@@ -24,7 +24,7 @@ ARC-S02-005
 
 # Status
 
-NOT_STARTED
+READY_FOR_INGESTION
 
 # Raw Path
 
