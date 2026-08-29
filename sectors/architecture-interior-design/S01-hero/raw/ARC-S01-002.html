@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S01-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S01 — Hero (Portfolio-led)
+  Territory      : Premium / Editorial
+  Reference      : Reference 1 — full-bleed hero, wordmark left with uppercase nav right,
+                   oversized two-line display heading, two pill actions, and a bottom rail
+                   of one paragraph plus three large-type cells.
+  Layout model   : Full-bleed stage, overlaid editorial type, three-cell baseline rail
+  Density        : Low-medium
+  Media mode     : One empty full-bleed media area behind a legibility scrim. No image supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The reference places numeric counters in the bottom rail. Those are replaced
+                   with non-numeric stage labels: this workspace does not author statistics,
+                   awards, certifications, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S01-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="Full-bleed stage with overlay type and baseline rail">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="empty-media-area-full-bleed">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S01-002 — Hero, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #2a2c2e; }
+
+/* Scoped study styles — namespaced to .arc-s01-002 */
+.arc-s01-002 {
+  --ground: #2a2c2e;
+  --ground-2: #3a3d40;
+  --light: #ffffff;
+  --light-soft: #d3d4d6;
+  --hair: rgba(255, 255, 255, 0.28);
+  --hair-strong: rgba(255, 255, 255, 0.6);
+  --focus: #ffd479;
+
+  box-sizing: border-box;
+  background: var(--ground);
+  color: var(--light);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s01-002 *,
+.arc-s01-002 *::before,
+.arc-s01-002 *::after { box-sizing: inherit; }
+.arc-s01-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+
+.arc-s01-002 .skip {
+  position: absolute; left: 16px; top: -64px; z-index: 40;
+  padding: 10px 16px; background: var(--light); color: #101114;
+  text-decoration: none; transition: top 140ms ease;
+}
+.arc-s01-002 .skip:focus { top: 16px; }
+
+/* --- Stage ----------------------------------------------------- */
+.arc-s01-002 .stage {
+  position: relative;
+  display: flex; flex-direction: column;
+  min-height: 720px; height: 100vh; max-height: 1040px;
+  padding: clamp(22px, 3vw, 44px) clamp(20px, 4vw, 64px) clamp(26px, 3vw, 48px);
+  overflow: hidden;
+}
+
+/* Empty full-bleed media area + scrim for future imagery */
+.arc-s01-002 .slot {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(168deg, var(--ground-2) 0%, var(--ground) 58%, #222426 100%);
+}
+.arc-s01-002 .scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(to right, rgba(20, 21, 22, 0.62) 0%, rgba(20, 21, 22, 0.28) 55%, rgba(20, 21, 22, 0.12) 100%),
+    linear-gradient(to top, rgba(20, 21, 22, 0.7) 0%, rgba(20, 21, 22, 0) 46%);
+}
+.arc-s01-002 .slot__label {
+  position: absolute; z-index: 2; right: clamp(20px, 4vw, 64px); top: 50%;
+  margin: 0; transform: translateY(-50%) rotate(90deg); transform-origin: right center;
+  font-size: 0.6875rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--light-soft); white-space: nowrap;
+}
+
+.arc-s01-002 .stage > header,
+.arc-s01-002 .stage > .lead,
+.arc-s01-002 .stage > .rail { position: relative; z-index: 3; }
+
+/* --- Masthead -------------------------------------------------- */
+.arc-s01-002 .masthead {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 28px; flex-wrap: wrap;
+}
+.arc-s01-002 .wordmark {
+  font-size: clamp(1.25rem, 1.9vw, 1.625rem); font-weight: 400; letter-spacing: -0.01em;
+  color: var(--light); text-decoration: none;
+}
+.arc-s01-002 .masthead nav ul {
+  display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 52px);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s01-002 .masthead nav a {
+  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--light); text-decoration: none; padding: 6px 0;
+  border-bottom: 1px solid transparent;
+}
+.arc-s01-002 .masthead nav a:hover,
+.arc-s01-002 .masthead nav a:focus-visible { border-bottom-color: var(--hair-strong); }
+
+/* --- Editorial lead -------------------------------------------- */
+.arc-s01-002 .lead {
+  flex: 1 1 auto;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: clamp(40px, 6vw, 96px) 0;
+  max-width: 980px;
+}
+.arc-s01-002 .lead__title {
+  margin: 0 0 26px;
+  font-size: clamp(2.5rem, 6.4vw, 5.25rem);
+  line-height: 1.02; letter-spacing: -0.035em; font-weight: 500;
+}
+.arc-s01-002 .lead__text {
+  margin: 0 0 38px; font-size: clamp(1rem, 1.2vw, 1.125rem);
+  color: var(--light-soft); max-width: 44ch;
+}
+.arc-s01-002 .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.arc-s01-002 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 54px; padding: 0 28px; border-radius: 999px;
+  font-size: 1rem; font-weight: 500; text-decoration: none; cursor: pointer;
+  border: 1px solid transparent; transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s01-002 .btn--solid { background: var(--light); color: #101114; border-color: var(--light); }
+.arc-s01-002 .btn--solid:hover,
+.arc-s01-002 .btn--solid:focus-visible { background: #e8e8e9; }
+.arc-s01-002 .btn--ghost { background: transparent; color: var(--light); border-color: var(--hair-strong); }
+.arc-s01-002 .btn--ghost:hover,
+.arc-s01-002 .btn--ghost:focus-visible { border-color: var(--light); background: rgba(255, 255, 255, 0.1); }
+
+/* --- Baseline rail: paragraph + three large-type cells ---------- */
+.arc-s01-002 .rail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) repeat(3, minmax(0, 0.58fr));
+  gap: clamp(20px, 3vw, 48px);
+  align-items: end;
+}
+.arc-s01-002 .rail__note { margin: 0; font-size: 0.9375rem; color: var(--light-soft); max-width: 46ch; }
+.arc-s01-002 .rail dl { margin: 0; text-align: center; }
+.arc-s01-002 .rail dt {
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem); line-height: 1.1;
+  letter-spacing: -0.02em; font-weight: 500; color: var(--light);
+}
+.arc-s01-002 .rail dd { margin: 6px 0 0; font-size: 0.875rem; color: var(--light-soft); }
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s01-002 .rail { grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, 0.62fr)); }
+}
+@media (max-width: 1024px) {
+  .arc-s01-002 .stage { min-height: 660px; }
+  .arc-s01-002 .lead { padding-right: 52px; }
+  .arc-s01-002 .rail { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 30px; }
+  .arc-s01-002 .rail__note { grid-column: 1 / -1; max-width: 60ch; }
+}
+@media (max-width: 768px) {
+  .arc-s01-002 .stage { height: auto; max-height: none; min-height: 0; }
+  .arc-s01-002 .lead { padding: 64px 0 56px; }
+  .arc-s01-002 .slot__label {
+    position: static; transform: none; text-align: left; white-space: normal;
+    padding-bottom: 22px; order: -1;
+  }
+  .arc-s01-002 .scrim {
+    background: linear-gradient(to top, rgba(20, 21, 22, 0.72) 10%, rgba(20, 21, 22, 0.2) 100%);
+  }
+}
+@media (max-width: 480px) {
+  .arc-s01-002 .masthead { gap: 16px; }
+  .arc-s01-002 .masthead nav ul { gap: 16px; }
+  .arc-s01-002 .lead { padding: 48px 0 44px; }
+  .arc-s01-002 .btn { width: 100%; }
+  .arc-s01-002 .rail { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .arc-s01-002 .rail dt { font-size: 1.125rem; }
+  .arc-s01-002 .rail dd { font-size: 0.75rem; }
+}
+@media (max-width: 360px) {
+  .arc-s01-002 .rail { grid-template-columns: minmax(0, 1fr); }
+  .arc-s01-002 .rail dl { text-align: left; }
+  .arc-s01-002 .rail dt { font-size: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s01-002 *, .arc-s01-002 *::before, .arc-s01-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s01-002" data-study-id="ARC-S01-002" data-territory="premium-editorial">
+
+  <a class="skip" href="#arc-s01-002-main">Skip to main content</a>
+
+  <main id="arc-s01-002-main">
+    <section class="stage" aria-labelledby="arc-s01-002-title">
+
+      <div class="slot" aria-hidden="true"></div>
+      <div class="scrim" aria-hidden="true"></div>
+      <p class="slot__label">Image area &#183; full-bleed</p>
+
+      <header class="masthead">
+        <a class="wordmark" href="#arc-s01-002-main">Atelier</a>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#arc-s01-002-main">Projects</a></li>
+            <li><a href="#arc-s01-002-main">Practice</a></li>
+            <li><a href="#arc-s01-002-main">Materials</a></li>
+            <li><a href="#arc-s01-002-main">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="lead">
+        <h1 class="lead__title" id="arc-s01-002-title">
+          Built from context.<br>Designed for permanence.
+        </h1>
+        <p class="lead__text">
+          We work with an understanding of site, a focus on how a space is used,
+          and a commitment to architectural clarity.
+        </p>
+        <div class="actions">
+          <a class="btn btn--solid" href="#arc-s01-002-main">
+            Get in touch
+            <span aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="btn btn--ghost" href="#arc-s01-002-main">Learn more</a>
+        </div>
+      </div>
+
+      <div class="rail">
+        <p class="rail__note">
+          Designing buildings and interiors that respond to real needs and real
+          environments, with a focus on clarity, purpose, and long-term value.
+        </p>
+        <dl>
+          <dt>Concept</dt>
+          <dd>First stage</dd>
+        </dl>
+        <dl>
+          <dt>Detail</dt>
+          <dd>Working stage</dd>
+        </dl>
+        <dl>
+          <dt>Delivery</dt>
+          <dd>Final stage</dd>
+        </dl>
+      </div>
+
+    </section>
+  </main>
+
+</div>
+</body>
+</html>

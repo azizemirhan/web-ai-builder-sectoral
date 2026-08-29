@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S01-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S01 — Hero (Portfolio-led)
+  Territory      : Dense / Information-heavy
+  Reference      : Reference 4 — dense uppercase navigation, oversized two-line display type,
+                   a badge and small caption block on the left, a stacked metadata column on
+                   the right, a media block overlapping the type, and a bottom caption.
+  Layout model   : Editorial display type with an overlapping media block and flanking
+                   information columns
+  Density        : High
+  Media mode     : One empty media area overlapping the display type. No image supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The reference places numeric counters in the right column. Those are
+                   replaced with non-numeric practice metadata: this workspace does not author
+                   statistics, awards, certifications, or completed-project claims. All project
+                   entries are labelled placeholders.
+-->
+
+<meta name="study-id" content="ARC-S01-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Display type with overlapping media and flanking info columns">
+<meta name="density" content="high">
+<meta name="media-mode" content="empty-media-area-overlapping">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S01-003 — Hero, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1ef; }
+
+/* Scoped study styles — namespaced to .arc-s01-003 */
+.arc-s01-003 {
+  --ink: #0f1012;
+  --ink-soft: #55575c;
+  --paper: #f1f1ef;
+  --slot: #dededc;
+  --slot-ink: #4f5155;
+  --line: #d3d3d0;
+  --line-strong: #838589;
+  --focus: #1f4fd8;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s01-003 *,
+.arc-s01-003 *::before,
+.arc-s01-003 *::after { box-sizing: inherit; }
+.arc-s01-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s01-003 .skip {
+  position: absolute; left: 16px; top: -64px; z-index: 40;
+  padding: 10px 16px; background: var(--ink); color: #fff;
+  text-decoration: none; transition: top 140ms ease;
+}
+.arc-s01-003 .skip:focus { top: 16px; }
+
+.arc-s01-003 .shell {
+  width: 100%; max-width: 1400px; margin: 0 auto;
+  padding: 0 clamp(16px, 2.6vw, 40px);
+}
+
+/* --- Dense navigation ------------------------------------------ */
+.arc-s01-003 .topbar { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.arc-s01-003 .topbar__inner {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center; gap: 20px;
+}
+.arc-s01-003 .mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border: 1.5px solid var(--ink);
+  color: var(--ink); text-decoration: none; font-size: 0.75rem; font-weight: 700;
+}
+.arc-s01-003 .nav ul {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 30px); margin: 0; padding: 0; list-style: none;
+}
+.arc-s01-003 .nav a {
+  font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; padding: 5px 0;
+  border-bottom: 1px solid transparent;
+}
+.arc-s01-003 .nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s01-003 .nav a:hover,
+.arc-s01-003 .nav a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s01-003 .util { display: flex; align-items: center; gap: 10px; }
+.arc-s01-003 .util__pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 34px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: 999px;
+  font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+}
+.arc-s01-003 .util__pill:hover,
+.arc-s01-003 .util__pill:focus-visible { border-color: var(--ink); background: #e7e7e5; }
+
+/* --- Display type ---------------------------------------------- */
+.arc-s01-003 .hero { padding: clamp(18px, 2.4vw, 34px) 0 clamp(28px, 3vw, 44px); }
+.arc-s01-003 .display {
+  margin: 0;
+  font-size: clamp(2.75rem, 11.4vw, 9.5rem);
+  line-height: 0.9; letter-spacing: -0.045em; font-weight: 400;
+  text-transform: uppercase;
+}
+.arc-s01-003 .display span { display: block; }
+.arc-s01-003 .display .line-2 { padding-left: 8%; }
+
+/* --- Body grid: info | media | metadata ------------------------ */
+.arc-s01-003 .body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 2.2fr) minmax(0, 0.92fr);
+  gap: clamp(18px, 2.4vw, 36px);
+  margin-top: clamp(-96px, -5vw, -28px);
+}
+.arc-s01-003 .col-left { align-self: end; padding-bottom: 8px; }
+.arc-s01-003 .col-right { align-self: end; padding-bottom: 8px; }
+
+.arc-s01-003 .badge {
+  display: inline-block; margin: 0 0 16px;
+  padding: 7px 14px; border: 1px solid var(--ink); border-radius: 999px;
+  font-size: 0.625rem; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.arc-s01-003 .col-left p {
+  margin: 0; font-size: 0.75rem; line-height: 1.7;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+.arc-s01-003 .meta { margin: 0; border-top: 1px solid var(--line-strong); }
+.arc-s01-003 .meta > div {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+.arc-s01-003 .meta dt {
+  font-size: 0.625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s01-003 .meta dd {
+  margin: 0; font-size: 0.8125rem; text-align: right; color: var(--ink);
+}
+
+/* --- Empty media area ------------------------------------------ */
+.arc-s01-003 .media { margin: 0; position: relative; z-index: 1; }
+.arc-s01-003 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 16 / 9; min-height: 260px;
+  background: var(--slot); border-radius: 6px;
+}
+.arc-s01-003 .slot__label {
+  margin: 0; padding: 14px 16px;
+  font-size: 0.625rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Bottom rail: caption + compact project index -------------- */
+.arc-s01-003 .rail {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  gap: clamp(18px, 2.4vw, 36px); align-items: end;
+  margin-top: clamp(20px, 2.6vw, 34px);
+  padding-top: 18px; border-top: 1px solid var(--line-strong);
+}
+.arc-s01-003 .rail__caption {
+  margin: 0; font-size: clamp(0.8125rem, 1.1vw, 1rem);
+  letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.35; max-width: 22ch;
+}
+.arc-s01-003 .index { margin: 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.arc-s01-003 .index a {
+  display: block; padding: 10px 0 4px; border-top: 1px solid var(--line);
+  text-decoration: none; color: var(--ink);
+}
+.arc-s01-003 .index a:hover,
+.arc-s01-003 .index a:focus-visible { border-top-color: var(--ink); }
+.arc-s01-003 .index .ref {
+  display: block; font-size: 0.625rem; letter-spacing: 0.14em; color: var(--ink-soft);
+}
+.arc-s01-003 .index .name { display: block; font-size: 0.8125rem; margin-top: 3px; }
+.arc-s01-003 .index .type { display: block; font-size: 0.6875rem; color: var(--ink-soft); }
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s01-003 .body { grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr) minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s01-003 .body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    margin-top: 20px;
+  }
+  .arc-s01-003 .media { grid-column: 1 / -1; order: -1; }
+  .arc-s01-003 .col-left, .arc-s01-003 .col-right { align-self: start; padding-bottom: 0; }
+  .arc-s01-003 .display .line-2 { padding-left: 6%; }
+  .arc-s01-003 .rail { grid-template-columns: minmax(0, 1fr); }
+  .arc-s01-003 .rail__caption { max-width: none; }
+}
+@media (max-width: 768px) {
+  .arc-s01-003 .topbar__inner { grid-template-columns: auto auto; row-gap: 14px; }
+  .arc-s01-003 .nav { grid-column: 1 / -1; order: 3; }
+  .arc-s01-003 .nav ul { justify-content: flex-start; }
+  .arc-s01-003 .index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s01-003 .slot { min-height: 200px; }
+}
+@media (max-width: 480px) {
+  .arc-s01-003 .body { grid-template-columns: minmax(0, 1fr); }
+  .arc-s01-003 .display { letter-spacing: -0.03em; }
+  .arc-s01-003 .display .line-2 { padding-left: 0; }
+  .arc-s01-003 .slot { aspect-ratio: 4 / 3; min-height: 0; }
+  .arc-s01-003 .index { grid-template-columns: minmax(0, 1fr); gap: 0; }
+}
+@media (max-width: 360px) {
+  .arc-s01-003 .nav ul { gap: 10px; }
+  .arc-s01-003 .util__pill { padding: 0 10px; letter-spacing: 0.08em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s01-003 *, .arc-s01-003 *::before, .arc-s01-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s01-003" data-study-id="ARC-S01-003" data-territory="dense-information-heavy">
+
+  <a class="skip" href="#arc-s01-003-main">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="mark" href="#arc-s01-003-main" aria-label="Studio home">S</a>
+      <nav class="nav" aria-label="Primary">
+        <ul>
+          <li><a href="#arc-s01-003-main" aria-current="page">Home</a></li>
+          <li><a href="#arc-s01-003-main">Projects</a></li>
+          <li><a href="#arc-s01-003-main">Typologies</a></li>
+          <li><a href="#arc-s01-003-main">Interiors</a></li>
+          <li><a href="#arc-s01-003-main">Practice</a></li>
+          <li><a href="#arc-s01-003-main">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="util">
+        <a class="util__pill" href="#arc-s01-003-main">Studio enquiries</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="arc-s01-003-main">
+    <section class="hero" aria-labelledby="arc-s01-003-title">
+      <div class="shell">
+
+        <h1 class="display" id="arc-s01-003-title">
+          <span class="line-1">Architecture</span>
+          <span class="line-2">&amp; Interiors</span>
+        </h1>
+
+        <div class="body">
+
+          <div class="col-left">
+            <p class="badge">Studio index</p>
+            <p>
+              A practice working across residential, workplace, and cultural
+              projects — from site reading and concept through detail design.
+            </p>
+          </div>
+
+          <figure class="media">
+            <div class="slot">
+              <p class="slot__label">Image area</p>
+            </div>
+          </figure>
+
+          <div class="col-right">
+            <dl class="meta">
+              <div><dt>Typologies</dt><dd>Residential, workplace, cultural</dd></div>
+              <div><dt>Scope</dt><dd>Architecture &amp; interiors</dd></div>
+              <div><dt>Stages</dt><dd>Concept to completion</dd></div>
+              <div><dt>Studio</dt><dd>Location placeholder</dd></div>
+            </dl>
+          </div>
+
+        </div>
+
+        <div class="rail">
+          <p class="rail__caption">A practice built on drawings</p>
+          <ul class="index">
+            <li>
+              <a href="#arc-s01-003-main">
+                <span class="ref">01</span>
+                <span class="name">Project record 01</span>
+                <span class="type">Residential</span>
+              </a>
+            </li>
+            <li>
+              <a href="#arc-s01-003-main">
+                <span class="ref">02</span>
+                <span class="name">Project record 02</span>
+                <span class="type">Workplace</span>
+              </a>
+            </li>
+            <li>
+              <a href="#arc-s01-003-main">
+                <span class="ref">03</span>
+                <span class="name">Project record 03</span>
+                <span class="type">Cultural</span>
+              </a>
+            </li>
+            <li>
+              <a href="#arc-s01-003-main">
+                <span class="ref">04</span>
+                <span class="name">Project record 04</span>
+                <span class="type">Adaptive reuse</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S01-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S01 — Hero (Portfolio-led)
+  Territory      : Sector-native / Distinctive
+  Reference      : Reference 2 — full-bleed hero with a stacked mark and glyph at the top left,
+                   compact nav at the top right, and a corner-anchored uppercase heading block
+                   with a two-line supporting line beneath it.
+  Layout model   : Full-bleed stage, corner-anchored heading block, drawing-sheet title block
+                   along the bottom edge
+  Density        : Medium
+  Media mode     : One empty full-bleed media area with a plate reference tag. No image supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Title-block values are neutral placeholders and the sheet status reads
+                   "Design study". No client names, awards, certifications, statistics, project
+                   dates, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S01-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Full-bleed stage with corner heading block and title block rail">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-area-full-bleed">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S01-005 — Hero, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dcdad5; }
+
+/* Scoped study styles — namespaced to .arc-s01-005 */
+.arc-s01-005 {
+  --ground: #dcdad5;
+  --ground-2: #e7e5e0;
+  --ink: #14161a;
+  --ink-soft: #4a4842;
+  --hair: #a8a49b;
+  --hair-ink: #847f76;
+  --hair-soft: #c4c0b8;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s01-005 *,
+.arc-s01-005 *::before,
+.arc-s01-005 *::after { box-sizing: inherit; }
+.arc-s01-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+
+.arc-s01-005 .skip {
+  position: absolute; left: 16px; top: -64px; z-index: 50;
+  padding: 10px 16px; background: var(--ink); color: #fff;
+  text-decoration: none; transition: top 140ms ease;
+}
+.arc-s01-005 .skip:focus { top: 16px; }
+
+/* --- Stage ----------------------------------------------------- */
+.arc-s01-005 .stage {
+  position: relative;
+  display: flex; flex-direction: column;
+  min-height: 700px; height: 100vh; max-height: 980px;
+  overflow: hidden;
+}
+
+/* Empty full-bleed media area + scrim for future imagery */
+.arc-s01-005 .slot {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(178deg, var(--ground-2) 0%, var(--ground) 54%, #d2cfc9 100%);
+}
+.arc-s01-005 .scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.12) 46%, rgba(255, 255, 255, 0) 100%);
+}
+.arc-s01-005 .slot__tag {
+  position: absolute; z-index: 2; right: clamp(16px, 3vw, 40px); bottom: clamp(72px, 9vw, 110px);
+  margin: 0; font-family: var(--mono);
+  font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+.arc-s01-005 .stage > header,
+.arc-s01-005 .stage > .lead,
+.arc-s01-005 .stage > .titleblock { position: relative; z-index: 3; }
+
+/* --- Masthead -------------------------------------------------- */
+.arc-s01-005 .masthead {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+  padding: clamp(18px, 2.4vw, 30px) clamp(16px, 3vw, 40px);
+}
+.arc-s01-005 .mark {
+  display: inline-flex; align-items: center; gap: 12px;
+  color: var(--ink); text-decoration: none;
+}
+.arc-s01-005 .mark__glyph {
+  display: block; width: 34px; height: 34px; flex: none; color: var(--ink);
+}
+.arc-s01-005 .mark__text {
+  font-family: var(--mono);
+  font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.16em;
+  line-height: 1.35; text-transform: uppercase;
+}
+.arc-s01-005 .masthead nav ul {
+  display: flex; flex-wrap: wrap; gap: clamp(14px, 2.2vw, 30px);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s01-005 .masthead nav a {
+  font-size: 0.8125rem; color: var(--ink-soft); text-decoration: none;
+  padding: 5px 0; border-bottom: 1px solid transparent;
+}
+.arc-s01-005 .masthead nav a:hover,
+.arc-s01-005 .masthead nav a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* --- Corner-anchored heading block ----------------------------- */
+.arc-s01-005 .lead {
+  flex: 1 1 auto;
+  padding: clamp(20px, 3vw, 44px) clamp(16px, 3vw, 40px) 0;
+  max-width: 1080px;
+}
+.arc-s01-005 .lead__title {
+  margin: 0 0 18px;
+  font-size: clamp(1.875rem, 4.2vw, 3.5rem);
+  line-height: 1.06; letter-spacing: -0.015em; font-weight: 600; text-transform: uppercase;
+  max-width: 18ch;
+}
+.arc-s01-005 .lead__text {
+  margin: 0 0 30px; font-size: clamp(0.9375rem, 1.15vw, 1.0625rem);
+  color: var(--ink-soft); max-width: 48ch;
+}
+.arc-s01-005 .lead__actions { display: flex; flex-wrap: wrap; gap: 12px 22px; }
+.arc-s01-005 .lead__actions a {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 46px; padding: 0 22px;
+  border: 1px solid var(--hair-ink); border-radius: 2px;
+  font-family: var(--mono);
+  font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none; background: rgba(255, 255, 255, 0.4);
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s01-005 .lead__actions a:hover,
+.arc-s01-005 .lead__actions a:focus-visible { background: rgba(255, 255, 255, 0.86); border-color: var(--ink); }
+
+/* --- Drawing-sheet title block along the bottom edge ----------- */
+.arc-s01-005 .titleblock {
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 0;
+  border-top: 1px solid var(--hair);
+  background: rgba(255, 255, 255, 0.5);
+}
+.arc-s01-005 .titleblock > div {
+  padding: 12px clamp(12px, 2vw, 22px);
+  border-right: 1px solid var(--hair-soft);
+}
+.arc-s01-005 .titleblock > div:last-child { border-right: 0; }
+.arc-s01-005 .titleblock dt {
+  font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 5px;
+}
+.arc-s01-005 .titleblock dd {
+  margin: 0; font-family: var(--mono); font-size: 0.75rem; color: var(--ink);
+}
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s01-005 .lead { max-width: 900px; }
+}
+@media (max-width: 1024px) {
+  .arc-s01-005 .stage { min-height: 640px; }
+  .arc-s01-005 .titleblock { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .arc-s01-005 .titleblock > div { border-bottom: 1px solid var(--hair-soft); }
+  .arc-s01-005 .titleblock > div:nth-child(3n) { border-right: 0; }
+  .arc-s01-005 .slot__tag { bottom: clamp(120px, 16vw, 150px); }
+}
+@media (max-width: 768px) {
+  .arc-s01-005 .stage { height: auto; max-height: none; min-height: 560px; }
+  .arc-s01-005 .lead { padding-top: 32px; padding-bottom: 40px; }
+  .arc-s01-005 .lead__title { max-width: 22ch; }
+  .arc-s01-005 .scrim {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0) 100%);
+  }
+  .arc-s01-005 .slot__tag { position: static; padding: 0 0 8px clamp(16px, 3vw, 40px); }
+}
+@media (max-width: 480px) {
+  .arc-s01-005 .masthead { gap: 14px; }
+  .arc-s01-005 .masthead nav ul { gap: 14px; }
+  .arc-s01-005 .mark__glyph { width: 28px; height: 28px; }
+  .arc-s01-005 .lead__actions a { width: 100%; justify-content: center; }
+  .arc-s01-005 .titleblock { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s01-005 .titleblock > div:nth-child(3n) { border-right: 1px solid var(--hair-soft); }
+  .arc-s01-005 .titleblock > div:nth-child(2n) { border-right: 0; }
+}
+@media (max-width: 360px) {
+  .arc-s01-005 .mark__text { font-size: 0.625rem; letter-spacing: 0.12em; }
+  .arc-s01-005 .masthead nav a { font-size: 0.75rem; }
+  .arc-s01-005 .titleblock { grid-template-columns: minmax(0, 1fr); }
+  .arc-s01-005 .titleblock > div { border-right: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s01-005 *, .arc-s01-005 *::before, .arc-s01-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s01-005" data-study-id="ARC-S01-005" data-territory="sector-native-distinctive">
+
+  <a class="skip" href="#arc-s01-005-main">Skip to main content</a>
+
+  <main id="arc-s01-005-main">
+    <section class="stage" aria-labelledby="arc-s01-005-title">
+
+      <div class="slot" aria-hidden="true"></div>
+      <div class="scrim" aria-hidden="true"></div>
+      <p class="slot__tag">Image area &#183; plate A-01</p>
+
+      <header class="masthead">
+        <a class="mark" href="#arc-s01-005-main">
+          <svg class="mark__glyph" viewBox="0 0 34 34" aria-hidden="true" focusable="false">
+            <path d="M2 32 L17 4 L32 32 Z M9 32 L17 18 L25 32" fill="none" stroke="currentColor" stroke-width="1.6"></path>
+          </svg>
+          <span class="mark__text">Studio<br>Architects</span>
+        </a>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#arc-s01-005-main">Practice</a></li>
+            <li><a href="#arc-s01-005-main">Services</a></li>
+            <li><a href="#arc-s01-005-main">Projects</a></li>
+            <li><a href="#arc-s01-005-main">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <div class="lead">
+        <h1 class="lead__title" id="arc-s01-005-title">
+          Architecture and interior design practice
+        </h1>
+        <p class="lead__text">
+          We design residential, workplace, and cultural projects — carrying each one
+          from site reading and concept drawings through to detail and delivery.
+        </p>
+        <div class="lead__actions">
+          <a href="#arc-s01-005-main">Open project sheet</a>
+          <a href="#arc-s01-005-main">Studio enquiries</a>
+        </div>
+      </div>
+
+      <dl class="titleblock">
+        <div><dt>Sheet</dt><dd>ARC / S01</dd></div>
+        <div><dt>Set</dt><dd>Hero plate</dd></div>
+        <div><dt>Scale</dt><dd>As noted</dd></div>
+        <div><dt>Revision</dt><dd>A</dd></div>
+        <div><dt>Status</dt><dd>Design study</dd></div>
+      </dl>
+
+    </section>
+  </main>
+
+</div>
+</body>
+</html>

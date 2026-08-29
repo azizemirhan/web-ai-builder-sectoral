@@ -3,11 +3,11 @@
 - Prefix: ARC
 - Planned sections: 20
 - Planned studies: 100
-- Authoring status: NOT_STARTED
+- Authoring status: IN_PROGRESS (S01 authored)
 
 | Section | Name | Directory | Planned IDs | Status |
 | --- | --- | --- | --- | --- |
-| S01 | Hero | `S01-hero/` | ARC-S01-001–005 | NOT_STARTED |
+| S01 | Hero | `S01-hero/` | ARC-S01-001–005 | AUTHORED |
 | S02 | Selected Projects | `S02-selected-projects/` | ARC-S02-001–005 | NOT_STARTED |
 | S03 | Services | `S03-services/` | ARC-S03-001–005 | NOT_STARTED |
 | S04 | Project Typologies | `S04-project-typologies/` | ARC-S04-001–005 | NOT_STARTED |
@@ -28,4 +28,4 @@
 | S19 | Project Inquiry | `S19-project-inquiry/` | ARC-S19-001–005 | NOT_STARTED |
 | S20 | Consultation CTA | `S20-consultation-cta/` | ARC-S20-001–005 | NOT_STARTED |
 
-No studies or section-level BATCH-V1.md files exist yet. Create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for a section.
+S01 is authored: five raw studies in `S01-hero/raw/` and a batch document at `S01-hero/BATCH-V1.md`. For any other section, create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for that section.
