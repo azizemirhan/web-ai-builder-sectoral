@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S03-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S03 — Services
+  Territory      : Dense / Information-heavy
+  Reference      : Reference 3 — a bracketed section number held in a ruled left margin, a large
+                   heading with a "See all" arrow link opposite it, and a three-card row where
+                   each card carries an image, a small uppercase category label, a title, and a
+                   description paragraph.
+  Layout model   : Ruled margin index column + heading rule + three-card row, each card extended
+                   with a scope list, closed by a capability rail
+  Density        : High
+  Media mode     : Three empty image areas, one per card. No image supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : All copy is neutral placeholder text. No client names, awards,
+                   certifications, statistics, pricing, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S03-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S03">
+<meta name="section-name" content="Services">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Ruled margin index with three-card row and capability rail">
+<meta name="density" content="high">
+<meta name="media-mode" content="empty-media-area-per-card">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S03-003 — Services, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f0f0ee; }
+
+/* Scoped study styles — namespaced to .arc-s03-003 */
+.arc-s03-003 {
+  --ink: #101114;
+  --ink-soft: #55575c;
+  --paper: #f0f0ee;
+  --slot: #dcdcda;
+  --slot-ink: #4f5155;
+  --line: #d5d5d2;
+  --line-strong: #838589;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s03-003 *,
+.arc-s03-003 *::before,
+.arc-s03-003 *::after { box-sizing: inherit; }
+.arc-s03-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+/* --- Frame: ruled margin column + body ------------------------- */
+.arc-s03-003 .frame {
+  display: grid; grid-template-columns: clamp(64px, 8vw, 116px) minmax(0, 1fr);
+  max-width: 1400px; margin: 0 auto;
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s03-003 .margin {
+  border-right: 1px solid var(--line-strong);
+  padding: clamp(36px, 4.4vw, 68px) 0 0;
+}
+.arc-s03-003 .margin p {
+  margin: 0; text-align: center;
+  font-family: var(--mono); font-size: 0.8125rem; color: var(--ink-soft);
+}
+.arc-s03-003 .body { padding: clamp(36px, 4.4vw, 68px) clamp(20px, 3vw, 44px) clamp(36px, 4.4vw, 64px); }
+
+/* --- Head row -------------------------------------------------- */
+.arc-s03-003 .head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap; margin-bottom: clamp(28px, 3.6vw, 54px);
+}
+.arc-s03-003 .head h1 {
+  margin: 0; font-size: clamp(1.75rem, 3.4vw, 3rem);
+  line-height: 1.05; letter-spacing: -0.028em; font-weight: 400;
+}
+.arc-s03-003 .seeall {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; font-size: 0.875rem; color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s03-003 .seeall:hover,
+.arc-s03-003 .seeall:focus-visible { border-bottom-color: var(--ink); }
+
+/* --- Card row -------------------------------------------------- */
+.arc-s03-003 .cards {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 38px);
+  margin: 0 0 clamp(28px, 3.4vw, 48px); padding: 0; list-style: none;
+}
+.arc-s03-003 .card { margin: 0; }
+.arc-s03-003 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 3 / 2; background: var(--slot);
+}
+.arc-s03-003 .slot__label {
+  margin: 0; padding: 11px 13px;
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s03-003 .card__cat {
+  margin: 18px 0 8px; font-family: var(--mono);
+  font-size: 0.625rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s03-003 .card h2 {
+  margin: 0 0 10px; font-size: 1.0625rem; line-height: 1.3;
+  letter-spacing: -0.012em; font-weight: 500;
+}
+.arc-s03-003 .card h2 a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+.arc-s03-003 .card h2 a:hover,
+.arc-s03-003 .card h2 a:focus-visible { border-bottom-color: var(--ink); }
+.arc-s03-003 .card > p { margin: 0 0 14px; font-size: 0.875rem; color: var(--ink-soft); }
+.arc-s03-003 .scope { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.arc-s03-003 .scope li {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 7px 0; border-bottom: 1px solid var(--line);
+  font-size: 0.75rem; color: var(--ink-soft);
+}
+.arc-s03-003 .scope b { font-weight: 500; color: var(--ink); }
+
+/* --- Capability rail ------------------------------------------- */
+.arc-s03-003 .rail {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 30px);
+  margin: 0; padding-top: clamp(20px, 2.4vw, 30px); border-top: 1px solid var(--line-strong);
+}
+.arc-s03-003 .rail dt {
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px;
+}
+.arc-s03-003 .rail dd { margin: 0; font-size: 0.8125rem; }
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s03-003 .cards { gap: 24px; }
+}
+@media (max-width: 1024px) {
+  .arc-s03-003 .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s03-003 .cards > li:nth-child(3) { grid-column: span 2; }
+  .arc-s03-003 .cards > li:nth-child(3) .slot { aspect-ratio: 21 / 9; }
+  .arc-s03-003 .rail { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 22px; }
+}
+@media (max-width: 768px) {
+  .arc-s03-003 .frame { grid-template-columns: minmax(0, 1fr); }
+  .arc-s03-003 .margin {
+    border-right: 0; border-bottom: 1px solid var(--line-strong);
+    padding: 18px clamp(20px, 3vw, 44px);
+  }
+  .arc-s03-003 .margin p { text-align: left; }
+  .arc-s03-003 .body { padding-top: clamp(26px, 4vw, 40px); }
+}
+@media (max-width: 480px) {
+  .arc-s03-003 .cards { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .arc-s03-003 .cards > li:nth-child(3) { grid-column: auto; }
+  .arc-s03-003 .cards > li:nth-child(3) .slot { aspect-ratio: 3 / 2; }
+  .arc-s03-003 .rail { grid-template-columns: minmax(0, 1fr); row-gap: 18px; }
+}
+@media (max-width: 360px) {
+  .arc-s03-003 .scope li { font-size: 0.6875rem; }
+  .arc-s03-003 .slot__label { padding: 9px 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s03-003 *, .arc-s03-003 *::before, .arc-s03-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s03-003" data-study-id="ARC-S03-003" data-territory="dense-information-heavy">
+
+  <section class="frame" aria-labelledby="arc-s03-003-title">
+
+    <div class="margin" aria-hidden="true">
+      <p>[03]</p>
+    </div>
+
+    <div class="body">
+
+      <div class="head">
+        <h1 id="arc-s03-003-title">What the studio does</h1>
+        <a class="seeall" href="#arc-s03-003-title">
+          See all services
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </div>
+
+      <ul class="cards">
+        <li class="card">
+          <div class="slot"><p class="slot__label">Image area</p></div>
+          <p class="card__cat">Architecture</p>
+          <h2><a href="#arc-s03-003-title">New build and extension design</a></h2>
+          <p>
+            From site reading and concept through planning submission, technical
+            drawings, and support while the work is on site.
+          </p>
+          <ul class="scope">
+            <li><span>Stages</span><b>Concept to completion</b></li>
+            <li><span>Output</span><b>Drawings, models</b></li>
+            <li><span>Typologies</span><b>Residential, cultural</b></li>
+          </ul>
+        </li>
+
+        <li class="card">
+          <div class="slot"><p class="slot__label">Image area</p></div>
+          <p class="card__cat">Interiors</p>
+          <h2><a href="#arc-s03-003-title">Interior architecture and fit-out</a></h2>
+          <p>
+            Layout, light, joinery, and surface resolved together, with material
+            selection carried through to the specification.
+          </p>
+          <ul class="scope">
+            <li><span>Stages</span><b>Concept to handover</b></li>
+            <li><span>Output</span><b>Layouts, schedules</b></li>
+            <li><span>Typologies</span><b>Residential, workplace</b></li>
+          </ul>
+        </li>
+
+        <li class="card">
+          <div class="slot"><p class="slot__label">Image area</p></div>
+          <p class="card__cat">Existing buildings</p>
+          <h2><a href="#arc-s03-003-title">Adaptive reuse and renovation</a></h2>
+          <p>
+            Working with what is already standing — surveying the fabric, then
+            deciding what stays, what changes, and what is added.
+          </p>
+          <ul class="scope">
+            <li><span>Stages</span><b>Survey to delivery</b></li>
+            <li><span>Output</span><b>Condition set, drawings</b></li>
+            <li><span>Typologies</span><b>Mixed, adaptive reuse</b></li>
+          </ul>
+        </li>
+      </ul>
+
+      <dl class="rail">
+        <div><dt>Engagement</dt><dd>Full service or single stage</dd></div>
+        <div><dt>Team</dt><dd>Architects and interior designers</dd></div>
+        <div><dt>Coordination</dt><dd>Consultants and contractors</dd></div>
+        <div><dt>Handover</dt><dd>Drawing set and specification</dd></div>
+      </dl>
+
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

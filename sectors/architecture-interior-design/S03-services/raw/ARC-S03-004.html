@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S03-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S03 — Services
+  Territory      : Conversion-led
+  Reference      : Reference 1 — a catalogue heading block on the left with a small supporting
+                   note opposite, a row of cards each carrying a light chip label over the
+                   image, a primary button at the bottom left, and circular previous / next
+                   controls at the bottom right.
+  Layout model   : Catalogue heading block + horizontally scrollable service card rail with
+                   paired controls and a primary action
+  Density        : Medium-high (six service cards)
+  Media mode     : Six empty image areas, one per card, each with an overlaid chip label.
+  Interaction    : Vanilla JavaScript, about forty lines. Previous / next buttons scroll the
+                   rail by one card, disable at each end, and hand focus to the opposite
+                   control when the pressed one becomes disabled. The rail is itself a labelled,
+                   keyboard-scrollable region, so the controls are an enhancement rather than
+                   the only way to reach a card. Scrolling honours prefers-reduced-motion.
+  Content note   : The reference places a price line inside each chip. Prices are replaced with
+                   a neutral engagement descriptor: this workspace does not author pricing,
+                   statistics, awards, certifications, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S03-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S03">
+<meta name="section-name" content="Services">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Catalogue heading with scrollable card rail and paired controls">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="empty-media-area-per-card-with-chip">
+<meta name="interaction" content="scroll-rail-with-prev-next-controls">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S03-004 — Services, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2f2f0; }
+
+/* Scoped study styles — namespaced to .arc-s03-004 */
+.arc-s03-004 {
+  --ink: #14151a;
+  --ink-soft: #575a61;
+  --paper: #f2f2f0;
+  --card: #ffffff;
+  --slot: #d9d9d7;
+  --slot-ink: #4e5054;
+  --line: #dcdcda;
+  --line-strong: #838589;
+  --focus: #1f4fd8;
+  --disabled: #a9abae;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s03-004 *,
+.arc-s03-004 *::before,
+.arc-s03-004 *::after { box-sizing: inherit; }
+.arc-s03-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s03-004 .shell {
+  width: 100%; max-width: 1400px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 84px) clamp(16px, 2.6vw, 40px);
+}
+.arc-s03-004 .panel {
+  background: var(--card);
+  border-radius: clamp(16px, 2vw, 28px);
+  padding: clamp(24px, 3vw, 44px);
+}
+
+/* --- Head ------------------------------------------------------ */
+.arc-s03-004 .head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap; margin-bottom: clamp(24px, 3vw, 40px);
+}
+.arc-s03-004 .head h1 {
+  margin: 0; font-size: clamp(1.5rem, 2.9vw, 2.375rem);
+  line-height: 1.14; letter-spacing: -0.026em; font-weight: 500; max-width: 16ch;
+}
+.arc-s03-004 .head__note { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); max-width: 30ch; }
+.arc-s03-004 .head__note a { color: var(--ink); }
+
+/* --- Scroll rail ----------------------------------------------- */
+.arc-s03-004 .rail {
+  display: flex; gap: clamp(12px, 1.4vw, 20px);
+  margin: 0 0 clamp(22px, 2.6vw, 34px); padding: 0 0 4px; list-style: none;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+.arc-s03-004 .rail:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+.arc-s03-004 .rail > li {
+  flex: 0 0 calc((100% - 3 * clamp(12px, 1.4vw, 20px)) / 4);
+  scroll-snap-align: start;
+}
+.arc-s03-004 .card {
+  position: relative;
+  display: flex; align-items: flex-end;
+  aspect-ratio: 3 / 4;
+  background: var(--slot);
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 12px;
+}
+.arc-s03-004 .card__slotlabel {
+  position: absolute; top: 12px; left: 14px; margin: 0;
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s03-004 .chip {
+  position: relative; width: 100%;
+  background: var(--card); border-radius: 8px; padding: 12px 14px;
+}
+.arc-s03-004 .chip h2 { margin: 0 0 4px; font-size: 0.875rem; font-weight: 600; letter-spacing: -0.005em; }
+.arc-s03-004 .chip h2 a { color: var(--ink); text-decoration: none; }
+.arc-s03-004 .chip h2 a::after { content: ""; position: absolute; inset: 0; border-radius: 8px; }
+.arc-s03-004 .chip h2 a:hover { text-decoration: underline; }
+/* Move the focus ring from the link to the whole chip, but only where :has() is
+   supported — otherwise the link keeps its own ring rather than losing it. */
+@supports selector(:has(*)) {
+  .arc-s03-004 .chip h2 a:focus-visible { outline: none; }
+  .arc-s03-004 .chip:has(a:focus-visible) { outline: 2px solid var(--focus); outline-offset: 3px; }
+}
+.arc-s03-004 .chip p { margin: 0; font-size: 0.75rem; color: var(--ink-soft); }
+
+/* --- Foot: primary action + rail controls ----------------------- */
+.arc-s03-004 .foot {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+}
+.arc-s03-004 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.arc-s03-004 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 52px; padding: 0 26px; border-radius: 999px;
+  font-size: 0.9375rem; font-weight: 500; text-decoration: none; cursor: pointer;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  transition: background-color 150ms ease;
+}
+.arc-s03-004 .btn:hover,
+.arc-s03-004 .btn:focus-visible { background: #000; }
+.arc-s03-004 .textlink {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+  font-size: 0.9375rem; color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s03-004 .textlink:hover,
+.arc-s03-004 .textlink:focus-visible { border-bottom-color: var(--ink); }
+
+.arc-s03-004 .controls { display: flex; gap: 10px; }
+.arc-s03-004 .controls button {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 999px;
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--line-strong); cursor: pointer;
+  font-size: 1rem; line-height: 1;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s03-004 .controls button:hover:not(:disabled),
+.arc-s03-004 .controls button:focus-visible { border-color: var(--ink); background: #f0f0ee; }
+.arc-s03-004 .controls button:disabled { color: var(--disabled); border-color: var(--line); cursor: default; }
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s03-004 .rail > li { flex-basis: calc((100% - 2 * clamp(12px, 1.4vw, 20px)) / 3); }
+}
+@media (max-width: 1024px) {
+  .arc-s03-004 .rail > li { flex-basis: calc((100% - 1 * clamp(12px, 1.4vw, 20px)) / 2); }
+  .arc-s03-004 .head h1 { max-width: 20ch; }
+}
+@media (max-width: 768px) {
+  .arc-s03-004 .card { aspect-ratio: 4 / 5; }
+  .arc-s03-004 .foot { align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .arc-s03-004 .rail > li { flex-basis: 78%; }
+  .arc-s03-004 .actions { width: 100%; }
+  .arc-s03-004 .btn { width: 100%; }
+  .arc-s03-004 .foot { flex-direction: column; align-items: stretch; }
+  .arc-s03-004 .controls { justify-content: flex-end; }
+}
+@media (max-width: 360px) {
+  .arc-s03-004 .rail > li { flex-basis: 86%; }
+  .arc-s03-004 .controls button { width: 44px; height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s03-004 *, .arc-s03-004 *::before, .arc-s03-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s03-004" data-study-id="ARC-S03-004" data-territory="conversion-led">
+
+  <section class="shell" aria-labelledby="arc-s03-004-title">
+    <div class="panel">
+
+      <div class="head">
+        <h1 id="arc-s03-004-title">Catalogue of studio services</h1>
+        <p class="head__note">
+          Architecture and interior design delivered as defined stages, so a project
+          can start at concept or join later. <a href="#arc-s03-004-title">How we work</a>
+        </p>
+      </div>
+
+      <ul class="rail" id="arc-s03-004-rail" tabindex="0" role="group"
+          aria-label="Studio services, scrollable list">
+        <li>
+          <div class="card">
+            <p class="card__slotlabel">Image area</p>
+            <div class="chip">
+              <h2><a href="#arc-s03-004-title">Architecture</a></h2>
+              <p>Concept to completion</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <p class="card__slotlabel">Image area</p>
+            <div class="chip">
+              <h2><a href="#arc-s03-004-title">Interior design</a></h2>
+              <p>Concept to handover</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <p class="card__slotlabel">Image area</p>
+            <div class="chip">
+              <h2><a href="#arc-s03-004-title">Renovation</a></h2>
+              <p>Survey to delivery</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <p class="card__slotlabel">Image area</p>
+            <div class="chip">
+              <h2><a href="#arc-s03-004-title">Adaptive reuse</a></h2>
+              <p>Existing building work</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <p class="card__slotlabel">Image area</p>
+            <div class="chip">
+              <h2><a href="#arc-s03-004-title">Workplace fit-out</a></h2>
+              <p>Layout to specification</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="card">
+            <p class="card__slotlabel">Image area</p>
+            <div class="chip">
+              <h2><a href="#arc-s03-004-title">Furniture &amp; detail</a></h2>
+              <p>Bespoke and fixed pieces</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="foot">
+        <div class="actions">
+          <a class="btn" href="#arc-s03-004-title">
+            Start a project
+            <span aria-hidden="true">&#8594;</span>
+          </a>
+          <a class="textlink" href="#arc-s03-004-title">All services</a>
+        </div>
+
+        <div class="controls">
+          <button type="button" id="arc-s03-004-prev" aria-controls="arc-s03-004-rail"
+                  aria-label="Scroll services left">
+            <span aria-hidden="true">&#8592;</span>
+          </button>
+          <button type="button" id="arc-s03-004-next" aria-controls="arc-s03-004-rail"
+                  aria-label="Scroll services right">
+            <span aria-hidden="true">&#8594;</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('.arc-s03-004');
+  if (!root) return;
+
+  var rail = root.querySelector('#arc-s03-004-rail');
+  var prev = root.querySelector('#arc-s03-004-prev');
+  var next = root.querySelector('#arc-s03-004-next');
+  if (!rail || !prev || !next) return;
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function step() {
+    var first = rail.querySelector('li');
+    if (!first) return rail.clientWidth;
+    var gap = parseFloat(getComputedStyle(rail).columnGap) || 0;
+    return first.getBoundingClientRect().width + gap;
+  }
+
+  function sync() {
+    var max = rail.scrollWidth - rail.clientWidth;
+    prev.disabled = rail.scrollLeft <= 1;
+    next.disabled = rail.scrollLeft >= max - 1;
+  }
+
+  function scrollBy(direction, source) {
+    rail.scrollBy({ left: direction * step(), behavior: reduce ? 'auto' : 'smooth' });
+    // A control that disables itself must not strand focus.
+    window.setTimeout(function () {
+      sync();
+      if (source && source.disabled) {
+        (source === prev ? next : prev).focus();
+      }
+    }, reduce ? 0 : 320);
+  }
+
+  prev.addEventListener('click', function () { scrollBy(-1, prev); });
+  next.addEventListener('click', function () { scrollBy(1, next); });
+  rail.addEventListener('scroll', sync);
+  window.addEventListener('resize', sync);
+  sync();
+})();
+</script>
+</body>
+</html>

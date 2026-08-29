@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S03-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S03 — Services
+  Territory      : Sector-native / Distinctive
+  Reference      : Reference 2 — a centred heading above a row of four tall rounded cards, each
+                   carrying a small pill badge over the top-left corner of its image.
+  Layout model   : Centred heading over a four-plate stage row, closed by a title-block rail
+  Density        : Medium
+  Media mode     : Four empty tall image areas, one per stage plate, each with an overlaid
+                   monospace stage badge.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Stage names are neutral and generic. No named methodology, professional body,
+                   award, certification, statistic, price, or completed-project claim appears.
+                   The sector-native element is the studio work-stage sequence and the
+                   drawing-sheet title block, not a claim about accreditation.
+-->
+
+<meta name="study-id" content="ARC-S03-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S03">
+<meta name="section-name" content="Services">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Centred heading with four-plate stage row and title-block rail">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-area-per-plate-with-badge">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S03-005 — Services, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f3ef; }
+
+/* Scoped study styles — namespaced to .arc-s03-005 */
+.arc-s03-005 {
+  --ink: #14161a;
+  --ink-soft: #4f4d47;
+  --paper: #f4f3ef;
+  --plate: #e2e0da;
+  --plate-ink: #4f4d47;
+  --badge: #ffffff;
+  --hair: #c6c2b9;
+  --hair-ink: #847f76;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s03-005 *,
+.arc-s03-005 *::before,
+.arc-s03-005 *::after { box-sizing: inherit; }
+.arc-s03-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s03-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(52px, 6.4vw, 100px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Centred head ---------------------------------------------- */
+.arc-s03-005 .head { text-align: center; margin-bottom: clamp(28px, 3.6vw, 52px); }
+.arc-s03-005 .head p.eyebrow {
+  margin: 0 0 14px; font-family: var(--mono);
+  font-size: 0.625rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s03-005 .head h1 {
+  margin: 0 auto 14px;
+  font-size: clamp(1.625rem, 3.2vw, 2.625rem);
+  line-height: 1.12; letter-spacing: -0.026em; font-weight: 500; max-width: 20ch;
+}
+.arc-s03-005 .head > p:last-child {
+  margin: 0 auto; font-size: 0.9375rem; color: var(--ink-soft); max-width: 56ch;
+}
+
+/* --- Stage plates ---------------------------------------------- */
+.arc-s03-005 .plates {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 24px);
+  margin: 0 0 clamp(28px, 3.4vw, 46px); padding: 0; list-style: none;
+}
+.arc-s03-005 .plate { margin: 0; }
+.arc-s03-005 .plate__slot {
+  position: relative;
+  display: flex; align-items: flex-end; justify-content: flex-end;
+  aspect-ratio: 3 / 4.4;
+  background: var(--plate);
+  border-radius: 14px;
+  padding: 12px;
+}
+.arc-s03-005 .plate__badge {
+  position: absolute; top: 12px; left: 12px; margin: 0;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 6px 12px; border-radius: 999px;
+  background: var(--badge);
+  font-family: var(--mono);
+  font-size: 0.625rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink);
+}
+.arc-s03-005 .plate__badge .tick {
+  display: inline-block; width: 6px; height: 6px; border: 1px solid var(--ink); transform: rotate(45deg);
+}
+.arc-s03-005 .plate__slotlabel {
+  margin: 0; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--plate-ink);
+}
+.arc-s03-005 .plate h2 {
+  margin: 16px 0 6px; font-size: 1rem; font-weight: 600; letter-spacing: -0.01em;
+}
+.arc-s03-005 .plate h2 a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+.arc-s03-005 .plate h2 a:hover,
+.arc-s03-005 .plate h2 a:focus-visible { border-bottom-color: var(--ink); }
+.arc-s03-005 .plate p { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); }
+
+/* --- Title-block rail ------------------------------------------ */
+.arc-s03-005 .titleblock {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0; border-top: 1px solid var(--hair-ink); border-bottom: 1px solid var(--hair);
+}
+.arc-s03-005 .titleblock > div {
+  padding: 14px clamp(12px, 1.6vw, 20px);
+  border-right: 1px solid var(--hair);
+}
+.arc-s03-005 .titleblock > div:last-child { border-right: 0; }
+.arc-s03-005 .titleblock dt {
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px;
+}
+.arc-s03-005 .titleblock dd { margin: 0; font-family: var(--mono); font-size: 0.75rem; }
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s03-005 .plate__slot { aspect-ratio: 3 / 4.2; }
+}
+@media (max-width: 1024px) {
+  .arc-s03-005 .plates { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  .arc-s03-005 .plate__slot { aspect-ratio: 4 / 5; }
+  .arc-s03-005 .titleblock { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s03-005 .titleblock > div { border-bottom: 1px solid var(--hair); }
+  .arc-s03-005 .titleblock > div:nth-child(2n) { border-right: 0; }
+  .arc-s03-005 .titleblock > div:nth-last-child(-n+2) { border-bottom: 0; }
+}
+@media (max-width: 768px) {
+  .arc-s03-005 .head h1 { max-width: 24ch; }
+}
+@media (max-width: 480px) {
+  .arc-s03-005 .plates { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .arc-s03-005 .plate__slot { aspect-ratio: 16 / 10; }
+  .arc-s03-005 .titleblock { grid-template-columns: minmax(0, 1fr); }
+  .arc-s03-005 .titleblock > div { border-right: 0; }
+  .arc-s03-005 .titleblock > div:nth-last-child(-n+2) { border-bottom: 1px solid var(--hair); }
+  .arc-s03-005 .titleblock > div:last-child { border-bottom: 0; }
+}
+@media (max-width: 360px) {
+  .arc-s03-005 .plate__badge { padding: 5px 10px; letter-spacing: 0.08em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s03-005 *, .arc-s03-005 *::before, .arc-s03-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s03-005" data-study-id="ARC-S03-005" data-territory="sector-native-distinctive">
+
+  <section class="shell" aria-labelledby="arc-s03-005-title">
+
+    <div class="head">
+      <p class="eyebrow">Services by work stage</p>
+      <h1 id="arc-s03-005-title">How a project moves through the studio</h1>
+      <p>
+        Each service is a stage with its own drawings, decisions, and handover. A
+        commission can run the full sequence or begin at the stage it needs.
+      </p>
+    </div>
+
+    <ul class="plates">
+      <li class="plate">
+        <div class="plate__slot">
+          <p class="plate__badge"><span class="tick" aria-hidden="true"></span>Stage 01</p>
+          <p class="plate__slotlabel">Image area</p>
+        </div>
+        <h2><a href="#arc-s03-005-title">Brief and site</a></h2>
+        <p>Survey, constraints, and what the project has to resolve.</p>
+      </li>
+
+      <li class="plate">
+        <div class="plate__slot">
+          <p class="plate__badge"><span class="tick" aria-hidden="true"></span>Stage 02</p>
+          <p class="plate__slotlabel">Image area</p>
+        </div>
+        <h2><a href="#arc-s03-005-title">Concept design</a></h2>
+        <p>Plan, section, and massing tested against the brief.</p>
+      </li>
+
+      <li class="plate">
+        <div class="plate__slot">
+          <p class="plate__badge"><span class="tick" aria-hidden="true"></span>Stage 03</p>
+          <p class="plate__slotlabel">Image area</p>
+        </div>
+        <h2><a href="#arc-s03-005-title">Technical design</a></h2>
+        <p>Details, materials, and the specification behind them.</p>
+      </li>
+
+      <li class="plate">
+        <div class="plate__slot">
+          <p class="plate__badge"><span class="tick" aria-hidden="true"></span>Stage 04</p>
+          <p class="plate__slotlabel">Image area</p>
+        </div>
+        <h2><a href="#arc-s03-005-title">Delivery and site</a></h2>
+        <p>Coordination, site queries, and the final handover set.</p>
+      </li>
+    </ul>
+
+    <dl class="titleblock">
+      <div><dt>Sheet</dt><dd>ARC / S03</dd></div>
+      <div><dt>Set</dt><dd>Service stages</dd></div>
+      <div><dt>Engagement</dt><dd>Full or single stage</dd></div>
+      <div><dt>Status</dt><dd>Design study</dd></div>
+    </dl>
+
+  </section>
+
+</div>
+</body>
+</html>

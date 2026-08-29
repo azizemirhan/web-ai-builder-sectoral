@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S03-001
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S03 — Services
+  Territory      : Universal / Safe
+  Reference      : Reference 4 — small uppercase eyebrow, "Our services" heading and a short
+                   paragraph in a narrow left column, with a two-by-two grid of service cards
+                   on the right: image, title, description, and a "Learn more" arrow link.
+  Layout model   : Narrow left intro column + two-by-two service card grid
+  Density        : Medium
+  Media mode     : Four empty image areas, one per card. No image supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : All copy is neutral placeholder text. No client names, awards,
+                   certifications, statistics, pricing, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S03-001">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S03">
+<meta name="section-name" content="Services">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="layout-model" content="Left intro column with two-by-two service card grid">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-area-per-card">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S03-001 — Services, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .arc-s03-001 */
+.arc-s03-001 {
+  --ink: #101114;
+  --ink-soft: #5d6068;
+  --paper: #ffffff;
+  --slot: #e9e9ea;
+  --slot-ink: #56585c;
+  --line: #e4e4e6;
+  --line-strong: #8c9097;
+  --focus: #1f4fd8;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s03-001 *,
+.arc-s03-001 *::before,
+.arc-s03-001 *::after { box-sizing: inherit; }
+.arc-s03-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+.arc-s03-001 .shell {
+  width: 100%; max-width: 1280px; margin: 0 auto;
+  padding: clamp(56px, 7vw, 112px) clamp(20px, 3.6vw, 48px);
+}
+
+/* --- Section grid ---------------------------------------------- */
+.arc-s03-001 .grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.6fr);
+  gap: clamp(32px, 4.6vw, 80px);
+  align-items: start;
+}
+
+/* --- Intro column ---------------------------------------------- */
+.arc-s03-001 .intro { position: sticky; top: clamp(24px, 4vw, 56px); }
+.arc-s03-001 .eyebrow {
+  margin: 0 0 16px; font-size: 0.6875rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s03-001 .intro h1 {
+  margin: 0 0 18px;
+  font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+  line-height: 1.08; letter-spacing: -0.028em; font-weight: 500;
+}
+.arc-s03-001 .intro p { margin: 0 0 26px; font-size: 0.9375rem; color: var(--ink-soft); max-width: 34ch; }
+.arc-s03-001 .intro__link {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 46px; font-size: 0.9375rem; color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s03-001 .intro__link:hover,
+.arc-s03-001 .intro__link:focus-visible { border-bottom-color: var(--ink); }
+
+/* --- Service cards --------------------------------------------- */
+.arc-s03-001 .cards {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 44px) clamp(20px, 2.4vw, 36px);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s03-001 .card { margin: 0; }
+.arc-s03-001 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 4 / 3; background: var(--slot); border-radius: 10px;
+}
+.arc-s03-001 .slot__label {
+  margin: 0; padding: 12px 14px;
+  font-size: 0.625rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s03-001 .card h2 {
+  margin: 20px 0 8px; font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em;
+}
+.arc-s03-001 .card p { margin: 0 0 14px; font-size: 0.875rem; color: var(--ink-soft); max-width: 40ch; }
+.arc-s03-001 .card a {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; font-size: 0.875rem; color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s03-001 .card a:hover,
+.arc-s03-001 .card a:focus-visible { border-bottom-color: var(--ink); }
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s03-001 .grid { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.5fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s03-001 .grid { grid-template-columns: minmax(0, 1fr); }
+  .arc-s03-001 .intro { position: static; }
+  .arc-s03-001 .intro p { max-width: 52ch; }
+}
+@media (max-width: 768px) {
+  .arc-s03-001 .cards { gap: 28px 22px; }
+  .arc-s03-001 .card p { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s03-001 .cards { grid-template-columns: minmax(0, 1fr); }
+  .arc-s03-001 .slot { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 360px) {
+  .arc-s03-001 .slot { border-radius: 8px; }
+  .arc-s03-001 .slot__label { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s03-001 *, .arc-s03-001 *::before, .arc-s03-001 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s03-001" data-study-id="ARC-S03-001" data-territory="universal-safe">
+
+  <section class="shell" aria-labelledby="arc-s03-001-title">
+    <div class="grid">
+
+      <div class="intro">
+        <p class="eyebrow">Services included</p>
+        <h1 id="arc-s03-001-title">Our services</h1>
+        <p>
+          We design architecture and interiors that answer the brief in front of
+          us — reading the site first, then working the plan until it holds.
+        </p>
+        <a class="intro__link" href="#arc-s03-001-title">
+          Discuss a project
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </div>
+
+      <ul class="cards">
+        <li class="card">
+          <div class="slot"><p class="slot__label">Image area</p></div>
+          <h2>Functional design</h2>
+          <p>
+            Organising a project around how it will actually be used, so the plan
+            meets its objectives before anything is detailed.
+          </p>
+          <a href="#arc-s03-001-title">Learn more <span aria-hidden="true">&#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="slot"><p class="slot__label">Image area</p></div>
+          <h2>Renovation of spaces</h2>
+          <p>
+            Updating existing areas to improve their function, aesthetics, and
+            comfort while keeping what is already working.
+          </p>
+          <a href="#arc-s03-001-title">Learn more <span aria-hidden="true">&#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="slot"><p class="slot__label">Image area</p></div>
+          <h2>Interior architecture</h2>
+          <p>
+            Layout, light, joinery, and surface worked as one set of decisions
+            rather than as a finish applied at the end.
+          </p>
+          <a href="#arc-s03-001-title">Learn more <span aria-hidden="true">&#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="slot"><p class="slot__label">Image area</p></div>
+          <h2>Technical delivery</h2>
+          <p>
+            Drawings, specifications, and site support carried through from
+            approval to the last detail on site.
+          </p>
+          <a href="#arc-s03-001-title">Learn more <span aria-hidden="true">&#8599;</span></a>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
