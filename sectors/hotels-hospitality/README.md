@@ -1,0 +1,31 @@
+# Hotels & Hospitality
+
+- Prefix: HOT
+- Planned sections: 20
+- Planned studies: 100
+- Authoring status: NOT_STARTED
+
+| Section | Name | Directory | Planned IDs | Status |
+| --- | --- | --- | --- | --- |
+| S01 | Hero | `S01-hero/` | HOT-S01-001–005 | NOT_STARTED |
+| S02 | Rooms Suites | `S02-rooms-suites/` | HOT-S02-001–005 | NOT_STARTED |
+| S03 | Room Categories | `S03-room-categories/` | HOT-S03-001–005 | NOT_STARTED |
+| S04 | Booking Availability | `S04-booking-availability/` | HOT-S04-001–005 | NOT_STARTED |
+| S05 | Amenities | `S05-amenities/` | HOT-S05-001–005 | NOT_STARTED |
+| S06 | Hotel Gallery | `S06-hotel-gallery/` | HOT-S06-001–005 | NOT_STARTED |
+| S07 | Dining | `S07-dining/` | HOT-S07-001–005 | NOT_STARTED |
+| S08 | Spa Wellness | `S08-spa-wellness/` | HOT-S08-001–005 | NOT_STARTED |
+| S09 | Experiences | `S09-experiences/` | HOT-S09-001–005 | NOT_STARTED |
+| S10 | Offers Packages | `S10-offers-packages/` | HOT-S10-001–005 | NOT_STARTED |
+| S11 | Location Map | `S11-location-map/` | HOT-S11-001–005 | NOT_STARTED |
+| S12 | Nearby Attractions | `S12-nearby-attractions/` | HOT-S12-001–005 | NOT_STARTED |
+| S13 | Guest Reviews | `S13-guest-reviews/` | HOT-S13-001–005 | NOT_STARTED |
+| S14 | Weddings Events | `S14-weddings-events/` | HOT-S14-001–005 | NOT_STARTED |
+| S15 | Meetings Business | `S15-meetings-business/` | HOT-S15-001–005 | NOT_STARTED |
+| S16 | Policies FAQ | `S16-policies-faq/` | HOT-S16-001–005 | NOT_STARTED |
+| S17 | Hotel Story | `S17-hotel-story/` | HOT-S17-001–005 | NOT_STARTED |
+| S18 | Concierge Contact | `S18-concierge-contact/` | HOT-S18-001–005 | NOT_STARTED |
+| S19 | Newsletter Offers | `S19-newsletter-offers/` | HOT-S19-001–005 | NOT_STARTED |
+| S20 | Final Booking CTA | `S20-final-booking-cta/` | HOT-S20-001–005 | NOT_STARTED |
+
+No studies or section-level BATCH-V1.md files exist yet. Create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for a section.
