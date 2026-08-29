@@ -13,58 +13,58 @@
 
 ### ARC-S02-001 — Universal / Safe
 
-- Structural intent / archetype: Broadly reusable portfolio overview with a clear introduction, one lead project and four supporting projects.
-- Layout model: Twelve-column grid; lead project spans two-thirds at wide widths, supporting projects form a regular portfolio matrix.
-- Density: Medium; five projects with title, typology/context metadata and project affordance.
-- Media mode: Five reserved image slots with a landscape-dominant lead slot.
+- Structural intent / archetype: Introductory text column paired with a four-project image mosaic, following the supplied featured-projects reference structure.
+- Layout model: Narrow editorial introduction + large lead slot + two compact slots + one tall slot.
+- Density: Medium; four projects with restrained metadata and detail affordances.
+- Media mode: Four completely empty image slots; no generated visual treatment.
 - Interaction: Link hover and focus treatment only.
-- Responsive strategy: 8/4 desktop composition → two-column tablet portfolio → single-column mobile stack with consistent media ratios.
+- Responsive strategy: Intro/mosaic desktop split → introduction above a two-column mosaic → single-column mobile project stack.
 - Composer value: Reliable default for architecture, interiors, residential, commercial and multidisciplinary studios.
 - Limitation / content ceiling: Best with 3–6 projects; hierarchy weakens if the lead project is removed or more than 8 projects are shown.
 
 ### ARC-S02-002 — Premium / Editorial
 
-- Structural intent / archetype: Art-directed selected-works spread modeled on an architecture monograph rather than a card catalogue.
-- Layout model: Asymmetric eleven-column editorial field with a vertical folio, oversized title and four irregular project plates.
-- Density: Low; four deliberately spaced projects.
-- Media mode: Mixed landscape, portrait, detail and panoramic reserved plates.
+- Structural intent / archetype: Premium paired-project presentation following the supplied selected-residences reference structure.
+- Layout model: Large uppercase heading and short introduction above two equal-width, large-format project studies.
+- Density: Low; two projects with title, discipline/context, concise description and project affordance.
+- Media mode: Two completely empty landscape image slots.
 - Interaction: Link hover and focus treatment only.
-- Responsive strategy: Asymmetric desktop spread → reduced-column editorial field → ordered mobile alternation with controlled insets.
+- Responsive strategy: Paired desktop studies → single-column mobile sequence with metadata moving below each empty slot.
 - Composer value: Premium portfolio storytelling for studios with a tightly curated body of work.
-- Limitation / content ceiling: Best with 3–5 projects and mixed media orientations; editorial asymmetry simplifies below tablet and loses rhythm above 6 items.
+- Limitation / content ceiling: Intentionally limited to two featured projects; additional works should continue in another section or index.
 
 ### ARC-S02-003 — Dense / Information-heavy
 
-- Structural intent / archetype: Architecture project register that exposes typology, context, discipline, scope and neutral status without becoming a dashboard.
-- Layout model: Structured project table paired with a sticky selectable preview plate.
-- Density: High; eight project entries and six metadata dimensions.
-- Media mode: One reserved preview slot updated by project selection.
-- Interaction: Native buttons update the preview; keyboard activation, pressed state and polite live-region feedback are included.
-- Responsive strategy: Full register + sticky preview → reduced metadata columns → preview-first mobile list with project, typology and index retained.
-- Composer value: Efficient archive overview for practices whose selection must communicate breadth and discipline.
-- Limitation / content ceiling: Requires short project labels and controlled taxonomy; more than 12 entries should move to a dedicated archive page.
+- Structural intent / archetype: Numbered three-project sequence following the supplied horizontal showcase reference structure.
+- Layout model: Split heading/introduction above three equal project columns with large numbers and compact metadata.
+- Density: Medium; three projects with title, typology, summary and link.
+- Media mode: Three completely empty landscape image slots.
+- Interaction: Native links only.
+- Responsive strategy: Three-column desktop sequence → lead-wide two-column tablet layout → single-column numbered mobile sequence.
+- Composer value: Strong comparative rhythm for a small, curated project group.
+- Limitation / content ceiling: Best with exactly 3–4 works; additional projects dilute the numbered sequence.
 
 ### ARC-S02-004 — Conversion-led
 
-- Structural intent / archetype: Portfolio evidence flows into a contextual architecture inquiry without allowing the call to action to dominate.
-- Layout model: One large lead case plus two supporting works, followed by a bounded project-conversation module.
-- Density: Medium-low; three projects and one secondary inquiry module.
-- Media mode: Three reserved project slots with one capability-defining lead image.
-- Interaction: Project and inquiry links with visible hover and focus states.
-- Responsive strategy: Lead/support split → two-column supporting works → single-column projects with a full-width inquiry action.
-- Composer value: Connects selected work to a commission pathway for studios that use portfolio evidence as the primary conversion mechanism.
-- Limitation / content ceiling: Best with exactly 3–4 projects; repeated CTAs or extra service modules would overpower the portfolio.
+- Structural intent / archetype: Editorial image collage with an integrated studio conversation action, following the supplied collage reference structure.
+- Layout model: Six differently sized empty slots arranged around a compact project heading and CTA.
+- Density: Medium-high visual field; one named lead work and five supporting image positions.
+- Media mode: Six completely empty mixed-ratio image slots.
+- Interaction: One native project-inquiry link.
+- Responsive strategy: Three-column desktop collage → two-column tablet/mobile collage with the copy moving first.
+- Composer value: Supports image-rich portfolio storytelling while preserving a secondary conversion path.
+- Limitation / content ceiling: Requires a disciplined six-image set; weak or repetitive imagery would reduce the collage hierarchy.
 
 ### ARC-S02-005 — Sector-native / Distinctive
 
-- Structural intent / archetype: Drawing-sheet portfolio system pairing overview, detail and diagram slots with architectural annotations.
-- Layout model: Bordered presentation board with title block, vertical project numbers, mixed media cells, notes and a sheet schedule.
-- Density: Medium-high; three projects with three reading modes each.
-- Media mode: Reserved primary image, detail/context and abstract diagram slots.
-- Interaction: Project-sheet links only.
-- Responsive strategy: Paired desktop sheets → single-column sheets → simplified mobile sheet with stacked main media and compact secondary slots.
-- Composer value: Architecture-native storytelling that can carry plans, sections, details and photography in a coherent composition.
-- Limitation / content ceiling: Requires disciplined image roles and concise annotations; the technical sheet language is less suitable for purely decorative portfolios.
+- Structural intent / archetype: Direct six-project catalogue grid following the supplied 3×2 project-gallery reference structure, adapted away from property-sales semantics.
+- Layout model: Centered section heading and typology labels above a three-column, two-row project grid.
+- Density: Medium-high; six projects with title, typology and project link.
+- Media mode: Six completely empty equal-ratio image slots.
+- Interaction: Native project links only.
+- Responsive strategy: 3×2 desktop catalogue → two-column tablet grid → single-column mobile list.
+- Composer value: Fast scanning and broad portfolio coverage with predictable media requirements.
+- Limitation / content ceiling: Uniform slots reduce hierarchy; best when all six projects have equally strong imagery.
 
 ## Research Metadata
 
@@ -78,31 +78,31 @@
 - Framework: NONE
 - CDN: NONE
 - Remote runtime dependency: NONE
-- JavaScript necessity: ARC-S02-003 uses small inline vanilla JavaScript for accessible project-preview selection; all other studies require no JavaScript.
+- JavaScript necessity: NONE
 
 ## Media Slots
 
 | Study | Slot policy | Expected future type | Accessibility / fallback |
 | --- | --- | --- | --- |
-| ARC-S02-001 | Lead + four supporting slots | Project photography | Each reserved treatment has a project-specific accessible name; structure remains readable without media. |
-| ARC-S02-002 | Four mixed-orientation plates | Editorial project photography/details | Plate purpose and project are named; captions carry the project semantics. |
-| ARC-S02-003 | One selectable preview | Project photography | Accessible name updates with selection; full project metadata remains in the register. |
-| ARC-S02-004 | Lead + two supporting slots | Capability-oriented project photography | Each slot is named; portfolio and inquiry path remain understandable without imagery. |
-| ARC-S02-005 | Primary + detail/context + diagram per project | Photography, detail, plan/section | Every slot has a distinct accessible role; abstract diagrams are explicitly reserved and non-evidentiary. |
+| ARC-S02-001 | Four empty mixed-size slots | Project photography | Each empty slot has a project-specific accessible name; captions preserve meaning. |
+| ARC-S02-002 | Two empty large-format slots | Featured project photography | Each slot is named and paired with complete project text outside the image area. |
+| ARC-S02-003 | Three empty equal-format slots | Project photography | Each slot is named; number, title and project metadata remain visible without imagery. |
+| ARC-S02-004 | Six empty collage slots | Project photography and details | Each slot has a specific accessible name; the visual field remains intentionally blank. |
+| ARC-S02-005 | Six empty equal-ratio slots | Project photography | Each slot is named and paired with architecture-portfolio metadata. |
 
 ## QA
 
 - ID validation: PASS — five unique IDs and filename/metadata/root-ID agreement.
 - Standalone HTML validation: PASS — all files load independently; HTML Tidy reports no errors or warnings.
-- Accessibility baseline: PASS — semantic regions and heading order, named media slots, real controls, visible focus, keyboard activation, reduced-motion handling and normal-text contrast checked.
-- Responsive QA (1440 / 1280 / 1024 / 768 / 430 / 390 / 320): PASS — deliberate transformations checked in-browser with no horizontal overflow at any target width.
-- Interaction QA: PASS — ARC-S02-003 preview selection verified by pointer, Enter and visible keyboard focus; other studies use native links only.
+- Accessibility baseline: PASS — semantic regions, heading order, named empty media slots, real links, visible focus, practical targets, reduced-motion handling and normal-text contrast checked.
+- Responsive QA (1440 / 1280 / 1024 / 768 / 430 / 390 / 320): PASS — 35 in-browser layout checks completed with no horizontal overflow.
+- Interaction QA: PASS — native links only; no custom interaction required.
 - Dependency validation: PASS — 0 external runtime dependencies.
-- Media-policy validation: PASS — 0 embedded reference images, remote images, client marks or evidentiary claims.
-- Structural diversity review: PASS — grid overview, editorial spread, project register, portfolio-to-inquiry sequence and project-sheet board provide different Composer value; no pair is a cosmetic restyle of the same layout.
+- Media-policy validation: PASS — every visual slot is empty; 0 embedded images, gradients, SVGs, reference assets, remote media, client marks or evidentiary claims.
+- Reference-alignment review: PASS — studies follow the supplied mosaic, paired-project, numbered-sequence, collage and 3×2 catalogue structures without reproducing source brands or content.
 
 ## Known Batch Boundaries
 
-- The studies use quiet reserved media treatments, not production imagery.
+- All visible image areas are intentionally blank and contain no generated or embedded imagery.
 - Project names and metadata are neutral demonstrative content, not factual portfolio claims.
 - Project links demonstrate affordance within standalone studies and do not represent implemented detail pages.

@@ -3,162 +3,57 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ARC-S02-003 — Project Index</title>
-  <meta name="description" content="A dense architecture-studio project index with structured metadata and an accessible preview selector.">
+  <title>ARC-S02-003 — Project Sequence</title>
+  <meta name="description" content="A numbered horizontal project sequence for an architecture and interior design studio.">
   <style>
-    body { margin: 0; background: #e9ebe6; }
-    #arc-s02-003 {
-      --ink: #121714;
-      --muted: #626963;
-      --line: #aeb4ad;
-      --signal: #b6381e;
-      --paper: #e9ebe6;
-      box-sizing: border-box;
-      min-height: 100vh;
-      padding: clamp(2.5rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem);
-      color: var(--ink);
-      background: var(--paper);
-      font-family: Arial, Helvetica, sans-serif;
+    body { margin:0; background:#f7f7f4; }
+    #arc-s02-003 { --ink:#161916; --muted:#696d68; --line:#cfd2cc; --accent:#1d553d; box-sizing:border-box; min-height:100vh; padding:clamp(2.5rem,6vw,6rem) clamp(1rem,4vw,4rem); color:var(--ink); background:#f7f7f4; font-family:Arial,Helvetica,sans-serif; }
+    #arc-s02-003 *, #arc-s02-003 *::before, #arc-s02-003 *::after { box-sizing:border-box; }
+    #arc-s02-003 .shell { width:min(100%,98rem); margin:0 auto; }
+    #arc-s02-003 .head { display:grid; grid-template-columns:1fr minmax(18rem,.7fr); gap:2rem; align-items:end; padding-bottom:2rem; }
+    #arc-s02-003 h1 { max-width:7ch; margin:0; font-size:clamp(2.8rem,5vw,5.5rem); font-weight:500; line-height:.87; letter-spacing:-.06em; }
+    #arc-s02-003 .head-copy { max-width:34rem; margin:0 0 .25rem auto; font-size:.86rem; line-height:1.55; }
+    #arc-s02-003 .index-link { display:inline-flex; align-items:center; min-height:2.75rem; margin-top:.6rem; color:var(--ink); font-size:.68rem; font-weight:700; text-underline-offset:.25rem; }
+    #arc-s02-003 .projects { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; border-top:1px solid var(--ink); padding-top:1rem; }
+    #arc-s02-003 article { min-width:0; }
+    #arc-s02-003 .media { width:100%; aspect-ratio:1.35 / 1; border:1px solid var(--line); background:#e2e3de; }
+    #arc-s02-003 .project-head { display:grid; grid-template-columns:auto 1fr; gap:.8rem; align-items:baseline; padding-top:.8rem; }
+    #arc-s02-003 .number { color:var(--accent); font-size:clamp(1.2rem,2vw,1.8rem); font-weight:500; letter-spacing:-.04em; }
+    #arc-s02-003 h2 { margin:0; font-family:Georgia,'Times New Roman',serif; font-size:clamp(1.3rem,2vw,2rem); font-weight:400; }
+    #arc-s02-003 .meta { grid-column:2; margin:.35rem 0 0; color:var(--muted); font-size:.62rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    #arc-s02-003 .summary { grid-column:2; max-width:23rem; margin:.8rem 0 0; color:var(--muted); font-size:.72rem; line-height:1.5; }
+    #arc-s02-003 .project-link { grid-column:2; display:inline-flex; align-items:center; min-height:2.75rem; color:var(--ink); font-size:.7rem; font-weight:700; text-underline-offset:.25rem; }
+    #arc-s02-003 a:hover { color:var(--accent); }
+    #arc-s02-003 a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    @media (max-width:64rem) {
+      #arc-s02-003 .projects { grid-template-columns:1fr 1fr; }
+      #arc-s02-003 article:first-child { grid-column:1 / -1; }
+      #arc-s02-003 article:first-child .media { aspect-ratio:16 / 8; }
     }
-    #arc-s02-003 *, #arc-s02-003 *::before, #arc-s02-003 *::after { box-sizing: border-box; }
-    #arc-s02-003 .index-shell { width: min(100%, 100rem); margin: 0 auto; }
-    #arc-s02-003 .topline { display: flex; justify-content: space-between; gap: 2rem; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 2px solid var(--ink); }
-    #arc-s02-003 .eyebrow { margin: 0 0 .7rem; color: var(--signal); font-size: .67rem; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
-    #arc-s02-003 h1 { margin: 0; font-size: clamp(2.7rem, 6vw, 6.4rem); font-weight: 500; line-height: .88; letter-spacing: -.06em; text-transform: uppercase; }
-    #arc-s02-003 .top-copy { max-width: 29rem; margin: .35rem 0 0; color: #3e4540; font-size: .95rem; line-height: 1.55; }
-    #arc-s02-003 .count { display: block; margin-top: 1.3rem; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    #arc-s02-003 .workspace { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(18rem, .65fr); gap: 2rem; padding-top: 1.5rem; }
-    #arc-s02-003 table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-    #arc-s02-003 th { padding: .6rem .45rem .7rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .6rem; letter-spacing: .12em; text-align: left; text-transform: uppercase; }
-    #arc-s02-003 td { padding: .8rem .45rem; border-bottom: 1px solid var(--line); font-size: .74rem; line-height: 1.35; vertical-align: middle; }
-    #arc-s02-003 th:nth-child(1), #arc-s02-003 td:nth-child(1) { width: 2.8rem; }
-    #arc-s02-003 th:nth-child(2), #arc-s02-003 td:nth-child(2) { width: 27%; }
-    #arc-s02-003 .project-select {
-      display: inline-flex;
-      align-items: center;
-      min-height: 2.75rem;
-      padding: .3rem 0;
-      border: 0;
-      color: var(--ink);
-      background: transparent;
-      font: inherit;
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1rem;
-      text-align: left;
-      text-decoration: underline;
-      text-decoration-color: transparent;
-      text-underline-offset: .3rem;
-      cursor: pointer;
+    @media (max-width:48rem) {
+      #arc-s02-003 .head { grid-template-columns:1fr; gap:1.4rem; }
+      #arc-s02-003 .head-copy { margin-left:0; }
     }
-    #arc-s02-003 .project-select:hover { text-decoration-color: var(--signal); }
-    #arc-s02-003 .project-select[aria-pressed="true"] { color: var(--signal); text-decoration-color: var(--signal); }
-    #arc-s02-003 button:focus-visible, #arc-s02-003 a:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
-    #arc-s02-003 .status { display: inline-flex; align-items: center; gap: .4rem; }
-    #arc-s02-003 .status::before { content: ''; width: .45rem; height: .45rem; border: 1px solid currentColor; border-radius: 50%; background: transparent; }
-    #arc-s02-003 .preview { position: sticky; top: 1.5rem; align-self: start; padding-left: 1.5rem; border-left: 1px solid var(--ink); }
-    #arc-s02-003 .preview-plate {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 3 / 4;
-      border: 1px solid var(--line);
-      background:
-        repeating-linear-gradient(90deg, transparent 0 14.1%, rgba(18,23,20,.12) 14.3% 14.6%),
-        linear-gradient(145deg, transparent 0 49%, rgba(18,23,20,.26) 49.2% 50%, transparent 50.2%),
-        linear-gradient(0deg, #737c75 0 19%, #b7beb7 19% 57%, #dde0db 57%);
+    @media (max-width:32rem) {
+      #arc-s02-003 { padding-inline:.8rem; }
+      #arc-s02-003 .projects { grid-template-columns:1fr; gap:2.2rem; }
+      #arc-s02-003 article:first-child { grid-column:auto; }
+      #arc-s02-003 article:first-child .media, #arc-s02-003 .media { aspect-ratio:4 / 3; }
     }
-    #arc-s02-003 .preview-plate::after { content: ''; position: absolute; inset: 24% 11% 14% 22%; border: 1px solid rgba(18,23,20,.55); background: rgba(241,241,234,.3); box-shadow: -1.4rem 1.1rem 0 rgba(200,64,34,.18); }
-    #arc-s02-003 .preview-plate[data-variant="2"] { filter: grayscale(.75) brightness(1.05); }
-    #arc-s02-003 .preview-plate[data-variant="3"] { filter: hue-rotate(40deg) saturate(.55); }
-    #arc-s02-003 .preview-plate[data-variant="4"] { filter: hue-rotate(320deg) brightness(.86); }
-    #arc-s02-003 .preview-plate[data-variant="5"] { filter: grayscale(.3) contrast(1.1); transform: scaleX(-1); }
-    #arc-s02-003 .slot-note { position: absolute; z-index: 2; top: .75rem; left: .75rem; max-width: 9rem; padding: .35rem .45rem; color: #fff; background: rgba(18,23,20,.74); font-size: .58rem; letter-spacing: .13em; line-height: 1.35; text-transform: uppercase; }
-    #arc-s02-003 .preview-kicker { margin: 1rem 0 .35rem; color: var(--signal); font-size: .63rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-    #arc-s02-003 h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.6rem, 2.5vw, 2.4rem); font-weight: 400; }
-    #arc-s02-003 .preview-meta { margin: .55rem 0 0; color: var(--muted); font-size: .7rem; font-weight: 700; letter-spacing: .08em; line-height: 1.5; text-transform: uppercase; }
-    #arc-s02-003 .preview-link { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: .5rem; color: var(--ink); font-size: .75rem; font-weight: 700; text-underline-offset: .25rem; }
-    @media (max-width: 68rem) {
-      #arc-s02-003 .workspace { grid-template-columns: minmax(0, 1fr) 16rem; gap: 1.25rem; }
-      #arc-s02-003 th:nth-child(6), #arc-s02-003 td:nth-child(6), #arc-s02-003 th:nth-child(7), #arc-s02-003 td:nth-child(7) { display: none; }
-    }
-    @media (max-width: 48rem) {
-      #arc-s02-003 .topline { display: block; }
-      #arc-s02-003 .top-copy { margin-top: 1.5rem; }
-      #arc-s02-003 .workspace { display: flex; flex-direction: column-reverse; }
-      #arc-s02-003 .preview { position: static; display: grid; grid-template-columns: minmax(8rem, .7fr) 1fr; gap: 1rem; padding: 0 0 1.5rem; border: 0; border-bottom: 1px solid var(--ink); }
-      #arc-s02-003 .preview-copy { align-self: end; }
-      #arc-s02-003 .preview-plate { aspect-ratio: 4 / 3; }
-      #arc-s02-003 th:nth-child(4), #arc-s02-003 td:nth-child(4), #arc-s02-003 th:nth-child(5), #arc-s02-003 td:nth-child(5) { display: none; }
-    }
-    @media (max-width: 35rem) {
-      #arc-s02-003 { padding-inline: .8rem; }
-      #arc-s02-003 .preview { grid-template-columns: 1fr; }
-      #arc-s02-003 thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
-      #arc-s02-003 table, #arc-s02-003 tbody, #arc-s02-003 tr, #arc-s02-003 td { display: block; width: 100%; }
-      #arc-s02-003 tr { display: grid; grid-template-columns: 2.4rem 1fr auto; align-items: center; border-bottom: 1px solid var(--line); }
-      #arc-s02-003 td { border: 0; }
-      #arc-s02-003 td:nth-child(3) { text-align: right; }
-      #arc-s02-003 td:nth-child(n+4) { display: none; }
-    }
-    @media (prefers-reduced-motion: reduce) { #arc-s02-003 * { scroll-behavior: auto !important; } }
+    @media (prefers-reduced-motion:reduce) { #arc-s02-003 * { scroll-behavior:auto !important; } }
   </style>
 </head>
 <body>
   <main id="arc-s02-003" data-study-id="ARC-S02-003">
-    <section class="index-shell" aria-labelledby="arc-s02-003-title">
-      <header class="topline">
-        <div><p class="eyebrow">Studio archive / selected index</p><h1 id="arc-s02-003-title">Project register</h1></div>
-        <div><p class="top-copy">A compact cross-section of architectural and interior work. Select a project name to update the reserved preview plate.</p><span class="count">08 project entries</span></div>
-      </header>
-
-      <div class="workspace">
-        <table aria-label="Selected architecture and interior design projects">
-          <thead><tr><th>No.</th><th>Project</th><th>Typology</th><th>Context</th><th>Discipline</th><th>Scope</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td>01</td><td><button class="project-select" type="button" aria-pressed="true" data-title="Courtyard House" data-type="Residential architecture" data-context="Coastal setting" data-variant="1">Courtyard House</button></td><td>Residential</td><td>Coastal</td><td>Architecture</td><td>New build</td><td><span class="status">Study</span></td></tr>
-            <tr><td>02</td><td><button class="project-select" type="button" aria-pressed="false" data-title="Garden Studio" data-type="Workplace" data-context="Urban garden" data-variant="2">Garden Studio</button></td><td>Workplace</td><td>Urban</td><td>Architecture</td><td>Adaptive reuse</td><td><span class="status">Study</span></td></tr>
-            <tr><td>03</td><td><button class="project-select" type="button" aria-pressed="false" data-title="Civic Interior" data-type="Cultural interior" data-context="Civic context" data-variant="3">Civic Interior</button></td><td>Cultural</td><td>Civic</td><td>Interiors</td><td>Fit-out</td><td><span class="status">Concept</span></td></tr>
-            <tr><td>04</td><td><button class="project-select" type="button" aria-pressed="false" data-title="Ridge Residence" data-type="Residential architecture" data-context="Rural edge" data-variant="4">Ridge Residence</button></td><td>Residential</td><td>Rural</td><td>Architecture</td><td>New build</td><td><span class="status">Study</span></td></tr>
-            <tr><td>05</td><td><button class="project-select" type="button" aria-pressed="false" data-title="Urban Apartment" data-type="Interior architecture" data-context="Dense urban fabric" data-variant="5">Urban Apartment</button></td><td>Residential</td><td>Urban</td><td>Interiors</td><td>Renovation</td><td><span class="status">Concept</span></td></tr>
-            <tr><td>06</td><td><button class="project-select" type="button" aria-pressed="false" data-title="Market Hall Rooms" data-type="Hospitality interior" data-context="Historic shell" data-variant="2">Market Hall Rooms</button></td><td>Hospitality</td><td>Heritage</td><td>Interiors</td><td>Adaptive reuse</td><td><span class="status">Study</span></td></tr>
-            <tr><td>07</td><td><button class="project-select" type="button" aria-pressed="false" data-title="Canal Workplace" data-type="Workplace architecture" data-context="Waterfront" data-variant="3">Canal Workplace</button></td><td>Workplace</td><td>Waterfront</td><td>Architecture</td><td>Reconfiguration</td><td><span class="status">Concept</span></td></tr>
-            <tr><td>08</td><td><button class="project-select" type="button" aria-pressed="false" data-title="Reading Room" data-type="Cultural interior" data-context="Campus" data-variant="4">Reading Room</button></td><td>Cultural</td><td>Campus</td><td>Interiors</td><td>Fit-out</td><td><span class="status">Study</span></td></tr>
-          </tbody>
-        </table>
-
-        <aside class="preview" aria-label="Selected project preview" aria-live="polite">
-          <div class="preview-plate" data-variant="1" role="img" aria-label="Reserved media preview for Courtyard House"><span class="slot-note" aria-hidden="true">Reserved project preview</span></div>
-          <div class="preview-copy"><p class="preview-kicker">Current selection</p><h2>Courtyard House</h2><p class="preview-meta">Residential architecture · Coastal setting</p><a class="preview-link" href="#arc-s02-003-title">Open project profile ↗</a></div>
-        </aside>
+    <section class="shell" aria-labelledby="arc-s02-003-title">
+      <header class="head"><h1 id="arc-s02-003-title">Work for the way we live</h1><div><p class="head-copy">A numbered sequence keeps projects comparable while giving each work a clear image field, title and concise architectural context.</p><a class="index-link" href="#numbered-projects">View project index ↗</a></div></header>
+      <div class="projects" id="numbered-projects">
+        <article id="sequence-courtyard-house"><div class="media" role="img" aria-label="Empty image slot for Courtyard House"></div><div class="project-head"><span class="number">01</span><h2>Courtyard House</h2><p class="meta">Residential · Architecture</p><p class="summary">Shared spaces gathered around a protected open court.</p><a class="project-link" href="#sequence-courtyard-house">Explore project ↗</a></div></article>
+        <article id="sequence-garden-studio"><div class="media" role="img" aria-label="Empty image slot for Garden Studio"></div><div class="project-head"><span class="number">02</span><h2>Garden Studio</h2><p class="meta">Workplace · Adaptive reuse</p><p class="summary">A compact working environment shaped by light and threshold.</p><a class="project-link" href="#sequence-garden-studio">Explore project ↗</a></div></article>
+        <article id="sequence-civic-interior"><div class="media" role="img" aria-label="Empty image slot for Civic Interior"></div><div class="project-head"><span class="number">03</span><h2>Civic Interior</h2><p class="meta">Cultural · Interior architecture</p><p class="summary">A public interior organized around orientation and gathering.</p><a class="project-link" href="#sequence-civic-interior">Explore project ↗</a></div></article>
       </div>
     </section>
   </main>
-  <script>
-    (() => {
-      const root = document.querySelector('#arc-s02-003');
-      const buttons = [...root.querySelectorAll('.project-select')];
-      const title = root.querySelector('.preview h2');
-      const meta = root.querySelector('.preview-meta');
-      const plate = root.querySelector('.preview-plate');
-      const activate = (button) => {
-        buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
-        title.textContent = button.dataset.title;
-        meta.textContent = `${button.dataset.type} · ${button.dataset.context}`;
-        plate.dataset.variant = button.dataset.variant;
-        plate.setAttribute('aria-label', `Reserved media preview for ${button.dataset.title}`);
-      };
-      buttons.forEach((button) => {
-        button.addEventListener('click', () => activate(button));
-        button.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            activate(button);
-          }
-        });
-      });
-    })();
-  </script>
-  <script type="application/json" data-study-metadata>
-    {"id":"ARC-S02-003","sector":"Architecture & Interior Design","section":"Selected Projects","territory":"Dense / Information-heavy","mediaPolicy":"One reserved local preview slot; no external assets","runtimeDependencies":[]}
-  </script>
+  <script type="application/json" data-study-metadata>{"id":"ARC-S02-003","sector":"Architecture & Interior Design","section":"Selected Projects","territory":"Dense / Information-heavy","mediaPolicy":"Three empty local image slots; no embedded assets","runtimeDependencies":[]}</script>
 </body>
 </html>

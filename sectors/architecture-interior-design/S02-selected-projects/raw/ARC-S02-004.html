@@ -3,120 +3,69 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ARC-S02-004 — Projects to Inquiry</title>
-  <meta name="description" content="A conversion-aware selected-projects study that moves naturally from portfolio evidence to an architecture project inquiry.">
+  <title>ARC-S02-004 — Project Collage</title>
+  <meta name="description" content="An editorial project collage with an architecture-specific continuation action.">
   <style>
-    body { margin: 0; background: #17201e; }
-    #arc-s02-004 {
-      --ink: #f1eee7;
-      --muted: #aeb9b3;
-      --dark: #17201e;
-      --line: #52605a;
-      --lime: #d4dd82;
-      box-sizing: border-box;
-      min-height: 100vh;
-      padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 5vw, 5.5rem);
-      color: var(--ink);
-      background: var(--dark);
-      font-family: Arial, Helvetica, sans-serif;
+    body { margin:0; background:#fff; }
+    #arc-s02-004 { --ink:#20231f; --muted:#70736d; --line:#d8dad5; --accent:#a65a2c; box-sizing:border-box; min-height:100vh; padding:clamp(2rem,6vw,6rem) clamp(1rem,5vw,5rem); color:var(--ink); background:#fff; font-family:Arial,Helvetica,sans-serif; overflow:hidden; }
+    #arc-s02-004 *, #arc-s02-004 *::before, #arc-s02-004 *::after { box-sizing:border-box; }
+    #arc-s02-004 .shell { position:relative; width:min(100%,90rem); margin:0 auto; }
+    #arc-s02-004 .ghost { position:absolute; z-index:0; top:1rem; bottom:0; left:-1.6rem; color:#f0f1ee; font-size:clamp(5rem,12vw,12rem); font-weight:700; letter-spacing:-.08em; line-height:.7; writing-mode:vertical-rl; transform:rotate(180deg); user-select:none; }
+    #arc-s02-004 .composition { position:relative; z-index:1; display:grid; grid-template-columns:1fr .8fr .9fr; grid-template-rows:auto repeat(3,minmax(7rem,1fr)); gap:1rem; padding-left:clamp(2rem,7vw,7rem); }
+    #arc-s02-004 .copy { grid-column:3; grid-row:1 / 3; align-self:center; padding:1.2rem; }
+    #arc-s02-004 .eyebrow { margin:0 0 .7rem; color:var(--accent); font-size:.62rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
+    #arc-s02-004 h1 { margin:0; font-family:Georgia,'Times New Roman',serif; font-size:clamp(2.5rem,4.5vw,4.8rem); font-weight:400; line-height:.92; letter-spacing:-.04em; }
+    #arc-s02-004 .copy p { max-width:25rem; margin:1rem 0 0; color:var(--muted); font-size:.8rem; line-height:1.6; }
+    #arc-s02-004 .cta { display:inline-flex; align-items:center; min-height:2.75rem; margin-top:1rem; padding:0 1rem; color:#fff; background:var(--accent); font-size:.7rem; font-weight:700; text-decoration:none; }
+    #arc-s02-004 .slot { min-width:0; min-height:8rem; border:1px solid var(--line); background:#e5e6e1; }
+    #arc-s02-004 .slot-a { grid-column:1; grid-row:1 / 3; }
+    #arc-s02-004 .slot-b { grid-column:2; grid-row:1; }
+    #arc-s02-004 .slot-c { grid-column:2; grid-row:2 / 4; }
+    #arc-s02-004 .slot-d { grid-column:1; grid-row:3; }
+    #arc-s02-004 .slot-e { grid-column:1 / 3; grid-row:4; }
+    #arc-s02-004 .slot-f { grid-column:3; grid-row:3 / 5; }
+    #arc-s02-004 .caption { grid-column:1; grid-row:3; align-self:end; z-index:2; margin:0 .7rem .7rem; padding:.6rem; color:var(--ink); background:rgba(255,255,255,.9); font-size:.62rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
+    #arc-s02-004 .cta:hover { background:#8d4b25; }
+    #arc-s02-004 a:focus-visible { outline:3px solid var(--ink); outline-offset:4px; }
+    @media (max-width:64rem) {
+      #arc-s02-004 .composition { grid-template-columns:1fr 1fr; grid-template-rows:auto repeat(4,minmax(9rem,auto)); }
+      #arc-s02-004 .copy { grid-column:1 / -1; grid-row:1; padding:0 0 1rem; }
+      #arc-s02-004 .slot-a { grid-column:1; grid-row:2 / 4; }
+      #arc-s02-004 .slot-b { grid-column:2; grid-row:2; }
+      #arc-s02-004 .slot-c { grid-column:2; grid-row:3 / 5; }
+      #arc-s02-004 .slot-d { grid-column:1; grid-row:4; }
+      #arc-s02-004 .slot-e { grid-column:1; grid-row:5; }
+      #arc-s02-004 .slot-f { grid-column:2; grid-row:5; }
+      #arc-s02-004 .caption { grid-column:1; grid-row:4; }
     }
-    #arc-s02-004 *, #arc-s02-004 *::before, #arc-s02-004 *::after { box-sizing: border-box; }
-    #arc-s02-004 .shell { width: min(100%, 94rem); margin: 0 auto; }
-    #arc-s02-004 .intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, .55fr); gap: 2rem; align-items: end; padding-bottom: 1.8rem; border-bottom: 1px solid var(--line); }
-    #arc-s02-004 .eyebrow { margin: 0 0 1rem; color: var(--lime); font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
-    #arc-s02-004 h1 { max-width: 12ch; margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3rem, 7vw, 7rem); font-weight: 400; line-height: .88; letter-spacing: -.05em; }
-    #arc-s02-004 .intro p:last-child { max-width: 31rem; margin: 0 0 .4rem auto; color: var(--muted); font-size: 1rem; line-height: 1.6; }
-    #arc-s02-004 .portfolio { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(18rem, .7fr); gap: 1.2rem; padding-top: 1.2rem; }
-    #arc-s02-004 article { position: relative; min-width: 0; }
-    #arc-s02-004 .lead { grid-row: span 2; }
-    #arc-s02-004 .media {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      min-width: 0;
-      min-height: 0;
-      aspect-ratio: 16 / 10;
-      border: 1px solid #66736d;
-      background:
-        linear-gradient(132deg, transparent 0 50%, rgba(7,14,12,.32) 50.2% 51%, transparent 51.2%),
-        repeating-linear-gradient(90deg, transparent 0 16%, rgba(255,255,255,.11) 16.2% 16.5%),
-        linear-gradient(0deg, #57625d 0 19%, #87938d 19% 55%, #b9c0ba 55%);
-      isolation: isolate;
+    @media (max-width:34rem) {
+      #arc-s02-004 { padding-inline:.8rem; }
+      #arc-s02-004 .ghost { display:none; }
+      #arc-s02-004 .composition { grid-template-columns:1fr 1fr; grid-template-rows:auto repeat(4,9rem); gap:.7rem; padding-left:0; }
+      #arc-s02-004 .slot-a { grid-row:2 / 4; }
+      #arc-s02-004 .slot-c { grid-row:3 / 5; }
+      #arc-s02-004 .slot-e, #arc-s02-004 .slot-f { grid-row:5; }
+      #arc-s02-004 .caption { font-size:.55rem; }
     }
-    #arc-s02-004 .lead .media { min-height: 35rem; aspect-ratio: 1.18 / 1; }
-    #arc-s02-004 .media::after { content: ''; position: absolute; z-index: -1; inset: 19% 8% 12% 20%; border: 1px solid rgba(243,240,232,.55); background: rgba(17,25,22,.2); box-shadow: -2rem 1.5rem 0 rgba(212,221,130,.14); }
-    #arc-s02-004 .media--b { filter: grayscale(.7) brightness(.92); }
-    #arc-s02-004 .media--c { filter: hue-rotate(32deg) saturate(.6); }
-    #arc-s02-004 .media-label { position: absolute; top: .8rem; left: .8rem; padding: .35rem .5rem; color: #18201e; background: var(--lime); font-size: .6rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-    #arc-s02-004 .project-info { display: grid; grid-template-columns: 1fr auto; gap: .8rem; align-items: end; padding: 1rem 0 1.6rem; border-bottom: 1px solid var(--line); }
-    #arc-s02-004 h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.35rem, 2.3vw, 2.2rem); font-weight: 400; }
-    #arc-s02-004 .meta { margin: .35rem 0 0; color: var(--muted); font-size: .67rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
-    #arc-s02-004 .view { display: inline-flex; align-items: center; justify-content: center; min-width: 7.5rem; min-height: 2.75rem; border: 1px solid var(--line); color: var(--ink); font-size: .72rem; font-weight: 700; text-decoration: none; }
-    #arc-s02-004 .view:hover { border-color: var(--lime); color: var(--lime); }
-    #arc-s02-004 .inquiry { display: grid; grid-template-columns: 8rem minmax(0, 1fr) auto; gap: 2rem; align-items: center; margin-top: clamp(3.5rem, 7vw, 7rem); padding: clamp(1.5rem, 3.5vw, 3rem); border-top: 1px solid var(--lime); border-bottom: 1px solid var(--line); }
-    #arc-s02-004 .inquiry-no { align-self: start; color: var(--lime); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3rem, 6vw, 6rem); line-height: .8; }
-    #arc-s02-004 .inquiry h2 { max-width: 19ch; font-size: clamp(2rem, 4vw, 4.2rem); line-height: .95; }
-    #arc-s02-004 .inquiry p { max-width: 35rem; margin: 1rem 0 0; color: var(--muted); line-height: 1.55; }
-    #arc-s02-004 .start { display: inline-flex; align-items: center; justify-content: center; min-width: 12rem; min-height: 3.25rem; padding: .8rem 1.2rem; color: #17201e; background: var(--lime); font-size: .78rem; font-weight: 700; text-decoration: none; }
-    #arc-s02-004 .start:hover { background: #eef3b8; }
-    #arc-s02-004 a:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
-    @media (max-width: 64rem) {
-      #arc-s02-004 .lead .media { min-height: 28rem; }
-      #arc-s02-004 .inquiry { grid-template-columns: 5rem 1fr; }
-      #arc-s02-004 .start { grid-column: 2; justify-self: start; }
-    }
-    @media (max-width: 48rem) {
-      #arc-s02-004 .intro { grid-template-columns: 1fr; }
-      #arc-s02-004 .intro p:last-child { margin-left: 0; }
-      #arc-s02-004 .portfolio { grid-template-columns: 1fr 1fr; }
-      #arc-s02-004 .lead { grid-column: 1 / -1; grid-row: auto; }
-      #arc-s02-004 .lead .media { min-height: 23rem; aspect-ratio: 16 / 10; }
-    }
-    @media (max-width: 35rem) {
-      #arc-s02-004 { padding-inline: .8rem; }
-      #arc-s02-004 .portfolio { display: block; }
-      #arc-s02-004 article + article { margin-top: 2rem; }
-      #arc-s02-004 .media, #arc-s02-004 .lead .media { min-height: 0; aspect-ratio: 4 / 3; }
-      #arc-s02-004 .project-info { grid-template-columns: 1fr; }
-      #arc-s02-004 .view { justify-self: start; }
-      #arc-s02-004 .inquiry { grid-template-columns: 1fr; gap: 1.25rem; padding-inline: .2rem; }
-      #arc-s02-004 .start { grid-column: 1; width: 100%; }
-    }
-    @media (prefers-reduced-motion: reduce) { #arc-s02-004 * { scroll-behavior: auto !important; } }
+    @media (prefers-reduced-motion:reduce) { #arc-s02-004 * { scroll-behavior:auto !important; } }
   </style>
 </head>
 <body>
   <main id="arc-s02-004" data-study-id="ARC-S02-004">
     <section class="shell" aria-labelledby="arc-s02-004-title">
-      <header class="intro">
-        <div><p class="eyebrow">Selected work · capability in context</p><h1 id="arc-s02-004-title">Spaces shaped around use</h1></div>
-        <p>Three project studies show how a studio can move between architecture, interiors and adaptive reuse without losing clarity of intent.</p>
-      </header>
-
-      <div class="portfolio">
-        <article class="lead" id="capability-courtyard-house">
-          <div class="media" role="img" aria-label="Reserved lead-project media slot for Courtyard House"><span class="media-label" aria-hidden="true">Lead project media</span></div>
-          <div class="project-info"><div><h2>Courtyard House</h2><p class="meta">Residential architecture · Spatial sequence</p></div><a class="view" href="#capability-courtyard-house" aria-label="View the Courtyard House project">View project ↗</a></div>
-        </article>
-        <article id="capability-garden-studio">
-          <div class="media media--b" role="img" aria-label="Reserved project media slot for Garden Studio"><span class="media-label" aria-hidden="true">Project media</span></div>
-          <div class="project-info"><div><h2>Garden Studio</h2><p class="meta">Adaptive reuse · Workplace</p></div><a class="view" href="#capability-garden-studio" aria-label="View the Garden Studio project">View project ↗</a></div>
-        </article>
-        <article id="capability-civic-interior">
-          <div class="media media--c" role="img" aria-label="Reserved project media slot for Civic Interior"><span class="media-label" aria-hidden="true">Interior media</span></div>
-          <div class="project-info"><div><h2>Civic Interior</h2><p class="meta">Cultural · Interior architecture</p></div><a class="view" href="#capability-civic-interior" aria-label="View the Civic Interior project">View project ↗</a></div>
-        </article>
+      <span class="ghost" aria-hidden="true">WORKS</span>
+      <div class="composition">
+        <header class="copy"><p class="eyebrow">Selected portfolio</p><h1 id="arc-s02-004-title">Our projects</h1><p>A compact collage gives projects different visual weight while preserving a clear path into a studio conversation.</p><a class="cta" href="#project-collage">Discuss a project ↗</a></header>
+        <div class="slot slot-a" role="img" aria-label="Empty primary image slot for Courtyard House"></div>
+        <div class="slot slot-b" role="img" aria-label="Empty detail image slot for Courtyard House"></div>
+        <div class="slot slot-c" role="img" aria-label="Empty image slot for Garden Studio"></div>
+        <div class="slot slot-d" role="img" aria-label="Empty image slot for Civic Interior"></div>
+        <div class="slot slot-e" role="img" aria-label="Empty panoramic image slot for Ridge Residence"></div>
+        <div class="slot slot-f" id="project-collage" role="img" aria-label="Empty portrait image slot for Urban Apartment"></div>
+        <p class="caption">Courtyard House · Residential architecture</p>
       </div>
-
-      <aside class="inquiry" id="project-inquiry" aria-labelledby="inquiry-title">
-        <span class="inquiry-no" aria-hidden="true">04</span>
-        <div><h2 id="inquiry-title">Have a place that needs a clear next move?</h2><p>Share the context, constraints and ambitions for your space. A project conversation can begin before the brief is fully resolved.</p></div>
-        <a class="start" href="#project-inquiry">Tell us about your space ↗</a>
-      </aside>
     </section>
   </main>
-  <script type="application/json" data-study-metadata>
-    {"id":"ARC-S02-004","sector":"Architecture & Interior Design","section":"Selected Projects","territory":"Conversion-led","mediaPolicy":"Reserved local project media slots; no external assets","runtimeDependencies":[]}
-  </script>
+  <script type="application/json" data-study-metadata>{"id":"ARC-S02-004","sector":"Architecture & Interior Design","section":"Selected Projects","territory":"Conversion-led","mediaPolicy":"Six empty local image slots; no embedded assets","runtimeDependencies":[]}</script>
 </body>
 </html>

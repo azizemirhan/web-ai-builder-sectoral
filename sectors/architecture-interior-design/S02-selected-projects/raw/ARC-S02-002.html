@@ -3,173 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ARC-S02-002 — Selected Works Editorial</title>
-  <meta name="description" content="An asymmetric editorial selected-works study for architecture studios.">
+  <title>ARC-S02-002 — Selected Residences</title>
+  <meta name="description" content="A premium paired-project presentation for an architecture studio.">
   <style>
-    body { margin: 0; background: #eee9df; }
-    #arc-s02-002 {
-      --ink: #171714;
-      --rust: #a54225;
-      --paper: #eee9df;
-      box-sizing: border-box;
-      min-height: 100vh;
-      padding: clamp(2.5rem, 6vw, 7rem) clamp(1rem, 4vw, 4rem);
-      color: var(--ink);
-      background: var(--paper);
-      font-family: Arial, Helvetica, sans-serif;
+    body { margin:0; background:#f5f5f2; }
+    #arc-s02-002 { --ink:#111310; --muted:#62645f; --line:#d0d2cc; --accent:#1f4d3a; box-sizing:border-box; min-height:100vh; padding:clamp(2rem,5vw,5rem) clamp(1rem,4vw,4rem); color:var(--ink); background:#f5f5f2; font-family:Arial,Helvetica,sans-serif; }
+    #arc-s02-002 *, #arc-s02-002 *::before, #arc-s02-002 *::after { box-sizing:border-box; }
+    #arc-s02-002 .shell { width:min(100%,92rem); margin:0 auto; border-top:1px solid var(--line); }
+    #arc-s02-002 .head { display:grid; grid-template-columns:1fr minmax(18rem,.55fr); gap:3rem; align-items:end; padding:1.6rem 0 1.2rem; }
+    #arc-s02-002 h1 { max-width:8ch; margin:0; font-size:clamp(3rem,6vw,6.5rem); font-weight:500; line-height:.83; letter-spacing:-.065em; text-transform:uppercase; }
+    #arc-s02-002 .head p { max-width:28rem; margin:0 0 .35rem auto; font-size:.86rem; line-height:1.55; text-align:right; }
+    #arc-s02-002 .projects { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--ink); border-bottom:1px solid var(--line); }
+    #arc-s02-002 article { min-width:0; }
+    #arc-s02-002 article + article { border-left:1px solid var(--line); }
+    #arc-s02-002 .media { width:100%; aspect-ratio:1.45 / 1; border-bottom:1px solid var(--line); background:#e1e2dd; }
+    #arc-s02-002 .project-copy { display:grid; grid-template-columns:1fr auto; gap:1rem; padding:1.2rem 1rem 1.5rem; }
+    #arc-s02-002 .type { margin:0 0 .45rem; color:var(--accent); font-size:.58rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    #arc-s02-002 h2 { margin:0; font-family:Georgia,'Times New Roman',serif; font-size:clamp(1.45rem,2.5vw,2.3rem); font-weight:400; }
+    #arc-s02-002 .description { max-width:31rem; margin:1.2rem 0 0; color:var(--muted); font-size:.76rem; line-height:1.55; }
+    #arc-s02-002 .project-meta { margin:0; color:var(--muted); font-size:.62rem; font-weight:700; letter-spacing:.08em; line-height:1.55; text-align:right; text-transform:uppercase; }
+    #arc-s02-002 .project-link { display:inline-flex; align-items:center; justify-content:center; width:2.8rem; min-height:2.8rem; margin-top:1rem; margin-left:auto; border:1px solid var(--ink); border-radius:50%; color:var(--ink); text-decoration:none; }
+    #arc-s02-002 .project-link:hover { color:#fff; background:var(--accent); border-color:var(--accent); }
+    #arc-s02-002 a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    @media (max-width:48rem) {
+      #arc-s02-002 .head { grid-template-columns:1fr; gap:1.5rem; }
+      #arc-s02-002 .head p { margin-left:0; text-align:left; }
+      #arc-s02-002 .projects { grid-template-columns:1fr; }
+      #arc-s02-002 article + article { border-top:1px solid var(--ink); border-left:0; }
     }
-    #arc-s02-002 *, #arc-s02-002 *::before, #arc-s02-002 *::after { box-sizing: border-box; }
-    #arc-s02-002 .spread {
-      display: grid;
-      grid-template-columns: minmax(3.5rem, .35fr) repeat(10, 1fr);
-      grid-template-rows: auto auto minmax(8rem, auto) auto;
-      gap: 1.2rem;
-      width: min(100%, 100rem);
-      margin: 0 auto;
+    @media (max-width:30rem) {
+      #arc-s02-002 { padding-inline:.8rem; }
+      #arc-s02-002 .project-copy { grid-template-columns:1fr; padding-inline:0; }
+      #arc-s02-002 .project-meta { text-align:left; }
+      #arc-s02-002 .project-link { margin-left:0; }
+      #arc-s02-002 .media { aspect-ratio:4 / 3; }
     }
-    #arc-s02-002 .folio {
-      grid-column: 1;
-      grid-row: 1 / 5;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: .35rem;
-      border-right: 1px solid rgba(23,23,20,.35);
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-    }
-    #arc-s02-002 .masthead { grid-column: 2 / 8; grid-row: 1; z-index: 2; }
-    #arc-s02-002 .kicker { margin: 0 0 .8rem; color: var(--rust); font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
-    #arc-s02-002 h1 {
-      max-width: 8ch;
-      margin: 0;
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(3.5rem, 9vw, 9rem);
-      font-weight: 400;
-      line-height: .78;
-      letter-spacing: -.065em;
-    }
-    #arc-s02-002 .statement {
-      grid-column: 8 / 12;
-      grid-row: 1;
-      align-self: end;
-      max-width: 28rem;
-      margin: 0 0 .3rem auto;
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: clamp(1rem, 1.55vw, 1.35rem);
-      line-height: 1.45;
-    }
-    #arc-s02-002 figure { margin: 0; min-width: 0; }
-    #arc-s02-002 .work-a { grid-column: 3 / 9; grid-row: 2 / 4; margin-top: 1rem; }
-    #arc-s02-002 .work-b { grid-column: 9 / 12; grid-row: 2; margin-top: 5.5rem; }
-    #arc-s02-002 .work-c { grid-column: 2 / 5; grid-row: 4; margin-top: -3.5rem; }
-    #arc-s02-002 .work-d { grid-column: 6 / 11; grid-row: 4; margin-top: 2.5rem; }
-    #arc-s02-002 .plate {
-      position: relative;
-      min-height: 13rem;
-      overflow: hidden;
-      border: 1px solid rgba(23,23,20,.24);
-      background: #c8c3b8;
-      isolation: isolate;
-    }
-    #arc-s02-002 .work-a .plate { aspect-ratio: 1.35 / 1; }
-    #arc-s02-002 .work-b .plate { aspect-ratio: .78 / 1; }
-    #arc-s02-002 .work-c .plate { aspect-ratio: .92 / 1; }
-    #arc-s02-002 .work-d .plate { aspect-ratio: 1.75 / 1; }
-    #arc-s02-002 .plate::before,
-    #arc-s02-002 .plate::after { content: ''; position: absolute; }
-    #arc-s02-002 .plate::before {
-      inset: 0;
-      z-index: -2;
-      background:
-        linear-gradient(125deg, transparent 0 48%, rgba(18,18,15,.24) 48.2% 49%, transparent 49.2%),
-        linear-gradient(0deg, #6c665c 0 18%, #b8b0a2 18% 52%, #dad8cf 52%);
-    }
-    #arc-s02-002 .plate::after {
-      inset: 20% 9% 14% 20%;
-      z-index: -1;
-      border: 1px solid rgba(20,20,17,.5);
-      background:
-        repeating-linear-gradient(90deg, transparent 0 19%, rgba(255,255,255,.5) 19.4% 20%),
-        linear-gradient(160deg, rgba(255,255,255,.25), rgba(82,69,55,.3));
-      box-shadow: -1.8rem 1.4rem 0 rgba(129,63,37,.18);
-    }
-    #arc-s02-002 .work-b .plate::before { filter: grayscale(1) contrast(.82) brightness(1.12); transform: scaleX(-1); }
-    #arc-s02-002 .work-c .plate::before { filter: sepia(.2) hue-rotate(330deg) brightness(.85); }
-    #arc-s02-002 .work-d .plate::before { filter: grayscale(.65) hue-rotate(60deg); transform: scaleX(-1); }
-    #arc-s02-002 .slot { position: absolute; top: .8rem; right: .8rem; padding: .35rem .45rem; color: #f5f1e8; background: rgba(20,20,17,.68); font-size: .6rem; letter-spacing: .14em; text-transform: uppercase; }
-    #arc-s02-002 figcaption { display: grid; grid-template-columns: auto 1fr; gap: .9rem; padding-top: .75rem; }
-    #arc-s02-002 .index { color: var(--rust); font-family: Georgia, 'Times New Roman', serif; font-size: 1.25rem; }
-    #arc-s02-002 h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.25rem, 2vw, 1.8rem); font-weight: 400; }
-    #arc-s02-002 .meta { margin: .3rem 0 0; color: #5b574f; font-size: .68rem; font-weight: 700; letter-spacing: .12em; line-height: 1.45; text-transform: uppercase; }
-    #arc-s02-002 .work-link { display: inline-block; min-height: 2.75rem; padding-top: .75rem; color: var(--ink); font-size: .78rem; text-underline-offset: .25rem; }
-    #arc-s02-002 .work-link:hover { color: var(--rust); }
-    #arc-s02-002 a:focus-visible { outline: 3px solid var(--rust); outline-offset: 4px; }
-    @media (max-width: 64rem) {
-      #arc-s02-002 .spread { grid-template-columns: 3rem repeat(8, 1fr); }
-      #arc-s02-002 .masthead { grid-column: 2 / 7; }
-      #arc-s02-002 .statement { grid-column: 7 / 10; }
-      #arc-s02-002 .work-a { grid-column: 2 / 7; }
-      #arc-s02-002 .work-b { grid-column: 7 / 10; }
-      #arc-s02-002 .work-c { grid-column: 2 / 5; }
-      #arc-s02-002 .work-d { grid-column: 5 / 10; }
-    }
-    @media (max-width: 48rem) {
-      #arc-s02-002 .spread { grid-template-columns: 2rem repeat(6, 1fr); grid-template-rows: auto; }
-      #arc-s02-002 .folio { grid-row: 1 / 7; }
-      #arc-s02-002 .masthead, #arc-s02-002 .statement, #arc-s02-002 .work-a, #arc-s02-002 .work-b, #arc-s02-002 .work-c, #arc-s02-002 .work-d { grid-column: 2 / 8; grid-row: auto; margin: 0; }
-      #arc-s02-002 .statement { max-width: 30rem; margin: 1rem 0 2rem; }
-      #arc-s02-002 .work-b, #arc-s02-002 .work-d { margin-left: 12%; }
-      #arc-s02-002 .work-c { margin-right: 12%; }
-      #arc-s02-002 .plate { min-height: 0; }
-      #arc-s02-002 .work-a .plate, #arc-s02-002 .work-b .plate, #arc-s02-002 .work-c .plate, #arc-s02-002 .work-d .plate { aspect-ratio: 4 / 3; }
-    }
-    @media (max-width: 27rem) {
-      #arc-s02-002 { padding-inline: .75rem; }
-      #arc-s02-002 .spread { grid-template-columns: 1.4rem repeat(6, 1fr); gap: 1rem .65rem; }
-      #arc-s02-002 .work-b, #arc-s02-002 .work-c, #arc-s02-002 .work-d { margin-inline: 0; }
-      #arc-s02-002 h1 { font-size: clamp(3.2rem, 20vw, 5rem); }
-    }
-    @media (prefers-reduced-motion: reduce) { #arc-s02-002 * { scroll-behavior: auto !important; } }
+    @media (prefers-reduced-motion:reduce) { #arc-s02-002 * { scroll-behavior:auto !important; } }
   </style>
 </head>
 <body>
   <main id="arc-s02-002" data-study-id="ARC-S02-002">
-    <section class="spread" aria-labelledby="arc-s02-002-title">
-      <div class="folio" aria-hidden="true">Studio folio · selected works</div>
-      <header class="masthead">
-        <p class="kicker">Portfolio excerpt</p>
-        <h1 id="arc-s02-002-title">Selected works</h1>
-      </header>
-      <p class="statement">Four spatial studies in context—read as an edited sequence of thresholds, rooms, landscapes and civic edges.</p>
-
-      <figure class="work-a" id="monograph-courtyard-house">
-        <div class="plate" role="img" aria-label="Reserved editorial media slot for Courtyard House"><span class="slot" aria-hidden="true">01 · landscape plate</span></div>
-        <figcaption><span class="index">I</span><div><h2>Courtyard House</h2><p class="meta">Architecture · Residential</p><a class="work-link" href="#monograph-courtyard-house" aria-label="Read the Courtyard House project entry">Read project entry ↗</a></div></figcaption>
-      </figure>
-
-      <figure class="work-b" id="monograph-civic-interior">
-        <div class="plate" role="img" aria-label="Reserved portrait media slot for Civic Interior"><span class="slot" aria-hidden="true">02 · vertical plate</span></div>
-        <figcaption><span class="index">II</span><div><h2>Civic Interior</h2><p class="meta">Interior architecture · Cultural</p><a class="work-link" href="#monograph-civic-interior" aria-label="Read the Civic Interior project entry">Read project entry ↗</a></div></figcaption>
-      </figure>
-
-      <figure class="work-c" id="monograph-garden-studio">
-        <div class="plate" role="img" aria-label="Reserved portrait media slot for Garden Studio"><span class="slot" aria-hidden="true">03 · detail plate</span></div>
-        <figcaption><span class="index">III</span><div><h2>Garden Studio</h2><p class="meta">Adaptive reuse · Workplace</p><a class="work-link" href="#monograph-garden-studio" aria-label="Read the Garden Studio project entry">Read project entry ↗</a></div></figcaption>
-      </figure>
-
-      <figure class="work-d" id="monograph-ridge-residence">
-        <div class="plate" role="img" aria-label="Reserved panoramic media slot for Ridge Residence"><span class="slot" aria-hidden="true">04 · panoramic plate</span></div>
-        <figcaption><span class="index">IV</span><div><h2>Ridge Residence</h2><p class="meta">Architecture · Rural context</p><a class="work-link" href="#monograph-ridge-residence" aria-label="Read the Ridge Residence project entry">Read project entry ↗</a></div></figcaption>
-      </figure>
+    <section class="shell" aria-labelledby="arc-s02-002-title">
+      <header class="head"><h1 id="arc-s02-002-title">Selected residences</h1><p>A focused pairing of residential studies, presented through proportion, context and spatial intent rather than property-listing information.</p></header>
+      <div class="projects">
+        <article id="paired-courtyard-house"><div class="media" role="img" aria-label="Empty image slot for Courtyard House"></div><div class="project-copy"><div><p class="type">Residential architecture</p><h2>Courtyard House</h2><p class="description">A calm sequence of shared rooms and sheltered outdoor thresholds, shown as neutral demonstrative portfolio copy.</p></div><div><p class="project-meta">Coastal context<br>Architecture</p><a class="project-link" href="#paired-courtyard-house" aria-label="Explore Courtyard House">↗</a></div></div></article>
+        <article id="paired-ridge-residence"><div class="media" role="img" aria-label="Empty image slot for Ridge Residence"></div><div class="project-copy"><div><p class="type">Residential architecture</p><h2>Ridge Residence</h2><p class="description">A compact study in enclosure, outlook and material restraint, without factual completion or performance claims.</p></div><div><p class="project-meta">Rural context<br>Architecture</p><a class="project-link" href="#paired-ridge-residence" aria-label="Explore Ridge Residence">↗</a></div></div></article>
+      </div>
     </section>
   </main>
-  <script type="application/json" data-study-metadata>
-    {"id":"ARC-S02-002","sector":"Architecture & Interior Design","section":"Selected Projects","territory":"Premium / Editorial","mediaPolicy":"Reserved local editorial plates; no external assets","runtimeDependencies":[]}
-  </script>
+  <script type="application/json" data-study-metadata>{"id":"ARC-S02-002","sector":"Architecture & Interior Design","section":"Selected Projects","territory":"Premium / Editorial","mediaPolicy":"Two empty local image slots; no embedded assets","runtimeDependencies":[]}</script>
 </body>
 </html>

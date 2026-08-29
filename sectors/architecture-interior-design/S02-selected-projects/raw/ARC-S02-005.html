@@ -3,152 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ARC-S02-005 — Selected Works Sheet</title>
-  <meta name="description" content="A drawing-sheet-inspired selected-projects study for architecture and interior design studios.">
+  <title>ARC-S02-005 — Project Catalogue Grid</title>
+  <meta name="description" content="A six-project architecture portfolio catalogue with blank media slots.">
   <style>
-    body { margin: 0; background: #f2f0e8; }
-    #arc-s02-005 {
-      --ink: #202421;
-      --blue: #275777;
-      --red: #bd412d;
-      --line: rgba(32,36,33,.28);
-      --paper: #f2f0e8;
-      box-sizing: border-box;
-      min-height: 100vh;
-      padding: clamp(1rem, 3vw, 3rem);
-      color: var(--ink);
-      background-color: var(--paper);
-      background-image:
-        linear-gradient(rgba(39,87,119,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(39,87,119,.08) 1px, transparent 1px);
-      background-size: 2rem 2rem;
-      font-family: Arial, Helvetica, sans-serif;
+    body { margin:0; background:#f7f6ef; }
+    #arc-s02-005 { --ink:#141613; --muted:#62655f; --line:#d2d3cc; --accent:#345945; box-sizing:border-box; min-height:100vh; padding:clamp(2rem,5vw,5rem) clamp(1rem,4vw,4rem); color:var(--ink); background:#f7f6ef; font-family:Arial,Helvetica,sans-serif; }
+    #arc-s02-005 *, #arc-s02-005 *::before, #arc-s02-005 *::after { box-sizing:border-box; }
+    #arc-s02-005 .shell { width:min(100%,90rem); margin:0 auto; }
+    #arc-s02-005 .head { display:grid; grid-template-columns:1fr auto 1fr; align-items:end; gap:1rem; padding-bottom:1.5rem; }
+    #arc-s02-005 .head::before, #arc-s02-005 .head::after { content:''; height:1px; background:var(--line); }
+    #arc-s02-005 h1 { margin:0; font-size:clamp(2rem,4vw,4rem); font-weight:600; letter-spacing:-.045em; text-align:center; }
+    #arc-s02-005 .filters { display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem 1.2rem; margin:0 0 1.4rem; padding:0; list-style:none; }
+    #arc-s02-005 .filters li { color:var(--muted); font-size:.62rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; }
+    #arc-s02-005 .projects { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2rem 1rem; }
+    #arc-s02-005 article { min-width:0; }
+    #arc-s02-005 .media { width:100%; aspect-ratio:1.25 / 1; border:1px solid var(--line); background:#e0e1da; }
+    #arc-s02-005 .project-head { display:flex; justify-content:space-between; gap:1rem; align-items:baseline; padding-top:.65rem; }
+    #arc-s02-005 h2 { margin:0; font-family:Georgia,'Times New Roman',serif; font-size:clamp(1.1rem,1.8vw,1.55rem); font-weight:400; }
+    #arc-s02-005 .project-link { display:inline-flex; align-items:center; min-height:2.75rem; color:var(--ink); font-size:.68rem; font-weight:700; white-space:nowrap; text-underline-offset:.25rem; }
+    #arc-s02-005 .meta { margin:.25rem 0 0; color:var(--muted); font-size:.6rem; font-weight:700; letter-spacing:.1em; line-height:1.45; text-transform:uppercase; }
+    #arc-s02-005 .project-link:hover { color:var(--accent); }
+    #arc-s02-005 a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    @media (max-width:64rem) { #arc-s02-005 .projects { grid-template-columns:1fr 1fr; } }
+    @media (max-width:40rem) {
+      #arc-s02-005 { padding-inline:.8rem; }
+      #arc-s02-005 .head { grid-template-columns:1fr; }
+      #arc-s02-005 .head::before, #arc-s02-005 .head::after { display:none; }
+      #arc-s02-005 h1 { text-align:left; }
+      #arc-s02-005 .filters { justify-content:flex-start; }
+      #arc-s02-005 .projects { grid-template-columns:1fr; }
+      #arc-s02-005 .media { aspect-ratio:4 / 3; }
     }
-    #arc-s02-005 *, #arc-s02-005 *::before, #arc-s02-005 *::after { box-sizing: border-box; }
-    #arc-s02-005 .board { width: min(100%, 104rem); margin: 0 auto; border: 1px solid var(--ink); background: rgba(242,240,232,.94); }
-    #arc-s02-005 .board-head { display: grid; grid-template-columns: 1.6fr .8fr .35fr; min-height: 11rem; border-bottom: 1px solid var(--ink); }
-    #arc-s02-005 .title-cell, #arc-s02-005 .brief-cell, #arc-s02-005 .sheet-cell { padding: clamp(1rem, 2.5vw, 2.5rem); }
-    #arc-s02-005 .brief-cell, #arc-s02-005 .sheet-cell { border-left: 1px solid var(--ink); }
-    #arc-s02-005 .eyebrow, #arc-s02-005 .label { margin: 0 0 .7rem; color: var(--blue); font-size: .62rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
-    #arc-s02-005 h1 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3rem, 8vw, 8.5rem); font-weight: 400; line-height: .76; letter-spacing: -.07em; }
-    #arc-s02-005 .brief-cell { display: flex; flex-direction: column; justify-content: space-between; }
-    #arc-s02-005 .brief-cell p:last-child { max-width: 28rem; margin: 1rem 0 0; font-size: .85rem; line-height: 1.5; }
-    #arc-s02-005 .sheet-cell { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; text-align: right; }
-    #arc-s02-005 .sheet-no { color: var(--red); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3rem, 5vw, 6rem); line-height: .8; }
-    #arc-s02-005 .revision { font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    #arc-s02-005 .projects { display: grid; grid-template-columns: 1.15fr .85fr; }
-    #arc-s02-005 .project-sheet { position: relative; display: grid; min-width: 0; border-bottom: 1px solid var(--ink); }
-    #arc-s02-005 .project-sheet:nth-child(odd) { border-right: 1px solid var(--ink); }
-    #arc-s02-005 .project-sheet--a { grid-template-columns: 5rem 1fr; grid-row: span 2; }
-    #arc-s02-005 .project-sheet--b, #arc-s02-005 .project-sheet--c { grid-template-columns: 4.2rem 1fr; }
-    #arc-s02-005 .project-no { display: flex; align-items: flex-start; justify-content: center; padding-top: 1rem; border-right: 1px solid var(--ink); color: rgba(39,87,119,.52); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.5rem, 5vw, 5rem); line-height: 1; writing-mode: vertical-rl; }
-    #arc-s02-005 .project-body { min-width: 0; padding: clamp(1rem, 2vw, 2rem); }
-    #arc-s02-005 .media-grid { display: grid; grid-template-columns: 1.5fr .7fr; grid-template-rows: 1fr .6fr; gap: .5rem; min-height: 29rem; }
-    #arc-s02-005 .project-sheet--b .media-grid, #arc-s02-005 .project-sheet--c .media-grid { grid-template-columns: 1fr .6fr; min-height: 15rem; }
-    #arc-s02-005 .plate { position: relative; overflow: hidden; min-height: 7rem; border: 1px solid var(--line); background: rgba(171,181,174,.65); isolation: isolate; }
-    #arc-s02-005 .plate--main { grid-row: 1 / 3; }
-    #arc-s02-005 .plate::before { content: ''; position: absolute; z-index: -2; inset: 0; background: linear-gradient(135deg, transparent 0 48%, rgba(32,36,33,.25) 48.2% 49%, transparent 49.2%), repeating-linear-gradient(90deg, transparent 0 15%, rgba(255,255,255,.4) 15.3% 16%), linear-gradient(0deg, #727b75 0 17%, #afb7b0 17% 56%, #d7dbd5 56%); }
-    #arc-s02-005 .plate::after { content: ''; position: absolute; z-index: -1; inset: 23% 10% 13% 18%; border: 1px solid rgba(32,36,33,.52); background: rgba(246,245,239,.2); }
-    #arc-s02-005 .plate--diagram::before { background: repeating-linear-gradient(0deg, transparent 0 1.45rem, rgba(39,87,119,.2) 1.5rem), repeating-linear-gradient(90deg, transparent 0 1.45rem, rgba(39,87,119,.2) 1.5rem), #ecebe4; }
-    #arc-s02-005 .plate--diagram::after { inset: 20%; border: 1px solid var(--blue); transform: rotate(-8deg); background: transparent; box-shadow: 1rem .8rem 0 -1px var(--paper), 1rem .8rem 0 var(--red); }
-    #arc-s02-005 .slot-note { position: absolute; z-index: 2; left: .5rem; bottom: .5rem; padding: .3rem .4rem; color: #fff; background: rgba(32,36,33,.72); font-size: .55rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-    #arc-s02-005 .caption { display: grid; grid-template-columns: 1fr minmax(10rem, .55fr); gap: 1rem; padding-top: 1rem; }
-    #arc-s02-005 h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.55rem, 2.8vw, 2.7rem); font-weight: 400; }
-    #arc-s02-005 .meta { margin: .4rem 0 0; color: #59615c; font-size: .65rem; font-weight: 700; letter-spacing: .1em; line-height: 1.5; text-transform: uppercase; }
-    #arc-s02-005 .annotation { margin: 0; padding-left: 1rem; border-left: 2px solid var(--red); font-size: .72rem; line-height: 1.5; }
-    #arc-s02-005 .project-link { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: .8rem; color: var(--ink); font-size: .72rem; font-weight: 700; text-underline-offset: .25rem; }
-    #arc-s02-005 .project-link:hover { color: var(--red); }
-    #arc-s02-005 .schedule { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 0; }
-    #arc-s02-005 .schedule div { min-height: 4.5rem; padding: 1rem; border-right: 1px solid var(--ink); }
-    #arc-s02-005 .schedule div:last-child { border-right: 0; }
-    #arc-s02-005 .schedule strong { display: block; margin-bottom: .35rem; color: var(--blue); font-size: .6rem; letter-spacing: .13em; text-transform: uppercase; }
-    #arc-s02-005 .schedule span { font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; }
-    #arc-s02-005 a:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; }
-    @media (max-width: 68rem) {
-      #arc-s02-005 .board-head { grid-template-columns: 1.3fr .7fr; }
-      #arc-s02-005 .sheet-cell { grid-column: 1 / -1; flex-direction: row; align-items: center; border-top: 1px solid var(--ink); border-left: 0; }
-      #arc-s02-005 .projects { grid-template-columns: 1fr; }
-      #arc-s02-005 .project-sheet, #arc-s02-005 .project-sheet:nth-child(odd) { border-right: 0; }
-      #arc-s02-005 .project-sheet--a, #arc-s02-005 .project-sheet--b, #arc-s02-005 .project-sheet--c { grid-template-columns: 4.2rem 1fr; }
-      #arc-s02-005 .media-grid, #arc-s02-005 .project-sheet--b .media-grid, #arc-s02-005 .project-sheet--c .media-grid { min-height: 20rem; }
-    }
-    @media (max-width: 48rem) {
-      #arc-s02-005 .board-head { grid-template-columns: 1fr; }
-      #arc-s02-005 .brief-cell, #arc-s02-005 .sheet-cell { border-left: 0; border-top: 1px solid var(--ink); }
-      #arc-s02-005 .media-grid, #arc-s02-005 .project-sheet--b .media-grid, #arc-s02-005 .project-sheet--c .media-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; min-height: 0; }
-      #arc-s02-005 .plate--main { grid-column: 1 / -1; grid-row: auto; min-height: 18rem; }
-      #arc-s02-005 .plate:not(.plate--main) { min-height: 10rem; }
-      #arc-s02-005 .caption { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 27rem) {
-      #arc-s02-005 { padding: .5rem; background-size: 1rem 1rem; }
-      #arc-s02-005 .project-sheet--a, #arc-s02-005 .project-sheet--b, #arc-s02-005 .project-sheet--c { grid-template-columns: 2.6rem 1fr; }
-      #arc-s02-005 .project-no { font-size: 2.2rem; }
-      #arc-s02-005 .project-body { padding: .75rem; }
-      #arc-s02-005 .plate--main { min-height: 14rem; }
-      #arc-s02-005 .schedule { grid-template-columns: 1fr; }
-      #arc-s02-005 .schedule div { min-height: 0; border-right: 0; border-bottom: 1px solid var(--ink); }
-      #arc-s02-005 .schedule div:last-child { border-bottom: 0; }
-    }
-    @media (prefers-reduced-motion: reduce) { #arc-s02-005 * { scroll-behavior: auto !important; } }
+    @media (prefers-reduced-motion:reduce) { #arc-s02-005 * { scroll-behavior:auto !important; } }
   </style>
 </head>
 <body>
   <main id="arc-s02-005" data-study-id="ARC-S02-005">
-    <section class="board" aria-labelledby="arc-s02-005-title">
-      <header class="board-head">
-        <div class="title-cell"><p class="eyebrow">Selected works / presentation sheet</p><h1 id="arc-s02-005-title">Projects in section</h1></div>
-        <div class="brief-cell"><p class="label">Drawing note A—02</p><p>Three projects are paired with image, detail and diagram slots to support an architectural reading rather than a conventional card catalogue.</p></div>
-        <div class="sheet-cell"><span class="sheet-no" aria-hidden="true">S02</span><span class="revision">Issue · authoring study</span></div>
-      </header>
-
+    <section class="shell" aria-labelledby="arc-s02-005-title">
+      <header class="head"><h1 id="arc-s02-005-title">Selected projects</h1></header>
+      <ul class="filters" aria-label="Project typologies"><li>Architecture</li><li>Interiors</li><li>Residential</li><li>Workplace</li><li>Cultural</li></ul>
       <div class="projects">
-        <article class="project-sheet project-sheet--a" id="sheet-courtyard-house">
-          <div class="project-no" aria-hidden="true">01</div>
-          <div class="project-body">
-            <div class="media-grid">
-              <div class="plate plate--main" role="img" aria-label="Reserved primary architecture media slot for Courtyard House"><span class="slot-note" aria-hidden="true">Primary elevation / image slot</span></div>
-              <div class="plate" role="img" aria-label="Reserved detail media slot for Courtyard House"><span class="slot-note" aria-hidden="true">Detail slot</span></div>
-              <div class="plate plate--diagram" role="img" aria-label="Reserved abstract diagram slot for Courtyard House"><span class="slot-note" aria-hidden="true">Diagram slot</span></div>
-            </div>
-            <div class="caption"><div><h2>Courtyard House</h2><p class="meta">Residential architecture · Sequence / threshold / garden</p><a class="project-link" href="#sheet-courtyard-house" aria-label="Open the Courtyard House project sheet">Open project sheet ↗</a></div><p class="annotation">A project-sheet format can pair spatial overview with a material detail and a non-representational diagram slot.</p></div>
-          </div>
-        </article>
-
-        <article class="project-sheet project-sheet--b" id="sheet-civic-interior">
-          <div class="project-no" aria-hidden="true">02</div>
-          <div class="project-body">
-            <div class="media-grid">
-              <div class="plate plate--main" role="img" aria-label="Reserved primary interior media slot for Civic Interior"><span class="slot-note" aria-hidden="true">Interior image slot</span></div>
-              <div class="plate plate--diagram" role="img" aria-label="Reserved abstract plan slot for Civic Interior"><span class="slot-note" aria-hidden="true">Plan slot</span></div>
-              <div class="plate" role="img" aria-label="Reserved detail media slot for Civic Interior"><span class="slot-note" aria-hidden="true">Material slot</span></div>
-            </div>
-            <div class="caption"><div><h2>Civic Interior</h2><p class="meta">Interior architecture · Cultural / public realm</p><a class="project-link" href="#sheet-civic-interior" aria-label="Open the Civic Interior project sheet">Open project sheet ↗</a></div><p class="annotation">The compact sheet retains discipline, typology and spatial emphasis without implying project claims.</p></div>
-          </div>
-        </article>
-
-        <article class="project-sheet project-sheet--c" id="sheet-garden-studio">
-          <div class="project-no" aria-hidden="true">03</div>
-          <div class="project-body">
-            <div class="media-grid">
-              <div class="plate plate--main" role="img" aria-label="Reserved primary project media slot for Garden Studio"><span class="slot-note" aria-hidden="true">Project image slot</span></div>
-              <div class="plate" role="img" aria-label="Reserved context media slot for Garden Studio"><span class="slot-note" aria-hidden="true">Context slot</span></div>
-              <div class="plate plate--diagram" role="img" aria-label="Reserved abstract section slot for Garden Studio"><span class="slot-note" aria-hidden="true">Section slot</span></div>
-            </div>
-            <div class="caption"><div><h2>Garden Studio</h2><p class="meta">Adaptive reuse · Workplace / urban garden</p><a class="project-link" href="#sheet-garden-studio" aria-label="Open the Garden Studio project sheet">Open project sheet ↗</a></div><p class="annotation">Image sequencing supports context, intervention and architectural section as three distinct reading modes.</p></div>
-          </div>
-        </article>
+        <article id="catalogue-courtyard-house"><div class="media" role="img" aria-label="Empty image slot for Courtyard House"></div><div class="project-head"><h2>Courtyard House</h2><a class="project-link" href="#catalogue-courtyard-house">View project</a></div><p class="meta">Residential · Architecture</p></article>
+        <article id="catalogue-ridge-residence"><div class="media" role="img" aria-label="Empty image slot for Ridge Residence"></div><div class="project-head"><h2>Ridge Residence</h2><a class="project-link" href="#catalogue-ridge-residence">View project</a></div><p class="meta">Residential · Rural context</p></article>
+        <article id="catalogue-garden-studio"><div class="media" role="img" aria-label="Empty image slot for Garden Studio"></div><div class="project-head"><h2>Garden Studio</h2><a class="project-link" href="#catalogue-garden-studio">View project</a></div><p class="meta">Workplace · Adaptive reuse</p></article>
+        <article id="catalogue-civic-interior"><div class="media" role="img" aria-label="Empty image slot for Civic Interior"></div><div class="project-head"><h2>Civic Interior</h2><a class="project-link" href="#catalogue-civic-interior">View project</a></div><p class="meta">Cultural · Interior architecture</p></article>
+        <article id="catalogue-urban-apartment"><div class="media" role="img" aria-label="Empty image slot for Urban Apartment"></div><div class="project-head"><h2>Urban Apartment</h2><a class="project-link" href="#catalogue-urban-apartment">View project</a></div><p class="meta">Residential · Renovation</p></article>
+        <article id="catalogue-reading-room"><div class="media" role="img" aria-label="Empty image slot for Reading Room"></div><div class="project-head"><h2>Reading Room</h2><a class="project-link" href="#catalogue-reading-room">View project</a></div><p class="meta">Cultural · Interior architecture</p></article>
       </div>
-
-      <footer class="schedule" aria-label="Selected works schedule">
-        <div><strong>Sheet contents</strong><span>03 project studies</span></div>
-        <div><strong>Disciplines</strong><span>Architecture + interiors</span></div>
-        <div><strong>Continue</strong><span><a class="project-link" href="#arc-s02-005-title">Selected works index ↗</a></span></div>
-      </footer>
     </section>
   </main>
-  <script type="application/json" data-study-metadata>
-    {"id":"ARC-S02-005","sector":"Architecture & Interior Design","section":"Selected Projects","territory":"Sector-native / Distinctive","mediaPolicy":"Reserved image, detail and abstract diagram slots; no external assets","runtimeDependencies":[]}
-  </script>
+  <script type="application/json" data-study-metadata>{"id":"ARC-S02-005","sector":"Architecture & Interior Design","section":"Selected Projects","territory":"Sector-native / Distinctive","mediaPolicy":"Six empty local image slots; no embedded assets","runtimeDependencies":[]}</script>
 </body>
 </html>
