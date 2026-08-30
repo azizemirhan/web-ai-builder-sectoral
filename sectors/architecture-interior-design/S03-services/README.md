@@ -22,6 +22,7 @@ ARC-S03-003
 ARC-S03-004
 ARC-S03-005
 ARC-S03-006 (extension variant)
+ARC-S03-007 (extension variant)
 
 # Status
 

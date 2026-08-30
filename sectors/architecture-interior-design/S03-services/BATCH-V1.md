@@ -19,6 +19,7 @@
 | `ARC-S03-004` | Conversion-led | AUTHORED | `raw/ARC-S03-004.html` |
 | `ARC-S03-005` | Sector-native / Distinctive | AUTHORED | `raw/ARC-S03-005.html` |
 | `ARC-S03-006` | Extended — Paired media-and-card rows | AUTHORED | `raw/ARC-S03-006.html` |
+| `ARC-S03-007` | Extended — Corner-media bento with icon cards | AUTHORED | `raw/ARC-S03-007.html` |
 
 ## Authoring Direction
 
@@ -40,6 +41,7 @@ was rewritten to services; nothing from their original subject matter was retain
 | `ARC-S03-004` | Reference 1 | Catalogue heading with a small note opposite; card row with a light chip label over each image; primary button bottom-left and circular previous / next controls bottom-right |
 | `ARC-S03-005` | Reference 2 | Centred heading above a row of four tall rounded cards, each with a pill badge over the top-left corner |
 | `ARC-S03-006` | Reference 6 | White sheet inset on a warm ground; narrow left column with an uppercase eyebrow, a serif heading, a paragraph and a small dark button; stacked rows each pairing a full-height photograph with a card carrying a filled icon tile, a serif title, and a description with an underlined "Learn more" link |
+| `ARC-S03-007` | Reference 7 | Off-white sheet on a warm ground; eyebrow, two-line serif heading, paragraph and a compact dark "View all" button in a block above the grid; a three-by-two field whose top-left and bottom-right cells are photographs and whose other four are icon cards |
 
 Reference 1 carries a price line inside each chip. The chip position and two-line structure are
 preserved, but the price is replaced with a neutral engagement descriptor ("Concept to
@@ -55,6 +57,20 @@ media tile with a text card, and the first with a persistent narrow heading colu
 action. That is a different content model rather than a restyling of an existing one, so the
 extension is taken as justified. The default target for the section remains five studies; `006`
 is an addition to the batch, not a replacement for any of them.
+
+`ARC-S03-007` came from a seventh reference supplied immediately after `006`. The two references
+belong to the same template family and share a palette, so the extension test was applied to
+their structure rather than their styling. `006` holds the heading in a persistent narrow side
+column and repeats two-cell rows that pair one media tile with one card. `007` puts the heading
+in a full-width block above the grid and treats media tiles as peers of the cards inside a single
+three-by-two field, placed at opposite corners so the field reads diagonally; it also carries
+four services rather than three. Different heading relationship, different media role, different
+card count — they are alternates rather than restylings, so `007` is recorded as justified on the
+same test.
+
+The section now holds seven studies against a default target of five. Whether all seven survive,
+or whether `006` and `007` are consolidated to one, is a Design Lab review decision and is not
+taken in this workspace.
 
 ## Study Records
 
@@ -217,6 +233,37 @@ is an addition to the batch, not a replacement for any of them.
   presentational commitment and assumes the section is not placed directly against another
   full-bleed block.
 
+### ARC-S03-007 — Extended / Corner-media bento with icon cards
+
+- **Structural intent / archetype:** Services as a single field. One heading block sits above a
+  three-by-two grid in which photographs and cards are peers, and the two media tiles are pushed
+  to opposite corners so the eye crosses the field diagonally rather than scanning it in rows.
+- **Layout model:** An off-white sheet on a warm ground. The head block runs an uppercase eyebrow,
+  a two-line serif heading, a short paragraph and a compact dark "View all" button at full width.
+  Below it a `repeat(3, 1fr)` field of six cells in source order — media tile, card, card, card,
+  card, media tile — so the corner placement falls out of natural flow with no area map to
+  maintain. Cards run a filled icon tile, a serif title, then a description and an underlined
+  "Learn more" link pinned to the card foot by `margin: auto` on the title.
+- **Density:** Medium-high. Four services with icon, title, description and link, plus two media
+  cells.
+- **Media mode:** Two empty media tiles occupying whole grid cells at opposite corners. The four
+  card icons are decorative inline vectors and are not media slots.
+- **Interaction:** None. No `<script>` element. Each card's "Learn more" link carries a stretched
+  `::after` so the whole card is clickable, and an `aria-label` naming the service so the link is
+  not announced as a bare "Learn more".
+- **Responsive strategy:** The field steps 3 → 2 columns at 1024px and to a single column at
+  480px, where media tiles swap their fixed row height for a 16:10 ratio (4:3 at 360px). Because
+  the corner placement comes from source order rather than an area map, no breakpoint has to
+  re-declare it. Sheet padding steps 52 → 18 → 14px and the ground inset steps 34 → 8px.
+- **Composer value:** The most compact way in the section to show four services and two images
+  together, and the only S03 layout where media and cards share one uniform cell shape — which
+  makes it the easiest to fill from a content model that does not distinguish the two.
+- **Limitation / content ceiling:** The six-cell field is the design; adding a fifth service
+  breaks the corner symmetry the layout depends on. Descriptions run to about twenty-five words
+  before the card foot crowds. At the two-column breakpoint the diagonal reading is lost and the
+  media tiles land at the start and end of the flow instead, which is coherent but no longer the
+  same composition.
+
 ## Research Metadata
 
 - **Sources:** Five visual-direction reference images supplied with the authoring request.
@@ -249,9 +296,9 @@ is an addition to the batch, not a replacement for any of them.
   inline SVG in this batch. All type uses system font stacks.
 - Network calls: NONE — no `fetch`, no `XMLHttpRequest`, no form.
 - Browser storage: NONE.
-- JavaScript necessity: One of six. `ARC-S03-004` needs it for the rail controls, their
-  disabled states, and focus recovery. `001`, `002`, `003`, `005`, and `006` contain no `<script>`
-  element at all.
+- JavaScript necessity: One of seven. `ARC-S03-004` needs it for the rail controls, their
+  disabled states, and focus recovery. `001`, `002`, `003`, `005`, `006`, and `007` contain no
+  `<script>` element at all.
 
 ## Media Slots
 
@@ -264,6 +311,7 @@ is an addition to the batch, not a replacement for any of them.
 | Card image ×6 | `ARC-S03-004` | Background of each catalogue card, behind the chip | Still image, 3:4 (4:5 at 768px) | Chip is opaque white and independent of the media, so the service name is legible over any replacement image. |
 | Plate image ×4 | `ARC-S03-005` | Background of each stage plate, behind the badge | Still image, 3:4.4 (4:5 at 1024px, 16:10 at 480px) | Badge is an opaque white pill; stage identity is carried by text, not by the artwork. |
 | Row tile ×3 | `ARC-S03-006` | One full-height photograph per service row | Still image, filling its cell (16:10 at 768px, 4:3 at 480px) | Empty tonal surface with a quiet label; the paired card holds all information and is independent of the tile. |
+| Corner tile ×2 | `ARC-S03-007` | Two photographs holding opposite corners of the field | Still image, filling its cell (16:10 at 480px, 4:3 at 360px) | Empty tonal surfaces with quiet labels; the four cards carry all information, so the field reads complete with neither tile filled. |
 
 Every image area is deliberately left empty, per the authoring direction. No study contains a
 photograph, a logo, a client mark, a badge of accreditation, or any fabricated evidence.
@@ -272,39 +320,41 @@ is referenced; it becomes required if these slots are filled before ingestion.
 
 ## QA
 
-- **ID validation: PASS.** All five planned IDs exist, plus the extension variant `ARC-S03-006`.
+- **ID validation: PASS.** All five planned IDs exist, plus the extension variants `ARC-S03-006`
+  and `ARC-S03-007`.
   Each file carries a matching `<meta name="study-id">`, a `data-study-id` attribute, a scoped
   root class, and a filename in the `ARC-S03-NNN.html` form required by
   `standards/02-NAMING-AND-ID-STANDARD.md`. Every element `id` is namespaced with its study ID.
-- **Raw-format validation: PASS.** Six standalone `.html` files. Tag balance, nesting, and
-  unique-id checks pass on all six. All CSS is namespaced to the study root class; the only
+- **Raw-format validation: PASS.** Seven standalone `.html` files. Tag balance, nesting, and
+  unique-id checks pass on all seven. All CSS is namespaced to the study root class; the only
   unscoped rules are a documented two-line standalone host baseline.
 - **Accessibility QA: PASS.** Verified by script and by review: exactly one `<h1>` per study with
   card titles at `<h2>` and no heading-level jumps, every `aria-labelledby` and `aria-controls`
   reference resolving to a real id, every `<a>` carrying an `href`, both icon-only buttons in
-  `004` carrying an `aria-label` and a `type`, visible `:focus-visible` styling in all six, and a
-  `prefers-reduced-motion` block in all six. Contrast measured on 36 text and UI colour pairs:
-  all text ≥ 4.5:1 (lowest 5.42:1) and all interactive borders ≥ 3:1 (lowest 3.07:1). The only
+  `004` carrying an `aria-label` and a `type`, visible `:focus-visible` styling in all seven, and a
+  `prefers-reduced-motion` block in all seven. Contrast measured on 44 text and UI colour pairs:
+  all text ≥ 4.5:1 (lowest 5.42:1) and all interactive borders ≥ 3:1 (lowest 3.06:1). The only
   sub-3:1 pair is the disabled state of the `004` controls, which is exempt and is not the sole
   signal — the controls also stop scrolling and the rail position itself communicates the end.
 - **Responsive QA: PASS by static review at 1440, 1280, 1024, 768, 430, 390, and 320px.** Every
-  study, `006` included, defines the 1280 / 1024 / 768 / 480 / 360 breakpoint ladder; 430 and 390 resolve through
+  study, `006` and `007` included, defines the 1280 / 1024 / 768 / 480 / 360 breakpoint ladder; 430 and 390 resolve through
   the 480 rules and 320 through the 360 rules. Grid children use `minmax(0, …)`, headings and
   spacing use `clamp()`, and every card grid reduces its column count rather than shrinking cards
   below a usable width. The only horizontal scroll in the batch is the `004` rail, which is
   intentional, labelled, and keyboard reachable. Interactive controls are ≥ 44px.
 - **Dependency validation: PASS.** Scanned for `http:`, `https:`, protocol-relative URLs,
   `@import`, `src=`, `<link>`, `<iframe>`, `url(`, `fetch(`, `XMLHttpRequest`, `integrity`, and
-  `crossorigin`. Zero matches across all six files.
+  `crossorigin`. Zero matches across all seven files.
 - **Copy-policy validation: PASS.** Visible text extracted and scanned for awards, certifications,
   accreditations, named professional bodies, rankings, percentages, guarantees, ratings,
   testimonial language, currency symbols, and price patterns. The only numeric strings in visible
   text are the study ID in each `<title>`, the `[03]` margin index in `ARC-S03-003`, and the stage
   numbers in `ARC-S03-005`. No study states a price or a statistic.
-- **Structural-diversity validation: PASS.** Six distinct topologies, six distinct card
-  proportions, six distinct heading treatments, and six distinct grounds. No study is a cosmetic
-  variation of another; the `006` extension was tested against the other five before being
-  accepted into the batch.
+- **Structural-diversity validation: PASS.** Seven distinct topologies, seven distinct card
+  arrangements, and seven distinct heading treatments. `006` and `007` share a palette because
+  their references come from one template family; they were therefore tested against each other
+  on structure, and differ in heading relationship, media role, and card count. No study is a
+  cosmetic variation of another.
 - **Not run here:** rendered-screenshot capture, real-browser and assistive-technology testing, and
   reduced-motion behaviour under a real user preference. Those belong to Design Lab capture and QA.
 
