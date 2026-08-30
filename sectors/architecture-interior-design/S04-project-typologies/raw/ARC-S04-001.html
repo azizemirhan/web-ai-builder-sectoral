@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S04-001
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S04 — Project Typologies
+  Territory      : Universal / Safe
+  Reference      : Reference 1 — a left column of four stacked cards, one of them inverted to a
+                   dark fill, each carrying a right-aligned uppercase title, a small description
+                   at the lower left, and an arrow at the lower right; a tall full-height image
+                   panel occupies the right side.
+  Layout model   : Stacked typology card column + full-height media panel
+  Density        : Medium
+  Media mode     : One empty full-height media area. No image supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The inverted card is a highlighted typology. Its state is carried by a visible
+                   "Featured" label as well as by the fill, so the distinction is never colour
+                   alone. All copy is neutral placeholder text; no client names, awards,
+                   certifications, statistics, pricing, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S04-001">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S04">
+<meta name="section-name" content="Project Typologies">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="layout-model" content="Stacked typology cards with full-height media panel">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-area-single-full-height">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S04-001 — Typologies, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f0f0ee; }
+
+/* Scoped study styles — namespaced to .arc-s04-001 */
+.arc-s04-001 {
+  --ink: #101114;
+  --ink-soft: #55575c;
+  --paper: #f0f0ee;
+  --card: #ffffff;
+  --invert: #141518;
+  --invert-ink: #ffffff;
+  --invert-soft: #c9cacc;
+  --slot: #dcdcda;
+  --slot-ink: #4f5155;
+  --line: #dedede;
+  --line-strong: #838589;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s04-001 *,
+.arc-s04-001 *::before,
+.arc-s04-001 *::after { box-sizing: inherit; }
+.arc-s04-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s04-001 .card--invert :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s04-001 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 76px) clamp(16px, 2.6vw, 40px);
+}
+
+/* --- Grid: card column + media panel ---------------------------- */
+.arc-s04-001 .grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
+  gap: clamp(14px, 1.8vw, 24px);
+  align-items: stretch;
+}
+
+/* --- Heading (visually compact, above the stack) ---------------- */
+.arc-s04-001 .head { margin-bottom: clamp(18px, 2.2vw, 30px); }
+.arc-s04-001 .head p {
+  margin: 0 0 10px; font-size: 0.625rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s04-001 .head h1 {
+  margin: 0; font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+  line-height: 1.12; letter-spacing: -0.026em; font-weight: 500; max-width: 22ch;
+}
+
+/* --- Typology cards -------------------------------------------- */
+.arc-s04-001 .stack {
+  display: grid; gap: clamp(10px, 1.2vw, 16px);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s04-001 .card {
+  position: relative;
+  display: grid; grid-template-rows: auto 1fr;
+  min-height: 132px;
+  padding: clamp(16px, 1.8vw, 24px);
+  background: var(--card); border-radius: 10px;
+  transition: background-color 150ms ease;
+}
+.arc-s04-001 .card:hover { background: #fbfbfb; }
+.arc-s04-001 .card--invert { background: var(--invert); color: var(--invert-ink); }
+.arc-s04-001 .card--invert:hover { background: #1c1d21; }
+
+.arc-s04-001 .card h2 {
+  margin: 0 0 auto; text-align: right;
+  font-size: clamp(1.0625rem, 1.8vw, 1.5rem);
+  line-height: 1.08; letter-spacing: 0.01em; text-transform: uppercase; font-weight: 500;
+}
+.arc-s04-001 .card h2 a { color: inherit; text-decoration: none; }
+.arc-s04-001 .card h2 a::after { content: ""; position: absolute; inset: 0; border-radius: 10px; }
+.arc-s04-001 .card h2 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.arc-s04-001 .card__foot {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 16px; margin-top: clamp(18px, 2vw, 28px);
+}
+.arc-s04-001 .card__foot p {
+  margin: 0; max-width: 30ch;
+  font-size: 0.625rem; letter-spacing: 0.1em; line-height: 1.7;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s04-001 .card--invert .card__foot p { color: var(--invert-soft); }
+.arc-s04-001 .card__arrow { font-size: 1.125rem; line-height: 1; color: inherit; }
+.arc-s04-001 .tag {
+  display: inline-block; margin-bottom: 8px;
+  padding: 3px 9px; border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase;
+}
+
+/* --- Empty media panel ----------------------------------------- */
+.arc-s04-001 .media { margin: 0; display: flex; }
+.arc-s04-001 .slot {
+  flex: 1 1 auto;
+  display: flex; align-items: flex-end;
+  min-height: 340px;
+  background: var(--slot); border-radius: 10px;
+}
+.arc-s04-001 .slot__label {
+  margin: 0; padding: 14px 16px;
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s04-001 .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.78fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s04-001 .grid { grid-template-columns: minmax(0, 1fr); }
+  .arc-s04-001 .media { order: -1; }
+  .arc-s04-001 .slot { min-height: 0; aspect-ratio: 16 / 9; }
+}
+@media (max-width: 768px) {
+  .arc-s04-001 .card { min-height: 118px; }
+  .arc-s04-001 .slot { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 480px) {
+  .arc-s04-001 .card h2 { text-align: left; }
+  .arc-s04-001 .card__foot { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .arc-s04-001 .card__foot p { max-width: none; }
+  .arc-s04-001 .slot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 360px) {
+  .arc-s04-001 .card { padding: 14px; border-radius: 8px; }
+  .arc-s04-001 .card h2 a::after { border-radius: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s04-001 *, .arc-s04-001 *::before, .arc-s04-001 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s04-001" data-study-id="ARC-S04-001" data-territory="universal-safe">
+
+  <section class="shell" aria-labelledby="arc-s04-001-title">
+
+    <div class="head">
+      <p>Project typologies</p>
+      <h1 id="arc-s04-001-title">The kinds of work the studio takes on</h1>
+    </div>
+
+    <div class="grid">
+
+      <ul class="stack">
+        <li class="card">
+          <h2><a href="#arc-s04-001-title">Residential<br>architecture</a></h2>
+          <div class="card__foot">
+            <p>Houses, extensions and apartments, from first plan to final detail</p>
+            <span class="card__arrow" aria-hidden="true">&#8599;</span>
+          </div>
+        </li>
+
+        <li class="card card--invert">
+          <h2><a href="#arc-s04-001-title">Interior<br>architecture</a></h2>
+          <div class="card__foot">
+            <div>
+              <span class="tag">Featured</span>
+              <p>Layout, light, joinery and surface resolved as one set of decisions</p>
+            </div>
+            <span class="card__arrow" aria-hidden="true">&#8599;</span>
+          </div>
+        </li>
+
+        <li class="card">
+          <h2><a href="#arc-s04-001-title">Workplace<br>and civic</a></h2>
+          <div class="card__foot">
+            <p>Offices, studios and small civic buildings with shared programmes</p>
+            <span class="card__arrow" aria-hidden="true">&#8599;</span>
+          </div>
+        </li>
+
+        <li class="card">
+          <h2><a href="#arc-s04-001-title">Adaptive<br>reuse</a></h2>
+          <div class="card__foot">
+            <p>Existing buildings surveyed, kept where possible and rebuilt where needed</p>
+            <span class="card__arrow" aria-hidden="true">&#8599;</span>
+          </div>
+        </li>
+      </ul>
+
+      <figure class="media">
+        <div class="slot">
+          <p class="slot__label">Image area &#183; typology panel</p>
+        </div>
+      </figure>
+
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

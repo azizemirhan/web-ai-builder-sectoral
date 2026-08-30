@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S04-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S04 — Project Typologies
+  Territory      : Dense / Information-heavy
+  Reference      : Reference 3 — a small pill tag and a right-hand studio label above a left
+                   heading carrying a marker-pen highlight, with a bento grid of mixed tiles
+                   beside it: tinted cards with a title and description, image tiles of unequal
+                   height, one accent-filled card, a circular graphic, and an arrow button.
+  Layout model   : Left heading column + seven-tile bento grid with template areas
+  Density        : High
+  Media mode     : Two empty image tiles at unequal heights, plus one decorative graphic tile.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Tile fills are decorative rhythm; every typology tile carries the same
+                   information structure, so nothing is signalled by colour alone. All copy is
+                   neutral placeholder text; no client names, awards, certifications,
+                   statistics, pricing, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S04-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S04">
+<meta name="section-name" content="Project Typologies">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Left heading column with seven-tile bento grid">
+<meta name="density" content="high">
+<meta name="media-mode" content="empty-media-tiles-unequal">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S04-003 — Typologies, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .arc-s04-003 */
+.arc-s04-003 {
+  --ink: #101114;
+  --ink-soft: #55575c;
+  --paper: #ffffff;
+  --tile-lilac: #e6e4fb;
+  --tile-plain: #f2f2f1;
+  --tile-accent: #d5f24d;
+  --slot: #e4e4e3;
+  --slot-ink: #4d4f52;
+  --line: #e0e0e0;
+  --line-strong: #838589;
+  --highlight: #d5f24d;
+  --focus: #1f4fd8;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s04-003 *,
+.arc-s04-003 *::before,
+.arc-s04-003 *::after { box-sizing: inherit; }
+.arc-s04-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s04-003 .shell {
+  width: 100%; max-width: 1340px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 76px) clamp(16px, 2.6vw, 40px);
+}
+
+/* --- Top rail --------------------------------------------------- */
+.arc-s04-003 .toprail {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap; margin-bottom: clamp(18px, 2.2vw, 30px);
+}
+.arc-s04-003 .pill {
+  display: inline-block; margin: 0;
+  padding: 6px 14px; border-radius: 999px; background: var(--ink); color: #fff;
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.arc-s04-003 .toprail__mark {
+  margin: 0; font-size: 0.5625rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Grid: heading column + bento ------------------------------- */
+.arc-s04-003 .grid {
+  display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(0, 2.2fr);
+  gap: clamp(20px, 2.6vw, 40px);
+  align-items: start;
+}
+.arc-s04-003 .lead h1 {
+  margin: 0 0 auto; font-size: clamp(1.5rem, 2.7vw, 2.25rem);
+  line-height: 1.14; letter-spacing: -0.026em; font-weight: 500;
+}
+.arc-s04-003 .hl {
+  background: var(--highlight);
+  padding: 0 6px; border-radius: 2px; box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.arc-s04-003 .lead__action {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 54px; height: 54px; margin-top: clamp(22px, 2.6vw, 36px);
+  border: 1px solid var(--line-strong); border-radius: 999px;
+  color: var(--ink); text-decoration: none; font-size: 1.125rem;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s04-003 .lead__action:hover,
+.arc-s04-003 .lead__action:focus-visible { background: var(--tile-plain); border-color: var(--ink); }
+
+/* --- Bento ------------------------------------------------------ */
+.arc-s04-003 .bento {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    "t1 t2 t3"
+    "t4 t2 t5"
+    "t6 t7 t5";
+  grid-auto-rows: minmax(128px, auto);
+  gap: clamp(10px, 1.2vw, 16px);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s04-003 .bento > li { margin: 0; min-width: 0; }
+.arc-s04-003 .t1 { grid-area: t1; } .arc-s04-003 .t2 { grid-area: t2; }
+.arc-s04-003 .t3 { grid-area: t3; } .arc-s04-003 .t4 { grid-area: t4; }
+.arc-s04-003 .t5 { grid-area: t5; } .arc-s04-003 .t6 { grid-area: t6; }
+.arc-s04-003 .t7 { grid-area: t7; }
+
+.arc-s04-003 .tile {
+  position: relative; height: 100%;
+  display: flex; flex-direction: column;
+  padding: clamp(14px, 1.5vw, 20px);
+  border-radius: 12px; background: var(--tile-plain);
+}
+.arc-s04-003 .tile--lilac { background: var(--tile-lilac); }
+.arc-s04-003 .tile--accent { background: var(--tile-accent); }
+.arc-s04-003 .tile--plain { background: var(--tile-plain); }
+
+.arc-s04-003 .tile h2 { margin: 0 0 8px; font-size: 0.9375rem; font-weight: 600; letter-spacing: -0.008em; }
+.arc-s04-003 .tile h2 a { color: var(--ink); text-decoration: none; }
+.arc-s04-003 .tile h2 a::after { content: ""; position: absolute; inset: 0; border-radius: 12px; }
+.arc-s04-003 .tile h2 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.arc-s04-003 .tile > p { margin: 0 0 12px; font-size: 0.8125rem; color: var(--ink-soft); }
+.arc-s04-003 .tile dl {
+  margin: auto 0 0; padding-top: 10px; border-top: 1px solid rgba(16, 17, 20, 0.14);
+  display: flex; justify-content: space-between; gap: 10px;
+  font-size: 0.6875rem;
+}
+.arc-s04-003 .tile dt { color: var(--ink-soft); }
+.arc-s04-003 .tile dd { margin: 0; font-weight: 500; text-align: right; }
+
+/* Empty image tiles + graphic tile */
+.arc-s04-003 .slot {
+  height: 100%; min-height: 128px;
+  display: flex; align-items: flex-end;
+  background: var(--slot); border-radius: 12px;
+}
+.arc-s04-003 .slot p {
+  margin: 0; padding: 12px 14px;
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s04-003 .graphic {
+  height: 100%; min-height: 128px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--tile-plain); border-radius: 12px; padding: 14px;
+}
+.arc-s04-003 .graphic svg { width: 100%; max-width: 130px; height: auto; color: #2b2f4a; }
+
+/* --- Responsive ------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s04-003 .grid { grid-template-columns: minmax(0, 0.86fr) minmax(0, 2fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s04-003 .grid { grid-template-columns: minmax(0, 1fr); }
+  .arc-s04-003 .lead h1 { max-width: 26ch; }
+  .arc-s04-003 .lead__action { margin-top: 20px; }
+  .arc-s04-003 .bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "t1 t2"
+      "t3 t2"
+      "t4 t5"
+      "t6 t5"
+      "t7 t7";
+  }
+}
+@media (max-width: 768px) {
+  .arc-s04-003 .bento { grid-auto-rows: minmax(118px, auto); }
+  .arc-s04-003 .slot, .arc-s04-003 .graphic { min-height: 118px; }
+}
+@media (max-width: 480px) {
+  .arc-s04-003 .bento {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "t1" "t2" "t3" "t4" "t5" "t6" "t7";
+  }
+  .arc-s04-003 .slot { min-height: 0; aspect-ratio: 16 / 10; }
+  .arc-s04-003 .tile dl { flex-direction: column; gap: 2px; }
+  .arc-s04-003 .tile dd { text-align: left; }
+}
+@media (max-width: 360px) {
+  .arc-s04-003 .tile { padding: 13px; border-radius: 10px; }
+  .arc-s04-003 .tile h2 a::after { border-radius: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s04-003 *, .arc-s04-003 *::before, .arc-s04-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s04-003" data-study-id="ARC-S04-003" data-territory="dense-information-heavy">
+
+  <section class="shell" aria-labelledby="arc-s04-003-title">
+
+    <div class="toprail">
+      <p class="pill">Typologies</p>
+      <p class="toprail__mark">Architecture &amp; interior design studio</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="lead">
+        <h1 id="arc-s04-003-title">
+          The <span class="hl">typologies</span> the studio is set up for
+        </h1>
+        <a class="lead__action" href="#arc-s04-003-title" aria-label="Open the full typology index">
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </div>
+
+      <ul class="bento">
+        <li class="t1">
+          <div class="tile tile--lilac">
+            <h2><a href="#arc-s04-003-title">Residential</a></h2>
+            <p>Houses, apartments and extensions planned around daily use.</p>
+            <dl>
+              <dt>Scope</dt>
+              <dd>Architecture &amp; interiors</dd>
+            </dl>
+          </div>
+        </li>
+
+        <li class="t2">
+          <div class="slot"><p>Image area &#183; tall</p></div>
+        </li>
+
+        <li class="t3">
+          <div class="tile tile--plain">
+            <h2><a href="#arc-s04-003-title">Workplace</a></h2>
+            <p>Studios and offices arranged for focus and shared work.</p>
+            <dl>
+              <dt>Scope</dt>
+              <dd>Interiors &amp; fit-out</dd>
+            </dl>
+          </div>
+        </li>
+
+        <li class="t4">
+          <div class="tile tile--accent">
+            <h2><a href="#arc-s04-003-title">Adaptive reuse</a></h2>
+            <p>Existing fabric surveyed, kept where it works, rebuilt where it does not.</p>
+            <dl>
+              <dt>Scope</dt>
+              <dd>Survey to delivery</dd>
+            </dl>
+          </div>
+        </li>
+
+        <li class="t5">
+          <div class="slot"><p>Image area &#183; tall</p></div>
+        </li>
+
+        <li class="t6">
+          <div class="tile tile--plain">
+            <h2><a href="#arc-s04-003-title">Cultural &amp; civic</a></h2>
+            <p>Small shared programmes where circulation and light carry the plan.</p>
+            <dl>
+              <dt>Scope</dt>
+              <dd>Architecture</dd>
+            </dl>
+          </div>
+        </li>
+
+        <li class="t7">
+          <div class="graphic">
+            <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="currentColor" stroke-width="1.2">
+                <path d="M10 80 H110 M10 80 V34 L60 10 L110 34 V80"></path>
+                <path d="M32 80 V52 H88 V80 M60 52 V80"></path>
+                <path d="M10 62 H110" stroke-dasharray="4 6"></path>
+              </g>
+            </svg>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

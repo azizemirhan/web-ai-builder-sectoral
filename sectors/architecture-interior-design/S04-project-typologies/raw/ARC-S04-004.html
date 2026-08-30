@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S04-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S04 — Project Typologies
+  Territory      : Conversion-led
+  Reference      : Reference 4 — a small accent eyebrow tag above a wide uppercase heading, a row
+                   of three deep-blue cards each carrying a white geometric glyph, a description
+                   and a scope line, and a row of photo tiles beneath them.
+  Layout model   : Uppercase head + three series cards + image tile row + conversion foot bar
+  Density        : Medium-high
+  Media mode     : Three empty image tiles at mixed proportions. Card glyphs are decorative
+                   inline vectors, not imagery.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The reference prints a storey-count spec line on each card. It is replaced
+                   with a neutral scale descriptor, because a storey count on a placeholder card
+                   would read as a capability claim. No client names, awards, certifications,
+                   statistics, pricing, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S04-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S04">
+<meta name="section-name" content="Project Typologies">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Series cards with image tile row and conversion foot bar">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="empty-media-tiles-mixed-ratio">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S04-004 — Typologies, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f5f7; }
+
+/* Scoped study styles — namespaced to .arc-s04-004 */
+.arc-s04-004 {
+  --ink: #12151c;
+  --ink-soft: #52565f;
+  --paper: #f4f5f7;
+  --navy: #1c2c52;
+  --navy-2: #24365f;
+  --on-navy: #ffffff;
+  --on-navy-soft: #c3cbdd;
+  --accent: #8f3324;
+  --slot: #dedfe2;
+  --slot-ink: #4b4e55;
+  --line: #dcdee2;
+  --line-strong: #7f838b;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s04-004 *,
+.arc-s04-004 *::before,
+.arc-s04-004 *::after { box-sizing: inherit; }
+.arc-s04-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s04-004 .series :focus-visible,
+.arc-s04-004 .foot :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s04-004 .shell {
+  width: 100%; max-width: 1340px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 78px) clamp(16px, 2.6vw, 40px);
+}
+
+/* --- Head ------------------------------------------------------- */
+.arc-s04-004 .eyebrow {
+  display: inline-block; margin: 0 0 16px;
+  padding: 5px 12px; border: 1px solid var(--accent); border-radius: 3px;
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+}
+.arc-s04-004 h1 {
+  margin: 0 0 clamp(24px, 3vw, 40px);
+  font-size: clamp(1.375rem, 2.6vw, 2.125rem);
+  line-height: 1.16; letter-spacing: -0.012em;
+  text-transform: uppercase; font-weight: 500; max-width: 40ch;
+}
+
+/* --- Series cards ----------------------------------------------- */
+.arc-s04-004 .series {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 22px);
+  margin: 0 0 clamp(12px, 1.6vw, 22px); padding: 0; list-style: none;
+}
+.arc-s04-004 .series > li { margin: 0; }
+.arc-s04-004 .card {
+  position: relative; height: 100%;
+  display: flex; flex-direction: column;
+  padding: clamp(18px, 2vw, 26px);
+  background: var(--navy); color: var(--on-navy); border-radius: 4px;
+  transition: background-color 150ms ease;
+}
+.arc-s04-004 .card:hover { background: var(--navy-2); }
+.arc-s04-004 .card__glyph { width: 40px; height: 40px; margin-bottom: clamp(20px, 2.4vw, 34px); color: var(--on-navy); }
+.arc-s04-004 .card h2 { margin: 0 0 10px; font-size: 0.9375rem; font-weight: 600; }
+.arc-s04-004 .card h2 a { color: var(--on-navy); text-decoration: none; }
+.arc-s04-004 .card h2 a::after { content: ""; position: absolute; inset: 0; border-radius: 4px; }
+.arc-s04-004 .card h2 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.arc-s04-004 .card > p { margin: 0 0 auto; font-size: 0.8125rem; color: var(--on-navy-soft); }
+.arc-s04-004 .card__scope {
+  margin: clamp(20px, 2.4vw, 32px) 0 0; padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  font-size: 0.75rem; color: var(--on-navy);
+}
+
+/* --- Image tile row --------------------------------------------- */
+.arc-s04-004 .tiles {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 22px);
+  margin: 0 0 clamp(20px, 2.6vw, 34px); padding: 0; list-style: none;
+}
+.arc-s04-004 .tiles > li { margin: 0; }
+.arc-s04-004 .slot {
+  display: flex; align-items: flex-end;
+  background: var(--slot); border-radius: 4px;
+}
+.arc-s04-004 .tiles > li:nth-child(1) .slot { aspect-ratio: 3 / 4; }
+.arc-s04-004 .tiles > li:nth-child(2) .slot { aspect-ratio: 4 / 3; }
+.arc-s04-004 .tiles > li:nth-child(3) .slot { aspect-ratio: 4 / 3; }
+.arc-s04-004 .slot p {
+  margin: 0; padding: 12px 14px;
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Conversion foot bar ---------------------------------------- */
+.arc-s04-004 .foot {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: clamp(16px, 2vw, 32px); flex-wrap: wrap;
+  padding: clamp(20px, 2.4vw, 32px);
+  background: var(--navy); color: var(--on-navy); border-radius: 4px;
+}
+.arc-s04-004 .foot p { margin: 0; font-size: 0.9375rem; color: var(--on-navy-soft); max-width: 46ch; }
+.arc-s04-004 .foot b { color: var(--on-navy); font-weight: 600; }
+.arc-s04-004 .foot__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.arc-s04-004 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 26px; border-radius: 3px;
+  background: #ffffff; color: var(--navy); border: 1px solid #ffffff;
+  font-size: 0.9375rem; font-weight: 600; text-decoration: none; cursor: pointer;
+  transition: background-color 150ms ease;
+}
+.arc-s04-004 .btn:hover,
+.arc-s04-004 .btn:focus-visible { background: #e7eaf1; }
+.arc-s04-004 .textlink {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+  font-size: 0.9375rem; color: var(--on-navy); text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.arc-s04-004 .textlink:hover,
+.arc-s04-004 .textlink:focus-visible { border-bottom-color: #fff; }
+
+/* --- Responsive -------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s04-004 h1 { max-width: 34ch; }
+}
+@media (max-width: 1024px) {
+  .arc-s04-004 .series { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s04-004 .series > li:nth-child(3) { grid-column: span 2; }
+  .arc-s04-004 .tiles > li:nth-child(1) .slot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 768px) {
+  .arc-s04-004 .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s04-004 .tiles > li:nth-child(3) { grid-column: span 2; }
+  .arc-s04-004 .tiles > li:nth-child(3) .slot { aspect-ratio: 21 / 9; }
+  .arc-s04-004 .foot { align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .arc-s04-004 .series { grid-template-columns: minmax(0, 1fr); }
+  .arc-s04-004 .series > li:nth-child(3) { grid-column: auto; }
+  .arc-s04-004 .tiles { grid-template-columns: minmax(0, 1fr); }
+  .arc-s04-004 .tiles > li:nth-child(3) { grid-column: auto; }
+  .arc-s04-004 .tiles > li:nth-child(3) .slot { aspect-ratio: 4 / 3; }
+  .arc-s04-004 .foot__actions { width: 100%; }
+  .arc-s04-004 .btn { width: 100%; }
+}
+@media (max-width: 360px) {
+  .arc-s04-004 .card { padding: 16px; }
+  .arc-s04-004 .card__glyph { width: 34px; height: 34px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s04-004 *, .arc-s04-004 *::before, .arc-s04-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s04-004" data-study-id="ARC-S04-004" data-territory="conversion-led">
+
+  <section class="shell" aria-labelledby="arc-s04-004-title">
+
+    <p class="eyebrow">Typology series</p>
+    <h1 id="arc-s04-004-title">
+      The studio works in three typology series, each with its own drawing set
+    </h1>
+
+    <ul class="series">
+      <li>
+        <div class="card">
+          <svg class="card__glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M6 30 L20 22 L34 30 L20 38 Z M6 18 L20 10 L34 18 L20 26 Z" fill="currentColor" opacity="0.9"></path>
+          </svg>
+          <h2><a href="#arc-s04-004-title">Series A &#183; Single dwelling</a></h2>
+          <p>
+            One-off houses and extensions where orientation, ground level, and the
+            existing boundary set the plan.
+          </p>
+          <p class="card__scope">Scale &#8212; single dwelling</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="card">
+          <svg class="card__glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M6 8 H34 V16 H6 Z M6 20 H34 V28 H6 Z M6 32 H22 V38 H6 Z" fill="currentColor" opacity="0.9"></path>
+          </svg>
+          <h2><a href="#arc-s04-004-title">Series B &#183; Multi-unit</a></h2>
+          <p>
+            Repeating residential units where the section, the circulation core, and
+            the shared thresholds do the work.
+          </p>
+          <p class="card__scope">Scale &#8212; multi-unit</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="card">
+          <svg class="card__glyph" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <path d="M4 34 L20 4 L36 34 Z" fill="none" stroke="currentColor" stroke-width="2.4"></path>
+            <path d="M13 34 L20 20 L27 34 Z" fill="currentColor" opacity="0.9"></path>
+          </svg>
+          <h2><a href="#arc-s04-004-title">Series C &#183; Mixed programme</a></h2>
+          <p>
+            Buildings holding more than one use, where the plan has to keep separate
+            programmes legible to each other.
+          </p>
+          <p class="card__scope">Scale &#8212; mixed programme</p>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="tiles">
+      <li><div class="slot"><p>Image area &#183; series A</p></div></li>
+      <li><div class="slot"><p>Image area &#183; series B</p></div></li>
+      <li><div class="slot"><p>Image area &#183; series C</p></div></li>
+    </ul>
+
+    <div class="foot">
+      <p><b>Not sure which series a project sits in?</b> Most commissions start somewhere between two of them.</p>
+      <div class="foot__actions">
+        <a class="btn" href="#arc-s04-004-title">
+          Discuss a typology
+          <span aria-hidden="true">&#8594;</span>
+        </a>
+        <a class="textlink" href="#arc-s04-004-title">See the full typology index</a>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+</body>
+</html>

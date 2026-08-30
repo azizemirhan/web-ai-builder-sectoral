@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S04-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S04 — Project Typologies
+  Territory      : Premium / Editorial
+  Reference      : Reference 5 — a mixed italic-serif and uppercase-sans heading on the left, a
+                   short paragraph above a rule on the right, a soft concentric graphic in the
+                   far corner, a four-card row beneath with alternating fills, each card carrying
+                   a chip title, a description and an image, and a small mark with an italic line
+                   at the bottom left.
+  Layout model   : Editorial head row + four alternating-fill typology cards + signature line
+  Density        : Medium
+  Media mode     : Four empty image areas, one per card, toned to their card fill.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The reference prints a year beside the rule; it is replaced with a neutral
+                   label because this workspace does not author dates that imply a real
+                   programme. Card fills are decorative rhythm only — every card carries the
+                   same information structure, so nothing is signalled by colour alone. No
+                   client names, awards, certifications, statistics, pricing, or
+                   completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S04-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S04">
+<meta name="section-name" content="Project Typologies">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="Editorial head with alternating-fill typology card row">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-area-per-card-toned">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S04-002 — Typologies, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f3; }
+
+/* Scoped study styles — namespaced to .arc-s04-002 */
+.arc-s04-002 {
+  --ink: #14161a;
+  --ink-soft: #4f4d47;
+  --paper: #f7f6f3;
+
+  --fill-1: #ece9e2;
+  --fill-2: #1e2540;
+  --fill-3: #ffffff;
+  --fill-4: #b7ba97;
+
+  --slot-light: #dcdad4;
+  --slot-light-ink: #4c4a44;
+  --slot-navy: #2f3757;
+  --slot-navy-ink: #ced2e1;
+  --slot-olive: #a7aa87;
+  --slot-olive-ink: #34362a;
+
+  --on-navy: #ffffff;
+  --on-navy-soft: #c6cadb;
+  --on-olive: #16180f;
+  --on-olive-soft: #383b2b;
+
+  --line: #d9d6cf;
+  --line-strong: #86837b;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s04-002 *,
+.arc-s04-002 *::before,
+.arc-s04-002 *::after { box-sizing: inherit; }
+.arc-s04-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s04-002 .card--navy :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s04-002 .shell {
+  width: 100%; max-width: 1340px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 84px) clamp(16px, 2.8vw, 44px);
+}
+
+/* --- Editorial head -------------------------------------------- */
+.arc-s04-002 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.9fr) minmax(0, 0.6fr);
+  gap: clamp(20px, 3vw, 48px);
+  align-items: start;
+  margin-bottom: clamp(26px, 3.2vw, 46px);
+}
+.arc-s04-002 .head h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3.6vw, 3rem);
+  line-height: 1.04; letter-spacing: -0.01em;
+  text-transform: uppercase; font-weight: 500; max-width: 15ch;
+}
+.arc-s04-002 .head h1 em {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  text-transform: none; letter-spacing: -0.02em;
+}
+.arc-s04-002 .head__note p { margin: 0 0 16px; font-size: 0.875rem; color: var(--ink-soft); }
+.arc-s04-002 .head__note hr { margin: 0 0 8px; border: 0; border-top: 1px solid var(--line-strong); }
+.arc-s04-002 .head__note span {
+  font-size: 0.625rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s04-002 .head__art { width: 100%; height: auto; color: #2a2f45; justify-self: end; max-width: 220px; }
+
+/* --- Typology cards -------------------------------------------- */
+.arc-s04-002 .cards {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 22px);
+  margin: 0 0 clamp(22px, 2.6vw, 34px); padding: 0; list-style: none;
+}
+.arc-s04-002 .card {
+  position: relative;
+  display: flex; flex-direction: column;
+  padding: clamp(14px, 1.6vw, 20px);
+  border-radius: 12px;
+  background: var(--fill-1);
+}
+.arc-s04-002 .card--navy { background: var(--fill-2); color: var(--on-navy); }
+.arc-s04-002 .card--white { background: var(--fill-3); }
+.arc-s04-002 .card--olive { background: var(--fill-4); color: var(--on-olive); }
+
+.arc-s04-002 .card h2 { margin: 0 0 10px; }
+.arc-s04-002 .card h2 a {
+  display: inline-block;
+  padding: 6px 12px; border-radius: 6px;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600;
+  color: var(--ink); text-decoration: none;
+}
+.arc-s04-002 .card--navy h2 a { background: rgba(255, 255, 255, 0.14); color: var(--on-navy); }
+.arc-s04-002 .card--olive h2 a { background: rgba(255, 255, 255, 0.6); color: var(--on-olive); }
+.arc-s04-002 .card h2 a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.arc-s04-002 .card h2 a::after { content: ""; position: absolute; inset: 0; border-radius: 12px; }
+
+.arc-s04-002 .card > p {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.8125rem; color: var(--ink-soft);
+}
+.arc-s04-002 .card--navy > p { color: var(--on-navy-soft); }
+.arc-s04-002 .card--olive > p { color: var(--on-olive-soft); }
+
+.arc-s04-002 .slot {
+  margin-top: auto;
+  display: flex; align-items: flex-end;
+  aspect-ratio: 4 / 3;
+  background: var(--slot-light); border-radius: 8px;
+}
+.arc-s04-002 .card--navy .slot { background: var(--slot-navy); }
+.arc-s04-002 .card--olive .slot { background: var(--slot-olive); }
+.arc-s04-002 .slot p {
+  margin: 0; padding: 10px 12px;
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--slot-light-ink);
+}
+.arc-s04-002 .card--navy .slot p { color: var(--slot-navy-ink); }
+.arc-s04-002 .card--olive .slot p { color: var(--slot-olive-ink); }
+
+/* --- Signature line -------------------------------------------- */
+.arc-s04-002 .sign {
+  display: flex; align-items: center; gap: 12px;
+  margin: 0; font-family: var(--serif); font-style: italic;
+  font-size: 0.9375rem; color: var(--ink-soft);
+}
+.arc-s04-002 .sign svg { width: 26px; height: 26px; flex: none; color: var(--ink); }
+
+/* --- Responsive ------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s04-002 .head { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 0.5fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s04-002 .head { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+  .arc-s04-002 .head__art { grid-column: 1 / -1; justify-self: start; max-width: 170px; }
+  .arc-s04-002 .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s04-002 .head h1 { max-width: 18ch; }
+}
+@media (max-width: 768px) {
+  .arc-s04-002 .head { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .arc-s04-002 .slot { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 480px) {
+  .arc-s04-002 .cards { grid-template-columns: minmax(0, 1fr); }
+  .arc-s04-002 .slot { aspect-ratio: 3 / 2; }
+  .arc-s04-002 .sign { align-items: flex-start; }
+}
+@media (max-width: 360px) {
+  .arc-s04-002 .card { padding: 13px; border-radius: 10px; }
+  .arc-s04-002 .card h2 a::after { border-radius: 10px; }
+  .arc-s04-002 .head__art { max-width: 140px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s04-002 *, .arc-s04-002 *::before, .arc-s04-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s04-002" data-study-id="ARC-S04-002" data-territory="premium-editorial">
+
+  <section class="shell" aria-labelledby="arc-s04-002-title">
+
+    <div class="head">
+      <h1 id="arc-s04-002-title"><em>Who</em> are we building for?</h1>
+
+      <div class="head__note">
+        <p>
+          Every typology begins with the person who will use the space and the
+          conditions the site already sets. The four below are how the studio
+          groups its work.
+        </p>
+        <hr>
+        <span>Typology set</span>
+      </div>
+
+      <svg class="head__art" viewBox="0 0 200 90" aria-hidden="true" focusable="false">
+        <g fill="currentColor">
+          <ellipse cx="24" cy="45" rx="17" ry="38" opacity="0.95"></ellipse>
+          <ellipse cx="60" cy="45" rx="16" ry="38" opacity="0.72"></ellipse>
+          <ellipse cx="94" cy="45" rx="15" ry="38" opacity="0.52"></ellipse>
+          <ellipse cx="126" cy="45" rx="14" ry="38" opacity="0.34"></ellipse>
+          <ellipse cx="156" cy="45" rx="13" ry="38" opacity="0.2"></ellipse>
+          <ellipse cx="182" cy="45" rx="12" ry="38" opacity="0.1"></ellipse>
+        </g>
+      </svg>
+    </div>
+
+    <ul class="cards">
+      <li class="card">
+        <h2><a href="#arc-s04-002-title">Families</a></h2>
+        <p>Houses and apartments planned around daily routine, storage, and shared rooms that take wear.</p>
+        <div class="slot"><p>Image area</p></div>
+      </li>
+
+      <li class="card card--navy">
+        <h2><a href="#arc-s04-002-title">Single dwellings</a></h2>
+        <p>One-off houses where the site, the orientation, and the brief set the plan rather than a template.</p>
+        <div class="slot"><p>Image area</p></div>
+      </li>
+
+      <li class="card card--white">
+        <h2><a href="#arc-s04-002-title">Workplaces</a></h2>
+        <p>Studios and offices arranged for focus and for the moments people actually work together.</p>
+        <div class="slot"><p>Image area</p></div>
+      </li>
+
+      <li class="card card--olive">
+        <h2><a href="#arc-s04-002-title">Shared buildings</a></h2>
+        <p>Small civic and cultural programmes where circulation, light, and acoustics carry the design.</p>
+        <div class="slot"><p>Image area</p></div>
+      </li>
+    </ul>
+
+    <p class="sign">
+      <svg viewBox="0 0 26 26" aria-hidden="true" focusable="false">
+        <path d="M2 22 L9 6 L16 22 M10 22 L17 6 L24 22" fill="none" stroke="currentColor" stroke-width="1.4"></path>
+      </svg>
+      Each typology carries its own constraints, and its own way of being drawn.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>
