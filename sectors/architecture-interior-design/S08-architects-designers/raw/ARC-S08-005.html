@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S08-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S08 — Architects & Designers
+  Territory      : Sector-native / Distinctive
+  Reference      : Reference 8 — a ruled header row in which each column carries a name above a
+                   role, sitting directly on top of a continuous band of portraits with no gaps
+                   between them.
+  Layout model   : Practice register — ruled caption row over a contiguous portrait band
+  Density        : Medium-high
+  Media mode     : Six empty portrait cells forming one uninterrupted band.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The sector-native device is the practice register — the ruled roster a studio
+                   keeps of who holds which post, closer to a title-block roster than to a
+                   marketing team grid. People are placeholders and are labelled as such; names
+                   read "Team member NN" and each column states the post, not a person's
+                   achievements. No photographs, credentials, registrations, awards, or
+                   biographical claims.
+-->
+
+<meta name="study-id" content="ARC-S08-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S08">
+<meta name="section-name" content="Architects &amp; Designers">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Ruled register caption row over a contiguous portrait band">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="empty-portrait-band-contiguous">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S08-005 — Team, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f0efea; }
+
+/* Scoped study styles — namespaced to .arc-s08-005 */
+.arc-s08-005 {
+  --paper: #f0efea;
+  --ink: #14161a;
+  --ink-soft: #4c4a44;
+  --slot: #d8d5cc;
+  --slot-ink: #47453f;
+  --hair: #c6c2b8;
+  --hair-ink: #7e7a71;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s08-005 *,
+.arc-s08-005 *::before,
+.arc-s08-005 *::after { box-sizing: inherit; }
+.arc-s08-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s08-005 .shell {
+  width: 100%; max-width: 1400px; margin: 0 auto;
+  padding: clamp(30px, 3.8vw, 60px) clamp(14px, 2.4vw, 36px) clamp(20px, 2.6vw, 34px);
+}
+
+/* --- Head --------------------------------------------------------------- */
+.arc-s08-005 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+  margin-bottom: clamp(22px, 2.8vw, 38px);
+}
+.arc-s08-005 .eyebrow {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s08-005 h1 {
+  margin: 0; font-size: clamp(1.375rem, 2.6vw, 2.125rem);
+  line-height: 1.14; letter-spacing: -0.024em; font-weight: 500; max-width: 22ch;
+}
+.arc-s08-005 .head > p:last-child {
+  margin: 0; font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Register ------------------------------------------------------------ */
+.arc-s08-005 .register {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  column-gap: 0; row-gap: 0;
+  margin: 0; padding: 0; list-style: none;
+  border-top: 1px solid var(--hair-ink);
+}
+/* Each entry contributes its caption to row 1 and its portrait to row 2, so the
+   captions read as one ruled header band above one uninterrupted portrait band. */
+.arc-s08-005 .register > li { display: contents; }
+.arc-s08-005 .cap {
+  grid-row: 1;
+  padding: clamp(12px, 1.6vw, 18px) clamp(8px, 1.2vw, 14px);
+  border-right: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair-ink);
+  text-align: center;
+}
+.arc-s08-005 .slot {
+  grid-row: 2;
+  display: flex; align-items: flex-end;
+  aspect-ratio: 3 / 4;
+  background: var(--slot);
+  border-right: 1px solid var(--paper);
+}
+.arc-s08-005 .register > li:nth-child(1) .cap,
+.arc-s08-005 .register > li:nth-child(1) .slot { grid-column: 1; }
+.arc-s08-005 .register > li:nth-child(2) .cap,
+.arc-s08-005 .register > li:nth-child(2) .slot { grid-column: 2; }
+.arc-s08-005 .register > li:nth-child(3) .cap,
+.arc-s08-005 .register > li:nth-child(3) .slot { grid-column: 3; }
+.arc-s08-005 .register > li:nth-child(4) .cap,
+.arc-s08-005 .register > li:nth-child(4) .slot { grid-column: 4; }
+.arc-s08-005 .register > li:nth-child(5) .cap,
+.arc-s08-005 .register > li:nth-child(5) .slot { grid-column: 5; }
+.arc-s08-005 .register > li:nth-child(6) .cap,
+.arc-s08-005 .register > li:nth-child(6) .slot { grid-column: 6; border-right: 0; }
+.arc-s08-005 .register > li:nth-child(6) .cap { border-right: 0; }
+
+.arc-s08-005 .cap h2 { margin: 0 0 5px; font-size: 0.875rem; font-weight: 600; letter-spacing: -0.008em; }
+.arc-s08-005 .cap p { margin: 0; font-size: 0.6875rem; line-height: 1.45; color: var(--ink-soft); }
+.arc-s08-005 .slot p {
+  margin: 0; padding: 10px 12px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Register foot -------------------------------------------------------- */
+.arc-s08-005 .foot {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  margin: 0; padding-top: 12px; border-top: 1px solid var(--hair-ink);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Responsive ------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s08-005 .cap p { font-size: 0.625rem; }
+}
+@media (max-width: 1024px) {
+  /* Below the register width, each entry becomes a self-contained card so a
+     caption can never be separated from its own portrait. */
+  .arc-s08-005 .register {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: none;
+    column-gap: clamp(10px, 1.4vw, 16px); row-gap: clamp(18px, 2.2vw, 26px);
+    border-top: 0;
+  }
+  .arc-s08-005 .register > li { display: block; }
+  .arc-s08-005 .cap {
+    border-right: 0; border-bottom: 0; text-align: left;
+    padding: 10px 0 0;
+  }
+  .arc-s08-005 .slot { border-right: 0; }
+  .arc-s08-005 .register > li > .cap { order: 2; }
+}
+@media (max-width: 768px) {
+  .arc-s08-005 .register { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .arc-s08-005 .register { grid-template-columns: minmax(0, 1fr); }
+  .arc-s08-005 .slot { aspect-ratio: 4 / 3; }
+  .arc-s08-005 .foot { gap: 6px; }
+}
+@media (max-width: 360px) {
+  .arc-s08-005 .slot p { padding: 9px 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s08-005 *, .arc-s08-005 *::before, .arc-s08-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s08-005" data-study-id="ARC-S08-005" data-territory="sector-native-distinctive">
+
+  <section class="shell" aria-labelledby="arc-s08-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Practice register</p>
+        <h1 id="arc-s08-005-title">Who holds which post</h1>
+      </div>
+      <p>Sheet ARC / S08 &#183; placeholder</p>
+    </div>
+
+    <ol class="register">
+      <li>
+        <div class="cap">
+          <h2>Team member 01</h2>
+          <p>Principal architect</p>
+        </div>
+        <div class="slot"><p>Portrait</p></div>
+      </li>
+      <li>
+        <div class="cap">
+          <h2>Team member 02</h2>
+          <p>Associate, interiors</p>
+        </div>
+        <div class="slot"><p>Portrait</p></div>
+      </li>
+      <li>
+        <div class="cap">
+          <h2>Team member 03</h2>
+          <p>Project architect</p>
+        </div>
+        <div class="slot"><p>Portrait</p></div>
+      </li>
+      <li>
+        <div class="cap">
+          <h2>Team member 04</h2>
+          <p>Technical designer</p>
+        </div>
+        <div class="slot"><p>Portrait</p></div>
+      </li>
+      <li>
+        <div class="cap">
+          <h2>Team member 05</h2>
+          <p>Interior designer</p>
+        </div>
+        <div class="slot"><p>Portrait</p></div>
+      </li>
+      <li>
+        <div class="cap">
+          <h2>Team member 06</h2>
+          <p>Studio manager</p>
+        </div>
+        <div class="slot"><p>Portrait</p></div>
+      </li>
+    </ol>
+
+    <p class="foot">
+      <span>Register &#183; six posts</span>
+      <span>Status &#183; design study</span>
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S08-001
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S08 — Architects & Designers
+  Territory      : Universal / Safe
+  Reference      : Reference 3 — a centred bold heading above a row of four equal cards, each
+                   with a coloured shape set behind a cut-out portrait and the name and role
+                   banded across the card foot, closed by a centred paragraph.
+  Layout model   : Centred heading over a four-card portrait row with offset tint blocks
+  Density        : Medium
+  Media mode     : Four empty portrait areas, each sitting over an offset tint block.
+  Interaction    : None (static; no JavaScript)
+  Content note   : People in this study are placeholders and are labelled as such. Names read
+                   "Team member NN" rather than invented personal names, because a team section
+                   filled with realistic names reads as a real roster. Role descriptions describe
+                   the post, never a person's achievements. No photographs, credentials,
+                   registrations, awards, or biographical claims.
+-->
+
+<meta name="study-id" content="ARC-S08-001">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S08">
+<meta name="section-name" content="Architects &amp; Designers">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="layout-model" content="Centred heading with four-card portrait row and tint blocks">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-portrait-with-offset-tint">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S08-001 — Team, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .arc-s08-001 */
+.arc-s08-001 {
+  --ink: #16171a;
+  --ink-soft: #56585e;
+  --paper: #ffffff;
+  --tint: #e2dbd0;
+  --slot: #dcdcda;
+  --slot-ink: #4b4d51;
+  --line: #e3e3e2;
+  --focus: #1f4fd8;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s08-001 *,
+.arc-s08-001 *::before,
+.arc-s08-001 *::after { box-sizing: inherit; }
+.arc-s08-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s08-001 .shell {
+  width: 100%; max-width: 1240px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 84px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Head ------------------------------------------------------------ */
+.arc-s08-001 .head { text-align: center; margin-bottom: clamp(30px, 3.8vw, 58px); }
+.arc-s08-001 .eyebrow {
+  margin: 0 0 14px; font-size: 0.625rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s08-001 h1 {
+  margin: 0 auto;
+  font-size: clamp(1.75rem, 3.6vw, 3rem);
+  line-height: 1.08; letter-spacing: -0.03em; font-weight: 700; max-width: 18ch;
+}
+
+/* --- Card row --------------------------------------------------------- */
+.arc-s08-001 .people {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 32px);
+  margin: 0 0 clamp(28px, 3.4vw, 48px); padding: 0; list-style: none;
+}
+.arc-s08-001 .person { margin: 0; }
+
+/* Portrait sits over a tint block offset up and to the left */
+.arc-s08-001 .portrait {
+  position: relative;
+  padding: clamp(14px, 1.8vw, 22px) 0 0 clamp(14px, 1.8vw, 22px);
+}
+.arc-s08-001 .portrait::before {
+  content: ""; position: absolute; top: 0; left: 0;
+  width: 62%; height: 58%;
+  background: var(--tint); border-radius: 6px 6px 0 0;
+}
+.arc-s08-001 .slot {
+  position: relative;
+  display: flex; align-items: flex-end;
+  aspect-ratio: 3 / 4; background: var(--slot); border-radius: 4px;
+}
+.arc-s08-001 .slot p {
+  margin: 0; padding: 11px 13px;
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+.arc-s08-001 .person__band { padding-top: 14px; }
+.arc-s08-001 .person h2 { margin: 0 0 3px; font-size: 1rem; font-weight: 600; letter-spacing: -0.012em; }
+.arc-s08-001 .person p { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); }
+
+/* --- Closing note ------------------------------------------------------ */
+.arc-s08-001 .note {
+  margin: 0 auto; max-width: 74ch; text-align: center;
+  padding-top: clamp(20px, 2.4vw, 30px); border-top: 1px solid var(--line);
+  font-size: 0.875rem; color: var(--ink-soft);
+}
+
+/* --- Responsive --------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s08-001 .people { gap: 22px; }
+}
+@media (max-width: 1024px) {
+  .arc-s08-001 .people { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+  .arc-s08-001 h1 { max-width: 22ch; }
+}
+@media (max-width: 768px) {
+  .arc-s08-001 .slot { aspect-ratio: 4 / 5; }
+}
+@media (max-width: 480px) {
+  .arc-s08-001 .people { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .arc-s08-001 .slot { aspect-ratio: 4 / 3; }
+  .arc-s08-001 .portrait::before { width: 54%; height: 50%; }
+  .arc-s08-001 .note { text-align: left; }
+}
+@media (max-width: 360px) {
+  .arc-s08-001 .portrait { padding-top: 12px; padding-left: 12px; }
+  .arc-s08-001 .slot p { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s08-001 *, .arc-s08-001 *::before, .arc-s08-001 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s08-001" data-study-id="ARC-S08-001" data-territory="universal-safe">
+
+  <section class="shell" aria-labelledby="arc-s08-001-title">
+
+    <div class="head">
+      <p class="eyebrow">The studio</p>
+      <h1 id="arc-s08-001-title">The people who draw the work</h1>
+    </div>
+
+    <ul class="people">
+      <li class="person">
+        <div class="portrait">
+          <div class="slot"><p>Portrait area</p></div>
+        </div>
+        <div class="person__band">
+          <h2>Team member 01</h2>
+          <p>Principal architect</p>
+        </div>
+      </li>
+
+      <li class="person">
+        <div class="portrait">
+          <div class="slot"><p>Portrait area</p></div>
+        </div>
+        <div class="person__band">
+          <h2>Team member 02</h2>
+          <p>Associate, interiors</p>
+        </div>
+      </li>
+
+      <li class="person">
+        <div class="portrait">
+          <div class="slot"><p>Portrait area</p></div>
+        </div>
+        <div class="person__band">
+          <h2>Team member 03</h2>
+          <p>Project architect</p>
+        </div>
+      </li>
+
+      <li class="person">
+        <div class="portrait">
+          <div class="slot"><p>Portrait area</p></div>
+        </div>
+        <div class="person__band">
+          <h2>Team member 04</h2>
+          <p>Technical designer</p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="note">
+      Placeholder roster &#183; structure demonstration only. Names, portraits and roles are
+      reserved slots, and no real person is represented.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

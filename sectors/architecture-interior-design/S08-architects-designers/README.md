@@ -4,7 +4,7 @@ ARC-S08
 
 # Section Name
 
-Architects Designers
+Architects & Designers
 
 # Sector
 
@@ -24,8 +24,12 @@ ARC-S08-005
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch Document
+
+./BATCH-V1.md
