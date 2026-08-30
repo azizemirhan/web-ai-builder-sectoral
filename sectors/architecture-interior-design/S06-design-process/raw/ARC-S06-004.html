@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S06-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S06 — Design Process
+  Territory      : Conversion-led
+  Reference      : None supplied. Authored to brief.
+  Layout model   : Sticky reassurance column beside a compact numbered ladder that terminates in
+                   a filled call-to-action panel occupying the final rung
+  Density        : Medium
+  Media mode     : One empty media area in the reassurance column. No image supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The call to action is the last rung of the sequence rather than a banner, so
+                   the conversion moment is the next step in the process. No durations, fees,
+                   response-time promises, guarantees, client names, awards, certifications,
+                   statistics, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S06-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S06">
+<meta name="section-name" content="Design Process">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Sticky column with numbered ladder ending in a CTA rung">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-area-single">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S06-004 — Process, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .arc-s06-004 */
+.arc-s06-004 {
+  --ink: #121317;
+  --ink-soft: #53565d;
+  --paper: #ffffff;
+  --rung: #f2f2f0;
+  --cta: #121317;
+  --on-cta: #ffffff;
+  --on-cta-soft: #c6c8cc;
+  --slot: #e2e2e0;
+  --slot-ink: #4a4c50;
+  --line: #e0e0de;
+  --line-strong: #81848a;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s06-004 *,
+.arc-s06-004 *::before,
+.arc-s06-004 *::after { box-sizing: inherit; }
+.arc-s06-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s06-004 .rung--cta :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s06-004 .shell {
+  width: 100%; max-width: 1260px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 78px) clamp(18px, 3vw, 44px);
+}
+.arc-s06-004 .grid {
+  display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.25fr);
+  gap: clamp(26px, 3.6vw, 64px);
+  align-items: start;
+}
+
+/* --- Sticky column --------------------------------------------------- */
+.arc-s06-004 .aside { position: sticky; top: clamp(20px, 3vw, 44px); }
+.arc-s06-004 .eyebrow {
+  margin: 0 0 14px; font-size: 0.6875rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s06-004 h1 {
+  margin: 0 0 16px; font-size: clamp(1.625rem, 2.9vw, 2.375rem);
+  line-height: 1.12; letter-spacing: -0.028em; font-weight: 500; max-width: 17ch;
+}
+.arc-s06-004 .aside > p { margin: 0 0 clamp(20px, 2.4vw, 28px); font-size: 0.9375rem; color: var(--ink-soft); max-width: 40ch; }
+.arc-s06-004 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 4 / 3; background: var(--slot); border-radius: 8px;
+}
+.arc-s06-004 .slot p {
+  margin: 0; padding: 12px 14px;
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s06-004 .aside figure { margin: 0; }
+
+/* --- Ladder ------------------------------------------------------------ */
+.arc-s06-004 .ladder { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(8px, 1vw, 12px); }
+.arc-s06-004 .rung {
+  display: grid; grid-template-columns: clamp(46px, 5vw, 62px) minmax(0, 1fr);
+  gap: clamp(12px, 1.6vw, 20px);
+  padding: clamp(16px, 1.9vw, 24px);
+  background: var(--rung); border-radius: 8px;
+}
+.arc-s06-004 .rung__no {
+  font-size: 0.6875rem; letter-spacing: 0.14em; color: var(--ink-soft);
+  font-variant-numeric: tabular-nums; padding-top: 3px;
+}
+.arc-s06-004 .rung h2 { margin: 0 0 6px; font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+.arc-s06-004 .rung p { margin: 0; font-size: 0.875rem; color: var(--ink-soft); }
+
+/* Final rung carries the conversion */
+.arc-s06-004 .rung--cta { background: var(--cta); color: var(--on-cta); }
+.arc-s06-004 .rung--cta .rung__no { color: var(--on-cta-soft); }
+.arc-s06-004 .rung--cta p { color: var(--on-cta-soft); margin-bottom: clamp(16px, 2vw, 22px); }
+.arc-s06-004 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; }
+.arc-s06-004 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 26px; border-radius: 6px;
+  background: #fff; color: var(--cta); border: 1px solid #fff;
+  font-size: 0.9375rem; font-weight: 600; text-decoration: none; cursor: pointer;
+  transition: background-color 150ms ease;
+}
+.arc-s06-004 .btn:hover,
+.arc-s06-004 .btn:focus-visible { background: #e6e7ea; }
+.arc-s06-004 .textlink {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+  font-size: 0.9375rem; color: var(--on-cta); text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.arc-s06-004 .textlink:hover,
+.arc-s06-004 .textlink:focus-visible { border-bottom-color: #fff; }
+
+/* --- Responsive --------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s06-004 .grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s06-004 .grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .arc-s06-004 .aside { position: static; }
+  .arc-s06-004 h1 { max-width: 22ch; }
+  .arc-s06-004 .aside > p { max-width: 60ch; }
+  .arc-s06-004 .slot { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 768px) {
+  .arc-s06-004 .slot { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 480px) {
+  .arc-s06-004 .rung { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 16px; }
+  .arc-s06-004 .rung__no { padding-top: 0; }
+  .arc-s06-004 .btn { width: 100%; }
+  .arc-s06-004 .actions { gap: 12px; }
+}
+@media (max-width: 360px) {
+  .arc-s06-004 .slot { aspect-ratio: 4 / 3; border-radius: 6px; }
+  .arc-s06-004 .rung { border-radius: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s06-004 *, .arc-s06-004 *::before, .arc-s06-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s06-004" data-study-id="ARC-S06-004" data-territory="conversion-led">
+
+  <section class="shell" aria-labelledby="arc-s06-004-title">
+    <div class="grid">
+
+      <div class="aside">
+        <p class="eyebrow">Design process</p>
+        <h1 id="arc-s06-004-title">You always know which stage you are in</h1>
+        <p>
+          Each stage is agreed before the next begins, and each one ends in drawings you can
+          hold on to. The last step on this list is the one that starts it.
+        </p>
+        <figure>
+          <div class="slot"><p>Image area</p></div>
+        </figure>
+      </div>
+
+      <ol class="ladder">
+        <li class="rung">
+          <span class="rung__no">01</span>
+          <div>
+            <h2>First conversation</h2>
+            <p>A short discussion of the space, the intent and what the project has to resolve. No drawings yet, and nothing to prepare.</p>
+          </div>
+        </li>
+        <li class="rung">
+          <span class="rung__no">02</span>
+          <div>
+            <h2>Site and brief review</h2>
+            <p>We look at the site, the existing documents and the constraints, then set out in writing what the scope covers.</p>
+          </div>
+        </li>
+        <li class="rung">
+          <span class="rung__no">03</span>
+          <div>
+            <h2>Proposal and appointment</h2>
+            <p>A written outline of stages, deliverables and terms. You decide how far to take it before anything is committed.</p>
+          </div>
+        </li>
+        <li class="rung">
+          <span class="rung__no">04</span>
+          <div>
+            <h2>Design stages begin</h2>
+            <p>Concept, developed and technical design follow in order, each closing on a set of drawings that is signed off.</p>
+          </div>
+        </li>
+        <li class="rung rung--cta">
+          <span class="rung__no">05</span>
+          <div>
+            <h2>Start at stage one</h2>
+            <p>Everything above begins with a conversation. Tell us about the space and we will take it from there.</p>
+            <div class="actions">
+              <a class="btn" href="#arc-s06-004-title">
+                Start a project
+                <span aria-hidden="true">&#8594;</span>
+              </a>
+              <a class="textlink" href="#arc-s06-004-title">Book a consultation</a>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

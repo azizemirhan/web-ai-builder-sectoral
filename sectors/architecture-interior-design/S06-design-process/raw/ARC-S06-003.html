@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S06-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S06 — Design Process
+  Territory      : Dense / Information-heavy
+  Reference      : None supplied. Authored to brief.
+  Layout model   : Stacked dossier rows — stage number, title and description, a three-pair
+                   metadata block, and a small media thumbnail, separated by hairlines
+  Density        : High
+  Media mode     : Five empty thumbnail areas, one per stage row.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Metadata pairs describe what each stage produces and who does what. No
+                   durations, fees, guarantees, client names, awards, certifications, statistics,
+                   or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S06-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S06">
+<meta name="section-name" content="Design Process">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Stacked dossier rows with metadata block and thumbnail">
+<meta name="density" content="high">
+<meta name="media-mode" content="empty-thumbnail-per-row">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S06-003 — Process, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f4f2; }
+
+/* Scoped study styles — namespaced to .arc-s06-003 */
+.arc-s06-003 {
+  --ink: #101215;
+  --ink-soft: #53565c;
+  --paper: #f4f4f2;
+  --slot: #dedeDB;
+  --slot-ink: #4b4d51;
+  --line: #dcdcd8;
+  --line-strong: #82858a;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s06-003 *,
+.arc-s06-003 *::before,
+.arc-s06-003 *::after { box-sizing: inherit; }
+.arc-s06-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s06-003 .shell {
+  width: 100%; max-width: 1360px; margin: 0 auto;
+  padding: clamp(36px, 4.4vw, 70px) clamp(16px, 2.6vw, 40px);
+}
+
+/* --- Head ---------------------------------------------------------- */
+.arc-s06-003 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+  margin-bottom: clamp(20px, 2.4vw, 32px);
+  padding-bottom: clamp(14px, 1.8vw, 22px);
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s06-003 .head h1 {
+  margin: 0; font-size: clamp(1.5rem, 2.7vw, 2.25rem);
+  line-height: 1.12; letter-spacing: -0.026em; font-weight: 500; max-width: 20ch;
+}
+.arc-s06-003 .head p {
+  margin: 0; font-family: var(--mono); font-size: 0.6875rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Dossier rows --------------------------------------------------- */
+.arc-s06-003 .rows { margin: 0; padding: 0; list-style: none; }
+.arc-s06-003 .row {
+  display: grid;
+  grid-template-columns: clamp(54px, 6vw, 84px) minmax(0, 1.25fr) minmax(0, 1.35fr) clamp(120px, 14vw, 190px);
+  gap: clamp(14px, 2vw, 30px);
+  align-items: start;
+  padding: clamp(18px, 2.2vw, 28px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.arc-s06-003 .row:last-child { border-bottom: 0; }
+
+.arc-s06-003 .row__no {
+  font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em;
+  color: var(--ink-soft); padding-top: 3px;
+}
+.arc-s06-003 .row h2 { margin: 0 0 7px; font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.012em; }
+.arc-s06-003 .row__desc { margin: 0; font-size: 0.875rem; color: var(--ink-soft); }
+
+.arc-s06-003 .meta { margin: 0; display: grid; gap: 8px; }
+.arc-s06-003 .meta > div {
+  display: grid; grid-template-columns: clamp(88px, 9vw, 120px) minmax(0, 1fr);
+  gap: 12px; align-items: baseline;
+  padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+.arc-s06-003 .meta > div:last-child { border-bottom: 0; padding-bottom: 0; }
+.arc-s06-003 .meta dt {
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s06-003 .meta dd { margin: 0; font-size: 0.8125rem; }
+
+.arc-s06-003 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 4 / 3; background: var(--slot); border-radius: 4px;
+}
+.arc-s06-003 .slot p {
+  margin: 0; padding: 10px 12px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Responsive ------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s06-003 .row {
+    grid-template-columns: clamp(50px, 6vw, 72px) minmax(0, 1.2fr) minmax(0, 1.3fr) clamp(110px, 13vw, 160px);
+  }
+}
+@media (max-width: 1024px) {
+  .arc-s06-003 .row {
+    grid-template-columns: clamp(50px, 7vw, 72px) minmax(0, 1fr) clamp(120px, 16vw, 170px);
+    gap: 18px 22px;
+  }
+  .arc-s06-003 .meta { grid-column: 2 / 4; }
+  .arc-s06-003 .meta > div { grid-template-columns: 120px minmax(0, 1fr); }
+}
+@media (max-width: 768px) {
+  .arc-s06-003 .row { grid-template-columns: 44px minmax(0, 1fr); }
+  .arc-s06-003 .meta { grid-column: 2 / 3; }
+  .arc-s06-003 .media { grid-column: 2 / 3; }
+  .arc-s06-003 .slot { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 480px) {
+  .arc-s06-003 .row { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .arc-s06-003 .meta,
+  .arc-s06-003 .media { grid-column: 1 / -1; }
+  .arc-s06-003 .meta > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .arc-s06-003 .slot { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 360px) {
+  .arc-s06-003 .row { padding: 16px 0; }
+  .arc-s06-003 .slot p { padding: 9px 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s06-003 *, .arc-s06-003 *::before, .arc-s06-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s06-003" data-study-id="ARC-S06-003" data-territory="dense-information-heavy">
+
+  <section class="shell" aria-labelledby="arc-s06-003-title">
+
+    <div class="head">
+      <h1 id="arc-s06-003-title">The process, stage by stage</h1>
+      <p>Five stages &#183; what each one produces</p>
+    </div>
+
+    <ol class="rows">
+      <li class="row">
+        <span class="row__no">01</span>
+        <div>
+          <h2>Brief and site</h2>
+          <p class="row__desc">Survey, constraints and the written brief, recorded together before any option is drawn.</p>
+        </div>
+        <dl class="meta">
+          <div><dt>Output</dt><dd>Site notes, agreed brief</dd></div>
+          <div><dt>Studio does</dt><dd>Survey, constraint review</dd></div>
+          <div><dt>You provide</dt><dd>Requirements, existing documents</dd></div>
+        </dl>
+        <figure class="media"><div class="slot"><p>Image area</p></div></figure>
+      </li>
+
+      <li class="row">
+        <span class="row__no">02</span>
+        <div>
+          <h2>Concept design</h2>
+          <p class="row__desc">Options tested in plan and section until one is worth developing, with the reasoning written down.</p>
+        </div>
+        <dl class="meta">
+          <div><dt>Output</dt><dd>Concept drawings, study model</dd></div>
+          <div><dt>Studio does</dt><dd>Option testing, massing</dd></div>
+          <div><dt>You provide</dt><dd>Feedback, chosen direction</dd></div>
+        </dl>
+        <figure class="media"><div class="slot"><p>Image area</p></div></figure>
+      </li>
+
+      <li class="row">
+        <span class="row__no">03</span>
+        <div>
+          <h2>Developed design</h2>
+          <p class="row__desc">The chosen option resolved in detail, with structure, services and material coordinated onto one set.</p>
+        </div>
+        <dl class="meta">
+          <div><dt>Output</dt><dd>Developed drawing set</dd></div>
+          <div><dt>Studio does</dt><dd>Coordination, material selection</dd></div>
+          <div><dt>You provide</dt><dd>Sign-off on the set</dd></div>
+        </dl>
+        <figure class="media"><div class="slot"><p>Image area</p></div></figure>
+      </li>
+
+      <li class="row">
+        <span class="row__no">04</span>
+        <div>
+          <h2>Technical design</h2>
+          <p class="row__desc">Construction information: junctions drawn, components scheduled, specification written to match.</p>
+        </div>
+        <dl class="meta">
+          <div><dt>Output</dt><dd>Construction set, specification</dd></div>
+          <div><dt>Studio does</dt><dd>Details, schedules, tender support</dd></div>
+          <div><dt>You provide</dt><dd>Procurement decisions</dd></div>
+        </dl>
+        <figure class="media"><div class="slot"><p>Image area</p></div></figure>
+      </li>
+
+      <li class="row">
+        <span class="row__no">05</span>
+        <div>
+          <h2>Site and handover</h2>
+          <p class="row__desc">The studio stays on the project while it is built, answering queries and reviewing what is made.</p>
+        </div>
+        <dl class="meta">
+          <div><dt>Output</dt><dd>Handover set, as-built notes</dd></div>
+          <div><dt>Studio does</dt><dd>Site visits, query responses</dd></div>
+          <div><dt>You provide</dt><dd>Access, instructions to the builder</dd></div>
+        </dl>
+        <figure class="media"><div class="slot"><p>Image area</p></div></figure>
+      </li>
+    </ol>
+
+  </section>
+
+</div>
+</body>
+</html>
