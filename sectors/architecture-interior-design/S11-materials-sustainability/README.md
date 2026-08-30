@@ -4,7 +4,7 @@ ARC-S11
 
 # Section Name
 
-Materials Sustainability
+Materials & Sustainability
 
 # Sector
 
@@ -24,8 +24,12 @@ ARC-S11-005
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch Document
+
+./BATCH-V1.md

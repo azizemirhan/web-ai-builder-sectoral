@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S11-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S11 — Materials & Sustainability
+  Territory      : Dense / Information-heavy
+  Reference      : None supplied. Authored to brief, in the sector's established register.
+  Layout model   : Sticky category rail beside a long grouped material record, each entry
+                   carrying five fields
+  Density        : High
+  Media mode     : None. This study is the written record behind the palette; the samples are
+                   shown in ARC-S11-001 and ARC-S11-002.
+  Interaction    : None (static; no JavaScript). The rail is a list of in-page anchors, so
+                   navigation within a long section works with nothing but links — the first
+                   sticky anchor index in the sector.
+  Content note   : Every entry has an "Evidence" field, and every one of them reads
+                   "To be supplied by the studio". That is deliberate: this is the field where a
+                   real practice records a declaration, a test result or a supplier document, and
+                   filling it with a plausible value here would manufacture exactly the evidence
+                   the section exists to carry. No certification, rating scheme, standard, carbon
+                   figure, energy figure or percentage appears.
+-->
+
+<meta name="study-id" content="ARC-S11-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S11">
+<meta name="section-name" content="Materials &amp; Sustainability">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Sticky category rail beside a long grouped material record">
+<meta name="density" content="high">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S11-003 — Materials, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f6f5; }
+
+/* Scoped study styles — namespaced to .arc-s11-003 */
+.arc-s11-003 {
+  --ink: #101215;
+  --ink-soft: #4f5359;
+  --paper: #f6f6f5;
+  --card: #ffffff;
+  --line: #e0e1e0;
+  --line-strong: #7f8286;
+  --pending: #6a5a2a;
+  --pending-bg: #f2ecd9;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s11-003 *,
+.arc-s11-003 *::before,
+.arc-s11-003 *::after { box-sizing: inherit; }
+.arc-s11-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s11-003 .shell {
+  width: 100%; max-width: 1300px; margin: 0 auto;
+  padding: clamp(34px, 4.2vw, 66px) clamp(16px, 2.6vw, 40px);
+}
+
+/* --- Head ---------------------------------------------------------------------- */
+.arc-s11-003 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 18px; flex-wrap: wrap;
+  padding-bottom: clamp(14px, 1.8vw, 20px); margin-bottom: clamp(20px, 2.6vw, 32px);
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s11-003 h1 {
+  margin: 0; font-size: clamp(1.5rem, 2.7vw, 2.125rem);
+  line-height: 1.12; letter-spacing: -0.026em; font-weight: 600; max-width: 22ch;
+}
+.arc-s11-003 .head p {
+  margin: 0; font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Body: sticky rail + record --------------------------------------------------- */
+.arc-s11-003 .body {
+  display: grid; grid-template-columns: minmax(0, 0.3fr) minmax(0, 1.5fr);
+  gap: clamp(22px, 3vw, 52px); align-items: start;
+}
+.arc-s11-003 .rail { position: sticky; top: clamp(18px, 2.6vw, 34px); }
+.arc-s11-003 .rail h2 {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s11-003 .rail ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.arc-s11-003 .rail a {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  min-height: 44px; padding: 6px 0; border-bottom: 1px solid var(--line);
+  font-size: 0.8125rem; color: var(--ink); text-decoration: none;
+}
+.arc-s11-003 .rail a:hover,
+.arc-s11-003 .rail a:focus-visible { color: var(--ink-soft); }
+.arc-s11-003 .rail .n { font-family: var(--mono); font-size: 0.625rem; color: var(--ink-soft); }
+
+.arc-s11-003 .group + .group { margin-top: clamp(24px, 3vw, 40px); }
+.arc-s11-003 .group > h2 {
+  margin: 0 0 12px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-strong);
+  font-size: 1rem; font-weight: 600; letter-spacing: -0.012em;
+  scroll-margin-top: clamp(18px, 2.6vw, 34px);
+}
+.arc-s11-003 .entries { display: grid; gap: clamp(10px, 1.4vw, 14px); margin: 0; padding: 0; list-style: none; }
+.arc-s11-003 .entry {
+  margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+  padding: clamp(14px, 1.8vw, 20px);
+}
+.arc-s11-003 .entry h3 { margin: 0 0 10px; font-size: 0.9375rem; font-weight: 600; letter-spacing: -0.008em; }
+.arc-s11-003 .fields { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px clamp(16px, 2.2vw, 30px); }
+.arc-s11-003 .fields > div { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.arc-s11-003 .fields dt {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s11-003 .fields dd { margin: 0; font-size: 0.8125rem; }
+.arc-s11-003 .pending {
+  display: inline-block; padding: 2px 8px; border-radius: 3px;
+  background: var(--pending-bg); color: var(--pending);
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.08em;
+}
+
+.arc-s11-003 .note {
+  margin: clamp(24px, 3vw, 38px) 0 0; padding-top: clamp(14px, 1.8vw, 20px);
+  border-top: 1px solid var(--line-strong);
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 84ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s11-003 .body { grid-template-columns: minmax(0, 0.36fr) minmax(0, 1.5fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s11-003 .body { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .arc-s11-003 .rail { position: static; }
+  .arc-s11-003 .rail ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
+}
+@media (max-width: 768px) {
+  .arc-s11-003 .fields { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .arc-s11-003 .rail ul { grid-template-columns: minmax(0, 1fr); }
+  .arc-s11-003 .fields > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (max-width: 360px) {
+  .arc-s11-003 .entry { padding: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s11-003 *, .arc-s11-003 *::before, .arc-s11-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s11-003" data-study-id="ARC-S11-003" data-territory="dense-information-heavy">
+
+  <section class="shell" aria-labelledby="arc-s11-003-title">
+
+    <div class="head">
+      <h1 id="arc-s11-003-title">Material record and what stands behind each choice</h1>
+      <p>Three groups &#183; six entries &#183; placeholder</p>
+    </div>
+
+    <div class="body">
+
+      <nav class="rail" aria-labelledby="arc-s11-003-railtitle">
+        <h2 id="arc-s11-003-railtitle">Categories</h2>
+        <ul>
+          <li><a href="#arc-s11-003-g1"><span>Structure</span><span class="n">2</span></a></li>
+          <li><a href="#arc-s11-003-g2"><span>Envelope</span><span class="n">2</span></a></li>
+          <li><a href="#arc-s11-003-g3"><span>Interior</span><span class="n">2</span></a></li>
+        </ul>
+      </nav>
+
+      <div>
+
+        <div class="group">
+          <h2 id="arc-s11-003-g1">Structure</h2>
+          <ul class="entries">
+            <li class="entry">
+              <h3>Material 01</h3>
+              <dl class="fields">
+                <div><dt>Used for</dt><dd>Primary frame</dd></div>
+                <div><dt>Finish</dt><dd>Left exposed</dd></div>
+                <div><dt>Maintenance</dt><dd>Inspect at junctions; no coating cycle</dd></div>
+                <div><dt>End of life</dt><dd>Demountable, fixings reachable</dd></div>
+                <div><dt>Evidence</dt><dd><span class="pending">To be supplied by the studio</span></dd></div>
+              </dl>
+            </li>
+            <li class="entry">
+              <h3>Material 02</h3>
+              <dl class="fields">
+                <div><dt>Used for</dt><dd>Floor structure</dd></div>
+                <div><dt>Finish</dt><dd>Concealed</dd></div>
+                <div><dt>Maintenance</dt><dd>None in normal use</dd></div>
+                <div><dt>End of life</dt><dd>Separable from the deck above</dd></div>
+                <div><dt>Evidence</dt><dd><span class="pending">To be supplied by the studio</span></dd></div>
+              </dl>
+            </li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h2 id="arc-s11-003-g2">Envelope</h2>
+          <ul class="entries">
+            <li class="entry">
+              <h3>Material 03</h3>
+              <dl class="fields">
+                <div><dt>Used for</dt><dd>External weathering surface</dd></div>
+                <div><dt>Finish</dt><dd>Untreated, weathers openly</dd></div>
+                <div><dt>Maintenance</dt><dd>Periodic inspection; local replacement</dd></div>
+                <div><dt>End of life</dt><dd>Removable in whole units</dd></div>
+                <div><dt>Evidence</dt><dd><span class="pending">To be supplied by the studio</span></dd></div>
+              </dl>
+            </li>
+            <li class="entry">
+              <h3>Material 04</h3>
+              <dl class="fields">
+                <div><dt>Used for</dt><dd>Insulation layer</dd></div>
+                <div><dt>Finish</dt><dd>Concealed within build-up</dd></div>
+                <div><dt>Maintenance</dt><dd>None; protected by outer layer</dd></div>
+                <div><dt>End of life</dt><dd>Separable from adjacent layers</dd></div>
+                <div><dt>Evidence</dt><dd><span class="pending">To be supplied by the studio</span></dd></div>
+              </dl>
+            </li>
+          </ul>
+        </div>
+
+        <div class="group">
+          <h2 id="arc-s11-003-g3">Interior</h2>
+          <ul class="entries">
+            <li class="entry">
+              <h3>Material 05</h3>
+              <dl class="fields">
+                <div><dt>Used for</dt><dd>Floors in occupied rooms</dd></div>
+                <div><dt>Finish</dt><dd>Refinishable surface treatment</dd></div>
+                <div><dt>Maintenance</dt><dd>Refinish rather than replace</dd></div>
+                <div><dt>End of life</dt><dd>Liftable; substrate reusable</dd></div>
+                <div><dt>Evidence</dt><dd><span class="pending">To be supplied by the studio</span></dd></div>
+              </dl>
+            </li>
+            <li class="entry">
+              <h3>Material 06</h3>
+              <dl class="fields">
+                <div><dt>Used for</dt><dd>Joinery and fixed furniture</dd></div>
+                <div><dt>Finish</dt><dd>Repairable, matched to floor</dd></div>
+                <div><dt>Maintenance</dt><dd>Part replacement without rebuild</dd></div>
+                <div><dt>End of life</dt><dd>Mechanically fixed, not bonded</dd></div>
+                <div><dt>Evidence</dt><dd><span class="pending">To be supplied by the studio</span></dd></div>
+              </dl>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="note">
+      Placeholder record &#183; structure demonstration only. Every &#8220;evidence&#8221; field is
+      deliberately unfilled: that is where a practice records a declaration, a test result or a
+      supplier document, and putting a plausible value there would manufacture the very evidence
+      this section exists to carry. No certification, rating scheme, standard, carbon figure,
+      energy figure or percentage appears anywhere in this study.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S10-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S10 — Capabilities
+  Territory      : Dense / Information-heavy
+  Reference      : None supplied. Authored to brief, in the sector's established register.
+  Layout model   : Disclosure stack — six capability groups as native details/summary panels,
+                   each opening onto a two-column list of specific items
+  Density        : High (highest capacity in the section; the section stays short until opened)
+  Media mode     : None.
+  Interaction    : Native HTML disclosure only. `<details>` and `<summary>` carry their own
+                   keyboard support, focus handling and expanded state, so a section with far
+                   more content than fits on screen needs no script at all — the first study in
+                   the sector to use the element.
+  Content note   : Delivery mode is stated per item ("in-house" / "consultant"). No software,
+                   product or vendor is named. No certifications, accreditations, statistics, or
+                   completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S10-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S10">
+<meta name="section-name" content="Capabilities">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Native disclosure stack with two-column item lists">
+<meta name="density" content="high">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="native-details-disclosure">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S10-003 — Capabilities, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f5f6f7; }
+
+/* Scoped study styles — namespaced to .arc-s10-003 */
+.arc-s10-003 {
+  --ink: #101216;
+  --ink-soft: #4f545b;
+  --paper: #f5f6f7;
+  --card: #ffffff;
+  --line: #dfe2e5;
+  --line-strong: #7f848a;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s10-003 *,
+.arc-s10-003 *::before,
+.arc-s10-003 *::after { box-sizing: inherit; }
+.arc-s10-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.arc-s10-003 .shell {
+  width: 100%; max-width: 1160px; margin: 0 auto;
+  padding: clamp(34px, 4.2vw, 66px) clamp(16px, 2.6vw, 40px);
+}
+
+/* --- Head --------------------------------------------------------------------- */
+.arc-s10-003 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 18px; flex-wrap: wrap; margin-bottom: clamp(16px, 2vw, 24px);
+}
+.arc-s10-003 h1 {
+  margin: 0; font-size: clamp(1.5rem, 2.7vw, 2.125rem);
+  line-height: 1.12; letter-spacing: -0.026em; font-weight: 600; max-width: 20ch;
+}
+.arc-s10-003 .head p {
+  margin: 0; font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s10-003 .hint { margin: 0 0 clamp(14px, 1.8vw, 20px); font-size: 0.8125rem; color: var(--ink-soft); max-width: 66ch; }
+
+/* --- Disclosure stack ----------------------------------------------------------- */
+.arc-s10-003 .stack { display: grid; gap: clamp(8px, 1vw, 10px); }
+.arc-s10-003 details {
+  background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+}
+.arc-s10-003 summary {
+  display: grid; grid-template-columns: 34px minmax(0, 1fr) auto;
+  gap: 12px; align-items: center;
+  padding: clamp(14px, 1.8vw, 18px) clamp(14px, 1.8vw, 20px);
+  cursor: pointer; list-style: none;
+}
+.arc-s10-003 summary::-webkit-details-marker { display: none; }
+.arc-s10-003 summary:hover { background: #f7f8f9; border-radius: 8px; }
+.arc-s10-003 .no {
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.1em; color: var(--ink-soft);
+}
+.arc-s10-003 summary h2 { margin: 0; font-size: 1rem; font-weight: 600; letter-spacing: -0.012em; }
+.arc-s10-003 summary .count {
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+/* A written open/closed cue, so state is never carried by the triangle alone. */
+.arc-s10-003 summary .count::after { content: " \00B7 open"; }
+.arc-s10-003 details[open] summary .count::after { content: " \00B7 close"; }
+
+.arc-s10-003 .panel {
+  padding: 0 clamp(14px, 1.8vw, 20px) clamp(16px, 2vw, 22px);
+  border-top: 1px solid var(--line);
+  margin-top: -1px; padding-top: clamp(14px, 1.8vw, 18px);
+}
+.arc-s10-003 .panel > p { margin: 0 0 clamp(12px, 1.6vw, 16px); font-size: 0.8125rem; color: var(--ink-soft); max-width: 72ch; }
+.arc-s10-003 .items {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(18px, 2.4vw, 34px);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s10-003 .items li {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px; align-items: baseline;
+  padding: 8px 0; border-bottom: 1px solid var(--line);
+  font-size: 0.8125rem;
+}
+.arc-s10-003 .mode {
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-soft); white-space: nowrap;
+}
+
+.arc-s10-003 .note {
+  margin: clamp(18px, 2.2vw, 26px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 76ch;
+}
+
+/* --- Responsive -------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s10-003 .items { gap: 0 24px; }
+}
+@media (max-width: 1024px) {
+  .arc-s10-003 h1 { max-width: 26ch; }
+}
+@media (max-width: 768px) {
+  .arc-s10-003 .items { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .arc-s10-003 summary { grid-template-columns: 26px minmax(0, 1fr); row-gap: 6px; }
+  .arc-s10-003 summary .count { grid-column: 2; }
+  .arc-s10-003 .items li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (max-width: 360px) {
+  .arc-s10-003 summary { padding: 13px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s10-003 *, .arc-s10-003 *::before, .arc-s10-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s10-003" data-study-id="ARC-S10-003" data-territory="dense-information-heavy">
+
+  <section class="shell" aria-labelledby="arc-s10-003-title">
+
+    <div class="head">
+      <h1 id="arc-s10-003-title">Full capability list</h1>
+      <p>Six groups &#183; placeholder set</p>
+    </div>
+    <p class="hint">
+      Groups are closed by default so the section stays short. Open the ones that matter; each
+      line states whether the studio holds it in-house or appoints a consultant for it.
+    </p>
+
+    <div class="stack">
+
+      <details open>
+        <summary>
+          <span class="no">01</span>
+          <h2>Survey and site</h2>
+          <span class="count">4 items</span>
+        </summary>
+        <div class="panel">
+          <p>Establishing what is already there, and recording it in a form the rest of the project can be checked against.</p>
+          <ul class="items">
+            <li><span>Measured survey</span><span class="mode">In-house</span></li>
+            <li><span>Condition assessment</span><span class="mode">In-house</span></li>
+            <li><span>Topographic survey</span><span class="mode">Consultant</span></li>
+            <li><span>Constraint and orientation review</span><span class="mode">In-house</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="no">02</span>
+          <h2>Architectural design</h2>
+          <span class="count">4 items</span>
+        </summary>
+        <div class="panel">
+          <p>Deciding the arrangement of a building and testing it until it answers the brief.</p>
+          <ul class="items">
+            <li><span>Concept and option studies</span><span class="mode">In-house</span></li>
+            <li><span>Massing and section studies</span><span class="mode">In-house</span></li>
+            <li><span>Physical and digital models</span><span class="mode">In-house</span></li>
+            <li><span>Planning and approvals submissions</span><span class="mode">In-house</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="no">03</span>
+          <h2>Interior architecture</h2>
+          <span class="count">4 items</span>
+        </summary>
+        <div class="panel">
+          <p>The inside of the building treated as one set of decisions rather than a finish applied late.</p>
+          <ul class="items">
+            <li><span>Layout and circulation</span><span class="mode">In-house</span></li>
+            <li><span>Daylight and artificial lighting</span><span class="mode">In-house</span></li>
+            <li><span>Joinery and fixed furniture</span><span class="mode">In-house</span></li>
+            <li><span>Loose furniture selection</span><span class="mode">In-house</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="no">04</span>
+          <h2>Technical design</h2>
+          <span class="count">4 items</span>
+        </summary>
+        <div class="panel">
+          <p>Information a builder can price and build from, with the junctions drawn before they are specified.</p>
+          <ul class="items">
+            <li><span>Construction drawings</span><span class="mode">In-house</span></li>
+            <li><span>Specification writing</span><span class="mode">In-house</span></li>
+            <li><span>Structural design</span><span class="mode">Consultant</span></li>
+            <li><span>Services and environmental design</span><span class="mode">Consultant</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="no">05</span>
+          <h2>Coordination</h2>
+          <span class="count">4 items</span>
+        </summary>
+        <div class="panel">
+          <p>Keeping consultants, contractors and the client working from the same information.</p>
+          <ul class="items">
+            <li><span>Consultant coordination</span><span class="mode">In-house</span></li>
+            <li><span>Drawing issue and revision control</span><span class="mode">In-house</span></li>
+            <li><span>Cost planning</span><span class="mode">Consultant</span></li>
+            <li><span>Programme coordination</span><span class="mode">In-house</span></li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="no">06</span>
+          <h2>Site and handover</h2>
+          <span class="count">4 items</span>
+        </summary>
+        <div class="panel">
+          <p>Staying with the project while it is built, so what was drawn is what gets made.</p>
+          <ul class="items">
+            <li><span>Tender support</span><span class="mode">In-house</span></li>
+            <li><span>Site review and queries</span><span class="mode">In-house</span></li>
+            <li><span>Contract administration</span><span class="mode">Consultant</span></li>
+            <li><span>Handover set and as-built notes</span><span class="mode">In-house</span></li>
+          </ul>
+        </div>
+      </details>
+
+    </div>
+
+    <p class="note">
+      Placeholder capability set &#183; structure demonstration only. Twenty-four lines across six
+      groups; a studio filling this section should correct both the lines and the delivery modes.
+      No tool, product or vendor is named anywhere.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

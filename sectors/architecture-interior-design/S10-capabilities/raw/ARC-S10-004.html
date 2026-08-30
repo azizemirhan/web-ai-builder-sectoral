@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S10-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S10 — Capabilities
+  Territory      : Conversion-led
+  Reference      : None supplied. Authored to brief, in the sector's established register.
+  Layout model   : Routing cards — three "start where you are" entry points, each naming what the
+                   studio would do first and carrying its own action, over a shared foot bar
+  Density        : Medium
+  Media mode     : None.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The conversion is a routing decision rather than a pitch: each card states the
+                   situation a visitor is actually in and what the first piece of work would be.
+                   No response time, fee, guarantee, tool, product or vendor is named, and no
+                   certification, statistic or completed-project claim appears.
+-->
+
+<meta name="study-id" content="ARC-S10-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S10">
+<meta name="section-name" content="Capabilities">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Three routing cards with per-card actions over a foot bar">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S10-004 — Capabilities, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f2ee; }
+
+/* Scoped study styles — namespaced to .arc-s10-004 */
+.arc-s10-004 {
+  --ink: #17181b;
+  --ink-soft: #56544e;
+  --paper: #f4f2ee;
+  --card: #ffffff;
+  --bar: #17181b;
+  --on-bar: #f4f3f1;
+  --on-bar-soft: #adafb3;
+  --line: #ddd9d1;
+  --line-strong: #85827a;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s10-004 *,
+.arc-s10-004 *::before,
+.arc-s10-004 *::after { box-sizing: inherit; }
+.arc-s10-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s10-004 .bar :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s10-004 .shell {
+  width: 100%; max-width: 1240px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 78px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Head ------------------------------------------------------------------- */
+.arc-s10-004 .eyebrow {
+  margin: 0 0 12px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s10-004 h1 {
+  margin: 0 0 12px; font-size: clamp(1.625rem, 3vw, 2.375rem);
+  line-height: 1.1; letter-spacing: -0.03em; font-weight: 600; max-width: 17ch;
+}
+.arc-s10-004 .lede {
+  margin: 0 0 clamp(24px, 3vw, 40px);
+  font-size: 0.9375rem; color: var(--ink-soft); max-width: 56ch;
+}
+
+/* --- Routing cards ------------------------------------------------------------ */
+.arc-s10-004 .routes {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 24px);
+  margin: 0 0 clamp(20px, 2.6vw, 32px); padding: 0; list-style: none;
+}
+.arc-s10-004 .route {
+  position: relative; margin: 0;
+  display: flex; flex-direction: column;
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: clamp(20px, 2.4vw, 28px);
+  transition: border-color 150ms ease;
+}
+.arc-s10-004 .route:hover { border-color: var(--line-strong); }
+.arc-s10-004 .route__tag {
+  display: inline-block; margin: 0 0 14px;
+  padding: 5px 11px; border: 1px solid var(--line-strong); border-radius: 999px;
+  font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s10-004 .route h2 { margin: 0 0 10px; font-size: 1.125rem; font-weight: 600; letter-spacing: -0.016em; }
+.arc-s10-004 .route > p { margin: 0 0 clamp(16px, 2vw, 22px); font-size: 0.875rem; color: var(--ink-soft); }
+.arc-s10-004 .route dl {
+  margin: 0 0 clamp(18px, 2.2vw, 24px); padding-top: clamp(14px, 1.8vw, 18px);
+  border-top: 1px solid var(--line);
+}
+.arc-s10-004 .route dt {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 5px;
+}
+.arc-s10-004 .route dd { margin: 0; font-size: 0.8125rem; }
+.arc-s10-004 .route__go {
+  margin-top: auto;
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 10px;
+  min-height: 50px; padding: 0 18px; border-radius: 8px;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  font-size: 0.875rem; font-weight: 500; text-decoration: none;
+  transition: background-color 150ms ease;
+}
+.arc-s10-004 .route__go::after { content: ""; position: absolute; inset: 0; border-radius: 10px; }
+.arc-s10-004 .route__go:hover,
+.arc-s10-004 .route__go:focus-visible { background: #000; }
+
+/* --- Foot bar ------------------------------------------------------------------ */
+.arc-s10-004 .bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: clamp(16px, 2vw, 32px); flex-wrap: wrap;
+  padding: clamp(18px, 2.2vw, 28px);
+  background: var(--bar); color: var(--on-bar); border-radius: 10px;
+}
+.arc-s10-004 .bar p { margin: 0; font-size: 0.9375rem; color: var(--on-bar-soft); max-width: 52ch; }
+.arc-s10-004 .bar b { color: var(--on-bar); font-weight: 600; }
+.arc-s10-004 .bar a {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+  font-size: 0.9375rem; color: var(--on-bar); text-decoration: none;
+  border-bottom: 1px solid rgba(244, 243, 241, 0.5);
+}
+.arc-s10-004 .bar a:hover,
+.arc-s10-004 .bar a:focus-visible { border-bottom-color: #fff; }
+
+.arc-s10-004 .note {
+  margin: clamp(18px, 2.2vw, 26px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 76ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s10-004 .routes { gap: 16px; }
+}
+@media (max-width: 1024px) {
+  .arc-s10-004 .routes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s10-004 .routes > li:nth-child(3) { grid-column: span 2; }
+  .arc-s10-004 h1 { max-width: 22ch; }
+}
+@media (max-width: 768px) {
+  .arc-s10-004 .routes { grid-template-columns: minmax(0, 1fr); }
+  .arc-s10-004 .routes > li:nth-child(3) { grid-column: auto; }
+  .arc-s10-004 .bar { align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .arc-s10-004 .route { padding: 18px; }
+  .arc-s10-004 .bar { flex-direction: column; align-items: stretch; }
+}
+@media (max-width: 360px) {
+  .arc-s10-004 .route__go { padding: 0 14px; font-size: 0.8125rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s10-004 *, .arc-s10-004 *::before, .arc-s10-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s10-004" data-study-id="ARC-S10-004" data-territory="conversion-led">
+
+  <section class="shell" aria-labelledby="arc-s10-004-title">
+
+    <p class="eyebrow">Capabilities</p>
+    <h1 id="arc-s10-004-title">Start from where the project already is</h1>
+    <p class="lede">
+      Most commissions arrive part-way through. Pick the one that matches, and the first piece of
+      work is already decided.
+    </p>
+
+    <ul class="routes">
+      <li class="route">
+        <p class="route__tag">Route 01</p>
+        <h2>You have a site</h2>
+        <p>
+          A plot, a field, or a building you are about to buy, and no drawings yet beyond what
+          the agent supplied.
+        </p>
+        <dl>
+          <dt>First piece of work</dt>
+          <dd>Site reading and a written constraint review</dd>
+        </dl>
+        <a class="route__go" href="#arc-s10-004-title" aria-label="Start from a site">
+          Start here <span aria-hidden="true">&#8594;</span>
+        </a>
+      </li>
+
+      <li class="route">
+        <p class="route__tag">Route 02</p>
+        <h2>You have a building</h2>
+        <p>
+          Something already standing that no longer fits &#8212; too small, too dark, or arranged
+          for a life you no longer live.
+        </p>
+        <dl>
+          <dt>First piece of work</dt>
+          <dd>Measured survey and a condition assessment</dd>
+        </dl>
+        <a class="route__go" href="#arc-s10-004-title" aria-label="Start from an existing building">
+          Start here <span aria-hidden="true">&#8594;</span>
+        </a>
+      </li>
+
+      <li class="route">
+        <p class="route__tag">Route 03</p>
+        <h2>You have drawings</h2>
+        <p>
+          A scheme someone else began, or an approval already in place, and a project that needs
+          taking the rest of the way.
+        </p>
+        <dl>
+          <dt>First piece of work</dt>
+          <dd>Drawing review and a scope for the remaining stages</dd>
+        </dl>
+        <a class="route__go" href="#arc-s10-004-title" aria-label="Start from existing drawings">
+          Start here <span aria-hidden="true">&#8594;</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="bar">
+      <p><b>None of these quite fit?</b> Most projects sit between two of them, which is a short conversation rather than a long form.</p>
+      <a href="#arc-s10-004-title">Talk to the studio<span aria-hidden="true"> &#8594;</span></a>
+    </div>
+
+    <p class="note">
+      Placeholder routing set &#183; structure demonstration only. No response time, fee or
+      guarantee is stated, and no tool, product or vendor is named.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S11-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S11 — Materials & Sustainability
+  Territory      : Premium / Editorial
+  Reference      : None supplied. Authored to brief, in the sector's established register.
+  Layout model   : Sample board — one bordered board holding swatches at mixed sizes on an
+                   asymmetric grid, beside a serif statement column
+  Density        : Low-medium
+  Media mode     : Five empty sample areas at four different sizes, arranged as a physical
+                   materials board rather than as an even grid.
+  Interaction    : None (static; no JavaScript)
+  Content note   : No certification, rating scheme, standard, carbon figure, energy figure or
+                   percentage appears, and none is implied. The statement describes how the studio
+                   chooses materials, not what those choices achieve.
+-->
+
+<meta name="study-id" content="ARC-S11-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S11">
+<meta name="section-name" content="Materials &amp; Sustainability">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="Sample board with mixed-size swatches beside a serif statement">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="empty-sample-board-mixed-sizes">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S11-002 — Materials, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2f0ea; }
+
+/* Scoped study styles — namespaced to .arc-s11-002 */
+.arc-s11-002 {
+  --paper: #f2f0ea;
+  --board: #e8e5dc;
+  --ink: #17171a;
+  --ink-soft: #57554d;
+  --slot: #d8d4c9;
+  --slot-2: #cfcabd;
+  --slot-3: #ddd9cf;
+  --slot-ink: #4a4841;
+  --hair: #c7c2b6;
+  --hair-ink: #7e7a70;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s11-002 *,
+.arc-s11-002 *::before,
+.arc-s11-002 *::after { box-sizing: inherit; }
+.arc-s11-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s11-002 .shell {
+  width: 100%; max-width: 1300px; margin: 0 auto;
+  padding: clamp(42px, 5.2vw, 84px) clamp(18px, 3vw, 44px);
+}
+.arc-s11-002 .grid {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(26px, 3.6vw, 62px); align-items: center;
+}
+
+/* --- Sample board -------------------------------------------------------------- */
+.arc-s11-002 .board {
+  margin: 0;
+  background: var(--board); border: 1px solid var(--hair);
+  padding: clamp(14px, 1.8vw, 22px);
+}
+.arc-s11-002 .swatches {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: clamp(52px, 7vw, 96px);
+  gap: clamp(8px, 1.1vw, 14px);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s11-002 .swatches > li { margin: 0; }
+.arc-s11-002 .sw {
+  width: 100%; height: 100%;
+  display: flex; align-items: flex-end;
+  background: var(--slot); border-radius: 2px;
+}
+.arc-s11-002 .sw span {
+  padding: 8px 9px; font-family: var(--mono);
+  font-size: 0.4375rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slot-ink);
+}
+/* Mixed sizes, as a board is pinned rather than gridded evenly. */
+.arc-s11-002 .s1 { grid-column: span 4; grid-row: span 3; }
+.arc-s11-002 .s2 { grid-column: span 2; grid-row: span 2; }
+.arc-s11-002 .s2 .sw { background: var(--slot-2); }
+.arc-s11-002 .s3 { grid-column: span 2; grid-row: span 1; }
+.arc-s11-002 .s3 .sw { background: var(--slot-3); }
+.arc-s11-002 .s4 { grid-column: span 3; grid-row: span 2; }
+.arc-s11-002 .s4 .sw { background: var(--slot-3); }
+.arc-s11-002 .s5 { grid-column: span 3; grid-row: span 2; }
+.arc-s11-002 .s5 .sw { background: var(--slot-2); }
+
+.arc-s11-002 .board figcaption {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  margin-top: clamp(12px, 1.6vw, 16px); padding-top: clamp(10px, 1.4vw, 14px);
+  border-top: 1px solid var(--hair);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Statement -------------------------------------------------------------------- */
+.arc-s11-002 .eyebrow {
+  margin: 0 0 14px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s11-002 h1 {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.625rem, 3.2vw, 2.5rem);
+  line-height: 1.14; letter-spacing: -0.018em; max-width: 17ch;
+}
+.arc-s11-002 .statement > p { margin: 0 0 14px; font-size: 0.9375rem; color: var(--ink-soft); max-width: 46ch; }
+.arc-s11-002 .rules { margin: clamp(20px, 2.4vw, 28px) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--hair-ink); }
+.arc-s11-002 .rules li {
+  display: grid; grid-template-columns: 2.4em minmax(0, 1fr);
+  gap: 12px; align-items: baseline;
+  padding: 11px 0; border-bottom: 1px solid var(--hair);
+  font-size: 0.8125rem;
+}
+.arc-s11-002 .rules .n { font-family: var(--mono); font-size: 0.625rem; color: var(--ink-soft); }
+
+.arc-s11-002 .note {
+  margin: clamp(24px, 3vw, 38px) 0 0; padding-top: clamp(14px, 1.8vw, 20px);
+  border-top: 1px solid var(--hair-ink);
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 82ch;
+}
+
+/* --- Responsive ---------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s11-002 .grid { gap: 40px; }
+}
+@media (max-width: 1024px) {
+  .arc-s11-002 .grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .arc-s11-002 h1 { max-width: 22ch; }
+  .arc-s11-002 .statement > p { max-width: 62ch; }
+}
+@media (max-width: 768px) {
+  .arc-s11-002 .swatches { grid-auto-rows: clamp(46px, 9vw, 70px); }
+}
+@media (max-width: 480px) {
+  /* A pinned board cannot hold five sizes on a phone: it becomes a simple stack. */
+  .arc-s11-002 .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
+  .arc-s11-002 .swatches > li { grid-column: auto !important; grid-row: auto !important; }
+  .arc-s11-002 .sw { aspect-ratio: 1 / 1; }
+  .arc-s11-002 .s1 { grid-column: span 2 !important; }
+  .arc-s11-002 .s1 .sw { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 360px) {
+  .arc-s11-002 .board { padding: 12px; }
+  .arc-s11-002 .sw span { padding: 7px 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s11-002 *, .arc-s11-002 *::before, .arc-s11-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s11-002" data-study-id="ARC-S11-002" data-territory="premium-editorial">
+
+  <section class="shell" aria-labelledby="arc-s11-002-title">
+    <div class="grid">
+
+      <figure class="board">
+        <ul class="swatches">
+          <li class="s1"><span class="sw"><span>Sample &#183; 01</span></span></li>
+          <li class="s2"><span class="sw"><span>Sample &#183; 02</span></span></li>
+          <li class="s3"><span class="sw"><span>Sample &#183; 03</span></span></li>
+          <li class="s4"><span class="sw"><span>Sample &#183; 04</span></span></li>
+          <li class="s5"><span class="sw"><span>Sample &#183; 05</span></span></li>
+        </ul>
+        <figcaption>
+          <span>Board &#183; placeholder samples</span>
+          <span>Five areas &#183; four sizes</span>
+        </figcaption>
+      </figure>
+
+      <div class="statement">
+        <p class="eyebrow">Materials &amp; sustainability</p>
+        <h1 id="arc-s11-002-title">We choose few materials and use them well</h1>
+        <p>
+          A short palette is easier to detail, easier to source and easier to repair. It also
+          means every material in a project has had to argue for its place against the others.
+        </p>
+        <p>
+          These are the questions a material has to answer before it is specified. None of them
+          is about how a surface photographs.
+        </p>
+
+        <ol class="rules">
+          <li><span class="n">01</span><span>Where does it come from, and can that be documented?</span></li>
+          <li><span class="n">02</span><span>How does it behave after a decade of ordinary use?</span></li>
+          <li><span class="n">03</span><span>Can a damaged part be reached and replaced on its own?</span></li>
+          <li><span class="n">04</span><span>Can it be separated from what it is fixed to at the end?</span></li>
+        </ol>
+      </div>
+
+    </div>
+
+    <p class="note">
+      Placeholder board &#183; structure demonstration only. No certification, rating scheme,
+      standard, carbon figure, energy figure or percentage appears in this study, and none is
+      implied. The four questions describe how the studio selects, not what the selection achieves.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>
