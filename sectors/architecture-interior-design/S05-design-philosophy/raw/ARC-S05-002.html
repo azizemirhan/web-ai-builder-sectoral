@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S05-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S05 — Design Philosophy
+  Territory      : Premium / Editorial
+  Reference      : Reference 1 — an oversized ultra-light lowercase display word spanning the
+                   full measure with two tiny labels beneath it, a large centred uppercase
+                   manifesto paragraph in which some phrases are set in an accent tone and small
+                   rounded capsules sit inline, a pair of small rounded image cards at the lower
+                   left, two short text columns at the lower right, and an asterisk mark in the
+                   top corner.
+  Layout model   : Oversized display word + accented manifesto paragraph + asymmetric foot row
+  Density        : Low-medium
+  Media mode     : Two empty rounded image cards, plus two optional inline media capsules set
+                   into the manifesto line. The capsules are decorative and the sentence reads
+                   correctly without them.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The accent tone marks phrases for rhythm only; the manifesto reads the same
+                   in one colour, so no meaning depends on colour. All copy is neutral
+                   placeholder text with no client names, awards, certifications, statistics,
+                   pricing, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S05-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S05">
+<meta name="section-name" content="Design Philosophy">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="Oversized display word with accented manifesto and foot row">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="empty-cards-plus-inline-capsules">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S05-002 — Philosophy, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f3; }
+
+/* Scoped study styles — namespaced to .arc-s05-002 */
+.arc-s05-002 {
+  --ink: #16161a;
+  --ink-soft: #5a5850;
+  --paper: #f7f6f3;
+  --accent: #8a6a33;
+  --slot: #e6e3dc;
+  --slot-ink: #4e4c45;
+  --line: #ddd9d0;
+  --focus: #1f4fd8;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s05-002 *,
+.arc-s05-002 *::before,
+.arc-s05-002 *::after { box-sizing: inherit; }
+.arc-s05-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s05-002 .shell {
+  position: relative;
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(34px, 4.4vw, 68px) clamp(18px, 3vw, 44px) clamp(40px, 5vw, 76px);
+}
+
+/* --- Corner mark ------------------------------------------------- */
+.arc-s05-002 .mark {
+  position: absolute; top: clamp(30px, 4vw, 60px); right: clamp(18px, 3vw, 44px);
+  margin: 0; font-size: 1.375rem; line-height: 1; color: var(--accent);
+}
+
+/* --- Display word ------------------------------------------------ */
+.arc-s05-002 h1 {
+  margin: 0;
+  font-size: clamp(3rem, 15.5vw, 12rem);
+  line-height: 0.86; letter-spacing: -0.045em; font-weight: 200;
+}
+.arc-s05-002 .subs {
+  display: flex; gap: clamp(40px, 12vw, 190px);
+  margin: clamp(8px, 1.2vw, 16px) 0 clamp(34px, 4.6vw, 76px);
+  padding: 0 0 0 clamp(10px, 2.4vw, 34px); list-style: none;
+}
+.arc-s05-002 .subs li { font-size: 0.5625rem; letter-spacing: 0.14em; color: var(--ink-soft); }
+
+/* --- Manifesto --------------------------------------------------- */
+.arc-s05-002 .manifesto {
+  margin: 0 0 clamp(34px, 4.4vw, 70px) auto;
+  max-width: 62ch; text-align: right;
+  font-size: clamp(0.9375rem, 1.85vw, 1.5rem);
+  line-height: 1.42; letter-spacing: 0.005em;
+  text-transform: uppercase; font-weight: 500;
+}
+.arc-s05-002 .manifesto .accent { color: var(--accent); }
+.arc-s05-002 .capsule {
+  display: inline-block; vertical-align: middle;
+  width: clamp(38px, 4.4vw, 62px); height: clamp(15px, 1.7vw, 24px);
+  margin: 0 0.18em; border-radius: 999px; background: var(--slot);
+}
+
+/* --- Foot row ---------------------------------------------------- */
+.arc-s05-002 .foot {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.4vw, 60px); align-items: end;
+}
+.arc-s05-002 .cards {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px); margin: 0; padding: 0; list-style: none;
+  max-width: 460px;
+}
+.arc-s05-002 .cards > li { margin: 0; }
+.arc-s05-002 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 4 / 3; background: var(--slot); border-radius: 12px;
+}
+.arc-s05-002 .slot p {
+  margin: 0; padding: 11px 13px;
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s05-002 .notes {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 34px);
+}
+.arc-s05-002 .notes h2 {
+  margin: 0 0 6px; font-size: 0.625rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--ink); font-weight: 600;
+}
+.arc-s05-002 .notes p { margin: 0; font-size: 0.6875rem; line-height: 1.7; color: var(--ink-soft); }
+
+/* --- Responsive --------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s05-002 .manifesto { max-width: 56ch; }
+}
+@media (max-width: 1024px) {
+  .arc-s05-002 .manifesto { max-width: none; text-align: left; }
+  .arc-s05-002 .foot { grid-template-columns: minmax(0, 1fr); gap: 30px; align-items: start; }
+  .arc-s05-002 .cards { max-width: none; }
+}
+@media (max-width: 768px) {
+  .arc-s05-002 .subs { gap: 32px; padding-left: 6px; }
+  .arc-s05-002 .mark { font-size: 1.125rem; }
+}
+@media (max-width: 480px) {
+  .arc-s05-002 h1 { letter-spacing: -0.035em; }
+  .arc-s05-002 .subs { flex-direction: column; gap: 4px; margin-bottom: 28px; }
+  .arc-s05-002 .notes { grid-template-columns: minmax(0, 1fr); }
+  .arc-s05-002 .capsule { width: 34px; height: 14px; }
+}
+@media (max-width: 360px) {
+  .arc-s05-002 .cards { grid-template-columns: minmax(0, 1fr); }
+  .arc-s05-002 .slot { aspect-ratio: 16 / 10; border-radius: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s05-002 *, .arc-s05-002 *::before, .arc-s05-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s05-002" data-study-id="ARC-S05-002" data-territory="premium-editorial">
+
+  <section class="shell" aria-labelledby="arc-s05-002-title">
+
+    <p class="mark" aria-hidden="true">&#10033;</p>
+
+    <h1 id="arc-s05-002-title">philosophy</h1>
+    <ul class="subs">
+      <li>architecture</li>
+      <li>interiors</li>
+    </ul>
+
+    <p class="manifesto">
+      <span class="accent">We design for the long middle</span> of a building's life &#8212;
+      the ordinary years after the photographs, when <span class="capsule" aria-hidden="true"></span>
+      material, light and plan have to keep working. <span class="accent">Our aim is not to
+      build more</span>, but to build <span class="capsule" aria-hidden="true"></span> what will
+      still make sense when the brief that produced it is forgotten.
+    </p>
+
+    <div class="foot">
+      <ul class="cards">
+        <li><div class="slot"><p>Image area</p></div></li>
+        <li><div class="slot"><p>Image area</p></div></li>
+      </ul>
+
+      <div class="notes">
+        <div>
+          <h2>Material</h2>
+          <p>
+            We specify a small number of materials and let them meet each other
+            plainly, so repairs stay possible and surfaces are allowed to weather.
+          </p>
+        </div>
+        <div>
+          <h2>Restraint</h2>
+          <p>
+            Every added element has to earn its place against the plan. What is left
+            out is as deliberate as what is drawn.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
+</body>
+</html>

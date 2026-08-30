@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S05-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S05 — Design Philosophy
+  Territory      : Sector-native / Distinctive
+  Reference      : Reference 3 — a wide image band across the top of a dark section, then a small
+                   label held in the left margin beside a long body of text in which the opening
+                   sentences are set brighter than the continuation.
+  Layout model   : Dark statement sheet — wide media band, margin label with clause index, and a
+                   numbered specification-clause body
+  Density        : Medium
+  Media mode     : One empty wide media band. No image supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The sector-native device is written specification convention — the philosophy
+                   is set as numbered clauses with hanging references, the way a practice writes
+                   a project specification. Clause numbers are neutral and refer to nothing
+                   external. No client names, awards, certifications, statistics, pricing, or
+                   completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S05-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S05">
+<meta name="section-name" content="Design Philosophy">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Dark statement sheet with media band and numbered clauses">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-band-wide">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S05-005 — Philosophy, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #16181b; }
+
+/* Scoped study styles — namespaced to .arc-s05-005 */
+.arc-s05-005 {
+  --ground: #16181b;
+  --light: #f2f2f0;
+  --muted: #a9aaa7;
+  --slot: #24272b;
+  --slot-ink: #b7b9bb;
+  --hair: rgba(242, 242, 240, 0.2);
+  --hair-strong: rgba(242, 242, 240, 0.42);
+  --focus: #ffd479;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--ground);
+  color: var(--light);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s05-005 *,
+.arc-s05-005 *::before,
+.arc-s05-005 *::after { box-sizing: inherit; }
+.arc-s05-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s05-005 .shell {
+  width: 100%; max-width: 1280px; margin: 0 auto;
+  padding: clamp(28px, 3.6vw, 56px) clamp(16px, 2.8vw, 44px) clamp(40px, 5vw, 76px);
+}
+
+/* --- Media band --------------------------------------------------- */
+.arc-s05-005 .band { margin: 0 0 clamp(30px, 4vw, 64px); }
+.arc-s05-005 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 21 / 9; min-height: 200px;
+  background: var(--slot); border-radius: 4px;
+}
+.arc-s05-005 .slot p {
+  margin: 0; padding: 14px 16px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Statement grid ----------------------------------------------- */
+.arc-s05-005 .grid {
+  display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.6fr);
+  gap: clamp(22px, 3vw, 56px);
+  align-items: start;
+}
+.arc-s05-005 .margin h1 {
+  margin: 0 0 clamp(16px, 2vw, 24px); font-family: var(--mono);
+  font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase;
+  font-weight: 600; color: var(--light);
+}
+.arc-s05-005 .refs { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--hair); }
+.arc-s05-005 .refs li {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 8px 0; border-bottom: 1px solid var(--hair);
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.08em; color: var(--muted);
+}
+.arc-s05-005 .refs b { color: var(--light); font-weight: 400; }
+
+/* --- Clauses ------------------------------------------------------- */
+.arc-s05-005 .lede {
+  margin: 0 0 clamp(22px, 2.8vw, 36px);
+  font-size: clamp(1.0625rem, 1.65vw, 1.375rem);
+  line-height: 1.44; letter-spacing: -0.012em; color: var(--light); max-width: 60ch;
+}
+.arc-s05-005 .clauses { margin: 0; padding: 0; list-style: none; }
+.arc-s05-005 .clauses > li {
+  display: grid; grid-template-columns: clamp(46px, 5vw, 68px) minmax(0, 1fr);
+  gap: clamp(10px, 1.4vw, 18px);
+  padding: clamp(14px, 1.8vw, 20px) 0;
+  border-top: 1px solid var(--hair);
+}
+.arc-s05-005 .clauses .no {
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.06em;
+  color: var(--muted); padding-top: 3px;
+}
+.arc-s05-005 .clauses h2 {
+  margin: 0 0 5px; font-size: 0.9375rem; font-weight: 600; letter-spacing: -0.006em; color: var(--light);
+}
+.arc-s05-005 .clauses p { margin: 0; font-size: 0.875rem; color: var(--muted); max-width: 62ch; }
+
+/* --- Sheet foot ----------------------------------------------------- */
+.arc-s05-005 .foot {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  margin: clamp(26px, 3.2vw, 44px) 0 0; padding-top: 14px;
+  border-top: 1px solid var(--hair-strong);
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* --- Responsive ------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s05-005 .grid { grid-template-columns: minmax(0, 0.5fr) minmax(0, 1.6fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s05-005 .grid { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .arc-s05-005 .slot { aspect-ratio: 16 / 9; }
+  .arc-s05-005 .refs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
+}
+@media (max-width: 768px) {
+  .arc-s05-005 .slot { aspect-ratio: 3 / 2; min-height: 0; }
+  .arc-s05-005 .lede { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s05-005 .refs { grid-template-columns: minmax(0, 1fr); }
+  .arc-s05-005 .clauses > li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .arc-s05-005 .clauses .no { padding-top: 0; }
+  .arc-s05-005 .foot { gap: 6px; }
+}
+@media (max-width: 360px) {
+  .arc-s05-005 .slot { aspect-ratio: 4 / 3; }
+  .arc-s05-005 .slot p { padding: 12px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s05-005 *, .arc-s05-005 *::before, .arc-s05-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s05-005" data-study-id="ARC-S05-005" data-territory="sector-native-distinctive">
+
+  <section class="shell" aria-labelledby="arc-s05-005-title">
+
+    <figure class="band">
+      <div class="slot"><p>Image area &#183; wide band</p></div>
+    </figure>
+
+    <div class="grid">
+
+      <div class="margin">
+        <h1 id="arc-s05-005-title">Statement of design principles</h1>
+        <ul class="refs">
+          <li><span>Clause</span><b>01 &#8212; 04</b></li>
+          <li><span>Applies to</span><b>All commissions</b></li>
+          <li><span>Revision</span><b>A</b></li>
+          <li><span>Status</span><b>Design study</b></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="lede">
+          The studio works to a written position rather than a house style. The clauses
+          below are the ones we return to when a decision is contested, and they are the
+          ones we expect to be held to.
+        </p>
+
+        <ol class="clauses">
+          <li>
+            <span class="no">01.1</span>
+            <div>
+              <h2>Context precedes form</h2>
+              <p>
+                The site is surveyed and understood before a form is proposed. Ground,
+                orientation, boundary, and what already stands nearby are treated as given
+                conditions, not as obstacles to a preferred outcome.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="no">01.2</span>
+            <div>
+              <h2>The plan carries the building</h2>
+              <p>
+                Movement, daylight, storage, and sequence are resolved in plan and section
+                first. Elevation follows from that resolution rather than being composed
+                independently of it.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="no">01.3</span>
+            <div>
+              <h2>Materials are declared, not disguised</h2>
+              <p>
+                Surfaces are what they appear to be, and are selected for how they weather.
+                Where two materials meet, the junction is drawn rather than covered.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="no">01.4</span>
+            <div>
+              <h2>Buildings are designed to be maintained</h2>
+              <p>
+                Assemblies allow a component to be reached, replaced, or renewed without
+                dismantling what surrounds it. Longevity is treated as a design requirement,
+                not as an outcome hoped for after handover.
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="foot">
+          <span>ARC / S05 &#183; Statement</span>
+          <span>Design study &#183; placeholder text</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
