@@ -16,6 +16,9 @@ The current repository contains structure and documentation only. It contains no
 
 - `standards/`: authoring, naming, QA, media, and future handoff standards.
 - `planning/`: the master plan and initial progress/status records.
-- `sectors/`: sector briefs, sector indexes, section READMEs, and empty tracked `raw/` directories.
+- `sectors/`: sector briefs, sector indexes, section READMEs, and tracked `raw/` study directories.
+- `review/`: a generated local contact sheet of the authored studies. Not part of the batch and
+  not the Design Lab gallery. Regenerate it with `python3 review/build-index.py` and stage it in
+  the same commit whenever studies are added or changed.
 
 Each future completed raw batch is intended to be validated and ingested into Design Lab without a conversion or rewrite step. No ingestion pipeline is implemented here.

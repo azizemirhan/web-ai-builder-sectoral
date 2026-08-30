@@ -34,7 +34,11 @@ then open `http://localhost:8000/review/index.html`.
 
     python3 review/build-index.py
 
-Re-run it after authoring a section. The script scans `sectors/*/S*/raw/*.html`, reads each
+**Workspace convention: a section is not finished until this page has been regenerated.** Run the
+generator as part of section close-out and stage `review/index.html` in the same commit as the
+studies, alongside the section `BATCH-V1.md`, the section README, and the sector README row. The
+page is generated rather than hand-written, so it goes stale silently — and a stale contact sheet
+is worse than none, because it looks complete while missing exactly the work being reviewed. The script scans `sectors/*/S*/raw/*.html`, reads each
 study's `<meta>` research fields, and falls back to the section's `BATCH-V1.md` for the
 territory where a study predates the `<meta>` convention — which is currently the case for the
 `ARC-S02` studies, authored in a separate pass with a different batch format.
