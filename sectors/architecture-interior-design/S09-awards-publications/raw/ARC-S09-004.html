@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S09-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S09 — Awards & Publications
+  Territory      : Conversion-led
+  Reference      : None supplied. Authored to brief.
+  Layout model   : Dark press-office panel with the primary action, beside a coverage list where
+                   every entry carries its own read link
+  Density        : Medium
+  Media mode     : None. The panel offers a press kit rather than showing award marks, so the
+                   section converts without needing an image it cannot honestly placehold.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Conversion here is a press enquiry, which is what this section is actually
+                   for: journalists and awards juries asking for material. Every coverage entry
+                   is a template token, the press-kit panel promises no contents and no response
+                   time, and no awarding body, publication or date is named or implied.
+-->
+
+<meta name="study-id" content="ARC-S09-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S09">
+<meta name="section-name" content="Awards &amp; Publications">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Dark press-office panel beside a coverage list with per-item links">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none-by-policy">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S09-004 — Awards, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fbfbfa; }
+
+/* Scoped study styles — namespaced to .arc-s09-004 */
+.arc-s09-004 {
+  --ink: #121317;
+  --ink-soft: #53565d;
+  --paper: #fbfbfa;
+  --panel: #121317;
+  --on-panel: #f4f4f3;
+  --on-panel-soft: #b0b2b6;
+  --line: #e2e2e0;
+  --line-strong: #81848a;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s09-004 *,
+.arc-s09-004 *::before,
+.arc-s09-004 *::after { box-sizing: inherit; }
+.arc-s09-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s09-004 .press :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s09-004 .shell {
+  width: 100%; max-width: 1260px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 78px) clamp(18px, 3vw, 44px);
+}
+.arc-s09-004 .grid {
+  display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.2fr);
+  gap: clamp(22px, 3vw, 50px);
+  align-items: start;
+}
+
+/* --- Press-office panel ----------------------------------------------------- */
+.arc-s09-004 .press {
+  position: sticky; top: clamp(20px, 3vw, 44px);
+  background: var(--panel); color: var(--on-panel);
+  border-radius: 10px; padding: clamp(22px, 2.8vw, 36px);
+}
+.arc-s09-004 .press .eyebrow {
+  margin: 0 0 14px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--on-panel-soft);
+}
+.arc-s09-004 .press h1 {
+  margin: 0 0 14px; font-size: clamp(1.375rem, 2.4vw, 1.875rem);
+  line-height: 1.14; letter-spacing: -0.024em; font-weight: 600;
+}
+.arc-s09-004 .press > p { margin: 0 0 clamp(20px, 2.4vw, 28px); font-size: 0.875rem; color: var(--on-panel-soft); }
+.arc-s09-004 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; min-height: 54px; padding: 0 22px; border-radius: 6px;
+  background: #fff; color: var(--panel); border: 1px solid #fff;
+  font-size: 0.9375rem; font-weight: 600; text-decoration: none;
+  transition: background-color 150ms ease;
+}
+.arc-s09-004 .btn:hover,
+.arc-s09-004 .btn:focus-visible { background: #e6e7e9; }
+.arc-s09-004 .press ul {
+  margin: clamp(16px, 2vw, 22px) 0 0; padding: clamp(16px, 2vw, 22px) 0 0;
+  border-top: 1px solid rgba(244, 244, 243, 0.24);
+  list-style: none; display: grid; gap: 4px;
+}
+.arc-s09-004 .press ul a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 0.875rem; color: var(--on-panel); text-decoration: none;
+  border-bottom: 1px solid rgba(244, 244, 243, 0.4);
+}
+.arc-s09-004 .press ul a:hover,
+.arc-s09-004 .press ul a:focus-visible { border-bottom-color: #fff; }
+
+/* --- Coverage list ----------------------------------------------------------- */
+.arc-s09-004 .coverage__head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 14px; flex-wrap: wrap; margin-bottom: clamp(10px, 1.4vw, 14px);
+}
+.arc-s09-004 .coverage__head h2 {
+  margin: 0; font-size: 0.6875rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--ink-soft); font-weight: 600;
+}
+.arc-s09-004 .coverage__head p { margin: 0; font-size: 0.75rem; color: var(--ink-soft); }
+
+.arc-s09-004 .coverage { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.arc-s09-004 .coverage > li {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 18px; align-items: center;
+  padding: clamp(13px, 1.7vw, 18px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.arc-s09-004 .coverage h3 { margin: 0 0 3px; font-size: 0.9375rem; font-weight: 500; letter-spacing: -0.008em; }
+.arc-s09-004 .coverage p {
+  margin: 0; font-family: var(--mono); font-size: 0.6875rem;
+  letter-spacing: 0.06em; color: var(--ink-soft);
+}
+.arc-s09-004 .read {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 16px; border-radius: 999px;
+  border: 1px solid var(--line-strong); color: var(--ink); text-decoration: none;
+  font-size: 0.75rem; white-space: nowrap;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s09-004 .read:hover,
+.arc-s09-004 .read:focus-visible { background: #f1f1f0; border-color: var(--ink); }
+
+.arc-s09-004 .note {
+  margin: clamp(18px, 2.2vw, 26px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 74ch;
+}
+
+/* --- Responsive ---------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s09-004 .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s09-004 .grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .arc-s09-004 .press { position: static; }
+}
+@media (max-width: 768px) {
+  .arc-s09-004 .coverage > li { gap: 10px 14px; }
+}
+@media (max-width: 480px) {
+  .arc-s09-004 .coverage > li { grid-template-columns: minmax(0, 1fr); }
+  .arc-s09-004 .read { width: 100%; }
+}
+@media (max-width: 360px) {
+  .arc-s09-004 .press { padding: 18px; border-radius: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s09-004 *, .arc-s09-004 *::before, .arc-s09-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s09-004" data-study-id="ARC-S09-004" data-territory="conversion-led">
+
+  <section class="shell" aria-labelledby="arc-s09-004-title">
+    <div class="grid">
+
+      <div class="press">
+        <p class="eyebrow">Press office</p>
+        <h1 id="arc-s09-004-title">Writing about a project?</h1>
+        <p>
+          Drawings, plans and photography for published work are held in one place, with
+          captions and credits already written. Ask and we will send what you need.
+        </p>
+        <a class="btn" href="#arc-s09-004-title">
+          Request the press kit
+          <span aria-hidden="true">&#8594;</span>
+        </a>
+        <ul>
+          <li><a href="#arc-s09-004-title">Media enquiries</a></li>
+          <li><a href="#arc-s09-004-title">Image use and credits</a></li>
+          <li><a href="#arc-s09-004-title">Awards submissions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="coverage__head">
+          <h2>Coverage and recognition</h2>
+          <p>Placeholder records &#183; template tokens</p>
+        </div>
+
+        <ol class="coverage">
+          <li>
+            <div>
+              <h3>Publication record 01</h3>
+              <p>Feature &#183; YYYY &#183; issue NN</p>
+            </div>
+            <a class="read" href="#arc-s09-004-title" aria-label="Read publication record 01">Read</a>
+          </li>
+          <li>
+            <div>
+              <h3>Award record 01</h3>
+              <p>Award &#183; YYYY &#183; category</p>
+            </div>
+            <a class="read" href="#arc-s09-004-title" aria-label="Read about award record 01">Read</a>
+          </li>
+          <li>
+            <div>
+              <h3>Publication record 02</h3>
+              <p>Project profile &#183; YYYY &#183; issue NN</p>
+            </div>
+            <a class="read" href="#arc-s09-004-title" aria-label="Read publication record 02">Read</a>
+          </li>
+          <li>
+            <div>
+              <h3>Publication record 03</h3>
+              <p>Interview &#183; YYYY &#183; issue NN</p>
+            </div>
+            <a class="read" href="#arc-s09-004-title" aria-label="Read publication record 03">Read</a>
+          </li>
+          <li>
+            <div>
+              <h3>Award record 02</h3>
+              <p>Award &#183; YYYY &#183; category</p>
+            </div>
+            <a class="read" href="#arc-s09-004-title" aria-label="Read about award record 02">Read</a>
+          </li>
+        </ol>
+
+        <p class="note">
+          Entries are template tokens. The press kit panel describes what a studio would send,
+          not what this study contains, and no awarding body, publication or date is named.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

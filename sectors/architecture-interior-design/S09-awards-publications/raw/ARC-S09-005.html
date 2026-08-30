@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S09-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S09 — Awards & Publications
+  Territory      : Sector-native / Distinctive
+  Reference      : None supplied. Authored to brief.
+  Layout model   : Monograph back matter — two grouped bibliographies set in a multi-column flow
+                   with bracketed citation keys and true hanging indents
+  Density        : Medium-high
+  Media mode     : None. Back matter is set text; an image would break the convention the study
+                   is built on.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The sector-native device is bibliographic citation — how a practice actually
+                   lists awards and published work in a monograph or a CV, rather than as badges.
+                   Every field is a template token, and the italic slot that would carry an
+                   awarding body or a publication is written as "placeholder" in the running text
+                   so no institution is named or implied.
+-->
+
+<meta name="study-id" content="ARC-S09-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S09">
+<meta name="section-name" content="Awards &amp; Publications">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Monograph back matter with citation keys and hanging indents">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="none-by-policy">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S09-005 — Awards, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2f1ec; }
+
+/* Scoped study styles — namespaced to .arc-s09-005 */
+.arc-s09-005 {
+  --paper: #f2f1ec;
+  --ink: #14161a;
+  --ink-soft: #4d4b45;
+  --hair: #c9c5bb;
+  --hair-ink: #7d7a71;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s09-005 *,
+.arc-s09-005 *::before,
+.arc-s09-005 *::after { box-sizing: inherit; }
+.arc-s09-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s09-005 .shell {
+  width: 100%; max-width: 1180px; margin: 0 auto;
+  padding: clamp(34px, 4.4vw, 70px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Back-matter head -------------------------------------------------------- */
+.arc-s09-005 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 18px; flex-wrap: wrap;
+  padding-bottom: clamp(14px, 1.8vw, 20px); margin-bottom: clamp(20px, 2.6vw, 32px);
+  border-bottom: 1px solid var(--hair-ink);
+}
+.arc-s09-005 .eyebrow {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s09-005 h1 {
+  margin: 0; font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+  line-height: 1.14; letter-spacing: -0.014em; max-width: 22ch;
+}
+.arc-s09-005 .head > p:last-child {
+  margin: 0; font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+.arc-s09-005 .intro {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  font-size: 0.875rem; color: var(--ink-soft); max-width: 72ch;
+}
+
+/* --- Grouped bibliographies --------------------------------------------------- */
+.arc-s09-005 .group + .group { margin-top: clamp(26px, 3.2vw, 42px); }
+.arc-s09-005 .group h2 {
+  margin: 0 0 clamp(12px, 1.6vw, 16px); padding-bottom: 8px;
+  border-bottom: 1px solid var(--hair);
+  font-family: var(--mono); font-size: 0.625rem;
+  letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft);
+}
+
+/* Set as book back matter: a two-column flow of hanging-indent entries. */
+.arc-s09-005 .bib {
+  margin: 0; padding: 0; list-style: none;
+  columns: 2; column-gap: clamp(24px, 3.4vw, 56px);
+}
+.arc-s09-005 .bib > li {
+  break-inside: avoid; -webkit-column-break-inside: avoid;
+  margin: 0 0 clamp(11px, 1.5vw, 15px);
+  padding-left: 4.6em; text-indent: -4.6em;
+  font-size: 0.875rem; line-height: 1.62; color: var(--ink);
+}
+.arc-s09-005 .bib .key {
+  font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.02em; color: var(--ink-soft);
+}
+.arc-s09-005 .bib i { font-style: italic; }
+.arc-s09-005 .bib .tok { font-family: var(--mono); font-size: 0.8125rem; color: var(--ink-soft); }
+
+/* --- Foot -------------------------------------------------------------------- */
+.arc-s09-005 .foot {
+  margin: clamp(26px, 3.2vw, 42px) 0 0; padding-top: clamp(12px, 1.6vw, 18px);
+  border-top: 1px solid var(--hair-ink);
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 24px; align-items: baseline;
+}
+.arc-s09-005 .foot p { margin: 0; font-size: 0.75rem; color: var(--ink-soft); max-width: 76ch; }
+.arc-s09-005 .foot .sheet {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--ink-soft); white-space: nowrap;
+}
+
+/* --- Responsive ---------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s09-005 .bib > li { padding-left: 4.3em; text-indent: -4.3em; }
+}
+@media (max-width: 1024px) {
+  .arc-s09-005 h1 { max-width: 26ch; }
+}
+@media (max-width: 768px) {
+  /* One column: a hanging indent only reads when the measure is wide enough. */
+  .arc-s09-005 .bib { columns: 1; }
+}
+@media (max-width: 480px) {
+  .arc-s09-005 .bib > li { padding-left: 0; text-indent: 0; }
+  .arc-s09-005 .bib .key { display: block; margin-bottom: 2px; }
+  .arc-s09-005 .foot { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 360px) {
+  .arc-s09-005 .bib > li { font-size: 0.8125rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s09-005 *, .arc-s09-005 *::before, .arc-s09-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s09-005" data-study-id="ARC-S09-005" data-territory="sector-native-distinctive">
+
+  <section class="shell" aria-labelledby="arc-s09-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Back matter</p>
+        <h1 id="arc-s09-005-title">Selected awards and publications</h1>
+      </div>
+      <p>Sheet ARC / S09 &#183; placeholder</p>
+    </div>
+
+    <p class="intro">
+      Recorded the way a practice records them in a monograph or a CV &#8212; as citations that
+      can be checked, not as badges. Each entry carries a key, the body or title it belongs to,
+      the project it concerns, and the year.
+    </p>
+
+    <div class="group">
+      <h2>Awards</h2>
+      <ol class="bib">
+        <li>
+          <span class="key">[A&#8209;01]</span> <i>Awarding body placeholder</i>. Award record 01,
+          category placeholder. Project record 01. <span class="tok">YYYY</span>.
+        </li>
+        <li>
+          <span class="key">[A&#8209;02]</span> <i>Awarding body placeholder</i>. Award record 02,
+          category placeholder. Project record 02. <span class="tok">YYYY</span>.
+        </li>
+        <li>
+          <span class="key">[A&#8209;03]</span> <i>Awarding body placeholder</i>. Award record 03,
+          category placeholder. Project record 04. <span class="tok">YYYY</span>.
+        </li>
+        <li>
+          <span class="key">[A&#8209;04]</span> <i>Awarding body placeholder</i>. Award record 04,
+          category placeholder. Project record 05. <span class="tok">YYYY</span>.
+        </li>
+      </ol>
+    </div>
+
+    <div class="group">
+      <h2>Publications</h2>
+      <ol class="bib">
+        <li>
+          <span class="key">[P&#8209;01]</span> <i>Publication placeholder</i>. &#8220;Publication
+          record 01&#8221;, feature on project record 01, issue <span class="tok">NN</span>,
+          pp. <span class="tok">NN&#8211;NN</span>. <span class="tok">YYYY</span>.
+        </li>
+        <li>
+          <span class="key">[P&#8209;02]</span> <i>Publication placeholder</i>. &#8220;Publication
+          record 02&#8221;, project profile, issue <span class="tok">NN</span>,
+          pp. <span class="tok">NN&#8211;NN</span>. <span class="tok">YYYY</span>.
+        </li>
+        <li>
+          <span class="key">[P&#8209;03]</span> <i>Publication placeholder</i>. &#8220;Publication
+          record 03&#8221;, interview, issue <span class="tok">NN</span>,
+          pp. <span class="tok">NN&#8211;NN</span>. <span class="tok">YYYY</span>.
+        </li>
+        <li>
+          <span class="key">[P&#8209;04]</span> <i>Book title placeholder</i>. Chapter
+          <span class="tok">NN</span>, contribution on project record 03, publisher placeholder.
+          <span class="tok">YYYY</span>.
+        </li>
+        <li>
+          <span class="key">[P&#8209;05]</span> <i>Publication placeholder</i>. &#8220;Publication
+          record 05&#8221;, project profile, issue <span class="tok">NN</span>,
+          pp. <span class="tok">NN&#8211;NN</span>. <span class="tok">YYYY</span>.
+        </li>
+        <li>
+          <span class="key">[P&#8209;06]</span> <i>Publication placeholder</i>. &#8220;Publication
+          record 06&#8221;, feature on project record 05, issue <span class="tok">NN</span>,
+          pp. <span class="tok">NN&#8211;NN</span>. <span class="tok">YYYY</span>.
+        </li>
+      </ol>
+    </div>
+
+    <div class="foot">
+      <p>
+        Every field above is a template token. Nothing here names an awarding body, a publication,
+        a publisher or a date, and nothing asserts that an award was given or an article printed
+        &#8212; the citation form is the structure being studied, not a record.
+      </p>
+      <span class="sheet">Status &#183; design study</span>
+    </div>
+
+  </section>
+
+</div>
+</body>
+</html>

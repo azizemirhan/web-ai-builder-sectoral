@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S09-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S09 — Awards & Publications
+  Territory      : Dense / Information-heavy
+  Reference      : None supplied. Authored to brief.
+  Layout model   : Summary rail over a full record table — year, record, project, kind and
+                   outcome as sortable-looking columns
+  Density        : High
+  Media mode     : None. A record table is a document; the section's only natural image is an
+                   award mark or a masthead, which cannot be placeheld honestly.
+  Interaction    : None (static; no JavaScript). Below 900px the table becomes a labelled,
+                   keyboard-scrollable region rather than dropping columns.
+  Content note   : Every cell is a template token. The "Outcome" column deliberately carries
+                   neutral words ("Entry", "Shortlist", "Award") as *field values to be filled*,
+                   not as claims — the summary rail counts rows in the table, not achievements,
+                   and says so.
+-->
+
+<meta name="study-id" content="ARC-S09-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S09">
+<meta name="section-name" content="Awards &amp; Publications">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Summary rail over a full record table">
+<meta name="density" content="high">
+<meta name="media-mode" content="none-by-policy">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S09-003 — Awards, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f5f6f7; }
+
+/* Scoped study styles — namespaced to .arc-s09-003 */
+.arc-s09-003 {
+  --ink: #101216;
+  --ink-soft: #4f545b;
+  --paper: #f5f6f7;
+  --card: #ffffff;
+  --line: #dfe2e5;
+  --line-strong: #7f848a;
+  --chip: #e6e9ec;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s09-003 *,
+.arc-s09-003 *::before,
+.arc-s09-003 *::after { box-sizing: inherit; }
+.arc-s09-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s09-003 .shell {
+  width: 100%; max-width: 1360px; margin: 0 auto;
+  padding: clamp(34px, 4.2vw, 66px) clamp(16px, 2.6vw, 40px);
+}
+
+/* --- Head ----------------------------------------------------------------- */
+.arc-s09-003 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 18px; flex-wrap: wrap; margin-bottom: clamp(18px, 2.2vw, 28px);
+}
+.arc-s09-003 h1 {
+  margin: 0; font-size: clamp(1.5rem, 2.7vw, 2.25rem);
+  line-height: 1.12; letter-spacing: -0.026em; font-weight: 600; max-width: 20ch;
+}
+.arc-s09-003 .head p {
+  margin: 0; font-family: var(--mono); font-size: 0.625rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Summary rail ---------------------------------------------------------- */
+.arc-s09-003 .summary {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 16px);
+  margin: 0 0 clamp(18px, 2.2vw, 28px);
+}
+.arc-s09-003 .summary > div {
+  background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+  padding: clamp(12px, 1.6vw, 18px);
+}
+.arc-s09-003 .summary dt {
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px;
+}
+.arc-s09-003 .summary dd {
+  margin: 0; font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600; letter-spacing: -0.014em; font-variant-numeric: tabular-nums;
+}
+
+/* --- Record table ----------------------------------------------------------- */
+.arc-s09-003 .tablewrap {
+  background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+  padding: clamp(10px, 1.6vw, 18px);
+}
+.arc-s09-003 .scroll { overflow-x: auto; }
+.arc-s09-003 .scroll:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+.arc-s09-003 table { width: 100%; border-collapse: collapse; }
+.arc-s09-003 caption {
+  caption-side: top; text-align: left; padding: 4px 4px 14px;
+  font-size: 0.8125rem; color: var(--ink-soft); max-width: 82ch;
+}
+.arc-s09-003 thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--card);
+  padding: 0 14px 10px 0; text-align: left; vertical-align: bottom;
+  border-bottom: 1px solid var(--line-strong);
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-soft); font-weight: 600; white-space: nowrap;
+}
+.arc-s09-003 tbody th,
+.arc-s09-003 tbody td {
+  padding: 11px 14px 11px 0; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.8125rem; white-space: nowrap;
+}
+.arc-s09-003 tbody th { font-weight: 500; }
+.arc-s09-003 tbody tr:last-child th,
+.arc-s09-003 tbody tr:last-child td { border-bottom: 0; }
+.arc-s09-003 .yr { font-family: var(--mono); color: var(--ink-soft); width: 1%; }
+.arc-s09-003 .chip {
+  display: inline-block; padding: 3px 9px; border-radius: 999px;
+  background: var(--chip); font-size: 0.6875rem;
+}
+
+.arc-s09-003 .note {
+  margin: clamp(16px, 2vw, 24px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 80ch;
+}
+
+/* --- Responsive -------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s09-003 .summary { gap: 12px; }
+}
+@media (max-width: 1024px) {
+  .arc-s09-003 .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s09-003 h1 { max-width: 26ch; }
+}
+@media (max-width: 900px) {
+  .arc-s09-003 table { min-width: 720px; }
+}
+@media (max-width: 768px) {
+  .arc-s09-003 caption { padding-bottom: 12px; }
+}
+@media (max-width: 480px) {
+  .arc-s09-003 .summary { grid-template-columns: minmax(0, 1fr); }
+  .arc-s09-003 table { min-width: 660px; }
+}
+@media (max-width: 360px) {
+  .arc-s09-003 .tablewrap { padding: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s09-003 *, .arc-s09-003 *::before, .arc-s09-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s09-003" data-study-id="ARC-S09-003" data-territory="dense-information-heavy">
+
+  <section class="shell" aria-labelledby="arc-s09-003-title">
+
+    <div class="head">
+      <h1 id="arc-s09-003-title">Full record of awards and publications</h1>
+      <p>Placeholder record &#183; template tokens</p>
+    </div>
+
+    <dl class="summary">
+      <div><dt>Rows in this table</dt><dd>8</dd></div>
+      <div><dt>Kinds recorded</dt><dd>Award, press, book</dd></div>
+      <div><dt>Fields per row</dt><dd>5</dd></div>
+      <div><dt>Status</dt><dd>Design study</dd></div>
+    </dl>
+
+    <div class="tablewrap">
+      <div class="scroll" role="region" tabindex="0" aria-labelledby="arc-s09-003-title">
+        <table>
+          <caption>
+            The studio's record, kept as one table rather than split by kind. Every cell below is
+            a template token: the counts in the rail above describe this table, not the studio,
+            and no awarding body, publication or date is named or implied.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" class="yr">Year</th>
+              <th scope="col">Record</th>
+              <th scope="col">Project</th>
+              <th scope="col">Kind</th>
+              <th scope="col">Field to fill</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="yr">YYYY</td>
+              <th scope="row">Award record 01</th>
+              <td>Project record 01</td>
+              <td><span class="chip">Award</span></td>
+              <td>Outcome</td>
+            </tr>
+            <tr>
+              <td class="yr">YYYY</td>
+              <th scope="row">Publication record 01</th>
+              <td>Project record 01</td>
+              <td><span class="chip">Press</span></td>
+              <td>Issue NN</td>
+            </tr>
+            <tr>
+              <td class="yr">YYYY</td>
+              <th scope="row">Award record 02</th>
+              <td>Project record 02</td>
+              <td><span class="chip">Award</span></td>
+              <td>Outcome</td>
+            </tr>
+            <tr>
+              <td class="yr">YYYY</td>
+              <th scope="row">Publication record 02</th>
+              <td>Project record 03</td>
+              <td><span class="chip">Press</span></td>
+              <td>Issue NN</td>
+            </tr>
+            <tr>
+              <td class="yr">YYYY</td>
+              <th scope="row">Publication record 03</th>
+              <td>Project record 03</td>
+              <td><span class="chip">Book</span></td>
+              <td>Chapter NN</td>
+            </tr>
+            <tr>
+              <td class="yr">YYYY</td>
+              <th scope="row">Award record 03</th>
+              <td>Project record 04</td>
+              <td><span class="chip">Award</span></td>
+              <td>Outcome</td>
+            </tr>
+            <tr>
+              <td class="yr">YYYY</td>
+              <th scope="row">Publication record 04</th>
+              <td>Project record 05</td>
+              <td><span class="chip">Press</span></td>
+              <td>Issue NN</td>
+            </tr>
+            <tr>
+              <td class="yr">YYYY</td>
+              <th scope="row">Award record 04</th>
+              <td>Project record 05</td>
+              <td><span class="chip">Award</span></td>
+              <td>Outcome</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="note">
+      The "Field to fill" column marks where a studio enters the outcome, issue or chapter for
+      each row. It is left as a field name rather than a value so the table cannot be read as a
+      record of results.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>
