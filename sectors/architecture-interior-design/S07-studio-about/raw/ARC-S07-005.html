@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S07-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S07 — Studio About
+  Territory      : Sector-native / Distinctive
+  Reference      : Reference 5 — an oversized wordmark at the top left with a small pill beside
+                   it, one long statement paragraph filling the right of the measure with the
+                   studio name set in italic at its head, a small tall image at the lower left,
+                   and a rail of short uppercase labels along the bottom edge.
+  Layout model   : Studio colophon — oversized wordmark masthead, single long statement, tall
+                   plate, and a labelled colophon rail
+  Density        : Low-medium
+  Media mode     : One empty tall plate at the lower left.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The sector-native device is the colophon — the imprint page of a practice
+                   monograph, where the studio is described once, in full, and the rail points to
+                   the documents that stand behind the description. The reference paragraph is
+                   promotional ("trailblazing", "groundbreaking", "unrivalled", "setting new
+                   standards"); that language is superlative self-assessment, so the statement
+                   here is written plainly instead. No client names, awards, certifications,
+                   statistics, pricing, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S07-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S07">
+<meta name="section-name" content="Studio About">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Studio colophon with wordmark masthead, statement, plate and rail">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="empty-tall-plate-single">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S07-005 — About, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f5f2; }
+
+/* Scoped study styles — namespaced to .arc-s07-005 */
+.arc-s07-005 {
+  --paper: #f6f5f2;
+  --ink: #15161a;
+  --ink-soft: #4d4b45;
+  --slot: #dedcd4;
+  --slot-ink: #4a4842;
+  --hair: #d5d2c9;
+  --hair-ink: #7f7c73;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s07-005 *,
+.arc-s07-005 *::before,
+.arc-s07-005 *::after { box-sizing: inherit; }
+.arc-s07-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s07-005 .shell {
+  width: 100%; max-width: 1280px; margin: 0 auto;
+  padding: clamp(26px, 3.4vw, 54px) clamp(16px, 2.8vw, 44px) clamp(20px, 2.4vw, 34px);
+}
+
+/* --- Edge label --------------------------------------------------------- */
+.arc-s07-005 .edge {
+  margin: 0 0 clamp(16px, 2vw, 26px);
+  padding-bottom: clamp(12px, 1.6vw, 18px);
+  border-bottom: 1px solid var(--hair);
+  font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Masthead ----------------------------------------------------------- */
+.arc-s07-005 .masthead {
+  display: flex; align-items: flex-start; gap: clamp(12px, 1.8vw, 24px);
+  flex-wrap: wrap;
+  margin-bottom: clamp(26px, 3.4vw, 54px);
+}
+.arc-s07-005 h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7.4vw, 5.75rem);
+  line-height: 0.94; letter-spacing: -0.045em; font-weight: 400;
+}
+.arc-s07-005 .pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 34px; padding: 0 14px; margin-top: clamp(6px, 1vw, 14px);
+  border: 1px solid var(--hair-ink); border-radius: 999px;
+  font-size: 0.625rem; letter-spacing: 0.12em;
+  color: var(--ink); text-decoration: none; background: transparent;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s07-005 .pill:hover,
+.arc-s07-005 .pill:focus-visible { background: #eceae4; border-color: var(--ink); }
+
+/* --- Statement + plate --------------------------------------------------- */
+.arc-s07-005 .body {
+  display: grid; grid-template-columns: minmax(0, 0.4fr) minmax(0, 1.55fr);
+  gap: clamp(22px, 3vw, 52px);
+  align-items: end;
+  margin-bottom: clamp(24px, 3vw, 42px);
+}
+.arc-s07-005 figure { margin: 0; }
+.arc-s07-005 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 3 / 4; background: var(--slot); border-radius: 2px;
+}
+.arc-s07-005 .slot p {
+  margin: 0; padding: 11px 13px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s07-005 .statement {
+  margin: 0;
+  font-size: clamp(1rem, 1.85vw, 1.5rem);
+  line-height: 1.42; letter-spacing: -0.012em; max-width: 58ch;
+}
+.arc-s07-005 .statement em { font-style: italic; }
+
+/* --- Colophon rail -------------------------------------------------------- */
+.arc-s07-005 .colophon {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--hair-ink);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s07-005 .colophon > li { margin: 0; border-right: 1px solid var(--hair); }
+.arc-s07-005 .colophon > li:last-child { border-right: 0; }
+.arc-s07-005 .colophon a {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  min-height: 52px; padding: 12px clamp(12px, 1.8vw, 20px) 12px 0;
+  font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  transition: color 140ms ease;
+}
+.arc-s07-005 .colophon > li:not(:first-child) a { padding-left: clamp(12px, 1.8vw, 20px); }
+.arc-s07-005 .colophon a:hover,
+.arc-s07-005 .colophon a:focus-visible { color: var(--ink-soft); }
+.arc-s07-005 .colophon a span:last-child { color: var(--hair-ink); }
+
+/* --- Responsive ------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s07-005 .statement { max-width: 52ch; }
+}
+@media (max-width: 1024px) {
+  .arc-s07-005 .body { grid-template-columns: minmax(0, 0.5fr) minmax(0, 1.4fr); gap: 30px; }
+}
+@media (max-width: 768px) {
+  .arc-s07-005 .body { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .arc-s07-005 figure { order: 2; max-width: 320px; }
+  .arc-s07-005 .slot { aspect-ratio: 4 / 3; }
+  .arc-s07-005 .statement { max-width: none; }
+  .arc-s07-005 .colophon { grid-template-columns: minmax(0, 1fr); }
+  .arc-s07-005 .colophon > li { border-right: 0; border-bottom: 1px solid var(--hair); }
+  .arc-s07-005 .colophon > li:last-child { border-bottom: 0; }
+  .arc-s07-005 .colophon > li:not(:first-child) a { padding-left: 0; }
+}
+@media (max-width: 480px) {
+  .arc-s07-005 .masthead { gap: 10px; }
+  .arc-s07-005 figure { max-width: none; }
+}
+@media (max-width: 360px) {
+  .arc-s07-005 .edge { letter-spacing: 0.14em; }
+  .arc-s07-005 .colophon a { letter-spacing: 0.12em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s07-005 *, .arc-s07-005 *::before, .arc-s07-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s07-005" data-study-id="ARC-S07-005" data-territory="sector-native-distinctive">
+
+  <section class="shell" aria-labelledby="arc-s07-005-title">
+
+    <p class="edge">Colophon &#183; architecture &amp; interior design practice</p>
+
+    <div class="masthead">
+      <h1 id="arc-s07-005-title">Studio</h1>
+      <a class="pill" href="#arc-s07-005-title">Learn more</a>
+    </div>
+
+    <div class="body">
+      <figure>
+        <div class="slot"><p>Plate area</p></div>
+      </figure>
+
+      <p class="statement">
+        <em>The studio</em> is an architecture and interior design practice working across
+        houses, workplaces and small civic buildings. We read a site before we draw, keep the
+        number of construction systems in a project low so each junction can be detailed
+        properly, and stay on a commission until the last thing is fixed in place. The work is
+        made by the same small team from the first survey to the final handover set.
+      </p>
+    </div>
+
+    <ul class="colophon">
+      <li>
+        <a href="#arc-s07-005-title">
+          <span>Studio</span>
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+      <li>
+        <a href="#arc-s07-005-title">
+          <span>Materials statement</span>
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+      <li>
+        <a href="#arc-s07-005-title">
+          <span>Practice &amp; people</span>
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+
+</div>
+</body>
+</html>

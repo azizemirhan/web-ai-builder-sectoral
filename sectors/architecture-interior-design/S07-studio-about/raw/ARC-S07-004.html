@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S07-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S07 — Studio About
+  Territory      : Conversion-led
+  Reference      : Reference 3 — an oversized uppercase display statement spanning the measure
+                   with a bordered "about us" pill in the top-right corner, a dark round
+                   "learn more" pill at the lower left, and an image beside a two-column
+                   paragraph block on the right.
+  Layout model   : Oversized display statement with a corner pill, a round action, and an
+                   image beside two text columns
+  Density        : Medium
+  Media mode     : One empty image area beside the text columns.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The reference statement is a counter ("we've crafted over 600+ unique
+                   designs"). The oversized-statement device is kept but the claim is removed:
+                   the line states what the studio works on, not how much of it there is. This
+                   workspace authors no statistics, awards, certifications, pricing, or
+                   completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S07-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S07">
+<meta name="section-name" content="Studio About">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Oversized display statement with corner pill, round action and text columns">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-area-single">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S07-004 — About, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fbfbfa; }
+
+/* Scoped study styles — namespaced to .arc-s07-004 */
+.arc-s07-004 {
+  --ink: #121317;
+  --ink-soft: #53565d;
+  --paper: #fbfbfa;
+  --slot: #e3e3e1;
+  --slot-ink: #4a4c50;
+  --line-strong: #81848a;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s07-004 *,
+.arc-s07-004 *::before,
+.arc-s07-004 *::after { box-sizing: inherit; }
+.arc-s07-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s07-004 .dial:focus-visible { outline-color: var(--focus-light); }
+
+.arc-s07-004 .shell {
+  width: 100%; max-width: 1340px; margin: 0 auto;
+  padding: clamp(34px, 4.4vw, 70px) clamp(16px, 2.8vw, 44px) clamp(40px, 5vw, 78px);
+}
+
+/* --- Display statement + corner pill ------------------------------------ */
+.arc-s07-004 .head {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(16px, 2.4vw, 36px); align-items: start;
+  margin-bottom: clamp(24px, 3vw, 44px);
+}
+.arc-s07-004 h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 5.4vw, 4.25rem);
+  line-height: 1.02; letter-spacing: -0.035em;
+  text-transform: uppercase; font-weight: 500;
+}
+.arc-s07-004 .pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 20px; white-space: nowrap;
+  border: 1px solid var(--line-strong); border-radius: 999px;
+  font-size: 0.625rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none; background: transparent;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s07-004 .pill:hover,
+.arc-s07-004 .pill:focus-visible { background: #f0f0ef; border-color: var(--ink); }
+
+/* --- Body: action + image + text columns -------------------------------- */
+.arc-s07-004 .body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1.15fr) minmax(0, 1.1fr);
+  gap: clamp(20px, 2.8vw, 46px);
+  align-items: start;
+}
+.arc-s07-004 .dial {
+  display: inline-flex; align-items: center; gap: 12px;
+  min-height: 58px; padding: 0 10px 0 24px; border-radius: 999px;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  font-size: 0.6875rem; letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+  transition: background-color 150ms ease;
+}
+.arc-s07-004 .dial:hover,
+.arc-s07-004 .dial:focus-visible { background: #000; }
+.arc-s07-004 .dial__mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 999px;
+  background: #fff; color: var(--ink); font-size: 0.8125rem;
+}
+
+.arc-s07-004 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 4 / 3; background: var(--slot); border-radius: 3px;
+}
+.arc-s07-004 .slot p {
+  margin: 0; padding: 12px 14px;
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s07-004 figure { margin: 0; }
+
+.arc-s07-004 .cols {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 32px);
+}
+.arc-s07-004 .cols p { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); }
+
+/* --- Responsive ---------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s07-004 .body { grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.1fr) minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s07-004 .body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .arc-s07-004 .action { grid-column: 1 / -1; order: 3; }
+  .arc-s07-004 .cols { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 768px) {
+  .arc-s07-004 .head { grid-template-columns: minmax(0, 1fr); }
+  .arc-s07-004 .pill { justify-self: start; }
+  .arc-s07-004 .body { grid-template-columns: minmax(0, 1fr); }
+  .arc-s07-004 .action { order: 0; }
+  .arc-s07-004 .slot { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 480px) {
+  .arc-s07-004 h1 { letter-spacing: -0.028em; }
+  .arc-s07-004 .dial { width: 100%; justify-content: space-between; }
+  .arc-s07-004 .slot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 360px) {
+  .arc-s07-004 .dial { padding-left: 16px; letter-spacing: 0.1em; }
+  .arc-s07-004 .slot p { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s07-004 *, .arc-s07-004 *::before, .arc-s07-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s07-004" data-study-id="ARC-S07-004" data-territory="conversion-led">
+
+  <section class="shell" aria-labelledby="arc-s07-004-title">
+
+    <div class="head">
+      <h1 id="arc-s07-004-title">
+        We shape rooms, houses and the ordinary spaces between them &#8212;
+      </h1>
+      <a class="pill" href="#arc-s07-004-title">About us</a>
+    </div>
+
+    <div class="body">
+
+      <div class="action">
+        <a class="dial" href="#arc-s07-004-title">
+          Learn more
+          <span class="dial__mark" aria-hidden="true">&#8594;</span>
+        </a>
+      </div>
+
+      <figure>
+        <div class="slot"><p>Image area</p></div>
+      </figure>
+
+      <div class="cols">
+        <p>
+          The studio works across residential and small civic projects, and across the whole
+          arc of one: reading the site, testing the plan, drawing the details, and staying on
+          the project while it is built.
+        </p>
+        <p>
+          Every commission arrives with its own constraints, so the scope is written around
+          them rather than assembled from a standard list. If that is how you want to work,
+          the first conversation is short.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
