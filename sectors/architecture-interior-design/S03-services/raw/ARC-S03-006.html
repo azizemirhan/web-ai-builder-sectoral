@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S03-006
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S03 — Services
+  Territory      : Extended — Paired media-and-card rows on an inset sheet
+  Variant note   : 006 extends the default 001–005 set. standards/01-AUTHORING-STANDARD.md
+                   permits 006–010 only where a structural territory is genuinely missing.
+                   Justification: in all five existing S03 studies the services sit in a grid of
+                   equal cells and any media belongs to a card. This is the first S03 topology
+                   built from repeated two-cell rows in which a full-height media tile is paired
+                   with a text card, and the first with a persistent narrow heading column
+                   holding the action. It is a different content model, not a restyling.
+  Reference      : Reference 6 — a white sheet inset on a warm ground; a narrow left column with
+                   an uppercase eyebrow, a three-line serif heading, a short paragraph and a
+                   small dark button; and a right area of stacked rows, each pairing a
+                   full-height photograph with a card carrying a filled icon tile, a serif title,
+                   and a description with an underlined "Learn more" link pinned to the foot.
+  Layout model   : Inset sheet — narrow heading column beside repeated [media tile | card] rows
+  Density        : Medium
+  Media mode     : Three empty media tiles, one per row, each filling its own grid cell at full
+                   row height. Card icons are decorative inline vectors, not media slots.
+  Interaction    : None (static; no JavaScript)
+  Content note   : All copy is neutral placeholder text. No client names, awards,
+                   certifications, statistics, pricing, or completed-project claims.
+-->
+
+<meta name="study-id" content="ARC-S03-006">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S03">
+<meta name="section-name" content="Services">
+<meta name="variant" content="006">
+<meta name="territory" content="Extended — Paired media-and-card rows">
+<meta name="layout-model" content="Inset sheet with heading column and paired media/card rows">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-tile-per-row">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S03-006 — Services, Extended / Paired rows</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #a9a99d; }
+
+/* Scoped study styles — namespaced to .arc-s03-006 */
+.arc-s03-006 {
+  --ground: #a9a99d;
+  --sheet: #ffffff;
+  --card: #e8e7e2;
+  --slot: #d5d4ce;
+  --slot-ink: #494840;
+  --ink: #1a1a18;
+  --ink-soft: #55534d;
+  --accent: #d1541a;
+  --on-accent: #ffffff;
+  --line-strong: #85837b;
+  --focus: #1f4fd8;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+
+  box-sizing: border-box;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  padding: clamp(14px, 3.4vw, 56px) clamp(12px, 3vw, 48px);
+}
+.arc-s03-006 *,
+.arc-s03-006 *::before,
+.arc-s03-006 *::after { box-sizing: inherit; }
+.arc-s03-006 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+/* --- Inset sheet ---------------------------------------------------- */
+.arc-s03-006 .sheet {
+  max-width: 1200px; margin: 0 auto;
+  background: var(--sheet);
+  padding: clamp(22px, 3.4vw, 54px);
+}
+.arc-s03-006 .grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.62fr);
+  gap: clamp(20px, 2.8vw, 44px);
+  align-items: start;
+}
+
+/* --- Heading column -------------------------------------------------- */
+.arc-s03-006 .eyebrow {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s03-006 h1 {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.375rem, 2.4vw, 1.9375rem);
+  line-height: 1.22; letter-spacing: -0.012em; max-width: 18ch;
+}
+.arc-s03-006 .lede {
+  margin: 0 0 clamp(18px, 2.2vw, 28px);
+  font-size: 0.75rem; line-height: 1.7; color: var(--ink-soft); max-width: 34ch;
+}
+.arc-s03-006 .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 20px;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  font-size: 0.8125rem; text-decoration: none;
+  transition: background-color 150ms ease;
+}
+.arc-s03-006 .btn:hover,
+.arc-s03-006 .btn:focus-visible { background: #000; }
+
+/* --- Paired rows ------------------------------------------------------ */
+.arc-s03-006 .rows { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(10px, 1.3vw, 16px); }
+.arc-s03-006 .row {
+  display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr);
+  gap: clamp(10px, 1.3vw, 16px);
+  align-items: stretch;
+}
+.arc-s03-006 .tile {
+  display: flex; align-items: flex-end;
+  min-height: 210px; background: var(--slot);
+}
+.arc-s03-006 .tile p {
+  margin: 0; padding: 12px 14px;
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s03-006 .card {
+  position: relative;
+  display: flex; flex-direction: column;
+  min-height: 210px;
+  padding: clamp(14px, 1.7vw, 22px);
+  background: var(--card);
+}
+.arc-s03-006 .card__icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; margin-bottom: 14px;
+  background: var(--accent); color: var(--on-accent); border-radius: 5px;
+}
+.arc-s03-006 .card__icon svg { width: 17px; height: 17px; }
+.arc-s03-006 .card h2 {
+  margin: 0 0 auto;
+  font-family: var(--serif); font-weight: 400;
+  font-size: 0.9375rem; letter-spacing: -0.004em;
+}
+.arc-s03-006 .card > p {
+  margin: clamp(28px, 3.4vw, 52px) 0 10px;
+  font-size: 0.6875rem; line-height: 1.65; color: var(--ink-soft);
+}
+.arc-s03-006 .more {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 0.625rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong);
+}
+.arc-s03-006 .more::after { content: ""; position: absolute; inset: 0; }
+.arc-s03-006 .more:hover,
+.arc-s03-006 .more:focus-visible { border-bottom-color: var(--ink); }
+
+/* --- Responsive --------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s03-006 .tile, .arc-s03-006 .card { min-height: 196px; }
+}
+@media (max-width: 1024px) {
+  .arc-s03-006 .grid { grid-template-columns: minmax(0, 1fr); }
+  .arc-s03-006 h1 { max-width: 26ch; }
+  .arc-s03-006 .lede { max-width: 56ch; }
+}
+@media (max-width: 768px) {
+  .arc-s03-006 .row { grid-template-columns: minmax(0, 1fr); }
+  .arc-s03-006 .tile { min-height: 0; aspect-ratio: 16 / 10; }
+  .arc-s03-006 .card { min-height: 0; }
+  .arc-s03-006 .card > p { margin-top: 22px; }
+}
+@media (max-width: 480px) {
+  .arc-s03-006 .sheet { padding: 18px; }
+  .arc-s03-006 .btn { width: 100%; }
+  .arc-s03-006 .tile { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 360px) {
+  .arc-s03-006 { padding: 10px; }
+  .arc-s03-006 .sheet { padding: 14px; }
+  .arc-s03-006 .card { padding: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s03-006 *, .arc-s03-006 *::before, .arc-s03-006 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s03-006" data-study-id="ARC-S03-006" data-territory="extended-paired-rows">
+
+  <section class="sheet" aria-labelledby="arc-s03-006-title">
+    <div class="grid">
+
+      <div>
+        <p class="eyebrow">Our services</p>
+        <h1 id="arc-s03-006-title">
+          Architecture and Interiors, Drawn and Delivered Together
+        </h1>
+        <p class="lede">
+          We take a project from the first reading of the site through to the details
+          that get built, keeping the same team on it from beginning to end.
+        </p>
+        <a class="btn" href="#arc-s03-006-title">Contact us</a>
+      </div>
+
+      <ul class="rows">
+        <li class="row">
+          <div class="tile"><p>Image area</p></div>
+          <div class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 21 H21 M5 21 V10 L12 5 L19 10 V21" fill="none" stroke="currentColor" stroke-width="1.7"></path>
+              </svg>
+            </span>
+            <h2>Architectural design</h2>
+            <p>
+              New build and extension work carried from the concept sketch through
+              planning and technical drawings.
+            </p>
+            <a class="more" href="#arc-s03-006-title" aria-label="Learn more about architectural design">Learn more</a>
+          </div>
+        </li>
+
+        <li class="row">
+          <div class="tile"><p>Image area</p></div>
+          <div class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M4 4 H20 V20 H4 Z M4 13 H13 M13 4 V20" fill="none" stroke="currentColor" stroke-width="1.7"></path>
+              </svg>
+            </span>
+            <h2>Interior architecture</h2>
+            <p>
+              Layout, light, joinery and surface resolved as one set of decisions
+              rather than applied at the end.
+            </p>
+            <a class="more" href="#arc-s03-006-title" aria-label="Learn more about interior architecture">Learn more</a>
+          </div>
+        </li>
+
+        <li class="row">
+          <div class="tile"><p>Image area</p></div>
+          <div class="card">
+            <span class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M3 20 H21 M6 20 V9 H18 V20 M6 14 H18 M9 9 V20 M15 9 V20" fill="none" stroke="currentColor" stroke-width="1.7"></path>
+              </svg>
+            </span>
+            <h2>Renovation and reuse</h2>
+            <p>
+              Existing fabric surveyed, kept where it works, and rebuilt where it does
+              not, with the change drawn rather than hidden.
+            </p>
+            <a class="more" href="#arc-s03-006-title" aria-label="Learn more about renovation and reuse">Learn more</a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

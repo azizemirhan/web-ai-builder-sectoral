@@ -18,6 +18,7 @@
 | `ARC-S03-003` | Dense / Information-heavy | AUTHORED | `raw/ARC-S03-003.html` |
 | `ARC-S03-004` | Conversion-led | AUTHORED | `raw/ARC-S03-004.html` |
 | `ARC-S03-005` | Sector-native / Distinctive | AUTHORED | `raw/ARC-S03-005.html` |
+| `ARC-S03-006` | Extended — Paired media-and-card rows | AUTHORED | `raw/ARC-S03-006.html` |
 
 ## Authoring Direction
 
@@ -38,11 +39,22 @@ was rewritten to services; nothing from their original subject matter was retain
 | `ARC-S03-003` | Reference 3 | Bracketed section number in a ruled left margin; heading with a "See all" arrow opposite; three-card row with category label, title, and description |
 | `ARC-S03-004` | Reference 1 | Catalogue heading with a small note opposite; card row with a light chip label over each image; primary button bottom-left and circular previous / next controls bottom-right |
 | `ARC-S03-005` | Reference 2 | Centred heading above a row of four tall rounded cards, each with a pill badge over the top-left corner |
+| `ARC-S03-006` | Reference 6 | White sheet inset on a warm ground; narrow left column with an uppercase eyebrow, a serif heading, a paragraph and a small dark button; stacked rows each pairing a full-height photograph with a card carrying a filled icon tile, a serif title, and a description with an underlined "Learn more" link |
 
 Reference 1 carries a price line inside each chip. The chip position and two-line structure are
 preserved, but the price is replaced with a neutral engagement descriptor ("Concept to
 completion"), because this workspace does not author pricing, statistics, awards,
 certifications, or completed-project claims.
+
+`ARC-S03-006` was authored later, from a sixth reference supplied after the first five studies
+were committed. `standards/01-AUTHORING-STANDARD.md` allows variants 006–010 only where research
+demonstrates a genuinely missing structural territory, so it is recorded here against that test:
+in all of `001`–`005` the services occupy a grid of equal cells and any photography belongs to a
+card. `006` is the first S03 topology built from repeated two-cell rows pairing a full-height
+media tile with a text card, and the first with a persistent narrow heading column carrying the
+action. That is a different content model rather than a restyling of an existing one, so the
+extension is taken as justified. The default target for the section remains five studies; `006`
+is an addition to the batch, not a replacement for any of them.
 
 ## Study Records
 
@@ -175,6 +187,36 @@ certifications, or completed-project claims.
   line. Framing services as stages will not suit studios that sell discrete, independent
   services, and the numbered sequence implies a full-service appointment.
 
+### ARC-S03-006 — Extended / Paired media-and-card rows
+
+- **Structural intent / archetype:** Services as a stack of paired rows. Each service gets a
+  photograph of its own at full row height and a card beside it, with the section heading and its
+  single action held permanently in a narrow left column.
+- **Layout model:** A white sheet inset on a warm ground, itself a `0.6fr / 1.62fr` grid. The left
+  column holds an uppercase eyebrow, a three-line serif heading, a short paragraph and a compact
+  dark button. The right column is a list of three rows, each a `1.04fr / 1fr` pair of a media
+  tile and a card. Cards run a filled icon tile, a serif title, then a description and an
+  underlined "Learn more" link pinned to the card foot by `margin: auto` on the title.
+- **Density:** Medium. Three services, each with an icon, a title, a description and a link.
+- **Media mode:** Three empty media tiles, one per row, each filling its own grid cell at full row
+  height. The four card icons are decorative inline vectors and are not media slots.
+- **Interaction:** None. No `<script>` element. Each card's "Learn more" link carries a stretched
+  `::after` so the whole card is clickable, and an `aria-label` naming the service so the link is
+  not announced as a bare "Learn more".
+- **Responsive strategy:** The heading column moves above the rows at 1024px. Each row breaks into
+  a stacked media tile and card at 768px, where the tile swaps its fixed row height for a 16:10
+  ratio (4:3 at 480px). Sheet padding steps 54 → 18 → 14px and the ground inset steps 56 → 10px,
+  so the framing survives 320px.
+- **Composer value:** The only S03 layout that gives each service a full-size image of its own,
+  which suits studios whose services are best shown rather than described. The persistent heading
+  column also means the section keeps one visible action no matter how far the row list is
+  scrolled past.
+- **Limitation / content ceiling:** Three rows is the designed count — a fourth makes the row stack
+  much taller than the heading column and the balance of the sheet is lost. Descriptions run to
+  about twenty words before the card foot crowds. The inset-sheet framing is a strong
+  presentational commitment and assumes the section is not placed directly against another
+  full-bleed block.
+
 ## Research Metadata
 
 - **Sources:** Five visual-direction reference images supplied with the authoring request.
@@ -207,8 +249,8 @@ certifications, or completed-project claims.
   inline SVG in this batch. All type uses system font stacks.
 - Network calls: NONE — no `fetch`, no `XMLHttpRequest`, no form.
 - Browser storage: NONE.
-- JavaScript necessity: One of five. `ARC-S03-004` needs it for the rail controls, their
-  disabled states, and focus recovery. `001`, `002`, `003`, and `005` contain no `<script>`
+- JavaScript necessity: One of six. `ARC-S03-004` needs it for the rail controls, their
+  disabled states, and focus recovery. `001`, `002`, `003`, `005`, and `006` contain no `<script>`
   element at all.
 
 ## Media Slots
@@ -221,6 +263,7 @@ certifications, or completed-project claims.
 | Card image ×3 | `ARC-S03-003` | One image per service card | Still image, 3:2 (21:9 for the third card at 1024px) | Empty tonal surface with a monospace label; the scope list carries the information load. |
 | Card image ×6 | `ARC-S03-004` | Background of each catalogue card, behind the chip | Still image, 3:4 (4:5 at 768px) | Chip is opaque white and independent of the media, so the service name is legible over any replacement image. |
 | Plate image ×4 | `ARC-S03-005` | Background of each stage plate, behind the badge | Still image, 3:4.4 (4:5 at 1024px, 16:10 at 480px) | Badge is an opaque white pill; stage identity is carried by text, not by the artwork. |
+| Row tile ×3 | `ARC-S03-006` | One full-height photograph per service row | Still image, filling its cell (16:10 at 768px, 4:3 at 480px) | Empty tonal surface with a quiet label; the paired card holds all information and is independent of the tile. |
 
 Every image area is deliberately left empty, per the authoring direction. No study contains a
 photograph, a logo, a client mark, a badge of accreditation, or any fabricated evidence.
@@ -229,38 +272,39 @@ is referenced; it becomes required if these slots are filled before ingestion.
 
 ## QA
 
-- **ID validation: PASS.** All five planned IDs exist. Each file carries a matching
-  `<meta name="study-id">`, a `data-study-id` attribute, a scoped root class, and a filename in
-  the `ARC-S03-NNN.html` form required by `standards/02-NAMING-AND-ID-STANDARD.md`. Every element
-  `id` is namespaced with its study ID.
-- **Raw-format validation: PASS.** Five standalone `.html` files. Tag balance, nesting, and
-  unique-id checks pass on all five. All CSS is namespaced to the study root class; the only
+- **ID validation: PASS.** All five planned IDs exist, plus the extension variant `ARC-S03-006`.
+  Each file carries a matching `<meta name="study-id">`, a `data-study-id` attribute, a scoped
+  root class, and a filename in the `ARC-S03-NNN.html` form required by
+  `standards/02-NAMING-AND-ID-STANDARD.md`. Every element `id` is namespaced with its study ID.
+- **Raw-format validation: PASS.** Six standalone `.html` files. Tag balance, nesting, and
+  unique-id checks pass on all six. All CSS is namespaced to the study root class; the only
   unscoped rules are a documented two-line standalone host baseline.
 - **Accessibility QA: PASS.** Verified by script and by review: exactly one `<h1>` per study with
   card titles at `<h2>` and no heading-level jumps, every `aria-labelledby` and `aria-controls`
   reference resolving to a real id, every `<a>` carrying an `href`, both icon-only buttons in
-  `004` carrying an `aria-label` and a `type`, visible `:focus-visible` styling in all five, and a
-  `prefers-reduced-motion` block in all five. Contrast measured on 27 text and UI colour pairs:
-  all text ≥ 4.5:1 (lowest 5.42:1) and all interactive borders ≥ 3:1 (lowest 3.21:1). The only
+  `004` carrying an `aria-label` and a `type`, visible `:focus-visible` styling in all six, and a
+  `prefers-reduced-motion` block in all six. Contrast measured on 36 text and UI colour pairs:
+  all text ≥ 4.5:1 (lowest 5.42:1) and all interactive borders ≥ 3:1 (lowest 3.07:1). The only
   sub-3:1 pair is the disabled state of the `004` controls, which is exempt and is not the sole
   signal — the controls also stop scrolling and the rail position itself communicates the end.
 - **Responsive QA: PASS by static review at 1440, 1280, 1024, 768, 430, 390, and 320px.** Every
-  study defines the 1280 / 1024 / 768 / 480 / 360 breakpoint ladder; 430 and 390 resolve through
+  study, `006` included, defines the 1280 / 1024 / 768 / 480 / 360 breakpoint ladder; 430 and 390 resolve through
   the 480 rules and 320 through the 360 rules. Grid children use `minmax(0, …)`, headings and
   spacing use `clamp()`, and every card grid reduces its column count rather than shrinking cards
   below a usable width. The only horizontal scroll in the batch is the `004` rail, which is
   intentional, labelled, and keyboard reachable. Interactive controls are ≥ 44px.
 - **Dependency validation: PASS.** Scanned for `http:`, `https:`, protocol-relative URLs,
   `@import`, `src=`, `<link>`, `<iframe>`, `url(`, `fetch(`, `XMLHttpRequest`, `integrity`, and
-  `crossorigin`. Zero matches across all five files.
+  `crossorigin`. Zero matches across all six files.
 - **Copy-policy validation: PASS.** Visible text extracted and scanned for awards, certifications,
   accreditations, named professional bodies, rankings, percentages, guarantees, ratings,
   testimonial language, currency symbols, and price patterns. The only numeric strings in visible
   text are the study ID in each `<title>`, the `[03]` margin index in `ARC-S03-003`, and the stage
   numbers in `ARC-S03-005`. No study states a price or a statistic.
-- **Structural-diversity validation: PASS.** Five distinct topologies, five distinct card
-  proportions, five distinct heading treatments, and five distinct grounds. No study is a cosmetic
-  variation of another.
+- **Structural-diversity validation: PASS.** Six distinct topologies, six distinct card
+  proportions, six distinct heading treatments, and six distinct grounds. No study is a cosmetic
+  variation of another; the `006` extension was tested against the other five before being
+  accepted into the batch.
 - **Not run here:** rendered-screenshot capture, real-browser and assistive-technology testing, and
   reduced-motion behaviour under a real user preference. Those belong to Design Lab capture and QA.
 
@@ -270,7 +314,7 @@ is referenced; it becomes required if these slots are filled before ingestion.
   raw study is captured as a standalone document, so a document-level `h1` is correct here even
   though a services block would sit at `h2` inside an assembled page. This is the convention set
   by this batch for all non-hero sections.
-- `ARC-S03-004` is the only study in the sector so far whose controls depend on JavaScript. Content
+- `ARC-S03-004` is the only study in this section whose controls depend on JavaScript. Content
   remains fully reachable without it: the rail is a native scroll container with its own tab stop.
 - Every image area is an empty placeholder surface carrying a short text label. No study implies
   real completed work, a real client, or a real studio; `005` states `Status: Design study` in its
