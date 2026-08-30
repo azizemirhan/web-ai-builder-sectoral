@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S08-006
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S08 — Architects & Designers
+  Territory      : Extended — Featured member with thumbnail strip
+  Variant note   : 006 extends the default 001–005 set so that every supplied reference is
+                   realised. Structurally it is the only study in the section that singles one
+                   person out at large scale and reduces the rest to a strip, which none of
+                   001–005 does.
+  Reference      : Reference 4 — a centred two-line bold heading, a large portrait on the left
+                   with a short statement, a rule, and a name and role on the right, over a strip
+                   of smaller portraits beneath.
+  Layout model   : Centred heading over a featured portrait and statement, closed by a
+                   thumbnail strip of the rest of the team
+  Density        : Medium
+  Media mode     : One large empty portrait plus four empty thumbnails.
+  Interaction    : None (static; no JavaScript). The reference implies a selector — clicking a
+                   thumbnail swaps the featured person — but the thumbnails here are links to
+                   individual pages instead, so the section needs no script and degrades to
+                   nothing.
+  Content note   : The reference carries a five-star rating above its quote. Ratings are
+                   third-party evidence this workspace does not author, so the statement is a
+                   description of what the post covers and no rating appears. People are
+                   placeholders: names read "Team member NN". No photographs, credentials,
+                   registrations, awards, or biographical claims.
+-->
+
+<meta name="study-id" content="ARC-S08-006">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S08">
+<meta name="section-name" content="Architects &amp; Designers">
+<meta name="variant" content="006">
+<meta name="territory" content="Extended — Featured member with thumbnail strip">
+<meta name="layout-model" content="Featured portrait and statement over a thumbnail strip">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-featured-plus-thumbnails">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S08-006 — Team, Extended / Featured member</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fdfdfc; }
+
+/* Scoped study styles — namespaced to .arc-s08-006 */
+.arc-s08-006 {
+  --ink: #16171a;
+  --ink-soft: #55575d;
+  --paper: #fdfdfc;
+  --slot: #e0e0de;
+  --slot-ink: #4a4c50;
+  --rule: #b8563a;
+  --line: #e3e3e1;
+  --line-strong: #83868b;
+  --focus: #1f4fd8;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s08-006 *,
+.arc-s08-006 *::before,
+.arc-s08-006 *::after { box-sizing: inherit; }
+.arc-s08-006 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s08-006 .shell {
+  width: 100%; max-width: 1180px; margin: 0 auto;
+  padding: clamp(42px, 5.2vw, 82px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Head ------------------------------------------------------------------ */
+.arc-s08-006 h1 {
+  margin: 0 auto clamp(30px, 3.8vw, 56px);
+  text-align: center;
+  font-size: clamp(1.75rem, 3.8vw, 3.125rem);
+  line-height: 1.06; letter-spacing: -0.032em; font-weight: 700; max-width: 14ch;
+}
+
+/* --- Featured ---------------------------------------------------------------- */
+.arc-s08-006 .featured {
+  display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  gap: clamp(22px, 3.2vw, 54px); align-items: center;
+  margin-bottom: clamp(28px, 3.4vw, 48px);
+}
+.arc-s08-006 figure { margin: 0; }
+.arc-s08-006 .slot {
+  display: flex; align-items: flex-end;
+  background: var(--slot); border-radius: 8px;
+}
+.arc-s08-006 .featured .slot { aspect-ratio: 4 / 5; }
+.arc-s08-006 .slot p {
+  margin: 0; padding: 12px 14px;
+  font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+.arc-s08-006 .featured__label {
+  margin: 0 0 14px; font-size: 0.5625rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s08-006 .featured blockquote {
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+  font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.5; color: var(--ink-soft);
+  max-width: 40ch;
+}
+.arc-s08-006 .featured hr {
+  width: 72px; height: 2px; margin: 0 0 clamp(16px, 2vw, 22px);
+  border: 0; background: var(--rule);
+}
+.arc-s08-006 .featured h2 { margin: 0 0 3px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.018em; }
+.arc-s08-006 .featured .role { margin: 0; font-size: 0.875rem; color: var(--ink-soft); }
+
+/* --- Thumbnail strip ---------------------------------------------------------- */
+.arc-s08-006 .strip__label {
+  margin: 0 0 clamp(10px, 1.4vw, 14px); padding-top: clamp(18px, 2.2vw, 26px);
+  border-top: 1px solid var(--line);
+  font-size: 0.5625rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s08-006 .strip {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 22px);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s08-006 .strip > li { margin: 0; }
+.arc-s08-006 .strip a {
+  display: block; text-decoration: none; color: var(--ink);
+  border-radius: 8px;
+}
+.arc-s08-006 .strip .slot { aspect-ratio: 3 / 4; }
+.arc-s08-006 .strip h3 { margin: 10px 0 2px; font-size: 0.8125rem; font-weight: 600; }
+.arc-s08-006 .strip p:last-child { margin: 0; font-size: 0.75rem; color: var(--ink-soft); }
+.arc-s08-006 .strip a:hover h3,
+.arc-s08-006 .strip a:focus-visible h3 { text-decoration: underline; text-underline-offset: 3px; }
+
+.arc-s08-006 .note {
+  margin: clamp(22px, 2.8vw, 34px) 0 0; padding-top: clamp(14px, 1.8vw, 20px);
+  border-top: 1px solid var(--line);
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 76ch;
+}
+
+/* --- Responsive ---------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s08-006 .featured { gap: 34px; }
+}
+@media (max-width: 1024px) {
+  .arc-s08-006 .featured { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .arc-s08-006 .featured figure { max-width: 380px; }
+  .arc-s08-006 h1 { max-width: 18ch; }
+}
+@media (max-width: 768px) {
+  .arc-s08-006 .featured figure { max-width: none; }
+  .arc-s08-006 .featured .slot { aspect-ratio: 16 / 10; }
+  .arc-s08-006 .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .arc-s08-006 .featured .slot { aspect-ratio: 4 / 3; }
+  .arc-s08-006 .strip { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .arc-s08-006 .strip .slot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 360px) {
+  .arc-s08-006 .slot p { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s08-006 *, .arc-s08-006 *::before, .arc-s08-006 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s08-006" data-study-id="ARC-S08-006" data-territory="extended-featured-member">
+
+  <section class="shell" aria-labelledby="arc-s08-006-title">
+
+    <h1 id="arc-s08-006-title">Who you will actually be working with</h1>
+
+    <div class="featured">
+      <figure>
+        <div class="slot"><p>Portrait area &#183; featured</p></div>
+      </figure>
+
+      <div>
+        <p class="featured__label">Featured post</p>
+        <blockquote>
+          Takes the brief, sets the design position, and stays on the project through technical
+          design and site &#8212; so the person who agreed the plan is the person who defends it.
+        </blockquote>
+        <hr>
+        <h2>Team member 01</h2>
+        <p class="role">Principal architect</p>
+      </div>
+    </div>
+
+    <p class="strip__label">The rest of the team</p>
+    <ul class="strip">
+      <li>
+        <a href="#arc-s08-006-title">
+          <div class="slot"><p>Portrait</p></div>
+          <h3>Team member 02</h3>
+          <p>Associate, interiors</p>
+        </a>
+      </li>
+      <li>
+        <a href="#arc-s08-006-title">
+          <div class="slot"><p>Portrait</p></div>
+          <h3>Team member 03</h3>
+          <p>Project architect</p>
+        </a>
+      </li>
+      <li>
+        <a href="#arc-s08-006-title">
+          <div class="slot"><p>Portrait</p></div>
+          <h3>Team member 04</h3>
+          <p>Technical designer</p>
+        </a>
+      </li>
+      <li>
+        <a href="#arc-s08-006-title">
+          <div class="slot"><p>Portrait</p></div>
+          <h3>Team member 05</h3>
+          <p>Interior designer</p>
+        </a>
+      </li>
+    </ul>
+
+    <p class="note">
+      Placeholder roster &#183; structure demonstration only. The featured statement describes
+      what the post covers, not a person; no rating, credential or biography appears.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

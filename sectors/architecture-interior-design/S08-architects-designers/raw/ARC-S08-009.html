@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S08-009
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S08 — Architects & Designers
+  Territory      : Extended — Lead card with buttoned rail
+  Variant note   : 009 extends the default 001–005 set so that every supplied reference is
+                   realised. It is the only study in the section that opens the row with a
+                   filled contact card instead of a portrait, and the only one whose rail is
+                   driven by buttons. It is the buttoned counterpart to ARC-S08-008, which uses
+                   native scrolling for the same reason the reference offers arrows.
+  Reference      : Reference 7 — a small uppercase tag above a two-line heading with round
+                   previous / next controls opposite, then a row opening on a filled colour card
+                   carrying a name, a role, a short line and contact links, followed by portrait
+                   cards with the name and role set over the foot of each image.
+  Layout model   : Tagged heading with paired controls over a rail opening on a filled lead card
+  Density        : Medium-high
+  Media mode     : Five empty portrait cards. The lead card carries no image by design — it is
+                   the contact card, not a portrait.
+  Interaction    : Vanilla JavaScript, about forty lines. Previous / next buttons scroll the rail
+                   by one card, disable at each end, and hand focus to the opposite control when
+                   the pressed one becomes disabled. The rail is itself a labelled scroll region
+                   with its own tab stop, so the buttons are an enhancement rather than the only
+                   way through. Scrolling honours prefers-reduced-motion.
+  Content note   : The reference's lead card carries social platform icons. Platform identities
+                   are accounts this workspace cannot invent, so the links read "Profile" and
+                   "Contact" and point nowhere. People are placeholders: names read
+                   "Team member NN". No photographs, credentials, registrations, awards, or
+                   biographical claims.
+-->
+
+<meta name="study-id" content="ARC-S08-009">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S08">
+<meta name="section-name" content="Architects &amp; Designers">
+<meta name="variant" content="009">
+<meta name="territory" content="Extended — Lead card with buttoned rail">
+<meta name="layout-model" content="Tagged heading with paired controls over a rail opening on a lead card">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="empty-portrait-cards-plus-imageless-lead">
+<meta name="interaction" content="scroll-rail-with-prev-next-controls">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S08-009 — Team, Extended / Lead card rail</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .arc-s08-009 */
+.arc-s08-009 {
+  --ink: #131419;
+  --ink-soft: #53555d;
+  --paper: #ffffff;
+  --lead: #4b45d6;
+  --on-lead: #ffffff;
+  --on-lead-soft: #d8d6f8;
+  --card: #23252a;
+  --card-2: #2d3037;
+  --on-card: #f4f4f3;
+  --on-card-soft: #b4b6ba;
+  --line: #e3e3e6;
+  --line-strong: #7f8189;
+  --disabled: #a8aab0;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s08-009 *,
+.arc-s08-009 *::before,
+.arc-s08-009 *::after { box-sizing: inherit; }
+.arc-s08-009 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s08-009 .lead-card :focus-visible,
+.arc-s08-009 .person :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s08-009 .shell {
+  width: 100%; max-width: 1300px; margin: 0 auto;
+  padding: clamp(38px, 4.8vw, 74px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Head ------------------------------------------------------------------------ */
+.arc-s08-009 .tag {
+  display: inline-block; margin: 0 0 clamp(14px, 1.8vw, 20px);
+  padding: 6px 12px; border: 1px solid var(--line-strong); border-radius: 4px;
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s08-009 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap; margin-bottom: clamp(20px, 2.6vw, 32px);
+}
+.arc-s08-009 h1 {
+  margin: 0; font-size: clamp(1.5rem, 2.7vw, 2.125rem);
+  line-height: 1.14; letter-spacing: -0.026em; font-weight: 500; max-width: 22ch;
+}
+.arc-s08-009 .controls { display: flex; gap: 8px; }
+.arc-s08-009 .controls button {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 999px;
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--line-strong); cursor: pointer;
+  font: inherit; font-size: 0.9375rem;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s08-009 .controls button:hover:not(:disabled),
+.arc-s08-009 .controls button:focus-visible { background: #f1f1f3; border-color: var(--ink); }
+.arc-s08-009 .controls button:disabled { color: var(--disabled); border-color: var(--line); cursor: default; }
+
+/* --- Rail --------------------------------------------------------------------------- */
+.arc-s08-009 .rail {
+  display: flex; gap: clamp(10px, 1.4vw, 18px);
+  margin: 0; padding: 0 0 6px; list-style: none;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+}
+.arc-s08-009 .rail:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s08-009 .rail > li {
+  flex: 0 0 clamp(220px, 24vw, 290px);
+  scroll-snap-align: start;
+}
+
+/* Lead contact card — no portrait by design */
+.arc-s08-009 .lead-card {
+  display: flex; flex-direction: column;
+  height: 100%; aspect-ratio: 3 / 4;
+  background: var(--lead); color: var(--on-lead);
+  border-radius: 10px; padding: clamp(16px, 2vw, 22px);
+}
+.arc-s08-009 .lead-card h2 { margin: 0 0 3px; font-size: 1rem; font-weight: 600; letter-spacing: -0.012em; }
+.arc-s08-009 .lead-card .role { margin: 0 0 clamp(14px, 1.8vw, 20px); font-size: 0.75rem; color: var(--on-lead-soft); }
+.arc-s08-009 .lead-card > p:last-of-type { margin: 0 0 auto; font-size: 0.8125rem; color: var(--on-lead-soft); }
+.arc-s08-009 .lead-card ul {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin: clamp(14px, 1.8vw, 20px) 0 0; padding: 0; list-style: none;
+}
+.arc-s08-009 .lead-card ul a {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  font-size: 0.625rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--on-lead); text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s08-009 .lead-card ul a:hover,
+.arc-s08-009 .lead-card ul a:focus-visible { background: rgba(255, 255, 255, 0.16); border-color: #fff; }
+
+/* Portrait cards */
+.arc-s08-009 .person {
+  position: relative;
+  display: flex; align-items: flex-end;
+  aspect-ratio: 3 / 4;
+  background: var(--card); border-radius: 10px; overflow: hidden;
+}
+.arc-s08-009 .person__slot {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-start; justify-content: flex-end;
+  background: var(--card-2);
+}
+.arc-s08-009 .person__slot span {
+  padding: 11px 13px;
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-card-soft);
+}
+.arc-s08-009 .person__band {
+  position: relative; width: 100%;
+  padding: clamp(30px, 3.6vw, 48px) clamp(14px, 1.8vw, 18px) clamp(14px, 1.8vw, 18px);
+  background: linear-gradient(to top, rgba(19, 20, 25, 0.94) 44%, rgba(19, 20, 25, 0));
+  color: var(--on-card);
+}
+.arc-s08-009 .person__band h2 { margin: 0 0 2px; font-size: 0.9375rem; font-weight: 600; letter-spacing: -0.01em; }
+.arc-s08-009 .person__band p { margin: 0; font-size: 0.75rem; color: var(--on-card-soft); }
+
+.arc-s08-009 .note {
+  margin: clamp(18px, 2.4vw, 28px) 0 0; padding-top: clamp(14px, 1.8vw, 20px);
+  border-top: 1px solid var(--line);
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 78ch;
+}
+
+/* --- Responsive ----------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s08-009 .rail > li { flex-basis: clamp(210px, 26vw, 270px); }
+}
+@media (max-width: 1024px) {
+  .arc-s08-009 h1 { max-width: 26ch; }
+}
+@media (max-width: 768px) {
+  .arc-s08-009 .rail > li { flex-basis: 58%; }
+  .arc-s08-009 .head { align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .arc-s08-009 .rail > li { flex-basis: 78%; }
+  .arc-s08-009 .lead-card { aspect-ratio: auto; min-height: 300px; }
+}
+@media (max-width: 360px) {
+  .arc-s08-009 .rail > li { flex-basis: 86%; }
+  .arc-s08-009 .person__slot span { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s08-009 *, .arc-s08-009 *::before, .arc-s08-009 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s08-009" data-study-id="ARC-S08-009" data-territory="extended-lead-card-rail">
+
+  <section class="shell" aria-labelledby="arc-s08-009-title">
+
+    <p class="tag">Expertise</p>
+
+    <div class="head">
+      <h1 id="arc-s08-009-title">The architects and designers on the work</h1>
+      <div class="controls">
+        <button type="button" id="arc-s08-009-prev" aria-controls="arc-s08-009-rail"
+                aria-label="Scroll team left">
+          <span aria-hidden="true">&#8592;</span>
+        </button>
+        <button type="button" id="arc-s08-009-next" aria-controls="arc-s08-009-rail"
+                aria-label="Scroll team right">
+          <span aria-hidden="true">&#8594;</span>
+        </button>
+      </div>
+    </div>
+
+    <ul class="rail" id="arc-s08-009-rail" tabindex="0" role="group"
+        aria-label="Team members, scrollable row">
+      <li>
+        <div class="lead-card">
+          <h2>Team member 01</h2>
+          <p class="role">Principal architect</p>
+          <p>
+            First point of contact on a commission. Takes the brief, sets the design position,
+            and stays with the project through to handover.
+          </p>
+          <ul>
+            <li><a href="#arc-s08-009-title" aria-label="Profile of team member 01">Profile</a></li>
+            <li><a href="#arc-s08-009-title" aria-label="Contact team member 01">Contact</a></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="person">
+          <div class="person__slot"><span>Portrait</span></div>
+          <div class="person__band">
+            <h2>Team member 02</h2>
+            <p>Associate, interiors</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="person">
+          <div class="person__slot"><span>Portrait</span></div>
+          <div class="person__band">
+            <h2>Team member 03</h2>
+            <p>Project architect</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="person">
+          <div class="person__slot"><span>Portrait</span></div>
+          <div class="person__band">
+            <h2>Team member 04</h2>
+            <p>Technical designer</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="person">
+          <div class="person__slot"><span>Portrait</span></div>
+          <div class="person__band">
+            <h2>Team member 05</h2>
+            <p>Interior designer</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="person">
+          <div class="person__slot"><span>Portrait</span></div>
+          <div class="person__band">
+            <h2>Team member 06</h2>
+            <p>Studio manager</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <p class="note">
+      Placeholder roster &#183; structure demonstration only. The lead card carries contact routes
+      rather than a portrait; its links are neutral and point nowhere, since a studio's actual
+      profiles cannot be invented here.
+    </p>
+
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('.arc-s08-009');
+  if (!root) return;
+
+  var rail = root.querySelector('#arc-s08-009-rail');
+  var prev = root.querySelector('#arc-s08-009-prev');
+  var next = root.querySelector('#arc-s08-009-next');
+  if (!rail || !prev || !next) return;
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function step() {
+    var first = rail.querySelector('li');
+    if (!first) return rail.clientWidth;
+    var gap = parseFloat(getComputedStyle(rail).columnGap) || 0;
+    return first.getBoundingClientRect().width + gap;
+  }
+
+  function sync() {
+    var max = rail.scrollWidth - rail.clientWidth;
+    prev.disabled = rail.scrollLeft <= 1;
+    next.disabled = rail.scrollLeft >= max - 1;
+  }
+
+  function move(direction, source) {
+    rail.scrollBy({ left: direction * step(), behavior: reduce ? 'auto' : 'smooth' });
+    // A control that disables itself must not strand focus.
+    window.setTimeout(function () {
+      sync();
+      if (source && source.disabled) (source === prev ? next : prev).focus();
+    }, reduce ? 0 : 320);
+  }
+
+  prev.addEventListener('click', function () { move(-1, prev); });
+  next.addEventListener('click', function () { move(1, next); });
+  rail.addEventListener('scroll', sync);
+  window.addEventListener('resize', sync);
+  sync();
+})();
+</script>
+</body>
+</html>
