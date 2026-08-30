@@ -1,8 +1,8 @@
 # Hotels & Hospitality
 
 - Prefix: HOT
-- Planned sections: 20
-- Planned studies: 100
+- Planned sections: 27
+- Planned studies: 135
 - Authoring status: NOT_STARTED
 
 | Section | Name | Directory | Planned IDs | Status |
@@ -27,5 +27,16 @@
 | S18 | Concierge Contact | `S18-concierge-contact/` | HOT-S18-001–005 | NOT_STARTED |
 | S19 | Newsletter Offers | `S19-newsletter-offers/` | HOT-S19-001–005 | NOT_STARTED |
 | S20 | Final Booking CTA | `S20-final-booking-cta/` | HOT-S20-001–005 | NOT_STARTED |
+| S21 | Subpage Hero | `S21-subpage-hero/` | HOT-S21-001–005 | NOT_STARTED |
+| S22 | Breadcrumb / Context Navigation | `S22-breadcrumb-context-navigation/` | HOT-S22-001–005 | NOT_STARTED |
+| S23 | Hospitality Service / Experience Detail | `S23-service-offering-detail/` | HOT-S23-001–005 | NOT_STARTED |
+| S24 | Event / Group Programme Case Detail | `S24-project-case-study-detail/` | HOT-S24-001–005 | NOT_STARTED |
+| S25 | Destination Guide / Story Detail | `S25-article-insight-detail/` | HOT-S25-001–005 | NOT_STARTED |
+| S26 | Leadership / Host Profile | `S26-person-profile-detail/` | HOT-S26-001–005 | NOT_STARTED |
+| S27 | Property / Location Detail | `S27-location-branch-detail/` | HOT-S27-001–005 | NOT_STARTED |
 
 No studies or section-level BATCH-V1.md files exist yet. Create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for a section.
+
+S01–S20 are this sector's core catalog. S21–S27 are the universal extended site
+architecture roles, scaffolded and documented but not yet researched or authored.
+S28 and above are reserved for future sector-native page types and are not created.

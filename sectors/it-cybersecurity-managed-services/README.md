@@ -1,8 +1,8 @@
 # IT, Cybersecurity & Managed Services
 
 - Prefix: IT
-- Planned sections: 20
-- Planned studies: 100
+- Planned sections: 27
+- Planned studies: 135
 - Authoring status: NOT_STARTED
 
 | Section | Name | Directory | Planned IDs | Status |
@@ -27,5 +27,16 @@
 | S18 | Experts Team | `S18-experts-team/` | IT-S18-001–005 | NOT_STARTED |
 | S19 | Contact Support | `S19-contact-support/` | IT-S19-001–005 | NOT_STARTED |
 | S20 | Final Consultation CTA | `S20-final-consultation-cta/` | IT-S20-001–005 | NOT_STARTED |
+| S21 | Subpage Hero | `S21-subpage-hero/` | IT-S21-001–005 | NOT_STARTED |
+| S22 | Breadcrumb / Context Navigation | `S22-breadcrumb-context-navigation/` | IT-S22-001–005 | NOT_STARTED |
+| S23 | IT / Cyber Service Detail | `S23-service-offering-detail/` | IT-S23-001–005 | NOT_STARTED |
+| S24 | Case Study / Implementation Detail | `S24-project-case-study-detail/` | IT-S24-001–005 | NOT_STARTED |
+| S25 | Security Advisory / Article Detail | `S25-article-insight-detail/` | IT-S25-001–005 | NOT_STARTED |
+| S26 | Security / Technology Expert Profile | `S26-person-profile-detail/` | IT-S26-001–005 | NOT_STARTED |
+| S27 | Office / Support Location Detail | `S27-location-branch-detail/` | IT-S27-001–005 | NOT_STARTED |
 
 No studies or section-level BATCH-V1.md files exist yet. Create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for a section.
+
+S01–S20 are this sector's core catalog. S21–S27 are the universal extended site
+architecture roles, scaffolded and documented but not yet researched or authored.
+S28 and above are reserved for future sector-native page types and are not created.

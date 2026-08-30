@@ -1,8 +1,8 @@
 # Real Estate
 
 - Prefix: RE
-- Planned sections: 20
-- Planned studies: 100
+- Planned sections: 27
+- Planned studies: 135
 - Authoring status: NOT_STARTED
 
 | Section | Name | Directory | Planned IDs | Status |
@@ -27,5 +27,16 @@
 | S18 | FAQ | `S18-faq/` | RE-S18-001–005 | NOT_STARTED |
 | S19 | Contact Inquiry | `S19-contact-inquiry/` | RE-S19-001–005 | NOT_STARTED |
 | S20 | Final Property Inquiry | `S20-final-property-inquiry/` | RE-S20-001–005 | NOT_STARTED |
+| S21 | Subpage Hero | `S21-subpage-hero/` | RE-S21-001–005 | NOT_STARTED |
+| S22 | Breadcrumb / Context Navigation | `S22-breadcrumb-context-navigation/` | RE-S22-001–005 | NOT_STARTED |
+| S23 | Real Estate Service Detail | `S23-service-offering-detail/` | RE-S23-001–005 | NOT_STARTED |
+| S24 | Development / Project Case Study Detail | `S24-project-case-study-detail/` | RE-S24-001–005 | NOT_STARTED |
+| S25 | Market Insight / Guide Detail | `S25-article-insight-detail/` | RE-S25-001–005 | NOT_STARTED |
+| S26 | Agent / Advisor Profile | `S26-person-profile-detail/` | RE-S26-001–005 | NOT_STARTED |
+| S27 | Office Location Detail | `S27-location-branch-detail/` | RE-S27-001–005 | NOT_STARTED |
 
 No studies or section-level BATCH-V1.md files exist yet. Create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for a section.
+
+S01–S20 are this sector's core catalog. S21–S27 are the universal extended site
+architecture roles, scaffolded and documented but not yet researched or authored.
+S28 and above are reserved for future sector-native page types and are not created.

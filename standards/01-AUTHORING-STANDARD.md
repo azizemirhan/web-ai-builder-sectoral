@@ -29,3 +29,11 @@ The default study set documents five diversity targets:
 | 005 | Sector-native / Distinctive |
 
 These labels are authoring targets, not rigid production enums. Variants 006–010 may be used only when research demonstrates a genuinely missing structural territory. The default target remains five studies per section.
+
+The same five-territory model applies to every section role in the catalog, both the sector core
+sections S01–S20 and the universal extended site architecture sections S21–S27.
+
+The five studies in a section must differ **structurally**. They must not become five colour
+schemes, five font themes, five cosmetic variants, or five copies of one grid with the content
+swapped. A set that differs only in styling has not covered five territories, whatever its
+variant numbers say.

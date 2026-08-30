@@ -20,3 +20,10 @@
 18 Energy, Solar & Engineering — NOT_STARTED
 19 Home Services — NOT_STARTED
 20 Retail & E-commerce — NOT_STARTED
+
+Every sector above is scaffolded to 27 sections: S01–S20 sector core, S21–S27 universal
+extended site architecture. S21–S27 are documented and reserved in every sector and are
+NOT_STARTED for authoring. S28 and above are reserved and not created.
+
+Status values here are sector-level scaffold status. Per-section authoring state lives in each
+section README.

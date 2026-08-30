@@ -1,8 +1,8 @@
 # Restaurants & Food Service
 
 - Prefix: REST
-- Planned sections: 20
-- Planned studies: 100
+- Planned sections: 27
+- Planned studies: 135
 - Authoring status: NOT_STARTED
 
 | Section | Name | Directory | Planned IDs | Status |
@@ -27,5 +27,16 @@
 | S18 | Newsletter | `S18-newsletter/` | REST-S18-001–005 | NOT_STARTED |
 | S19 | Social Gallery | `S19-social-gallery/` | REST-S19-001–005 | NOT_STARTED |
 | S20 | Final Reservation CTA | `S20-final-reservation-cta/` | REST-S20-001–005 | NOT_STARTED |
+| S21 | Subpage Hero | `S21-subpage-hero/` | REST-S21-001–005 | NOT_STARTED |
+| S22 | Breadcrumb / Context Navigation | `S22-breadcrumb-context-navigation/` | REST-S22-001–005 | NOT_STARTED |
+| S23 | Dining / Private Event Offering Detail | `S23-service-offering-detail/` | REST-S23-001–005 | NOT_STARTED |
+| S24 | Private Event / Collaboration Case Detail | `S24-project-case-study-detail/` | REST-S24-001–005 | NOT_STARTED |
+| S25 | Story / Press Article Detail | `S25-article-insight-detail/` | REST-S25-001–005 | NOT_STARTED |
+| S26 | Chef / Team Profile | `S26-person-profile-detail/` | REST-S26-001–005 | NOT_STARTED |
+| S27 | Restaurant Location Detail | `S27-location-branch-detail/` | REST-S27-001–005 | NOT_STARTED |
 
 No studies or section-level BATCH-V1.md files exist yet. Create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for a section.
+
+S01–S20 are this sector's core catalog. S21–S27 are the universal extended site
+architecture roles, scaffolded and documented but not yet researched or authored.
+S28 and above are reserved for future sector-native page types and are not created.

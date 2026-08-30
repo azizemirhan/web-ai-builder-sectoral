@@ -5,12 +5,23 @@ This standalone local workspace is the authoring source for a planned catalog of
 ## Scope
 
 - 20 sectors
-- 20 section roles per sector
+- 27 section roles per sector
 - 5 planned studies per section
-- 2,000 planned studies in total
-- 0 authored studies at initial setup
+- 2,700 planned studies in total
 
-The current repository contains structure and documentation only. It contains no HTML studies, application code, production manifests, registry code, runtime adapters, or Design Lab review decisions.
+The catalog is in two parts:
+
+| Range | Model | Sections | Planned studies |
+| --- | --- | ---: | ---: |
+| S01–S20 | Sector Core — the sector's own page and section roles | 20 per sector | 2,000 |
+| S21–S27 | Universal Extended Site Architecture — detail-page and page-context roles shared by every sector | 7 per sector | 700 |
+| **Total** |  | **27 per sector** | **2,700** |
+
+The original core catalog was 2,000 studies across S01–S20. S21–S27 extend it; they do not
+replace it. S28 and above are reserved for future sector-native page types and are not
+scaffolded.
+
+The repository contains structure, documentation, and authored raw studies only. It contains no application code, production manifests, registry code, runtime adapters, or Design Lab review decisions.
 
 ## Workspace Map
 

@@ -1,8 +1,8 @@
 # Home Services
 
 - Prefix: HOME
-- Planned sections: 20
-- Planned studies: 100
+- Planned sections: 27
+- Planned studies: 135
 - Authoring status: NOT_STARTED
 
 | Section | Name | Directory | Planned IDs | Status |
@@ -27,5 +27,16 @@
 | S18 | Branches Locations | `S18-branches-locations/` | HOME-S18-001–005 | NOT_STARTED |
 | S19 | Contact | `S19-contact/` | HOME-S19-001–005 | NOT_STARTED |
 | S20 | Final Booking Call CTA | `S20-final-booking-call-cta/` | HOME-S20-001–005 | NOT_STARTED |
+| S21 | Subpage Hero | `S21-subpage-hero/` | HOME-S21-001–005 | NOT_STARTED |
+| S22 | Breadcrumb / Context Navigation | `S22-breadcrumb-context-navigation/` | HOME-S22-001–005 | NOT_STARTED |
+| S23 | Home Service Detail | `S23-service-offering-detail/` | HOME-S23-001–005 | NOT_STARTED |
+| S24 | Completed Job / Project Detail | `S24-project-case-study-detail/` | HOME-S24-001–005 | NOT_STARTED |
+| S25 | Guide / Advice Detail | `S25-article-insight-detail/` | HOME-S25-001–005 | NOT_STARTED |
+| S26 | Technician Profile | `S26-person-profile-detail/` | HOME-S26-001–005 | NOT_STARTED |
+| S27 | Branch / Service Location Detail | `S27-location-branch-detail/` | HOME-S27-001–005 | NOT_STARTED |
 
 No studies or section-level BATCH-V1.md files exist yet. Create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for a section.
+
+S01–S20 are this sector's core catalog. S21–S27 are the universal extended site
+architecture roles, scaffolded and documented but not yet researched or authored.
+S28 and above are reserved for future sector-native page types and are not created.
