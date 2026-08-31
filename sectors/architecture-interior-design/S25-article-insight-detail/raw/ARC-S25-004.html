@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S25-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S25 — Studio Journal / Article Detail
+  Territory      : Conversion-led
+  Reference      : Supplied reference 3 — studio article with a narrow meta rail pinned to the
+                   left edge (date, category, reading time, share marks), an uppercase sans
+                   headline, a wide image, body sections under uppercase sub-headings with a dark
+                   contact card set into the text column, and a very large "Related news" band
+                   holding four images. Followed directly.
+  Layout model   : Left meta rail beside the article, dark contact card inside the body, oversized
+                   related band, closing enquiry line
+  Density        : Medium
+  Media mode     : One lead area, one avatar area in the card, four related-card areas
+  Interaction    : None (static; no JavaScript)
+  Page note      : `data-region="page-context"` marks the top bar, which overlaps ARC-S21 / S22.
+  Content note   : Conversion here is the onward route, not a pitch: the header action, the card
+                   inside the body and the closing line all lead to the same enquiry. The
+                   reference's named expert becomes `Author 02`, and date and reading time are
+                   placeholder tokens — fabricated authors and dates are out of scope for this
+                   section. No readership, ranking or performance figure appears anywhere.
+-->
+
+<meta name="study-id" content="ARC-S25-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S25">
+<meta name="section-name" content="Studio Journal / Article Detail">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Left meta rail, dark contact card in body, oversized related band">
+<meta name="density" content="medium">
+<meta name="media-mode" content="lead-avatar-and-four-cards">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S25-004 — Article Detail, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .arc-s25-004 */
+.arc-s25-004 {
+  --ink: #101114;
+  --ink-soft: #4d4f55;
+  --paper: #ffffff;
+  --slot: #e7e7e6;
+  --slot-ink: #4a4b4f;
+  --line: #e2e2e1;
+  --line-strong: #7c7e83;
+  --deep: #101114;
+  --on-deep: #f4f4f3;
+  --on-deep-soft: #b0b2b6;
+  --focus: #2648d6;
+  --focus-light: #ffd166;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s25-004 *,
+.arc-s25-004 *::before,
+.arc-s25-004 *::after { box-sizing: inherit; }
+.arc-s25-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+.arc-s25-004 .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 clamp(14px, 2.6vw, 38px); }
+.arc-s25-004 .sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.arc-s25-004 .lbl {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s25-004 figure { margin: 0; }
+.arc-s25-004 .slot { display: flex; align-items: flex-end; background: var(--slot); }
+.arc-s25-004 .slot p {
+  margin: 0; padding: clamp(9px, 1.2vw, 14px);
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Top bar ---------------------------------------------------------------------------- */
+.arc-s25-004 .bar {
+  display: flex; align-items: center; gap: clamp(12px, 2vw, 28px);
+  padding: clamp(12px, 1.6vw, 18px) 0; border-bottom: 1px solid var(--line);
+}
+.arc-s25-004 .wordmark { font-size: 0.9375rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); text-decoration: none; }
+.arc-s25-004 .topnav { margin-left: auto; }
+.arc-s25-004 .topnav ul { display: flex; flex-wrap: wrap; align-items: center; gap: 2px clamp(12px, 1.8vw, 26px); margin: 0; padding: 0; list-style: none; }
+.arc-s25-004 .topnav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent;
+}
+.arc-s25-004 .topnav a:hover,
+.arc-s25-004 .topnav a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s25-004 .pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 40px; padding: 0 20px; border-radius: 999px;
+  background: var(--deep); color: var(--on-deep); border: 1px solid var(--deep);
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap;
+  transition: background-color 150ms ease;
+}
+.arc-s25-004 .pill:hover,
+.arc-s25-004 .pill:focus-visible { background: #303239; }
+
+/* --- Article: meta rail + content ---------------------------------------------------------- */
+.arc-s25-004 .shell {
+  display: grid; grid-template-columns: 150px minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 54px); align-items: start;
+  padding: clamp(24px, 3.2vw, 46px) 0 clamp(26px, 3.4vw, 44px);
+}
+.arc-s25-004 .metarail dl { margin: 0; }
+.arc-s25-004 .metarail dt { padding-top: 12px; border-top: 1px solid var(--line); margin-bottom: 5px; }
+.arc-s25-004 .metarail dt:first-child { padding-top: 0; border-top: 0; }
+.arc-s25-004 .metarail dd { margin: 0 0 16px; font-family: var(--mono); font-size: 0.6875rem; }
+.arc-s25-004 .metarail .share p.lbl { margin: 0 0 10px; padding-top: 12px; border-top: 1px solid var(--line); }
+.arc-s25-004 .metarail .share ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.arc-s25-004 .metarail .share a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--deep); color: var(--on-deep); text-decoration: none;
+  font-family: var(--mono); font-size: 0.4375rem; letter-spacing: 0.06em; text-transform: uppercase;
+  transition: background-color 150ms ease;
+}
+.arc-s25-004 .metarail .share a:hover,
+.arc-s25-004 .metarail .share a:focus-visible { background: #303239; }
+
+.arc-s25-004 h1 {
+  margin: 0 0 clamp(18px, 2.4vw, 28px);
+  font-size: clamp(1.5rem, 3.4vw, 2.625rem); line-height: 1.1; letter-spacing: -0.012em;
+  text-transform: uppercase; font-weight: 500; max-width: 22ch;
+}
+.arc-s25-004 .lead-media .slot { aspect-ratio: 16 / 9; }
+
+.arc-s25-004 .prose { padding-top: clamp(22px, 3vw, 36px); }
+.arc-s25-004 .prose h2 {
+  margin: 0 0 10px; font-size: clamp(0.9375rem, 1.3vw, 1.125rem);
+  line-height: 1.3; letter-spacing: 0.01em; text-transform: uppercase; font-weight: 500;
+}
+.arc-s25-004 .prose p { margin: 0 0 10px; font-size: 0.8125rem; line-height: 1.75; color: var(--ink-soft); max-width: 78ch; }
+.arc-s25-004 .prose section + section { margin-top: clamp(22px, 3vw, 34px); }
+
+/* The dark card sits inside the first section, beside the text, as in the reference. */
+.arc-s25-004 .withcard { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.3fr); gap: clamp(16px, 2.4vw, 34px); align-items: start; }
+.arc-s25-004 .card { padding: clamp(14px, 2vw, 20px); background: var(--deep); color: var(--on-deep); }
+.arc-s25-004 .card .who { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.arc-s25-004 .card .slot { width: 34px; height: 34px; border-radius: 50%; background: #33353b; flex: 0 0 auto; }
+.arc-s25-004 .card .slot p { padding: 0; font-size: 0.375rem; color: #cdcfd3; width: 100%; text-align: center; }
+.arc-s25-004 .card h3 { margin: 0; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+.arc-s25-004 .card .role { margin: 3px 0 0; font-family: var(--mono); font-size: 0.4375rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-deep-soft); }
+.arc-s25-004 .card p.say { margin: 0 0 14px; font-size: 0.75rem; line-height: 1.7; color: var(--on-deep-soft); }
+.arc-s25-004 .card a {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--on-deep); text-decoration: none; border-bottom: 1px solid #646771;
+}
+.arc-s25-004 .card a:hover,
+.arc-s25-004 .card a:focus-visible { border-bottom-color: var(--on-deep); }
+.arc-s25-004 .card :focus-visible { outline-color: var(--focus-light); }
+
+/* --- Related band ----------------------------------------------------------------------------- */
+.arc-s25-004 .related { padding: clamp(24px, 3vw, 40px) 0 clamp(20px, 2.6vw, 30px); border-top: 1px solid var(--ink); }
+.arc-s25-004 .related h2 {
+  margin: 0 0 clamp(16px, 2.4vw, 28px);
+  font-size: clamp(2rem, 7.6vw, 5.25rem); line-height: 0.96; letter-spacing: -0.03em;
+  text-transform: uppercase; font-weight: 400;
+}
+.arc-s25-004 .related ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.8vw, 22px); margin: 0; padding: 0; list-style: none; }
+.arc-s25-004 .related a { display: block; text-decoration: none; color: var(--ink); }
+.arc-s25-004 .related .slot { aspect-ratio: 3 / 4; }
+.arc-s25-004 .related h3 { margin: 10px 0 3px; font-size: 0.8125rem; font-weight: 600; line-height: 1.35; }
+.arc-s25-004 .related a:hover h3,
+.arc-s25-004 .related a:focus-visible h3 { text-decoration: underline; text-underline-offset: 3px; }
+.arc-s25-004 .related .cat { margin: 0; }
+
+/* --- Closing enquiry line -------------------------------------------------------------------- */
+.arc-s25-004 .close {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(14px, 2.2vw, 30px); align-items: center;
+  margin-bottom: clamp(22px, 3vw, 34px); padding: clamp(18px, 2.6vw, 30px) 0;
+  border-top: 1px solid var(--line);
+}
+.arc-s25-004 .close h2 { margin: 0 0 5px; font-size: clamp(1rem, 1.6vw, 1.25rem); font-weight: 600; letter-spacing: -0.014em; }
+.arc-s25-004 .close p { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); max-width: 62ch; }
+
+.arc-s25-004 .note { margin: 0; padding: 0 0 clamp(26px, 3.2vw, 44px); font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch; }
+
+/* --- Responsive ----------------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s25-004 .shell { grid-template-columns: 132px minmax(0, 1fr); gap: 34px; }
+}
+@media (max-width: 1024px) {
+  /* The rail becomes a row above the article rather than a column too narrow to hold its values. */
+  .arc-s25-004 .shell { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .arc-s25-004 .metarail dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(14px, 2.4vw, 28px); }
+  .arc-s25-004 .metarail dd { margin-bottom: 0; }
+  .arc-s25-004 .metarail .share { margin-top: 18px; }
+  .arc-s25-004 .related ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .arc-s25-004 .bar { flex-wrap: wrap; }
+  .arc-s25-004 .topnav { order: 3; width: 100%; margin-left: 0; }
+  .arc-s25-004 .pill { margin-left: auto; }
+  .arc-s25-004 .withcard { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-004 .prose p { max-width: none; }
+  .arc-s25-004 h1 { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s25-004 .metarail dl { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-004 .metarail dt { padding-top: 10px; border-top: 1px solid var(--line); }
+  .arc-s25-004 .metarail dt:first-child { padding-top: 0; border-top: 0; }
+  .arc-s25-004 .metarail dd { margin-bottom: 12px; }
+  .arc-s25-004 .related ul { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-004 .related .slot { aspect-ratio: 4 / 3; }
+  .arc-s25-004 .lead-media .slot { aspect-ratio: 4 / 3; }
+  .arc-s25-004 .close { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-004 .close .pill { width: 100%; }
+}
+@media (max-width: 360px) {
+  .arc-s25-004 .topnav ul { gap: 0 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s25-004 *, .arc-s25-004 *::before, .arc-s25-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s25-004" data-study-id="ARC-S25-004" data-territory="conversion-led">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="wrap" data-region="page-context">
+    <div class="bar">
+      <a class="wordmark" href="#arc-s25-004-title">Studio&#176;</a>
+      <nav class="topnav" aria-label="Primary">
+        <ul>
+          <li><a href="#arc-s25-004-title">Work</a></li>
+          <li><a href="#arc-s25-004-title">Services</a></li>
+          <li><a href="#arc-s25-004-title">About</a></li>
+          <li><a href="#arc-s25-004-title">News</a></li>
+          <li><a href="#arc-s25-004-title">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="pill" href="#arc-s25-004-enquire">Let&#8217;s create</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="shell wrap">
+
+      <aside class="metarail" aria-labelledby="arc-s25-004-meta">
+        <p class="sr-only" id="arc-s25-004-meta">Article details</p>
+        <dl>
+          <dt class="lbl">Date</dt>
+          <dd>DD Month YYYY</dd>
+          <dt class="lbl">Category</dt>
+          <dd>Fashion of form</dd>
+          <dt class="lbl">Reading time</dt>
+          <dd>NN min</dd>
+        </dl>
+        <div class="share">
+          <p class="lbl" id="arc-s25-004-share">Share</p>
+          <ul aria-labelledby="arc-s25-004-share">
+            <li><a href="#arc-s25-004-title">Link</a></li>
+            <li><a href="#arc-s25-004-title">Mail</a></li>
+            <li><a href="#arc-s25-004-title">More</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <article>
+        <h1 id="arc-s25-004-title">What you need to know to stay ahead of the curve</h1>
+
+        <figure class="lead-media">
+          <div class="slot"><p>Image area</p></div>
+        </figure>
+
+        <div class="prose">
+          <section aria-labelledby="arc-s25-004-s1">
+            <h2 id="arc-s25-004-s1">Placeholder section heading</h2>
+            <div class="withcard">
+              <div>
+                <p>
+                  Placeholder body copy. This section runs beside the card, as in the reference, so
+                  the text column and the card can be judged together: the card is narrow enough to
+                  leave a readable measure and short enough not to outrun the paragraph beside it.
+                </p>
+                <p>
+                  A second paragraph at the same small size, which is the register this layout uses
+                  &#8212; a dense body under a large uppercase heading, with the line height doing
+                  the work the type size would otherwise have to do.
+                </p>
+              </div>
+
+              <div class="card">
+                <div class="who">
+                  <div class="slot"><p>Portrait</p></div>
+                  <div>
+                    <h3>Author 02</h3>
+                    <p class="role">Studio director</p>
+                  </div>
+                </div>
+                <p class="say">
+                  Placeholder note from the writer. Two or three lines, in the reference's position
+                  and weight, ending in the route this page is built around.
+                </p>
+                <a href="#arc-s25-004-enquire">
+                  Talk to the studio
+                  <span aria-hidden="true">&#8594;</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="arc-s25-004-s2">
+            <h2 id="arc-s25-004-s2">Placeholder section heading</h2>
+            <p>
+              Placeholder body copy under the second heading, running the full width of the article
+              column now that the card has ended, which is how the reference resolves the two
+              measures on one page.
+            </p>
+          </section>
+
+          <section aria-labelledby="arc-s25-004-s3">
+            <h2 id="arc-s25-004-s3">Placeholder section heading</h2>
+            <p>
+              Placeholder body copy closing the article. Nothing here states a readership figure, a
+              ranking or an outcome, and the piece is not marketing copy dressed as editorial.
+            </p>
+          </section>
+        </div>
+      </article>
+    </div>
+
+    <section class="related wrap" aria-labelledby="arc-s25-004-relh">
+      <h2 id="arc-s25-004-relh">Related news</h2>
+      <ul>
+        <li>
+          <a href="#arc-s25-004-title">
+            <div class="slot"><p>Image area</p></div>
+            <h3>Placeholder related article title</h3>
+            <p class="cat lbl">Category</p>
+          </a>
+        </li>
+        <li>
+          <a href="#arc-s25-004-title">
+            <div class="slot"><p>Image area</p></div>
+            <h3>Placeholder related article title</h3>
+            <p class="cat lbl">Category</p>
+          </a>
+        </li>
+        <li>
+          <a href="#arc-s25-004-title">
+            <div class="slot"><p>Image area</p></div>
+            <h3>Placeholder related article title</h3>
+            <p class="cat lbl">Category</p>
+          </a>
+        </li>
+        <li>
+          <a href="#arc-s25-004-title">
+            <div class="slot"><p>Image area</p></div>
+            <h3>Placeholder related article title</h3>
+            <p class="cat lbl">Category</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <div class="wrap">
+      <div class="close" id="arc-s25-004-enquire">
+        <div>
+          <h2>Working on something this piece touches on?</h2>
+          <p>
+            One route, repeated three times on this page &#8212; in the bar, in the card and here.
+            It leads to the studio, not to a form that promises a reply by a certain time.
+          </p>
+        </div>
+        <a class="pill" href="#arc-s25-004-title">Start a conversation</a>
+      </div>
+
+      <p class="note">
+        Placeholder article detail page &#183; structure demonstration only. Built directly from the
+        supplied reference: a narrow meta rail pinned left, an uppercase headline, a wide image,
+        body sections under uppercase sub-headings with a dark card set into the text column, and an
+        oversized related band holding four images. Image areas are left empty. Conversion here is
+        the onward route rather than a pitch: the same enquiry appears in the bar, in the card and
+        at the foot, and no response time, readership figure or ranking is stated anywhere. The
+        named expert in the reference becomes `Author 02`, and date and reading time are placeholder
+        tokens, because fabricated authors and dates are out of scope for this section. The top bar
+        overlaps ARC-S21 and ARC-S22.
+      </p>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S25-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S25 — Studio Journal / Article Detail
+  Territory      : Premium / Editorial
+  Reference      : Supplied reference 1 — magazine article on a white sheet floating on a grey
+                   ground: fixed bar carrying the publication left, the article title centred and
+                   article actions right; a wide film still with a play mark; a very large centred
+                   display headline over three lines; a bold centred standfirst; a dateline; then a
+                   single narrow measure of body copy running into an interview. Followed directly.
+  Layout model   : White sheet on a grey ground, centred display headline, one narrow measure,
+                   interview running as question and answer
+  Density        : Low
+  Media mode     : One lead area with a play mark, drawn in CSS and non-interactive
+  Interaction    : None (static; no JavaScript)
+  Page note      : `data-region="page-context"` marks the sheet bar, which overlaps ARC-S21 and
+                   ARC-S22 and would be supplied by those sections in an assembly.
+  Content note   : The reference carries a share count, a comment count and named people. All are
+                   removed: the section README puts fabricated authors, publications and citations
+                   out of scope, and counts would be invented statistics. The interview speaks as
+                   `Interviewer` and `Speaker 01`.
+-->
+
+<meta name="study-id" content="ARC-S25-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S25">
+<meta name="section-name" content="Studio Journal / Article Detail">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="White sheet on grey ground, centred display headline, single measure interview">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-lead-with-play-mark">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S25-002 — Article Detail, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #8a8a8a; }
+
+/* Scoped study styles — namespaced to .arc-s25-002 */
+.arc-s25-002 {
+  --ink: #16161a;
+  --ink-soft: #4f5056;
+  --display: #757579;
+  --ground: #8a8a8a;
+  --sheet: #ffffff;
+  --band: #e9e9e9;
+  --slot: #dcdcdc;
+  --slot-ink: #48484c;
+  --line: #e2e2e4;
+  --line-strong: #7c7c82;
+  --link: #6e6f75;
+  --focus: #1f45cf;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  box-sizing: border-box;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s25-002 *,
+.arc-s25-002 *::before,
+.arc-s25-002 *::after { box-sizing: inherit; }
+.arc-s25-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+/* The sheet is the page. Everything sits inside it; the grey is only what surrounds it. */
+.arc-s25-002 .sheet {
+  width: 100%; max-width: 1020px; margin: 0 auto;
+  background: var(--sheet);
+}
+.arc-s25-002 .band { height: 18px; background: var(--band); }
+.arc-s25-002 .inner { padding: 0 clamp(16px, 3vw, 40px); }
+.arc-s25-002 .measure { max-width: 36rem; margin: 0 auto; }
+
+/* --- Sheet bar --------------------------------------------------------------------- */
+.arc-s25-002 .bar {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: center; gap: 12px;
+  padding: clamp(12px, 1.6vw, 18px) clamp(16px, 3vw, 40px);
+  border-bottom: 1px solid var(--line);
+}
+.arc-s25-002 .bar .pub { font-size: 0.9375rem; color: var(--ink); text-decoration: none; }
+.arc-s25-002 .bar .here { margin: 0; text-align: center; font-size: 0.9375rem; }
+.arc-s25-002 .baracts { display: flex; align-items: center; justify-content: flex-end; gap: clamp(10px, 1.6vw, 22px); }
+.arc-s25-002 .baracts a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--sans); font-size: 0.6875rem; letter-spacing: 0.06em;
+  color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent;
+}
+.arc-s25-002 .baracts a:hover,
+.arc-s25-002 .baracts a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s25-002 .burger { display: inline-flex; flex-direction: column; justify-content: center; gap: 4px; width: 22px; height: 44px; }
+.arc-s25-002 .burger span { display: block; height: 1px; background: var(--ink); }
+.arc-s25-002 .sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* --- Lead media with play mark -------------------------------------------------------- */
+.arc-s25-002 .lead-media { margin: 0; padding: clamp(28px, 5vw, 70px) 0 clamp(26px, 4vw, 54px); }
+.arc-s25-002 .slot { position: relative; display: flex; align-items: flex-end; aspect-ratio: 3 / 2; background: var(--slot); }
+.arc-s25-002 .slot p {
+  margin: 0; padding: clamp(10px, 1.4vw, 15px);
+  font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+/* A media-type mark, not a control: it is drawn, non-interactive and hidden from assistive
+   technology, so it never promises a player that is not there. */
+.arc-s25-002 .playmark {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 0; height: 0;
+  border-top: clamp(28px, 4vw, 44px) solid transparent;
+  border-bottom: clamp(28px, 4vw, 44px) solid transparent;
+  border-left: clamp(42px, 6vw, 66px) solid #ffffff;
+}
+
+/* --- Titling ----------------------------------------------------------------------------- */
+.arc-s25-002 .titling { text-align: center; padding-bottom: clamp(26px, 4vw, 52px); }
+.arc-s25-002 h1 {
+  margin: 0 auto clamp(18px, 2.6vw, 30px); max-width: 15ch;
+  font-size: clamp(2rem, 6vw, 4.25rem); line-height: 1.02; letter-spacing: -0.022em;
+  font-weight: 400; color: var(--display);
+}
+.arc-s25-002 .standfirst {
+  margin: 0 auto; max-width: 36rem;
+  font-size: clamp(1rem, 1.7vw, 1.3125rem); line-height: 1.28; font-weight: 700;
+}
+
+/* --- Dateline + body ---------------------------------------------------------------------- */
+.arc-s25-002 .dateline { margin: 0 auto clamp(20px, 2.6vw, 30px); font-size: 0.9375rem; color: var(--ink); }
+.arc-s25-002 .prose p { margin: 0 0 1em; font-size: 1rem; }
+.arc-s25-002 .prose p:last-child { margin-bottom: 0; }
+.arc-s25-002 a.ref { color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.arc-s25-002 a.ref:hover,
+.arc-s25-002 a.ref:focus-visible { color: var(--ink); }
+
+/* Interview: the question is a heading, the answer follows it */
+.arc-s25-002 .qa { display: block; padding-top: clamp(22px, 3vw, 34px); }
+.arc-s25-002 .qa h2 { margin: 0 0 2px; font-size: 1rem; line-height: 1.5; font-weight: 700; }
+.arc-s25-002 .qa p { margin: 0 0 1.4em; font-size: 1rem; }
+.arc-s25-002 .qa p b { font-weight: 700; }
+.arc-s25-002 .qa p:last-child { margin-bottom: 0; }
+
+.arc-s25-002 .note {
+  margin: 0 auto; padding: clamp(30px, 4vw, 58px) 0 clamp(30px, 4vw, 56px);
+  font-family: var(--sans); font-size: 0.75rem; line-height: 1.7; color: var(--ink-soft);
+}
+
+/* --- Responsive -------------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s25-002 .sheet { max-width: 940px; }
+}
+@media (max-width: 1024px) {
+  .arc-s25-002 .measure { max-width: 34rem; }
+  .arc-s25-002 h1 { max-width: 17ch; }
+}
+@media (max-width: 768px) {
+  /* The centred title in the bar is the first thing to go: it repeats the headline below it. */
+  .arc-s25-002 .bar { grid-template-columns: minmax(0, 1fr) auto; }
+  .arc-s25-002 .bar .here { display: none; }
+  .arc-s25-002 .measure { max-width: none; }
+  .arc-s25-002 .slot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 480px) {
+  .arc-s25-002 .band { height: 12px; }
+  .arc-s25-002 .baracts a { font-size: 0.625rem; }
+  .arc-s25-002 .standfirst { font-size: 1.0625rem; }
+}
+@media (max-width: 360px) {
+  .arc-s25-002 .baracts { gap: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s25-002 *, .arc-s25-002 *::before, .arc-s25-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s25-002" data-study-id="ARC-S25-002" data-territory="premium-editorial">
+  <div class="sheet">
+
+    <div class="band"></div>
+
+    <!-- Overlaps ARC-S21 / ARC-S22. -->
+    <div class="bar" data-region="page-context">
+      <a class="pub" href="#arc-s25-002-title">Journal</a>
+      <p class="here">Double bill &#183; Placeholder article</p>
+      <div class="baracts">
+        <a href="#arc-s25-002-title">Share</a>
+        <a href="#arc-s25-002-title">Comments</a>
+        <a class="burger" href="#arc-s25-002-title">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+          <span class="sr">Menu</span>
+        </a>
+      </div>
+    </div>
+
+    <main>
+      <article>
+        <div class="inner">
+          <figure class="lead-media">
+            <div class="slot">
+              <span class="playmark" aria-hidden="true"></span>
+              <p>Film area</p>
+            </div>
+          </figure>
+
+          <header class="titling">
+            <h1 id="arc-s25-002-title">A short film captures a city moment on the street.</h1>
+            <p class="standfirst">
+              Placeholder standfirst set in two lines, saying what the piece is about without
+              claiming anything that would have to be true.
+            </p>
+          </header>
+
+          <div class="measure">
+            <p class="dateline">
+              DD Month YYYY &#8212; <a class="ref" href="#arc-s25-002-title">City, Country</a>
+            </p>
+
+            <div class="prose">
+              <p>
+                Placeholder body copy opening the article. It is written at the length the reference
+                sets, so the measure can be judged: a single centred column of about thirty-six
+                characters&#8217; width per line at the widest, holding its line length as the sheet
+                narrows. Inline references sit in the copy as
+                <a class="ref" href="#arc-s25-002-title">quiet underlined links</a> rather than as
+                coloured text, which is the register this kind of magazine page uses.
+              </p>
+              <p>
+                A second paragraph, again at length. The piece carries no names of real people and
+                no invented ones: where the reference credits a director and two actors, this study
+                speaks about a placeholder subject and attributes the interview to
+                <a class="ref" href="#arc-s25-002-title">Speaker 01</a>, because the section README
+                puts fabricated authors and citations out of scope.
+              </p>
+            </div>
+
+            <section class="qa" aria-label="Interview">
+              <h2>What are your earliest memories of making things?</h2>
+              <p><b>Speaker 01:</b> Placeholder answer. The interview runs as a plain alternation of
+                question and answer, with the question marked up as a real heading so the piece can
+                be navigated by heading rather than by scanning for bold text.</p>
+
+              <h2>What draws you to working on existing buildings?</h2>
+              <p><b>Speaker 01:</b> Placeholder answer, longer than the first, so the spacing between
+                one exchange and the next can be judged at the reading measure rather than at a
+                single line.</p>
+
+              <h2>How much of the result is planned?</h2>
+              <p><b>Speaker 01:</b> Placeholder answer closing the interview. Nothing here states a
+                date, an award, a publication or a figure.</p>
+            </section>
+
+            <p class="note">
+              Placeholder article detail page &#183; structure demonstration only. Built directly
+              from the supplied reference: white sheet on a grey ground, a bar carrying the
+              publication and the article title, a wide film area, a large centred display headline,
+              a bold standfirst, a dateline and one narrow measure running into an interview. Three
+              things in the reference are deliberately not reproduced &#8212; the share count, the
+              comment count and the named people &#8212; because counts would be invented statistics
+              and the section README rules out fabricated authors and citations. The play mark is
+              drawn in CSS, is not a control, and is hidden from assistive technology, so it never
+              promises a player that is not there. The sheet bar overlaps ARC-S21 and ARC-S22.
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
+
+  </div>
+</div>
+</body>
+</html>

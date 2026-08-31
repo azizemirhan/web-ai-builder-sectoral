@@ -91,8 +91,12 @@ Nearest existing section in this sector: S09 Awards & Publications (`S09-awards-
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch Document
+
+./BATCH-V1.md

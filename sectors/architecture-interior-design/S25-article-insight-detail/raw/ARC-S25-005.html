@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S25-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S25 — Studio Journal / Article Detail
+  Territory      : Sector-native / Distinctive
+  Reference      : Supplied reference 4 — an arts-magazine article on a cream ground: a pill
+                   category nav, a very large serif title whose middle words drop to a small size,
+                   a full-width plate, a dated two-column intro, a centred pull quote, a pair of
+                   plates at unequal widths, a labelled credits block beside the body, and a
+                   closing plate. Followed directly.
+  Layout model   : Cream sheet, mixed-scale serif display title, unequal plate pair, credits
+                   register set against the body
+  Density        : Medium
+  Media mode     : Four plate areas — one full width, two unequal, one closing
+  Interaction    : None (static; no JavaScript)
+  Sector register: The **credits register** an architecture journal runs under a piece: project,
+                   photography, drawings, location, each as a label against a value. It is what
+                   makes this article page belong to this sector rather than to any magazine.
+  Register check : Deliberately not the service colophon of ARC-S23-002 (a four-field summary of
+                   an offering at the foot of a page) and not the bibliographic citation of
+                   ARC-S09-005. This is attribution for the work shown in the plates, set beside
+                   the body rather than under it.
+  Page note      : `data-region="page-context"` marks the top bar, which overlaps ARC-S21 / S22.
+  Content note   : Every credit value is a placeholder token. The section README puts fabricated
+                   authors, publications, dates and citations out of scope, and a credits block is
+                   exactly where those would otherwise be invented.
+-->
+
+<meta name="study-id" content="ARC-S25-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S25">
+<meta name="section-name" content="Studio Journal / Article Detail">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Cream sheet, mixed-scale serif title, unequal plate pair, credits register">
+<meta name="density" content="medium">
+<meta name="media-mode" content="four-plates-optional">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S25-005 — Article Detail, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #faf6ed; }
+
+/* Scoped study styles — namespaced to .arc-s25-005 */
+.arc-s25-005 {
+  --ink: #1a1712;
+  --ink-body: #565146;
+  --paper: #faf6ed;
+  --slot: #e8e2d4;
+  --slot-ink: #4d4940;
+  --line: #ded7c7;
+  --line-strong: #82796a;
+  --focus: #2f49bd;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s25-005 *,
+.arc-s25-005 *::before,
+.arc-s25-005 *::after { box-sizing: inherit; }
+.arc-s25-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+.arc-s25-005 .wrap { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 clamp(14px, 2.6vw, 32px); }
+.arc-s25-005 .lbl {
+  font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-body); font-weight: 700;
+}
+.arc-s25-005 .sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.arc-s25-005 figure { margin: 0; }
+.arc-s25-005 .slot { display: flex; align-items: flex-end; background: var(--slot); }
+.arc-s25-005 .slot p {
+  margin: 0; padding: clamp(9px, 1.2vw, 14px);
+  font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Top bar with pill categories --------------------------------------------------------- */
+.arc-s25-005 .bar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px clamp(12px, 2vw, 22px);
+  padding: clamp(12px, 1.6vw, 18px) 0;
+}
+.arc-s25-005 .wordmark { font-family: var(--serif); font-size: 1.125rem; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+.arc-s25-005 .cats ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.arc-s25-005 .cats a {
+  display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid var(--line-strong); color: var(--ink); text-decoration: none;
+  font-size: 0.6875rem;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+.arc-s25-005 .cats a:hover,
+.arc-s25-005 .cats a:focus-visible { border-color: var(--ink); }
+.arc-s25-005 .baracts { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.arc-s25-005 .baracts a {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px;
+  font-size: 0.75rem; color: var(--ink-body); text-decoration: none;
+}
+.arc-s25-005 .baracts a:hover,
+.arc-s25-005 .baracts a:focus-visible { color: var(--ink); }
+.arc-s25-005 .burger { display: inline-flex; flex-direction: column; justify-content: center; gap: 4px; width: 22px; }
+.arc-s25-005 .burger span { display: block; height: 1px; width: 100%; background: var(--ink); }
+
+/* --- Display title -------------------------------------------------------------------------- */
+.arc-s25-005 .titling { padding: clamp(22px, 3.4vw, 46px) 0 clamp(20px, 2.8vw, 34px); text-align: center; }
+.arc-s25-005 h1 {
+  margin: 0; font-family: var(--serif); font-weight: 400;
+  font-size: clamp(2rem, 7vw, 4.75rem); line-height: 1.02; letter-spacing: -0.012em;
+  text-transform: uppercase;
+}
+/* The reference drops the joining words to a small size on the same line. */
+.arc-s25-005 h1 .small {
+  font-size: 0.42em; letter-spacing: 0.02em; padding: 0 0.14em; vertical-align: 0.28em;
+}
+
+/* --- Plates ------------------------------------------------------------------------------------ */
+.arc-s25-005 .plate .slot { aspect-ratio: 16 / 9; }
+.arc-s25-005 .plate figcaption,
+.arc-s25-005 .pair figcaption { margin-top: 8px; font-size: 0.6875rem; color: var(--ink-body); }
+.arc-s25-005 .pair { display: grid; grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr); gap: clamp(12px, 1.8vw, 20px); margin: clamp(22px, 3vw, 38px) 0 0; padding: 0; list-style: none; }
+.arc-s25-005 .pair > li { margin: 0; }
+.arc-s25-005 .pair .slot { aspect-ratio: 3 / 4; }
+.arc-s25-005 .pair li:last-child .slot { aspect-ratio: 4 / 3; }
+.arc-s25-005 .closing { margin-top: clamp(22px, 3vw, 38px); }
+.arc-s25-005 .closing .slot { aspect-ratio: 21 / 9; }
+
+/* --- Dated intro ---------------------------------------------------------------------------------- */
+.arc-s25-005 .intro {
+  display: grid; grid-template-columns: minmax(0, 0.22fr) minmax(0, 1fr);
+  gap: clamp(14px, 2.4vw, 30px); align-items: start;
+  padding: clamp(20px, 2.8vw, 34px) 0 0;
+}
+.arc-s25-005 .intro p.body { margin: 0 0 10px; font-size: 0.8125rem; line-height: 1.75; color: var(--ink-body); max-width: 74ch; }
+.arc-s25-005 .intro p.body:last-child { margin-bottom: 0; }
+
+/* --- Pull quote -------------------------------------------------------------------------------------- */
+.arc-s25-005 blockquote {
+  margin: clamp(26px, 3.6vw, 48px) auto; max-width: 40rem; padding: 0; text-align: center;
+}
+.arc-s25-005 blockquote p {
+  margin: 0; font-family: var(--serif); font-size: clamp(1rem, 1.7vw, 1.3125rem);
+  line-height: 1.4; letter-spacing: -0.008em;
+}
+
+/* --- Credits register + body ------------------------------------------------------------------------- */
+.arc-s25-005 .credited {
+  display: grid; grid-template-columns: minmax(0, 0.3fr) minmax(0, 1fr);
+  gap: clamp(14px, 2.4vw, 32px); align-items: start;
+  padding: clamp(22px, 3vw, 36px) 0 0;
+}
+.arc-s25-005 .credits h2 { margin: 0 0 10px; }
+.arc-s25-005 .credits dl { margin: 0; }
+.arc-s25-005 .credits > dl > div {
+  display: grid; grid-template-columns: 7.4em minmax(0, 1fr); gap: 8px;
+  padding: 6px 0; border-top: 1px solid var(--line);
+}
+.arc-s25-005 .credits dt { font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-body); font-weight: 700; padding-top: 2px; }
+.arc-s25-005 .credits dd { margin: 0; font-size: 0.75rem; color: var(--ink); }
+.arc-s25-005 .credited p.body { margin: 0 0 10px; font-size: 0.8125rem; line-height: 1.75; color: var(--ink-body); max-width: 74ch; }
+.arc-s25-005 .credited p.body:last-child { margin-bottom: 0; }
+
+.arc-s25-005 .note {
+  margin: 0; padding: clamp(24px, 3vw, 40px) 0 clamp(26px, 3.2vw, 44px);
+  font-size: 0.75rem; line-height: 1.65; color: var(--ink-body); max-width: 92ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s25-005 .wrap { max-width: 1000px; }
+}
+@media (max-width: 1024px) {
+  .arc-s25-005 .intro { grid-template-columns: minmax(0, 0.28fr) minmax(0, 1fr); }
+  .arc-s25-005 .credited { grid-template-columns: minmax(0, 0.36fr) minmax(0, 1fr); }
+}
+@media (max-width: 768px) {
+  /* Date and credits move above the copy they belong to rather than shrinking beside it. */
+  .arc-s25-005 .intro,
+  .arc-s25-005 .credited { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .arc-s25-005 .intro p.body,
+  .arc-s25-005 .credited p.body { max-width: none; }
+  .arc-s25-005 .cats { width: 100%; order: 3; }
+  .arc-s25-005 h1 .small { display: inline-block; }
+}
+@media (max-width: 480px) {
+  .arc-s25-005 .pair { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-005 .pair .slot,
+  .arc-s25-005 .pair li:last-child .slot { aspect-ratio: 4 / 3; }
+  .arc-s25-005 .plate .slot { aspect-ratio: 4 / 3; }
+  .arc-s25-005 .closing .slot { aspect-ratio: 16 / 9; }
+  .arc-s25-005 .credits > dl > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (max-width: 360px) {
+  .arc-s25-005 .cats a { padding: 0 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s25-005 *, .arc-s25-005 *::before, .arc-s25-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s25-005" data-study-id="ARC-S25-005" data-territory="sector-native-distinctive">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="wrap" data-region="page-context">
+    <div class="bar">
+      <a class="wordmark" href="#arc-s25-005-title">Journal</a>
+      <nav class="cats" aria-label="Categories">
+        <ul>
+          <li><a href="#arc-s25-005-title">Architecture</a></li>
+          <li><a href="#arc-s25-005-title">Interiors</a></li>
+          <li><a href="#arc-s25-005-title">Materials</a></li>
+          <li><a href="#arc-s25-005-title">Process</a></li>
+          <li><a href="#arc-s25-005-title">Photography</a></li>
+        </ul>
+      </nav>
+      <div class="baracts">
+        <a href="#arc-s25-005-title">Search</a>
+        <a class="burger" href="#arc-s25-005-title">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+          <span class="sr">Menu</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <header class="titling wrap">
+        <h1 id="arc-s25-005-title">
+          Colour, light <span class="small">and the</span> street
+        </h1>
+      </header>
+
+      <div class="wrap">
+        <figure class="plate">
+          <div class="slot"><p>Plate area</p></div>
+          <figcaption>Placeholder &#183; lead plate</figcaption>
+        </figure>
+
+        <div class="intro">
+          <p class="lbl">DD Month YYYY</p>
+          <div>
+            <p class="body">
+              Placeholder body copy opening the piece. It runs at the length the reference sets, so
+              the relationship between the small dated column on the left and the reading column on
+              the right can be judged rather than guessed: the date is a marker, not a heading, and
+              it never competes with the copy beside it.
+            </p>
+            <p class="body">
+              A second paragraph of placeholder copy. Nothing in this article names a photographer,
+              a publication, an exhibition or a date that would have to be true; every one of those
+              is a placeholder token, including the credits below.
+            </p>
+          </div>
+        </div>
+
+        <blockquote>
+          <p>
+            &#8220;Placeholder pull quote, set centred in the serif and marked as a quotation without
+            being attributed to a real person.&#8221;
+          </p>
+        </blockquote>
+
+        <ul class="pair">
+          <li>
+            <figure>
+              <div class="slot"><p>Plate area</p></div>
+              <figcaption>Placeholder &#183; narrow plate</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure>
+              <div class="slot"><p>Plate area</p></div>
+              <figcaption>Placeholder &#183; wide plate</figcaption>
+            </figure>
+          </li>
+        </ul>
+
+        <section class="credited" aria-labelledby="arc-s25-005-credh">
+          <div class="credits">
+            <h2 class="lbl" id="arc-s25-005-credh">Credits</h2>
+            <dl aria-labelledby="arc-s25-005-credh">
+              <div><dt>Project</dt><dd>Project reference</dd></div>
+              <div><dt>Photography</dt><dd>To be supplied</dd></div>
+              <div><dt>Drawings</dt><dd>To be supplied</dd></div>
+              <div><dt>Location</dt><dd>City, Country</dd></div>
+            </dl>
+          </div>
+          <div>
+            <p class="body">
+              Placeholder body copy running beside the credits. This is the register the sector
+              actually uses: a piece about built work carries its attribution as a labelled list
+              against the text, so a reader can see who made the work and who photographed it
+              without leaving the article.
+            </p>
+            <p class="body">
+              A second paragraph, closing the piece. Each credit value above is a token rather than
+              a name, because a credits block is the one part of an article page where invented
+              attribution would look most convincing and be least honest.
+            </p>
+          </div>
+        </section>
+
+        <figure class="plate closing">
+          <div class="slot"><p>Plate area</p></div>
+          <figcaption>Placeholder &#183; closing plate</figcaption>
+        </figure>
+
+        <p class="note">
+          Placeholder article detail page &#183; structure demonstration only. Built directly from
+          the supplied reference: cream ground, pill category nav, a large serif title whose joining
+          words drop to a small size on the same line, a full-width plate, a dated two-column intro,
+          a centred pull quote, a pair of plates at unequal widths, a labelled credits block beside
+          the body, and a closing plate. Plate areas are left empty and the piece reads without
+          them. The credits register is what makes this study sector-native, and every value in it
+          is a placeholder token &#8212; fabricated authors, publications, dates and citations are
+          out of scope for this section, and a credits block is where they would otherwise appear.
+          The top bar overlaps ARC-S21 and ARC-S22.
+        </p>
+      </div>
+    </article>
+  </main>
+
+</div>
+</body>
+</html>

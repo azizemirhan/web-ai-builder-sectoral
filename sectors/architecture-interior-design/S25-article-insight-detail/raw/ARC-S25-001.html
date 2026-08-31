@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S25-001
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S25 — Studio Journal / Article Detail
+  Territory      : Universal / Safe
+  Reference      : Supplied reference 5 — studio-agency journal article with a two-column head,
+                   a right meta column behind a vertical rule, an author-and-share rail beside the
+                   body, and a large "Related news" block closing the page. Followed directly:
+                   same regions, same order, same proportions. Image areas left empty.
+  Layout model   : Back chip, title beside a ruled meta column, wide lead image, body column with
+                   an author / share rail, then a large related-reading block
+  Density        : Medium
+  Media mode     : One lead area plus three related-card areas. All empty by design.
+  Interaction    : None (static; no JavaScript)
+  Page note      : `data-region="page-context"` marks the top bar and back chip, which overlap
+                   ARC-S21 and ARC-S22 and would be supplied by those sections in an assembly.
+  Content note   : The section README puts fabricated authors, publications, dates and citations
+                   out of scope. The reference's byline, date and reading time are therefore
+                   carried as placeholder tokens — `Author 01`, `DD Month YYYY`, `NN min` — and the
+                   share row is neutral routes rather than platform marks.
+-->
+
+<meta name="study-id" content="ARC-S25-001">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S25">
+<meta name="section-name" content="Studio Journal / Article Detail">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="layout-model" content="Title beside ruled meta column, body with author rail, related block">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-lead-plus-three-cards">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S25-001 — Article Detail, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #faf8f4; }
+
+/* Scoped study styles — namespaced to .arc-s25-001 */
+.arc-s25-001 {
+  --ink: #14150f;
+  --ink-soft: #55564d;
+  --paper: #faf8f4;
+  --slot: #e6e3da;
+  --slot-ink: #4c4a42;
+  --line: #ddd9cf;
+  --line-strong: #7e7b71;
+  --deep: #14150f;
+  --on-deep: #f6f5f0;
+  --focus: #2946c8;
+  --focus-light: #ffce62;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s25-001 *,
+.arc-s25-001 *::before,
+.arc-s25-001 *::after { box-sizing: inherit; }
+.arc-s25-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+.arc-s25-001 .wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 44px); }
+.arc-s25-001 .lbl {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+
+/* --- Top bar ---------------------------------------------------------------------- */
+.arc-s25-001 .topbar {
+  display: flex; align-items: center; gap: clamp(14px, 2.4vw, 32px);
+  padding: clamp(12px, 1.6vw, 18px) 0; border-bottom: 1px solid var(--line);
+}
+.arc-s25-001 .brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
+.arc-s25-001 .brand .mark { width: 9px; height: 9px; background: var(--ink); border-radius: 2px; }
+.arc-s25-001 .brand .name { font-size: 0.9375rem; font-weight: 700; letter-spacing: 0.04em; }
+.arc-s25-001 .topnav { margin-left: auto; }
+.arc-s25-001 .topnav ul { display: flex; flex-wrap: wrap; align-items: center; gap: 4px clamp(12px, 1.8vw, 24px); margin: 0; padding: 0; list-style: none; }
+.arc-s25-001 .topnav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent;
+}
+.arc-s25-001 .topnav a:hover,
+.arc-s25-001 .topnav a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s25-001 .pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 40px; padding: 0 18px; border-radius: 999px;
+  background: var(--deep); color: var(--on-deep); border: 1px solid var(--deep);
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap;
+  transition: background-color 150ms ease;
+}
+.arc-s25-001 .pill:hover,
+.arc-s25-001 .pill:focus-visible { background: #34362c; }
+
+/* --- Back chip + head ---------------------------------------------------------------- */
+.arc-s25-001 .backrow { padding: clamp(18px, 2.4vw, 30px) 0 clamp(10px, 1.4vw, 14px); }
+.arc-s25-001 .chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 34px; padding: 0 12px; border-radius: 3px;
+  border: 1px solid var(--line-strong); color: var(--ink); text-decoration: none;
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase;
+  transition: border-color 150ms ease;
+}
+.arc-s25-001 .chip:hover,
+.arc-s25-001 .chip:focus-visible { border-color: var(--ink); }
+
+.arc-s25-001 .head {
+  display: grid; grid-template-columns: minmax(0, 1.62fr) minmax(0, 0.38fr);
+  gap: clamp(20px, 3vw, 56px); align-items: start;
+  padding-bottom: clamp(22px, 3vw, 38px);
+}
+.arc-s25-001 h1 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(1.875rem, 4.2vw, 3.125rem); line-height: 1.06; letter-spacing: -0.032em;
+  font-weight: 600; max-width: 17ch;
+}
+.arc-s25-001 .head .lead { margin: 0; font-size: clamp(0.9375rem, 1.15vw, 1.0625rem); color: var(--ink-soft); max-width: 46ch; }
+.arc-s25-001 .headmeta { padding-left: clamp(18px, 2.4vw, 34px); border-left: 1px solid var(--line-strong); }
+.arc-s25-001 .headmeta dl { margin: 0; }
+.arc-s25-001 .headmeta dt { margin-bottom: 5px; }
+.arc-s25-001 .headmeta dd { margin: 0 0 clamp(14px, 1.8vw, 22px); font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.04em; }
+.arc-s25-001 .headmeta dd:last-child { margin-bottom: 0; }
+
+/* --- Lead media ------------------------------------------------------------------------ */
+.arc-s25-001 figure { margin: 0; }
+.arc-s25-001 .slot { display: flex; align-items: flex-end; background: var(--slot); }
+.arc-s25-001 .slot p {
+  margin: 0; padding: clamp(10px, 1.4vw, 15px);
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s25-001 .lead-media .slot { aspect-ratio: 16 / 9; }
+.arc-s25-001 .lead-media figcaption { margin-top: 9px; font-size: 0.75rem; color: var(--ink-soft); }
+
+/* --- Body + rail -------------------------------------------------------------------------- */
+.arc-s25-001 .body {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.3fr);
+  gap: clamp(22px, 3vw, 56px); align-items: start;
+  padding: clamp(28px, 3.6vw, 52px) 0 clamp(24px, 3vw, 40px);
+}
+.arc-s25-001 .prose h2 {
+  margin: clamp(24px, 3vw, 36px) 0 10px;
+  font-size: clamp(1.0625rem, 1.6vw, 1.3125rem); line-height: 1.22; letter-spacing: -0.018em; font-weight: 600;
+}
+.arc-s25-001 .prose > h2:first-child { margin-top: 0; }
+.arc-s25-001 .prose p { margin: 0 0 12px; font-size: 0.9375rem; color: var(--ink-soft); max-width: 72ch; }
+.arc-s25-001 .prose p:last-child { margin-bottom: 0; }
+
+.arc-s25-001 .rail { padding-left: clamp(18px, 2.4vw, 34px); border-left: 1px solid var(--line); }
+.arc-s25-001 .rail h2 { margin: 0 0 8px; font-size: 0.5rem; }
+.arc-s25-001 .rail .who { margin: 0 0 6px; font-size: 0.9375rem; font-weight: 600; }
+.arc-s25-001 .rail p.bio { margin: 0; font-size: 0.75rem; color: var(--ink-soft); }
+.arc-s25-001 .rail .share { margin-top: clamp(20px, 2.6vw, 30px); }
+.arc-s25-001 .rail .share ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.arc-s25-001 .rail .share a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line-strong); color: var(--ink); text-decoration: none;
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.06em; text-transform: uppercase;
+  transition: border-color 150ms ease;
+}
+.arc-s25-001 .rail .share a:hover,
+.arc-s25-001 .rail .share a:focus-visible { border-color: var(--ink); }
+
+/* --- Related --------------------------------------------------------------------------------- */
+.arc-s25-001 .related { padding: clamp(24px, 3vw, 40px) 0 clamp(20px, 2.6vw, 30px); border-top: 1px solid var(--line-strong); }
+.arc-s25-001 .relhead { display: flex; flex-wrap: wrap; align-items: center; gap: 12px clamp(14px, 2vw, 26px); margin-bottom: clamp(18px, 2.4vw, 28px); }
+.arc-s25-001 .related h2 {
+  margin: 0; font-size: clamp(1.625rem, 4.6vw, 3rem); line-height: 1; letter-spacing: -0.03em;
+  text-transform: uppercase; font-weight: 500;
+}
+.arc-s25-001 .relhead .chip { margin-left: auto; }
+.arc-s25-001 .related ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2.2vw, 28px); margin: 0; padding: 0; list-style: none; }
+.arc-s25-001 .related a { display: block; text-decoration: none; color: var(--ink); }
+.arc-s25-001 .related .slot { aspect-ratio: 4 / 3; }
+.arc-s25-001 .related h3 { margin: 12px 0 4px; font-size: 0.9375rem; font-weight: 600; line-height: 1.28; }
+.arc-s25-001 .related a:hover h3,
+.arc-s25-001 .related a:focus-visible h3 { text-decoration: underline; text-underline-offset: 3px; }
+.arc-s25-001 .related .cat { margin: 0; }
+
+.arc-s25-001 .note { margin: 0; padding: 0 0 clamp(26px, 3.2vw, 44px); font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch; }
+
+/* --- Responsive ------------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s25-001 .head { grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.5fr); }
+  .arc-s25-001 .body { grid-template-columns: minmax(0, 1fr) minmax(0, 0.34fr); }
+}
+@media (max-width: 1024px) {
+  /* Meta column and author rail both release to normal flow before they get too narrow to read. */
+  .arc-s25-001 .head { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .arc-s25-001 .headmeta { padding-left: 0; border-left: 0; border-top: 1px solid var(--line-strong); padding-top: 18px; }
+  .arc-s25-001 .headmeta dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(14px, 2.4vw, 30px); }
+  .arc-s25-001 .headmeta dd { margin-bottom: 0; }
+  .arc-s25-001 .body { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .arc-s25-001 .rail { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); padding-top: 20px; }
+  .arc-s25-001 h1 { max-width: 22ch; }
+}
+@media (max-width: 768px) {
+  .arc-s25-001 .topnav { width: 100%; margin-left: 0; order: 3; }
+  .arc-s25-001 .topbar { flex-wrap: wrap; }
+  .arc-s25-001 .pill { margin-left: auto; }
+  .arc-s25-001 .related ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s25-001 .prose p { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s25-001 .headmeta dl { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-001 .headmeta dd { margin-bottom: 14px; }
+  .arc-s25-001 .headmeta dd:last-child { margin-bottom: 0; }
+  .arc-s25-001 .related ul { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-001 .lead-media .slot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 360px) {
+  .arc-s25-001 .topnav ul { gap: 2px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s25-001 *, .arc-s25-001 *::before, .arc-s25-001 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s25-001" data-study-id="ARC-S25-001" data-territory="universal-safe">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="wrap" data-region="page-context">
+    <div class="topbar">
+      <a class="brand" href="#arc-s25-001-title">
+        <span class="mark" aria-hidden="true"></span>
+        <span class="name">Studio</span>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <ul>
+          <li><a href="#arc-s25-001-title">Work</a></li>
+          <li><a href="#arc-s25-001-title">Services</a></li>
+          <li><a href="#arc-s25-001-title">Studio</a></li>
+          <li><a href="#arc-s25-001-title">Journal</a></li>
+          <li><a href="#arc-s25-001-title">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="pill" href="#arc-s25-001-title">Let&#8217;s talk</a>
+    </div>
+    <div class="backrow">
+      <a class="chip" href="#arc-s25-001-title">
+        <span aria-hidden="true">&#8592;</span>
+        Go back
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <header class="head wrap">
+        <div>
+          <h1 id="arc-s25-001-title">What to look for when comparing two ways of laying out a plan</h1>
+          <p class="lead">
+            Placeholder standfirst. One or two sentences saying what the piece argues, written so
+            the reader can decide whether to carry on.
+          </p>
+        </div>
+        <div class="headmeta">
+          <dl>
+            <dt class="lbl">Date</dt>
+            <dd>DD Month YYYY</dd>
+            <dt class="lbl">Category</dt>
+            <dd>Design, Process</dd>
+            <dt class="lbl">Reading time</dt>
+            <dd>NN min</dd>
+          </dl>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <figure class="lead-media">
+          <div class="slot"><p>Image area</p></div>
+          <figcaption>Placeholder &#183; lead image, optional</figcaption>
+        </figure>
+      </div>
+
+      <div class="body wrap">
+        <div class="prose">
+          <h2>Placeholder section heading</h2>
+          <p>
+            Placeholder body copy. This paragraph stands in for the opening of the article and is
+            long enough to show the measure the layout holds at a wide width, where an unconstrained
+            column would otherwise run past comfortable reading length and force the eye to hunt for
+            the start of the next line.
+          </p>
+          <p>
+            A second paragraph, so the spacing between paragraphs can be judged rather than
+            guessed. The body carries no marketing copy dressed as editorial, which the section
+            README puts out of scope.
+          </p>
+
+          <h2>Placeholder section heading</h2>
+          <p>
+            Placeholder body copy. Sub-headings divide the piece into sections a reader can scan,
+            and the hierarchy is real markup rather than a size change, so it survives at every
+            width and in any reading mode.
+          </p>
+          <p>
+            A further paragraph of placeholder text, again at a length that exercises the measure
+            rather than sitting on a single line.
+          </p>
+
+          <h2>Placeholder section heading</h2>
+          <p>
+            Placeholder body copy closing the article. Nothing here states a figure, a date or an
+            outcome that would have to be true.
+          </p>
+        </div>
+
+        <aside class="rail" aria-labelledby="arc-s25-001-author">
+          <h2 class="lbl" id="arc-s25-001-author">Author</h2>
+          <p class="who">Author 01</p>
+          <p class="bio">
+            Placeholder byline. Role and a short description supplied by the studio; no name is
+            invented here.
+          </p>
+          <div class="share">
+            <h2 class="lbl" id="arc-s25-001-share">Share</h2>
+            <ul aria-labelledby="arc-s25-001-share">
+              <li><a href="#arc-s25-001-title">Link</a></li>
+              <li><a href="#arc-s25-001-title">Mail</a></li>
+              <li><a href="#arc-s25-001-title">More</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <section class="related wrap" aria-labelledby="arc-s25-001-relh">
+      <div class="relhead">
+        <h2 id="arc-s25-001-relh">Related news</h2>
+        <a class="chip" href="#arc-s25-001-title">See all</a>
+      </div>
+      <ul>
+        <li>
+          <a href="#arc-s25-001-title">
+            <div class="slot"><p>Image area</p></div>
+            <h3>Placeholder related article title, two lines long</h3>
+            <p class="cat lbl">Category</p>
+          </a>
+        </li>
+        <li>
+          <a href="#arc-s25-001-title">
+            <div class="slot"><p>Image area</p></div>
+            <h3>Placeholder related article title, two lines long</h3>
+            <p class="cat lbl">Category</p>
+          </a>
+        </li>
+        <li>
+          <a href="#arc-s25-001-title">
+            <div class="slot"><p>Image area</p></div>
+            <h3>Placeholder related article title, two lines long</h3>
+            <p class="cat lbl">Category</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <div class="wrap">
+      <p class="note">
+        Placeholder article detail page &#183; structure demonstration only. Built directly from the
+        supplied reference: back chip, title beside a ruled meta column, wide lead image, body with
+        an author and share rail, and a large related-reading block. Image areas are left empty and
+        the page is complete without them. Byline, date and reading time are placeholder tokens
+        because the section README puts fabricated authors, publications and dates out of scope, and
+        the share row carries neutral routes rather than platform marks. The top bar and back chip
+        overlap ARC-S21 and ARC-S22.
+      </p>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>

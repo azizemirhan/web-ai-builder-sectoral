@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S25-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S25 — Studio Journal / Article Detail
+  Territory      : Dense / Information-heavy
+  Reference      : Supplied reference 2 — a journal article between two sidebars: an about block
+                   with a portrait and a connect row on the left, the article in the middle, and
+                   recent posts with an archive on the right; the article itself runs image, body,
+                   pull quote, share row, author box, related posts and comments. Followed
+                   directly, region for region.
+  Layout model   : Three columns — left about sidebar, centre article, right recent-and-archive
+                   sidebar — with the article carrying its own seven stacked regions
+  Density        : High
+  Media mode     : One lead area, one portrait, one author avatar, two related-card areas
+  Interaction    : None (static; no JavaScript). The comment form is markup only, has no action,
+                   and says so on the page.
+  Page note      : `data-region="page-context"` marks the top bar, which overlaps ARC-S21 / S22.
+  Content note   : The reference's byline, dates, archive counts and platform share row are all
+                   replaced with placeholder tokens and neutral routes — fabricated authors, dates
+                   and citations are out of scope for this section, and counts would be invented
+                   statistics.
+-->
+
+<meta name="study-id" content="ARC-S25-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S25">
+<meta name="section-name" content="Studio Journal / Article Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Article between an about sidebar and a recent-plus-archive sidebar">
+<meta name="density" content="high">
+<meta name="media-mode" content="lead-portrait-avatar-and-two-cards">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S25-003 — Article Detail, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fdfdfc; }
+
+/* Scoped study styles — namespaced to .arc-s25-003 */
+.arc-s25-003 {
+  --ink: #16161a;
+  --ink-soft: #4f5157;
+  --quote: #6f7178;
+  --paper: #fdfdfc;
+  --slot: #e5e4e2;
+  --slot-ink: #4a4c50;
+  --line: #e6e5e3;
+  --line-strong: #7d8086;
+  --focus: #2246cc;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s25-003 *,
+.arc-s25-003 *::before,
+.arc-s25-003 *::after { box-sizing: inherit; }
+.arc-s25-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+.arc-s25-003 .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 clamp(14px, 2.6vw, 34px); }
+.arc-s25-003 .lbl {
+  font-family: var(--sans); font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s25-003 .sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.arc-s25-003 figure { margin: 0; }
+.arc-s25-003 .slot { display: flex; align-items: flex-end; background: var(--slot); }
+.arc-s25-003 .slot p {
+  margin: 0; padding: clamp(9px, 1.2vw, 13px);
+  font-family: var(--sans); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Top bar ------------------------------------------------------------------------- */
+.arc-s25-003 .bar {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center; gap: 12px;
+  padding: clamp(10px, 1.4vw, 16px) clamp(14px, 2.6vw, 34px);
+  border-bottom: 1px solid var(--line);
+}
+.arc-s25-003 .burger { display: inline-flex; flex-direction: column; justify-content: center; gap: 4px; width: 24px; height: 44px; }
+.arc-s25-003 .burger span { display: block; height: 1px; background: var(--ink); }
+.arc-s25-003 .wordmark { text-align: center; font-family: var(--sans); font-size: 1.0625rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+.arc-s25-003 .baracts { display: flex; align-items: center; justify-content: flex-end; gap: clamp(10px, 1.6vw, 20px); }
+.arc-s25-003 .baracts a {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px;
+  font-family: var(--sans); font-size: 0.8125rem; color: var(--ink-soft); text-decoration: none;
+}
+.arc-s25-003 .baracts a:hover,
+.arc-s25-003 .baracts a:focus-visible { color: var(--ink); }
+
+/* --- Article title block ---------------------------------------------------------------- */
+.arc-s25-003 .titling { padding: clamp(34px, 6vw, 78px) 0 clamp(20px, 2.6vw, 30px); text-align: center; }
+.arc-s25-003 h1 {
+  margin: 0 auto 14px; max-width: 20ch;
+  font-size: clamp(1.875rem, 4.4vw, 3.25rem); line-height: 1.06; letter-spacing: -0.02em; font-weight: 400;
+}
+.arc-s25-003 .postmeta { margin: 0; font-family: var(--sans); font-size: 0.5625rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+.arc-s25-003 .postmeta a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.arc-s25-003 .postmeta a:hover,
+.arc-s25-003 .postmeta a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* --- Three columns -------------------------------------------------------------------------- */
+.arc-s25-003 .cols {
+  display: grid; grid-template-columns: minmax(0, 0.24fr) minmax(0, 1fr) minmax(0, 0.26fr);
+  gap: clamp(20px, 3vw, 54px); align-items: start;
+  padding: clamp(20px, 2.6vw, 34px) 0 clamp(28px, 3.4vw, 46px);
+}
+
+/* Left sidebar */
+.arc-s25-003 .aside h2 { margin: 0 0 14px; font-size: 0.9375rem; font-weight: 400; }
+.arc-s25-003 .aside .portrait .slot { aspect-ratio: 3 / 4; }
+.arc-s25-003 .aside .bio {
+  margin: 14px 0 0; font-family: var(--sans); font-size: 0.5625rem; line-height: 1.9;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s25-003 .connect { margin-top: clamp(22px, 3vw, 34px); }
+.arc-s25-003 .connect h2 { margin-bottom: 8px; }
+.arc-s25-003 .connect ul { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 0; padding: 0; list-style: none; }
+.arc-s25-003 .connect a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--sans); font-size: 0.5625rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent;
+}
+.arc-s25-003 .connect a:hover,
+.arc-s25-003 .connect a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* Centre article */
+.arc-s25-003 .lead-media .slot { aspect-ratio: 3 / 2; }
+.arc-s25-003 .prose { padding-top: clamp(20px, 2.6vw, 30px); }
+.arc-s25-003 .prose p { margin: 0 0 1.35em; font-size: 0.9375rem; }
+.arc-s25-003 blockquote {
+  margin: clamp(22px, 3vw, 34px) 0; padding: 4px 0 4px clamp(16px, 2.2vw, 24px);
+  border-left: 2px solid var(--line-strong); color: var(--quote);
+}
+.arc-s25-003 blockquote p { margin: 0; font-size: 0.9375rem; }
+
+.arc-s25-003 .sharerow {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px clamp(14px, 2.2vw, 26px);
+  margin-top: clamp(24px, 3vw, 38px); padding-top: clamp(14px, 2vw, 20px); border-top: 1px solid var(--line);
+}
+.arc-s25-003 .sharerow ul { display: flex; flex-wrap: wrap; gap: 4px clamp(14px, 2.2vw, 26px); margin: 0; padding: 0; list-style: none; }
+.arc-s25-003 .sharerow a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--sans); font-size: 0.5625rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong);
+}
+.arc-s25-003 .sharerow a:hover,
+.arc-s25-003 .sharerow a:focus-visible { border-bottom-color: var(--ink); }
+
+.arc-s25-003 .authorbox {
+  display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: clamp(14px, 2.2vw, 26px); align-items: start;
+  margin-top: clamp(20px, 2.6vw, 30px); padding: clamp(18px, 2.4vw, 26px) 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.arc-s25-003 .authorbox .slot { aspect-ratio: 1 / 1; border-radius: 50%; }
+.arc-s25-003 .authorbox .slot p { padding: 0 0 10px; width: 100%; text-align: center; font-size: 0.4375rem; }
+.arc-s25-003 .authorbox h2 { margin: 0 0 6px; font-size: 1.0625rem; font-weight: 400; }
+.arc-s25-003 .authorbox p.bio { margin: 0; font-size: 0.875rem; color: var(--ink-soft); }
+
+.arc-s25-003 .relposts { padding-top: clamp(24px, 3vw, 38px); }
+.arc-s25-003 .relposts > h2 { margin: 0 0 14px; font-size: 0.9375rem; font-weight: 400; }
+.arc-s25-003 .relposts ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2.2vw, 26px); margin: 0; padding: 0; list-style: none; }
+.arc-s25-003 .relposts a { display: block; text-decoration: none; color: var(--ink); }
+.arc-s25-003 .relposts .slot { aspect-ratio: 4 / 3; }
+.arc-s25-003 .relposts h3 {
+  margin: 0; padding: 14px 12px; background: #f2f1ef; text-align: center;
+  font-family: var(--sans); font-size: 0.5625rem; line-height: 1.7; letter-spacing: 0.12em;
+  text-transform: uppercase; font-weight: 600;
+}
+.arc-s25-003 .relposts a:hover h3,
+.arc-s25-003 .relposts a:focus-visible h3 { text-decoration: underline; text-underline-offset: 3px; }
+
+.arc-s25-003 .comments { padding-top: clamp(26px, 3.2vw, 40px); }
+.arc-s25-003 .comments h2 { margin: 0 0 6px; font-size: 0.9375rem; font-weight: 400; }
+.arc-s25-003 .comments h3 { margin: clamp(18px, 2.4vw, 26px) 0 12px; font-size: 0.9375rem; font-weight: 400; }
+.arc-s25-003 .comments > p { margin: 0; font-size: 0.875rem; color: var(--ink-soft); }
+.arc-s25-003 form { margin: 0; }
+.arc-s25-003 fieldset { margin: 0; padding: 0; border: 0; }
+.arc-s25-003 legend { padding: 0 0 10px; }
+.arc-s25-003 .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.arc-s25-003 .field { display: flex; flex-direction: column; gap: 5px; }
+.arc-s25-003 .field.full { grid-column: 1 / -1; }
+.arc-s25-003 .field label { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; }
+.arc-s25-003 .field input,
+.arc-s25-003 .field textarea {
+  width: 100%; min-height: 46px; padding: 11px 13px;
+  background: #ffffff; color: var(--ink); border: 1px solid var(--line-strong); border-radius: 3px;
+  font-family: var(--sans); font-size: 0.9375rem;
+}
+.arc-s25-003 .field textarea { min-height: 120px; resize: vertical; }
+.arc-s25-003 .field input:hover,
+.arc-s25-003 .field textarea:hover { border-color: var(--ink); }
+.arc-s25-003 .submit { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 14px; }
+.arc-s25-003 .btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 46px; padding: 0 22px; border-radius: 3px; cursor: pointer;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
+  transition: background-color 150ms ease;
+}
+.arc-s25-003 .btn:hover,
+.arc-s25-003 .btn:focus-visible { background: #35373d; }
+.arc-s25-003 .submit .disclaimer { margin: 0; font-family: var(--sans); font-size: 0.6875rem; color: var(--ink-soft); max-width: 32ch; }
+
+/* Right sidebar */
+.arc-s25-003 .recent h2,
+.arc-s25-003 .archive h2 { margin: 0 0 14px; font-size: 0.9375rem; font-weight: 400; }
+.arc-s25-003 .recent ul,
+.arc-s25-003 .archive ul { margin: 0; padding: 0; list-style: none; }
+.arc-s25-003 .recent li { padding-bottom: clamp(16px, 2.2vw, 24px); }
+.arc-s25-003 .recent .cat { margin: 0 0 5px; }
+.arc-s25-003 .recent h3 { margin: 0; font-size: 0.9375rem; font-weight: 400; line-height: 1.45; }
+.arc-s25-003 .recent a { color: var(--ink); text-decoration: none; }
+.arc-s25-003 .recent a:hover,
+.arc-s25-003 .recent a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.arc-s25-003 .archive { margin-top: clamp(14px, 2vw, 20px); }
+.arc-s25-003 .archive h2 { font-family: var(--sans); font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+.arc-s25-003 .archive a {
+  display: inline-flex; align-items: center; min-height: 40px;
+  font-size: 0.875rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent;
+}
+.arc-s25-003 .archive a:hover,
+.arc-s25-003 .archive a:focus-visible { border-bottom-color: var(--ink); }
+
+.arc-s25-003 .note {
+  margin: 0; padding: 0 0 clamp(26px, 3.2vw, 44px);
+  font-family: var(--sans); font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch;
+}
+
+/* --- Responsive ----------------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s25-003 .cols { grid-template-columns: minmax(0, 0.28fr) minmax(0, 1fr) minmax(0, 0.3fr); gap: 34px; }
+}
+@media (max-width: 1024px) {
+  /* Both sidebars release below the article rather than squeezing the reading column. */
+  .arc-s25-003 .cols { grid-template-columns: minmax(0, 1fr); gap: 34px; }
+  .arc-s25-003 .article { order: -1; }
+  .arc-s25-003 .aside { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); align-items: start; }
+  .arc-s25-003 .aside .connect { margin-top: 0; }
+  .arc-s25-003 .aside .portrait .slot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 768px) {
+  .arc-s25-003 .authorbox { grid-template-columns: 72px minmax(0, 1fr); }
+  .arc-s25-003 .aside { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .arc-s25-003 .relposts ul { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-003 .fields { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-003 .authorbox { grid-template-columns: minmax(0, 1fr); }
+  .arc-s25-003 .authorbox .slot { aspect-ratio: 3 / 2; border-radius: 4px; }
+  .arc-s25-003 .btn { width: 100%; }
+  .arc-s25-003 .lead-media .slot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 360px) {
+  .arc-s25-003 .sharerow { gap: 2px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s25-003 *, .arc-s25-003 *::before, .arc-s25-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s25-003" data-study-id="ARC-S25-003" data-territory="dense-information-heavy">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="bar" data-region="page-context">
+    <a class="burger" href="#arc-s25-003-title">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      <span class="sr">Menu</span>
+    </a>
+    <a class="wordmark" href="#arc-s25-003-title">journal</a>
+    <div class="baracts">
+      <a href="#arc-s25-003-title"><span aria-hidden="true">&#64;</span><span class="sr">Contact</span></a>
+      <a href="#arc-s25-003-title">Search</a>
+    </div>
+  </div>
+
+  <main>
+    <header class="titling wrap" data-region="page-context">
+      <h1 id="arc-s25-003-title">Visiting a cathedral, and what its plan still teaches</h1>
+      <p class="postmeta">
+        <a href="#arc-s25-003-title">Featured</a>, <a href="#arc-s25-003-title">Places</a>,
+        <a href="#arc-s25-003-title">Travel</a> &#183; On DD Month YYYY &#183; Posted by Author 01
+        &#183; No comments
+      </p>
+    </header>
+
+    <div class="cols wrap">
+
+      <aside class="aside" aria-labelledby="arc-s25-003-about">
+        <div>
+          <h2 id="arc-s25-003-about">About</h2>
+          <figure class="portrait">
+            <div class="slot"><p>Portrait area</p></div>
+          </figure>
+          <p class="bio">
+            Placeholder biography for the writer of this journal. Two or three lines, set small and
+            spaced, describing what they write about.
+          </p>
+        </div>
+        <div class="connect">
+          <h2 class="lbl" id="arc-s25-003-connect">Let&#8217;s connect</h2>
+          <ul aria-labelledby="arc-s25-003-connect">
+            <li><a href="#arc-s25-003-title">Link</a></li>
+            <li><a href="#arc-s25-003-title">Mail</a></li>
+            <li><a href="#arc-s25-003-title">Save</a></li>
+            <li><a href="#arc-s25-003-title">Share</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <article class="article">
+        <figure class="lead-media">
+          <div class="slot"><p>Image area</p></div>
+        </figure>
+
+        <div class="prose">
+          <p>
+            Placeholder body copy opening the article. This paragraph runs long enough to show the
+            reading measure the centre column holds while both sidebars are present, which is the
+            single thing this layout has to get right: the column between two rails is where the
+            article is actually read.
+          </p>
+          <p>
+            A second paragraph of placeholder copy, so that paragraph spacing can be judged. The
+            body carries no marketing copy dressed as editorial and states nothing that would have
+            to be verified.
+          </p>
+
+          <blockquote>
+            <p>
+              Placeholder pull quote, set against a rule on the left and in a lighter tone, marking a
+              line from the piece without claiming it was said by anyone in particular.
+            </p>
+          </blockquote>
+
+          <p>
+            A third paragraph after the quote, returning to the body register so the reader can see
+            where the quote ends and the article resumes.
+          </p>
+          <p>
+            A fourth and final paragraph of placeholder copy, closing the piece before the share
+            row and the author box.
+          </p>
+        </div>
+
+        <div class="sharerow">
+          <p class="lbl" id="arc-s25-003-share">Share this:</p>
+          <ul aria-labelledby="arc-s25-003-share">
+            <li><a href="#arc-s25-003-title">Copy link</a></li>
+            <li><a href="#arc-s25-003-title">Email</a></li>
+            <li><a href="#arc-s25-003-title">Save</a></li>
+            <li><a href="#arc-s25-003-title">Share</a></li>
+          </ul>
+        </div>
+
+        <div class="authorbox">
+          <figure>
+            <div class="slot"><p>Portrait</p></div>
+          </figure>
+          <div>
+            <h2>Author 01</h2>
+            <p class="bio">
+              Placeholder author note. Role and a short description supplied by the studio. No name
+              is invented here, because the section README puts fabricated authors out of scope.
+            </p>
+          </div>
+        </div>
+
+        <section class="relposts" aria-labelledby="arc-s25-003-relh">
+          <h2 id="arc-s25-003-relh">Related posts</h2>
+          <ul>
+            <li>
+              <a href="#arc-s25-003-title">
+                <div class="slot"><p>Image area</p></div>
+                <h3>Placeholder related article title over two lines</h3>
+              </a>
+            </li>
+            <li>
+              <a href="#arc-s25-003-title">
+                <div class="slot"><p>Image area</p></div>
+                <h3>Placeholder related article title over two lines</h3>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="comments" aria-labelledby="arc-s25-003-comh">
+          <h2 id="arc-s25-003-comh">No comments</h2>
+          <p>Nothing has been posted on this article yet.</p>
+
+          <h3 id="arc-s25-003-formh">Leave a comment</h3>
+          <form action="" method="post" aria-describedby="arc-s25-003-formnote">
+            <fieldset>
+              <legend class="lbl">Comment on this article</legend>
+              <div class="fields">
+                <div class="field">
+                  <label for="arc-s25-003-name">Name</label>
+                  <input type="text" id="arc-s25-003-name" name="name" autocomplete="name">
+                </div>
+                <div class="field">
+                  <label for="arc-s25-003-email">Email</label>
+                  <input type="email" id="arc-s25-003-email" name="email" autocomplete="email">
+                </div>
+                <div class="field full">
+                  <label for="arc-s25-003-comment">Comment</label>
+                  <textarea id="arc-s25-003-comment" name="comment"></textarea>
+                </div>
+              </div>
+              <div class="submit">
+                <button type="submit" class="btn">Post comment</button>
+                <p class="disclaimer" id="arc-s25-003-formnote">
+                  Placeholder form. Markup only, not connected to anything.
+                </p>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+      </article>
+
+      <aside aria-labelledby="arc-s25-003-recent">
+        <div class="recent">
+          <h2 id="arc-s25-003-recent">Recent posts</h2>
+          <ul>
+            <li>
+              <p class="cat lbl">Photography</p>
+              <h3><a href="#arc-s25-003-title">Placeholder recent article title over two lines</a></h3>
+            </li>
+            <li>
+              <p class="cat lbl">Materials</p>
+              <h3><a href="#arc-s25-003-title">Placeholder recent article title over two lines</a></h3>
+            </li>
+            <li>
+              <p class="cat lbl">Process</p>
+              <h3><a href="#arc-s25-003-title">Placeholder recent article title over two lines</a></h3>
+            </li>
+          </ul>
+        </div>
+        <div class="archive">
+          <h2 id="arc-s25-003-archive">Archive</h2>
+          <ul aria-labelledby="arc-s25-003-archive">
+            <li><a href="#arc-s25-003-title">Month YYYY (NN)</a></li>
+            <li><a href="#arc-s25-003-title">Month YYYY (NN)</a></li>
+            <li><a href="#arc-s25-003-title">Month YYYY (NN)</a></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+
+    <div class="wrap">
+      <p class="note">
+        Placeholder article detail page &#183; structure demonstration only. Built directly from the
+        supplied reference: centred title with a category and byline line, an about sidebar with a
+        portrait and a connect row on the left, the article in the middle running image, body, pull
+        quote, share row, author box, related posts and comments, and a recent-posts-plus-archive
+        sidebar on the right. Image areas are left empty. Byline, dates and archive counts are
+        placeholder tokens and the share rows carry neutral routes rather than platform marks,
+        because fabricated authors, dates and citations are out of scope for this section and counts
+        would be invented statistics. The comment form is markup only and says so beside its own
+        button. The top bar and title block overlap ARC-S21 and ARC-S22.
+      </p>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>
