@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S13-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S13 — Featured Project Case Study
+  Territory      : Sector-native / Distinctive
+  Reference      : None supplied. Authored to brief, in the sector's established register.
+  Layout model   : Existing / proposed comparison — two matched plate columns under a shared
+                   sheet head, with paired annotations reading across the divide and a change
+                   schedule beneath
+  Density        : Medium-high
+  Media mode     : Four empty plates in two matched pairs — existing and proposed, at the same
+                   ratio so the comparison is honest.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The sector-native device is the existing/proposed pair, the comparison an
+                   architect makes on every project involving a building that already stands. It
+                   is the one presentation where the two images must be taken from the same
+                   position at the same ratio, and the sheet says so, because an unmatched pair
+                   flatters the proposal. No client, address, date, cost, area, award or
+                   completed-project claim appears.
+-->
+
+<meta name="study-id" content="ARC-S13-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S13">
+<meta name="section-name" content="Featured Project Case Study">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Existing/proposed matched plate comparison with change schedule">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="empty-matched-plate-pairs">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S13-005 — Case Study, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eeece7; }
+
+/* Scoped study styles — namespaced to .arc-s13-005 */
+.arc-s13-005 {
+  --paper: #eeece7;
+  --sheet: #f5f4f0;
+  --ink: #14161a;
+  --ink-soft: #4c4a44;
+  --existing: #d9d5cb;
+  --proposed: #cfcabd;
+  --slot-ink: #46443e;
+  --hair: #c8c4ba;
+  --hair-ink: #7c786f;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: clamp(14px, 2.6vw, 42px);
+}
+.arc-s13-005 *,
+.arc-s13-005 *::before,
+.arc-s13-005 *::after { box-sizing: inherit; }
+.arc-s13-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s13-005 .sheet {
+  max-width: 1280px; margin: 0 auto;
+  background: var(--sheet); border: 1px solid var(--hair);
+  padding: clamp(22px, 3.2vw, 50px);
+}
+
+/* --- Sheet head --------------------------------------------------------------------- */
+.arc-s13-005 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 18px; flex-wrap: wrap;
+  padding-bottom: clamp(14px, 1.8vw, 20px); margin-bottom: clamp(18px, 2.4vw, 28px);
+  border-bottom: 1px solid var(--hair-ink);
+}
+.arc-s13-005 .eyebrow {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s13-005 h1 {
+  margin: 0; font-size: clamp(1.375rem, 2.5vw, 2rem);
+  line-height: 1.14; letter-spacing: -0.024em; font-weight: 500; max-width: 24ch;
+}
+.arc-s13-005 .head > p:last-child {
+  margin: 0; font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s13-005 .preamble {
+  margin: 0 0 clamp(20px, 2.6vw, 30px);
+  font-size: 0.8125rem; color: var(--ink-soft); max-width: 78ch;
+}
+
+/* --- Comparison ---------------------------------------------------------------------- */
+.arc-s13-005 .compare { margin: 0; padding: 0; list-style: none; }
+.arc-s13-005 .pair {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 18px);
+  margin: 0 0 clamp(10px, 1.4vw, 18px);
+}
+.arc-s13-005 .side { margin: 0; }
+.arc-s13-005 .side__label {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 10px; padding-bottom: 7px; margin-bottom: 8px;
+  border-bottom: 1px solid var(--hair-ink);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s13-005 .side__label b { color: var(--ink); font-weight: 400; }
+/* Both plates share one ratio: an unmatched pair flatters the proposal. */
+.arc-s13-005 .plate {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 4 / 3; border-radius: 2px;
+}
+.arc-s13-005 .side--existing .plate { background: var(--existing); }
+.arc-s13-005 .side--proposed .plate { background: var(--proposed); }
+.arc-s13-005 .plate span {
+  padding: 11px 13px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s13-005 .side figcaption {
+  margin-top: 8px; font-size: 0.75rem; color: var(--ink-soft);
+}
+
+/* Annotation reading across the divide */
+.arc-s13-005 .across {
+  display: grid; grid-template-columns: 3.4em minmax(0, 1fr);
+  gap: 12px; align-items: baseline;
+  margin: 0 0 clamp(16px, 2.2vw, 26px);
+  padding: clamp(10px, 1.4vw, 14px) 0;
+  border-top: 1px dashed var(--hair); border-bottom: 1px dashed var(--hair);
+}
+.arc-s13-005 .across .n {
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.06em; color: var(--ink-soft);
+}
+.arc-s13-005 .across p { margin: 0; font-size: 0.8125rem; max-width: 72ch; }
+
+/* --- Change schedule ------------------------------------------------------------------- */
+.arc-s13-005 .schedule { margin: clamp(20px, 2.6vw, 32px) 0 0; }
+.arc-s13-005 .schedule h2 {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.625rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s13-005 .schedule ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--hair-ink); }
+.arc-s13-005 .schedule li {
+  display: grid; grid-template-columns: 3.4em minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 12px; align-items: baseline;
+  padding: 10px 0; border-bottom: 1px solid var(--hair);
+  font-size: 0.8125rem;
+}
+.arc-s13-005 .schedule .ref {
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.06em; color: var(--ink-soft);
+}
+.arc-s13-005 .schedule .what { font-weight: 500; }
+.arc-s13-005 .schedule .why { color: var(--ink-soft); }
+
+.arc-s13-005 .foot {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  margin: clamp(22px, 2.8vw, 34px) 0 0; padding-top: clamp(12px, 1.6vw, 16px);
+  border-top: 1px solid var(--hair-ink);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s13-005 .note {
+  margin: clamp(12px, 1.6vw, 16px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 88ch;
+}
+
+/* --- Responsive -------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s13-005 .schedule li { grid-template-columns: 3em minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s13-005 h1 { max-width: 28ch; }
+}
+@media (max-width: 768px) {
+  /* The pair must stay side by side to be a comparison at all, so the plates
+     narrow rather than stacking; the schedule drops its reason column instead. */
+  .arc-s13-005 .plate { aspect-ratio: 1 / 1; }
+  .arc-s13-005 .schedule li { grid-template-columns: 3em minmax(0, 1fr); }
+  .arc-s13-005 .schedule .why { grid-column: 2; }
+}
+@media (max-width: 480px) {
+  .arc-s13-005 .sheet { padding: 18px; }
+  .arc-s13-005 .plate { aspect-ratio: 3 / 4; }
+  .arc-s13-005 .side__label { flex-direction: column; gap: 2px; }
+  .arc-s13-005 .across { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+@media (max-width: 360px) {
+  .arc-s13-005 { padding: 10px; }
+  .arc-s13-005 .sheet { padding: 14px; }
+  .arc-s13-005 .plate span { padding: 9px 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s13-005 *, .arc-s13-005 *::before, .arc-s13-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s13-005" data-study-id="ARC-S13-005" data-territory="sector-native-distinctive">
+
+  <section class="sheet" aria-labelledby="arc-s13-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Featured project &#183; existing and proposed</p>
+        <h1 id="arc-s13-005-title">Project record 05 &#8212; what changed, and what did not</h1>
+      </div>
+      <p>Sheet ARC / S13 &#183; placeholder</p>
+    </div>
+
+    <p class="preamble">
+      The comparison an architect makes on every project involving a building that already stands.
+      Both plates in a pair are taken from the same position at the same ratio, because an
+      unmatched pair flatters the proposal rather than explaining it.
+    </p>
+
+    <ol class="compare">
+
+      <li>
+        <div class="pair">
+          <figure class="side side--existing">
+            <p class="side__label"><b>Existing</b><span>Plate E-01</span></p>
+            <div class="plate"><span>Plate area</span></div>
+            <figcaption>Existing condition placeholder &#183; view 01</figcaption>
+          </figure>
+          <figure class="side side--proposed">
+            <p class="side__label"><b>Proposed</b><span>Plate P-01</span></p>
+            <div class="plate"><span>Plate area</span></div>
+            <figcaption>Proposal placeholder &#183; same position, same ratio</figcaption>
+          </figure>
+        </div>
+        <div class="across">
+          <span class="n">01</span>
+          <p>
+            Placeholder annotation reading across the pair. This line says what the reader should
+            be comparing, because two images side by side do not explain themselves.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div class="pair">
+          <figure class="side side--existing">
+            <p class="side__label"><b>Existing</b><span>Plate E-02</span></p>
+            <div class="plate"><span>Plate area</span></div>
+            <figcaption>Existing condition placeholder &#183; view 02</figcaption>
+          </figure>
+          <figure class="side side--proposed">
+            <p class="side__label"><b>Proposed</b><span>Plate P-02</span></p>
+            <div class="plate"><span>Plate area</span></div>
+            <figcaption>Proposal placeholder &#183; same position, same ratio</figcaption>
+          </figure>
+        </div>
+        <div class="across">
+          <span class="n">02</span>
+          <p>
+            Placeholder annotation. A second pair, because one comparison is an illustration and
+            two begin to be an argument.
+          </p>
+        </div>
+      </li>
+
+    </ol>
+
+    <div class="schedule">
+      <h2>Schedule of change</h2>
+      <ol>
+        <li>
+          <span class="ref">C-01</span>
+          <span class="what">Opening enlarged to the garden</span>
+          <span class="why">To bring afternoon light into the room that is used most</span>
+        </li>
+        <li>
+          <span class="ref">C-02</span>
+          <span class="what">Partition removed</span>
+          <span class="why">Two rooms that were each too small for what happened in them</span>
+        </li>
+        <li>
+          <span class="ref">C-03</span>
+          <span class="what">Original floor retained</span>
+          <span class="why">Sound, and worth more repaired than replaced</span>
+        </li>
+        <li>
+          <span class="ref">C-04</span>
+          <span class="what">Services rerouted to a separate zone</span>
+          <span class="why">So the control layer is not punctured to reach a socket</span>
+        </li>
+      </ol>
+    </div>
+
+    <p class="foot">
+      <span>Plates indicative &#183; not to scale</span>
+      <span>Existing &#8594; proposed</span>
+      <span>Status &#183; design study</span>
+    </p>
+
+    <p class="note">
+      Placeholder project record &#183; structure demonstration only. Plate references, annotations
+      and the schedule of change are all placeholders, and no client, address, date, cost, area,
+      award or completed-project claim appears. A practice issuing a real comparison would shoot
+      both plates from the same position and say so.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

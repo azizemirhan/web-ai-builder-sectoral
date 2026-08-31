@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S13-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S13 — Featured Project Case Study
+  Territory      : Premium / Editorial
+  Reference      : None supplied. Authored to brief, in the sector's established register.
+  Layout model   : Held media column — the image stays while the narrative moves past it, with a
+                   pull line breaking the column and a plate caption fixed to the media
+  Density        : Low-medium
+  Media mode     : One tall media area held in place beside the scrolling narrative.
+  Interaction    : None (static; no JavaScript). The held column is `position: sticky`, which is
+                   a scroll relationship rather than a script, and the first sector study to hold
+                   *media* rather than a panel of controls or a navigation rail.
+  Content note   : The project is a placeholder record. No client, address, date, cost, area,
+                   award or completed-project claim appears.
+-->
+
+<meta name="study-id" content="ARC-S13-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S13">
+<meta name="section-name" content="Featured Project Case Study">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="Held sticky media column beside a moving narrative">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="empty-held-media-column">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S13-002 — Case Study, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f5f1; }
+
+/* Scoped study styles — namespaced to .arc-s13-002 */
+.arc-s13-002 {
+  --ink: #17171a;
+  --ink-soft: #58564e;
+  --paper: #f6f5f1;
+  --slot: #e2dfd6;
+  --slot-ink: #4b493f;
+  --hair: #d8d4ca;
+  --hair-ink: #85827a;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s13-002 *,
+.arc-s13-002 *::before,
+.arc-s13-002 *::after { box-sizing: inherit; }
+.arc-s13-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s13-002 .shell {
+  width: 100%; max-width: 1300px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 80px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Head ------------------------------------------------------------------------ */
+.arc-s13-002 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+  padding-bottom: clamp(16px, 2vw, 24px); margin-bottom: clamp(24px, 3vw, 40px);
+  border-bottom: 1px solid var(--hair-ink);
+}
+.arc-s13-002 .eyebrow {
+  margin: 0 0 12px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s13-002 h1 {
+  margin: 0; font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.75rem, 3.6vw, 3rem);
+  line-height: 1.1; letter-spacing: -0.02em; max-width: 18ch;
+}
+.arc-s13-002 .head > p:last-child {
+  margin: 0; font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Held media + moving narrative ------------------------------------------------ */
+.arc-s13-002 .body {
+  display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.4vw, 60px);
+  align-items: start;
+}
+/* The media is held while the narrative travels past it. */
+.arc-s13-002 .held {
+  position: sticky; top: clamp(20px, 3vw, 44px);
+  margin: 0;
+}
+.arc-s13-002 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 4 / 5; background: var(--slot); border-radius: 3px;
+}
+.arc-s13-002 .slot p {
+  margin: 0; padding: 13px 15px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s13-002 .held figcaption {
+  margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--hair);
+  display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+.arc-s13-002 .narrative > p { margin: 0 0 18px; font-size: 0.9375rem; color: var(--ink-soft); max-width: 52ch; }
+.arc-s13-002 .narrative > p.opening {
+  font-family: var(--serif); font-size: clamp(1.0625rem, 1.6vw, 1.375rem);
+  line-height: 1.5; color: var(--ink); margin-bottom: 24px;
+}
+.arc-s13-002 .pull {
+  margin: clamp(26px, 3.2vw, 42px) 0; padding: clamp(18px, 2.2vw, 26px) 0;
+  border-top: 1px solid var(--hair-ink); border-bottom: 1px solid var(--hair-ink);
+  font-family: var(--serif); font-size: clamp(1.125rem, 1.9vw, 1.625rem);
+  line-height: 1.34; letter-spacing: -0.012em; color: var(--ink); max-width: 26ch;
+}
+.arc-s13-002 .marks { margin: clamp(24px, 3vw, 36px) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--hair); }
+.arc-s13-002 .marks li {
+  display: grid; grid-template-columns: 8em minmax(0, 1fr);
+  gap: 12px; align-items: baseline;
+  padding: 10px 0; border-bottom: 1px solid var(--hair);
+  font-size: 0.8125rem;
+}
+.arc-s13-002 .marks .k {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+
+.arc-s13-002 .note {
+  margin: clamp(22px, 2.8vw, 34px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 78ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s13-002 .body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+  /* Holding the media only works when there is a taller column to travel against. */
+  .arc-s13-002 .body { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .arc-s13-002 .held { position: static; }
+  .arc-s13-002 .slot { aspect-ratio: 16 / 10; }
+  .arc-s13-002 h1 { max-width: 22ch; }
+  .arc-s13-002 .narrative > p { max-width: 62ch; }
+}
+@media (max-width: 768px) {
+  .arc-s13-002 .slot { aspect-ratio: 3 / 2; }
+  .arc-s13-002 .pull { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s13-002 .slot { aspect-ratio: 4 / 3; }
+  .arc-s13-002 .marks li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+@media (max-width: 360px) {
+  .arc-s13-002 .slot p { padding: 11px 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s13-002 *, .arc-s13-002 *::before, .arc-s13-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s13-002" data-study-id="ARC-S13-002" data-territory="premium-editorial">
+
+  <section class="shell" aria-labelledby="arc-s13-002-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Featured project &#183; placeholder record</p>
+        <h1 id="arc-s13-002-title">Project record 02</h1>
+      </div>
+      <p>Residential interior &#183; design study</p>
+    </div>
+
+    <div class="body">
+
+      <figure class="held">
+        <div class="slot"><p>Image area &#183; held plate</p></div>
+        <figcaption>
+          <span>Plate placeholder</span>
+          <span>Held while the text moves</span>
+        </figcaption>
+      </figure>
+
+      <div class="narrative">
+        <p class="opening">
+          Placeholder opening. One image is held in place while the account of the project moves
+          past it, so the reader keeps the room in view while reading what was done to it.
+        </p>
+        <p>
+          Placeholder narrative. The paragraphs here run at a controlled measure, because an
+          editorial case study is judged on whether it is comfortable to read rather than on how
+          much it fits.
+        </p>
+        <p>
+          A second paragraph carries the middle of the account: the decisions, in the order they
+          were taken, and the constraint each one answered.
+        </p>
+
+        <p class="pull">
+          A held image is only worth holding if the text beside it is worth staying for.
+        </p>
+
+        <p>
+          Placeholder narrative. After the break the account closes, usually on what the project
+          made possible rather than on what it looks like.
+        </p>
+        <p>
+          The column is deliberately shorter than a full project page. This section features a
+          project; it does not replace the page about it.
+        </p>
+
+        <ul class="marks">
+          <li><span class="k">Record</span><span>Project record 02</span></li>
+          <li><span class="k">Typology</span><span>Residential interior</span></li>
+          <li><span class="k">Scope</span><span>Interiors, joinery, lighting</span></li>
+          <li><span class="k">Status</span><span>Design study</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="note">
+      Placeholder project record &#183; structure demonstration only. No client, address, date,
+      cost, area, award or completed-project claim appears anywhere in this study.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

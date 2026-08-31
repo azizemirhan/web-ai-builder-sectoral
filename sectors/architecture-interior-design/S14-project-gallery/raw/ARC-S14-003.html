@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S14-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S14 — Project Gallery
+  Territory      : Dense / Information-heavy
+  Layout model   : Contact sheet — a tight numbered frame grid at one ratio, with a keyed legend
+                   listing every frame beneath it
+  Density        : High
+  Media mode     : Eighteen small empty frames at a single ratio. Uniformity is the point: a
+                   contact sheet compares, and a sheet of mixed crops cannot.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Frames are keyed to placeholder project records. No client, address, date or
+                   completed-project claim appears.
+-->
+
+<meta name="study-id" content="ARC-S14-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S14">
+<meta name="section-name" content="Project Gallery">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Numbered contact sheet with keyed legend">
+<meta name="density" content="high">
+<meta name="media-mode" content="empty-uniform-frames-eighteen">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S14-003 — Gallery, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ecebe8; }
+
+/* Scoped study styles — namespaced to .arc-s14-003 */
+.arc-s14-003 {
+  --paper: #ecebe8;
+  --sheet: #f4f3f1;
+  --ink: #14161a;
+  --ink-soft: #4c4a45;
+  --frame: #d6d4ce;
+  --frame-ink: #46443f;
+  --hair: #c7c4bc;
+  --hair-ink: #7c7970;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: clamp(14px, 2.6vw, 42px);
+}
+.arc-s14-003 *,
+.arc-s14-003 *::before,
+.arc-s14-003 *::after { box-sizing: inherit; }
+.arc-s14-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s14-003 .sheet {
+  max-width: 1300px; margin: 0 auto;
+  background: var(--sheet); border: 1px solid var(--hair);
+  padding: clamp(20px, 3vw, 44px);
+}
+
+/* --- Head --------------------------------------------------------------------------- */
+.arc-s14-003 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 18px; flex-wrap: wrap;
+  padding-bottom: clamp(12px, 1.6vw, 18px); margin-bottom: clamp(16px, 2vw, 24px);
+  border-bottom: 1px solid var(--hair-ink);
+}
+.arc-s14-003 .eyebrow {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s14-003 h1 {
+  margin: 0; font-size: clamp(1.375rem, 2.4vw, 1.9375rem);
+  line-height: 1.14; letter-spacing: -0.024em; font-weight: 500; max-width: 24ch;
+}
+.arc-s14-003 .head > p:last-child {
+  margin: 0; font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Contact sheet -------------------------------------------------------------------- */
+.arc-s14-003 .sheetgrid {
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(6px, 0.9vw, 11px);
+  margin: 0 0 clamp(18px, 2.4vw, 28px); padding: 0; list-style: none;
+}
+.arc-s14-003 .sheetgrid > li { margin: 0; }
+.arc-s14-003 .frame {
+  position: relative;
+  display: flex; align-items: flex-end;
+  aspect-ratio: 3 / 2;            /* one ratio across the sheet: a contact sheet compares */
+  background: var(--frame);
+}
+.arc-s14-003 .frame .n {
+  position: absolute; top: 4px; left: 5px;
+  font-family: var(--mono); font-size: 0.4375rem;
+  letter-spacing: 0.08em; color: var(--frame-ink);
+}
+.arc-s14-003 .frame .lbl {
+  padding: 5px 6px; font-family: var(--mono);
+  font-size: 0.4375rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--frame-ink);
+}
+
+/* --- Legend ---------------------------------------------------------------------------- */
+.arc-s14-003 .legend h2 {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s14-003 .legend ol {
+  margin: 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 clamp(18px, 2.4vw, 34px);
+  border-top: 1px solid var(--hair-ink);
+}
+.arc-s14-003 .legend li {
+  display: grid; grid-template-columns: 2.6em minmax(0, 1fr) auto;
+  gap: 10px; align-items: baseline;
+  padding: 7px 0; border-bottom: 1px solid var(--hair);
+  font-size: 0.75rem;
+}
+.arc-s14-003 .legend .k {
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.04em; color: var(--ink-soft);
+}
+.arc-s14-003 .legend .rec {
+  justify-self: end; font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.1em; color: var(--ink-soft); white-space: nowrap;
+}
+
+.arc-s14-003 .foot {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  margin: clamp(18px, 2.4vw, 28px) 0 0; padding-top: clamp(12px, 1.6vw, 16px);
+  border-top: 1px solid var(--hair-ink);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Responsive ------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s14-003 .legend ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1024px) {
+  .arc-s14-003 .sheetgrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .arc-s14-003 h1 { max-width: 28ch; }
+}
+@media (max-width: 768px) {
+  .arc-s14-003 .sheetgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .arc-s14-003 .legend ol { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  .arc-s14-003 .sheetgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s14-003 .sheet { padding: 16px; }
+  .arc-s14-003 .legend li { grid-template-columns: 2.4em minmax(0, 1fr); }
+  .arc-s14-003 .legend .rec { grid-column: 2; justify-self: start; }
+}
+@media (max-width: 360px) {
+  .arc-s14-003 { padding: 10px; }
+  .arc-s14-003 .sheet { padding: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s14-003 *, .arc-s14-003 *::before, .arc-s14-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s14-003" data-study-id="ARC-S14-003" data-territory="dense-information-heavy">
+
+  <section class="sheet" aria-labelledby="arc-s14-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Project gallery &#183; contact sheet</p>
+        <h1 id="arc-s14-003-title">Everything, at one size</h1>
+      </div>
+      <p>18 frames &#183; placeholder</p>
+    </div>
+
+    <ul class="sheetgrid" aria-label="Contact sheet of eighteen placeholder frames">
+      <li><div class="frame"><span class="n">01</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">02</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">03</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">04</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">05</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">06</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">07</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">08</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">09</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">10</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">11</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">12</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">13</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">14</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">15</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">16</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">17</span><span class="lbl">Frame</span></div></li>
+      <li><div class="frame"><span class="n">18</span><span class="lbl">Frame</span></div></li>
+    </ul>
+
+    <div class="legend">
+      <h2>Legend</h2>
+      <ol>
+        <li><span class="k">01</span><span>Site, approach</span><span class="rec">Record 01</span></li>
+        <li><span class="k">02</span><span>Exterior, long view</span><span class="rec">Record 01</span></li>
+        <li><span class="k">03</span><span>Entrance threshold</span><span class="rec">Record 01</span></li>
+        <li><span class="k">04</span><span>Interior, main room</span><span class="rec">Record 01</span></li>
+        <li><span class="k">05</span><span>Joinery detail</span><span class="rec">Record 01</span></li>
+        <li><span class="k">06</span><span>Stair</span><span class="rec">Record 01</span></li>
+        <li><span class="k">07</span><span>Exterior, corner</span><span class="rec">Record 02</span></li>
+        <li><span class="k">08</span><span>Interior, kitchen</span><span class="rec">Record 02</span></li>
+        <li><span class="k">09</span><span>Window reveal</span><span class="rec">Record 02</span></li>
+        <li><span class="k">10</span><span>Material junction</span><span class="rec">Record 02</span></li>
+        <li><span class="k">11</span><span>Courtyard</span><span class="rec">Record 03</span></li>
+        <li><span class="k">12</span><span>Interior, upper floor</span><span class="rec">Record 03</span></li>
+        <li><span class="k">13</span><span>Roof detail</span><span class="rec">Record 03</span></li>
+        <li><span class="k">14</span><span>Existing fabric retained</span><span class="rec">Record 04</span></li>
+        <li><span class="k">15</span><span>New opening</span><span class="rec">Record 04</span></li>
+        <li><span class="k">16</span><span>Interior, long view</span><span class="rec">Record 04</span></li>
+        <li><span class="k">17</span><span>Fixed furniture</span><span class="rec">Record 05</span></li>
+        <li><span class="k">18</span><span>Surface, close</span><span class="rec">Record 05</span></li>
+      </ol>
+    </div>
+
+    <p class="foot">
+      <span>One ratio across the sheet &#183; frames compare only when they match</span>
+      <span>Placeholder frames &#183; status: design study</span>
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

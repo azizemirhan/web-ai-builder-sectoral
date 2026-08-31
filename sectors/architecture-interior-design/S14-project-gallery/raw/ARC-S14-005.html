@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S14-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S14 — Project Gallery
+  Territory      : Sector-native / Distinctive
+  Layout model   : Scale-ordered gallery — a scale axis runs down the left with four stops, and
+                   each stop holds the images taken at that scale
+  Density        : Medium-high
+  Media mode     : Nine empty image areas distributed across four scale bands, sized so the band
+                   proportions themselves fall from wide to close.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The sector-native device is ordering by scale rather than by project or date.
+                   An architect reads work from the site inward — situation, building, room,
+                   detail — and a gallery ordered that way says what the practice pays attention
+                   to. No client, address, date or completed-project claim appears.
+-->
+
+<meta name="study-id" content="ARC-S14-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S14">
+<meta name="section-name" content="Project Gallery">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Scale-ordered gallery with a four-stop scale axis">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="empty-images-banded-by-scale">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S14-005 — Gallery, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f0efea; }
+
+/* Scoped study styles — namespaced to .arc-s14-005 */
+.arc-s14-005 {
+  --paper: #f0efea;
+  --sheet: #f6f5f1;
+  --ink: #14161a;
+  --ink-soft: #4c4a44;
+  --slot: #dbd8cf;
+  --slot-ink: #46443e;
+  --hair: #c8c4ba;
+  --hair-ink: #7c786f;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: clamp(14px, 2.6vw, 42px);
+}
+.arc-s14-005 *,
+.arc-s14-005 *::before,
+.arc-s14-005 *::after { box-sizing: inherit; }
+.arc-s14-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s14-005 .sheet {
+  max-width: 1300px; margin: 0 auto;
+  background: var(--sheet); border: 1px solid var(--hair);
+  padding: clamp(22px, 3.2vw, 50px);
+}
+
+/* --- Head --------------------------------------------------------------------------- */
+.arc-s14-005 .head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 18px; flex-wrap: wrap;
+  padding-bottom: clamp(14px, 1.8vw, 20px); margin-bottom: clamp(6px, 1vw, 10px);
+  border-bottom: 1px solid var(--hair-ink);
+}
+.arc-s14-005 .eyebrow {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s14-005 h1 {
+  margin: 0; font-size: clamp(1.375rem, 2.5vw, 2rem);
+  line-height: 1.14; letter-spacing: -0.024em; font-weight: 500; max-width: 22ch;
+}
+.arc-s14-005 .head > p:last-child {
+  margin: 0; font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s14-005 .preamble {
+  margin: clamp(14px, 1.8vw, 20px) 0 clamp(20px, 2.6vw, 30px);
+  font-size: 0.8125rem; color: var(--ink-soft); max-width: 76ch;
+}
+
+/* --- Scale bands ---------------------------------------------------------------------- */
+.arc-s14-005 .bands { margin: 0; padding: 0; list-style: none; }
+.arc-s14-005 .band {
+  display: grid;
+  grid-template-columns: clamp(96px, 13vw, 168px) minmax(0, 1fr);
+  gap: clamp(14px, 2vw, 30px);
+  padding: clamp(16px, 2.2vw, 26px) 0;
+  border-top: 1px solid var(--hair);
+}
+.arc-s14-005 .bands > li:first-child .band { border-top: 1px solid var(--hair-ink); }
+
+/* The axis stop: a label, a tick and a rule running down the left. */
+.arc-s14-005 .stop { position: relative; padding-left: 18px; }
+.arc-s14-005 .stop::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 1px; background: var(--hair-ink);
+}
+.arc-s14-005 .stop::after {
+  content: ""; position: absolute; left: -3px; top: 4px;
+  width: 7px; height: 7px; border-radius: 999px; background: var(--ink);
+}
+.arc-s14-005 .stop .n {
+  display: block; font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px;
+}
+.arc-s14-005 .stop h2 { margin: 0 0 6px; font-size: 0.9375rem; font-weight: 600; letter-spacing: -0.01em; }
+.arc-s14-005 .stop p { margin: 0; font-size: 0.75rem; color: var(--ink-soft); }
+
+.arc-s14-005 .shots { display: grid; gap: clamp(10px, 1.4vw, 16px); margin: 0; padding: 0; list-style: none; }
+.arc-s14-005 .shots > li { margin: 0; }
+.arc-s14-005 figure { margin: 0; }
+.arc-s14-005 .slot {
+  display: flex; align-items: flex-end;
+  background: var(--slot); border-radius: 2px;
+}
+.arc-s14-005 .slot p {
+  margin: 0; padding: 11px 13px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s14-005 figcaption {
+  margin-top: 7px; font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* Band proportions themselves fall from wide to close, so the axis is visible in the images. */
+.arc-s14-005 .b1 .shots { grid-template-columns: minmax(0, 1fr); }
+.arc-s14-005 .b1 .slot { aspect-ratio: 21 / 9; }
+.arc-s14-005 .b2 .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.arc-s14-005 .b2 .slot { aspect-ratio: 3 / 2; }
+.arc-s14-005 .b3 .shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.arc-s14-005 .b3 .slot { aspect-ratio: 4 / 3; }
+.arc-s14-005 .b4 .shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.arc-s14-005 .b4 .slot { aspect-ratio: 1 / 1; }
+
+.arc-s14-005 .foot {
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  margin: clamp(20px, 2.6vw, 30px) 0 0; padding-top: clamp(12px, 1.6vw, 16px);
+  border-top: 1px solid var(--hair-ink);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s14-005 .note {
+  margin: clamp(12px, 1.6vw, 16px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 86ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s14-005 .band { grid-template-columns: clamp(92px, 14vw, 140px) minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s14-005 h1 { max-width: 26ch; }
+  .arc-s14-005 .b3 .shots, .arc-s14-005 .b4 .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  /* The axis moves above its band rather than shrinking to an unreadable column. */
+  .arc-s14-005 .band { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .arc-s14-005 .stop { padding-left: 0; padding-top: 14px; }
+  .arc-s14-005 .stop::before { left: 0; right: 0; top: 0; bottom: auto; width: auto; height: 1px; }
+  .arc-s14-005 .stop::after { left: 0; top: -3px; }
+  .arc-s14-005 .b1 .slot { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 480px) {
+  .arc-s14-005 .sheet { padding: 18px; }
+  .arc-s14-005 .b2 .shots, .arc-s14-005 .b3 .shots, .arc-s14-005 .b4 .shots { grid-template-columns: minmax(0, 1fr); }
+  .arc-s14-005 .b1 .slot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 360px) {
+  .arc-s14-005 { padding: 10px; }
+  .arc-s14-005 .sheet { padding: 14px; }
+  .arc-s14-005 .slot p { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s14-005 *, .arc-s14-005 *::before, .arc-s14-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s14-005" data-study-id="ARC-S14-005" data-territory="sector-native-distinctive">
+
+  <section class="sheet" aria-labelledby="arc-s14-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Project gallery &#183; ordered by scale</p>
+        <h1 id="arc-s14-005-title">From the site inward</h1>
+      </div>
+      <p>Sheet ARC / S14 &#183; placeholder</p>
+    </div>
+
+    <p class="preamble">
+      Not ordered by project or by date, but by how close you are standing. An architect reads
+      work from the situation inward &#8212; site, building, room, detail &#8212; and a gallery
+      arranged that way says what the practice actually pays attention to.
+    </p>
+
+    <ol class="bands">
+
+      <li>
+        <div class="band b1">
+          <div class="stop">
+            <span class="n">Scale 01</span>
+            <h2>Situation</h2>
+            <p>Where the work sits, and what it sits next to.</p>
+          </div>
+          <ul class="shots">
+            <li>
+              <figure>
+                <div class="slot"><p>Image area &#183; 21:9</p></div>
+                <figcaption>Site &#183; project record 01</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li>
+        <div class="band b2">
+          <div class="stop">
+            <span class="n">Scale 02</span>
+            <h2>Building</h2>
+            <p>The whole thing, from far enough back to read its form.</p>
+          </div>
+          <ul class="shots">
+            <li>
+              <figure>
+                <div class="slot"><p>Image area &#183; 3:2</p></div>
+                <figcaption>Building &#183; record 01</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="slot"><p>Image area &#183; 3:2</p></div>
+                <figcaption>Building &#183; record 03</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li>
+        <div class="band b3">
+          <div class="stop">
+            <span class="n">Scale 03</span>
+            <h2>Room</h2>
+            <p>What it is like to stand inside it on an ordinary day.</p>
+          </div>
+          <ul class="shots">
+            <li>
+              <figure>
+                <div class="slot"><p>Image area &#183; 4:3</p></div>
+                <figcaption>Room &#183; record 01</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="slot"><p>Image area &#183; 4:3</p></div>
+                <figcaption>Room &#183; record 02</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="slot"><p>Image area &#183; 4:3</p></div>
+                <figcaption>Room &#183; record 04</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li>
+        <div class="band b4">
+          <div class="stop">
+            <span class="n">Scale 04</span>
+            <h2>Detail</h2>
+            <p>The junctions, where the drawing either held or did not.</p>
+          </div>
+          <ul class="shots">
+            <li>
+              <figure>
+                <div class="slot"><p>Image area &#183; 1:1</p></div>
+                <figcaption>Detail &#183; record 02</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="slot"><p>Image area &#183; 1:1</p></div>
+                <figcaption>Detail &#183; record 04</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="slot"><p>Image area &#183; 1:1</p></div>
+                <figcaption>Detail &#183; record 05</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+    </ol>
+
+    <p class="foot">
+      <span>Read top to bottom &#183; far to close</span>
+      <span>Nine placeholder images across four scales</span>
+      <span>Status &#183; design study</span>
+    </p>
+
+    <p class="note">
+      Placeholder gallery &#183; structure demonstration only. Images are keyed to placeholder
+      project records, and no client, address, date or completed-project claim appears. The band
+      proportions narrow as the scale closes, so the ordering is visible in the images themselves
+      and not only in the axis labels.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

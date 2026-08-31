@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S14-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S14 — Project Gallery
+  Territory      : Premium / Editorial
+  Layout model   : Plate sequence — full-measure plates stacked one per row with wide margins and
+                   a hairline caption line, read like a photo book rather than scanned like a grid
+  Density        : Low
+  Media mode     : Four large empty plates, one per row, at alternating proportions.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Captions name a placeholder record and a view. No client, address, date, or
+                   completed-project claim appears.
+-->
+
+<meta name="study-id" content="ARC-S14-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S14">
+<meta name="section-name" content="Project Gallery">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="Stacked plate sequence with hairline caption lines">
+<meta name="density" content="low">
+<meta name="media-mode" content="empty-large-plates-sequential">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S14-002 — Gallery, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f5f2; }
+
+/* Scoped study styles — namespaced to .arc-s14-002 */
+.arc-s14-002 {
+  --ink: #17171a;
+  --ink-soft: #58564e;
+  --paper: #f6f5f2;
+  --slot: #e3e0d7;
+  --slot-ink: #4b493f;
+  --hair: #d8d4ca;
+  --hair-ink: #85827a;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s14-002 *,
+.arc-s14-002 *::before,
+.arc-s14-002 *::after { box-sizing: inherit; }
+.arc-s14-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s14-002 .shell {
+  width: 100%; max-width: 1120px; margin: 0 auto;
+  padding: clamp(44px, 5.6vw, 92px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Head ------------------------------------------------------------------------- */
+.arc-s14-002 .head {
+  margin-bottom: clamp(34px, 4.4vw, 72px);
+  padding-bottom: clamp(16px, 2vw, 24px); border-bottom: 1px solid var(--hair-ink);
+}
+.arc-s14-002 .eyebrow {
+  margin: 0 0 14px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s14-002 h1 {
+  margin: 0 0 12px; font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.75rem, 3.6vw, 3rem);
+  line-height: 1.1; letter-spacing: -0.02em; max-width: 18ch;
+}
+.arc-s14-002 .head p { margin: 0; font-size: 0.9375rem; color: var(--ink-soft); max-width: 54ch; }
+
+/* --- Plate sequence ---------------------------------------------------------------- */
+.arc-s14-002 .plates { margin: 0; padding: 0; list-style: none; }
+.arc-s14-002 .plates > li + li { margin-top: clamp(36px, 4.8vw, 84px); }
+.arc-s14-002 figure { margin: 0; }
+.arc-s14-002 .slot {
+  display: flex; align-items: flex-end;
+  background: var(--slot); border-radius: 2px;
+}
+.arc-s14-002 .slot p {
+  margin: 0; padding: 13px 15px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+/* Alternating proportions: a book turns the page, it does not repeat the frame. */
+.arc-s14-002 .plates > li:nth-child(1) .slot { aspect-ratio: 3 / 2; }
+.arc-s14-002 .plates > li:nth-child(2) .slot { aspect-ratio: 4 / 5; }
+.arc-s14-002 .plates > li:nth-child(3) .slot { aspect-ratio: 21 / 9; }
+.arc-s14-002 .plates > li:nth-child(4) .slot { aspect-ratio: 1 / 1; }
+/* The two portrait plates hold a narrower measure, as they would on a page. */
+.arc-s14-002 .plates > li:nth-child(2) figure,
+.arc-s14-002 .plates > li:nth-child(4) figure { max-width: 62%; }
+.arc-s14-002 .plates > li:nth-child(4) figure { margin-left: auto; }
+
+.arc-s14-002 figcaption {
+  display: grid; grid-template-columns: 4.4em minmax(0, 1fr) auto;
+  gap: 10px clamp(12px, 1.8vw, 22px); align-items: baseline;
+  margin-top: clamp(12px, 1.6vw, 18px); padding-top: clamp(10px, 1.4vw, 14px);
+  border-top: 1px solid var(--hair);
+}
+.arc-s14-002 .pl {
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.06em; color: var(--ink-soft);
+}
+.arc-s14-002 .desc { font-size: 0.875rem; }
+.arc-s14-002 .rec {
+  justify-self: end; font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap;
+}
+
+.arc-s14-002 .foot {
+  margin: clamp(36px, 4.4vw, 72px) 0 0; padding-top: clamp(14px, 1.8vw, 20px);
+  border-top: 1px solid var(--hair-ink);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+
+/* --- Responsive -------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s14-002 .plates > li:nth-child(2) figure,
+  .arc-s14-002 .plates > li:nth-child(4) figure { max-width: 70%; }
+}
+@media (max-width: 1024px) {
+  .arc-s14-002 h1 { max-width: 22ch; }
+  .arc-s14-002 .plates > li:nth-child(2) figure,
+  .arc-s14-002 .plates > li:nth-child(4) figure { max-width: 82%; }
+}
+@media (max-width: 768px) {
+  /* Below this the page is one column wide, so the inset portrait plates hold
+     the full measure rather than sitting in a margin that no longer exists. */
+  .arc-s14-002 .plates > li:nth-child(2) figure,
+  .arc-s14-002 .plates > li:nth-child(4) figure { max-width: none; margin-left: 0; }
+  .arc-s14-002 .plates > li:nth-child(3) .slot { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 480px) {
+  .arc-s14-002 figcaption { grid-template-columns: minmax(0, 1fr); }
+  .arc-s14-002 .rec { justify-self: start; }
+  .arc-s14-002 .plates > li:nth-child(2) .slot { aspect-ratio: 3 / 4; }
+}
+@media (max-width: 360px) {
+  .arc-s14-002 .slot p { padding: 11px 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s14-002 *, .arc-s14-002 *::before, .arc-s14-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s14-002" data-study-id="ARC-S14-002" data-territory="premium-editorial">
+
+  <section class="shell" aria-labelledby="arc-s14-002-title">
+
+    <div class="head">
+      <p class="eyebrow">Project gallery &#183; plates</p>
+      <h1 id="arc-s14-002-title">Four plates, one at a time</h1>
+      <p>
+        A sequence rather than a grid. Each plate holds the measure on its own, with the caption
+        set beneath it on a hairline, the way a monograph sets a picture.
+      </p>
+    </div>
+
+    <ol class="plates">
+      <li>
+        <figure>
+          <div class="slot"><p>Plate area &#183; 3:2</p></div>
+          <figcaption>
+            <span class="pl">Plate 01</span>
+            <span class="desc">Exterior, long view. Placeholder caption at the length a plate caption runs to.</span>
+            <span class="rec">Project record 01</span>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <div class="slot"><p>Plate area &#183; 4:5</p></div>
+          <figcaption>
+            <span class="pl">Plate 02</span>
+            <span class="desc">Interior, portrait. Placeholder caption.</span>
+            <span class="rec">Project record 02</span>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <div class="slot"><p>Plate area &#183; 21:9</p></div>
+          <figcaption>
+            <span class="pl">Plate 03</span>
+            <span class="desc">The wide plate, which is the one a sequence is usually built around.</span>
+            <span class="rec">Project record 03</span>
+          </figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <div class="slot"><p>Plate area &#183; 1:1</p></div>
+          <figcaption>
+            <span class="pl">Plate 04</span>
+            <span class="desc">Detail, square, set into the right margin to close the sequence.</span>
+            <span class="rec">Project record 04</span>
+          </figcaption>
+        </figure>
+      </li>
+    </ol>
+
+    <p class="foot">
+      <span>Placeholder plates &#183; structure demonstration only</span>
+      <span>No completed project is implied</span>
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>
