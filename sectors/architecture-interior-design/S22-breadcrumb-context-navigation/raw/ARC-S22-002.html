@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S22-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S22 — Breadcrumb / Context Navigation
+  Territory      : Premium / Editorial
+  Layout model   : Quiet trail set against a parent return — the ancestry runs left as small type,
+                   the way back to the parent sits right as the one weighted element
+  Density        : Low
+  Media mode     : NONE.
+  Interaction    : Links only. No JavaScript.
+  Accessibility  : Two landmarks, each with its own accessible name: the breadcrumb trail, and a
+                   separate single-link navigation for the parent return. They are separated
+                   because they do different jobs — one states position, the other offers an
+                   action — and a screen-reader user should be able to skip one without losing the
+                   other. Current page carries `aria-current="page"` and is not a link.
+  Responsive     : At narrow widths the parent return moves ABOVE the trail rather than below it,
+                   because the way out is the thing a lost visitor reaches for first.
+-->
+
+<meta name="study-id" content="ARC-S22-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="Quiet trail with a weighted parent return">
+<meta name="density" content="low">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="links-only">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S22-002 — Context Navigation, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f2; }
+
+/* Scoped study styles — namespaced to .arc-s22-002 */
+.arc-s22-002 {
+  --ink: #17171a;
+  --ink-soft: #58564e;
+  --paper: #f7f6f2;
+  --hair: #d8d4ca;
+  --hair-ink: #85827a;
+  --sep: #6f6c63;          /* separator glyphs are visible text: 4.85:1, not 3:1 */
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s22-002 *,
+.arc-s22-002 *::before,
+.arc-s22-002 *::after { box-sizing: inherit; }
+.arc-s22-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+.arc-s22-002 .shell {
+  width: 100%; max-width: 1180px; margin: 0 auto;
+  padding: clamp(20px, 2.8vw, 36px) clamp(18px, 3vw, 44px);
+}
+.arc-s22-002 .here {
+  margin: 0 0 clamp(10px, 1.4vw, 14px);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); font-weight: 400;
+}
+
+/* --- Row: trail | parent return -------------------------------------------------------- */
+.arc-s22-002 .row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(14px, 2.4vw, 34px); align-items: baseline;
+  padding-bottom: clamp(12px, 1.6vw, 16px);
+  border-bottom: 1px solid var(--hair-ink);
+}
+
+.arc-s22-002 .trail ol {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 2px 0; margin: 0; padding: 0; list-style: none;
+}
+.arc-s22-002 .trail li { display: flex; align-items: baseline; }
+.arc-s22-002 .trail li + li::before {
+  content: "\2014";                    /* em dash separator, decorative */
+  padding: 0 10px; color: var(--sep); font-size: 0.6875rem;
+}
+.arc-s22-002 .trail a,
+.arc-s22-002 .trail [aria-current] {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--mono); font-size: 0.625rem;
+  letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+}
+.arc-s22-002 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s22-002 .trail a:hover,
+.arc-s22-002 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--hair-ink); }
+.arc-s22-002 .trail [aria-current] { color: var(--ink); }
+
+/* The one weighted element: the way back up. */
+.arc-s22-002 .up a {
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 44px; font-size: 0.9375rem; color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--hair-ink);
+}
+.arc-s22-002 .up a:hover,
+.arc-s22-002 .up a:focus-visible { border-bottom-color: var(--ink); }
+.arc-s22-002 .up .arrow { font-size: 0.875rem; }
+
+.arc-s22-002 .note {
+  margin: clamp(14px, 1.8vw, 20px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 84ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s22-002 .trail li + li::before { padding: 0 9px; }
+}
+@media (max-width: 1024px) {
+  .arc-s22-002 .row { gap: 20px; }
+}
+@media (max-width: 768px) {
+  /* The parent return moves above the trail: the way out is what a lost visitor
+     reaches for first, so it should not be the last thing on the row. */
+  .arc-s22-002 .row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .arc-s22-002 .up { order: -1; }
+}
+@media (max-width: 480px) {
+  .arc-s22-002 .trail li + li::before { padding: 0 7px; }
+  .arc-s22-002 .trail a,
+  .arc-s22-002 .trail [aria-current] { min-height: 40px; letter-spacing: 0.1em; }
+}
+@media (max-width: 360px) {
+  .arc-s22-002 .here { letter-spacing: 0.16em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s22-002 *, .arc-s22-002 *::before, .arc-s22-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s22-002" data-study-id="ARC-S22-002" data-territory="premium-editorial">
+
+  <section class="shell" aria-labelledby="arc-s22-002-title">
+
+    <h1 class="here" id="arc-s22-002-title">You are here</h1>
+
+    <div class="row">
+      <nav class="trail" aria-labelledby="arc-s22-002-title">
+        <ol>
+          <li><a href="#arc-s22-002-title">Studio</a></li>
+          <li><a href="#arc-s22-002-title">Journal</a></li>
+          <li><a href="#arc-s22-002-title">Materials</a></li>
+          <li><span aria-current="page">Article record 04</span></li>
+        </ol>
+      </nav>
+
+      <nav class="up" aria-label="Return to parent section">
+        <a href="#arc-s22-002-title">
+          <span class="arrow" aria-hidden="true">&#8592;</span>
+          Back to Materials
+        </a>
+      </nav>
+    </div>
+
+    <p class="note">
+      Placeholder trail &#183; structure demonstration only. Two landmarks with separate accessible
+      names: the trail states position, the return offers an action, and a screen-reader user can
+      skip one without losing the other. Separators are decorative and generated in CSS. At narrow
+      widths the return moves above the trail rather than below it.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

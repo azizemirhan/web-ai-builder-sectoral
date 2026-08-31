@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S22-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S22 — Breadcrumb / Context Navigation
+  Territory      : Sector-native / Distinctive
+  Layout model   : Key plan — the small locator diagram a drawing sheet carries, showing the whole
+                   set with the current sheet marked, set beside a sheet-reference trail
+  Density        : Medium
+  Media mode     : NONE. The key plan is drawn from list items and borders, not from an image, and
+                   it is navigation rather than illustration.
+  Interaction    : Links only. No JavaScript.
+  Role note      : The sector-native device is the key plan: every drawing in a set carries a small
+                   diagram of the whole, with the part this sheet covers picked out, so a reader
+                   who opens one sheet knows where it sits. That is precisely this section's job,
+                   and it is why the key plan belongs here rather than in the page header —
+                   ARC-S21-005 states the page's position in words, this shows it.
+  Accessibility  : The diagram is a real list of links inside a named navigation landmark, so it is
+                   read and reached in order. The current cell is marked THREE ways — filled, a
+                   visible bullet glyph, and `aria-current="page"` — because a locator that
+                   communicates position by fill alone fails for anyone who cannot see the fill.
+-->
+
+<meta name="study-id" content="ARC-S22-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Key plan locator beside a sheet-reference trail">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="links-only">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S22-005 — Context Navigation, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f0efea; }
+
+/* Scoped study styles — namespaced to .arc-s22-005 */
+.arc-s22-005 {
+  --paper: #f0efea;
+  --sheet: #f6f5f1;
+  --ink: #14161a;
+  --ink-soft: #4c4a44;
+  --cell: #e2dfd6;
+  --hair: #c8c4ba;
+  --hair-ink: #7c786f;
+  --sep: #6f6c63;          /* separator glyphs are visible text */
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: clamp(12px, 2.2vw, 32px);
+}
+.arc-s22-005 *,
+.arc-s22-005 *::before,
+.arc-s22-005 *::after { box-sizing: inherit; }
+.arc-s22-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s22-005 .sheet {
+  max-width: 1240px; margin: 0 auto;
+  background: var(--sheet); border: 1px solid var(--hair);
+  padding: clamp(16px, 2.4vw, 30px);
+}
+.arc-s22-005 .grid {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(18px, 2.6vw, 40px); align-items: start;
+}
+.arc-s22-005 .here {
+  margin: 0 0 clamp(8px, 1.2vw, 12px);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); font-weight: 400;
+}
+
+/* --- Sheet-reference trail ----------------------------------------------------------- */
+.arc-s22-005 .trail ol {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 2px 0; margin: 0 0 clamp(12px, 1.6vw, 16px); padding: 0; list-style: none;
+}
+.arc-s22-005 .trail li { display: flex; align-items: baseline; }
+.arc-s22-005 .trail li + li::before {
+  content: "/"; padding: 0 9px; color: var(--sep); font-size: 0.75rem;
+}
+.arc-s22-005 .trail a,
+.arc-s22-005 .trail [aria-current] {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--mono); font-size: 0.625rem;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+}
+.arc-s22-005 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s22-005 .trail a:hover,
+.arc-s22-005 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--hair-ink); }
+.arc-s22-005 .trail [aria-current] { color: var(--ink); font-weight: 700; }
+
+.arc-s22-005 .refline {
+  margin: 0; padding-top: clamp(10px, 1.4vw, 14px);
+  border-top: 1px solid var(--hair);
+  display: flex; gap: 8px 22px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s22-005 .refline b { color: var(--ink); font-weight: 400; }
+
+/* --- Key plan ------------------------------------------------------------------------- */
+.arc-s22-005 .key { border: 1px solid var(--hair-ink); padding: clamp(10px, 1.4vw, 14px); }
+.arc-s22-005 .key h2 {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s22-005 .key ol {
+  display: grid; grid-template-columns: repeat(3, 46px);
+  gap: 4px; margin: 0; padding: 0; list-style: none;
+}
+.arc-s22-005 .key a,
+.arc-s22-005 .key [aria-current] {
+  display: flex; align-items: center; justify-content: center; gap: 3px;
+  min-height: 44px; border: 1px solid var(--hair-ink); background: var(--cell);
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.04em;
+  color: var(--ink); text-decoration: none;
+}
+.arc-s22-005 .key a:hover,
+.arc-s22-005 .key a:focus-visible { background: #d5d1c7; }
+/* Current cell: filled, weighted, glyphed, and aria-current. Never fill alone. */
+.arc-s22-005 .key [aria-current] { background: var(--ink); border-color: var(--ink); color: #fff; font-weight: 700; }
+.arc-s22-005 .key .dot { font-size: 0.5rem; }
+.arc-s22-005 .key .legend {
+  margin: 10px 0 0; padding-top: 8px; border-top: 1px solid var(--hair);
+  font-family: var(--mono); font-size: 0.4375rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+.arc-s22-005 .note {
+  margin: clamp(14px, 1.8vw, 20px) 0 0; padding-top: clamp(10px, 1.4vw, 14px);
+  border-top: 1px solid var(--hair);
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 86ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s22-005 .grid { gap: 28px; }
+}
+@media (max-width: 1024px) {
+  .arc-s22-005 .key ol { grid-template-columns: repeat(3, 44px); }
+}
+@media (max-width: 768px) {
+  /* The key plan moves below the trail rather than shrinking: a locator that cannot
+     be read locates nothing. Cells keep their 44px target at every width. */
+  .arc-s22-005 .grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .arc-s22-005 .key { justify-self: start; }
+}
+@media (max-width: 480px) {
+  .arc-s22-005 .key { justify-self: stretch; }
+  .arc-s22-005 .key ol { grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); }
+  .arc-s22-005 .trail li + li::before { padding: 0 7px; }
+}
+@media (max-width: 360px) {
+  .arc-s22-005 .sheet { padding: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s22-005 *, .arc-s22-005 *::before, .arc-s22-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s22-005" data-study-id="ARC-S22-005" data-territory="sector-native-distinctive">
+
+  <section class="sheet" aria-labelledby="arc-s22-005-title">
+    <div class="grid">
+
+      <div>
+        <h1 class="here" id="arc-s22-005-title">You are here</h1>
+
+        <nav class="trail" aria-labelledby="arc-s22-005-title">
+          <ol>
+            <li><a href="#arc-s22-005-title">Set ARC</a></li>
+            <li><a href="#arc-s22-005-title">Projects</a></li>
+            <li><a href="#arc-s22-005-title">Adaptive reuse</a></li>
+            <li><span aria-current="page">Sheet 05</span></li>
+          </ol>
+        </nav>
+
+        <p class="refline">
+          <span>Set <b>Projects</b></span>
+          <span>Sheet <b>05 of 09</b></span>
+          <span>Status <b>Design study</b></span>
+        </p>
+      </div>
+
+      <nav class="key" aria-labelledby="arc-s22-005-key">
+        <h2 id="arc-s22-005-key">Key plan &#183; this set</h2>
+        <ol>
+          <li><a href="#arc-s22-005-title">01</a></li>
+          <li><a href="#arc-s22-005-title">02</a></li>
+          <li><a href="#arc-s22-005-title">03</a></li>
+          <li><a href="#arc-s22-005-title">04</a></li>
+          <li><span aria-current="page"><span class="dot" aria-hidden="true">&#9679;</span>05</span></li>
+          <li><a href="#arc-s22-005-title">06</a></li>
+          <li><a href="#arc-s22-005-title">07</a></li>
+          <li><a href="#arc-s22-005-title">08</a></li>
+          <li><a href="#arc-s22-005-title">09</a></li>
+        </ol>
+        <p class="legend">Filled cell &#183; this sheet</p>
+      </nav>
+
+    </div>
+
+    <p class="note">
+      Placeholder locator &#183; structure demonstration only. Every drawing in a set carries a key
+      plan showing where that sheet sits; this is the same idea for a page inside a section, which
+      is why it belongs to context navigation rather than to the page header. The current cell is
+      marked three ways &#8212; filled, glyphed and <code>aria-current</code> &#8212; because a
+      locator that communicates position by fill alone locates nothing for a visitor who cannot see
+      the fill. Every cell keeps a 44px target at every width.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

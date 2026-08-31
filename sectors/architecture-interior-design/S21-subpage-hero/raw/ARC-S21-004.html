@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S21-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S21 — Subpage Hero
+  Territory      : Conversion-led
+  Layout model   : Split page header — title and framing intro on the left, a single contextual
+                   action with its own qualifying line on the right
+  Density        : Low-medium
+  Media mode     : NONE. The action is the second element in the block; an image would be a third
+                   thing competing for the same glance.
+  Interaction    : None (static; no JavaScript)
+  Role note      : Exactly ONE action. The section README puts "multiple competing calls to
+                   action" out of scope and caps the role at a single contextual action, so this
+                   study takes that literally: one link, tied to this page, with a line saying
+                   what it actually does. The secondary routes a marketing header would add belong
+                   further down the page.
+  Content note   : The action names the next step, not an outcome. No response time, fee,
+                   availability or guarantee appears.
+-->
+
+<meta name="study-id" content="ARC-S21-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S21">
+<meta name="section-name" content="Subpage Hero">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Split page header with a single qualified contextual action">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S21-004 — Subpage Hero, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f2ee; }
+
+/* Scoped study styles — namespaced to .arc-s21-004 */
+.arc-s21-004 {
+  --ink: #17181b;
+  --ink-soft: #56544e;
+  --paper: #f4f2ee;
+  --card: #ffffff;
+  --line: #ddd9d1;
+  --line-strong: #85827a;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s21-004 *,
+.arc-s21-004 *::before,
+.arc-s21-004 *::after { box-sizing: inherit; }
+.arc-s21-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s21-004 .shell {
+  width: 100%; max-width: 1260px; margin: 0 auto;
+  padding: clamp(28px, 3.6vw, 56px) clamp(18px, 3vw, 44px) clamp(20px, 2.6vw, 32px);
+}
+
+.arc-s21-004 .parent {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- Split header ------------------------------------------------------------------ */
+.arc-s21-004 .header {
+  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.85fr);
+  gap: clamp(20px, 3vw, 54px); align-items: start;
+  padding-bottom: clamp(18px, 2.4vw, 28px);
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s21-004 h1 {
+  margin: 0 0 12px; font-size: clamp(1.75rem, 3.2vw, 2.625rem);
+  line-height: 1.08; letter-spacing: -0.03em; font-weight: 600; max-width: 18ch;
+}
+.arc-s21-004 .intro { margin: 0; font-size: clamp(0.9375rem, 1.2vw, 1.0625rem); color: var(--ink-soft); max-width: 52ch; }
+
+/* One action, with a line that says what it actually is. */
+.arc-s21-004 .act {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: clamp(16px, 2vw, 22px);
+}
+.arc-s21-004 .act p {
+  margin: 0 0 clamp(14px, 1.8vw, 18px);
+  font-size: 0.8125rem; color: var(--ink-soft);
+}
+.arc-s21-004 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; min-height: 52px; padding: 0 20px; border-radius: 8px;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  font-size: 0.9375rem; font-weight: 500; text-decoration: none;
+  transition: background-color 150ms ease;
+}
+.arc-s21-004 .btn:hover,
+.arc-s21-004 .btn:focus-visible { background: #000; }
+.arc-s21-004 .act .qual {
+  margin: clamp(12px, 1.6vw, 16px) 0 0; padding-top: clamp(10px, 1.4vw, 14px);
+  border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+.arc-s21-004 .note {
+  margin: clamp(18px, 2.4vw, 28px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 84ch;
+}
+
+/* --- Responsive --------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s21-004 .header { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s21-004 h1 { max-width: 22ch; }
+}
+@media (max-width: 768px) {
+  /* The action drops below the title rather than beside it: the title is read first
+     at every width, which is what the section README requires. */
+  .arc-s21-004 .header { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .arc-s21-004 .act { max-width: 460px; }
+  .arc-s21-004 .intro { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s21-004 .act { max-width: none; }
+}
+@media (max-width: 360px) {
+  .arc-s21-004 .act { padding: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s21-004 *, .arc-s21-004 *::before, .arc-s21-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s21-004" data-study-id="ARC-S21-004" data-territory="conversion-led">
+
+  <section class="shell" aria-labelledby="arc-s21-004-title">
+
+    <p class="parent">Services</p>
+
+    <div class="header">
+      <div>
+        <h1 id="arc-s21-004-title">Renovation and adaptive reuse</h1>
+        <p class="intro">
+          What this page covers: how the studio works with a building that already stands &#8212;
+          what gets surveyed, what gets kept, and how the scope is written around it.
+        </p>
+      </div>
+
+      <div class="act">
+        <p>
+          If you already have a building and want to know whether this is the right service for
+          it, the first step is a survey and a written constraint review.
+        </p>
+        <a class="btn" href="#arc-s21-004-title">
+          Ask about this service
+          <span aria-hidden="true">&#8594;</span>
+        </a>
+        <p class="qual">Goes to the studio &#183; nothing committed</p>
+      </div>
+    </div>
+
+    <p class="note">
+      Placeholder page header &#183; structure demonstration only. Exactly one action, tied to this
+      page, with a line saying what it does &#8212; the section README caps this role at a single
+      contextual action and puts competing calls to action out of scope. No response time, fee,
+      availability or guarantee is stated.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

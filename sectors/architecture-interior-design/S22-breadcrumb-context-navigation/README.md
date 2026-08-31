@@ -90,8 +90,12 @@ Sits directly above or below S21 on an internal page, and never replaces it.
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch Document
+
+./BATCH-V1.md

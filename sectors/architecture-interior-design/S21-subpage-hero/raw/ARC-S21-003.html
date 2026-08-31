@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S21-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S21 — Subpage Hero
+  Territory      : Dense / Information-heavy
+  Layout model   : Contextual masthead — title and framing intro beside an eight-field metadata
+                   grid, closed by an in-page contents list
+  Density        : High (the most contextual metadata a page header can carry before it becomes
+                   the page)
+  Media mode     : NONE. At this density an image would be the only thing that could not fit.
+  Interaction    : None (static; no JavaScript). The contents list is plain in-page anchors, which
+                   the section README allows for local navigation as long as it degrades to links.
+  Role note      : A contents list belongs to the page header rather than to S22, because it
+                   describes the inside of this page, not its position in the site.
+  Content note   : Metadata fields are page context, not project claims — no client, date, cost,
+                   area or completed-project claim appears.
+-->
+
+<meta name="study-id" content="ARC-S21-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S21">
+<meta name="section-name" content="Subpage Hero">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Contextual masthead with metadata grid and in-page contents">
+<meta name="density" content="high">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S21-003 — Subpage Hero, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f5f6f7; }
+
+/* Scoped study styles — namespaced to .arc-s21-003 */
+.arc-s21-003 {
+  --ink: #101216;
+  --ink-soft: #4f545b;
+  --paper: #f5f6f7;
+  --card: #ffffff;
+  --line: #dfe2e5;
+  --line-strong: #7f848a;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s21-003 *,
+.arc-s21-003 *::before,
+.arc-s21-003 *::after { box-sizing: inherit; }
+.arc-s21-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s21-003 .shell {
+  width: 100%; max-width: 1340px; margin: 0 auto;
+  padding: clamp(26px, 3.4vw, 52px) clamp(16px, 2.6vw, 40px) clamp(20px, 2.6vw, 32px);
+}
+
+/* --- Masthead --------------------------------------------------------------------- */
+.arc-s21-003 .parent {
+  margin: 0 0 clamp(10px, 1.4vw, 16px);
+  font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s21-003 .masthead {
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.35fr);
+  gap: clamp(20px, 2.8vw, 46px); align-items: start;
+  padding-bottom: clamp(16px, 2vw, 24px); margin-bottom: clamp(16px, 2vw, 24px);
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s21-003 h1 {
+  margin: 0 0 12px; font-size: clamp(1.625rem, 3vw, 2.375rem);
+  line-height: 1.1; letter-spacing: -0.028em; font-weight: 600; max-width: 20ch;
+}
+.arc-s21-003 .intro { margin: 0; font-size: 0.9375rem; color: var(--ink-soft); max-width: 54ch; }
+
+/* Eight fields, on a hairline grid so the header reads as a record. */
+.arc-s21-003 .meta {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px; margin: 0;
+  background: var(--line); border: 1px solid var(--line);
+}
+.arc-s21-003 .meta > div { background: var(--card); padding: clamp(10px, 1.3vw, 14px); }
+.arc-s21-003 .meta dt {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-soft); margin-bottom: 5px;
+}
+.arc-s21-003 .meta dd { margin: 0; font-size: 0.8125rem; }
+
+/* --- In-page contents ---------------------------------------------------------------- */
+.arc-s21-003 .contents h2 {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s21-003 .contents ol {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0 clamp(16px, 2.2vw, 30px);
+  margin: 0; padding: 0; list-style: none;
+  border-top: 1px solid var(--line);
+}
+.arc-s21-003 .contents li { border-bottom: 1px solid var(--line); }
+.arc-s21-003 .contents a {
+  display: grid; grid-template-columns: 2.2em minmax(0, 1fr);
+  gap: 10px; align-items: baseline;
+  min-height: 44px; padding: 8px 0;
+  font-size: 0.8125rem; color: var(--ink); text-decoration: none;
+}
+.arc-s21-003 .contents a:hover span:last-child,
+.arc-s21-003 .contents a:focus-visible span:last-child { text-decoration: underline; text-underline-offset: 3px; }
+.arc-s21-003 .contents .n {
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.06em; color: var(--ink-soft);
+}
+
+.arc-s21-003 .note {
+  margin: clamp(18px, 2.2vw, 26px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 84ch;
+}
+
+/* --- Responsive ---------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s21-003 .meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1024px) {
+  .arc-s21-003 .masthead { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .arc-s21-003 h1 { max-width: 24ch; }
+  .arc-s21-003 .contents ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .arc-s21-003 .intro { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s21-003 .meta { grid-template-columns: minmax(0, 1fr); }
+  .arc-s21-003 .contents ol { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 360px) {
+  .arc-s21-003 .parent { letter-spacing: 0.14em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s21-003 *, .arc-s21-003 *::before, .arc-s21-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s21-003" data-study-id="ARC-S21-003" data-territory="dense-information-heavy">
+
+  <section class="shell" aria-labelledby="arc-s21-003-title">
+
+    <p class="parent">Projects &#183; placeholder record</p>
+
+    <div class="masthead">
+      <div>
+        <h1 id="arc-s21-003-title">Project record 03</h1>
+        <p class="intro">
+          What this page covers: the existing building, what was kept, the arrangement that
+          followed, and the drawings issued for it.
+        </p>
+      </div>
+
+      <dl class="meta">
+        <div><dt>Section</dt><dd>Projects</dd></div>
+        <div><dt>Record</dt><dd>Project record 03</dd></div>
+        <div><dt>Typology</dt><dd>Adaptive reuse</dd></div>
+        <div><dt>Scope</dt><dd>Architecture &amp; interiors</dd></div>
+        <div><dt>Discipline</dt><dd>Existing buildings</dd></div>
+        <div><dt>Stage reached</dt><dd>Placeholder</dd></div>
+        <div><dt>Reference</dt><dd>Placeholder</dd></div>
+        <div><dt>Status</dt><dd>Design study</dd></div>
+      </dl>
+    </div>
+
+    <nav class="contents" aria-labelledby="arc-s21-003-contents">
+      <h2 id="arc-s21-003-contents">On this page</h2>
+      <ol>
+        <li><a href="#arc-s21-003-title"><span class="n">01</span><span>The existing building</span></a></li>
+        <li><a href="#arc-s21-003-title"><span class="n">02</span><span>What was kept</span></a></li>
+        <li><a href="#arc-s21-003-title"><span class="n">03</span><span>The plan move</span></a></li>
+        <li><a href="#arc-s21-003-title"><span class="n">04</span><span>Material and junction</span></a></li>
+        <li><a href="#arc-s21-003-title"><span class="n">05</span><span>Drawings issued</span></a></li>
+        <li><a href="#arc-s21-003-title"><span class="n">06</span><span>On site</span></a></li>
+        <li><a href="#arc-s21-003-title"><span class="n">07</span><span>Credits</span></a></li>
+        <li><a href="#arc-s21-003-title"><span class="n">08</span><span>Related projects</span></a></li>
+      </ol>
+    </nav>
+
+    <p class="note">
+      Placeholder page header &#183; structure demonstration only. The contents list describes the
+      inside of this page, which is why it sits in the page header rather than in the breadcrumb
+      section: S22 says where the page is, this says what is in it. No client, date, cost, area or
+      completed-project claim appears in the metadata.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S22-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S22 — Breadcrumb / Context Navigation
+  Territory      : Conversion-led
+  Layout model   : Trail above a sibling pager — previous and next pages named in full, with a
+                   single contextual link between them
+  Density        : Medium
+  Media mode     : NONE.
+  Interaction    : Links only. No JavaScript. The pager is two ordinary links, not a control: it
+                   moves between pages rather than changing state on this one.
+  Role note      : Conversion in a navigation section is movement, not a pitch. The pager keeps a
+                   visitor inside the work instead of returning them to an index, and the one
+                   contextual link is about the page they are on. A banner call to action would be
+                   S21's single action or a section further down, not this.
+  Accessibility  : The pager names its destinations in full rather than saying only "previous" and
+                   "next", so each link is meaningful out of context — the failure mode of every
+                   pager. Direction words are marked up separately from the page names.
+-->
+
+<meta name="study-id" content="ARC-S22-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Trail above a named sibling pager with one contextual link">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="links-only">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S22-004 — Context Navigation, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f2ee; }
+
+/* Scoped study styles — namespaced to .arc-s22-004 */
+.arc-s22-004 {
+  --ink: #17181b;
+  --ink-soft: #56544e;
+  --paper: #f4f2ee;
+  --card: #ffffff;
+  --line: #ddd9d1;
+  --line-strong: #85827a;
+  --sep: #676a6f;          /* separator glyphs are visible text */
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s22-004 *,
+.arc-s22-004 *::before,
+.arc-s22-004 *::after { box-sizing: inherit; }
+.arc-s22-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+.arc-s22-004 .shell {
+  width: 100%; max-width: 1260px; margin: 0 auto;
+  padding: clamp(18px, 2.4vw, 30px) clamp(18px, 3vw, 44px);
+}
+.arc-s22-004 .here {
+  margin: 0 0 clamp(8px, 1.2vw, 12px);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); font-weight: 400;
+}
+
+/* --- Trail ------------------------------------------------------------------------- */
+.arc-s22-004 .trail ol {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 2px 0; margin: 0; padding: 0 0 clamp(12px, 1.6vw, 16px);
+  list-style: none; border-bottom: 1px solid var(--line-strong);
+}
+.arc-s22-004 .trail li { display: flex; align-items: baseline; }
+.arc-s22-004 .trail li + li::before {
+  content: "/"; padding: 0 9px; color: var(--sep); font-size: 0.8125rem;
+}
+.arc-s22-004 .trail a,
+.arc-s22-004 .trail [aria-current] {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 0.8125rem; text-decoration: none;
+}
+.arc-s22-004 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s22-004 .trail a:hover,
+.arc-s22-004 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s22-004 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+/* --- Pager --------------------------------------------------------------------------- */
+.arc-s22-004 .pager {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: clamp(10px, 1.6vw, 18px); align-items: stretch;
+  margin-top: clamp(14px, 1.8vw, 20px);
+}
+.arc-s22-004 .pager a {
+  display: flex; flex-direction: column; justify-content: center; gap: 5px;
+  min-height: 68px; padding: clamp(12px, 1.6vw, 16px);
+  background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+  text-decoration: none; color: var(--ink);
+  transition: border-color 150ms ease;
+}
+.arc-s22-004 .pager a:hover,
+.arc-s22-004 .pager a:focus-visible { border-color: var(--ink); }
+.arc-s22-004 .pager .dir {
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s22-004 .pager .name { font-size: 0.9375rem; font-weight: 500; letter-spacing: -0.008em; }
+.arc-s22-004 .pager .next { text-align: right; }
+
+/* The one contextual link, between the two directions. */
+.arc-s22-004 .mid {
+  display: flex; align-items: center; justify-content: center;
+}
+.arc-s22-004 .mid a {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 68px; padding: 0 clamp(14px, 1.8vw, 22px); border-radius: 8px;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  font-size: 0.8125rem; text-decoration: none; text-align: center;
+  transition: background-color 150ms ease;
+}
+.arc-s22-004 .mid a:hover,
+.arc-s22-004 .mid a:focus-visible { background: #000; }
+
+.arc-s22-004 .note {
+  margin: clamp(14px, 1.8vw, 20px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 86ch;
+}
+
+/* --- Responsive ----------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s22-004 .pager { gap: 12px; }
+}
+@media (max-width: 1024px) {
+  .arc-s22-004 .pager .name { font-size: 0.875rem; }
+}
+@media (max-width: 768px) {
+  /* Previous and next keep the row; the contextual link takes its own line below,
+     so the two directions stay side by side and readable as a pair. */
+  .arc-s22-004 .pager { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s22-004 .mid { grid-column: 1 / -1; order: 2; }
+  .arc-s22-004 .mid a { width: 100%; min-height: 52px; }
+}
+@media (max-width: 480px) {
+  .arc-s22-004 .pager { grid-template-columns: minmax(0, 1fr); }
+  .arc-s22-004 .pager .next { text-align: left; }
+  .arc-s22-004 .trail li + li::before { padding: 0 7px; }
+}
+@media (max-width: 360px) {
+  .arc-s22-004 .pager a { min-height: 62px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s22-004 *, .arc-s22-004 *::before, .arc-s22-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s22-004" data-study-id="ARC-S22-004" data-territory="conversion-led">
+
+  <section class="shell" aria-labelledby="arc-s22-004-title">
+
+    <h1 class="here" id="arc-s22-004-title">You are here</h1>
+
+    <nav class="trail" aria-labelledby="arc-s22-004-title">
+      <ol>
+        <li><a href="#arc-s22-004-title">Studio</a></li>
+        <li><a href="#arc-s22-004-title">Projects</a></li>
+        <li><span aria-current="page">Project record 02</span></li>
+      </ol>
+    </nav>
+
+    <nav class="pager" aria-label="Move between projects">
+      <a href="#arc-s22-004-title">
+        <span class="dir">Previous project</span>
+        <span class="name">Project record 01 &#8212; residential</span>
+      </a>
+
+      <span class="mid">
+        <a href="#arc-s22-004-title">Ask about a project like this</a>
+      </span>
+
+      <a class="next" href="#arc-s22-004-title">
+        <span class="dir">Next project</span>
+        <span class="name">Project record 03 &#8212; adaptive reuse</span>
+      </a>
+    </nav>
+
+    <p class="note">
+      Placeholder context navigation &#183; structure demonstration only. Conversion here is
+      movement rather than a pitch: the pager keeps a visitor inside the work instead of returning
+      them to an index. Each pager link names its destination in full rather than saying only
+      &#8220;previous&#8221; and &#8220;next&#8221;, so it is meaningful out of context, and the
+      direction word is marked up separately from the page name. The single contextual link is
+      about the page being read.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

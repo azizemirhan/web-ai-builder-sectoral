@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S22-001
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S22 — Breadcrumb / Context Navigation
+  Territory      : Universal / Safe
+  Layout model   : Wrapping breadcrumb trail on a rule, with the current page carried as the last
+                   item
+  Density        : Low
+  Media mode     : NONE. The section README is explicit: this role is navigation, not
+                   presentation. No study in this batch carries a media slot.
+  Interaction    : Links only. No JavaScript anywhere in this section.
+  Accessibility  : The trail is a real `<nav>` landmark with an accessible name, marked up as an
+                   ordered list because a trail has an order. The current page is a plain `<span>`
+                   with `aria-current="page"` rather than a link, so its state is programmatic and
+                   not carried by styling alone. Separators are `aria-hidden` and are generated in
+                   CSS, so they are never read out or copied into the accessible name.
+  Responsive     : The trail WRAPS. It is never truncated, never collapsed behind an ellipsis, and
+                   never hidden — the section README rules all three out unless the hidden levels
+                   stay reachable.
+-->
+
+<meta name="study-id" content="ARC-S22-001">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="layout-model" content="Wrapping breadcrumb trail on a rule">
+<meta name="density" content="low">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="links-only">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S22-001 — Context Navigation, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fbfbfa; }
+
+/* Scoped study styles — namespaced to .arc-s22-001 */
+.arc-s22-001 {
+  --ink: #16171a;
+  --ink-soft: #55575c;
+  --paper: #fbfbfa;
+  --line: #e3e3e2;
+  --line-strong: #83868b;
+  --sep: #6d7075;          /* separator glyphs are visible text: 4.8:1, not 3:1 */
+  --focus: #1f4fd8;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s22-001 *,
+.arc-s22-001 *::before,
+.arc-s22-001 *::after { box-sizing: inherit; }
+.arc-s22-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+.arc-s22-001 .shell {
+  width: 100%; max-width: 1240px; margin: 0 auto;
+  padding: clamp(18px, 2.4vw, 30px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Trail ------------------------------------------------------------------------- */
+.arc-s22-001 .trail ol {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 2px 0; margin: 0; padding: 0 0 clamp(12px, 1.6vw, 16px);
+  list-style: none; border-bottom: 1px solid var(--line-strong);
+}
+.arc-s22-001 .trail li { display: flex; align-items: baseline; }
+/* Separator drawn in CSS and hidden from the accessible name. */
+.arc-s22-001 .trail li + li::before {
+  content: "/";
+  padding: 0 10px; color: var(--sep); font-size: 0.8125rem;
+}
+.arc-s22-001 .trail a,
+.arc-s22-001 .trail [aria-current] {
+  display: inline-flex; align-items: center;
+  min-height: 44px; padding: 0 2px;
+  font-size: 0.875rem; text-decoration: none;
+}
+.arc-s22-001 .trail a {
+  color: var(--ink-soft);
+  border-bottom: 1px solid transparent;
+}
+.arc-s22-001 .trail a:hover,
+.arc-s22-001 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+/* The current page is not a link, is weighted differently, AND carries aria-current. */
+.arc-s22-001 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+.arc-s22-001 .here {
+  margin: 0 0 clamp(8px, 1.2vw, 12px);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 400;
+}
+
+.arc-s22-001 .note {
+  margin: clamp(14px, 1.8vw, 20px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 84ch;
+}
+
+/* --- Responsive --------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s22-001 .trail li + li::before { padding: 0 9px; }
+}
+@media (max-width: 1024px) {
+  .arc-s22-001 .trail a,
+  .arc-s22-001 .trail [aria-current] { font-size: 0.8125rem; }
+}
+@media (max-width: 768px) {
+  /* Wrapping is the whole strategy: every level stays on the page. */
+  .arc-s22-001 .trail li + li::before { padding: 0 8px; }
+}
+@media (max-width: 480px) {
+  .arc-s22-001 .trail a,
+  .arc-s22-001 .trail [aria-current] { min-height: 40px; }
+}
+@media (max-width: 360px) {
+  .arc-s22-001 .trail li + li::before { padding: 0 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s22-001 *, .arc-s22-001 *::before, .arc-s22-001 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s22-001" data-study-id="ARC-S22-001" data-territory="universal-safe">
+
+  <section class="shell" aria-labelledby="arc-s22-001-title">
+    <h1 class="here" id="arc-s22-001-title">You are here</h1>
+
+    <nav class="trail" aria-labelledby="arc-s22-001-title">
+      <ol>
+        <li><a href="#arc-s22-001-title">Studio</a></li>
+        <li><a href="#arc-s22-001-title">Projects</a></li>
+        <li><a href="#arc-s22-001-title">Residential</a></li>
+        <li><span aria-current="page">Project record 01</span></li>
+      </ol>
+    </nav>
+
+    <p class="note">
+      Placeholder trail &#183; structure demonstration only. The current page is a span carrying
+      <code>aria-current="page"</code>, not a link, so its state is programmatic rather than a
+      styling difference. Separators are generated in CSS and never enter the accessible name. The
+      trail wraps at every width and is never truncated, collapsed or hidden.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

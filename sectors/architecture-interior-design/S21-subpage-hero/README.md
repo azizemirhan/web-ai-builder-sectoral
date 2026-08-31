@@ -87,12 +87,16 @@ The title must remain the first thing read at every width. Contextual metadata s
 
 S01 is the homepage or primary sector hero. S21 is the internal page contextual hero. A study that would work unchanged as S01 has not answered this role.
 
-Homepage hero for this sector: S01 S01-hero (`Hero/`).
+Homepage hero for this sector: S01 Hero (`S01-hero/`).
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch Document
+
+./BATCH-V1.md

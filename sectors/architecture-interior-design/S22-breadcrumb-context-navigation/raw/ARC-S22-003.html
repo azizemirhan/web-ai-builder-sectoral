@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S22-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S22 — Breadcrumb / Context Navigation
+  Territory      : Dense / Information-heavy
+  Layout model   : Full context bar — a deep trail above a two-part local navigation: the sibling
+                   pages at this level, and the sections inside the current page
+  Density        : High (the most context a bar can carry before it becomes the page's main
+                   navigation, which the section README puts out of scope)
+  Media mode     : NONE.
+  Interaction    : Links only. No JavaScript.
+  Accessibility  : Three landmarks, three accessible names — Breadcrumb, Sibling pages, and On this
+                   page. The current sibling carries `aria-current="page"`; the trail's last item
+                   carries it too and is not a link. Below 768px the trail becomes a labelled,
+                   keyboard-focusable scroll region rather than wrapping to four lines: the section
+                   README allows scrolling with a visible affordance, and the region keeps every
+                   level reachable by keyboard.
+  Responsive     : The trail scrolls, the sibling list wraps, the page contents stack. Nothing is
+                   removed at any width.
+-->
+
+<meta name="study-id" content="ARC-S22-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Context bar with deep trail, sibling navigation and page contents">
+<meta name="density" content="high">
+<meta name="media-mode" content="none-by-design">
+<meta name="interaction" content="links-only">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S22-003 — Context Navigation, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f5f6f7; }
+
+/* Scoped study styles — namespaced to .arc-s22-003 */
+.arc-s22-003 {
+  --ink: #101216;
+  --ink-soft: #4f545b;
+  --paper: #f5f6f7;
+  --card: #ffffff;
+  --line: #dfe2e5;
+  --line-strong: #7f848a;
+  --sep: #696c71;          /* separator glyphs are visible text */
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s22-003 *,
+.arc-s22-003 *::before,
+.arc-s22-003 *::after { box-sizing: inherit; }
+.arc-s22-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+.arc-s22-003 .shell {
+  width: 100%; max-width: 1340px; margin: 0 auto;
+  padding: clamp(18px, 2.4vw, 30px) clamp(16px, 2.6vw, 40px);
+}
+.arc-s22-003 .here {
+  margin: 0 0 clamp(8px, 1.2vw, 12px);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); font-weight: 400;
+}
+
+/* --- Trail ------------------------------------------------------------------------- */
+.arc-s22-003 .trailwrap { padding-bottom: clamp(12px, 1.6vw, 16px); border-bottom: 1px solid var(--line-strong); }
+.arc-s22-003 .trail ol {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 2px 0; margin: 0; padding: 0; list-style: none;
+}
+.arc-s22-003 .trail li { display: flex; align-items: baseline; white-space: nowrap; }
+.arc-s22-003 .trail li + li::before {
+  content: "\203A"; padding: 0 9px; color: var(--sep); font-size: 0.8125rem;
+}
+.arc-s22-003 .trail a,
+.arc-s22-003 .trail [aria-current] {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 0.8125rem; text-decoration: none;
+}
+.arc-s22-003 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s22-003 .trail a:hover,
+.arc-s22-003 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s22-003 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+/* --- Local navigation --------------------------------------------------------------- */
+.arc-s22-003 .local {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.6vw, 44px);
+  padding-top: clamp(14px, 1.8vw, 20px);
+}
+.arc-s22-003 .local h2 {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s22-003 .sib ul {
+  display: flex; flex-wrap: wrap; gap: 7px;
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s22-003 .sib a,
+.arc-s22-003 .sib [aria-current] {
+  display: inline-flex; align-items: center;
+  min-height: 44px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: var(--card);
+  font-size: 0.8125rem; color: var(--ink); text-decoration: none;
+}
+.arc-s22-003 .sib a:hover,
+.arc-s22-003 .sib a:focus-visible { background: #eef0f1; border-color: var(--ink); }
+/* Current sibling: filled AND weighted AND aria-current — never fill alone. */
+.arc-s22-003 .sib [aria-current] { background: var(--ink); border-color: var(--ink); color: #fff; font-weight: 600; }
+
+.arc-s22-003 .toc ol {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(16px, 2.2vw, 28px);
+  margin: 0; padding: 0; list-style: none;
+  border-top: 1px solid var(--line);
+}
+.arc-s22-003 .toc li { border-bottom: 1px solid var(--line); }
+.arc-s22-003 .toc a {
+  display: grid; grid-template-columns: 2em minmax(0, 1fr);
+  gap: 10px; align-items: baseline;
+  min-height: 44px; padding: 7px 0;
+  font-size: 0.8125rem; color: var(--ink); text-decoration: none;
+}
+.arc-s22-003 .toc a:hover span:last-child,
+.arc-s22-003 .toc a:focus-visible span:last-child { text-decoration: underline; text-underline-offset: 3px; }
+.arc-s22-003 .toc .n { font-family: var(--mono); font-size: 0.5625rem; color: var(--ink-soft); }
+
+.arc-s22-003 .note {
+  margin: clamp(14px, 1.8vw, 20px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 86ch;
+}
+
+/* --- Responsive ---------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s22-003 .local { gap: 28px; }
+}
+@media (max-width: 1024px) {
+  .arc-s22-003 .local { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+}
+@media (max-width: 768px) {
+  /* A five-level trail wraps to four lines here, so it becomes a labelled scroll
+     region instead — every level stays reachable, including by keyboard. */
+  .arc-s22-003 .trailwrap { overflow-x: auto; }
+  .arc-s22-003 .trailwrap:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .arc-s22-003 .trail ol { flex-wrap: nowrap; }
+}
+@media (max-width: 480px) {
+  .arc-s22-003 .toc ol { grid-template-columns: minmax(0, 1fr); }
+  .arc-s22-003 .trail li + li::before { padding: 0 7px; }
+}
+@media (max-width: 360px) {
+  .arc-s22-003 .sib a,
+  .arc-s22-003 .sib [aria-current] { padding: 0 12px; font-size: 0.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s22-003 *, .arc-s22-003 *::before, .arc-s22-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s22-003" data-study-id="ARC-S22-003" data-territory="dense-information-heavy">
+
+  <section class="shell" aria-labelledby="arc-s22-003-title">
+
+    <h1 class="here" id="arc-s22-003-title">You are here</h1>
+
+    <div class="trailwrap" role="region" tabindex="0" aria-labelledby="arc-s22-003-title">
+      <nav class="trail" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="#arc-s22-003-title">Studio</a></li>
+          <li><a href="#arc-s22-003-title">Projects</a></li>
+          <li><a href="#arc-s22-003-title">Typologies</a></li>
+          <li><a href="#arc-s22-003-title">Adaptive reuse</a></li>
+          <li><span aria-current="page">Project record 03</span></li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="local">
+      <nav class="sib" aria-labelledby="arc-s22-003-sib">
+        <h2 id="arc-s22-003-sib">Other projects in adaptive reuse</h2>
+        <ul>
+          <li><a href="#arc-s22-003-title">Record 01</a></li>
+          <li><a href="#arc-s22-003-title">Record 02</a></li>
+          <li><span aria-current="page">Record 03</span></li>
+          <li><a href="#arc-s22-003-title">Record 04</a></li>
+          <li><a href="#arc-s22-003-title">Record 05</a></li>
+          <li><a href="#arc-s22-003-title">Record 06</a></li>
+        </ul>
+      </nav>
+
+      <nav class="toc" aria-labelledby="arc-s22-003-toc">
+        <h2 id="arc-s22-003-toc">On this page</h2>
+        <ol>
+          <li><a href="#arc-s22-003-title"><span class="n">01</span><span>The existing building</span></a></li>
+          <li><a href="#arc-s22-003-title"><span class="n">02</span><span>What was kept</span></a></li>
+          <li><a href="#arc-s22-003-title"><span class="n">03</span><span>The plan move</span></a></li>
+          <li><a href="#arc-s22-003-title"><span class="n">04</span><span>Material and junction</span></a></li>
+          <li><a href="#arc-s22-003-title"><span class="n">05</span><span>Drawings issued</span></a></li>
+          <li><a href="#arc-s22-003-title"><span class="n">06</span><span>Credits</span></a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <p class="note">
+      Placeholder context bar &#183; structure demonstration only. Three landmarks with three
+      accessible names: Breadcrumb, sibling pages, and page contents. The current sibling is filled,
+      weighted and carries <code>aria-current</code> &#8212; never fill alone. Below 768px the trail
+      becomes a labelled scroll region with its own tab stop rather than wrapping to four lines, so
+      every level stays reachable. This is local context, not the site's primary navigation.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S21-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S21 — Subpage Hero
+  Territory      : Premium / Editorial
+  Layout model   : Serif page opener with a hairline context line above the title and a contained
+                   media strip set beneath it, never behind it
+  Density        : Low
+  Media mode     : One contained media strip at 21:9, placed under the title. Deliberately not a
+                   full-bleed stage and never a background: an internal page hero that puts type
+                   over a picture is a homepage hero wearing a smaller hat.
+  Interaction    : None (static; no JavaScript)
+  Role note      : The media sits below the title and can be removed without the block collapsing,
+                   which is the section README's test for an internal page hero.
+  Content note   : Copy frames the page, not the sector.
+-->
+
+<meta name="study-id" content="ARC-S21-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S21">
+<meta name="section-name" content="Subpage Hero">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="Serif page opener with contained media strip below the title">
+<meta name="density" content="low">
+<meta name="media-mode" content="contained-strip-below-title">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S21-002 — Subpage Hero, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f2; }
+
+/* Scoped study styles — namespaced to .arc-s21-002 */
+.arc-s21-002 {
+  --ink: #17171a;
+  --ink-soft: #58564e;
+  --paper: #f7f6f2;
+  --slot: #e3e0d7;
+  --slot-ink: #4b493f;
+  --hair: #d8d4ca;
+  --hair-ink: #85827a;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s21-002 *,
+.arc-s21-002 *::before,
+.arc-s21-002 *::after { box-sizing: inherit; }
+.arc-s21-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s21-002 .shell {
+  width: 100%; max-width: 1180px; margin: 0 auto;
+  padding: clamp(32px, 4.4vw, 68px) clamp(18px, 3vw, 44px) clamp(22px, 2.8vw, 36px);
+}
+
+/* --- Context line above the title ------------------------------------------------- */
+.arc-s21-002 .context {
+  display: grid; grid-template-columns: auto minmax(24px, 1fr) auto;
+  gap: clamp(10px, 1.6vw, 20px); align-items: center;
+  margin: 0 0 clamp(20px, 2.6vw, 34px);
+  font-family: var(--mono); font-size: 0.5625rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s21-002 .context .rule { height: 1px; background: var(--hair-ink); }
+.arc-s21-002 .context p { margin: 0; }
+.arc-s21-002 .context .right { text-align: right; }
+
+.arc-s21-002 h1 {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.875rem, 4vw, 3.25rem);
+  line-height: 1.06; letter-spacing: -0.022em; max-width: 16ch;
+}
+.arc-s21-002 .intro {
+  margin: 0 0 clamp(24px, 3.2vw, 44px);
+  font-size: clamp(0.9375rem, 1.25vw, 1.125rem); color: var(--ink-soft); max-width: 52ch;
+}
+
+/* --- Contained media strip -------------------------------------------------------- */
+.arc-s21-002 figure { margin: 0; }
+.arc-s21-002 .slot {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 21 / 9; background: var(--slot); border-radius: 2px;
+}
+.arc-s21-002 .slot p {
+  margin: 0; padding: 12px 14px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s21-002 figcaption {
+  margin-top: 10px; display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+.arc-s21-002 .note {
+  margin: clamp(22px, 2.8vw, 34px) 0 0; padding-top: clamp(12px, 1.6vw, 16px);
+  border-top: 1px solid var(--hair);
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 80ch;
+}
+
+/* --- Responsive -------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s21-002 .intro { max-width: 48ch; }
+}
+@media (max-width: 1024px) {
+  .arc-s21-002 h1 { max-width: 20ch; }
+}
+@media (max-width: 768px) {
+  /* The context line loses its rule before it loses either label. */
+  .arc-s21-002 .context { grid-template-columns: auto auto; gap: 8px 16px; }
+  .arc-s21-002 .context .rule { display: none; }
+  .arc-s21-002 .context .right { text-align: left; }
+  .arc-s21-002 .intro { max-width: none; }
+  .arc-s21-002 .slot { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 480px) {
+  .arc-s21-002 .context { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .arc-s21-002 .slot { aspect-ratio: 3 / 2; }
+}
+@media (max-width: 360px) {
+  .arc-s21-002 .slot p { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s21-002 *, .arc-s21-002 *::before, .arc-s21-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s21-002" data-study-id="ARC-S21-002" data-territory="premium-editorial">
+
+  <section class="shell" aria-labelledby="arc-s21-002-title">
+
+    <div class="context">
+      <p>Projects</p>
+      <span class="rule" aria-hidden="true"></span>
+      <p class="right">Residential &#183; placeholder record</p>
+    </div>
+
+    <h1 id="arc-s21-002-title">Project record 01</h1>
+    <p class="intro">
+      What this page covers: the site as it was found, the arrangement that answered it, and the
+      details that were drawn before they were specified.
+    </p>
+
+    <figure>
+      <div class="slot"><p>Image area &#183; contained strip 21:9</p></div>
+      <figcaption>
+        <span>Placeholder image</span>
+        <span>Contained, not full-bleed</span>
+      </figcaption>
+    </figure>
+
+    <p class="note">
+      Placeholder page header &#183; structure demonstration only. The strip sits below the title
+      rather than behind it, and the block still reads if the image never arrives &#8212; an
+      internal page hero that puts type over a picture is a homepage hero wearing a smaller hat.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>
