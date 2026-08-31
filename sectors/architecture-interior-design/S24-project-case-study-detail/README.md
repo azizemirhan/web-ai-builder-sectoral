@@ -91,8 +91,12 @@ Nearest existing section in this sector: S02 Selected Projects (`S02-selected-pr
 
 # Status
 
-NOT_STARTED
+READY_FOR_INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch
+
+./BATCH-V1.md
