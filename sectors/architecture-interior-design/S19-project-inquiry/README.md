@@ -24,8 +24,12 @@ ARC-S19-005
 
 # Status
 
-NOT_STARTED
+READY_FOR_INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch
+
+./BATCH-V1.md
