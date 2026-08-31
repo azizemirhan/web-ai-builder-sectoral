@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S12-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S12 — Client Testimonials
+  Territory      : Conversion-led
+  Reference      : Reference 4 — a small eyebrow above a two-line heading, then a row of quote
+                   cards in which one is a dark image card and the attributions are set in a
+                   signature-like hand beneath each quote.
+  Layout model   : Two-line head over a four-cell row — three quote cards, one of them dark, with
+                   the fourth cell inverted and carrying the conversion
+  Density        : Medium
+  Media mode     : One empty media area inside the dark quote card.
+  Interaction    : None (static; no JavaScript). The reference's row bleeds off the page edge to
+                   suggest more cards; here the row is a fixed four-cell grid whose last cell says
+                   how many references exist and links to them, so the same signal is given
+                   without a scroll container. That also keeps this study structurally apart from
+                   the rails already carrying ARC-S03-004, ARC-S08-008 and ARC-S08-009.
+  Content note   : Every quote is a labelled placeholder and every attribution a token. No person,
+                   company or project is named; no rating, score, percentage or metric appears,
+                   and the conversion card promises no response time or outcome.
+-->
+
+<meta name="study-id" content="ARC-S12-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S12">
+<meta name="section-name" content="Client Testimonials">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Quote card row with an inverted conversion cell">
+<meta name="density" content="medium">
+<meta name="media-mode" content="empty-media-in-dark-card">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S12-004 — Testimonials, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f2ee; }
+
+/* Scoped study styles — namespaced to .arc-s12-004 */
+.arc-s12-004 {
+  --ink: #17181b;
+  --ink-soft: #56544e;
+  --paper: #f4f2ee;
+  --card: #ffffff;
+  --dark: #1c1d20;
+  --dark-2: #282a2e;
+  --on-dark: #f4f3f1;
+  --on-dark-soft: #adafb3;
+  --line: #ddd9d1;
+  --line-strong: #85827a;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s12-004 *,
+.arc-s12-004 *::before,
+.arc-s12-004 *::after { box-sizing: inherit; }
+.arc-s12-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.arc-s12-004 .cell--dark :focus-visible,
+.arc-s12-004 .cell--cta :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s12-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 78px) clamp(18px, 3vw, 44px);
+}
+
+/* --- Head ----------------------------------------------------------------------- */
+.arc-s12-004 .eyebrow {
+  margin: 0 0 14px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s12-004 h1 {
+  margin: 0 0 clamp(24px, 3vw, 44px);
+  font-size: clamp(1.625rem, 3.2vw, 2.625rem);
+  line-height: 1.1; letter-spacing: -0.03em; font-weight: 500; max-width: 20ch;
+}
+
+/* --- Card row --------------------------------------------------------------------- */
+.arc-s12-004 .row {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+  margin: 0; padding: 0; list-style: none;
+  align-items: stretch;
+}
+.arc-s12-004 .row > li { margin: 0; }
+
+.arc-s12-004 .cell {
+  height: 100%;
+  display: flex; flex-direction: column;
+  background: var(--card); border-radius: 12px;
+  padding: clamp(18px, 2.2vw, 26px);
+}
+.arc-s12-004 .cell blockquote { margin: 0 0 auto; font-size: 0.875rem; }
+.arc-s12-004 .sign {
+  margin-top: clamp(24px, 3vw, 40px);
+  padding-top: 14px; border-top: 1px solid var(--line);
+}
+.arc-s12-004 .sign p { margin: 0; font-size: 0.9375rem; font-weight: 600; letter-spacing: -0.008em; }
+.arc-s12-004 .sign .rel { margin-top: 2px; font-size: 0.75rem; font-weight: 400; color: var(--ink-soft); }
+
+/* Dark quote card carrying the media area */
+.arc-s12-004 .cell--dark {
+  position: relative; padding: 0; overflow: hidden;
+  background: var(--dark); color: var(--on-dark);
+  justify-content: flex-end; min-height: clamp(280px, 30vw, 380px);
+}
+.arc-s12-004 .cell--dark .slot {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-start; justify-content: flex-end;
+  background: var(--dark-2);
+}
+.arc-s12-004 .cell--dark .slot span {
+  padding: 11px 13px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-dark-soft);
+}
+.arc-s12-004 .cell--dark .band {
+  position: relative;
+  padding: clamp(36px, 4vw, 56px) clamp(16px, 2vw, 22px) clamp(16px, 2vw, 22px);
+  background: linear-gradient(to top, rgba(20, 21, 24, 0.94) 46%, rgba(20, 21, 24, 0));
+}
+.arc-s12-004 .cell--dark blockquote { margin: 0 0 16px; font-size: 0.875rem; }
+.arc-s12-004 .cell--dark .sign { border-top-color: rgba(244, 243, 241, 0.3); margin-top: 0; }
+.arc-s12-004 .cell--dark .sign .rel { color: var(--on-dark-soft); }
+
+/* Conversion cell */
+.arc-s12-004 .cell--cta { background: var(--dark); color: var(--on-dark); }
+.arc-s12-004 .cell--cta .count {
+  margin: 0 0 12px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--on-dark-soft);
+}
+.arc-s12-004 .cell--cta h2 { margin: 0 0 10px; font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.014em; }
+.arc-s12-004 .cell--cta > p { margin: 0 0 auto; font-size: 0.8125rem; color: var(--on-dark-soft); }
+.arc-s12-004 .actions { margin-top: clamp(20px, 2.4vw, 30px); display: grid; gap: 10px; }
+.arc-s12-004 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 0 18px; border-radius: 8px;
+  background: #fff; color: var(--dark); border: 1px solid #fff;
+  font-size: 0.875rem; font-weight: 600; text-decoration: none;
+  transition: background-color 150ms ease;
+}
+.arc-s12-004 .btn:hover,
+.arc-s12-004 .btn:focus-visible { background: #e6e5e2; }
+.arc-s12-004 .textlink {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; font-size: 0.8125rem; color: var(--on-dark); text-decoration: none;
+  border-bottom: 1px solid rgba(244, 243, 241, 0.45);
+  justify-self: center;
+}
+.arc-s12-004 .textlink:hover,
+.arc-s12-004 .textlink:focus-visible { border-bottom-color: #fff; }
+
+.arc-s12-004 .note {
+  margin: clamp(20px, 2.6vw, 32px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 84ch;
+}
+
+/* --- Responsive -------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s12-004 .row { gap: 14px; }
+}
+@media (max-width: 1024px) {
+  .arc-s12-004 .row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s12-004 h1 { max-width: 24ch; }
+}
+@media (max-width: 768px) {
+  .arc-s12-004 .cell--dark { min-height: 0; aspect-ratio: 4 / 5; }
+}
+@media (max-width: 480px) {
+  .arc-s12-004 .row { grid-template-columns: minmax(0, 1fr); }
+  .arc-s12-004 .cell--dark { aspect-ratio: 4 / 3; }
+  .arc-s12-004 .textlink { justify-self: stretch; }
+}
+@media (max-width: 360px) {
+  .arc-s12-004 .cell { padding: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s12-004 *, .arc-s12-004 *::before, .arc-s12-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s12-004" data-study-id="ARC-S12-004" data-territory="conversion-led">
+
+  <section class="shell" aria-labelledby="arc-s12-004-title">
+
+    <p class="eyebrow">Testimonials &#183; placeholder</p>
+    <h1 id="arc-s12-004-title">Don't take the studio's word for it.<br>Take a client's.</h1>
+
+    <ul class="row">
+
+      <li>
+        <div class="cell">
+          <blockquote>
+            Quote placeholder 01. A medium-length quote, at the length a client gives when asked
+            what the work was actually like rather than for a compliment.
+          </blockquote>
+          <div class="sign">
+            <p>Client placeholder 01</p>
+            <p class="rel">Residential project &#183; relationship placeholder</p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="cell cell--dark">
+          <div class="slot"><span>Image area</span></div>
+          <div class="band">
+            <blockquote>
+              Quote placeholder 02. Set over an image, kept short so the gradient does not have to
+              cover most of the picture to keep it legible.
+            </blockquote>
+            <div class="sign">
+              <p>Client placeholder 02</p>
+              <p class="rel">Interior project &#183; relationship placeholder</p>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="cell">
+          <blockquote>
+            Quote placeholder 03. A longer one, running past its neighbours so the row can be
+            checked for the uneven heights real quotes always produce.
+          </blockquote>
+          <div class="sign">
+            <p>Client placeholder 03</p>
+            <p class="rel">Adaptive reuse project &#183; relationship placeholder</p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="cell cell--cta">
+          <p class="count">Three of the studio's references</p>
+          <h2>Ask for the rest</h2>
+          <p>
+            The studio keeps written references for its recent work and will send the ones
+            relevant to your project, with the client's permission.
+          </p>
+          <div class="actions">
+            <a class="btn" href="#arc-s12-004-title">
+              Request references
+              <span aria-hidden="true">&#8594;</span>
+            </a>
+            <a class="textlink" href="#arc-s12-004-title">Start a project</a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <p class="note">
+      Placeholder testimonials &#183; structure demonstration only. Every quote states that it is a
+      placeholder and every attribution is a token &#8212; no person, company or project is named,
+      and no rating, score, percentage or metric appears. The conversion cell promises no response
+      time and no outcome, and says references are sent with the client's permission because that
+      is the condition a real studio would be under.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S12-005
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S12 — Client Testimonials
+  Territory      : Sector-native / Distinctive
+  Reference      : Reference 3 — a left column holding a small image, a pill label, a large
+                   heading and a forward control, beside stacked cards that carry a mark, an
+                   avatar, a large quotation glyph, the quote, and then the name, organisation and
+                   address of the person who gave it.
+  Layout model   : Client reference sheet — a ruled head column beside stacked reference records,
+                   each with a keyed header row, a statement, and a signature foot
+  Density        : Medium-high
+  Media mode     : One small empty plate in the head column. The records carry no imagery: a
+                   written reference is a document, and a photograph beside it adds nothing that
+                   can be checked.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The sector-native device is the client reference — the written statement a
+                   practice asks a past client for and supplies with a competition entry, a
+                   prequalification return or a new appointment. It is the form in which this
+                   material actually circulates in architecture, and unlike a marketing quote it
+                   is expected to be attributable and checkable. That is exactly why every field
+                   here is a token: reference key, project, relationship, signatory and date are
+                   all placeholders, dates read YYYY, and the sheet states that real references
+                   are released only with the client's permission.
+-->
+
+<meta name="study-id" content="ARC-S12-005">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S12">
+<meta name="section-name" content="Client Testimonials">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Client reference sheet with keyed records and signature feet">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="empty-plate-single">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S12-005 — Testimonials, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #edece7; }
+
+/* Scoped study styles — namespaced to .arc-s12-005 */
+.arc-s12-005 {
+  --paper: #edece7;
+  --sheet: #f5f4f0;
+  --ink: #14161a;
+  --ink-soft: #4c4a44;
+  --slot: #dcd9d0;
+  --slot-ink: #47453f;
+  --hair: #c8c4ba;
+  --hair-ink: #7c786f;
+  --stamp: #e3e0d7;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: clamp(14px, 2.6vw, 42px);
+}
+.arc-s12-005 *,
+.arc-s12-005 *::before,
+.arc-s12-005 *::after { box-sizing: inherit; }
+.arc-s12-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.arc-s12-005 .sheet {
+  max-width: 1220px; margin: 0 auto;
+  background: var(--sheet); border: 1px solid var(--hair);
+  padding: clamp(22px, 3.2vw, 50px);
+}
+.arc-s12-005 .grid {
+  display: grid; grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.5fr);
+  gap: clamp(24px, 3.2vw, 56px);
+  align-items: start;
+}
+
+/* --- Head column ------------------------------------------------------------------ */
+.arc-s12-005 .plate {
+  display: flex; align-items: flex-end;
+  aspect-ratio: 4 / 3; margin: 0 0 clamp(18px, 2.2vw, 26px);
+  background: var(--slot); border-radius: 3px;
+}
+.arc-s12-005 .plate span {
+  padding: 11px 13px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s12-005 .tag {
+  display: inline-block; margin: 0 0 14px;
+  padding: 5px 12px; border: 1px solid var(--hair-ink); border-radius: 999px;
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s12-005 h1 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(1.375rem, 2.6vw, 2.125rem);
+  line-height: 1.12; letter-spacing: -0.026em; font-weight: 500; max-width: 16ch;
+}
+.arc-s12-005 .head p { margin: 0 0 12px; font-size: 0.8125rem; color: var(--ink-soft); max-width: 40ch; }
+.arc-s12-005 .head p:last-child { margin-bottom: 0; }
+
+/* --- Reference records --------------------------------------------------------------- */
+.arc-s12-005 .records { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(12px, 1.6vw, 18px); }
+.arc-s12-005 .record { margin: 0; border: 1px solid var(--hair); background: var(--sheet); }
+
+.arc-s12-005 .record__head {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px clamp(10px, 1.4vw, 16px); align-items: baseline;
+  padding: clamp(10px, 1.4vw, 14px) clamp(14px, 1.8vw, 20px);
+  border-bottom: 1px solid var(--hair);
+}
+.arc-s12-005 .key {
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--ink);
+}
+.arc-s12-005 .proj { font-size: 0.8125rem; color: var(--ink-soft); }
+.arc-s12-005 .stamp {
+  justify-self: end;
+  padding: 3px 9px; border: 1px solid var(--hair-ink); border-radius: 2px; background: var(--stamp);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
+}
+
+.arc-s12-005 .record__body { padding: clamp(14px, 1.8vw, 20px); }
+.arc-s12-005 .rel {
+  display: grid; grid-template-columns: 8.5em minmax(0, 1fr);
+  gap: 10px; align-items: baseline;
+  margin: 0 0 clamp(12px, 1.6vw, 16px);
+  padding-bottom: clamp(12px, 1.6vw, 16px); border-bottom: 1px dashed var(--hair);
+}
+.arc-s12-005 .rel dt {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s12-005 .rel dd { margin: 0; font-size: 0.8125rem; }
+.arc-s12-005 .record blockquote { margin: 0; font-size: 0.875rem; line-height: 1.6; max-width: 68ch; }
+
+.arc-s12-005 .record__foot {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px 20px; align-items: end;
+  padding: clamp(12px, 1.6vw, 16px) clamp(14px, 1.8vw, 20px);
+  border-top: 1px solid var(--hair);
+}
+.arc-s12-005 .sig { font-size: 0.8125rem; }
+.arc-s12-005 .sig b { display: block; font-weight: 600; }
+.arc-s12-005 .sig span { color: var(--ink-soft); font-size: 0.75rem; }
+.arc-s12-005 .dated {
+  justify-self: end; font-family: var(--mono); font-size: 0.625rem;
+  letter-spacing: 0.08em; color: var(--ink-soft); white-space: nowrap;
+}
+
+/* --- Sheet foot ----------------------------------------------------------------------- */
+.arc-s12-005 .legend {
+  display: flex; flex-wrap: wrap; gap: 8px 22px;
+  margin: clamp(22px, 2.8vw, 34px) 0 0; padding-top: clamp(14px, 1.8vw, 18px);
+  border-top: 1px solid var(--hair-ink);
+  font-family: var(--mono); font-size: 0.5rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s12-005 .note {
+  margin: clamp(12px, 1.6vw, 16px) 0 0;
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 88ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s12-005 .grid { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.5fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s12-005 .grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .arc-s12-005 .plate { max-width: 320px; }
+  .arc-s12-005 h1 { max-width: 22ch; }
+  .arc-s12-005 .head p { max-width: 62ch; }
+}
+@media (max-width: 768px) {
+  .arc-s12-005 .record__head { grid-template-columns: auto minmax(0, 1fr); }
+  .arc-s12-005 .stamp { grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 480px) {
+  .arc-s12-005 .sheet { padding: 18px; }
+  .arc-s12-005 .plate { max-width: none; aspect-ratio: 16 / 10; }
+  .arc-s12-005 .rel { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .arc-s12-005 .record__foot { grid-template-columns: minmax(0, 1fr); }
+  .arc-s12-005 .dated { justify-self: start; }
+}
+@media (max-width: 360px) {
+  .arc-s12-005 { padding: 10px; }
+  .arc-s12-005 .sheet { padding: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s12-005 *, .arc-s12-005 *::before, .arc-s12-005 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s12-005" data-study-id="ARC-S12-005" data-territory="sector-native-distinctive">
+
+  <section class="sheet" aria-labelledby="arc-s12-005-title">
+    <div class="grid">
+
+      <div class="head">
+        <figure class="plate"><span>Plate area</span></figure>
+        <p class="tag">Annex B &#183; client references</p>
+        <h1 id="arc-s12-005-title">Written references, not selected compliments</h1>
+        <p>
+          The statements a practice asks a past client for and encloses with a competition entry,
+          a prequalification return or a new appointment.
+        </p>
+        <p>
+          Each is keyed to a project and signed, so it can be followed up. That is what separates
+          a reference from a quote lifted out of an email.
+        </p>
+      </div>
+
+      <ol class="records">
+
+        <li class="record">
+          <div class="record__head">
+            <span class="key">[REF&#8209;01]</span>
+            <span class="proj">Project record 01 &#183; residential</span>
+            <span class="stamp">On request</span>
+          </div>
+          <div class="record__body">
+            <dl class="rel">
+              <dt>Relationship</dt>
+              <dd>Client placeholder &#183; commissioning party</dd>
+            </dl>
+            <blockquote>
+              Statement placeholder 01. This is where a client's written reference would sit, at
+              the length such a statement usually runs to: a paragraph on what the project was,
+              a paragraph on how the studio worked, and a plain closing sentence. It is written
+              to be read by someone deciding whether to appoint the practice, not by a visitor
+              browsing a page.
+            </blockquote>
+          </div>
+          <div class="record__foot">
+            <p class="sig"><b>Signatory placeholder 01</b><span>Role placeholder</span></p>
+            <span class="dated">Dated YYYY</span>
+          </div>
+        </li>
+
+        <li class="record">
+          <div class="record__head">
+            <span class="key">[REF&#8209;02]</span>
+            <span class="proj">Project record 03 &#183; workplace interior</span>
+            <span class="stamp">On request</span>
+          </div>
+          <div class="record__body">
+            <dl class="rel">
+              <dt>Relationship</dt>
+              <dd>Client placeholder &#183; project sponsor</dd>
+            </dl>
+            <blockquote>
+              Statement placeholder 02. Shorter than the first, because references vary and the
+              record has to hold both. A single paragraph, signed and dated.
+            </blockquote>
+          </div>
+          <div class="record__foot">
+            <p class="sig"><b>Signatory placeholder 02</b><span>Role placeholder</span></p>
+            <span class="dated">Dated YYYY</span>
+          </div>
+        </li>
+
+        <li class="record">
+          <div class="record__head">
+            <span class="key">[REF&#8209;03]</span>
+            <span class="proj">Project record 04 &#183; adaptive reuse</span>
+            <span class="stamp">On request</span>
+          </div>
+          <div class="record__body">
+            <dl class="rel">
+              <dt>Relationship</dt>
+              <dd>Client placeholder &#183; building owner</dd>
+            </dl>
+            <blockquote>
+              Statement placeholder 03. A third record, so the stack can be checked with three
+              different lengths. Real references are uneven, and the sheet has to look deliberate
+              when they are.
+            </blockquote>
+          </div>
+          <div class="record__foot">
+            <p class="sig"><b>Signatory placeholder 03</b><span>Role placeholder</span></p>
+            <span class="dated">Dated YYYY</span>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+
+    <p class="legend">
+      <span>On request &#183; released with the client's permission</span>
+      <span>Keyed to project record</span>
+      <span>Status &#183; design study</span>
+    </p>
+
+    <p class="note">
+      Placeholder references &#183; structure demonstration only. Every field is a token: reference
+      key, project, relationship, statement, signatory and role are placeholders and every date
+      reads YYYY. No person, company or project is named, and no rating, score, percentage or
+      metric appears. A practice filling this sheet would need each statement in writing, with the
+      client's permission to release it.
+    </p>
+
+  </section>
+
+</div>
+</body>
+</html>
