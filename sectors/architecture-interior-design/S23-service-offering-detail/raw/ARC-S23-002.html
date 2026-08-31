@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S23-002
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S23 — Architecture / Interior Service Detail
+  Territory      : Premium / Editorial
+  Layout model   : Long-form essay page — a single centred measure the whole way down, with a
+                   full-bleed plate, a marginal note set in the outer column, a pull statement,
+                   and the included / stages / suitability material set as running prose lists
+                   rather than cards
+  Density        : Low
+  Media mode     : One wide plate. The page reads intact when it is empty.
+  Interaction    : None (static; no JavaScript)
+  Structural difference from 001 : 001 splits the page into a body column and a persistent facts
+                   rail. This one refuses the rail entirely: there is one column of prose, and the
+                   facts appear once, at the foot, as a colophon. The reading order is linear.
+  Page note      : `data-region="page-context"` overlaps ARC-S21 / ARC-S22.
+  Content note   : No price, fee, turnaround, availability or guarantee.
+-->
+
+<meta name="study-id" content="ARC-S23-002">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S23">
+<meta name="section-name" content="Architecture / Interior Service Detail">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="layout-model" content="Single-measure essay page with margin note and closing colophon">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-wide-plate-optional">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S23-002 — Service Detail, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2f1ec; }
+
+/* Scoped study styles — namespaced to .arc-s23-002 */
+.arc-s23-002 {
+  --ink: #1b1a17;
+  --ink-soft: #575349;
+  --paper: #f2f1ec;
+  --slot: #e2e0d8;
+  --slot-ink: #4e4a41;
+  --line: #d8d5cb;
+  --hair-ink: #837e73;
+  --sep: #6b6659;
+  --focus: #2f4bbd;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s23-002 *,
+.arc-s23-002 *::before,
+.arc-s23-002 *::after { box-sizing: inherit; }
+.arc-s23-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+/* The measure is the layout. Everything hangs off one centred column; wide items break out of it. */
+.arc-s23-002 .page {
+  width: 100%; max-width: 1180px; margin: 0 auto;
+  padding: 0 clamp(18px, 4vw, 56px);
+}
+.arc-s23-002 .measure { max-width: 34rem; margin-left: auto; margin-right: auto; }
+
+/* --- Page context ---------------------------------------------------------------- */
+.arc-s23-002 .context { padding: clamp(18px, 2.4vw, 30px) 0 0; }
+.arc-s23-002 .trail ol {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 2px 0; margin: 0; padding: 0; list-style: none;
+  font-family: var(--mono);
+}
+.arc-s23-002 .trail li { display: flex; align-items: baseline; }
+.arc-s23-002 .trail li + li::before { content: "\2014"; padding: 0 9px; color: var(--sep); font-size: 0.625rem; }
+.arc-s23-002 .trail a,
+.arc-s23-002 .trail [aria-current] {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+}
+.arc-s23-002 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s23-002 .trail a:hover,
+.arc-s23-002 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--hair-ink); }
+.arc-s23-002 .trail [aria-current] { color: var(--ink); }
+
+/* --- Title ------------------------------------------------------------------------ */
+.arc-s23-002 .titling { padding: clamp(40px, 8vw, 108px) 0 clamp(28px, 4vw, 48px); text-align: center; }
+.arc-s23-002 .kicker {
+  margin: 0 0 clamp(20px, 3vw, 34px); font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s23-002 h1 {
+  margin: 0 auto; max-width: 16ch;
+  font-size: clamp(2.125rem, 5.6vw, 4rem); line-height: 1.02;
+  letter-spacing: -0.028em; font-weight: 400;
+}
+.arc-s23-002 .titling .rule { width: 56px; height: 1px; margin: clamp(24px, 3.4vw, 40px) auto; background: var(--hair-ink); border: 0; }
+.arc-s23-002 .titling .standfirst {
+  margin: 0 auto; max-width: 40ch;
+  font-size: clamp(1.0625rem, 1.6vw, 1.3125rem); line-height: 1.5; color: var(--ink-soft);
+}
+
+/* --- Wide plate -------------------------------------------------------------------- */
+.arc-s23-002 figure { margin: 0; }
+.arc-s23-002 .plate { padding-bottom: clamp(36px, 5vw, 72px); }
+.arc-s23-002 .slot { display: flex; align-items: flex-end; aspect-ratio: 21 / 9; background: var(--slot); }
+.arc-s23-002 .slot p {
+  margin: 0; padding: clamp(12px, 1.6vw, 18px);
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+.arc-s23-002 .plate figcaption {
+  margin: 10px auto 0; max-width: 34rem;
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.1em; color: var(--ink-soft);
+}
+
+/* --- Prose -------------------------------------------------------------------------- */
+.arc-s23-002 .prose > section + section { margin-top: clamp(34px, 5vw, 66px); }
+.arc-s23-002 .prose h2 {
+  margin: 0 0 14px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 400;
+}
+.arc-s23-002 .prose p { margin: 0 0 1.05em; font-size: clamp(1rem, 1.15vw, 1.0625rem); }
+.arc-s23-002 .prose p:last-child { margin-bottom: 0; }
+.arc-s23-002 .prose .lead::first-letter {
+  float: left; font-size: 3.4em; line-height: 0.82; padding: 0.06em 0.1em 0 0; font-weight: 400;
+}
+
+/* Running lists — the inclusion material as prose, not as cards */
+.arc-s23-002 .runlist { margin: 0; padding: 0; list-style: none; }
+.arc-s23-002 .runlist li {
+  padding: 11px 0 11px 1.5em; border-bottom: 1px solid var(--line);
+  font-size: 0.9375rem; text-indent: -1.5em;
+}
+.arc-s23-002 .runlist li::before { content: "\2014"; color: var(--sep); padding-right: 0.7em; }
+.arc-s23-002 .runlist.excl li::before { content: "\00D7"; }
+.arc-s23-002 .runlist + h3 { margin-top: clamp(22px, 3vw, 34px); }
+.arc-s23-002 .prose h3 {
+  margin: 0 0 8px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); font-weight: 400;
+}
+
+/* Stages, as a numbered run of paragraphs */
+.arc-s23-002 .stages { margin: 0; padding: 0; list-style: none; counter-reset: st; }
+.arc-s23-002 .stages > li { padding: clamp(16px, 2.2vw, 22px) 0; border-top: 1px solid var(--line); counter-increment: st; }
+.arc-s23-002 .stages > li:last-child { border-bottom: 1px solid var(--line); }
+.arc-s23-002 .stages h3 { display: flex; gap: 0.8em; align-items: baseline; margin-bottom: 6px; }
+.arc-s23-002 .stages h3::before { content: counter(st, decimal-leading-zero); color: var(--sep); }
+.arc-s23-002 .stages p { margin: 0; font-size: 0.9375rem; color: var(--ink-soft); }
+
+/* Pull statement — breaks the measure, stays inside the page */
+.arc-s23-002 .pull {
+  margin: clamp(38px, 5.5vw, 78px) auto; max-width: 44rem; padding: 0;
+  border: 0; border-top: 1px solid var(--hair-ink); border-bottom: 1px solid var(--hair-ink);
+}
+.arc-s23-002 .pull p {
+  margin: 0; padding: clamp(26px, 3.6vw, 44px) 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.875rem); line-height: 1.28; letter-spacing: -0.02em; text-align: center;
+}
+
+/* Margin note — sits in the outer column at wide widths, folds into flow below */
+.arc-s23-002 .noted { position: relative; }
+.arc-s23-002 .marginal {
+  margin: 22px auto 0; max-width: 34rem;
+  padding-top: 12px; border-top: 1px solid var(--line);
+  font-family: var(--mono); font-size: 0.6875rem; line-height: 1.6; color: var(--ink-soft);
+}
+@media (min-width: 1081px) {
+  .arc-s23-002 .marginal {
+    position: absolute; top: 0; right: 0; width: 12rem; margin: 0;
+    border-top: 0; padding-top: 4px; border-left: 1px solid var(--line); padding-left: 16px;
+  }
+}
+
+/* --- Enquiry close ------------------------------------------------------------------- */
+.arc-s23-002 .close { padding: clamp(44px, 6vw, 86px) 0 clamp(24px, 3vw, 36px); text-align: center; }
+.arc-s23-002 .close h2 {
+  margin: 0 0 12px; font-family: var(--serif);
+  font-size: clamp(1.375rem, 2.6vw, 2rem); line-height: 1.16; letter-spacing: -0.024em; font-weight: 400;
+  text-transform: none;
+}
+.arc-s23-002 .close p { margin: 0 auto clamp(22px, 3vw, 32px); max-width: 38ch; font-size: 1rem; color: var(--ink-soft); }
+.arc-s23-002 .btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  min-height: 54px; padding: 0 4px;
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair-ink);
+  transition: border-color 150ms ease;
+}
+.arc-s23-002 .btn:hover,
+.arc-s23-002 .btn:focus-visible { border-bottom-color: var(--ink); }
+
+/* Colophon — the facts, once, at the foot */
+.arc-s23-002 .colophon { padding: clamp(24px, 3vw, 38px) 0; border-top: 1px solid var(--hair-ink); }
+.arc-s23-002 .colophon h2 {
+  margin: 0 0 16px; font-family: var(--mono);
+  font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); font-weight: 400;
+}
+.arc-s23-002 .colophon dl {
+  margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 26px);
+}
+.arc-s23-002 .colophon dt {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 5px;
+}
+.arc-s23-002 .colophon dd { margin: 0; font-size: 0.875rem; }
+.arc-s23-002 .colophon .adjacent { margin-top: clamp(20px, 2.6vw, 30px); }
+.arc-s23-002 .colophon .adjacent ul { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0; padding: 0; list-style: none; }
+.arc-s23-002 .colophon .adjacent a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 0.875rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line);
+}
+.arc-s23-002 .colophon .adjacent a:hover,
+.arc-s23-002 .colophon .adjacent a:focus-visible { border-bottom-color: var(--ink); }
+
+.arc-s23-002 .note {
+  margin: 0; padding: 0 0 clamp(30px, 4vw, 50px);
+  font-family: var(--mono); font-size: 0.6875rem; line-height: 1.7; color: var(--ink-soft); max-width: 78ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s23-002 .measure { max-width: 33rem; }
+}
+@media (max-width: 1024px) {
+  .arc-s23-002 .measure { max-width: 36rem; }
+  .arc-s23-002 .slot { aspect-ratio: 16 / 9; }
+  .arc-s23-002 .colophon dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .arc-s23-002 .measure { max-width: none; }
+  .arc-s23-002 .plate figcaption { max-width: none; }
+  .arc-s23-002 .marginal { max-width: none; }
+  .arc-s23-002 .pull p { text-align: left; }
+}
+@media (max-width: 480px) {
+  .arc-s23-002 .slot { aspect-ratio: 4 / 3; }
+  .arc-s23-002 .prose .lead::first-letter { float: none; font-size: inherit; line-height: inherit; padding: 0; }
+  .arc-s23-002 .colophon dl { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .arc-s23-002 .colophon dl > div { padding: 10px 0; border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 360px) {
+  .arc-s23-002 .runlist li { padding-left: 1.2em; text-indent: -1.2em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s23-002 *, .arc-s23-002 *::before, .arc-s23-002 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s23-002" data-study-id="ARC-S23-002" data-territory="premium-editorial">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="context page" data-region="page-context">
+    <nav class="trail" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#arc-s23-002-title">Studio</a></li>
+        <li><a href="#arc-s23-002-title">Services</a></li>
+        <li><span aria-current="page">Concept design</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <header class="titling page" data-region="page-context">
+    <p class="kicker">Service detail &#183; 002</p>
+    <h1 id="arc-s23-002-title">Concept design</h1>
+    <hr class="rule">
+    <p class="standfirst">
+      The stage where the building is still an argument &#8212; before it becomes a set of
+      drawings that only record decisions already made.
+    </p>
+  </header>
+
+  <main>
+    <div class="page">
+      <figure class="plate">
+        <div class="slot"><p>Image area</p></div>
+        <figcaption>Placeholder &#183; wide plate, optional</figcaption>
+      </figure>
+    </div>
+
+    <div class="page">
+      <div class="prose">
+
+        <section class="measure noted" aria-labelledby="arc-s23-002-what">
+          <h2 id="arc-s23-002-what">The offering</h2>
+          <p class="lead">
+            Concept design is placeholder description for the first design stage: the point at
+            which the site, the brief and the constraints are put together and a proposition is
+            made about what the building could be.
+          </p>
+          <p>
+            It produces a proposition, not a specification. Plans, sections and models are made in
+            order to test an idea, and they are made loosely enough that the idea can still change.
+            What leaves the stage is a scheme that can be argued for, together with the reasoning
+            that got there.
+          </p>
+          <p>
+            The stage is deliberately short. Its value is that it ends with a decision, and the
+            work that follows is more expensive to reverse.
+          </p>
+          <p class="marginal">
+            The studio takes this stage as a separate appointment, so a client can commission it
+            alone and stop there.
+          </p>
+        </section>
+
+        <section class="measure" aria-labelledby="arc-s23-002-incl">
+          <h2 id="arc-s23-002-incl">What it contains</h2>
+          <h3>Included</h3>
+          <ul class="runlist">
+            <li>Site and context appraisal</li>
+            <li>Brief written with the client and agreed in writing</li>
+            <li>Two or three alternative schemes, drawn to the same standard</li>
+            <li>Plans, sections and a study model of the preferred scheme</li>
+            <li>A written design report setting out the reasoning</li>
+          </ul>
+          <h3>Not included</h3>
+          <ul class="runlist excl">
+            <li>Planning or permitting submissions</li>
+            <li>Technical drawings for construction</li>
+            <li>Structural, mechanical or electrical design</li>
+            <li>Cost advice</li>
+          </ul>
+        </section>
+
+        <blockquote class="pull">
+          <p>
+            A concept is worth having only if it can be given up. The stage is built so that
+            changing your mind is still cheap.
+          </p>
+        </blockquote>
+
+        <section class="measure" aria-labelledby="arc-s23-002-how">
+          <h2 id="arc-s23-002-how">How it is delivered</h2>
+          <ol class="stages">
+            <li>
+              <h3>Appraisal</h3>
+              <p>The site is visited and read, and the constraints that will shape the scheme are written down before anything is drawn.</p>
+            </li>
+            <li>
+              <h3>Brief</h3>
+              <p>The brief is drafted with the client, and the parts that are fixed are separated from the parts that are open.</p>
+            </li>
+            <li>
+              <h3>Alternatives</h3>
+              <p>Schemes are drawn in parallel and to the same standard, so the comparison between them is fair.</p>
+            </li>
+            <li>
+              <h3>Resolution</h3>
+              <p>One scheme is chosen and developed far enough to be tested, and the reasoning is written up as a report.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="measure" aria-labelledby="arc-s23-002-who">
+          <h2 id="arc-s23-002-who">Who it suits</h2>
+          <p>
+            Placeholder description. The stage suits a client who has a site and an intention but
+            not yet a scheme, and who would rather test the intention than commit to it.
+          </p>
+          <p>
+            It is not the right starting point where a scheme already exists and needs technical
+            development, or where a submission deadline leaves no room for alternatives to be
+            drawn. Those routes are listed in the colophon below.
+          </p>
+        </section>
+
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="close">
+        <h2>Ask about concept design</h2>
+        <p>
+          Send the site and what you are hoping to do with it. The studio replies with what the
+          stage would involve for that particular case.
+        </p>
+        <a class="btn" href="#arc-s23-002-title">
+          Begin an enquiry
+          <span aria-hidden="true">&#8594;</span>
+        </a>
+      </div>
+
+      <div class="colophon">
+        <h2 id="arc-s23-002-col">Service colophon</h2>
+        <dl aria-labelledby="arc-s23-002-col">
+          <div><dt>Service</dt><dd>Concept design</dd></div>
+          <div><dt>Position</dt><dd>First design stage</dd></div>
+          <div><dt>Output</dt><dd>Scheme and design report</dd></div>
+          <div><dt>Appointment</dt><dd>Stand-alone or continuing</dd></div>
+        </dl>
+        <div class="adjacent">
+          <h2 id="arc-s23-002-adj">Adjacent services</h2>
+          <ul aria-labelledby="arc-s23-002-adj">
+            <li><a href="#arc-s23-002-title">Planning and permissions</a></li>
+            <li><a href="#arc-s23-002-title">Technical design</a></li>
+            <li><a href="#arc-s23-002-title">Feasibility studies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note">
+        Placeholder service detail page &#183; structure demonstration only. One offering set as a
+        linear essay: a single measure the whole way down, no persistent rail, and the facts
+        gathered once at the foot instead of tracking the reader. No price, fee, turnaround,
+        availability or guarantee appears anywhere on the page. The context strip and title block
+        overlap ARC-S21 and ARC-S22.
+      </p>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>

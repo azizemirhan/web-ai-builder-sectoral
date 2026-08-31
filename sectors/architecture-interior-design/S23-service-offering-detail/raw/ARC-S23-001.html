@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S23-001
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S23 — Architecture / Interior Service Detail
+  Territory      : Universal / Safe
+  Layout model   : Full detail page — context strip, page header, a measured body column beside a
+                   facts rail, then included/excluded, stages, suitability, related offerings and
+                   one enquiry close
+  Density        : Medium
+  Media mode     : Two supporting media areas. The page is complete with both empty, which the
+                   section README requires.
+  Interaction    : None (static; no JavaScript)
+  Page note      : This is a PAGE study, not a section study — the first in this sector. The region
+                   marked `data-region="page-context"` overlaps ARC-S21 and ARC-S22: in an assembly
+                   it would be supplied by those sections rather than duplicated here. It is
+                   included so the study reads as a real page.
+  Content note   : One offering, in depth. No index of all services, no homepage positioning, and
+                   no price, fee, turnaround, availability or guarantee — all four are named in the
+                   section README's out-of-scope list and all four are the obvious temptation on a
+                   service page.
+-->
+
+<meta name="study-id" content="ARC-S23-001">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S23">
+<meta name="section-name" content="Architecture / Interior Service Detail">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="layout-model" content="Detail page with measured body column beside a facts rail">
+<meta name="density" content="medium">
+<meta name="media-mode" content="two-supporting-areas-optional">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S23-001 — Service Detail, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fbfbfa; }
+
+/* Scoped study styles — namespaced to .arc-s23-001 */
+.arc-s23-001 {
+  --ink: #16171a;
+  --ink-soft: #55575c;
+  --paper: #fbfbfa;
+  --card: #ffffff;
+  --slot: #e4e4e2;
+  --slot-ink: #4b4d51;
+  --line: #e3e3e2;
+  --line-strong: #83868b;
+  --sep: #6d7075;
+  --focus: #1f4fd8;
+  --focus-light: #ffd479;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s23-001 *,
+.arc-s23-001 *::before,
+.arc-s23-001 *::after { box-sizing: inherit; }
+.arc-s23-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+
+.arc-s23-001 .shell {
+  width: 100%; max-width: 1240px; margin: 0 auto;
+  padding: 0 clamp(18px, 3vw, 44px);
+}
+
+/* --- Page context (overlaps S21 / S22) ------------------------------------------- */
+.arc-s23-001 .context { padding: clamp(16px, 2vw, 24px) 0 0; }
+.arc-s23-001 .trail ol {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 2px 0; margin: 0; padding: 0; list-style: none;
+}
+.arc-s23-001 .trail li { display: flex; align-items: baseline; }
+.arc-s23-001 .trail li + li::before { content: "/"; padding: 0 9px; color: var(--sep); font-size: 0.8125rem; }
+.arc-s23-001 .trail a,
+.arc-s23-001 .trail [aria-current] {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 0.8125rem; text-decoration: none;
+}
+.arc-s23-001 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s23-001 .trail a:hover,
+.arc-s23-001 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s23-001 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+/* --- Page header ------------------------------------------------------------------ */
+.arc-s23-001 .pagehead {
+  padding: clamp(12px, 1.6vw, 20px) 0 clamp(24px, 3vw, 40px);
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s23-001 .eyebrow {
+  margin: 0 0 12px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s23-001 h1 {
+  margin: 0 0 14px; font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+  line-height: 1.08; letter-spacing: -0.03em; font-weight: 500; max-width: 18ch;
+}
+.arc-s23-001 .standfirst {
+  margin: 0; font-size: clamp(1rem, 1.3vw, 1.1875rem); color: var(--ink-soft); max-width: 62ch;
+}
+
+/* --- Body: measured column + facts rail --------------------------------------------- */
+.arc-s23-001 .body {
+  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.62fr);
+  gap: clamp(26px, 3.6vw, 64px); align-items: start;
+  padding: clamp(28px, 3.6vw, 52px) 0;
+}
+.arc-s23-001 .main > section + section { margin-top: clamp(28px, 3.6vw, 52px); }
+.arc-s23-001 .main h2 {
+  margin: 0 0 12px; font-size: clamp(1.125rem, 1.7vw, 1.375rem);
+  line-height: 1.2; letter-spacing: -0.018em; font-weight: 600;
+}
+.arc-s23-001 .main p { margin: 0 0 14px; font-size: 0.9375rem; color: var(--ink-soft); max-width: 68ch; }
+.arc-s23-001 .main p:last-child { margin-bottom: 0; }
+
+/* Included / excluded */
+.arc-s23-001 .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 36px); }
+.arc-s23-001 .cols h3 {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s23-001 .cols ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.arc-s23-001 .cols li {
+  display: grid; grid-template-columns: 1.4em minmax(0, 1fr);
+  gap: 8px; align-items: baseline;
+  padding: 9px 0; border-bottom: 1px solid var(--line);
+  font-size: 0.875rem;
+}
+/* A word, not just a glyph: inclusion is never signalled by symbol alone. */
+.arc-s23-001 .cols .mk { font-family: var(--mono); font-size: 0.625rem; color: var(--ink-soft); }
+
+/* Stages */
+.arc-s23-001 .stages { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.arc-s23-001 .stages > li {
+  display: grid; grid-template-columns: 3.4em minmax(0, 1fr);
+  gap: clamp(10px, 1.4vw, 16px); align-items: start;
+  padding: clamp(12px, 1.6vw, 16px) 0; border-bottom: 1px solid var(--line);
+}
+.arc-s23-001 .stages .n { font-family: var(--mono); font-size: 0.6875rem; color: var(--ink-soft); padding-top: 2px; }
+.arc-s23-001 .stages h3 { margin: 0 0 4px; font-size: 0.9375rem; font-weight: 600; }
+.arc-s23-001 .stages p { margin: 0; font-size: 0.8125rem; }
+
+/* Media pair */
+.arc-s23-001 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); margin: 0; padding: 0; list-style: none; }
+.arc-s23-001 .pair > li { margin: 0; }
+.arc-s23-001 figure { margin: 0; }
+.arc-s23-001 .slot { display: flex; align-items: flex-end; aspect-ratio: 4 / 3; background: var(--slot); border-radius: 6px; }
+.arc-s23-001 .slot p { margin: 0; padding: 11px 13px; font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink); }
+.arc-s23-001 .pair figcaption { margin-top: 8px; font-size: 0.75rem; color: var(--ink-soft); }
+
+/* Facts rail */
+.arc-s23-001 .rail { position: sticky; top: clamp(18px, 2.6vw, 34px); }
+.arc-s23-001 .rail h2 {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s23-001 .rail dl { margin: 0; border-top: 1px solid var(--line-strong); }
+.arc-s23-001 .rail > dl > div { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.arc-s23-001 .rail dt { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
+.arc-s23-001 .rail dd { margin: 0; font-size: 0.8125rem; }
+
+/* --- Related + enquiry close ---------------------------------------------------------- */
+.arc-s23-001 .related { padding: clamp(24px, 3vw, 40px) 0; border-top: 1px solid var(--line-strong); }
+.arc-s23-001 .related h2 {
+  margin: 0 0 12px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s23-001 .related ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 20px); margin: 0; padding: 0; list-style: none; }
+.arc-s23-001 .related a {
+  display: block; min-height: 44px; padding: clamp(14px, 1.8vw, 18px);
+  background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+  text-decoration: none; color: var(--ink);
+  transition: border-color 150ms ease;
+}
+.arc-s23-001 .related a:hover,
+.arc-s23-001 .related a:focus-visible { border-color: var(--ink); }
+.arc-s23-001 .related .t { display: block; font-size: 0.9375rem; font-weight: 500; margin-bottom: 3px; }
+.arc-s23-001 .related .d { display: block; font-size: 0.75rem; color: var(--ink-soft); }
+
+.arc-s23-001 .enquire {
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.6vw, 40px); align-items: center;
+  margin-bottom: clamp(28px, 3.6vw, 52px);
+  padding: clamp(20px, 2.8vw, 36px);
+  background: var(--ink); color: #f4f4f3; border-radius: 10px;
+}
+.arc-s23-001 .enquire h2 { margin: 0 0 8px; font-size: clamp(1.125rem, 1.8vw, 1.4375rem); font-weight: 600; letter-spacing: -0.018em; }
+.arc-s23-001 .enquire p { margin: 0; font-size: 0.9375rem; color: #adafb3; max-width: 52ch; }
+.arc-s23-001 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 54px; padding: 0 26px; border-radius: 8px;
+  background: #fff; color: var(--ink); border: 1px solid #fff;
+  font-size: 0.9375rem; font-weight: 600; text-decoration: none;
+  transition: background-color 150ms ease;
+}
+.arc-s23-001 .btn:hover,
+.arc-s23-001 .btn:focus-visible { background: #e7e7e6; }
+.arc-s23-001 .enquire :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s23-001 .note {
+  margin: 0; padding: 0 0 clamp(28px, 3.4vw, 44px);
+  font-size: 0.75rem; color: var(--ink-soft); max-width: 88ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s23-001 .body { grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.7fr); gap: 44px; }
+}
+@media (max-width: 1024px) {
+  /* The rail releases before it starts competing with the body, as the README requires. */
+  .arc-s23-001 .body { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .arc-s23-001 .rail { position: static; }
+  .arc-s23-001 .rail dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(18px, 2.4vw, 34px); }
+  .arc-s23-001 h1 { max-width: 22ch; }
+  .arc-s23-001 .related ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .arc-s23-001 .main p { max-width: none; }
+  .arc-s23-001 .enquire { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 480px) {
+  /* Included and excluded stack rather than becoming two unreadable columns. */
+  .arc-s23-001 .cols { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .arc-s23-001 .pair { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-001 .related ul { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-001 .rail dl { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-001 .stages > li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .arc-s23-001 .btn { width: 100%; }
+}
+@media (max-width: 360px) {
+  .arc-s23-001 .slot p { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s23-001 *, .arc-s23-001 *::before, .arc-s23-001 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s23-001" data-study-id="ARC-S23-001" data-territory="universal-safe">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. In an assembly these blocks supply this region. -->
+  <div class="context shell" data-region="page-context">
+    <nav class="trail" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#arc-s23-001-title">Studio</a></li>
+        <li><a href="#arc-s23-001-title">Services</a></li>
+        <li><span aria-current="page">Interior architecture</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <header class="pagehead shell" data-region="page-context">
+    <p class="eyebrow">Service detail</p>
+    <h1 id="arc-s23-001-title">Interior architecture</h1>
+    <p class="standfirst">
+      Designing the inside of a building as one set of decisions &#8212; layout, light, joinery
+      and surface &#8212; rather than as a finish applied to a plan someone else settled.
+    </p>
+  </header>
+
+  <main>
+    <div class="body shell">
+
+      <div class="main">
+        <section aria-labelledby="arc-s23-001-what">
+          <h2 id="arc-s23-001-what">What this service covers</h2>
+          <p>
+            Placeholder description. The service is defined by what it decides: where the walls
+            go, how daylight reaches the rooms that need it, what is built in and what is loose,
+            and how the surfaces meet each other.
+          </p>
+          <p>
+            It runs from a measured survey through to information a joiner and a contractor can
+            build from. It can follow the studio's own architectural work or begin on a building
+            somebody else designed.
+          </p>
+        </section>
+
+        <section aria-labelledby="arc-s23-001-incl">
+          <h2 id="arc-s23-001-incl">What is included, and what is not</h2>
+          <div class="cols">
+            <div>
+              <h3>Included</h3>
+              <ul>
+                <li><span class="mk">Yes</span><span>Measured survey of the existing interior</span></li>
+                <li><span class="mk">Yes</span><span>Layout and circulation design</span></li>
+                <li><span class="mk">Yes</span><span>Daylight and artificial lighting design</span></li>
+                <li><span class="mk">Yes</span><span>Joinery and fixed furniture drawings</span></li>
+                <li><span class="mk">Yes</span><span>Finishes schedule and specification</span></li>
+                <li><span class="mk">Yes</span><span>Site review during installation</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Not included</h3>
+              <ul>
+                <li><span class="mk">No</span><span>Structural design &#8212; appointed separately</span></li>
+                <li><span class="mk">No</span><span>Mechanical and electrical design</span></li>
+                <li><span class="mk">No</span><span>Cost planning and quantity surveying</span></li>
+                <li><span class="mk">No</span><span>Loose furniture procurement</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="arc-s23-001-how">
+          <h2 id="arc-s23-001-how">How it runs</h2>
+          <ol class="stages">
+            <li>
+              <span class="n">01</span>
+              <div>
+                <h3>Survey and brief</h3>
+                <p>The interior is measured and recorded, and the brief is written against what is actually there.</p>
+              </div>
+            </li>
+            <li>
+              <span class="n">02</span>
+              <div>
+                <h3>Layout studies</h3>
+                <p>Arrangements are tested in plan and section until one answers the brief, with the reasoning written down.</p>
+              </div>
+            </li>
+            <li>
+              <span class="n">03</span>
+              <div>
+                <h3>Detail and specification</h3>
+                <p>Joinery, lighting and surfaces are drawn and scheduled, and the specification follows the drawings.</p>
+              </div>
+            </li>
+            <li>
+              <span class="n">04</span>
+              <div>
+                <h3>Installation</h3>
+                <p>The studio reviews the work as it is installed and answers the queries that come back.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="arc-s23-001-who">
+          <h2 id="arc-s23-001-who">Who it is for</h2>
+          <p>
+            Placeholder description. This service suits a project where the shell is settled and the
+            decisions that remain are about how the inside works: a house being reorganised, a
+            workplace being fitted out, or a building whose use is changing.
+          </p>
+          <p>
+            It is less suited to a project that still needs its plan or its structure resolved.
+            That work sits in architectural design, which is listed below.
+          </p>
+        </section>
+
+        <section aria-labelledby="arc-s23-001-media">
+          <h2 id="arc-s23-001-media">From this kind of work</h2>
+          <ul class="pair">
+            <li>
+              <figure>
+                <div class="slot"><p>Image area</p></div>
+                <figcaption>Placeholder &#183; interior view</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="slot"><p>Image area</p></div>
+                <figcaption>Placeholder &#183; joinery detail</figcaption>
+              </figure>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="rail" aria-labelledby="arc-s23-001-facts">
+        <h2 id="arc-s23-001-facts">At a glance</h2>
+        <dl>
+          <div><dt>Service</dt><dd>Interior architecture</dd></div>
+          <div><dt>Discipline</dt><dd>Interiors</dd></div>
+          <div><dt>Typical typologies</dt><dd>Residential, workplace</dd></div>
+          <div><dt>Runs from</dt><dd>Survey to installation</dd></div>
+          <div><dt>Delivered</dt><dd>In-house</dd></div>
+          <div><dt>Appointed with</dt><dd>Structure, services</dd></div>
+        </dl>
+      </aside>
+
+    </div>
+
+    <div class="related shell">
+      <h2 id="arc-s23-001-rel">Related services</h2>
+      <ul aria-labelledby="arc-s23-001-rel">
+        <li>
+          <a href="#arc-s23-001-title">
+            <span class="t">Architectural design</span>
+            <span class="d">When the plan or the structure is still open</span>
+          </a>
+        </li>
+        <li>
+          <a href="#arc-s23-001-title">
+            <span class="t">Renovation and reuse</span>
+            <span class="d">When the building itself is changing use</span>
+          </a>
+        </li>
+        <li>
+          <a href="#arc-s23-001-title">
+            <span class="t">Technical delivery</span>
+            <span class="d">Construction information and site support</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="shell">
+      <div class="enquire">
+        <div>
+          <h2>Ask about this service</h2>
+          <p>
+            Tell the studio about the space and what has to change. The first step is a survey and
+            a written scope, and nothing is committed before that.
+          </p>
+        </div>
+        <a class="btn" href="#arc-s23-001-title">
+          Ask about interior architecture
+          <span aria-hidden="true">&#8594;</span>
+        </a>
+      </div>
+
+      <p class="note">
+        Placeholder service detail page &#183; structure demonstration only. One offering in depth:
+        no index of every service, no homepage positioning, and no price, fee, turnaround,
+        availability or guarantee &#8212; the four things a service page invites and the section
+        README rules out. The page-context region at the top overlaps ARC-S21 and ARC-S22 and would
+        be supplied by those sections in an assembly.
+      </p>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>

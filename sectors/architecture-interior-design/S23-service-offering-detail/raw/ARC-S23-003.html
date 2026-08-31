@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S23-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S23 — Architecture / Interior Service Detail
+  Territory      : Dense / Information-heavy
+  Layout model   : Scope-document page — a contents grid of in-page jump links, then numbered
+                   clauses containing a deliverables table, an assumptions and exclusions pair,
+                   an interfaces list and a question-and-answer register. Everything is open;
+                   nothing is hidden behind a control.
+  Density        : High
+  Media mode     : None. A scope document carries no imagery, and the section README makes media
+                   optional.
+  Interaction    : None (static; no JavaScript). In-page anchors only.
+  Structural difference : 001 uses a facts rail, 002 a single prose measure. This is a document
+                   with a numbered clause spine and real tabular data, read by jumping rather
+                   than by scrolling continuously.
+  Content note   : No price, fee, turnaround, availability or guarantee. Durations are expressed
+                   as sequence and dependency, never as a number of days.
+-->
+
+<meta name="study-id" content="ARC-S23-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S23">
+<meta name="section-name" content="Architecture / Interior Service Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Numbered scope document with contents grid and deliverables table">
+<meta name="density" content="high">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S23-003 — Service Detail, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f5f6f7; }
+
+/* Scoped study styles — namespaced to .arc-s23-003 */
+.arc-s23-003 {
+  --ink: #14161a;
+  --ink-soft: #4e535b;
+  --paper: #f5f6f7;
+  --card: #ffffff;
+  --line: #dfe2e5;
+  --line-strong: #7d838b;
+  --sep: #666c74;
+  --rule: #14161a;
+  --focus: #1a45c8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s23-003 *,
+.arc-s23-003 *::before,
+.arc-s23-003 *::after { box-sizing: inherit; }
+.arc-s23-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+
+.arc-s23-003 .sheet {
+  width: 100%; max-width: 1160px; margin: 0 auto;
+  padding: 0 clamp(14px, 2.4vw, 36px);
+}
+
+/* --- Context + document head ------------------------------------------------------- */
+.arc-s23-003 .context { padding: clamp(14px, 1.8vw, 20px) 0 0; }
+.arc-s23-003 .trail ol {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0; margin: 0; padding: 0; list-style: none;
+  font-family: var(--mono);
+}
+.arc-s23-003 .trail li { display: flex; align-items: baseline; }
+.arc-s23-003 .trail li + li::before { content: "\203A"; padding: 0 8px; color: var(--sep); font-size: 0.75rem; }
+.arc-s23-003 .trail a,
+.arc-s23-003 .trail [aria-current] {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 0.625rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+}
+.arc-s23-003 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s23-003 .trail a:hover,
+.arc-s23-003 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s23-003 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+.arc-s23-003 .dochead {
+  display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.6vw, 44px); align-items: end;
+  padding: clamp(10px, 1.4vw, 16px) 0 clamp(18px, 2.4vw, 26px);
+  border-bottom: 2px solid var(--rule);
+}
+.arc-s23-003 .ref {
+  margin: 0 0 10px; font-family: var(--mono);
+  font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s23-003 h1 {
+  margin: 0 0 8px; font-size: clamp(1.5rem, 2.8vw, 2.125rem);
+  line-height: 1.1; letter-spacing: -0.026em; font-weight: 600;
+}
+.arc-s23-003 .dochead p.sub { margin: 0; font-size: 0.875rem; color: var(--ink-soft); max-width: 56ch; }
+.arc-s23-003 .docmeta { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 16px; }
+.arc-s23-003 .docmeta div { display: grid; grid-template-columns: 8.2em minmax(0, 1fr); gap: 8px; padding: 4px 0; border-bottom: 1px solid var(--line); }
+.arc-s23-003 .docmeta dt { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); padding-top: 3px; }
+.arc-s23-003 .docmeta dd { margin: 0; font-size: 0.75rem; }
+
+/* --- Contents grid ----------------------------------------------------------------- */
+.arc-s23-003 .contents { padding: clamp(16px, 2.2vw, 24px) 0; border-bottom: 1px solid var(--line-strong); }
+.arc-s23-003 .contents h2,
+.arc-s23-003 .clause h3,
+.arc-s23-003 .lbl {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s23-003 .contents h2 { margin: 0 0 10px; }
+.arc-s23-003 .contents ol {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(16px, 2.4vw, 34px);
+  margin: 0; padding: 0; list-style: none;
+}
+.arc-s23-003 .contents a {
+  display: grid; grid-template-columns: 2.4em minmax(0, 1fr);
+  gap: 8px; align-items: baseline;
+  min-height: 44px; padding: 7px 0; border-bottom: 1px solid var(--line);
+  font-size: 0.8125rem; color: var(--ink); text-decoration: none;
+}
+.arc-s23-003 .contents a:hover,
+.arc-s23-003 .contents a:focus-visible { border-bottom-color: var(--ink); }
+.arc-s23-003 .contents .n { font-family: var(--mono); font-size: 0.6875rem; color: var(--ink-soft); }
+
+/* --- Clauses ------------------------------------------------------------------------ */
+.arc-s23-003 .clause {
+  display: grid; grid-template-columns: 4.6em minmax(0, 1fr);
+  gap: clamp(10px, 1.8vw, 28px);
+  padding: clamp(20px, 2.6vw, 32px) 0; border-bottom: 1px solid var(--line);
+  scroll-margin-top: 18px;
+}
+.arc-s23-003 .clause > .num { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-soft); padding-top: 4px; }
+.arc-s23-003 .clause h2 {
+  margin: 0 0 10px; font-size: clamp(1rem, 1.4vw, 1.1875rem);
+  line-height: 1.2; letter-spacing: -0.016em; font-weight: 600;
+}
+.arc-s23-003 .clause h3 { margin: 18px 0 8px; }
+.arc-s23-003 .clause > div > h3:first-child { margin-top: 0; }
+.arc-s23-003 .clause p { margin: 0 0 10px; font-size: 0.875rem; color: var(--ink-soft); max-width: 76ch; }
+.arc-s23-003 .clause p:last-child { margin-bottom: 0; }
+
+/* Two-up bodies inside a clause */
+.arc-s23-003 .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 34px); }
+
+/* Compact lists */
+.arc-s23-003 .tick { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.arc-s23-003 .tick li {
+  display: grid; grid-template-columns: 3.1em minmax(0, 1fr); gap: 8px; align-items: baseline;
+  padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 0.8125rem;
+}
+.arc-s23-003 .tick .mk { font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+
+/* Deliverables table */
+.arc-s23-003 .tablewrap { overflow-x: auto; }
+.arc-s23-003 table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.8125rem; }
+.arc-s23-003 caption {
+  text-align: left; padding-bottom: 8px;
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+}
+.arc-s23-003 th, .arc-s23-003 td { text-align: left; vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--line); }
+.arc-s23-003 thead th {
+  border-bottom: 1px solid var(--line-strong);
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600; white-space: nowrap;
+}
+.arc-s23-003 tbody th { font-family: var(--mono); font-size: 0.6875rem; font-weight: 400; color: var(--ink-soft); white-space: nowrap; }
+.arc-s23-003 td:last-child, .arc-s23-003 th:last-child { padding-right: 0; }
+
+/* Q&A register */
+.arc-s23-003 .qa { margin: 0; border-top: 1px solid var(--line); }
+.arc-s23-003 .qa > div { padding: 11px 0; border-bottom: 1px solid var(--line); }
+.arc-s23-003 .qa dt { font-size: 0.8125rem; font-weight: 600; margin-bottom: 3px; }
+.arc-s23-003 .qa dd { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); max-width: 74ch; }
+
+/* Interfaces / related */
+.arc-s23-003 .links { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0; padding: 0; list-style: none; }
+.arc-s23-003 .links a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-size: 0.8125rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong);
+}
+.arc-s23-003 .links a:hover,
+.arc-s23-003 .links a:focus-visible { border-bottom-color: var(--ink); }
+
+/* --- Enquiry line -------------------------------------------------------------------- */
+.arc-s23-003 .enquire {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(14px, 2vw, 28px); align-items: center;
+  margin: clamp(20px, 2.6vw, 32px) 0 clamp(14px, 2vw, 20px);
+  padding: clamp(16px, 2.2vw, 26px);
+  background: var(--card); border: 1px solid var(--line-strong); border-radius: 4px;
+}
+.arc-s23-003 .enquire h2 { margin: 0 0 4px; font-size: 1rem; font-weight: 600; letter-spacing: -0.014em; }
+.arc-s23-003 .enquire p { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); max-width: 62ch; }
+.arc-s23-003 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 0 22px; border-radius: 4px;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap;
+  transition: background-color 150ms ease;
+}
+.arc-s23-003 .btn:hover,
+.arc-s23-003 .btn:focus-visible { background: #33373d; }
+
+.arc-s23-003 .note {
+  margin: 0; padding: 0 0 clamp(24px, 3vw, 40px);
+  font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch;
+}
+
+/* --- Responsive ------------------------------------------------------------------------ */
+@media (max-width: 1280px) {
+  .arc-s23-003 .dochead { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .arc-s23-003 .docmeta div { grid-template-columns: 7.4em minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s23-003 .dochead { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 22px; }
+  .arc-s23-003 .contents ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .arc-s23-003 .clause { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .arc-s23-003 .clause > .num { padding-top: 0; }
+  .arc-s23-003 .duo { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .arc-s23-003 .clause p { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s23-003 .contents ol { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-003 .docmeta { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-003 .enquire { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-003 .btn { width: 100%; }
+}
+@media (max-width: 360px) {
+  .arc-s23-003 .tick li { grid-template-columns: 2.6em minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s23-003 *, .arc-s23-003 *::before, .arc-s23-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s23-003" data-study-id="ARC-S23-003" data-territory="dense-information-heavy">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="context sheet" data-region="page-context">
+    <nav class="trail" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#arc-s23-003-title">Studio</a></li>
+        <li><a href="#arc-s23-003-title">Services</a></li>
+        <li><span aria-current="page">Technical design and delivery</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <header class="dochead sheet" data-region="page-context">
+    <div>
+      <p class="ref">Service detail &#183; scope document</p>
+      <h1 id="arc-s23-003-title">Technical design and delivery</h1>
+      <p class="sub">
+        The stage that turns an agreed scheme into information a contractor can build from, and
+        keeps that information current while the work is on site.
+      </p>
+    </div>
+    <dl class="docmeta">
+      <div><dt>Service</dt><dd>Technical design</dd></div>
+      <div><dt>Discipline</dt><dd>Architecture</dd></div>
+      <div><dt>Follows</dt><dd>Developed design</dd></div>
+      <div><dt>Precedes</dt><dd>Handover</dd></div>
+      <div><dt>Output</dt><dd>Construction information</dd></div>
+      <div><dt>Delivered</dt><dd>In-house, with consultants</dd></div>
+    </dl>
+  </header>
+
+  <main>
+    <nav class="contents sheet" aria-labelledby="arc-s23-003-toc">
+      <h2 id="arc-s23-003-toc">Contents</h2>
+      <ol>
+        <li><a href="#arc-s23-003-c1"><span class="n">1.0</span><span>Description of the service</span></a></li>
+        <li><a href="#arc-s23-003-c2"><span class="n">2.0</span><span>Scope: included and excluded</span></a></li>
+        <li><a href="#arc-s23-003-c3"><span class="n">3.0</span><span>Deliverables by stage</span></a></li>
+        <li><a href="#arc-s23-003-c4"><span class="n">4.0</span><span>Assumptions and conditions</span></a></li>
+        <li><a href="#arc-s23-003-c5"><span class="n">5.0</span><span>Interfaces and adjacent services</span></a></li>
+        <li><a href="#arc-s23-003-c6"><span class="n">6.0</span><span>Questions raised most often</span></a></li>
+      </ol>
+    </nav>
+
+    <div class="sheet">
+
+      <section class="clause" id="arc-s23-003-c1" aria-labelledby="arc-s23-003-c1h">
+        <p class="num">1.0</p>
+        <div>
+          <h2 id="arc-s23-003-c1h">Description of the service</h2>
+          <p>
+            Placeholder description. Technical design takes a scheme that has already been agreed
+            and resolves it to the level at which it can be priced, built and inspected. Junctions
+            are drawn, materials are specified by performance and by name, and the drawings are
+            coordinated against the consultants' information rather than issued alongside it.
+          </p>
+          <p>
+            The service continues through construction. Queries from site are answered against the
+            issued information, and the record is kept current so that what was built and what was
+            drawn do not drift apart.
+          </p>
+        </div>
+      </section>
+
+      <section class="clause" id="arc-s23-003-c2" aria-labelledby="arc-s23-003-c2h">
+        <p class="num">2.0</p>
+        <div>
+          <h2 id="arc-s23-003-c2h">Scope: included and excluded</h2>
+          <div class="duo">
+            <div>
+              <h3>2.1 &#160;Included in the appointment</h3>
+              <ul class="tick">
+                <li><span class="mk">Incl</span><span>General arrangement drawings, coordinated</span></li>
+                <li><span class="mk">Incl</span><span>Assembly and junction details</span></li>
+                <li><span class="mk">Incl</span><span>Door, window and finishes schedules</span></li>
+                <li><span class="mk">Incl</span><span>Written specification, performance and named</span></li>
+                <li><span class="mk">Incl</span><span>Coordination of consultant information</span></li>
+                <li><span class="mk">Incl</span><span>Responses to contractor queries</span></li>
+                <li><span class="mk">Incl</span><span>Periodic site inspection against the drawings</span></li>
+                <li><span class="mk">Incl</span><span>Record of changes issued during construction</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3>2.2 &#160;Excluded from the appointment</h3>
+              <ul class="tick">
+                <li><span class="mk">Excl</span><span>Structural and civil engineering design</span></li>
+                <li><span class="mk">Excl</span><span>Mechanical, electrical and public health design</span></li>
+                <li><span class="mk">Excl</span><span>Fire engineering and specialist certification</span></li>
+                <li><span class="mk">Excl</span><span>Cost planning and contract administration</span></li>
+                <li><span class="mk">Excl</span><span>Temporary works and construction methodology</span></li>
+                <li><span class="mk">Excl</span><span>Statutory applications and their fees</span></li>
+              </ul>
+              <p>
+                Excluded items are not gaps. Each is normally covered by a separate appointment,
+                and the studio coordinates with whoever holds it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="clause" id="arc-s23-003-c3" aria-labelledby="arc-s23-003-c3h">
+        <p class="num">3.0</p>
+        <div>
+          <h2 id="arc-s23-003-c3h">Deliverables by stage</h2>
+          <p>
+            Stages are sequential and each depends on the one before it. The sequence is fixed;
+            programme dates are set per project and are not stated here.
+          </p>
+          <div class="tablewrap">
+            <table>
+              <caption>3.1 &#160;Stage, deliverable and issue purpose</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Stage</th>
+                  <th scope="col">Deliverable</th>
+                  <th scope="col">Issued for</th>
+                  <th scope="col">Depends on</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">T1</th>
+                  <td>Coordinated general arrangement set</td>
+                  <td>Comment</td>
+                  <td>Agreed developed design</td>
+                </tr>
+                <tr>
+                  <th scope="row">T2</th>
+                  <td>Assembly details and schedules</td>
+                  <td>Comment</td>
+                  <td>T1 signed off</td>
+                </tr>
+                <tr>
+                  <th scope="row">T3</th>
+                  <td>Specification, performance and named products</td>
+                  <td>Tender</td>
+                  <td>T2, consultant input</td>
+                </tr>
+                <tr>
+                  <th scope="row">T4</th>
+                  <td>Full information set, revised after tender queries</td>
+                  <td>Construction</td>
+                  <td>T3, appointed contractor</td>
+                </tr>
+                <tr>
+                  <th scope="row">T5</th>
+                  <td>Query responses and revised sheets</td>
+                  <td>Construction</td>
+                  <td>Work on site</td>
+                </tr>
+                <tr>
+                  <th scope="row">T6</th>
+                  <td>Record set as built by others</td>
+                  <td>Record</td>
+                  <td>Completion</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="clause" id="arc-s23-003-c4" aria-labelledby="arc-s23-003-c4h">
+        <p class="num">4.0</p>
+        <div>
+          <h2 id="arc-s23-003-c4h">Assumptions and conditions</h2>
+          <div class="duo">
+            <div>
+              <h3>4.1 &#160;The service assumes</h3>
+              <ul class="tick">
+                <li><span class="mk">A</span><span>A developed design signed off before T1 begins</span></li>
+                <li><span class="mk">A</span><span>Consultants appointed and issuing to a shared programme</span></li>
+                <li><span class="mk">A</span><span>A measured survey of adequate accuracy</span></li>
+                <li><span class="mk">A</span><span>One route for client decisions and comments</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3>4.2 &#160;Conditions that change the scope</h3>
+              <ul class="tick">
+                <li><span class="mk">C</span><span>Design changed after an issue for construction</span></li>
+                <li><span class="mk">C</span><span>Statutory conditions requiring redesign</span></li>
+                <li><span class="mk">C</span><span>Ground or fabric found to differ from survey</span></li>
+                <li><span class="mk">C</span><span>Procurement route changed mid-appointment</span></li>
+              </ul>
+              <p>
+                Where a condition applies, the change is agreed in writing before the affected work
+                is done.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="clause" id="arc-s23-003-c5" aria-labelledby="arc-s23-003-c5h">
+        <p class="num">5.0</p>
+        <div>
+          <h2 id="arc-s23-003-c5h">Interfaces and adjacent services</h2>
+          <p>
+            This service sits between design and construction, and it is defined as much by what it
+            hands over as by what it produces. The services below either precede it or run beside it.
+          </p>
+          <ul class="links">
+            <li><a href="#arc-s23-003-title">Developed design</a></li>
+            <li><a href="#arc-s23-003-title">Planning and permissions</a></li>
+            <li><a href="#arc-s23-003-title">Interior architecture</a></li>
+            <li><a href="#arc-s23-003-title">Contract administration</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="clause" id="arc-s23-003-c6" aria-labelledby="arc-s23-003-c6h">
+        <p class="num">6.0</p>
+        <div>
+          <h2 id="arc-s23-003-c6h">Questions raised most often</h2>
+          <dl class="qa">
+            <div>
+              <dt>Can the studio take on technical design for a scheme it did not design?</dt>
+              <dd>Yes. The scheme is reviewed first, and anything unresolved is listed before the appointment is agreed.</dd>
+            </div>
+            <div>
+              <dt>Who coordinates the consultants?</dt>
+              <dd>The studio coordinates its own information against theirs. Appointing and managing the consultants remains with the client unless a separate appointment says otherwise.</dd>
+            </div>
+            <div>
+              <dt>What happens if the contractor proposes an alternative product?</dt>
+              <dd>It is reviewed against the specified performance and either accepted in writing or refused with the reason stated.</dd>
+            </div>
+            <div>
+              <dt>Does the service include being on site?</dt>
+              <dd>It includes periodic inspection against the issued drawings. Continuous supervision is a different appointment and is not included.</dd>
+            </div>
+            <div>
+              <dt>How are changes recorded?</dt>
+              <dd>Every issue is revisioned, and superseded sheets stay in the record rather than being replaced silently.</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="enquire">
+        <div>
+          <h2>Enquire about this service</h2>
+          <p>
+            Send the current design information and the procurement route, and the studio replies
+            with a written scope for this appointment.
+          </p>
+        </div>
+        <a class="btn" href="#arc-s23-003-title">
+          Enquire about technical design
+          <span aria-hidden="true">&#8594;</span>
+        </a>
+      </div>
+
+      <p class="note">
+        Placeholder service detail page &#183; structure demonstration only. A scope document for one
+        offering: numbered clauses, a deliverables table and a question register, all of it open on
+        the page with no control to reveal it. Stages are given as sequence and dependency; no price,
+        fee, turnaround, availability or guarantee is stated, and none should be inferred from the
+        stage codes. The context strip and document head overlap ARC-S21 and ARC-S22.
+      </p>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>

@@ -91,8 +91,12 @@ Nearest existing section in this sector: S03 Services (`S03-services/`).
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch Document
+
+./BATCH-V1.md

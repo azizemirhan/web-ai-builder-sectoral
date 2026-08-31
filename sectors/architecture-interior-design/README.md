@@ -3,7 +3,7 @@
 - Prefix: ARC
 - Planned sections: 27
 - Planned studies: 135
-- Authoring status: IN_PROGRESS (S01–S14, S21–S22 authored)
+- Authoring status: IN_PROGRESS (S01–S14, S21–S23 authored)
 
 | Section | Name | Directory | Planned IDs | Status |
 | --- | --- | --- | --- | --- |
@@ -29,13 +29,13 @@
 | S20 | Consultation CTA | `S20-consultation-cta/` | ARC-S20-001–005 | NOT_STARTED |
 | S21 | Subpage Hero | `S21-subpage-hero/` | ARC-S21-001–005 | AUTHORED |
 | S22 | Breadcrumb / Context Navigation | `S22-breadcrumb-context-navigation/` | ARC-S22-001–005 | AUTHORED |
-| S23 | Architecture / Interior Service Detail | `S23-service-offering-detail/` | ARC-S23-001–005 | NOT_STARTED |
+| S23 | Architecture / Interior Service Detail | `S23-service-offering-detail/` | ARC-S23-001–005 | AUTHORED |
 | S24 | Project Detail | `S24-project-case-study-detail/` | ARC-S24-001–005 | NOT_STARTED |
 | S25 | Studio Journal / Article Detail | `S25-article-insight-detail/` | ARC-S25-001–005 | NOT_STARTED |
 | S26 | Architect / Designer Profile | `S26-person-profile-detail/` | ARC-S26-001–005 | NOT_STARTED |
 | S27 | Studio / Location Detail | `S27-location-branch-detail/` | ARC-S27-001–005 | NOT_STARTED |
 
-S01 through S05 are authored: five raw studies plus a `BATCH-V1.md` in each of `S01-hero/`, `S02-selected-projects/`, `S03-services/` (which also carries the extension variant `ARC-S03-006`), `S04-project-typologies/`, `S05-design-philosophy/`, `S06-design-process/`, `S07-studio-about/`, `S08-architects-designers/`, `S09-awards-publications/`, `S10-capabilities/`, `S11-materials-sustainability/`, `S12-client-testimonials/`, `S13-featured-project-case-study/`, and `S14-project-gallery/`. In the extended site architecture, `S21-subpage-hero/` and `S22-breadcrumb-context-navigation/` are authored. For any other section, create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for that section.
+S01 through S05 are authored: five raw studies plus a `BATCH-V1.md` in each of `S01-hero/`, `S02-selected-projects/`, `S03-services/` (which also carries the extension variant `ARC-S03-006`), `S04-project-typologies/`, `S05-design-philosophy/`, `S06-design-process/`, `S07-studio-about/`, `S08-architects-designers/`, `S09-awards-publications/`, `S10-capabilities/`, `S11-materials-sustainability/`, `S12-client-testimonials/`, `S13-featured-project-case-study/`, and `S14-project-gallery/`. In the extended site architecture, `S21-subpage-hero/`, `S22-breadcrumb-context-navigation/` and `S23-service-offering-detail/` are authored; the S23 studies are full page studies rather than section studies, and each marks the region it shares with S21 and S22 with `data-region="page-context"`. For any other section, create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for that section.
 
 S01–S20 are this sector's core catalog. S21–S27 are the universal extended site
 architecture roles, scaffolded and documented but not yet researched or authored.

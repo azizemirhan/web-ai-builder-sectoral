@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S23-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S23 — Architecture / Interior Service Detail
+  Territory      : Conversion-led
+  Layout model   : Page ordered around the decision — a decision header carrying the action, a
+                   self-selection pair that sends the wrong reader elsewhere, a short evidence of
+                   scope, what happens after enquiring, and a full enquiry block with a labelled
+                   placeholder form at the foot
+  Density        : Medium
+  Media mode     : None. The page is a decision surface; the section README makes media optional
+                   and nothing here needs it.
+  Interaction    : None (static; no JavaScript). The form is markup only — it is not wired to any
+                   endpoint, has no action, and is labelled as a placeholder on the page itself.
+  Structural difference : 001 puts facts in a rail, 002 runs one prose measure, 003 is a numbered
+                   document. This one is ordered by the reader's decision rather than by the
+                   service's own anatomy, and it ends in a form rather than a link.
+  Content note   : Conversion pressure is where invented numbers appear. There is no price, fee,
+                   turnaround, response time, availability, capacity, guarantee or scarcity claim
+                   anywhere on this page, and the "what happens next" steps describe order only.
+-->
+
+<meta name="study-id" content="ARC-S23-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S23">
+<meta name="section-name" content="Architecture / Interior Service Detail">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Decision-ordered page closing on a labelled placeholder enquiry form">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S23-004 — Service Detail, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f2; }
+
+/* Scoped study styles — namespaced to .arc-s23-004 */
+.arc-s23-004 {
+  --ink: #191b18;
+  --ink-soft: #53564f;
+  --paper: #f7f6f2;
+  --card: #ffffff;
+  --deep: #1f2a24;
+  --on-deep: #f2f4f1;
+  --on-deep-soft: #b8c0ba;
+  --line: #e0dfd8;
+  --line-strong: #7f827a;
+  --focus: #274ad0;
+  --focus-light: #ffd06b;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.arc-s23-004 *,
+.arc-s23-004 *::before,
+.arc-s23-004 *::after { box-sizing: inherit; }
+.arc-s23-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+.arc-s23-004 .wrap {
+  width: 100%; max-width: 1160px; margin: 0 auto;
+  padding: 0 clamp(18px, 3vw, 44px);
+}
+.arc-s23-004 .lbl {
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+
+/* --- Context ---------------------------------------------------------------------- */
+.arc-s23-004 .context { padding: clamp(16px, 2vw, 22px) 0 0; }
+.arc-s23-004 .trail ol { display: flex; flex-wrap: wrap; align-items: baseline; margin: 0; padding: 0; list-style: none; }
+.arc-s23-004 .trail li { display: flex; align-items: baseline; }
+.arc-s23-004 .trail li + li::before { content: "/"; padding: 0 9px; color: #676a63; font-size: 0.8125rem; }
+.arc-s23-004 .trail a,
+.arc-s23-004 .trail [aria-current] { display: inline-flex; align-items: center; min-height: 44px; font-size: 0.8125rem; text-decoration: none; }
+.arc-s23-004 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s23-004 .trail a:hover,
+.arc-s23-004 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s23-004 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+/* --- Decision header ---------------------------------------------------------------- */
+.arc-s23-004 .decide {
+  display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(22px, 3.2vw, 56px); align-items: start;
+  padding: clamp(14px, 2vw, 22px) 0 clamp(26px, 3.4vw, 42px);
+}
+.arc-s23-004 .decide .eyebrow { margin: 0 0 12px; }
+.arc-s23-004 h1 {
+  margin: 0 0 14px; font-size: clamp(1.75rem, 3.6vw, 2.875rem);
+  line-height: 1.06; letter-spacing: -0.03em; font-weight: 500; max-width: 17ch;
+}
+.arc-s23-004 .decide .standfirst { margin: 0; font-size: clamp(1rem, 1.3vw, 1.1875rem); color: var(--ink-soft); max-width: 54ch; }
+
+.arc-s23-004 .actionbox {
+  padding: clamp(18px, 2.4vw, 28px);
+  background: var(--card); border: 1px solid var(--line-strong); border-radius: 10px;
+}
+.arc-s23-004 .actionbox h2 { margin: 0 0 6px; font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.016em; }
+.arc-s23-004 .actionbox p { margin: 0 0 16px; font-size: 0.8125rem; color: var(--ink-soft); }
+.arc-s23-004 .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.arc-s23-004 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 22px; border-radius: 8px;
+  font-size: 0.9375rem; font-weight: 600; text-decoration: none; cursor: pointer;
+  border: 1px solid var(--deep); background: var(--deep); color: var(--on-deep);
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s23-004 .btn:hover,
+.arc-s23-004 .btn:focus-visible { background: #2c3a32; }
+.arc-s23-004 .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.arc-s23-004 .btn.ghost:hover,
+.arc-s23-004 .btn.ghost:focus-visible { background: transparent; border-color: var(--ink); }
+
+.arc-s23-004 .quickfacts { margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--line); }
+.arc-s23-004 .quickfacts > div { display: grid; grid-template-columns: 8.4em minmax(0, 1fr); gap: 10px; padding: 5px 0; }
+.arc-s23-004 .quickfacts dt { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); padding-top: 3px; }
+.arc-s23-004 .quickfacts dd { margin: 0; font-size: 0.8125rem; }
+
+/* --- Self-selection ------------------------------------------------------------------ */
+.arc-s23-004 .fit { padding: clamp(24px, 3.2vw, 44px) 0; border-top: 1px solid var(--line-strong); }
+.arc-s23-004 .fit > h2 { margin: 0 0 clamp(14px, 2vw, 22px); font-size: clamp(1.125rem, 1.8vw, 1.4375rem); font-weight: 600; letter-spacing: -0.02em; }
+.arc-s23-004 .fitcols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); }
+.arc-s23-004 .fitcols > div { padding: clamp(16px, 2.2vw, 24px); border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+.arc-s23-004 .fitcols h3 { margin: 0 0 12px; font-size: 0.9375rem; font-weight: 600; }
+.arc-s23-004 .fitcols ul { margin: 0; padding: 0; list-style: none; }
+.arc-s23-004 .fitcols li {
+  display: grid; grid-template-columns: 4.2em minmax(0, 1fr); gap: 10px; align-items: baseline;
+  padding: 8px 0; border-top: 1px solid var(--line); font-size: 0.875rem;
+}
+.arc-s23-004 .fitcols li .mk { font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.arc-s23-004 .fitcols .out { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 0.8125rem; color: var(--ink-soft); }
+.arc-s23-004 .fitcols .out a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* --- Scope evidence ------------------------------------------------------------------- */
+.arc-s23-004 .scope { padding: clamp(24px, 3.2vw, 44px) 0; border-top: 1px solid var(--line); }
+.arc-s23-004 .scope > h2 { margin: 0 0 clamp(14px, 2vw, 20px); font-size: clamp(1.125rem, 1.8vw, 1.4375rem); font-weight: 600; letter-spacing: -0.02em; }
+.arc-s23-004 .scope ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(18px, 2.6vw, 40px); margin: 0; padding: 0; list-style: none; }
+.arc-s23-004 .scope li { padding: 10px 0; border-top: 1px solid var(--line); font-size: 0.875rem; }
+.arc-s23-004 .scope .excl { margin: clamp(16px, 2.2vw, 22px) 0 0; font-size: 0.8125rem; color: var(--ink-soft); max-width: 76ch; }
+
+/* --- After you enquire ----------------------------------------------------------------- */
+.arc-s23-004 .next { padding: clamp(24px, 3.2vw, 44px) 0; border-top: 1px solid var(--line); }
+.arc-s23-004 .next > h2 { margin: 0 0 clamp(14px, 2vw, 20px); font-size: clamp(1.125rem, 1.8vw, 1.4375rem); font-weight: 600; letter-spacing: -0.02em; }
+.arc-s23-004 .next ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); margin: 0; padding: 0; list-style: none; }
+.arc-s23-004 .next li { padding-top: 12px; border-top: 2px solid var(--ink); }
+.arc-s23-004 .next .n { display: block; margin-bottom: 6px; font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.14em; color: var(--ink-soft); }
+.arc-s23-004 .next h3 { margin: 0 0 5px; font-size: 0.9375rem; font-weight: 600; }
+.arc-s23-004 .next p { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); }
+
+/* --- Enquiry block ---------------------------------------------------------------------- */
+.arc-s23-004 .enquire {
+  display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(22px, 3.2vw, 52px);
+  margin: clamp(26px, 3.4vw, 44px) 0 clamp(20px, 2.6vw, 30px);
+  padding: clamp(22px, 3vw, 40px);
+  background: var(--deep); color: var(--on-deep); border-radius: 12px;
+}
+.arc-s23-004 .enquire h2 { margin: 0 0 10px; font-size: clamp(1.25rem, 2vw, 1.625rem); font-weight: 600; letter-spacing: -0.022em; }
+.arc-s23-004 .enquire .intro { margin: 0 0 16px; font-size: 0.9375rem; color: var(--on-deep-soft); max-width: 46ch; }
+.arc-s23-004 .enquire .alt { margin: 0; padding-top: 14px; border-top: 1px solid #3b4741; font-size: 0.8125rem; color: var(--on-deep-soft); max-width: 46ch; }
+.arc-s23-004 .enquire :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s23-004 form { margin: 0; }
+.arc-s23-004 fieldset { margin: 0; padding: 0; border: 0; }
+.arc-s23-004 legend { padding: 0 0 12px; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--on-deep-soft); }
+.arc-s23-004 .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.arc-s23-004 .field { display: flex; flex-direction: column; gap: 6px; }
+.arc-s23-004 .field.full { grid-column: 1 / -1; }
+.arc-s23-004 .field label { font-size: 0.8125rem; font-weight: 600; }
+.arc-s23-004 .field .hint { font-size: 0.75rem; color: var(--on-deep-soft); }
+.arc-s23-004 .field input,
+.arc-s23-004 .field textarea {
+  width: 100%; min-height: 48px; padding: 12px 14px;
+  background: #17201b; color: var(--on-deep);
+  border: 1px solid #6c7871; border-radius: 8px;
+  font: inherit; font-size: 0.9375rem;
+}
+.arc-s23-004 .field textarea { min-height: 116px; resize: vertical; }
+.arc-s23-004 .field input::placeholder,
+.arc-s23-004 .field textarea::placeholder { color: #8e968f; }
+.arc-s23-004 .field input:hover,
+.arc-s23-004 .field textarea:hover { border-color: #97a29b; }
+.arc-s23-004 .submit { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.arc-s23-004 .submit .btn { background: #fff; color: var(--ink); border-color: #fff; }
+.arc-s23-004 .submit .btn:hover,
+.arc-s23-004 .submit .btn:focus-visible { background: #e4e6e3; }
+.arc-s23-004 .submit .disclaimer { margin: 0; font-size: 0.75rem; color: var(--on-deep-soft); max-width: 34ch; }
+
+.arc-s23-004 .note { margin: 0; padding: 0 0 clamp(28px, 3.4vw, 44px); font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch; }
+
+/* --- Responsive ------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s23-004 .decide { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 36px; }
+}
+@media (max-width: 1024px) {
+  .arc-s23-004 .decide { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .arc-s23-004 h1 { max-width: 22ch; }
+  .arc-s23-004 .enquire { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-004 .scope ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .arc-s23-004 .fitcols { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-004 .next ol { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .arc-s23-004 .decide .standfirst { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s23-004 .scope ul { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-004 .fields { grid-template-columns: minmax(0, 1fr); }
+  .arc-s23-004 .quickfacts > div { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .arc-s23-004 .btn { width: 100%; }
+  .arc-s23-004 .submit .disclaimer { max-width: none; }
+}
+@media (max-width: 360px) {
+  .arc-s23-004 .fitcols li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s23-004 *, .arc-s23-004 *::before, .arc-s23-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s23-004" data-study-id="ARC-S23-004" data-territory="conversion-led">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="context wrap" data-region="page-context">
+    <nav class="trail" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#arc-s23-004-title">Studio</a></li>
+        <li><a href="#arc-s23-004-title">Services</a></li>
+        <li><span aria-current="page">Feasibility study</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <header class="decide wrap" data-region="page-context">
+    <div>
+      <p class="lbl eyebrow">Service detail</p>
+      <h1 id="arc-s23-004-title">Feasibility study</h1>
+      <p class="standfirst">
+        A short, self-contained piece of work that answers one question: can this site take what
+        you want to put on it, and at what cost to the idea.
+      </p>
+    </div>
+
+    <div class="actionbox">
+      <h2>Start with this service</h2>
+      <p>The enquiry goes straight to the studio, and it is about this service specifically.</p>
+      <div class="actions">
+        <a class="btn" href="#arc-s23-004-enquire">
+          Ask about a feasibility study
+          <span aria-hidden="true">&#8594;</span>
+        </a>
+        <a class="btn ghost" href="#arc-s23-004-scope">See what is included</a>
+      </div>
+      <dl class="quickfacts">
+        <div><dt>Service</dt><dd>Feasibility study</dd></div>
+        <div><dt>Position</dt><dd>Before any design stage</dd></div>
+        <div><dt>Output</dt><dd>Written report with options</dd></div>
+        <div><dt>Commitment</dt><dd>Stands alone; nothing follows automatically</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <main>
+    <section class="fit wrap" aria-labelledby="arc-s23-004-fith">
+      <h2 id="arc-s23-004-fith">Is this the right service for you?</h2>
+      <div class="fitcols">
+        <div>
+          <h3>Choose a feasibility study if</h3>
+          <ul>
+            <li><span class="mk">Fits</span><span>You have a site or a building and an idea, and want to know whether they meet.</span></li>
+            <li><span class="mk">Fits</span><span>A decision to buy, sell or keep depends on what could be built.</span></li>
+            <li><span class="mk">Fits</span><span>You want the constraints written down before spending on design.</span></li>
+            <li><span class="mk">Fits</span><span>Two or three options need comparing on the same terms.</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Choose something else if</h3>
+          <ul>
+            <li><span class="mk">Other</span><span>The scheme is already agreed and needs drawing up.</span></li>
+            <li><span class="mk">Other</span><span>A submission deadline is fixed and close.</span></li>
+            <li><span class="mk">Other</span><span>Only the inside is changing and the shell is settled.</span></li>
+          </ul>
+          <p class="out">
+            In those cases the right route is
+            <a href="#arc-s23-004-title">technical design</a>,
+            <a href="#arc-s23-004-title">planning and permissions</a> or
+            <a href="#arc-s23-004-title">interior architecture</a>. The studio will say so rather
+            than sell this one.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="scope wrap" id="arc-s23-004-scope" aria-labelledby="arc-s23-004-scopeh">
+      <h2 id="arc-s23-004-scopeh">What the study includes</h2>
+      <ul>
+        <li>Site visit and photographic record</li>
+        <li>Review of the constraints on the record</li>
+        <li>Capacity testing in plan and section</li>
+        <li>Two or three options, drawn to one standard</li>
+        <li>Comparison of the options against the brief</li>
+        <li>Written report with a recommendation</li>
+      </ul>
+      <p class="excl">
+        Not included: statutory applications, structural or services design, cost planning, and any
+        valuation. The report sets out what is possible and what would have to be resolved &#8212; it
+        is not a permission and it is not a price.
+      </p>
+    </section>
+
+    <section class="next wrap" aria-labelledby="arc-s23-004-nexth">
+      <h2 id="arc-s23-004-nexth">What happens after you enquire</h2>
+      <ol>
+        <li>
+          <span class="n">Step 01</span>
+          <h3>The studio reads what you sent</h3>
+          <p>Site address, what you own or are considering, and what you are hoping to do.</p>
+        </li>
+        <li>
+          <span class="n">Step 02</span>
+          <h3>A call, then a written scope</h3>
+          <p>The question the study has to answer is agreed and written down before work starts.</p>
+        </li>
+        <li>
+          <span class="n">Step 03</span>
+          <h3>You decide whether to proceed</h3>
+          <p>The study stands alone. Nothing further is committed by asking about it.</p>
+        </li>
+      </ol>
+    </section>
+
+    <div class="wrap">
+      <section class="enquire" id="arc-s23-004-enquire" aria-labelledby="arc-s23-004-enqh">
+        <div>
+          <h2 id="arc-s23-004-enqh">Ask about a feasibility study</h2>
+          <p class="intro">
+            Tell the studio where the site is and what you are considering. The more that is known
+            about the constraints, the more useful the first reply will be.
+          </p>
+          <p class="alt">
+            If you would rather not use a form, the studio's direct contact details are published
+            on the contact page. Placeholder &#8212; details supplied by the studio.
+          </p>
+        </div>
+
+        <form action="" method="post" aria-describedby="arc-s23-004-formnote">
+          <fieldset>
+            <legend>Enquiry about this service</legend>
+            <div class="fields">
+              <div class="field">
+                <label for="arc-s23-004-name">Your name</label>
+                <input type="text" id="arc-s23-004-name" name="name" autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="arc-s23-004-email">Email</label>
+                <input type="email" id="arc-s23-004-email" name="email" autocomplete="email">
+              </div>
+              <div class="field full">
+                <label for="arc-s23-004-site">Where the site is</label>
+                <input type="text" id="arc-s23-004-site" name="site" aria-describedby="arc-s23-004-sitehint">
+                <span class="hint" id="arc-s23-004-sitehint">A town or a postcode is enough at this stage.</span>
+              </div>
+              <div class="field full">
+                <label for="arc-s23-004-brief">What you are considering</label>
+                <textarea id="arc-s23-004-brief" name="brief" aria-describedby="arc-s23-004-briefhint"></textarea>
+                <span class="hint" id="arc-s23-004-briefhint">What you would like to do, and anything already known about what stands in the way.</span>
+              </div>
+            </div>
+            <div class="submit">
+              <button type="submit" class="btn">Send this enquiry</button>
+              <p class="disclaimer" id="arc-s23-004-formnote">
+                Placeholder form. It is markup only and is not connected to anything.
+              </p>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+
+      <p class="note">
+        Placeholder service detail page &#183; structure demonstration only. The page is ordered by
+        the reader's decision rather than by the anatomy of the service, and it deliberately sends
+        the wrong reader to another service instead of pressing on. No price, fee, turnaround,
+        response time, availability, capacity, guarantee or scarcity claim appears anywhere: the
+        "what happens next" steps describe order, not duration. The form is unwired markup and says
+        so on the page. The context strip and decision header overlap ARC-S21 and ARC-S22.
+      </p>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>
