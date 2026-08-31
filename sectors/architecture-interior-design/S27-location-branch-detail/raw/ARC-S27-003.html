@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S27-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S27 — Studio / Location Detail
+  Territory      : Dense / Information-heavy
+  Layout model   : Location details sheet — an identification band, then three tables (contact and
+                   address, hours by day, access and arrival), a services-and-people pair, and a
+                   reserved map area
+  Density        : High
+  Media mode     : One reserved map area. No photography — a details sheet does not need it.
+  Interaction    : None (static; no JavaScript). Nothing is hidden behind a control.
+  Page note      : `data-region="page-context"` marks the breadcrumb and identification band.
+  Location policy: Address, telephone, email, coordinates, hours and travel times are all
+                   placeholder tokens or reserved fields. **No travel duration is stated as a
+                   number** — a dense sheet is where "12 minutes from the station" gets invented,
+                   so the distance column holds a reserved field instead.
+-->
+
+<meta name="study-id" content="ARC-S27-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S27">
+<meta name="section-name" content="Studio / Location Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Location details sheet with contact, hours and access tables">
+<meta name="density" content="high">
+<meta name="media-mode" content="reserved-map-only">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S27-003 — Location Detail, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f5f6f7; }
+
+/* Scoped study styles — namespaced to .arc-s27-003 */
+.arc-s27-003 {
+  --ink: #14161a;
+  --ink-soft: #4e535b;
+  --paper: #f5f6f7;
+  --card: #ffffff;
+  --map: #dfe1e4;
+  --line: #dfe2e5;
+  --line-strong: #7d838b;
+  --sep: #666c74;
+  --focus: #1a45c8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+.arc-s27-003 *, .arc-s27-003 *::before, .arc-s27-003 *::after { box-sizing: inherit; }
+.arc-s27-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+
+.arc-s27-003 .sheet { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(14px, 2.4vw, 36px); }
+.arc-s27-003 .lbl { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+
+/* --- Breadcrumb + identification ---------------------------------------------------------- */
+.arc-s27-003 .context { padding: clamp(14px, 1.8vw, 20px) 0 0; }
+.arc-s27-003 .trail ol { display: flex; flex-wrap: wrap; align-items: baseline; margin: 0; padding: 0; list-style: none; font-family: var(--mono); }
+.arc-s27-003 .trail li { display: flex; align-items: baseline; }
+.arc-s27-003 .trail li + li::before { content: "\203A"; padding: 0 8px; color: var(--sep); font-size: 0.75rem; }
+.arc-s27-003 .trail a, .arc-s27-003 .trail [aria-current] { display: inline-flex; align-items: center; min-height: 44px; font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
+.arc-s27-003 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s27-003 .trail a:hover, .arc-s27-003 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s27-003 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+.arc-s27-003 .ident {
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(16px, 2.6vw, 40px); align-items: end;
+  padding: clamp(10px, 1.4vw, 16px) 0 clamp(16px, 2.2vw, 24px);
+  border-bottom: 2px solid var(--ink);
+}
+.arc-s27-003 .ident .ref { margin: 0 0 8px; }
+.arc-s27-003 h1 { margin: 0 0 6px; font-size: clamp(1.5rem, 2.8vw, 2.125rem); line-height: 1.08; letter-spacing: -0.026em; font-weight: 600; }
+.arc-s27-003 .ident p.sub { margin: 0; font-size: 0.875rem; color: var(--ink-soft); max-width: 56ch; }
+.arc-s27-003 .identfacts { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px clamp(14px, 2vw, 24px); }
+.arc-s27-003 .identfacts div { display: grid; grid-template-columns: 6.8em minmax(0, 1fr); gap: 8px; padding: 3px 0; border-bottom: 1px solid var(--line); }
+.arc-s27-003 .identfacts dt { padding-top: 3px; }
+.arc-s27-003 .identfacts dd { margin: 0; font-size: 0.75rem; }
+
+/* --- Blocks + tables ------------------------------------------------------------------------ */
+.arc-s27-003 .block { padding: clamp(18px, 2.4vw, 28px) 0; border-bottom: 1px solid var(--line); }
+.arc-s27-003 .block > h2 { margin: 0 0 10px; font-size: clamp(1rem, 1.4vw, 1.1875rem); line-height: 1.2; letter-spacing: -0.016em; font-weight: 600; }
+.arc-s27-003 .block > p { margin: 0 0 12px; font-size: 0.875rem; color: var(--ink-soft); max-width: 78ch; }
+.arc-s27-003 .duo { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.6vw, 40px); align-items: start; }
+
+.arc-s27-003 .tablewrap { overflow-x: auto; }
+.arc-s27-003 table { width: 100%; min-width: 460px; border-collapse: collapse; font-size: 0.8125rem; }
+.arc-s27-003 caption { text-align: left; padding-bottom: 8px; font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+.arc-s27-003 th, .arc-s27-003 td { text-align: left; vertical-align: top; padding: 7px 12px 7px 0; border-bottom: 1px solid var(--line); }
+.arc-s27-003 thead th { border-bottom: 1px solid var(--line-strong); font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; white-space: nowrap; }
+.arc-s27-003 tbody th { font-size: 0.8125rem; font-weight: 600; white-space: nowrap; }
+.arc-s27-003 td:last-child, .arc-s27-003 th:last-child { padding-right: 0; }
+.arc-s27-003 .tok { font-family: var(--mono); font-size: 0.6875rem; }
+.arc-s27-003 .res { font-family: var(--mono); font-size: 0.625rem; color: var(--ink-soft); }
+
+.arc-s27-003 address { font-style: normal; font-size: 0.875rem; line-height: 1.75; }
+.arc-s27-003 .plain { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.arc-s27-003 .plain li { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 0.8125rem; }
+.arc-s27-003 .plain a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.arc-s27-003 .plain a:hover, .arc-s27-003 .plain a:focus-visible { border-bottom-color: var(--ink); }
+.arc-s27-003 h3.lbl { margin: 0 0 8px; }
+
+.arc-s27-003 .mapslot { display: flex; align-items: flex-end; aspect-ratio: 21 / 9; background: var(--map); border: 1px solid var(--line-strong); }
+.arc-s27-003 .mapslot p { margin: 0; padding: clamp(10px, 1.4vw, 14px); font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: #494c51; }
+.arc-s27-003 figure { margin: 0; }
+.arc-s27-003 figcaption { margin-top: 8px; font-size: 0.75rem; color: var(--ink-soft); }
+
+.arc-s27-003 .contactline { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(14px, 2vw, 28px); align-items: center; padding: clamp(14px, 2vw, 22px) 0 clamp(16px, 2.2vw, 24px); }
+.arc-s27-003 .contactline h2 { margin: 0 0 4px; font-size: 1rem; font-weight: 600; }
+.arc-s27-003 .contactline p { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); max-width: 66ch; }
+.arc-s27-003 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 46px; padding: 0 20px; border-radius: 3px;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap; transition: background-color 150ms ease;
+}
+.arc-s27-003 .btn:hover, .arc-s27-003 .btn:focus-visible { background: #33373d; }
+
+.arc-s27-003 .note { margin: 0; padding: 0 0 clamp(24px, 3vw, 40px); font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch; }
+
+/* --- Responsive ---------------------------------------------------------------------------------- */
+@media (max-width: 1280px) { .arc-s27-003 .ident { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); } }
+@media (max-width: 1024px) {
+  .arc-s27-003 .ident { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 20px; }
+  .arc-s27-003 .duo { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}
+@media (max-width: 768px) {
+  .arc-s27-003 .block > p { max-width: none; }
+  .arc-s27-003 .mapslot { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 480px) {
+  .arc-s27-003 .identfacts { grid-template-columns: minmax(0, 1fr); }
+  .arc-s27-003 .contactline { grid-template-columns: minmax(0, 1fr); }
+  .arc-s27-003 .btn { width: 100%; }
+  .arc-s27-003 .mapslot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 360px) { .arc-s27-003 .identfacts div { grid-template-columns: minmax(0, 1fr); gap: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s27-003 *, .arc-s27-003 *::before, .arc-s27-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s27-003" data-study-id="ARC-S27-003" data-territory="dense-information-heavy">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="context sheet" data-region="page-context">
+    <nav class="trail" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#arc-s27-003-title">Studio</a></li>
+        <li><a href="#arc-s27-003-title">Locations</a></li>
+        <li><span aria-current="page">Studio location 03</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <article>
+      <header class="ident sheet" data-region="page-context">
+        <div>
+          <p class="ref lbl">Location record &#183; placeholder</p>
+          <h1 id="arc-s27-003-title">Studio location 03</h1>
+          <p class="sub">
+            Every field on this sheet is a placeholder or a reserved field. Nothing here is a real
+            address, hour, coordinate or contact route.
+          </p>
+        </div>
+        <dl class="identfacts">
+          <div><dt class="lbl">Record ref</dt><dd>LOC-NN</dd></div>
+          <div><dt class="lbl">Type</dt><dd>Studio</dd></div>
+          <div><dt class="lbl">Opened</dt><dd>YYYY</dd></div>
+          <div><dt class="lbl">Coordinates</dt><dd>Reserved field</dd></div>
+        </dl>
+      </header>
+
+      <div class="sheet">
+        <section class="block" aria-labelledby="arc-s27-003-c">
+          <h2 id="arc-s27-003-c">Address and contact</h2>
+          <div class="duo">
+            <div>
+              <h3 class="lbl" id="arc-s27-003-addr">Postal address</h3>
+              <address aria-labelledby="arc-s27-003-addr">
+                Studio name<br>
+                Street address line 1<br>
+                Street address line 2<br>
+                District<br>
+                City, Postcode<br>
+                Country
+              </address>
+            </div>
+            <div>
+              <div class="tablewrap">
+                <table>
+                  <caption>Contact routes for this location</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Route</th>
+                      <th scope="col">Value</th>
+                      <th scope="col">For</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">Telephone</th><td class="res">Supplied by the studio</td><td>General</td></tr>
+                    <tr><th scope="row">Email</th><td class="res">Supplied by the studio</td><td>General</td></tr>
+                    <tr><th scope="row">Enquiry form</th><td><a href="#arc-s27-003-title">Write to this studio</a></td><td>New work</td></tr>
+                    <tr><th scope="row">Post</th><td class="res">Address above</td><td>Deliveries</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="block" aria-labelledby="arc-s27-003-h">
+          <h2 id="arc-s27-003-h">Opening context</h2>
+          <p>
+            Hours are held as tokens. A studio is not a shop, so the sheet states the context a
+            visitor needs rather than implying a counter that is open to the public.
+          </p>
+          <div class="tablewrap">
+            <table>
+              <caption>Day, hours and note</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Day</th>
+                  <th scope="col">Hours</th>
+                  <th scope="col">Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Monday</th><td class="tok">HH:MM&#8211;HH:MM</td><td>By arrangement</td></tr>
+                <tr><th scope="row">Tuesday</th><td class="tok">HH:MM&#8211;HH:MM</td><td>By arrangement</td></tr>
+                <tr><th scope="row">Wednesday</th><td class="tok">HH:MM&#8211;HH:MM</td><td>By arrangement</td></tr>
+                <tr><th scope="row">Thursday</th><td class="tok">HH:MM&#8211;HH:MM</td><td>By arrangement</td></tr>
+                <tr><th scope="row">Friday</th><td class="tok">HH:MM&#8211;HH:MM</td><td>By arrangement</td></tr>
+                <tr><th scope="row">Saturday</th><td class="tok">Closed</td><td>&#8212;</td></tr>
+                <tr><th scope="row">Sunday</th><td class="tok">Closed</td><td>&#8212;</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="block" aria-labelledby="arc-s27-003-a">
+          <h2 id="arc-s27-003-a">Access and arrival</h2>
+          <p>
+            Distances and durations are left as reserved fields. A dense sheet is where a travel
+            time gets invented, and a wrong one sends a visitor to the wrong place at the wrong
+            time.
+          </p>
+          <div class="tablewrap">
+            <table>
+              <caption>Arrival route, distance and note</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Route</th>
+                  <th scope="col">Distance or duration</th>
+                  <th scope="col">Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Nearest rail stop</th><td class="res">Reserved field</td><td>Name supplied by the studio</td></tr>
+                <tr><th scope="row">Nearest bus stop</th><td class="res">Reserved field</td><td>Name supplied by the studio</td></tr>
+                <tr><th scope="row">On foot from the stop</th><td class="res">Reserved field</td><td>Route supplied by the studio</td></tr>
+                <tr><th scope="row">Parking</th><td class="res">Reserved field</td><td>No on-site parking assumed</td></tr>
+                <tr><th scope="row">Cycle parking</th><td class="res">Reserved field</td><td>&#8212;</td></tr>
+                <tr><th scope="row">Step-free entry</th><td class="res">Reserved field</td><td>Access details supplied by the studio</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="block" aria-labelledby="arc-s27-003-s">
+          <h2 id="arc-s27-003-s">At this location</h2>
+          <div class="duo">
+            <div>
+              <h3 class="lbl">Available here</h3>
+              <ul class="plain">
+                <li>Meeting room</li>
+                <li>Materials library</li>
+                <li>Model bench</li>
+                <li>Large-format printing</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="lbl">Based here</h3>
+              <ul class="plain">
+                <li><a href="#arc-s27-003-title">Team member 01</a> &#8212; interior architecture</li>
+                <li><a href="#arc-s27-003-title">Team member 03</a> &#8212; technical delivery</li>
+                <li><a href="#arc-s27-003-title">Team member 04</a> &#8212; feasibility</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="block" aria-labelledby="arc-s27-003-m">
+          <h2 class="lbl" id="arc-s27-003-m">Map area</h2>
+          <figure>
+            <div class="mapslot"><p>Reserved map slot &#183; no embedded service</p></div>
+            <figcaption>
+              A reserved area, not a map. No third-party map service is embedded, no coordinate is
+              stated, and this page makes no remote request of any kind.
+            </figcaption>
+          </figure>
+        </section>
+
+        <div class="contactline">
+          <div>
+            <h2>Write to this location</h2>
+            <p>An enquiry naming this studio goes to the people based here rather than to a general address.</p>
+          </div>
+          <a class="btn" href="#arc-s27-003-title">
+            Contact Studio location 03
+            <span aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+
+        <p class="note">
+          Placeholder location page &#183; structure demonstration only. The densest register in this
+          section: an identification band and three tables &#8212; contact and address, hours by day,
+          access and arrival &#8212; with everything open on the page and nothing behind a control.
+          No travel duration or distance is stated as a number anywhere; each is a reserved field,
+          because this is the layout where "twelve minutes from the station" gets invented. No
+          review, rating or claim is attributed to the location, and the map is a reserved slot with
+          no embedded service. The breadcrumb and identification band overlap ARC-S21 and ARC-S22.
+        </p>
+      </div>
+    </article>
+  </main>
+
+</div>
+</body>
+</html>

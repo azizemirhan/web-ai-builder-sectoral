@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S27-004
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S27 — Studio / Location Detail
+  Territory      : Conversion-led
+  Layout model   : The page ordered around arranging a visit — address and contact carried inside
+                   the decision header, what a visit is for, who it suits, how one is arranged,
+                   what to bring, what to do instead, and a closing route
+  Density        : Medium
+  Media mode     : One reserved map area only
+  Interaction    : None (static; no JavaScript). No form: the route is a link to the studio.
+  Page note      : `data-region="page-context"` marks the breadcrumb and decision header.
+  Location policy: Address, telephone, email and hours are placeholder tokens or reserved fields;
+                   the map is a reserved slot with no embedded service. **Nothing states when the
+                   studio can see you, how quickly it replies, or that a visit is available** —
+                   a visit page invites all three and can honestly promise none of them.
+-->
+
+<meta name="study-id" content="ARC-S27-004">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S27">
+<meta name="section-name" content="Studio / Location Detail">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="layout-model" content="Visit-ordered location page with address inside the decision header">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-map-only">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S27-004 — Location Detail, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f2; }
+
+/* Scoped study styles — namespaced to .arc-s27-004 */
+.arc-s27-004 {
+  --ink: #191b18;
+  --ink-soft: #53564f;
+  --paper: #f7f6f2;
+  --card: #ffffff;
+  --map: #e0ded5;
+  --line: #e0dfd8;
+  --line-strong: #7f827a;
+  --sep: #676a63;
+  --deep: #1f2a24;
+  --on-deep: #f2f4f1;
+  --on-deep-soft: #b8c0ba;
+  --focus: #274ad0;
+  --focus-light: #ffd06b;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.arc-s27-004 *, .arc-s27-004 *::before, .arc-s27-004 *::after { box-sizing: inherit; }
+.arc-s27-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+.arc-s27-004 .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 44px); }
+.arc-s27-004 .lbl { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+
+/* --- Breadcrumb -------------------------------------------------------------------------- */
+.arc-s27-004 .context { padding: clamp(16px, 2vw, 22px) 0 0; }
+.arc-s27-004 .trail ol { display: flex; flex-wrap: wrap; align-items: baseline; margin: 0; padding: 0; list-style: none; }
+.arc-s27-004 .trail li { display: flex; align-items: baseline; }
+.arc-s27-004 .trail li + li::before { content: "/"; padding: 0 9px; color: var(--sep); font-size: 0.8125rem; }
+.arc-s27-004 .trail a, .arc-s27-004 .trail [aria-current] { display: inline-flex; align-items: center; min-height: 44px; font-size: 0.8125rem; text-decoration: none; }
+.arc-s27-004 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s27-004 .trail a:hover, .arc-s27-004 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s27-004 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+/* --- Decision header carrying the address ------------------------------------------------- */
+.arc-s27-004 .decide {
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 52px); align-items: start;
+  padding: clamp(12px, 1.8vw, 20px) 0 clamp(24px, 3.2vw, 40px);
+}
+.arc-s27-004 .decide .eyebrow { margin: 0 0 10px; }
+.arc-s27-004 h1 { margin: 0 0 12px; font-size: clamp(1.75rem, 3.4vw, 2.625rem); line-height: 1.06; letter-spacing: -0.03em; font-weight: 500; max-width: 17ch; }
+.arc-s27-004 .decide .sub { margin: 0 0 clamp(16px, 2.2vw, 22px); font-size: clamp(0.9375rem, 1.2vw, 1.125rem); color: var(--ink-soft); max-width: 52ch; }
+.arc-s27-004 address { font-style: normal; font-size: 0.9375rem; line-height: 1.7; }
+.arc-s27-004 .addrblock h2 { margin: 0 0 8px; }
+
+.arc-s27-004 .actionbox { padding: clamp(18px, 2.4vw, 28px); background: var(--card); border: 1px solid var(--line-strong); border-radius: 10px; }
+.arc-s27-004 .actionbox h2 { margin: 0 0 6px; font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.016em; }
+.arc-s27-004 .actionbox p { margin: 0 0 16px; font-size: 0.8125rem; color: var(--ink-soft); }
+.arc-s27-004 .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.arc-s27-004 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 0 22px; border-radius: 8px;
+  background: var(--deep); color: var(--on-deep); border: 1px solid var(--deep);
+  font-size: 0.9375rem; font-weight: 600; text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.arc-s27-004 .btn:hover, .arc-s27-004 .btn:focus-visible { background: #2c3a32; }
+.arc-s27-004 .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.arc-s27-004 .btn.ghost:hover, .arc-s27-004 .btn.ghost:focus-visible { background: transparent; border-color: var(--ink); }
+.arc-s27-004 .actionbox dl { margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--line); }
+.arc-s27-004 .actionbox dl > div { display: grid; grid-template-columns: 7.4em minmax(0, 1fr); gap: 10px; padding: 4px 0; }
+.arc-s27-004 .actionbox dd { margin: 0; font-size: 0.8125rem; }
+
+/* --- Bands -------------------------------------------------------------------------------- */
+.arc-s27-004 .band { padding: clamp(22px, 3vw, 38px) 0; border-top: 1px solid var(--line-strong); }
+.arc-s27-004 .band > h2 { margin: 0 0 clamp(12px, 1.8vw, 18px); font-size: clamp(1.125rem, 1.8vw, 1.4375rem); font-weight: 600; letter-spacing: -0.02em; }
+.arc-s27-004 .band > p { margin: 0 0 14px; font-size: 0.875rem; color: var(--ink-soft); max-width: 70ch; }
+
+.arc-s27-004 .fit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); }
+.arc-s27-004 .fit > div { padding: clamp(16px, 2.2vw, 22px); border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+.arc-s27-004 .fit h3 { margin: 0 0 10px; font-size: 0.9375rem; font-weight: 600; }
+.arc-s27-004 .fit ul { margin: 0; padding: 0; list-style: none; }
+.arc-s27-004 .fit li { display: grid; grid-template-columns: 4.6em minmax(0, 1fr); gap: 10px; align-items: baseline; padding: 8px 0; border-top: 1px solid var(--line); font-size: 0.875rem; }
+.arc-s27-004 .fit .mk { font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.arc-s27-004 .fit .out { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid var(--line); font-size: 0.8125rem; color: var(--ink-soft); }
+.arc-s27-004 .fit .out a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.arc-s27-004 .steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); margin: 0; padding: 0; list-style: none; }
+.arc-s27-004 .steps li { padding-top: 12px; border-top: 2px solid var(--ink); }
+.arc-s27-004 .steps .n { display: block; margin-bottom: 6px; font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+.arc-s27-004 .steps h3 { margin: 0 0 5px; font-size: 0.9375rem; font-weight: 600; }
+.arc-s27-004 .steps p { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); }
+
+.arc-s27-004 .twocol { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(18px, 2.6vw, 40px); align-items: start; }
+.arc-s27-004 .plain { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.arc-s27-004 .plain li { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 0.875rem; }
+.arc-s27-004 .mapslot { display: flex; align-items: flex-end; aspect-ratio: 4 / 3; background: var(--map); border: 1px solid var(--line-strong); }
+.arc-s27-004 .mapslot p { margin: 0; padding: clamp(10px, 1.4vw, 14px); font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: #4b4a44; }
+.arc-s27-004 figure { margin: 0; }
+.arc-s27-004 figcaption { margin-top: 8px; font-size: 0.75rem; color: var(--ink-soft); }
+.arc-s27-004 h3.lbl { margin: 0 0 8px; }
+
+.arc-s27-004 .close {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(16px, 2.4vw, 34px); align-items: center;
+  margin: clamp(22px, 3vw, 36px) 0 clamp(18px, 2.4vw, 26px);
+  padding: clamp(20px, 2.8vw, 32px); background: var(--deep); color: var(--on-deep); border-radius: 12px;
+}
+.arc-s27-004 .close h2 { margin: 0 0 6px; font-size: clamp(1.125rem, 1.8vw, 1.4375rem); font-weight: 600; letter-spacing: -0.02em; }
+.arc-s27-004 .close p { margin: 0; font-size: 0.875rem; color: var(--on-deep-soft); max-width: 56ch; }
+.arc-s27-004 .close .btn { background: #fff; color: var(--ink); border-color: #fff; }
+.arc-s27-004 .close .btn:hover, .arc-s27-004 .close .btn:focus-visible { background: #e4e6e3; }
+.arc-s27-004 .close :focus-visible { outline-color: var(--focus-light); }
+
+.arc-s27-004 .note { margin: 0; padding: 0 0 clamp(26px, 3.2vw, 44px); font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch; }
+
+/* --- Responsive ------------------------------------------------------------------------------------ */
+@media (max-width: 1280px) { .arc-s27-004 .decide { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 34px; } }
+@media (max-width: 1024px) {
+  .arc-s27-004 .decide { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .arc-s27-004 h1 { max-width: 22ch; }
+}
+@media (max-width: 768px) {
+  .arc-s27-004 .fit { grid-template-columns: minmax(0, 1fr); }
+  .arc-s27-004 .steps { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .arc-s27-004 .twocol { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .arc-s27-004 .close { grid-template-columns: minmax(0, 1fr); }
+  .arc-s27-004 .band > p { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s27-004 .btn { width: 100%; }
+  .arc-s27-004 .fit li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .arc-s27-004 .actionbox dl > div { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .arc-s27-004 .mapslot { aspect-ratio: 1 / 1; }
+}
+@media (max-width: 360px) { .arc-s27-004 .trail li + li::before { padding: 0 6px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s27-004 *, .arc-s27-004 *::before, .arc-s27-004 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s27-004" data-study-id="ARC-S27-004" data-territory="conversion-led">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="context wrap" data-region="page-context">
+    <nav class="trail" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#arc-s27-004-title">Studio</a></li>
+        <li><a href="#arc-s27-004-title">Locations</a></li>
+        <li><span aria-current="page">Studio location 04</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <article>
+      <header class="decide wrap" data-region="page-context">
+        <div>
+          <p class="lbl eyebrow">Location &#183; visiting</p>
+          <h1 id="arc-s27-004-title">Come to Studio location 04</h1>
+          <p class="sub">
+            Placeholder description. What a visit to this address is actually for, and what would
+            make one worth arranging.
+          </p>
+          <div class="addrblock">
+            <h2 class="lbl" id="arc-s27-004-addr">Address</h2>
+            <address aria-labelledby="arc-s27-004-addr">
+              Street address line 1<br>
+              District<br>
+              City, Postcode<br>
+              Country
+            </address>
+          </div>
+        </div>
+
+        <div class="actionbox">
+          <h2>Arrange a visit</h2>
+          <p>Visits are by arrangement. The request goes to the people based at this address.</p>
+          <div class="actions">
+            <a class="btn" href="#arc-s27-004-close">
+              Ask for a visit
+              <span aria-hidden="true">&#8594;</span>
+            </a>
+            <a class="btn ghost" href="#arc-s27-004-arrange">How it works</a>
+          </div>
+          <dl>
+            <div><dt class="lbl">Telephone</dt><dd>Supplied by the studio</dd></div>
+            <div><dt class="lbl">Email</dt><dd>Supplied by the studio</dd></div>
+            <div><dt class="lbl">Hours</dt><dd>HH:MM&#8211;HH:MM, weekdays</dd></div>
+          </dl>
+        </div>
+      </header>
+
+      <div class="wrap">
+        <section class="band" aria-labelledby="arc-s27-004-forh">
+          <h2 id="arc-s27-004-forh">Is a visit worth arranging?</h2>
+          <div class="fit">
+            <div>
+              <h3>Come here if</h3>
+              <ul>
+                <li><span class="mk">Fits</span><span>You want to see materials and samples in daylight rather than on a screen.</span></li>
+                <li><span class="mk">Fits</span><span>A drawing set is easier to read across a table than in a call.</span></li>
+                <li><span class="mk">Fits</span><span>Several people need to be in the same room to decide something.</span></li>
+                <li><span class="mk">Fits</span><span>You are already nearby and would rather talk in person.</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3>Do something else if</h3>
+              <ul>
+                <li><span class="mk">Other</span><span>The question can be answered in writing.</span></li>
+                <li><span class="mk">Other</span><span>The work is on your site and should be seen there.</span></li>
+                <li><span class="mk">Other</span><span>You are only beginning to think about a project.</span></li>
+              </ul>
+              <p class="out">
+                In those cases <a href="#arc-s27-004-title">write to the studio</a>,
+                <a href="#arc-s27-004-title">ask for a site visit</a> instead, or start with a
+                <a href="#arc-s27-004-title">feasibility study</a>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="band" id="arc-s27-004-arrange" aria-labelledby="arc-s27-004-arrh">
+          <h2 id="arc-s27-004-arrh">How a visit is arranged</h2>
+          <ol class="steps">
+            <li>
+              <span class="n">Step 01</span>
+              <h3>You ask</h3>
+              <p>Say what the visit is for and roughly when suits you. Nothing is committed by asking.</p>
+            </li>
+            <li>
+              <span class="n">Step 02</span>
+              <h3>The studio proposes a time</h3>
+              <p>Held against who needs to be in the room. No time is promised on this page.</p>
+            </li>
+            <li>
+              <span class="n">Step 03</span>
+              <h3>You are told where to come</h3>
+              <p>The entrance, the floor and who to ask for are confirmed in writing beforehand.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="band" aria-labelledby="arc-s27-004-bringh">
+          <h2 id="arc-s27-004-bringh">Before you come</h2>
+          <div class="twocol">
+            <div>
+              <h3 class="lbl">Worth bringing</h3>
+              <ul class="plain">
+                <li>Any drawings or surveys you already hold</li>
+                <li>Photographs of the space as it is now</li>
+                <li>A note of what has to be decided</li>
+                <li>Anyone else whose agreement is needed</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="lbl">Where to come</h3>
+              <figure>
+                <div class="mapslot"><p>Reserved map slot &#183; no embedded service</p></div>
+                <figcaption>
+                  A reserved area, not a map. Directions and access details are confirmed in writing
+                  by the studio rather than invented here.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <div class="close" id="arc-s27-004-close">
+          <div>
+            <h2>Ask for a visit to this studio</h2>
+            <p>
+              One route, named three times on this page. It reaches the people based at this
+              address, and it says nothing about how quickly they will reply.
+            </p>
+          </div>
+          <a class="btn" href="#arc-s27-004-title">Ask for a visit</a>
+        </div>
+
+        <p class="note">
+          Placeholder location page &#183; structure demonstration only. The page is ordered around
+          arranging a visit, with the address carried inside the decision header rather than below
+          the fold, and it sends the wrong visitor elsewhere by name instead of pressing on. Address,
+          contact and hours are placeholder tokens or reserved fields, and the map is a reserved
+          slot with no embedded service. Nothing states when the studio can see you, how quickly it
+          replies, or that a visit is available &#8212; a visit page invites all three claims and can
+          honestly make none of them. The breadcrumb and header overlap ARC-S21 and ARC-S22.
+        </p>
+      </div>
+    </article>
+  </main>
+
+</div>
+</body>
+</html>

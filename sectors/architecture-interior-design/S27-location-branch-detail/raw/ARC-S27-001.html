@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S27-001
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S27 — Studio / Location Detail
+  Territory      : Universal / Safe
+  Layout model   : Address and contact first, then hours, media of the place, what happens here,
+                   getting there, a reserved map area and who is based here
+  Density        : Medium
+  Media mode     : One image area of the place and one reserved map area. Both may be empty.
+  Interaction    : None (static; no JavaScript)
+  Page note      : `data-region="page-context"` marks the breadcrumb, which overlaps ARC-S22.
+  Location policy: Every address line, telephone, email, coordinate and hour is an obvious
+                   placeholder token. The section README calls a plausible invented address "the
+                   failure mode this role invites", so nothing here is plausible: address lines
+                   read `Street address line`, hours read `HH:MM`, and contact routes say they are
+                   supplied by the studio. The map is a **reserved slot** — no third-party map, no
+                   embedded service, no remote dependency of any kind.
+  Ordering rule  : Address and contact come before any media in source order, so they are never
+                   pushed below a decorative image on a phone — the README's explicit responsive
+                   requirement.
+-->
+
+<meta name="study-id" content="ARC-S27-001">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S27">
+<meta name="section-name" content="Studio / Location Detail">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="layout-model" content="Address-first location page with hours, media, directions and a reserved map">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-place-image-and-reserved-map">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S27-001 — Location Detail, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fbfbfa; }
+
+/* Scoped study styles — namespaced to .arc-s27-001 */
+.arc-s27-001 {
+  --ink: #16171a;
+  --ink-soft: #55575c;
+  --paper: #fbfbfa;
+  --card: #ffffff;
+  --slot: #e4e4e2;
+  --slot-ink: #4b4d51;
+  --map: #dedfe1;
+  --line: #e3e3e2;
+  --line-strong: #7f8288;
+  --sep: #6d7075;
+  --focus: #1f4fd8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.arc-s27-001 *, .arc-s27-001 *::before, .arc-s27-001 *::after { box-sizing: inherit; }
+.arc-s27-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+.arc-s27-001 .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 44px); }
+.arc-s27-001 .lbl { font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+.arc-s27-001 figure { margin: 0; }
+.arc-s27-001 .slot { display: flex; align-items: flex-end; background: var(--slot); }
+.arc-s27-001 .slot p { margin: 0; padding: clamp(10px, 1.4vw, 15px); font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink); }
+
+/* --- Breadcrumb + head ------------------------------------------------------------------ */
+.arc-s27-001 .context { padding: clamp(16px, 2vw, 24px) 0 0; }
+.arc-s27-001 .trail ol { display: flex; flex-wrap: wrap; align-items: baseline; margin: 0; padding: 0; list-style: none; }
+.arc-s27-001 .trail li { display: flex; align-items: baseline; }
+.arc-s27-001 .trail li + li::before { content: "/"; padding: 0 9px; color: var(--sep); font-size: 0.8125rem; }
+.arc-s27-001 .trail a, .arc-s27-001 .trail [aria-current] { display: inline-flex; align-items: center; min-height: 44px; font-size: 0.8125rem; text-decoration: none; }
+.arc-s27-001 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s27-001 .trail a:hover, .arc-s27-001 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s27-001 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+.arc-s27-001 .head { padding: clamp(12px, 1.8vw, 20px) 0 clamp(20px, 2.6vw, 30px); }
+.arc-s27-001 .head .eyebrow { margin: 0 0 10px; }
+.arc-s27-001 h1 { margin: 0 0 12px; font-size: clamp(1.75rem, 3.4vw, 2.75rem); line-height: 1.06; letter-spacing: -0.03em; font-weight: 500; max-width: 18ch; }
+.arc-s27-001 .head p.sub { margin: 0; font-size: clamp(0.9375rem, 1.2vw, 1.125rem); color: var(--ink-soft); max-width: 58ch; }
+
+/* --- Address and contact, before any media ------------------------------------------------- */
+.arc-s27-001 .details {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 34px);
+  padding: clamp(18px, 2.4vw, 26px) 0 clamp(22px, 3vw, 34px);
+  border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line);
+}
+.arc-s27-001 .details h2 { margin: 0 0 10px; }
+.arc-s27-001 address { font-style: normal; font-size: 0.9375rem; line-height: 1.7; }
+.arc-s27-001 .routes { margin: 0; padding: 0; list-style: none; }
+.arc-s27-001 .routes li { padding: 7px 0; border-top: 1px solid var(--line); font-size: 0.875rem; }
+.arc-s27-001 .routes li:first-child { border-top: 0; padding-top: 0; }
+.arc-s27-001 .routes .v { color: var(--ink-soft); }
+.arc-s27-001 .routes a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.arc-s27-001 .routes a:hover, .arc-s27-001 .routes a:focus-visible { border-bottom-color: var(--ink); }
+.arc-s27-001 .hours { margin: 0; }
+.arc-s27-001 .hours > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; padding: 6px 0; border-top: 1px solid var(--line); font-size: 0.875rem; }
+.arc-s27-001 .hours > div:first-child { border-top: 0; padding-top: 0; }
+.arc-s27-001 .hours dd { margin: 0; font-family: var(--mono); font-size: 0.75rem; }
+
+/* --- Media + body ---------------------------------------------------------------------------- */
+.arc-s27-001 .place { padding: clamp(22px, 3vw, 36px) 0 0; }
+.arc-s27-001 .place .slot { aspect-ratio: 16 / 9; }
+.arc-s27-001 .place figcaption { margin-top: 9px; font-size: 0.75rem; color: var(--ink-soft); }
+
+.arc-s27-001 .body { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(22px, 3vw, 52px); align-items: start; padding: clamp(24px, 3.2vw, 44px) 0; }
+.arc-s27-001 .body h2 { margin: 0 0 10px; font-size: clamp(1.0625rem, 1.6vw, 1.3125rem); line-height: 1.22; letter-spacing: -0.018em; font-weight: 600; }
+.arc-s27-001 .body p { margin: 0 0 12px; font-size: 0.9375rem; color: var(--ink-soft); max-width: 68ch; }
+.arc-s27-001 .body p:last-child { margin-bottom: 0; }
+.arc-s27-001 .body section + section { margin-top: clamp(22px, 3vw, 34px); }
+.arc-s27-001 .plain { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.arc-s27-001 .plain li { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 0.875rem; }
+.arc-s27-001 .plain a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.arc-s27-001 .plain a:hover, .arc-s27-001 .plain a:focus-visible { border-bottom-color: var(--ink); }
+
+/* Map is a reserved slot, never an embed */
+.arc-s27-001 .mapslot { display: flex; align-items: flex-end; aspect-ratio: 4 / 3; background: var(--map); border: 1px solid var(--line-strong); }
+.arc-s27-001 .mapslot p { margin: 0; padding: clamp(10px, 1.4vw, 14px); font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink); }
+.arc-s27-001 .maprow h2 { margin: 0 0 10px; }
+.arc-s27-001 .maprow figcaption { margin-top: 8px; font-size: 0.75rem; color: var(--ink-soft); }
+
+.arc-s27-001 .note { margin: 0; padding: 0 0 clamp(26px, 3.2vw, 44px); font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch; }
+
+/* --- Responsive ---------------------------------------------------------------------------------- */
+@media (max-width: 1280px) { .arc-s27-001 .body { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); } }
+@media (max-width: 1024px) {
+  .arc-s27-001 .body { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .arc-s27-001 h1 { max-width: 24ch; }
+}
+@media (max-width: 768px) {
+  /* Address, contact and hours keep the top of the page and stack before the image. */
+  .arc-s27-001 .details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .arc-s27-001 .body p { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s27-001 .details { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .arc-s27-001 .place .slot { aspect-ratio: 4 / 3; }
+  .arc-s27-001 .mapslot { aspect-ratio: 1 / 1; }
+}
+@media (max-width: 360px) { .arc-s27-001 .trail li + li::before { padding: 0 6px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s27-001 *, .arc-s27-001 *::before, .arc-s27-001 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s27-001" data-study-id="ARC-S27-001" data-territory="universal-safe">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="context wrap" data-region="page-context">
+    <nav class="trail" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#arc-s27-001-title">Studio</a></li>
+        <li><a href="#arc-s27-001-title">Locations</a></li>
+        <li><span aria-current="page">Studio location 01</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <article>
+      <header class="head wrap">
+        <p class="lbl eyebrow">Location</p>
+        <h1 id="arc-s27-001-title">Studio location 01</h1>
+        <p class="sub">
+          Placeholder description of one studio: what it is, and what a visitor would find if they
+          came to this address rather than another one.
+        </p>
+      </header>
+
+      <div class="details wrap">
+        <div>
+          <h2 class="lbl" id="arc-s27-001-addr">Address</h2>
+          <address aria-labelledby="arc-s27-001-addr">
+            Street address line 1<br>
+            Street address line 2<br>
+            District<br>
+            City, Postcode<br>
+            Country
+          </address>
+        </div>
+        <div>
+          <h2 class="lbl" id="arc-s27-001-contact">Contact</h2>
+          <ul class="routes" aria-labelledby="arc-s27-001-contact">
+            <li>Telephone &#8212; <span class="v">supplied by the studio</span></li>
+            <li>Email &#8212; <span class="v">supplied by the studio</span></li>
+            <li><a href="#arc-s27-001-title">Write to this studio</a></li>
+            <li>Coordinates &#8212; <span class="v">reserved field</span></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="lbl" id="arc-s27-001-hours">Opening context</h2>
+          <dl class="hours" aria-labelledby="arc-s27-001-hours">
+            <div><dt>Monday to Thursday</dt><dd>HH:MM&#8211;HH:MM</dd></div>
+            <div><dt>Friday</dt><dd>HH:MM&#8211;HH:MM</dd></div>
+            <div><dt>Saturday and Sunday</dt><dd>Closed</dd></div>
+            <div><dt>Visits</dt><dd>By arrangement</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <figure class="place">
+          <div class="slot"><p>Image area &#183; the place</p></div>
+          <figcaption>Placeholder &#183; image of the studio, optional</figcaption>
+        </figure>
+      </div>
+
+      <div class="body wrap">
+        <div>
+          <section aria-labelledby="arc-s27-001-what">
+            <h2 id="arc-s27-001-what">What happens here</h2>
+            <p>
+              Placeholder description. Which parts of the practice sit at this address, what work is
+              done from it, and what a visitor would be coming for &#8212; a meeting, a materials
+              review, or a scheduled site conversation.
+            </p>
+            <p>
+              This page describes one location only. The list of every studio belongs to the
+              locations section, not here.
+            </p>
+          </section>
+
+          <section aria-labelledby="arc-s27-001-avail">
+            <h2 id="arc-s27-001-avail">Available at this location</h2>
+            <ul class="plain">
+              <li>Meeting room, by arrangement</li>
+              <li>Materials library</li>
+              <li>Model making bench</li>
+              <li>Step-free entrance &#8212; access details reserved</li>
+            </ul>
+          </section>
+
+          <section aria-labelledby="arc-s27-001-get">
+            <h2 id="arc-s27-001-get">Getting here</h2>
+            <p>
+              Directions are supplied by the studio and are not invented in this study. The rows
+              below hold the shape of that information.
+            </p>
+            <ul class="plain">
+              <li>Nearest transport stop &#8212; reserved field</li>
+              <li>Walking route from the stop &#8212; reserved field</li>
+              <li>Parking &#8212; reserved field</li>
+              <li>Cycle parking &#8212; reserved field</li>
+            </ul>
+          </section>
+        </div>
+
+        <aside>
+          <section class="maprow" aria-labelledby="arc-s27-001-map">
+            <h2 class="lbl" id="arc-s27-001-map">Map area</h2>
+            <figure>
+              <div class="mapslot"><p>Reserved map slot &#183; no embedded service</p></div>
+              <figcaption>
+                A reserved area, not a map. No third-party map is embedded and no remote request is
+                made from this page.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section class="maprow" aria-labelledby="arc-s27-001-people">
+            <h2 class="lbl" id="arc-s27-001-people">Based here</h2>
+            <ul class="plain" aria-labelledby="arc-s27-001-people">
+              <li><a href="#arc-s27-001-title">Team member 01</a> &#8212; interior architecture</li>
+              <li><a href="#arc-s27-001-title">Team member 03</a> &#8212; technical delivery</li>
+              <li><a href="#arc-s27-001-title">Team member 05</a> &#8212; reuse</li>
+            </ul>
+          </section>
+        </aside>
+      </div>
+
+      <div class="wrap">
+        <p class="note">
+          Placeholder location page &#183; structure demonstration only. Address, contact and
+          opening context come before any media in source order, so they are never pushed below a
+          decorative image on a phone. Every address line, telephone, email, coordinate, hour and
+          direction is an obvious placeholder or a reserved field &#8212; the section README calls a
+          plausible invented address the failure mode this role invites, so nothing here is
+          plausible. The map is a reserved slot: no third-party map, no embed, no remote request of
+          any kind. No review, rating or claim is attributed to the location. The breadcrumb
+          overlaps ARC-S21 and ARC-S22.
+        </p>
+      </div>
+    </article>
+  </main>
+
+</div>
+</body>
+</html>

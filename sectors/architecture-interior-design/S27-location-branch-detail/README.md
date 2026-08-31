@@ -91,8 +91,12 @@ Nearest existing section in this sector: S17 Studio Locations (`S17-studio-locat
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch Document
+
+./BATCH-V1.md

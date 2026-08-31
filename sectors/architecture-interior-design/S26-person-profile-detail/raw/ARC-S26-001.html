@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S26-001
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S26 — Architect / Designer Profile
+  Territory      : Universal / Safe
+  Layout model   : Portrait paired with an identity block, then post description, how they work,
+                   what they are attached to, a reserved-fields background register and a contact
+                   route
+  Density        : Medium
+  Media mode     : One portrait area. The page reads completely with it empty, which the section
+                   README requires.
+  Interaction    : None (static; no JavaScript)
+  Page note      : `data-region="page-context"` marks the breadcrumb, which overlaps ARC-S22.
+  Person policy  : No name is invented — the subject is `Team member 01`. Roles describe what the
+                   post covers, never an achievement. Qualifications, registrations, memberships
+                   and awards are **reserved fields**, left empty and labelled, because the section
+                   README says a placeholder study must reserve them rather than fill them. No
+                   social handle, profile link, testimonial or rating appears anywhere.
+  Pairing rule   : The portrait and the identity block are one grid, so a reflow can never leave a
+                   name beside the wrong portrait — the README's explicit responsive requirement.
+-->
+
+<meta name="study-id" content="ARC-S26-001">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S26">
+<meta name="section-name" content="Architect / Designer Profile">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="layout-model" content="Paired portrait and identity, then post, work, reserved background, contact">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-portrait-optional">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S26-001 — Person Profile, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fbfaf8; }
+
+/* Scoped study styles — namespaced to .arc-s26-001 */
+.arc-s26-001 {
+  --ink: #15161a;
+  --ink-soft: #53565c;
+  --paper: #fbfaf8;
+  --card: #ffffff;
+  --slot: #e5e3de;
+  --slot-ink: #4b4a45;
+  --line: #e2e0da;
+  --line-strong: #7e8087;
+  --sep: #6c6e74;
+  --deep: #15161a;
+  --on-deep: #f4f4f2;
+  --on-deep-soft: #adafb3;
+  --focus: #2246cc;
+  --focus-light: #ffd479;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.arc-s26-001 *, .arc-s26-001 *::before, .arc-s26-001 *::after { box-sizing: inherit; }
+.arc-s26-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+
+.arc-s26-001 .wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 42px); }
+.arc-s26-001 .lbl {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s26-001 figure { margin: 0; }
+.arc-s26-001 .slot { display: flex; align-items: flex-end; background: var(--slot); }
+.arc-s26-001 .slot p {
+  margin: 0; padding: clamp(10px, 1.4vw, 14px);
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--slot-ink);
+}
+
+/* --- Breadcrumb --------------------------------------------------------------------- */
+.arc-s26-001 .context { padding: clamp(16px, 2vw, 24px) 0 0; }
+.arc-s26-001 .trail ol { display: flex; flex-wrap: wrap; align-items: baseline; margin: 0; padding: 0; list-style: none; }
+.arc-s26-001 .trail li { display: flex; align-items: baseline; }
+.arc-s26-001 .trail li + li::before { content: "/"; padding: 0 9px; color: var(--sep); font-size: 0.8125rem; }
+.arc-s26-001 .trail a, .arc-s26-001 .trail [aria-current] { display: inline-flex; align-items: center; min-height: 44px; font-size: 0.8125rem; text-decoration: none; }
+.arc-s26-001 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s26-001 .trail a:hover, .arc-s26-001 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s26-001 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+/* --- Identity: portrait and name are one unit at every width --------------------------- */
+.arc-s26-001 .identity {
+  display: grid; grid-template-columns: minmax(0, 0.36fr) minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 44px); align-items: end;
+  padding: clamp(14px, 2vw, 22px) 0 clamp(24px, 3vw, 38px);
+  border-bottom: 1px solid var(--line-strong);
+}
+.arc-s26-001 .identity .slot { aspect-ratio: 3 / 4; }
+.arc-s26-001 .identity .eyebrow { margin: 0 0 10px; }
+.arc-s26-001 h1 { margin: 0 0 10px; font-size: clamp(1.75rem, 3.6vw, 2.75rem); line-height: 1.06; letter-spacing: -0.03em; font-weight: 500; }
+.arc-s26-001 .role { margin: 0 0 14px; font-size: clamp(1rem, 1.3vw, 1.1875rem); color: var(--ink-soft); }
+.arc-s26-001 .idmeta { display: flex; flex-wrap: wrap; gap: 6px clamp(16px, 2.4vw, 34px); margin: 0; }
+.arc-s26-001 .idmeta div { min-width: 0; }
+.arc-s26-001 .idmeta dt { margin-bottom: 4px; }
+.arc-s26-001 .idmeta dd { margin: 0; font-size: 0.8125rem; }
+
+/* --- Body ----------------------------------------------------------------------------- */
+.arc-s26-001 .body {
+  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.7fr);
+  gap: clamp(24px, 3.4vw, 60px); align-items: start;
+  padding: clamp(26px, 3.4vw, 46px) 0;
+}
+.arc-s26-001 .main section + section { margin-top: clamp(24px, 3vw, 38px); }
+.arc-s26-001 .main h2 { margin: 0 0 10px; font-size: clamp(1.0625rem, 1.6vw, 1.3125rem); line-height: 1.22; letter-spacing: -0.018em; font-weight: 600; }
+.arc-s26-001 .main p { margin: 0 0 12px; font-size: 0.9375rem; color: var(--ink-soft); max-width: 68ch; }
+.arc-s26-001 .main p:last-child { margin-bottom: 0; }
+.arc-s26-001 .plain { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.arc-s26-001 .plain li { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 0.875rem; }
+.arc-s26-001 .plain a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.arc-s26-001 .plain a:hover, .arc-s26-001 .plain a:focus-visible { border-bottom-color: var(--ink); }
+
+/* Reserved-fields register: labelled, empty, and honest about being empty */
+.arc-s26-001 .reserved { padding-top: 4px; }
+.arc-s26-001 .reserved h2 { margin: 0 0 6px; }
+.arc-s26-001 .reserved > p { margin: 0 0 12px; font-size: 0.8125rem; color: var(--ink-soft); max-width: 62ch; }
+.arc-s26-001 .reserved dl { margin: 0; border-top: 1px solid var(--line); }
+.arc-s26-001 .reserved > dl > div { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.arc-s26-001 .reserved dt { font-size: 0.8125rem; }
+.arc-s26-001 .reserved dd { margin: 0; font-family: var(--mono); font-size: 0.6875rem; color: var(--ink-soft); }
+
+/* Rail: contact route */
+.arc-s26-001 .rail { position: sticky; top: clamp(16px, 2.4vw, 30px); }
+.arc-s26-001 .contact { padding: clamp(18px, 2.4vw, 26px); background: var(--deep); color: var(--on-deep); border-radius: 10px; }
+.arc-s26-001 .contact h2 { margin: 0 0 8px; font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.016em; }
+.arc-s26-001 .contact p { margin: 0 0 16px; font-size: 0.8125rem; color: var(--on-deep-soft); }
+.arc-s26-001 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 50px; padding: 0 22px; border-radius: 8px; width: 100%;
+  background: #fff; color: var(--ink); border: 1px solid #fff;
+  font-size: 0.9375rem; font-weight: 600; text-decoration: none;
+  transition: background-color 150ms ease;
+}
+.arc-s26-001 .btn:hover, .arc-s26-001 .btn:focus-visible { background: #e5e5e3; }
+.arc-s26-001 .contact :focus-visible { outline-color: var(--focus-light); }
+.arc-s26-001 .contact .fine { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid #34363b; font-size: 0.75rem; color: var(--on-deep-soft); }
+.arc-s26-001 .alsorail { margin-top: clamp(18px, 2.4vw, 26px); }
+.arc-s26-001 .alsorail h2 { margin: 0 0 8px; }
+
+.arc-s26-001 .note { margin: 0; padding: 0 0 clamp(26px, 3.2vw, 44px); font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch; }
+
+/* --- Responsive ------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s26-001 .identity { grid-template-columns: minmax(0, 0.4fr) minmax(0, 1fr); }
+  .arc-s26-001 .body { grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s26-001 .body { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .arc-s26-001 .rail { position: static; }
+}
+@media (max-width: 768px) {
+  /* Portrait and identity stay in the same grid — they stack together and nothing comes
+     between them, so the name can never end up beside another person's portrait. */
+  .arc-s26-001 .identity { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 18px; }
+  .arc-s26-001 .identity .slot { aspect-ratio: 4 / 3; }
+  .arc-s26-001 .main p { max-width: none; }
+}
+@media (max-width: 480px) {
+  .arc-s26-001 .reserved > dl > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .arc-s26-001 .idmeta { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+}
+@media (max-width: 360px) {
+  .arc-s26-001 .trail li + li::before { padding: 0 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s26-001 *, .arc-s26-001 *::before, .arc-s26-001 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s26-001" data-study-id="ARC-S26-001" data-territory="universal-safe">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="context wrap" data-region="page-context">
+    <nav class="trail" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#arc-s26-001-title">Studio</a></li>
+        <li><a href="#arc-s26-001-title">People</a></li>
+        <li><span aria-current="page">Team member 01</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <article>
+      <header class="identity wrap">
+        <figure>
+          <div class="slot"><p>Portrait area</p></div>
+        </figure>
+        <div>
+          <p class="lbl eyebrow">Profile</p>
+          <h1 id="arc-s26-001-title">Team member 01</h1>
+          <p class="role">Associate &#183; Interior architecture</p>
+          <dl class="idmeta">
+            <div>
+              <dt class="lbl">Based at</dt>
+              <dd>Studio location 01</dd>
+            </div>
+            <div>
+              <dt class="lbl">Works on</dt>
+              <dd>Residential, workplace</dd>
+            </div>
+            <div>
+              <dt class="lbl">Joined</dt>
+              <dd>YYYY</dd>
+            </div>
+          </dl>
+        </div>
+      </header>
+
+      <div class="body wrap">
+        <div class="main">
+          <section aria-labelledby="arc-s26-001-post">
+            <h2 id="arc-s26-001-post">What this post covers</h2>
+            <p>
+              Placeholder description. The post carries interior architecture from survey through
+              to installation: layout, daylight, joinery and the specification that holds them
+              together, on projects where the shell is already settled.
+            </p>
+            <p>
+              It is a working post rather than a supervisory one &#8212; the drawings that leave the
+              studio under it are drawn or checked by the person holding it.
+            </p>
+          </section>
+
+          <section aria-labelledby="arc-s26-001-how">
+            <h2 id="arc-s26-001-how">How they work</h2>
+            <p>
+              Placeholder description supplied by the studio. Two or three sentences about method:
+              what gets decided first, what gets tested, and what the client is asked for and when.
+            </p>
+          </section>
+
+          <section aria-labelledby="arc-s26-001-attached">
+            <h2 id="arc-s26-001-attached">Attached to</h2>
+            <ul class="plain">
+              <li><a href="#arc-s26-001-title">Interior architecture</a> &#8212; service</li>
+              <li><a href="#arc-s26-001-title">Renovation and reuse</a> &#8212; service</li>
+              <li><a href="#arc-s26-001-title">Project record 01</a> &#8212; project</li>
+              <li><a href="#arc-s26-001-title">Project record 02</a> &#8212; project</li>
+            </ul>
+          </section>
+
+          <section class="reserved" aria-labelledby="arc-s26-001-bg">
+            <h2 id="arc-s26-001-bg">Professional background</h2>
+            <p>
+              These are verifiable facts about a real person. They are left as reserved fields here
+              and are filled by the studio, not by this study.
+            </p>
+            <dl>
+              <div><dt>Education</dt><dd>Reserved field &#8212; supplied by the studio</dd></div>
+              <div><dt>Professional registration</dt><dd>Reserved field &#8212; supplied by the studio</dd></div>
+              <div><dt>Memberships</dt><dd>Reserved field &#8212; supplied by the studio</dd></div>
+              <div><dt>Previous practice</dt><dd>Reserved field &#8212; supplied by the studio</dd></div>
+              <div><dt>Teaching and writing</dt><dd>Reserved field &#8212; supplied by the studio</dd></div>
+            </dl>
+          </section>
+        </div>
+
+        <aside class="rail">
+          <div class="contact">
+            <h2>Reach this person</h2>
+            <p>
+              An enquiry about the work this post covers goes to the studio and is passed on, so
+              nothing here depends on a personal address being published.
+            </p>
+            <a class="btn" href="#arc-s26-001-title">
+              Ask for Team member 01
+              <span aria-hidden="true">&#8594;</span>
+            </a>
+            <p class="fine">
+              Direct contact details are a reserved field. No personal address, telephone number or
+              social handle is invented in this study.
+            </p>
+          </div>
+          <div class="alsorail">
+            <h2 class="lbl" id="arc-s26-001-also">Also in this discipline</h2>
+            <ul class="plain" aria-labelledby="arc-s26-001-also">
+              <li><a href="#arc-s26-001-title">Team member 02</a></li>
+              <li><a href="#arc-s26-001-title">Team member 03</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </article>
+
+    <div class="wrap">
+      <p class="note">
+        Placeholder person profile page &#183; structure demonstration only. One person: portrait
+        paired with identity, what the post covers, how they work, what they are attached to, a
+        background register and a contact route. No name is invented &#8212; the subject is
+        `Team member 01` &#8212; and qualifications, registrations, memberships and previous
+        practice are left as labelled reserved fields, because the section README says a
+        placeholder study must reserve them rather than fill them. No social handle, profile link,
+        testimonial or rating appears. The portrait and the identity block are a single grid at
+        every width, so a reflow cannot pair a name with the wrong portrait. The breadcrumb
+        overlaps ARC-S21 and ARC-S22.
+      </p>
+    </div>
+  </main>
+
+</div>
+</body>
+</html>

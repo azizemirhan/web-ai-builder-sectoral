@@ -91,8 +91,12 @@ Nearest existing section in this sector: S08 Architects & Designers (`S08-archit
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
 ./raw/
+
+# Batch Document
+
+./BATCH-V1.md

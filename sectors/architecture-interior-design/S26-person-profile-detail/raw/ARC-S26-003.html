@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : ARC-S26-003
+  Sector         : Architecture & Interior Design (ARC)
+  Section        : ARC-S26 — Architect / Designer Profile
+  Territory      : Dense / Information-heavy
+  Layout model   : Personnel record sheet — identity band, a two-column field register, a table of
+                   involvement by work stage, attached work in two columns, and a reserved-fields
+                   block set apart at the foot
+  Density        : High
+  Media mode     : One small portrait area inside the identity band
+  Interaction    : None (static; no JavaScript). Nothing is hidden behind a control.
+  Page note      : `data-region="page-context"` marks the breadcrumb and record head.
+  Person policy  : `Team member 03`. Every field that would be a credential, registration,
+                   membership or award is present as a **reserved row** and left empty — a record
+                   sheet is exactly the layout that invites filling them in, so they are shown as
+                   reserved rather than omitted, which is what the section README asks for.
+-->
+
+<meta name="study-id" content="ARC-S26-003">
+<meta name="sector" content="Architecture &amp; Interior Design">
+<meta name="sector-prefix" content="ARC">
+<meta name="section-id" content="ARC-S26">
+<meta name="section-name" content="Architect / Designer Profile">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="layout-model" content="Personnel record sheet with field register and stage-involvement table">
+<meta name="density" content="high">
+<meta name="media-mode" content="one-small-portrait">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>ARC-S26-003 — Person Profile, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f5f6; }
+
+/* Scoped study styles — namespaced to .arc-s26-003 */
+.arc-s26-003 {
+  --ink: #14161a;
+  --ink-soft: #4e535b;
+  --paper: #f4f5f6;
+  --card: #ffffff;
+  --slot: #e2e3e5;
+  --slot-ink: #494c51;
+  --line: #dee1e4;
+  --line-strong: #7c828a;
+  --sep: #666c74;
+  --focus: #1a45c8;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+  box-sizing: border-box;
+  background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.55; -webkit-font-smoothing: antialiased;
+}
+.arc-s26-003 *, .arc-s26-003 *::before, .arc-s26-003 *::after { box-sizing: inherit; }
+.arc-s26-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+
+.arc-s26-003 .sheet { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(14px, 2.4vw, 36px); }
+.arc-s26-003 .lbl {
+  font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-soft); font-weight: 600;
+}
+.arc-s26-003 figure { margin: 0; }
+.arc-s26-003 .slot { display: flex; align-items: flex-end; background: var(--slot); }
+.arc-s26-003 .slot p { margin: 0; padding: 9px 10px; font-family: var(--mono); font-size: 0.4375rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slot-ink); }
+
+/* --- Breadcrumb ------------------------------------------------------------------------ */
+.arc-s26-003 .context { padding: clamp(14px, 1.8vw, 20px) 0 0; }
+.arc-s26-003 .trail ol { display: flex; flex-wrap: wrap; align-items: baseline; margin: 0; padding: 0; list-style: none; font-family: var(--mono); }
+.arc-s26-003 .trail li { display: flex; align-items: baseline; }
+.arc-s26-003 .trail li + li::before { content: "\203A"; padding: 0 8px; color: var(--sep); font-size: 0.75rem; }
+.arc-s26-003 .trail a, .arc-s26-003 .trail [aria-current] { display: inline-flex; align-items: center; min-height: 44px; font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
+.arc-s26-003 .trail a { color: var(--ink-soft); border-bottom: 1px solid transparent; }
+.arc-s26-003 .trail a:hover, .arc-s26-003 .trail a:focus-visible { color: var(--ink); border-bottom-color: var(--ink); }
+.arc-s26-003 .trail [aria-current] { color: var(--ink); font-weight: 600; }
+
+/* --- Identity band: portrait, name and reference travel together ------------------------ */
+.arc-s26-003 .identity {
+  display: grid; grid-template-columns: 118px minmax(0, 1fr) minmax(0, 0.5fr);
+  gap: clamp(14px, 2.4vw, 32px); align-items: end;
+  padding: clamp(10px, 1.4vw, 16px) 0 clamp(16px, 2.2vw, 24px);
+  border-bottom: 2px solid var(--ink);
+}
+.arc-s26-003 .identity .slot { aspect-ratio: 3 / 4; }
+.arc-s26-003 .identity .ref { margin: 0 0 8px; }
+.arc-s26-003 h1 { margin: 0 0 6px; font-size: clamp(1.5rem, 2.8vw, 2.125rem); line-height: 1.08; letter-spacing: -0.026em; font-weight: 600; }
+.arc-s26-003 .role { margin: 0; font-size: 0.9375rem; color: var(--ink-soft); }
+.arc-s26-003 .idfacts { margin: 0; display: grid; gap: 3px; }
+.arc-s26-003 .idfacts div { display: grid; grid-template-columns: 7.2em minmax(0, 1fr); gap: 8px; padding: 3px 0; border-bottom: 1px solid var(--line); }
+.arc-s26-003 .idfacts dt { padding-top: 3px; }
+.arc-s26-003 .idfacts dd { margin: 0; font-size: 0.75rem; }
+
+/* --- Field register --------------------------------------------------------------------- */
+.arc-s26-003 .block { padding: clamp(18px, 2.4vw, 28px) 0; border-bottom: 1px solid var(--line); }
+.arc-s26-003 .block > h2 { margin: 0 0 12px; font-size: clamp(1rem, 1.4vw, 1.1875rem); line-height: 1.2; letter-spacing: -0.016em; font-weight: 600; }
+.arc-s26-003 .block > p { margin: 0 0 12px; font-size: 0.875rem; color: var(--ink-soft); max-width: 76ch; }
+
+.arc-s26-003 .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(20px, 3vw, 46px); margin: 0; }
+.arc-s26-003 .fields > div { display: grid; grid-template-columns: 10.4em minmax(0, 1fr); gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); }
+.arc-s26-003 .fields dt { padding-top: 2px; }
+.arc-s26-003 .fields dd { margin: 0; font-size: 0.8125rem; }
+
+/* --- Stage involvement table -------------------------------------------------------------- */
+.arc-s26-003 .tablewrap { overflow-x: auto; }
+.arc-s26-003 table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 0.8125rem; }
+.arc-s26-003 caption { text-align: left; padding-bottom: 8px; font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+.arc-s26-003 th, .arc-s26-003 td { text-align: left; vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--line); }
+.arc-s26-003 thead th { border-bottom: 1px solid var(--line-strong); font-family: var(--mono); font-size: 0.5rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; white-space: nowrap; }
+.arc-s26-003 tbody th { font-family: var(--mono); font-size: 0.6875rem; font-weight: 400; color: var(--ink-soft); white-space: nowrap; }
+.arc-s26-003 td:last-child, .arc-s26-003 th:last-child { padding-right: 0; }
+/* Involvement is stated in words, never by a mark or a colour alone. */
+.arc-s26-003 .held { font-family: var(--mono); font-size: 0.625rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* --- Attached work ------------------------------------------------------------------------- */
+.arc-s26-003 .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(20px, 3vw, 46px); }
+.arc-s26-003 .two ul { margin: 0; padding: 0; list-style: none; }
+.arc-s26-003 .two li { padding: 8px 0; border-top: 1px solid var(--line); font-size: 0.8125rem; }
+.arc-s26-003 .two a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.arc-s26-003 .two a:hover, .arc-s26-003 .two a:focus-visible { border-bottom-color: var(--ink); }
+
+/* --- Reserved block --------------------------------------------------------------------------- */
+.arc-s26-003 .reserved { border: 1px solid var(--line-strong); background: var(--card); padding: clamp(16px, 2.2vw, 24px); margin: clamp(18px, 2.4vw, 26px) 0; }
+.arc-s26-003 .reserved h2 { margin: 0 0 6px; font-size: 1rem; font-weight: 600; }
+.arc-s26-003 .reserved > p { margin: 0 0 12px; font-size: 0.8125rem; color: var(--ink-soft); max-width: 70ch; }
+.arc-s26-003 .reserved dl { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(16px, 2.4vw, 32px); }
+.arc-s26-003 .reserved dl > div { padding: 7px 0; border-top: 1px solid var(--line); }
+.arc-s26-003 .reserved dt { font-size: 0.8125rem; }
+.arc-s26-003 .reserved dd { margin: 2px 0 0; font-family: var(--mono); font-size: 0.625rem; color: var(--ink-soft); }
+
+/* --- Contact line -------------------------------------------------------------------------------- */
+.arc-s26-003 .contact { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(14px, 2vw, 28px); align-items: center; padding: clamp(14px, 2vw, 22px) 0 clamp(16px, 2.2vw, 24px); }
+.arc-s26-003 .contact h2 { margin: 0 0 4px; font-size: 1rem; font-weight: 600; }
+.arc-s26-003 .contact p { margin: 0; font-size: 0.8125rem; color: var(--ink-soft); max-width: 64ch; }
+.arc-s26-003 .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 46px; padding: 0 20px; border-radius: 3px;
+  background: var(--ink); color: #fff; border: 1px solid var(--ink);
+  font-family: var(--mono); font-size: 0.5625rem; letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; white-space: nowrap; transition: background-color 150ms ease;
+}
+.arc-s26-003 .btn:hover, .arc-s26-003 .btn:focus-visible { background: #33373d; }
+
+.arc-s26-003 .note { margin: 0; padding: 0 0 clamp(24px, 3vw, 40px); font-size: 0.75rem; line-height: 1.65; color: var(--ink-soft); max-width: 92ch; }
+
+/* --- Responsive ----------------------------------------------------------------------------------- */
+@media (max-width: 1280px) {
+  .arc-s26-003 .identity { grid-template-columns: 104px minmax(0, 1fr) minmax(0, 0.55fr); }
+  .arc-s26-003 .fields > div { grid-template-columns: 9.2em minmax(0, 1fr); }
+}
+@media (max-width: 1024px) {
+  .arc-s26-003 .identity { grid-template-columns: 104px minmax(0, 1fr); }
+  .arc-s26-003 .idfacts { grid-column: 1 / -1; grid-template-columns: repeat(2, minmax(0, 1fr)); display: grid; gap: 0 clamp(16px, 2.4vw, 30px); }
+  .arc-s26-003 .reserved dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .arc-s26-003 .fields { grid-template-columns: minmax(0, 1fr); }
+  .arc-s26-003 .two { grid-template-columns: minmax(0, 1fr); }
+  .arc-s26-003 .block > p { max-width: none; }
+}
+@media (max-width: 480px) {
+  /* Portrait and name stay in one row, at a smaller portrait, rather than separating. */
+  .arc-s26-003 .identity { grid-template-columns: 72px minmax(0, 1fr); gap: 14px; align-items: start; }
+  .arc-s26-003 .idfacts { grid-template-columns: minmax(0, 1fr); }
+  .arc-s26-003 .fields > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .arc-s26-003 .reserved dl { grid-template-columns: minmax(0, 1fr); }
+  .arc-s26-003 .contact { grid-template-columns: minmax(0, 1fr); }
+  .arc-s26-003 .btn { width: 100%; }
+}
+@media (max-width: 360px) {
+  .arc-s26-003 .identity { grid-template-columns: 60px minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-s26-003 *, .arc-s26-003 *::before, .arc-s26-003 *::after {
+    animation-duration: 0.001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important; scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="arc-s26-003" data-study-id="ARC-S26-003" data-territory="dense-information-heavy">
+
+  <!-- Overlaps ARC-S21 / ARC-S22. -->
+  <div class="context sheet" data-region="page-context">
+    <nav class="trail" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#arc-s26-003-title">Studio</a></li>
+        <li><a href="#arc-s26-003-title">People</a></li>
+        <li><span aria-current="page">Team member 03</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <main>
+    <article>
+      <header class="identity sheet" data-region="page-context">
+        <figure>
+          <div class="slot"><p>Portrait</p></div>
+        </figure>
+        <div>
+          <p class="ref lbl">Personnel record &#183; placeholder</p>
+          <h1 id="arc-s26-003-title">Team member 03</h1>
+          <p class="role">Senior architect &#183; Technical delivery</p>
+        </div>
+        <dl class="idfacts">
+          <div><dt class="lbl">Discipline</dt><dd>Architecture</dd></div>
+          <div><dt class="lbl">Based at</dt><dd>Studio location 01</dd></div>
+          <div><dt class="lbl">Joined</dt><dd>YYYY</dd></div>
+          <div><dt class="lbl">Record ref</dt><dd>NN-NNN</dd></div>
+        </dl>
+      </header>
+
+      <div class="sheet">
+        <section class="block" aria-labelledby="arc-s26-003-f">
+          <h2 id="arc-s26-003-f">Field register</h2>
+          <p>
+            The whole record is open on the page: nothing on this profile is hidden behind a control,
+            because a reader comparing two people should not have to open anything.
+          </p>
+          <dl class="fields">
+            <div><dt class="lbl">Post</dt><dd>Senior architect</dd></div>
+            <div><dt class="lbl">Reports into</dt><dd>Technical delivery</dd></div>
+            <div><dt class="lbl">Project types</dt><dd>Reuse, residential, workplace</dd></div>
+            <div><dt class="lbl">Stages held</dt><dd>Technical design, construction</dd></div>
+            <div><dt class="lbl">Working languages</dt><dd>Reserved field</dd></div>
+            <div><dt class="lbl">Works from</dt><dd>Studio location 01</dd></div>
+            <div><dt class="lbl">Drawing role</dt><dd>Draws and checks</dd></div>
+            <div><dt class="lbl">Site role</dt><dd>Periodic inspection</dd></div>
+          </dl>
+        </section>
+
+        <section class="block" aria-labelledby="arc-s26-003-st">
+          <h2 id="arc-s26-003-st">Involvement by work stage</h2>
+          <p>
+            Which stages this post carries, and what leaves the studio under it. Involvement is
+            written as a word in every row &#8212; never as a mark, a dot or a colour.
+          </p>
+          <div class="tablewrap">
+            <table>
+              <caption>Stage, involvement and output</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Stage</th>
+                  <th scope="col">Involvement</th>
+                  <th scope="col">Output under this post</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Feasibility</th><td class="held">Supports</td><td>Constraint review</td></tr>
+                <tr><th scope="row">Concept</th><td class="held">Supports</td><td>Comment on buildability</td></tr>
+                <tr><th scope="row">Developed design</th><td class="held">Holds</td><td>Coordinated design set</td></tr>
+                <tr><th scope="row">Technical design</th><td class="held">Holds</td><td>Details, schedules, specification</td></tr>
+                <tr><th scope="row">Construction</th><td class="held">Holds</td><td>Query responses, inspection notes</td></tr>
+                <tr><th scope="row">Handover</th><td class="held">Supports</td><td>Record set review</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="block" aria-labelledby="arc-s26-003-at">
+          <h2 id="arc-s26-003-at">Attached work</h2>
+          <div class="two">
+            <div>
+              <h3 class="lbl">Services</h3>
+              <ul>
+                <li><a href="#arc-s26-003-title">Technical design and delivery</a></li>
+                <li><a href="#arc-s26-003-title">Renovation and reuse</a></li>
+                <li><a href="#arc-s26-003-title">Interior architecture</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="lbl">Projects</h3>
+              <ul>
+                <li><a href="#arc-s26-003-title">Project record 01</a></li>
+                <li><a href="#arc-s26-003-title">Project record 04</a></li>
+                <li><a href="#arc-s26-003-title">Project record 07</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="reserved" aria-labelledby="arc-s26-003-res">
+          <h2 id="arc-s26-003-res">Reserved fields &#8212; not filled by this study</h2>
+          <p>
+            A record sheet is the layout that most invites inventing a qualification. These rows are
+            present so the shape of the record is complete, and empty because every one of them is a
+            verifiable fact about a real person.
+          </p>
+          <dl>
+            <div><dt>Education</dt><dd>Reserved</dd></div>
+            <div><dt>Professional registration</dt><dd>Reserved</dd></div>
+            <div><dt>Registration number</dt><dd>Reserved</dd></div>
+            <div><dt>Memberships</dt><dd>Reserved</dd></div>
+            <div><dt>Previous practice</dt><dd>Reserved</dd></div>
+            <div><dt>Awards</dt><dd>Reserved</dd></div>
+            <div><dt>Teaching</dt><dd>Reserved</dd></div>
+            <div><dt>Publications</dt><dd>Reserved</dd></div>
+            <div><dt>Direct contact</dt><dd>Reserved</dd></div>
+          </dl>
+        </section>
+
+        <div class="contact">
+          <div>
+            <h2>Reach this person</h2>
+            <p>
+              Enquiries go to the studio and are passed on. No personal address, telephone number or
+              social handle is published or invented in this study.
+            </p>
+          </div>
+          <a class="btn" href="#arc-s26-003-title">
+            Ask for Team member 03
+            <span aria-hidden="true">&#8594;</span>
+          </a>
+        </div>
+
+        <p class="note">
+          Placeholder person profile page &#183; structure demonstration only. The densest register
+          in this section: identity band, open field register, a stage-involvement table, attached
+          work in two columns, and a reserved-fields block set apart at the foot. Involvement is
+          stated in words in every row, so nothing on the page depends on a mark or a colour being
+          seen. The portrait sits in the same row as the name at every width, down to a 60px
+          portrait at 360px, rather than separating from it. The breadcrumb and record head overlap
+          ARC-S21 and ARC-S22.
+        </p>
+      </div>
+    </article>
+  </main>
+
+</div>
+</body>
+</html>
