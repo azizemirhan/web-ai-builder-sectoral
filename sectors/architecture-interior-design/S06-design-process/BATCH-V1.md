@@ -15,7 +15,7 @@
 | --- | --- | --- | --- |
 | `ARC-S06-001` | Universal / Safe | AUTHORED | `raw/ARC-S06-001.html` |
 | `ARC-S06-002` | Premium / Editorial | AUTHORED | `raw/ARC-S06-002.html` |
-| `ARC-S06-003` | Structured / Visual Modular | AUTHORED (reworked) | `raw/ARC-S06-003.html` |
+| `ARC-S06-003` | Structured / Visual Modular | REWORKED — ACCEPTED | `raw/ARC-S06-003.html` |
 | `ARC-S06-004` | Conversion-led | AUTHORED | `raw/ARC-S06-004.html` |
 | `ARC-S06-005` | Sector-native / Distinctive | AUTHORED | `raw/ARC-S06-005.html` |
 
@@ -106,6 +106,11 @@ all, which is a deliberate decision recorded under Media Slots.
 - **Limitation / content ceiling:** Five or six phases; beyond that the five-up row is too narrow at
   1440px and needs a second row. One line per phase — a second sentence reintroduces the density
   this study was reworked to remove.
+- **Review record (user decision, 2026-09-01):** Implemented as the pilot rework for the
+  Structured / Visual Modular direction. Quality accepted, direction confirmed as `003`, no further
+  rework required. Responsive QA passed at 1440 / 1280 / 1024 / 768 / 430 / 390 / 320. Recorded as
+  a high-value reference for the remaining Architecture reworks. Contact-sheet regeneration is
+  still outstanding.
 - **Rework record:** Replaces a five-row dossier treatment (stage number, description, a three-pair
   metadata block and a small thumbnail, separated by hairlines). Preserved: the five-stage
   progression — brief and site, concept design, developed design, technical design, site and

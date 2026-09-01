@@ -85,6 +85,11 @@ Sector direction: `../ARCHITECTURE-DESIGN-DIRECTION.md`.
 direction this section should take. Programme, schedule and drawing-document aesthetics are not
 the default here.
 
+`ARC-S06-003` was reworked to that direction and accepted: a large lead media field above concise
+phase modules, the five-stage content model kept and the grid adapted to it. It is the accepted
+pilot for the Structured / Visual Modular pattern and carries high reference value for the
+remaining Architecture reworks.
+
 # Section Shell
 
 Section only. No global header, navigation or footer.
