@@ -23,7 +23,7 @@ through S27 in every sector.
 | --- | --- | --- |
 | S01–S20 | Sector Core | Section roles specific to the sector |
 | S21–S27 | Universal Extended Site Architecture | The same seven roles, at the same numbers, in every sector |
-| S28+ | Reserved | For future sector-native page types. Not allocated and not created. |
+| S28+ | Reserved / provisional | Sector-native extensions beyond the shared model. Outside the planned catalog count; used only where a sector documents a genuinely additional role. |
 
 Section numbers above S20 are explicitly supported and follow the same rules as S01–S20: two
 digits, zero-padded, contiguous, and stable. A section number is never reused or renumbered once

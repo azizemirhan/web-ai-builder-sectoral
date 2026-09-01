@@ -18,8 +18,8 @@ The catalog is in two parts:
 | **Total** |  | **27 per sector** | **2,700** |
 
 The original core catalog was 2,000 studies across S01–S20. S21–S27 extend it; they do not
-replace it. S28 and above are reserved for future sector-native page types and are not
-scaffolded.
+replace it. S28 and above are reserved for provisional sector-native extensions; they are not
+scaffolded and are outside the planned catalog count.
 
 The repository contains structure, documentation, and authored raw studies only. It contains no application code, production manifests, registry code, runtime adapters, or Design Lab review decisions.
 

@@ -36,7 +36,7 @@ The file name records the original core figure and is kept for continuity.
 | --- | --- | ---: | --- |
 | S01–S20 | Sector Core — roles specific to the sector | 20 | Yes |
 | S21–S27 | Universal Extended Site Architecture — detail-page and page-context roles shared by every sector | 7 | Yes |
-| S28+ | Reserved for future sector-native page types | — | No, deliberately not created |
+| S28+ | Reserved / provisional sector-native extensions | — | Not scaffolded; outside the planned catalog count |
 
 The seven extended roles are the same in every sector. Their numbers and IDs are canonical;
 only the sector-facing section name adapts to the sector's own terminology.
@@ -62,5 +62,5 @@ is useful research information; a missing role is not.
     Total catalog      20 sectors × 27 sections          × 5 studies = 2,700 planned studies
 
 The original core catalog of 2,000 studies is unchanged; the 700 extended studies are added to
-it. The five default study territories are documented in standards/01-AUTHORING-STANDARD.md.
+it. The five default study directions are documented in standards/01-AUTHORING-STANDARD.md.
 Stable ID rules are documented in standards/02-NAMING-AND-ID-STANDARD.md.
