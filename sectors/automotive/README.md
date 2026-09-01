@@ -3,11 +3,11 @@
 - Prefix: AUTO
 - Planned sections: 27
 - Planned studies: 135
-- Authoring status: NOT_STARTED
+- Authoring status: IN_PROGRESS — S01 authored
 
 | Section | Name | Directory | Planned IDs | Status |
 | --- | --- | --- | --- | --- |
-| S01 | Hero | `S01-hero/` | AUTO-S01-001–005 | NOT_STARTED |
+| S01 | Hero | `S01-hero/` | AUTO-S01-001–005 | AUTHORED |
 | S02 | Vehicle Service Categories | `S02-vehicle-service-categories/` | AUTO-S02-001–005 | NOT_STARTED |
 | S03 | Featured Vehicles | `S03-featured-vehicles/` | AUTO-S03-001–005 | NOT_STARTED |
 | S04 | Workshop Services | `S04-workshop-services/` | AUTO-S04-001–005 | NOT_STARTED |
@@ -35,7 +35,9 @@
 | S26 | Technician / Sales Specialist Profile | `S26-person-profile-detail/` | AUTO-S26-001–005 | NOT_STARTED |
 | S27 | Dealership / Service Centre Detail | `S27-location-branch-detail/` | AUTO-S27-001–005 | NOT_STARTED |
 
-No studies or section-level BATCH-V1.md files exist yet. Create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for a section.
+S01 is authored and carries `S01-hero/BATCH-V1.md`. The remaining sections have no studies yet;
+create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins
+for a section.
 
 S01–S20 are this sector's core catalog. S21–S27 are the universal extended site
 architecture roles, scaffolded and documented but not yet researched or authored.

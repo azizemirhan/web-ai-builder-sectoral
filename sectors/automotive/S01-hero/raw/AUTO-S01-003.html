@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : AUTO-S01-003
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S01 — Hero
+  Direction      : Structured / Visual Modular
+  Reference      : Supplied visual research — reference 3 of five images provided with the
+                   authoring request (a model presentation combining one vehicle image with
+                   several supporting information callouts). Its organising idea — one
+                   vehicle field plus a small set of grouped supporting modules — is the part
+                   that was used. Its metric density was deliberately reduced: the reference
+                   carries six-plus numeric specifications, this study carries none.
+  Layout model   : Three-band modular system on a light ground — intro band, one wide primary
+                   vehicle media field, then a three-up module row, each module carrying its
+                   own detail media area
+  Density        : Medium (capacity carried by the module grid, not by copy volume)
+  Media mode     : Four reserved media areas — one wide primary field plus one per module.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Module titles and one line each. No figures of any kind — no range,
+                   charging, power, acceleration, battery, price, finance or availability
+                   values, and no specification table. Text never sits over media in this
+                   study, which is one of its structural differences from the other four.
+-->
+
+<meta name="study-id" content="AUTO-S01-003">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Intro band above a wide primary media field above a three-up module row">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-primary-field-plus-area-per-module-x3">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>AUTO-S01-003 — Hero, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .auto-s01-003 */
+.auto-s01-003 {
+  --ink: #14161a;
+  --ink-soft: #565b63;
+  --paper: #ffffff;
+  --slot: #e8e8e6;
+  --slot-ink: #55585d;
+  --line: #dedeeb;
+  --rule: #dcdcda;
+  --accent: #17506e;
+  --focus: #17506e;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.auto-s01-003 *,
+.auto-s01-003 *::before,
+.auto-s01-003 *::after { box-sizing: inherit; }
+.auto-s01-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.auto-s01-003 .shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(30px, 3.6vw, 52px) clamp(20px, 3.6vw, 52px);
+  display: grid;
+  gap: clamp(22px, 2.4vw, 34px);
+}
+
+/* Band 1 — intro */
+.auto-s01-003 .intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.85fr);
+  gap: clamp(20px, 3vw, 48px);
+  align-items: end;
+}
+.auto-s01-003 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.73rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.auto-s01-003 h1 {
+  margin: 0;
+  font-size: clamp(1.95rem, 3.9vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  font-weight: 640;
+  max-width: 18ch;
+}
+.auto-s01-003 .intro-side { min-width: 0; }
+.auto-s01-003 .intro-side p {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: clamp(0.96rem, 1vw, 1.04rem);
+  max-width: 40ch;
+}
+.auto-s01-003 .textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--accent);
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+.auto-s01-003 .textlink:hover { text-decoration-thickness: 2px; }
+
+/* Band 2 — primary vehicle media */
+.auto-s01-003 .primary-media {
+  min-height: clamp(210px, 21vw, 300px);
+  border-radius: 16px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.auto-s01-003 .slot-label {
+  font-size: 0.71rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+
+/* Band 3 — module row */
+.auto-s01-003 .modules {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 32px);
+}
+.auto-s01-003 .module {
+  min-width: 0;
+  display: grid;
+  gap: clamp(14px, 1.5vw, 20px);
+  align-content: start;
+}
+.auto-s01-003 .module-media {
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  min-width: 0;
+}
+.auto-s01-003 .module-body { min-width: 0; }
+.auto-s01-003 .module-index {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+}
+.auto-s01-003 .module h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.05rem, 1.3vw, 1.24rem);
+  line-height: 1.25;
+  letter-spacing: -0.012em;
+  font-weight: 620;
+}
+.auto-s01-003 .module p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .auto-s01-003 .intro {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(16px, 3vw, 24px);
+  }
+  .auto-s01-003 h1 { max-width: 22ch; }
+  .auto-s01-003 .primary-media { min-height: 0; aspect-ratio: 21 / 9; }
+}
+
+/* Module row becomes a stack of horizontal rows rather than three narrow columns */
+@media (max-width: 900px) {
+  .auto-s01-003 .modules {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .auto-s01-003 .module {
+    grid-template-columns: minmax(0, 0.38fr) minmax(0, 1fr);
+    gap: clamp(16px, 3vw, 24px);
+    align-items: center;
+    padding: clamp(18px, 3vw, 24px) 0;
+    border-top: 1px solid var(--rule);
+  }
+  .auto-s01-003 .module:first-child { padding-top: clamp(4px, 1vw, 8px); border-top: 0; }
+  .auto-s01-003 .module-media { aspect-ratio: 3 / 2; }
+}
+
+@media (max-width: 768px) {
+  .auto-s01-003 .primary-media { aspect-ratio: 16 / 9; border-radius: 14px; }
+}
+
+/* At phone widths the module media becomes a small fixed square rather than a proportional
+   column, so three modules stay compact instead of turning the hero into a long page. */
+@media (max-width: 560px) {
+  .auto-s01-003 .module {
+    grid-template-columns: minmax(0, 96px) minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+    padding: 18px 0;
+  }
+  .auto-s01-003 .module-media { aspect-ratio: 1 / 1; }
+  .auto-s01-003 .module-media .slot-label { font-size: 0.6rem; letter-spacing: 0.1em; }
+  .auto-s01-003 .primary-media { aspect-ratio: 16 / 9; }
+  .auto-s01-003 .intro-side p { max-width: none; }
+}
+
+@media (max-width: 360px) {
+  .auto-s01-003 .module { grid-template-columns: minmax(0, 80px) minmax(0, 1fr); gap: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-s01-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<main class="auto-s01-003" data-study-id="AUTO-S01-003" data-direction="Structured / Visual Modular">
+  <section class="hero" aria-labelledby="auto-s01-003-title">
+    <div class="shell">
+
+      <div class="intro">
+        <div class="intro-main">
+          <p class="eyebrow">Model overview</p>
+          <h1 id="auto-s01-003-title">Built around three ideas</h1>
+        </div>
+        <div class="intro-side">
+          <p>Range, charging and the space you sit in — the parts of an electric car you actually live with.</p>
+          <a class="textlink" href="#auto-s01-003-title">
+            View the model
+            <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="primary-media">
+        <span class="slot-label">Vehicle media</span>
+      </div>
+
+      <ul class="modules">
+        <li class="module">
+          <div class="module-media"><span class="slot-label">Detail media</span></div>
+          <div class="module-body">
+            <span class="module-index">01</span>
+            <h2>Range</h2>
+            <p>Planned around a normal week of driving.</p>
+          </div>
+        </li>
+        <li class="module">
+          <div class="module-media"><span class="slot-label">Detail media</span></div>
+          <div class="module-body">
+            <span class="module-index">02</span>
+            <h2>Charging</h2>
+            <p>Home, work and motorway stops as one routine.</p>
+          </div>
+        </li>
+        <li class="module">
+          <div class="module-media"><span class="slot-label">Interior detail media</span></div>
+          <div class="module-body">
+            <span class="module-index">03</span>
+            <h2>Interior</h2>
+            <p>Materials and controls arranged around the driver.</p>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

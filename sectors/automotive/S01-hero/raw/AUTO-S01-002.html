@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : AUTO-S01-002
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S01 — Hero
+  Direction      : Premium / Editorial
+  Reference      : Supplied visual research — reference 4 of five images provided with the
+                   authoring request (a vehicle on a mountain road, bright cinematic frame,
+                   two short lines of copy, a restrained pair of actions). Used for its
+                   cinematic restraint, its whitespace and its low copy count only. No
+                   layout, brand, wording, vehicle or photograph from that image is
+                   reproduced, and none of its German-language brand voice is imitated.
+  Layout model   : Full-bleed cinematic stage on a bright ground — media edge to edge, copy
+                   held in the left third, hairline caption rail on the bottom edge
+  Density        : Low
+  Media mode     : One reserved full-bleed media area with a built-in horizontal scrim so
+                   overlay text keeps contrast independently of the eventual photograph. The
+                   slot tone is set deliberately darker than the scrim so the reserved region
+                   still reads as a reserved region while it is empty.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Neutral placeholder copy. No model names, prices, finance terms, ranges,
+                   performance figures, availability, awards or certifications. The media
+                   area is reserved and intentionally empty.
+-->
+
+<meta name="study-id" content="AUTO-S01-002">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Full-bleed bright cinematic stage with left copy field and bottom caption rail">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-full-bleed-media-area-with-scrim">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>AUTO-S01-002 — Hero, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2efe9; }
+
+/* Scoped study styles — namespaced to .auto-s01-002 */
+.auto-s01-002 {
+  --ink: #15202e;
+  --ink-soft: #4a5462;
+  --paper: #f2efe9;
+  --slot: #cdc7ba;
+  --slot-ink: #45484d;
+  --line: #b9b4aa;
+  --accent: #15202e;
+  --accent-ink: #ffffff;
+  --ghost-line: #5c626b;
+  --focus: #15202e;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.auto-s01-002 *,
+.auto-s01-002 *::before,
+.auto-s01-002 *::after { box-sizing: inherit; }
+.auto-s01-002 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Stage */
+.auto-s01-002 .stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(600px, 88vh, 880px);
+  overflow: hidden;
+}
+
+.auto-s01-002 .media {
+  position: absolute;
+  inset: 0;
+  background: var(--slot);
+}
+.auto-s01-002 .media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(96deg,
+      rgba(242, 239, 233, 0.97) 0%,
+      rgba(242, 239, 233, 0.95) 34%,
+      rgba(242, 239, 233, 0.90) 54%,
+      rgba(242, 239, 233, 0.30) 74%,
+      rgba(242, 239, 233, 0) 90%);
+}
+.auto-s01-002 .slot-label {
+  position: absolute;
+  right: clamp(14px, 1.6vw, 26px);
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+}
+
+/* Copy field */
+.auto-s01-002 .shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 92px) clamp(20px, 3.6vw, 56px);
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+
+.auto-s01-002 .lede { max-width: min(680px, 52%); min-width: 0; }
+
+.auto-s01-002 .eyebrow {
+  margin: 0 0 clamp(20px, 2.4vw, 32px);
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.auto-s01-002 h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5.2vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+.auto-s01-002 h1 .line { display: block; }
+.auto-s01-002 h1 .line--indent { padding-left: 0.09em; }
+
+.auto-s01-002 .lead {
+  margin: clamp(22px, 2.6vw, 34px) 0 0;
+  max-width: 34ch;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.05vw, 1.1rem);
+}
+
+.auto-s01-002 .actions {
+  margin: clamp(30px, 3.6vw, 46px) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.auto-s01-002 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 28px;
+  font-size: 0.93rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+.auto-s01-002 .btn--solid {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 1px solid var(--accent);
+}
+.auto-s01-002 .btn--solid:hover { background: #223349; border-color: #223349; }
+.auto-s01-002 .btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ghost-line);
+}
+.auto-s01-002 .btn--ghost:hover { background: rgba(21, 32, 46, 0.07); }
+
+/* Bottom caption rail */
+.auto-s01-002 .rail {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  /* The horizontal scrim has faded out by the right edge, so the rail carries its own
+     backdrop rather than depending on the eventual photograph. */
+  background: linear-gradient(180deg,
+    rgba(242, 239, 233, 0) 0%,
+    rgba(242, 239, 233, 0.86) 42%,
+    rgba(242, 239, 233, 0.97) 100%);
+}
+.auto-s01-002 .rail-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(14px, 1.6vw, 20px) clamp(20px, 3.6vw, 56px) clamp(20px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+.auto-s01-002 .rail-note,
+.auto-s01-002 .rail-marker {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.auto-s01-002 .rail-marker { display: inline-flex; align-items: center; gap: 10px; }
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .auto-s01-002 .stage { min-height: clamp(560px, 82vh, 760px); }
+  .auto-s01-002 .lede { max-width: min(560px, 64%); }
+  .auto-s01-002 .media::after {
+    background:
+      linear-gradient(100deg,
+        rgba(242, 239, 233, 0.97) 0%,
+        rgba(242, 239, 233, 0.94) 40%,
+        rgba(242, 239, 233, 0.90) 64%,
+        rgba(242, 239, 233, 0.26) 82%,
+        rgba(242, 239, 233, 0) 96%);
+  }
+}
+
+/* Narrow widths keep the cinematic full-bleed frame, but the copy moves to the lower
+   band and the scrim turns vertical, so the upper part of the frame stays open for the
+   photograph while the copy band is protected independently of what that photograph is. */
+@media (max-width: 768px) {
+  .auto-s01-002 .stage { min-height: clamp(480px, 128vw, 640px); }
+  .auto-s01-002 .shell {
+    align-items: flex-end;
+    padding-top: clamp(40px, 8vw, 64px);
+    padding-bottom: clamp(26px, 5vw, 40px);
+  }
+  .auto-s01-002 .lede { max-width: none; }
+  .auto-s01-002 .lead { max-width: 40ch; }
+  .auto-s01-002 .media::after {
+    background:
+      linear-gradient(180deg,
+        rgba(242, 239, 233, 0.14) 0%,
+        rgba(242, 239, 233, 0.26) 18%,
+        rgba(242, 239, 233, 0.90) 38%,
+        rgba(242, 239, 233, 0.97) 100%);
+  }
+  .auto-s01-002 .slot-label {
+    writing-mode: horizontal-tb;
+    top: clamp(16px, 3vw, 24px);
+    bottom: auto;
+    right: clamp(20px, 3.6vw, 56px);
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  /* The copy block takes a larger share of a short frame, so the scrim reaches full
+     strength earlier to keep the ramp above the first line of copy. */
+  .auto-s01-002 .media::after {
+    background:
+      linear-gradient(180deg,
+        rgba(242, 239, 233, 0.16) 0%,
+        rgba(242, 239, 233, 0.30) 14%,
+        rgba(242, 239, 233, 0.92) 28%,
+        rgba(242, 239, 233, 0.97) 100%);
+  }
+  .auto-s01-002 .actions { flex-direction: column; align-items: stretch; }
+  .auto-s01-002 .btn { width: 100%; }
+  .auto-s01-002 .lead { max-width: none; }
+  .auto-s01-002 .rail-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-s01-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<main class="auto-s01-002" data-study-id="AUTO-S01-002" data-direction="Premium / Editorial">
+  <section class="stage" aria-labelledby="auto-s01-002-title">
+
+    <div class="media">
+      <span class="slot-label">Campaign media</span>
+    </div>
+
+    <div class="shell">
+      <div class="lede">
+        <p class="eyebrow">Touring series</p>
+        <h1 id="auto-s01-002-title">
+          <span class="line">Quiet confidence,</span>
+          <span class="line line--indent">mile after mile.</span>
+        </h1>
+        <p class="lead">A touring line shaped by long roads, considered materials and a very short list of decisions.</p>
+        <div class="actions">
+          <a class="btn btn--solid" href="#auto-s01-002-title">Discover the series</a>
+          <a class="btn btn--ghost" href="#auto-s01-002-title">Configure yours</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rail">
+      <div class="rail-inner">
+        <p class="rail-note">Built for distance</p>
+        <p class="rail-marker">
+          <span aria-hidden="true">&darr;</span>
+          <span>Continue</span>
+        </p>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+</body>
+</html>

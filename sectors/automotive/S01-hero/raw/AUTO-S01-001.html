@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : AUTO-S01-001
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S01 — Hero
+  Direction      : Universal / Safe
+  Reference      : Supplied visual research — reference 2 of five images provided with the
+                   authoring request (a vehicle photographed on open landscape, one stacked
+                   heading, one restrained action, one short supporting line). Used for its
+                   clarity, its vehicle dominance and its low copy count only. No layout,
+                   brand, wording, vehicle or photograph from that image is reproduced.
+  Layout model   : Bounded split hero — text column left, dominant rounded media panel right,
+                   inside a single 1440px shell on a light ground
+  Density        : Low
+  Media mode     : One reserved media area (rounded panel). No image is supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Neutral placeholder copy. No model names, prices, finance terms, ranges,
+                   performance figures, availability, stock counts, awards or certifications.
+                   The media area is reserved and intentionally empty.
+-->
+
+<meta name="study-id" content="AUTO-S01-001">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Bounded split hero with dominant right media panel">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-area-single-panel">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>AUTO-S01-001 — Hero, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f6f5; }
+
+/* Scoped study styles — namespaced to .auto-s01-001 */
+.auto-s01-001 {
+  --ink: #14161a;
+  --ink-soft: #545961;
+  --paper: #f6f6f5;
+  --slot: #e4e4e2;
+  --slot-ink: #55585d;
+  --line: #d9d9d6;
+  --accent: #1b3f8f;
+  --accent-ink: #ffffff;
+  --focus: #1b3f8f;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.auto-s01-001 *,
+.auto-s01-001 *::before,
+.auto-s01-001 *::after { box-sizing: inherit; }
+.auto-s01-001 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.auto-s01-001 .shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(30px, 4vw, 60px) clamp(20px, 3.6vw, 52px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: clamp(28px, 3.4vw, 56px);
+  align-items: center;
+  min-height: clamp(560px, 66vh, 700px);
+}
+
+/* Text column */
+.auto-s01-001 .copy { min-width: 0; }
+
+.auto-s01-001 .eyebrow {
+  margin: 0 0 clamp(14px, 1.6vw, 22px);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.auto-s01-001 h1 {
+  margin: 0;
+  font-size: clamp(2.05rem, 4.4vw, 3.7rem);
+  line-height: 1.05;
+  letter-spacing: -0.022em;
+  font-weight: 650;
+  max-width: 17ch;
+}
+
+.auto-s01-001 .lead {
+  margin: clamp(18px, 2vw, 26px) 0 0;
+  max-width: 42ch;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1vw, 1.08rem);
+}
+
+.auto-s01-001 .actions {
+  margin: clamp(26px, 3vw, 38px) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(16px, 1.8vw, 26px);
+}
+
+.auto-s01-001 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 140ms ease;
+}
+.auto-s01-001 .btn:hover { background: #16346f; }
+.auto-s01-001 .btn .arrow { font-size: 1.05em; line-height: 1; }
+
+.auto-s01-001 .textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 550;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+.auto-s01-001 .textlink:hover { text-decoration-thickness: 2px; }
+
+.auto-s01-001 .note {
+  margin: clamp(22px, 2.4vw, 30px) 0 0;
+  padding-top: clamp(16px, 1.8vw, 22px);
+  border-top: 1px solid var(--line);
+  max-width: 38ch;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+/* Media column */
+.auto-s01-001 .media {
+  min-width: 0;
+  align-self: stretch;
+  display: grid;
+}
+.auto-s01-001 .slot {
+  min-height: clamp(330px, 38vw, 520px);
+  border-radius: 18px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.auto-s01-001 .slot-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .auto-s01-001 .shell {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    gap: clamp(26px, 4vw, 38px);
+  }
+  .auto-s01-001 h1 { max-width: 20ch; }
+  .auto-s01-001 .slot {
+    min-height: 0;
+    aspect-ratio: 2 / 1;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .auto-s01-001 .slot { aspect-ratio: 3 / 2; }
+  .auto-s01-001 .note { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .auto-s01-001 .slot { aspect-ratio: 4 / 3; border-radius: 14px; }
+  .auto-s01-001 .actions { gap: 14px; }
+  .auto-s01-001 .btn { width: 100%; }
+  .auto-s01-001 .lead { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-s01-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<main class="auto-s01-001" data-study-id="AUTO-S01-001" data-direction="Universal / Safe">
+  <section class="hero" aria-labelledby="auto-s01-001-title">
+    <div class="shell">
+
+      <div class="copy">
+        <p class="eyebrow">Vehicle range</p>
+        <h1 id="auto-s01-001-title">Every journey starts with the right car</h1>
+        <p class="lead">Browse the current range and find a vehicle that fits how you drive, where you drive, and who travels with you.</p>
+
+        <div class="actions">
+          <a class="btn" href="#auto-s01-001-title">
+            Explore the range
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="textlink" href="#auto-s01-001-title">Arrange a test drive</a>
+        </div>
+
+        <p class="note">Speak to the team at your nearest showroom, or start online and continue the conversation in person.</p>
+      </div>
+
+      <div class="media">
+        <div class="slot">
+          <span class="slot-label">Vehicle media</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
