@@ -5,6 +5,13 @@
 - Planned studies: 135
 - Authoring status: IN_PROGRESS (S01–S14 and S21–S27 authored)
 
+Sector design direction: [ARCHITECTURE-DESIGN-DIRECTION.md](ARCHITECTURE-DESIGN-DIRECTION.md).
+Architecture and interior design web design is primarily visual; that document governs the visual
+language, anti-patterns, copy and media direction, and the section-shell rule for every ARC study,
+and each section README carries the section's own reading of it. Audit baseline:
+[ARCHITECTURE-REWORK-MANIFEST.md](ARCHITECTURE-REWORK-MANIFEST.md). Direction change record:
+[ARCHITECTURE-DIRECTION-CHANGELOG.md](ARCHITECTURE-DIRECTION-CHANGELOG.md).
+
 | Section | Name | Directory | Planned IDs | Status |
 | --- | --- | --- | --- | --- |
 | S01 | Hero | `S01-hero/` | ARC-S01-001–005 | AUTHORED |
@@ -38,5 +45,6 @@
 S01 through S05 are authored: five raw studies plus a `BATCH-V1.md` in each of `S01-hero/`, `S02-selected-projects/`, `S03-services/` (which also carries the extension variant `ARC-S03-006`), `S04-project-typologies/`, `S05-design-philosophy/`, `S06-design-process/`, `S07-studio-about/`, `S08-architects-designers/`, `S09-awards-publications/`, `S10-capabilities/`, `S11-materials-sustainability/`, `S12-client-testimonials/`, `S13-featured-project-case-study/`, and `S14-project-gallery/`. In the extended site architecture, `S21-subpage-hero/`, `S22-breadcrumb-context-navigation/`, `S23-service-offering-detail/`, `S25-article-insight-detail/`, `S26-person-profile-detail/` and `S27-location-branch-detail/` are authored; the S23, S25, S26 and S27 studies are full page studies rather than section studies, and each marks the region it shares with S21 and S22 with `data-region="page-context"`. The five S25 studies were built directly from supplied references. For any other section, create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins for that section.
 
 S01–S20 are this sector's core catalog. S21–S27 are the universal extended site
-architecture roles, scaffolded and documented but not yet researched or authored.
-S28 and above are reserved for future sector-native page types and are not created.
+architecture roles. S28 and above are reserved for provisional sector-native extensions, sit
+outside the planned catalog count, and are not governed by the sector design direction until their
+taxonomy is decided.

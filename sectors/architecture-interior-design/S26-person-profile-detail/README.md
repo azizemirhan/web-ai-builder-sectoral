@@ -25,9 +25,17 @@ ARC
 
 The detail page for one person: who they are, what they work on, and how to reach them.
 
+# Role Clarification
+
+A portrait-led profile page. Favour the portrait, name, role, a concise biography, disciplines,
+selected projects, related services, and credentials only where they are real.
+
+It must not default to a curriculum sheet, a bid CV, a capability matrix or a verification form.
+
 # Visitor Intent
 
-The visitor is deciding whether this is the right person to work with, or has been sent to this page by name.
+The visitor is deciding whether this is the right person to work with, or has been sent to this
+page by name.
 
 # Content Responsibility
 
@@ -35,16 +43,18 @@ One person in full: role, focus, the work they are attached to, and a contact ro
 
 # In Scope
 
-- Name, role and area of focus
-- A description of what the post covers and how they work
-- Links to the work and offerings they are attached to
+- A portrait, at a scale that makes it the page's anchor
+- Name, role and disciplines
+- A concise biography
+- Selected projects and related services
 - Factual professional background the person has supplied
 - A contact route appropriate to the sector
-- Optional portrait media
 
 # Out Of Scope
 
-- A team index or grid, which belongs to the sector core sections
+- **A global site header, primary navigation or footer**
+- A team index or grid, which belongs to S08
+- **CV sheets, bid documentation, capability matrices and verification forms**
 - Fabricated qualifications, registrations, memberships, awards or credentials
 - Invented social handles or profile links
 - Testimonials or ratings attributed to a person
@@ -59,21 +69,45 @@ ARC-S26-005
 
 # Expected Structural Diversity
 
-| Variant | Territory |
+| Variant | Direction |
 | --- | --- |
 | `ARC-S26-001` | Universal / Safe |
 | `ARC-S26-002` | Premium / Editorial |
-| `ARC-S26-003` | Dense / Information-heavy |
+| `ARC-S26-003` | Structured / Visual Modular |
 | `ARC-S26-004` | Conversion-led |
-| `ARC-S26-005` | Sector-native / Distinctive |
+| `ARC-S26-005` | Art-directed / Distinctive |
 
-These are authoring and research directions, not production enums. The five studies must
-differ structurally. They must not become five colour schemes, five font themes, five
-cosmetic variants, or five copies of one grid with the content swapped.
+These are authoring and research directions, not production enums, and the study IDs do not change
+with them. The five studies must differ structurally. They must not become five colour schemes,
+five font themes, five cosmetic variants, or five copies of one grid with the content swapped.
+
+In this section:
+
+- **003** organises richer information visually — grouped panels, project modules, disclosure —
+  rather than as a personnel record.
+- **005** is an art-directed profile: portrait scale, crop and typographic treatment. Not a CV
+  sheet.
+
+**Recorded correction.** `ARC-S26-003` and `ARC-S26-005` are a personnel record and a CV sheet, and
+the section is text-heavy throughout. The reserved-field device for unverifiable facts is correct
+and stays.
+
+# Architecture Direction
+
+Sector direction: `../ARCHITECTURE-DESIGN-DIRECTION.md`.
+
+The portrait carries the page; the projects give it substance. Keep the biography short enough to
+read in one pass and let the work do the rest.
+
+# Section Shell
+
+Page archetype: internal page content architecture is allowed. Global website chrome is not. The
+region this page shares with S21 and S22 is marked `data-region="page-context"`.
 
 # Media Relationship
 
-One portrait slot, optional. A profile must read completely with the portrait absent, and a filled portrait slot means an image of a real person who has consented to appear.
+One portrait slot, plus project imagery. A profile must read completely with the portrait absent,
+and a filled portrait slot means an image of a real person who has consented to appear.
 
 # Interaction Notes
 
@@ -81,13 +115,23 @@ Normally none.
 
 # Responsive Considerations
 
-Portrait and identity must stay paired at every width; a name must never end up beside or above the wrong portrait when the layout reflows.
+Portrait and identity must stay paired at every width; a name must never end up beside or above the
+wrong portrait when the layout reflows.
+
+# Authoring Questions
+
+- **Primary visual element:** the portrait, and the projects attached to the person.
+- **Immediate understanding:** who this is, what they do, and what they have worked on.
+
+Full authoring question list: `../ARCHITECTURE-DESIGN-DIRECTION.md`.
 
 # Related Sections
 
-Nothing in this role may be invented. Credentials, registrations and memberships are verifiable facts about real people, and a placeholder study must leave them as reserved fields rather than fill them.
+Nothing in this role may be invented. Credentials, registrations and memberships are verifiable
+facts about real people, and a placeholder study must leave them as reserved fields rather than
+fill them.
 
-Nearest existing section in this sector: S08 Architects & Designers (`S08-architects-designers/`).
+Roster section for this sector: S08 Architects & Designers (`../S08-architects-designers/`).
 
 # Status
 
