@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : AUTO-S02-005
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S02 — Vehicle / Service Categories
+  Direction      : Art-directed / Distinctive
+  Reference      : None supplied. Authored to brief.
+  Category model : Vehicle categories — SUV, Electric, Performance, Touring, Commercial.
+  Layout model   : Horizontal category rail on a full-bleed near-black stage. Five tall
+                   cinematic crops on a staggered baseline with alternating proportions, the
+                   category name set oversized across the foot of each crop, and the run
+                   continuing past the right edge so the fifth panel is deliberately cropped.
+  Density        : Very low — an index and a category name per panel, nothing else.
+  Media mode     : One reserved media area per category — five areas, two proportions.
+  Interaction    : Native horizontal scroll with scroll-snap. No JavaScript. The rail is an
+                   labelled scrollable region so it is keyboard operable, and every panel is a
+                   real link, so tabbing through the categories scrolls the rail.
+  Section role   : Category-level discovery only. No model names, stock, prices or
+                   specifications — AUTO-S03 owns specific vehicles.
+  Content note   : Category names and ordinal indices. The oversized type is the navigation
+                   itself, not decoration. Media areas are reserved and intentionally empty.
+-->
+
+<meta name="study-id" content="AUTO-S02-005">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S02">
+<meta name="section-name" content="Vehicle / Service Categories">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Staggered horizontal category rail with oversized names over cinematic crops">
+<meta name="density" content="very-low">
+<meta name="media-mode" content="reserved-media-area-per-category-x5-alternating-crops">
+<meta name="interaction" content="native-horizontal-scroll-snap">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>AUTO-S02-005 — Vehicle Categories, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0b0c0e; }
+
+/* Scoped study styles — namespaced to .auto-s02-005 */
+.auto-s02-005 {
+  --ink: #f2f3f5;
+  --ink-soft: #b0b4ba;
+  --ground: #0b0c0e;
+  --slot: #1e2024;
+  --slot-hover: #26292e;
+  --slot-ink: #9aa0a8;
+  --line: #2c2f34;
+  --focus: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.auto-s02-005 *,
+.auto-s02-005 *::before,
+.auto-s02-005 *::after { box-sizing: inherit; }
+.auto-s02-005 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.auto-s02-005 .stage { padding: clamp(50px, 5.6vw, 84px) 0 clamp(46px, 5.2vw, 76px); }
+
+/* Header, held inside the shell measure */
+.auto-s02-005 .head {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto clamp(30px, 3.6vw, 52px);
+  padding: 0 clamp(20px, 3.6vw, 52px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+  gap: clamp(14px, 3vw, 40px);
+  align-items: end;
+}
+.auto-s02-005 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.71rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.auto-s02-005 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  max-width: 16ch;
+}
+.auto-s02-005 .hint {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* Rail */
+.auto-s02-005 .rail { width: 100%; }
+.auto-s02-005 .track {
+  list-style: none;
+  margin: 0;
+  padding: 0 clamp(20px, 3.6vw, 52px);
+  display: flex;
+  gap: clamp(16px, 1.9vw, 28px);
+  align-items: flex-start;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: clamp(20px, 3.6vw, 52px);
+  scrollbar-width: thin;
+  scrollbar-color: #6b7078 transparent;
+}
+.auto-s02-005 .track::-webkit-scrollbar { height: 6px; }
+.auto-s02-005 .track::-webkit-scrollbar-track { background: transparent; }
+.auto-s02-005 .track::-webkit-scrollbar-thumb { background: #6b7078; border-radius: 3px; }
+
+.auto-s02-005 .panel {
+  flex: 0 0 clamp(232px, 21vw, 330px);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+/* Staggered baseline — the rail reads as a composition, not as a row of equal tiles */
+.auto-s02-005 .panel:nth-child(even) { margin-top: clamp(22px, 3.4vw, 56px); }
+
+.auto-s02-005 .tile {
+  display: block;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+.auto-s02-005 .media {
+  position: relative;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  overflow: hidden;
+  transition: background-color 160ms ease;
+}
+.auto-s02-005 .tile:hover .media { background: var(--slot-hover); }
+/* Two alternating proportions */
+.auto-s02-005 .panel:nth-child(odd) .media { aspect-ratio: 3 / 4; }
+.auto-s02-005 .panel:nth-child(even) .media { aspect-ratio: 4 / 5; }
+
+.auto-s02-005 .slot-label {
+  font-size: 0.64rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.auto-s02-005 .index {
+  position: absolute;
+  top: clamp(10px, 1vw, 14px);
+  left: clamp(12px, 1.1vw, 16px);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--slot-ink);
+}
+.auto-s02-005 .mark {
+  position: absolute;
+  top: clamp(10px, 1vw, 14px);
+  right: clamp(12px, 1.1vw, 16px);
+  font-size: 0.95rem;
+  line-height: 1;
+  color: var(--slot-ink);
+  transition: color 160ms ease, transform 160ms ease;
+}
+.auto-s02-005 .tile:hover .mark { color: var(--ink); transform: translateX(3px); }
+
+/* The category name is the navigation — set oversized across the foot of its crop */
+.auto-s02-005 .tile h2 {
+  position: absolute;
+  left: clamp(12px, 1.1vw, 16px);
+  right: clamp(12px, 1.1vw, 16px);
+  bottom: clamp(10px, 1vw, 14px);
+  margin: 0;
+  font-size: clamp(1.45rem, 2.1vw, 2.05rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink);
+}
+.auto-s02-005 .tile:hover h2 { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; }
+
+/* Responsive ladder — the rail is kept, because a swipe run is the native narrow-width form
+   of this archetype. What changes is the measure: fewer panels in view, a wider peek so the
+   continuation is unmistakable, and the stagger and crop alternation dropped once they would
+   only cost height. */
+@media (max-width: 900px) {
+  .auto-s02-005 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .auto-s02-005 h1 { max-width: none; }
+  .auto-s02-005 .panel { flex-basis: clamp(220px, 34vw, 300px); }
+}
+
+@media (max-width: 560px) {
+  .auto-s02-005 .panel { flex-basis: 74vw; margin-top: 0; }
+  .auto-s02-005 .panel:nth-child(even) { margin-top: 0; }
+  .auto-s02-005 .panel:nth-child(even) .media { aspect-ratio: 3 / 4; }
+}
+
+@media (max-width: 360px) {
+  .auto-s02-005 .panel { flex-basis: 78vw; }
+  .auto-s02-005 .panel .media { aspect-ratio: 4 / 5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-s02-005 * { transition: none !important; }
+  .auto-s02-005 .track { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="auto-s02-005" data-study-id="AUTO-S02-005" data-direction="Art-directed / Distinctive">
+  <section class="stage" aria-labelledby="auto-s02-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The range</p>
+        <h1 id="auto-s02-005-title">Pick a lane</h1>
+      </div>
+      <p class="hint">
+        <span>Scroll the range</span>
+        <span aria-hidden="true">&rarr;</span>
+      </p>
+    </div>
+
+    <div class="rail" role="region" tabindex="0" aria-labelledby="auto-s02-005-title">
+      <ul class="track">
+        <li class="panel">
+          <a class="tile" href="#auto-s02-005-title">
+            <div class="media">
+              <span class="slot-label">Category media</span>
+              <span class="index">01</span>
+              <span class="mark" aria-hidden="true">&rarr;</span>
+              <h2>SUV</h2>
+            </div>
+          </a>
+        </li>
+        <li class="panel">
+          <a class="tile" href="#auto-s02-005-title">
+            <div class="media">
+              <span class="slot-label">Category media</span>
+              <span class="index">02</span>
+              <span class="mark" aria-hidden="true">&rarr;</span>
+              <h2>Electric</h2>
+            </div>
+          </a>
+        </li>
+        <li class="panel">
+          <a class="tile" href="#auto-s02-005-title">
+            <div class="media">
+              <span class="slot-label">Category media</span>
+              <span class="index">03</span>
+              <span class="mark" aria-hidden="true">&rarr;</span>
+              <h2>Performance</h2>
+            </div>
+          </a>
+        </li>
+        <li class="panel">
+          <a class="tile" href="#auto-s02-005-title">
+            <div class="media">
+              <span class="slot-label">Category media</span>
+              <span class="index">04</span>
+              <span class="mark" aria-hidden="true">&rarr;</span>
+              <h2>Touring</h2>
+            </div>
+          </a>
+        </li>
+        <li class="panel">
+          <a class="tile" href="#auto-s02-005-title">
+            <div class="media">
+              <span class="slot-label">Category media</span>
+              <span class="index">05</span>
+              <span class="mark" aria-hidden="true">&rarr;</span>
+              <h2>Commercial</h2>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

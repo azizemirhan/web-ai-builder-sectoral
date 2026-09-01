@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : AUTO-S02-001
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S02 — Vehicle / Service Categories
+  Direction      : Universal / Safe
+  Reference      : None supplied. Authored to brief.
+  Category model : Vehicle categories — SUV, Sedan, Electric, Performance
+  Layout model   : Equal four-up category grid, image-led cards with minimal chrome
+  Density        : Low
+  Media mode     : One reserved media area per category — four areas.
+  Interaction    : None (static; no JavaScript). Hover and focus states only.
+  Section role   : Category-level discovery. The visitor chooses which kind of vehicle to
+                   explore. Specific vehicles, stock, prices and specifications belong to
+                   AUTO-S03 (Featured Vehicles) and are deliberately absent here.
+  Content note   : Category names and one short descriptor each. No model names, prices,
+                   finance terms, mileage, model years, range, power or availability. Media
+                   areas are reserved and intentionally empty.
+-->
+
+<meta name="study-id" content="AUTO-S02-001">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S02">
+<meta name="section-name" content="Vehicle / Service Categories">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Equal four-up image-led category grid">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-area-per-category-x4">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>AUTO-S02-001 — Vehicle Categories, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .auto-s02-001 */
+.auto-s02-001 {
+  --ink: #14161a;
+  --ink-soft: #545961;
+  --paper: #ffffff;
+  --slot: #e7e7e5;
+  --slot-ink: #55585d;
+  --line: #dcdcda;
+  --accent: #1b3f8f;
+  --focus: #1b3f8f;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.auto-s02-001 *,
+.auto-s02-001 *::before,
+.auto-s02-001 *::after { box-sizing: inherit; }
+.auto-s02-001 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.auto-s02-001 .shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(52px, 6vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Section header */
+.auto-s02-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
+  gap: clamp(16px, 3vw, 48px);
+  align-items: end;
+  margin-bottom: clamp(30px, 3.6vw, 52px);
+}
+.auto-s02-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.73rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.auto-s02-001 h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 640;
+  max-width: 20ch;
+}
+.auto-s02-001 .head-side {
+  min-width: 0;
+  text-align: right;
+}
+.auto-s02-001 .head-side p {
+  margin: 0 0 10px;
+  max-width: 38ch;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+.auto-s02-001 .textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--accent);
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+.auto-s02-001 .textlink:hover { text-decoration-thickness: 2px; }
+
+/* Category grid */
+.auto-s02-001 .grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(20px, 2.2vw, 32px);
+}
+.auto-s02-001 .card {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: clamp(12px, 1.2vw, 16px);
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+}
+.auto-s02-001 .media {
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  min-width: 0;
+  transition: background-color 140ms ease;
+}
+.auto-s02-001 .card:hover .media { background: #dedede; }
+.auto-s02-001 .slot-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.auto-s02-001 .card h2 {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.35vw, 1.32rem);
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+  font-weight: 640;
+}
+.auto-s02-001 .card:hover h2 {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.auto-s02-001 .card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+.auto-s02-001 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Responsive ladder — 4 up, 2 up, then one column of horizontal rows */
+@media (max-width: 1024px) {
+  .auto-s02-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .auto-s02-001 .head {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  .auto-s02-001 .head-side { text-align: left; }
+  .auto-s02-001 .head-side p { max-width: none; }
+  .auto-s02-001 h1 { max-width: none; }
+}
+
+/* One column, but as horizontal rows — a stacked column of 4:3 cards would make the
+   section roughly twice as tall for no gain in scannability. */
+@media (max-width: 520px) {
+  .auto-s02-001 .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .auto-s02-001 .card {
+    grid-template-columns: minmax(0, 38%) minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: clamp(14px, 3.4vw, 20px);
+    align-items: center;
+    align-content: center;
+    padding: clamp(16px, 3.4vw, 20px) 0;
+    border-top: 1px solid var(--line);
+  }
+  .auto-s02-001 .grid > li:first-child .card { border-top: 0; padding-top: 0; }
+  .auto-s02-001 .card .media { grid-row: span 3; }
+  .auto-s02-001 .card h2 { margin-bottom: 4px; }
+  .auto-s02-001 .card p { margin-bottom: 6px; }
+}
+
+@media (max-width: 360px) {
+  .auto-s02-001 .card { grid-template-columns: minmax(0, 34%) minmax(0, 1fr); }
+  .auto-s02-001 .media { padding: 8px; }
+  .auto-s02-001 .slot-label { font-size: 0.6rem; letter-spacing: 0.1em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-s02-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="auto-s02-001" data-study-id="AUTO-S02-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="auto-s02-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Browse by category</p>
+        <h1 id="auto-s02-001-title">Start with the kind of vehicle you need</h1>
+      </div>
+      <div class="head-side">
+        <p>Four ways into the range. Pick the one that matches how you drive.</p>
+        <a class="textlink" href="#auto-s02-001-title">
+          All categories
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <ul class="grid">
+      <li>
+        <a class="card" href="#auto-s02-001-title">
+          <span class="media"><span class="slot-label">Category media</span></span>
+          <h2>SUV</h2>
+          <p>Space and versatility for everyday routes.</p>
+          <span class="go">Explore <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#auto-s02-001-title">
+          <span class="media"><span class="slot-label">Category media</span></span>
+          <h2>Sedan</h2>
+          <p>Comfort and balance for the daily drive.</p>
+          <span class="go">Explore <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#auto-s02-001-title">
+          <span class="media"><span class="slot-label">Category media</span></span>
+          <h2>Electric</h2>
+          <p>Quieter driving, with charging built into the routine.</p>
+          <span class="go">Explore <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#auto-s02-001-title">
+          <span class="media"><span class="slot-label">Category media</span></span>
+          <h2>Performance</h2>
+          <p>Sharper handling and a more focused drive.</p>
+          <span class="go">Explore <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

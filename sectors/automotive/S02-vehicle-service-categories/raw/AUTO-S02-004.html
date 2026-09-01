@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : AUTO-S02-004
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S02 — Vehicle / Service Categories
+  Direction      : Conversion-led
+  Reference      : None supplied. Authored to brief.
+  Category model : Service categories — Maintenance, Diagnostics, Tyres, Body & Paint.
+                   One coherent scenario: service discovery. No vehicle categories are mixed
+                   into this study.
+  Layout model   : Choice rail beside a live action panel. Selecting a service category
+                   rewrites the panel — its media label, its title, its line and, critically,
+                   its primary action. The next step is a consequence of the category choice.
+  Density        : Low
+  Media mode     : One reserved service media area, relabelled by the current choice.
+  Interaction    : Vanilla JS radiogroup. Roving tabindex, arrow keys, Home/End, aria-checked,
+                   and a polite live region on the panel so the change is announced.
+                   Progressive enhancement: with no JavaScript the four categories and their
+                   descriptors are all present and the panel shows the default category, so
+                   the section still reads completely.
+  Section role   : Category-level discovery. The visitor chooses a kind of work, not a
+                   specific job, vehicle or price. AUTO-S03 owns specific vehicles.
+  Content note   : No prices, quotes, rates, turnaround times, warranty terms, certifications
+                   or availability. There is no form and no field capture — conversion is a
+                   visible action hierarchy only. Media area is reserved and intentionally empty.
+-->
+
+<meta name="study-id" content="AUTO-S02-004">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S02">
+<meta name="section-name" content="Vehicle / Service Categories">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Service choice rail beside a contextual action panel">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-service-media-area-relabelled-by-choice">
+<meta name="interaction" content="vanilla-js-radiogroup-contextual-cta">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>AUTO-S02-004 — Service Categories, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #16181d; }
+
+/* Scoped study styles — namespaced to .auto-s02-004 */
+.auto-s02-004 {
+  --ink: #eef1f5;
+  --ink-soft: #b3b9c2;
+  --ground: #16181d;
+  --panel: #1d2026;
+  --slot: #262a30;
+  --slot-ink: #9ea4ae;
+  --line: #2f343c;
+  --control-line: #6a7280;
+  --accent: #58b0ff;
+  --accent-hover: #7cc2ff;
+  --accent-ink: #08141f;
+  --focus: #7cc2ff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.auto-s02-004 *,
+.auto-s02-004 *::before,
+.auto-s02-004 *::after { box-sizing: inherit; }
+.auto-s02-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.auto-s02-004 .shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(50px, 5.6vw, 84px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.auto-s02-004 .head { margin-bottom: clamp(28px, 3.2vw, 44px); max-width: 46ch; }
+.auto-s02-004 .eyebrow {
+  margin: 0 0 clamp(12px, 1.3vw, 18px);
+  font-size: 0.73rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.auto-s02-004 h1 {
+  margin: 0 0 12px;
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  font-weight: 640;
+}
+.auto-s02-004 .head p {
+  margin: 0;
+  max-width: 42ch;
+  color: var(--ink-soft);
+  font-size: 0.99rem;
+}
+
+/* Body — choice rail beside the action panel */
+.auto-s02-004 .body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.3fr);
+  gap: clamp(20px, 2.6vw, 40px);
+  align-items: start;
+}
+
+.auto-s02-004 .choices {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.auto-s02-004 .choice {
+  appearance: none;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 76px;
+  padding: 14px 18px;
+  border: 1px solid var(--control-line);
+  border-left-width: 3px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease;
+}
+.auto-s02-004 .choice:hover { background: #1c1f25; border-color: #8d95a2; }
+/* Selected state uses a fill, a thick left bar and a filled indicator — never colour alone */
+.auto-s02-004 .choice[aria-checked="true"] {
+  background: var(--panel);
+  border-color: var(--line);
+  border-left-color: var(--accent);
+  border-left-width: 4px;
+  padding-left: 17px;
+}
+
+.auto-s02-004 .dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--control-line);
+  display: grid;
+  place-items: center;
+}
+.auto-s02-004 .dot::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: transparent;
+}
+.auto-s02-004 .choice[aria-checked="true"] .dot { border-color: var(--accent); }
+.auto-s02-004 .choice[aria-checked="true"] .dot::after { background: var(--accent); }
+
+.auto-s02-004 .choice-name {
+  display: block;
+  font-size: 1.02rem;
+  font-weight: 620;
+  letter-spacing: -0.01em;
+}
+.auto-s02-004 .choice[aria-checked="true"] .choice-name { font-weight: 700; }
+.auto-s02-004 .choice-desc {
+  display: block;
+  margin-top: 2px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.auto-s02-004 .chev { color: var(--ink-soft); font-size: 1.05rem; line-height: 1; }
+
+/* Action panel */
+.auto-s02-004 .panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: clamp(16px, 1.6vw, 22px);
+  display: grid;
+  gap: clamp(16px, 1.8vw, 24px);
+}
+.auto-s02-004 .media {
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.auto-s02-004 .slot-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.auto-s02-004 .action { min-width: 0; }
+.auto-s02-004 .action h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.25rem, 1.7vw, 1.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 660;
+}
+.auto-s02-004 .action p {
+  margin: 0 0 clamp(16px, 1.8vw, 22px);
+  max-width: 40ch;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.auto-s02-004 .actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+}
+.auto-s02-004 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.98rem;
+  font-weight: 680;
+  text-decoration: none;
+  transition: background-color 140ms ease;
+}
+.auto-s02-004 .btn:hover { background: var(--accent-hover); }
+.auto-s02-004 .textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+.auto-s02-004 .textlink:hover { text-decoration-thickness: 2px; }
+
+/* Responsive ladder — choice first, then the action it produces */
+@media (max-width: 900px) {
+  .auto-s02-004 .body { grid-template-columns: minmax(0, 1fr); }
+  .auto-s02-004 .action p { max-width: none; }
+}
+
+@media (max-width: 560px) {
+  .auto-s02-004 .choice { min-height: 68px; padding: 12px 14px; }
+  .auto-s02-004 .choice[aria-checked="true"] { padding-left: 13px; }
+  .auto-s02-004 .media { aspect-ratio: 4 / 3; }
+  .auto-s02-004 .btn { width: 100%; }
+  .auto-s02-004 .actions { gap: 12px; }
+}
+
+@media (max-width: 360px) {
+  .auto-s02-004 .choice { gap: 10px; padding: 12px; }
+  .auto-s02-004 .choice[aria-checked="true"] { padding-left: 11px; }
+  .auto-s02-004 .btn { padding: 0 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-s02-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="auto-s02-004" data-study-id="AUTO-S02-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="auto-s02-004-title">
+
+    <div class="head">
+      <p class="eyebrow">Workshop services</p>
+      <h1 id="auto-s02-004-title">What does your vehicle need?</h1>
+      <p>Pick the kind of work and we will take you straight to the right place to arrange it.</p>
+    </div>
+
+    <div class="body">
+
+      <div class="choices" role="radiogroup" aria-label="Service categories">
+        <button class="choice" type="button" role="radio" aria-checked="true"
+                data-name="Maintenance"
+                data-desc="Routine servicing and scheduled care, on the interval your vehicle asks for."
+                data-cta="Book a maintenance visit"
+                data-media="Maintenance service media">
+          <span class="dot" aria-hidden="true"></span>
+          <span>
+            <span class="choice-name">Maintenance</span>
+            <span class="choice-desc">Routine servicing and scheduled care.</span>
+          </span>
+          <span class="chev" aria-hidden="true">&rarr;</span>
+        </button>
+
+        <button class="choice" type="button" role="radio" aria-checked="false"
+                data-name="Diagnostics"
+                data-desc="Electronic checks and fault investigation when something is not behaving as it should."
+                data-cta="Book a diagnostic check"
+                data-media="Diagnostics service media">
+          <span class="dot" aria-hidden="true"></span>
+          <span>
+            <span class="choice-name">Diagnostics</span>
+            <span class="choice-desc">Electronic checks and fault investigation.</span>
+          </span>
+          <span class="chev" aria-hidden="true">&rarr;</span>
+        </button>
+
+        <button class="choice" type="button" role="radio" aria-checked="false"
+                data-name="Tyres"
+                data-desc="Fitting, balancing and seasonal changes, with the old set taken away."
+                data-cta="Book a tyre appointment"
+                data-media="Tyre service media">
+          <span class="dot" aria-hidden="true"></span>
+          <span>
+            <span class="choice-name">Tyres</span>
+            <span class="choice-desc">Fitting, balancing and seasonal changes.</span>
+          </span>
+          <span class="chev" aria-hidden="true">&rarr;</span>
+        </button>
+
+        <button class="choice" type="button" role="radio" aria-checked="false"
+                data-name="Body &amp; Paint"
+                data-desc="Panel repair and refinishing, from a scuffed bumper to a full panel."
+                data-cta="Book a body repair assessment"
+                data-media="Body and paint service media">
+          <span class="dot" aria-hidden="true"></span>
+          <span>
+            <span class="choice-name">Body &amp; Paint</span>
+            <span class="choice-desc">Panel repair and refinishing.</span>
+          </span>
+          <span class="chev" aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+
+      <div class="panel">
+        <div class="media"><span class="slot-label" data-slot>Maintenance service media</span></div>
+        <div class="action" aria-live="polite">
+          <h2 data-title>Maintenance</h2>
+          <p data-panel-desc>Routine servicing and scheduled care, on the interval your vehicle asks for.</p>
+          <div class="actions">
+            <a class="btn" href="#auto-s02-004-title" data-cta>
+              <span data-cta-label>Book a maintenance visit</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="textlink" href="#auto-s02-004-title">See all services</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+<script>
+/* Service category choice drives the panel and, with it, the primary action.
+   Progressive enhancement: with no JavaScript every category and descriptor is still present
+   and the panel shows the default category, so the section reads completely. */
+(function () {
+  var root = document.querySelector('.auto-s02-004');
+  if (!root) { return; }
+
+  var choices = Array.prototype.slice.call(root.querySelectorAll('[role="radio"]'));
+  var slot = root.querySelector('[data-slot]');
+  var title = root.querySelector('[data-title]');
+  var desc = root.querySelector('[data-panel-desc]');
+  var ctaLabel = root.querySelector('[data-cta-label]');
+  if (!choices.length || !slot || !title || !desc || !ctaLabel) { return; }
+
+  function select(index, moveFocus) {
+    choices.forEach(function (choice, i) {
+      var on = i === index;
+      choice.setAttribute('aria-checked', on ? 'true' : 'false');
+      choice.tabIndex = on ? 0 : -1;
+    });
+    var chosen = choices[index];
+    slot.textContent = chosen.getAttribute('data-media');
+    title.textContent = chosen.getAttribute('data-name');
+    desc.textContent = chosen.getAttribute('data-desc');
+    ctaLabel.textContent = chosen.getAttribute('data-cta');
+    if (moveFocus) { chosen.focus(); }
+  }
+
+  choices.forEach(function (choice, i) {
+    choice.addEventListener('click', function () { select(i, false); });
+    choice.addEventListener('keydown', function (event) {
+      var next = null;
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') { next = (i + 1) % choices.length; }
+      else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') { next = (i - 1 + choices.length) % choices.length; }
+      else if (event.key === 'Home') { next = 0; }
+      else if (event.key === 'End') { next = choices.length - 1; }
+      if (next !== null) {
+        event.preventDefault();
+        select(next, true);
+      }
+    });
+  });
+
+  select(0, false);
+})();
+</script>
+
+</body>
+</html>

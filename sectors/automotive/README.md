@@ -3,12 +3,12 @@
 - Prefix: AUTO
 - Planned sections: 27
 - Planned studies: 135
-- Authoring status: IN_PROGRESS — S01 authored
+- Authoring status: IN_PROGRESS — S01, S02 authored
 
 | Section | Name | Directory | Planned IDs | Status |
 | --- | --- | --- | --- | --- |
 | S01 | Hero | `S01-hero/` | AUTO-S01-001–005 | AUTHORED |
-| S02 | Vehicle Service Categories | `S02-vehicle-service-categories/` | AUTO-S02-001–005 | NOT_STARTED |
+| S02 | Vehicle Service Categories | `S02-vehicle-service-categories/` | AUTO-S02-001–005 | AUTHORED |
 | S03 | Featured Vehicles | `S03-featured-vehicles/` | AUTO-S03-001–005 | NOT_STARTED |
 | S04 | Workshop Services | `S04-workshop-services/` | AUTO-S04-001–005 | NOT_STARTED |
 | S05 | Brands Manufacturers | `S05-brands-manufacturers/` | AUTO-S05-001–005 | NOT_STARTED |
@@ -35,7 +35,7 @@
 | S26 | Technician / Sales Specialist Profile | `S26-person-profile-detail/` | AUTO-S26-001–005 | NOT_STARTED |
 | S27 | Dealership / Service Centre Detail | `S27-location-branch-detail/` | AUTO-S27-001–005 | NOT_STARTED |
 
-S01 is authored and carries `S01-hero/BATCH-V1.md`. The remaining sections have no studies yet;
+S01 and S02 are authored and carry their own `BATCH-V1.md`. The remaining sections have no studies yet;
 create a batch document from ../../standards/06-BATCH-V1-TEMPLATE.md only when authoring begins
 for a section.
 

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : AUTO-S02-002
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S02 — Vehicle / Service Categories
+  Direction      : Premium / Editorial
+  Reference      : None supplied. Authored to brief.
+  Category model : Vehicle categories — Electric, Performance, Touring, Utility
+  Layout model   : Asymmetric editorial showcase on a twelve-column grid. Four categories at
+                   four different widths, four different media proportions and four different
+                   vertical offsets — deliberately not four equal cards.
+  Density        : Low
+  Media mode     : One reserved media area per category — four areas, each a different crop.
+  Interaction    : None (static; no JavaScript). Hover and focus states only.
+  Section role   : Category-level discovery, presented as a range showcase. Specific vehicles,
+                   stock, prices and specifications belong to AUTO-S03 and are absent here.
+  Content note   : Category names and one short descriptor each. No model names, prices,
+                   finance terms, range, power or availability. Media areas are reserved and
+                   intentionally empty.
+-->
+
+<meta name="study-id" content="AUTO-S02-002">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S02">
+<meta name="section-name" content="Vehicle / Service Categories">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Asymmetric twelve-column editorial category showcase">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-area-per-category-x4-varied-crops">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>AUTO-S02-002 — Vehicle Categories, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f1ea; }
+
+/* Scoped study styles — namespaced to .auto-s02-002 */
+.auto-s02-002 {
+  --ink: #16171a;
+  --ink-soft: #55564f;
+  --paper: #f4f1ea;
+  --slot: #ddd8cc;
+  --slot-ink: #46484a;
+  --line: #c4bfb2;
+  --focus: #16171a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.auto-s02-002 *,
+.auto-s02-002 *::before,
+.auto-s02-002 *::after { box-sizing: inherit; }
+.auto-s02-002 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 5px;
+}
+
+.auto-s02-002 .shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(52px, 5.6vw, 84px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Section header — narrow, left, editorial */
+.auto-s02-002 .head { max-width: 44ch; margin-bottom: clamp(36px, 4.4vw, 68px); }
+.auto-s02-002 .eyebrow {
+  margin: 0 0 clamp(14px, 1.6vw, 22px);
+  font-size: 0.71rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.auto-s02-002 h1 {
+  margin: 0 0 clamp(14px, 1.6vw, 20px);
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  font-weight: 500;
+}
+.auto-s02-002 .head p {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--ink-soft);
+  font-size: clamp(0.98rem, 1vw, 1.06rem);
+}
+
+/* Asymmetric category grid */
+.auto-s02-002 .items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(20px, 2.4vw, 40px);
+  row-gap: clamp(40px, 4.6vw, 72px);
+}
+.auto-s02-002 .item { min-width: 0; }
+
+/* Four different widths, four different offsets */
+.auto-s02-002 .item--a { grid-column: 1 / 8; }
+.auto-s02-002 .item--b { grid-column: 9 / 13; margin-top: clamp(24px, 3.4vw, 64px); }
+.auto-s02-002 .item--c { grid-column: 1 / 5; }
+.auto-s02-002 .item--d { grid-column: 6 / 13; margin-top: clamp(20px, 3vw, 56px); }
+
+.auto-s02-002 .entry {
+  display: block;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+.auto-s02-002 .index {
+  display: block;
+  margin: 0 0 clamp(10px, 1vw, 14px);
+  font-size: 0.71rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-soft);
+}
+.auto-s02-002 .media {
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  min-width: 0;
+  max-height: clamp(300px, 32vw, 450px);
+  transition: background-color 160ms ease;
+}
+.auto-s02-002 .entry:hover .media { background: #d2ccbe; }
+.auto-s02-002 .slot-label {
+  font-size: 0.67rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+
+/* Four different media proportions */
+.auto-s02-002 .item--a .media { aspect-ratio: 2 / 1; }
+.auto-s02-002 .item--b .media { aspect-ratio: 1 / 1; }
+.auto-s02-002 .item--c .media { aspect-ratio: 4 / 5; }
+.auto-s02-002 .item--d .media { aspect-ratio: 21 / 9; }
+
+.auto-s02-002 .entry h2 {
+  margin: clamp(16px, 1.8vw, 26px) 0 clamp(8px, 0.8vw, 12px);
+  font-size: clamp(1.6rem, 3vw, 2.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+.auto-s02-002 .entry:hover h2 {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+.auto-s02-002 .entry p {
+  margin: 0 0 clamp(12px, 1.2vw, 16px);
+  max-width: 34ch;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+.auto-s02-002 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.85rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.auto-s02-002 .entry:hover .go { border-bottom-color: var(--ink); }
+
+/* Responsive ladder — the asymmetry survives as varying widths, not as four equal blocks */
+@media (max-width: 900px) {
+  .auto-s02-002 .items {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    row-gap: clamp(30px, 4.4vw, 48px);
+  }
+  .auto-s02-002 .item--a { grid-column: 1 / 5; margin-top: 0; }
+  .auto-s02-002 .item--b { grid-column: 5 / 7; margin-top: clamp(20px, 3vw, 40px); }
+  .auto-s02-002 .item--c { grid-column: 1 / 3; margin-top: 0; }
+  .auto-s02-002 .item--d { grid-column: 3 / 7; margin-top: clamp(18px, 2.6vw, 34px); }
+  .auto-s02-002 .media { max-height: clamp(200px, 34vw, 320px); }
+  .auto-s02-002 .item--a .media { aspect-ratio: 16 / 9; }
+  .auto-s02-002 .item--b .media { aspect-ratio: 3 / 4; }
+  .auto-s02-002 .item--c .media { aspect-ratio: 4 / 5; }
+  .auto-s02-002 .item--d .media { aspect-ratio: 16 / 9; }
+  .auto-s02-002 .entry h2 { font-size: clamp(1.35rem, 2.6vw, 1.9rem); }
+}
+
+@media (max-width: 560px) {
+  /* Below this a two-track row leaves the display type in an unreadable column, so the
+     rhythm moves from width to proportion: every entry is full width, no two crops match. */
+  .auto-s02-002 .items { grid-template-columns: minmax(0, 1fr); row-gap: clamp(26px, 6vw, 34px); }
+  .auto-s02-002 .item--a,
+  .auto-s02-002 .item--b,
+  .auto-s02-002 .item--c,
+  .auto-s02-002 .item--d { grid-column: 1; margin-top: 0; }
+  .auto-s02-002 .media { max-height: clamp(180px, 58vw, 260px); }
+  .auto-s02-002 .item--a .media { aspect-ratio: 16 / 9; }
+  .auto-s02-002 .item--b .media { aspect-ratio: 4 / 3; }
+  .auto-s02-002 .item--c .media { aspect-ratio: 5 / 4; }
+  .auto-s02-002 .item--d .media { aspect-ratio: 2 / 1; }
+  .auto-s02-002 .entry h2 { margin-top: clamp(12px, 3vw, 16px); font-size: clamp(1.4rem, 6.4vw, 1.8rem); }
+  .auto-s02-002 .entry p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-s02-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="auto-s02-002" data-study-id="AUTO-S02-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="auto-s02-002-title">
+
+    <div class="head">
+      <p class="eyebrow">The range</p>
+      <h1 id="auto-s02-002-title">Four ways to drive</h1>
+      <p>Each part of the range is built around a different kind of journey. Start where yours fits.</p>
+    </div>
+
+    <ul class="items">
+      <li class="item item--a">
+        <a class="entry" href="#auto-s02-002-title">
+          <span class="index">01</span>
+          <span class="media"><span class="slot-label">Category media</span></span>
+          <h2>Electric</h2>
+          <p>Quieter driving, with charging built into the routine.</p>
+          <span class="go">Explore <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </li>
+      <li class="item item--b">
+        <a class="entry" href="#auto-s02-002-title">
+          <span class="index">02</span>
+          <span class="media"><span class="slot-label">Category media</span></span>
+          <h2>Performance</h2>
+          <p>Sharper handling and a more focused drive.</p>
+          <span class="go">Explore <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </li>
+      <li class="item item--c">
+        <a class="entry" href="#auto-s02-002-title">
+          <span class="index">03</span>
+          <span class="media"><span class="slot-label">Category media</span></span>
+          <h2>Touring</h2>
+          <p>Built around longer journeys and the space they need.</p>
+          <span class="go">Explore <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </li>
+      <li class="item item--d">
+        <a class="entry" href="#auto-s02-002-title">
+          <span class="index">04</span>
+          <span class="media"><span class="slot-label">Category media</span></span>
+          <h2>Utility</h2>
+          <p>Load space and practicality for work.</p>
+          <span class="go">Explore <span aria-hidden="true">&rarr;</span></span>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

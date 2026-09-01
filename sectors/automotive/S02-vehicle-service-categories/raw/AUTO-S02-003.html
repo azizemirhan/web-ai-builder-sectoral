@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : AUTO-S02-003
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S02 — Vehicle / Service Categories
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied. Authored to brief.
+  Category model : Vehicle categories — SUV, Electric, Performance, Touring — each opening
+                   onto two sub-categories. Twelve category routes in total, held by the
+                   visual system rather than by a list.
+  Layout model   : Category navigator. A tab row selects a category; the selected category
+                   fills a mosaic panel — one dominant media field beside an information
+                   block and two sub-category modules.
+  Density        : Low-medium. Capacity comes from the switcher and the mosaic, not from copy.
+  Media mode     : Three reserved media areas per panel — one dominant, two sub-category —
+                   twelve in the document, three visible at a time.
+  Interaction    : Vanilla JS tab pattern. Roving tabindex, arrow/Home/End keys, aria-selected.
+                   Progressive enhancement: the markup ships every panel visible, and the
+                   script hides the unselected ones at init, so with no JavaScript all four
+                   categories and all twelve routes remain readable and reachable.
+  Section role   : Category-level discovery. Sub-categories are still categories — no model
+                   names, no stock, no prices. Specific vehicles belong to AUTO-S03.
+  Content note   : Category names, sub-category names and one short descriptor each. No
+                   figures of any kind. Media areas are reserved and intentionally empty.
+-->
+
+<meta name="study-id" content="AUTO-S02-003">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S02">
+<meta name="section-name" content="Vehicle / Service Categories">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Tabbed category navigator with a dominant media field and two sub-category modules">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="reserved-dominant-field-plus-two-subcategory-modules-per-panel">
+<meta name="interaction" content="vanilla-js-tabs">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>AUTO-S02-003 — Vehicle Categories, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f5f7; }
+
+/* Scoped study styles — namespaced to .auto-s02-003 */
+.auto-s02-003 {
+  --ink: #14161a;
+  --ink-soft: #545961;
+  --paper: #f4f5f7;
+  --panel: #ffffff;
+  --slot: #e3e5e8;
+  --slot-ink: #55585d;
+  --line: #d8dbe0;
+  --control-line: #6f757e;
+  --accent: #17506e;
+  --accent-ink: #ffffff;
+  --focus: #17506e;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.auto-s02-003 *,
+.auto-s02-003 *::before,
+.auto-s02-003 *::after { box-sizing: inherit; }
+.auto-s02-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.auto-s02-003 .shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(50px, 5.6vw, 84px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.auto-s02-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: clamp(16px, 3vw, 44px);
+  align-items: end;
+  margin-bottom: clamp(24px, 2.8vw, 38px);
+}
+.auto-s02-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.73rem;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.auto-s02-003 h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3.1vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 640;
+  max-width: 18ch;
+}
+.auto-s02-003 .head p {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+/* Category switcher */
+.auto-s02-003 .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: clamp(20px, 2.2vw, 30px);
+  padding-bottom: 2px;
+}
+.auto-s02-003 .tab {
+  position: relative;
+  appearance: none;
+  min-height: 48px;
+  padding: 0 22px 3px;
+  border: 1px solid var(--control-line);
+  border-radius: 999px;
+  background: transparent;
+  color: #2c3037;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 550;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
+}
+.auto-s02-003 .tab:hover { border-color: var(--ink); }
+/* Selected state is carried by fill, weight and a bar — not by colour alone */
+.auto-s02-003 .tab[aria-selected="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+}
+.auto-s02-003 .tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 9px;
+  height: 2px;
+  background: var(--accent-ink);
+  border-radius: 2px;
+}
+
+/* Panel mosaic */
+/* An author `display` declaration beats the UA sheet's [hidden] rule, so the switcher's
+   hidden panels have to be turned off explicitly or every panel renders at once. */
+.auto-s02-003 .panel[hidden] { display: none; }
+.auto-s02-003 .panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  grid-template-areas:
+    "lead info"
+    "lead subs";
+  gap: clamp(16px, 1.8vw, 26px);
+  align-content: start;
+}
+.auto-s02-003 .panel:focus-visible { outline-offset: 6px; }
+
+.auto-s02-003 .lead {
+  grid-area: lead;
+  min-height: clamp(300px, 32vw, 440px);
+  border-radius: 14px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.auto-s02-003 .slot-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+
+.auto-s02-003 .info {
+  grid-area: info;
+  min-width: 0;
+  align-self: start;
+}
+.auto-s02-003 .info h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.3rem, 1.8vw, 1.7rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 640;
+}
+.auto-s02-003 .info p {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.auto-s02-003 .explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--accent);
+  font-size: 0.93rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+}
+.auto-s02-003 .explore:hover { text-decoration-thickness: 2px; }
+
+/* Two sub-category modules */
+.auto-s02-003 .subs {
+  grid-area: subs;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 18px);
+  align-self: end;
+}
+.auto-s02-003 .sub {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+.auto-s02-003 .sub-media {
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  transition: background-color 140ms ease;
+}
+.auto-s02-003 .sub:hover .sub-media { background: #d6d9de; }
+.auto-s02-003 .sub-media .slot-label { font-size: 0.6rem; letter-spacing: 0.1em; }
+.auto-s02-003 .sub h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  font-weight: 620;
+}
+.auto-s02-003 .sub:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Responsive ladder — the selected category stays dominant at every width */
+@media (max-width: 1024px) {
+  .auto-s02-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .auto-s02-003 h1 { max-width: none; }
+  .auto-s02-003 .head p { max-width: none; }
+  .auto-s02-003 .panel {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "lead"
+      "info"
+      "subs";
+  }
+  .auto-s02-003 .lead { min-height: 0; aspect-ratio: 16 / 9; }
+  .auto-s02-003 .subs { align-self: start; }
+}
+
+@media (max-width: 768px) {
+  .auto-s02-003 .lead { aspect-ratio: 3 / 2; }
+}
+
+@media (max-width: 480px) {
+  .auto-s02-003 .lead { aspect-ratio: 4 / 3; }
+  .auto-s02-003 .tab { padding: 0 17px 3px; font-size: 0.9rem; }
+  .auto-s02-003 .tab[aria-selected="true"]::after { left: 17px; right: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auto-s02-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="auto-s02-003" data-study-id="AUTO-S02-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="auto-s02-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Browse the range</p>
+        <h1 id="auto-s02-003-title">Choose a category, then narrow it down</h1>
+      </div>
+      <p>Four categories, each opening onto the two shapes people ask for most.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Vehicle categories">
+      <button class="tab" type="button" role="tab" id="auto-s02-003-tab-suv" aria-controls="auto-s02-003-panel-suv" aria-selected="true">SUV</button>
+      <button class="tab" type="button" role="tab" id="auto-s02-003-tab-electric" aria-controls="auto-s02-003-panel-electric" aria-selected="false">Electric</button>
+      <button class="tab" type="button" role="tab" id="auto-s02-003-tab-performance" aria-controls="auto-s02-003-panel-performance" aria-selected="false">Performance</button>
+      <button class="tab" type="button" role="tab" id="auto-s02-003-tab-touring" aria-controls="auto-s02-003-panel-touring" aria-selected="false">Touring</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="auto-s02-003-panel-suv" aria-labelledby="auto-s02-003-tab-suv" tabindex="0">
+      <div class="lead"><span class="slot-label">SUV category media</span></div>
+      <div class="info">
+        <h2>SUV</h2>
+        <p>Space and versatility for everyday routes, in two sizes.</p>
+        <a class="explore" href="#auto-s02-003-title">Explore SUV <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <ul class="subs">
+        <li>
+          <a class="sub" href="#auto-s02-003-title">
+            <span class="sub-media"><span class="slot-label">Detail media</span></span>
+            <h3>Compact</h3>
+          </a>
+        </li>
+        <li>
+          <a class="sub" href="#auto-s02-003-title">
+            <span class="sub-media"><span class="slot-label">Detail media</span></span>
+            <h3>Seven seat</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="panel" role="tabpanel" id="auto-s02-003-panel-electric" aria-labelledby="auto-s02-003-tab-electric" tabindex="0">
+      <div class="lead"><span class="slot-label">Electric category media</span></div>
+      <div class="info">
+        <h2>Electric</h2>
+        <p>Quieter driving, with charging built into the routine.</p>
+        <a class="explore" href="#auto-s02-003-title">Explore electric <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <ul class="subs">
+        <li>
+          <a class="sub" href="#auto-s02-003-title">
+            <span class="sub-media"><span class="slot-label">Detail media</span></span>
+            <h3>Full electric</h3>
+          </a>
+        </li>
+        <li>
+          <a class="sub" href="#auto-s02-003-title">
+            <span class="sub-media"><span class="slot-label">Detail media</span></span>
+            <h3>Plug-in hybrid</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="panel" role="tabpanel" id="auto-s02-003-panel-performance" aria-labelledby="auto-s02-003-tab-performance" tabindex="0">
+      <div class="lead"><span class="slot-label">Performance category media</span></div>
+      <div class="info">
+        <h2>Performance</h2>
+        <p>Sharper handling and a more focused drive.</p>
+        <a class="explore" href="#auto-s02-003-title">Explore performance <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <ul class="subs">
+        <li>
+          <a class="sub" href="#auto-s02-003-title">
+            <span class="sub-media"><span class="slot-label">Detail media</span></span>
+            <h3>Coupe</h3>
+          </a>
+        </li>
+        <li>
+          <a class="sub" href="#auto-s02-003-title">
+            <span class="sub-media"><span class="slot-label">Detail media</span></span>
+            <h3>Convertible</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="panel" role="tabpanel" id="auto-s02-003-panel-touring" aria-labelledby="auto-s02-003-tab-touring" tabindex="0">
+      <div class="lead"><span class="slot-label">Touring category media</span></div>
+      <div class="info">
+        <h2>Touring</h2>
+        <p>Built around longer journeys and the space they need.</p>
+        <a class="explore" href="#auto-s02-003-title">Explore touring <span aria-hidden="true">&rarr;</span></a>
+      </div>
+      <ul class="subs">
+        <li>
+          <a class="sub" href="#auto-s02-003-title">
+            <span class="sub-media"><span class="slot-label">Detail media</span></span>
+            <h3>Estate</h3>
+          </a>
+        </li>
+        <li>
+          <a class="sub" href="#auto-s02-003-title">
+            <span class="sub-media"><span class="slot-label">Detail media</span></span>
+            <h3>Grand tourer</h3>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+</div>
+
+<script>
+/* Category switcher. Progressive enhancement: the markup ships every panel visible, and this
+   script hides the unselected ones at init. With no JavaScript all four categories and all
+   twelve category routes stay readable and reachable. */
+(function () {
+  var root = document.querySelector('.auto-s02-003');
+  if (!root) { return; }
+
+  var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
+  var panels = tabs.map(function (tab) {
+    return document.getElementById(tab.getAttribute('aria-controls'));
+  });
+  if (!tabs.length || panels.indexOf(null) !== -1) { return; }
+
+  function select(index, moveFocus) {
+    tabs.forEach(function (tab, i) {
+      var on = i === index;
+      tab.setAttribute('aria-selected', on ? 'true' : 'false');
+      tab.tabIndex = on ? 0 : -1;
+      panels[i].hidden = !on;
+    });
+    if (moveFocus) { tabs[index].focus(); }
+  }
+
+  tabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () { select(i, false); });
+    tab.addEventListener('keydown', function (event) {
+      var next = null;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') { next = (i + 1) % tabs.length; }
+      else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') { next = (i - 1 + tabs.length) % tabs.length; }
+      else if (event.key === 'Home') { next = 0; }
+      else if (event.key === 'End') { next = tabs.length - 1; }
+      if (next !== null) {
+        event.preventDefault();
+        select(next, true);
+      }
+    });
+  });
+
+  select(0, false);
+})();
+</script>
+
+</body>
+</html>
