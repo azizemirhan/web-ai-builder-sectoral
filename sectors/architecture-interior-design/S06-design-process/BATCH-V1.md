@@ -86,29 +86,32 @@ all, which is a deliberate decision recorded under Media Slots.
 ### ARC-S06-003 — Structured / Visual Modular
 
 - **Structural intent / archetype:** The process shown rather than tabulated. One large lead media
-  field establishes the work, then four equal phase modules carry the sequence.
-- **Layout model:** A short head over a full-width lead media area (21:9), above a four-column grid
+  field establishes the work, then five equal phase modules carry the sequence.
+- **Layout model:** A short head over a full-width lead media area (21:9), above a five-column grid
   of phase modules. Each module is a 4:3 media area, a CSS-counter numeral, a short title and one
   line of copy. No rules, no boxes, no field lists — the grid and the media rhythm carry the
   structure.
-- **Density:** Low. Four phases, one line each; roughly eighty visible words.
-- **Media mode:** Five empty areas — one large lead area plus one per phase.
+- **Density:** Low. Five phases, one line each; roughly ninety visible words.
+- **Media mode:** Six empty areas — one large lead area plus one per phase.
 - **Interaction:** None. No `<script>` element.
-- **Responsive strategy:** Four columns → two at 1024px (lead media relaxes to 16:9) → two with
-  tighter gaps at 768px → one column at 480px, where phase areas widen to 16:9 and the lead settles
-  at 3:2. Nothing is hidden at any width and there is no horizontal scroll.
+- **Responsive strategy:** Five columns → at 1024px a six-track grid where the first three modules
+  span two tracks and the last two span three, so the second row is filled rather than orphaned and
+  its two media areas widen to 16:9 → at 768px two columns with the fifth module spanning the full
+  width at 16:9 → one column at 480px with every phase area at 16:9 and the lead at 3:2. The grid
+  adapts to the five-stage content model; the content model is not cut to fit the grid. Nothing is
+  hidden at any width and there is no horizontal scroll.
 - **Composer value:** A repeatable `{image, title, line}` phase collection with a lead image above
   it — the highest-capacity option in this section that stays visual, and the one that binds most
-  directly to a media-led CMS model.
-- **Limitation / content ceiling:** Four to six phases; beyond that the four-up grid needs a second
-  row and the lead media stops governing the composition. One line per phase — a second sentence
-  reintroduces the density this study was reworked to remove.
+  directly to a media-led CMS model. The span rules absorb an odd item count without leaving a gap.
+- **Limitation / content ceiling:** Five or six phases; beyond that the five-up row is too narrow at
+  1440px and needs a second row. One line per phase — a second sentence reintroduces the density
+  this study was reworked to remove.
 - **Rework record:** Replaces a five-row dossier treatment (stage number, description, a three-pair
-  metadata block and a small thumbnail, separated by hairlines). Preserved: the phase progression,
-  the per-phase media relationship and the progressive responsive ladder. Removed: the dossier row
-  language, the `Output / Studio does / You provide` metadata pairs, the monospace field labels and
-  the long per-stage copy. The five stages were consolidated to the four the section's other
-  studies use, developed and technical design becoming one phase.
+  metadata block and a small thumbnail, separated by hairlines). Preserved: the five-stage
+  progression — brief and site, concept design, developed design, technical design, site and
+  handover — the per-phase media relationship and the progressive responsive ladder. Removed: the
+  dossier row language, the `Output / Studio does / You provide` metadata pairs, the monospace field
+  labels and the long per-stage copy.
 
 ### ARC-S06-004 — Conversion-led
 
@@ -200,7 +203,7 @@ all, which is a deliberate decision recorded under Media Slots.
 | Wide band | `ARC-S06-001` | One image closing the stage row | Still image, 21:9 (16:9 at 1024px, 3:2 at 768px, 4:3 at 480px) | Empty tonal surface with a quiet label and a `<figcaption>` stating that no completed project is implied. |
 | Stage image ×4 | `ARC-S06-002` | One image per stage, alternating sides | Still image, 4:3 (16:9 at 768px, 3:2 at 480px) | Labelled empty areas; each stage's text is complete without its image. |
 | Lead area | `ARC-S06-003` | One large image establishing the work above the phase grid | Still image, 21:9 (16:9 at 1024px, 3:2 at 480px) | Labelled empty area; the phase sequence reads without it. |
-| Phase area ×4 | `ARC-S06-003` | One image per phase module | Still image, 4:3 (16:9 at 480px) | Labelled empty areas; each phase's title and line are complete without its image. |
+| Phase area ×5 | `ARC-S06-003` | One image per phase module | Still image, 4:3 (16:9 for the last two modules at 1024px, for the fifth at 768px, and for all five at 480px) | Labelled empty areas; each phase's title and line are complete without its image. |
 | Column image | `ARC-S06-004` | One image in the sticky reassurance column | Still image, 4:3 (16:9 at 1024px, 3:2 at 768px) | Labelled empty area; the ladder is independent of it. |
 | — | `ARC-S06-005` | **No media slot by design.** A programme is a document, not an image | — | Deliberate absence, recorded so it is not treated as an unfilled slot. |
 
@@ -232,8 +235,9 @@ it becomes required if these slots are filled before ingestion.
   the first pass, flagged by the structural check, and added before sign-off. Grid children use
   `minmax(0, …)`, type and spacing use `clamp()`. Two layouts change behaviour rather than merely
   shrinking: `002` moves its spine from centre to edge and switches off alternation at 768px, and
-  `003` steps its phase grid from four columns to two to one and re-proportions both its lead and
-  its phase media at the same time, so no area is ever reduced to a sliver. The only horizontal scroll in
+  `003` steps its phase grid from five columns to a 3 + 2 span arrangement to two to one, widening
+  the modules that would otherwise be orphaned and re-proportioning both its lead and its phase
+  media as it goes, so no area is ever reduced to a sliver. The only horizontal scroll in
   the batch is the `005` programme, which is intentional, labelled and keyboard reachable.
   Interactive controls are ≥ 44px.
 - **Dependency validation: PASS.** Scanned for `http:`, `https:`, protocol-relative URLs,
@@ -246,14 +250,15 @@ it becomes required if these slots are filled before ingestion.
 - **Structural-diversity validation: PASS.** Five distinct geometries, checked against each other
   and against the twenty-seven studies already authored in `ARC-S01`–`ARC-S05`, so no device is
   reused across sections. No study is a cosmetic variation of another.
-- **Rework QA — `ARC-S06-003`: PASS.** Re-validated after the rework: one `<h1>` and four `<h2>`s
+- **Rework QA — `ARC-S06-003`: PASS.** Re-validated after the rework: one `<h1>` and five `<h2>`s
   with no level jump; `<ol>`/`<li>` retained so phase order is structural and the CSS-counter
   numerals are presentational only; `aria-labelledby` resolving; no `<script>`; zero external,
   remote or `url()` references; CSS scoped to `.arc-s06-003` apart from the two-line host baseline;
   the 1280 / 1024 / 768 / 480 / 360 ladder intact with `minmax(0, …)` on every grid track. Contrast
   re-measured on the reduced palette: body and phase copy `#53565c` on `#f4f4f2` at 6.67:1, slot
   labels `#4b4d51` on `#dedddb` at 7.04:1, titles near-maximal — all text ≥ 4.5:1, and the study
-  now carries no bordered or interactive component. Visible copy fell from 187 words to 80.
+  now carries no bordered or interactive component. Visible copy fell from 187 words to 93. Rendered and checked at 1440, 1280, 1024, 768, 430,
+  390 and 320px.
 - **Not run here:** rendered-screenshot capture, real-browser and assistive-technology testing, and
   reduced-motion behaviour under a real user preference. Those belong to Design Lab capture and QA.
 

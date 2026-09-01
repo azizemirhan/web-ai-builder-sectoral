@@ -13,17 +13,18 @@
   Section        : ARC-S06 — Design Process
   Direction      : Structured / Visual Modular
   Reference      : None supplied. Authored to brief.
-  Layout model   : One large lead media field above a four-up modular phase grid; each phase
+  Layout model   : One large lead media field above a five-up modular phase grid; each phase
                    module is media over a numeral, a short title and one line of copy
   Density        : Low
-  Media mode     : One large lead area plus one area per phase — five reserved areas.
+  Media mode     : One large lead area plus one area per phase — six reserved areas.
   Interaction    : None (static; no JavaScript)
 
-  Rework note    : Replaces the earlier dossier-row treatment. The four-phase progression, the
+  Rework note    : Replaces the earlier dossier-row treatment. The five-stage progression, the
                    per-phase media relationship and the progressive responsive ladder are kept;
                    the metadata definition lists, hairline row rules, monospace field labels and
                    the long per-stage copy are removed. Capacity now comes from the module grid
-                   and the media rhythm rather than from fields and prose.
+                   and the media rhythm rather than from fields and prose. The grid is built for
+                   five modules — the content model was not reduced to fit a four-up grid.
   Content note   : Phase titles and one-line descriptions only. No durations, fees, guarantees,
                    client names, project names, awards, certifications, statistics or
                    completed-project claims. Media areas are reserved and intentionally empty.
@@ -36,9 +37,9 @@
 <meta name="section-name" content="Design Process">
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
-<meta name="layout-model" content="Large lead media above a four-up modular phase grid">
+<meta name="layout-model" content="Large lead media above a five-up modular phase grid">
 <meta name="density" content="low">
-<meta name="media-mode" content="empty-lead-area-plus-area-per-phase">
+<meta name="media-mode" content="empty-lead-area-plus-area-per-phase-x5">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="batch" content="V1">
@@ -100,8 +101,8 @@ body { margin: 0; background: #f4f4f2; }
   margin: 0; padding: 0; list-style: none;
   counter-reset: phase;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(20px, 2.4vw, 36px);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(18px, 2.1vw, 32px);
 }
 .arc-s06-003 .phase { counter-increment: phase; min-width: 0; }
 .arc-s06-003 .phase .slot { aspect-ratio: 4 / 3; }
@@ -134,19 +135,37 @@ body { margin: 0; background: #f4f4f2; }
 
 /* --- Responsive ------------------------------------------------------- */
 @media (max-width: 1280px) {
-  .arc-s06-003 .phases { gap: clamp(18px, 2.2vw, 28px); }
+  .arc-s06-003 .phases { gap: clamp(16px, 1.9vw, 26px); }
 }
+/* Five modules become three then two: the last two widen rather than leaving an orphan. */
 @media (max-width: 1024px) {
-  .arc-s06-003 .phases { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(22px, 3vw, 34px); }
+  .arc-s06-003 .phases {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: clamp(22px, 3vw, 34px);
+  }
+  .arc-s06-003 .phase { grid-column: span 2; }
+  .arc-s06-003 .phase:nth-child(4),
+  .arc-s06-003 .phase:nth-child(5) { grid-column: span 3; }
+  .arc-s06-003 .phase:nth-child(4) .slot,
+  .arc-s06-003 .phase:nth-child(5) .slot { aspect-ratio: 16 / 9; }
   .arc-s06-003 .lead .slot { aspect-ratio: 16 / 9; }
 }
 @media (max-width: 768px) {
-  .arc-s06-003 .phases { gap: 22px 18px; }
+  .arc-s06-003 .phases { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
+  .arc-s06-003 .phase,
+  .arc-s06-003 .phase:nth-child(4) { grid-column: auto; }
+  .arc-s06-003 .phase:nth-child(4) .slot { aspect-ratio: 4 / 3; }
+  .arc-s06-003 .phase:nth-child(5) { grid-column: 1 / -1; }
+  .arc-s06-003 .phase:nth-child(5) .slot { aspect-ratio: 16 / 9; }
   .arc-s06-003 .phase p { max-width: none; }
 }
 @media (max-width: 480px) {
   .arc-s06-003 .phases { grid-template-columns: minmax(0, 1fr); gap: 26px; }
-  .arc-s06-003 .phase .slot { aspect-ratio: 16 / 9; }
+  .arc-s06-003 .phase,
+  .arc-s06-003 .phase:nth-child(5) { grid-column: auto; }
+  .arc-s06-003 .phase .slot,
+  .arc-s06-003 .phase:nth-child(4) .slot,
+  .arc-s06-003 .phase:nth-child(5) .slot { aspect-ratio: 16 / 9; }
   .arc-s06-003 .lead .slot { aspect-ratio: 3 / 2; }
 }
 @media (max-width: 360px) {
@@ -170,7 +189,7 @@ body { margin: 0; background: #f4f4f2; }
 
     <div class="head">
       <h1 id="arc-s06-003-title">How a project takes shape</h1>
-      <p>Four phases, from the first site visit to handover.</p>
+      <p>Five phases, from the first site visit to handover.</p>
     </div>
 
     <figure class="media lead"><div class="slot"><p>Image area</p></div></figure>
@@ -191,7 +210,13 @@ body { margin: 0; background: #f4f4f2; }
       <li class="phase">
         <figure class="media"><div class="slot"><p>Image area</p></div></figure>
         <h2>Developed design</h2>
-        <p>The chosen option resolved in detail and drawn for construction.</p>
+        <p>The chosen option resolved in detail, with structure and material coordinated.</p>
+      </li>
+
+      <li class="phase">
+        <figure class="media"><div class="slot"><p>Image area</p></div></figure>
+        <h2>Technical design</h2>
+        <p>Construction information: junctions drawn, specification written to match.</p>
       </li>
 
       <li class="phase">
