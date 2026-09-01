@@ -139,7 +139,122 @@ footer p { margin: 0 0 6px; max-width: 76ch; }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
 }
+
+/* --- PDF export: toolbar button --------------------------------------- */
+.tools { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pdfbtn {
+  min-height: 36px; padding: 0 16px;
+  background: #f2f2f0; color: #101114;
+  border: 1px solid #f2f2f0; border-radius: 999px;
+  font: inherit; font-size: 0.75rem; font-weight: 600; cursor: pointer;
+}
+.pdfbtn:hover { background: #fff; }
+
+/* --- PDF export: picker ------------------------------------------------ */
+.pickr {
+  width: min(1000px, 94vw); max-height: 88vh; padding: 0;
+  color: #f2f2f0; background: #17181c;
+  border: 1px solid rgba(242, 242, 240, 0.24); border-radius: 12px;
+}
+.pickr::backdrop { background: rgba(8, 9, 11, 0.74); }
+.pickr__form { display: flex; flex-direction: column; max-height: 88vh; }
+.pickr__head { padding: 16px 20px; border-bottom: 1px solid rgba(242, 242, 240, 0.16); }
+.pickr__head h2 { margin: 0 0 4px; font-size: 0.9375rem; font-weight: 600; }
+.pickr__head p { margin: 0; font-size: 0.75rem; color: #a7a9ad; max-width: 74ch; }
+.pickr__opts {
+  display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: flex-start;
+  padding: 12px 20px; border-bottom: 1px solid rgba(242, 242, 240, 0.12);
+}
+.pickr fieldset { margin: 0; padding: 0; border: 0; }
+.pickr legend {
+  padding: 0 0 6px; font-size: 0.625rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #a7a9ad;
+}
+.pickr__opts label { display: inline-flex; align-items: center; gap: 7px; margin-right: 14px; font-size: 0.75rem; }
+.pickr__bulk { margin-left: auto; display: flex; gap: 8px; align-items: flex-end; }
+.pickr__bulk button, .pickr__foot button {
+  min-height: 34px; padding: 0 14px;
+  background: transparent; color: #f2f2f0;
+  border: 1px solid rgba(242, 242, 240, 0.3); border-radius: 999px;
+  font: inherit; font-size: 0.75rem; cursor: pointer;
+}
+.pickr__bulk button:hover, .pickr__foot button:hover { border-color: rgba(242, 242, 240, 0.7); }
+.pickr__list { overflow: auto; padding: 6px 20px 16px; flex: 1 1 auto; }
+.secrow { border-bottom: 1px solid rgba(242, 242, 240, 0.1); }
+.secrow__top { display: flex; align-items: center; gap: 10px; padding: 9px 0; }
+.secrow__top label { display: inline-flex; align-items: center; gap: 9px; font-size: 0.8125rem; cursor: pointer; }
+.secrow__id {
+  display: inline-block; min-width: 34px; padding: 2px 7px;
+  border: 1px solid rgba(242, 242, 240, 0.28); border-radius: 4px;
+  font-size: 0.625rem; letter-spacing: 0.08em; text-align: center;
+}
+.secrow__n { margin-left: auto; font-size: 0.6875rem; color: #a7a9ad; }
+.secrow__toggle {
+  min-height: 30px; padding: 0 10px; background: transparent; color: #d5d6d8;
+  border: 1px solid rgba(242, 242, 240, 0.2); border-radius: 999px;
+  font: inherit; font-size: 0.625rem; cursor: pointer;
+}
+.secrow__kids { display: none; padding: 0 0 10px 44px; }
+.secrow__kids[data-open="1"] { display: block; }
+.secrow__kids ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.secrow__kids label { display: inline-flex; align-items: baseline; gap: 8px; font-size: 0.75rem; color: #d5d6d8; }
+.secrow__kids .t { color: #a7a9ad; }
+.pickr__foot {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 14px 20px; border-top: 1px solid rgba(242, 242, 240, 0.16);
+}
+.pickr__count { margin: 0; font-size: 0.75rem; color: #a7a9ad; }
+.pickr__foot .go { margin-left: auto; background: #f2f2f0; color: #101114; border-color: #f2f2f0; font-weight: 600; }
+.pickr__warn { margin: 0; width: 100%; font-size: 0.6875rem; color: #ffce8a; }
+
+/* --- PDF export: print view -------------------------------------------- */
+#pdfroot { display: none; }
+body.pdfmode #pdfroot { display: block; }
+body.pdfmode > .masthead, body.pdfmode > main { display: none; }
+.pdfbar {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 12px clamp(14px, 2.4vw, 34px);
+  background: rgba(16, 17, 20, 0.96); border-bottom: 1px solid rgba(242, 242, 240, 0.16);
+}
+.pdfbar p { margin: 0; font-size: 0.75rem; color: #a7a9ad; }
+.pdfbar button {
+  min-height: 34px; padding: 0 14px; background: transparent; color: #f2f2f0;
+  border: 1px solid rgba(242, 242, 240, 0.3); border-radius: 999px;
+  font: inherit; font-size: 0.75rem; cursor: pointer;
+}
+.pdfbar .print { margin-left: auto; background: #f2f2f0; color: #101114; border-color: #f2f2f0; font-weight: 600; }
+.pdfpages { padding: 18px clamp(14px, 2.4vw, 34px) 40px; }
+.pdfpage {
+  position: relative; margin: 0 auto 20px; padding: 0;
+  background: #fff; color: #111214; overflow: hidden;
+}
+.pdfpage__head {
+  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  height: 26px; padding: 0 2px; border-bottom: 1px solid #d9d9d6;
+  font-size: 10px; letter-spacing: 0.02em;
+}
+.pdfpage__head b { font-size: 11px; letter-spacing: 0.06em; }
+.pdfpage__head span { color: #5b5e63; }
+.pdfpage__head .sec { margin-left: auto; color: #5b5e63; }
+.pdfrow { display: flex; align-items: flex-start; gap: 14px; padding-top: 8px; }
+.pdfdev__cap {
+  margin: 0 0 4px; font-size: 8px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #5b5e63;
+}
+.pdfhold { position: relative; overflow: hidden; border: 1px solid #d9d9d6; background: #fff; }
+.pdfhold iframe { position: absolute; top: 0; left: 0; border: 0; transform-origin: top left; }
+
+@media print {
+  html, body { background: #fff !important; }
+  .pdfbar { display: none !important; }
+  .pdfpages { padding: 0 !important; }
+  .pdfpage { margin: 0 !important; break-after: page; page-break-after: always; }
+  .pdfpage:last-child { break-after: auto; page-break-after: auto; }
+}
+
 </style>
+<style id="pdf-pagesize">@page { size: A3 landscape; margin: 8mm; }</style>
 </head>
 
 <body>
@@ -149,12 +264,15 @@ footer p { margin: 0 0 6px; max-width: 76ch; }
     <div class="masthead__row">
       <div>
         <h1>Architecture &amp; Interior Design &#183; review contact sheet</h1>
-        <p class="count">131 studies across 25 sections &#183; live previews, two columns</p>
+        <p class="count">146 studies across 28 sections &#183; live previews, two columns</p>
       </div>
-      <div class="widths" role="group" aria-label="Preview viewport width">
-        <button type="button" data-w="1440" data-h="900" aria-pressed="true">Desktop 1440</button>
-        <button type="button" data-w="768" data-h="1000" aria-pressed="false">Tablet 768</button>
-        <button type="button" data-w="390" data-h="844" aria-pressed="false">Phone 390</button>
+      <div class="tools">
+        <div class="widths" role="group" aria-label="Preview viewport width">
+          <button type="button" data-w="1440" data-h="900" aria-pressed="true">Desktop 1440</button>
+          <button type="button" data-w="768" data-h="1000" aria-pressed="false">Tablet 768</button>
+          <button type="button" data-w="390" data-h="844" aria-pressed="false">Phone 390</button>
+        </div>
+        <button type="button" class="pdfbtn" id="pdfopen">PDF üret</button>
       </div>
     </div>
     <nav class="sectionnav" aria-label="Sections">
@@ -184,6 +302,9 @@ footer p { margin: 0 0 6px; max-width: 76ch; }
         <li><a href="#S23">S23 <span>Architecture / Interior Service Detail</span> <b>5</b></a></li>
         <li><a href="#S24">S24 <span>Project Detail</span> <b>5</b></a></li>
         <li><a href="#S25">S25 <span>Studio Journal / Article Detail</span> <b>5</b></a></li>
+        <li><a href="#S26">S26 <span>Architect / Designer Profile</span> <b>5</b></a></li>
+        <li><a href="#S27">S27 <span>Studio / Location Detail</span> <b>5</b></a></li>
+        <li><a href="#S28">S28 <span>S28-blog-list-pages</span> <b>5</b></a></li>
       </ul>
     </nav>
   </div>
@@ -694,15 +815,15 @@ footer p { margin: 0 0 6px; max-width: 76ch; }
         <li class="card">
           <div class="card__head">
             <h3>ARC-S06-003</h3>
-            <p class="terr">Dense / Information-heavy</p>
+            <p class="terr">Structured / Visual Modular</p>
           </div>
           <div class="frame" data-frame>
             <iframe src="../sectors/architecture-interior-design/S06-design-process/raw/ARC-S06-003.html" title="Preview of study ARC-S06-003" loading="lazy" tabindex="-1" scrolling="no"></iframe>
           </div>
           <dl class="facts">
-            <div><dt>Layout</dt><dd>Stacked dossier rows with metadata block and thumbnail</dd></div>
-            <div><dt>Density</dt><dd>high</dd></div>
-            <div><dt>Media</dt><dd>empty-thumbnail-per-row</dd></div>
+            <div><dt>Layout</dt><dd>Large lead media above a five-up modular phase grid</dd></div>
+            <div><dt>Density</dt><dd>low</dd></div>
+            <div><dt>Media</dt><dd>empty-lead-area-plus-area-per-phase-x5</dd></div>
             <div><dt>Interaction</dt><dd>none</dd></div>
           </dl>
           <a class="open" href="../sectors/architecture-interior-design/S06-design-process/raw/ARC-S06-003.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
@@ -2392,6 +2513,258 @@ footer p { margin: 0 0 6px; max-width: 76ch; }
       </ul>
     </section>
 
+    <section class="group" id="S26" aria-labelledby="S26-h">
+      <div class="group__head">
+        <h2 id="S26-h"><span class="group__id">S26</span> Architect / Designer Profile</h2>
+        <p>5 studies</p>
+      </div>
+      <ul class="grid">
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S26-001</h3>
+            <p class="terr">Universal / Safe</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-001.html" title="Preview of study ARC-S26-001" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Paired portrait and identity, then post, work, reserved background, contact</dd></div>
+            <div><dt>Density</dt><dd>medium</dd></div>
+            <div><dt>Media</dt><dd>one-portrait-optional</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-001.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S26-002</h3>
+            <p class="terr">Premium / Editorial</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-002.html" title="Preview of study ARC-S26-002" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Tall portrait beside a quiet identity column, statement at one measure</dd></div>
+            <div><dt>Density</dt><dd>low</dd></div>
+            <div><dt>Media</dt><dd>one-tall-portrait-optional</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-002.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S26-003</h3>
+            <p class="terr">Dense / Information-heavy</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-003.html" title="Preview of study ARC-S26-003" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Personnel record sheet with field register and stage-involvement table</dd></div>
+            <div><dt>Density</dt><dd>high</dd></div>
+            <div><dt>Media</dt><dd>one-small-portrait</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-003.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S26-004</h3>
+            <p class="terr">Conversion-led</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-004.html" title="Preview of study ARC-S26-004" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Decision header with standing action, help list, self-selection, introduction steps</dd></div>
+            <div><dt>Density</dt><dd>medium</dd></div>
+            <div><dt>Media</dt><dd>one-portrait-optional</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-004.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S26-005</h3>
+            <p class="terr">Sector-native / Distinctive</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-005.html" title="Preview of study ARC-S26-005" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Bid curriculum sheet with coverage matrix and verification block</dd></div>
+            <div><dt>Density</dt><dd>medium-high</dd></div>
+            <div><dt>Media</dt><dd>one-portrait-in-sheet</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-005.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="group" id="S27" aria-labelledby="S27-h">
+      <div class="group__head">
+        <h2 id="S27-h"><span class="group__id">S27</span> Studio / Location Detail</h2>
+        <p>5 studies</p>
+      </div>
+      <ul class="grid">
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S27-001</h3>
+            <p class="terr">Universal / Safe</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-001.html" title="Preview of study ARC-S27-001" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Address-first location page with hours, media, directions and a reserved map</dd></div>
+            <div><dt>Density</dt><dd>medium</dd></div>
+            <div><dt>Media</dt><dd>one-place-image-and-reserved-map</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-001.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S27-002</h3>
+            <p class="terr">Premium / Editorial</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-002.html" title="Preview of study ARC-S27-002" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Editorial place study with a compact address line above the media and a full register at the foot</dd></div>
+            <div><dt>Density</dt><dd>low</dd></div>
+            <div><dt>Media</dt><dd>three-plates-optional</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-002.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S27-003</h3>
+            <p class="terr">Dense / Information-heavy</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-003.html" title="Preview of study ARC-S27-003" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Location details sheet with contact, hours and access tables</dd></div>
+            <div><dt>Density</dt><dd>high</dd></div>
+            <div><dt>Media</dt><dd>reserved-map-only</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-003.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S27-004</h3>
+            <p class="terr">Conversion-led</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-004.html" title="Preview of study ARC-S27-004" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Visit-ordered location page with address inside the decision header</dd></div>
+            <div><dt>Density</dt><dd>medium</dd></div>
+            <div><dt>Media</dt><dd>reserved-map-only</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-004.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-S27-005</h3>
+            <p class="terr">Sector-native / Distinctive</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-005.html" title="Preview of study ARC-S27-005" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Layout</dt><dd>Lettered arrival key against a reserved plan area</dd></div>
+            <div><dt>Density</dt><dd>medium</dd></div>
+            <div><dt>Media</dt><dd>reserved-plan-and-map</dd></div>
+            <div><dt>Interaction</dt><dd>none</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-005.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="group" id="S28" aria-labelledby="S28-h">
+      <div class="group__head">
+        <h2 id="S28-h"><span class="group__id">S28</span> S28-blog-list-pages</h2>
+        <p>5 studies</p>
+      </div>
+      <ul class="grid">
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-BLOG-LIST-001</h3>
+            <p class="terr">—</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-001.html" title="Preview of study ARC-BLOG-LIST-001" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Metadata</dt><dd>Not recorded in this study</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-001.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-BLOG-LIST-002</h3>
+            <p class="terr">—</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-002.html" title="Preview of study ARC-BLOG-LIST-002" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Metadata</dt><dd>Not recorded in this study</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-002.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-BLOG-LIST-003</h3>
+            <p class="terr">—</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-003.html" title="Preview of study ARC-BLOG-LIST-003" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Metadata</dt><dd>Not recorded in this study</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-003.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-BLOG-LIST-004</h3>
+            <p class="terr">—</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-004.html" title="Preview of study ARC-BLOG-LIST-004" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Metadata</dt><dd>Not recorded in this study</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-004.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+        <li class="card">
+          <div class="card__head">
+            <h3>ARC-BLOG-LIST-005</h3>
+            <p class="terr">—</p>
+          </div>
+          <div class="frame" data-frame>
+            <iframe src="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-005.html" title="Preview of study ARC-BLOG-LIST-005" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+          </div>
+          <dl class="facts">
+            <div><dt>Metadata</dt><dd>Not recorded in this study</dd></div>
+          </dl>
+          <a class="open" href="../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-005.html" target="_blank" rel="noopener">Open study<span aria-hidden="true"> &#8599;</span></a>
+        </li>
+      </ul>
+    </section>
+
   <footer>
     <p>
       Local review aid for the Sector Design Authoring Workspace. This page is not a raw study,
@@ -2435,6 +2808,326 @@ footer p { margin: 0 0 6px; max-width: 76ch; }
   window.addEventListener('load', layout);
   layout();
 })();
+</script>
+
+<dialog class="pickr" id="pickr" aria-labelledby="pickr-h">
+  <div class="pickr__form">
+    <div class="pickr__head">
+      <h2 id="pickr-h">PDF üret</h2>
+      <p>
+        Seçilen her tasarım için bir yatay sayfa: solda desktop, ortada tablet, sağda telefon
+        genişliği yan yana. Hazırlandığında tarayıcının yazdırma penceresi açılır &#8212; oradan
+        <b>PDF olarak kaydet</b> seçilir.
+      </p>
+    </div>
+
+    <div class="pickr__opts">
+      <fieldset>
+        <legend>Kağıt</legend>
+        <label><input type="radio" name="paper" value="a3" checked> A3 yatay</label>
+        <label><input type="radio" name="paper" value="a4"> A4 yatay</label>
+      </fieldset>
+      <fieldset>
+        <legend>Cihaz görünümleri</legend>
+        <label><input type="checkbox" name="dev" value="0" checked> Desktop 1440</label>
+        <label><input type="checkbox" name="dev" value="1" checked> Tablet 768</label>
+        <label><input type="checkbox" name="dev" value="2" checked> Telefon 390</label>
+      </fieldset>
+      <div class="pickr__bulk">
+        <button type="button" id="pickr-all">Tümünü seç</button>
+        <button type="button" id="pickr-none">Temizle</button>
+      </div>
+    </div>
+
+    <div class="pickr__list" id="pickr-list"></div>
+
+    <div class="pickr__foot">
+      <p class="pickr__count" id="pickr-count"></p>
+      <button type="button" id="pickr-close">Kapat</button>
+      <button type="button" class="go" id="pickr-go">Sayfaları hazırla</button>
+      <p class="pickr__warn" id="pickr-warn"></p>
+    </div>
+  </div>
+</dialog>
+
+<div id="pdfroot"></div>
+
+<script id="pdf-data" type="application/json">{"widths":[1440,768,390],"studies":[{"id":"ARC-S01-001","sec":"S01","secName":"Hero","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S01-hero/raw/ARC-S01-001.html","h":[754,1109,915]},{"id":"ARC-S01-002","sec":"S01","secName":"Hero","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S01-hero/raw/ARC-S01-002.html","h":[900,643,772]},{"id":"ARC-S01-003","sec":"S01","secName":"Hero","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S01-hero/raw/ARC-S01-003.html","h":[857,1149,1207]},{"id":"ARC-S01-004","sec":"S01","secName":"Hero","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S01-hero/raw/ARC-S01-004.html","h":[900,996,791]},{"id":"ARC-S01-005","sec":"S01","secName":"Hero","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S01-hero/raw/ARC-S01-005.html","h":[900,560,714]},{"id":"ARC-S02-001","sec":"S02","secName":"Selected Projects","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S02-selected-projects/raw/ARC-S02-001.html","h":[900,1354,1727]},{"id":"ARC-S02-002","sec":"S02","secName":"Selected Projects","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S02-selected-projects/raw/ARC-S02-002.html","h":[950,1538,1334]},{"id":"ARC-S02-003","sec":"S02","secName":"Selected Projects","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S02-selected-projects/raw/ARC-S02-003.html","h":[904,1355,1778]},{"id":"ARC-S02-004","sec":"S02","secName":"Selected Projects","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S02-selected-projects/raw/ARC-S02-004.html","h":[900,1024,891]},{"id":"ARC-S02-005","sec":"S02","secName":"Selected Projects","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S02-selected-projects/raw/ARC-S02-005.html","h":[1133,1281,2411]},{"id":"ARC-S03-001","sec":"S03","secName":"Services","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S03-services/raw/ARC-S03-001.html","h":[1161,1274,2024]},{"id":"ARC-S03-002","sec":"S03","secName":"Services","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S03-services/raw/ARC-S03-002.html","h":[1020,2065,2242]},{"id":"ARC-S03-003","sec":"S03","secName":"Services","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S03-services/raw/ARC-S03-003.html","h":[859,1390,2015]},{"id":"ARC-S03-004","sec":"S03","secName":"Services","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S03-services/raw/ARC-S03-004.html","h":[852,737,797]},{"id":"ARC-S03-005","sec":"S03","secName":"Services","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S03-services/raw/ARC-S03-005.html","h":[1048,1475,1833]},{"id":"ARC-S03-006","sec":"S03","secName":"Services","terr":"Extended \u2014 Paired media-and-card rows","rel":"../sectors/architecture-interior-design/S03-services/raw/ARC-S03-006.html","h":[979,2196,1734]},{"id":"ARC-S03-007","sec":"S03","secName":"Services","terr":"Extended \u2014 Corner-media bento with icon cards","rel":"../sectors/architecture-interior-design/S03-services/raw/ARC-S03-007.html","h":[929,952,1577]},{"id":"ARC-S04-001","sec":"S04","secName":"Project Typologies","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S04-project-typologies/raw/ARC-S04-001.html","h":[1089,1308,1126]},{"id":"ARC-S04-002","sec":"S04","secName":"Project Typologies","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S04-project-typologies/raw/ARC-S04-002.html","h":[740,1117,1911]},{"id":"ARC-S04-003","sec":"S04","secName":"Project Typologies","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S04-project-typologies/raw/ARC-S04-003.html","h":[679,959,1557]},{"id":"ARC-S04-004","sec":"S04","secName":"Project Typologies","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S04-project-typologies/raw/ARC-S04-004.html","h":[1254,1396,1992]},{"id":"ARC-S04-005","sec":"S04","secName":"Project Typologies","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S04-project-typologies/raw/ARC-S04-005.html","h":[729,716,1094]},{"id":"ARC-S05-001","sec":"S05","secName":"Design Philosophy","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S05-design-philosophy/raw/ARC-S05-001.html","h":[1421,969,1331]},{"id":"ARC-S05-002","sec":"S05","secName":"Design Philosophy","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S05-design-philosophy/raw/ARC-S05-002.html","h":[762,729,690]},{"id":"ARC-S05-003","sec":"S05","secName":"Design Philosophy","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S05-design-philosophy/raw/ARC-S05-003.html","h":[1000,1285,1307]},{"id":"ARC-S05-004","sec":"S05","secName":"Design Philosophy","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S05-design-philosophy/raw/ARC-S05-004.html","h":[621,895,1182]},{"id":"ARC-S05-005","sec":"S05","secName":"Design Philosophy","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S05-design-philosophy/raw/ARC-S05-005.html","h":[1426,1313,1410]},{"id":"ARC-S06-001","sec":"S06","secName":"Design Process","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S06-design-process/raw/ARC-S06-001.html","h":[1136,1218,1463]},{"id":"ARC-S06-002","sec":"S06","secName":"Design Process","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S06-design-process/raw/ARC-S06-002.html","h":[2268,2434,1838]},{"id":"ARC-S06-003","sec":"S06","secName":"Design Process","terr":"Structured / Visual Modular","rel":"../sectors/architecture-interior-design/S06-design-process/raw/ARC-S06-003.html","h":[1229,1882,2065]},{"id":"ARC-S06-004","sec":"S06","secName":"Design Process","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S06-design-process/raw/ARC-S06-004.html","h":[888,1419,1472]},{"id":"ARC-S06-005","sec":"S06","secName":"Design Process","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S06-design-process/raw/ARC-S06-005.html","h":[773,723,852]},{"id":"ARC-S07-001","sec":"S07","secName":"Studio About","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S07-studio-about/raw/ARC-S07-001.html","h":[985,1167,1883]},{"id":"ARC-S07-002","sec":"S07","secName":"Studio About","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S07-studio-about/raw/ARC-S07-002.html","h":[1166,1539,1052]},{"id":"ARC-S07-003","sec":"S07","secName":"Studio About","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S07-studio-about/raw/ARC-S07-003.html","h":[964,1232,1499]},{"id":"ARC-S07-004","sec":"S07","secName":"Studio About","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S07-studio-about/raw/ARC-S07-004.html","h":[681,900,793]},{"id":"ARC-S07-005","sec":"S07","secName":"Studio About","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S07-studio-about/raw/ARC-S07-005.html","h":[689,714,856]},{"id":"ARC-S08-001","sec":"S08","secName":"Architects & Designers","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S08-architects-designers/raw/ARC-S08-001.html","h":[877,1288,1726]},{"id":"ARC-S08-002","sec":"S08","secName":"Architects & Designers","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S08-architects-designers/raw/ARC-S08-002.html","h":[842,1345,1821]},{"id":"ARC-S08-003","sec":"S08","secName":"Architects & Designers","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S08-architects-designers/raw/ARC-S08-003.html","h":[898,1279,2137]},{"id":"ARC-S08-004","sec":"S08","secName":"Architects & Designers","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S08-architects-designers/raw/ARC-S08-004.html","h":[842,1338,1737]},{"id":"ARC-S08-005","sec":"S08","secName":"Architects & Designers","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S08-architects-designers/raw/ARC-S08-005.html","h":[590,1774,2201]},{"id":"ARC-S08-006","sec":"S08","secName":"Architects & Designers","terr":"Extended \u2014 Featured member with thumbnail strip","rel":"../sectors/architecture-interior-design/S08-architects-designers/raw/ARC-S08-006.html","h":[1450,2078,2177]},{"id":"ARC-S08-007","sec":"S08","secName":"Architects & Designers","terr":"Extended \u2014 Expanding filmstrip","rel":"../sectors/architecture-interior-design/S08-architects-designers/raw/ARC-S08-007.html","h":[873,600,611]},{"id":"ARC-S08-008","sec":"S08","secName":"Architects & Designers","terr":"Extended \u2014 Edge-bleeding card row","rel":"../sectors/architecture-interior-design/S08-architects-designers/raw/ARC-S08-008.html","h":[925,1057,876]},{"id":"ARC-S08-009","sec":"S08","secName":"Architects & Designers","terr":"Extended \u2014 Lead card with buttoned rail","rel":"../sectors/architecture-interior-design/S08-architects-designers/raw/ARC-S08-009.html","h":[778,831,742]},{"id":"ARC-S09-001","sec":"S09","secName":"Awards & Publications","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S09-awards-publications/raw/ARC-S09-001.html","h":[842,1102,1377]},{"id":"ARC-S09-002","sec":"S09","secName":"Awards & Publications","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S09-awards-publications/raw/ARC-S09-002.html","h":[1005,1238,1127]},{"id":"ARC-S09-003","sec":"S09","secName":"Awards & Publications","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S09-awards-publications/raw/ARC-S09-003.html","h":[907,824,1077]},{"id":"ARC-S09-004","sec":"S09","secName":"Awards & Publications","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S09-awards-publications/raw/ARC-S09-004.html","h":[651,957,1321]},{"id":"ARC-S09-005","sec":"S09","secName":"Awards & Publications","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S09-awards-publications/raw/ARC-S09-005.html","h":[925,775,1389]},{"id":"ARC-S10-001","sec":"S10","secName":"Capabilities","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S10-capabilities/raw/ARC-S10-001.html","h":[752,1263,1591]},{"id":"ARC-S10-002","sec":"S10","secName":"Capabilities","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S10-capabilities/raw/ARC-S10-002.html","h":[1166,1364,1614]},{"id":"ARC-S10-003","sec":"S10","secName":"Capabilities","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S10-capabilities/raw/ARC-S10-003.html","h":[912,828,1075]},{"id":"ARC-S10-004","sec":"S10","secName":"Capabilities","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S10-capabilities/raw/ARC-S10-004.html","h":[949,1358,1584]},{"id":"ARC-S10-005","sec":"S10","secName":"Capabilities","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S10-capabilities/raw/ARC-S10-005.html","h":[1328,1618,2147]},{"id":"ARC-S11-001","sec":"S11","secName":"Materials & Sustainability","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S11-materials-sustainability/raw/ARC-S11-001.html","h":[1516,1955,2835]},{"id":"ARC-S11-002","sec":"S11","secName":"Materials & Sustainability","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S11-materials-sustainability/raw/ARC-S11-002.html","h":[893,1076,1379]},{"id":"ARC-S11-003","sec":"S11","secName":"Materials & Sustainability","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S11-materials-sustainability/raw/ARC-S11-003.html","h":[1538,1778,2325]},{"id":"ARC-S11-004","sec":"S11","secName":"Materials & Sustainability","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S11-materials-sustainability/raw/ARC-S11-004.html","h":[799,1094,1133]},{"id":"ARC-S11-005","sec":"S11","secName":"Materials & Sustainability","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S11-materials-sustainability/raw/ARC-S11-005.html","h":[978,979,1313]},{"id":"ARC-S12-001","sec":"S12","secName":"Client Testimonials","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S12-client-testimonials/raw/ARC-S12-001.html","h":[1016,1279,1412]},{"id":"ARC-S12-002","sec":"S12","secName":"Client Testimonials","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S12-client-testimonials/raw/ARC-S12-002.html","h":[775,968,918]},{"id":"ARC-S12-003","sec":"S12","secName":"Client Testimonials","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S12-client-testimonials/raw/ARC-S12-003.html","h":[1186,1034,1837]},{"id":"ARC-S12-004","sec":"S12","secName":"Client Testimonials","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S12-client-testimonials/raw/ARC-S12-004.html","h":[843,1029,1363]},{"id":"ARC-S12-005","sec":"S12","secName":"Client Testimonials","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S12-client-testimonials/raw/ARC-S12-005.html","h":[1268,1624,1980]},{"id":"ARC-S13-001","sec":"S13","secName":"Featured Project Case Study","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S13-featured-project-case-study/raw/ARC-S13-001.html","h":[1744,1801,2085]},{"id":"ARC-S13-002","sec":"S13","secName":"Featured Project Case Study","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S13-featured-project-case-study/raw/ARC-S13-002.html","h":[1096,1406,1476]},{"id":"ARC-S13-003","sec":"S13","secName":"Featured Project Case Study","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S13-featured-project-case-study/raw/ARC-S13-003.html","h":[1207,1407,2591]},{"id":"ARC-S13-004","sec":"S13","secName":"Featured Project Case Study","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S13-featured-project-case-study/raw/ARC-S13-004.html","h":[1696,1953,1762]},{"id":"ARC-S13-005","sec":"S13","secName":"Featured Project Case Study","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S13-featured-project-case-study/raw/ARC-S13-005.html","h":[1956,1678,1790]},{"id":"ARC-S14-001","sec":"S14","secName":"Project Gallery","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S14-project-gallery/raw/ARC-S14-001.html","h":[2598,2991,2683]},{"id":"ARC-S14-002","sec":"S14","secName":"Project Gallery","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S14-project-gallery/raw/ARC-S14-002.html","h":[3510,3150,2183]},{"id":"ARC-S14-003","sec":"S14","secName":"Project Gallery","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S14-project-gallery/raw/ARC-S14-003.html","h":[980,1769,2301]},{"id":"ARC-S14-004","sec":"S14","secName":"Project Gallery","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S14-project-gallery/raw/ARC-S14-004.html","h":[1286,2091,2588]},{"id":"ARC-S14-005","sec":"S14","secName":"Project Gallery","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S14-project-gallery/raw/ARC-S14-005.html","h":[2109,2778,3619]},{"id":"ARC-S15-001","sec":"S15","secName":"Sectors Markets","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S15-sectors-markets/raw/ARC-S15-001.html","h":[1326,1474,2564]},{"id":"ARC-S15-002","sec":"S15","secName":"Sectors Markets","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S15-sectors-markets/raw/ARC-S15-002.html","h":[1992,2721,1870]},{"id":"ARC-S15-003","sec":"S15","secName":"Sectors Markets","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S15-sectors-markets/raw/ARC-S15-003.html","h":[900,1224,1229]},{"id":"ARC-S15-004","sec":"S15","secName":"Sectors Markets","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S15-sectors-markets/raw/ARC-S15-004.html","h":[1094,1343,1394]},{"id":"ARC-S15-005","sec":"S15","secName":"Sectors Markets","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S15-sectors-markets/raw/ARC-S15-005.html","h":[1066,1760,1749]},{"id":"ARC-S16-001","sec":"S16","secName":"Press News","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S16-press-news/raw/ARC-S16-001.html","h":[1063,1178,1189]},{"id":"ARC-S16-002","sec":"S16","secName":"Press News","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S16-press-news/raw/ARC-S16-002.html","h":[1256,2003,1932]},{"id":"ARC-S16-003","sec":"S16","secName":"Press News","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S16-press-news/raw/ARC-S16-003.html","h":[900,1024,1304]},{"id":"ARC-S16-004","sec":"S16","secName":"Press News","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S16-press-news/raw/ARC-S16-004.html","h":[1121,1494,1371]},{"id":"ARC-S16-005","sec":"S16","secName":"Press News","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S16-press-news/raw/ARC-S16-005.html","h":[1150,1442,1918]},{"id":"ARC-S17-001","sec":"S17","secName":"Studio Locations","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S17-studio-locations/raw/ARC-S17-001.html","h":[900,1282,1728]},{"id":"ARC-S17-002","sec":"S17","secName":"Studio Locations","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S17-studio-locations/raw/ARC-S17-002.html","h":[1033,1384,1507]},{"id":"ARC-S17-003","sec":"S17","secName":"Studio Locations","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S17-studio-locations/raw/ARC-S17-003.html","h":[900,1024,942]},{"id":"ARC-S17-004","sec":"S17","secName":"Studio Locations","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S17-studio-locations/raw/ARC-S17-004.html","h":[1108,1499,1433]},{"id":"ARC-S17-005","sec":"S17","secName":"Studio Locations","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S17-studio-locations/raw/ARC-S17-005.html","h":[1047,1070,1137]},{"id":"ARC-S18-001","sec":"S18","secName":"Studio Stats","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S18-studio-stats/raw/ARC-S18-001.html","h":[900,1024,1164]},{"id":"ARC-S18-002","sec":"S18","secName":"Studio Stats","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S18-studio-stats/raw/ARC-S18-002.html","h":[960,1050,1285]},{"id":"ARC-S18-003","sec":"S18","secName":"Studio Stats","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S18-studio-stats/raw/ARC-S18-003.html","h":[900,1024,972]},{"id":"ARC-S18-004","sec":"S18","secName":"Studio Stats","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S18-studio-stats/raw/ARC-S18-004.html","h":[900,1195,1219]},{"id":"ARC-S18-005","sec":"S18","secName":"Studio Stats","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S18-studio-stats/raw/ARC-S18-005.html","h":[1015,1024,1441]},{"id":"ARC-S19-001","sec":"S19","secName":"Project Inquiry","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S19-project-inquiry/raw/ARC-S19-001.html","h":[919,1139,1290]},{"id":"ARC-S19-002","sec":"S19","secName":"Project Inquiry","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S19-project-inquiry/raw/ARC-S19-002.html","h":[900,1122,1143]},{"id":"ARC-S19-003","sec":"S19","secName":"Project Inquiry","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S19-project-inquiry/raw/ARC-S19-003.html","h":[962,1024,1429]},{"id":"ARC-S19-004","sec":"S19","secName":"Project Inquiry","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S19-project-inquiry/raw/ARC-S19-004.html","h":[972,1244,1263]},{"id":"ARC-S19-005","sec":"S19","secName":"Project Inquiry","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S19-project-inquiry/raw/ARC-S19-005.html","h":[1063,1024,1240]},{"id":"ARC-S20-001","sec":"S20","secName":"Consultation CTA","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S20-consultation-cta/raw/ARC-S20-001.html","h":[900,1024,844]},{"id":"ARC-S20-002","sec":"S20","secName":"Consultation CTA","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S20-consultation-cta/raw/ARC-S20-002.html","h":[900,1024,844]},{"id":"ARC-S20-003","sec":"S20","secName":"Consultation CTA","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S20-consultation-cta/raw/ARC-S20-003.html","h":[900,1024,928]},{"id":"ARC-S20-004","sec":"S20","secName":"Consultation CTA","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S20-consultation-cta/raw/ARC-S20-004.html","h":[900,1055,1215]},{"id":"ARC-S20-005","sec":"S20","secName":"Consultation CTA","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S20-consultation-cta/raw/ARC-S20-005.html","h":[949,1024,1057]},{"id":"ARC-S21-001","sec":"S21","secName":"Subpage Hero","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S21-subpage-hero/raw/ARC-S21-001.html","h":[432,332,574]},{"id":"ARC-S21-002","sec":"S21","secName":"Subpage Hero","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S21-subpage-hero/raw/ARC-S21-002.html","h":[927,731,639]},{"id":"ARC-S21-003","sec":"S21","secName":"Subpage Hero","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S21-subpage-hero/raw/ARC-S21-003.html","h":[511,725,1217]},{"id":"ARC-S21-004","sec":"S21","secName":"Subpage Hero","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S21-subpage-hero/raw/ARC-S21-004.html","h":[453,482,616]},{"id":"ARC-S21-005","sec":"S21","secName":"Subpage Hero","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S21-subpage-hero/raw/ARC-S21-005.html","h":[503,325,417]},{"id":"ARC-S22-001","sec":"S22","secName":"Breadcrumb / Context Navigation","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S22-breadcrumb-context-navigation/raw/ARC-S22-001.html","h":[227,191,243]},{"id":"ARC-S22-002","sec":"S22","secName":"Breadcrumb / Context Navigation","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S22-breadcrumb-context-navigation/raw/ARC-S22-002.html","h":[240,246,296]},{"id":"ARC-S22-003","sec":"S22","secName":"Breadcrumb / Context Navigation","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S22-breadcrumb-context-navigation/raw/ARC-S22-003.html","h":[416,460,716]},{"id":"ARC-S22-004","sec":"S22","secName":"Breadcrumb / Context Navigation","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S22-breadcrumb-context-navigation/raw/ARC-S22-004.html","h":[335,351,503]},{"id":"ARC-S22-005","sec":"S22","secName":"Breadcrumb / Context Navigation","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S22-breadcrumb-context-navigation/raw/ARC-S22-005.html","h":[472,524,528]},{"id":"ARC-S23-001","sec":"S23","secName":"Architecture / Interior Service Detail","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S23-service-offering-detail/raw/ARC-S23-001.html","h":[2606,2488,3800]},{"id":"ARC-S23-002","sec":"S23","secName":"Architecture / Interior Service Detail","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S23-service-offering-detail/raw/ARC-S23-002.html","h":[3801,3190,3746]},{"id":"ARC-S23-003","sec":"S23","secName":"Architecture / Interior Service Detail","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S23-service-offering-detail/raw/ARC-S23-003.html","h":[2855,3398,4229]},{"id":"ARC-S23-004","sec":"S23","secName":"Architecture / Interior Service Detail","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S23-service-offering-detail/raw/ARC-S23-004.html","h":[2304,2777,3559]},{"id":"ARC-S23-005","sec":"S23","secName":"Architecture / Interior Service Detail","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S23-service-offering-detail/raw/ARC-S23-005.html","h":[2827,4000,5333]},{"id":"ARC-S24-001","sec":"S24","secName":"Project Detail","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S24-project-case-study-detail/raw/ARC-S24-001.html","h":[4446,4484,4755]},{"id":"ARC-S24-002","sec":"S24","secName":"Project Detail","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S24-project-case-study-detail/raw/ARC-S24-002.html","h":[7907,6169,5954]},{"id":"ARC-S24-003","sec":"S24","secName":"Project Detail","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S24-project-case-study-detail/raw/ARC-S24-003.html","h":[4070,5991,4866]},{"id":"ARC-S24-004","sec":"S24","secName":"Project Detail","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S24-project-case-study-detail/raw/ARC-S24-004.html","h":[4819,4253,4590]},{"id":"ARC-S24-005","sec":"S24","secName":"Project Detail","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S24-project-case-study-detail/raw/ARC-S24-005.html","h":[5260,6340,5790]},{"id":"ARC-S25-001","sec":"S25","secName":"Studio Journal / Article Detail","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S25-article-insight-detail/raw/ARC-S25-001.html","h":[2373,2465,3152]},{"id":"ARC-S25-002","sec":"S25","secName":"Studio Journal / Article Detail","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S25-article-insight-detail/raw/ARC-S25-002.html","h":[2169,1691,1904]},{"id":"ARC-S25-003","sec":"S25","secName":"Studio Journal / Article Detail","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S25-article-insight-detail/raw/ARC-S25-003.html","h":[2631,3627,4211]},{"id":"ARC-S25-004","sec":"S25","secName":"Studio Journal / Article Detail","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S25-article-insight-detail/raw/ARC-S25-004.html","h":[2484,2926,3536]},{"id":"ARC-S25-005","sec":"S25","secName":"Studio Journal / Article Detail","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S25-article-insight-detail/raw/ARC-S25-005.html","h":[2636,2188,2588]},{"id":"ARC-S26-001","sec":"S26","secName":"Architect / Designer Profile","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-001.html","h":[1642,2181,2407]},{"id":"ARC-S26-002","sec":"S26","secName":"Architect / Designer Profile","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-002.html","h":[2368,2380,2445]},{"id":"ARC-S26-003","sec":"S26","secName":"Architect / Designer Profile","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-003.html","h":[1828,2127,2728]},{"id":"ARC-S26-004","sec":"S26","secName":"Architect / Designer Profile","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-004.html","h":[1891,2246,3007]},{"id":"ARC-S26-005","sec":"S26","secName":"Architect / Designer Profile","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S26-person-profile-detail/raw/ARC-S26-005.html","h":[1469,1692,2034]},{"id":"ARC-S27-001","sec":"S27","secName":"Studio / Location Detail","terr":"Universal / Safe","rel":"../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-001.html","h":[2112,2698,2780]},{"id":"ARC-S27-002","sec":"S27","secName":"Studio / Location Detail","terr":"Premium / Editorial","rel":"../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-002.html","h":[2719,2387,3001]},{"id":"ARC-S27-003","sec":"S27","secName":"Studio / Location Detail","terr":"Dense / Information-heavy","rel":"../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-003.html","h":[2443,2649,2823]},{"id":"ARC-S27-004","sec":"S27","secName":"Studio / Location Detail","terr":"Conversion-led","rel":"../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-004.html","h":[2065,2866,3224]},{"id":"ARC-S27-005","sec":"S27","secName":"Studio / Location Detail","terr":"Sector-native / Distinctive","rel":"../sectors/architecture-interior-design/S27-location-branch-detail/raw/ARC-S27-005.html","h":[1681,2308,2686]},{"id":"ARC-BLOG-LIST-001","sec":"S28","secName":"S28-blog-list-pages","terr":"","rel":"../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-001.html","h":[3075,3033,4322]},{"id":"ARC-BLOG-LIST-002","sec":"S28","secName":"S28-blog-list-pages","terr":"","rel":"../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-002.html","h":[2988,3388,5952]},{"id":"ARC-BLOG-LIST-003","sec":"S28","secName":"S28-blog-list-pages","terr":"","rel":"../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-003.html","h":[2759,3761,5839]},{"id":"ARC-BLOG-LIST-004","sec":"S28","secName":"S28-blog-list-pages","terr":"","rel":"../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-004.html","h":[3049,2682,5018]},{"id":"ARC-BLOG-LIST-005","sec":"S28","secName":"S28-blog-list-pages","terr":"","rel":"../sectors/architecture-interior-design/S28-blog-list-pages/raw/ARC-BLOG-LIST-005.html","h":[2538,3977,5812]}]}</script>
+<script>
+
+(function () {
+  var raw = document.getElementById('pdf-data');
+  if (!raw) return;
+  var DATA = JSON.parse(raw.textContent);
+  var WIDTHS = DATA.widths;                       // [1440, 768, 390]
+  var LABELS = ['Desktop', 'Tablet', 'Phone'];
+  var PAPER = { a3: [420, 297], a4: [297, 210] }; // mm, landscape
+  var MARGIN = 8;                                 // mm
+  var GAP = 14;                                   // px between device columns
+
+  var dlg = document.getElementById('pickr');
+  var openBtn = document.getElementById('pdfopen');
+  var list = document.getElementById('pickr-list');
+  var count = document.getElementById('pickr-count');
+  var warn = document.getElementById('pickr-warn');
+  var root = document.getElementById('pdfroot');
+  var pageStyle = document.getElementById('pdf-pagesize');
+
+  function mm(v) { return v * 96 / 25.4; }
+  function el(tag, cls) { var n = document.createElement(tag); if (cls) n.className = cls; return n; }
+
+  /* ---- picker ------------------------------------------------------- */
+  var bySection = [];
+  DATA.studies.forEach(function (st) {
+    var g = bySection[bySection.length - 1];
+    if (!g || g.id !== st.sec) { g = { id: st.sec, name: st.secName, items: [] }; bySection.push(g); }
+    g.items.push(st);
+  });
+
+  bySection.forEach(function (g) {
+    var row = el('div', 'secrow');
+    var top = el('div', 'secrow__top');
+
+    var lab = el('label');
+    var cb = el('input');
+    cb.type = 'checkbox'; cb.checked = true; cb.setAttribute('data-sec', g.id);
+    var idb = el('span', 'secrow__id'); idb.textContent = g.id;
+    var nm = el('span'); nm.textContent = g.name;
+    lab.appendChild(cb); lab.appendChild(idb); lab.appendChild(nm);
+
+    var n = el('span', 'secrow__n'); n.textContent = g.items.length + ' tasarım';
+    var tog = el('button', 'secrow__toggle');
+    tog.type = 'button'; tog.textContent = 'Tasarımlar';
+    tog.setAttribute('aria-expanded', 'false');
+
+    top.appendChild(lab); top.appendChild(n); top.appendChild(tog);
+
+    var kids = el('div', 'secrow__kids');
+    kids.id = 'kids-' + g.id;
+    tog.setAttribute('aria-controls', kids.id);
+    var ul = el('ul');
+    g.items.forEach(function (st) {
+      var li = el('li');
+      var l = el('label');
+      var c = el('input');
+      c.type = 'checkbox'; c.checked = true; c.setAttribute('data-id', st.id); c.setAttribute('data-sec', g.id);
+      var t = el('span'); t.textContent = st.id;
+      var tt = el('span', 't'); tt.textContent = st.terr ? '· ' + st.terr : '';
+      l.appendChild(c); l.appendChild(t); l.appendChild(tt);
+      li.appendChild(l); ul.appendChild(li);
+    });
+    kids.appendChild(ul);
+
+    tog.addEventListener('click', function () {
+      var open = kids.getAttribute('data-open') === '1';
+      kids.setAttribute('data-open', open ? '0' : '1');
+      tog.setAttribute('aria-expanded', String(!open));
+    });
+    cb.addEventListener('change', function () {
+      kids.querySelectorAll('input[data-id]').forEach(function (c) { c.checked = cb.checked; });
+      refresh();
+    });
+    kids.addEventListener('change', function () { syncSection(g.id); refresh(); });
+
+    row.appendChild(top); row.appendChild(kids);
+    list.appendChild(row);
+  });
+
+  function syncSection(sec) {
+    var kids = Array.prototype.slice.call(list.querySelectorAll('input[data-id][data-sec="' + sec + '"]'));
+    var on = kids.filter(function (c) { return c.checked; }).length;
+    var head = list.querySelector('input[data-sec="' + sec + '"]:not([data-id])');
+    head.checked = on === kids.length;
+    head.indeterminate = on > 0 && on < kids.length;
+  }
+
+  function selected() {
+    var ids = {};
+    list.querySelectorAll('input[data-id]').forEach(function (c) { if (c.checked) ids[c.getAttribute('data-id')] = 1; });
+    return DATA.studies.filter(function (s) { return ids[s.id]; });
+  }
+
+  function devices() {
+    return [0, 1, 2].filter(function (i) {
+      var b = document.querySelector('input[name="dev"][value="' + i + '"]');
+      return b && b.checked;
+    });
+  }
+
+  function refresh() {
+    var n = selected().length;
+    var d = devices().length;
+    count.textContent = n + ' tasarım · ' + n + ' sayfa · ' + d + ' cihaz görünümü';
+    warn.textContent = n > 40
+      ? 'Bu kadar çok sayfa hazırlanırken tarayıcı yavaşlayabilir; her sayfa canlı olarak yeniden çiziliyor.'
+      : '';
+    document.getElementById('pickr-go').disabled = n === 0 || d === 0;
+  }
+
+  document.getElementById('pickr-all').addEventListener('click', function () {
+    list.querySelectorAll('input[type="checkbox"]').forEach(function (c) { c.checked = true; c.indeterminate = false; });
+    refresh();
+  });
+  document.getElementById('pickr-none').addEventListener('click', function () {
+    list.querySelectorAll('input[type="checkbox"]').forEach(function (c) { c.checked = false; c.indeterminate = false; });
+    refresh();
+  });
+  Array.prototype.slice.call(document.querySelectorAll('input[name="dev"], input[name="paper"]'))
+    .forEach(function (i) { i.addEventListener('change', refresh); });
+
+  openBtn.addEventListener('click', function () {
+    refresh();
+    if (dlg.showModal) { dlg.showModal(); } else { dlg.setAttribute('open', ''); }
+  });
+  document.getElementById('pickr-close').addEventListener('click', function () {
+    if (dlg.close) { dlg.close(); } else { dlg.removeAttribute('open'); }
+  });
+
+  /* ---- build the print view ------------------------------------------ */
+  document.getElementById('pickr-go').addEventListener('click', function () {
+    var items = selected();
+    var devs = devices();
+    var paper = document.querySelector('input[name="paper"]:checked').value;
+    if (dlg.close) { dlg.close(); } else { dlg.removeAttribute('open'); }
+    build(items, devs, paper);
+  });
+
+  function build(items, devs, paper) {
+    var dims = PAPER[paper];
+    var availW = mm(dims[0] - 2 * MARGIN);
+    var availH = mm(dims[1] - 2 * MARGIN);
+    var contentH = availH - 48;
+
+    pageStyle.textContent = '@page { size: ' + paper.toUpperCase() + ' landscape; margin: ' + MARGIN + 'mm; }';
+
+    root.innerHTML = '';
+    var bar = el('div', 'pdfbar');
+    var status = el('p');
+    status.textContent = 'Sayfalar hazırlanıyor…';
+    var back = el('button'); back.type = 'button'; back.textContent = '← Listeye dön';
+    var printBtn = el('button', 'print'); printBtn.type = 'button';
+    printBtn.textContent = 'Yazdır / PDF olarak kaydet';
+    printBtn.disabled = true;
+    bar.appendChild(back); bar.appendChild(status); bar.appendChild(printBtn);
+    root.appendChild(bar);
+
+    var pages = el('div', 'pdfpages');
+    root.appendChild(pages);
+
+    var frames = [];
+    items.forEach(function (st) {
+      var page = el('section', 'pdfpage');
+      page.style.width = availW + 'px';
+      page.style.height = availH + 'px';
+
+      var head = el('div', 'pdfpage__head');
+      var b = el('b'); b.textContent = st.id;
+      var t = el('span'); t.textContent = st.terr || '';
+      var sec = el('span', 'sec'); sec.textContent = st.sec + ' · ' + st.secName;
+      head.appendChild(b); head.appendChild(t); head.appendChild(sec);
+      page.appendChild(head);
+
+      var row = el('div', 'pdfrow');
+      var cols = devs.map(function (i) {
+        var col = el('div', 'pdfdev');
+        var cap = el('p', 'pdfdev__cap');
+        var hold = el('div', 'pdfhold');
+        var f = el('iframe');
+        f.setAttribute('data-src', st.rel);
+        f.setAttribute('title', st.id + ' — ' + LABELS[i] + ' ' + WIDTHS[i]);
+        f.setAttribute('scrolling', 'no');
+        f.setAttribute('tabindex', '-1');
+        hold.appendChild(f);
+        col.appendChild(cap); col.appendChild(hold);
+        row.appendChild(col);
+        frames.push(f);
+        return { w: WIDTHS[i], h: st.h[i] || 2400, label: LABELS[i], cap: cap, hold: hold, frame: f };
+      });
+      page.appendChild(row);
+      pages.appendChild(page);
+
+      // Each column is scaled so the whole study fits the printed page height. The height
+      // baked in at build time is the starting point; if the browser can read the study's
+      // real height once it has loaded (same-origin, e.g. served over http), that wins.
+      function layout() {
+        var scales = cols.map(function (c) { return Math.min(1, contentH / c.h); });
+        var gaps = GAP * (cols.length - 1);
+        var total = cols.reduce(function (a, c, i) { return a + c.w * scales[i]; }, 0);
+        if (total + gaps > availW) {
+          var k = (availW - gaps) / total;
+          scales = scales.map(function (v) { return v * k; });
+        }
+        cols.forEach(function (c, i) {
+          c.hold.style.width = Math.round(c.w * scales[i]) + 'px';
+          c.hold.style.height = Math.round(c.h * scales[i]) + 'px';
+          c.frame.style.width = c.w + 'px';
+          c.frame.style.height = c.h + 'px';
+          c.frame.style.transform = 'scale(' + scales[i] + ')';
+          c.cap.textContent = c.label + ' ' + c.w + ' · ' + c.h + 'px';
+        });
+      }
+      layout();
+
+      cols.forEach(function (c) {
+        c.frame.addEventListener('load', function () {
+          try {
+            var d = c.frame.contentDocument;
+            if (d) {
+              var real = Math.max(d.documentElement.scrollHeight, d.body ? d.body.scrollHeight : 0);
+              if (real > 200 && Math.abs(real - c.h) > 8) { c.h = real; layout(); }
+            }
+          } catch (e) { /* cross-origin (file://): keep the height baked in at build time */ }
+        });
+      });
+    });
+
+    document.body.classList.add('pdfmode');
+    window.scrollTo(0, 0);
+
+    back.addEventListener('click', function () {
+      document.body.classList.remove('pdfmode');
+      root.innerHTML = '';
+    });
+    printBtn.addEventListener('click', function () { window.print(); });
+
+    loadFrames(frames, function (done, all) {
+      status.textContent = 'Hazırlanıyor… ' + done + ' / ' + all;
+    }, function () {
+      status.textContent = items.length + ' sayfa hazır · ' + paper.toUpperCase() + ' yatay';
+      printBtn.disabled = false;
+      setTimeout(function () { window.print(); }, 600);
+    });
+  }
+
+  function loadFrames(frames, onProgress, done) {
+    var i = 0, active = 0, finished = 0, CONC = 4;
+    if (!frames.length) { done(); return; }
+    function start() {
+      while (active < CONC && i < frames.length) {
+        (function (f) {
+          active++;
+          var settled = false;
+          var timer = setTimeout(settle, 15000);
+          function settle() {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            f.removeEventListener('load', settle);
+            active--; finished++;
+            onProgress(finished, frames.length);
+            if (finished === frames.length) { done(); } else { start(); }
+          }
+          f.addEventListener('load', settle);
+          f.src = f.getAttribute('data-src');
+        })(frames[i++]);
+      }
+    }
+    start();
+  }
+
+  refresh();
+})();
+
 </script>
 </body>
 </html>
