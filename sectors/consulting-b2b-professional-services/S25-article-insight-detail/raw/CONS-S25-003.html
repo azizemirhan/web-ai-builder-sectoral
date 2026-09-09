@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S25-003
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S25 — Insight / Research Detail
+  Direction      : Dense / Information-heavy
+  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One contained reserved area, in the rail.**
+  Layout model   : Body left, a rail right carrying **the review history** — every time the firm has
+                   re-read this piece and what it concluded — plus the context, related and author
+  Density        : Detail page (172 visible words, detail band 150–230)
+  Media mode     : One reserved area — **the author, in the rail.** No lead image. The page is
+                   complete without it.
+  Interaction    : None (static; no JavaScript). Links only, no form, **no sticky rail**.
+
+  Governing idea : **An article carries no expiry date, so every reader arrives assuming it is
+                   current.**
+
+  What "dense" means in this role — the review history :
+                   The note at the top says the firm was wrong. The obvious next question is **when it
+                   found out**, and every other treatment of this role leaves that unanswerable.
+                   So the rail carries the full history: published, reviewed and held, reviewed and
+                   retracted. Three dated entries, the last one carrying the accent.
+                   **A single correction is an event; a review history is a practice**, and only the
+                   second is evidence that the other pieces on the site have been looked at too. It is
+                   the same argument `S13` makes with its status field, extended from one flag to a
+                   record — and it costs the firm the option of quietly leaving anything unreviewed.
+
+  Why the rail is not sticky :
+                   `S23`s README rule holds here too: a supporting rail should release to normal flow
+                   before it competes with the body. This one is static, duplicates nothing, and holds
+                   only what a reader checks rather than reads.
+
+  Why there is no lead image :
+                   `S13` named the three photographs this section reaches for — abstract nodes, a city
+                   at dusk, a laptop and a coffee, all sector anti-patterns. The only reserved area is
+                   the person who wrote it, and it sits in the rail with the attribution.
+
+  No reading time :
+                   `S13` ruled out the reading-time badge and the view count as retention metrics
+                   dressed as courtesy. Neither appears.
+
+  Page context region :
+                   The strip at the top carries the trail. **`S21` and `S22` supply that region in an
+                   assembly and it would not be duplicated here** — deliberately plain in all five.
+
+  Placeholder data : The publication and review dates, the author name and the two related titles are
+                   PLACEHOLDER DEMO VALUES marked data-placeholder="true".
+
+  Content note   : No article index — that is `S13`. No reading time, view count, share counter,
+                   newsletter box, gate or form. No fabricated citation or publication. No client
+                   name, logo, testimonial, percentage or currency figure.
+-->
+
+<meta name="study-id" content="CONS-S25-003">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S25">
+<meta name="section-name" content="Insight / Research Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="direction" content="Dense / Information-heavy">
+<meta name="theme" content="003 Field">
+<meta name="section-shape" content="B — anchored, one contained reserved area in the rail">
+<meta name="layout-model" content="Body left, a non-sticky rail right carrying the review history, context, related and author">
+<meta name="density" content="detail-page">
+<meta name="media-mode" content="one-reserved-area-the-author-in-the-rail-no-lead-image">
+<meta name="interaction" content="none-links-only-no-form-no-sticky-rail">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="publication and review dates, author name, related titles — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S25-003 — Insight / Research Detail, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eff1f4; }
+
+/* Scoped study styles — namespaced to .cons-s25-003 */
+.cons-s25-003 {
+  --paper: #eff1f4;
+  --ink: #0e1216;
+  --ink-soft: #525c66;
+  --line: #d7dde2;
+  --card: #ffffff;
+  --accent: #12856a;
+  --accent-ink: #ffffff;
+  --slot: #e2e7eb;
+  --slot-edge: #b6c0c8;
+  --slot-ink: #5c666f;
+  --focus: #0e1216;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s25-003 *,
+.cons-s25-003 *::before,
+.cons-s25-003 *::after { box-sizing: inherit; }
+.cons-s25-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.cons-s25-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(26px, 3.2vw, 52px) clamp(22px, 3.6vw, 58px) clamp(40px, 5vw, 88px);
+}
+
+/* --- Page context --- */
+.cons-s25-003 .ctx ol {
+  margin: 0 0 clamp(13px, 1.7vw, 18px);
+  padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-size: 0.84rem; color: var(--ink-soft);
+}
+.cons-s25-003 .ctx li + li::before { content: "\203A"; margin-right: 8px; opacity: 0.5; }
+.cons-s25-003 .ctx a { color: var(--ink-soft); font-weight: 700; text-underline-offset: 3px; }
+
+.cons-s25-003 h1 {
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+  font-size: clamp(1.85rem, 3.2vw, 2.7rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 24ch;
+}
+
+.cons-s25-003 .page {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.5fr);
+  gap: clamp(24px, 3.4vw, 56px);
+  align-items: start;
+}
+
+/* --- The note --- */
+.cons-s25-003 .note {
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+  padding: clamp(15px, 1.9vw, 22px) clamp(17px, 2.1vw, 24px);
+  border-radius: 20px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.cons-s25-003 .note b { display: block; font-size: clamp(1.04rem, 1.35vw, 1.22rem); letter-spacing: -0.022em; font-weight: 800; margin-bottom: 5px; }
+.cons-s25-003 .note span { font-size: 0.97rem; opacity: 0.95; }
+
+.cons-s25-003 .stand {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding-bottom: clamp(20px, 2.6vw, 30px);
+  border-bottom: 1px solid var(--line);
+  max-width: 48ch;
+  font-size: clamp(1.12rem, 1.6vw, 1.38rem);
+  line-height: 1.3; letter-spacing: -0.02em; font-weight: 600;
+}
+
+.cons-s25-003 .body { max-width: 60ch; }
+.cons-s25-003 .body h2 { margin: 0 0 clamp(8px, 1vw, 11px); font-size: clamp(1.1rem, 1.45vw, 1.28rem); line-height: 1.18; letter-spacing: -0.024em; font-weight: 800; }
+.cons-s25-003 .body p { margin: 0 0 clamp(20px, 2.6vw, 32px); font-size: 1.03rem; }
+.cons-s25-003 .body p:last-child { margin-bottom: 0; }
+
+.cons-s25-003 .policy { margin: clamp(24px, 3vw, 38px) 0 0; font-size: 0.95rem; color: var(--ink-soft); max-width: 66ch; }
+.cons-s25-003 .policy b { color: var(--ink); font-weight: 800; }
+
+/* --- The rail. Checked, not read. Never sticky --- */
+.cons-s25-003 .rail { padding: clamp(20px, 2.4vw, 28px); border-radius: 20px; background: var(--card); }
+.cons-s25-003 .rail h2 { margin: 0 0 clamp(10px, 1.3vw, 14px); font-size: 0.73rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft); }
+.cons-s25-003 .rail .grp + .grp { margin-top: clamp(20px, 2.4vw, 28px); }
+
+/* The review history — a practice, not an event */
+.cons-s25-003 .hist { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 15px); }
+.cons-s25-003 .hist b { display: block; font-size: 0.86rem; font-weight: 800; }
+.cons-s25-003 .hist p { margin: 2px 0 0; font-size: 0.87rem; color: var(--ink-soft); }
+.cons-s25-003 .hist li:last-child b,
+.cons-s25-003 .hist li:last-child p { color: var(--accent); }
+
+.cons-s25-003 .rail ul.plain { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.cons-s25-003 .rail .one { margin: 0; font-size: 0.92rem; font-weight: 700; }
+.cons-s25-003 .rail .k { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-soft); }
+.cons-s25-003 .rail .v { margin-left: 8px; font-size: 0.9rem; font-weight: 700; }
+.cons-s25-003 .rail a { color: var(--accent); font-weight: 700; font-size: 0.92rem; text-underline-offset: 3px; }
+
+.cons-s25-003 .who {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 20px;
+  background: var(--slot);
+  aspect-ratio: 4 / 3;
+  display: grid; place-items: center;
+  padding: 14px;
+  margin-bottom: 9px;
+}
+.cons-s25-003 .who span { color: var(--slot-ink); font-size: 0.72rem; font-weight: 700; text-align: center; line-height: 1.4; }
+.cons-s25-003 .by { margin: 0; font-size: 0.87rem; color: var(--ink-soft); }
+.cons-s25-003 .by b { color: var(--ink); font-weight: 800; }
+
+/* --- Responsive ladder. The rail releases before it competes --- */
+@media (max-width: 980px) {
+  .cons-s25-003 .page { grid-template-columns: minmax(0, 1fr); }
+  .cons-s25-003 .stand, .cons-s25-003 .body, .cons-s25-003 .policy { max-width: none; }
+}
+@media (max-width: 860px) {
+  .cons-s25-003 h1 { max-width: none; }
+  .cons-s25-003 .who { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s25-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s25-003" data-study-id="CONS-S25-003" data-direction="Dense / Information-heavy">
+  <article class="shell">
+
+    <div class="ctx" data-region="page-context">
+      <ol>
+        <li><a href="#">Insights</a></li>
+        <li><a href="#">Operating model</a></li>
+        <li>This piece</li>
+      </ol>
+    </div>
+
+    <h1>A central function should own the standard, not the delivery</h1>
+
+    <div class="page">
+      <div>
+        <p class="note">
+          <b>We now think this was wrong.</b>
+          <span>Two engagements since went badly for exactly this reason. Nothing below has been edited.</span>
+        </p>
+
+        <p class="stand">Central delivery becomes a queue, and the queue becomes the reason nobody uses the standard.</p>
+
+        <div class="body">
+          <h2>The argument</h2>
+          <p>A standard nobody owns decays. Put the standard and the delivery in one place and the standard survives.</p>
+          <h2>Where it broke</h2>
+          <p>The central team became the only route. Waiting for them cost more than the inconsistency ever did.</p>
+          <h2>What we would write now</h2>
+          <p>Own the standard. Publish it. Let delivery sit where the work is, and audit it quarterly.</p>
+        </div>
+
+        <p class="policy"><b>Nothing is taken down.</b> A piece we no longer believe keeps its address and gets this note.</p>
+      </div>
+
+      <aside class="rail">
+        <div class="grp">
+          <h2>Review history</h2>
+          <ol class="hist">
+            <li><b data-placeholder="true">March 2019</b><p>Published.</p></li>
+            <li><b data-placeholder="true">May 2021</b><p>Reviewed. Still held.</p></li>
+            <li><b data-placeholder="true">June 2024</b><p>Reviewed. We were wrong.</p></li>
+          </ol>
+        </div>
+        <div class="grp">
+          <h2>Discipline</h2>
+          <p class="one">Operating model</p>
+        </div>
+        <div class="grp">
+          <h2>Related</h2>
+          <ul class="plain">
+            <li><a href="#" data-placeholder="true">The reorganisation will not move the decision rights</a></li>
+            <li><a href="#" data-placeholder="true">Cost programmes rebuild the cost they removed</a></li>
+          </ul>
+        </div>
+        <div class="grp">
+          <div class="who"><span>Image area &mdash; the author, mid-sentence</span></div>
+          <p class="by">Written by <b data-placeholder="true">A. Whitfield</b></p>
+        </div>
+      </aside>
+    </div>
+
+  </article>
+</div>
+
+</body>
+</html>

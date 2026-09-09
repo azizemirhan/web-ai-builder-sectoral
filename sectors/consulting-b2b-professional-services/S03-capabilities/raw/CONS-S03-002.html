@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S03-002
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S03 — Capabilities
+  Direction      : Premium / Editorial
+  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
+  Layout model   : Editorial statement, then six horizontal magazine cards on two columns — reserved
+                   image held left inside each card, the capability set beside it
+  Density        : Low (112 visible words) — the lowest of the five, as the theme contract requires
+                   of 002
+  Media mode     : Six reserved image areas at 1:1, one inside each card, held to roughly a third of
+                   the card so the card reads horizontally rather than as a tile.
+  Interaction    : None (static; no JavaScript).
+
+  The editorial cut :
+                   The other four studies give each capability three parts — the name, what it is,
+                   and where it stops. **This one drops the middle part on purpose.** The section's
+                   whole argument is that the limit is what makes a capability credible, and an
+                   editorial treatment earns its place by removing everything that is not the
+                   argument. A capability named alongside its limit still communicates; a capability
+                   named alongside a description of itself is a brochure.
+
+  Governing idea : Every consulting firm lists the same capabilities, so a list proves nothing. What
+                   makes one credible is its limit. The limits are policy statements a firm can
+                   honour, not claims about past performance, so none is a fabricated metric.
+
+  Boundary       : S02 Services is the map — which situation the reader is in. S03 is what has to be
+                   true inside the firm for any of those services to be deliverable.
+
+  Content note   : Capability names are generic vocabulary, not claims. No named client, logo,
+                   ranking, award, certification, tool vendor or invented metric. No header or
+                   navigation.
+-->
+
+<meta name="study-id" content="CONS-S03-002">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S03">
+<meta name="section-name" content="Capabilities">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Sable">
+<meta name="layout-model" content="Editorial statement, six horizontal magazine cards on two columns">
+<meta name="density" content="low">
+<meta name="media-mode" content="six-reserved-image-areas-inside-horizontal-cards">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CONS-S03-002 — Capabilities, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2efe9; }
+
+/* Scoped study styles — namespaced to .cons-s03-002 */
+.cons-s03-002 {
+  --paper: #f2efe9;
+  --ink: #1a1714;
+  --ink-soft: #6b6459;
+  --line: #dcd6ca;
+  --card: #f8f6f1;
+  --slot: #e6e1d7;
+  --slot-edge: #c4bbab;
+  --slot-ink: #6e675c;
+  --accent: #9a5b2c;
+  --accent-ink: #ffffff;
+  --focus: #1a1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s03-002 *,
+.cons-s03-002 *::before,
+.cons-s03-002 *::after { box-sizing: inherit; }
+.cons-s03-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+
+.cons-s03-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(52px, 6.2vw, 116px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Statement --- */
+.cons-s03-002 .eyebrow {
+  margin: 0 0 clamp(20px, 2.6vw, 36px);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cons-s03-002 h2 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5.2vw, 4.1rem);
+  line-height: 0.99;
+  letter-spacing: -0.044em;
+  font-weight: 800;
+  max-width: 18ch;
+}
+.cons-s03-002 .second {
+  margin: clamp(22px, 2.8vw, 42px) 0 clamp(36px, 4.6vw, 72px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 72px);
+}
+.cons-s03-002 .second p {
+  grid-column: 2;
+  margin: 0;
+  max-width: 40ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.08rem, 1.34vw, 1.26rem);
+}
+
+/* --- Horizontal magazine cards --- */
+.cons-s03-002 .cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.2vw, 32px);
+}
+.cons-s03-002 .card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  gap: clamp(16px, 1.8vw, 24px);
+  align-items: center;
+  height: 100%;
+  padding: clamp(14px, 1.4vw, 18px);
+  background: var(--card);
+  border-radius: 4px;
+  color: inherit;
+  text-decoration: none;
+}
+.cons-s03-002 .card:hover { background: #fffdf8; }
+.cons-s03-002 .shot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 2px;
+  background: var(--slot);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+}
+.cons-s03-002 .shot span {
+  color: var(--slot-ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.cons-s03-002 .card h3 {
+  margin: 0;
+  font-size: clamp(1.16rem, 1.55vw, 1.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+  font-weight: 800;
+}
+.cons-s03-002 .limit {
+  margin: 10px 0 0;
+  color: var(--accent);
+  font-size: 0.97rem;
+  font-weight: 600;
+}
+
+/* --- Coda --- */
+.cons-s03-002 .coda { margin: clamp(34px, 4.2vw, 62px) 0 0; }
+.cons-s03-002 .go {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--accent);
+  font-size: clamp(1.16rem, 1.6vw, 1.5rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+.cons-s03-002 .go:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s03-002 h2 { max-width: none; }
+  .cons-s03-002 .second { grid-template-columns: minmax(0, 1fr); }
+  .cons-s03-002 .second p { grid-column: 1; max-width: none; }
+  .cons-s03-002 .cards { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .cons-s03-002 .card { grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s03-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s03-002" data-study-id="CONS-S03-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="cons-s03-002-title">
+
+    <p class="eyebrow">Capabilities</p>
+    <h2 id="cons-s03-002-title">Everyone lists the same six. Read where they stop.</h2>
+
+    <div class="second">
+      <p>A capability stated without a limit is a brochure line. Stated with one, it is something you can hold us to.</p>
+    </div>
+
+    <ul class="cards">
+      <li><a class="card" href="#cons-s03-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <div>
+          <h3>Quantitative modelling</h3>
+          <p class="limit">Not a model you cannot maintain once we leave.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <div>
+          <h3>Primary research</h3>
+          <p class="limit">Named interviews, not a survey panel.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <div>
+          <h3>Organisation design</h3>
+          <p class="limit">We will not name individuals for the roles.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <div>
+          <h3>Commercial analysis</h3>
+          <p class="limit">We do not set your prices.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <div>
+          <h3>Programme direction</h3>
+          <p class="limit">We advise it or we run it. Not both.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <div>
+          <h3>Facilitation</h3>
+          <p class="limit">We will not manufacture agreement you do not have.</p>
+        </div>
+      </a></li>
+    </ul>
+
+    <p class="coda"><a class="go" href="#cons-s03-002-title">Start a conversation <span aria-hidden="true">&rarr;</span></a></p>
+
+  </section>
+</div>
+
+</body>
+</html>

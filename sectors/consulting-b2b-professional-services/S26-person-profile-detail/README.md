@@ -59,13 +59,45 @@ CONS-S26-005
 
 # Expected Structural Diversity
 
-| Variant | Territory |
-| --- | --- |
-| `CONS-S26-001` | Universal / Safe |
-| `CONS-S26-002` | Premium / Editorial |
-| `CONS-S26-003` | Dense / Information-heavy |
-| `CONS-S26-004` | Conversion-led |
-| `CONS-S26-005` | Sector-native / Distinctive |
+| Variant | Direction | Theme | Shape | Composition | Portrait |
+| --- | --- | --- | :---: | --- | ---: |
+| `CONS-S26-001` | Universal / Safe | 001 Paper | B | Identity and portrait paired, the load as three numerals, attachments, the route | 1 |
+| `CONS-S26-002` | Premium / Editorial | 002 Sable | C | One measure. The role is the headline and the name is the caption | 0 |
+| `CONS-S26-003` | Dense / Information-heavy | 003 Field | B | The commitment at stage resolution — how much of them each of `S05`'s stages gets | 1 |
+| `CONS-S26-004` | Conversion-led | 004 Signal | C | Three ways to check any of this before signing anything | 0 |
+| `CONS-S26-005` | Sector-native / Distinctive | 005 Midnight | C | No biography — a revision record of what they still hold | 0 |
+
+# The Governing Idea
+
+> **You are not choosing a person. You are choosing how much of them you get.**
+
+`S06` answered the sector's oldest complaint — senior partners sell, juniors deliver — with a
+commitment naming where each person is *not*. A profile page is where that gets specific. So every
+study carries **the load**: `two` engagements at a time and never three, `two` running now, `three`
+days a week on a live one. Those are the firm's own countable facts, checkable by asking, and the only
+numbers on a profile page that mean anything.
+
+# The Person All Five Render
+
+**`A. Whitfield`, Partner, operating model** — the person `S21`, `S23`, `S24` and `S25` have each been
+pointing at, so variant N of `S21`–`S26` assembles into one site naming the same individual across six
+roles. The commitment is `S06`'s: all five stages, with the first ninety days shared with
+`R. Adeyemi`, who owns stage 05 there.
+
+# What Is Deliberately Not Here
+
+The role forbids inventing credentials, and requires a placeholder study to leave them reserved rather
+than filled. **These studies do neither: they say the credentials are not listed, and why** — *ask,
+and we will send what is verifiable*. A profile with a credential list asks to be trusted on a claim
+the reader cannot check from the page.
+
+# Names, Portraits And Pronouns
+
+The firm's own people may carry placeholder names (initial and surname). **The portrait stays reserved
+and its label names the role, never the person.** No reference uses a gendered pronoun: on a page
+about a placeholder individual, inventing a gender is the same class of error as inventing a
+credential. Two of five reserve a portrait; three carry none, which is what tests the README's
+requirement that the page read completely without one.
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,7 +123,7 @@ Nearest existing section in this sector: S06 Experts Leadership (`S06-experts-le
 
 # Status
 
-NOT_STARTED
+AUTHORED — five studies. Batch record in `./BATCH-V1.md`.
 
 # Raw Path
 

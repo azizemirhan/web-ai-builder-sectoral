@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S17-004
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S17 — Offices & Locations
+  Direction      : Conversion-led
+  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored.** One reserved area, beside the offer.
+  Layout model   : The offer first and filled, rejecting the question the reader arrived with, with
+                   the one real floor beside it, then the four entries compact
+  Density        : Structured (176 visible words, structured band 170–230)
+  Media mode     : ONE reserved area — the only floor the firm has.
+  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
+
+  Governing idea : **An address is not an office.**
+
+  What "conversion-led" means in this role, and it is a refusal of the premise :
+                   A reader in a locations section is asking one question: **are you near me?** Every
+                   other firm answers it by inflating the list — a registered address becomes an
+                   office, a person who lives somewhere becomes a presence, and twelve cities become
+                   a network.
+                   This study answers a different question, on the record. **Proximity is not a
+                   service.** What a client actually needs is people in the room on the days that
+                   matter, and the number of those days is knowable in advance and belongs in the
+                   proposal. A firm with an office in your city that sends nobody is worse than a
+                   firm three hours away that turns up for all five stage gates.
+                   So the action is not *find your nearest office*. It is **tell us where the work
+                   is, and we will tell you how many days we would be there.**
+
+  Ten sections, ten conversion bases :
+                   `S08` audit, `S09` verification, `S10` relevance, `S11` giving the method away,
+                   `S12` declining the sale, `S13` inviting contradiction, `S14` converting by not
+                   charging, `S15` disqualifying the rest, `S16` surfacing the unasked question, and
+                   this one **rejecting the premise of the question.**
+
+  Why there is no map :
+                   An embedded map is a remote runtime dependency, which this catalog forbids, and a
+                   drawn one is a picture of a network that four pins do not make. It would also
+                   answer the question this study is refusing.
+
+  Placeholder data : The city names, the desk count and the headcount are PLACEHOLDER DEMO VALUES
+                   marked data-placeholder="true".
+
+  Content note   : No map, no pin, no skyline, no *global presence*, no country count, no square
+                   footage, no telephone number, no response-time promise. No client name, logo,
+                   testimonial attribution, percentage, currency figure or ranking. No header or
+                   navigation.
+-->
+
+<meta name="study-id" content="CONS-S17-004">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S17">
+<meta name="section-name" content="Offices &amp; Locations">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Signal">
+<meta name="section-shape" content="B — anchored">
+<meta name="layout-model" content="Offer first and filled rejecting the proximity question, the one real floor beside it, four entries compact">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-only-floor-the-firm-has">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="city names, desk count and headcount — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S17-004 — Offices &amp; Locations, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .cons-s17-004 */
+.cons-s17-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #54585e;
+  --line: #e5e5e5;
+  --card: #f6f6f6;
+  --accent: #e0402f;
+  --accent-ink: #ffffff;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s17-004 *,
+.cons-s17-004 *::before,
+.cons-s17-004 *::after { box-sizing: inherit; }
+.cons-s17-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+
+.cons-s17-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s17-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(22px, 3.6vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(20px, 2.6vw, 32px);
+}
+.cons-s17-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s17-004 h2 {
+  margin: 0;
+  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+  max-width: 18ch;
+}
+.cons-s17-004 .lead { margin: 0; color: var(--ink-soft); }
+
+/* --- The offer, first and filled --- */
+.cons-s17-004 .offer {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(22px, 3.4vw, 52px);
+  align-items: center;
+  padding: clamp(26px, 3.2vw, 44px);
+  border-radius: 24px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  margin-bottom: clamp(18px, 2.2vw, 28px);
+}
+.cons-s17-004 .offer h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.7vw, 2.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+}
+.cons-s17-004 .offer p { margin: 14px 0 0; font-size: 1.04rem; font-weight: 600; opacity: 0.94; }
+.cons-s17-004 .go {
+  display: inline-flex;
+  align-items: center;
+  margin-top: clamp(18px, 2.2vw, 26px);
+  min-height: 56px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: var(--accent-ink);
+  color: var(--ink);
+  font-size: 1.04rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cons-s17-004 .go:hover { background: var(--ink); color: var(--paper); }
+.cons-s17-004 .floor {
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.cons-s17-004 .floor span {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* --- The four entries, compact --- */
+.cons-s17-004 .places-head { margin: 0 0 clamp(12px, 1.5vw, 16px); font-size: clamp(1.1rem, 1.5vw, 1.3rem); font-weight: 800; letter-spacing: -0.026em; }
+.cons-s17-004 .places {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 20px);
+}
+.cons-s17-004 .place {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(18px, 2.1vw, 26px);
+  border-radius: 24px;
+  background: var(--card);
+  transition: transform 160ms ease;
+}
+.cons-s17-004 .place:hover { transform: translateY(-4px); }
+.cons-s17-004 .kind {
+  align-self: flex-start;
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(10, 11, 13, 0.07);
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+.cons-s17-004 .kind.real { background: var(--accent); color: var(--accent-ink); }
+.cons-s17-004 .place h4 {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.4vw, 1.18rem);
+  line-height: 1.18;
+  letter-spacing: -0.026em;
+  font-weight: 800;
+}
+.cons-s17-004 .there { margin: 8px 0 0; color: var(--ink-soft); font-size: 0.9rem; flex: 1 1 auto; }
+.cons-s17-004 .can { margin: clamp(11px, 1.4vw, 15px) 0 0; font-size: 0.87rem; font-weight: 700; color: var(--accent); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .cons-s17-004 .places { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .cons-s17-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s17-004 h2 { max-width: none; }
+  .cons-s17-004 .offer { grid-template-columns: minmax(0, 1fr); }
+  .cons-s17-004 .floor { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 560px) {
+  .cons-s17-004 .places { grid-template-columns: minmax(0, 1fr); }
+  .cons-s17-004 .go { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s17-004 * { transition: none !important; }
+  .cons-s17-004 .place:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s17-004" data-study-id="CONS-S17-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="cons-s17-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Where we are</p>
+        <h2 id="cons-s17-004-title">You are asking whether we are near you.</h2>
+      </div>
+      <p class="lead">It is the wrong question, and the list below is why. An address is not an office.</p>
+    </div>
+
+    <div class="offer">
+      <div>
+        <h3>Proximity is not a service.</h3>
+        <p>What you need is people in the room on the days that matter, and that number is knowable before you sign. A firm in your city that sends nobody is worse than one three hours away that turns up for every stage gate.</p>
+        <a class="go" href="#cons-s17-004-title">Tell us where the work is</a>
+      </div>
+      <div class="floor"><span>Image area &mdash; the only floor we have,<br>at the size it actually is</span></div>
+    </div>
+
+    <p class="places-head">What is actually at each address</p>
+    <ul class="places">
+      <li>
+        <div class="place">
+          <span class="kind real">The office</span>
+          <h4 data-placeholder="true">London</h4>
+          <p class="there">A floor with <span data-placeholder="true">18</span> desks.</p>
+          <p class="can">You can meet us here.</p>
+        </div>
+      </li>
+      <li>
+        <div class="place">
+          <span class="kind">No office</span>
+          <h4 data-placeholder="true">Manchester</h4>
+          <p class="there"><span data-placeholder="true">Three</span> of us live here. Nothing to visit.</p>
+          <p class="can">We will meet you in the city.</p>
+        </div>
+      </li>
+      <li>
+        <div class="place">
+          <span class="kind">Registered address</span>
+          <h4 data-placeholder="true">Frankfurt</h4>
+          <p class="there">Nobody sits here. It exists so we can invoice in euros.</p>
+          <p class="can">You can post something to it. That is all.</p>
+        </div>
+      </li>
+      <li>
+        <div class="place">
+          <span class="kind">Borrowed desk</span>
+          <h4 data-placeholder="true">Singapore</h4>
+          <p class="there">Inside a client&rsquo;s building, for one engagement. Not ours.</p>
+          <p class="can">It comes off this page when the engagement ends.</p>
+        </div>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

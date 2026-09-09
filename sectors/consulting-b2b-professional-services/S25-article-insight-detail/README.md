@@ -59,13 +59,40 @@ CONS-S25-005
 
 # Expected Structural Diversity
 
-| Variant | Territory |
-| --- | --- |
-| `CONS-S25-001` | Universal / Safe |
-| `CONS-S25-002` | Premium / Editorial |
-| `CONS-S25-003` | Dense / Information-heavy |
-| `CONS-S25-004` | Conversion-led |
-| `CONS-S25-005` | Sector-native / Distinctive |
+| Variant | Direction | Theme | Shape | Composition | Media |
+| --- | --- | --- | :---: | --- | ---: |
+| `CONS-S25-001` | Universal / Safe | 001 Paper | B | Title, the note before the standfirst, body in a measure, author at the foot | 1 |
+| `CONS-S25-002` | Premium / Editorial | 002 Sable | C | One measure, the note set at the standfirst's size and placed above it | 0 |
+| `CONS-S25-003` | Dense / Information-heavy | 003 Field | B | Body left, a non-sticky rail carrying the review history | 1 |
+| `CONS-S25-004` | Conversion-led | 004 Signal | C | The piece, then *if you acted on this, tell us* | 0 |
+| `CONS-S25-005` | Sector-native / Distinctive | 005 Midnight | C | The annotated piece — the 2019 text unchanged, the present in the margin | 0 |
+
+# The Governing Idea
+
+> **An article carries no expiry date, so every reader arrives assuming it is current.**
+
+A search result from five years ago looks exactly like one from last week. The firm knows which of its
+pieces it no longer believes; the reader does not. So `S13`'s status field becomes the top of the
+page — **the note comes before the standfirst**, not after the body where a correction is buried — and
+`S13`'s policy holds: **nothing is taken down. A piece we no longer believe keeps its address and gets
+this note.**
+
+# The Piece All Five Render
+
+`S13` published five pieces with a status against each. Four still hold; one the firm now thinks was
+wrong. This batch renders **that one** — *A central function should own the standard, not the
+delivery* — because it is the only article page where the device does real work.
+
+# What This Section Refuses
+
+- **No reading time, view count or share counter.** `S13` ruled these out as retention metrics dressed
+  as courtesy. The publication context carries what a reader checking currency needs instead: when it
+  was published, when it was last reviewed, and who wrote it.
+- **No newsletter box or gated download.** `S14`: a gate is a price. `S18`: a form is a way of not
+  giving you an address.
+- **No lead image.** `S13` named the three photographs this section reaches for, all sector
+  anti-patterns. The only reserved area in the batch is the person who wrote it, and it sits with the
+  attribution rather than at the top.
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,7 +118,7 @@ Nearest existing section in this sector: S13 Insights (`S13-insights/`).
 
 # Status
 
-NOT_STARTED
+AUTHORED — five studies. Batch record in `./BATCH-V1.md`.
 
 # Raw Path
 

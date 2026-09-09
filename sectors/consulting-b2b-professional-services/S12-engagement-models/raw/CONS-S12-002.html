@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S12-002
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S12 — Engagement Models
+  Direction      : Premium / Editorial
+  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **C — Type and colour. No reserved media at all.**
+  Layout model   : Four models set two to a row as an editorial run, each closing on its own
+                   misaligned incentive, then the declined model as a full-measure statement
+  Density        : Structured (194 visible words, structured band 170–230)
+  Media mode     : **NONE.** A fee model has nothing to photograph.
+  Interaction    : None (static; no JavaScript).
+
+  Governing idea : **Every fee model pays us to do something. Read the one that pays us to do the
+                   wrong thing.**
+
+  The editorial cut : No cards, no tiers, no comparison grid. Each model is a name at standfirst
+                   size, the situation it suits in the reading face, and the incentive set in the
+                   accent as its own closing line — the way a magazine sets the sentence it wants
+                   remembered rather than skimmed.
+                   **The incentive is always the last thing in the block**, because it is the thing a
+                   reader should leave with and the thing every other firm leaves out.
+
+  The declined model, and why it is the same argument as S08 :
+                   Payment on outcome requires knowing what would have happened otherwise, and nobody
+                   runs the company twice. The metrics section's epistemics decide this section's
+                   terms, which is what it looks like when a site is written by one mind.
+
+  Not a pricing table : Three tiers, a tick matrix and a *most popular* badge are all out. A tick
+                   matrix is a table, tiers imply that more money buys a better firm, and
+                   ../../CONSULTING-THEME-CONTRACT.md omits currency figures entirely. **No price, no
+                   tier, no comparison grid.**
+
+  Placeholder data : The retainer cap is a PLACEHOLDER DEMO VALUE marked data-placeholder="true".
+
+  Content note   : No price, currency figure, day rate, percentage, ROI multiple, tier name or tick
+                   matrix. No client name, logo, testimonial attribution, ranking, award or
+                   certification. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S12-002">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S12">
+<meta name="section-name" content="Engagement Models">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Sable">
+<meta name="section-shape" content="C — type and colour">
+<meta name="layout-model" content="Four models as a two-column editorial run each closing on its incentive, declined model as a full-measure statement">
+<meta name="density" content="structured">
+<meta name="media-mode" content="none-deliberate-a-fee-model-has-nothing-to-photograph">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="the retainer cap — demo value, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S12-002 — Engagement Models, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2efe9; }
+
+/* Scoped study styles — namespaced to .cons-s12-002 */
+.cons-s12-002 {
+  --paper: #f2efe9;
+  --ink: #1a1714;
+  --ink-soft: #6b6459;
+  --line: #dcd6ca;
+  --accent: #9a5b2c;
+  --accent-ink: #ffffff;
+  --focus: #1a1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s12-002 *,
+.cons-s12-002 *::before,
+.cons-s12-002 *::after { box-sizing: inherit; }
+.cons-s12-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+
+.cons-s12-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(52px, 6.2vw, 116px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Statement --- */
+.cons-s12-002 .eyebrow {
+  margin: 0 0 clamp(20px, 2.6vw, 34px);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cons-s12-002 h2 {
+  margin: 0 0 clamp(20px, 2.6vw, 32px);
+  font-size: clamp(2.3rem, 5.2vw, 4.1rem);
+  line-height: 0.99;
+  letter-spacing: -0.044em;
+  font-weight: 800;
+  max-width: 16ch;
+}
+.cons-s12-002 .lead { margin: 0 0 clamp(38px, 4.8vw, 72px); max-width: 54ch; color: var(--ink-soft); font-size: clamp(1.06rem, 1.3vw, 1.22rem); }
+
+/* --- The editorial run --- */
+.cons-s12-002 .models {
+  margin: 0 0 clamp(38px, 4.8vw, 70px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(30px, 5vw, 88px);
+  row-gap: clamp(34px, 4.2vw, 60px);
+}
+.cons-s12-002 .n {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.cons-s12-002 .models h3 {
+  margin: clamp(10px, 1.3vw, 14px) 0 0;
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.034em;
+  font-weight: 800;
+}
+.cons-s12-002 .suits { margin: 11px 0 0; color: var(--ink-soft); font-size: 1rem; max-width: 42ch; }
+
+/* The incentive closes every block, set in the accent */
+.cons-s12-002 .pays {
+  margin: clamp(14px, 1.7vw, 19px) 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+  max-width: 42ch;
+}
+.cons-s12-002 .pays b { font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; font-size: 0.72rem; display: block; opacity: 0.8; margin-bottom: 4px; }
+
+/* --- The declined --- */
+.cons-s12-002 .declined {
+  padding: clamp(28px, 3.4vw, 48px) clamp(26px, 3.4vw, 50px);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.cons-s12-002 .declined h3 {
+  margin: 0;
+  font-size: clamp(1.44rem, 2.4vw, 2.15rem);
+  line-height: 1.1;
+  letter-spacing: -0.034em;
+  font-weight: 800;
+  max-width: 24ch;
+}
+.cons-s12-002 .declined p { margin: 14px 0 0; font-size: clamp(1.02rem, 1.2vw, 1.16rem); font-weight: 600; opacity: 0.92; max-width: 56ch; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s12-002 h2, .cons-s12-002 .lead { max-width: none; }
+  .cons-s12-002 .models { grid-template-columns: minmax(0, 1fr); }
+  .cons-s12-002 .suits, .cons-s12-002 .pays,
+  .cons-s12-002 .declined h3, .cons-s12-002 .declined p { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s12-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s12-002" data-study-id="CONS-S12-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="cons-s12-002-title">
+
+    <p class="eyebrow">How we can be engaged</p>
+    <h2 id="cons-s12-002-title">Every fee model pays us to do something.</h2>
+    <p class="lead">Read the one that pays us to do the wrong thing. The misalignment is usually what decides how an engagement ends.</p>
+
+    <ul class="models">
+      <li>
+        <span class="n">01</span>
+        <h3>Fixed fee</h3>
+        <p class="suits">Suits a question whose shape is already known.</p>
+        <p class="pays"><b>Pays us to</b>Finish early. If the question changes in week three, the scope becomes the argument.</p>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <h3>Time and materials</h3>
+        <p class="suits">Suits a problem nobody has framed yet.</p>
+        <p class="pays"><b>Pays us to</b>Take longer. The defence is a weekly decision to stop or continue, written into the contract.</p>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <h3>Retainer</h3>
+        <p class="suits">Suits a decision that comes back every quarter.</p>
+        <p class="pays"><b>Pays us to</b>Still be here. The hardest of these to cancel, so we cap it at <span data-placeholder="true">six</span> months and make you re-sign.</p>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <h3>Secondment</h3>
+        <p class="suits">Suits wanting the capability rather than the answer.</p>
+        <p class="pays"><b>Pays us to</b>Be agreeable. Someone inside your organisation stops being able to say the unwelcome thing.</p>
+      </li>
+    </ul>
+
+    <div class="declined">
+      <h3>Outcome-based fees. We do not offer them.</h3>
+      <p>Paying on outcome requires knowing what would have happened otherwise, and nobody runs the company twice. A fee resting on a number neither of us can produce is a dispute with a date on it.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

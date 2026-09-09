@@ -20,11 +20,17 @@ Structural container for future Consulting & B2B Professional Services section s
 
 # Authoring Status
 
-NOT_STARTED
+COMPLETE — S01-S27 authored (135 studies). The core catalog and the full extended site architecture are both finished.
 
 # Notes
 
-Structure only. No sector research, design guidance, or design studies have been created.
+Sector direction, anti-patterns, claims limits and the five-theme system are recorded in
+CONSULTING-THEME-CONTRACT.md. S01-S20 are authored (Hero, Services, Capabilities, Industries &
+Markets, Methodology & Process, Experts & Leadership, Case Studies, Outcomes & Metrics, Client
+Testimonials, Client Logos, Frameworks & Approach, Engagement Models, Insights, Reports & Downloads,
+Events & Webinars, FAQ, Offices & Locations, Contact, Consultation & Proposal, Final CTA) — the core
+catalog is complete at 100 studies. S21-S27, the universal extended site architecture, remain
+scaffolded.
 
 # Extended Site Architecture — S21–S27
 

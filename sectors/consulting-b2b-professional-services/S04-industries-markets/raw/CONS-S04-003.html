@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S04-003
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S04 — Industries & Markets
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
+  Layout model   : A bento grid on four columns — one tile at two-by-two, two at two-by-one, three
+                   compact, and a saturated cell carrying the action
+  Density        : Medium (133 visible words)
+  Section shape  : **B — Anchored.** Two images anchor the bento; the other four tiles are type and
+                   colour. See *Page Rhythm* in ../../CONSULTING-THEME-CONTRACT.md.
+  Media mode     : TWO reserved image areas — a large field in the two-by-two tile and one wide strip
+                   in the Energy tile. The other four tiles carry no photograph at all.
+
+  V2 rework note : The first version put a reserved image in all six tiles. It worked alone, but
+                   CONS-S02 and CONS-S03 at this variant are also image-led, and a page of
+                   consecutive image grids is a catalogue rather than a website. Reducing the media
+                   here also improved the bento: with six images the size hierarchy was competing
+                   with six identical grey rectangles, and with two it is legible immediately.
+  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
+
+  Why a bento rather than a grid of six :
+                   A uniform grid says the six are equivalent. They are not — a firm is deeper in
+                   some markets than others, and a layout that hides that is doing PR rather than
+                   design. Size is the honest signal here, and it is the only ranking claim in the
+                   study: **no scores, no coverage bars, no maturity scale.** The tile is bigger; it
+                   does not say by how much, because that would be a measurement nobody took.
+
+  Still no matrix : Ruled out in ../../CONSULTING-THEME-CONTRACT.md. There are no axes here. A tile's
+                   row and column assert nothing; only its area does, and that is deliberate.
+
+  Governing idea : Every consultancy lists every industry, and a list nothing could have been left off
+                   tells the reader nothing. Naming an industry is not knowing it, so each tile names
+                   the binding constraint that makes work there different.
+
+  Content note   : Industry names are generic vocabulary. The constraints are general structural facts
+                   about how those industries operate, not claims about this firm's record. No named
+                   client, logo, ranking, award, certification, market-share figure or invented
+                   metric. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S04-003">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S04">
+<meta name="section-name" content="Industries &amp; Markets">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Field">
+<meta name="layout-model" content="Four-column bento grid with one two-by-two tile, two wide tiles, three compact and an accent action cell">
+<meta name="section-shape" content="B — anchored">
+<meta name="density" content="medium">
+<meta name="media-mode" content="two-reserved-image-areas-anchoring-a-bento">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CONS-S04-003 — Industries &amp; Markets, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eff1f4; }
+
+/* Scoped study styles — namespaced to .cons-s04-003 */
+.cons-s04-003 {
+  --paper: #eff1f4;
+  --ink: #0e1216;
+  --ink-soft: #525c66;
+  --line: #d7dde2;
+  --card: #ffffff;
+  --slot: #e2e7eb;
+  --slot-edge: #b6c0c8;
+  --slot-ink: #5c666f;
+  --accent: #12856a;
+  --accent-ink: #ffffff;
+  --focus: #0e1216;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s04-003 *,
+.cons-s04-003 *::before,
+.cons-s04-003 *::after { box-sizing: inherit; }
+.cons-s04-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.cons-s04-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s04-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(22px, 3.6vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(24px, 3.2vw, 42px);
+}
+.cons-s04-003 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s04-003 h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3.7vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+  max-width: 17ch;
+}
+.cons-s04-003 .lead { margin: 0; color: var(--ink-soft); }
+
+/* --- Bento --- */
+.cons-s04-003 .bento {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(clamp(168px, 15vw, 210px), auto);
+  gap: clamp(14px, 1.6vw, 22px);
+}
+.cons-s04-003 .bento > li:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+.cons-s04-003 .bento > li:nth-child(4) { grid-column: span 2; }
+.cons-s04-003 .bento > li:nth-child(5) { grid-column: span 2; }
+
+.cons-s04-003 .tile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(13px, 1.3vw, 16px);
+  background: var(--card);
+  border-radius: 20px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.cons-s04-003 a.tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(14, 18, 22, 0.10);
+}
+.cons-s04-003 .shot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 14px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  margin-bottom: clamp(11px, 1.2vw, 15px);
+  min-height: 74px;
+  flex: 0 0 auto;
+  aspect-ratio: 16 / 7;
+}
+.cons-s04-003 .bento > li:nth-child(1) .shot { aspect-ratio: 4 / 3; flex: 1 1 auto; }
+.cons-s04-003 .shot span {
+  color: var(--slot-ink);
+  font-size: 0.71rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.cons-s04-003 .body { padding: 0 clamp(5px, 0.6vw, 9px) clamp(5px, 0.6vw, 9px); }
+/* A tile with no reserved image centres its text rather than sitting it at the top */
+.cons-s04-003 .body:only-child { align-self: center; padding: clamp(8px, 1vw, 14px) clamp(7px, 0.8vw, 11px); }
+.cons-s04-003 .tile h3 {
+  margin: 0;
+  font-size: clamp(1.04rem, 1.28vw, 1.2rem);
+  line-height: 1.16;
+  letter-spacing: -0.024em;
+  font-weight: 800;
+}
+.cons-s04-003 .bento > li:nth-child(1) h3 { font-size: clamp(1.34rem, 1.85vw, 1.7rem); }
+.cons-s04-003 .bind { margin: 7px 0 0; color: var(--ink-soft); font-size: 0.96rem; }
+.cons-s04-003 .bento > li:nth-child(1) .bind { font-size: clamp(1.02rem, 1.18vw, 1.12rem); }
+.cons-s04-003 .bind b { color: var(--accent); font-weight: 750; }
+
+/* Action cell */
+.cons-s04-003 .tile--act {
+  background: var(--accent);
+  color: var(--accent-ink);
+  justify-content: space-between;
+  padding: clamp(20px, 2.2vw, 26px);
+}
+.cons-s04-003 .tile--act h3 {
+  font-size: clamp(1.08rem, 1.4vw, 1.28rem);
+  line-height: 1.16;
+}
+.cons-s04-003 .go {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--accent-ink);
+  color: var(--accent);
+  font-size: 0.97rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+.cons-s04-003 .go:hover { background: var(--ink); color: var(--accent-ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .cons-s04-003 .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cons-s04-003 .bento > li:nth-child(1) { grid-column: span 2; grid-row: auto; }
+  .cons-s04-003 .bento > li:nth-child(4),
+  .cons-s04-003 .bento > li:nth-child(5) { grid-column: span 2; }
+  .cons-s04-003 .bento > li:nth-child(1) .shot { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 860px) {
+  .cons-s04-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s04-003 h2 { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s04-003 .bento { grid-template-columns: minmax(0, 1fr); }
+  .cons-s04-003 .bento > li:nth-child(n) { grid-column: span 1; }
+  .cons-s04-003 .go { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s04-003 * { transition: none !important; }
+  .cons-s04-003 a.tile:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s04-003" data-study-id="CONS-S04-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="cons-s04-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Industries</p>
+        <h2 id="cons-s04-003-title">Naming an industry is not knowing it.</h2>
+      </div>
+      <p class="lead">Each tile names what that market actually constrains. Size says where we are deepest; it does not put a number on it.</p>
+    </div>
+
+    <ul class="bento">
+
+      <li><a class="tile" href="#cons-s04-003-title">
+        <div class="shot"><span>Image area</span></div>
+        <div class="body">
+          <h3>Financial services</h3>
+          <p class="bind">The regulator is a <b>stakeholder in every decision</b>, including the ones about your own cost base.</p>
+        </div>
+      </a></li>
+
+      <li><a class="tile" href="#cons-s04-003-title">
+        <div class="body">
+          <h3>Healthcare and life sciences</h3>
+          <p class="bind">Clinical staff <b>cannot be reallocated by a spreadsheet</b>.</p>
+        </div>
+      </a></li>
+
+      <li><a class="tile" href="#cons-s04-003-title">
+        <div class="body">
+          <h3>Retail and consumer</h3>
+          <p class="bind">Margin is decided <b>in the supply chain</b>, not in the deck.</p>
+        </div>
+      </a></li>
+
+      <li><a class="tile" href="#cons-s04-003-title">
+        <div class="shot"><span>Image area</span></div>
+        <div class="body">
+          <h3>Energy and utilities</h3>
+          <p class="bind">The <b>price control cycle</b> sets your horizon, not your ambition.</p>
+        </div>
+      </a></li>
+
+      <li><a class="tile" href="#cons-s04-003-title">
+        <div class="body">
+          <h3>Industrials and manufacturing</h3>
+          <p class="bind">The plant sets the pace. A <b>shorter changeover is a wish</b>, not a plan.</p>
+        </div>
+      </a></li>
+
+      <li><a class="tile" href="#cons-s04-003-title">
+        <div class="body">
+          <h3>Public and regulated</h3>
+          <p class="bind"><b>Defensible or it does not happen.</b></p>
+        </div>
+      </a></li>
+
+      <li class="tile tile--act">
+        <h3>Not on the grid? Tell us what constrains yours.</h3>
+        <a class="go" href="#cons-s04-003-title">Start a conversation</a>
+      </li>
+
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

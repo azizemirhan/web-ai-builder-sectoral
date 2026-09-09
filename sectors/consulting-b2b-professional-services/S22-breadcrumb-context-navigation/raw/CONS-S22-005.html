@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S22-005
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S22 — Breadcrumb / Context Navigation
+  Direction      : Sector-native / Distinctive
+  Theme          : 005 Midnight — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **C — Type and colour. No reserved media at all.** Mandated by the section README:
+                   *this role is navigation, not presentation.*
+  Layout model   : The trail as a **row of display numerals** — how many pages are inside each level,
+                   so the narrowing itself is the graphic
+  Density        : Low (53 visible words, breadcrumb band 40–90)
+  Media mode     : **NONE**, and not optional — the role forbids it.
+  Interaction    : Links only. No JavaScript.
+
+  Governing idea : **Nobody climbs a breadcrumb, because no level tells you what is up there.**
+
+  The device, which is this study alone :
+                   **The count is the type, and the name is the caption.**
+
+                   `All`   `6`   `3`   `1`
+                   Home   Services   Operations   this page
+
+                   Every other study in this batch prints the count beside the level as a note. Here
+                   the count *is* the level, set at display scale, and the row reads
+                   **All to six to three to one** before the reader has taken in a single name. The
+                   shape of the trail is the shape of the narrowing, and it is drawn rather than
+                   described.
+
+  Why this is the sector-native reading :
+                   Consulting sites carry the deepest invented taxonomies on the web, and the whole
+                   commercial function of that depth is to make a small number of offers look like a
+                   large number of capabilities. **A trail that prints the counts at display size
+                   cannot do that**: six services, three of them operations, one of them this page,
+                   and the reader can see the bottom of the catalog from the top of the page.
+                   It is `S10`s move — a firm that shows the count instead of the impression has
+                   given up the impression — applied to navigation.
+
+  Semantics      : A real `nav` landmark named by the visible heading and an ordered list, because
+                   the order is the meaning. **The current page is a `span` with aria-current="page"**,
+                   never a link. The numerals are inside each item`s link text rather than in
+                   decorative pseudo-elements, so the count reaches an assistive reader as content;
+                   the arrows between them are CSS and reach nobody.
+
+  Contrast       : The level names carry --ink-soft, not --ink-dim. They are content, not ornament,
+                   and --ink-dim on this ground fails AA. Only the arrows, which are CSS and reach
+                   nobody, are set that faint.
+
+  Responsive     : The row wraps to two, then to one item per line. **No level is hidden, truncated
+                   or ellipsised** — the README forbids it, and the numerals are the content here, so
+                   dropping one would drop the argument.
+
+  Placeholder data : The three counts and the sibling page names are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true".
+
+  Content note   : No primary site navigation, no footer or sitemap listing, no page title or
+                   introduction — that is `S21`. No client name, logo, testimonial, percentage,
+                   currency figure or ranking.
+-->
+
+<meta name="study-id" content="CONS-S22-005">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="direction" content="Sector-native / Distinctive">
+<meta name="theme" content="005 Midnight">
+<meta name="section-shape" content="C — type and colour">
+<meta name="layout-model" content="The trail as a row of display numerals — how many pages are inside each level">
+<meta name="density" content="low">
+<meta name="media-mode" content="none-mandated-navigation-not-presentation">
+<meta name="interaction" content="links-only-no-javascript">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="level counts and sibling page names — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S22-005 — Breadcrumb / Context Navigation, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0b0d12; }
+
+/* Scoped study styles — namespaced to .cons-s22-005 */
+.cons-s22-005 {
+  --paper: #0b0d12;
+  --ink: #f2f3f5;
+  --ink-soft: #989ca6;
+  --ink-dim: #4a505c;
+  --line: #272b33;
+  --accent: #7c6cf7;
+  --focus: #7c6cf7;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s22-005 *,
+.cons-s22-005 *::before,
+.cons-s22-005 *::after { box-sizing: inherit; }
+.cons-s22-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 12px; }
+
+.cons-s22-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(26px, 3.2vw, 50px) clamp(22px, 3.6vw, 58px);
+}
+
+.cons-s22-005 .here {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* --- The count is the type; the name is the caption --- */
+.cons-s22-005 .trail ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: clamp(14px, 2.4vw, 40px);
+}
+.cons-s22-005 .trail li { display: flex; align-items: flex-end; gap: clamp(14px, 2.4vw, 40px); }
+.cons-s22-005 .trail li + li::before {
+  content: "\2192";
+  color: var(--ink-dim);
+  font-size: clamp(1.1rem, 1.7vw, 1.5rem);
+  line-height: 1;
+  padding-bottom: 0.5em;
+}
+.cons-s22-005 .lv { display: block; text-decoration: none; color: inherit; }
+.cons-s22-005 .lv .n {
+  display: block;
+  font-size: clamp(2.1rem, 4.4vw, 3.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+.cons-s22-005 .lv .name {
+  display: block;
+  margin-top: 9px;
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+.cons-s22-005 a.lv:hover .n,
+.cons-s22-005 a.lv:hover .name { color: var(--ink); }
+/* The current page: lit, weighted, and marked with aria-current. Never a link. */
+.cons-s22-005 .lv[aria-current="page"] .n { color: var(--accent); }
+.cons-s22-005 .lv[aria-current="page"] .name { color: var(--ink); }
+
+.cons-s22-005 .legend {
+  margin: clamp(20px, 2.4vw, 30px) 0 0;
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--line);
+  font-size: 0.91rem;
+  color: var(--ink-soft);
+}
+
+/* --- Across, not up --- */
+.cons-s22-005 .across { margin: clamp(14px, 1.8vw, 20px) 0 0; }
+.cons-s22-005 .across h2 { margin: 0 0 8px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.cons-s22-005 .across ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: clamp(12px, 1.8vw, 26px); }
+.cons-s22-005 .across a { color: var(--accent); font-weight: 700; font-size: 0.96rem; text-underline-offset: 3px; }
+
+.cons-s22-005 .real {
+  margin: clamp(16px, 2vw, 24px) 0 0;
+  font-size: 0.91rem;
+  color: var(--ink-soft);
+  max-width: 66ch;
+}
+.cons-s22-005 .real em { font-style: normal; color: var(--ink); font-weight: 700; }
+
+/* --- Responsive ladder. The numerals are the content; none is dropped --- */
+@media (max-width: 860px) {
+  .cons-s22-005 .trail ol { gap: clamp(12px, 3vw, 22px); }
+  .cons-s22-005 .trail li { gap: clamp(12px, 3vw, 22px); }
+  .cons-s22-005 .real { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s22-005 .lv .n { font-size: 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s22-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s22-005" data-study-id="CONS-S22-005" data-direction="Sector-native / Distinctive">
+  <section class="shell">
+
+    <p class="here" id="cons-s22-005-here">You are here</p>
+
+    <nav class="trail" aria-labelledby="cons-s22-005-here">
+      <ol>
+        <li><a class="lv" href="#"><span class="n">All</span><span class="name">Home</span></a></li>
+        <li><a class="lv" href="#"><span class="n" data-placeholder="true">6</span><span class="name">Services</span></a></li>
+        <li><a class="lv" href="#"><span class="n" data-placeholder="true">3</span><span class="name">Operations</span></a></li>
+        <li><span class="lv" aria-current="page"><span class="n" data-placeholder="true">1</span><span class="name">Operating model redesign</span></span></li>
+      </ol>
+    </nav>
+
+    <p class="legend">Each number is how many pages are inside that level.</p>
+
+    <div class="across">
+      <h2 id="cons-s22-005-across">The other two in Operations</h2>
+      <nav aria-labelledby="cons-s22-005-across">
+        <ul>
+          <li><a href="#" data-placeholder="true">Cost structure</a></li>
+          <li><a href="#" data-placeholder="true">Post-merger integration</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="real">Six to three to one is the whole taxonomy. <em>Every level is a page somebody maintains</em>, not a folder we invented.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

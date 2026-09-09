@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S26-001
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S26 — Consultant / Partner Profile
+  Direction      : Universal / Safe
+  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved portrait.**
+  Layout model   : Identity and portrait paired, the commitment, **the load** as three facts, what
+                   they are attached to, what is not listed here, and the route
+  Density        : Detail page (154 visible words, detail band 150–230)
+  Media mode     : One reserved portrait, **labelled by role and never by the placeholder name.**
+                   The page reads completely with it absent, which the README requires.
+  Interaction    : None (static; no JavaScript). Links only, no form.
+
+  Governing idea : **You are not choosing a person. You are choosing how much of them you get.**
+                   `S06` established the sector`s oldest complaint — senior partners sell, juniors
+                   deliver — and answered it with a commitment naming where each person is *not*. A
+                   profile page is where that gets specific, because the buyer is now looking at one
+                   individual and the only question left is **how much of them there is.**
+                   So this page carries **the load**: two engagements at a time and never three,
+                   what is running now, and how many days a week a live engagement gets. Those are
+                   the firm`s own countable facts, checkable by asking, and they are the only numbers
+                   on a profile page that mean anything.
+
+  What is deliberately not here :
+                   The README is explicit that nothing in this role may be invented — no
+                   qualifications, registrations, memberships, awards or credentials, and no social
+                   handles. **This page does not leave them as blank fields; it says they are not
+                   listed and why**, which is the same move `S17` makes about an address and `S20`
+                   about the reasons to leave. A profile with a credential list is asking to be
+                   trusted on a claim the reader cannot check from the page.
+
+  Names and the portrait :
+                   Per `S06` and the theme contract: the firm`s own people may carry placeholder
+                   names in the form initial-and-surname, so `A. Whitfield` and `R. Adeyemi` are
+                   marked data-placeholder="true". **The portrait stays reserved and its label names
+                   the role**, so no study presents a fabricated individual as a real one. Neither
+                   person is given a pronoun the study has no basis for.
+
+  Page context region :
+                   The strip at the top carries the trail. **`S21` and `S22` supply that region in an
+                   assembly and it would not be duplicated here** — deliberately plain in all five.
+
+  Content note   : No team index — that is `S06`. No fabricated qualification, registration,
+                   membership, award or credential. No invented social handle or profile link. No
+                   testimonial or rating attributed to a person. No form. No global header.
+-->
+
+<meta name="study-id" content="CONS-S26-001">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S26">
+<meta name="section-name" content="Consultant / Partner Profile">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="001 Paper">
+<meta name="section-shape" content="B — anchored, one reserved portrait">
+<meta name="layout-model" content="Identity and portrait paired, the commitment, the load as three facts, attachments, what is not listed, the route">
+<meta name="density" content="detail-page">
+<meta name="media-mode" content="one-reserved-portrait-labelled-by-role-page-complete-without-it">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="team names, engagement counts, days a week — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S26-001 — Consultant / Partner Profile, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f3; }
+
+/* Scoped study styles — namespaced to .cons-s26-001 */
+.cons-s26-001 {
+  --paper: #f7f6f3;
+  --ink: #14161a;
+  --ink-soft: #585d66;
+  --line: #dedcd6;
+  --card: #ffffff;
+  --accent: #2f4fe0;
+  --accent-ink: #ffffff;
+  --slot: #eceae5;
+  --slot-edge: #c7c4bc;
+  --slot-ink: #5f6169;
+  --focus: #14161a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s26-001 *,
+.cons-s26-001 *::before,
+.cons-s26-001 *::after { box-sizing: inherit; }
+.cons-s26-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+
+.cons-s26-001 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(28px, 3.4vw, 56px) clamp(22px, 3.6vw, 58px) clamp(40px, 5vw, 88px);
+}
+
+/* --- Page context --- */
+.cons-s26-001 .ctx ol {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-size: 0.84rem; color: var(--ink-soft);
+}
+.cons-s26-001 .ctx li + li::before { content: "\203A"; margin-right: 8px; opacity: 0.5; }
+.cons-s26-001 .ctx a { color: var(--ink-soft); font-weight: 700; text-underline-offset: 3px; }
+
+/* --- Identity and portrait, paired at every width --- */
+.cons-s26-001 .who {
+  display: grid;
+  grid-template-columns: minmax(0, 1.62fr) minmax(0, 0.38fr);
+  gap: clamp(24px, 3.4vw, 56px);
+  align-items: start;
+  padding-bottom: clamp(26px, 3.2vw, 44px);
+  border-bottom: 1px solid var(--line);
+}
+.cons-s26-001 .role {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.cons-s26-001 h1 {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
+  line-height: 1.02; letter-spacing: -0.038em; font-weight: 800;
+}
+.cons-s26-001 .focus { margin: 0 0 clamp(18px, 2.2vw, 26px); max-width: 44ch; font-size: clamp(1.1rem, 1.5vw, 1.32rem); line-height: 1.3; letter-spacing: -0.02em; font-weight: 600; }
+.cons-s26-001 .commit { margin: 0; max-width: 52ch; font-size: 1rem; }
+.cons-s26-001 .commit b { font-weight: 800; }
+.cons-s26-001 .commit em { font-style: normal; color: var(--accent); font-weight: 700; }
+
+.cons-s26-001 .shot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 18px;
+  background: var(--slot);
+  aspect-ratio: 4 / 5;
+  display: grid; place-items: center;
+  padding: 16px;
+}
+.cons-s26-001 .shot span { color: var(--slot-ink); font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 1.45; }
+
+/* --- Shared headings --- */
+.cons-s26-001 h2 {
+  margin: clamp(28px, 3.4vw, 48px) 0 clamp(14px, 1.8vw, 20px);
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- The load. Big numerals, no boxes --- */
+.cons-s26-001 .load { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 36px); }
+.cons-s26-001 .load .n { display: block; font-size: clamp(1.9rem, 3.2vw, 2.7rem); line-height: 0.92; letter-spacing: -0.05em; font-weight: 800; color: var(--accent); }
+.cons-s26-001 .load b { display: block; margin: 9px 0 5px; font-size: 0.94rem; font-weight: 800; }
+.cons-s26-001 .load p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
+
+/* --- Attached to --- */
+.cons-s26-001 .att { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.2vw, 32px); }
+.cons-s26-001 .att b { display: block; margin-bottom: 5px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-soft); }
+.cons-s26-001 .att a { color: var(--accent); font-weight: 700; font-size: 0.99rem; text-underline-offset: 3px; }
+.cons-s26-001 .att .stat { display: block; margin-top: 4px; font-size: 0.9rem; color: var(--ink-soft); }
+
+/* --- What is not listed, and the route --- */
+.cons-s26-001 .foot {
+  margin: clamp(28px, 3.4vw, 48px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(22px, 3.2vw, 50px);
+  align-items: center;
+}
+.cons-s26-001 .foot p { margin: 0; font-size: 0.98rem; color: var(--ink-soft); }
+.cons-s26-001 .foot b { color: var(--ink); font-weight: 800; }
+.cons-s26-001 .ask { font-size: clamp(1.06rem, 1.4vw, 1.24rem) !important; color: var(--ink) !important; letter-spacing: -0.02em; font-weight: 800; }
+
+/* --- Responsive ladder. Identity and portrait never separate --- */
+@media (max-width: 860px) {
+  .cons-s26-001 .who { grid-template-columns: minmax(0, 1fr); }
+  .cons-s26-001 .focus, .cons-s26-001 .commit { max-width: none; }
+  .cons-s26-001 .shot { aspect-ratio: 16 / 9; }
+  .cons-s26-001 .load { grid-template-columns: minmax(0, 1fr); }
+  .cons-s26-001 .att { grid-template-columns: minmax(0, 1fr); }
+  .cons-s26-001 .foot { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s26-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s26-001" data-study-id="CONS-S26-001" data-direction="Universal / Safe">
+  <article class="shell">
+
+    <div class="ctx" data-region="page-context">
+      <ol>
+        <li><a href="#">People</a></li>
+        <li><a href="#">Operating model</a></li>
+        <li>This person</li>
+      </ol>
+    </div>
+
+    <div class="who">
+      <div>
+        <p class="role">Partner, operating model</p>
+        <h1 data-placeholder="true">A. Whitfield</h1>
+        <p class="focus">Operating model redesign, and the argument about who decides what.</p>
+        <p class="commit"><b>On your engagement:</b> all five stages, named in the contract. <em>On the first ninety days they are alongside <span data-placeholder="true">R. Adeyemi</span></em>, not instead of them.</p>
+      </div>
+      <div class="shot"><span>Image area &mdash; the partner, operating model. Mid-sentence, not posed.</span></div>
+    </div>
+
+    <h2>The load</h2>
+    <ul class="load">
+      <li>
+        <span class="n" data-placeholder="true">2</span>
+        <b>At a time</b>
+        <p>Never three, which is why the answer is sometimes no.</p>
+      </li>
+      <li>
+        <span class="n" data-placeholder="true">2</span>
+        <b>Running now</b>
+        <p>One of them in its last month.</p>
+      </li>
+      <li>
+        <span class="n" data-placeholder="true">3</span>
+        <b>Days a week, live</b>
+        <p>The other two are for the pieces and the reference calls.</p>
+      </li>
+    </ul>
+
+    <h2>Attached to</h2>
+    <ul class="att">
+      <li>
+        <b>Service</b>
+        <a href="#" data-placeholder="true">Operating model redesign</a>
+      </li>
+      <li>
+        <b>Engagement</b>
+        <a href="#" data-placeholder="true">The strategy was agreed and nothing had changed</a>
+      </li>
+      <li>
+        <b>Written</b>
+        <a href="#" data-placeholder="true">A central function should own the standard</a>
+        <span class="stat">We now think this was wrong.</span>
+      </li>
+    </ul>
+
+    <div class="foot">
+      <p><b>No qualifications, memberships or awards are listed here.</b> Ask, and we will send what is verifiable.</p>
+      <p class="ask">Ask for them by name. The hour is with them, not with a salesperson.</p>
+    </div>
+
+  </article>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S07-004
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S07 — Case Studies
+  Direction      : Conversion-led
+  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **C — Type and colour. No reserved media at all.**
+  Layout model   : A near-black argument panel, then four cases inverted — the withheld line as a
+                   saturated header block on each card, the story beneath it
+  Density        : Structured (222 visible words, structured band 170–230)
+  Media mode     : **NONE.** Reasoned below.
+  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
+
+  The conversion insight, which is the whole study :
+                   Every other treatment of this section apologises for the anonymity. This one sells
+                   it. **The reason you cannot see their name is the reason you would not see
+                   yours.** A buyer whose own engagement would be sensitive reads a firm's discretion
+                   as a promise about themselves — so the redaction is not the limitation of the case
+                   study, it is the case study's strongest line.
+                   That is why the withheld line is the header of every card and set at the largest
+                   size on it, with the story underneath. The usual hierarchy is exactly inverted.
+
+  Why no media   : Ask what the photograph would be of. It cannot be the client — that is the
+                   constraint — and an abstract stand-in is the stock photograph this sector's
+                   anti-patterns rule out. Colour carries this study instead, which suits a section
+                   whose subject is the absence of a name. It also gives variant 004 a second shape-C
+                   section alongside CONS-S04-004.
+
+  Not a document : No black censor bar, no stamp, no classified-memo metaphor — those sit in the
+                   document idiom that ../../CONSULTING-THEME-CONTRACT.md rules out. The redaction is
+                   a saturated colour field with a plain sentence in it.
+
+  Placeholder data : The outcome line in each case is a PLACEHOLDER DEMO VALUE marked
+                   data-placeholder="true".
+
+  Content note   : Situations are generic vocabulary, shared with CONS-S02. No client name, sector
+                   name, logo, testimonial attribution, value figure, percentage, ROI multiple,
+                   ranking, award, certification or response-time promise. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S07-004">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S07">
+<meta name="section-name" content="Case Studies">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Signal">
+<meta name="section-shape" content="C — type and colour">
+<meta name="layout-model" content="Argument panel then four inverted cards with the withheld line as a saturated header">
+<meta name="density" content="structured">
+<meta name="media-mode" content="none-deliberate-see-comment">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="case outcomes — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S07-004 — Case Studies, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .cons-s07-004 */
+.cons-s07-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #54585e;
+  --line: #e5e5e5;
+  --card: #f6f6f6;
+  --accent: #e0402f;
+  --accent-ink: #ffffff;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s07-004 *,
+.cons-s07-004 *::before,
+.cons-s07-004 *::after { box-sizing: inherit; }
+.cons-s07-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+
+.cons-s07-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s07-004 .head { margin-bottom: clamp(22px, 2.8vw, 36px); }
+.cons-s07-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s07-004 h2 {
+  margin: 0;
+  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+  max-width: 20ch;
+}
+
+/* --- The argument --- */
+.cons-s07-004 .argue {
+  padding: clamp(24px, 2.8vw, 38px) clamp(24px, 3vw, 40px);
+  border-radius: 18px;
+  background: var(--ink);
+  color: var(--paper);
+  margin-bottom: clamp(22px, 2.8vw, 36px);
+}
+.cons-s07-004 .argue p {
+  margin: 0;
+  font-size: clamp(1.24rem, 2vw, 1.85rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  max-width: 34ch;
+}
+.cons-s07-004 .argue p em { font-style: normal; color: var(--accent); }
+
+/* --- Inverted cards: the redaction is the header --- */
+.cons-s07-004 .cases {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.7vw, 24px);
+}
+.cons-s07-004 .case {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--card);
+  border-radius: 18px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 160ms ease;
+}
+.cons-s07-004 .case:hover { transform: translateY(-4px); }
+.cons-s07-004 .withheld {
+  margin: 0;
+  padding: clamp(22px, 2.5vw, 32px) clamp(22px, 2.5vw, 32px);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.cons-s07-004 .withheld b {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.71rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.78;
+}
+.cons-s07-004 .withheld span {
+  display: block;
+  font-size: clamp(1.24rem, 1.85vw, 1.68rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.cons-s07-004 .inner { padding: clamp(20px, 2.3vw, 30px); flex: 1 1 auto; }
+.cons-s07-004 .n {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.cons-s07-004 .case h3 {
+  margin: 0;
+  font-size: clamp(1.06rem, 1.3vw, 1.22rem);
+  line-height: 1.16;
+  letter-spacing: -0.024em;
+  font-weight: 800;
+}
+.cons-s07-004 .fact { margin: 11px 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+.cons-s07-004 .fact b {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* --- Close --- */
+.cons-s07-004 .close {
+  margin: clamp(20px, 2.6vw, 34px) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(16px, 2.6vw, 34px);
+}
+.cons-s07-004 .close p {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(1.14rem, 1.55vw, 1.42rem);
+  letter-spacing: -0.026em;
+  max-width: 36ch;
+}
+.cons-s07-004 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.02rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.cons-s07-004 .go:hover { background: var(--ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s07-004 h2 { max-width: none; }
+  .cons-s07-004 .argue p { max-width: none; }
+  .cons-s07-004 .cases { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .cons-s07-004 .go { width: 100%; justify-content: center; }
+  .cons-s07-004 .close p { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s07-004 * { transition: none !important; }
+  .cons-s07-004 .case:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s07-004" data-study-id="CONS-S07-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="cons-s07-004-title">
+
+    <div class="head">
+      <p class="eyebrow">Selected work</p>
+      <h2 id="cons-s07-004-title">What is missing from these is the reason to hire us.</h2>
+    </div>
+
+    <div class="argue">
+      <p>The reason you cannot see their name is the reason you would not see <em>yours</em>.</p>
+    </div>
+
+    <ul class="cases">
+
+      <li><a class="case" href="#cons-s07-004-title">
+        <p class="withheld"><b>Withheld</b><span>The sector. Two firms operate in it; naming one identifies the other.</span></p>
+        <div class="inner">
+          <span class="n">Case 01</span>
+          <h3>The strategy was agreed and nothing had changed.</h3>
+          <p class="fact"><b>What we did</b>Redrew decision rights across the top three layers.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>The next capital decision took one board meeting, not four.</p>
+        </div>
+      </a></li>
+
+      <li><a class="case" href="#cons-s07-004-title">
+        <p class="withheld"><b>Withheld</b><span>The site count. It is public, and it would name them.</span></p>
+        <div class="inner">
+          <span class="n">Case 02</span>
+          <h3>It cost more to run than it should.</h3>
+          <p class="fact"><b>What we did</b>Rebuilt the model from the contracts up, not the budgets down.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>Two assumptions everyone relied on were wrong.</p>
+        </div>
+      </a></li>
+
+      <li><a class="case" href="#cons-s07-004-title">
+        <p class="withheld"><b>Withheld</b><span>Every date. The programme is still running.</span></p>
+        <div class="inner">
+          <span class="n">Case 03</span>
+          <h3>The programme was late and reporting said it was fine.</h3>
+          <p class="fact"><b>What we did</b>Re-baselined against what had actually been delivered.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>The board learned the real date eleven months earlier.</p>
+        </div>
+      </a></li>
+
+      <li><a class="case" href="#cons-s07-004-title">
+        <p class="withheld"><b>Withheld</b><span>The decision itself. It has not been announced yet.</span></p>
+        <div class="inner">
+          <span class="n">Case 04</span>
+          <h3>A decision was coming and the evidence was thin.</h3>
+          <p class="fact"><b>What we did</b>Interviews across the market, with assumptions exposed.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>They chose the option nobody had arrived wanting.</p>
+        </div>
+      </a></li>
+
+    </ul>
+
+    <div class="close">
+      <p>Ask for a reference and you will get one. Ask for a logo and you will not.</p>
+      <a class="go" href="#cons-s07-004-title">Start a conversation</a>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

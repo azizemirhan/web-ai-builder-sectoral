@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S24-003
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S24 — Case Study Detail
+  Direction      : Dense / Information-heavy
+  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **A — Item grid. Media in every item.** Five reserved areas, each with the week it
+                   was made. **The only shape-A study in the extended architecture so far.**
+  Layout model   : Situation, errors and what was delivered on three tracks, then **the documented
+                   set, which is itself the account of how it ran**
+  Density        : Detail page (228 visible words, detail band 150–230)
+  Media mode     : **Five reserved areas — the largest documented set in this sector`s catalogue**,
+                   which is what the README asks this role for. Every one is an artefact of ours.
+                   Slot purposes, types and fallbacks are recorded in BATCH-V1.md.
+  Interaction    : None (static; no JavaScript). Links only, no form, **no gallery script**.
+
+  Governing idea : **A case study is the only account of an engagement written by the people who were
+                   paid for it.**
+                   So this one prints what we got wrong, at the same weight as what we did.
+
+  What "dense" means in this role — a set, not a gallery :
+                   The README calls media central and asks the batch document to record each slot`s
+                   purpose, type and fallback. That is a documentation brief, not a styling one, so
+                   this study is the one that carries the full set — and **the set is the account.**
+                   The first draft ran the three decisions as a list above the grid and then captioned
+                   the grid with the same three, which is the failure a documented set is supposed to
+                   avoid: it described the work twice and documented it once. Here each area carries
+                   the decision it belongs to and the week it was made, and there is no separate
+                   narrative of how it ran, because this is it.
+                   An uncaptioned grid of five images is a mood board — it proves work happened and
+                   nothing else. A dated one is a record, and a record is the only thing a case study
+                   under confidentiality still has to offer. **The dates are the evidence the client`s
+                   name would have been.**
+
+  Why the grid is not a scroll :
+                   The README forbids a media set becoming a horizontal scroll without a label and a
+                   keyboard route. This one never scrolls: it is a wrapping grid at every width, so
+                   there is no route to provide and nothing to label.
+
+  The confidentiality constraint, carried from `S07` :
+                   **Anonymity removes the client, not the problem.** The situation is stated in full,
+                   and the redaction is named — *the sector, because two firms operate in it and
+                   naming one identifies the other.*
+
+  Page context region :
+                   The strip at the top carries the trail and the page title. **`S21` and `S22` supply
+                   that region in an assembly and it would not be duplicated here** — deliberately
+                   plain in all five studies.
+
+  Placeholder data : The engagement length, team size, interview counts, the ninety days, the week
+                   numbers and the service link are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true".
+
+  Content note   : No client name, sector, logo or testimonial. No fabricated outcome, percentage,
+                   currency figure, ROI multiple or value-delivered claim. No work index — that is
+                   `S07`. No form. No global header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S24-003">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S24">
+<meta name="section-name" content="Case Study Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="direction" content="Dense / Information-heavy">
+<meta name="theme" content="003 Field">
+<meta name="section-shape" content="A — item grid, media in every item">
+<meta name="layout-model" content="The situation, the errors and what was delivered on three tracks, then the documented set which is itself the account of how it ran">
+<meta name="density" content="detail-page">
+<meta name="media-mode" content="five-reserved-areas-largest-documented-set-each-dated-all-our-own-artefacts">
+<meta name="interaction" content="none-links-only-no-form-no-gallery-script">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="length, team size, interview counts, ninety days, week numbers, service link — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S24-003 — Case Study Detail, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eff1f4; }
+
+/* Scoped study styles — namespaced to .cons-s24-003 */
+.cons-s24-003 {
+  --paper: #eff1f4;
+  --ink: #0e1216;
+  --ink-soft: #525c66;
+  --line: #d7dde2;
+  --card: #ffffff;
+  --accent: #12856a;
+  --accent-ink: #ffffff;
+  --slot: #e2e7eb;
+  --slot-edge: #b6c0c8;
+  --slot-ink: #5c666f;
+  --focus: #0e1216;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s24-003 *,
+.cons-s24-003 *::before,
+.cons-s24-003 *::after { box-sizing: inherit; }
+.cons-s24-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.cons-s24-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(26px, 3.2vw, 52px) clamp(22px, 3.6vw, 58px) clamp(40px, 5vw, 88px);
+}
+
+/* --- Page context --- */
+.cons-s24-003 .ctx { margin-bottom: clamp(20px, 2.6vw, 34px); }
+.cons-s24-003 .ctx ol {
+  margin: 0 0 clamp(11px, 1.5vw, 16px);
+  padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-size: 0.84rem; color: var(--ink-soft);
+}
+.cons-s24-003 .ctx li + li::before { content: "\203A"; margin-right: 8px; opacity: 0.5; }
+.cons-s24-003 .ctx a { color: var(--ink-soft); font-weight: 700; text-underline-offset: 3px; }
+.cons-s24-003 .ctx h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.1vw, 2.65rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 22ch;
+}
+
+/* --- The account, compact, three tracks --- */
+.cons-s24-003 .acct {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: clamp(20px, 2.8vw, 44px);
+  align-items: start;
+  padding-bottom: clamp(24px, 3vw, 40px);
+  border-bottom: 1px solid var(--line);
+}
+.cons-s24-003 h2 {
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft);
+}
+.cons-s24-003 .sit { margin: 0 0 clamp(14px, 1.8vw, 20px); font-size: 1.04rem; font-weight: 600; }
+.cons-s24-003 .facts { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.cons-s24-003 .facts b { color: var(--accent); font-weight: 800; font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.cons-s24-003 .facts span { margin-left: 8px; font-size: 0.94rem; font-weight: 700; }
+
+.cons-s24-003 .ran { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(12px, 1.6vw, 18px); }
+.cons-s24-003 .ran h3 { margin: 0; font-size: 0.99rem; line-height: 1.18; letter-spacing: -0.02em; font-weight: 800; }
+.cons-s24-003 .ran p { margin: 3px 0 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+.cons-s24-003 .wrong { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(12px, 1.6vw, 18px); }
+.cons-s24-003 .wrong h3 { margin: 0; font-size: 0.99rem; line-height: 1.18; letter-spacing: -0.02em; font-weight: 800; color: var(--accent); }
+.cons-s24-003 .wrong p { margin: 3px 0 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+.cons-s24-003 .made { margin: clamp(20px, 2.6vw, 32px) 0 0; font-size: 1.02rem; max-width: 66ch; }
+.cons-s24-003 .made b { font-weight: 800; }
+
+/* --- The documented set. Media in every item; dated --- */
+.cons-s24-003 .set-lbl { margin-top: clamp(26px, 3.2vw, 42px); }
+.cons-s24-003 .set {
+  margin: 0;
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 24px);
+}
+.cons-s24-003 .set li { display: flex; flex-direction: column; }
+.cons-s24-003 .shot {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 20px;
+  background: var(--slot);
+  aspect-ratio: 4 / 3;
+  display: grid; place-items: center;
+  padding: clamp(12px, 1.6vw, 20px);
+  margin-bottom: 10px;
+}
+.cons-s24-003 .shot span { color: var(--slot-ink); font-size: 0.73rem; font-weight: 700; text-align: center; line-height: 1.4; }
+.cons-s24-003 .set .wk {
+  display: inline-block; align-self: flex-start;
+  margin-bottom: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.68rem; font-weight: 800;
+}
+.cons-s24-003 .set p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+
+/* --- Withheld, and the links --- */
+.cons-s24-003 .foot {
+  margin: clamp(26px, 3.2vw, 42px) 0 0;
+  padding-top: clamp(18px, 2.4vw, 28px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(20px, 3vw, 46px);
+  align-items: start;
+}
+.cons-s24-003 .foot p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+.cons-s24-003 .foot b { color: var(--ink); font-weight: 800; }
+.cons-s24-003 .foot a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+/* --- Responsive ladder. The set wraps; it never becomes a scroll --- */
+@media (max-width: 980px) {
+  .cons-s24-003 .acct { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cons-s24-003 .acct > div:first-child { grid-column: 1 / -1; }
+  .cons-s24-003 .set { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .cons-s24-003 .ctx h1, .cons-s24-003 .made { max-width: none; }
+  .cons-s24-003 .foot { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .cons-s24-003 .acct { grid-template-columns: minmax(0, 1fr); }
+  .cons-s24-003 .set { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s24-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s24-003" data-study-id="CONS-S24-003" data-direction="Dense / Information-heavy">
+  <article class="shell">
+
+    <div class="ctx" data-region="page-context">
+      <ol>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Operating model</a></li>
+        <li>This engagement</li>
+      </ol>
+      <h1>The strategy was agreed and nothing had changed</h1>
+    </div>
+
+    <div class="acct">
+      <div>
+        <h2>The situation</h2>
+        <p class="sit">Signed off twice, and eleven months later nothing downstream had moved. Nobody could name the decision that was stuck.</p>
+        <ul class="facts">
+          <li><b>Discipline</b><span>Operating model</span></li>
+          <li><b>Length</b><span data-placeholder="true">Fourteen weeks</span></li>
+          <li><b>Team</b><span data-placeholder="true">Three, one full-time</span></li>
+        </ul>
+      </div>
+      <div>
+        <h2>What we got wrong</h2>
+        <ul class="wrong">
+          <li>
+            <h3>We started with the wrong sponsor</h3>
+            <p>Six weeks in we moved to the COO. It should have been week one.</p>
+          </li>
+          <li>
+            <h3>We under-scoped the interviews</h3>
+            <p>We asked for eight and needed fourteen. That cost them, not us.</p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>What was delivered</h2>
+        <p class="made">A decision map, a redesigned ownership model, and <span data-placeholder="true">ninety</span> days of us in the room.</p>
+      </div>
+    </div>
+
+    <h2 class="set-lbl">The documented set</h2>
+    <ol class="set">
+      <li>
+        <div class="shot"><span>Image area &mdash; the decision map</span></div>
+        <span class="wk" data-placeholder="true">Week 4</span>
+        <p>Every decision above a threshold, and who currently makes it.</p>
+      </li>
+      <li>
+        <div class="shot"><span>Image area &mdash; the interview wall</span></div>
+        <span class="wk" data-placeholder="true">Week 6</span>
+        <p>We stopped after <span data-placeholder="true">nine</span>. The tenth said what the ninth had.</p>
+      </li>
+      <li>
+        <div class="shot"><span>Image area &mdash; the room it was argued in</span></div>
+        <span class="wk" data-placeholder="true">Week 9</span>
+        <p>Two days of argument. The third version survived.</p>
+      </li>
+      <li>
+        <div class="shot"><span>Image area &mdash; the ownership model on screen</span></div>
+        <span class="wk" data-placeholder="true">Week 10</span>
+        <p>The first chart of the engagement. Drawn in week two it would have been wrong.</p>
+      </li>
+      <li>
+        <div class="shot"><span>Image area &mdash; the re-run session</span></div>
+        <span class="wk" data-placeholder="true">Week 12</span>
+        <p>Four decisions from the previous quarter, re-run. Two came out differently.</p>
+      </li>
+    </ol>
+
+    <div class="foot">
+      <p><b>Withheld: the sector.</b> Two firms operate in it, and naming one identifies the other.</p>
+      <p>Service: <a href="#" data-placeholder="true">Operating model redesign</a>. The dates are the evidence the name would have been.</p>
+    </div>
+
+  </article>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S26-003
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S26 — Consultant / Partner Profile
+  Direction      : Dense / Information-heavy
+  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved portrait, in the rail.**
+  Layout model   : **The commitment at stage resolution** — how much of this person each of `S05`s
+                   five stages gets — with the load, attachments and portrait in a non-sticky rail
+  Density        : Detail page (200 visible words, detail band 150–230)
+  Media mode     : One reserved portrait in the rail, **labelled by role, never by the placeholder
+                   name.** The page reads completely with it absent.
+  Interaction    : None (static; no JavaScript). Links only, no form, no sticky rail.
+
+  Governing idea : **You are not choosing a person. You are choosing how much of them you get.**
+
+  What "dense" means in this role — the commitment at stage resolution :
+                   `S06` states the commitment as one line per person: *all five stages, named in the
+                   contract.* That is enough for an index. On a profile page it is not, because *on
+                   all five stages* is exactly the sentence every firm writes about its most senior
+                   name and the buyer has no way to price it.
+                   So this study breaks the commitment across `S05`s five stages and says **how much
+                   of this person each one gets** — full time in framing, two days a week in evidence,
+                   in the room for the decision, alongside somebody else for the first ninety days.
+                   **A commitment that does not vary by stage was not a commitment**, and the variation
+                   is the part that can be checked against a contract.
+
+  Why the rail is not sticky :
+                   `S23`s README rule holds: a supporting rail should release to normal flow before it
+                   competes with the body. This one is static and holds only what a reader checks —
+                   the load, the attachments and the portrait.
+
+  What is deliberately not here :
+                   Nothing in this role may be invented — no qualifications, registrations,
+                   memberships, awards, credentials or social handles. This page does not leave them as
+                   blank fields; **it says they are not listed and why.**
+
+  Names :
+                   Per `S06` and the theme contract, the firm`s own people may carry placeholder names
+                   in the form initial-and-surname. Neither person is given a pronoun the study has no
+                   basis for.
+
+  Page context region :
+                   The strip at the top carries the trail. **`S21` and `S22` supply that region in an
+                   assembly and it would not be duplicated here** — deliberately plain in all five.
+
+  Content note   : No team index — that is `S06`. No fabricated credential, no invented handle, no
+                   testimonial or rating attributed to a person. No form. No global header.
+-->
+
+<meta name="study-id" content="CONS-S26-003">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S26">
+<meta name="section-name" content="Consultant / Partner Profile">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="direction" content="Dense / Information-heavy">
+<meta name="theme" content="003 Field">
+<meta name="section-shape" content="B — anchored, one reserved portrait in the rail">
+<meta name="layout-model" content="The commitment broken across S05 five stages, with load, attachments and portrait in a non-sticky rail">
+<meta name="density" content="detail-page">
+<meta name="media-mode" content="one-reserved-portrait-in-the-rail-labelled-by-role">
+<meta name="interaction" content="none-links-only-no-form-no-sticky-rail">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="team names, engagement counts, days a week, stage loads — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S26-003 — Consultant / Partner Profile, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eff1f4; }
+
+/* Scoped study styles — namespaced to .cons-s26-003 */
+.cons-s26-003 {
+  --paper: #eff1f4;
+  --ink: #0e1216;
+  --ink-soft: #525c66;
+  --line: #d7dde2;
+  --card: #ffffff;
+  --accent: #12856a;
+  --accent-ink: #ffffff;
+  --slot: #e2e7eb;
+  --slot-edge: #b6c0c8;
+  --slot-ink: #5c666f;
+  --focus: #0e1216;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s26-003 *,
+.cons-s26-003 *::before,
+.cons-s26-003 *::after { box-sizing: inherit; }
+.cons-s26-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.cons-s26-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(26px, 3.2vw, 52px) clamp(22px, 3.6vw, 58px) clamp(40px, 5vw, 88px);
+}
+
+/* --- Page context --- */
+.cons-s26-003 .ctx ol {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-size: 0.84rem; color: var(--ink-soft);
+}
+.cons-s26-003 .ctx li + li::before { content: "\203A"; margin-right: 8px; opacity: 0.5; }
+.cons-s26-003 .ctx a { color: var(--ink-soft); font-weight: 700; text-underline-offset: 3px; }
+
+.cons-s26-003 .role {
+  display: inline-block;
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.cons-s26-003 h1 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.95rem, 3.4vw, 2.8rem);
+  line-height: 1.03; letter-spacing: -0.038em; font-weight: 800;
+}
+.cons-s26-003 .focus { margin: 0 0 clamp(20px, 2.6vw, 32px); max-width: 50ch; font-size: clamp(1.08rem, 1.45vw, 1.28rem); line-height: 1.3; letter-spacing: -0.02em; font-weight: 600; }
+
+.cons-s26-003 .page {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.5fr);
+  gap: clamp(24px, 3.4vw, 56px);
+  align-items: start;
+}
+
+.cons-s26-003 h2 {
+  margin: 0 0 clamp(13px, 1.6vw, 18px);
+  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+.cons-s26-003 .commit { margin: 0 0 clamp(20px, 2.6vw, 30px); max-width: 62ch; font-size: 1.02rem; }
+.cons-s26-003 .commit b { font-weight: 800; }
+.cons-s26-003 .commit em { font-style: normal; color: var(--accent); font-weight: 700; }
+
+/* --- The commitment, at stage resolution --- */
+.cons-s26-003 .stages { margin: 0; padding: 0; list-style: none; display: grid; gap: 2px; }
+.cons-s26-003 .stages li {
+  display: grid;
+  grid-template-columns: 2.6em minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(12px, 1.8vw, 24px);
+  align-items: baseline;
+  padding: clamp(12px, 1.5vw, 17px) clamp(14px, 1.8vw, 20px);
+  background: var(--card);
+}
+.cons-s26-003 .stages li:first-child { border-radius: 20px 20px 0 0; }
+.cons-s26-003 .stages li:last-child { border-radius: 0 0 20px 20px; }
+.cons-s26-003 .stages .fig { font-size: 0.79rem; font-weight: 800; color: var(--accent); }
+.cons-s26-003 .stages h3 { margin: 0; font-size: 0.99rem; letter-spacing: -0.02em; font-weight: 800; }
+.cons-s26-003 .stages p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
+.cons-s26-003 .stages li:last-child p { color: var(--accent); font-weight: 700; }
+
+.cons-s26-003 .notlisted { margin: clamp(22px, 2.8vw, 34px) 0 0; font-size: 0.96rem; color: var(--ink-soft); max-width: 66ch; }
+.cons-s26-003 .notlisted b { color: var(--ink); font-weight: 800; }
+.cons-s26-003 .ask {
+  margin: clamp(18px, 2.2vw, 26px) 0 0;
+  font-size: clamp(1.08rem, 1.4vw, 1.28rem);
+  line-height: 1.18; letter-spacing: -0.022em; font-weight: 800;
+}
+
+/* --- The rail --- */
+.cons-s26-003 .rail { padding: clamp(20px, 2.4vw, 28px); border-radius: 20px; background: var(--card); }
+.cons-s26-003 .rail .grp + .grp { margin-top: clamp(20px, 2.4vw, 28px); }
+.cons-s26-003 .load { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 15px); }
+.cons-s26-003 .load b { display: block; font-size: 0.88rem; font-weight: 800; }
+.cons-s26-003 .load p { margin: 2px 0 0; font-size: 0.87rem; color: var(--ink-soft); }
+.cons-s26-003 .att { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.cons-s26-003 .att .k { display: block; font-size: 0.69rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-soft); }
+.cons-s26-003 .att a { color: var(--accent); font-weight: 700; font-size: 0.92rem; text-underline-offset: 3px; }
+.cons-s26-003 .att .stat { display: block; margin-top: 3px; font-size: 0.85rem; color: var(--ink-soft); }
+
+.cons-s26-003 .shot {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 20px;
+  background: var(--slot);
+  aspect-ratio: 4 / 5;
+  display: grid; place-items: center;
+  padding: 14px;
+}
+.cons-s26-003 .shot span { color: var(--slot-ink); font-size: 0.72rem; font-weight: 700; text-align: center; line-height: 1.4; }
+
+/* --- Responsive ladder. The rail releases; identity and portrait stay paired --- */
+@media (max-width: 980px) {
+  .cons-s26-003 .page { grid-template-columns: minmax(0, 1fr); }
+  .cons-s26-003 .commit, .cons-s26-003 .notlisted { max-width: none; }
+}
+@media (max-width: 700px) {
+  .cons-s26-003 .stages li { grid-template-columns: 2.4em minmax(0, 1fr); }
+  .cons-s26-003 .stages p { grid-column: 2; margin-top: 3px; }
+  .cons-s26-003 .focus { max-width: none; }
+  .cons-s26-003 .shot { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s26-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s26-003" data-study-id="CONS-S26-003" data-direction="Dense / Information-heavy">
+  <article class="shell">
+
+    <div class="ctx" data-region="page-context">
+      <ol>
+        <li><a href="#">People</a></li>
+        <li><a href="#">Operating model</a></li>
+        <li>This person</li>
+      </ol>
+    </div>
+
+    <p class="role">Partner, operating model</p>
+    <h1 data-placeholder="true">A. Whitfield</h1>
+    <p class="focus">Operating model redesign, and the argument about who decides what.</p>
+
+    <div class="page">
+      <div>
+        <p class="commit"><b>On your engagement:</b> all five stages, named in the contract. <em>On the first ninety days they are alongside <span data-placeholder="true">R. Adeyemi</span></em>, not instead of them.</p>
+
+        <h2>How much of them, by stage</h2>
+        <ol class="stages">
+          <li>
+            <span class="fig" aria-hidden="true">01</span>
+            <h3>Framing</h3>
+            <p>Full time, two weeks.</p>
+          </li>
+          <li>
+            <span class="fig" aria-hidden="true">02</span>
+            <h3>Evidence</h3>
+            <p>Two days a week. The interviews are not theirs.</p>
+          </li>
+          <li>
+            <span class="fig" aria-hidden="true">03</span>
+            <h3>Options</h3>
+            <p>Full time.</p>
+          </li>
+          <li>
+            <span class="fig" aria-hidden="true">04</span>
+            <h3>Decision</h3>
+            <p>In the room, and in the argument with your board.</p>
+          </li>
+          <li>
+            <span class="fig" aria-hidden="true">05</span>
+            <h3>First ninety days</h3>
+            <p>Alongside, not instead of.</p>
+          </li>
+        </ol>
+
+        <p class="notlisted"><b>No qualifications, memberships or awards are listed here.</b> Ask, and we will send what is verifiable.</p>
+        <p class="ask">Ask for them by name. The hour is with them, not with a salesperson.</p>
+      </div>
+
+      <aside class="rail">
+        <div class="grp">
+          <h2>The load</h2>
+          <ul class="load">
+            <li><b><span data-placeholder="true">Two</span> at a time</b><p>Never three, which is why the answer is sometimes no.</p></li>
+            <li><b><span data-placeholder="true">Two</span> running now</b><p>One of them in its last month.</p></li>
+            <li><b><span data-placeholder="true">Three</span> days a week</b><p>The other two are for the pieces and the reference calls.</p></li>
+          </ul>
+        </div>
+        <div class="grp">
+          <h2>Attached to</h2>
+          <ul class="att">
+            <li><span class="k">Service</span><a href="#" data-placeholder="true">Operating model redesign</a></li>
+            <li><span class="k">Engagement</span><a href="#" data-placeholder="true">The strategy was agreed and nothing had changed</a></li>
+            <li><span class="k">Written</span><a href="#" data-placeholder="true">A central function should own the standard</a><span class="stat">We now think this was wrong.</span></li>
+          </ul>
+        </div>
+        <div class="grp">
+          <div class="shot"><span>Image area &mdash; the partner, operating model. Mid-sentence, not posed.</span></div>
+        </div>
+      </aside>
+    </div>
+
+  </article>
+</div>
+
+</body>
+</html>

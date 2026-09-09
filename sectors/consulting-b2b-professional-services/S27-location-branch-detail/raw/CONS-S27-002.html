@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S27-002
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S27 — Office Detail
+  Direction      : Premium / Editorial
+  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area: the door.**
+  Layout model   : One measure. **The lead image is the door, not the building**, and the arrival
+                   sequence runs beneath it as continuous instruction
+  Density        : Detail page (190 visible words, detail band 150–230)
+  Media mode     : One reserved area — **the door, from the street.** No map slot: see below.
+  Interaction    : None (static; no JavaScript). Links only, no form.
+
+  Governing idea : **Every office page tells you where the building is. Nobody tells you how to get
+                   in.**
+
+  The editorial cut — the lead image is the door :
+                   The lead image on a location page is the building, shot from across the street, and
+                   it is useless twice over: the reader is not looking for the building from that
+                   angle, and every building in the district looks like it. `S17` already ruled the
+                   skyline out of this sector on the same grounds.
+                   **The one photograph that does any work is the door**, because the door is what
+                   people get wrong — there is a glass one on the corner and it is not us. So the door
+                   is the lead, at strip proportion, immediately under the address, and the arrival
+                   sequence reads out of it.
+
+  Why there is no map slot :
+                   `001`, `003` and `004` reserve one and it is always a slot, never a service. This
+                   study carries none, because an editorial page that has just argued the photograph
+                   should be useful cannot then reserve a rectangle whose only content is a shape the
+                   reader already has in their phone. **The address is the map**, and it is the second
+                   thing on the page.
+
+  Carried from `S17` :
+                   **An address is not an office.** This is the one entry of the four that is one, and
+                   the other three are named at the foot with what they actually are.
+
+  What the README ruled out :
+                   No embedded third-party map and no remote dependency. No fabricated address,
+                   coordinate, phone number or opening hours: every one here is an obvious placeholder
+                   marked data-placeholder="true". No review, rating or claim attributed to the place.
+
+  Responsive     : Address and contact details are the second thing in the source order and stay above
+                   the reserved area at every width, which the README requires.
+
+  Content note   : No list of all locations — that is `S17`. No skyline, no glass tower, no world map
+                   with pins. No form. No global header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S27-002">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S27">
+<meta name="section-name" content="Office Detail">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Sable">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="One measure, the lead image is the door rather than the building, arrival sequence beneath it">
+<meta name="density" content="detail-page">
+<meta name="media-mode" content="one-reserved-area-the-door-no-map-slot">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="address, postcode, phone, email, desk counts, station, days — obvious placeholders, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S27-002 — Office Detail, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2efe9; }
+
+/* Scoped study styles — namespaced to .cons-s27-002 */
+.cons-s27-002 {
+  --paper: #f2efe9;
+  --ink: #1a1714;
+  --ink-soft: #6b6459;
+  --line: #dcd6ca;
+  --accent: #9a5b2c;
+  --slot: #eceae5;
+  --slot-edge: #c7c4bc;
+  --slot-ink: #5f6169;
+  --focus: #1a1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s27-002 *,
+.cons-s27-002 *::before,
+.cons-s27-002 *::after { box-sizing: inherit; }
+.cons-s27-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+
+.cons-s27-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(30px, 3.6vw, 60px) clamp(22px, 3.6vw, 58px) clamp(44px, 5.4vw, 96px);
+}
+.cons-s27-002 .col { max-width: 72ch; }
+
+/* --- Page context --- */
+.cons-s27-002 .ctx ol {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent);
+}
+.cons-s27-002 .ctx li + li::before { content: "/"; margin-right: 8px; opacity: 0.55; }
+.cons-s27-002 .ctx a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+.cons-s27-002 .kind { margin: 0 0 clamp(9px, 1.2vw, 13px); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
+.cons-s27-002 h1 {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.98; letter-spacing: -0.046em; font-weight: 800;
+}
+.cons-s27-002 .here { margin: 0 0 clamp(24px, 3vw, 38px); max-width: 40ch; font-size: clamp(1.2rem, 1.9vw, 1.62rem); line-height: 1.26; letter-spacing: -0.024em; font-weight: 600; }
+
+/* --- The address, before the picture --- */
+.cons-s27-002 .addr {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: clamp(18px, 2.2vw, 26px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+  display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 48px);
+}
+.cons-s27-002 .addr b { color: var(--accent); font-weight: 800; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.cons-s27-002 .addr span { display: block; margin-top: 4px; font-size: 1rem; font-weight: 700; }
+
+/* --- The door, as the lead --- */
+.cons-s27-002 .shot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 4px;
+  background: var(--slot);
+  aspect-ratio: 21 / 9;
+  display: grid; place-items: center;
+  padding: clamp(16px, 2.2vw, 28px);
+  margin-bottom: clamp(9px, 1.2vw, 13px);
+}
+.cons-s27-002 .shot span { color: var(--slot-ink); font-size: 0.76rem; font-weight: 700; text-align: center; }
+.cons-s27-002 .cap { margin: 0 0 clamp(30px, 3.8vw, 54px); font-size: 0.9rem; color: var(--ink-soft); }
+
+.cons-s27-002 h2 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- The arrival sequence, as continuous instruction --- */
+.cons-s27-002 .steps {
+  margin: 0 0 clamp(30px, 3.8vw, 54px);
+  padding: 0; list-style: none;
+  display: grid; gap: clamp(16px, 2vw, 24px);
+}
+.cons-s27-002 .steps li { display: grid; grid-template-columns: 2.4em minmax(0, 1fr); gap: clamp(10px, 1.4vw, 18px); align-items: baseline; }
+.cons-s27-002 .steps .fig { font-size: 0.8rem; font-weight: 800; letter-spacing: 0.04em; color: var(--accent); }
+.cons-s27-002 .steps h3 { margin: 0; display: inline; font-size: 1.1rem; letter-spacing: -0.022em; font-weight: 800; }
+.cons-s27-002 .steps p { margin: 4px 0 0; font-size: 1.03rem; color: var(--ink-soft); }
+
+/* --- Facts and the other three --- */
+.cons-s27-002 .facts { margin: 0 0 clamp(26px, 3.2vw, 44px); padding: 0; list-style: none; display: grid; gap: clamp(12px, 1.5vw, 17px); }
+.cons-s27-002 .facts li { font-size: 1.01rem; color: var(--ink-soft); }
+.cons-s27-002 .facts b { color: var(--ink); font-weight: 800; }
+
+.cons-s27-002 .others { margin: 0; padding-top: clamp(18px, 2.4vw, 28px); border-top: 1px solid var(--line); font-size: 0.97rem; color: var(--ink-soft); }
+.cons-s27-002 .others b { color: var(--ink); font-weight: 800; }
+.cons-s27-002 .others a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+/* --- Responsive ladder. The address stays above the picture --- */
+@media (max-width: 860px) {
+  .cons-s27-002 .here { max-width: none; }
+  .cons-s27-002 .shot { aspect-ratio: 4 / 3; }
+}
+@media (max-width: 560px) {
+  .cons-s27-002 .steps li { grid-template-columns: minmax(0, 1fr); gap: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s27-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s27-002" data-study-id="CONS-S27-002" data-direction="Premium / Editorial">
+  <article class="shell">
+    <div class="col">
+
+      <div class="ctx" data-region="page-context">
+        <ol>
+          <li><a href="#">Offices</a></li>
+          <li>London</li>
+        </ol>
+      </div>
+
+      <p class="kind">The office</p>
+      <h1>London</h1>
+      <p class="here">A floor with <span data-placeholder="true">18</span> desks. The room of twelve is this room.</p>
+
+      <ul class="addr">
+        <li><b>Address</b><span data-placeholder="true">Floor 4, 00 Example Street, London EC0A 0AA</span></li>
+        <li><b>Phone</b><span data-placeholder="true">+44 (0)20 0000 0000</span></li>
+        <li><b>Email</b><span data-placeholder="true">london@example.com</span></li>
+      </ul>
+
+      <div class="shot"><span>Image area &mdash; the door, from the street</span></div>
+      <p class="cap">Not the building. The door is the part people get wrong.</p>
+
+      <h2>How to get in</h2>
+      <ol class="steps">
+        <li>
+          <span class="fig" aria-hidden="true">01</span>
+          <div><h3>The door.</h3><p>The one beside the sandwich shop, not the glass one on the corner.</p></div>
+        </li>
+        <li>
+          <span class="fig" aria-hidden="true">02</span>
+          <div><h3>The bell.</h3><p>There is no reception. Ring the one marked <span data-placeholder="true">four</span>.</p></div>
+        </li>
+        <li>
+          <span class="fig" aria-hidden="true">03</span>
+          <div><h3>The lift.</h3><p>It needs a fob, so somebody comes down for you.</p></div>
+        </li>
+        <li>
+          <span class="fig" aria-hidden="true">04</span>
+          <div><h3>Who to ask for.</h3><p>The person you are meeting, by name. We have no front desk.</p></div>
+        </li>
+      </ol>
+
+      <ul class="facts">
+        <li><b>Getting here.</b> <span data-placeholder="true">Six</span> minutes from <span data-placeholder="true">Farringdon</span>, badly signposted.</li>
+        <li><b>Who is based here.</b> <span data-placeholder="true">Fourteen</span> of eighteen desks. <span data-placeholder="true">A. Whitfield</span> is in <span data-placeholder="true">three</span> days a week.</li>
+        <li><b>What is not here.</b> No parking. No visitor wifi worth using. No room bigger than twelve.</li>
+      </ul>
+
+      <p class="others"><b>The other three are not offices.</b> <a href="#" data-placeholder="true">Manchester</a> is three of us working from home, <a href="#" data-placeholder="true">Frankfurt</a> is a registered address nobody sits at, and <a href="#" data-placeholder="true">Singapore</a> is a borrowed desk that comes off the site when the engagement ends.</p>
+
+    </div>
+  </article>
+</div>
+
+</body>
+</html>

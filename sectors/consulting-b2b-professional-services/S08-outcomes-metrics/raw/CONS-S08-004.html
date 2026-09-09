@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S08-004
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S08 — Outcomes & Metrics
+  Direction      : Conversion-led
+  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored.** One artefact image beneath the figure row.
+  Layout model   : Five figure cards with one filled in the accent, then a reserved artefact band,
+                   then the refusal panel carrying the action
+  Density        : Structured (186 visible words, structured band 170–230)
+  Media mode     : ONE reserved artefact area.
+  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
+
+  What "conversion-led" means in this role, and it is unusual :
+                   A metrics section normally converts by making the numbers as large as possible.
+                   Here every impressive number is forbidden — value, ROI, savings and satisfaction
+                   are all excluded in the theme contract as measurements nobody ran.
+                   So the conversion device is **the least flattering figure on the page**: the
+                   engagements the client ended early. It is filled in the accent, it is the one the
+                   action points at, and the action is *"ask about the 47"*.
+                   That converts for a reason a bigger number could not. Any firm can publish a
+                   flattering total; a firm that volunteers its early exits and offers to walk you
+                   through them is making a claim a buyer can actually test. **The offer is being
+                   audited.**
+
+  Governing idea : **Consulting cannot measure its own effect, because the counterfactual does not
+                   exist. Nobody runs the company twice.**
+
+  Placeholder data : Every figure is a PLACEHOLDER DEMO VALUE marked data-placeholder="true", and the
+                   engagement count matches the counter in CONS-S01.
+
+  Content note   : No client name, sector name, logo, testimonial attribution, percentage, currency
+                   figure, ROI multiple, ranking, award, certification or response-time promise. No
+                   header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S08-004">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S08">
+<meta name="section-name" content="Outcomes &amp; Metrics">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Signal">
+<meta name="section-shape" content="B — anchored">
+<meta name="layout-model" content="Five figure cards with one filled, reserved artefact band, refusal panel carrying the action">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-artefact-band">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="all figures — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S08-004 — Outcomes &amp; Metrics, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .cons-s08-004 */
+.cons-s08-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #54585e;
+  --line: #e5e5e5;
+  --card: #f6f6f6;
+  --slot: #ececec;
+  --slot-edge: #c9c9c9;
+  --slot-ink: #5e6167;
+  --accent: #e0402f;
+  --accent-ink: #ffffff;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s08-004 *,
+.cons-s08-004 *::before,
+.cons-s08-004 *::after { box-sizing: inherit; }
+.cons-s08-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+
+.cons-s08-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s08-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(22px, 3.6vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(24px, 3.2vw, 42px);
+}
+.cons-s08-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s08-004 h2 {
+  margin: 0;
+  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+  max-width: 21ch;
+}
+.cons-s08-004 .lead { margin: 0; color: var(--ink-soft); }
+
+/* --- Figure cards --- */
+.cons-s08-004 .counted {
+  margin: 0 0 clamp(16px, 1.9vw, 26px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 20px);
+}
+.cons-s08-004 .metric {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(18px, 2vw, 26px);
+  background: var(--card);
+  border-radius: 18px;
+  transition: transform 160ms ease;
+}
+.cons-s08-004 .metric:hover { transform: translateY(-4px); }
+.cons-s08-004 .fig {
+  font-size: clamp(2.1rem, 3.1vw, 2.85rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.94;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.cons-s08-004 .metric h3 {
+  margin: clamp(11px, 1.3vw, 15px) 0 0;
+  font-size: 0.98rem;
+  line-height: 1.2;
+  letter-spacing: -0.018em;
+  font-weight: 800;
+}
+.cons-s08-004 .why { margin: 7px 0 0; color: var(--ink-soft); font-size: 0.9rem; flex: 1 1 auto; }
+.cons-s08-004 .src {
+  align-self: flex-start;
+  margin: 12px 0 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(10, 11, 13, 0.07);
+  color: var(--ink-soft);
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* The least flattering figure is the one that is filled */
+.cons-s08-004 .counted > li:last-child .metric { background: var(--accent); color: var(--accent-ink); }
+.cons-s08-004 .counted > li:last-child .fig { color: var(--accent-ink); }
+.cons-s08-004 .counted > li:last-child .why { color: rgba(255, 255, 255, 0.86); }
+.cons-s08-004 .counted > li:last-child .src { background: rgba(255, 255, 255, 0.18); color: var(--accent-ink); }
+
+/* --- Band --- */
+.cons-s08-004 .band {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 18px;
+  background: var(--slot);
+  aspect-ratio: 24 / 7;
+  display: grid;
+  place-items: center;
+  margin-bottom: clamp(16px, 1.9vw, 26px);
+}
+.cons-s08-004 .band span {
+  color: var(--slot-ink);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* --- Refusal, carrying the action --- */
+.cons-s08-004 .refuse {
+  padding: clamp(24px, 2.8vw, 38px) clamp(24px, 3vw, 40px);
+  border-radius: 18px;
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(20px, 3.4vw, 52px);
+  align-items: center;
+}
+.cons-s08-004 .refuse h3 {
+  margin: 0;
+  font-size: clamp(1.28rem, 1.95vw, 1.78rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  max-width: 32ch;
+}
+.cons-s08-004 .unpub {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.cons-s08-004 .unpub li {
+  padding: 8px 14px;
+  border: 1px dashed #4c4f55;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 750;
+  color: #a9adb3;
+  white-space: nowrap;
+}
+.cons-s08-004 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.04rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cons-s08-004 .go:hover { background: var(--paper); color: var(--ink); }
+
+.cons-s08-004 .period {
+  margin: 0 0 clamp(20px, 2.6vw, 34px);
+  max-width: 66ch;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent);
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 1100px) {
+  .cons-s08-004 .counted { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .cons-s08-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s08-004 h2 { max-width: none; }
+  .cons-s08-004 .band { aspect-ratio: 16 / 9; }
+  .cons-s08-004 .refuse { grid-template-columns: minmax(0, 1fr); }
+  .cons-s08-004 .refuse h3 { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s08-004 .counted { grid-template-columns: minmax(0, 1fr); }
+  .cons-s08-004 .go { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s08-004 * { transition: none !important; }
+  .cons-s08-004 .metric:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s08-004" data-study-id="CONS-S08-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="cons-s08-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What we count</p>
+        <h2 id="cons-s08-004-title">The number we would rather not print is the one to ask about.</h2>
+      </div>
+      <p class="lead">Nobody runs the company twice, so we count the work rather than the effect.</p>
+    </div>
+
+    <p class="period">Counted from <span data-placeholder="true">1998</span> to the end of the last financial year. Every figure below is our own record of our own activity, except where the client is named as the source.</p>
+
+    <ul class="counted">
+      <li>
+        <div class="metric">
+          <span class="fig" data-placeholder="true">340</span>
+          <h3>Engagements completed</h3>
+          <p class="why">Ours to count. It says nothing about whether they worked.</p>
+          <span class="src">Our record</span>
+        </div>
+      </li>
+      <li>
+        <div class="metric">
+          <span class="fig" data-placeholder="true">212</span>
+          <h3>Decisions taken in the room</h3>
+          <p class="why">We were present for these. The closest thing to an outcome we can witness.</p>
+          <span class="src">Our record</span>
+        </div>
+      </li>
+      <li>
+        <div class="metric">
+          <span class="fig" data-placeholder="true">4,180</span>
+          <h3>Interviews conducted</h3>
+          <p class="why">The unglamorous figure, and the one that predicts the rest.</p>
+          <span class="src">Our record</span>
+        </div>
+      </li>
+      <li>
+        <div class="metric">
+          <span class="fig" data-placeholder="true">61/84</span>
+          <h3>Models still in use a year later</h3>
+          <p class="why">The client tells us, or stops answering. Both are informative.</p>
+          <span class="src">The client</span>
+        </div>
+      </li>
+      <li>
+        <div class="metric">
+          <span class="fig" data-placeholder="true">47</span>
+          <h3>Engagements the client ended early</h3>
+          <p class="why">At stage 03 or before. This is the one to ask about.</p>
+          <span class="src">Our record</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="band"><span>Image area &mdash; the work these figures came from</span></div>
+
+    <div class="refuse">
+      <div>
+        <h3>We publish none of these, because each needs a world where you did not hire us.</h3>
+        <ul class="unpub">
+          <li>Value delivered</li>
+          <li>ROI</li>
+          <li>Savings</li>
+          <li>Satisfaction</li>
+        </ul>
+      </div>
+      <a class="go" href="#cons-s08-004-title">Ask about the 47</a>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

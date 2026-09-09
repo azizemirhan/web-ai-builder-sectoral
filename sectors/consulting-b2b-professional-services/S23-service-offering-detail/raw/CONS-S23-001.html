@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S23-001
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S23 — Consulting Service Detail
+  Direction      : Universal / Safe
+  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One contained reserved area.**
+  Layout model   : Description at full measure, the four stages as a big-numeral run, then **what it
+                   costs you**, the limits, and one contained portrait beside the route
+  Density        : Detail page (218 visible words, detail band 150–230)
+  Media mode     : One reserved area, 3:2, contained, **at the foot beside the ask**. It was drafted
+                   beside the description and left a void there: a three-line paragraph cannot hold a
+                   tall block next to it. It belongs here anyway — the ask names the person who would
+                   run the work, and this is the picture of them. **The page is complete without it.**
+  Interaction    : None (static; no JavaScript). One contextual link, no form.
+
+  Governing idea : **The fee is not the price. Your own people's time is, and no service page has
+                   ever said how much.**
+                   Every consulting service page in this sector describes what the firm does across
+                   twelve weeks and says nothing about what the client has to put in — which is the
+                   larger number and the one that actually decides whether the work happens. A COO
+                   who finds out in week two that this needs a day a week of their own time did not
+                   buy the thing they were shown.
+                   So this page carries **What it costs you** as a section of its own, in the same
+                   weight as the stages: the COO`s day a week, the interviews, and the decision that
+                   gets reopened. **A page that will not name the buyer`s side of the bill is
+                   describing a purchase rather than a project.**
+
+  Page context region :
+                   The strip at the top carries the trail and the page title. **`S21` and `S22` supply
+                   that region in an assembly and it would not be duplicated here** — it is present so
+                   the study reads as a real page rather than a body fragment beginning mid-air, and
+                   it is deliberately plain in all five studies. This section`s content responsibility
+                   begins below it.
+
+  What the README ruled out :
+                   No fabricated pricing, guarantee, turnaround time or availability. The fee section
+                   names **which model** — `S12` owns the four — and never a figure. The engagement
+                   length is stated where `S21` states it, as the length of the work rather than as a
+                   promise about when anything arrives.
+
+  Placeholder data : The stage count, the interview range, the ninety days and the two adjacent page
+                   names are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
+
+  Content note   : No offering index — that is `S02`. No homepage positioning. No form, no response
+                   time, no scarcity. No client name, logo, testimonial, percentage, currency figure
+                   or ranking. No global header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S23-001">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S23">
+<meta name="section-name" content="Consulting Service Detail">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="001 Paper">
+<meta name="section-shape" content="B — anchored, one contained reserved area">
+<meta name="layout-model" content="Description at full measure, stages as a big-numeral run, then what it costs you, with one contained portrait beside the route">
+<meta name="density" content="detail-page">
+<meta name="media-mode" content="one-reserved-area-3x2-at-the-foot-beside-the-ask-page-complete-without-it">
+<meta name="interaction" content="none-one-contextual-link-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="stage count, interview range, ninety days, adjacent page names — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S23-001 — Consulting Service Detail, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f3; }
+
+/* Scoped study styles — namespaced to .cons-s23-001 */
+.cons-s23-001 {
+  --paper: #f7f6f3;
+  --ink: #14161a;
+  --ink-soft: #585d66;
+  --line: #dedcd6;
+  --card: #ffffff;
+  --accent: #2f4fe0;
+  --accent-ink: #ffffff;
+  --slot: #eceae5;
+  --slot-edge: #c7c4bc;
+  --slot-ink: #5f6169;
+  --focus: #14161a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s23-001 *,
+.cons-s23-001 *::before,
+.cons-s23-001 *::after { box-sizing: inherit; }
+.cons-s23-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+
+.cons-s23-001 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(28px, 3.4vw, 56px) clamp(22px, 3.6vw, 58px) clamp(40px, 5vw, 88px);
+}
+
+/* --- Page context. Supplied by S21 and S22 in an assembly --- */
+.cons-s23-001 .ctx { margin-bottom: clamp(24px, 3vw, 40px); }
+.cons-s23-001 .ctx ol {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+}
+.cons-s23-001 .ctx li + li::before { content: "\203A"; margin-right: 8px; color: var(--ink-soft); opacity: 0.5; }
+.cons-s23-001 .ctx a { color: var(--ink-soft); font-weight: 700; text-underline-offset: 3px; }
+.cons-s23-001 .ctx h1 {
+  margin: 0;
+  font-size: clamp(1.95rem, 3.5vw, 2.9rem);
+  line-height: 1.03;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+}
+
+/* --- What it is --- */
+.cons-s23-001 .lede {
+  padding-bottom: clamp(26px, 3.2vw, 44px);
+  border-bottom: 1px solid var(--line);
+}
+.cons-s23-001 .lede p {
+  margin: 0;
+  max-width: 54ch;
+  font-size: clamp(1.16rem, 1.8vw, 1.52rem);
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+.cons-s23-001 .who {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 18px;
+  background: var(--slot);
+  aspect-ratio: 3 / 2;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.cons-s23-001 .who span { color: var(--slot-ink); font-size: 0.72rem; font-weight: 700; text-align: center; line-height: 1.4; }
+
+/* --- Shared headings --- */
+.cons-s23-001 h2 {
+  margin: clamp(30px, 3.6vw, 54px) 0 clamp(16px, 2vw, 24px);
+  font-size: 0.79rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* --- How it runs. Big numerals, no boxes --- */
+.cons-s23-001 .runs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 36px);
+}
+.cons-s23-001 .runs .fig {
+  display: block;
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  font-weight: 800;
+  color: var(--line);
+}
+.cons-s23-001 .runs h3 { margin: 11px 0 6px; font-size: 1.04rem; line-height: 1.18; letter-spacing: -0.024em; font-weight: 800; }
+.cons-s23-001 .runs p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
+
+/* --- What it costs you. The section nobody writes --- */
+.cons-s23-001 .costs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 36px);
+}
+.cons-s23-001 .costs b {
+  display: inline-block;
+  margin: 0 0 9px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+.cons-s23-001 .costs p { margin: 0; font-size: 0.99rem; }
+
+/* --- Limits --- */
+.cons-s23-001 .limits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.6vw, 40px);
+}
+.cons-s23-001 .limits h3 { margin: 0 0 7px; font-size: 0.98rem; font-weight: 800; }
+.cons-s23-001 .limits p { margin: 0; color: var(--ink-soft); font-size: 0.98rem; }
+
+/* --- Fee, adjacent, and the route --- */
+.cons-s23-001 .foot {
+  margin: clamp(30px, 3.6vw, 54px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 32px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1.62fr) minmax(0, 0.38fr);
+  gap: clamp(24px, 3.4vw, 56px);
+  align-items: center;
+}
+.cons-s23-001 .foot p { margin: 0 0 10px; font-size: 0.99rem; }
+.cons-s23-001 .foot p:last-child { margin-bottom: 0; }
+.cons-s23-001 .foot .fee { color: var(--ink-soft); }
+.cons-s23-001 .foot .fee b { color: var(--ink); font-weight: 800; }
+.cons-s23-001 .foot .near { color: var(--ink-soft); }
+.cons-s23-001 .foot a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+.cons-s23-001 .ask { margin: 0 0 clamp(14px, 1.8vw, 20px); font-size: clamp(1.06rem, 1.4vw, 1.24rem); font-weight: 700; letter-spacing: -0.018em; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .cons-s23-001 .runs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .cons-s23-001 .lede p { max-width: none; }
+  .cons-s23-001 .who { aspect-ratio: 16 / 9; }
+  .cons-s23-001 .costs { grid-template-columns: minmax(0, 1fr); }
+  .cons-s23-001 .limits { grid-template-columns: minmax(0, 1fr); }
+  .cons-s23-001 .foot { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .cons-s23-001 .runs { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s23-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s23-001" data-study-id="CONS-S23-001" data-direction="Universal / Safe">
+  <article class="shell">
+
+    <div class="ctx" data-region="page-context">
+      <ol>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Operations</a></li>
+        <li>Operating model redesign</li>
+      </ol>
+      <h1>Operating model redesign</h1>
+    </div>
+
+    <div class="lede">
+      <p>Redrawing who decides what, and who has to be in the room for them to decide it. The chart is the last thing we draw, not the first.</p>
+    </div>
+
+    <h2>How it runs</h2>
+    <ol class="runs">
+      <li>
+        <span class="fig" aria-hidden="true">01</span>
+        <h3>Decision map</h3>
+        <p>Every decision above a threshold, and who currently makes it.</p>
+      </li>
+      <li>
+        <span class="fig" aria-hidden="true">02</span>
+        <h3>Where it breaks</h3>
+        <p>The ones that take four weeks, and the ones taken twice.</p>
+      </li>
+      <li>
+        <span class="fig" aria-hidden="true">03</span>
+        <h3>Redesign</h3>
+        <p>New ownership, tested against decisions you actually made last quarter.</p>
+      </li>
+      <li>
+        <span class="fig" aria-hidden="true">04</span>
+        <h3>First <span data-placeholder="true">ninety</span> days</h3>
+        <p>We are in the room for the first ones. Then we are not.</p>
+      </li>
+    </ol>
+
+    <h2>What it costs you</h2>
+    <ul class="costs">
+      <li>
+        <b>Your COO</b>
+        <p>About a day a week, for the whole of it.</p>
+      </li>
+      <li>
+        <b><span data-placeholder="true">Eight to twelve</span> interviews</b>
+        <p>An hour each, with people who will not enjoy them.</p>
+      </li>
+      <li>
+        <b>One decision you have already made</b>
+        <p>Reopened. There is always one.</p>
+      </li>
+    </ul>
+
+    <h2>Where it stops</h2>
+    <div class="limits">
+      <div>
+        <h3>Not included</h3>
+        <p>Implementation. Systems. Anything after the first <span data-placeholder="true">ninety</span> days.</p>
+      </div>
+      <div>
+        <h3>When it will not work</h3>
+        <p>If the strategy is still moving, the map is out of date before it is finished.</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div>
+        <p class="ask">Ask for the hour with the person who would run it.</p>
+        <p class="fee"><b>Fixed fee.</b> The scope is the four stages, and we would rather not be paid to extend them.</p>
+        <p class="near">Often after: <a href="#" data-placeholder="true">Cost structure</a>. Sometimes instead: <a href="#" data-placeholder="true">Post-merger integration</a>.</p>
+      </div>
+      <div class="who"><span>Image area &mdash; the partner who would run this work, mid-sentence</span></div>
+    </div>
+
+  </article>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S07-003
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S07 — Case Studies
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **A — Item grid**, a reserved artefact image in every case module.
+                   Chosen for this variant: at 003 the sections above are B C B B A B, so the page
+                   can carry an image-led moment here without running two grids together.
+  Layout model   : A module system — the first case given a wide horizontal module, three compact
+                   modules beneath it, and a saturated module closing the grid
+  Density        : Structured (229 visible words, structured band 170–230)
+  Media mode     : Four reserved image areas, one per case, sized to the module.
+  Interaction    : None (static; no JavaScript). Module hover and focus are CSS only.
+
+  What the photographs are of, which this section has to answer :
+                   Not the client's premises, their people or their product — that is the whole
+                   constraint. Every slot here reserves **the firm's own artefact**: a model on a
+                   screen, a wall of interview notes, the room a decision was taken in. It is the only
+                   photography this section can honestly carry, and it is why the slot labels say so.
+
+  Governing idea : **Anonymity removes the client, not the problem.** The situation is stated in full
+                   because it is the reader's situation rather than the client's identity, and the
+                   redaction is made visible instead of hidden — every module ends on a *withheld*
+                   line naming what cannot be said and why.
+
+  Not a document : A redaction is one hairline from a classified-memo metaphor, which
+                   ../../CONSULTING-THEME-CONTRACT.md rules out along with the rest of the document
+                   idiom. There is no black censor bar here and no stamp: the withheld line is a
+                   saturated colour field with a sentence in it, which is a design device rather than
+                   an imitation of an artefact.
+
+  Placeholder data : The outcome line in each case is a PLACEHOLDER DEMO VALUE marked
+                   data-placeholder="true".
+
+  Content note   : Situations are generic vocabulary, shared with CONS-S02. No client name, sector
+                   name, logo, testimonial attribution, value figure, percentage, ROI multiple,
+                   ranking, award or certification. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S07-003">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S07">
+<meta name="section-name" content="Case Studies">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Field">
+<meta name="section-shape" content="A — item grid">
+<meta name="layout-model" content="Module system with one wide horizontal case, three compact cases and a saturated closing module">
+<meta name="density" content="structured">
+<meta name="media-mode" content="four-reserved-artefact-images">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="case outcomes — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S07-003 — Case Studies, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eff1f4; }
+
+/* Scoped study styles — namespaced to .cons-s07-003 */
+.cons-s07-003 {
+  --paper: #eff1f4;
+  --ink: #0e1216;
+  --ink-soft: #525c66;
+  --line: #d7dde2;
+  --card: #ffffff;
+  --slot: #e2e7eb;
+  --slot-edge: #b6c0c8;
+  --slot-ink: #5c666f;
+  --accent: #12856a;
+  --accent-ink: #ffffff;
+  --focus: #0e1216;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s07-003 *,
+.cons-s07-003 *::before,
+.cons-s07-003 *::after { box-sizing: inherit; }
+.cons-s07-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.cons-s07-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s07-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(22px, 3.6vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(24px, 3.2vw, 42px);
+}
+.cons-s07-003 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s07-003 h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3.7vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+  max-width: 18ch;
+}
+.cons-s07-003 .lead { margin: 0; color: var(--ink-soft); }
+
+/* --- Modules --- */
+.cons-s07-003 .cases {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.7vw, 24px);
+}
+.cons-s07-003 .cases > li:first-child { grid-column: span 2; }
+
+.cons-s07-003 .case {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--card);
+  border-radius: 20px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.cons-s07-003 .case:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(14, 18, 22, 0.10); }
+
+/* The wide first module is horizontal */
+.cons-s07-003 .cases > li:first-child .case {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+}
+.cons-s07-003 .cases > li:first-child .shot { border-right: 1px dashed var(--slot-edge); border-bottom: 0; aspect-ratio: auto; min-height: clamp(210px, 21vw, 290px); }
+.cons-s07-003 .cases > li:first-child .side { display: flex; flex-direction: column; }
+
+.cons-s07-003 .shot {
+  border-bottom: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.cons-s07-003 .shot span {
+  color: var(--slot-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.7;
+}
+.cons-s07-003 .inner { padding: clamp(20px, 2.3vw, 30px); flex: 1 1 auto; }
+.cons-s07-003 .n {
+  display: inline-block;
+  margin-bottom: 11px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(18, 133, 106, 0.11);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}
+.cons-s07-003 .case h3 {
+  margin: 0;
+  font-size: clamp(1.18rem, 1.5vw, 1.4rem);
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+  font-weight: 800;
+}
+.cons-s07-003 .cases > li:first-child h3 { font-size: clamp(1.34rem, 1.9vw, 1.72rem); }
+.cons-s07-003 .fact { margin: 12px 0 0; font-size: 0.97rem; }
+.cons-s07-003 .fact b {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.cons-s07-003 .withheld {
+  margin: 0;
+  padding: clamp(14px, 1.6vw, 19px) clamp(20px, 2.3vw, 30px);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.34;
+}
+.cons-s07-003 .withheld b {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Closing module */
+.cons-s07-003 .case--act {
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(18px, 3vw, 44px);
+  align-items: center;
+  padding: clamp(24px, 2.8vw, 36px) clamp(24px, 3vw, 38px);
+}
+.cons-s07-003 .case--act h3 {
+  margin: 0;
+  font-size: clamp(1.18rem, 1.65vw, 1.5rem);
+  line-height: 1.16;
+  letter-spacing: -0.028em;
+  font-weight: 800;
+  max-width: 36ch;
+}
+.cons-s07-003 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.01rem;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cons-s07-003 .go:hover { background: var(--paper); color: var(--ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s07-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s07-003 h2 { max-width: none; }
+  .cons-s07-003 .cases { grid-template-columns: minmax(0, 1fr); }
+  .cons-s07-003 .cases > li:first-child { grid-column: span 1; }
+  .cons-s07-003 .cases > li:first-child .case { grid-template-columns: minmax(0, 1fr); }
+  .cons-s07-003 .cases > li:first-child .shot { border-right: 0; border-bottom: 1px dashed var(--slot-edge); aspect-ratio: 16 / 9; min-height: 0; }
+  .cons-s07-003 .case--act { grid-template-columns: minmax(0, 1fr); }
+  .cons-s07-003 .case--act h3 { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s07-003 .go { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s07-003 * { transition: none !important; }
+  .cons-s07-003 .case:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s07-003" data-study-id="CONS-S07-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="cons-s07-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Selected work</p>
+        <h2 id="cons-s07-003-title">Every module ends on what we are not allowed to tell you.</h2>
+      </div>
+      <p class="lead">Anonymity removes the client, not the problem.</p>
+    </div>
+
+    <ul class="cases">
+
+      <li><a class="case" href="#cons-s07-003-title">
+        <div class="shot"><span>Image area &mdash; our own artefact</span></div>
+        <div class="side">
+          <div class="inner">
+            <span class="n">Case 01</span>
+            <h3>The strategy was agreed and nothing had changed.</h3>
+            <p class="fact"><b>What we did</b>Redrew decision rights across the top three layers.</p>
+            <p class="fact" data-placeholder="true"><b>What changed</b>The next capital decision took one board meeting, not four.</p>
+          </div>
+          <p class="withheld"><b>Withheld</b>The sector. Two firms operate in it; naming one identifies the other.</p>
+        </div>
+      </a></li>
+
+      <li><a class="case" href="#cons-s07-003-title">
+        <div class="shot"><span>Image area &mdash; the cost model</span></div>
+        <div class="inner">
+          <span class="n">Case 02</span>
+          <h3>It cost more to run than it should.</h3>
+          <p class="fact"><b>What we did</b>Rebuilt the model from the contracts up, not the budgets down.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>Two assumptions everyone relied on were wrong.</p>
+        </div>
+        <p class="withheld"><b>Withheld</b>The site count. It is public, and it would name them.</p>
+      </a></li>
+
+      <li><a class="case" href="#cons-s07-003-title">
+        <div class="shot"><span>Image area &mdash; the re-baselined plan</span></div>
+        <div class="inner">
+          <span class="n">Case 03</span>
+          <h3>The programme was late and reporting said it was fine.</h3>
+          <p class="fact"><b>What we did</b>Re-baselined against what had actually been delivered.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>The board learned the real date eleven months earlier.</p>
+        </div>
+        <p class="withheld"><b>Withheld</b>Every date. The programme is still running.</p>
+      </a></li>
+
+      <li><a class="case" href="#cons-s07-003-title">
+        <div class="shot"><span>Image area &mdash; the wall of interview notes</span></div>
+        <div class="inner">
+          <span class="n">Case 04</span>
+          <h3>A decision was coming and the evidence was thin.</h3>
+          <p class="fact"><b>What we did</b>Interviews across the market, with assumptions exposed.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>They chose the option nobody had arrived wanting.</p>
+        </div>
+        <p class="withheld"><b>Withheld</b>The decision. It has not been announced yet.</p>
+      </a></li>
+
+      <li class="case case--act">
+        <h3>If one of these sounds like yours, that is the point.</h3>
+        <a class="go" href="#cons-s07-003-title">Start a conversation</a>
+      </li>
+
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

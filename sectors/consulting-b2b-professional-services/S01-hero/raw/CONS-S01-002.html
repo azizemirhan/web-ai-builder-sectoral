@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S01-002
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S01 — Hero
+  Direction      : Premium / Editorial
+  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
+  Layout model   : One display statement given the whole frame, an offset second voice beneath it,
+                   then a wide reserved portrait band and a hairline coda
+  Density        : Low (54 visible words) — the lowest of the five, as the theme contract requires
+                   of 002
+  Media mode     : One wide reserved portrait area at 21:9, given the full frame rather than a
+                   column. This is what separates 002 from 001, which holds the same subject in a
+                   tall panel beside the text.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The counters carry PLACEHOLDER DEMO VALUES (founded 1998, 340+ engagements,
+                   6 offices), marked data-placeholder="true" in the markup and declared in the
+                   meta block, so ingestion can find and clear every one of them. They exist so the
+                   composition can be judged with content in it. They are not claims and must be
+                   replaced before any real use. Still excluded, demo or not: named clients, logos,
+                   rankings, awards, certifications, and any figure asserting a measurement nobody
+                   ran. No header or navigation — the section-shell rule.
+  Editorial note : The editorial answer to a hero is not more prose. It is one sentence at a size
+                   that makes it a position rather than a description, and a second voice that
+                   refuses to repeat it.
+-->
+
+<meta name="study-id" content="CONS-S01-002">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Sable">
+<meta name="layout-model" content="Full-frame display statement, offset second voice, wide reserved portrait band, hairline coda">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-wide-reserved-portrait-band">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="counters — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S01-002 — Hero, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2efe9; }
+
+/* Scoped study styles — namespaced to .cons-s01-002 */
+.cons-s01-002 {
+  --paper: #f2efe9;
+  --ink: #1a1714;
+  --ink-soft: #6b6459;
+  --line: #dcd6ca;
+  --slot: #e6e1d7;
+  --slot-edge: #bcb3a4;
+  --slot-ink: #5f5950;
+  --accent: #9a5b2c;
+  --accent-ink: #ffffff;
+  --focus: #1a1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s01-002 *,
+.cons-s01-002 *::before,
+.cons-s01-002 *::after { box-sizing: inherit; }
+.cons-s01-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+.cons-s01-002 .vh {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+
+.cons-s01-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(56px, 6.6vw, 124px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- The statement, given the frame --- */
+.cons-s01-002 .eyebrow {
+  margin: 0 0 clamp(26px, 3.4vw, 48px);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cons-s01-002 h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 5.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  max-width: 16ch;
+}
+
+/* --- The second voice, offset right and refusing to repeat --- */
+.cons-s01-002 .second {
+  margin: clamp(28px, 3.4vw, 52px) 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 72px);
+}
+.cons-s01-002 .second p {
+  grid-column: 2;
+  margin: 0;
+  max-width: 42ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.1rem, 1.42vw, 1.34rem);
+}
+
+/* --- The band --- */
+.cons-s01-002 .band {
+  margin: clamp(44px, 5.4vw, 88px) 0 0;
+  border: 2px dashed var(--slot-edge);
+  border-radius: 4px;
+  background: var(--slot);
+  aspect-ratio: 21 / 9;
+  display: grid;
+  place-items: center;
+  padding: 26px;
+}
+.cons-s01-002 .band span {
+  color: var(--slot-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.85;
+}
+
+/* --- Coda: one action, two reserved figures --- */
+.cons-s01-002 .coda {
+  margin: clamp(30px, 3.6vw, 52px) 0 0;
+  padding-top: clamp(22px, 2.6vw, 32px);
+  border-top: 2px solid var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(20px, 3vw, 48px);
+}
+.cons-s01-002 .go {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--accent);
+  font-size: clamp(1.16rem, 1.6vw, 1.5rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+.cons-s01-002 .go:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.cons-s01-002 .figures { display: flex; gap: clamp(24px, 4vw, 60px); }
+.cons-s01-002 .fig { margin: 0; display: flex; align-items: baseline; gap: 12px; }
+.cons-s01-002 .slot {
+  display: inline-block;
+  color: var(--ink);
+  font-size: clamp(1.56rem, 2.2vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.cons-s01-002 .fname {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s01-002 h1 { max-width: none; }
+  .cons-s01-002 .second { grid-template-columns: minmax(0, 1fr); }
+  .cons-s01-002 .second p { grid-column: 1; max-width: none; }
+  .cons-s01-002 .band { aspect-ratio: 16 / 9; }
+  .cons-s01-002 .coda { align-items: flex-start; }
+}
+@media (max-width: 560px) {
+  .cons-s01-002 .band { aspect-ratio: 4 / 3; }
+  .cons-s01-002 .figures { flex-direction: column; gap: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s01-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s01-002" data-study-id="CONS-S01-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="cons-s01-002-title">
+
+    <p class="eyebrow">Advisory</p>
+    <h1 id="cons-s01-002-title">The hard part was never the analysis.</h1>
+
+    <div class="second">
+      <p>It is the part where somebody has to decide, and then own it in a room full of people who did not. That is where we work.</p>
+    </div>
+
+    <div class="band"><span>Portrait area &mdash; the people who would be in the room,<br>photographed as themselves rather than as a profession</span></div>
+
+    <div class="coda">
+      <a class="go" href="#cons-s01-002-title">Start a conversation <span aria-hidden="true">&rarr;</span></a>
+      <span class="figures">
+        <span class="fig">
+          <span class="slot" data-placeholder="true">1998</span>
+          <span class="fname">In practice since</span>
+        </span>
+        <span class="fig">
+          <span class="slot" data-placeholder="true">340+</span>
+          <span class="fname">Engagements</span>
+        </span>
+      </span>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

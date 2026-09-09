@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S05-005
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S05 — Methodology & Process
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Midnight — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **C — Type and colour. No reserved media at all.**
+  Layout model   : Near-black field. A horizontal snap rail of five tall stage cards, the next card
+                   peeking past the frame edge, with the arrows set against the oversized line
+  Density        : Structured (222 visible words, structured band 170–230)
+  Media mode     : **NONE.** Each card opens on a colour field carrying the stage numeral at display
+                   size, where an image would otherwise sit.
+
+  V2 note, why the images came out :
+                   Reviewed against the assembled page: twenty-four of the catalog's twenty-five
+                   studies carried an image area, so shape C existed as a rule and almost never in
+                   practice. Asked what a photograph of "Frame" or "Options" would actually be of,
+                   there is no honest answer — a process stage is not a thing that can be
+                   photographed, only illustrated, and an illustration of an abstraction is a stock
+                   photograph. The numeral panel is the better answer: it gives each card the same
+                   visual weight, keeps the rail readable at a glance, and claims nothing.
+  Interaction    : Horizontal snap rail. Native scroll, touch and trackpad need no script; the two
+                   arrow buttons use ~10 lines of vanilla JavaScript to step the rail by one card.
+
+  Why the rail is the right form here, rather than a device applied to it :
+                   A process is a sequence, and a rail is a sequence you move through one step at a
+                   time. The reader's gesture is the same shape as the content. That is also why the
+                   rail is the honest alternative to the thing this section usually reaches for —
+                   **a flow chart with arrows between five boxes**, which
+                   ../../CONSULTING-THEME-CONTRACT.md rules out. There are no connectors here: the
+                   sequence is the rail, and the numbering is the only ordering device.
+
+  Full capacity  : Every card carries what happens, what you get, the exit and the duration. A card
+                   that had to lose a field to fit would be the wrong card width, not a reason to
+                   cut the field.
+
+  Governing idea : Every consultancy has a five-box process and they are interchangeable. What makes
+                   one credible is where the client is allowed to get off.
+
+  Placeholder data : Stage durations are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
+
+  Content note   : Stage names are generic vocabulary. The exits are policy commitments a firm can
+                   honour, not claims about past performance. No named client, logo, ranking, award,
+                   certification or invented metric. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S05-005">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S05">
+<meta name="section-name" content="Methodology &amp; Process">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Midnight">
+<meta name="section-shape" content="C — type and colour">
+<meta name="layout-model" content="Near-black field, horizontal snap rail of five tall stage cards">
+<meta name="density" content="structured">
+<meta name="media-mode" content="none-deliberate-numeral-colour-fields">
+<meta name="interaction" content="snap-rail-with-arrow-controls">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="stage durations — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S05-005 — Methodology &amp; Process, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0b0d12; }
+
+/* Scoped study styles — namespaced to .cons-s05-005 */
+.cons-s05-005 {
+  --paper: #0b0d12;
+  --ink: #f2f3f5;
+  --ink-soft: #989ca6;
+  --line: #272b33;
+  --card: #14171e;
+  --slot-edge: #474d58;
+  --slot-ink: #b6bbc3;
+  --accent: #7c6cf7;
+  --accent-ink: #0b0d12;
+  --focus: #7c6cf7;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+.cons-s05-005 *,
+.cons-s05-005 *::before,
+.cons-s05-005 *::after { box-sizing: inherit; }
+.cons-s05-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 22px; }
+
+.cons-s05-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(48px, 5.8vw, 108px) 0 clamp(48px, 5.8vw, 108px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s05-005 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(24px, 4vw, 60px);
+  align-items: end;
+  padding-right: clamp(22px, 3.6vw, 58px);
+  margin-bottom: clamp(30px, 4vw, 56px);
+}
+.cons-s05-005 .eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 26px);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cons-s05-005 h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.6vw, 3.7rem);
+  line-height: 1.0;
+  letter-spacing: -0.042em;
+  font-weight: 800;
+  max-width: 17ch;
+}
+.cons-s05-005 h2 em { font-style: normal; color: var(--accent); }
+.cons-s05-005 .lead {
+  margin: clamp(16px, 2vw, 24px) 0 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.04rem, 1.24vw, 1.18rem);
+}
+.cons-s05-005 .ctrls { display: flex; gap: 12px; }
+.cons-s05-005 .ctrl {
+  width: 56px; height: 56px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--slot-edge);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.15rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+.cons-s05-005 .ctrl:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+/* --- The rail is the timeline --- */
+.cons-s05-005 .rail {
+  margin: 0;
+  padding: 0 clamp(22px, 3.6vw, 58px) 4px 0;
+  list-style: none;
+  display: flex;
+  gap: clamp(16px, 1.8vw, 26px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.cons-s05-005 .rail::-webkit-scrollbar { display: none; }
+.cons-s05-005 .rail > li {
+  flex: 0 0 clamp(268px, 27vw, 372px);
+  scroll-snap-align: start;
+}
+.cons-s05-005 .stage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--card);
+  border-radius: 22px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 180ms ease;
+}
+.cons-s05-005 .stage:hover { transform: translateY(-5px); }
+/* A colour field carrying the stage numeral, where the image used to be */
+.cons-s05-005 .numplate {
+  background: linear-gradient(160deg, rgba(124, 108, 247, 0.26) 0%, rgba(124, 108, 247, 0.08) 58%, rgba(124, 108, 247, 0) 100%);
+  border-bottom: 1px solid rgba(124, 108, 247, 0.22);
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+}
+.cons-s05-005 .numplate span {
+  font-size: clamp(3.2rem, 4.6vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.cons-s05-005 .stage:hover .numplate { background: linear-gradient(160deg, rgba(124, 108, 247, 0.42) 0%, rgba(124, 108, 247, 0.12) 60%, rgba(124, 108, 247, 0) 100%); }
+.cons-s05-005 .inner { padding: clamp(18px, 2vw, 24px); flex: 1 1 auto; }
+.cons-s05-005 .top { display: flex; align-items: center; gap: 10px; margin-bottom: 11px; }
+.cons-s05-005 .weeks {
+  font-size: 0.73rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.cons-s05-005 .stage h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.5vw, 1.42rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.cons-s05-005 .what { margin: 7px 0 0; color: var(--ink-soft); font-size: 0.95rem; }
+.cons-s05-005 .get { margin: 11px 0 0; font-size: 0.95rem; font-weight: 650; }
+.cons-s05-005 .get b {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.cons-s05-005 .exit {
+  margin: 0;
+  padding: clamp(15px, 1.7vw, 20px) clamp(18px, 2vw, 24px);
+  background: rgba(124, 108, 247, 0.13);
+  color: var(--accent);
+  font-size: 0.96rem;
+  font-weight: 750;
+  line-height: 1.32;
+}
+.cons-s05-005 .exit b {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.cons-s05-005 .stage:hover .exit { background: var(--accent); color: var(--accent-ink); }
+
+/* --- Foot --- */
+.cons-s05-005 .foot {
+  margin: clamp(34px, 4.2vw, 60px) 0 0;
+  padding: clamp(24px, 3vw, 36px) clamp(22px, 3.6vw, 58px) 0 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(18px, 3vw, 40px);
+}
+.cons-s05-005 .foot p {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(1.14rem, 1.55vw, 1.42rem);
+  letter-spacing: -0.026em;
+  max-width: 32ch;
+}
+.cons-s05-005 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.04rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.cons-s05-005 .go:hover { background: var(--ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s05-005 .head { grid-template-columns: minmax(0, 1fr); }
+  .cons-s05-005 h2, .cons-s05-005 .lead { max-width: none; }
+  .cons-s05-005 .ctrls { justify-content: flex-start; }
+}
+@media (max-width: 560px) {
+  .cons-s05-005 .rail > li { flex-basis: 80%; }
+  .cons-s05-005 .ctrl { width: 50px; height: 50px; }
+  .cons-s05-005 .go { width: 100%; justify-content: center; }
+  .cons-s05-005 .foot p { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s05-005 * { transition: none !important; }
+  .cons-s05-005 .rail { scroll-behavior: auto; }
+  .cons-s05-005 .stage:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s05-005" data-study-id="CONS-S05-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="cons-s05-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">How we work</p>
+        <h2 id="cons-s05-005-title">Five stages, and you may get off at <em>any</em> of them.</h2>
+        <p class="lead">A process with no stated exit is a sales ladder drawn as a diagram. Each card ends with what you keep.</p>
+      </div>
+      <div class="ctrls">
+        <button class="ctrl" type="button" data-dir="-1" aria-label="Previous stages"><span aria-hidden="true">&larr;</span></button>
+        <button class="ctrl" type="button" data-dir="1" aria-label="Next stages"><span aria-hidden="true">&rarr;</span></button>
+      </div>
+    </div>
+
+    <ul class="rail">
+
+      <li><a class="stage" href="#cons-s05-005-title">
+        <div class="numplate"><span>01</span></div>
+        <div class="inner">
+          <div class="top"><span class="weeks" data-placeholder="true">2 weeks</span></div>
+          <h3>Frame</h3>
+          <p class="what">What is actually being decided, and by whom.</p>
+          <p class="get"><b>You get</b>A one-page decision statement.</p>
+        </div>
+        <p class="exit"><b>Stop here and</b>You keep the decision written down.</p>
+      </a></li>
+
+      <li><a class="stage" href="#cons-s05-005-title">
+        <div class="numplate"><span>02</span></div>
+        <div class="inner">
+          <div class="top"><span class="weeks" data-placeholder="true">4 weeks</span></div>
+          <h3>Evidence</h3>
+          <p class="what">The work that makes an answer arguable rather than asserted.</p>
+          <p class="get"><b>You get</b>The model and the interviews, assumptions visible.</p>
+        </div>
+        <p class="exit"><b>Stop here and</b>You keep the evidence base, and can re-run it.</p>
+      </a></li>
+
+      <li><a class="stage" href="#cons-s05-005-title">
+        <div class="numplate"><span>03</span></div>
+        <div class="inner">
+          <div class="top"><span class="weeks" data-placeholder="true">3 weeks</span></div>
+          <h3>Options</h3>
+          <p class="what">Two or three real choices, costed against each other.</p>
+          <p class="get"><b>You get</b>Options, with what each one forecloses.</p>
+        </div>
+        <p class="exit"><b>Stop here and</b>You keep the right to pick none of them.</p>
+      </a></li>
+
+      <li><a class="stage" href="#cons-s05-005-title">
+        <div class="numplate"><span>04</span></div>
+        <div class="inner">
+          <div class="top"><span class="weeks" data-placeholder="true">2 weeks</span></div>
+          <h3>Decision</h3>
+          <p class="what">The room where somebody chooses, and the paper that survives it.</p>
+          <p class="get"><b>You get</b>The recommendation, with the dissent recorded.</p>
+        </div>
+        <p class="exit"><b>Stop here and</b>You keep a paper your board can defend.</p>
+      </a></li>
+
+      <li><a class="stage" href="#cons-s05-005-title">
+        <div class="numplate"><span>05</span></div>
+        <div class="inner">
+          <div class="top"><span class="weeks" data-placeholder="true">12 weeks</span></div>
+          <h3>Delivery</h3>
+          <p class="what">Standing it up, or handing it to whoever will.</p>
+          <p class="get"><b>You get</b>Named owners and the first ninety days.</p>
+        </div>
+        <p class="exit"><b>This is the end</b>There is no sixth stage to buy.</p>
+      </a></li>
+
+    </ul>
+
+    <div class="foot">
+      <p>Most engagements stop at 03. That is a result, not a failure.</p>
+      <a class="go" href="#cons-s05-005-title">Start a conversation</a>
+    </div>
+
+  </section>
+</div>
+
+<script>
+/* Steps the snap rail by one card. Native scroll already works without this;
+   the arrows exist because a rail with no visible control reads as a static row. */
+(function () {
+  var root = document.querySelector('.cons-s05-005');
+  if (!root) return;
+  var rail = root.querySelector('.rail');
+  var card = rail && rail.querySelector('li');
+  if (!rail || !card) return;
+  Array.prototype.forEach.call(root.querySelectorAll('[data-dir]'), function (btn) {
+    btn.addEventListener('click', function () {
+      var gap = parseFloat(getComputedStyle(rail).columnGap) || 20;
+      var step = card.getBoundingClientRect().width + gap;
+      rail.scrollBy({ left: step * Number(btn.getAttribute('data-dir')), behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

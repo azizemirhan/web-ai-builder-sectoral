@@ -59,13 +59,43 @@ CONS-S27-005
 
 # Expected Structural Diversity
 
-| Variant | Territory |
-| --- | --- |
-| `CONS-S27-001` | Universal / Safe |
-| `CONS-S27-002` | Premium / Editorial |
-| `CONS-S27-003` | Dense / Information-heavy |
-| `CONS-S27-004` | Conversion-led |
-| `CONS-S27-005` | Sector-native / Distinctive |
+| Variant | Direction | Theme | Shape | Composition | Slots |
+| --- | --- | --- | :---: | --- | ---: |
+| `CONS-S27-001` | Universal / Safe | 001 Paper | B | Address first, how to get in as four steps beside the door, then a map slot | 2 |
+| `CONS-S27-002` | Premium / Editorial | 002 Sable | B | One measure. The lead image is the door, not the building | 1 |
+| `CONS-S27-003` | Dense / Information-heavy | 003 Field | B | The arrival sequence as joined modules; the address demoted to a rail | 1 |
+| `CONS-S27-004` | Conversion-led | 004 Signal | C | The hour is in this room — the sector's single ask, finally given a place | 0 |
+| `CONS-S27-005` | Sector-native / Distinctive | 005 Midnight | C | Written to somebody standing outside — the arrival lines are the display type | 0 |
+
+# The Governing Idea
+
+> **Every office page tells you where the building is. Nobody tells you how to get in.**
+
+The address is the part a search engine already has. What is missing everywhere is the last hundred
+metres: which door, which floor, what to press, who to ask for. **A visitor standing on the street
+with the right postcode and the wrong door is the ordinary outcome of every location page in this
+sector.** So *How to get in* is a first-class section in all five: the door beside the sandwich shop
+and not the glass one on the corner, the bell marked `four`, the fob-locked lift, and the person by
+name.
+
+# The Place All Five Render
+
+**London — the office.** `S17` printed four locations and said which was which; this is the one of the
+four that is an office, and **the room of twelve is this room** — `S15`'s session and `S19`'s hour
+happen in it. The other three are named at the foot of every study with what they actually are.
+
+# Placeholders
+
+Every address, phone and email is deliberately impossible to mistake for real — `00 Example Street`,
+`EC0A 0AA`, `+44 (0)20 0000 0000`, an `example.com` address — all marked `data-placeholder="true"`.
+Fabricating a plausible address is the failure mode this role invites.
+
+# The Map Slot
+
+**A map area is a slot, never a service.** Two studies reserve one and its label says so; three carry
+none and each says why. No study contains a remote URL, an embedded map or any third-party script. The
+address is above both reserved areas in source order in every study, which is what keeps it
+first-class on a phone.
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,7 +121,7 @@ Nearest existing section in this sector: S17 Offices Locations (`S17-offices-loc
 
 # Status
 
-NOT_STARTED
+AUTHORED — five studies. Batch record in `./BATCH-V1.md`.
 
 # Raw Path
 

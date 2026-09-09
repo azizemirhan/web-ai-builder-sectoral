@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S01-001
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S01 — Hero
+  Direction      : Universal / Safe
+  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
+  Layout model   : Split hero — proposition column left, reserved portrait panel right, a hairline
+                   row of three reserved figures beneath
+  Density        : Low (62 visible words)
+  Media mode     : One reserved portrait area. The sector's only honest photographic subject is
+                   people, so the slot names what the photograph is — the person who would actually
+                   run the engagement — and never who is in it.
+  Interaction    : None (static; no JavaScript)
+  Content note   : The counters carry PLACEHOLDER DEMO VALUES (founded 1998, 340+ engagements,
+                   6 offices), marked data-placeholder="true" in the markup and declared in the
+                   meta block, so ingestion can find and clear every one of them. They exist so the
+                   composition can be judged with content in it. They are not claims and must be
+                   replaced before any real use. Still excluded, demo or not: named clients, logos,
+                   rankings, awards, certifications, and any figure asserting a measurement nobody
+                   ran. No header or navigation — the section-shell rule.
+-->
+
+<meta name="study-id" content="CONS-S01-001">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="001 Paper">
+<meta name="layout-model" content="Split hero with reserved portrait panel and a reserved figure row">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-reserved-portrait-area">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="counters — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S01-001 — Hero, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f3; }
+
+/* Scoped study styles — namespaced to .cons-s01-001 */
+.cons-s01-001 {
+  --paper: #f7f6f3;
+  --ink: #14161a;
+  --ink-soft: #585d66;
+  --line: #dedcd6;
+  --slot: #e8e6e0;
+  --slot-edge: #b7b4ac;
+  --slot-ink: #55585e;
+  --accent: #2f4fe0;
+  --accent-ink: #ffffff;
+  --focus: #14161a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s01-001 *,
+.cons-s01-001 *::before,
+.cons-s01-001 *::after { box-sizing: inherit; }
+.cons-s01-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 8px; }
+.cons-s01-001 .vh {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+
+.cons-s01-001 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Split: proposition left, portrait right --- */
+.cons-s01-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: clamp(30px, 4.4vw, 72px);
+  align-items: center;
+}
+.cons-s01-001 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s01-001 h1 {
+  margin: 0;
+  font-size: clamp(2.35rem, 4.9vw, 3.95rem);
+  line-height: 1.0;
+  letter-spacing: -0.038em;
+  font-weight: 800;
+  max-width: 15ch;
+}
+.cons-s01-001 .lead {
+  margin: clamp(18px, 2.2vw, 28px) 0 0;
+  max-width: 48ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.06rem, 1.28vw, 1.22rem);
+}
+
+/* --- Actions --- */
+.cons-s01-001 .actions {
+  margin: clamp(24px, 3vw, 38px) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.cons-s01-001 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.02rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+.cons-s01-001 .go:hover { background: var(--ink); }
+.cons-s01-001 .go--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+.cons-s01-001 .go--ghost:hover { background: var(--ink); color: var(--paper); }
+
+/* --- Portrait --- */
+.cons-s01-001 .portrait {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 14px;
+  background: var(--slot);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+.cons-s01-001 .portrait span {
+  color: var(--slot-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* --- Reserved figures --- */
+.cons-s01-001 .figures {
+  margin: clamp(34px, 4.2vw, 62px) 0 0;
+  padding-top: clamp(22px, 2.6vw, 32px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 52px);
+}
+.cons-s01-001 .fig { display: flex; align-items: center; gap: 14px; }
+.cons-s01-001 .slot {
+  display: inline-block;
+  color: var(--ink);
+  font-size: clamp(1.78rem, 2.6vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.cons-s01-001 .fname {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  max-width: 15ch;
+  line-height: 1.5;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s01-001 .head { grid-template-columns: minmax(0, 1fr); }
+  .cons-s01-001 h1, .cons-s01-001 .lead { max-width: none; }
+  .cons-s01-001 .portrait { aspect-ratio: 16 / 9; }
+  .cons-s01-001 .figures { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .cons-s01-001 .fig { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+@media (max-width: 560px) {
+  .cons-s01-001 .portrait { aspect-ratio: 3 / 2; }
+  .cons-s01-001 .go { width: 100%; justify-content: center; }
+  .cons-s01-001 .figures { grid-template-columns: minmax(0, 1fr); }
+  .cons-s01-001 .fig { flex-direction: row; align-items: center; }
+  .cons-s01-001 .fname { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s01-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s01-001" data-study-id="CONS-S01-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="cons-s01-001-title">
+
+    <div class="head">
+      <div class="say">
+        <p class="eyebrow">Strategy &amp; advisory</p>
+        <h1 id="cons-s01-001-title">Hired when the decision is too expensive to get wrong.</h1>
+        <p class="lead">Strategy, operating models, and the awkward questions in between &mdash; for boards and executive teams who need an answer they can defend.</p>
+        <div class="actions">
+          <a class="go" href="#cons-s01-001-title">Start a conversation</a>
+          <a class="go go--ghost" href="#cons-s01-001-title">How we work</a>
+        </div>
+      </div>
+      <div class="portrait"><span>Portrait area &mdash; the partner who would<br>run the engagement, not a stock boardroom</span></div>
+    </div>
+
+    <div class="figures">
+      <p class="fig">
+        <span class="slot" data-placeholder="true">1998</span>
+        <span class="fname">In practice since</span>
+      </p>
+      <p class="fig">
+        <span class="slot" data-placeholder="true">340+</span>
+        <span class="fname">Engagements</span>
+      </p>
+      <p class="fig">
+        <span class="slot" data-placeholder="true">6</span>
+        <span class="fname">Offices</span>
+      </p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

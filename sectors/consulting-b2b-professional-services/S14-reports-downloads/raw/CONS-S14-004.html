@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S14-004
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S14 — Reports & Downloads
+  Direction      : Conversion-led
+  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **A — Item grid.** Four reports, each carrying its own cover.
+  Layout model   : The two ungated reports large on the first row, the two costed ones smaller
+                   beneath, then the fields never asked for, then the action
+  Density        : Structured (187 visible words, structured band 170–230)
+  Media mode     : FOUR reserved areas — the cover of each report.
+  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
+
+  Governing idea : **A gate is a price. Here is what each one costs.**
+
+  What "conversion-led" means in this role :
+                   The conversion device in a reports section is the gate. Every one of them is built
+                   to trade a file for an address, and the design work goes into making the trade
+                   feel generous.
+                   This study converts the other way. **The two reports that cost nothing are the
+                   largest things on the page**, with the biggest covers and the clearest action, and
+                   the two that cost something sit beneath them at half the size.
+                   That is not altruism dressed as strategy. A reader who has already taken something
+                   without being charged for it is a reader who believes the next price when they
+                   read it — so **giving the ungated material the best position is what makes the
+                   gated one credible.** The section spends its most valuable space on the thing it
+                   earns nothing from, and says so.
+
+  Seven sections, seven conversion bases :
+                   `S08-004` audit, `S09-004` verification, `S10-004` relevance, `S11-004` giving
+                   the method away, `S12-004` declining the sale, `S13-004` inviting contradiction,
+                   and this one **converting by not charging.** None repeats another.
+
+  Placeholder data : The four titles are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
+
+  Content note   : No *free* claim, no *exclusive* claim, no survey figure, no respondent count, no
+                   page count, no download count, no response-time promise. No client name, logo,
+                   testimonial attribution, percentage, currency figure or ranking. No header or
+                   navigation.
+-->
+
+<meta name="study-id" content="CONS-S14-004">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S14">
+<meta name="section-name" content="Reports &amp; Downloads">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Signal">
+<meta name="section-shape" content="A — item grid">
+<meta name="layout-model" content="The two ungated reports large, the two costed ones smaller beneath, never-asked fields, action">
+<meta name="density" content="structured">
+<meta name="media-mode" content="four-reserved-areas-the-cover-of-each-report">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="the four titles — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S14-004 — Reports &amp; Downloads, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .cons-s14-004 */
+.cons-s14-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #54585e;
+  --line: #e5e5e5;
+  --card: #f6f6f6;
+  --slot: #efefef;
+  --slot-edge: #c9c9c9;
+  --slot-ink: #5e6167;
+  --accent: #e0402f;
+  --accent-ink: #ffffff;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s14-004 *,
+.cons-s14-004 *::before,
+.cons-s14-004 *::after { box-sizing: inherit; }
+.cons-s14-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+
+.cons-s14-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s14-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(22px, 3.6vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(22px, 3vw, 38px);
+}
+.cons-s14-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s14-004 h2 {
+  margin: 0;
+  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+  max-width: 19ch;
+}
+.cons-s14-004 .lead { margin: 0; color: var(--ink-soft); }
+
+/* --- The reports: free ones first and largest --- */
+.cons-s14-004 .reports {
+  margin: 0 0 clamp(16px, 2vw, 26px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.7vw, 22px);
+}
+.cons-s14-004 .report {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--card);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: transform 160ms ease;
+}
+.cons-s14-004 .report:hover { transform: translateY(-4px); }
+/* The two that cost nothing are the ones held in the accent */
+.cons-s14-004 .reports > li:nth-child(-n+2) .report { background: var(--accent); color: var(--accent-ink); }
+
+.cons-s14-004 .cover {
+  aspect-ratio: 21 / 9;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+.cons-s14-004 .reports > li:nth-child(n+3) .cover { aspect-ratio: 32 / 9; }
+.cons-s14-004 .cover span {
+  color: var(--slot-ink);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.cons-s14-004 .body { padding: clamp(20px, 2.4vw, 30px); display: flex; flex-direction: column; flex: 1 1 auto; }
+.cons-s14-004 .price {
+  align-self: flex-start;
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--accent-ink);
+  color: var(--accent);
+  font-size: 0.73rem;
+  font-weight: 800;
+}
+.cons-s14-004 .reports > li:nth-child(n+3) .price { background: rgba(10, 11, 13, 0.08); color: var(--ink-soft); }
+.cons-s14-004 .report h3 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.032em;
+  font-weight: 800;
+}
+.cons-s14-004 .reports > li:nth-child(n+3) h3 { font-size: clamp(1.06rem, 1.4vw, 1.2rem); }
+.cons-s14-004 .what { margin: 10px 0 0; font-size: 0.98rem; opacity: 0.92; flex: 1 1 auto; }
+.cons-s14-004 .reports > li:nth-child(n+3) .what { color: var(--ink-soft); font-size: 0.92rem; }
+.cons-s14-004 .cost { margin: clamp(12px, 1.5vw, 16px) 0 0; font-size: 0.92rem; font-weight: 700; opacity: 0.92; }
+
+/* --- The fields never asked for --- */
+.cons-s14-004 .asked {
+  margin: 0 0 clamp(16px, 2vw, 26px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px clamp(14px, 2vw, 24px);
+}
+.cons-s14-004 .asked b { font-size: 0.95rem; font-weight: 800; }
+.cons-s14-004 .asked ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.cons-s14-004 .asked li {
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* --- The action --- */
+.cons-s14-004 .offer {
+  padding: clamp(26px, 3.2vw, 44px) clamp(24px, 3.2vw, 44px);
+  border-radius: 24px;
+  background: var(--ink);
+  color: var(--paper);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(22px, 3.6vw, 56px);
+  align-items: center;
+}
+.cons-s14-004 .offer h3 {
+  margin: 0;
+  font-size: clamp(1.36rem, 2.2vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.034em;
+  font-weight: 800;
+  max-width: 30ch;
+}
+.cons-s14-004 .offer p { margin: 12px 0 0; font-size: 1.02rem; opacity: 0.84; max-width: 52ch; }
+.cons-s14-004 .go {
+  display: inline-flex;
+  align-items: center;
+  min-height: 58px;
+  padding: 0 34px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.06rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cons-s14-004 .go:hover { background: var(--paper); color: var(--ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s14-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s14-004 h2 { max-width: none; }
+  .cons-s14-004 .reports { grid-template-columns: minmax(0, 1fr); }
+  .cons-s14-004 .offer { grid-template-columns: minmax(0, 1fr); }
+  .cons-s14-004 .offer h3, .cons-s14-004 .offer p { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s14-004 .go { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s14-004 * { transition: none !important; }
+  .cons-s14-004 .report:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s14-004" data-study-id="CONS-S14-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="cons-s14-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Reports</p>
+        <h2 id="cons-s14-004-title">Two of these need nothing from you.</h2>
+      </div>
+      <p class="lead">A gate is a price, so the ones that cost nothing get the best position on the page.</p>
+    </div>
+
+    <ul class="reports">
+      <li>
+        <div class="report">
+          <div class="cover"><span>Image area &mdash; the cover of the report</span></div>
+          <div class="body">
+            <span class="price">No gate</span>
+            <h3 data-placeholder="true">The decision-rights audit</h3>
+            <p class="what">A method for finding who actually decides.</p>
+            <p class="cost">The file is a link. Nothing is collected.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="report">
+          <div class="cover"><span>Image area &mdash; cover</span></div>
+          <div class="body">
+            <span class="price">No gate</span>
+            <h3 data-placeholder="true">What cost programmes cost</h3>
+            <p class="what">Six patterns of savings that came back.</p>
+            <p class="cost">The file is a link. Nothing is collected.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="report">
+          <div class="cover"><span>Image area &mdash; cover</span></div>
+          <div class="body">
+            <span class="price">One email address</span>
+            <h3 data-placeholder="true">The stage-03 exits</h3>
+            <p class="what">What we found in engagements the client stopped.</p>
+            <p class="cost">The file, and one message when the next one is published.</p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="report">
+          <div class="cover"><span>Image area &mdash; cover</span></div>
+          <div class="body">
+            <span class="price">A conversation</span>
+            <h3 data-placeholder="true">The counterfactual problem</h3>
+            <p class="what">Why nobody can price consulting by outcome.</p>
+            <p class="cost">We do not send this one. It is useless without the context.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="asked">
+      <b>Never asked for:</b>
+      <ul>
+        <li>Phone number</li>
+        <li>Job title</li>
+        <li>Company size</li>
+        <li>Budget</li>
+        <li>Timeline</li>
+        <li>How you heard about us</li>
+      </ul>
+    </div>
+
+    <div class="offer">
+      <div>
+        <h3>Take the two that cost nothing first.</h3>
+        <p>A reader who has already taken something without being charged is a reader who believes the next price. That is the whole reason they are at the top.</p>
+      </div>
+      <a class="go" href="#cons-s14-004-title">Open the ungated two</a>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

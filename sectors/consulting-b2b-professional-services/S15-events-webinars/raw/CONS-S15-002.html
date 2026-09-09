@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S15-002
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S15 — Events & Webinars
+  Direction      : Premium / Editorial
+  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **A — Item grid.** Four events, each carrying its own room.
+  Layout model   : A staggered two-column gallery, the right column dropped so no two rooms ever
+                   align, each event carrying an image of the room it is actually held in
+  Density        : Structured (215 visible words, structured band 170–230)
+  Media mode     : FOUR reserved areas — **each event's own room, at its real size**, and the
+                   aspect ratios differ because the rooms do.
+  Interaction    : None (static; no JavaScript).
+
+  Governing idea : **What makes an hour worth it is who else is in the room.**
+                   Not the speaker. So every entry names its format, who it is for and what its cap
+                   is, and the section says which of its own events is a broadcast rather than
+                   pretending all four are workshops.
+
+  Why the ratios differ, which is the only reason this study is a grid :
+                   A normal events grid gives every card the same 16:9 photograph of a stage, which
+                   makes a session for twelve look exactly like a conference for four hundred. Here
+                   **the reserved area is shaped like the room**: the capped session is close and
+                   nearly square, the broadcast is a wide flat strip because there is no room at all,
+                   the conference hall is panoramic, and the closed briefing is the smallest area on
+                   the page.
+                   A reader who never gets past the images has still been told the truth.
+
+  The stagger : The right column is dropped by half a block so no two rooms ever sit level. That is
+                   the *offset gallery* device from ../../CONSULTING-THEME-CONTRACT.md, and it earns
+                   its place here rather than being decoration: aligned rows would invite exactly the
+                   comparison the differing ratios exist to prevent.
+
+  The closed event, listed anyway :
+                   The fourth is a client briefing nobody can attend. Leaving it off would make the
+                   calendar look busier with open events than it is.
+
+  Placeholder data : The four event names and the cap are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true".
+
+  Content note   : No attendee count, no *limited seats*, no countdown, no *register now*, no speaker
+                   name or headshot, no partner logo. No client name, testimonial attribution,
+                   percentage, currency figure or ranking. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S15-002">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S15">
+<meta name="section-name" content="Events &amp; Webinars">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Sable">
+<meta name="section-shape" content="A — item grid">
+<meta name="layout-model" content="Staggered two-column gallery, each event carrying an image of its own room, ratios shaped by the room">
+<meta name="density" content="structured">
+<meta name="media-mode" content="four-reserved-areas-each-shaped-like-its-room">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="the four event names and the cap — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S15-002 — Events &amp; Webinars, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2efe9; }
+
+/* Scoped study styles — namespaced to .cons-s15-002 */
+.cons-s15-002 {
+  --paper: #f2efe9;
+  --ink: #1a1714;
+  --ink-soft: #6b6459;
+  --line: #dcd6ca;
+  --slot: #e6e1d7;
+  --slot-edge: #c4bbab;
+  --slot-ink: #6e675c;
+  --accent: #9a5b2c;
+  --accent-ink: #ffffff;
+  --focus: #1a1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s15-002 *,
+.cons-s15-002 *::before,
+.cons-s15-002 *::after { box-sizing: inherit; }
+.cons-s15-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+
+.cons-s15-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(52px, 6.2vw, 116px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Statement --- */
+.cons-s15-002 .eyebrow {
+  margin: 0 0 clamp(20px, 2.6vw, 34px);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cons-s15-002 h2 {
+  margin: 0 0 clamp(20px, 2.6vw, 32px);
+  font-size: clamp(2.3rem, 5.2vw, 4.1rem);
+  line-height: 0.99;
+  letter-spacing: -0.044em;
+  font-weight: 800;
+  max-width: 16ch;
+}
+.cons-s15-002 .lead { margin: 0 0 clamp(38px, 4.8vw, 72px); max-width: 54ch; color: var(--ink-soft); font-size: clamp(1.06rem, 1.3vw, 1.22rem); }
+
+/* --- The staggered gallery --- */
+.cons-s15-002 .events {
+  margin: 0 0 clamp(34px, 4.2vw, 62px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(24px, 4vw, 66px);
+  row-gap: clamp(34px, 4.2vw, 58px);
+}
+/* The right column is dropped, so no two rooms ever sit level */
+.cons-s15-002 .events > li:nth-child(even) { margin-top: clamp(0px, 6vw, 92px); }
+
+/* The reserved area is shaped like the room */
+.cons-s15-002 .room {
+  border: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  margin-bottom: clamp(16px, 2vw, 22px);
+}
+.cons-s15-002 .events > li:nth-child(1) .room { aspect-ratio: 5 / 4; }
+.cons-s15-002 .events > li:nth-child(2) .room { aspect-ratio: 32 / 9; }
+.cons-s15-002 .events > li:nth-child(3) .room { aspect-ratio: 21 / 9; }
+.cons-s15-002 .events > li:nth-child(4) .room { aspect-ratio: 2 / 1; max-width: 62%; }
+.cons-s15-002 .room span {
+  color: var(--slot-ink);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.cons-s15-002 .format {
+  display: inline-block;
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.73rem;
+  font-weight: 800;
+}
+.cons-s15-002 .format.open { background: transparent; border: 2px solid var(--line); color: var(--ink-soft); padding: 4px 12px; }
+.cons-s15-002 .format.shut { background: var(--ink); color: var(--paper); }
+.cons-s15-002 .events h3 {
+  margin: 0;
+  font-size: clamp(1.36rem, 2.3vw, 1.95rem);
+  line-height: 1.1;
+  letter-spacing: -0.034em;
+  font-weight: 800;
+}
+.cons-s15-002 .who { margin: 11px 0 0; color: var(--ink-soft); font-size: 1rem; max-width: 40ch; }
+.cons-s15-002 .cap { margin: 12px 0 0; color: var(--accent); font-size: 0.96rem; font-weight: 700; max-width: 40ch; }
+
+/* --- The anti-urgency note --- */
+.cons-s15-002 .honest {
+  padding-top: clamp(26px, 3vw, 38px);
+  border-top: 3px solid var(--ink);
+}
+.cons-s15-002 .honest h3 {
+  margin: 0;
+  font-size: clamp(1.44rem, 2.4vw, 2.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.034em;
+  font-weight: 800;
+  max-width: 30ch;
+}
+.cons-s15-002 .honest p { margin: 13px 0 0; color: var(--ink-soft); font-size: 1.04rem; max-width: 54ch; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s15-002 h2, .cons-s15-002 .lead, .cons-s15-002 .who, .cons-s15-002 .cap,
+  .cons-s15-002 .honest h3, .cons-s15-002 .honest p { max-width: none; }
+  .cons-s15-002 .events { grid-template-columns: minmax(0, 1fr); }
+  .cons-s15-002 .events > li:nth-child(even) { margin-top: 0; }
+  .cons-s15-002 .events > li:nth-child(4) .room { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s15-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s15-002" data-study-id="CONS-S15-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="cons-s15-002-title">
+
+    <p class="eyebrow">Events</p>
+    <h2 id="cons-s15-002-title">Each of these is shaped like its room.</h2>
+    <p class="lead">What makes an hour worth it is who else is in it. A session for twelve should not look like a conference for four hundred, so here it does not.</p>
+
+    <ul class="events">
+      <li>
+        <div class="room"><span>Image area &mdash; the room,<br>at the size we run it</span></div>
+        <span class="format">Room of <span data-placeholder="true">twelve</span></span>
+        <h3 data-placeholder="true">The stage-03 session</h3>
+        <p class="who">For people whose programme is late and whose reporting says it is fine.</p>
+        <p class="cap">When it fills we run it again, within the quarter.</p>
+      </li>
+      <li>
+        <div class="room"><span>Image area &mdash; no room; a desk and a microphone</span></div>
+        <span class="format open">Broadcast</span>
+        <h3 data-placeholder="true">The counterfactual hour</h3>
+        <p class="who">For anyone. There is no room, so there is no cap.</p>
+        <p class="cap">We will not call it a workshop. Recorded, and it goes up whether or not it went well.</p>
+      </li>
+      <li>
+        <div class="room"><span>Image area &mdash; the hall, from the back</span></div>
+        <span class="format open">Someone else&rsquo;s stage</span>
+        <h3 data-placeholder="true">A conference talk</h3>
+        <p class="who">For whoever bought a ticket. We do not control the room.</p>
+        <p class="cap">Useful for deciding whether to talk to us, not for getting work done.</p>
+      </li>
+      <li>
+        <div class="room"><span>Image area &mdash; a closed door</span></div>
+        <span class="format shut">Closed</span>
+        <h3 data-placeholder="true">A client briefing</h3>
+        <p class="who">For one client&rsquo;s team. Not open and not on sale.</p>
+        <p class="cap">Listed because leaving it off would make this calendar look busier than it is.</p>
+      </li>
+    </ul>
+
+    <div class="honest">
+      <h3>No countdown, and no seats-remaining counter.</h3>
+      <p>The cap exists so the session works, not to make you hurry. When it fills, we run it again.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

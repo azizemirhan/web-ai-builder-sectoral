@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S02-004
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S02 — Services
+  Direction      : Conversion-led
+  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
+  Layout model   : One featured card carrying a large reserved image and the entry action, five
+                   compact media cards beside and beneath it, and a saturated panel closing the grid
+                   for the reader none of them fits
+  Density        : Low-medium (131 visible words)
+  Media mode     : Six reserved image areas — one large inside the featured card, five smaller in the
+                   compact cards. Size hierarchy in the media is what makes one route dominant.
+  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
+
+  V2 rework note : The first version listed the six as full-width rows with hairlines, a right-aligned
+                   label column and an arrow per row. Reviewed as a document idiom — a schedule with
+                   a call to action — and rebuilt. The conversion argument is unchanged; the way it is
+                   made is now scale and imagery rather than table rows.
+
+  What "conversion-led" means in this role :
+                   A services section converts badly when it asks the buyer to translate their problem
+                   into the firm's vocabulary. So the card title is the sentence they would have said,
+                   and the discipline sits under it as a pill they never have to understand.
+                   One route is given the featured card because a grid of six equal cards asks the
+                   reader to make six decisions; a featured card asks them to make one.
+                   And the last panel is a route for the reader none of the six fits — the reader most
+                   likely to leave and the cheapest to keep.
+
+  On the badge   : The featured card is labelled "Start here", which is a recommendation the firm can
+                   make. It is deliberately NOT "most common" or a percentage, which would be a
+                   statistic nobody measured.
+
+  Content note   : Discipline names are generic vocabulary, not claims. No named client, logo,
+                   ranking, award, certification or invented metric. No response-time promise. No
+                   header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S02-004">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S02">
+<meta name="section-name" content="Services">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Signal">
+<meta name="layout-model" content="Featured media card with entry action, five compact media cards, closing fallback panel">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="six-reserved-image-areas-with-size-hierarchy">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CONS-S02-004 — Services, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .cons-s02-004 */
+.cons-s02-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #54585e;
+  --line: #e5e5e5;
+  --card: #f7f7f7;
+  --slot: #ececec;
+  --slot-edge: #c9c9c9;
+  --slot-ink: #5e6167;
+  --accent: #e0402f;
+  --accent-ink: #ffffff;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s02-004 *,
+.cons-s02-004 *::before,
+.cons-s02-004 *::after { box-sizing: inherit; }
+.cons-s02-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+
+.cons-s02-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s02-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(22px, 3.6vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(26px, 3.4vw, 46px);
+}
+.cons-s02-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s02-004 h2 {
+  margin: 0;
+  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+  max-width: 17ch;
+}
+.cons-s02-004 .lead { margin: 0; color: var(--ink-soft); }
+
+/* --- The grid --- */
+.cons-s02-004 .grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.7vw, 24px);
+}
+
+/* Shared card */
+.cons-s02-004 .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(14px, 1.5vw, 18px);
+  background: var(--card);
+  border-radius: 18px;
+  color: inherit;
+  text-decoration: none;
+  transition: background 160ms ease, transform 160ms ease;
+}
+.cons-s02-004 a.card:hover { background: var(--slot); transform: translateY(-3px); }
+.cons-s02-004 .shot {
+  position: relative;
+  border: 1px dashed var(--slot-edge);
+  border-radius: 12px;
+  background: var(--slot);
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  margin-bottom: clamp(12px, 1.4vw, 16px);
+}
+.cons-s02-004 .shot span {
+  color: var(--slot-ink);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.cons-s02-004 .pill {
+  align-self: flex-start;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(224, 64, 47, 0.10);
+  color: var(--accent);
+  font-size: 0.73rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cons-s02-004 .sit {
+  margin: 11px 0 0;
+  font-weight: 750;
+  font-size: clamp(1.06rem, 1.3vw, 1.22rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  flex: 1 1 auto;
+}
+
+/* The featured card */
+.cons-s02-004 .card--feature {
+  grid-column: span 2;
+  grid-row: span 2;
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(16px, 1.8vw, 22px);
+}
+.cons-s02-004 .card--feature .shot {
+  aspect-ratio: auto;
+  flex: 1 1 auto;
+  min-height: clamp(230px, 25vw, 360px);
+  border-color: #4a4c50;
+  background: #17191c;
+}
+.cons-s02-004 .card--feature .shot span { color: #b9bcc1; }
+.cons-s02-004 .badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.cons-s02-004 .card--feature .sit {
+  font-size: clamp(1.4rem, 2.3vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.032em;
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+.cons-s02-004 .card--feature .why { margin: 10px 0 0; color: #a9adb3; max-width: 46ch; }
+.cons-s02-004 .featfoot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: clamp(16px, 2vw, 22px);
+}
+.cons-s02-004 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.01rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.cons-s02-004 .go:hover { background: var(--paper); color: var(--ink); }
+.cons-s02-004 .card--feature .pill { background: rgba(255, 255, 255, 0.12); color: #ffd9d4; }
+
+/* The closing panel */
+.cons-s02-004 .card--none {
+  grid-column: 1 / -1;
+  background: var(--accent);
+  color: var(--accent-ink);
+  justify-content: space-between;
+  padding: clamp(22px, 2.6vw, 34px);
+}
+.cons-s02-004 .card--none h3 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.028em;
+  font-weight: 800;
+  max-width: 24ch;
+}
+.cons-s02-004 .card--none .go { background: var(--accent-ink); color: var(--accent); margin-top: 18px; align-self: flex-start; }
+.cons-s02-004 .card--none .go:hover { background: var(--ink); color: var(--accent-ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .cons-s02-004 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cons-s02-004 .card--feature { grid-column: span 2; grid-row: auto; }
+  .cons-s02-004 .card--none { grid-column: 1 / -1; }
+}
+@media (max-width: 860px) {
+  .cons-s02-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s02-004 h2 { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s02-004 .grid { grid-template-columns: minmax(0, 1fr); }
+  .cons-s02-004 .card--feature, .cons-s02-004 .card--none { grid-column: span 1; grid-row: auto; }
+  .cons-s02-004 .card--feature .shot { aspect-ratio: 16 / 9; }
+  .cons-s02-004 .go { width: 100%; justify-content: center; }
+  .cons-s02-004 .card--none h3 { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s02-004 * { transition: none !important; }
+  .cons-s02-004 a.card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s02-004" data-study-id="CONS-S02-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="cons-s02-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Services</p>
+        <h2 id="cons-s02-004-title">You should not have to know what to call it.</h2>
+      </div>
+      <p class="lead">Pick the sentence that sounds like your last board meeting. The pill under it is our word for it, not yours.</p>
+    </div>
+
+    <ul class="grid">
+
+      <li class="card card--feature">
+        <div class="shot">
+          <span class="badge">Start here</span>
+          <span>Image area</span>
+        </div>
+        <span class="pill">Operating model</span>
+        <p class="sit">The strategy is agreed and nothing has changed.</p>
+        <p class="why">The one that brings most people here, and the one that is almost never actually about the strategy.</p>
+        <div class="featfoot">
+          <a class="go" href="#cons-s02-004-title">Start a conversation</a>
+        </div>
+      </li>
+
+      <li><a class="card" href="#cons-s02-004-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="pill">Strategy and positioning</span>
+        <p class="sit">The market moved and the plan did not.</p>
+      </a></li>
+
+      <li><a class="card" href="#cons-s02-004-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="pill">Performance and cost</span>
+        <p class="sit">It costs more to run than it should.</p>
+      </a></li>
+
+      <li><a class="card" href="#cons-s02-004-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="pill">Growth and commercial</span>
+        <p class="sit">Growth stalled and the reasons contradict each other.</p>
+      </a></li>
+
+      <li><a class="card" href="#cons-s02-004-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="pill">Transformation delivery</span>
+        <p class="sit">The programme is late and reporting says it is fine.</p>
+      </a></li>
+
+      <li><a class="card" href="#cons-s02-004-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="pill">Diligence and decision support</span>
+        <p class="sit">A decision is coming and the evidence is thin.</p>
+      </a></li>
+
+      <li class="card card--none">
+        <h3>None of them fits? That is also a conversation.</h3>
+        <a class="go" href="#cons-s02-004-title">Tell us what happened</a>
+      </li>
+
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S19-004
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S19 — Consultation & Proposal
+  Direction      : Conversion-led
+  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored.** One reserved area, beside the terms.
+  Layout model   : **The terms before the pitch** — what the hour costs and what the document
+                   contains come first, and the invitation is the last and smallest thing on the page
+  Density        : Structured (187 visible words, structured band 170–230)
+  Media mode     : ONE reserved area — the proposal, open at the page that names the decision.
+  Interaction    : None (static; no JavaScript). **No form, no wizard, no booking widget.**
+
+  Governing idea : **A proposal is the only document you will be asked to sign, and nobody tells you
+                   what is in it first.**
+
+  What "conversion-led" means in this role, and it is a reordering :
+                   The standard sequence is pitch, then proposal, then contract — the reader is asked
+                   to want the thing before being told what the thing costs or contains. Every
+                   consultation section in this sector runs it that way, with the booking button at
+                   the top and the terms nowhere.
+                   **This study reverses the order.** What the hour costs, what the document
+                   contains, and the fact that the firm may say no all come first. The invitation is
+                   the last line, at the smallest size in the study, because a reader who has read
+                   the terms does not need to be sold the meeting.
+                   A buyer who arrives at a call already knowing the fee model, the boundary and the
+                   firm's own assumption is a different buyer. **Reordering costs the firm the
+                   enquiries it would have won on enthusiasm, and keeps the ones it can serve.**
+
+  Twelve sections, twelve conversion bases :
+                   `S08` audit, `S09` verification, `S10` relevance, `S11` giving the method away,
+                   `S12` declining the sale, `S13` inviting contradiction, `S14` converting by not
+                   charging, `S15` disqualifying the rest, `S16` surfacing the unasked question,
+                   `S17` rejecting the premise, `S18` removing the cost of contact, and this one
+                   **inverting the sequence.**
+
+  Not a free consultation :
+                   *Free consultation, no obligation* is the reflex, and `S14` established why it is
+                   untrue: a gate is a price. An hour of somebody who can sign is the most expensive
+                   thing in this process.
+
+  Placeholder data : The page count and the decline ratio are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true".
+
+  Content note   : No *free* claim, no *no obligation*, no turnaround promise, no form, wizard or
+                   booking widget, no response-time promise. No client name, logo, testimonial
+                   attribution, percentage, currency figure or ranking. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S19-004">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S19">
+<meta name="section-name" content="Consultation &amp; Proposal">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Signal">
+<meta name="section-shape" content="B — anchored">
+<meta name="layout-model" content="The terms before the pitch — cost and contents first, the invitation last and smallest">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-proposal-open-at-its-first-page">
+<meta name="interaction" content="none-deliberate-no-form-no-wizard">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="the page count and the decline ratio — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S19-004 — Consultation &amp; Proposal, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .cons-s19-004 */
+.cons-s19-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #54585e;
+  --line: #e5e5e5;
+  --card: #f6f6f6;
+  --slot: #efefef;
+  --slot-edge: #c9c9c9;
+  --slot-ink: #5e6167;
+  --accent: #e0402f;
+  --accent-ink: #ffffff;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s19-004 *,
+.cons-s19-004 *::before,
+.cons-s19-004 *::after { box-sizing: inherit; }
+.cons-s19-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+
+.cons-s19-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s19-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(22px, 3.6vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(20px, 2.6vw, 32px);
+}
+.cons-s19-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s19-004 h2 {
+  margin: 0;
+  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+  max-width: 18ch;
+}
+.cons-s19-004 .lead { margin: 0; color: var(--ink-soft); }
+
+/* --- The terms, first and filled --- */
+.cons-s19-004 .terms {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(24px, 3.6vw, 56px);
+  align-items: center;
+  padding: clamp(28px, 3.4vw, 46px) clamp(26px, 3.2vw, 44px);
+  border-radius: 24px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  margin-bottom: clamp(18px, 2.2vw, 28px);
+}
+.cons-s19-004 .terms h3 {
+  margin: 0 0 clamp(16px, 2vw, 22px);
+  font-size: clamp(1.6rem, 2.9vw, 2.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.038em;
+  font-weight: 800;
+}
+.cons-s19-004 .terms ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+.cons-s19-004 .terms li { padding-left: 15px; border-left: 3px solid var(--accent-ink); font-size: 1rem; opacity: 0.94; }
+.cons-s19-004 .terms b { font-weight: 800; }
+.cons-s19-004 .doc {
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.cons-s19-004 .doc span {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* --- What is in it --- */
+.cons-s19-004 .toc-head { margin: 0 0 clamp(12px, 1.5vw, 16px); font-size: clamp(1.1rem, 1.5vw, 1.3rem); font-weight: 800; letter-spacing: -0.026em; }
+.cons-s19-004 .toc {
+  margin: 0 0 clamp(18px, 2.2vw, 28px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(10px, 1.3vw, 16px);
+}
+.cons-s19-004 .toc li {
+  padding: clamp(16px, 1.9vw, 22px);
+  border-radius: 24px;
+  background: var(--card);
+}
+.cons-s19-004 .toc > li:nth-child(5),
+.cons-s19-004 .toc > li:nth-child(6) { background: rgba(224, 64, 47, 0.12); }
+.cons-s19-004 .n { display: block; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; color: var(--accent); }
+.cons-s19-004 .toc h4 { margin: 7px 0 0; font-size: 0.98rem; line-height: 1.18; letter-spacing: -0.024em; font-weight: 800; }
+.cons-s19-004 .says { margin: 7px 0 0; color: var(--ink-soft); font-size: 0.86rem; }
+
+/* --- The invitation, last and smallest --- */
+.cons-s19-004 .ask {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px clamp(18px, 2.6vw, 32px);
+  padding-top: clamp(18px, 2.2vw, 26px);
+  border-top: 2px solid var(--line);
+}
+.cons-s19-004 .ask p { margin: 0; font-size: 0.98rem; color: var(--ink-soft); }
+.cons-s19-004 .go {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.94rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cons-s19-004 .go:hover { background: var(--accent); color: var(--accent-ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 1100px) {
+  .cons-s19-004 .toc { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .cons-s19-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s19-004 h2 { max-width: none; }
+  .cons-s19-004 .terms { grid-template-columns: minmax(0, 1fr); }
+  .cons-s19-004 .doc { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 560px) {
+  .cons-s19-004 .toc { grid-template-columns: minmax(0, 1fr); }
+  .cons-s19-004 .go { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s19-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s19-004" data-study-id="CONS-S19-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="cons-s19-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Consultation &amp; proposal</p>
+        <h2 id="cons-s19-004-title">The terms before the pitch, not after it.</h2>
+      </div>
+      <p class="lead">A proposal is the only document you will be asked to sign. Here is what it costs and what is in it.</p>
+    </div>
+
+    <div class="terms">
+      <div>
+        <h3>What the conversation costs</h3>
+        <ul>
+          <li><b>One hour of yours.</b> We do not call it free; an hour of somebody who can sign is the most expensive thing here.</li>
+          <li><b>Nothing else.</b> The five questions and whatever we draw stay with you either way.</li>
+          <li><b>It can end in a no from us.</b> Roughly one in <span data-placeholder="true">four</span> does.</li>
+        </ul>
+      </div>
+      <div class="doc"><span>Image area &mdash; the proposal, open at the page<br>that names the decision</span></div>
+    </div>
+
+    <p class="toc-head">What is in it, in order &mdash; <span data-placeholder="true">nine</span> pages</p>
+    <ul class="toc">
+      <li>
+        <span class="n">01</span>
+        <h4>The decision</h4>
+        <p class="says">In your words. Without it there is no proposal.</p>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <h4>The stages</h4>
+        <p class="says">And where you may stop.</p>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <h4>The people</h4>
+        <p class="says">With the stages they are not on.</p>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <h4>The fee model</h4>
+        <p class="says">And what it pays us to do.</p>
+      </li>
+      <li>
+        <span class="n">05</span>
+        <h4>What we would not do</h4>
+        <p class="says">So the scope argument happens now.</p>
+      </li>
+      <li>
+        <span class="n">06</span>
+        <h4>What would make us wrong</h4>
+        <p class="says">The assumption, so you can test it.</p>
+      </li>
+    </ul>
+
+    <div class="ask">
+      <p>You have the terms. The meeting is the small part.</p>
+      <a class="go" href="#cons-s19-004-title">Ask for the hour</a>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

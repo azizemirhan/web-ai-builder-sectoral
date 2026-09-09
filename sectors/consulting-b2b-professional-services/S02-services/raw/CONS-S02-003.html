@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S02-003
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S02 — Services
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
+  Layout model   : A module system of mixed-size cards — one wide reserved media card, six numbered
+                   situation cards with one held in the accent as the live module, and a CTA card
+                   closing the grid
+  Density        : Low-medium (108 visible words)
+  Section shape  : **C — Type and colour. No reserved media at all.**
+  Media mode     : **NONE.** Reasoned below.
+
+  V3 note, why the media module was removed :
+                   Reviewed with the assembled page rather than the section alone: at variant 003
+                   every section carried an image area, and twenty-four of the catalog's twenty-five
+                   studies did. A capability-adjacent module grid does not need a photograph — asked
+                   what the picture would be of, the only honest answer was "something related", which
+                   is a grey rectangle standing in for an image rather than an image. The live module
+                   now spans the two cells it occupied, so the size hierarchy that made this a system
+                   rather than a grid is intact.
+  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
+
+  V2 rework note : The first version divided the six into two ruled zones. Reviewed as too close to a
+                   document: labelled regions, hairlines, text in columns. Rebuilt as a card system
+                   with real size hierarchy and one saturated module, which is the modern structural
+                   idiom and what the supplied references use.
+
+  Why there is still no matrix :
+                   The obvious modular answer for consulting services is a 2x2, ruled out in
+                   ../../CONSULTING-THEME-CONTRACT.md as the sector's signature ornament. The
+                   structure here is a grid of modules, not a diagram of axes — the position of a card
+                   asserts nothing about it, which is exactly the difference. Nothing is being
+                   classified; things are being laid out.
+
+  Governing idea : The situation is the card title; the discipline is a small label. Same six
+                   situations across the batch, so the five studies differ by composition.
+
+  Content note   : Discipline names are generic vocabulary, not claims. The numbering is a reading
+                   order, not a sequence or a maturity ladder. No named client, logo, ranking, award,
+                   certification or invented metric. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S02-003">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S02">
+<meta name="section-name" content="Services">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Field">
+<meta name="layout-model" content="Mixed-size card module system with one wide media card and one saturated live module">
+<meta name="section-shape" content="C — type and colour">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="none-deliberate-page-rhythm-see-comment">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CONS-S02-003 — Services, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eff1f4; }
+
+/* Scoped study styles — namespaced to .cons-s02-003 */
+.cons-s02-003 {
+  --paper: #eff1f4;
+  --ink: #0e1216;
+  --ink-soft: #525c66;
+  --line: #d7dde2;
+  --card: #ffffff;
+  --slot: #e2e7eb;
+  --slot-edge: #b6c0c8;
+  --slot-ink: #5c666f;
+  --accent: #12856a;
+  --accent-ink: #ffffff;
+  --focus: #0e1216;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s02-003 *,
+.cons-s02-003 *::before,
+.cons-s02-003 *::after { box-sizing: inherit; }
+.cons-s02-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+
+.cons-s02-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s02-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: clamp(22px, 3.6vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(26px, 3.4vw, 46px);
+}
+.cons-s02-003 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 20px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.cons-s02-003 h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3.7vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 800;
+  max-width: 17ch;
+}
+.cons-s02-003 .lead { margin: 0; color: var(--ink-soft); }
+
+/* --- The module grid --- */
+.cons-s02-003 .modules {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.6vw, 22px);
+}
+.cons-s02-003 .mod {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: clamp(178px, 17vw, 232px);
+  padding: clamp(20px, 2.3vw, 28px);
+  background: var(--card);
+  border-radius: 20px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.cons-s02-003 a.mod:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(14, 18, 22, 0.10);
+}
+.cons-s02-003 .modtop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(14px, 1.8vw, 22px);
+}
+.cons-s02-003 .n {
+  font-size: clamp(1.5rem, 2vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.cons-s02-003 .plus {
+  display: grid;
+  place-items: center;
+  width: 32px; height: 32px;
+  border-radius: 999px;
+  background: var(--slot);
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.cons-s02-003 .sit {
+  margin: 0;
+  font-weight: 750;
+  font-size: clamp(1.08rem, 1.32vw, 1.24rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  flex: 1 1 auto;
+}
+.cons-s02-003 .disc {
+  margin-top: 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* The live module */
+.cons-s02-003 .mod--live { grid-column: span 2; background: var(--accent); color: var(--accent-ink); }
+.cons-s02-003 .mod--live .plus { background: rgba(255, 255, 255, 0.18); color: var(--accent-ink); }
+.cons-s02-003 .mod--live .disc { color: rgba(255, 255, 255, 0.82); }
+
+/* The media module — two wide */
+.cons-s02-003 .mod--media {
+  grid-column: span 2;
+  border: 2px dashed var(--slot-edge);
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.cons-s02-003 .mod--media span {
+  color: var(--slot-ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* The CTA module */
+.cons-s02-003 .mod--cta { background: var(--ink); color: var(--paper); justify-content: space-between; }
+.cons-s02-003 .mod--cta h3 {
+  margin: 0;
+  font-size: clamp(1.16rem, 1.5vw, 1.4rem);
+  line-height: 1.16;
+  letter-spacing: -0.026em;
+  font-weight: 800;
+}
+.cons-s02-003 .go {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.99rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+.cons-s02-003 .go:hover { background: var(--paper); color: var(--ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .cons-s02-003 .modules { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cons-s02-003 .mod--media { grid-column: span 2; min-height: clamp(180px, 26vw, 240px); }
+}
+@media (max-width: 860px) {
+  .cons-s02-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s02-003 h2 { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s02-003 .modules { grid-template-columns: minmax(0, 1fr); }
+  .cons-s02-003 .mod--media { grid-column: span 1; }
+  .cons-s02-003 .go { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s02-003 * { transition: none !important; }
+  .cons-s02-003 a.mod:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s02-003" data-study-id="CONS-S02-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="cons-s02-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Services</p>
+        <h2 id="cons-s02-003-title">Six situations. Most arrive with more than one.</h2>
+      </div>
+      <p class="lead">Rarely the two you would guess, which is what the first conversation is for.</p>
+    </div>
+
+    <ul class="modules">
+
+      <li><a class="mod" href="#cons-s02-003-title">
+        <span class="modtop"><span class="n">01</span><span class="plus" aria-hidden="true">+</span></span>
+        <p class="sit">The market moved and the plan did not.</p>
+        <span class="disc">Strategy and positioning</span>
+      </a></li>
+
+      <li><a class="mod mod--live" href="#cons-s02-003-title">
+        <span class="modtop"><span class="n">02</span><span class="plus" aria-hidden="true">+</span></span>
+        <p class="sit">The strategy is agreed and nothing has changed.</p>
+        <span class="disc">Operating model</span>
+      </a></li>
+
+      <li><a class="mod" href="#cons-s02-003-title">
+        <span class="modtop"><span class="n">03</span><span class="plus" aria-hidden="true">+</span></span>
+        <p class="sit">It costs more to run than it should.</p>
+        <span class="disc">Performance and cost</span>
+      </a></li>
+
+      <li><a class="mod" href="#cons-s02-003-title">
+        <span class="modtop"><span class="n">04</span><span class="plus" aria-hidden="true">+</span></span>
+        <p class="sit">Growth stalled and the reasons contradict each other.</p>
+        <span class="disc">Growth and commercial</span>
+      </a></li>
+
+      <li><a class="mod" href="#cons-s02-003-title">
+        <span class="modtop"><span class="n">05</span><span class="plus" aria-hidden="true">+</span></span>
+        <p class="sit">The programme is late and reporting says it is fine.</p>
+        <span class="disc">Transformation delivery</span>
+      </a></li>
+
+      <li><a class="mod" href="#cons-s02-003-title">
+        <span class="modtop"><span class="n">06</span><span class="plus" aria-hidden="true">+</span></span>
+        <p class="sit">A decision is coming and the evidence is thin.</p>
+        <span class="disc">Diligence and decision support</span>
+      </a></li>
+
+      <li class="mod mod--cta">
+        <h3>On the line between two of them?</h3>
+        <a class="go" href="#cons-s02-003-title">Start a conversation</a>
+      </li>
+
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

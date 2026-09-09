@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S07-005
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S07 — Case Studies
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Midnight — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **A — Item grid**, a reserved artefact image in every case.
+  Layout model   : Near-black field. One case given the full width as a banner with the number at
+                   display size, then three compact cases across a three-column row
+  Density        : Structured (225 visible words, structured band 170–230)
+  Media mode     : Four reserved image areas at 4:3 — the firm's own artefacts, never the client.
+  Interaction    : None (static; no JavaScript). Row hover and focus are CSS only.
+
+  V2 note, why the row layout changed :
+                   Drafted as four full-width rows. review/check-composition-collisions.js reported a
+                   100% structural match with CONS-S06-005, which is the section directly above it
+                   and is also a column of full-width rows. Two adjacent sections sharing a skeleton
+                   is the worst case of that defect, because the reader meets them back to back.
+                   Rebuilt as one banner case and three compact ones.
+
+  Why the numeral leads :
+                   In every other study of this batch the case number is a small pill. Here it is the
+                   first and largest thing in the row, at the size a title would normally be, because
+                   **the number is all the identification a confidential case is allowed to have.**
+                   It is the only name these cases get, so it is set like one. That is the
+                   distinction this direction is claiming, and it comes from the constraint rather
+                   than from an effect applied over it.
+
+  Governing idea : **Anonymity removes the client, not the problem.** The situation is stated in full
+                   because it is the reader's situation rather than the client's identity, and every
+                   row ends on a *withheld* line naming what cannot be said and why.
+
+  Not a document : No censor bar, no stamp, no classified-memo metaphor —
+                   ../../CONSULTING-THEME-CONTRACT.md rules the document idiom out. The withheld line
+                   is a violet field with a plain sentence in it.
+
+  Placeholder data : The outcome line in each case is a PLACEHOLDER DEMO VALUE marked
+                   data-placeholder="true".
+
+  Content note   : Situations are generic vocabulary, shared with CONS-S02. No client name, sector
+                   name, logo, testimonial attribution, value figure, percentage, ROI multiple,
+                   ranking, award or certification. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S07-005">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S07">
+<meta name="section-name" content="Case Studies">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Midnight">
+<meta name="section-shape" content="A — item grid">
+<meta name="layout-model" content="Near-black field, one banner case and three compact cases on a three-column grid">
+<meta name="density" content="structured">
+<meta name="media-mode" content="four-reserved-artefact-images">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="case outcomes — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S07-005 — Case Studies, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0b0d12; }
+
+/* Scoped study styles — namespaced to .cons-s07-005 */
+.cons-s07-005 {
+  --paper: #0b0d12;
+  --ink: #f2f3f5;
+  --ink-soft: #989ca6;
+  --line: #272b33;
+  --slot-edge: #474d58;
+  --slot-ink: #b6bbc3;
+  --accent: #7c6cf7;
+  --accent-ink: #0b0d12;
+  --focus: #7c6cf7;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s07-005 *,
+.cons-s07-005 *::before,
+.cons-s07-005 *::after { box-sizing: inherit; }
+.cons-s07-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 6px; border-radius: 22px; }
+
+.cons-s07-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(48px, 5.8vw, 108px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s07-005 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: end;
+  margin-bottom: clamp(32px, 4.2vw, 60px);
+}
+.cons-s07-005 .eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 26px);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cons-s07-005 h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.6vw, 3.7rem);
+  line-height: 1.0;
+  letter-spacing: -0.042em;
+  font-weight: 800;
+  max-width: 17ch;
+}
+.cons-s07-005 h2 em { font-style: normal; color: var(--accent); }
+.cons-s07-005 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.24vw, 1.18rem); }
+
+/* --- Case rows: the numeral is the only name they get --- */
+/* One case given the full width as a banner, three compact beneath it. Deliberately not a column
+   of full-width rows: CONS-S06-005 directly above is exactly that, and the two sections stack. */
+.cons-s07-005 .cases {
+  margin: 0; padding: 0; list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 26px);
+}
+.cons-s07-005 .cases > li:first-child { grid-column: 1 / -1; }
+/* the compact three stack their parts instead of running across */
+.cons-s07-005 .cases > li:not(:first-child) .case {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(12px, 1.6vw, 18px);
+  background: #11141a;
+}
+.cons-s07-005 .cases > li:not(:first-child) .num { font-size: clamp(2.2rem, 3vw, 2.9rem); }
+.cons-s07-005 .case {
+  display: grid;
+  grid-template-columns: auto minmax(0, 0.9fr) minmax(0, 1.35fr);
+  gap: clamp(20px, 2.8vw, 44px);
+  align-items: center;
+  padding: clamp(18px, 2.2vw, 30px);
+  border-radius: 24px;
+  color: inherit;
+  text-decoration: none;
+  transition: background 170ms ease;
+}
+.cons-s07-005 .case:hover { background: #13161d; }
+
+.cons-s07-005 .num {
+  font-size: clamp(3.2rem, 6vw, 5.6rem);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  line-height: 0.86;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.cons-s07-005 .shot {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 18px;
+  background: linear-gradient(158deg, #1e222b 0%, #14171e 62%, #101319 100%);
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.cons-s07-005 .case:hover .shot { border-color: var(--accent); }
+.cons-s07-005 .shot span {
+  color: var(--slot-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.7;
+}
+.cons-s07-005 .case h3 {
+  margin: 0;
+  font-size: clamp(1.28rem, 1.95vw, 1.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.032em;
+  font-weight: 800;
+}
+.cons-s07-005 .fact { margin: 11px 0 0; color: var(--ink-soft); font-size: 0.97rem; }
+.cons-s07-005 .fact b {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.cons-s07-005 .withheld {
+  display: inline-block;
+  margin: 14px 0 0;
+  padding: 10px 17px;
+  border-radius: 999px;
+  background: rgba(124, 108, 247, 0.15);
+  color: var(--accent);
+  font-size: 0.93rem;
+  font-weight: 750;
+}
+.cons-s07-005 .withheld b {
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-right: 9px;
+}
+.cons-s07-005 .case:hover .withheld { background: var(--accent); color: var(--accent-ink); }
+
+/* --- Foot --- */
+.cons-s07-005 .foot {
+  margin: clamp(34px, 4.2vw, 60px) 0 0;
+  padding-top: clamp(26px, 3vw, 38px);
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(18px, 3vw, 40px);
+}
+.cons-s07-005 .foot p {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(1.14rem, 1.55vw, 1.42rem);
+  letter-spacing: -0.026em;
+  max-width: 36ch;
+}
+.cons-s07-005 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.04rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.cons-s07-005 .go:hover { background: var(--ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .cons-s07-005 .case { grid-template-columns: auto minmax(0, 1fr); }
+  .cons-s07-005 .case .shot { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+}
+@media (max-width: 860px) {
+  .cons-s07-005 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s07-005 h2 { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s07-005 .case { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .cons-s07-005 .case .shot { aspect-ratio: 4 / 3; }
+  .cons-s07-005 .go { width: 100%; justify-content: center; }
+  .cons-s07-005 .foot p { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s07-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s07-005" data-study-id="CONS-S07-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="cons-s07-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Selected work</p>
+        <h2 id="cons-s07-005-title">A number is the only <em>name</em> these get.</h2>
+      </div>
+      <p class="lead">Anonymity removes the client, not the problem. Each row ends on what we cannot say.</p>
+    </div>
+
+    <ul class="cases">
+
+      <li><a class="case" href="#cons-s07-005-title">
+        <span class="num">01</span>
+        <div class="shot"><span>Image area &mdash; our own artefact,<br>never the client&rsquo;s premises</span></div>
+        <div>
+          <h3>The strategy was agreed and nothing had changed.</h3>
+          <p class="fact"><b>What we did</b>Redrew decision rights across the top three layers.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>The next capital decision took one board meeting, not four.</p>
+          <span class="withheld"><b>Withheld</b>The sector. Naming it identifies them.</span>
+        </div>
+      </a></li>
+
+      <li><a class="case" href="#cons-s07-005-title">
+        <span class="num">02</span>
+        <div class="shot"><span>Image area &mdash; the cost model</span></div>
+        <div>
+          <h3>It cost more to run than it should.</h3>
+          <p class="fact"><b>What we did</b>Rebuilt the model from the contracts up, not the budgets down.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>Two assumptions everyone relied on were wrong.</p>
+          <span class="withheld"><b>Withheld</b>The site count. It is public.</span>
+        </div>
+      </a></li>
+
+      <li><a class="case" href="#cons-s07-005-title">
+        <span class="num">03</span>
+        <div class="shot"><span>Image area &mdash; the re-baselined plan</span></div>
+        <div>
+          <h3>The programme was late and reporting said it was fine.</h3>
+          <p class="fact"><b>What we did</b>Re-baselined against what had actually been delivered.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>The board learned the real date eleven months earlier.</p>
+          <span class="withheld"><b>Withheld</b>Every date. It is still running.</span>
+        </div>
+      </a></li>
+
+      <li><a class="case" href="#cons-s07-005-title">
+        <span class="num">04</span>
+        <div class="shot"><span>Image area &mdash; the wall of interview notes</span></div>
+        <div>
+          <h3>A decision was coming and the evidence was thin.</h3>
+          <p class="fact"><b>What we did</b>Interviews across the market, with assumptions exposed.</p>
+          <p class="fact" data-placeholder="true"><b>What changed</b>They chose the option nobody had arrived wanting.</p>
+          <span class="withheld"><b>Withheld</b>The decision. Not yet announced.</span>
+        </div>
+      </a></li>
+
+    </ul>
+
+    <div class="foot">
+      <p>Ask for a reference and you will get one. Ask for a logo and you will not.</p>
+      <a class="go" href="#cons-s07-005-title">Start a conversation</a>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

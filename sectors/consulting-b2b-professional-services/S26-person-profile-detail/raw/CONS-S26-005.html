@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S26-005
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S26 — Consultant / Partner Profile
+  Direction      : Sector-native / Distinctive
+  Theme          : 005 Midnight — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **C — Type and colour. No reserved media at all.**
+  Layout model   : **No biography.** The page is a revision record: what this person has published and
+                   whether they still hold it, with the commitment and load beneath
+  Density        : Detail page (222 visible words, detail band 150–230)
+  Media mode     : **NONE.** A revision record is a record of thinking; a face adds nothing to it.
+  Interaction    : None (static; no JavaScript). Links only, no form.
+
+  Governing idea : **You are not choosing a person. You are choosing how much of them you get.**
+
+  The device, which is this study alone :
+                   **There is no biography on this page.**
+
+                   A consultant profile is conventionally a career: firms, years, degrees, sectors
+                   served. The README forbids inventing any of it, and this study takes that further
+                   and argues it should not be there even when true — **a career is a list of rooms
+                   somebody was in, and none of it tells you how they think.**
+                   What replaces it is a **revision record**: two published positions, and whether
+                   this person still holds them. One still stands. One they changed their mind about,
+                   in public, with the piece left up.
+                   `S13` established the status field for the firm; `S25` gave the retracted piece its
+                   own page. This makes it personal, which is the only place it becomes a hiring
+                   criterion: **the useful thing to know about somebody who sells judgement is what
+                   they have changed their mind about, and when.**
+
+  Why this is the sector-native reading :
+                   `S11` asks the client *what would change your mind?* A firm that asks that and
+                   publishes no answer of its own is asking a question it has not passed. This page is
+                   an individual passing it.
+
+  What is deliberately not here :
+                   No qualifications, registrations, memberships, awards, credentials or social
+                   handles — none invented and none left as an empty field. The page says they are not
+                   listed and why.
+
+  Names :
+                   Per `S06` and the theme contract, the firm`s own people may carry placeholder names
+                   in the form initial-and-surname. Neither person is given a pronoun the study has no
+                   basis for.
+
+  Page context region :
+                   The strip at the top carries the trail. **`S21` and `S22` supply that region in an
+                   assembly and it would not be duplicated here** — deliberately plain in all five.
+
+  Content note   : No team index — that is `S06`. No fabricated credential, no invented handle, no
+                   testimonial or rating attributed to a person. No form. No global header.
+-->
+
+<meta name="study-id" content="CONS-S26-005">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S26">
+<meta name="section-name" content="Consultant / Partner Profile">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="direction" content="Sector-native / Distinctive">
+<meta name="theme" content="005 Midnight">
+<meta name="section-shape" content="C — type and colour">
+<meta name="layout-model" content="No biography — a revision record of published positions and whether they still hold">
+<meta name="density" content="detail-page">
+<meta name="media-mode" content="none-deliberate-a-face-adds-nothing-to-a-revision-record">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="team names, dates, engagement counts, days a week — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S26-005 — Consultant / Partner Profile, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0b0d12; }
+
+/* Scoped study styles — namespaced to .cons-s26-005 */
+.cons-s26-005 {
+  --paper: #0b0d12;
+  --ink: #f2f3f5;
+  --ink-soft: #989ca6;
+  --line: #272b33;
+  --accent: #7c6cf7;
+  --focus: #7c6cf7;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s26-005 *,
+.cons-s26-005 *::before,
+.cons-s26-005 *::after { box-sizing: inherit; }
+.cons-s26-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 26px; }
+
+.cons-s26-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(28px, 3.4vw, 56px) clamp(22px, 3.6vw, 58px) clamp(44px, 5.4vw, 96px);
+}
+
+/* --- Page context --- */
+.cons-s26-005 .ctx ol {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-size: 0.82rem; color: var(--ink-soft);
+}
+.cons-s26-005 .ctx li + li::before { content: "\203A"; margin-right: 8px; opacity: 0.55; }
+.cons-s26-005 .ctx a { color: var(--ink-soft); font-weight: 700; text-underline-offset: 3px; }
+
+.cons-s26-005 .role {
+  display: inline-block;
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  padding: 6px 14px; border-radius: 999px;
+  background: rgba(124, 108, 247, 0.18); color: var(--accent);
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.cons-s26-005 h1 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.95rem, 3.4vw, 2.8rem);
+  line-height: 1.03; letter-spacing: -0.038em; font-weight: 800;
+}
+.cons-s26-005 .focus { margin: 0 0 clamp(16px, 2vw, 22px); max-width: 48ch; font-size: clamp(1.06rem, 1.35vw, 1.24rem); font-weight: 600; }
+.cons-s26-005 .nobio {
+  margin: 0 0 clamp(34px, 4.2vw, 58px);
+  padding-bottom: clamp(20px, 2.6vw, 30px);
+  border-bottom: 1px solid var(--line);
+  max-width: 60ch; font-size: 0.99rem; color: var(--ink-soft);
+}
+.cons-s26-005 .nobio em { font-style: normal; color: var(--accent); font-weight: 700; }
+
+.cons-s26-005 h2 {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent);
+}
+
+/* --- The revision record --- */
+.cons-s26-005 .rev { margin: 0 0 clamp(34px, 4.2vw, 58px); padding: 0; list-style: none; display: grid; gap: clamp(26px, 3.2vw, 44px); }
+.cons-s26-005 .rev .verdict {
+  display: inline-block; margin: 0 0 10px;
+  padding: 4px 12px; border-radius: 999px;
+  font-size: 0.7rem; font-weight: 800; letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.08); color: var(--ink-soft);
+}
+.cons-s26-005 .rev li:last-child .verdict { background: var(--accent); color: #0b0d12; }
+.cons-s26-005 .rev h3 {
+  margin: 0;
+  font-size: clamp(1.42rem, 2.4vw, 2.05rem);
+  line-height: 1.1; letter-spacing: -0.03em; font-weight: 800;
+  max-width: 26ch;
+}
+.cons-s26-005 .rev li:last-child h3 { color: var(--accent); }
+.cons-s26-005 .rev p { margin: 9px 0 0; color: var(--ink-soft); font-size: 1rem; max-width: 52ch; }
+.cons-s26-005 .rev a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+/* --- Commitment and load, beneath --- */
+.cons-s26-005 .commit { margin: 0 0 clamp(18px, 2.2vw, 26px); max-width: 62ch; font-size: 1.01rem; }
+.cons-s26-005 .commit b { font-weight: 800; }
+.cons-s26-005 .load { margin: 0 0 clamp(28px, 3.4vw, 46px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 46px); }
+.cons-s26-005 .load b { display: block; font-size: 0.95rem; font-weight: 800; }
+.cons-s26-005 .load p { margin: 3px 0 0; font-size: 0.9rem; color: var(--ink-soft); max-width: 30ch; }
+
+.cons-s26-005 .foot { padding-top: clamp(20px, 2.6vw, 30px); border-top: 1px solid var(--line); }
+.cons-s26-005 .foot p { margin: 0 0 11px; font-size: 0.97rem; color: var(--ink-soft); max-width: 70ch; }
+.cons-s26-005 .foot b { color: var(--ink); font-weight: 800; }
+.cons-s26-005 .foot a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+.cons-s26-005 .ask {
+  margin: clamp(16px, 2vw, 24px) 0 0 !important;
+  color: var(--ink) !important;
+  font-size: clamp(1.1rem, 1.5vw, 1.34rem);
+  line-height: 1.18; letter-spacing: -0.024em; font-weight: 800;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s26-005 .focus, .cons-s26-005 .nobio, .cons-s26-005 .rev h3, .cons-s26-005 .rev p,
+  .cons-s26-005 .commit, .cons-s26-005 .load p, .cons-s26-005 .foot p { max-width: none; }
+  .cons-s26-005 .load { flex-direction: column; gap: clamp(14px, 2vw, 20px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s26-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s26-005" data-study-id="CONS-S26-005" data-direction="Sector-native / Distinctive">
+  <article class="shell">
+
+    <div class="ctx" data-region="page-context">
+      <ol>
+        <li><a href="#">People</a></li>
+        <li><a href="#">Operating model</a></li>
+        <li>This person</li>
+      </ol>
+    </div>
+
+    <p class="role">Partner, operating model</p>
+    <h1 data-placeholder="true">A. Whitfield</h1>
+    <p class="focus">Operating model redesign, and the argument about who decides what.</p>
+    <p class="nobio">There is no career history on this page. <em>A career is a list of rooms somebody was in</em>, and none of it tells you how they think. This is what they have published, and whether they still hold it.</p>
+
+    <h2>What they have changed their mind about</h2>
+    <ol class="rev">
+      <li>
+        <span class="verdict">Still holds</span>
+        <h3>The reorganisation will not move the decision rights</h3>
+        <p>Authority follows budget, not reporting lines. Written <span data-placeholder="true">2020</span>, reviewed twice since.</p>
+      </li>
+      <li>
+        <span class="verdict">Changed their mind</span>
+        <h3>A central function should own the standard, not the delivery</h3>
+        <p>Two engagements since went badly for exactly this reason. The piece is still up, with a note on it. <a href="#" data-placeholder="true">Read it</a>.</p>
+      </li>
+    </ol>
+
+    <p class="commit"><b>On your engagement:</b> all five stages, named in the contract. On the first ninety days they are alongside <span data-placeholder="true">R. Adeyemi</span>, not instead of them.</p>
+
+    <ul class="load">
+      <li><b><span data-placeholder="true">Two</span> at a time</b><p>Never three, which is why the answer is sometimes no.</p></li>
+      <li><b><span data-placeholder="true">Two</span> running now</b><p>One of them in its last month.</p></li>
+      <li><b><span data-placeholder="true">Three</span> days a week</b><p>The other two are for the pieces and the reference calls.</p></li>
+    </ul>
+
+    <div class="foot">
+      <p><b>No qualifications, memberships or awards are listed here.</b> Ask, and we will send what is verifiable.</p>
+      <p>Attached to <a href="#" data-placeholder="true">Operating model redesign</a> and <a href="#" data-placeholder="true">one engagement</a>.</p>
+      <p class="ask">Ask for them by name. The hour is with them, not with a salesperson.</p>
+    </div>
+
+  </article>
+</div>
+
+</body>
+</html>

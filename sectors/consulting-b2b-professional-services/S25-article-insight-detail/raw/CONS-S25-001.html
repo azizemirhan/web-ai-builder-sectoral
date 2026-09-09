@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S25-001
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S25 — Insight / Research Detail
+  Direction      : Universal / Safe
+  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One contained reserved area.**
+  Layout model   : Title, **the note before the standfirst**, publication context, the body in a
+                   controlled measure, related reading, and the author at the foot
+  Density        : Detail page (166 visible words, detail band 150–230)
+  Media mode     : One reserved area — **the author, at the foot beside the attribution.** The page
+                   is complete without it, and there is no lead image. See below.
+  Interaction    : None (static; no JavaScript). Links only, no form.
+
+  Governing idea : **An article carries no expiry date, so every reader arrives assuming it is
+                   current.**
+                   A search result from five years ago looks exactly like one from last week. The
+                   firm knows which of its pieces it no longer believes; the reader does not, and the
+                   page is the only place that difference can be resolved.
+                   So `S13`s status field becomes the top of the page: **the note comes before the
+                   standfirst**, not after the body where a correction is conventionally buried. The
+                   piece itself is unchanged underneath it.
+                   `S13`s policy holds: **nothing is taken down.** A piece the firm no longer believes
+                   keeps its address and gets this note.
+
+  Why there is no lead image :
+                   `S13` named this the most content-farm-shaped section on any professional-services
+                   site, and named the three photographs it reaches for — abstract nodes, a city at
+                   dusk, a laptop and a coffee. All three are in the sector anti-patterns. An article
+                   about who owns a standard has no honest photograph, so the only reserved area here
+                   is **the person who wrote it**, and it sits at the foot with the attribution rather
+                   than at the top as a lead.
+
+  No reading time :
+                   `S13` ruled out the reading-time badge and the view count as retention metrics
+                   dressed as courtesy. Neither appears. The publication context carries what a reader
+                   checking currency actually needs: when it was published, when it was last reviewed,
+                   and who wrote it.
+
+  Page context region :
+                   The strip at the top carries the trail. **`S21` and `S22` supply that region in an
+                   assembly and it would not be duplicated here** — deliberately plain in all five.
+
+  Placeholder data : The publication and review dates, the author name and the two related titles are
+                   PLACEHOLDER DEMO VALUES marked data-placeholder="true". The author is initial and
+                   surname only, per the sector rule; the portrait stays reserved.
+
+  Content note   : No article index — that is `S13`. No reading time, no view count, no share counter,
+                   no newsletter box, no gate, no form. No fabricated citation or publication. No
+                   client name, logo, testimonial, percentage or currency figure.
+-->
+
+<meta name="study-id" content="CONS-S25-001">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S25">
+<meta name="section-name" content="Insight / Research Detail">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="001 Paper">
+<meta name="section-shape" content="B — anchored, one contained reserved area">
+<meta name="layout-model" content="Title, the note before the standfirst, publication context, body in a measure, related reading, author at the foot">
+<meta name="density" content="detail-page">
+<meta name="media-mode" content="one-reserved-area-the-author-at-the-foot-no-lead-image">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="publication and review dates, author name, related titles — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S25-001 — Insight / Research Detail, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f6f3; }
+
+/* Scoped study styles — namespaced to .cons-s25-001 */
+.cons-s25-001 {
+  --paper: #f7f6f3;
+  --ink: #14161a;
+  --ink-soft: #585d66;
+  --line: #dedcd6;
+  --card: #ffffff;
+  --accent: #2f4fe0;
+  --accent-ink: #ffffff;
+  --slot: #eceae5;
+  --slot-edge: #c7c4bc;
+  --slot-ink: #5f6169;
+  --focus: #14161a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s25-001 *,
+.cons-s25-001 *::before,
+.cons-s25-001 *::after { box-sizing: inherit; }
+.cons-s25-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+
+.cons-s25-001 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(28px, 3.4vw, 56px) clamp(22px, 3.6vw, 58px) clamp(40px, 5vw, 88px);
+}
+
+/* --- Page context --- */
+.cons-s25-001 .ctx ol {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-size: 0.84rem; color: var(--ink-soft);
+}
+.cons-s25-001 .ctx li + li::before { content: "\203A"; margin-right: 8px; opacity: 0.5; }
+.cons-s25-001 .ctx a { color: var(--ink-soft); font-weight: 700; text-underline-offset: 3px; }
+
+.cons-s25-001 h1 {
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+  font-size: clamp(1.95rem, 3.5vw, 2.95rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 22ch;
+}
+
+/* --- The note. Before the standfirst, not after the body --- */
+.cons-s25-001 .note {
+  margin: 0 0 clamp(20px, 2.6vw, 30px);
+  padding: clamp(16px, 2vw, 24px) clamp(18px, 2.2vw, 26px);
+  border-radius: 18px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  max-width: 68ch;
+}
+.cons-s25-001 .note b { display: block; font-size: clamp(1.06rem, 1.4vw, 1.26rem); letter-spacing: -0.022em; font-weight: 800; margin-bottom: 6px; }
+.cons-s25-001 .note span { font-size: 0.99rem; opacity: 0.95; }
+
+.cons-s25-001 .stand {
+  margin: 0 0 clamp(20px, 2.6vw, 30px);
+  max-width: 46ch;
+  font-size: clamp(1.16rem, 1.7vw, 1.44rem);
+  line-height: 1.3; letter-spacing: -0.02em; font-weight: 600;
+}
+
+/* --- Publication context. No reading time, no view count --- */
+.cons-s25-001 .pub {
+  margin: 0 0 clamp(28px, 3.4vw, 46px);
+  padding: 0 0 clamp(20px, 2.6vw, 30px);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+  display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 46px);
+}
+.cons-s25-001 .pub b { color: var(--accent); font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.cons-s25-001 .pub span { display: block; margin-top: 4px; font-size: 0.97rem; font-weight: 700; }
+
+/* --- The body, in a controlled measure --- */
+.cons-s25-001 .body { max-width: 62ch; }
+.cons-s25-001 .body h2 {
+  margin: 0 0 clamp(8px, 1vw, 11px);
+  font-size: clamp(1.14rem, 1.5vw, 1.34rem);
+  line-height: 1.18; letter-spacing: -0.024em; font-weight: 800;
+}
+.cons-s25-001 .body p { margin: 0 0 clamp(22px, 2.8vw, 34px); font-size: clamp(1.04rem, 1.2vw, 1.14rem); }
+.cons-s25-001 .body p:last-child { margin-bottom: 0; }
+
+/* --- Related, the policy, and the author --- */
+.cons-s25-001 .foot {
+  margin: clamp(30px, 3.8vw, 54px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 32px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.45fr);
+  gap: clamp(24px, 3.4vw, 56px);
+  align-items: center;
+}
+.cons-s25-001 .foot h2 { margin: 0 0 10px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft); }
+.cons-s25-001 .rel { margin: 0 0 clamp(16px, 2vw, 24px); padding: 0; list-style: none; display: grid; gap: 8px; }
+.cons-s25-001 .rel a { color: var(--accent); font-weight: 700; font-size: 1rem; text-underline-offset: 3px; }
+.cons-s25-001 .policy { margin: 0; font-size: 0.95rem; color: var(--ink-soft); max-width: 60ch; }
+.cons-s25-001 .policy b { color: var(--ink); font-weight: 800; }
+
+.cons-s25-001 .who {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 18px;
+  background: var(--slot);
+  aspect-ratio: 4 / 5;
+  display: grid; place-items: center;
+  padding: 16px;
+  margin-bottom: 10px;
+}
+.cons-s25-001 .who span { color: var(--slot-ink); font-size: 0.74rem; font-weight: 700; text-align: center; line-height: 1.45; }
+.cons-s25-001 .by { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+.cons-s25-001 .by b { color: var(--ink); font-weight: 800; }
+
+/* --- Responsive ladder. A stable measure at every width --- */
+@media (max-width: 860px) {
+  .cons-s25-001 h1, .cons-s25-001 .stand, .cons-s25-001 .note, .cons-s25-001 .body, .cons-s25-001 .policy { max-width: none; }
+  .cons-s25-001 .foot { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s25-001 .who { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s25-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s25-001" data-study-id="CONS-S25-001" data-direction="Universal / Safe">
+  <article class="shell">
+
+    <div class="ctx" data-region="page-context">
+      <ol>
+        <li><a href="#">Insights</a></li>
+        <li><a href="#">Operating model</a></li>
+        <li>This piece</li>
+      </ol>
+    </div>
+
+    <h1>A central function should own the standard, not the delivery</h1>
+
+    <p class="note">
+      <b>We now think this was wrong.</b>
+      <span>Two engagements since went badly for exactly this reason. Nothing below has been edited.</span>
+    </p>
+
+    <p class="stand">Central delivery becomes a queue, and the queue becomes the reason nobody uses the standard.</p>
+
+    <ul class="pub">
+      <li><b>Published</b><span data-placeholder="true">March 2019</span></li>
+      <li><b>Reviewed</b><span data-placeholder="true">June 2024</span></li>
+      <li><b>Written by</b><span data-placeholder="true">A. Whitfield</span></li>
+      <li><b>Discipline</b><span>Operating model</span></li>
+    </ul>
+
+    <div class="body">
+      <h2>The argument</h2>
+      <p>A standard nobody owns decays. Put the standard and the delivery in one place and the standard survives.</p>
+      <h2>Where it broke</h2>
+      <p>The central team became the only route. Waiting for them cost more than the inconsistency ever did.</p>
+      <h2>What we would write now</h2>
+      <p>Own the standard. Publish it. Let delivery sit where the work is, and audit it quarterly.</p>
+    </div>
+
+    <div class="foot">
+      <div>
+        <h2>Related</h2>
+        <ul class="rel">
+          <li><a href="#" data-placeholder="true">The reorganisation will not move the decision rights</a></li>
+          <li><a href="#" data-placeholder="true">Cost programmes rebuild the cost they removed</a></li>
+        </ul>
+        <p class="policy"><b>Nothing is taken down.</b> A piece we no longer believe keeps its address and gets this note.</p>
+      </div>
+      <div>
+        <div class="who"><span>Image area &mdash; the author, mid-sentence</span></div>
+        <p class="by">Written by <b data-placeholder="true">A. Whitfield</b></p>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+</body>
+</html>

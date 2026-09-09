@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S22-003
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S22 — Breadcrumb / Context Navigation
+  Direction      : Dense / Information-heavy
+  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **C — Type and colour. No reserved media at all.** Mandated by the section README:
+                   *this role is navigation, not presentation.*
+  Layout model   : Four joined level modules and a fifth panel of sibling pages on the same seam —
+                   up and across in one object rather than two rows
+  Density        : Low-medium (52 visible words, breadcrumb band 40–90)
+  Media mode     : **NONE**, and not optional — the role forbids it.
+  Interaction    : Links only. No JavaScript.
+
+  Governing idea : **Nobody climbs a breadcrumb, because no level tells you what is up there.**
+                   So every level carries the count of what is up there.
+
+  What "dense" means in this role :
+                   Not more levels and not more words. It is **up and across in one object.** Every
+                   other treatment of this role puts the trail on one row and the sibling links on
+                   another, which asks the reader to understand two components. Here the four levels
+                   are joined modules with a `2px` seam, and the two siblings are the fifth panel on
+                   that same seam — so *where you are* and *what is beside you* occupy one shape.
+                   That is the honest structure, because a sibling is not a separate kind of
+                   destination. It is the level above, entered one door along.
+
+  Semantics, and why the nesting is safe :
+                   The sibling panel is joined to the trail visually but is **not inside the trail`s
+                   ordered list** — it is a second `nav` landmark with its own accessible name, placed
+                   as its own cell of the same grid. A screen-reader user reaches *You are here*,
+                   then four ordered levels, then *The other two in Operations*, in that order. The
+                   current page is a `span` with aria-current="page" and is never a link.
+
+  Responsive     : At `860px` the five panels become two columns with the sibling panel across the
+                   foot, seam radii re-squared so the block still reads as one object; at `560px`
+                   everything stacks. **Nothing is hidden,
+                   truncated or ellipsised** — the README forbids it.
+
+  Placeholder data : The two counts and the sibling page names are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true".
+
+  Content note   : No primary site navigation, no footer or sitemap listing, no page title or
+                   introduction — that is `S21`. No decorative text shaped like a breadcrumb. No
+                   client name, logo, testimonial, percentage, currency figure or ranking.
+-->
+
+<meta name="study-id" content="CONS-S22-003">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="direction" content="Dense / Information-heavy">
+<meta name="theme" content="003 Field">
+<meta name="section-shape" content="C — type and colour">
+<meta name="layout-model" content="Four joined level modules and a fifth panel of sibling pages on the same seam">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="none-mandated-navigation-not-presentation">
+<meta name="interaction" content="links-only-no-javascript">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="level counts and sibling page names — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S22-003 — Breadcrumb / Context Navigation, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eff1f4; }
+
+/* Scoped study styles — namespaced to .cons-s22-003 */
+.cons-s22-003 {
+  --paper: #eff1f4;
+  --ink: #0e1216;
+  --ink-soft: #525c66;
+  --line: #d7dde2;
+  --card: #ffffff;
+  --accent: #12856a;
+  --accent-ink: #ffffff;
+  --focus: #0e1216;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s22-003 *,
+.cons-s22-003 *::before,
+.cons-s22-003 *::after { box-sizing: inherit; }
+.cons-s22-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 8px; }
+
+.cons-s22-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(24px, 2.8vw, 44px) clamp(22px, 3.6vw, 58px);
+}
+
+.cons-s22-003 .here {
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* --- One object: the levels, the current page, and the doors beside it --- */
+.cons-s22-003 .block {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 0.6fr)) minmax(0, 1.15fr) minmax(0, 1.3fr);
+  gap: 2px;
+}
+.cons-s22-003 .trail { display: contents; }
+.cons-s22-003 .trail ol { display: contents; margin: 0; padding: 0; list-style: none; }
+.cons-s22-003 .trail li { display: flex; }
+.cons-s22-003 .lv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 82px;
+  padding: clamp(14px, 1.8vw, 20px) clamp(15px, 1.9vw, 22px);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.99rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.cons-s22-003 .trail li:first-child .lv { border-radius: 20px 0 0 20px; }
+.cons-s22-003 a.lv:hover { color: var(--accent); }
+.cons-s22-003 .lv .n { margin-top: 5px; color: var(--ink-soft); font-size: 0.78rem; font-weight: 700; }
+.cons-s22-003 a.lv:hover .n { color: var(--accent); }
+
+/* The current cell: filled, weighted, and marked with aria-current. Never a link. */
+.cons-s22-003 .lv[aria-current="page"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* The doors beside it, joined to the same row */
+.cons-s22-003 .side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(14px, 1.8vw, 20px) clamp(16px, 2vw, 24px);
+  border-radius: 0 20px 20px 0;
+  background: var(--card);
+}
+.cons-s22-003 .side h2 {
+  margin: 0 0 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.cons-s22-003 .side ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: clamp(10px, 1.4vw, 20px); }
+.cons-s22-003 .side a { color: var(--accent); font-size: 0.94rem; font-weight: 700; text-underline-offset: 3px; }
+
+.cons-s22-003 .legend {
+  margin: clamp(13px, 1.6vw, 18px) 0 0;
+  font-size: 0.91rem;
+  color: var(--ink-soft);
+  max-width: 74ch;
+}
+.cons-s22-003 .legend em { font-style: normal; color: var(--ink); font-weight: 700; }
+
+/* --- Responsive ladder. Nothing is hidden or truncated --- */
+@media (max-width: 860px) {
+  .cons-s22-003 .block { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cons-s22-003 .trail li:first-child .lv { border-radius: 20px 0 0 0; }
+  .cons-s22-003 .trail li:nth-child(2) .lv { border-radius: 0 20px 0 0; }
+  .cons-s22-003 .side { grid-column: 1 / -1; border-radius: 0 0 20px 20px; }
+  .cons-s22-003 .legend { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s22-003 .block { grid-template-columns: minmax(0, 1fr); }
+  .cons-s22-003 .trail li:first-child .lv { border-radius: 20px 20px 0 0; }
+  .cons-s22-003 .trail li:nth-child(2) .lv { border-radius: 0; }
+  .cons-s22-003 .lv { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s22-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s22-003" data-study-id="CONS-S22-003" data-direction="Dense / Information-heavy">
+  <section class="shell">
+
+    <p class="here" id="cons-s22-003-here">You are here</p>
+
+    <div class="block">
+      <nav class="trail" aria-labelledby="cons-s22-003-here">
+        <ol>
+          <li><a class="lv" href="#">Home</a></li>
+          <li><a class="lv" href="#">Services <span class="n" data-placeholder="true">6 pages</span></a></li>
+          <li><a class="lv" href="#">Operations <span class="n" data-placeholder="true">3 pages</span></a></li>
+          <li><span class="lv" aria-current="page">Operating model redesign</span></li>
+        </ol>
+      </nav>
+      <nav class="side" aria-labelledby="cons-s22-003-across">
+        <h2 id="cons-s22-003-across">The other two in Operations</h2>
+        <ul>
+          <li><a href="#" data-placeholder="true">Cost structure</a></li>
+          <li><a href="#" data-placeholder="true">Post-merger integration</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="legend">The number on each level is how many pages are up there. <em>Every level is a page somebody maintains</em>, not a folder we invented to give the trail another rung.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S24-004
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S24 — Case Study Detail
+  Direction      : Conversion-led
+  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area.**
+  Layout model   : The account and the errors in one column with the artefact beside them, then a
+                   filled panel: **is this evidence about you?**
+  Density        : Detail page (211 visible words, detail band 150–230)
+  Media mode     : One reserved area. **An artefact of ours.** Slot purpose recorded in BATCH-V1.md.
+  Interaction    : None (static; no JavaScript). Links only. **No form.**
+
+  Governing idea : **A case study is the only account of an engagement written by the people who were
+                   paid for it.**
+                   So this one prints what we got wrong, at the same weight as what we did.
+
+  What "conversion-led" means in this role — naming the limits of the evidence :
+                   A case study is offered as evidence and almost never says **what it is evidence
+                   about.** The reader is left to assume it generalises, and most of the time it does
+                   not: this engagement worked because the strategy underneath it was settled, and for
+                   a reader whose strategy is still moving it proves nothing at all.
+                   So the closing panel is *is this evidence about you?* — one condition under which
+                   the case transfers and one under which it does not, with the second pointing at a
+                   different piece of work by name.
+                   That is the conversion. **A firm that tells you when its own best work is
+                   irrelevant to you is the only kind whose relevant work you can believe** — and it
+                   forfeits every enquiry that came from a reader assuming a case generalised.
+
+  Not the `S07-004` move :
+                   `S07-004` inverted the hierarchy and made the **withheld** line the header of every
+                   card, selling the discretion itself. This study leaves the withheld line where the
+                   rest of the batch puts it and sells something else — the boundary of the evidence.
+                   The two are different arguments and the compositions do not overlap.
+
+  The confidentiality constraint, carried from `S07` :
+                   **Anonymity removes the client, not the problem.** The situation is stated in full,
+                   and the redaction is named rather than hidden.
+
+  Page context region :
+                   The strip at the top carries the trail and the page title. **`S21` and `S22` supply
+                   that region in an assembly and it would not be duplicated here** — deliberately
+                   plain in all five studies.
+
+  Placeholder data : The engagement length, team size, interview counts, the ninety days and the two
+                   service links are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
+
+  Content note   : No client name, sector, logo or testimonial. No fabricated outcome, percentage,
+                   currency figure, ROI multiple or value-delivered claim. No work index — that is
+                   `S07`. No form, no scarcity. No global header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S24-004">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S24">
+<meta name="section-name" content="Case Study Detail">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Signal">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="The account, then a filled panel naming when this case is and is not evidence about the reader">
+<meta name="density" content="detail-page">
+<meta name="media-mode" content="one-reserved-area-our-own-artefact">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="length, team size, interview counts, ninety days, service links — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>CONS-S24-004 — Case Study Detail, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .cons-s24-004 */
+.cons-s24-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #54585e;
+  --line: #e5e5e5;
+  --card: #f6f6f6;
+  --accent: #e0402f;
+  --accent-ink: #ffffff;
+  --slot: #efefef;
+  --slot-edge: #c9c9c9;
+  --slot-ink: #5e6167;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s24-004 *,
+.cons-s24-004 *::before,
+.cons-s24-004 *::after { box-sizing: inherit; }
+.cons-s24-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+
+.cons-s24-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(26px, 3.2vw, 52px) clamp(22px, 3.6vw, 58px) clamp(40px, 5vw, 88px);
+}
+
+/* --- Page context --- */
+.cons-s24-004 .ctx { margin-bottom: clamp(20px, 2.6vw, 34px); }
+.cons-s24-004 .ctx ol {
+  margin: 0 0 clamp(11px, 1.5vw, 16px);
+  padding: 0; list-style: none;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-size: 0.84rem; color: var(--ink-soft);
+}
+.cons-s24-004 .ctx li + li::before { content: "\203A"; margin-right: 8px; opacity: 0.5; }
+.cons-s24-004 .ctx a { color: var(--ink-soft); font-weight: 700; text-underline-offset: 3px; }
+
+.cons-s24-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(22px, 3.2vw, 52px);
+  align-items: end;
+  margin-bottom: clamp(20px, 2.6vw, 34px);
+}
+.cons-s24-004 .head h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.85rem);
+  line-height: 1.03; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 18ch;
+}
+.cons-s24-004 .sit { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.24vw, 1.18rem); max-width: 46ch; }
+
+.cons-s24-004 .facts {
+  margin: 0 0 clamp(24px, 3vw, 40px);
+  padding: 0 0 clamp(20px, 2.6vw, 30px);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+  display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 46px);
+}
+.cons-s24-004 .facts b { color: var(--accent); font-weight: 800; font-size: 0.73rem; letter-spacing: 0.07em; text-transform: uppercase; }
+.cons-s24-004 .facts span { display: block; margin-top: 4px; font-size: 0.97rem; font-weight: 700; }
+
+.cons-s24-004 h2 {
+  margin: 0 0 clamp(13px, 1.7vw, 19px);
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft);
+}
+
+/* --- The account --- */
+.cons-s24-004 .body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: start;
+}
+.cons-s24-004 .ran { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(14px, 1.8vw, 22px); }
+.cons-s24-004 .ran .fig { display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; color: var(--accent); }
+.cons-s24-004 .ran h3 { margin: 5px 0 4px; font-size: 1.02rem; line-height: 1.18; letter-spacing: -0.022em; font-weight: 800; }
+.cons-s24-004 .ran p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
+
+.cons-s24-004 .shot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 24px;
+  background: var(--slot);
+  aspect-ratio: 4 / 5;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 24px);
+}
+.cons-s24-004 .wrong-lbl { margin-top: clamp(24px, 3vw, 38px); }
+.cons-s24-004 .shot span { color: var(--slot-ink); font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 1.45; }
+
+.cons-s24-004 .wrong { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(12px, 1.6vw, 18px); }
+.cons-s24-004 .wrong h3 { margin: 0; font-size: 1rem; line-height: 1.18; letter-spacing: -0.02em; font-weight: 800; color: var(--accent); }
+.cons-s24-004 .wrong p { margin: 3px 0 0; font-size: 0.93rem; color: var(--ink-soft); }
+
+.cons-s24-004 .made { margin: clamp(22px, 2.8vw, 36px) 0 0; font-size: 1.02rem; max-width: 66ch; }
+.cons-s24-004 .made b { font-weight: 800; }
+
+/* --- Is this evidence about you? --- */
+.cons-s24-004 .test {
+  margin: clamp(26px, 3.2vw, 44px) 0 0;
+  padding: clamp(24px, 3vw, 42px) clamp(22px, 2.8vw, 40px);
+  border-radius: 24px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.cons-s24-004 .test h2 {
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+  font-size: clamp(1.24rem, 2vw, 1.72rem);
+  line-height: 1.14; letter-spacing: -0.03em; text-transform: none; color: var(--accent-ink);
+}
+.cons-s24-004 .test ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 2.6vw, 40px); }
+.cons-s24-004 .test b {
+  display: inline-block; margin: 0 0 9px;
+  padding: 5px 13px; border-radius: 999px;
+  background: var(--accent-ink); color: var(--accent);
+  font-size: 0.73rem; font-weight: 800;
+}
+.cons-s24-004 .test p { margin: 0; font-size: 1rem; font-weight: 600; opacity: 0.96; }
+.cons-s24-004 .test a { color: var(--accent-ink); font-weight: 800; text-underline-offset: 3px; }
+
+/* --- Withheld, and the links --- */
+.cons-s24-004 .foot {
+  margin: clamp(22px, 2.8vw, 34px) 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(20px, 3vw, 46px);
+  align-items: start;
+}
+.cons-s24-004 .foot p { margin: 0; font-size: 0.96rem; color: var(--ink-soft); }
+.cons-s24-004 .foot b { color: var(--ink); font-weight: 800; }
+.cons-s24-004 .foot a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s24-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s24-004 .head h1, .cons-s24-004 .sit, .cons-s24-004 .made { max-width: none; }
+  .cons-s24-004 .body { grid-template-columns: minmax(0, 1fr); }
+  .cons-s24-004 .shot { aspect-ratio: 16 / 9; }
+  .cons-s24-004 .test ul { grid-template-columns: minmax(0, 1fr); }
+  .cons-s24-004 .foot { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s24-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s24-004" data-study-id="CONS-S24-004" data-direction="Conversion-led">
+  <article class="shell">
+
+    <div class="ctx" data-region="page-context">
+      <ol>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Operating model</a></li>
+        <li>This engagement</li>
+      </ol>
+    </div>
+
+    <div class="head">
+      <h1>The strategy was agreed and nothing had changed</h1>
+      <p class="sit">Signed off twice, and eleven months later nothing downstream had moved. Nobody could name the decision that was stuck.</p>
+    </div>
+
+    <ul class="facts">
+      <li><b>Discipline</b><span>Operating model</span></li>
+      <li><b>Length</b><span data-placeholder="true">Fourteen weeks</span></li>
+      <li><b>Team</b><span data-placeholder="true">Three, one full-time</span></li>
+    </ul>
+
+    <div class="body">
+      <div>
+        <h2>How it ran</h2>
+        <ol class="ran">
+          <li>
+            <span class="fig" aria-hidden="true">01</span>
+            <h3>We stopped interviewing after <span data-placeholder="true">nine</span></h3>
+            <p>The tenth said what the ninth had. Sampling, not census.</p>
+          </li>
+          <li>
+            <span class="fig" aria-hidden="true">02</span>
+            <h3>We drew no chart until week ten</h3>
+            <p>Everyone expected one in week two. It would have been wrong.</p>
+          </li>
+          <li>
+            <span class="fig" aria-hidden="true">03</span>
+            <h3>We tested it on decisions already taken</h3>
+            <p>Four from the previous quarter, re-run. Two came out differently.</p>
+          </li>
+        </ol>
+
+        <h2 class="wrong-lbl">What we got wrong</h2>
+        <ul class="wrong">
+          <li>
+            <h3>We started with the wrong sponsor</h3>
+            <p>Six weeks in we moved to the COO. It should have been week one.</p>
+          </li>
+          <li>
+            <h3>We under-scoped the interviews</h3>
+            <p>We asked for eight and needed fourteen. That cost them, not us.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="shot"><span>Image area &mdash; the decision map, week four</span></div>
+    </div>
+
+    <p class="made"><b>What was delivered.</b> A decision map, a redesigned ownership model, and <span data-placeholder="true">ninety</span> days of us in the room.</p>
+
+    <div class="test">
+      <h2>Is this evidence about you?</h2>
+      <ul>
+        <li>
+          <b>It transfers</b>
+          <p>If your strategy is settled. Ours was signed off twice.</p>
+        </li>
+        <li>
+          <b>It does not</b>
+          <p>If the strategy is the problem. That is <a href="#" data-placeholder="true">different work</a>.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="foot">
+      <p><b>Withheld: the sector.</b> Two firms operate in it, and naming one identifies the other.</p>
+      <p>Service: <a href="#" data-placeholder="true">Operating model redesign</a>.</p>
+    </div>
+
+  </article>
+</div>
+
+</body>
+</html>

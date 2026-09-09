@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S02-002
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S02 — Services
+  Direction      : Premium / Editorial
+  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
+  Layout model   : Editorial statement with the slider controls set against it, then a horizontal
+                   rail of tall media cards that snap, with the next card peeking past the frame edge
+  Density        : Low (110 visible words)
+  Media mode     : Six reserved image areas at 3:4, one per card, at the largest per-card size in the
+                   batch. The rail exists so the media can be tall and the reader still sees that
+                   there is more.
+  Interaction    : Horizontal snap rail. Native scroll, touch and trackpad need no script; the two
+                   arrow buttons use ~10 lines of vanilla JavaScript to step the rail by one card.
+
+  V1 was rejected, and why :
+                   The first version of this study was a full-width ruled list — a numeral gutter on
+                   the left, the text in the middle, a right-aligned uppercase label column, a hairline
+                   between every row. That is a schedule. It is the same document idiom this workspace
+                   already ruled out for ARC under the names register, ledger and index, reproduced
+                   here under the name "editorial". Corners and colour were never the problem; rows,
+                   rules and a metadata column were.
+                   The editorial answer is not a better-set table. It is **photography at scale with
+                   type beside it**, which is what a design publication actually looks like, and what
+                   the supplied references do.
+
+  Governing idea : The situation is the card title; the discipline is a small label above it. Same six
+                   situations across the batch, so the five studies differ by composition.
+
+  Content note   : Discipline names are generic vocabulary, not claims. No named client, logo,
+                   ranking, award, certification or invented metric. No header or navigation.
+-->
+
+<meta name="study-id" content="CONS-S02-002">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S02">
+<meta name="section-name" content="Services">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Sable">
+<meta name="layout-model" content="Editorial statement with slider controls, horizontal snap rail of tall media cards">
+<meta name="density" content="low">
+<meta name="media-mode" content="six-reserved-image-areas-tall-rail">
+<meta name="interaction" content="snap-rail-with-arrow-controls">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CONS-S02-002 — Services, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2efe9; }
+
+/* Scoped study styles — namespaced to .cons-s02-002 */
+.cons-s02-002 {
+  --paper: #f2efe9;
+  --ink: #1a1714;
+  --ink-soft: #6b6459;
+  --line: #dcd6ca;
+  --slot: #e6e1d7;
+  --slot-edge: #c4bbab;
+  --slot-ink: #6e675c;
+  --accent: #9a5b2c;
+  --accent-ink: #ffffff;
+  --focus: #1a1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+.cons-s02-002 *,
+.cons-s02-002 *::before,
+.cons-s02-002 *::after { box-sizing: inherit; }
+.cons-s02-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+
+.cons-s02-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(52px, 6.2vw, 116px) 0 clamp(52px, 6.2vw, 116px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head: statement, with the controls set against it --- */
+.cons-s02-002 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(24px, 4vw, 60px);
+  align-items: end;
+  padding-right: clamp(22px, 3.6vw, 58px);
+  margin-bottom: clamp(34px, 4.4vw, 64px);
+}
+.cons-s02-002 .eyebrow {
+  margin: 0 0 clamp(18px, 2.4vw, 30px);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cons-s02-002 h2 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5.4vw, 4.2rem);
+  line-height: 0.99;
+  letter-spacing: -0.044em;
+  font-weight: 800;
+  max-width: 17ch;
+}
+.cons-s02-002 .lead {
+  margin: clamp(18px, 2vw, 26px) 0 0;
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.06rem, 1.28vw, 1.22rem);
+}
+.cons-s02-002 .ctrls { display: flex; gap: 12px; }
+.cons-s02-002 .ctrl {
+  width: 56px; height: 56px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.15rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+.cons-s02-002 .ctrl:hover { background: var(--ink); color: var(--paper); }
+
+/* --- The rail --- */
+.cons-s02-002 .rail {
+  margin: 0;
+  padding: 0 clamp(22px, 3.6vw, 58px) 4px 0;
+  list-style: none;
+  display: flex;
+  gap: clamp(16px, 1.8vw, 26px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.cons-s02-002 .rail::-webkit-scrollbar { display: none; }
+.cons-s02-002 .rail > li {
+  flex: 0 0 clamp(250px, 27vw, 372px);
+  scroll-snap-align: start;
+}
+.cons-s02-002 .card { display: block; color: inherit; text-decoration: none; }
+.cons-s02-002 .shot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 4px;
+  background: var(--slot);
+  aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+  margin-bottom: clamp(16px, 1.8vw, 22px);
+  transition: opacity 160ms ease;
+}
+.cons-s02-002 .card:hover .shot { opacity: 0.82; }
+.cons-s02-002 .shot span {
+  color: var(--slot-ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.cons-s02-002 .disc {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cons-s02-002 .sit {
+  margin: 10px 0 0;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+}
+
+/* --- Foot --- */
+.cons-s02-002 .foot { margin: clamp(34px, 4vw, 58px) 0 0; padding-right: clamp(22px, 3.6vw, 58px); }
+.cons-s02-002 .go {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--accent);
+  font-size: clamp(1.16rem, 1.6vw, 1.5rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+}
+.cons-s02-002 .go:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .cons-s02-002 h2, .cons-s02-002 .lead { max-width: none; }
+  .cons-s02-002 .head { grid-template-columns: minmax(0, 1fr); }
+  .cons-s02-002 .ctrls { justify-content: flex-start; }
+}
+@media (max-width: 560px) {
+  .cons-s02-002 .rail > li { flex-basis: 78%; }
+  .cons-s02-002 .ctrl { width: 50px; height: 50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s02-002 * { transition: none !important; }
+  .cons-s02-002 .rail { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s02-002" data-study-id="CONS-S02-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="cons-s02-002-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Services</p>
+        <h2 id="cons-s02-002-title">A capability list tells you what we sell.</h2>
+        <p class="lead">This tells you whether we have already met the problem you are actually in.</p>
+      </div>
+      <div class="ctrls">
+        <button class="ctrl" type="button" data-dir="-1" aria-label="Previous services"><span aria-hidden="true">&larr;</span></button>
+        <button class="ctrl" type="button" data-dir="1" aria-label="Next services"><span aria-hidden="true">&rarr;</span></button>
+      </div>
+    </div>
+
+    <ul class="rail">
+      <li><a class="card" href="#cons-s02-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="disc">Strategy and positioning</span>
+        <p class="sit">The market moved and the plan did not.</p>
+      </a></li>
+      <li><a class="card" href="#cons-s02-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="disc">Operating model</span>
+        <p class="sit">The strategy is agreed and nothing has changed.</p>
+      </a></li>
+      <li><a class="card" href="#cons-s02-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="disc">Performance and cost</span>
+        <p class="sit">It costs more to run than it should.</p>
+      </a></li>
+      <li><a class="card" href="#cons-s02-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="disc">Growth and commercial</span>
+        <p class="sit">Growth stalled and the reasons contradict each other.</p>
+      </a></li>
+      <li><a class="card" href="#cons-s02-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="disc">Transformation delivery</span>
+        <p class="sit">The programme is late and reporting says it is fine.</p>
+      </a></li>
+      <li><a class="card" href="#cons-s02-002-title">
+        <div class="shot"><span>Image area</span></div>
+        <span class="disc">Diligence and decision support</span>
+        <p class="sit">A decision is coming and the evidence is thin.</p>
+      </a></li>
+    </ul>
+
+    <div class="foot">
+      <a class="go" href="#cons-s02-002-title">Start a conversation <span aria-hidden="true">&rarr;</span></a>
+    </div>
+
+  </section>
+</div>
+
+<script>
+/* Steps the snap rail by one card. Native scroll already works without this;
+   the arrows exist because a rail with no visible control reads as a static row. */
+(function () {
+  var root = document.querySelector('.cons-s02-002');
+  if (!root) return;
+  var rail = root.querySelector('.rail');
+  var card = rail && rail.querySelector('li');
+  if (!rail || !card) return;
+  Array.prototype.forEach.call(root.querySelectorAll('[data-dir]'), function (btn) {
+    btn.addEventListener('click', function () {
+      var gap = parseFloat(getComputedStyle(rail).columnGap) || 20;
+      var step = card.getBoundingClientRect().width + gap;
+      rail.scrollBy({ left: step * Number(btn.getAttribute('data-dir')), behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

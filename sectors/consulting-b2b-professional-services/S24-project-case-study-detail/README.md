@@ -66,13 +66,44 @@ CONS-S24-005
 
 # Expected Structural Diversity
 
-| Variant | Territory |
-| --- | --- |
-| `CONS-S24-001` | Universal / Safe |
-| `CONS-S24-002` | Premium / Editorial |
-| `CONS-S24-003` | Dense / Information-heavy |
-| `CONS-S24-004` | Conversion-led |
-| `CONS-S24-005` | Sector-native / Distinctive |
+| Variant | Direction | Theme | Shape | Composition | Media |
+| --- | --- | --- | :---: | --- | ---: |
+| `CONS-S24-001` | Universal / Safe | 001 Paper | B | Situation and facts, a lead artefact, the decisions, then what we got wrong | 3 |
+| `CONS-S24-002` | Premium / Editorial | 002 Sable | B | One measure, the single artefact placed at the hinge before the errors | 1 |
+| `CONS-S24-003` | Dense / Information-heavy | 003 Field | A | The documented set is the account — five dated artefacts carrying the decisions | 5 |
+| `CONS-S24-004` | Conversion-led | 004 Signal | B | The account beside one artefact, then *is this evidence about you?* | 1 |
+| `CONS-S24-005` | Sector-native / Distinctive | 005 Midnight | C | Ordered by what we did not know yet — the errors dated into the sequence | 0 |
+
+# The Governing Idea
+
+> **A case study is the only account of an engagement written by the people who were paid for it.**
+
+Every one describes a smooth arc, because the firm chooses the frame, the scope and the ending. So
+every study carries **what we got wrong** at the same weight as what we did — the wrong sponsor for
+six weeks, and interviews scoped at half what they needed. Both cost the client something, which is
+what makes them worth printing. **A case study that contains no error is not a record, it is a
+brochure with dates in it.**
+
+# The Confidentiality Constraint
+
+`S07` established it and every study here applies it: **anonymity removes the client, not the
+problem.** The situation is stated in full because it is the reader's situation, and the redaction is
+named rather than hidden — *the sector, because two firms operate in it and naming one identifies the
+other.*
+
+# The Page All Five Render
+
+The engagement behind `S07`'s first case and behind the service `S23` documents: *the strategy was
+agreed and nothing had changed*. Shared content: the situation, three facts, three decisions, what was
+delivered, the two errors, the withheld line, and the service link.
+
+# The Media Set
+
+Ask this section's photograph what it is *of*. It cannot be the client's premises, people or product —
+that is the constraint. What remains honest is **the firm's own artefact**: the decision map, the
+interview wall, the room it was argued in, the model on screen, the re-run session. Every slot's
+purpose, expected type and fallback is recorded in `./BATCH-V1.md`. No slot may hold a client logo, a
+client interior, a named individual from the client, or a stock boardroom.
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -98,7 +129,7 @@ Nearest existing section in this sector: S07 Case Studies (`S07-case-studies/`).
 
 # Status
 
-NOT_STARTED
+AUTHORED — five studies. Batch record in `./BATCH-V1.md`.
 
 # Raw Path
 

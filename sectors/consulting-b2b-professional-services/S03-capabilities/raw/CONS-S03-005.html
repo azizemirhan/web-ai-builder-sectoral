@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CONS-S03-005
+  Sector         : Consulting & B2B Professional Services (CONS)
+  Section        : CONS-S03 — Capabilities
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Midnight — see ../../CONSULTING-THEME-CONTRACT.md
+  Layout model   : Near-black field. Six cards that ARE their media — the capability and its limit sit
+                   over the image inside a scrim, rather than in a text block beneath it
+  Density        : Low (99 visible words)
+  Media mode     : Six reserved image areas at 3:4, each filling its whole card. This is the only
+                   study in the batch where the media is the card rather than part of it.
+  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
+
+  Why text over media :
+                   Every other study in this batch separates the picture from the words. This one
+                   does not, and that is the distinction it is claiming. A capability that has to be
+                   described beside a photograph is being illustrated; a capability whose name sits
+                   *on* the work reads as a caption to something real. The scrim is a fixed gradient
+                   rather than a translucent block, so the type stays legible whatever photograph
+                   eventually lands underneath — which is the condition an empty reserved area has to
+                   satisfy to be honest.
+
+  Governing idea : Every consulting firm lists the same capabilities, so a list proves nothing. What
+                   makes one credible is its limit. The limits are policy statements a firm can
+                   honour, not claims about past performance, so none is a fabricated metric.
+
+  Boundary       : S02 Services is the map — which situation the reader is in. S03 is what has to be
+                   true inside the firm for any of those services to be deliverable.
+
+  Content note   : Capability names are generic vocabulary, not claims. No named client, logo,
+                   ranking, award, certification, tool vendor or invented metric. No header or
+                   navigation.
+-->
+
+<meta name="study-id" content="CONS-S03-005">
+<meta name="sector" content="Consulting &amp; B2B Professional Services">
+<meta name="sector-prefix" content="CONS">
+<meta name="section-id" content="CONS-S03">
+<meta name="section-name" content="Capabilities">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Midnight">
+<meta name="layout-model" content="Near-black field, six media-filled cards with the capability and limit set over a scrim">
+<meta name="density" content="low">
+<meta name="media-mode" content="six-reserved-image-areas-as-the-cards">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CONS-S03-005 — Capabilities, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0b0d12; }
+
+/* Scoped study styles — namespaced to .cons-s03-005 */
+.cons-s03-005 {
+  --paper: #0b0d12;
+  --ink: #f2f3f5;
+  --ink-soft: #989ca6;
+  --line: #272b33;
+  --slot: #14171e;
+  --slot-edge: #474d58;
+  --slot-ink: #b6bbc3;
+  --accent: #7c6cf7;
+  --accent-ink: #0b0d12;
+  --focus: #7c6cf7;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.cons-s03-005 *,
+.cons-s03-005 *::before,
+.cons-s03-005 *::after { box-sizing: inherit; }
+.cons-s03-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 6px; border-radius: 26px; }
+
+.cons-s03-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(48px, 5.8vw, 108px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.cons-s03-005 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: end;
+  margin-bottom: clamp(30px, 4vw, 58px);
+}
+.cons-s03-005 .eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 26px);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cons-s03-005 h2 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.6vw, 3.7rem);
+  line-height: 1.0;
+  letter-spacing: -0.042em;
+  font-weight: 800;
+  max-width: 16ch;
+}
+.cons-s03-005 h2 em { font-style: normal; color: var(--accent); }
+.cons-s03-005 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.24vw, 1.18rem); }
+
+/* --- Cards that are their media --- */
+.cons-s03-005 .grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 1.9vw, 28px);
+}
+.cons-s03-005 .card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 2px dashed var(--slot-edge);
+  border-radius: 26px;
+  background: linear-gradient(158deg, #1e222b 0%, #14171e 58%, #0f1218 100%);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+.cons-s03-005 .card:hover { border-color: var(--accent); transform: translateY(-5px); }
+.cons-s03-005 .mark {
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  color: var(--slot-ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.cons-s03-005 .scrim {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: clamp(20px, 2.2vw, 28px);
+  background: linear-gradient(to top,
+    rgba(11, 13, 18, 0.97) 0%,
+    rgba(11, 13, 18, 0.86) 45%,
+    rgba(11, 13, 18, 0.30) 78%,
+    rgba(11, 13, 18, 0) 100%);
+}
+.cons-s03-005 .scrim h3 {
+  margin: 0;
+  font-size: clamp(1.16rem, 1.5vw, 1.44rem);
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+  font-weight: 800;
+}
+.cons-s03-005 .limit {
+  margin: 9px 0 0;
+  color: var(--accent);
+  font-size: 0.93rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* --- Foot --- */
+.cons-s03-005 .foot {
+  margin: clamp(34px, 4.2vw, 62px) 0 0;
+  padding-top: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--line);
+}
+.cons-s03-005 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.04rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.cons-s03-005 .go:hover { background: var(--ink); }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .cons-s03-005 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .cons-s03-005 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .cons-s03-005 h2 { max-width: none; }
+}
+@media (max-width: 560px) {
+  .cons-s03-005 .grid { grid-template-columns: minmax(0, 1fr); }
+  .cons-s03-005 .card { aspect-ratio: 4 / 3; }
+  .cons-s03-005 .go { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cons-s03-005 * { transition: none !important; }
+  .cons-s03-005 .card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cons-s03-005" data-study-id="CONS-S03-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="cons-s03-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Capabilities</p>
+        <h2 id="cons-s03-005-title">What we will <em>not</em> do is the useful half.</h2>
+      </div>
+      <p class="lead">Six things we can do, and the edge each one stops at.</p>
+    </div>
+
+    <ul class="grid">
+      <li><a class="card" href="#cons-s03-005-title">
+        <span class="mark">Image area</span>
+        <div class="scrim">
+          <h3>Quantitative modelling</h3>
+          <p class="limit">Not a model you cannot maintain once we leave.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-005-title">
+        <span class="mark">Image area</span>
+        <div class="scrim">
+          <h3>Primary research</h3>
+          <p class="limit">Named interviews, not a survey panel.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-005-title">
+        <span class="mark">Image area</span>
+        <div class="scrim">
+          <h3>Organisation design</h3>
+          <p class="limit">We will not name individuals for the roles.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-005-title">
+        <span class="mark">Image area</span>
+        <div class="scrim">
+          <h3>Commercial analysis</h3>
+          <p class="limit">We do not set your prices.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-005-title">
+        <span class="mark">Image area</span>
+        <div class="scrim">
+          <h3>Programme direction</h3>
+          <p class="limit">We advise it or we run it. Not both.</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="#cons-s03-005-title">
+        <span class="mark">Image area</span>
+        <div class="scrim">
+          <h3>Facilitation</h3>
+          <p class="limit">We will not manufacture agreement you do not have.</p>
+        </div>
+      </a></li>
+    </ul>
+
+    <div class="foot">
+      <a class="go" href="#cons-s03-005-title">Start a conversation</a>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>
