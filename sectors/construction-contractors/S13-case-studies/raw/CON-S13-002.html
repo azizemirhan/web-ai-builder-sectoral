@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S13-002
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S13 — Case Studies
+  Direction      : Premium / Editorial
+  Reference      : None supplied for this section.
+  Layout model   : One job at length, told as a site log — headed entries in the order they happened,
+                   each marked in the margin with what it was: a discovery, a decision, or a cost —
+                   closing on the entry we got wrong
+  Density        : Low
+  Media mode     : Two reserved project areas — one letterbox plate after the opening, one at the
+                   close.
+  Interaction    : None (static; no JavaScript)
+  The device     : **The log, not the essay.** A case study written as an essay is written
+                   afterwards by somebody who has decided what it meant. A log is written in the
+                   order things happened, which is the only order in which the decisions make sense
+                   &mdash; and it has no room at the end for a paragraph about how well it all went.
+  Structural note : Distinct from `CON-S11-002`, which told a chronology of people with floated
+                   portraits. This is a chronology of a job with marginal entry markers and no
+                   floats, and the marker vocabulary is the batch's unit: found, chose, cost.
+  One job, at length : `001` carries two cases in summary; this carries one in detail, because an
+                   editorial study earns its keep by going further into fewer things rather than
+                   further across more.
+  Deliberately not : No *on time*, no *on budget*, no *delighted client*, and no client quotation
+                   &mdash; `S12` owns those and reserves them.
+  Content note   : Project and client names are reserved fields; sector and scope are generic
+                   vocabulary. No value, duration, date or percentage. No digit in visible copy; no
+                   header.
+-->
+
+<meta name="study-id" content="CON-S13-002">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S13">
+<meta name="section-name" content="Case Studies">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="One job as a site log, entries marked found / chose / cost in the margin">
+<meta name="density" content="low">
+<meta name="media-mode" content="two-reserved-project-areas">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S13-002 — Case Studies, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fafafa; }
+
+/* Scoped study styles — namespaced to .con-s13-002 */
+.con-s13-002 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #969696;
+  --paper: #fafafa;
+  --rule: #d2d2d2;
+  --hair: #d2d2d2;
+  --field: #ececec;
+  --found: #444444;
+  --chose: #444444;
+  --cost: #444444;
+  --wrong: #2b2b2b;
+  --slot-a: #b4b4b4;
+  --slot-b: #7a7a7a;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s13-002 *,
+.con-s13-002 *::before,
+.con-s13-002 *::after { box-sizing: inherit; }
+.con-s13-002 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+.con-s13-002 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s13-002 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.con-s13-002 .eyebrow {
+  margin: 0 0 clamp(13px, 1.7vw, 20px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s13-002 h2 {
+  margin: 0 0 clamp(16px, 2.2vw, 26px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2.44rem, 5.292vw, 4.284rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  max-width: 20ch;
+}
+.con-s13-002 h2 em { font-style: italic; }
+.con-s13-002 .stand { margin: 0 0 clamp(20px, 2.6vw, 32px); max-width: 60ch; font-size: clamp(1.1rem, 1.357vw, 1.369rem); line-height: 1.62; color: var(--ink-soft); }
+.con-s13-002 .stand b { color: var(--ink); font-weight: 650; }
+
+.con-s13-002 .ident {
+  margin: 0 0 clamp(24px, 3.2vw, 40px);
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(14px, 2.4vw, 36px);
+  padding-bottom: clamp(16px, 2.2vw, 24px);
+  border-bottom: 2px solid var(--rule);
+}
+.con-s13-002 .ident li { font-size: 0.804rem; letter-spacing: 0.085em; text-transform: uppercase; color: var(--ink-faint); }
+.con-s13-002 .ident .slot {
+  display: inline-block;
+  min-width: 62px;
+  margin-left: 8px;
+  padding: 1px 10px;
+  border-radius: 16px;
+  background: var(--field);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.con-s13-002 .plate {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 32 / 9;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(15px, 1.9vw, 24px);
+  margin-bottom: clamp(26px, 3.4vw, 46px);
+}
+.con-s13-002 .plate span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.82;
+}
+
+/* The log */
+.con-s13-002 .entry {
+  display: grid;
+  grid-template-columns: minmax(0, 0.3fr) minmax(0, 1fr);
+  gap: clamp(16px, 2.8vw, 48px);
+  align-items: start;
+  padding: clamp(22px, 2.8vw, 38px) 0;
+  border-top: 1px solid var(--hair);
+}
+.con-s13-002 .entry:first-of-type { border-top: 0; padding-top: 0; }
+.con-s13-002 .marker { padding-top: 4px; }
+.con-s13-002 .kind {
+  display: block;
+  margin-bottom: 7px;
+  padding-left: 12px;
+  border-left: 4px solid var(--tone, var(--ink-faint));
+  font-size: 0.777rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s13-002 .m-found { --tone: var(--found); }
+.con-s13-002 .m-chose { --tone: var(--chose); }
+.con-s13-002 .m-cost { --tone: var(--cost); }
+.con-s13-002 .when { display: block; font-size: 1rem; line-height: 1.34; font-weight: 700; color: var(--ink); }
+
+.con-s13-002 h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 15px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.581rem, 2.44vw, 2.22rem);
+  line-height: 1.12;
+  letter-spacing: -0.014em;
+  font-weight: 400;
+  max-width: 26ch;
+}
+.con-s13-002 .say p { margin: 0; max-width: 58ch; font-size: clamp(1.1rem, 1.298vw, 1.274rem); line-height: 1.7; color: var(--ink-soft); }
+.con-s13-002 .say p + p { margin-top: clamp(11px, 1.4vw, 16px); }
+.con-s13-002 .say p b { color: var(--ink); font-weight: 650; }
+
+/* The entry we got wrong */
+.con-s13-002 .wrong {
+  margin-top: clamp(24px, 3.2vw, 40px);
+  padding: clamp(18px, 2.4vw, 32px);
+  border: 2px solid var(--wrong);
+  border-radius: 10px;
+}
+.con-s13-002 .wrong .kind { border-left-color: var(--wrong); color: var(--wrong); }
+.con-s13-002 .wrong h3 { color: var(--wrong); margin-top: clamp(9px, 1.2vw, 12px); }
+.con-s13-002 .wrong p { margin: 0 0 clamp(11px, 1.4vw, 15px); max-width: 66ch; font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.66; color: var(--ink-soft); }
+.con-s13-002 .wrong p:last-child { margin-bottom: 0; }
+.con-s13-002 .wrong p b { color: var(--ink); font-weight: 650; }
+
+/* Close */
+.con-s13-002 .close {
+  margin-top: clamp(26px, 3.4vw, 44px);
+  padding-top: clamp(20px, 2.6vw, 34px);
+  border-top: 2px solid var(--rule);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(20px, 3.2vw, 52px);
+  align-items: start;
+}
+.con-s13-002 .close p { margin: 0 0 clamp(11px, 1.4vw, 15px); max-width: 58ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.64; }
+.con-s13-002 .close p:last-child { margin-bottom: 0; }
+.con-s13-002 .close p b { color: var(--ink); font-weight: 650; }
+.con-s13-002 .aside {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(14px, 1.8vw, 22px);
+}
+.con-s13-002 .aside span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.82;
+}
+
+/* Responsive ladder */
+@media (max-width: 820px) {
+  .con-s13-002 .entry { grid-template-columns: minmax(0, 1fr); gap: clamp(12px, 2vw, 18px); }
+  .con-s13-002 .close { grid-template-columns: minmax(0, 1fr); }
+  .con-s13-002 h2, .con-s13-002 h3, .con-s13-002 .stand,
+  .con-s13-002 .say p, .con-s13-002 .wrong p, .con-s13-002 .close p { max-width: none; }
+  .con-s13-002 .plate { aspect-ratio: 16 / 9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s13-002 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s13-002 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 30%);
+  font-size: 1.06rem;
+}
+.con-s13-002 h2 { font-weight: 800; }
+.con-s13-002 h3, .con-s13-002 h4 { font-weight: 750; }
+.con-s13-002 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s13-002 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s13-002.con-s13-002 .shell > h2 {
+  padding: clamp(26px, 3.4vw, 54px);
+  border-radius: 34px;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  max-width: none;
+}
+.con-s13-002.con-s13-002 .shell > h2 span, .con-s13-002.con-s13-002 .shell > h2 b, .con-s13-002.con-s13-002 .shell > h2 em, .con-s13-002.con-s13-002 .shell > h2 i {
+  color: #ffffff;
+}
+.con-s13-002 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s13-002 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s13-002" data-study-id="CON-S13-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="con-s13-002-title">
+
+    <p class="eyebrow">One job, at length</p>
+    <h2 id="con-s13-002-title">A log, rather than <em>an account written afterwards</em>.</h2>
+    <p class="stand">A case study written as an essay is written by somebody who has already decided what the job meant. <b>A log is written in the order things happened</b>, which is the only order in which the decisions make sense &mdash; and it leaves no room at the end for a paragraph about how well it all went.</p>
+
+    <ul class="ident">
+      <li>Sector <span class="slot"><span class="vh">Sector</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li>Project <span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li>Client <span class="slot"><span class="vh">Client name</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li>Scope <span class="slot"><span class="vh">Scope of works</span><span aria-hidden="true">&mdash;</span></span></li>
+    </ul>
+
+    <div class="plate"><span>Project media &mdash; the work in progress, wide</span></div>
+
+    <div class="entry">
+      <div class="marker">
+        <span class="kind m-found">Found</span>
+        <span class="when">Before anything started</span>
+      </div>
+      <div class="say">
+        <h3>The building was going to stay open, and nobody had said so in writing</h3>
+        <p>It was in the room at the site walk and in nobody&rsquo;s documents. The tender assumed a possession that was never going to exist, which is a common enough way for a job like this to begin badly.</p>
+        <p><b>We priced it as an occupied refurbishment and said why</b>, which made us more expensive than at least one other bidder. That is a decision worth mentioning here because it is the kind of thing that loses work.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="marker">
+        <span class="kind m-chose">Chose</span>
+        <span class="when">At pre-start</span>
+      </div>
+      <div class="say">
+        <h3>We put the site manager in the estates meeting rather than reporting to it</h3>
+        <p>The person who would be running the job sat in the room where the phasing was agreed, instead of being told afterwards what had been decided about their sequence.</p>
+        <p>It costs a morning every week of somebody expensive. <b>It is the cheapest thing on this page</b>, and every difficult decision that followed was easier because of it.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="marker">
+        <span class="kind m-found">Found</span>
+        <span class="when">The first fortnight</span>
+      </div>
+      <div class="say">
+        <h3>The slab was thinner than the record drawings, in the one bay that mattered</h3>
+        <p>Records of buildings of this age are a hypothesis. This one was wrong in the bay where the new plant had to sit, which is the way that particular luck usually runs.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="marker">
+        <span class="kind m-chose">Chose</span>
+        <span class="when">The same day</span>
+      </div>
+      <div class="say">
+        <h3>Redesigned the fixings rather than re-pouring</h3>
+        <p>The temporary works engineer came out that afternoon rather than the following week, and the fixing detail changed instead of the structure.</p>
+        <p><b>The alternative was faster to decide and slower to build</b>, and it would have put a wet trade above an occupied floor. We would rather spend a day choosing than a fortnight recovering.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="marker">
+        <span class="kind m-cost">Cost</span>
+        <span class="when">Absorbed</span>
+      </div>
+      <div class="say">
+        <h3>The float we were holding on the fit-out</h3>
+        <p>Ours, not the client&rsquo;s. It is the reason we hold float at all, and a firm that arrives with none has priced a job in which nothing is discovered.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="marker">
+        <span class="kind m-chose">Chose</span>
+        <span class="when">When the hours slipped</span>
+      </div>
+      <div class="say">
+        <h3>Moved the noisy work rather than asking the ward to move</h3>
+        <p>The agreed hours did not survive contact with the floor below, whose day began earlier than the estates office had told us. Breaking went to the afternoons and the quiet trades took the mornings.</p>
+        <p><b>Two trades on site where one would have done</b>, and we absorbed the difference rather than raising it as a variation.</p>
+      </div>
+    </div>
+
+    <div class="wrong">
+      <span class="kind">The entry we got wrong</span>
+      <h3>We let the asbestos survey stay a provisional item at tender</h3>
+      <p>It should have been a condition of pricing. When it came back it changed the sequence, and everybody then spent longer arguing about whose risk it had been than the work itself took &mdash; which is the most avoidable kind of delay there is, and it was ours to avoid.</p>
+      <p><b>What changed:</b> we now decline to price this kind of refurbishment without the survey in hand. It has cost us two tenders since, both to firms who were content to price around it, and we would make the same choice again.</p>
+    </div>
+
+    <div class="close" data-refusal>
+      <div>
+        <p><b>There is no paragraph at the end of this saying it was delivered on time, on budget and to a delighted client.</b> That sentence is on the case studies of firms that failed, because it is written afterwards by somebody who was not there.</p>
+        <p>There is no value, duration or percentage either. <b>Cost is described rather than counted</b> &mdash; <em>out of our float rather than yours</em> is something the client will confirm or contradict, and a figure is something you would have to take on trust.</p>
+        <p>And there is no quotation from the client. If you want one, they are on the testimonials page, reserved, with the phone number offered beside them.</p>
+      </div>
+      <div class="aside"><span>Project media &mdash; the completed work, in use</span></div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

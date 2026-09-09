@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S15-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S15 — Bid RFQ
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Three columns, one per kind of number, each listing what it requires — so the
+                   same seven pieces of information appear at different depths in each column and
+                   the reader can see what a price costs to obtain
+  Density        : High
+  Media mode     : None. A bid section has nothing to photograph.
+  Interaction    : None. `004` carries this section's only form.
+  The device     : **The same information, at three depths.** `001` lists what a price depends on;
+                   this study shows the same list resolved three ways &mdash; what a guess needs,
+                   what a range needs, what a price needs &mdash; so the gap between the columns is
+                   visible as a quantity of missing rows rather than described as one.
+  Why it reads   : A reader arrives knowing what they have. Finding their own column and reading
+                   down it answers the only question they came with, and the two columns beside it
+                   show what the next answer would cost them to obtain.
+  Not a table    : The direction's trap, and a requirements matrix is the obvious wrong answer. The
+                   columns carry different numbers of rows by construction, the middle one is widest
+                   because it is where most enquiries sit, and the missing rows are drawn as absences
+                   rather than as empty cells.
+  Deliberately not : No price, rate, range, figure or *from* anything. No calculator. No turnaround.
+  Content note   : The bid contact, submission address and question deadline are reserved fields.
+                   Everything else is policy and is real. No digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S15-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S15">
+<meta name="section-name" content="Bid RFQ">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Three requirement columns, one per kind of number, with missing rows drawn as absences">
+<meta name="density" content="high">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S15-003 — Bid RFQ, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e8e8e8; }
+
+/* Scoped study styles — namespaced to .con-s15-003 */
+.con-s15-003 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #969696;
+  --paper: #e8e8e8;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --rule: #b4b4b4;
+  --field: #ececec;
+  --guess: #111111;
+  --range: #444444;
+  --price: #2b2b2b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s15-003 *,
+.con-s15-003 *::before,
+.con-s15-003 *::after { box-sizing: inherit; }
+.con-s15-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s15-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s15-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s15-003 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(14px, 2.4vw, 40px);
+  margin-bottom: clamp(16px, 2.2vw, 26px);
+}
+.con-s15-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s15-003 h2 {
+  margin: 0;
+  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 22ch;
+}
+.con-s15-003 .head p { margin: 0; max-width: 42ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s15-003 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Three columns, deliberately unequal */
+.con-s15-003 .cols {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.24fr) minmax(0, 0.94fr);
+  gap: clamp(12px, 1.5vw, 18px);
+  align-items: start;
+}
+.con-s15-003 .cols > li { min-width: 0; }
+
+.con-s15-003 .colhead {
+  border-radius: 22px;
+  background: var(--tone, #444444);
+  color: #ffffff;
+  padding: clamp(15px, 1.9vw, 24px);
+  margin-bottom: clamp(11px, 1.4vw, 16px);
+}
+.con-s15-003 .c-guess { --tone: var(--guess); }
+.con-s15-003 .c-range { --tone: var(--range); }
+.con-s15-003 .c-price { --tone: var(--price); }
+.con-s15-003 .give { margin: 0 0 6px; font-size: 0.777rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; opacity: 0.86; }
+.con-s15-003 h3 { margin: 0 0 7px; font-size: clamp(1.274rem, 1.652vw, 1.534rem); line-height: 1.12; letter-spacing: -0.022em; font-weight: 700; }
+.con-s15-003 .colhead p { margin: 0; font-size: 1rem; line-height: 1.48; opacity: 0.9; }
+
+.con-s15-003 .reqs { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(9px, 1.2vw, 13px); }
+.con-s15-003 .req {
+  border-radius: 22px;
+  background: var(--card);
+  border-left: 5px solid var(--tone, var(--rule));
+  padding: clamp(12px, 1.6vw, 18px);
+}
+.con-s15-003 h4 { margin: 0 0 6px; font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.014em; font-weight: 700; }
+.con-s15-003 .req p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.con-s15-003 .req p b { color: var(--ink); font-weight: 650; }
+
+/* Absences, drawn rather than left as empty cells */
+.con-s15-003 .absent {
+  border-radius: 22px;
+  border: 2px dashed var(--rule);
+  padding: clamp(12px, 1.6vw, 18px);
+  color: var(--ink-faint);
+}
+.con-s15-003 .absent .k {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.con-s15-003 .absent p { margin: 0; font-size: 1rem; line-height: 1.48; }
+.con-s15-003 .absent ul { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.con-s15-003 .absent li {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px dashed var(--rule);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Foot */
+.con-s15-003 .foot {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(11px, 1.4vw, 16px);
+}
+.con-s15-003 .foot > div { border-radius: 22px; padding: clamp(15px, 1.9vw, 26px); }
+.con-s15-003 .foot .budget { background: var(--card); }
+.con-s15-003 .foot .send { background: var(--card); }
+.con-s15-003 .foot .refuse { border: 2px dashed var(--rule); }
+.con-s15-003 .foot h3 { color: var(--ink); font-size: clamp(1.1rem, 1.534vw, 1.369rem); margin-bottom: clamp(10px, 1.3vw, 13px); }
+.con-s15-003 .foot p { margin: 0 0 9px; max-width: 56ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.56; }
+.con-s15-003 .foot p:last-child { margin-bottom: 0; }
+.con-s15-003 .foot p b { color: var(--ink); font-weight: 650; }
+.con-s15-003 .fields { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.con-s15-003 .fields li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.777rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s15-003 .fields .slot {
+  min-width: 56px;
+  padding: 1px 10px;
+  border-radius: 16px;
+  background: var(--field);
+  text-align: center;
+  letter-spacing: 0;
+}
+.con-s15-003 .none { margin: 0 0 clamp(10px, 1.3vw, 14px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s15-003 .none li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px dashed var(--rule);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Responsive ladder */
+@media (max-width: 1080px) {
+  .con-s15-003 .cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .con-s15-003 .cols > li:last-child { grid-column: 1 / -1; }
+  .con-s15-003 .foot { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .con-s15-003 .cols { grid-template-columns: minmax(0, 1fr); }
+  .con-s15-003 .cols > li:last-child { grid-column: auto; }
+  .con-s15-003 h2, .con-s15-003 .head p, .con-s15-003 .foot p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s15-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s15-003 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
+  font-size: 1.06rem;
+}
+.con-s15-003 h2 { font-weight: 800; }
+.con-s15-003 h3, .con-s15-003 h4 { font-weight: 750; }
+.con-s15-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s15-003 .req, .con-s15-003 .foot .budget, .con-s15-003 .foot .send {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s15-003 .absent li, .con-s15-003 .none li {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s15-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s15-003.con-s15-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s15-003.con-s15-003 .head h2, .con-s15-003.con-s15-003 .head h3, .con-s15-003.con-s15-003 .head h4, .con-s15-003.con-s15-003 .head b, .con-s15-003.con-s15-003 .head strong, .con-s15-003.con-s15-003 .head p b, .con-s15-003.con-s15-003 .head li b, .con-s15-003.con-s15-003 .head span b, .con-s15-003.con-s15-003 .head dt, .con-s15-003.con-s15-003 .head div b {
+  color: #ffffff;
+}
+.con-s15-003.con-s15-003 .head p, .con-s15-003.con-s15-003 .head li, .con-s15-003.con-s15-003 .head span, .con-s15-003.con-s15-003 .head dd, .con-s15-003.con-s15-003 .head div p, .con-s15-003.con-s15-003 .head div li, .con-s15-003.con-s15-003 .head p span, .con-s15-003.con-s15-003 .head .said, .con-s15-003.con-s15-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s15-003.con-s15-003 .head .eyebrow, .con-s15-003.con-s15-003 .head .kicker, .con-s15-003.con-s15-003 .head .slot, .con-s15-003.con-s15-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s15-003.con-s15-003 .head i, .con-s15-003.con-s15-003 .head .bars i, .con-s15-003.con-s15-003 .head .lines i, .con-s15-003.con-s15-003 .head .measures i, .con-s15-003.con-s15-003 .head .bar, .con-s15-003.con-s15-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s15-003.con-s15-003 .head .plate, .con-s15-003.con-s15-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s15-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s15-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s15-003" data-study-id="CON-S15-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s15-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Putting work to us</p>
+        <h2 id="con-s15-003-title">The same information, at three depths</h2>
+      </div>
+      <p>Find the column that matches what you are holding. <b>The gap between it and the next one is what a real price costs to obtain</b>, and it is drawn here rather than described.</p>
+    </div>
+
+    <ul class="cols">
+
+      <li class="c-guess">
+        <div class="colhead">
+          <p class="give">You send a sentence</p>
+          <h3>You get no number</h3>
+          <p>A conversation and a date to come and look. The honest answer, and the one most firms will not give.</p>
+        </div>
+        <ul class="reqs">
+          <li>
+            <div class="req c-guess">
+              <h4>What is being built</h4>
+              <p>In your own words is enough at this stage.</p>
+            </div>
+          </li>
+          <li>
+            <div class="req c-guess">
+              <h4>Where the site is</h4>
+              <p>So we can tell you which attendance band you are in, <b>and whether we should be bidding at all.</b></p>
+            </div>
+          </li>
+          <li>
+            <div class="absent">
+              <span class="k">Not enough for a number</span>
+              <p>Everything below is missing, which is why there is not one:</p>
+              <ul><li>Design stage</li><li>Surveys</li><li>Occupied or empty</li><li>What fixes the start</li><li>Who decides</li></ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li class="c-range">
+        <div class="colhead">
+          <p class="give">You send a design</p>
+          <h3>You get a range, with the assumptions beside it</h3>
+          <p>Every assumption written where you can argue with it. Useful for a decision, not for a contract.</p>
+        </div>
+        <ul class="reqs">
+          <li>
+            <div class="req c-range">
+              <h4>Drawings at a stated stage</h4>
+              <p>Concept or planning &mdash; tell us which, because <b>it decides how wide the range is</b> and we would rather say so than let you assume it is narrow.</p>
+            </div>
+          </li>
+          <li>
+            <div class="req c-range">
+              <h4>Where the site is</h4>
+              <p>The band, and whether a firm nearer you would serve you better.</p>
+            </div>
+          </li>
+          <li>
+            <div class="req c-range">
+              <h4>Whether the building is in use</h4>
+              <p>A different job rather than the same job more carefully. <b>Without it we price as occupied</b>, which is the expensive assumption.</p>
+            </div>
+          </li>
+          <li>
+            <div class="req c-range">
+              <h4>What surveys exist, and which do not</h4>
+              <p>Named either way. <b>We will not price around a missing one</b>, and we will tell you which one is holding the range open.</p>
+            </div>
+          </li>
+          <li>
+            <div class="req c-range">
+              <h4>What fixes your start</h4>
+              <p>A term, a lease, a season. It changes the sequence rather than the price, and we would rather design around it than discover it.</p>
+            </div>
+          </li>
+          <li>
+            <div class="absent">
+              <span class="k">Still missing, and why it is a range</span>
+              <p>A specification and a set of quantities. Without those, any single figure would be a range with the honesty removed.</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li class="c-price">
+        <div class="colhead">
+          <p class="give">You send a tender package</p>
+          <h3>You get a price</h3>
+          <p>Only this one is a price. The other two are called prices by firms that want to be on your list.</p>
+        </div>
+        <ul class="reqs">
+          <li>
+            <div class="req c-price">
+              <h4>Everything in the column to the left</h4>
+              <p>All of it, answered rather than assumed.</p>
+            </div>
+          </li>
+          <li>
+            <div class="req c-price">
+              <h4>A specification and quantities</h4>
+              <p>The part that turns a range into a number. <b>Where the quantities are ours to take off, we say so and price the taking-off as our risk.</b></p>
+            </div>
+          </li>
+          <li>
+            <div class="req c-price">
+              <h4>Surveys in hand, not pending</h4>
+              <p><b>This is the one we hold hardest</b>, and it came from getting it wrong once.</p>
+            </div>
+          </li>
+          <li>
+            <div class="req c-price">
+              <h4>Who decides, and what they can decide</h4>
+              <p>Because most delay on a live job is a decision waiting on somebody.</p>
+            </div>
+          </li>
+          <li>
+            <div class="req c-price">
+              <h4>A site walk before we submit</h4>
+              <p><b>We will not price a job we have not walked.</b> This is not negotiable and it is the reason some tenders go elsewhere.</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+
+    <div class="foot">
+      <div class="budget">
+        <h3>Your budget, which is the question everybody dodges</h3>
+        <p><b>We do ask.</b> A scope with no budget attached is a fishing trip for both of us.</p>
+        <p>What we will not do is simply price to your figure. <b>If the scope costs less than you have allowed we will say so; if it costs more we tell you before we bid</b> rather than after we have won.</p>
+      </div>
+      <div class="send">
+        <h3>Where to send it</h3>
+        <p>All three are worth sending. The first line of our reply tells you which of the three numbers you are going to get.</p>
+        <ul class="fields">
+          <li><span>Bid contact</span><span class="slot"><span class="vh">Name of the bid contact</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Send to</span><span class="slot"><span class="vh">Submission address</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Questions by</span><span class="slot"><span class="vh">Deadline for questions</span><span aria-hidden="true">&mdash;</span></span></li>
+        </ul>
+      </div>
+      <div class="refuse" data-refusal>
+        <h3>What is not on this page</h3>
+        <ul class="none">
+          <li>No instant quote</li><li>No calculator</li><li>No figure</li><li>No response time</li><li>No win rate</li>
+        </ul>
+        <p><b>A response time is a promise about a job nobody has looked at yet</b>, and the usual way of meeting one is to send the first of the three numbers and call it the third.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

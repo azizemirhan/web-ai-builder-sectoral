@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S18-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S18 — BIM Technology
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : The same six items distributed twice across the same four rooms — once with
+                   nobody coordinating and once with somebody — so that the reader watches the six
+                   move to the left
+  Density        : Medium
+  Media mode     : None. No wireframe, no isometric, no overlay, and **nothing is drawn at an
+                   angle** &mdash; anti-patterns four and five.
+  Interaction    : None.
+  The device     : **The same set, distributed twice.** The argument of this section is that a
+                   coordinated model relocates problems rather than removing them, so the structure
+                   is a relocation: identical items, identical columns, different positions.
+  The trap       : The sector direction names it for this variant &mdash; *becoming a specification
+                   table.* A table would set the six against four criteria and invite comparison
+                   between them. **These are not six comparable rows**; they are one set shown in
+                   two states, and the finding is the difference between the two pictures.
+  The exception  : One of the six does not move. **Setting out only relocates if somebody surveyed
+                   the building**, so it is drawn in the second picture as an unresolved item rather
+                   than quietly moved with the rest. An honest distribution has to show what stays
+                   put.
+  Not drawn      : No count, no proportion and no width mapped to quantity. The columns are named
+                   places, not measured ones &mdash; the `S09` test.
+  Software       : **Omitted, not reserved.**
+  Deliberately not : No figure, percentage, clash count or saving. No software named. No compliance
+                   level as a badge. No fly-through. No named project.
+  Content note   : Information manager, level schedule and survey reference are reserved fields.
+                   Standard names are reserved &mdash; the `S08` rule. No digit in visible copy; no
+                   acronym; no header.
+-->
+
+<meta name="study-id" content="CON-S18-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S18">
+<meta name="section-name" content="BIM Technology">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="One set of six items distributed twice across four rooms — without coordination and with it">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S18-003 — BIM Technology, Structured</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles — namespaced to .con-s18-003 */
+.con-s18-003 {
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #b4b4b4;
+  --paper: #dfdfdf;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --soft-line: #ececec;
+  --rule: #111111;
+  --model: #444444;
+  --review: #969696;
+  --site: #5e5e5e;
+  --after: #2b2b2b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s18-003 *,
+.con-s18-003 *::before,
+.con-s18-003 *::after { box-sizing: inherit; }
+.con-s18-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s18-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s18-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s18-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  padding-bottom: clamp(18px, 2.3vw, 30px);
+  border-bottom: 3px solid var(--rule);
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+}
+.con-s18-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s18-003 h2 {
+  margin: 0;
+  font-size: clamp(2.257rem, 4.41vw, 3.717rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 21ch;
+}
+.con-s18-003 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s18-003 .head p b { color: var(--ink); font-weight: 650; }
+
+/* A picture */
+.con-s18-003 .picture { margin-bottom: clamp(18px, 2.4vw, 30px); }
+.con-s18-003 .ph {
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  gap: clamp(14px, 2.6vw, 44px);
+  align-items: baseline;
+  margin-bottom: clamp(12px, 1.6vw, 18px);
+}
+.con-s18-003 .ph h3 {
+  margin: 0;
+  font-size: clamp(1.369rem, 2.318vw, 1.879rem);
+  line-height: 1.12;
+  letter-spacing: -0.026em;
+  font-weight: 700;
+  max-width: 24ch;
+}
+.con-s18-003 .ph p { margin: 0; max-width: 64ch; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
+.con-s18-003 .ph p b { color: var(--ink); font-weight: 650; }
+
+.con-s18-003 .rooms {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 16px);
+}
+.con-s18-003 .rooms > li {
+  min-width: 0;
+  padding: clamp(12px, 1.5vw, 17px) clamp(12px, 1.5vw, 16px) clamp(13px, 1.6vw, 18px);
+  border-top: 5px solid var(--tone, var(--line));
+  background: rgba(255, 255, 255, 0.42);
+  border-radius: 0 0 12px 12px;
+}
+.con-s18-003 .r-model { --tone: var(--model); }
+.con-s18-003 .r-review { --tone: var(--review); }
+.con-s18-003 .r-site { --tone: var(--site); }
+.con-s18-003 .r-after { --tone: var(--after); }
+.con-s18-003 .rooms h4 {
+  margin: 0 0 5px;
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s18-003 .takes {
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  padding-bottom: clamp(10px, 1.3vw, 14px);
+  border-bottom: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.34;
+  font-weight: 700;
+  letter-spacing: -0.014em;
+}
+.con-s18-003 .chips { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.con-s18-003 .chips li {
+  padding: 8px 11px;
+  border-radius: 16px;
+  background: var(--card);
+  font-size: 1rem;
+  line-height: 1.36;
+  color: var(--ink);
+}
+.con-s18-003 .chips .open {
+  background: transparent;
+  border: 1px dashed var(--site);
+  color: var(--ink-soft);
+}
+.con-s18-003 .chips .open b { color: var(--site); font-weight: 650; }
+.con-s18-003 .empty {
+  padding: 8px 11px;
+  border-radius: 16px;
+  border: 1px dashed var(--line);
+  font-size: 1rem;
+  color: var(--ink-faint);
+}
+
+.con-s18-003 .after-note {
+  margin: clamp(12px, 1.6vw, 18px) 0 0;
+  padding-left: clamp(12px, 1.5vw, 16px);
+  border-left: 4px solid var(--site);
+  max-width: 78ch;
+  font-size: 1.1rem;
+  line-height: 1.62;
+  color: var(--ink-soft);
+}
+.con-s18-003 .after-note b { color: var(--ink); font-weight: 650; }
+
+/* Foot */
+.con-s18-003 .foot {
+  margin-top: clamp(20px, 2.6vw, 34px);
+  padding-top: clamp(18px, 2.3vw, 28px);
+  border-top: 3px solid var(--rule);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s18-003 .foot h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.369rem, 2.257vw, 1.83rem);
+  line-height: 1.12;
+  letter-spacing: -0.024em;
+  font-weight: 700;
+  max-width: 26ch;
+}
+.con-s18-003 .foot p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 62ch; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
+.con-s18-003 .foot p:last-child { margin-bottom: 0; }
+.con-s18-003 .foot p b { color: var(--ink); font-weight: 650; }
+.con-s18-003 .fields { margin: 0 0 clamp(14px, 1.8vw, 20px); padding: 0; list-style: none; display: grid; gap: 7px; }
+.con-s18-003 .fields li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s18-003 .slot {
+  min-width: 62px;
+  padding: 1px 11px;
+  border-radius: 10px;
+  background: var(--card);
+  text-align: center;
+  letter-spacing: 0;
+}
+.con-s18-003 .no ul { margin: 0 0 clamp(10px, 1.3vw, 14px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s18-003 .no li {
+  padding: 4px 12px;
+  border: 1px solid var(--after);
+  border-radius: 999px;
+  font-size: 1rem;
+  color: var(--after);
+}
+
+/* Responsive ladder */
+@media (max-width: 1040px) {
+  .con-s18-003 .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px) {
+  .con-s18-003 .head,
+  .con-s18-003 .ph,
+  .con-s18-003 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s18-003 .head { align-items: start; gap: clamp(14px, 2.4vw, 22px); }
+  .con-s18-003 .ph { gap: clamp(10px, 1.6vw, 16px); }
+}
+
+@media (max-width: 560px) {
+  .con-s18-003 .rooms { grid-template-columns: minmax(0, 1fr); }
+  .con-s18-003 h2, .con-s18-003 .head p, .con-s18-003 .ph h3,
+  .con-s18-003 .ph p, .con-s18-003 .after-note,
+  .con-s18-003 .foot h3, .con-s18-003 .foot p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s18-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s18-003 {
+  --v2-accent: #969696;
+  --v2-soft: #b4b4b4;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
+  font-size: 1.06rem;
+}
+.con-s18-003 h2 { font-weight: 800; }
+.con-s18-003 h3, .con-s18-003 h4 { font-weight: 750; }
+.con-s18-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s18-003 .chips li, .con-s18-003 .slot {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #b4b4b4;
+}
+.con-s18-003 .chips .open, .con-s18-003 .empty {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s18-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s18-003.con-s18-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s18-003.con-s18-003 .head h2, .con-s18-003.con-s18-003 .head h3, .con-s18-003.con-s18-003 .head h4, .con-s18-003.con-s18-003 .head b, .con-s18-003.con-s18-003 .head strong, .con-s18-003.con-s18-003 .head p b, .con-s18-003.con-s18-003 .head li b, .con-s18-003.con-s18-003 .head span b, .con-s18-003.con-s18-003 .head dt, .con-s18-003.con-s18-003 .head div b {
+  color: #ffffff;
+}
+.con-s18-003.con-s18-003 .head p, .con-s18-003.con-s18-003 .head li, .con-s18-003.con-s18-003 .head span, .con-s18-003.con-s18-003 .head dd, .con-s18-003.con-s18-003 .head div p, .con-s18-003.con-s18-003 .head div li, .con-s18-003.con-s18-003 .head p span, .con-s18-003.con-s18-003 .head .said, .con-s18-003.con-s18-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s18-003.con-s18-003 .head .eyebrow, .con-s18-003.con-s18-003 .head .kicker, .con-s18-003.con-s18-003 .head .slot, .con-s18-003.con-s18-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s18-003.con-s18-003 .head i, .con-s18-003.con-s18-003 .head .bars i, .con-s18-003.con-s18-003 .head .lines i, .con-s18-003.con-s18-003 .head .measures i, .con-s18-003.con-s18-003 .head .bar, .con-s18-003.con-s18-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s18-003.con-s18-003 .head .plate, .con-s18-003.con-s18-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s18-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s18-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s18-003" data-study-id="CON-S18-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s18-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Coordination, and what it is for</p>
+        <h2 id="con-s18-003-title">The same six problems. The same four rooms. Twice.</h2>
+      </div>
+      <p>A coordinated model does not remove any of these; every one of them still happens. <b>What it changes is which room somebody is standing in when it turns up</b> &mdash; so here is the set laid out without coordination, and then the same set with it.</p>
+    </div>
+
+    <div class="picture">
+      <div class="ph">
+        <h3>Without anybody coordinating</h3>
+        <p>Each problem is real, each is found eventually, and <b>most of them are found by the person who has to stop work in order to report them.</b></p>
+      </div>
+      <ul class="rooms">
+        <li class="r-model">
+          <h4>In the model</h4>
+          <p class="takes">An email</p>
+          <ul class="chips">
+            <li class="empty">Nothing arrives here</li>
+          </ul>
+        </li>
+        <li class="r-review">
+          <h4>At the drawing review</h4>
+          <p class="takes">A re-issue</p>
+          <ul class="chips">
+            <li>Services against structure, sometimes, if somebody lays the sections side by side</li>
+          </ul>
+        </li>
+        <li class="r-site">
+          <h4>On site, in the work</h4>
+          <p class="takes">A variation, and two trades standing</p>
+          <ul class="chips">
+            <li>Services against structure</li>
+            <li>Ceiling void depth</li>
+            <li>Builder's work openings</li>
+            <li>Setting out against the survey</li>
+          </ul>
+        </li>
+        <li class="r-after">
+          <h4>After handover</h4>
+          <p class="takes">Opening something that was signed off</p>
+          <ul class="chips">
+            <li>Riser and plant access</li>
+            <li>Who owned which object, discovered when somebody needs the record</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="picture">
+      <div class="ph">
+        <h3>And with somebody coordinating</h3>
+        <p>The same six. <b>Five of them move left, which is the whole of what is being bought</b> &mdash; and the sixth does not move on its own.</p>
+      </div>
+      <ul class="rooms">
+        <li class="r-model">
+          <h4>In the model</h4>
+          <p class="takes">An email</p>
+          <ul class="chips">
+            <li>Services against structure</li>
+            <li>Ceiling void depth</li>
+            <li>Builder's work openings, ahead of the pour</li>
+            <li>Who owns which object, in a schedule</li>
+            <li class="open"><b>Setting out</b> &mdash; only once a survey exists</li>
+          </ul>
+        </li>
+        <li class="r-review">
+          <h4>At the drawing review</h4>
+          <p class="takes">A re-issue</p>
+          <ul class="chips">
+            <li>Riser and plant access, because it needs somebody to ask a question the software does not ask</li>
+          </ul>
+        </li>
+        <li class="r-site">
+          <h4>On site, in the work</h4>
+          <p class="takes">A variation, and two trades standing</p>
+          <ul class="chips">
+            <li class="open"><b>Setting out</b>, if the survey was never done. It stays here, and it takes the others back with it</li>
+          </ul>
+        </li>
+        <li class="r-after">
+          <h4>After handover</h4>
+          <p class="takes">Opening something that was signed off</p>
+          <ul class="chips">
+            <li class="empty">Nothing, which is the point of the exercise</li>
+          </ul>
+        </li>
+      </ul>
+      <p class="after-note"><b>The sixth item is drawn twice on purpose.</b> A model of an existing building is only as true as the survey underneath it, and on a refurbishment the building is never where the drawing says it is. Without that survey the setting out is still discovered on site &mdash; and because everything else was coordinated against a wrong origin, <b>it takes the other five back onto the site with it.</b> That is why we will not start one without it.</p>
+    </div>
+
+    <div class="foot">
+      <div>
+        <h3>Most of what goes wrong is not a clash the software missed</h3>
+        <p>It is somebody modelling to a level of detail nobody agreed, an object two parties both believed the other owned, or <b>a file issued after the decision it was meant to inform.</b></p>
+        <p>So the artefacts that matter are a schedule of who owns what, a level of definition against each line, and a date. <b>They are held by a person rather than by a system</b>, and the person is named.</p>
+        <ul class="fields">
+          <li><span>Who holds this</span><span class="slot"><span class="vh">Name of the information manager</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Level schedule</span><span class="slot"><span class="vh">Level of definition schedule reference</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Survey</span><span class="slot"><span class="vh">Survey reference</span><span aria-hidden="true">&mdash;</span></span></li>
+        </ul>
+      </div>
+      <div class="no" data-refusal>
+        <h3>Not on this page</h3>
+        <ul>
+          <li>No wireframe</li>
+          <li>No software named</li>
+          <li>No compliance badge</li>
+          <li>No fly-through</li>
+        </ul>
+        <p><b>A drawing you did not make is a drawing of nothing</b>, so there is no plan, no overlay and nothing set at an angle &mdash; an angle is that same picture rebuilt out of rules. <b>Which package we use is the least interesting fact here</b>, and a compliance level is a scope of work rather than an achievement. A walkthrough sells a building; <b>it does not coordinate one.</b></p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

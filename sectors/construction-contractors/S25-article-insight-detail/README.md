@@ -6,13 +6,6 @@ CON-S25
 
 Project Journal / Industry Update Detail
 
-# Section Role
-
-S25 — Article / Insight Detail
-
-Universal Extended Site Architecture (S21–S27). The role is canonical across all
-twenty sectors; the section name above is this sector's own term for it.
-
 # Sector
 
 Construction & Contractors
@@ -20,34 +13,6 @@ Construction & Contractors
 # Prefix
 
 CON
-
-# Purpose
-
-The detail page for one piece of editorial or resource content.
-
-# Visitor Intent
-
-The visitor came to read something specific, usually from a search result or a link, and wants to read it without obstruction.
-
-# Content Responsibility
-
-One article in full: its heading structure, its body, its attribution and its context.
-
-# In Scope
-
-- Article title, standfirst and body content
-- Attribution and factual publication context
-- Category or topic labels
-- Optional lead media and in-body media
-- Optional in-page contents for long pieces
-- Related reading
-
-# Out Of Scope
-
-- An index or feed of all articles, which belongs to the sector core sections
-- Marketing copy dressed as editorial
-- Fabricated authors, publications, dates or citations
-- Any advice a regulated sector may not publish without qualification
 
 # Planned Studies
 
@@ -59,37 +24,95 @@ CON-S25-005
 
 # Expected Structural Diversity
 
-| Variant | Territory |
+| Variant | Direction |
 | --- | --- |
 | `CON-S25-001` | Universal / Safe |
 | `CON-S25-002` | Premium / Editorial |
-| `CON-S25-003` | Dense / Information-heavy |
+| `CON-S25-003` | Structured / Visual Modular |
 | `CON-S25-004` | Conversion-led |
-| `CON-S25-005` | Sector-native / Distinctive |
+| `CON-S25-005` | Art-directed / Distinctive |
 
-These are authoring and research directions, not production enums. The five studies must
-differ structurally. They must not become five colour schemes, five font themes, five
-cosmetic variants, or five copies of one grid with the content swapped.
+Read for this sector in `../CONSTRUCTION-DESIGN-DIRECTION.md`.
 
-# Media Relationship
+# Section Role
 
-Optional lead media plus in-body media slots. Body media must not break the reading measure, and captions belong to the study, not to alt text alone.
+The body of one journal entry: why it was written, who wrote it, what a reader can do with it without
+hiring anybody, and what it does not cover.
 
-# Interaction Notes
+# The Governing Constraint — Give Something Away Or It Is An Advertisement
 
-Usually none. In-page contents, footnotes or a progress indicator may be justified for long pieces and must degrade to plain markup.
+    A piece that cannot be used without hiring us is an advertisement with paragraphs in
+    it. The test of an article is whether somebody could act on it tomorrow and never
+    call.
 
-# Responsive Considerations
+So every study carries a block headed **what you can do with this without us**, and the things in it
+are real and specific enough to be done by a reader on their own building.
 
-This role is judged on reading comfort: a controlled measure, a stable line length, and heading hierarchy that survives at every width. Media inside the body must reflow without forcing the text column wider than it should be.
+# The Three Rules Behind The Piece
 
-# Related Sections
+| Rule | Why |
+| --- | --- |
+| **It was written because somebody asked it** — three times, by three different people | Not because it ranks. A topic chosen by a search engine is a topic chosen by somebody who is not the reader |
+| **The person who wrote it runs something** | An article about site safety by the marketing team is worth nothing. **If the writer does not run something, it does not go up** |
+| **What we get out of publishing it is stated** | People who read it ring us, and some of them ring somebody else with better questions. Both are fine, and saying so is more trustworthy than calling it a public service |
 
-Sector terminology varies and the label should follow it. Not every sector calls this a blog, and professional sectors generally do not.
+# The Text Itself Is Reserved
+
+The catalog's standing resolution, and the form invented for it in `WELL-S25`:
+
+    Reserve the prose. Author the apparatus.
+
+An article body cannot be invented, so it is drawn as **reserved prose** — ruled measures of varying
+width, labelled — rather than as a dash or a block of filler. `005` takes that to display scale,
+which raises the same problem `S21-005` solved for the title: **a reserved thing that becomes the
+design has to be redrawn, not merely enlarged.**
+
+# What This Section Will Not Do
+
+- **No *ultimate guide*, no *top tips*, no *everything you need to know*.** A piece with that title
+  was written for a search engine, and the search engine is not the reader.
+- **No share count, no view count, no comment count.** The counter rule.
+- **No newsletter form.** `S15-004` holds this sector's only form.
+- **No stock photograph of a hard hat and a tablet** — anti-patterns four and five.
+- **No author portrait wall.** One reserved portrait at most — the `S11` rule.
+
+# What Is Real, And What May Not Be Invented
+
+| Element | Treatment |
+| --- | --- |
+| Why the piece exists, and the three rules | **Real** |
+| The writer's role, and what they run | **Real** |
+| What a reader can do without us | **Real, and specific** |
+| What we get out of publishing | **Real** |
+| What the piece does not cover | **Real** |
+| The article body | **Reserved prose** — ruled measures, never filler |
+| Title, writer's name, date, reading time, category | **Reserved fields** |
+| Any count of shares, views or comments | **Forbidden** |
+
+# Boundary With S16, S21 And S24
+
+| Section | What it owns |
+| --- | --- |
+| `S16` Capability Downloads | **Documents**, and when each stops being true |
+| `S21` Subpage Hero | Which page this is |
+| `S24` Project Detail | **One job's register of change** |
+| `S25` Project Journal Detail | **One piece of writing**: why it exists, who wrote it, and what it gives away |
+
+    S16 is what we will send you. S25 is what we will tell you for nothing.
+
+# One Mechanism, In One Study
+
+**`004` carries the batch's only anchors**, routing in-page. No study carries a form. The
+architecture run's placeholder convention holds: **no em-dash**; a reserved value reads as
+*Reserved*, and reserved prose is drawn as measures.
+
+# Section Shell
+
+Section only. No global header, logo, primary navigation, announcement bar or footer.
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 

@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S01-005
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S01 — Hero
+  Direction      : Art-directed / Distinctive
+  Reference      : Supplied — the near-black hero with a red block, a machine cut out against it, an
+                   oversized line, a slide counter and a vertical side nav. Placed here because
+                   weight and plant is this direction's register in this sector.
+  Layout model   : A near-black field with a single saturated block held to the right, a large
+                   reserved plant media area sitting across it, and an oversized line to the left
+  Density        : Low
+  Media mode     : One reserved plant media area — machinery in use, on the site, not parked for a
+                   photograph. The sector direction's `005` trap is becoming a car advert; **the
+                   subject is the work, not the plant**, and the slot says so.
+  Interaction    : None (static; no JavaScript)
+  What was dropped from the reference, and why :
+                   • **The slide counter.** A counter asserts a carousel, and this study has no
+                     script and therefore no slides. A control that counts nothing is worse than no
+                     control — and it would also have put a digit on a page whose whole rule is that
+                     unearned figures do not appear.
+                   • **The vertical side navigation.** Site chrome, removed on the standing
+                     section-shell rule.
+                   • **The price line** (*from $8 per sq. m.*). A rate on a construction hero is
+                     either fabricated or a quote for a job nobody has walked. The sector direction
+                     rules it out.
+  What replaced them : One reserved figure at the foot — the largest project by value — which is the
+                   honest version of the thing a rate was trying to signal: the ceiling this firm has
+                   actually worked to.
+  Content note   : No invented figure, client or project name, certification, safety record, award,
+                   rating, price or rate; no header; no urgency device; no digit in visible copy.
+-->
+
+<meta name="study-id" content="CON-S01-005">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Near-black field with a saturated block, a reserved plant area across it and an oversized line">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-reserved-plant-area">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S01-005 — Hero, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0e0e0e; }
+
+/* Scoped study styles — namespaced to .con-s01-005 */
+.con-s01-005 {
+  --ink: #ffffff;
+  --ink-soft: #b4b4b4;
+  --paper: #0e0e0e;
+  --block: #969696;
+  --slot: #111111;
+  --slot-ink: #ececec;
+  --slot-edge: #5e5e5e;
+  --line: #444444;
+  --focus: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s01-005 *,
+.con-s01-005 *::before,
+.con-s01-005 *::after { box-sizing: inherit; }
+.con-s01-005 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+.con-s01-005 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s01-005 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* The stage: a block held right, media across it */
+.con-s01-005 .stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  margin-bottom: clamp(24px, 3vw, 44px);
+}
+.con-s01-005 .block {
+  grid-column: 2;
+  grid-row: 1;
+  background: var(--block);
+  aspect-ratio: 4 / 5;
+  max-height: clamp(300px, 40vw, 520px);
+  justify-self: end;
+  width: 100%;
+}
+.con-s01-005 .plant {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  align-self: center;
+  margin-left: clamp(0px, 6vw, 96px);
+  margin-right: clamp(0px, 3vw, 48px);
+  border: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  aspect-ratio: 16 / 9;
+  max-height: clamp(230px, 30vw, 400px);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.con-s01-005 .plant span {
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* The line */
+.con-s01-005 .say { max-width: none; }
+.con-s01-005 .eyebrow {
+  margin: 0 0 clamp(12px, 1.5vw, 18px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.con-s01-005 h1 {
+  margin: 0;
+  font-size: clamp(2.44rem, 5.796vw, 4.914rem);
+  line-height: 0.98;
+  letter-spacing: -0.038em;
+  font-weight: 800;
+  text-transform: uppercase;
+  max-width: 17ch;
+}
+.con-s01-005 .said {
+  margin: clamp(16px, 2vw, 24px) 0 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.1rem, 1.298vw, 1.274rem);
+  line-height: 1.64;
+}
+
+.con-s01-005 .foot {
+  margin: clamp(26px, 3.2vw, 46px) 0 0;
+  padding-top: clamp(20px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: clamp(18px, 3vw, 52px);
+}
+.con-s01-005 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 32px;
+  background: var(--block);
+  color: var(--ink);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.con-s01-005 .go:hover { background: var(--ink); color: var(--paper); }
+.con-s01-005 .figure { display: flex; align-items: flex-end; gap: 14px; }
+.con-s01-005 .fname {
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+  max-width: 13ch;
+  line-height: 1.5;
+}
+.con-s01-005 .slot {
+  display: grid;
+  place-items: center;
+  min-width: clamp(100px, 11vw, 150px);
+  min-height: clamp(58px, 6vw, 78px);
+  padding: 8px 14px;
+  border: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  color: var(--slot-ink);
+  font-size: clamp(1.534rem, 2.44vw, 2.196rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Responsive ladder — the block releases before the line does */
+@media (max-width: 860px) {
+  .con-s01-005 .stage { grid-template-columns: minmax(0, 1fr); }
+  .con-s01-005 .block {
+    grid-column: 1;
+    aspect-ratio: 3 / 1;
+    max-height: 150px;
+  }
+  .con-s01-005 .plant {
+    grid-column: 1;
+    margin: 0 0 0 clamp(16px, 6vw, 48px);
+    max-height: none;
+  }
+  .con-s01-005 h1,
+  .con-s01-005 .said { max-width: none; }
+}
+
+@media (max-width: 560px) {
+  .con-s01-005 .go { width: 100%; }
+  .con-s01-005 .plant { aspect-ratio: 4 / 3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s01-005 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s01-005 {
+  --v2-accent: #b4b4b4;
+  --v2-soft: #444444;
+  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
+  font-size: 1.06rem;
+}
+.con-s01-005 h2 { font-weight: 800; }
+.con-s01-005 h3, .con-s01-005 h4 { font-weight: 750; }
+.con-s01-005 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s01-005 .plant {
+  height: auto;
+  min-height: clamp(200px, 21vw, 320px);
+  border-radius: 26px;
+  border: 2px dashed #5e5e5e;
+  background: linear-gradient(145deg, #444444 0%, #2b2b2b 100%);
+}
+.con-s01-005 .plant span {
+  color: #b4b4b4;
+  font-weight: 700;
+}
+.con-s01-005 .slot {
+  border: 1px dashed #5e5e5e;
+  border-radius: 14px;
+}
+.con-s01-005 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 600;
+}
+.con-s01-005.con-s01-005 .shell > h2 {
+  padding: clamp(26px, 3.4vw, 54px);
+  border-radius: 34px;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  max-width: none;
+}
+.con-s01-005.con-s01-005 .shell > h2 span, .con-s01-005.con-s01-005 .shell > h2 b, .con-s01-005.con-s01-005 .shell > h2 em, .con-s01-005.con-s01-005 .shell > h2 i {
+  color: #ffffff;
+}
+.con-s01-005 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s01-005 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s01-005" data-study-id="CON-S01-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="con-s01-005-title">
+
+    <div class="stage">
+      <div class="block" aria-hidden="true"></div>
+      <div class="plant"><span>Plant media &mdash; machinery in use, on the job<br>working, not parked for a photograph</span></div>
+    </div>
+
+    <div class="say">
+      <p class="eyebrow">Groundworks &amp; civils</p>
+      <h1 id="con-s01-005-title">We move the ground before anybody builds on it.</h1>
+    </div>
+    <p class="said">Muck away, piling, drainage, slabs and the roads that get everyone else on site. Unglamorous, on the critical path, and the reason the trades behind us either start on time or do not.</p>
+
+    <div class="foot">
+      <a class="go" href="#con-s01-005-title">Put a project to us</a>
+      <p class="figure">
+        <span class="slot"><span class="vh">Value of the largest project completed</span><span aria-hidden="true">&mdash;</span></span>
+        <span class="fname">Largest project by value, reserved</span>
+      </p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

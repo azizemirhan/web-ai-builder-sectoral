@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S06-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S06 — Project Delivery Process
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Two coloured lanes running the full height — what we do, and what you owe before
+                   it — with a dark gate bar cutting across both after every stage to say what has
+                   just stopped being cheap to change
+  Density        : High
+  Media mode     : One reserved site area, as a band, under the head.
+  Interaction    : None (static; no JavaScript)
+  The device     : **Two lanes of equal width.** Every process diagram in this industry is written
+                   entirely in the contractor's lane. Giving the client's obligations a lane of the
+                   same width, in a colour of its own, states structurally what the copy could only
+                   assert: that this is a job with two parties in it and the delay usually starts on
+                   the other side.
+  Gate split     : `001` and `002` carry both halves of the gate inside the bar. Here the *what you
+                   owe* half becomes a lane and the bar carries only *what is fixed* &mdash; a
+                   legitimate re-division, because a lane can hold an obligation per stage where a
+                   bar can only hold one per join.
+  Not a table    : The direction's trap. The defence is that the lanes are coloured fields rather
+                   than ruled columns, the cells are rounded cards with their own padding, and the
+                   gate bars break the grid across its whole width at every join. A table has no
+                   rows that cut across it.
+  Content note   : Stage names and roles are generic vocabulary. No duration, date, programme length
+                   or lead time, in copy or as a reserved field. No client or project name, no
+                   certification, scheme or named regulation, no safety record, no price or rate; no
+                   digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S06-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S06">
+<meta name="section-name" content="Project Delivery Process">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Two coloured obligation lanes with dark gate bars cutting across at every join">
+<meta name="density" content="high">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S06-003 — Project Delivery Process, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e8e8e8; }
+
+/* Scoped study styles — namespaced to .con-s06-003 */
+.con-s06-003 {
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #7a7a7a;
+  --paper: #e8e8e8;
+  --us: #ffffff;
+  --us-head: #2b2b2b;
+  --you: #ececec;
+  --you-head: #444444;
+  --line: #d2d2d2;
+  --rule: #b4b4b4;
+  --gate: #111111;
+  --gate-ink: #ececec;
+  --gate-soft: #969696;
+  --slot-a: #969696;
+  --slot-b: #5e5e5e;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s06-003 *,
+.con-s06-003 *::before,
+.con-s06-003 *::after { box-sizing: inherit; }
+.con-s06-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s06-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s06-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s06-003 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(14px, 2.4vw, 40px);
+  margin-bottom: clamp(16px, 2.2vw, 28px);
+}
+.con-s06-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s06-003 h2 {
+  margin: 0;
+  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s06-003 .head p { margin: 0; max-width: 40ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s06-003 .head p b { color: var(--ink); font-weight: 650; }
+
+.con-s06-003 .shot {
+  border-radius: 22px;
+  overflow: hidden;
+  height: clamp(140px, 15vw, 230px);
+  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(13px, 1.6vw, 20px);
+  margin-bottom: clamp(16px, 2.2vw, 26px);
+}
+.con-s06-003 .shot span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.84;
+}
+
+/* The two lanes */
+.con-s06-003 .grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.44fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(9px, 1.1vw, 13px);
+  align-items: stretch;
+}
+.con-s06-003 .lanehead {
+  border-radius: 22px;
+  padding: clamp(12px, 1.5vw, 18px) clamp(14px, 1.7vw, 20px);
+  color: #ffffff;
+}
+.con-s06-003 .lanehead.us { background: var(--us-head); }
+.con-s06-003 .lanehead.you { background: var(--you-head); }
+.con-s06-003 .lanehead h3 { margin: 0 0 3px; font-size: clamp(1.1rem, 1.475vw, 1.369rem); line-height: 1.16; letter-spacing: -0.016em; font-weight: 700; }
+.con-s06-003 .lanehead p { margin: 0; font-size: 1rem; line-height: 1.44; opacity: 0.88; }
+.con-s06-003 .spacer { border-radius: 22px; }
+
+.con-s06-003 .name {
+  border-radius: 22px;
+  padding: clamp(14px, 1.7vw, 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.con-s06-003 .when {
+  margin: 0 0 5px;
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s06-003 h4 {
+  margin: 0;
+  font-size: clamp(1.1rem, 1.51vw, 1.416rem);
+  line-height: 1.16;
+  letter-spacing: -0.018em;
+  font-weight: 700;
+}
+
+.con-s06-003 .cell {
+  border-radius: 22px;
+  padding: clamp(14px, 1.7vw, 20px);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.con-s06-003 .cell.us { background: var(--us); }
+.con-s06-003 .cell.you { background: var(--you); }
+.con-s06-003 .cell p { margin: 0; }
+.con-s06-003 .cell p + p { margin-top: 9px; }
+.con-s06-003 .cell b { color: var(--ink); font-weight: 650; }
+
+/* Gate bars cut across the whole grid */
+.con-s06-003 .gate {
+  grid-column: 1 / -1;
+  border-radius: 22px;
+  background: var(--gate);
+  color: var(--gate-ink);
+  padding: clamp(11px, 1.4vw, 16px) clamp(14px, 1.8vw, 22px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px clamp(12px, 1.6vw, 20px);
+}
+.con-s06-003 .gate .k {
+  flex: none;
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gate-soft);
+}
+.con-s06-003 .gate p { margin: 0; flex: 1 1 380px; min-width: 0; font-size: 1rem; line-height: 1.5; }
+
+/* Close */
+.con-s06-003 .close {
+  margin: clamp(18px, 2.4vw, 30px) 0 0;
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--rule);
+  max-width: 88ch;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  line-height: 1.62;
+}
+.con-s06-003 .close b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 980px) {
+  .con-s06-003 .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .con-s06-003 .spacer { display: none; }
+  .con-s06-003 .name { grid-column: 1 / -1; padding-bottom: 0; }
+}
+
+@media (max-width: 640px) {
+  .con-s06-003 .grid { grid-template-columns: minmax(0, 1fr); }
+  .con-s06-003 h2, .con-s06-003 .head p, .con-s06-003 .close { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s06-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s06-003 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
+  font-size: 1.06rem;
+}
+.con-s06-003 h2 { font-weight: 800; }
+.con-s06-003 h3, .con-s06-003 h4 { font-weight: 750; }
+.con-s06-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s06-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s06-003.con-s06-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s06-003.con-s06-003 .head h2, .con-s06-003.con-s06-003 .head h3, .con-s06-003.con-s06-003 .head h4, .con-s06-003.con-s06-003 .head b, .con-s06-003.con-s06-003 .head strong, .con-s06-003.con-s06-003 .head p b, .con-s06-003.con-s06-003 .head li b, .con-s06-003.con-s06-003 .head span b, .con-s06-003.con-s06-003 .head dt, .con-s06-003.con-s06-003 .head div b {
+  color: #ffffff;
+}
+.con-s06-003.con-s06-003 .head p, .con-s06-003.con-s06-003 .head li, .con-s06-003.con-s06-003 .head span, .con-s06-003.con-s06-003 .head dd, .con-s06-003.con-s06-003 .head div p, .con-s06-003.con-s06-003 .head div li, .con-s06-003.con-s06-003 .head p span, .con-s06-003.con-s06-003 .head .said, .con-s06-003.con-s06-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s06-003.con-s06-003 .head .eyebrow, .con-s06-003.con-s06-003 .head .kicker, .con-s06-003.con-s06-003 .head .slot, .con-s06-003.con-s06-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s06-003.con-s06-003 .head i, .con-s06-003.con-s06-003 .head .bars i, .con-s06-003.con-s06-003 .head .lines i, .con-s06-003.con-s06-003 .head .measures i, .con-s06-003.con-s06-003 .head .bar, .con-s06-003.con-s06-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s06-003.con-s06-003 .head .plate, .con-s06-003.con-s06-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s06-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s06-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s06-003" data-study-id="CON-S06-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s06-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">How a job runs</p>
+        <h2 id="con-s06-003-title">Two lanes, because a job has two parties in it</h2>
+      </div>
+      <p>Every process diagram in this industry is written entirely in the contractor&rsquo;s lane. <b>The other one is the same width here, because that is where most of the delay starts.</b></p>
+    </div>
+
+    <div class="shot"><span>Site media &mdash; the work in progress, wide</span></div>
+
+    <div class="grid">
+
+      <div class="spacer"></div>
+      <div class="lanehead us">
+        <h3>What we do</h3>
+        <p>Ours to get right, and ours to carry when it is not.</p>
+      </div>
+      <div class="lanehead you">
+        <h3>What you owe before it</h3>
+        <p>Not a complaint. The half nobody prints.</p>
+      </div>
+
+      <div class="name">
+        <p class="when">To begin with</p>
+        <h4>The first conversation</h4>
+      </div>
+      <div class="cell us">
+        <p>Tell you whether this is the kind of work we do, and which of it would be our own people rather than somebody else&rsquo;s.</p>
+        <p><b>If it is not for us, we say so here</b> rather than at the third meeting.</p>
+      </div>
+      <div class="cell you">
+        <p>Roughly what, and roughly where.</p>
+        <p>Who will have the authority to say yes later on &mdash; because the answer changes how the rest of this runs.</p>
+      </div>
+      <div class="gate">
+        <span class="k">Fixed after this</span>
+        <p>Nothing at all. This is the stage where changing your mind is free, and we would rather you spent it.</p>
+      </div>
+
+      <div class="name">
+        <p class="when">Before any price</p>
+        <h4>The site walk</h4>
+      </div>
+      <div class="cell us">
+        <p><b>We will not price a job we have not walked.</b> A drawing tells you the building; the site tells you the job.</p>
+        <p>We bring the person who would run it, not only somebody from the office.</p>
+      </div>
+      <div class="cell you">
+        <p>Access, at a time when the building is doing what it normally does.</p>
+        <p>Half an hour of somebody who knows its history &mdash; usually the most valuable half hour on the job.</p>
+      </div>
+      <div class="gate">
+        <span class="k">Fixed after this</span>
+        <p>Still nothing &mdash; but what we saw now goes into the price, including an honest line for what we could not see.</p>
+      </div>
+
+      <div class="name">
+        <p class="when">Then</p>
+        <h4>The price</h4>
+      </div>
+      <div class="cell us">
+        <p>A price, and with it the list of what we could not price and why.</p>
+        <p><b>Assumptions written where you can argue with them</b>, rather than buried where you will meet them later.</p>
+      </div>
+      <div class="cell you">
+        <p>A decision on the exclusions. That list is where the surprises live on every job.</p>
+        <p>Any information you are holding that we have asked for.</p>
+      </div>
+      <div class="gate">
+        <span class="k">Fixed after this</span>
+        <p>The scope you accepted. Anything added later is a variation, and it is better to argue about that now than in the middle of the work.</p>
+      </div>
+
+      <div class="name">
+        <p class="when">Before we start</p>
+        <h4>Pre-start</h4>
+      </div>
+      <div class="cell us">
+        <p>Contract, sequence, temporary works, site set-up.</p>
+        <p><b>The manager who will run the job is in the meeting</b>, so the plan is made by the person who has to live in it.</p>
+      </div>
+      <div class="cell you">
+        <p>The signed contract.</p>
+        <p>The permissions that are yours to get, and final choices on anything with a long order.</p>
+      </div>
+      <div class="gate">
+        <span class="k">Fixed after this</span>
+        <p>The sequence. Moving a stage now costs money, because the trades and the plant are booked around it.</p>
+      </div>
+
+      <div class="name">
+        <p class="when">While it runs</p>
+        <h4>On site</h4>
+      </div>
+      <div class="cell us">
+        <p>The work. A written report every week, a valuation every month, and one named person who answers the phone.</p>
+        <p><b>Change gets more expensive every week, and the reason is physical.</b> Moving a wall before the frame is a drawing; afterwards it is a demolition.</p>
+      </div>
+      <div class="cell you">
+        <p>Decisions when we ask for them rather than when they turn urgent.</p>
+        <p><b>This is the largest single cause of delay on a live site</b>, and it is the one thing on this page we cannot do for you.</p>
+      </div>
+      <div class="gate">
+        <span class="k">Fixed after this</span>
+        <p>Everything you did not change while there was still time to change it cheaply.</p>
+      </div>
+
+      <div class="name">
+        <p class="when">At the end</p>
+        <h4>Handover</h4>
+      </div>
+      <div class="cell us">
+        <p>The building, the drawings, the manuals and the demonstrations, on the day &mdash; not a box of paperwork posted later once everyone has forgotten what it was for.</p>
+      </div>
+      <div class="cell you">
+        <p>Somebody with the authority to accept it.</p>
+        <p>Time booked to walk it properly, rather than signed for in a corridor.</p>
+      </div>
+      <div class="gate">
+        <span class="k">Fixed after this</span>
+        <p>The building. What remains is a defects list, which is a normal part of a job rather than an accusation.</p>
+      </div>
+
+      <div class="name">
+        <p class="when">Afterwards</p>
+        <h4>The defects period</h4>
+      </div>
+      <div class="cell us">
+        <p><b>The same site manager comes back.</b> Sending somebody who was not there spends your morning explaining the job to a stranger before anything gets fixed.</p>
+      </div>
+      <div class="cell you">
+        <p>Tell us. A defect nobody reports is one nobody can fix.</p>
+      </div>
+      <div class="gate">
+        <span class="k">Fixed after this</span>
+        <p>Nothing. This is the stage where you find out whether the rest of this page was true.</p>
+      </div>
+
+    </div>
+
+    <p class="close"><b>No stage on this page has a length, and none has an empty box where one should go.</b> A duration printed before anybody has walked your site is a guess in a uniform, and a blank marked <em>weeks</em> makes the same promise more quietly. The order is something we can state truthfully; so is where in that order each decision stops being cheap.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

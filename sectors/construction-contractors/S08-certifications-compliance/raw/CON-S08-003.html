@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S08-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S08 — Certifications & Compliance
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Each certificate drawn as a register entry — a category rule, the reserved number
+                   in a boxed field at display scale, a permits row and an excludes row, and a
+                   footer of small reserved fields — with a not-held strip above and the handover to
+                   the safety page below
+  Density        : High
+  Media mode     : None. A certifications section has nothing to photograph that is not a logo.
+  Interaction    : None (static; no JavaScript)
+  The device     : **The reserved fields are drawn as fields.** Everywhere else in this catalog a
+                   reserved slot is a discreet dash; here the whole subject is documentation, so the
+                   slot is boxed and ruled like the record it stands for. The form is the module,
+                   and the module repeating is the structure.
+  Not a table    : The direction's trap. Each entry is a card with its own coloured rule and its own
+                   internal hierarchy, the permits and excludes rows carry sentences of different
+                   lengths, and the not-held strip breaks the grid across its whole width. No two
+                   entries are the same height.
+  The not-held strip : Kept and put first rather than last. A compliance page that lists only what a
+                   firm holds is answering a question nobody asked; the useful line is what it does
+                   **not** hold, said before a reader has spent an evening on a submission.
+  Deliberately not : No logo, badge, seal or crest. No real scheme, standard or body named in copy.
+                   No *fully accredited* or *fully compliant*.
+  Content note   : Categories of assurance are generic vocabulary. Scheme names, registration
+                   numbers, issuing bodies, assessment and expiry dates and cover levels are all
+                   reserved fields. No incident figure or safety record; no digit in visible copy;
+                   no header.
+-->
+
+<meta name="study-id" content="CON-S08-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S08">
+<meta name="section-name" content="Certifications &amp; Compliance">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Register-entry modules with boxed reserved fields, above a not-held strip">
+<meta name="density" content="high">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S08-003 — Certifications &amp; Compliance, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles — namespaced to .con-s08-003 */
+.con-s08-003 {
+  --ink: #111111;
+  --ink-soft: #7a7a7a;
+  --ink-faint: #969696;
+  --paper: #dfdfdf;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --rule: #b4b4b4;
+  --field: #ececec;
+  --permit: #5e5e5e;
+  --exclude: #444444;
+  --mark: #2b2b2b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s08-003 *,
+.con-s08-003 *::before,
+.con-s08-003 *::after { box-sizing: inherit; }
+.con-s08-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s08-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s08-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s08-003 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(14px, 2.4vw, 40px);
+  margin-bottom: clamp(16px, 2.2vw, 26px);
+}
+.con-s08-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s08-003 h2 {
+  margin: 0;
+  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 21ch;
+}
+.con-s08-003 .head p { margin: 0; max-width: 40ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s08-003 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Not-held strip, first */
+.con-s08-003 .nothold {
+  border-radius: 22px;
+  border: 2px dashed var(--rule);
+  padding: clamp(15px, 2vw, 26px);
+  margin-bottom: clamp(14px, 1.8vw, 22px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr);
+  gap: clamp(14px, 2.4vw, 42px);
+  align-items: center;
+}
+.con-s08-003 .nothold h3 { margin: 0; font-size: clamp(1.298rem, 1.888vw, 1.652rem); line-height: 1.1; letter-spacing: -0.022em; font-weight: 700; max-width: 18ch; }
+.con-s08-003 .nothold p { margin: 0; max-width: 82ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
+.con-s08-003 .nothold p b { color: var(--ink); font-weight: 650; }
+
+/* Register entries */
+.con-s08-003 .register {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 18px);
+  align-items: start;
+}
+.con-s08-003 .register li { min-width: 0; }
+.con-s08-003 .entry {
+  border-radius: 22px;
+  background: var(--card);
+  border-top: 6px solid var(--mark);
+  padding: clamp(15px, 1.9vw, 24px);
+}
+.con-s08-003 .top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: clamp(11px, 1.4vw, 15px);
+}
+.con-s08-003 .cat {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--mark);
+}
+.con-s08-003 h3 { margin: 0; font-size: clamp(1.1rem, 1.416vw, 1.322rem); line-height: 1.2; letter-spacing: -0.016em; font-weight: 700; }
+
+/* The number, boxed like the record it stands for */
+.con-s08-003 .box {
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  background: var(--field);
+  padding: clamp(11px, 1.4vw, 16px) clamp(12px, 1.5vw, 17px);
+  margin-bottom: clamp(11px, 1.4vw, 15px);
+}
+.con-s08-003 .box .k {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s08-003 .box .slot {
+  display: block;
+  width: 100%;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--rule);
+  font-size: clamp(1.652rem, 2.684vw, 2.379rem);
+  line-height: 1.08;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+
+.con-s08-003 .says { margin: 0 0 9px; font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
+.con-s08-003 .says .k { font-size: 0.777rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; }
+.con-s08-003 .says.lets .k { color: var(--permit); }
+.con-s08-003 .says.not .k { color: var(--exclude); }
+.con-s08-003 .says b { color: var(--ink); font-weight: 650; }
+
+.con-s08-003 .fields {
+  margin: clamp(11px, 1.4vw, 15px) 0 0;
+  padding-top: clamp(10px, 1.3vw, 13px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.con-s08-003 .fields div {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 6px 8px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s08-003 .fields .slot {
+  display: block;
+  margin-top: 3px;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-faint);
+}
+
+/* Verify + close */
+.con-s08-003 .foot {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 18px);
+  align-items: stretch;
+}
+.con-s08-003 .foot > div {
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(16px, 2vw, 26px);
+}
+.con-s08-003 .foot h3 { margin: 0 0 clamp(9px, 1.2vw, 13px); font-size: clamp(1.251rem, 1.77vw, 1.534rem); max-width: 22ch; }
+.con-s08-003 .foot p { margin: 0 0 9px; max-width: 62ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
+.con-s08-003 .foot p:last-child { margin-bottom: 0; }
+.con-s08-003 .foot p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1000px) {
+  .con-s08-003 .register { grid-template-columns: minmax(0, 1fr); }
+  .con-s08-003 .foot { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .con-s08-003 .nothold { grid-template-columns: minmax(0, 1fr); }
+  .con-s08-003 .fields { grid-template-columns: minmax(0, 1fr); }
+  .con-s08-003 h2, .con-s08-003 .head p, .con-s08-003 .nothold h3,
+  .con-s08-003 .nothold p, .con-s08-003 .foot h3, .con-s08-003 .foot p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s08-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s08-003 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
+  font-size: 1.06rem;
+}
+.con-s08-003 h2 { font-weight: 800; }
+.con-s08-003 h3, .con-s08-003 h4 { font-weight: 750; }
+.con-s08-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s08-003 .entry, .con-s08-003 .foot > div {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s08-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s08-003.con-s08-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s08-003.con-s08-003 .head h2, .con-s08-003.con-s08-003 .head h3, .con-s08-003.con-s08-003 .head h4, .con-s08-003.con-s08-003 .head b, .con-s08-003.con-s08-003 .head strong, .con-s08-003.con-s08-003 .head p b, .con-s08-003.con-s08-003 .head li b, .con-s08-003.con-s08-003 .head span b, .con-s08-003.con-s08-003 .head dt, .con-s08-003.con-s08-003 .head div b {
+  color: #ffffff;
+}
+.con-s08-003.con-s08-003 .head p, .con-s08-003.con-s08-003 .head li, .con-s08-003.con-s08-003 .head span, .con-s08-003.con-s08-003 .head dd, .con-s08-003.con-s08-003 .head div p, .con-s08-003.con-s08-003 .head div li, .con-s08-003.con-s08-003 .head p span, .con-s08-003.con-s08-003 .head .said, .con-s08-003.con-s08-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s08-003.con-s08-003 .head .eyebrow, .con-s08-003.con-s08-003 .head .kicker, .con-s08-003.con-s08-003 .head .slot, .con-s08-003.con-s08-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s08-003.con-s08-003 .head i, .con-s08-003.con-s08-003 .head .bars i, .con-s08-003.con-s08-003 .head .lines i, .con-s08-003.con-s08-003 .head .measures i, .con-s08-003.con-s08-003 .head .bar, .con-s08-003.con-s08-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s08-003.con-s08-003 .head .plate, .con-s08-003.con-s08-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s08-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s08-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s08-003" data-study-id="CON-S08-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s08-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The paperwork</p>
+        <h2 id="con-s08-003-title">The register, with the numbers where the badges usually go</h2>
+      </div>
+      <p><b>A certificate is a permission with an expiry date and somebody who can take it away.</b> Every number below is on a public register kept by whoever issued it.</p>
+    </div>
+
+    <div class="nothold">
+      <h3>What we do not hold</h3>
+      <p><b>We are not on every public framework, and there are assessments in this industry we have never been through.</b> If your tender requires one we do not hold, we would rather say so at the first email than after you have shortlisted us &mdash; and if it is one we could reasonably go and get, we will say that too, and let you decide whether it is worth waiting for.</p>
+    </div>
+
+    <ul class="register">
+
+      <li>
+        <div class="entry">
+          <div class="top"><p class="cat">Quality management</p><h3>An audited management system</h3></div>
+          <p class="box"><span class="k">Registration number</span><span class="slot"><span class="vh">Quality management registration number</span><span aria-hidden="true">&mdash;</span></span></p>
+          <p class="says lets"><span class="k">Lets us</span> bid where a client&rsquo;s procurement requires a certified system, and gives somebody outside the firm an audit trail to read.</p>
+          <p class="says not"><span class="k">Does not cover</span> <b>whether any individual job was built well.</b> It audits the system, not the building.</p>
+          <div class="fields">
+            <div>Standard<span class="slot"><span class="vh">Standard name</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Assessed by<span class="slot"><span class="vh">Assessing body</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Valid until<span class="slot"><span class="vh">Expiry date</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="entry">
+          <div class="top"><p class="cat">Health and safety assessment</p><h3>A prequalification assessment</h3></div>
+          <p class="box"><span class="k">Registration number</span><span class="slot"><span class="vh">Health and safety assessment registration number</span><span aria-hidden="true">&mdash;</span></span></p>
+          <p class="says lets"><span class="k">Lets us</span> clear prequalification on most tenders without answering the same questionnaire from scratch each time.</p>
+          <p class="says not"><span class="k">Does not cover</span> <b>how the site runs on a wet Friday when we are behind.</b> Nobody certifies that.</p>
+          <div class="fields">
+            <div>Scheme<span class="slot"><span class="vh">Scheme name</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Assessed by<span class="slot"><span class="vh">Assessing body</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Valid until<span class="slot"><span class="vh">Expiry date</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="entry">
+          <div class="top"><p class="cat">Environmental management</p><h3>An audited environmental system</h3></div>
+          <p class="box"><span class="k">Registration number</span><span class="slot"><span class="vh">Environmental management registration number</span><span aria-hidden="true">&mdash;</span></span></p>
+          <p class="says lets"><span class="k">Lets us</span> work on sites where segregation, reporting and disposal routes are written into the contract.</p>
+          <p class="says not"><span class="k">Does not cover</span> <b>our carbon footprint.</b> No certificate covers that, whatever the badge is shaped like.</p>
+          <div class="fields">
+            <div>Standard<span class="slot"><span class="vh">Standard name</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Assessed by<span class="slot"><span class="vh">Assessing body</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Valid until<span class="slot"><span class="vh">Expiry date</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="entry">
+          <div class="top"><p class="cat">Trade body registration</p><h3>Membership of a trade body</h3></div>
+          <p class="box"><span class="k">Membership number</span><span class="slot"><span class="vh">Trade body membership number</span><span aria-hidden="true">&mdash;</span></span></p>
+          <p class="says lets"><span class="k">Lets us</span> be listed where clients look for firms of our type, and be reachable through somebody other than us.</p>
+          <p class="says not"><span class="k">Does not cover</span> <b>competence.</b> It confirms we exist, we pay, and nobody has struck us off.</p>
+          <div class="fields">
+            <div>Body<span class="slot"><span class="vh">Trade body name</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Member since<span class="slot"><span class="vh">Membership start date</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Valid until<span class="slot"><span class="vh">Expiry date</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="entry">
+          <div class="top"><p class="cat">Public sector supplier registration</p><h3>A public buyer register</h3></div>
+          <p class="box"><span class="k">Supplier number</span><span class="slot"><span class="vh">Public sector supplier registration number</span><span aria-hidden="true">&mdash;</span></span></p>
+          <p class="says lets"><span class="k">Lets us</span> bid for public work without submitting the same evidence separately to every authority that asks.</p>
+          <p class="says not"><span class="k">Does not cover</span> <b>any preference.</b> Being on a register means eligible, not chosen.</p>
+          <div class="fields">
+            <div>Register<span class="slot"><span class="vh">Register name</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Categories<span class="slot"><span class="vh">Registered work categories</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Valid until<span class="slot"><span class="vh">Expiry date</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="entry">
+          <div class="top"><p class="cat">Insurance</p><h3>Liability and contract works cover</h3></div>
+          <p class="box"><span class="k">Policy number</span><span class="slot"><span class="vh">Insurance policy number</span><span aria-hidden="true">&mdash;</span></span></p>
+          <p class="says lets"><span class="k">Lets us</span> come through the gate. Most clients will not let a contractor onto a site without it, and nor should they.</p>
+          <p class="says not"><span class="k">Does not cover</span> <b>as much as you would assume.</b> Cover has limits and exclusions, and yours should read them.</p>
+          <div class="fields">
+            <div>Insurer<span class="slot"><span class="vh">Insurer name</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Cover<span class="slot"><span class="vh">Cover level</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div>Renews<span class="slot"><span class="vh">Renewal date</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="foot">
+      <div>
+        <h3>Check every one of them</h3>
+        <p><b>Each number above sits on a public register kept by the body that issued it, and we would rather you looked than took our word for it.</b></p>
+        <p>If one has lapsed by the time you are reading this, the register will say so before we do. That is the argument for printing numbers instead of badges.</p>
+      </div>
+      <div>
+        <h3>What none of it tells you</h3>
+        <p><b>Whether the site is run well.</b> All of the above tells you that somebody checked the paperwork on a date &mdash; worth something, and not worth what a wall of badges implies.</p>
+        <p>Who can stop the work, and what happens to them if they were wrong, is on the safety page. Nobody certifies those answers, which is exactly why they are the ones to ask.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

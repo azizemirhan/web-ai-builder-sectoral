@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S01-002
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S01 — Hero
+  Direction      : Premium / Editorial
+  Reference      : Supplied — the split hero: a tall building photograph against a pale panel
+                   carrying a short proposition, one action, and a single large figure. Placed here
+                   because low density plus one number is the editorial register.
+  Layout model   : A tall reserved project image holding the left, a pale panel on the right with
+                   the proposition, one action, and **one reserved figure at counter scale**
+  Density        : Low
+  Media mode     : One reserved project media area, 3:4, given half the composition.
+  Interaction    : None (static; no JavaScript)
+  The one number : The reference reads *40 years of experience*. Years in operation is a countable
+                   fact a firm already knows, so it is a **reserved field** rather than an omission —
+                   and giving one reserved figure the scale the reference gives it is the point of
+                   the study: an empty field at counter scale still tells a reviewer exactly what the
+                   finished hero asserts.
+  What was dropped from the reference, and why : The round *watch* button. A play control implies a
+                   film that does not exist, and a control that does nothing is worse than no
+                   control. The second route here is a text link instead.
+  The editorial argument : One image, one sentence, one number, one action. A contractor's hero
+                   does not need to prove everything above the fold; it needs to be specific about
+                   one thing and let the rest of the page carry the evidence.
+  No header      : The reference shows a site header with a phone number and a CTA. Absent here on
+                   the standing section-shell rule; the number would also have been invented.
+  Content note   : No invented figure, client or project name, certification, safety record, award,
+                   rating or price; no urgency device.
+-->
+
+<meta name="study-id" content="CON-S01-002">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Tall reserved image beside a pale panel with one proposition, one action and one reserved figure">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-tall-reserved-project-area">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S01-002 — Hero, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1f1; }
+
+/* Scoped study styles — namespaced to .con-s01-002 */
+.con-s01-002 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --paper: #f1f1f1;
+  --panel: #ffffff;
+  --slot: #444444;
+  --slot-ink: #b4b4b4;
+  --slot-edge: #5e5e5e;
+  --field: #ececec;
+  --field-edge: #969696;
+  --focus: #111111;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s01-002 *,
+.con-s01-002 *::before,
+.con-s01-002 *::after { box-sizing: inherit; }
+.con-s01-002 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+.con-s01-002 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s01-002 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(16px, 2.4vw, 32px);
+  align-items: stretch;
+}
+
+/* Image side */
+.con-s01-002 .media {
+  background: var(--slot);
+  border: 1px dashed var(--slot-edge);
+  border-radius: 26px;
+  aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.con-s01-002 .media span {
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* Panel side */
+.con-s01-002 .panel {
+  background: var(--panel);
+  border-radius: 26px;
+  padding: clamp(24px, 3.4vw, 56px);
+  display: flex;
+  flex-direction: column;
+}
+.con-s01-002 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.con-s01-002 h1 {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: clamp(2.318rem, 4.536vw, 3.906rem);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+  font-weight: 700;
+  max-width: 15ch;
+}
+.con-s01-002 .said {
+  margin: 0 0 clamp(22px, 2.8vw, 34px);
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.1rem, 1.298vw, 1.274rem);
+  line-height: 1.66;
+}
+.con-s01-002 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-height: 52px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--panel);
+  font-size: 1.1rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.con-s01-002 .go:hover { background: #111111; }
+.con-s01-002 .or {
+  margin: clamp(12px, 1.5vw, 16px) 0 0;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+.con-s01-002 .or a { color: var(--ink); text-underline-offset: 4px; }
+
+/* The one number */
+.con-s01-002 .figure {
+  margin-top: auto;
+  padding-top: clamp(28px, 3.4vw, 48px);
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(14px, 2vw, 22px);
+}
+.con-s01-002 .slot {
+  display: grid;
+  place-items: center;
+  min-width: clamp(112px, 12vw, 168px);
+  min-height: clamp(76px, 8vw, 108px);
+  padding: 10px 16px;
+  border: 1px dashed var(--field-edge);
+  border-radius: 22px;
+  background: var(--field);
+  color: #5e5e5e;
+  font-size: clamp(1.952rem, 3.276vw, 3.024rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.con-s01-002 .fname {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  max-width: 14ch;
+}
+.con-s01-002 .fname b { display: block; color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 860px) {
+  .con-s01-002 .shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(14px, 2.4vw, 20px);
+  }
+  .con-s01-002 .media { aspect-ratio: 16 / 10; }
+  .con-s01-002 h1,
+  .con-s01-002 .said { max-width: none; }
+  .con-s01-002 .figure { padding-top: clamp(22px, 2.8vw, 30px); }
+}
+
+@media (max-width: 480px) {
+  .con-s01-002 .go { align-self: stretch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s01-002 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s01-002 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
+  font-size: 1.06rem;
+}
+.con-s01-002 h2 { font-weight: 800; }
+.con-s01-002 h3, .con-s01-002 h4 { font-weight: 750; }
+.con-s01-002 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s01-002 .slot {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s01-002 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s01-002.con-s01-002 .shell > h2 {
+  padding: clamp(26px, 3.4vw, 54px);
+  border-radius: 34px;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  max-width: none;
+}
+.con-s01-002.con-s01-002 .shell > h2 span, .con-s01-002.con-s01-002 .shell > h2 b, .con-s01-002.con-s01-002 .shell > h2 em, .con-s01-002.con-s01-002 .shell > h2 i {
+  color: #ffffff;
+}
+.con-s01-002 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s01-002 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s01-002" data-study-id="CON-S01-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="con-s01-002-title">
+
+    <div class="media"><span>Project media &mdash; one finished building, tall<br>a real project, not a render</span></div>
+
+    <div class="panel">
+      <p class="eyebrow">Main contractor</p>
+      <h1 id="con-s01-002-title">The people who price it are the people who build it.</h1>
+      <p class="said">One firm, one estimator, one site manager, and the same names on the job from the first walk-round to the snagging list. Nothing is handed to a division you have not met.</p>
+
+      <a class="go" href="#con-s01-002-title">Put a project to us</a>
+      <p class="or">Or <a href="#con-s01-002-title">see what we have built</a> first.</p>
+
+      <div class="figure">
+        <span class="slot"><span class="vh">Years the firm has been in operation</span><span aria-hidden="true">&mdash;</span></span>
+        <p class="fname"><b>Years in operation</b>Reserved &mdash; a date on the company record, not a claim.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

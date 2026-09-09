@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S16-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S16 — Capability Downloads
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Three bands, one per kind of expiry trigger, each holding an unequal number of
+                   document modules — sorted by who or what makes the document go out of date
+  Density        : Medium
+  Media mode     : None.
+  Interaction    : None.
+  The sort       : Not by document type, which is how every library in this industry is ordered and
+                   which tells a reader nothing. **Sorted by what makes each one stop being true:**
+                   a date somebody else set, a change we make, or contact with your job. The bands
+                   hold two, three and one, and the unevenness is the finding.
+  The trap       : The sector direction names it for this variant &mdash; *becoming a specification
+                   table.* A table would assert that six documents are six comparable rows. They are
+                   not: one of them expires on a printed date and one expires the moment you open
+                   it, and the bands say so.
+  Not drawn      : No shelf-life bar and no expiry meter. A bar of relative length would assert that
+                   one document lasts twice as long as another, which is a quantity nobody here can
+                   support &mdash; the `S09` test. The trigger is named in words instead.
+  Deliberately not : No figure, limit, term or period &mdash; they are in the documents. No
+                   certificate image, no brochure, no download count, no link to a file.
+  Content note   : Issue dates, revisions, signatory and file are reserved fields. Scheme names are
+                   reserved &mdash; the `S08` rule. No digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S16-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S16">
+<meta name="section-name" content="Capability Downloads">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Three bands by expiry trigger, holding two, three and one document module">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S16-003 — Capability Downloads, Structured</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles — namespaced to .con-s16-003 */
+.con-s16-003 {
+  --ink: #111111;
+  --ink-soft: #7a7a7a;
+  --ink-faint: #b4b4b4;
+  --paper: #dfdfdf;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --soft-line: #ececec;
+  --rule: #111111;
+  --other: #444444;
+  --ours: #5e5e5e;
+  --yours: #2b2b2b;
+  --request: #969696;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s16-003 *,
+.con-s16-003 *::before,
+.con-s16-003 *::after { box-sizing: inherit; }
+.con-s16-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s16-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s16-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s16-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  padding-bottom: clamp(18px, 2.3vw, 30px);
+  border-bottom: 3px solid var(--rule);
+}
+.con-s16-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s16-003 h2 {
+  margin: 0;
+  font-size: clamp(2.257rem, 4.41vw, 3.717rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 21ch;
+}
+.con-s16-003 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s16-003 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Bands */
+.con-s16-003 .band {
+  padding: clamp(20px, 2.6vw, 34px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.con-s16-003 .band > .bh {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(14px, 2.6vw, 44px);
+  align-items: baseline;
+  margin-bottom: clamp(14px, 1.8vw, 22px);
+}
+.con-s16-003 .band h3 {
+  margin: 0;
+  font-size: clamp(1.369rem, 2.318vw, 1.903rem);
+  line-height: 1.14;
+  letter-spacing: -0.024em;
+  font-weight: 700;
+  max-width: 24ch;
+  padding-left: clamp(11px, 1.4vw, 15px);
+  border-left: 6px solid var(--tone, var(--line));
+}
+.con-s16-003 .band > .bh p { margin: 0; max-width: 62ch; font-size: 1.1rem; line-height: 1.6; color: var(--ink-soft); }
+.con-s16-003 .band > .bh p b { color: var(--ink); font-weight: 650; }
+.con-s16-003 .b-other { --tone: var(--other); }
+.con-s16-003 .b-ours { --tone: var(--ours); }
+.con-s16-003 .b-yours { --tone: var(--yours); }
+
+.con-s16-003 .mods { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(12px, 1.6vw, 18px); }
+.con-s16-003 .two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.con-s16-003 .three { grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+.con-s16-003 .one { grid-template-columns: minmax(0, 1fr); }
+
+.con-s16-003 .mods > li {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 22px;
+  padding: clamp(16px, 2vw, 23px) clamp(16px, 2vw, 23px) clamp(14px, 1.8vw, 20px);
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid var(--tone, var(--line));
+}
+.con-s16-003 .one > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: clamp(14px, 2.6vw, 40px);
+  align-items: start;
+}
+
+.con-s16-003 .tag {
+  display: inline-block;
+  align-self: flex-start;
+  justify-self: start;
+  margin-bottom: 8px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.con-s16-003 .t-open { color: var(--ours); border: 1px solid var(--ours); }
+.con-s16-003 .t-request { color: var(--request); border: 1px dashed var(--request); }
+.con-s16-003 h4 {
+  margin: 0 0 clamp(9px, 1.2vw, 13px);
+  font-size: clamp(1.1rem, 1.676vw, 1.416rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  max-width: 24ch;
+}
+.con-s16-003 .mods p { margin: 0 0 clamp(9px, 1.1vw, 12px); font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
+.con-s16-003 .mods p b { color: var(--ink); font-weight: 650; }
+.con-s16-003 .who .k,
+.con-s16-003 .trig .k {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s16-003 .trig {
+  margin-top: auto;
+  padding: clamp(10px, 1.2vw, 13px) 0 0;
+  border-top: 1px solid var(--soft-line);
+  color: var(--ink);
+}
+.con-s16-003 .trig .k { color: var(--tone, var(--ink-faint)); }
+.con-s16-003 .trig p { margin: 0; color: var(--ink); font-size: 1rem; line-height: 1.5; }
+
+.con-s16-003 .fields { margin: clamp(10px, 1.3vw, 14px) 0 0; padding: clamp(10px, 1.3vw, 14px) 0 0; border-top: 1px solid var(--soft-line); list-style: none; display: flex; flex-wrap: wrap; gap: clamp(9px, 1.4vw, 18px); }
+.con-s16-003 .fields li { display: flex; align-items: baseline; gap: 7px; font-size: 0.74rem; letter-spacing: 0.085em; text-transform: uppercase; color: var(--ink-faint); }
+.con-s16-003 .slot {
+  min-width: 52px;
+  padding: 1px 9px;
+  border-radius: 10px;
+  background: #ececec;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+/* Foot */
+.con-s16-003 .foot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: clamp(14px, 2vw, 26px);
+  padding-top: clamp(20px, 2.6vw, 32px);
+}
+.con-s16-003 .foot > div { min-width: 0; padding-left: clamp(11px, 1.4vw, 15px); border-left: 4px solid var(--line); }
+.con-s16-003 .foot .no { border-left-style: dashed; }
+.con-s16-003 .foot h5 {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s16-003 .foot p { margin: 0 0 10px; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
+.con-s16-003 .foot p:last-child { margin-bottom: 0; }
+.con-s16-003 .foot p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s16-003 .head,
+  .con-s16-003 .band > .bh { grid-template-columns: minmax(0, 1fr); }
+  .con-s16-003 .head { align-items: start; gap: clamp(14px, 2.4vw, 22px); }
+  .con-s16-003 .band > .bh { gap: clamp(10px, 1.6vw, 16px); }
+  .con-s16-003 .one > li { grid-template-columns: minmax(0, 1fr); gap: clamp(12px, 2vw, 18px); }
+}
+
+@media (max-width: 620px) {
+  .con-s16-003 .two,
+  .con-s16-003 .three { grid-template-columns: minmax(0, 1fr); }
+  .con-s16-003 h2, .con-s16-003 .head p, .con-s16-003 .band h3,
+  .con-s16-003 .band > .bh p, .con-s16-003 h4 { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s16-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s16-003 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
+  font-size: 1.06rem;
+}
+.con-s16-003 h2 { font-weight: 800; }
+.con-s16-003 h3, .con-s16-003 h4 { font-weight: 750; }
+.con-s16-003 .eyebrow, .con-s16-003 .tag {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s16-003 .mods > li {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s16-003 .t-request {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s16-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s16-003.con-s16-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s16-003.con-s16-003 .head h2, .con-s16-003.con-s16-003 .head h3, .con-s16-003.con-s16-003 .head h4, .con-s16-003.con-s16-003 .head b, .con-s16-003.con-s16-003 .head strong, .con-s16-003.con-s16-003 .head p b, .con-s16-003.con-s16-003 .head li b, .con-s16-003.con-s16-003 .head span b, .con-s16-003.con-s16-003 .head dt, .con-s16-003.con-s16-003 .head div b {
+  color: #ffffff;
+}
+.con-s16-003.con-s16-003 .head p, .con-s16-003.con-s16-003 .head li, .con-s16-003.con-s16-003 .head span, .con-s16-003.con-s16-003 .head dd, .con-s16-003.con-s16-003 .head div p, .con-s16-003.con-s16-003 .head div li, .con-s16-003.con-s16-003 .head p span, .con-s16-003.con-s16-003 .head .said, .con-s16-003.con-s16-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s16-003.con-s16-003 .head .eyebrow, .con-s16-003.con-s16-003 .head .kicker, .con-s16-003.con-s16-003 .head .slot, .con-s16-003.con-s16-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s16-003.con-s16-003 .head i, .con-s16-003.con-s16-003 .head .bars i, .con-s16-003.con-s16-003 .head .lines i, .con-s16-003.con-s16-003 .head .measures i, .con-s16-003.con-s16-003 .head .bar, .con-s16-003.con-s16-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s16-003.con-s16-003 .head .plate, .con-s16-003.con-s16-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s16-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s16-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s16-003" data-study-id="CON-S16-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s16-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What we will send you</p>
+        <h2 id="con-s16-003-title">Sorted by what makes each one stop being true.</h2>
+      </div>
+      <p>Not by document type, which is how every library in this industry is ordered and which tells you nothing. <b>Every figure worth having is inside one of these and none of them is on this page</b>, because a number in a signed document has a date, a revision and a name against it.</p>
+    </div>
+
+    <div class="band b-other">
+      <div class="bh">
+        <h3>Expires on a date somebody else set</h3>
+        <p>An insurer's renewal, an assessor's revisit. <b>We do not control either date, so both are printed on the document rather than described here</b> &mdash; and when the date passes the document becomes a historical record, not a weaker version of itself.</p>
+      </div>
+      <ul class="mods two">
+        <li>
+          <span class="tag t-open">Open</span>
+          <h4>Insurance summary</h4>
+          <p>The cover we carry, the limit against each, and the renewal date on the front. <b>The figures are in it, which is where figures belong.</b></p>
+          <p class="who"><span class="k">Who it is for</span>Anybody satisfying themselves before we set foot on their site. <b>Checking us is doing us a favour</b>, so nothing stands in front of it.</p>
+          <div class="trig">
+            <span class="k">Stops being true</span>
+            <p>On the renewal date printed on its cover. After that it should come out of your file rather than sit in it.</p>
+          </div>
+          <ul class="fields">
+            <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span>Renews</span><span class="slot"><span class="vh">Renewal date</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
+          </ul>
+        </li>
+        <li>
+          <span class="tag t-request">On request</span>
+          <h4>Prequalification pack</h4>
+          <p>The standard answers to the standard questions, <b>each carrying the registration you can check for yourself</b> rather than a certificate you would take from us. Every answer also carries the date it was written.</p>
+          <p class="who"><span class="k">Who it is for</span>A procurement team filling in a matrix, who would rather not chase us line by line.</p>
+          <div class="trig">
+            <span class="k">Stops being true</span>
+            <p>When an accreditation is reassessed &mdash; on a date the assessor sets, not us.</p>
+          </div>
+          <ul class="fields">
+            <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span>Revision</span><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="band b-ours">
+      <div class="bh">
+        <h3>Expires when something about us changes</h3>
+        <p>A project completes, a person leaves, a term is rewritten. <b>These are the ones we are on the hook to reissue</b>, and the only honest way to run them is to put the issue date on the cover and reissue on a fixed rhythm rather than when somebody notices.</p>
+      </div>
+      <ul class="mods three">
+        <li>
+          <span class="tag t-open">Open</span>
+          <h4>Capability statement</h4>
+          <p>What we build, at what size, in which sectors &mdash; and <b>the four kinds of work we turn down</b>, which is the part that saves you a meeting.</p>
+          <p class="who"><span class="k">Who it is for</span>Somebody deciding whether to have a conversation with us at all.</p>
+          <div class="trig">
+            <span class="k">Stops being true</span>
+            <p>When a project completes or somebody leaves. Reissued at the end of every quarter.</p>
+          </div>
+          <ul class="fields">
+            <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
+          </ul>
+        </li>
+        <li>
+          <span class="tag t-open">Open</span>
+          <h4>Health, safety and environmental policy</h4>
+          <p>The signed policy, with a name against each responsibility rather than a department. <b>An unsigned policy is a document nobody owns.</b></p>
+          <p class="who"><span class="k">Who it is for</span>Your compliance file, and whoever has to answer for what is in it.</p>
+          <div class="trig">
+            <span class="k">Stops being true</span>
+            <p>When the law changes, or <b>when the person who signed it is no longer the person responsible.</b></p>
+          </div>
+          <ul class="fields">
+            <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span>Signed by</span><span class="slot"><span class="vh">Name of the signatory</span><span aria-hidden="true">&mdash;</span></span></li>
+          </ul>
+        </li>
+        <li>
+          <span class="tag t-open">Open</span>
+          <h4>Payment terms for our supply chain</h4>
+          <p>When our subcontractors are paid, what we hold back and for how long. <b>Most firms in this trade do not publish this one.</b></p>
+          <p class="who"><span class="k">Who it is for</span>A client wanting to know whether a price is propped up by somebody downstream who has not been paid.</p>
+          <div class="trig">
+            <span class="k">Stops being true</span>
+            <p>When we change them, which we have done once. The previous version is underneath, in the same document.</p>
+          </div>
+          <ul class="fields">
+            <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span>Revision</span><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="band b-yours">
+      <div class="bh">
+        <h3>Expires on contact with your job</h3>
+        <p>One document, and it is the one most likely to be misread. <b>It has no shelf life at all in the ordinary sense</b> &mdash; it is out of date for your site before you have finished opening it, and that is not a fault in the document.</p>
+      </div>
+      <ul class="mods one">
+        <li>
+          <div>
+            <span class="tag t-request">On request</span>
+            <h4>Method statement and risk assessment, the generic ones</h4>
+            <p class="who"><span class="k">Who it is for</span>Somebody who wants to see the shape of one before we write yours. <b>Sent with a covering note rather than on its own</b>, and that note is the whole reason it is on request.</p>
+          </div>
+          <div>
+            <p>How we would normally sequence the common operations, and the format your principal designer will receive it in. <b>A template sent without the covering note gets used as though it were the real thing</b>, which is a mistake we have watched somebody else make on a live site.</p>
+            <div class="trig">
+              <span class="k">Stops being true</span>
+              <p><b>Immediately, for your job.</b> It is a sample of our handwriting, not a plan for your site. The real one is written after we have walked it.</p>
+            </div>
+            <ul class="fields">
+              <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
+              <li><span>Revision</span><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></li>
+              <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="foot">
+      <div>
+        <h5>Why two of them are on request</h5>
+        <p>Both end up in somebody's tender file, and <b>we have to know which version you are holding</b> &mdash; an answer you quote back to us has to match the one we can evidence.</p>
+      </div>
+      <div class="no" data-refusal>
+        <h5>And not for this reason</h5>
+        <p>Collecting an email address. <b>A document gated for that is a document nobody wanted to write and nobody wants to read</b>, and it is not a reason we use.</p>
+      </div>
+      <div class="no" data-refusal>
+        <h5>Not on this page</h5>
+        <p>No brochure, and no scanned certificates &mdash; <b>a scan proves less than a registration you can check yourself.</b> Nothing undated, and no count of who else has downloaded what.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

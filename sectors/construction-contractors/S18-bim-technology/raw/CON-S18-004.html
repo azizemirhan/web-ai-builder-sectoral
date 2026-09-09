@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S18-004
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S18 — BIM Technology
+  Direction      : Conversion-led
+  Reference      : None supplied for this section.
+  Layout model   : Four situations on a deep ground, each answered yes, yes-with-a-condition, no, or
+                   neither — with what to ask for underneath each answer
+  Density        : Medium
+  Media mode     : None. No wireframe, no isometric, no overlay, and **nothing is drawn at an
+                   angle** &mdash; anti-patterns four and five.
+  Interaction    : In-page anchors only. **The batch's only anchors.**
+  Conversion device : **The answer is sometimes no.** On a straightforward build with nothing
+                   sharing a ceiling, a model costs more than the clashes it would find, and this
+                   study says so and offers the cheaper thing instead. It is the sector's standing
+                   conversion form by now rather than a novelty &mdash; `S09`, `S12`, `S13`, `S14`,
+                   `S15`, `S16` and `S17` all convert by handing over the less flattering answer.
+  The condition  : Situation two is a refurbishment, and the answer is yes **after** a survey. A
+                   model of an existing building is only as true as the survey underneath it, so the
+                   ask on that route is the survey rather than the model.
+  The fourth     : A client who already holds a model from the design team is not asking a
+                   technology question at all. **It is a contract question** &mdash; who takes it
+                   on, to what level, and who carries it when it is wrong.
+  Software       : **Omitted, not reserved.** None of the four answers depends on it.
+  Deliberately not : No form &mdash; `S15-004` holds this sector's submission. No figure, clash
+                   count or saving. No software named. No compliance level as a badge. No
+                   fly-through. No named project.
+  Content note   : Information manager and survey reference are reserved fields. No digit in visible
+                   copy; no acronym; no header.
+-->
+
+<meta name="study-id" content="CON-S18-004">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S18">
+<meta name="section-name" content="BIM Technology">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Four situations, four different answers — one of them no">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="in-page-anchors">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S18-004 — BIM Technology, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0e0e0e; }
+
+/* Scoped study styles — namespaced to .con-s18-004 */
+.con-s18-004 {
+  --ink: #ffffff;
+  --ink-soft: #969696;
+  --ink-faint: #5e5e5e;
+  --paper: #0e0e0e;
+  --edge: #2b2b2b;
+  --card: #111111;
+  --yes: #b4b4b4;
+  --cond: #ececec;
+  --no: #7a7a7a;
+  --other: #969696;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s18-004 *,
+.con-s18-004 *::before,
+.con-s18-004 *::after { box-sizing: inherit; }
+.con-s18-004 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s18-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s18-004 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s18-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  padding-bottom: clamp(18px, 2.3vw, 30px);
+  border-bottom: 2px solid var(--edge);
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+.con-s18-004 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s18-004 h2 {
+  margin: 0;
+  font-size: clamp(2.318rem, 4.536vw, 3.843rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s18-004 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s18-004 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Situations */
+.con-s18-004 .cases { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(12px, 1.6vw, 18px); }
+.con-s18-004 .cases > li {
+  background: var(--card);
+  border-radius: 26px;
+  border-left: 6px solid var(--tone, var(--edge));
+  padding: clamp(18px, 2.2vw, 28px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(14px, 2.6vw, 42px);
+  align-items: start;
+}
+.con-s18-004 .c-yes { --tone: var(--yes); }
+.con-s18-004 .c-cond { --tone: var(--cond); }
+.con-s18-004 .c-no { --tone: var(--no); }
+.con-s18-004 .c-other { --tone: var(--other); }
+
+.con-s18-004 .if {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s18-004 h3 {
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  font-size: clamp(1.416rem, 2.257vw, 1.879rem);
+  line-height: 1.14;
+  letter-spacing: -0.026em;
+  font-weight: 700;
+  max-width: 24ch;
+}
+.con-s18-004 .verdict {
+  display: inline-block;
+  margin-bottom: clamp(11px, 1.4vw, 15px);
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--tone, var(--edge));
+  color: var(--tone, var(--ink));
+  font-size: 0.8rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.con-s18-004 .cases p { margin: 0 0 clamp(11px, 1.4vw, 15px); font-size: 1.1rem; line-height: 1.6; color: var(--ink-soft); }
+.con-s18-004 .cases p:last-child { margin-bottom: 0; }
+.con-s18-004 .cases p b { color: var(--ink); font-weight: 650; }
+.con-s18-004 .why { max-width: 36ch; }
+
+.con-s18-004 .ask {
+  padding-top: clamp(12px, 1.5vw, 17px);
+  border-top: 1px solid var(--edge);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(12px, 1.8vw, 22px);
+}
+.con-s18-004 .ask p { margin: 0; flex: 1 1 260px; min-width: 0; max-width: 46ch; font-size: 1rem; line-height: 1.56; }
+.con-s18-004 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.con-s18-004 .go:hover { background: #ffffff; }
+.con-s18-004 .c-no .go { background: transparent; color: var(--no); border: 1px solid var(--no); }
+.con-s18-004 .c-no .go:hover { background: var(--no); color: var(--paper); }
+
+.con-s18-004 .points { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: grid; gap: 7px; }
+.con-s18-004 .points li { position: relative; padding-left: 14px; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.con-s18-004 .points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 2px;
+  background: var(--tone, var(--edge));
+}
+.con-s18-004 .points b { color: var(--ink); font-weight: 650; }
+
+/* Close */
+.con-s18-004 .close {
+  margin-top: clamp(18px, 2.3vw, 28px);
+  padding-top: clamp(18px, 2.3vw, 28px);
+  border-top: 2px solid var(--edge);
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s18-004 .close h3 { max-width: 22ch; }
+.con-s18-004 .close p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 66ch; font-size: 1rem; line-height: 1.62; color: var(--ink-soft); }
+.con-s18-004 .close p:last-child { margin-bottom: 0; }
+.con-s18-004 .close p b { color: var(--ink); font-weight: 650; }
+.con-s18-004 .fields { margin: clamp(12px, 1.5vw, 16px) 0 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+.con-s18-004 .fields li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--edge);
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s18-004 .slot {
+  min-width: 62px;
+  padding: 1px 11px;
+  border-radius: 10px;
+  background: var(--paper);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+/* Responsive ladder */
+@media (max-width: 960px) {
+  .con-s18-004 .head,
+  .con-s18-004 .cases > li,
+  .con-s18-004 .close { grid-template-columns: minmax(0, 1fr); }
+  .con-s18-004 .head { align-items: start; gap: clamp(14px, 2.4vw, 22px); }
+  .con-s18-004 .cases > li { gap: clamp(14px, 2vw, 20px); }
+}
+
+@media (max-width: 620px) {
+  .con-s18-004 .go { width: 100%; }
+  .con-s18-004 h2, .con-s18-004 .head p, .con-s18-004 h3,
+  .con-s18-004 .why, .con-s18-004 .ask p, .con-s18-004 .close p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s18-004 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s18-004 {
+  --v2-accent: #b4b4b4;
+  --v2-soft: #444444;
+  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
+  font-size: 1.06rem;
+}
+.con-s18-004 h2 { font-weight: 800; }
+.con-s18-004 h3, .con-s18-004 h4 { font-weight: 750; }
+.con-s18-004 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s18-004 .cases > li, .con-s18-004 .go:hover {
+  border-radius: 26px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid #2b2b2b;
+}
+.con-s18-004 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 600;
+}
+.con-s18-004.con-s18-004 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: 1px solid #444444;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s18-004.con-s18-004 .head h2, .con-s18-004.con-s18-004 .head h3, .con-s18-004.con-s18-004 .head h4, .con-s18-004.con-s18-004 .head b, .con-s18-004.con-s18-004 .head strong, .con-s18-004.con-s18-004 .head p b, .con-s18-004.con-s18-004 .head li b, .con-s18-004.con-s18-004 .head span b, .con-s18-004.con-s18-004 .head dt, .con-s18-004.con-s18-004 .head div b {
+  color: #ffffff;
+}
+.con-s18-004.con-s18-004 .head p, .con-s18-004.con-s18-004 .head li, .con-s18-004.con-s18-004 .head span, .con-s18-004.con-s18-004 .head dd, .con-s18-004.con-s18-004 .head div p, .con-s18-004.con-s18-004 .head div li, .con-s18-004.con-s18-004 .head p span, .con-s18-004.con-s18-004 .head .said, .con-s18-004.con-s18-004 .head .note {
+  color: #d2d2d2;
+}
+.con-s18-004.con-s18-004 .head .eyebrow, .con-s18-004.con-s18-004 .head .kicker, .con-s18-004.con-s18-004 .head .slot, .con-s18-004.con-s18-004 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s18-004.con-s18-004 .head i, .con-s18-004.con-s18-004 .head .bars i, .con-s18-004.con-s18-004 .head .lines i, .con-s18-004.con-s18-004 .head .measures i, .con-s18-004.con-s18-004 .head .bar, .con-s18-004.con-s18-004 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s18-004.con-s18-004 .head .plate, .con-s18-004.con-s18-004 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s18-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s18-004 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s18-004" data-study-id="CON-S18-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="con-s18-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Coordination, and what it is for</p>
+        <h2 id="con-s18-004-title">Does your job need one? Sometimes the answer is no.</h2>
+      </div>
+      <p>A coordinated model earns its cost where a lot of things have to share the same space and getting them wrong is expensive to undo. <b>Where that is not true it is an overhead with a good reputation</b>, and we would rather tell you that than sell you one.</p>
+    </div>
+
+    <ul class="cases">
+
+      <li class="c-yes">
+        <div>
+          <span class="if">If it is a new build with services in it</span>
+          <h3>Yes, and the useful moment is before the frame order</h3>
+          <span class="verdict">Worth it</span>
+          <p class="why">Plant, ductwork, drainage and structure all competing for the same voids. <b>This is the case the whole exercise was invented for</b>, and the value of it falls away the later it starts.</p>
+        </div>
+        <div>
+          <ul class="points">
+            <li><b>Services against structure</b>, with penetrations designed in rather than cut later</li>
+            <li>Ceiling voids that hold what is actually going into them</li>
+            <li><b>Builder's work openings agreed before the pour</b>, because concrete does not have a revision</li>
+            <li>Riser and plant access, which needs somebody to ask a question the software will not ask</li>
+          </ul>
+          <div class="ask">
+            <a class="go" href="#con-s18-004-title">Ask for the coordination scope</a>
+            <p>A scope, a schedule of who owns which object, and a level of definition against each line of it.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="c-cond">
+        <div>
+          <span class="if">If it is a refurbishment</span>
+          <h3>Yes &mdash; after somebody has surveyed the building</h3>
+          <span class="verdict">Yes, in that order</span>
+          <p class="why"><b>A model of an existing building is only as true as the survey underneath it</b>, and on a refurbishment the building is never where the drawing says it is.</p>
+        </div>
+        <div>
+          <ul class="points">
+            <li>Everything above, plus the parts of the existing structure nobody has looked behind</li>
+            <li><b>Setting out against a real origin</b>, rather than against a drawing somebody scanned</li>
+            <li>Without it, the model is coordinated against the wrong position &mdash; <b>and being confidently wrong is worse than having nothing</b></li>
+          </ul>
+          <div class="ask">
+            <a class="go" href="#con-s18-004-title">Ask for the survey scope first</a>
+            <p>We will not start one without it. That is the same rule we apply to a price.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="c-no">
+        <div>
+          <span class="if">If it is a straightforward build</span>
+          <h3>No. It would cost you more than it finds</h3>
+          <span class="verdict">Not worth it</span>
+          <p class="why">A simple frame, a shallow void, nothing much sharing a ceiling. <b>The clashes it would find are ones two people can find with two drawings and an afternoon.</b></p>
+        </div>
+        <div>
+          <ul class="points">
+            <li>You would be paying for a coordination exercise to confirm what is already obvious</li>
+            <li>And for somebody to maintain it, which is the cost nobody quotes</li>
+            <li><b>What is worth doing instead:</b> a coordination check on the two or three places where things do meet, and the builder's work openings agreed properly</li>
+          </ul>
+          <div class="ask">
+            <a class="go" href="#con-s18-004-title">Ask for the cheaper version</a>
+            <p>It takes an afternoon and it is the part of the exercise that was doing the work.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="c-other">
+        <div>
+          <span class="if">If your design team has already built one</span>
+          <h3>Then it is not a technology question</h3>
+          <span class="verdict">A contract question</span>
+          <p class="why">The model exists. <b>What has usually not been decided is who takes it on when construction starts</b>, to what level, and who carries it when it turns out to be wrong.</p>
+        </div>
+        <div>
+          <ul class="points">
+            <li>Whether it was built to a level of definition that survives being built from</li>
+            <li><b>Which objects are ours from the day we start</b>, and which stay with the designer</li>
+            <li>What happens to it at handover, and <b>who updates it afterwards</b></li>
+          </ul>
+          <div class="ask">
+            <a class="go" href="#con-s18-004-title">Ask for the responsibility review</a>
+            <p>An afternoon with the schedule, before anybody signs anything about it.</p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="close">
+      <div>
+        <h3>And the one nobody asks about until later</h3>
+        <ul class="fields">
+          <li><span>Who holds this</span><span class="slot"><span class="vh">Name of the information manager</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Survey</span><span class="slot"><span class="vh">Survey reference</span><span aria-hidden="true">&mdash;</span></span></li>
+        </ul>
+      </div>
+      <div data-refusal>
+        <p><b>An as-built model that nobody updates is a photograph of a building that has since changed.</b> So the question of who maintains it after handover is settled before it is handed over, in writing, and if the answer is nobody we say that rather than describing it as a living record.</p>
+        <p>There is no wireframe on this page, no plan and no overlay, and nothing on it is set at an angle &mdash; <b>a drawing you did not make is a drawing of nothing.</b> No package is named, because which one we use is the least interesting fact here. No compliance level is offered as a badge; it is a scope of work. <b>And no walkthrough: a walkthrough sells a building, it does not coordinate one.</b></p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

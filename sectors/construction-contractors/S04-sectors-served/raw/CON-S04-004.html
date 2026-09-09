@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S04-004
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S04 — Sectors Served
+  Direction      : Conversion-led
+  Reference      : None supplied for this section.
+  Layout model   : A sector selector on a deep near-black ground — one sector opened as a wide panel with
+                   its constraint, a reserved media area and the action, and the other five as tall
+                   colour columns beside it
+  Density        : Medium
+  Media mode     : One reserved project area inside the opened panel.
+  Interaction    : Plain links only (static; no JavaScript). **The other sectors are links, not a
+                   toggle** — a control that appears to switch panels and does not would be the
+                   `CON-S01-005` slide-counter failure again.
+  Conversion device : **Which of these are you?** The section converts by letting a visitor find
+                   their own constraint and act from inside it, rather than by asking them to read
+                   six sectors and then scroll to a form. The opened panel is the argument and the
+                   action in one place.
+  The steer-away : Kept, and given its own line under the action — the sector this firm is wrong
+                   for. A sectors page that lists only sectors served is a claim of universal
+                   competence, which nobody believes.
+  Content note   : Sector names and services are generic vocabulary. No client name or logo, no
+                   framework or authority, no per-sector count or percentage, no certification,
+                   award, rating, price, programme length or urgency device; no header.
+-->
+
+<meta name="study-id" content="CON-S04-004">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S04">
+<meta name="section-name" content="Sectors Served">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="One opened sector panel beside five tall colour columns as links">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-reserved-area-in-the-opened-panel">
+<meta name="interaction" content="links-only">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S04-004 — Sectors Served, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0e0e0e; }
+
+/* Scoped study styles — namespaced to .con-s04-004 */
+.con-s04-004 {
+  --ink: #ececec;
+  --ink-soft: #ececec;
+  --paper: #0e0e0e;
+  --panel: #111111;
+  --slot-a: #969696;
+  --slot-b: #2b2b2b;
+  --on-slot: #ffffff;
+  --line: #444444;
+
+  --health: #969696;
+  --edu: #969696;
+  --industrial: #2b2b2b;
+  --retail: #111111;
+  --civic: #444444;
+  --resi: #5e5e5e;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s04-004 *,
+.con-s04-004 *::before,
+.con-s04-004 *::after { box-sizing: inherit; }
+.con-s04-004 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 22px;
+}
+.con-s04-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s04-004 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.con-s04-004 .head { margin-bottom: clamp(20px, 2.6vw, 36px); }
+.con-s04-004 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.con-s04-004 h2 {
+  margin: 0;
+  font-size: clamp(2.379rem, 4.788vw, 4.032rem);
+  line-height: 1.03;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 18ch;
+}
+
+/* Selector */
+.con-s04-004 .selector {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.45fr);
+  gap: clamp(14px, 2vw, 26px);
+  align-items: stretch;
+}
+
+.con-s04-004 .open {
+  background: var(--panel);
+  border-radius: 26px;
+  border-left: 10px solid var(--health);
+  padding: clamp(20px, 2.6vw, 36px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(18px, 2.6vw, 40px);
+  align-items: center;
+}
+.con-s04-004 .open h3 {
+  margin: 0 0 clamp(11px, 1.4vw, 16px);
+  font-size: clamp(1.83rem, 2.928vw, 2.562rem);
+  line-height: 1.04;
+  letter-spacing: -0.026em;
+  font-weight: 700;
+}
+.con-s04-004 .q { margin: 0 0 5px; font-size: 0.75rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; color: var(--ink-soft); }
+.con-s04-004 .open p.a { margin: 0 0 clamp(14px, 1.8vw, 20px); font-size: clamp(1.1rem, 1.357vw, 1.298rem); line-height: 1.56; }
+.con-s04-004 .open .do { margin: 0 0 clamp(18px, 2.2vw, 26px); color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s04-004 .open .do b { color: var(--ink); }
+.con-s04-004 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 1.1rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.con-s04-004 .go:hover { background: #ffffff; }
+.con-s04-004 .wrong {
+  margin: clamp(12px, 1.5vw, 18px) 0 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.56;
+}
+.con-s04-004 .wrong b { color: var(--ink); }
+
+.con-s04-004 .shot {
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(12px, 1.5vw, 18px);
+}
+.con-s04-004 .shot span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.82;
+}
+
+/* Columns */
+.con-s04-004 .others { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(8px, 1vw, 12px); }
+.con-s04-004 .others a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 60px;
+  height: 100%;
+  padding: clamp(12px, 1.5vw, 18px) clamp(14px, 1.8vw, 22px);
+  border-radius: 22px;
+  background: var(--col, #2b2b2b);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(1.1rem, 1.475vw, 1.369rem);
+  font-weight: 700;
+  letter-spacing: -0.014em;
+}
+.con-s04-004 .others a:hover { filter: brightness(1.14); }
+.con-s04-004 .o-edu { --col: var(--edu); }
+.con-s04-004 .o-industrial { --col: var(--industrial); }
+.con-s04-004 .o-retail { --col: var(--retail); }
+.con-s04-004 .o-civic { --col: var(--civic); }
+.con-s04-004 .o-resi { --col: var(--resi); }
+.con-s04-004 .others .arrow { font-size: 1.1rem; opacity: 0.85; }
+
+/* Responsive ladder */
+@media (max-width: 1000px) {
+  .con-s04-004 .selector { grid-template-columns: minmax(0, 1fr); }
+  .con-s04-004 .others { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .con-s04-004 .open { grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 22px); }
+  .con-s04-004 h2, .con-s04-004 .wrong { max-width: none; }
+  .con-s04-004 .go { width: 100%; }
+  .con-s04-004 .others { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s04-004 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s04-004 {
+  --v2-accent: #b4b4b4;
+  --v2-soft: #444444;
+  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
+  font-size: 1.06rem;
+}
+.con-s04-004 h2 { font-weight: 800; }
+.con-s04-004 h3, .con-s04-004 h4 { font-weight: 750; }
+.con-s04-004 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s04-004 .go:hover {
+  border-radius: 26px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid #444444;
+}
+.con-s04-004 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 600;
+}
+.con-s04-004.con-s04-004 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: 1px solid #444444;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s04-004.con-s04-004 .head h2, .con-s04-004.con-s04-004 .head h3, .con-s04-004.con-s04-004 .head h4, .con-s04-004.con-s04-004 .head b, .con-s04-004.con-s04-004 .head strong, .con-s04-004.con-s04-004 .head p b, .con-s04-004.con-s04-004 .head li b, .con-s04-004.con-s04-004 .head span b, .con-s04-004.con-s04-004 .head dt, .con-s04-004.con-s04-004 .head div b {
+  color: #ffffff;
+}
+.con-s04-004.con-s04-004 .head p, .con-s04-004.con-s04-004 .head li, .con-s04-004.con-s04-004 .head span, .con-s04-004.con-s04-004 .head dd, .con-s04-004.con-s04-004 .head div p, .con-s04-004.con-s04-004 .head div li, .con-s04-004.con-s04-004 .head p span, .con-s04-004.con-s04-004 .head .said, .con-s04-004.con-s04-004 .head .note {
+  color: #ececec;
+}
+.con-s04-004.con-s04-004 .head .eyebrow, .con-s04-004.con-s04-004 .head .kicker, .con-s04-004.con-s04-004 .head .slot, .con-s04-004.con-s04-004 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s04-004.con-s04-004 .head i, .con-s04-004.con-s04-004 .head .bars i, .con-s04-004.con-s04-004 .head .lines i, .con-s04-004.con-s04-004 .head .measures i, .con-s04-004.con-s04-004 .head .bar, .con-s04-004.con-s04-004 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s04-004.con-s04-004 .head .plate, .con-s04-004.con-s04-004 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ececec;
+}
+.con-s04-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s04-004 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s04-004" data-study-id="CON-S04-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="con-s04-004-title">
+
+    <div class="head">
+      <p class="eyebrow">Who we build for</p>
+      <h2 id="con-s04-004-title">Which of these are you?</h2>
+    </div>
+
+    <div class="selector">
+
+      <div class="open">
+        <div>
+          <h3>Healthcare</h3>
+          <p class="q">What makes it hard</p>
+          <p class="a">The building stays open. Infection control, live entrances, and every noisy hour agreed in advance with somebody who has patients in the room below.</p>
+          <p class="do"><b>What we do about it:</b> phasing is priced before anything else, and our site manager sits in the estates meeting rather than hearing about it afterwards.</p>
+          <a class="go" href="#con-s04-004-title">Put a healthcare project to us</a>
+          <p class="wrong"><b>Where we are the wrong firm:</b> anything with a live process running through it &mdash; clean areas, data halls, food production. Specialists who work in those every week will beat us.</p>
+        </div>
+        <div class="shot"><span>Project media &mdash; healthcare, completed</span></div>
+      </div>
+
+      <ul class="others">
+        <li><a class="o-edu" href="#con-s04-004-title">Education <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+        <li><a class="o-industrial" href="#con-s04-004-title">Industrial <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+        <li><a class="o-retail" href="#con-s04-004-title">Retail <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+        <li><a class="o-civic" href="#con-s04-004-title">Civic <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+        <li><a class="o-resi" href="#con-s04-004-title">Residential <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+      </ul>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

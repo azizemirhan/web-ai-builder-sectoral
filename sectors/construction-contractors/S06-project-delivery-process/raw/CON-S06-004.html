@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S06-004
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S06 — Project Delivery Process
+  Direction      : Conversion-led
+  Reference      : None supplied for this section.
+  Layout model   : One dominant panel for the site walk on a deep slate ground, with the five
+                   stages that follow it set behind as a quiet outlined rail carrying only their
+                   names and what each one closes
+  Density        : Medium
+  Media mode     : One reserved site area, 4:3, inside the panel.
+  Interaction    : A single plain link. No form &mdash; `S05-004` carries this sector's resource
+                   check and `S15` owns the formal submission.
+  Conversion device : **The call to action is the last free gate.** The gate system this batch is
+                   built on hands the conversion its own argument: every stage after the site walk
+                   closes something, and the walk is the last point at which changing your mind
+                   costs nothing. So the page converts on the walk, and says exactly that rather
+                   than manufacturing a reason.
+  Why no urgency : Because the argument is already structural. *Nobody buys a building on urgency*
+                   is the sector direction's line, and a page that can say **this is the last stage
+                   where changing your mind is free** does not need a countdown to do the same work
+                   dishonestly.
+  Content note   : Stage names and roles are generic vocabulary. No duration, date, programme length
+                   or lead time, in copy or as a reserved field. No client or project name, no
+                   certification, scheme or named regulation, no safety record, no price or rate, no
+                   urgency device; no digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S06-004">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S06">
+<meta name="section-name" content="Project Delivery Process">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="One dominant site-walk panel above a quiet outlined rail of the remaining stages">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="single-link">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S06-004 — Project Delivery Process, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0e0e0e; }
+
+/* Scoped study styles — namespaced to .con-s06-004 */
+.con-s06-004 {
+  --ink: #d2d2d2;
+  --ink-soft: #b4b4b4;
+  --ink-faint: #7a7a7a;
+  --paper: #0e0e0e;
+  --panel: #ececec;
+  --panel-ink: #111111;
+  --panel-soft: #444444;
+  --panel-line: #d2d2d2;
+  --edge: #444444;
+  --free: #969696;
+  --slot-a: #5e5e5e;
+  --slot-b: #2b2b2b;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s06-004 *,
+.con-s06-004 *::before,
+.con-s06-004 *::after { box-sizing: inherit; }
+.con-s06-004 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s06-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s06-004 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s06-004 .head { margin-bottom: clamp(20px, 2.6vw, 34px); max-width: 66ch; }
+.con-s06-004 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s06-004 h2 {
+  margin: 0 0 clamp(13px, 1.7vw, 20px);
+  font-size: clamp(2.379rem, 4.914vw, 4.158rem);
+  line-height: 1.03;
+  letter-spacing: -0.034em;
+  font-weight: 700;
+  max-width: 19ch;
+}
+.con-s06-004 .head p { margin: 0; color: var(--ink-soft); font-size: clamp(1.1rem, 1.298vw, 1.274rem); line-height: 1.62; }
+.con-s06-004 .head p b { color: var(--ink); font-weight: 650; }
+
+/* The panel */
+.con-s06-004 .panel {
+  border-radius: 26px;
+  background: var(--panel);
+  color: var(--panel-ink);
+  padding: clamp(20px, 2.6vw, 38px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  gap: clamp(20px, 3vw, 48px);
+  align-items: center;
+  margin-bottom: clamp(16px, 2.2vw, 28px);
+}
+.con-s06-004 .flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 clamp(11px, 1.4vw, 16px);
+  padding: 5px 14px 5px 11px;
+  border-radius: 999px;
+  background: #ececec;
+  color: #444444;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+.con-s06-004 .flag::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--free);
+}
+.con-s06-004 h3 {
+  margin: 0 0 clamp(11px, 1.4vw, 16px);
+  font-size: clamp(1.83rem, 3.15vw, 2.772rem);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+  font-weight: 700;
+  max-width: 18ch;
+}
+.con-s06-004 .panel p { margin: 0 0 clamp(13px, 1.6vw, 18px); max-width: 58ch; color: var(--panel-soft); font-size: clamp(1.1rem, 1.131vw, 1.1rem); line-height: 1.62; }
+.con-s06-004 .panel p b { color: var(--panel-ink); font-weight: 650; }
+
+.con-s06-004 .owe {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  padding: clamp(12px, 1.5vw, 17px) clamp(14px, 1.7vw, 20px);
+  border-radius: 22px;
+  border-left: 5px solid #969696;
+  background: #ececec;
+  max-width: 58ch;
+}
+.con-s06-004 .owe .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.con-s06-004 .owe p { margin: 0; max-width: none; color: var(--panel-soft); font-size: 1.1rem; }
+
+.con-s06-004 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 0 36px;
+  border-radius: 999px;
+  background: var(--panel-ink);
+  color: var(--panel);
+  font-size: 1.1rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.con-s06-004 .go:hover { background: #111111; }
+.con-s06-004 .note { margin: clamp(12px, 1.5vw, 17px) 0 0; max-width: 56ch; font-size: 1rem; line-height: 1.56; color: var(--panel-soft); }
+.con-s06-004 .note b { color: var(--panel-ink); font-weight: 650; }
+
+.con-s06-004 .shot {
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(13px, 1.6vw, 20px);
+}
+.con-s06-004 .shot span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.84;
+}
+
+/* The quiet rail */
+.con-s06-004 .after {
+  margin: 0 0 clamp(11px, 1.4vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s06-004 .rail {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(9px, 1.1vw, 13px);
+  align-items: stretch;
+}
+.con-s06-004 .rail li { min-width: 0; }
+.con-s06-004 .step {
+  height: 100%;
+  border-radius: 22px;
+  border: 1px solid var(--edge);
+  padding: clamp(13px, 1.6vw, 19px);
+}
+.con-s06-004 h4 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  line-height: 1.18;
+  letter-spacing: -0.014em;
+  font-weight: 700;
+}
+.con-s06-004 .k2 {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s06-004 .step p { margin: 0; font-size: 1rem; line-height: 1.48; color: var(--ink-soft); }
+
+.con-s06-004 .close {
+  margin: clamp(18px, 2.4vw, 30px) 0 0;
+  max-width: 86ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+.con-s06-004 .close b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1080px) {
+  .con-s06-004 .rail { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px) {
+  .con-s06-004 .panel { grid-template-columns: minmax(0, 1fr); }
+  .con-s06-004 .rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .con-s06-004 .rail { grid-template-columns: minmax(0, 1fr); }
+  .con-s06-004 h2,
+  .con-s06-004 h3,
+  .con-s06-004 .head,
+  .con-s06-004 .panel p,
+  .con-s06-004 .owe,
+  .con-s06-004 .note,
+  .con-s06-004 .close { max-width: none; }
+  .con-s06-004 .go { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s06-004 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s06-004 {
+  --v2-accent: #d2d2d2;
+  --v2-soft: #444444;
+  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
+  font-size: 1.06rem;
+}
+.con-s06-004 h2 { font-weight: 800; }
+.con-s06-004 h3, .con-s06-004 h4 { font-weight: 750; }
+.con-s06-004 .eyebrow, .con-s06-004 .step {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #444444;
+  color: #d2d2d2;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s06-004 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #444444;
+  color: #d2d2d2;
+  font-weight: 600;
+}
+.con-s06-004.con-s06-004 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: 1px solid #444444;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s06-004.con-s06-004 .head h2, .con-s06-004.con-s06-004 .head h3, .con-s06-004.con-s06-004 .head h4, .con-s06-004.con-s06-004 .head b, .con-s06-004.con-s06-004 .head strong, .con-s06-004.con-s06-004 .head p b, .con-s06-004.con-s06-004 .head li b, .con-s06-004.con-s06-004 .head span b, .con-s06-004.con-s06-004 .head dt, .con-s06-004.con-s06-004 .head div b {
+  color: #ffffff;
+}
+.con-s06-004.con-s06-004 .head p, .con-s06-004.con-s06-004 .head li, .con-s06-004.con-s06-004 .head span, .con-s06-004.con-s06-004 .head dd, .con-s06-004.con-s06-004 .head div p, .con-s06-004.con-s06-004 .head div li, .con-s06-004.con-s06-004 .head p span, .con-s06-004.con-s06-004 .head .said, .con-s06-004.con-s06-004 .head .note {
+  color: #d2d2d2;
+}
+.con-s06-004.con-s06-004 .head .eyebrow, .con-s06-004.con-s06-004 .head .kicker, .con-s06-004.con-s06-004 .head .slot, .con-s06-004.con-s06-004 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s06-004.con-s06-004 .head i, .con-s06-004.con-s06-004 .head .bars i, .con-s06-004.con-s06-004 .head .lines i, .con-s06-004.con-s06-004 .head .measures i, .con-s06-004.con-s06-004 .head .bar, .con-s06-004.con-s06-004 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s06-004.con-s06-004 .head .plate, .con-s06-004.con-s06-004 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s06-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s06-004 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s06-004" data-study-id="CON-S06-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="con-s06-004-title">
+
+    <div class="head">
+      <p class="eyebrow">How a job runs</p>
+      <h2 id="con-s06-004-title">Every stage after this one closes something.</h2>
+      <p>A job runs through seven stages, and at each join something stops being cheap to change. <b>The walk is the last one where changing your mind costs nothing at all</b> &mdash; which is the only honest reason to make it the next thing you do.</p>
+    </div>
+
+    <div class="panel">
+      <div>
+        <p class="flag">Nothing is fixed at this stage</p>
+        <h3>The site walk</h3>
+        <p><b>We will not price a job we have not walked.</b> A drawing tells you the building; the site tells you the job &mdash; the access, the neighbours, the ground, and the thing nobody mentions any more because they stopped noticing it years ago.</p>
+        <p>We bring the person who would actually run the work, not only somebody from the office who will hand it on afterwards.</p>
+
+        <div class="owe">
+          <span class="k">What we need from you</span>
+          <p>Access at a time when the building is doing what it normally does, and half an hour of somebody who knows its history. Usually the most valuable half hour on the whole job.</p>
+        </div>
+
+        <a class="go" href="#con-s06-004-title">Ask us to come and walk it</a>
+        <p class="note"><b>This commits you to nothing and it is not a quotation.</b> If what we see says a specialist would serve you better, we will tell you that instead, and you will have lost a morning rather than a tender.</p>
+      </div>
+      <div class="shot"><span>Site media &mdash; a walk, before the work</span></div>
+    </div>
+
+    <p class="after">And then, in order &mdash; each of these closes a door</p>
+
+    <ul class="rail">
+      <li>
+        <div class="step">
+          <h4>The price</h4>
+          <span class="k2">Closes</span>
+          <p>The scope you accepted. Anything after it is a variation.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step">
+          <h4>Pre-start</h4>
+          <span class="k2">Closes</span>
+          <p>The sequence. The trades and the plant are now booked around it.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step">
+          <h4>On site</h4>
+          <span class="k2">Closes</span>
+          <p>A little more every week. Before the frame it is a drawing; after it, a demolition.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step">
+          <h4>Handover</h4>
+          <span class="k2">Closes</span>
+          <p>The building. What is left is a defects list, not an accusation.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step">
+          <h4>The defects period</h4>
+          <span class="k2">Closes</span>
+          <p>Nothing. This is where you find out whether the rest was true.</p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="close"><b>No stage above has a length, and none has an empty box where one should go.</b> A duration printed before anybody has walked your site is a guess in a uniform. The order is something we can state truthfully &mdash; and so is where in that order each decision stops being cheap.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

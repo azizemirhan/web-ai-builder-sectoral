@@ -6,13 +6,6 @@ CON-S23
 
 Construction Service Detail
 
-# Section Role
-
-S23 — Service / Offering Detail
-
-Universal Extended Site Architecture (S21–S27). The role is canonical across all
-twenty sectors; the section name above is this sector's own term for it.
-
 # Sector
 
 Construction & Contractors
@@ -20,34 +13,6 @@ Construction & Contractors
 # Prefix
 
 CON
-
-# Purpose
-
-The detail page for one single offering, presented in enough depth that a visitor can decide whether it is the right one for them.
-
-# Visitor Intent
-
-The visitor has chosen one offering from an index and now wants specifics: what it covers, how it runs, what it involves and what happens next.
-
-# Content Responsibility
-
-One offering in full: what it is, what is included, how it is delivered, who it suits, and the route to enquire about it.
-
-# In Scope
-
-- A description of the single offering the page is about
-- What the offering includes and, where useful, what it excludes
-- How it is delivered, staged or sequenced
-- Who it is for, and the conditions under which it applies
-- Related or adjacent offerings
-- A route to enquire about this specific offering
-
-# Out Of Scope
-
-- An index or grid of every offering, which belongs to the sector core sections
-- Homepage positioning copy
-- Fabricated pricing, guarantees, turnaround times or availability
-- Any regulated claim the sector does not permit
 
 # Planned Studies
 
@@ -59,39 +24,115 @@ CON-S23-005
 
 # Expected Structural Diversity
 
-| Variant | Territory |
+| Variant | Direction |
 | --- | --- |
 | `CON-S23-001` | Universal / Safe |
 | `CON-S23-002` | Premium / Editorial |
-| `CON-S23-003` | Dense / Information-heavy |
+| `CON-S23-003` | Structured / Visual Modular |
 | `CON-S23-004` | Conversion-led |
-| `CON-S23-005` | Sector-native / Distinctive |
+| `CON-S23-005` | Art-directed / Distinctive |
 
-These are authoring and research directions, not production enums. The five studies must
-differ structurally. They must not become five colour schemes, five font themes, five
-cosmetic variants, or five copies of one grid with the content swapped.
+Read for this sector in `../CONSTRUCTION-DESIGN-DIRECTION.md`.
 
-# Media Relationship
+# Section Role
 
-Optional and supporting. Media should illustrate the offering rather than carry it, and the page must remain complete when a media slot is empty.
+The body of one service page: what the work is, where it stops, who owns the joints at its edges,
+and what goes wrong on this kind of work in particular.
 
-# Interaction Notes
+# The Governing Constraint — The Edge Is The Content
 
-Usually none. Where an offering has stages or options, disclosure or tab patterns may be justified, but the full content must remain reachable without script.
+    Every service page in this trade lists what is included and stops there. The useful
+    part is the edge: what stops being ours, who it becomes, and who owns the joint
+    between us.
 
-# Responsive Considerations
+Buildings do not fail in the middle of a package. They fail at the interfaces, and they fail there
+because two trades met at one detail and each of them thought the other had it.
 
-Long-form body copy needs a controlled measure at wide widths and must not collapse into a single dense column on small screens. Any supporting rail or sticky element should release to normal flow before it starts competing with the body.
+    Water gets in where two trades meet and both thought the other had it.
 
-# Related Sections
+So this section's content is **the seam**, and its signature refusal is the claim that there is not
+one.
 
-This is the depth page behind one entry in the sector's offering index. The index lives in the sector core sections; this page is what one of its entries opens into.
+# The Worked Service Is The Building Envelope
 
-Nearest existing section in this sector: S02 Construction Services (`S02-construction-services/`).
+Roof, walls, windows, and the junctions between them. It is chosen because it has the richest
+interface story in the trade and because the failure mode is unarguable: on most jobs three trades
+meet at one detail and the detail is the only thing anybody remembers.
+
+# The Anatomy, In Five Parts
+
+| Part | What it carries |
+| --- | --- |
+| What is in it | Real, generic vocabulary |
+| **What is not in it, and who does it instead** | The honest exclusion — `S05`'s limit applied to scope rather than capability |
+| **The seams** | Each junction, the two parties either side, and **who owns the joint** |
+| **What goes wrong on this kind of work** | Three failure modes specific to this service, and what we do about each |
+| Who does it | `S05`'s four markers — directly employed, owned outright, long-term hire, retained specialist |
+
+# The Three Failure Modes, Which Are The Section's Real Content
+
+| Goes wrong | What we do |
+| --- | --- |
+| **The detail nobody drew.** Standard details cover the typical bay; every job has three junctions the drawings do not show | Draw them and get them signed before we start, rather than at the point somebody wants the scaffold down |
+| **The sequence.** The envelope is built once and inspected once, from a scaffold that is coming down | Everything that needs to be seen is seen while the scaffold is still there. After that it is a rope job or another scaffold |
+| **The test.** A water test on a finished building tests a finished building | **We hose the first bay instead.** A test at the first bay tests the detail, while it is still cheap to change |
+
+That last one is the section's best line and the cheapest thing on the page to do.
+
+# The Signature Refusal
+
+> **No turnkey. No one-stop shop. No *we handle everything*.**
+>
+> A firm claiming there are no interfaces is claiming something no building has. Every one of these
+> pages names its seams and says who owns each of them, including the ones we hand over.
+
+# What This Section Will Not Do
+
+- **No claim to have no seams** — the refusal above.
+- **No system, product or proprietary name.** Reserved, as everywhere in this sector.
+- **No guarantee or warranty period.** A figure and a promise at once.
+- **No *fully qualified*, *approved installer* or badge of any kind** — anti-pattern two.
+- **No before-and-after of an envelope.** Anti-pattern ten; the two photographs are never of the
+  same conditions.
+
+# What Is Real, And What May Not Be Invented
+
+| Element | Treatment |
+| --- | --- |
+| What is in the work, and what is not | **Real** |
+| Who does the excluded work instead | **Real**, as a trade rather than a firm |
+| The seams, and who owns each joint | **Real** |
+| The three failure modes and the responses | **Real** |
+| The four holding markers | **Real** — the `S05` set |
+| Named specialists, product and system names, standard references | **Reserved fields** |
+| Media | **Reserved area** — one photograph of a junction, at interior scale |
+| Any figure, period, guarantee or performance number | **Forbidden** |
+
+# Boundary With S02, S05 And S21
+
+| Section | What it owns |
+| --- | --- |
+| `S02` Construction Services | **The list** of what this firm does |
+| `S05` Capabilities | **What we hold**, and the depth behind each |
+| `S21` Subpage Hero | **Which page this is** |
+| `S23` Construction Service Detail | **The anatomy of one kind of work, and its edges** |
+
+    S02 says we do this. S05 says how deep it goes. S23 says where it stops and who
+    owns the joint.
+
+# One Mechanism, In One Study
+
+**`004` carries the batch's only anchors**, routing in-page. No study carries a form. The
+architecture run's placeholder convention holds: **no em-dash**; a reserved value reads as
+*Reserved*.
+
+# Section Shell
+
+Section only. No global header, logo, primary navigation, announcement bar or footer.
 
 # Status
 
-NOT_STARTED
+AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 

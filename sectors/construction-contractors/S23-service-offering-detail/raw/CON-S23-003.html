@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S23-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S23 — Construction Service Detail
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Each seam drawn as three cells — the party on one side, the joint itself, and the
+                   party on the other — with the joint always the middle cell and always the one
+                   carrying an owner
+  Density        : Medium
+  Media mode     : None.
+  Interaction    : None. The batch's anchors belong to `004`.
+  The device     : **The joint is drawn as a thing, not as a gap.** A scope list gives each package
+                   a box and leaves the space between boxes empty, which is exactly the mistake the
+                   buildings make. Here the middle cell is the widest of the three and it is the only
+                   one with a name attached.
+  The unowned one : The fourth seam is drawn with its owner cell **empty and dashed** before the
+                   answer is given, because on most jobs that is its true state until somebody names
+                   an owner. The study fills it in and says when.
+  The trap       : The sector direction names it for this variant &mdash; *becoming a specification
+                   table.* A table would list packages down one axis and attributes across the
+                   other, and the seams would be nowhere. **These rows have no attributes; they have
+                   a middle.**
+  Placeholder    : The architecture run's convention &mdash; no em-dash.
+  Deliberately not : No system, product or proprietary name. No guarantee or period. No badge. No
+                   turnkey claim.
+  Content note   : Named specialists reserved. No digit in visible copy; no header; no refusal
+                   region.
+-->
+
+<meta name="study-id" content="CON-S23-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S23">
+<meta name="section-name" content="Construction Service Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Each seam as three cells — party, joint, party — with the joint widest and owned">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S23-003 — Service Detail, Structured</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e8e8e8; }
+
+/* Scoped study styles — namespaced to .con-s23-003 */
+.con-s23-003 {
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #969696;
+  --paper: #e8e8e8;
+  --card: #ffffff;
+  --fill: #ececec;
+  --line: #b4b4b4;
+  --soft-line: #d2d2d2;
+  --rule: #111111;
+  --side: #969696;
+  --seam: #5e5e5e;
+  --ours: #2b2b2b;
+  --wrong: #7a7a7a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s23-003 *,
+.con-s23-003 *::before,
+.con-s23-003 *::after { box-sizing: inherit; }
+.con-s23-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s23-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s23-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s23-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(16px, 2.8vw, 48px);
+  align-items: end;
+  padding-bottom: clamp(16px, 2vw, 26px);
+  border-bottom: 3px solid var(--rule);
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+.con-s23-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s23-003 h2 {
+  margin: 0;
+  font-size: clamp(2.098rem, 4.032vw, 3.276rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 22ch;
+}
+.con-s23-003 .head p { margin: 0; max-width: 56ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.121vw, 1.1rem); line-height: 1.62; }
+.con-s23-003 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Column marks */
+.con-s23-003 .marks {
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.76fr) minmax(0, 0.62fr);
+  gap: clamp(10px, 1.4vw, 16px);
+  margin-bottom: clamp(8px, 1vw, 11px);
+}
+.con-s23-003 .marks span {
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s23-003 .marks .mid { color: var(--seam); }
+
+/* Seams */
+.con-s23-003 .seams { margin: 0 0 clamp(18px, 2.3vw, 28px); padding: 0; list-style: none; display: grid; gap: clamp(10px, 1.3vw, 14px); }
+.con-s23-003 .seams > li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.76fr) minmax(0, 0.62fr);
+  gap: clamp(10px, 1.4vw, 16px);
+  align-items: stretch;
+}
+.con-s23-003 .side {
+  min-width: 0;
+  background: var(--fill);
+  border-radius: 22px;
+  padding: clamp(12px, 1.5vw, 17px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 3px solid var(--side);
+}
+.con-s23-003 .side b { display: block; font-size: 1rem; line-height: 1.34; font-weight: 650; color: var(--ink); }
+.con-s23-003 .side span { margin-top: 4px; font-size: 1rem; line-height: 1.4; color: var(--ink-faint); }
+
+.con-s23-003 .joint {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 22px;
+  border-top: 5px solid var(--seam);
+  padding: clamp(14px, 1.8vw, 20px);
+}
+.con-s23-003 .joint h3 { margin: 0 0 clamp(8px, 1vw, 11px); font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.018em; font-weight: 700; }
+.con-s23-003 .joint p { margin: 0 0 clamp(10px, 1.3vw, 13px); font-size: 1rem; line-height: 1.56; color: var(--ink-soft); max-width: 76ch; }
+.con-s23-003 .joint p b { color: var(--ink); font-weight: 650; }
+.con-s23-003 .owns {
+  margin: 0;
+  padding-top: clamp(9px, 1.2vw, 12px);
+  border-top: 1px solid var(--soft-line);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.con-s23-003 .owns span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ours);
+}
+.con-s23-003 .owns b { font-weight: 650; }
+.con-s23-003 .unowned { border: 1px dashed var(--seam); border-radius: 16px; padding: clamp(9px, 1.2vw, 12px); margin-bottom: clamp(9px, 1.2vw, 12px); font-size: 1rem; line-height: 1.5; color: var(--seam); }
+.con-s23-003 .unowned b { color: var(--seam); font-weight: 650; }
+.con-s23-003 .slot {
+  display: inline-block;
+  min-width: 84px;
+  padding: 2px 11px;
+  border-radius: 10px;
+  background: #3a3a3a;
+  color: var(--ink-faint);
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Foot */
+.con-s23-003 .foot {
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 3px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(13px, 1.8vw, 24px);
+}
+.con-s23-003 .foot > div { min-width: 0; padding-left: clamp(12px, 1.5vw, 16px); border-left: 4px solid var(--wrong); }
+.con-s23-003 .foot h4 { margin: 0 0 7px; font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.016em; font-weight: 700; }
+.con-s23-003 .foot p { margin: 0 0 9px; font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
+.con-s23-003 .foot p:last-child { margin-bottom: 0; }
+.con-s23-003 .foot p b { color: var(--ink); font-weight: 650; }
+.con-s23-003 .foot .do { color: var(--ink); }
+.con-s23-003 .foot .do > span:first-child { display: block; margin-bottom: 3px; font-size: 0.74rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; color: var(--wrong); }
+
+/* Responsive ladder */
+@media (max-width: 1000px) {
+  .con-s23-003 .marks { display: none; }
+  .con-s23-003 .seams > li { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .con-s23-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; gap: clamp(12px, 2vw, 18px); }
+}
+
+@media (max-width: 560px) {
+  .con-s23-003 h2, .con-s23-003 .head p, .con-s23-003 .joint p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s23-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s23-003 {
+  --v2-accent: #969696;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
+  font-size: 1.06rem;
+}
+.con-s23-003 h2 { font-weight: 800; }
+.con-s23-003 h3, .con-s23-003 h4 { font-weight: 750; }
+.con-s23-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #3a3a3a;
+  color: #969696;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s23-003 .joint {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s23-003 .unowned {
+  border: 1px dashed #b4b4b4;
+  border-radius: 14px;
+}
+.con-s23-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #3a3a3a;
+  color: #969696;
+  font-weight: 600;
+}
+.con-s23-003.con-s23-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s23-003.con-s23-003 .head h2, .con-s23-003.con-s23-003 .head h3, .con-s23-003.con-s23-003 .head h4, .con-s23-003.con-s23-003 .head b, .con-s23-003.con-s23-003 .head strong, .con-s23-003.con-s23-003 .head p b, .con-s23-003.con-s23-003 .head li b, .con-s23-003.con-s23-003 .head span b, .con-s23-003.con-s23-003 .head dt, .con-s23-003.con-s23-003 .head div b {
+  color: #ffffff;
+}
+.con-s23-003.con-s23-003 .head p, .con-s23-003.con-s23-003 .head li, .con-s23-003.con-s23-003 .head span, .con-s23-003.con-s23-003 .head dd, .con-s23-003.con-s23-003 .head div p, .con-s23-003.con-s23-003 .head div li, .con-s23-003.con-s23-003 .head p span, .con-s23-003.con-s23-003 .head .said, .con-s23-003.con-s23-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s23-003.con-s23-003 .head .eyebrow, .con-s23-003.con-s23-003 .head .kicker, .con-s23-003.con-s23-003 .head .slot, .con-s23-003.con-s23-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s23-003.con-s23-003 .head i, .con-s23-003.con-s23-003 .head .bars i, .con-s23-003.con-s23-003 .head .lines i, .con-s23-003.con-s23-003 .head .measures i, .con-s23-003.con-s23-003 .head .bar, .con-s23-003.con-s23-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s23-003.con-s23-003 .head .plate, .con-s23-003.con-s23-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s23-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s23-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s23-003" data-study-id="CON-S23-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s23-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The building envelope</p>
+        <h2 id="con-s23-003-title">The joint is drawn as a thing, not as the gap between two boxes.</h2>
+      </div>
+      <p>A scope list gives every package a box and leaves the space between the boxes empty, <b>which is exactly the mistake the buildings make.</b> Here the middle cell is the widest of the three, and it is the only one with a name attached to it.</p>
+    </div>
+
+    <div class="marks">
+      <span>One side</span>
+      <span class="mid">The joint, and who owns it</span>
+      <span>The other side</span>
+    </div>
+
+    <ul class="seams">
+
+      <li>
+        <div class="side"><b>Roof covering</b><span>Retained specialist</span></div>
+        <div class="joint">
+          <h3>The parapet, and the tray inside it</h3>
+          <p>Two build-ups arrive at one detail, and the tray is what stops water running down the inside of the cavity. <b>It is built once, from a scaffold that is already booked to come down.</b></p>
+          <p class="owns"><span>Who owns the joint</span><b>Ours, both sides.</b> There is nobody to hand it to and we do not look for one.</p>
+        </div>
+        <div class="side"><b>Wall build-up</b><span>Directly employed</span></div>
+      </li>
+
+      <li>
+        <div class="side"><b>Wall build-up</b><span>Directly employed</span></div>
+        <div class="joint">
+          <h3>The reveal, the head tray and the seal</h3>
+          <p>Two firms stand at this one. The frame and everything sealed to it belongs to the window contractor; the wall it sits in and the tray above it belong to us.</p>
+          <p class="owns"><span>Who owns the joint</span><b>Ours to the frame, theirs from it</b> &mdash; drawn on a detail we both sign before either of us orders anything.</p>
+        </div>
+        <div class="side"><b>Window contractor</b><span>Somebody else's package</span></div>
+      </li>
+
+      <li>
+        <div class="side"><b>Wall build-up</b><span>Directly employed</span></div>
+        <div class="joint">
+          <h3>The damp-proof course, and the level that moved</h3>
+          <p>Set early, on a level surveyed before there was any landscaping. Then a path is laid or a threshold is made level for somebody who needs it. <b>The commonest late change on any job, and it is made by a landscaper.</b></p>
+          <p class="owns"><span>Who owns the joint</span><b>Ours, and put in writing the day the level moves</b> &mdash; because afterwards nobody remembers agreeing to it.</p>
+        </div>
+        <div class="side"><b>Groundworks</b><span>Somebody else's package</span></div>
+      </li>
+
+      <li>
+        <div class="side"><b>The envelope</b><span>Ours</span></div>
+        <div class="joint">
+          <h3>Every hole that goes through it</h3>
+          <p>Vents, flues, brackets, cables &mdash; each one a hole in a thing whose whole job is to have no holes in it, arriving from a different package on a different week.</p>
+          <p class="unowned"><b>On most jobs this cell is empty.</b> Nobody owns it, nobody notices, and the second winter is when it gets discussed.</p>
+          <p class="owns"><span>Who owns the joint here</span><b>We take it, and we say so at the start.</b> Whoever makes a hole tells us before they make it, and the sealing is ours.</p>
+        </div>
+        <div class="side"><b>Whoever made the hole</b><span>Any package, any week</span></div>
+      </li>
+
+    </ul>
+
+    <div class="foot">
+      <div>
+        <h4>The detail nobody drew</h4>
+        <p>Standard details cover the typical bay. <b>Every job has three junctions the drawings do not show</b>, and they always have two trades in them.</p>
+        <p class="do"><span>What we do</span>Draw them and get them signed before we start, not when somebody wants the scaffold down.</p>
+      </div>
+      <div>
+        <h4>The sequence</h4>
+        <p>An envelope is built once and inspected once. <b>Anything found after the scaffold goes is a rope job or another scaffold.</b></p>
+        <p class="do"><span>What we do</span>Everything that has to be seen is seen while it is standing, and the sign-off is a condition of striking it.</p>
+      </div>
+      <div>
+        <h4>The test</h4>
+        <p>A water test on a finished building tells you a finished building leaks, and the answer is behind a wall somebody decorated.</p>
+        <p class="do"><span>What we do</span><b>We hose the first bay</b>, which tests the detail while it is still cheap to change. <b>There is no turnkey version of this:</b> a firm claiming there are no interfaces is claiming something no building has. The covering itself is held by <span class="slot"><span class="vh">Name of the retained roofing specialist</span>Reserved</span></p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

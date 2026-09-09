@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S17-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S17 — Sustainability
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : What was already fixed before appointment, then six practices as cards — each
+                   carrying what it changes, the last point it can be decided, and the claim we will
+                   not make from it — then the record somebody outside the firm signs
+  Density        : Medium
+  Media mode     : None. The subject is waste, fuel and lorries; a photograph of a tree would be the
+                   adjective smuggled back in.
+  Interaction    : None.
+  The rule       : Anti-pattern twelve &mdash; *the sustainability claim without a mechanism.* So
+                   every item states a practice, a deadline and a refusal, and **no adjective is
+                   applied to this firm anywhere on the page.**
+  The device     : The third part of each card. **Each practice inoculates itself against its own
+                   overclaim**, in its own words: *this does not make the building green, it keeps
+                   plasterboard out of a mixed load.*
+  The window     : `S06`'s gate arriving where it bites hardest. An environmental practice with no
+                   deadline attached is an intention, and most of these have a point after which
+                   they are simply unavailable.
+  No green       : Deliberate, and it holds across the batch. The device tones are a blue for what
+                   changes, a mid value for the window and the darkest for the refusal.
+  Deliberately not : No tonnage, percentage, target year or carbon figure. No offsetting. No
+                   *green*, *eco*, *carbon neutral* or *net zero* applied to us.
+  Content note   : Transfer note reference, carrier registration and the environmental lead are
+                   reserved fields. Scheme names are reserved &mdash; the `S08` rule. No digit in
+                   visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S17-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S17">
+<meta name="section-name" content="Sustainability">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Six practice cards — what it changes, the last point it can be decided, what we will not claim">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S17-001 — Sustainability, Universal</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1f1; }
+
+/* Scoped study styles — namespaced to .con-s17-001 */
+.con-s17-001 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #b4b4b4;
+  --paper: #f1f1f1;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --soft-line: #ececec;
+  --rule: #111111;
+  --change: #444444;
+  --window: #969696;
+  --wont: #2b2b2b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s17-001 *,
+.con-s17-001 *::before,
+.con-s17-001 *::after { box-sizing: inherit; }
+.con-s17-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s17-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s17-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s17-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  padding-bottom: clamp(18px, 2.3vw, 30px);
+  border-bottom: 2px solid var(--rule);
+}
+.con-s17-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s17-001 h2 {
+  margin: 0;
+  font-size: clamp(2.294rem, 4.536vw, 3.78rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 21ch;
+}
+.con-s17-001 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s17-001 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Already fixed */
+.con-s17-001 .fixed {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(14px, 2.6vw, 44px);
+  padding: clamp(18px, 2.2vw, 28px) 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.con-s17-001 .fixed h3 {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+  max-width: 26ch;
+}
+.con-s17-001 .fixed ul { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s17-001 .fixed li {
+  padding: 4px 12px;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  font-size: 1rem;
+  color: var(--ink-faint);
+}
+.con-s17-001 .fixed p { margin: 0; max-width: 66ch; font-size: 1.1rem; line-height: 1.6; color: var(--ink-soft); }
+.con-s17-001 .fixed p b { color: var(--ink); font-weight: 650; }
+
+/* Practices */
+.con-s17-001 .acts {
+  margin: clamp(18px, 2.4vw, 30px) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+}
+.con-s17-001 .acts > li {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 22px;
+  padding: clamp(17px, 2.1vw, 25px) clamp(17px, 2.1vw, 25px) clamp(15px, 1.9vw, 22px);
+  display: flex;
+  flex-direction: column;
+}
+.con-s17-001 .n {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s17-001 h4 {
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  font-size: clamp(1.251rem, 1.77vw, 1.487rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  max-width: 24ch;
+}
+.con-s17-001 .part { padding-top: clamp(10px, 1.2vw, 13px); border-top: 1px solid var(--soft-line); margin-bottom: clamp(10px, 1.2vw, 13px); }
+.con-s17-001 .part .k {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.con-s17-001 .part p { margin: 0; font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
+.con-s17-001 .part p b { color: var(--ink); font-weight: 650; }
+.con-s17-001 .p-change .k { color: var(--change); }
+.con-s17-001 .p-window .k { color: var(--window); }
+.con-s17-001 .p-wont { margin-top: auto; margin-bottom: 0; border-top: 1px solid var(--wont); }
+.con-s17-001 .p-wont .k { color: var(--wont); }
+.con-s17-001 .p-wont p { color: var(--ink); }
+
+/* The record somebody else signs */
+.con-s17-001 .record {
+  margin-top: clamp(20px, 2.6vw, 34px);
+  padding-top: clamp(18px, 2.3vw, 28px);
+  border-top: 2px solid var(--rule);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s17-001 .record h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.416rem, 2.318vw, 1.952rem);
+  line-height: 1.12;
+  letter-spacing: -0.024em;
+  font-weight: 700;
+  max-width: 26ch;
+}
+.con-s17-001 .record p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 64ch; font-size: 1.1rem; line-height: 1.62; color: var(--ink-soft); }
+.con-s17-001 .record p:last-child { margin-bottom: 0; }
+.con-s17-001 .record p b { color: var(--ink); font-weight: 650; }
+.con-s17-001 .fields { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+.con-s17-001 .fields li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s17-001 .slot {
+  min-width: 62px;
+  padding: 1px 11px;
+  border-radius: 10px;
+  background: var(--card);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+/* Refusal */
+.con-s17-001 .refuse {
+  margin-top: clamp(18px, 2.3vw, 28px);
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s17-001 .refuse h3 {
+  margin: 0;
+  font-size: clamp(1.298rem, 2.006vw, 1.676rem);
+  line-height: 1.14;
+  letter-spacing: -0.022em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s17-001 .refuse ul { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s17-001 .refuse li {
+  padding: 4px 12px;
+  border: 1px solid var(--wont);
+  border-radius: 999px;
+  font-size: 1rem;
+  color: var(--wont);
+}
+.con-s17-001 .refuse p { margin: 0; max-width: 66ch; font-size: 1rem; line-height: 1.62; color: var(--ink-soft); }
+.con-s17-001 .refuse p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s17-001 .head,
+  .con-s17-001 .fixed,
+  .con-s17-001 .record,
+  .con-s17-001 .refuse { grid-template-columns: minmax(0, 1fr); }
+  .con-s17-001 .head { align-items: start; gap: clamp(14px, 2.4vw, 22px); }
+}
+
+@media (max-width: 620px) {
+  .con-s17-001 .acts { grid-template-columns: minmax(0, 1fr); }
+  .con-s17-001 h2, .con-s17-001 .head p, .con-s17-001 h4,
+  .con-s17-001 .fixed h3, .con-s17-001 .fixed p, .con-s17-001 .record h3,
+  .con-s17-001 .record p, .con-s17-001 .refuse h3, .con-s17-001 .refuse p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s17-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s17-001 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
+  font-size: 1.06rem;
+}
+.con-s17-001 h2 { font-weight: 800; }
+.con-s17-001 h3, .con-s17-001 h4 { font-weight: 750; }
+.con-s17-001 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s17-001 .acts > li, .con-s17-001 .slot {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s17-001 .fixed li {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s17-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s17-001.con-s17-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s17-001.con-s17-001 .head h2, .con-s17-001.con-s17-001 .head h3, .con-s17-001.con-s17-001 .head h4, .con-s17-001.con-s17-001 .head b, .con-s17-001.con-s17-001 .head strong, .con-s17-001.con-s17-001 .head p b, .con-s17-001.con-s17-001 .head li b, .con-s17-001.con-s17-001 .head span b, .con-s17-001.con-s17-001 .head dt, .con-s17-001.con-s17-001 .head div b {
+  color: #ffffff;
+}
+.con-s17-001.con-s17-001 .head p, .con-s17-001.con-s17-001 .head li, .con-s17-001.con-s17-001 .head span, .con-s17-001.con-s17-001 .head dd, .con-s17-001.con-s17-001 .head div p, .con-s17-001.con-s17-001 .head div li, .con-s17-001.con-s17-001 .head p span, .con-s17-001.con-s17-001 .head .said, .con-s17-001.con-s17-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s17-001.con-s17-001 .head .eyebrow, .con-s17-001.con-s17-001 .head .kicker, .con-s17-001.con-s17-001 .head .slot, .con-s17-001.con-s17-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s17-001.con-s17-001 .head i, .con-s17-001.con-s17-001 .head .bars i, .con-s17-001.con-s17-001 .head .lines i, .con-s17-001.con-s17-001 .head .measures i, .con-s17-001.con-s17-001 .head .bar, .con-s17-001.con-s17-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s17-001.con-s17-001 .head .plate, .con-s17-001.con-s17-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s17-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s17-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s17-001" data-study-id="CON-S17-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s17-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What we change, and by when</p>
+        <h2 id="con-s17-001-title">Most of it was decided before we were appointed.</h2>
+      </div>
+      <p>The frame, the substructure, the orientation and the glazing were drawn by somebody else, and between them they hold most of a building's carbon. <b>What we control is what happens between the drawing and the handover</b> &mdash; a shorter list than this kind of page usually claims, and here it is in full.</p>
+    </div>
+
+    <div class="fixed">
+      <h3>Already fixed by the time we price it</h3>
+      <div>
+        <ul>
+          <li>The frame</li>
+          <li>The substructure</li>
+          <li>The orientation</li>
+          <li>The glazing ratio</li>
+          <li>Whether anything is kept</li>
+        </ul>
+        <p>Those are the large decisions, and <b>we can propose against them but we cannot make them.</b> Saying otherwise would be claiming credit for a design we were handed &mdash; and it would also hide the one thing worth telling you, which is that the window on all of them closes before a contractor is in the room.</p>
+      </div>
+    </div>
+
+    <ul class="acts">
+
+      <li>
+        <span class="n">Practice</span>
+        <h4>Segregation on site, not a mixed skip</h4>
+        <div class="part p-change">
+          <span class="k">What it changes</span>
+          <p>What leaves the gate as a material rather than as a load of mixed rubbish. <b>Timber, metal, plasterboard and inert kept apart, each in its own container.</b></p>
+        </div>
+        <div class="part p-window">
+          <span class="k">The last point it can be decided</span>
+          <p><b>At compound layout.</b> Once the gate and the standing are set, another stream is a lorry movement problem rather than a bin, and a full skip is moved whether it was sorted or not.</p>
+        </div>
+        <div class="part p-wont">
+          <span class="k">What we will not claim from it</span>
+          <p>That it makes the building anything. <b>It keeps plasterboard out of a mixed load</b>, which is the expensive and the smelly problem, and it puts a name on the paperwork.</p>
+        </div>
+      </li>
+
+      <li>
+        <span class="n">Practice</span>
+        <h4>Reuse before recycling, on the same site</h4>
+        <div class="part p-change">
+          <span class="k">What it changes</span>
+          <p>Whether a material stays where it is as a material &mdash; brick, steel, slate, joinery &mdash; or leaves as a lorry load and comes back as aggregate.</p>
+        </div>
+        <div class="part p-window">
+          <span class="k">The last point it can be decided</span>
+          <p><b>Before the machine arrives.</b> Once a structure is down you have rubble, and rubble is recycling at best. This is the shortest window on the page and the one most often missed.</p>
+        </div>
+        <div class="part p-wont">
+          <span class="k">What we will not claim from it</span>
+          <p><b>That crushing on site is reuse.</b> It is recycling done nearer, and we will call it that. Reuse means the thing is still the thing it was.</p>
+        </div>
+      </li>
+
+      <li>
+        <span class="n">Practice</span>
+        <h4>Substitutions we can propose in the specification</h4>
+        <div class="part p-change">
+          <span class="k">What it changes</span>
+          <p>A handful of build-ups where an alternative does the same job. <b>The frame and the substructure are not among them</b>, and they are where the weight sits.</p>
+        </div>
+        <div class="part p-window">
+          <span class="k">The last point it can be decided</span>
+          <p>Between appointment and the order going in for the frame. <b>Afterwards it is a variation</b>, and a variation costs more than the substitution saves.</p>
+        </div>
+        <div class="part p-wont">
+          <span class="k">What we will not claim from it</span>
+          <p>That we designed the building. <b>We proposed against a drawing and somebody else accepted or refused</b>, and which of those happened is in the correspondence.</p>
+        </div>
+      </li>
+
+      <li>
+        <span class="n">Practice</span>
+        <h4>What the site runs on</h4>
+        <div class="part p-change">
+          <span class="k">What it changes</span>
+          <p>Whether the compound draws from a supply or from a generator, and what the plant on site burns while it is standing as well as while it is working.</p>
+        </div>
+        <div class="part p-window">
+          <span class="k">The last point it can be decided</span>
+          <p><b>The temporary services application, which goes in before mobilisation.</b> Miss it and the site runs on a generator for the duration, and nothing said about it afterwards changes that.</p>
+        </div>
+        <div class="part p-wont">
+          <span class="k">What we will not claim from it</span>
+          <p>That a plant list is a carbon figure. <b>It is a list of machines</b>, and the fuel records against it are the only part anybody could check.</p>
+        </div>
+      </li>
+
+      <li>
+        <span class="n">Practice</span>
+        <h4>Deliveries, dust and what leaves in the water</h4>
+        <div class="part p-change">
+          <span class="k">What it changes</span>
+          <p>The number of vehicle movements through somebody else's street, when they happen, and whether what runs off the site is treated before it goes.</p>
+        </div>
+        <div class="part p-window">
+          <span class="k">The last point it can be decided</span>
+          <p>The logistics plan, written with the programme rather than after it. <b>Consolidation has to be designed into the sequence</b> or it turns into vehicles waiting on a road.</p>
+        </div>
+        <div class="part p-wont">
+          <span class="k">What we will not claim from it</span>
+          <p>That a delivery plan is an environmental policy. <b>It is a traffic decision that happens also to be an environmental one</b>, and the people it affects most are the ones who live there.</p>
+        </div>
+      </li>
+
+      <li>
+        <span class="n">Practice</span>
+        <h4>What gets measured, and who signs it</h4>
+        <div class="part p-change">
+          <span class="k">What it changes</span>
+          <p>Nothing on its own &mdash; which is worth saying, because measurement is the part of this subject most often presented as an achievement.</p>
+        </div>
+        <div class="part p-window">
+          <span class="k">The last point it can be decided</span>
+          <p>Continuous, and that is the difficulty. <b>A record kept from the first week is evidence; a record assembled at the end is a reconstruction</b>, and the difference is visible in it.</p>
+        </div>
+        <div class="part p-wont">
+          <span class="k">What we will not claim from it</span>
+          <p><b>That our own figures are evidence.</b> The waste transfer notes are, because somebody outside this firm signs them. Our spreadsheet is us marking our own work.</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="record">
+      <div>
+        <h3>The only environmental record on a site that somebody outside the firm signs</h3>
+        <p>Every other number on this subject is produced by the party it flatters. <b>Waste transfer notes are not</b> &mdash; a carrier signs them, a receiving site signs them, and both of those are registered with somebody who can be asked.</p>
+        <p>So the figures are on the notes rather than on this page, and the references are here instead. <b>Ask for them by job and we will send the set</b>, including the loads that went to landfill, which is the part of the set that is usually left out.</p>
+      </div>
+      <ul class="fields">
+        <li><span>Transfer notes</span><span class="slot"><span class="vh">Transfer note reference set</span><span aria-hidden="true">&mdash;</span></span></li>
+        <li><span>Carrier registration</span><span class="slot"><span class="vh">Waste carrier registration</span><span aria-hidden="true">&mdash;</span></span></li>
+        <li><span>Who holds this</span><span class="slot"><span class="vh">Name of the environmental lead</span><span aria-hidden="true">&mdash;</span></span></li>
+      </ul>
+    </div>
+
+    <div class="refuse" data-refusal>
+      <h3>And five things we are not going to say</h3>
+      <div>
+        <ul>
+          <li>Not green</li>
+          <li>Not eco</li>
+          <li>Not carbon neutral</li>
+          <li>No offsetting</li>
+          <li>No target past our order book</li>
+        </ul>
+        <p><b>An adjective is not a mechanism</b>, so none of them is applied to this firm anywhere above. <b>We do not buy certificates in order to call a job neutral</b> &mdash; a figure arrived at by purchase is a purchase rather than a measurement, and it would tell you nothing about how the work was done. And a target dated further out than the work we currently hold is a press release: <b>the windows on this page all close inside the job.</b></p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

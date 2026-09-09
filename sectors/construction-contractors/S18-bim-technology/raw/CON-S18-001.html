@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S18-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S18 — BIM Technology
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : The four places a problem can surface and what fixing it takes at each, then six
+                   coordination items shown twice over — as they appear in the model, and as they
+                   appear on site if they were missed
+  Density        : Medium
+  Media mode     : None. Anti-patterns four and five remove every image this page is usually built
+                   from: **no wireframe, no isometric, no grid overlay, no blueprint hatch, and no
+                   element on this page is drawn at an angle.**
+  Interaction    : None.
+  The constraint : A model does not stop things going wrong. **It moves the moment you find out**,
+                   and the only currency this catalog can print that in is the work it takes to fix
+                   the same problem at each place.
+  Software       : **Omitted, not reserved.** A slot labelled *Software* would assert that the
+                   package matters to the reader; it does not. The `S09` field-versus-figure test.
+  The caveat     : The survey item. A model of an existing building is only as true as the survey
+                   underneath it &mdash; the same input `S15` refuses to price around.
+  Deliberately not : No figure, percentage, clash count or saving. No software or platform named. No
+                   compliance level as a badge. No fly-through. No named project &mdash; `S13` owns
+                   case studies.
+  Content note   : Information manager, model and survey references and the level schedule are
+                   reserved fields. Standard and protocol names are reserved &mdash; the `S08` rule.
+                   No digit in visible copy; no acronym; no header.
+-->
+
+<meta name="study-id" content="CON-S18-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S18">
+<meta name="section-name" content="BIM Technology">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Four places a problem surfaces, then six coordination items shown in the model and on site">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S18-001 — BIM Technology, Universal</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1f1; }
+
+/* Scoped study styles — namespaced to .con-s18-001 */
+.con-s18-001 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #b4b4b4;
+  --paper: #f1f1f1;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --soft-line: #ececec;
+  --rule: #111111;
+  --model: #444444;
+  --review: #969696;
+  --site: #7a7a7a;
+  --after: #2b2b2b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s18-001 *,
+.con-s18-001 *::before,
+.con-s18-001 *::after { box-sizing: inherit; }
+.con-s18-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s18-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s18-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s18-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  padding-bottom: clamp(18px, 2.3vw, 30px);
+  border-bottom: 2px solid var(--rule);
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+.con-s18-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s18-001 h2 {
+  margin: 0;
+  font-size: clamp(2.294rem, 4.536vw, 3.78rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s18-001 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s18-001 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Where it surfaces */
+.con-s18-001 .where {
+  margin: 0 0 clamp(20px, 2.6vw, 32px);
+  padding: 0 0 clamp(18px, 2.3vw, 28px);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(12px, 1.8vw, 22px);
+}
+.con-s18-001 .where > li { min-width: 0; padding-top: clamp(11px, 1.4vw, 15px); border-top: 5px solid var(--tone, var(--line)); }
+.con-s18-001 .w-model { --tone: var(--model); }
+.con-s18-001 .w-review { --tone: var(--review); }
+.con-s18-001 .w-site { --tone: var(--site); }
+.con-s18-001 .w-after { --tone: var(--after); }
+.con-s18-001 .where h3 {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s18-001 .where .cost {
+  margin: 0 0 7px;
+  font-size: clamp(1.1rem, 1.676vw, 1.416rem);
+  line-height: 1.2;
+  letter-spacing: -0.018em;
+  font-weight: 700;
+}
+.con-s18-001 .where p { margin: 0; font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
+
+/* Coordination items */
+.con-s18-001 .items { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: clamp(12px, 1.6vw, 20px); }
+.con-s18-001 .items > li {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 22px;
+  padding: clamp(17px, 2.1vw, 25px) clamp(17px, 2.1vw, 25px) clamp(15px, 1.9vw, 22px);
+  display: flex;
+  flex-direction: column;
+}
+.con-s18-001 h4 {
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
+  padding-bottom: clamp(10px, 1.2vw, 13px);
+  border-bottom: 1px solid var(--soft-line);
+  font-size: clamp(1.251rem, 1.77vw, 1.463rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  max-width: 24ch;
+}
+.con-s18-001 .side { margin-bottom: clamp(11px, 1.4vw, 15px); }
+.con-s18-001 .side:last-of-type { margin-bottom: 0; margin-top: auto; }
+.con-s18-001 .side .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.con-s18-001 .in .k { color: var(--model); }
+.con-s18-001 .out .k { color: var(--site); }
+.con-s18-001 .side p { margin: 0; font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
+.con-s18-001 .side p b { color: var(--ink); font-weight: 650; }
+.con-s18-001 .out { padding-top: clamp(11px, 1.4vw, 15px); border-top: 1px solid var(--site); }
+.con-s18-001 .out p { color: var(--ink); }
+
+/* Who owns what */
+.con-s18-001 .owns {
+  margin-top: clamp(20px, 2.6vw, 34px);
+  padding-top: clamp(18px, 2.3vw, 28px);
+  border-top: 2px solid var(--rule);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s18-001 .owns h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.416rem, 2.318vw, 1.952rem);
+  line-height: 1.12;
+  letter-spacing: -0.024em;
+  font-weight: 700;
+  max-width: 26ch;
+}
+.con-s18-001 .owns p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 64ch; font-size: 1.1rem; line-height: 1.62; color: var(--ink-soft); }
+.con-s18-001 .owns p:last-child { margin-bottom: 0; }
+.con-s18-001 .owns p b { color: var(--ink); font-weight: 650; }
+.con-s18-001 .fields { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; }
+.con-s18-001 .fields li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s18-001 .slot {
+  min-width: 62px;
+  padding: 1px 11px;
+  border-radius: 10px;
+  background: var(--card);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+/* Refusal */
+.con-s18-001 .refuse {
+  margin-top: clamp(18px, 2.3vw, 28px);
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s18-001 .refuse h3 {
+  margin: 0;
+  font-size: clamp(1.298rem, 2.006vw, 1.676rem);
+  line-height: 1.14;
+  letter-spacing: -0.022em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s18-001 .refuse ul { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s18-001 .refuse li {
+  padding: 4px 12px;
+  border: 1px solid var(--after);
+  border-radius: 999px;
+  font-size: 1rem;
+  color: var(--after);
+}
+.con-s18-001 .refuse p { margin: 0; max-width: 66ch; font-size: 1rem; line-height: 1.62; color: var(--ink-soft); }
+.con-s18-001 .refuse p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s18-001 .head,
+  .con-s18-001 .owns,
+  .con-s18-001 .refuse { grid-template-columns: minmax(0, 1fr); }
+  .con-s18-001 .head { align-items: start; gap: clamp(14px, 2.4vw, 22px); }
+}
+
+@media (max-width: 620px) {
+  .con-s18-001 .items { grid-template-columns: minmax(0, 1fr); }
+  .con-s18-001 h2, .con-s18-001 .head p, .con-s18-001 h4,
+  .con-s18-001 .owns h3, .con-s18-001 .owns p,
+  .con-s18-001 .refuse h3, .con-s18-001 .refuse p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s18-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s18-001 {
+  --v2-accent: #969696;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
+  font-size: 1.06rem;
+}
+.con-s18-001 h2 { font-weight: 800; }
+.con-s18-001 h3, .con-s18-001 h4 { font-weight: 750; }
+.con-s18-001 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s18-001 .items > li, .con-s18-001 .slot {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s18-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s18-001.con-s18-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s18-001.con-s18-001 .head h2, .con-s18-001.con-s18-001 .head h3, .con-s18-001.con-s18-001 .head h4, .con-s18-001.con-s18-001 .head b, .con-s18-001.con-s18-001 .head strong, .con-s18-001.con-s18-001 .head p b, .con-s18-001.con-s18-001 .head li b, .con-s18-001.con-s18-001 .head span b, .con-s18-001.con-s18-001 .head dt, .con-s18-001.con-s18-001 .head div b {
+  color: #ffffff;
+}
+.con-s18-001.con-s18-001 .head p, .con-s18-001.con-s18-001 .head li, .con-s18-001.con-s18-001 .head span, .con-s18-001.con-s18-001 .head dd, .con-s18-001.con-s18-001 .head div p, .con-s18-001.con-s18-001 .head div li, .con-s18-001.con-s18-001 .head p span, .con-s18-001.con-s18-001 .head .said, .con-s18-001.con-s18-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s18-001.con-s18-001 .head .eyebrow, .con-s18-001.con-s18-001 .head .kicker, .con-s18-001.con-s18-001 .head .slot, .con-s18-001.con-s18-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s18-001.con-s18-001 .head i, .con-s18-001.con-s18-001 .head .bars i, .con-s18-001.con-s18-001 .head .lines i, .con-s18-001.con-s18-001 .head .measures i, .con-s18-001.con-s18-001 .head .bar, .con-s18-001.con-s18-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s18-001.con-s18-001 .head .plate, .con-s18-001.con-s18-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s18-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s18-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s18-001" data-study-id="CON-S18-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s18-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Coordination, and what it is for</p>
+        <h2 id="con-s18-001-title">It does not stop things going wrong. It moves where you find out.</h2>
+      </div>
+      <p>A coordinated model finds the same problems a site finds. <b>The difference is entirely in the room you are standing in when it turns up</b> &mdash; and what fixing it takes there. Which is the only useful way to describe this, so it is the first thing on the page.</p>
+    </div>
+
+    <ul class="where">
+      <li class="w-model">
+        <h3>Found in the model</h3>
+        <p class="cost">An email</p>
+        <p>Before anything is ordered. Somebody moves an object, and the thing that changes is a file.</p>
+      </li>
+      <li class="w-review">
+        <h3>Found at the drawing review</h3>
+        <p class="cost">A re-issue</p>
+        <p>Before fabrication. A revised drawing goes out and somebody has to read it, which is a cost but a small one.</p>
+      </li>
+      <li class="w-site">
+        <h3>Found on site, in the work</h3>
+        <p class="cost">A variation, and two trades standing</p>
+        <p>While it is agreed. The argument about whose it was takes longer than the alteration.</p>
+      </li>
+      <li class="w-after">
+        <h3>Found after handover</h3>
+        <p class="cost">Opening something that was signed off</p>
+        <p>In a building somebody has moved into. This is the one worth paying to avoid.</p>
+      </li>
+    </ul>
+
+    <ul class="items">
+
+      <li>
+        <h4>Services against structure</h4>
+        <div class="side in">
+          <span class="k">In the model</span>
+          <p>A penetration drawn where it belongs, <b>and a beam designed with it in it</b> rather than around it afterwards.</p>
+        </div>
+        <div class="side out">
+          <span class="k">On site, if it was missed</span>
+          <p><b>A hole nobody will sign for</b>, and a week of drawings going back and forth while the duct sits on a pallet.</p>
+        </div>
+      </li>
+
+      <li>
+        <h4>Ceiling void depth</h4>
+        <div class="side in">
+          <span class="k">In the model</span>
+          <p>A void that holds what is actually going into it, <b>with the fall on the drainage in place</b> rather than assumed.</p>
+        </div>
+        <div class="side out">
+          <span class="k">On site, if it was missed</span>
+          <p>The void is the first thing trimmed when the budget moves and <b>the last thing anybody re-checks afterwards.</b> It is found by the plasterer.</p>
+        </div>
+      </li>
+
+      <li>
+        <h4>Riser and plant space</h4>
+        <div class="side in">
+          <span class="k">In the model</span>
+          <p>Room to lift the thing out again, not only to get it in. <b>Maintenance access is a clash the software will not flag</b>, so somebody has to ask.</p>
+        </div>
+        <div class="side out">
+          <span class="k">On site, if it was missed</span>
+          <p><b>A pump that fits and cannot be replaced.</b> Nobody finds this one during the job; it is found in the building's fifth year.</p>
+        </div>
+      </li>
+
+      <li>
+        <h4>Builder's work openings</h4>
+        <div class="side in">
+          <span class="k">In the model</span>
+          <p>Every hole agreed and drawn before the pour, with the ones nobody is sure about marked as unresolved rather than left out.</p>
+        </div>
+        <div class="side out">
+          <span class="k">On site, if it was missed</span>
+          <p><b>Concrete does not have a revision.</b> It is the hardest deadline in the whole exercise, and the reason the model has to be ahead of the programme rather than beside it.</p>
+        </div>
+      </li>
+
+      <li>
+        <h4>Setting out against the survey</h4>
+        <div class="side in">
+          <span class="k">In the model</span>
+          <p>The building where it actually is, taken off a survey somebody stood in the room to do.</p>
+        </div>
+        <div class="side out">
+          <span class="k">On site, if it was missed</span>
+          <p><b>On a refurbishment the building is never where the drawing says it is.</b> A model of an existing structure is only as true as the survey underneath it, and that is the input we will not proceed without.</p>
+        </div>
+      </li>
+
+      <li>
+        <h4>Who owns which object</h4>
+        <div class="side in">
+          <span class="k">In the model</span>
+          <p>A schedule saying who models what, to what level of definition, and by when. <b>Not a technology question at all.</b></p>
+        </div>
+        <div class="side out">
+          <span class="k">On site, if it was missed</span>
+          <p><b>Two consultants each assuming the other did it</b>, which produces a coordinated-looking model with a hole in the middle of it.</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="owns">
+      <div>
+        <h3>The unglamorous half of this, which is most of it</h3>
+        <p>Most of what goes wrong here is not a clash the software missed. <b>It is somebody modelling to a level of detail nobody agreed</b>, or an object that two parties both thought the other owned, or a file issued after the decision it was meant to inform.</p>
+        <p>So the useful artefacts are a schedule of who owns what, a level of definition against each, and a date. <b>They are held by a person rather than by a system</b>, and that person is named here rather than described as a department.</p>
+      </div>
+      <ul class="fields">
+        <li><span>Who holds this</span><span class="slot"><span class="vh">Name of the information manager</span><span aria-hidden="true">&mdash;</span></span></li>
+        <li><span>Level schedule</span><span class="slot"><span class="vh">Level of definition schedule reference</span><span aria-hidden="true">&mdash;</span></span></li>
+        <li><span>Survey</span><span class="slot"><span class="vh">Survey reference</span><span aria-hidden="true">&mdash;</span></span></li>
+      </ul>
+    </div>
+
+    <div class="refuse" data-refusal>
+      <h3>And what is not on this page</h3>
+      <div>
+        <ul>
+          <li>No wireframe</li>
+          <li>No software named</li>
+          <li>No compliance badge</li>
+          <li>No fly-through</li>
+        </ul>
+        <p><b>A drawing you did not make is a drawing of nothing</b>, so there is no wireframe, no stock plan and no overlay here &mdash; and nothing on this page is drawn at an angle, because that is the same picture rebuilt out of rules. <b>Which package we use is the least interesting fact about any of this</b>, and a row of logos would be a wall of badges wearing a different hat. A compliance level is a scope of work rather than an achievement. And a walkthrough sells a building; <b>it does not coordinate one.</b></p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S15-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S15 — Bid RFQ
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : The three kinds of number across the top, then seven things a price depends on as
+                   cards — each saying why it is asked and what it costs not to know — closing on
+                   the budget position and the four refusals
+  Density        : Medium
+  Media mode     : None. A bid section has nothing to photograph.
+  Interaction    : None. `004` carries this section's only form; this study presents what to send
+                   as content, because a bid section is about what makes a price possible rather
+                   than about collecting an email address.
+  The device     : **What it costs not to know.** Every *request a quote* form in this industry asks
+                   for a name, an email and *tell us about your project*, then returns a number
+                   nothing in the form determined. Naming what each answer decides &mdash; and what
+                   the number becomes without it &mdash; is the `S05` limit and the `S06` gate
+                   applied to a submission.
+  The three numbers : A guess, a range and a price are different objects, and only the third is a
+                   price. Saying so at the top of the page is the section's whole argument, and it
+                   is the reason there is no calculator on it.
+  Deliberately not : No price, rate, range, figure or *from* anything. No calculator or estimator.
+                   No turnaround or response time &mdash; the `S06` schedule rule. No win rate.
+  Content note   : The bid contact, submission address and question deadline are reserved fields.
+                   Everything else is policy and is real. No digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S15-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S15">
+<meta name="section-name" content="Bid RFQ">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Three kinds of number over seven price-dependency cards, closing on budget and refusals">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S15-001 — Bid RFQ, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1f1; }
+
+/* Scoped study styles — namespaced to .con-s15-001 */
+.con-s15-001 {
+  --ink: #111111;
+  --ink-soft: #7a7a7a;
+  --ink-faint: #969696;
+  --paper: #f1f1f1;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --rule: #b4b4b4;
+  --field: #ececec;
+  --guess: #2b2b2b;
+  --range: #969696;
+  --price: #444444;
+  --why: #5e5e5e;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s15-001 *,
+.con-s15-001 *::before,
+.con-s15-001 *::after { box-sizing: inherit; }
+.con-s15-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s15-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s15-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s15-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+}
+.con-s15-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s15-001 h2 {
+  margin: 0;
+  font-size: clamp(2.318rem, 4.41vw, 3.78rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s15-001 .head p { margin: 0; max-width: 48ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
+.con-s15-001 .head p b { color: var(--ink); font-weight: 650; }
+
+/* The three numbers */
+.con-s15-001 .three {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 18px);
+}
+.con-s15-001 .three li { min-width: 0; }
+.con-s15-001 .kind {
+  height: 100%;
+  border-radius: 22px;
+  background: var(--card);
+  border-top: 5px solid var(--tone, var(--rule));
+  padding: clamp(16px, 2vw, 26px);
+}
+.con-s15-001 .k-guess { --tone: var(--guess); }
+.con-s15-001 .k-range { --tone: var(--range); }
+.con-s15-001 .k-price { --tone: var(--price); }
+.con-s15-001 .give {
+  margin: 0 0 clamp(9px, 1.2vw, 12px);
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s15-001 h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.369rem, 1.888vw, 1.699rem);
+  line-height: 1.12;
+  letter-spacing: -0.024em;
+  font-weight: 700;
+}
+.con-s15-001 .kind p { margin: 0; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s15-001 .kind p + p { margin-top: 10px; }
+.con-s15-001 .kind p b { color: var(--ink); font-weight: 650; }
+
+/* What a price depends on */
+.con-s15-001 .depends {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 18px);
+}
+.con-s15-001 .depends li { min-width: 0; }
+.con-s15-001 .dep {
+  height: 100%;
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(16px, 2vw, 26px);
+  display: flex;
+  flex-direction: column;
+}
+.con-s15-001 h4 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.1rem, 1.534vw, 1.416rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.con-s15-001 .why { margin: 0 0 clamp(11px, 1.4vw, 15px); font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
+.con-s15-001 .why .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--why);
+}
+.con-s15-001 .why b { color: var(--ink); font-weight: 650; }
+.con-s15-001 .cost {
+  margin: auto 0 0;
+  padding-top: clamp(10px, 1.3vw, 14px);
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.52;
+  color: var(--ink-soft);
+}
+.con-s15-001 .cost .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--guess);
+}
+.con-s15-001 .cost b { color: var(--ink); font-weight: 650; }
+
+/* Budget + send + refusals */
+.con-s15-001 .foot {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 18px);
+  margin-bottom: clamp(12px, 1.6vw, 18px);
+}
+.con-s15-001 .foot > div { border-radius: 22px; background: var(--card); padding: clamp(16px, 2vw, 26px); }
+.con-s15-001 .foot p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 62ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
+.con-s15-001 .foot p:last-child { margin-bottom: 0; }
+.con-s15-001 .foot p b { color: var(--ink); font-weight: 650; }
+.con-s15-001 .send { margin: clamp(12px, 1.5vw, 17px) 0 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.con-s15-001 .send li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.804rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s15-001 .send .slot {
+  min-width: 62px;
+  padding: 1px 10px;
+  border-radius: 16px;
+  background: var(--field);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.con-s15-001 .refuse {
+  border-radius: 22px;
+  border: 2px dashed var(--rule);
+  padding: clamp(16px, 2.2vw, 30px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s15-001 .refuse h3 { max-width: 20ch; }
+.con-s15-001 .none { margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.con-s15-001 .none li {
+  padding: 5px 13px;
+  border-radius: 999px;
+  border: 1px dashed var(--rule);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.con-s15-001 .refuse p { margin: 0 0 10px; max-width: 74ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
+.con-s15-001 .refuse p:last-child { margin-bottom: 0; }
+.con-s15-001 .refuse p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1000px) {
+  .con-s15-001 .three { grid-template-columns: minmax(0, 1fr); }
+  .con-s15-001 .depends { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .con-s15-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .con-s15-001 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s15-001 .refuse { grid-template-columns: minmax(0, 1fr); }
+  .con-s15-001 h2, .con-s15-001 .head p, .con-s15-001 .foot p,
+  .con-s15-001 .refuse h3, .con-s15-001 .refuse p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s15-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s15-001 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #ececec;
+  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
+  font-size: 1.06rem;
+}
+.con-s15-001 h2 { font-weight: 800; }
+.con-s15-001 h3, .con-s15-001 h4 { font-weight: 750; }
+.con-s15-001 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #ececec;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s15-001 .kind, .con-s15-001 .dep, .con-s15-001 .foot > div {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #ececec;
+}
+.con-s15-001 .none li {
+  border: 1px dashed #b4b4b4;
+  border-radius: 14px;
+}
+.con-s15-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #ececec;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s15-001.con-s15-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s15-001.con-s15-001 .head h2, .con-s15-001.con-s15-001 .head h3, .con-s15-001.con-s15-001 .head h4, .con-s15-001.con-s15-001 .head b, .con-s15-001.con-s15-001 .head strong, .con-s15-001.con-s15-001 .head p b, .con-s15-001.con-s15-001 .head li b, .con-s15-001.con-s15-001 .head span b, .con-s15-001.con-s15-001 .head dt, .con-s15-001.con-s15-001 .head div b {
+  color: #ffffff;
+}
+.con-s15-001.con-s15-001 .head p, .con-s15-001.con-s15-001 .head li, .con-s15-001.con-s15-001 .head span, .con-s15-001.con-s15-001 .head dd, .con-s15-001.con-s15-001 .head div p, .con-s15-001.con-s15-001 .head div li, .con-s15-001.con-s15-001 .head p span, .con-s15-001.con-s15-001 .head .said, .con-s15-001.con-s15-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s15-001.con-s15-001 .head .eyebrow, .con-s15-001.con-s15-001 .head .kicker, .con-s15-001.con-s15-001 .head .slot, .con-s15-001.con-s15-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s15-001.con-s15-001 .head i, .con-s15-001.con-s15-001 .head .bars i, .con-s15-001.con-s15-001 .head .lines i, .con-s15-001.con-s15-001 .head .measures i, .con-s15-001.con-s15-001 .head .bar, .con-s15-001.con-s15-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s15-001.con-s15-001 .head .plate, .con-s15-001.con-s15-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s15-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s15-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s15-001" data-study-id="CON-S15-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s15-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Putting work to us</p>
+        <h2 id="con-s15-001-title">A price is a function of information. There is no calculator on this page.</h2>
+      </div>
+      <p>Anything we could work out from a web form would be revised the moment somebody walked the site, and <b>a number revised upward is worse than no number at all</b> &mdash; it has already done its job of getting us onto your list.</p>
+    </div>
+
+    <ul class="three">
+      <li>
+        <div class="kind k-guess">
+          <p class="give">If you can give us a sentence</p>
+          <h3>You get no number</h3>
+          <p>A conversation and a site walk instead. <b>That is the honest answer to a sentence</b>, and it is the one most firms will not give you because it does not get them onto a list.</p>
+        </div>
+      </li>
+      <li>
+        <div class="kind k-range">
+          <p class="give">If you can give us a design</p>
+          <h3>You get a range, with the assumptions beside it</h3>
+          <p>Every assumption written where you can argue with it rather than buried where you meet it later. <b>Useful for a decision. Not useful for a contract.</b></p>
+        </div>
+      </li>
+      <li>
+        <div class="kind k-price">
+          <p class="give">If you can give us a tender package</p>
+          <h3>You get a price</h3>
+          <p><b>Only this one is a price.</b> The other two are called prices by people who want to be on your list, and both of them move.</p>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="depends">
+
+      <li>
+        <div class="dep">
+          <h4>What is being built</h4>
+          <p class="why"><span class="k">Why we ask</span>Scope is the price. Everything else on this page only modifies it.</p>
+          <p class="cost"><span class="k">If you cannot answer</span>The number becomes a range and <b>we will say so rather than let you read it as a price.</b></p>
+        </div>
+      </li>
+
+      <li>
+        <div class="dep">
+          <h4>Where the site is</h4>
+          <p class="why"><span class="k">Why we ask</span>It decides which of our attendance bands you are in, and therefore whether the site manager is there every morning &mdash; and whether we should be bidding at all.</p>
+          <p class="cost"><span class="k">If you cannot answer</span>We cannot tell you which band you are in, and <b>the band is the part that changes what you actually get.</b></p>
+        </div>
+      </li>
+
+      <li>
+        <div class="dep">
+          <h4>Whether the building is in use</h4>
+          <p class="why"><span class="k">Why we ask</span>It decides phasing, hours and sequence, which is a different job rather than the same job more carefully.</p>
+          <p class="cost"><span class="k">If you cannot answer</span><b>We price it as occupied</b>, which is the expensive assumption. Tell us and it may come down.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="dep">
+          <h4>What stage the design is at</h4>
+          <p class="why"><span class="k">Why we ask</span>It decides which of the three numbers above you get. A concept, a planning drawing and a tender package produce three different objects.</p>
+          <p class="cost"><span class="k">If you cannot answer</span><b>You get the first one</b>, which is not a number at all.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="dep">
+          <h4>What surveys exist</h4>
+          <p class="why"><span class="k">Why we ask</span>Asbestos, ground, structural, drainage. <b>Missing surveys are the single largest cause of a price changing after it is accepted.</b></p>
+          <p class="cost"><span class="k">If you cannot answer</span><b>We will not price around it.</b> We have done that once and spent longer arguing about whose risk it was than the work took.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="dep">
+          <h4>What fixes your start</h4>
+          <p class="why"><span class="k">Why we ask</span>A date outside your control &mdash; a term, a lease, a season &mdash; changes the sequence rather than the price, and we would rather design the sequence around it than discover it.</p>
+          <p class="cost"><span class="k">If you cannot answer</span>We assume nothing is fixed, which is the cheapest assumption and the one most often wrong.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="dep">
+          <h4>Who decides</h4>
+          <p class="why"><span class="k">Why we ask</span>It decides how long an answer takes once we are on site, and most delay on a live job is a decision waiting on somebody rather than a trade waiting on us.</p>
+          <p class="cost"><span class="k">If you cannot answer</span><b>The programme has a hole in it</b> that nobody will notice until the first query.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="dep">
+          <h4>Your budget</h4>
+          <p class="why"><span class="k">Why we ask</span>A scope with no budget is a fishing trip for both of us. <b>We do ask, and we say what we will not do with it.</b></p>
+          <p class="cost"><span class="k">What we will not do</span>Simply price to your figure. <b>If the scope costs less, we say so. If it costs more, we tell you before we bid</b> rather than after we have won.</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="foot">
+      <div>
+        <h3>Where to send it</h3>
+        <p>A tender package, a drawing set, or a paragraph &mdash; all three are worth sending, and the first line of our reply will tell you which of the three numbers you are going to get.</p>
+        <ul class="send">
+          <li><span>Bid contact</span><span class="slot"><span class="vh">Name of the bid contact</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Send to</span><span class="slot"><span class="vh">Submission address</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Questions by</span><span class="slot"><span class="vh">Deadline for questions</span><span aria-hidden="true">&mdash;</span></span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>And what happens next</h3>
+        <p><b>We come and walk it.</b> That is not a formality and it is not a sales visit &mdash; a drawing tells you the building and the site tells you the job.</p>
+        <p>If what we see says a firm nearer you or a specialist would serve you better, you will get that instead of a price, and you will have lost a morning rather than a tender.</p>
+      </div>
+    </div>
+
+    <div class="refuse" data-refusal>
+      <h3>What we will not do</h3>
+      <div>
+        <ul class="none">
+          <li>No instant quote</li>
+          <li>No calculator</li>
+          <li>No figure from a web page</li>
+          <li>No pricing around a missing survey</li>
+        </ul>
+        <p><b>We will not price a job we have not walked</b>, and we will not give you a number to get onto a list. Both are easy to do, both look like service, and both end with a conversation in month two that nobody enjoys.</p>
+        <p>There is no response time on this page either. <b>A promise about how quickly a price arrives is a promise about a job nobody has looked at yet</b>, and it is the kind of thing that gets met by sending you the first of the three numbers and calling it the third.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

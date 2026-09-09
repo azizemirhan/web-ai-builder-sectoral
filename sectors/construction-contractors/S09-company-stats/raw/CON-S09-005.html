@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S09-005
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S09 — Company Stats
+  Direction      : Art-directed / Distinctive
+  Reference      : None supplied for this section.
+  Layout model   : Four full-width bands on a deep ground, each with different internal geometry —
+                   a point on a rule, an accumulating stack, a provisional dashed frame, and one
+                   spike against ordinary ones — with the reserved figure at poster scale in each
+  Density        : Low
+  Media mode     : None. A counter has nothing to photograph.
+  Interaction    : None (static; no JavaScript)
+  The device     : **The geometry differs band to band, and that is the whole page.** This is the
+                   section where a counter is legitimate at display scale, so the study takes the
+                   scale and then refuses the uniformity that normally comes with it: four figures
+                   at the same size, drawn four different ways.
+  Against the trap : The direction's trap here is the car advert. A stats poster is one bad decision
+                   away from it, and the defence is that every band carries the qualification that
+                   makes its figure readable &mdash; a start date, an as-at, an outlier warning. An
+                   advertisement removes those; this page is built out of them.
+  Colour         : One tone per kind of quantity, lifted for the dark ground, and nothing else on
+                   the page carries a second value. The last band is the darkest rather than a
+                   hi-vis tone &mdash; hi-vis as decoration is anti-pattern six, and a stats page is where
+                   it usually appears.
+  Content note   : Sectors and trades are generic vocabulary and are the only real content. All four
+                   figures and their bases are reserved fields. No safety figure of any kind; no
+                   digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S09-005">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S09">
+<meta name="section-name" content="Company Stats">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Four full-width bands with different internal geometry, figures at poster scale">
+<meta name="density" content="low">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S09-005 — Company Stats, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0e0e0e; }
+
+/* Scoped study styles — namespaced to .con-s09-005 */
+.con-s09-005 {
+  --ink: #ffffff;
+  --ink-soft: #969696;
+  --ink-faint: #5e5e5e;
+  --paper: #0e0e0e;
+  --rule: #2b2b2b;
+  --field: #111111;
+
+  --point: #111111;
+  --total: #2b2b2b;
+  --snap: #ececec;
+  --extreme: #7a7a7a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s09-005 *,
+.con-s09-005 *::before,
+.con-s09-005 *::after { box-sizing: inherit; }
+.con-s09-005 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+.con-s09-005 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s09-005 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s09-005 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(16px, 2.6vw, 48px);
+  margin-bottom: clamp(20px, 2.6vw, 34px);
+}
+.con-s09-005 .eyebrow {
+  margin: 0 0 clamp(11px, 1.4vw, 18px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s09-005 h2 {
+  margin: 0;
+  font-size: clamp(2.318rem, 4.662vw, 3.906rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s09-005 .head p { margin: 0; max-width: 38ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
+.con-s09-005 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Bands */
+.con-s09-005 .band {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(20px, 3.4vw, 60px);
+  align-items: center;
+  padding: clamp(26px, 3.4vw, 56px) 0;
+  border-top: 1px solid var(--rule);
+}
+.con-s09-005 .band:last-of-type { border-bottom: 1px solid var(--rule); }
+
+.con-s09-005 .kind {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 clamp(9px, 1.2vw, 13px);
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s09-005 .kind::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  flex: none;
+  background: var(--tone, var(--ink-faint));
+}
+.con-s09-005 .b-point { --tone: var(--point); }
+.con-s09-005 .b-total { --tone: var(--total); }
+.con-s09-005 .b-snap { --tone: var(--snap); }
+.con-s09-005 .b-extreme { --tone: var(--extreme); }
+.con-s09-005 .b-point .kind::before { border-radius: 50%; }
+.con-s09-005 .b-snap .kind::before { border-radius: 10px; transform: rotate(45deg); }
+.con-s09-005 .b-extreme .kind::before { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+.con-s09-005 h3 {
+  margin: 0 0 clamp(11px, 1.4vw, 16px);
+  font-size: clamp(1.463rem, 2.318vw, 2.025rem);
+  line-height: 1.1;
+  letter-spacing: -0.026em;
+  font-weight: 700;
+}
+.con-s09-005 .reads { margin: 0; max-width: 48ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.11vw, 1.1rem); line-height: 1.62; }
+.con-s09-005 .reads b { color: var(--ink); font-weight: 650; }
+.con-s09-005 .reads.flag b { color: var(--extreme); }
+.con-s09-005 .basis {
+  margin: clamp(12px, 1.6vw, 18px) 0 0;
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  line-height: 2;
+  color: var(--ink-faint);
+}
+.con-s09-005 .basis .slot {
+  display: inline-block;
+  min-width: 42px;
+  margin-left: 7px;
+  padding: 1px 9px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+/* The four geometries */
+.con-s09-005 .draw { min-width: 0; }
+
+.con-s09-005 .g-point {
+  position: relative;
+  padding-bottom: clamp(18px, 2.4vw, 28px);
+  border-bottom: 3px solid var(--point);
+}
+.con-s09-005 .g-point::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -9px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--point);
+}
+
+.con-s09-005 .g-total { display: flex; align-items: flex-end; gap: clamp(12px, 1.8vw, 22px); }
+.con-s09-005 .g-total .stack { display: flex; align-items: flex-end; gap: 5px; flex: none; }
+.con-s09-005 .g-total .stack i { display: block; width: 10px; background: var(--total); border-radius: 10px 2px 0 0; }
+.con-s09-005 .g-total .stack i:nth-child(1) { height: 16px; opacity: 0.26; }
+.con-s09-005 .g-total .stack i:nth-child(2) { height: 26px; opacity: 0.4; }
+.con-s09-005 .g-total .stack i:nth-child(3) { height: 36px; opacity: 0.54; }
+.con-s09-005 .g-total .stack i:nth-child(4) { height: 46px; opacity: 0.68; }
+.con-s09-005 .g-total .stack i:nth-child(5) { height: 56px; opacity: 0.82; }
+.con-s09-005 .g-total .stack i:nth-child(6) { height: 66px; opacity: 1; }
+
+.con-s09-005 .g-snap {
+  padding: clamp(14px, 1.9vw, 22px) clamp(16px, 2.1vw, 26px);
+  border: 3px dashed var(--snap);
+  border-radius: 22px;
+}
+
+.con-s09-005 .g-extreme { display: flex; align-items: flex-end; gap: clamp(12px, 1.8vw, 22px); }
+.con-s09-005 .g-extreme .bars { display: flex; align-items: flex-end; gap: 5px; flex: none; }
+.con-s09-005 .g-extreme .bars i { display: block; width: 9px; background: var(--rule); border-radius: 10px 2px 0 0; }
+.con-s09-005 .g-extreme .bars i:nth-child(1) { height: 18px; }
+.con-s09-005 .g-extreme .bars i:nth-child(2) { height: 26px; }
+.con-s09-005 .g-extreme .bars i:nth-child(3) { height: 21px; }
+.con-s09-005 .g-extreme .bars i:nth-child(4) { height: 29px; }
+.con-s09-005 .g-extreme .bars i.tall { height: 92px; background: var(--extreme); }
+
+.con-s09-005 .value {
+  display: block;
+  font-size: clamp(3.024rem, 7.812vw, 6.552rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+/* At this scale a bare dash reads as a redaction mark rather than as a value waiting to be
+   entered. The rule under it is what makes it a field. (Lesson carried from CON-S08-005.) */
+.con-s09-005 .value .slot {
+  display: inline-block;
+  min-width: min(320px, 62%);
+  padding-bottom: clamp(6px, 0.8vw, 11px);
+  border-bottom: 3px solid var(--rule);
+}
+
+/* Foot */
+.con-s09-005 .foot {
+  margin-top: clamp(26px, 3.4vw, 52px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 52px);
+}
+.con-s09-005 .foot h3 { margin-bottom: clamp(10px, 1.3vw, 14px); }
+.con-s09-005 .foot p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 54ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.62; }
+.con-s09-005 .foot p:last-child { margin-bottom: 0; }
+.con-s09-005 .foot p b { color: var(--ink); font-weight: 650; }
+.con-s09-005 .chips, .con-s09-005 .none { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s09-005 .chips li { padding: 5px 13px; border-radius: 999px; background: var(--field); color: var(--ink-soft); font-size: 1rem; font-weight: 600; }
+.con-s09-005 .none { margin-bottom: clamp(11px, 1.4vw, 15px); }
+.con-s09-005 .none li { padding: 5px 13px; border-radius: 999px; border: 1px dashed var(--rule); color: var(--ink-faint); font-size: 1rem; font-weight: 600; }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s09-005 .band { grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 24px); }
+  .con-s09-005 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s09-005 h2, .con-s09-005 .head p, .con-s09-005 .reads, .con-s09-005 .foot p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s09-005 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s09-005 {
+  --v2-accent: #b4b4b4;
+  --v2-soft: #444444;
+  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
+  font-size: 1.06rem;
+}
+.con-s09-005 h2 { font-weight: 800; }
+.con-s09-005 h3, .con-s09-005 h4 { font-weight: 750; }
+.con-s09-005 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s09-005 .none li {
+  border: 1px dashed #5e5e5e;
+  border-radius: 14px;
+}
+.con-s09-005 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 600;
+}
+.con-s09-005.con-s09-005 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: 1px solid #444444;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s09-005.con-s09-005 .head h2, .con-s09-005.con-s09-005 .head h3, .con-s09-005.con-s09-005 .head h4, .con-s09-005.con-s09-005 .head b, .con-s09-005.con-s09-005 .head strong, .con-s09-005.con-s09-005 .head p b, .con-s09-005.con-s09-005 .head li b, .con-s09-005.con-s09-005 .head span b, .con-s09-005.con-s09-005 .head dt, .con-s09-005.con-s09-005 .head div b {
+  color: #ffffff;
+}
+.con-s09-005.con-s09-005 .head p, .con-s09-005.con-s09-005 .head li, .con-s09-005.con-s09-005 .head span, .con-s09-005.con-s09-005 .head dd, .con-s09-005.con-s09-005 .head div p, .con-s09-005.con-s09-005 .head div li, .con-s09-005.con-s09-005 .head p span, .con-s09-005.con-s09-005 .head .said, .con-s09-005.con-s09-005 .head .note {
+  color: #d2d2d2;
+}
+.con-s09-005.con-s09-005 .head .eyebrow, .con-s09-005.con-s09-005 .head .kicker, .con-s09-005.con-s09-005 .head .slot, .con-s09-005.con-s09-005 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s09-005.con-s09-005 .head i, .con-s09-005.con-s09-005 .head .bars i, .con-s09-005.con-s09-005 .head .lines i, .con-s09-005.con-s09-005 .head .measures i, .con-s09-005.con-s09-005 .head .bar, .con-s09-005.con-s09-005 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s09-005.con-s09-005 .head .plate, .con-s09-005.con-s09-005 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s09-005 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s09-005 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s09-005" data-study-id="CON-S09-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="con-s09-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The firm, in figures</p>
+        <h2 id="con-s09-005-title">Four figures. Four shapes. Not one row of boxes.</h2>
+      </div>
+      <p><b>A date, a running total, a snapshot and a single extreme.</b> Same size on this page; drawn four different ways, because they are four different things.</p>
+    </div>
+
+    <div class="band b-point">
+      <div>
+        <p class="kind">A fixed point</p>
+        <h3>Year founded</h3>
+        <p class="reads"><b>A date is not a score.</b> It does not grow because we did good work; it grows because time passed. The second line is the one worth reading &mdash; firms change names, and a long history under a recent name is a question rather than a boast.</p>
+        <p class="basis">Under this name since<span class="slot"><span class="vh">Year the current trading name was adopted</span><span aria-hidden="true">&mdash;</span></span></p>
+      </div>
+      <div class="draw">
+        <div class="g-point"><span class="value"><span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span></span></div>
+      </div>
+    </div>
+
+    <div class="band b-total">
+      <div>
+        <p class="kind">A running total</p>
+        <h3>Projects completed</h3>
+        <p class="reads"><b>A total with no start date can be any number you like.</b> Counted from the founding year it means one thing and from last spring another, and the convention in this industry is to leave you to guess which.</p>
+        <p class="basis">Counted since<span class="slot"><span class="vh">Year the count starts from</span><span aria-hidden="true">&mdash;</span></span><br>A project means<span class="slot"><span class="vh">Definition of a counted project</span><span aria-hidden="true">&mdash;</span></span></p>
+      </div>
+      <div class="draw">
+        <div class="g-total">
+          <span class="stack" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="value"><span class="slot"><span class="vh">Number of projects completed</span><span aria-hidden="true">&mdash;</span></span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="band b-snap">
+      <div>
+        <p class="kind">A snapshot</p>
+        <h3>People employed</h3>
+        <p class="reads"><b>True on the day it was counted, and different next month.</b> Headcount moves with the order book, so it is drawn provisional. The split between our own books and somebody else&rsquo;s is the line that tells you something, and the capabilities page is where we set it out.</p>
+        <p class="basis">As at<span class="slot"><span class="vh">Date the headcount was taken</span><span aria-hidden="true">&mdash;</span></span><br>On our own books<span class="slot"><span class="vh">Number directly employed</span><span aria-hidden="true">&mdash;</span></span></p>
+      </div>
+      <div class="draw">
+        <div class="g-snap"><span class="value"><span class="slot"><span class="vh">Number of people employed</span><span aria-hidden="true">&mdash;</span></span></span></div>
+      </div>
+    </div>
+
+    <div class="band b-extreme">
+      <div>
+        <p class="kind">A single extreme</p>
+        <h3>Largest project by value</h3>
+        <p class="reads flag"><b>The largest project we have done is not the size of project we usually do.</b> It is one job. Drawn here against the ordinary ones because that is what an extreme looks like, and because this is the figure that makes somebody with a normal job decide they are too small to ask. They are not.</p>
+        <p class="basis">That one job, completed<span class="slot"><span class="vh">Year the largest project completed</span><span aria-hidden="true">&mdash;</span></span></p>
+      </div>
+      <div class="draw">
+        <div class="g-extreme">
+          <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="tall"></i></span>
+          <span class="value"><span class="slot"><span class="vh">Value of the largest project</span><span aria-hidden="true">&mdash;</span></span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div>
+        <h3>The only thing here without a number attached</h3>
+        <p><b>Every figure above is a reserved field.</b> The sectors and trades are not, because they are not quantities &mdash; and you can check them against any job we have run.</p>
+        <ul class="chips">
+          <li>Healthcare</li><li>Education</li><li>Industrial</li><li>Retail</li><li>Civic</li><li>Residential</li>
+          <li>Groundworks</li><li>Concrete frame</li><li>Fit-out</li><li>Refurbishment</li><li>Civils</li>
+        </ul>
+      </div>
+      <div data-refusal>
+        <h3>The numbers that are not here</h3>
+        <ul class="none">
+          <li>Happy clients</li><li>Satisfaction rating</li><li>On-time completion</li><li>Awards won</li><li>Any safety figure</li>
+        </ul>
+        <p><b>Happy clients is a client list with a compliment attached</b>, and nobody ran that survey. A satisfaction or on-time percentage asserts a measurement system, and the definition of on time belongs to whoever reports it. An award is a body we chose, making a judgement we paid to enter.</p>
+        <p>Safety figures are absent for a harder reason, set out on the safety page. <b>If a figure is countable and it is not one of the four above, it is a claim rather than a count.</b></p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S04-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S04 — Sectors Served
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Six modules, each asking the same three questions of its sector — what makes it
+                   hard, what we do about it, which of our services it usually needs — with a heavy
+                   colour spine down the left edge of every module
+  Density        : High
+  Media mode     : None.
+  Interaction    : None (static; no JavaScript)
+  The device     : **The same three questions, asked of every sector.** Consistency is what makes
+                   modules comparable, and comparison is the only reason to put six sectors on one
+                   screen. A reader in one sector reads one module; a reader deciding between two
+                   reads across.
+  Not a table    : The questions are consistent but the modules are not cells — each carries a
+                   colour spine, its own service chips and a different amount of copy. The sector
+                   direction's warning for this direction is the trade table, and the test is
+                   whether the layout survives one module being twice the length of another. It
+                   does.
+  Content note   : Sector names and services are generic vocabulary; the delivery markers are
+                   carried from `S02`. No client name or logo, no framework or authority, no
+                   per-sector count or percentage, no certification, award, rating, price or
+                   programme length; no header.
+-->
+
+<meta name="study-id" content="CON-S04-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S04">
+<meta name="section-name" content="Sectors Served">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Six colour-spined modules asking the same three questions of each sector">
+<meta name="density" content="high">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S04-003 — Sectors Served, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e8e8e8; }
+
+/* Scoped study styles — namespaced to .con-s04-003 */
+.con-s04-003 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --paper: #e8e8e8;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --rule: #b4b4b4;
+  --chip: #ececec;
+
+  --health: #7a7a7a;
+  --edu: #969696;
+  --industrial: #444444;
+  --retail: #2b2b2b;
+  --civic: #5e5e5e;
+  --resi: #969696;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s04-003 *,
+.con-s04-003 *::before,
+.con-s04-003 *::after { box-sizing: inherit; }
+.con-s04-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s04-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s04-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.con-s04-003 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(14px, 2.4vw, 40px);
+  margin-bottom: clamp(20px, 2.6vw, 36px);
+}
+.con-s04-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.con-s04-003 h2 {
+  margin: 0;
+  font-size: clamp(2.318rem, 4.536vw, 3.78rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 18ch;
+}
+.con-s04-003 .head p { margin: 0; max-width: 32ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.55; }
+
+/* Modules */
+.con-s04-003 .grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 22px);
+  align-items: start;
+}
+.con-s04-003 .grid li { min-width: 0; }
+.con-s04-003 .mod {
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--card);
+  border-left: 8px solid var(--spine, #7a7a7a);
+  padding: clamp(16px, 2vw, 26px);
+}
+.con-s04-003 .s-health { --spine: var(--health); }
+.con-s04-003 .s-edu { --spine: var(--edu); }
+.con-s04-003 .s-industrial { --spine: var(--industrial); }
+.con-s04-003 .s-retail { --spine: var(--retail); }
+.con-s04-003 .s-civic { --spine: var(--civic); }
+.con-s04-003 .s-resi { --spine: var(--resi); }
+
+.con-s04-003 h3 {
+  margin: 0 0 clamp(13px, 1.6vw, 18px);
+  font-size: clamp(1.345rem, 1.77vw, 1.605rem);
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  color: var(--spine);
+}
+.con-s04-003 .q { margin: 0 0 5px; font-size: 0.74rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; color: var(--ink-soft); }
+.con-s04-003 .a { margin: 0 0 clamp(13px, 1.6vw, 17px); font-size: 1.1rem; line-height: 1.54; }
+.con-s04-003 .a:last-of-type { margin-bottom: 0; }
+.con-s04-003 .block + .block { padding-top: clamp(12px, 1.4vw, 16px); border-top: 1px solid var(--line); }
+.con-s04-003 .chips { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s04-003 .chips li {
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--chip);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.con-s04-003 .close {
+  margin: clamp(20px, 2.6vw, 34px) 0 0;
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--rule);
+  max-width: 82ch;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  line-height: 1.62;
+}
+.con-s04-003 .close b { color: var(--ink); }
+
+/* Responsive ladder */
+@media (max-width: 1060px) {
+  .con-s04-003 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .con-s04-003 .grid { grid-template-columns: minmax(0, 1fr); }
+  .con-s04-003 h2, .con-s04-003 .head p, .con-s04-003 .close { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s04-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s04-003 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
+  font-size: 1.06rem;
+}
+.con-s04-003 h2 { font-weight: 800; }
+.con-s04-003 h3, .con-s04-003 h4 { font-weight: 750; }
+.con-s04-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s04-003 .mod {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s04-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s04-003.con-s04-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s04-003.con-s04-003 .head h2, .con-s04-003.con-s04-003 .head h3, .con-s04-003.con-s04-003 .head h4, .con-s04-003.con-s04-003 .head b, .con-s04-003.con-s04-003 .head strong, .con-s04-003.con-s04-003 .head p b, .con-s04-003.con-s04-003 .head li b, .con-s04-003.con-s04-003 .head span b, .con-s04-003.con-s04-003 .head dt, .con-s04-003.con-s04-003 .head div b {
+  color: #ffffff;
+}
+.con-s04-003.con-s04-003 .head p, .con-s04-003.con-s04-003 .head li, .con-s04-003.con-s04-003 .head span, .con-s04-003.con-s04-003 .head dd, .con-s04-003.con-s04-003 .head div p, .con-s04-003.con-s04-003 .head div li, .con-s04-003.con-s04-003 .head p span, .con-s04-003.con-s04-003 .head .said, .con-s04-003.con-s04-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s04-003.con-s04-003 .head .eyebrow, .con-s04-003.con-s04-003 .head .kicker, .con-s04-003.con-s04-003 .head .slot, .con-s04-003.con-s04-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s04-003.con-s04-003 .head i, .con-s04-003.con-s04-003 .head .bars i, .con-s04-003.con-s04-003 .head .lines i, .con-s04-003.con-s04-003 .head .measures i, .con-s04-003.con-s04-003 .head .bar, .con-s04-003.con-s04-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s04-003.con-s04-003 .head .plate, .con-s04-003.con-s04-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s04-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s04-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s04-003" data-study-id="CON-S04-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s04-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Who we build for</p>
+        <h2 id="con-s04-003-title">The same three questions, asked of every sector</h2>
+      </div>
+      <p>Read one if you are in one. Read across if you are deciding between two.</p>
+    </div>
+
+    <ul class="grid">
+      <li>
+        <div class="mod s-health">
+          <h3>Healthcare</h3>
+          <div class="block">
+            <p class="q">What makes it hard</p>
+            <p class="a">The building stays open. Infection control, live entrances, agreed noisy hours.</p>
+          </div>
+          <div class="block">
+            <p class="q">What we do about it</p>
+            <p class="a">Phasing is priced first, and our site manager sits in the estates meeting.</p>
+          </div>
+          <div class="block">
+            <p class="q">Usually needs</p>
+            <ul class="chips"><li>Refurbishment</li><li>Fit-out</li><li>Enabling</li></ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="mod s-edu">
+          <h3>Education</h3>
+          <div class="block">
+            <p class="q">What makes it hard</p>
+            <p class="a">A date nobody can move, and safeguarding around every gate until it arrives.</p>
+          </div>
+          <div class="block">
+            <p class="q">What we do about it</p>
+            <p class="a">The programme runs backwards from the first day of teaching; gates are sequenced with the school.</p>
+          </div>
+          <div class="block">
+            <p class="q">Usually needs</p>
+            <ul class="chips"><li>Frame</li><li>Envelope</li><li>Fit-out</li></ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="mod s-industrial">
+          <h3>Industrial</h3>
+          <div class="block">
+            <p class="q">What makes it hard</p>
+            <p class="a">Ground and loads decide the programme before anybody draws an elevation.</p>
+          </div>
+          <div class="block">
+            <p class="q">What we do about it</p>
+            <p class="a">We self-deliver the groundworks rather than manage somebody else's risk on our programme.</p>
+          </div>
+          <div class="block">
+            <p class="q">Usually needs</p>
+            <ul class="chips"><li>Groundworks</li><li>Civils</li><li>Frame</li></ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="mod s-retail">
+          <h3>Retail</h3>
+          <div class="block">
+            <p class="q">What makes it hard</p>
+            <p class="a">A trading floor, weekend possessions, and a landlord as well as a client.</p>
+          </div>
+          <div class="block">
+            <p class="q">What we do about it</p>
+            <p class="a">Work is written in shifts, and both parties get the same programme rather than two versions.</p>
+          </div>
+          <div class="block">
+            <p class="q">Usually needs</p>
+            <ul class="chips"><li>Fit-out</li><li>Refurbishment</li></ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="mod s-civic">
+          <h3>Civic</h3>
+          <div class="block">
+            <p class="q">What makes it hard</p>
+            <p class="a">The public alongside the works, and permissions in somebody else's gift.</p>
+          </div>
+          <div class="block">
+            <p class="q">What we do about it</p>
+            <p class="a">Hoardings, routes and closures are designed at tender, and the sequence assumes one permission arrives late.</p>
+          </div>
+          <div class="block">
+            <p class="q">Usually needs</p>
+            <ul class="chips"><li>Demolition</li><li>Enabling</li><li>Civils</li></ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="mod s-resi">
+          <h3>Residential</h3>
+          <div class="block">
+            <p class="q">What makes it hard</p>
+            <p class="a">Neighbours who did not choose to be next to a site, and will be there after we have gone.</p>
+          </div>
+          <div class="block">
+            <p class="q">What we do about it</p>
+            <p class="a">Somebody on site is named and reachable, and complaints get an answer rather than a form.</p>
+          </div>
+          <div class="block">
+            <p class="q">Usually needs</p>
+            <ul class="chips"><li>Groundworks</li><li>Frame</li><li>Fit-out</li></ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <p class="close"><b>No counts and no share of turnover on this page.</b> How many schools we have built tells you how busy we have been, not whether we understood the gate on yours &mdash; and the second question is the one you are actually asking.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

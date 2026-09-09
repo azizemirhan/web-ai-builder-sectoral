@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S24-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S24 — Project Detail
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : The register of change — four classes as cards, each with why that class happens,
+                   who decided, who paid, and a reserved particular — then the client's own words and
+                   the record references
+  Density        : Medium
+  Media mode     : One reserved area of the work in progress. **Never a pair** &mdash; anti-pattern
+                   ten.
+  Interaction    : None. The batch's anchors belong to `004`.
+  The constraint : **The record worth having is the difference.** Every project page shows what was
+                   built; the list of things that changed between the drawing and the building, with
+                   who decided each, exists on every job and is published on none of them.
+  The fourth class : *We got it wrong.* Us deciding, us paying. It is the class nobody publishes and
+                   it is the one `S21`'s hero has already promised the reader.
+  Not S13        : `S13` owns several jobs at one decision each. This is one job's register, and the
+                   difference is the register rather than the length.
+  The quotation  : Reserved, with the apparatus authored &mdash; the `S12` rule. **No invented word
+                   of client speech anywhere in this batch.**
+  Deliberately not : No value, duration, percentage or programme figure. No *on time and on budget*.
+                   No client logo. No before-and-after pair.
+  Content note   : Project name, client, dates, the particular change in each class and the client's
+                   words are reserved. No digit in visible copy; no header; no refusal region.
+-->
+
+<meta name="study-id" content="CON-S24-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S24">
+<meta name="section-name" content="Project Detail">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="The register of change — four classes, each with who decided and who paid">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-single">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S24-001 — Project Detail, Universal</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1f1; }
+
+/* Scoped study styles — namespaced to .con-s24-001 */
+.con-s24-001 {
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #969696;
+  --paper: #f1f1f1;
+  --card: #ffffff;
+  --fill: #d2d2d2;
+  --line: #b4b4b4;
+  --soft-line: #ececec;
+  --rule: #111111;
+  --found: #2b2b2b;
+  --client: #969696;
+  --design: #7a7a7a;
+  --us: #5e5e5e;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s24-001 *,
+.con-s24-001 *::before,
+.con-s24-001 *::after { box-sizing: inherit; }
+.con-s24-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s24-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s24-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s24-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  padding-bottom: clamp(16px, 2vw, 26px);
+  border-bottom: 2px solid var(--rule);
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+.con-s24-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s24-001 h2 {
+  margin: 0;
+  font-size: clamp(2.196rem, 4.284vw, 3.528rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 21ch;
+}
+.con-s24-001 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s24-001 .head p b { color: var(--ink); font-weight: 650; }
+
+/* The register */
+.con-s24-001 .register { margin: 0 0 clamp(18px, 2.3vw, 28px); padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: clamp(12px, 1.6vw, 18px); }
+.con-s24-001 .register > li {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 22px;
+  border-top: 5px solid var(--tone, var(--line));
+  padding: clamp(16px, 2vw, 23px);
+  display: flex;
+  flex-direction: column;
+}
+.con-s24-001 .c-found { --tone: var(--found); }
+.con-s24-001 .c-client { --tone: var(--client); }
+.con-s24-001 .c-design { --tone: var(--design); }
+.con-s24-001 .c-us { --tone: var(--us); }
+
+.con-s24-001 .cls {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s24-001 h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.1rem, 1.711vw, 1.44rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  max-width: 24ch;
+}
+.con-s24-001 .register p { margin: 0 0 clamp(10px, 1.3vw, 14px); font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s24-001 .register p b { color: var(--ink); font-weight: 650; }
+.con-s24-001 .what {
+  padding: clamp(10px, 1.3vw, 13px);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  margin-bottom: clamp(10px, 1.3vw, 14px);
+}
+.con-s24-001 .what .k {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s24-001 .slot {
+  display: inline-block;
+  min-width: 90px;
+  padding: 2px 12px;
+  border-radius: 10px;
+  background: #3a3a3a;
+  color: var(--ink-faint);
+  font-size: 1rem;
+  text-align: center;
+}
+.con-s24-001 .paid {
+  margin: auto 0 0;
+  padding-top: clamp(10px, 1.3vw, 13px);
+  border-top: 1px solid var(--soft-line);
+  display: grid;
+  gap: 5px;
+}
+.con-s24-001 .paid span { font-size: 0.74rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; color: var(--tone, var(--ink-faint)); }
+.con-s24-001 .paid strong { font-size: 1.1rem; line-height: 1.42; font-weight: 650; color: var(--ink); }
+
+/* The words, the record, the media */
+.con-s24-001 .foot {
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 2px solid var(--rule);
+  display: grid;
+  grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s24-001 .foot h3 { margin-bottom: clamp(10px, 1.3vw, 14px); max-width: 28ch; font-size: clamp(1.345rem, 2.124vw, 1.699rem); }
+.con-s24-001 .quote {
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
+  padding: clamp(13px, 1.7vw, 19px);
+  border-left: 5px solid var(--client);
+  background: var(--card);
+  border-radius: 0 11px 11px 0;
+}
+.con-s24-001 .quote .k {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--client);
+}
+.con-s24-001 .quote p { margin: 0; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s24-001 .quote p b { color: var(--ink); font-weight: 650; }
+.con-s24-001 .foot > div > p { margin: 0; max-width: 62ch; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
+.con-s24-001 .foot > div > p b { color: var(--ink); font-weight: 650; }
+
+.con-s24-001 .fields { margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; display: grid; gap: 7px; }
+.con-s24-001 .fields li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s24-001 .media {
+  height: clamp(120px, 13vw, 190px);
+  border-radius: 22px;
+  border: 1px dashed var(--line);
+  background: var(--fill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.con-s24-001 .media span {
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s24-001 .head,
+  .con-s24-001 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s24-001 .head { align-items: start; gap: clamp(14px, 2.4vw, 22px); }
+}
+
+@media (max-width: 620px) {
+  .con-s24-001 .register { grid-template-columns: minmax(0, 1fr); }
+  .con-s24-001 h2, .con-s24-001 .head p, .con-s24-001 h3, .con-s24-001 .foot > div > p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s24-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s24-001 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
+  font-size: 1.06rem;
+}
+.con-s24-001 h2 { font-weight: 800; }
+.con-s24-001 h3, .con-s24-001 h4 { font-weight: 750; }
+.con-s24-001 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s24-001 .register > li, .con-s24-001 .quote {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s24-001 .what, .con-s24-001 .media {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s24-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s24-001.con-s24-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s24-001.con-s24-001 .head h2, .con-s24-001.con-s24-001 .head h3, .con-s24-001.con-s24-001 .head h4, .con-s24-001.con-s24-001 .head b, .con-s24-001.con-s24-001 .head strong, .con-s24-001.con-s24-001 .head p b, .con-s24-001.con-s24-001 .head li b, .con-s24-001.con-s24-001 .head span b, .con-s24-001.con-s24-001 .head dt, .con-s24-001.con-s24-001 .head div b {
+  color: #ffffff;
+}
+.con-s24-001.con-s24-001 .head p, .con-s24-001.con-s24-001 .head li, .con-s24-001.con-s24-001 .head span, .con-s24-001.con-s24-001 .head dd, .con-s24-001.con-s24-001 .head div p, .con-s24-001.con-s24-001 .head div li, .con-s24-001.con-s24-001 .head p span, .con-s24-001.con-s24-001 .head .said, .con-s24-001.con-s24-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s24-001.con-s24-001 .head .eyebrow, .con-s24-001.con-s24-001 .head .kicker, .con-s24-001.con-s24-001 .head .slot, .con-s24-001.con-s24-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s24-001.con-s24-001 .head i, .con-s24-001.con-s24-001 .head .bars i, .con-s24-001.con-s24-001 .head .lines i, .con-s24-001.con-s24-001 .head .measures i, .con-s24-001.con-s24-001 .head .bar, .con-s24-001.con-s24-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s24-001.con-s24-001 .head .plate, .con-s24-001.con-s24-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s24-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s24-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s24-001" data-study-id="CON-S24-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s24-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The register of change</p>
+        <h2 id="con-s24-001-title">Four things on this job were not what the drawings said.</h2>
+      </div>
+      <p>Every project page shows what was built. <b>The record worth having is the list of what changed between the drawing and the building, and who decided each one</b> &mdash; it exists on every job, it is written down as it happens, and it is published on almost none of them.</p>
+    </div>
+
+    <ul class="register">
+
+      <li class="c-found">
+        <span class="cls">Found on opening up</span>
+        <h3>The building was not what the drawings said</h3>
+        <p>It rarely is. A survey shows what somebody could see, and the parts nobody could see are the parts that change a programme. <b>This one was found in the first fortnight</b>, which is the best week it could have been found in.</p>
+        <div class="what">
+          <span class="k">What it was</span>
+          <span class="slot"><span class="vh">What was found on opening up</span>Reserved</span>
+        </div>
+        <p>Decided by us and the designer inside a day, because the alternative was a week of everybody waiting to be told.</p>
+        <div class="paid"><span>Who paid</span><strong>The client &mdash; and we said so before we did the work, not after.</strong></div>
+      </li>
+
+      <li class="c-client">
+        <span class="cls">The client changed their mind</span>
+        <h3>Which is entirely normal and needs no defending</h3>
+        <p>A building is designed over a couple of years and lived in for forty. <b>Somebody deciding late that a room should be used differently is not a failure of anything</b>, and a contractor treating it as one is a contractor who has forgotten what the building is for.</p>
+        <div class="what">
+          <span class="k">What changed</span>
+          <span class="slot"><span class="vh">What the client changed</span>Reserved</span>
+        </div>
+        <p><b>The thing worth publishing is not that it happened.</b> It is how fast it was priced, and whether the answer arrived before the decision had to be made.</p>
+        <div class="paid"><span>Who paid</span><strong>The client, at a price agreed before anybody moved.</strong></div>
+      </li>
+
+      <li class="c-design">
+        <span class="cls">Could not be built as drawn</span>
+        <h3>The detail worked on paper</h3>
+        <p>Most of these are caught in coordination, which is what coordination is for. <b>This one was caught before anything was ordered</b>, which is the difference between a revision and a variation.</p>
+        <div class="what">
+          <span class="k">What could not be built</span>
+          <span class="slot"><span class="vh">The detail that could not be built as drawn</span>Reserved</span>
+        </div>
+        <p>Decided by the designer, on our proposal, and the correspondence shows which of us said what.</p>
+        <div class="paid"><span>Who paid</span><strong>Nobody. Caught early enough that there was nothing to pay for.</strong></div>
+      </li>
+
+      <li class="c-us">
+        <span class="cls">We got it wrong</span>
+        <h3>The entry nobody publishes</h3>
+        <p>It is on this page because a project page without one is a project page nobody has checked. <b>We made a call, it was the wrong call, and it was ours to put right.</b></p>
+        <div class="what">
+          <span class="k">What we got wrong</span>
+          <span class="slot"><span class="vh">What this firm got wrong on this project</span>Reserved</span>
+        </div>
+        <p><b>What changed afterwards is the part worth reading:</b> the way we sequence that operation is different now, and it is different on every job since, not only on this one.</p>
+        <div class="paid"><span>Who paid</span><strong>We did.</strong></div>
+      </li>
+
+    </ul>
+
+    <div class="foot">
+      <div>
+        <h3>What the client said, in their own words</h3>
+        <div class="quote">
+          <span class="k">Reserved quotation</span>
+          <p><b>Nothing here is written for them.</b> The words in this space are theirs or the space stays empty &mdash; and what they are asked is not whether they were happy, but whether the register above matches what they remember.</p>
+        </div>
+        <p><b>Delivered on time and on budget</b> is not a claim about a project. <b>It is a claim about a page.</b> A job with no variations is a job nobody has looked at; every project has a register like the one above, and the only question is whether the firm will show it to you.</p>
+      </div>
+      <div>
+        <ul class="fields">
+          <li><span>Project</span><span class="slot"><span class="vh">Project name</span>Reserved</span></li>
+          <li><span>Client</span><span class="slot"><span class="vh">Client name</span>Reserved</span></li>
+          <li><span>Contracts manager</span><span class="slot"><span class="vh">Name of the contracts manager</span>Reserved</span></li>
+          <li><span>Handover file</span><span class="slot"><span class="vh">Handover file reference</span>Reserved</span></li>
+        </ul>
+        <div class="media">
+          <span>Reserved area &mdash; one photograph of the work in progress, never a pair</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

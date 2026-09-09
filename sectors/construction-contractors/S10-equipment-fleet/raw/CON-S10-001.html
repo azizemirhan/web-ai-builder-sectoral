@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S10-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S10 — Equipment Fleet
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : Six site constraints as cards — the condition first, the plant that answers it
+                   second — over a families strip carrying the reserved counts, and closing on the
+                   refusal of the specification sheet
+  Density        : Medium
+  Media mode     : Two reserved plant areas, as bands. Machinery in use, operator in it. Never at
+                   rest.
+  Interaction    : None (static; no JavaScript)
+  The device     : **The site's specification, not the machine's.** A fleet list is a car advert
+                   with the prices removed. Every entry here opens on a condition a client will
+                   recognise from their own site and only then says what we bring to it, which is
+                   the order the question actually arrives in.
+  The media rule : Stricter here than anywhere else in the sector. Plant is the whole subject, so a
+                   photograph of clean machinery on a forecourt would be the trap itself. Every
+                   reserved area names the work, the operator or the site.
+  Deliberately not : No make, model, weight, reach, capacity or tonnage. No hours run, fleet value or
+                   utilisation. No emissions rating &mdash; `S17` owns practices and a rating here
+                   would be a badge.
+  Content note   : Kinds of plant are generic vocabulary. Machines held, ticketed operators and
+                   fitters are reserved fields. No digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S10-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S10">
+<meta name="section-name" content="Equipment Fleet">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Site-constraint cards over a families strip with reserved counts">
+<meta name="density" content="medium">
+<meta name="media-mode" content="two-reserved-areas-in-use">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S10-001 — Equipment Fleet, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1f1; }
+
+/* Scoped study styles — namespaced to .con-s10-001 */
+.con-s10-001 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #969696;
+  --paper: #f1f1f1;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --rule: #b4b4b4;
+  --field: #ececec;
+  --site: #2b2b2b;
+  --bring: #444444;
+  --slot-a: #969696;
+  --slot-b: #7a7a7a;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s10-001 *,
+.con-s10-001 *::before,
+.con-s10-001 *::after { box-sizing: inherit; }
+.con-s10-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s10-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s10-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s10-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+}
+.con-s10-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s10-001 h2 {
+  margin: 0;
+  font-size: clamp(2.318rem, 4.41vw, 3.78rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s10-001 .head p { margin: 0; max-width: 46ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
+.con-s10-001 .head p b { color: var(--ink); font-weight: 650; }
+
+.con-s10-001 .shot {
+  border-radius: 22px;
+  overflow: hidden;
+  height: clamp(140px, 15vw, 230px);
+  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(13px, 1.6vw, 20px);
+  margin-bottom: clamp(14px, 1.8vw, 22px);
+}
+.con-s10-001 .shot span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.84;
+}
+
+/* Constraint cards */
+.con-s10-001 .cases {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 18px);
+}
+.con-s10-001 .cases li { min-width: 0; }
+.con-s10-001 .case {
+  height: 100%;
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(16px, 2vw, 26px);
+  display: flex;
+  flex-direction: column;
+}
+.con-s10-001 .cond {
+  margin: 0 0 clamp(9px, 1.2vw, 12px);
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--site);
+}
+.con-s10-001 h3 {
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  font-size: clamp(1.251rem, 1.534vw, 1.44rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.con-s10-001 .says { margin: 0 0 clamp(11px, 1.4vw, 15px); font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s10-001 .says b { color: var(--ink); font-weight: 650; }
+.con-s10-001 .says .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.777rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--bring);
+}
+.con-s10-001 .chips { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.con-s10-001 .chips li {
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--field);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.con-s10-001 .who {
+  margin: auto 0 0;
+  padding-top: clamp(10px, 1.3vw, 14px);
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.con-s10-001 .who .k {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s10-001 .who b { color: var(--ink); font-weight: 650; }
+
+/* Families strip with the reserved counts */
+.con-s10-001 .families {
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(16px, 2vw, 26px);
+  margin-bottom: clamp(12px, 1.6vw, 18px);
+}
+.con-s10-001 .families > .k {
+  display: block;
+  margin-bottom: clamp(12px, 1.5vw, 17px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s10-001 .families ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 22px); }
+.con-s10-001 .families li { min-width: 0; padding-left: clamp(11px, 1.4vw, 14px); border-left: 3px solid var(--rule); }
+.con-s10-001 .fam { margin: 0 0 5px; font-size: 1rem; line-height: 1.24; font-weight: 700; }
+.con-s10-001 .hold { margin: 0 0 7px; font-size: 1rem; color: var(--ink-soft); }
+.con-s10-001 .count { margin: 0; display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 0.777rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-faint); }
+.con-s10-001 .count .slot { min-width: 40px; padding: 1px 9px; border-radius: 16px; background: var(--field); text-align: center; letter-spacing: 0; }
+
+/* Refusal */
+.con-s10-001 .refuse {
+  border-radius: 22px;
+  border: 2px dashed var(--rule);
+  padding: clamp(16px, 2.2vw, 30px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s10-001 .refuse h3 { max-width: 18ch; }
+.con-s10-001 .none { margin: 0 0 clamp(12px, 1.5vw, 17px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.con-s10-001 .none li {
+  padding: 5px 13px;
+  border-radius: 999px;
+  border: 1px dashed var(--rule);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.con-s10-001 .refuse p { margin: 0 0 10px; max-width: 76ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
+.con-s10-001 .refuse p:last-child { margin-bottom: 0; }
+.con-s10-001 .refuse p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1080px) {
+  .con-s10-001 .cases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .con-s10-001 .families ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 780px) {
+  .con-s10-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .con-s10-001 .cases { grid-template-columns: minmax(0, 1fr); }
+  .con-s10-001 .families ul { grid-template-columns: minmax(0, 1fr); }
+  .con-s10-001 .refuse { grid-template-columns: minmax(0, 1fr); }
+  .con-s10-001 h2, .con-s10-001 .head p, .con-s10-001 .refuse h3, .con-s10-001 .refuse p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s10-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s10-001 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
+  font-size: 1.06rem;
+}
+.con-s10-001 h2 { font-weight: 800; }
+.con-s10-001 h3, .con-s10-001 h4 { font-weight: 750; }
+.con-s10-001 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s10-001 .case {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #ececec;
+}
+.con-s10-001 .none li {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s10-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s10-001.con-s10-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s10-001.con-s10-001 .head h2, .con-s10-001.con-s10-001 .head h3, .con-s10-001.con-s10-001 .head h4, .con-s10-001.con-s10-001 .head b, .con-s10-001.con-s10-001 .head strong, .con-s10-001.con-s10-001 .head p b, .con-s10-001.con-s10-001 .head li b, .con-s10-001.con-s10-001 .head span b, .con-s10-001.con-s10-001 .head dt, .con-s10-001.con-s10-001 .head div b {
+  color: #ffffff;
+}
+.con-s10-001.con-s10-001 .head p, .con-s10-001.con-s10-001 .head li, .con-s10-001.con-s10-001 .head span, .con-s10-001.con-s10-001 .head dd, .con-s10-001.con-s10-001 .head div p, .con-s10-001.con-s10-001 .head div li, .con-s10-001.con-s10-001 .head p span, .con-s10-001.con-s10-001 .head .said, .con-s10-001.con-s10-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s10-001.con-s10-001 .head .eyebrow, .con-s10-001.con-s10-001 .head .kicker, .con-s10-001.con-s10-001 .head .slot, .con-s10-001.con-s10-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s10-001.con-s10-001 .head i, .con-s10-001.con-s10-001 .head .bars i, .con-s10-001.con-s10-001 .head .lines i, .con-s10-001.con-s10-001 .head .measures i, .con-s10-001.con-s10-001 .head .bar, .con-s10-001.con-s10-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s10-001.con-s10-001 .head .plate, .con-s10-001.con-s10-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s10-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s10-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s10-001" data-study-id="CON-S10-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s10-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The plant</p>
+        <h2 id="con-s10-001-title">The specification you need is your site&rsquo;s, not the machine&rsquo;s.</h2>
+      </div>
+      <p>A fleet list is a car advert with the prices removed. <b>What decides whether a machine is any use to you is your access, your ground and your hours</b> &mdash; so this page is organised by those, and each one says what we bring to it.</p>
+    </div>
+
+    <div class="shot"><span>Plant media &mdash; an excavator working, operator in it, on a live site</span></div>
+
+    <ul class="cases">
+
+      <li>
+        <div class="case">
+          <p class="cond">The site says</p>
+          <h3>You can only reach it through a domestic street</h3>
+          <p class="says">A back garden, a side return, a terrace with a gate somebody&rsquo;s bins live behind. Anything full-size arrives and turns straight round again.</p>
+          <ul class="chips"><li>Micro excavator</li><li>Tracked barrow</li><li>Hand-fed conveyor</li></ul>
+          <p class="says"><span class="k">So we bring</span>Plant that fits through a standard gate and tracks rather than rolls, because a wheeled machine on a lawn is a different conversation with the neighbours.</p>
+          <p class="who"><span class="k">Who is in it</span><b>Our operator, ticketed, and the same one for the job</b> where the programme allows. A machine is as good as the person in it, and that is not on any specification sheet.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="case">
+          <p class="cond">The site says</p>
+          <h3>You cannot put a point load where you want to stand</h3>
+          <p class="says">A basement below, a podium slab, a vault under the pavement, or ground nobody has proved yet. The machine is not the problem; where it stands is.</p>
+          <ul class="chips"><li>Spreader mats</li><li>Lighter tracked plant</li><li>Long reach from a safe stance</li></ul>
+          <p class="says"><span class="k">So we bring</span>Mats and a lighter machine working further out, with the stance agreed by the temporary works engineer rather than by whoever is on site that morning.</p>
+          <p class="who"><span class="k">When it fails</span><b>Our plant, our fitter, our cost.</b> A breakdown on a mat is a bad morning; a breakdown you are waiting on a hire yard for is a bad week.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="case">
+          <p class="cond">The site says</p>
+          <h3>The building is occupied and there are hours you may not make noise</h3>
+          <p class="says">A ward below, a classroom next door, a trading floor above. The constraint is not the decibel; it is the clock.</p>
+          <ul class="chips"><li>Electric and battery plant</li><li>Hydraulic breaking</li><li>Hand demolition</li></ul>
+          <p class="says"><span class="k">So we bring</span>Battery plant where it exists and hydraulic rather than percussive breaking where it does not. <b>Much of this fleet has no quiet equivalent yet</b>, and the honest answer is to sequence the noisy work rather than pretend otherwise.</p>
+          <p class="who"><span class="k">Who is in it</span><b>Somebody briefed on the hours before the machine starts</b>, and a supervisor who owns the clock rather than the output.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="case">
+          <p class="cond">The site says</p>
+          <h3>Something next door must not move</h3>
+          <p class="says">A party wall, a listed façade, a railway boundary, a neighbour who has been told what will happen and is watching. Vibration is the risk, not the dig.</p>
+          <ul class="chips"><li>Pressed rather than driven</li><li>Low-vibration breaking</li><li>Monitoring targets</li></ul>
+          <p class="says"><span class="k">So we bring</span>Methods chosen for what they do to the neighbour rather than for speed, and monitoring in place before the first blow rather than after the first complaint.</p>
+          <p class="who"><span class="k">When we say no</span><b>Some of this is not ours.</b> Where the answer is piling rigs or a specialist technique, we say so and bring somebody who does it every week.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="case">
+          <p class="cond">The site says</p>
+          <h3>Everything has to come out across a public highway</h3>
+          <p class="says">Muck away past a school gate, a wheel-washing point that has to fit somewhere, and a road that will be inspected whether or not anybody warned you.</p>
+          <ul class="chips"><li>Dumpers</li><li>Wheel wash</li><li>Sheeted haulage</li></ul>
+          <p class="says"><span class="k">So we bring</span>A wash point designed into the compound at pre-start rather than added after the first complaint, and sheeted loads because an unsheeted one is somebody&rsquo;s windscreen.</p>
+          <p class="who"><span class="k">Who is in it</span><b>Drivers who know the route out</b>, agreed with you before the first load rather than found on the day.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="case">
+          <p class="cond">The site says</p>
+          <h3>You need height, and a crane would mean closing the road</h3>
+          <p class="says">Materials to a third floor, a roof edge, a frame going up in a street that cannot be shut without a permit and a programme of its own.</p>
+          <ul class="chips"><li>Telehandlers</li><li>Powered access</li><li>Mast climbers</li></ul>
+          <p class="says"><span class="k">So we bring</span>Reach from inside the site boundary wherever it can be done, because a road closure is a separate programme with its own permissions and its own way of going wrong.</p>
+          <p class="who"><span class="k">When we say no</span><b>If the job genuinely needs a crane and a closure, that is a specialist</b> and we will tell you at tender rather than discover it at the frame.</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="shot"><span>Site media &mdash; muck away in progress, loading and sheeting</span></div>
+
+    <div class="families">
+      <span class="k">What we hold, and how</span>
+      <ul>
+        <li>
+          <p class="fam">Excavation and earthmoving</p>
+          <p class="hold">Owned outright</p>
+          <p class="count"><span>Machines</span><span class="slot"><span class="vh">Number of excavation machines held</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <p class="fam">Access and handling</p>
+          <p class="hold">Long-term hire</p>
+          <p class="count"><span>Units</span><span class="slot"><span class="vh">Number of access and handling units</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <p class="fam">Operators</p>
+          <p class="hold">Directly employed, ticketed</p>
+          <p class="count"><span>Operators</span><span class="slot"><span class="vh">Number of ticketed operators</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <p class="fam">Fitters</p>
+          <p class="hold">Directly employed</p>
+          <p class="count"><span>Fitters</span><span class="slot"><span class="vh">Number of fitters on our own books</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="refuse" data-refusal>
+      <h3>What is not on this page</h3>
+      <div>
+        <ul class="none">
+          <li>Makes and models</li>
+          <li>Weights and tonnages</li>
+          <li>Reach and capacity</li>
+          <li>Hours run</li>
+          <li>Fleet value</li>
+        </ul>
+        <p><b>A specification tells you what a machine can do somewhere.</b> Whether it can get down your access, stand on your ground and work inside your hours is a different question, and it is the only one worth answering here.</p>
+        <p>A row of clean machinery photographed on a forecourt is an advertisement for plant. <b>Every picture on this page is of a machine working, with somebody in it</b>, because that is the part you are actually buying.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

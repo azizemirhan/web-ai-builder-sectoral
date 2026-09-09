@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S06-005
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S06 — Project Delivery Process
+  Direction      : Art-directed / Distinctive
+  Reference      : None supplied for this section.
+  Layout model   : A warm sand page. The stages step further right as they go, one indent at a time,
+                   and between every pair a heavy black gate slab cuts the full width — what is
+                   fixed, set in sand, and what you owe, set in the single accent
+  Density        : Low
+  Media mode     : Three reserved site areas, offset with the stagger.
+  Interaction    : None (static; no JavaScript)
+  The device     : **The staircase and the slab.** Each stage is indented one step further than the
+                   last, so the page physically walks the reader inward, and each black slab closes
+                   across the whole width behind them. The layout says what the copy says: you are
+                   going further in, and the doors are shutting.
+  On the ground  : Light, deliberately. The three art-directed studies before this one in this
+                   sector all reached for a dark ground, and a fourth would be a house style rather
+                   than a direction. Sand and black with one accent is the harder version of the
+                   same brief.
+  The accent     : One colour, used only for what the client owes. The sector direction allows a
+                   single accent *used where attention must go*, and warns against hi-vis as
+                   decoration; here it appears nowhere else on the page, so it means one thing.
+  The schedule   : No duration, date or programme length, and none reserved. At this type scale a
+                   reserved figure would become a counter, and a counter is this sector's signature
+                   failure.
+  Content note   : Stage names and roles are generic vocabulary. No client or project name, no
+                   certification, scheme or named regulation, no safety record, no price, rate,
+                   duration or date, no urgency device; no digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S06-005">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S06">
+<meta name="section-name" content="Project Delivery Process">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Staggered stages on sand with full-width black gate slabs between them">
+<meta name="density" content="low">
+<meta name="media-mode" content="three-reserved-areas">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S06-005 — Project Delivery Process, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles — namespaced to .con-s06-005 */
+.con-s06-005 {
+  --ink: #2b2b2b;
+  --ink-soft: #444444;
+  --ink-faint: #969696;
+  --paper: #dfdfdf;
+  --slab: #111111;
+  --slab-ink: #ececec;
+  --slab-soft: #969696;
+  --accent: #5e5e5e;
+  --accent-lift: #b4b4b4;
+  --slot-a: #d2d2d2;
+  --slot-b: #7a7a7a;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s06-005 *,
+.con-s06-005 *::before,
+.con-s06-005 *::after { box-sizing: inherit; }
+.con-s06-005 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+.con-s06-005 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s06-005 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s06-005 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(16px, 2.6vw, 48px);
+  margin-bottom: clamp(20px, 2.6vw, 36px);
+}
+.con-s06-005 .eyebrow {
+  margin: 0 0 clamp(11px, 1.4vw, 18px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s06-005 h2 {
+  margin: 0;
+  font-size: clamp(2.44rem, 5.544vw, 4.662rem);
+  line-height: 0.99;
+  letter-spacing: -0.038em;
+  font-weight: 700;
+  max-width: 15ch;
+}
+.con-s06-005 .head p { margin: 0; max-width: 38ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
+.con-s06-005 .head p b { color: var(--ink); font-weight: 650; }
+
+/* The staircase */
+.con-s06-005 .flow { margin: 0; padding: 0; list-style: none; }
+
+/* The measure belongs to the prose, not to the stage. Constraining the whole block leaves the
+   reserved areas at reading width and the right of the page permanently empty. */
+.con-s06-005 .stage {
+  margin-left: calc(var(--i, 0) * clamp(0px, 2.4vw, 48px));
+  padding: clamp(22px, 2.8vw, 44px) 0 clamp(20px, 2.4vw, 36px);
+}
+.con-s06-005 .stage .when,
+.con-s06-005 .stage h3,
+.con-s06-005 .stage p { max-width: 58ch; }
+/* One indent per stage. Set as classes rather than an inline custom property, because a raw
+   study may carry no style attribute. */
+.con-s06-005 .s1 { --i: 0; }
+.con-s06-005 .s2 { --i: 1; }
+.con-s06-005 .s3 { --i: 2; }
+.con-s06-005 .s4 { --i: 3; }
+.con-s06-005 .s5 { --i: 4; }
+.con-s06-005 .s6 { --i: 5; }
+.con-s06-005 .s7 { --i: 6; }
+
+.con-s06-005 .when {
+  margin: 0 0 7px;
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s06-005 h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 15px);
+  font-size: clamp(1.952rem, 3.906vw, 3.276rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+}
+.con-s06-005 .stage p { margin: 0; font-size: clamp(1.1rem, 1.298vw, 1.274rem); line-height: 1.62; color: var(--ink-soft); }
+.con-s06-005 .stage p + p { margin-top: clamp(10px, 1.3vw, 14px); }
+.con-s06-005 .stage p b { color: var(--ink); font-weight: 650; }
+
+.con-s06-005 .shot {
+  margin: clamp(16px, 2vw, 26px) 0 0;
+  max-width: min(840px, 66vw);
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 2 / 1;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(12px, 1.5vw, 18px);
+}
+.con-s06-005 .shot span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.84;
+}
+
+/* The slab */
+.con-s06-005 .slab {
+  background: var(--slab);
+  color: var(--slab-ink);
+  padding: clamp(20px, 2.6vw, 38px) clamp(20px, 2.8vw, 44px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: start;
+}
+.con-s06-005 .slab .k {
+  display: block;
+  margin-bottom: clamp(7px, 0.9vw, 11px);
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--slab-soft);
+}
+.con-s06-005 .slab .k.owe { color: var(--accent-lift); }
+.con-s06-005 .slab p {
+  margin: 0;
+  font-size: clamp(1.251rem, 1.829vw, 1.699rem);
+  line-height: 1.26;
+  letter-spacing: -0.014em;
+}
+.con-s06-005 .slab .you { color: var(--accent-lift); }
+
+/* Close */
+.con-s06-005 .close {
+  margin: clamp(26px, 3.4vw, 52px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 34px);
+  border-top: 2px solid var(--slab);
+  max-width: 76ch;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  line-height: 1.64;
+}
+.con-s06-005 .close b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  /* The staircase is the art direction, not the structure — it unwinds first. */
+  .con-s06-005 .stage { margin-left: 0; }
+  .con-s06-005 .stage .when,
+  .con-s06-005 .stage h3,
+  .con-s06-005 .stage p,
+  .con-s06-005 .shot { max-width: none; }
+  .con-s06-005 .slab { grid-template-columns: minmax(0, 1fr); gap: clamp(14px, 2.2vw, 22px); }
+  .con-s06-005 h2, .con-s06-005 .head p, .con-s06-005 .close { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s06-005 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s06-005 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
+  font-size: 1.06rem;
+}
+.con-s06-005 h2 { font-weight: 800; }
+.con-s06-005 h3, .con-s06-005 h4 { font-weight: 750; }
+.con-s06-005 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s06-005 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s06-005.con-s06-005 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s06-005.con-s06-005 .head h2, .con-s06-005.con-s06-005 .head h3, .con-s06-005.con-s06-005 .head h4, .con-s06-005.con-s06-005 .head b, .con-s06-005.con-s06-005 .head strong, .con-s06-005.con-s06-005 .head p b, .con-s06-005.con-s06-005 .head li b, .con-s06-005.con-s06-005 .head span b, .con-s06-005.con-s06-005 .head dt, .con-s06-005.con-s06-005 .head div b {
+  color: #ffffff;
+}
+.con-s06-005.con-s06-005 .head p, .con-s06-005.con-s06-005 .head li, .con-s06-005.con-s06-005 .head span, .con-s06-005.con-s06-005 .head dd, .con-s06-005.con-s06-005 .head div p, .con-s06-005.con-s06-005 .head div li, .con-s06-005.con-s06-005 .head p span, .con-s06-005.con-s06-005 .head .said, .con-s06-005.con-s06-005 .head .note {
+  color: #d2d2d2;
+}
+.con-s06-005.con-s06-005 .head .eyebrow, .con-s06-005.con-s06-005 .head .kicker, .con-s06-005.con-s06-005 .head .slot, .con-s06-005.con-s06-005 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s06-005.con-s06-005 .head i, .con-s06-005.con-s06-005 .head .bars i, .con-s06-005.con-s06-005 .head .lines i, .con-s06-005.con-s06-005 .head .measures i, .con-s06-005.con-s06-005 .head .bar, .con-s06-005.con-s06-005 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s06-005.con-s06-005 .head .plate, .con-s06-005.con-s06-005 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s06-005 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s06-005 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s06-005" data-study-id="CON-S06-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="con-s06-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">How a job runs</p>
+        <h2 id="con-s06-005-title">Every black band is a door shutting.</h2>
+      </div>
+      <p>The stages step further in as you go. <b>Between them are the gates</b> &mdash; what has just stopped being cheap to change, and what we needed from you to get that far.</p>
+    </div>
+
+    <ul class="flow">
+
+      <li>
+        <div class="stage s1">
+          <p class="when">To begin with</p>
+          <h3>The first conversation</h3>
+          <p>You say what you want built and roughly where. We say whether it is the kind of work we do, and which of it would be our own people rather than somebody else&rsquo;s.</p>
+          <p><b>If it is not for us, this is where we say so.</b></p>
+        </div>
+      </li>
+      <li>
+        <div class="slab">
+          <p><span class="k">Fixed after this</span>Nothing at all. Changing your mind is still free, and we would rather you spent it here.</p>
+          <p class="you"><span class="k owe">What we needed from you</span>Roughly what, roughly where, and who can say yes later on.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="stage s2">
+          <p class="when">Before any price</p>
+          <h3>The site walk</h3>
+          <p><b>We will not price a job we have not walked.</b> A drawing tells you the building; the site tells you the job &mdash; the access, the neighbours, the ground, and the thing nobody mentions any more because they stopped noticing it years ago.</p>
+          <div class="shot"><span>Site media &mdash; a walk, before the work</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="slab">
+          <p><span class="k">Fixed after this</span>Still nothing &mdash; but what we saw now goes into the price, including a line for what we could not see.</p>
+          <p class="you"><span class="k owe">What we needed from you</span>Access, and half an hour of somebody who knows the building&rsquo;s history.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="stage s3">
+          <p class="when">Then</p>
+          <h3>The price</h3>
+          <p>A price, and with it the list of what we could not price and why. <b>The exclusions are the part worth your time</b> &mdash; that is where the surprises live on every job, ours included.</p>
+        </div>
+      </li>
+      <li>
+        <div class="slab">
+          <p><span class="k">Fixed after this</span>The scope you accepted. Anything added later is a variation.</p>
+          <p class="you"><span class="k owe">What we needed from you</span>A decision on the exclusions, and anything you were holding that we asked for.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="stage s4">
+          <p class="when">Before we start</p>
+          <h3>Pre-start</h3>
+          <p>Contract, sequence, temporary works, permissions, site set-up. <b>The manager who will run the job is in the meeting</b>, so the plan is made by the person who has to live in it.</p>
+        </div>
+      </li>
+      <li>
+        <div class="slab">
+          <p><span class="k">Fixed after this</span>The sequence. Moving a stage now costs money, because the trades and the plant are booked around it.</p>
+          <p class="you"><span class="k owe">What we needed from you</span>The signed contract, your permissions, and final choices on anything with a long order.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="stage s5">
+          <p class="when">While it runs</p>
+          <h3>On site</h3>
+          <p>The work. A written report every week, a valuation every month, and one named person who answers the phone.</p>
+          <p><b>Change gets more expensive every week, and the reason is physical.</b> Moving a wall before the frame is a drawing. Moving it afterwards is a demolition.</p>
+          <div class="shot"><span>Site media &mdash; the work in progress, wide</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="slab">
+          <p><span class="k">Fixed after this</span>Everything you did not change while there was still time to change it cheaply.</p>
+          <p class="you"><span class="k owe">What we needed from you</span>Decisions when we asked, not when they turned urgent. The largest single cause of delay on a live site.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="stage s6">
+          <p class="when">At the end</p>
+          <h3>Handover</h3>
+          <p>The building, the drawings, the manuals and the demonstrations, on the day &mdash; rather than a box of paperwork posted later once everybody has forgotten what it was for.</p>
+          <div class="shot"><span>Site media &mdash; handover, the building in use</span></div>
+        </div>
+      </li>
+      <li>
+        <div class="slab">
+          <p><span class="k">Fixed after this</span>The building. What remains is a defects list, which is a normal part of a job rather than an accusation.</p>
+          <p class="you"><span class="k owe">What we needed from you</span>Somebody with the authority to accept it, and the time booked to walk it properly.</p>
+        </div>
+      </li>
+
+      <li>
+        <div class="stage s7">
+          <p class="when">Afterwards</p>
+          <h3>The defects period</h3>
+          <p><b>The same site manager comes back.</b> Sending somebody who was not there spends your morning explaining the job to a stranger before anything gets fixed.</p>
+        </div>
+      </li>
+      <li>
+        <div class="slab">
+          <p><span class="k">Fixed after this</span>Nothing. This is the stage where you find out whether the rest of this page was true.</p>
+          <p class="you"><span class="k owe">What we needed from you</span>Tell us. A defect nobody reports is one nobody can fix.</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <p class="close"><b>No stage on this page has a length, and none has an empty box where one should go.</b> A duration printed before anybody has walked your site is a guess wearing a uniform, and a blank marked <em>weeks</em> makes the same promise more quietly. What we can tell you truthfully is the order, and where in that order each decision stops being cheap.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S17-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S17 — Sustainability
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Three columns sorted by who decides — not ours, ours to propose, ours alone —
+                   with the widest column holding no practices at all
+  Density        : Medium
+  Media mode     : None.
+  Interaction    : None.
+  The sort       : By **who holds the decision**, which is the governing constraint made structural.
+                   The first column is the widest on the page and contains nothing this firm can do;
+                   it is a list of things already drawn. The second holds proposals somebody else
+                   accepts or refuses. Only the third is ours outright, and it is the narrowest.
+  The trap       : The sector direction names it for this variant &mdash; *becoming a specification
+                   table.* A table would set three comparable lists side by side. **These three
+                   columns are deliberately not comparable**: one has no modules in it, one has two,
+                   one has four, and the widths run the opposite way to the counts.
+  The window     : Every module carries the point after which its practice is no longer available.
+                   `S06`'s gate, arriving where an intention is usually left undated.
+  No green       : Deliberate, and it holds across the batch.
+  Deliberately not : No tonnage, percentage, target year or carbon figure. No offsetting. No
+                   *green*, *eco*, *carbon neutral* or *net zero* applied to us.
+  Content note   : Transfer note reference, carrier registration and the environmental lead are
+                   reserved fields. Scheme names are reserved &mdash; the `S08` rule. No digit in
+                   visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S17-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S17">
+<meta name="section-name" content="Sustainability">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Three unequal columns by who holds the decision — the widest holds no practices">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S17-003 — Sustainability, Structured</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles — namespaced to .con-s17-003 */
+.con-s17-003 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #b4b4b4;
+  --paper: #dfdfdf;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --soft-line: #ececec;
+  --rule: #111111;
+  --theirs: #969696;
+  --propose: #7a7a7a;
+  --ours: #444444;
+  --wont: #2b2b2b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s17-003 *,
+.con-s17-003 *::before,
+.con-s17-003 *::after { box-sizing: inherit; }
+.con-s17-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s17-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s17-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s17-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  padding-bottom: clamp(18px, 2.3vw, 30px);
+  border-bottom: 3px solid var(--rule);
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+}
+.con-s17-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s17-003 h2 {
+  margin: 0;
+  font-size: clamp(2.257rem, 4.41vw, 3.717rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 21ch;
+}
+.con-s17-003 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s17-003 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Three unequal columns */
+.con-s17-003 .cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.96fr) minmax(0, 0.82fr);
+  gap: clamp(14px, 2vw, 26px);
+  align-items: start;
+}
+.con-s17-003 .col { min-width: 0; }
+.con-s17-003 .ch {
+  padding: clamp(12px, 1.5vw, 17px) 0 clamp(13px, 1.6vw, 18px);
+  border-top: 6px solid var(--tone, var(--line));
+  margin-bottom: clamp(12px, 1.5vw, 17px);
+}
+.con-s17-003 .c-theirs { --tone: var(--theirs); }
+.con-s17-003 .c-propose { --tone: var(--propose); }
+.con-s17-003 .c-ours { --tone: var(--ours); }
+.con-s17-003 .ch .who {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s17-003 .ch h3 {
+  margin: 0 0 clamp(9px, 1.1vw, 12px);
+  font-size: clamp(1.345rem, 2.196vw, 1.806rem);
+  line-height: 1.12;
+  letter-spacing: -0.024em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s17-003 .ch p { margin: 0; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s17-003 .ch p b { color: var(--ink); font-weight: 650; }
+
+/* The column with nothing in it */
+.con-s17-003 .drawn { margin: 0 0 clamp(12px, 1.5vw, 17px); padding: 0; list-style: none; display: grid; gap: 7px; }
+.con-s17-003 .drawn li {
+  padding: clamp(12px, 1.5vw, 17px) clamp(14px, 1.7vw, 19px);
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  font-size: clamp(1.1rem, 1.534vw, 1.322rem);
+  color: var(--ink-faint);
+  background: transparent;
+}
+.con-s17-003 .aside { margin: 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
+.con-s17-003 .aside b { color: var(--ink); font-weight: 650; }
+
+/* Modules */
+.con-s17-003 .mods { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 16px); }
+.con-s17-003 .mods > li {
+  background: var(--card);
+  border-radius: 22px;
+  padding: clamp(14px, 1.8vw, 20px) clamp(14px, 1.8vw, 20px) clamp(13px, 1.6vw, 18px);
+  border-left: 4px solid var(--tone, var(--line));
+}
+.con-s17-003 h4 {
+  margin: 0 0 clamp(8px, 1vw, 11px);
+  font-size: clamp(1.1rem, 1.605vw, 1.345rem);
+  line-height: 1.18;
+  letter-spacing: -0.018em;
+  font-weight: 700;
+}
+.con-s17-003 .mods p { margin: 0 0 clamp(9px, 1.1vw, 12px); font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
+.con-s17-003 .mods p b { color: var(--ink); font-weight: 650; }
+.con-s17-003 .win,
+.con-s17-003 .wont { padding-top: clamp(9px, 1.1vw, 12px); border-top: 1px solid var(--soft-line); }
+.con-s17-003 .win { color: var(--ink); }
+.con-s17-003 .wont { margin-bottom: 0; border-top-color: var(--wont); color: var(--ink); }
+.con-s17-003 .win .k,
+.con-s17-003 .wont .k {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.con-s17-003 .win .k { color: var(--propose); }
+.con-s17-003 .wont .k { color: var(--wont); }
+
+/* Foot */
+.con-s17-003 .foot {
+  margin-top: clamp(20px, 2.6vw, 34px);
+  padding-top: clamp(18px, 2.3vw, 28px);
+  border-top: 3px solid var(--rule);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s17-003 .foot h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.369rem, 2.257vw, 1.83rem);
+  line-height: 1.12;
+  letter-spacing: -0.024em;
+  font-weight: 700;
+  max-width: 26ch;
+}
+.con-s17-003 .foot p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 62ch; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
+.con-s17-003 .foot p:last-child { margin-bottom: 0; }
+.con-s17-003 .foot p b { color: var(--ink); font-weight: 650; }
+.con-s17-003 .fields { margin: 0 0 clamp(14px, 1.8vw, 20px); padding: 0; list-style: none; display: grid; gap: 7px; }
+.con-s17-003 .fields li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s17-003 .slot {
+  min-width: 62px;
+  padding: 1px 11px;
+  border-radius: 10px;
+  background: var(--card);
+  text-align: center;
+  letter-spacing: 0;
+}
+.con-s17-003 .no ul { margin: 0 0 clamp(10px, 1.3vw, 14px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s17-003 .no li {
+  padding: 4px 12px;
+  border: 1px solid var(--wont);
+  border-radius: 999px;
+  font-size: 1rem;
+  color: var(--wont);
+}
+
+/* Responsive ladder */
+@media (max-width: 1000px) {
+  .con-s17-003 .cols { grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 26px); }
+}
+
+@media (max-width: 860px) {
+  .con-s17-003 .head,
+  .con-s17-003 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s17-003 .head { align-items: start; gap: clamp(14px, 2.4vw, 22px); }
+}
+
+@media (max-width: 600px) {
+  .con-s17-003 h2, .con-s17-003 .head p, .con-s17-003 .ch h3,
+  .con-s17-003 .foot h3, .con-s17-003 .foot p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s17-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s17-003 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
+  font-size: 1.06rem;
+}
+.con-s17-003 h2 { font-weight: 800; }
+.con-s17-003 h3, .con-s17-003 h4 { font-weight: 750; }
+.con-s17-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s17-003 .mods > li, .con-s17-003 .slot {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s17-003 .drawn li {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s17-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s17-003.con-s17-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s17-003.con-s17-003 .head h2, .con-s17-003.con-s17-003 .head h3, .con-s17-003.con-s17-003 .head h4, .con-s17-003.con-s17-003 .head b, .con-s17-003.con-s17-003 .head strong, .con-s17-003.con-s17-003 .head p b, .con-s17-003.con-s17-003 .head li b, .con-s17-003.con-s17-003 .head span b, .con-s17-003.con-s17-003 .head dt, .con-s17-003.con-s17-003 .head div b {
+  color: #ffffff;
+}
+.con-s17-003.con-s17-003 .head p, .con-s17-003.con-s17-003 .head li, .con-s17-003.con-s17-003 .head span, .con-s17-003.con-s17-003 .head dd, .con-s17-003.con-s17-003 .head div p, .con-s17-003.con-s17-003 .head div li, .con-s17-003.con-s17-003 .head p span, .con-s17-003.con-s17-003 .head .said, .con-s17-003.con-s17-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s17-003.con-s17-003 .head .eyebrow, .con-s17-003.con-s17-003 .head .kicker, .con-s17-003.con-s17-003 .head .slot, .con-s17-003.con-s17-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s17-003.con-s17-003 .head i, .con-s17-003.con-s17-003 .head .bars i, .con-s17-003.con-s17-003 .head .lines i, .con-s17-003.con-s17-003 .head .measures i, .con-s17-003.con-s17-003 .head .bar, .con-s17-003.con-s17-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s17-003.con-s17-003 .head .plate, .con-s17-003.con-s17-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s17-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s17-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s17-003" data-study-id="CON-S17-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s17-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What we change, and by when</p>
+        <h2 id="con-s17-003-title">Sorted by who actually holds the decision.</h2>
+      </div>
+      <p>Three columns. <b>The widest one has nothing in it that we can do</b>, and it is the one holding most of a building's carbon. That shape is the honest account of a contractor's influence, so it is the first thing on the page rather than something to be worked around.</p>
+    </div>
+
+    <div class="cols">
+
+      <div class="col c-theirs">
+        <div class="ch">
+          <span class="who">Decided before we were appointed</span>
+          <h3>Not ours to decide</h3>
+          <p><b>The widest column here, and not one line of it is a practice of ours.</b> These were drawn by other people, and between them they hold most of the answer.</p>
+        </div>
+        <ul class="drawn">
+          <li>The frame</li>
+          <li>The substructure</li>
+          <li>The orientation</li>
+          <li>The glazing ratio</li>
+          <li>Whether anything standing is kept</li>
+          <li>What the building is for</li>
+        </ul>
+        <p class="aside">We can propose against any of them and we do, but <b>proposing is not deciding</b>, and a page that blurs the two is claiming credit for a drawing it was handed. The window on all six closes before a contractor is in the room.</p>
+      </div>
+
+      <div class="col c-propose">
+        <div class="ch">
+          <span class="who">We propose, somebody else accepts</span>
+          <h3>Ours to put forward</h3>
+          <p>Two of them, and both have to survive a decision that is not ours. <b>Which way each went is in the correspondence.</b></p>
+        </div>
+        <ul class="mods">
+          <li>
+            <h4>Reuse before recycling</h4>
+            <p>Whether brick, steel, slate or joinery stays on the site as the thing it was, rather than leaving on a lorry and coming back as aggregate.</p>
+            <p class="win"><span class="k">Window</span><b>Before the machine arrives.</b> Once a structure is down you have rubble, and rubble is recycling at best. The shortest window on this page.</p>
+            <p class="wont"><span class="k">Will not claim</span><b>That crushing on site is reuse.</b> It is recycling done nearer, and we call it that.</p>
+          </li>
+          <li>
+            <h4>Substitutions in the specification</h4>
+            <p>A handful of build-ups where an alternative does the same job. <b>The frame and the substructure are not among them</b>, and that is where the weight sits.</p>
+            <p class="win"><span class="k">Window</span>Between appointment and the frame order. Afterwards it is a variation, and <b>a variation costs more than the substitution saves.</b></p>
+            <p class="wont"><span class="k">Will not claim</span>That we designed the building.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col c-ours">
+        <div class="ch">
+          <span class="who">Nobody to blame but us</span>
+          <h3>Ours alone</h3>
+          <p><b>The narrowest column, and the only one we can be held to entirely.</b> Four practices, four deadlines.</p>
+        </div>
+        <ul class="mods">
+          <li>
+            <h4>Segregation on site</h4>
+            <p>Timber, metal, plasterboard and inert each in their own container, so what leaves the gate leaves as a material.</p>
+            <p class="win"><span class="k">Window</span><b>Compound layout.</b> Afterwards another stream is a lorry movement rather than a bin.</p>
+            <p class="wont"><span class="k">Will not claim</span>That it makes the building anything. <b>It keeps plasterboard out of a mixed load.</b></p>
+          </li>
+          <li>
+            <h4>What the site runs on</h4>
+            <p>A supply or a generator, and what the plant burns standing as well as working.</p>
+            <p class="win"><span class="k">Window</span><b>The temporary services application, before mobilisation.</b> Miss it and it is a generator for the duration.</p>
+            <p class="wont"><span class="k">Will not claim</span>That a plant list is a carbon figure. It is a list of machines.</p>
+          </li>
+          <li>
+            <h4>Deliveries, dust and water</h4>
+            <p>Movements through somebody else's street, when they happen, and what is treated before it runs off.</p>
+            <p class="win"><span class="k">Window</span>The logistics plan, written with the programme. <b>Consolidation has to be in the sequence.</b></p>
+            <p class="wont"><span class="k">Will not claim</span>That a delivery plan is an environmental policy. It is a traffic decision.</p>
+          </li>
+          <li>
+            <h4>What is measured</h4>
+            <p>Kept from the first week rather than assembled at the end, because <b>the difference is visible in the record.</b></p>
+            <p class="win"><span class="k">Window</span>Continuous, which is the difficulty with it.</p>
+            <p class="wont"><span class="k">Will not claim</span><b>That our own figures are evidence.</b> The transfer notes are.</p>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="foot">
+      <div>
+        <h3>The one record on a site that somebody outside the firm signs</h3>
+        <p>Every other number on this subject is produced by the party it flatters. <b>Waste transfer notes are not</b> &mdash; a carrier signs them, a receiving site signs them, and both are registered with somebody who can be asked.</p>
+        <p>The figures are on the notes rather than on this page. <b>Ask by job and the set comes over whole</b>, including the loads that went to landfill.</p>
+        <ul class="fields">
+          <li><span>Transfer notes</span><span class="slot"><span class="vh">Transfer note reference set</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Carrier registration</span><span class="slot"><span class="vh">Waste carrier registration</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Who holds this</span><span class="slot"><span class="vh">Name of the environmental lead</span><span aria-hidden="true">&mdash;</span></span></li>
+        </ul>
+      </div>
+      <div class="no" data-refusal>
+        <h3>Not on this page</h3>
+        <ul>
+          <li>Not green</li>
+          <li>Not eco</li>
+          <li>Not carbon neutral</li>
+          <li>No offsetting</li>
+          <li>No target past our order book</li>
+        </ul>
+        <p><b>An adjective is not a mechanism</b>, so none is applied to this firm above. <b>We do not buy certificates in order to call a job neutral</b>: a figure arrived at by purchase is a purchase. And a target dated past the work we hold is a press release, whereas <b>every window in the columns closes inside a job somebody is already paying for.</b></p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

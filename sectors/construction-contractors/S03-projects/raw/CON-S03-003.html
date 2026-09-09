@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S03-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S03 — Projects
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Indexed by sector — each sector is a row with its label held in the left margin
+                   and its projects as image tiles running across, so the index reads down the page
+                   as a list of sectors and across as a body of work
+  Density        : Medium copy, high visual
+  Media mode     : Eight reserved project areas across four sector rows, sized 3:2.
+  Interaction    : None (static; no JavaScript). **No filter control**, deliberately — see below.
+  The structure  : A client arrives knowing their sector, not a project name. Indexing by sector
+                   puts the only thing they can search on in the margin where it can be scanned in
+                   one pass, and the tiles answer *how much of this have you done* without a count.
+  Why there is no filter : A filter implies a database and a script. A section study has neither, and
+                   a control that appears to filter and does not is worse than no control — the same
+                   reasoning that removed the slide counter from `CON-S01-005`. Grouping does the
+                   same job statically.
+  Not a specification table : Rows of images with a marginal label, not rows of cells. The sector
+                   direction's `003` trap is the trade table; this is a gallery with an index.
+  Content note   : Sectors and scope are generic vocabulary. No invented figure, client or project
+                   name, value, duration, area, count, certification, award or rating; no header.
+-->
+
+<meta name="study-id" content="CON-S03-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S03">
+<meta name="section-name" content="Projects">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Sector-indexed rows with a marginal label and image tiles running across">
+<meta name="density" content="medium">
+<meta name="media-mode" content="eight-reserved-project-areas-in-sector-rows">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S03-003 — Projects, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles — namespaced to .con-s03-003 */
+.con-s03-003 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --paper: #dfdfdf;
+  --slot-a: #b4b4b4;
+  --slot-b: #969696;
+  --slot-deep-a: #444444;
+  --slot-deep-b: #2b2b2b;
+  --on-slot: #ffffff;
+  --res: #ececec;
+  --res-edge: #d2d2d2;
+  --res-ink: #7a7a7a;
+  --rule: #d2d2d2;
+  --self: #444444;
+  --self-bg: #d2d2d2;
+  --managed: #5e5e5e;
+  --managed-bg: #d2d2d2;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s03-003 *,
+.con-s03-003 *::before,
+.con-s03-003 *::after { box-sizing: inherit; }
+.con-s03-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 22px;
+}
+.con-s03-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s03-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.con-s03-003 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(14px, 2.4vw, 40px);
+  margin-bottom: clamp(22px, 2.8vw, 40px);
+}
+.con-s03-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.con-s03-003 h2 {
+  margin: 0;
+  font-size: clamp(2.379rem, 4.788vw, 4.032rem);
+  line-height: 1.03;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 16ch;
+}
+.con-s03-003 .head p { margin: 0; max-width: 36ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.55; }
+
+/* Sector rows */
+.con-s03-003 .row {
+  display: grid;
+  grid-template-columns: clamp(120px, 14vw, 200px) minmax(0, 1fr);
+  gap: clamp(16px, 2.4vw, 40px);
+  align-items: start;
+  padding: clamp(20px, 2.6vw, 36px) 0;
+  border-top: 1px solid var(--rule);
+}
+.con-s03-003 .row:last-of-type { border-bottom: 1px solid var(--rule); }
+.con-s03-003 .rowhead { position: relative; }
+.con-s03-003 h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.298rem, 1.77vw, 1.652rem);
+  font-weight: 700;
+  letter-spacing: -0.016em;
+}
+.con-s03-003 .rowhead p { margin: 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
+
+.con-s03-003 .tiles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 22px);
+}
+.con-s03-003 .tiles li { min-width: 0; }
+.con-s03-003 .shot {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  background: linear-gradient(155deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(11px, 1.4vw, 16px);
+}
+.con-s03-003 .deep .shot { background: linear-gradient(155deg, var(--slot-deep-a) 0%, var(--slot-deep-b) 100%); }
+.con-s03-003 .shot .tag {
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.8;
+}
+.con-s03-003 .status {
+  position: absolute;
+  top: clamp(11px, 1.4vw, 16px);
+  right: clamp(11px, 1.4vw, 16px);
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 0.804rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.con-s03-003 .name {
+  display: block;
+  margin: 10px 0 8px;
+  padding: 9px 12px;
+  border: 1px dashed var(--res-edge);
+  border-radius: 16px;
+  background: var(--res);
+  color: var(--res-ink);
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.con-s03-003 .line { margin: 0; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
+.con-s03-003 .scope { color: var(--ink-soft); font-size: 1rem; }
+.con-s03-003 .chip {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.804rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.con-s03-003 .c-self { background: var(--self-bg); color: var(--self); }
+.con-s03-003 .c-managed { background: var(--managed-bg); color: var(--managed); }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s03-003 .row { grid-template-columns: minmax(0, 1fr); gap: clamp(12px, 2vw, 18px); }
+}
+
+@media (max-width: 600px) {
+  .con-s03-003 .tiles { grid-template-columns: minmax(0, 1fr); }
+  .con-s03-003 h2, .con-s03-003 .head p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s03-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s03-003 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
+  font-size: 1.06rem;
+}
+.con-s03-003 h2 { font-weight: 800; }
+.con-s03-003 h3, .con-s03-003 h4 { font-weight: 750; }
+.con-s03-003 .eyebrow, .con-s03-003 .tag {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s03-003 .name {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s03-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s03-003.con-s03-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s03-003.con-s03-003 .head h2, .con-s03-003.con-s03-003 .head h3, .con-s03-003.con-s03-003 .head h4, .con-s03-003.con-s03-003 .head b, .con-s03-003.con-s03-003 .head strong, .con-s03-003.con-s03-003 .head p b, .con-s03-003.con-s03-003 .head li b, .con-s03-003.con-s03-003 .head span b, .con-s03-003.con-s03-003 .head dt, .con-s03-003.con-s03-003 .head div b {
+  color: #ffffff;
+}
+.con-s03-003.con-s03-003 .head p, .con-s03-003.con-s03-003 .head li, .con-s03-003.con-s03-003 .head span, .con-s03-003.con-s03-003 .head dd, .con-s03-003.con-s03-003 .head div p, .con-s03-003.con-s03-003 .head div li, .con-s03-003.con-s03-003 .head p span, .con-s03-003.con-s03-003 .head .said, .con-s03-003.con-s03-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s03-003.con-s03-003 .head .eyebrow, .con-s03-003.con-s03-003 .head .kicker, .con-s03-003.con-s03-003 .head .slot, .con-s03-003.con-s03-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s03-003.con-s03-003 .head i, .con-s03-003.con-s03-003 .head .bars i, .con-s03-003.con-s03-003 .head .lines i, .con-s03-003.con-s03-003 .head .measures i, .con-s03-003.con-s03-003 .head .bar, .con-s03-003.con-s03-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s03-003.con-s03-003 .head .plate, .con-s03-003.con-s03-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s03-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s03-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s03-003" data-study-id="CON-S03-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s03-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The work</p>
+        <h2 id="con-s03-003-title">Indexed by the thing you can actually search on</h2>
+      </div>
+      <p>You arrive knowing your sector, not our project names. So the sectors sit in the margin and the work runs across.</p>
+    </div>
+
+    <div class="row">
+      <div class="rowhead">
+        <h3>Healthcare</h3>
+        <p>Occupied buildings, infection control, deliveries through a live entrance.</p>
+      </div>
+      <ul class="tiles">
+        <li class="deep">
+          <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
+          <span class="name">Project name &mdash; reserved</span>
+          <p class="line"><span class="chip c-self">Self-delivered</span><span class="scope">Refurbishment, occupied throughout</span></p>
+        </li>
+        <li>
+          <div class="shot"><span class="tag">Project media &mdash; on site</span><span class="status">On site</span></div>
+          <span class="name">Project name &mdash; reserved</span>
+          <p class="line"><span class="chip c-managed">Managed</span><span class="scope">Envelope and cladding</span></p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="rowhead">
+        <h3>Education</h3>
+        <p>Summer windows, safeguarding, a hard date nobody can move.</p>
+      </div>
+      <ul class="tiles">
+        <li>
+          <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
+          <span class="name">Project name &mdash; reserved</span>
+          <p class="line"><span class="chip c-managed">Managed</span><span class="scope">Structural frame</span></p>
+        </li>
+        <li class="deep">
+          <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
+          <span class="name">Project name &mdash; reserved</span>
+          <p class="line"><span class="chip c-self">Self-delivered</span><span class="scope">Fit-out, phased handover</span></p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="rowhead">
+        <h3>Industrial</h3>
+        <p>Big slabs, heavy loads, and ground that decides the programme.</p>
+      </div>
+      <ul class="tiles">
+        <li class="deep">
+          <div class="shot"><span class="tag">Project media &mdash; on site</span><span class="status">On site</span></div>
+          <span class="name">Project name &mdash; reserved</span>
+          <p class="line"><span class="chip c-self">Self-delivered</span><span class="scope">Groundworks and civils</span></p>
+        </li>
+        <li>
+          <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
+          <span class="name">Project name &mdash; reserved</span>
+          <p class="line"><span class="chip c-managed">Managed</span><span class="scope">Frame and envelope</span></p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="rowhead">
+        <h3>Civic &amp; retail</h3>
+        <p>Public alongside the works, and a programme measured in weekends.</p>
+      </div>
+      <ul class="tiles">
+        <li>
+          <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
+          <span class="name">Project name &mdash; reserved</span>
+          <p class="line"><span class="chip c-self">Self-delivered</span><span class="scope">Commercial fit-out</span></p>
+        </li>
+        <li class="deep">
+          <div class="shot"><span class="tag">Project media &mdash; on site</span><span class="status">On site</span></div>
+          <span class="name">Project name &mdash; reserved</span>
+          <p class="line"><span class="chip c-managed">Managed</span><span class="scope">Demolition and enabling, live traffic alongside</span></p>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

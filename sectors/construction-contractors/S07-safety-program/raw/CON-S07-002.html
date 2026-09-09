@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S07-002
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S07 — Safety Program
+  Direction      : Premium / Editorial
+  Reference      : None supplied for this section.
+  Layout model   : Seven questions a client would actually ask, each set large in serif italic with
+                   its answer beneath at reading measure — the last question being *where are your
+                   numbers*, so the refusal arrives as an answer rather than as a disclaimer
+  Density        : Low
+  Media mode     : Two reserved site areas — one letterbox plate after the opening, one 3:2 at the
+                   close. Work happening, real PPE, never posed.
+  Interaction    : None (static; no JavaScript)
+  The device     : **The question set.** A safety page written as statements is a policy; written as
+                   answers it is a conversation the reader was going to have anyway. Every question
+                   here is one a client asks on a first visit, in the order they usually arrive.
+  The last one   : *Where are your numbers?* Putting the refusal in the answer position turns the
+                   sector's hardest prohibition into the page's strongest passage, because the
+                   honest answer &mdash; an incident rate rewards under-reporting &mdash; is more
+                   persuasive than any rate would have been.
+  Structural note : Distinct from `CON-S06-002`, which ran one centred column broken by full-width
+                   interruptions. This study has no interruptions at all; the rhythm comes from the
+                   alternation of voice between question and answer.
+  Deliberately not : Nothing hi-vis and nothing tonal standing in for alarm &mdash; anti-pattern six, at its
+                   most tempting on this page of all pages.
+  Content note   : Roles are generic vocabulary. No incident rate, frequency or lost-time figure, no
+                   days-without board, no zero-harm slogan, no certification, scheme, registration
+                   number or named regulation; no reserved field of any kind; no digit in visible
+                   copy; no header.
+-->
+
+<meta name="study-id" content="CON-S07-002">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S07">
+<meta name="section-name" content="Safety Program">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Seven serif questions with sans answers, closing on the numbers question">
+<meta name="density" content="low">
+<meta name="media-mode" content="two-reserved-areas">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S07-002 — Safety Program, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1f1; }
+
+/* Scoped study styles — namespaced to .con-s07-002 */
+.con-s07-002 {
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #969696;
+  --paper: #f1f1f1;
+  --rule: #d2d2d2;
+  --hair: #ececec;
+
+  /* Value carries one meaning only: who holds the authority. Black and white only. */
+  --anyone: #2b2b2b;
+  --named: #111111;
+
+  --slot-a: #b4b4b4;
+  --slot-b: #5e5e5e;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s07-002 *,
+.con-s07-002 *::before,
+.con-s07-002 *::after { box-sizing: inherit; }
+.con-s07-002 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+.con-s07-002 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s07-002 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.con-s07-002 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s07-002 h2 {
+  margin: 0 0 clamp(16px, 2.2vw, 28px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2.44rem, 5.292vw, 4.41rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  max-width: 18ch;
+}
+.con-s07-002 h2 em { font-style: italic; }
+.con-s07-002 .stand {
+  margin: 0;
+  max-width: 60ch;
+  font-size: clamp(1.1rem, 1.357vw, 1.357rem);
+  line-height: 1.64;
+  color: var(--ink-soft);
+}
+.con-s07-002 .stand b { color: var(--ink); font-weight: 650; }
+
+.con-s07-002 .plate {
+  margin: clamp(28px, 3.6vw, 52px) 0 clamp(10px, 1.4vw, 18px);
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 32 / 9;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(15px, 1.9vw, 24px);
+}
+.con-s07-002 .plate span,
+.con-s07-002 .aside span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.82;
+}
+
+/* Question and answer */
+.con-s07-002 .qa {
+  padding: clamp(26px, 3.4vw, 52px) 0 clamp(22px, 2.8vw, 40px);
+  border-bottom: 1px solid var(--hair);
+}
+.con-s07-002 .qa:last-of-type { border-bottom: 0; }
+.con-s07-002 h3 {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: clamp(1.83rem, 3.78vw, 3.15rem);
+  line-height: 1.08;
+  letter-spacing: -0.016em;
+  font-weight: 400;
+  max-width: 22ch;
+}
+.con-s07-002 .who {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s07-002 .who::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--tone, var(--ink-faint));
+}
+.con-s07-002 .t-anyone { --tone: var(--anyone); }
+.con-s07-002 .t-named { --tone: var(--named); }
+
+.con-s07-002 .a { margin: 0; max-width: 58ch; font-size: clamp(1.1rem, 1.298vw, 1.286rem); line-height: 1.66; color: var(--ink-soft); }
+.con-s07-002 .a + .a { margin-top: clamp(11px, 1.4vw, 16px); }
+.con-s07-002 .a b { color: var(--ink); font-weight: 650; }
+
+.con-s07-002 .cost {
+  margin: clamp(14px, 1.8vw, 20px) 0 0;
+  padding-left: clamp(14px, 1.8vw, 22px);
+  border-left: 3px solid var(--rule);
+  max-width: 56ch;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.con-s07-002 .cost .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s07-002 .cost b { color: var(--ink); font-weight: 650; }
+
+/* Close */
+.con-s07-002 .close {
+  margin-top: clamp(28px, 3.6vw, 56px);
+  padding-top: clamp(22px, 3vw, 40px);
+  border-top: 2px solid var(--ink);
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(20px, 3.2vw, 52px);
+  align-items: center;
+}
+.con-s07-002 .close p { margin: 0; max-width: 58ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.64; }
+.con-s07-002 .close p b { color: var(--ink); font-weight: 650; }
+.con-s07-002 .aside {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(14px, 1.8vw, 22px);
+}
+
+/* Responsive ladder */
+@media (max-width: 820px) {
+  .con-s07-002 .close { grid-template-columns: minmax(0, 1fr); }
+  .con-s07-002 h2,
+  .con-s07-002 h3,
+  .con-s07-002 .stand,
+  .con-s07-002 .a,
+  .con-s07-002 .cost,
+  .con-s07-002 .close p { max-width: none; }
+  .con-s07-002 .plate { aspect-ratio: 16 / 9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s07-002 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s07-002 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #ececec;
+  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
+  font-size: 1.06rem;
+}
+.con-s07-002 h2 { font-weight: 800; }
+.con-s07-002 h3, .con-s07-002 h4 { font-weight: 750; }
+.con-s07-002 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #ececec;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s07-002 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #ececec;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s07-002.con-s07-002 .shell > h2 {
+  padding: clamp(26px, 3.4vw, 54px);
+  border-radius: 34px;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  max-width: none;
+}
+.con-s07-002.con-s07-002 .shell > h2 span, .con-s07-002.con-s07-002 .shell > h2 b, .con-s07-002.con-s07-002 .shell > h2 em, .con-s07-002.con-s07-002 .shell > h2 i {
+  color: #ffffff;
+}
+.con-s07-002 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s07-002 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s07-002" data-study-id="CON-S07-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="con-s07-002-title">
+
+    <p class="eyebrow">How the site is run</p>
+    <h2 id="con-s07-002-title">The questions people ask <em>on the first visit</em>.</h2>
+    <p class="stand">In roughly the order they arrive, and answered the way we would answer them standing on the site. <b>A record is an outcome and outcomes can be under-reported. A programme is a set of decisions, and a decision can be checked by asking somebody who works here.</b></p>
+
+    <div class="plate"><span>Site media &mdash; work happening, real PPE, not posed</span></div>
+
+    <div class="qa">
+      <h3>Who can stop the work?</h3>
+      <p class="who t-anyone">Anybody on site holds it</p>
+      <p class="a">Anybody. Somebody who started this morning, an agency operative, a driver who has come through the gate once. <b>They do not need to find a manager first</b>, and they do not need to be right about the trade they are stopping.</p>
+      <p class="cost"><span class="k">What it costs us</span>Time we do not get back, on a morning when we can least afford it. That is the price of the authority being real rather than written down.</p>
+    </div>
+
+    <div class="qa">
+      <h3>And if they were wrong?</h3>
+      <p class="who t-anyone">Anybody on site holds it</p>
+      <p class="a"><b>Nothing happens to them.</b> No conversation afterwards, no note anywhere, no quiet reputation for being difficult.</p>
+      <p class="a">This is the whole thing, and it is the part most firms get wrong without meaning to. A stop that costs the person something is a stop that does not happen the second time &mdash; and the second time is the one that matters.</p>
+      <p class="cost"><span class="k">What it costs us</span>Some stops will be unnecessary, and we pay for those in full. It is a cheaper problem than the alternative.</p>
+    </div>
+
+    <div class="qa">
+      <h3>Who decides it starts again?</h3>
+      <p class="who t-named">A named role holds it</p>
+      <p class="a">The supervisor and the person who raised it, together. <b>Not the person who stopped it alone, and not whoever is under the most programme pressure that morning</b> &mdash; which is the one combination that reliably produces a bad restart.</p>
+      <p class="cost"><span class="k">What it costs us</span>Sometimes the rest of the day. The delay is recorded against the programme, never against the person who called it.</p>
+    </div>
+
+    <div class="qa">
+      <h3>What happens when nothing happened?</h3>
+      <p class="who t-anyone">Anybody on site holds it</p>
+      <p class="a">The near miss is the one worth having, because it is the only time you learn something at no cost. Whoever saw it says so, it is written down, and <b>it is briefed to everybody the same week</b> rather than filed.</p>
+      <p class="cost"><span class="k">What it costs us</span>Recording near misses honestly makes our own figures look worse than a firm that does not bother. <b>That is precisely what those figures are worth.</b></p>
+    </div>
+
+    <div class="qa">
+      <h3>Who does a subcontractor answer to?</h3>
+      <p class="who t-named">A named role holds it</p>
+      <p class="a">On safety, every firm on the site answers to <b>our supervisor</b> &mdash; regardless of who they invoice, who introduced them, or how many years they have been doing it their own way somewhere else.</p>
+      <p class="cost"><span class="k">What it costs us</span>Subcontractors. Some will not work that way, and we would rather discover it at tender than at first fix.</p>
+    </div>
+
+    <div class="qa">
+      <h3>And when the job is behind?</h3>
+      <p class="who t-anyone">Anybody on site holds it</p>
+      <p class="a">Every serious incident in this industry happens on a job that is behind. <b>None of the above changes when we are behind</b>, which is the only circumstance in which any of it is worth anything.</p>
+      <p class="cost"><span class="k">What it costs us</span>We have handed time back on jobs rather than compress a sequence. It is the most expensive line on this page and the one we would keep.</p>
+    </div>
+
+    <div class="qa" data-refusal>
+      <h3>Where are your numbers?</h3>
+      <p class="a">Deliberately absent. <b>An incident rate rewards under-reporting</b> &mdash; the cheapest way to improve one is to write less down. <b>A days-without board punishes whoever breaks the streak</b>, and the person who breaks it is the person who reported something.</p>
+      <p class="a">Both make a page look better and a site more dangerous, so a firm printing them is telling you what it optimises. The certificates are real and they are not here either; they belong where a registration can be checked against a register rather than admired on a wall.</p>
+      <p class="cost"><span class="k">What it costs us</span>A page with no figure on it, next to competitors whose pages have several. We think you can tell the difference, and if you cannot, one visit to either site will.</p>
+    </div>
+
+    <div class="close">
+      <p><b>Everything above can be checked by asking one person on the site, and none of it requires you to take our word.</b> Ask whoever is nearest the gate whether they could stop the job this morning, and whether anything would happen to them afterwards. The answer to that pair of questions is the whole of a safety programme; the rest is administration.</p>
+      <div class="aside"><span>Site media &mdash; a brief before work starts</span></div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

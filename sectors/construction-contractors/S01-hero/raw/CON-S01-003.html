@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S01-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S01 — Hero
+  Direction      : Structured / Visual Modular
+  Reference      : Supplied — the oversized outlined display type over a render, with a note block
+                   at the left, a statistics column at the right and a caption at the foot. Placed
+                   here because it is a zoned grid: four distinct blocks, each doing one job.
+  Layout model   : A twelve-column grid with four named zones — a note, an oversized two-line
+                   display, a wide reserved project area, and a column of three reserved figures —
+                   closed by a caption on the media
+  Density        : Medium-high
+  Media mode     : One reserved project media area, sitting under the display type as the
+                   reference's render does.
+  Interaction    : None (static; no JavaScript)
+  The outlined line, and how it is made safe : The second line is drawn with `-webkit-text-stroke`
+                   inside an `@supports` guard. Without the guard, a browser that does not support
+                   the property would render `color: transparent` and **the line would disappear**.
+                   With it, unsupported browsers get the solid weight instead, which is the correct
+                   fallback rather than an empty space.
+  Not a specification table : The sector direction warns that the 003 trap here is a table of
+                   trades. These are four zones with different internal shapes, not rows of one
+                   matrix.
+  The figures    : Three reserved fields in a column, exactly where the reference puts *10K happy
+                   clients · 5K properties sold · 15+ years*. **Two of those three are omitted
+                   rather than reserved:** *happy clients* asserts a satisfaction survey and
+                   *properties sold* is a different trade. What is left is countable and checkable.
+  Content note   : No invented figure, client or project name, certification, safety record, award,
+                   rating or price; no header; no urgency device.
+-->
+
+<meta name="study-id" content="CON-S01-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Twelve-column zoned grid: note, oversized display, reserved media, reserved figure column">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="one-wide-reserved-project-area">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S01-003 — Hero, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles — namespaced to .con-s01-003 */
+.con-s01-003 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --paper: #dfdfdf;
+  --slot: #ececec;
+  --slot-ink: #2b2b2b;
+  --slot-edge: #7a7a7a;
+  --field: #ffffff;
+  --field-edge: #969696;
+  --rule: #b4b4b4;
+  --focus: #111111;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s01-003 *,
+.con-s01-003 *::before,
+.con-s01-003 *::after { box-sizing: inherit; }
+.con-s01-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+.con-s01-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s01-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 28px);
+  align-items: start;
+}
+
+/* Zone: the note */
+.con-s01-003 .note { grid-column: span 3; }
+.con-s01-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 14px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.con-s01-003 .note p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+.con-s01-003 .note b { color: var(--ink); }
+
+/* Zone: the display */
+.con-s01-003 .display { grid-column: span 9; }
+.con-s01-003 h1 {
+  margin: 0;
+  font-size: clamp(3.276rem, 10.584vw, 9.324rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.con-s01-003 h1 span { display: block; }
+.con-s01-003 .outline { color: var(--ink); }
+@supports (-webkit-text-stroke: 1px black) {
+  .con-s01-003 .outline {
+    color: transparent;
+    -webkit-text-stroke: clamp(1px, 0.16vw, 2px) var(--ink);
+  }
+}
+
+/* Zone: the media */
+.con-s01-003 .frame { grid-column: span 9; }
+.con-s01-003 .media {
+  background: var(--slot);
+  border: 1px dashed var(--slot-edge);
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.con-s01-003 .media span {
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+  line-height: 1.7;
+}
+.con-s01-003 .caption {
+  margin: clamp(10px, 1.2vw, 14px) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: clamp(10px, 1.2vw, 14px);
+  border-top: 1px solid var(--rule);
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+.con-s01-003 .caption b {
+  color: var(--ink);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+
+/* Zone: the figures */
+.con-s01-003 .figures {
+  grid-column: span 3;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.con-s01-003 .figures li { padding: clamp(12px, 1.5vw, 18px) 0; border-top: 1px solid var(--rule); }
+.con-s01-003 .figures li:first-child { border-top: 0; padding-top: 0; }
+.con-s01-003 .fname {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.777rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.con-s01-003 .slot {
+  display: block;
+  border: 1px dashed var(--field-edge);
+  background: var(--field);
+  padding: 8px 12px;
+  min-height: 52px;
+  color: #2b2b2b;
+  font-size: 1.652rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.con-s01-003 .figures p { margin: 7px 0 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
+
+.con-s01-003 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(14px, 1.8vw, 20px);
+  min-height: 50px;
+  padding: 0 26px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 1.1rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.con-s01-003 .go:hover { background: #7a7a7a; }
+
+/* Responsive ladder — zones stack, the display stays first after the note */
+@media (max-width: 1000px) {
+  .con-s01-003 .note,
+  .con-s01-003 .display,
+  .con-s01-003 .frame,
+  .con-s01-003 .figures { grid-column: span 12; }
+  .con-s01-003 h1 { font-size: clamp(3.024rem, 11.34vw, 5.796rem); }
+}
+
+@media (max-width: 560px) {
+  .con-s01-003 .go { width: 100%; }
+  .con-s01-003 .media { aspect-ratio: 4 / 3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s01-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s01-003 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
+  font-size: 1.06rem;
+}
+.con-s01-003 h2 { font-weight: 800; }
+.con-s01-003 h3, .con-s01-003 h4 { font-weight: 750; }
+.con-s01-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s01-003 .media, .con-s01-003 .slot {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s01-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s01-003.con-s01-003 .shell > h2 {
+  padding: clamp(26px, 3.4vw, 54px);
+  border-radius: 34px;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  max-width: none;
+}
+.con-s01-003.con-s01-003 .shell > h2 span, .con-s01-003.con-s01-003 .shell > h2 b, .con-s01-003.con-s01-003 .shell > h2 em, .con-s01-003.con-s01-003 .shell > h2 i {
+  color: #ffffff;
+}
+.con-s01-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s01-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s01-003" data-study-id="CON-S01-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s01-003-title">
+
+    <div class="note">
+      <p class="eyebrow">Main contractor</p>
+      <p><b>Frame, envelope, fit-out and the groundworks under all of it.</b> Commercial and civil work, self-delivered where we are good at it and subcontracted where somebody else is better &mdash; and we will tell you which is which before you sign anything.</p>
+    </div>
+
+    <div class="display">
+      <h1 id="con-s01-003-title">
+        <span>Built by the</span>
+        <span class="outline">people who</span>
+        <span>priced it</span>
+      </h1>
+    </div>
+
+    <div class="frame">
+      <div class="media"><span>Project media &mdash; completed work, wide<br>a real project, not a render</span></div>
+      <p class="caption">
+        <b>What we build</b>
+        <span>Commercial fit-out &middot; Structural frame &middot; Groundworks &middot; Civils &middot; Refurbishment</span>
+      </p>
+    </div>
+
+    <ul class="figures">
+      <li>
+        <span class="fname">Founded</span>
+        <span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span>
+        <p>On the company record either way.</p>
+      </li>
+      <li>
+        <span class="fname">Projects completed</span>
+        <span class="slot"><span class="vh">Number of completed projects</span><span aria-hidden="true">&mdash;</span></span>
+        <p>Counted from handover certificates.</p>
+      </li>
+      <li>
+        <span class="fname">People employed</span>
+        <span class="slot"><span class="vh">Number of people directly employed</span><span aria-hidden="true">&mdash;</span></span>
+        <p>Directly employed, supply chain counted separately.</p>
+        <a class="go" href="#con-s01-003-title">Put a project to us</a>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S05-002
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S05 — Capabilities
+  Direction      : Premium / Editorial
+  Reference      : None supplied for this section.
+  Layout model   : A serif proposition over one wide reserved plate, then three families as bands —
+                   a short essay on the left about why that family is held the way it is, and the
+                   capabilities themselves as an airy ruled register on the right — closing on a
+                   pull quote
+  Density        : Low
+  Media mode     : Two reserved areas — one letterbox plate under the proposition, one 3:2 beside the
+                   closing quote.
+  Interaction    : None (static; no JavaScript)
+  The device     : **Essay beside register.** The left column argues, the right column lists, and
+                   neither has to do the other's job. It is the structural difference from
+                   `CON-S04-002`, which set a marginal name against a passage; here the margin
+                   carries prose and the wide column carries the resource.
+  The register   : Ruled rows, not cells. Each row is a name, a marker and one sentence about the
+                   limit — set at reading scale with air around it, because the editorial direction
+                   fails the moment the register becomes a specification table.
+  Deliberately not : No serif on the register itself, which is what tips this direction into the
+                   developer-brochure voice the sector direction warns about. The serif carries the
+                   argument only.
+  Content note   : Trade, plant and technical function names are generic vocabulary. Depth figures
+                   are reserved fields. No client or project name, no certification or scheme, no
+                   safety record, no award or rating, no price or rate; no digit in visible copy;
+                   no header.
+-->
+
+<meta name="study-id" content="CON-S05-002">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S05">
+<meta name="section-name" content="Capabilities">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Serif proposition over a wide plate, then three essay-beside-register bands, closing on a pull quote">
+<meta name="density" content="low">
+<meta name="media-mode" content="two-reserved-areas">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S05-002 — Capabilities, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fafafa; }
+
+/* Scoped study styles — namespaced to .con-s05-002 */
+.con-s05-002 {
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #b4b4b4;
+  --paper: #fafafa;
+  --rule: #d2d2d2;
+  --hair: #ececec;
+  --slot-a: #d2d2d2;
+  --slot-b: #7a7a7a;
+  --on-slot: #ffffff;
+
+  --employed: #444444;
+  --owned: #2b2b2b;
+  --hire: #5e5e5e;
+  --retained: #111111;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s05-002 *,
+.con-s05-002 *::before,
+.con-s05-002 *::after { box-sizing: inherit; }
+.con-s05-002 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+.con-s05-002 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s05-002 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.con-s05-002 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s05-002 h2 {
+  margin: 0 0 clamp(18px, 2.4vw, 32px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2.44rem, 5.544vw, 4.662rem);
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  max-width: 17ch;
+}
+.con-s05-002 h2 em { font-style: italic; }
+.con-s05-002 .stand {
+  margin: 0 0 clamp(26px, 3.4vw, 48px);
+  max-width: 60ch;
+  font-size: clamp(1.1rem, 1.416vw, 1.392rem);
+  line-height: 1.62;
+  color: var(--ink-soft);
+}
+.con-s05-002 .stand b { color: var(--ink); font-weight: 650; }
+
+.con-s05-002 .plate {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 32 / 9;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(16px, 2vw, 26px);
+  margin-bottom: clamp(34px, 4.4vw, 72px);
+}
+.con-s05-002 .plate span,
+.con-s05-002 .aside span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.82;
+}
+
+/* Bands */
+.con-s05-002 .band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(20px, 3.4vw, 64px);
+  align-items: start;
+  padding: clamp(26px, 3.4vw, 52px) 0;
+  border-top: 1px solid var(--rule);
+}
+.con-s05-002 h3 {
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.699rem, 2.562vw, 2.367rem);
+  line-height: 1.1;
+  letter-spacing: -0.014em;
+  font-weight: 400;
+}
+.con-s05-002 .essay { margin: 0; max-width: 40ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.131vw, 1.1rem); line-height: 1.64; }
+.con-s05-002 .essay b { color: var(--ink); font-weight: 650; }
+
+/* Register */
+.con-s05-002 .reg { margin: 0; padding: 0; list-style: none; }
+.con-s05-002 .reg li { padding: clamp(15px, 1.9vw, 22px) 0; border-top: 1px solid var(--hair); }
+.con-s05-002 .reg li:first-child { border-top: 0; padding-top: 0; }
+.con-s05-002 .top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px clamp(12px, 1.6vw, 20px);
+  margin-bottom: 7px;
+}
+.con-s05-002 h4 {
+  margin: 0;
+  font-size: clamp(1.251rem, 1.534vw, 1.416rem);
+  line-height: 1.24;
+  letter-spacing: -0.016em;
+  font-weight: 700;
+}
+.con-s05-002 .hold {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s05-002 .hold::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--tone, var(--ink-faint));
+}
+.con-s05-002 .m-employed { --tone: var(--employed); }
+.con-s05-002 .m-owned { --tone: var(--owned); }
+.con-s05-002 .m-hire { --tone: var(--hire); }
+.con-s05-002 .m-retained { --tone: var(--retained); }
+
+.con-s05-002 .lim { margin: 0; max-width: 62ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.132vw, 1.1rem); line-height: 1.6; }
+.con-s05-002 .depth {
+  margin: 9px 0 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+}
+.con-s05-002 .slot {
+  display: inline-block;
+  min-width: 40px;
+  margin-left: 7px;
+  padding: 1px 9px;
+  border-radius: 16px;
+  border: 1px solid var(--rule);
+  text-align: center;
+}
+
+/* Close */
+.con-s05-002 .close {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(20px, 3.4vw, 56px);
+  align-items: center;
+  padding-top: clamp(30px, 4vw, 60px);
+  border-top: 1px solid var(--rule);
+}
+.con-s05-002 blockquote {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.581rem, 2.806vw, 2.513rem);
+  line-height: 1.2;
+  letter-spacing: -0.014em;
+  max-width: 21ch;
+}
+.con-s05-002 .close p { margin: clamp(14px, 1.8vw, 22px) 0 0; max-width: 58ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.64; }
+.con-s05-002 .close p b { color: var(--ink); font-weight: 650; }
+.con-s05-002 .aside {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(14px, 1.8vw, 22px);
+}
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s05-002 .band { grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 24px); }
+  .con-s05-002 .close { grid-template-columns: minmax(0, 1fr); }
+  .con-s05-002 h2,
+  .con-s05-002 .stand,
+  .con-s05-002 .essay,
+  .con-s05-002 .lim,
+  .con-s05-002 blockquote,
+  .con-s05-002 .close p { max-width: none; }
+  .con-s05-002 .plate { aspect-ratio: 16 / 9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s05-002 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s05-002 {
+  --v2-accent: #969696;
+  --v2-soft: #ececec;
+  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 30%);
+  font-size: 1.06rem;
+}
+.con-s05-002 h2 { font-weight: 800; }
+.con-s05-002 h3, .con-s05-002 h4 { font-weight: 750; }
+.con-s05-002 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #3a3a3a;
+  color: #969696;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s05-002 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #3a3a3a;
+  color: #969696;
+  font-weight: 600;
+}
+.con-s05-002.con-s05-002 .shell > h2 {
+  padding: clamp(26px, 3.4vw, 54px);
+  border-radius: 34px;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  max-width: none;
+}
+.con-s05-002.con-s05-002 .shell > h2 span, .con-s05-002.con-s05-002 .shell > h2 b, .con-s05-002.con-s05-002 .shell > h2 em, .con-s05-002.con-s05-002 .shell > h2 i {
+  color: #ffffff;
+}
+.con-s05-002 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s05-002 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s05-002" data-study-id="CON-S05-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="con-s05-002-title">
+
+    <p class="eyebrow">What we hold</p>
+    <h2 id="con-s05-002-title">In-house is a word. <em>How deep</em> is the question.</h2>
+    <p class="stand">Every contractor writes the same sentence about its own people, and the sentence costs nothing to write. <b>So each thing below says how it is held, and what happens when a job is deeper than we are.</b> The second half is the part a firm cannot print unless it is true.</p>
+
+    <div class="plate"><span>Site media &mdash; our own people working, wide</span></div>
+
+    <div class="band">
+      <div>
+        <h3>Trades</h3>
+        <p class="essay">Who is standing on your site matters more than who signed the contract. <b>Directly employed means our books, our insurance and our supervision</b> &mdash; and where that is not true, we have written what is true instead rather than leaving the word to do the work.</p>
+      </div>
+      <ul class="reg">
+        <li>
+          <div class="top"><h4>Groundworks &amp; drainage</h4><span class="hold m-employed">Directly employed</span></div>
+          <p class="lim">Beyond what we hold, we phase the sequence rather than put a gang we have never worked with on your site.</p>
+          <p class="depth">Gangs on our books<span class="slot"><span class="vh">Number of groundworks gangs</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <div class="top"><h4>Concrete frame &amp; formwork</h4><span class="hold m-employed">Directly employed</span></div>
+          <p class="lim">Two frames running at once come out of the same teams, so one of them starts later. We say which at tender rather than in month three.</p>
+          <p class="depth">Frame teams<span class="slot"><span class="vh">Number of frame teams</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <div class="top"><h4>Brickwork</h4><span class="hold m-hire">Long-term hire</span></div>
+          <p class="lim">Labour-only, and the same gangs year after year. We would rather write that here than call them ours and have you find out on site.</p>
+          <p class="depth">Regular gangs<span class="slot"><span class="vh">Number of regular brickwork gangs</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <div class="top"><h4>Mechanical &amp; electrical</h4><span class="hold m-retained">Retained specialist</span></div>
+          <p class="lim">Never ours. What is ours is the coordination, the builder&rsquo;s work and the commissioning window &mdash; which is where these jobs are actually lost.</p>
+          <p class="depth">Retained firms<span class="slot"><span class="vh">Number of retained M and E firms</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="band">
+      <div>
+        <h3>Plant</h3>
+        <p class="essay">Owning machinery is not a virtue in itself; it is a decision about who waits. <b>Owned means our fitter and our cost when it breaks.</b> Hired means somebody else&rsquo;s yard, which is the right answer for anything that would otherwise stand idle half the year in your preliminaries.</p>
+      </div>
+      <ul class="reg">
+        <li>
+          <div class="top"><h4>Excavation &amp; earthmoving</h4><span class="hold m-owned">Owned outright</span></div>
+          <p class="lim">A breakdown is our cost and our fitter, rather than a hire-yard queue sitting on your programme.</p>
+          <p class="depth">Machines in the yard<span class="slot"><span class="vh">Number of excavation machines</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <div class="top"><h4>Formwork &amp; falsework systems</h4><span class="hold m-owned">Owned outright</span></div>
+          <p class="lim">Ours, so a pour is not waiting on a delivery date that somebody else controls.</p>
+          <p class="depth">Sets held<span class="slot"><span class="vh">Number of formwork sets</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <div class="top"><h4>Access &amp; handling</h4><span class="hold m-hire">Long-term hire</span></div>
+          <p class="lim">Deliberately not owned. Standing plant that is idle half the year ends up in somebody&rsquo;s preliminaries, and that somebody is the client.</p>
+          <p class="depth">Units on long hire<span class="slot"><span class="vh">Number of access units</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="band">
+      <div>
+        <h3>Technical</h3>
+        <p class="essay">The programme and the price are written by people, and the useful question is whether those people ever stand on the site. <b>Ours do</b>, because a programme written from a desk is a spreadsheet, and a job handed to a surveyor who did not price it is where variations come from.</p>
+      </div>
+      <ul class="reg">
+        <li>
+          <div class="top"><h4>Planning &amp; programming</h4><span class="hold m-employed">Directly employed</span></div>
+          <p class="lim">The planner who writes your programme walks the site before writing it, and again when it changes.</p>
+          <p class="depth">Planners<span class="slot"><span class="vh">Number of planners</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <div class="top"><h4>Commercial &amp; quantity surveying</h4><span class="hold m-employed">Directly employed</span></div>
+          <p class="lim">The surveyor who priced it stays on it to the end. Handing it to somebody who did not price it is where the arguments start.</p>
+          <p class="depth">Surveyors<span class="slot"><span class="vh">Number of quantity surveyors</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <div class="top"><h4>Temporary works design</h4><span class="hold m-retained">Retained specialist</span></div>
+          <p class="lim">Designed by an engineer who carries it, and never by the person on site who wants the prop moved.</p>
+          <p class="depth">Retained engineers<span class="slot"><span class="vh">Number of retained temporary works engineers</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+        <li>
+          <div class="top"><h4>Site management</h4><span class="hold m-employed">Directly employed</span></div>
+          <p class="lim">A manager per site rather than one manager split across three. When we cannot resource that, we do not take the job.</p>
+          <p class="depth">Site managers<span class="slot"><span class="vh">Number of site managers</span><span aria-hidden="true">&mdash;</span></span></p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="close">
+      <div>
+        <blockquote>The gaps are the reason the rest of it is worth reading.</blockquote>
+        <p><b>Not ours, and we will not buy them in to say otherwise:</b> specialist fa&ccedil;ade and curtain walling, asbestos removal, lift installation, live process environments. Where a job is mostly one of those, a specialist will be better and cheaper, and we would rather say it at the first meeting than at the third.</p>
+      </div>
+      <div class="aside"><span>Yard media &mdash; our own plant, at rest</span></div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

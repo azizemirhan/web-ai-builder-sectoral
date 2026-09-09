@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S05-004
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S05 — Capabilities
+  Direction      : Conversion-led
+  Reference      : None supplied for this section.
+  Layout model   : A deep near-black ground — statement and reserved plate above, the four holding
+                   markers as a pill row across the middle, and a light resource-check panel below
+                   carrying three native controls and the refusal that makes it credible
+  Density        : Medium
+  Media mode     : One reserved site area, 4:3, beside the statement.
+  Interaction    : Three native `select` controls and a submit. No JavaScript, so nothing computes,
+                   and nothing in the copy claims it does.
+  Conversion device : **Is this one ours?** The visitor's real question at a capabilities section is
+                   not *what can you do* but *can you resource mine* — so the page converts by
+                   asking what the job leads with, when people are needed and whether the building
+                   is occupied, and routing that to a person.
+  The refusal    : Stated on the panel, in the panel's own voice: this books nothing and will not
+                   tell you we are free. The sector direction's trap for this direction is the quote
+                   calculator that invents a price; the same trap in this section is an availability
+                   checker that invents a diary. Both are refused in copy rather than avoided in
+                   silence.
+  Not S15        : `S15 Bid RFQ` owns the formal submission. This is three questions that decide
+                   whether the conversation is worth either party's time.
+  Content note   : Trade names are generic vocabulary. No date, duration, lead time, price or rate;
+                   no availability or capacity claim; no client or project name, no certification or
+                   scheme, no safety record, no award, rating or urgency device; no digit in visible
+                   copy; no header.
+-->
+
+<meta name="study-id" content="CON-S05-004">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S05">
+<meta name="section-name" content="Capabilities">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Statement and plate above a marker pill row and a light resource-check panel">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="native-select-controls">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S05-004 — Capabilities, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #1a1a1a; }
+
+/* Scoped study styles — namespaced to .con-s05-004 */
+.con-s05-004 {
+  --ink: #ececec;
+  --ink-soft: #b4b4b4;
+  --paper: #1a1a1a;
+  --panel: #ececec;
+  --panel-ink: #111111;
+  --panel-soft: #444444;
+  --panel-line: #d2d2d2;
+  /* Lifted off the ground deliberately: on a dark paper a reserved area whose dark stop
+     approaches the background stops reading as a reserved area at all. */
+  --slot-a: #5e5e5e;
+  --slot-b: #2b2b2b;
+  --on-slot: #ffffff;
+  --edge: #2b2b2b;
+
+  --employed: #111111;
+  --owned: #444444;
+  --hire: #5e5e5e;
+  --retained: #2b2b2b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s05-004 *,
+.con-s05-004 *::before,
+.con-s05-004 *::after { box-sizing: inherit; }
+.con-s05-004 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s05-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s05-004 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s05-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.78fr);
+  gap: clamp(20px, 3.2vw, 56px);
+  align-items: center;
+  margin-bottom: clamp(22px, 2.8vw, 40px);
+}
+.con-s05-004 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.con-s05-004 h2 {
+  margin: 0 0 clamp(13px, 1.7vw, 20px);
+  font-size: clamp(2.379rem, 4.914vw, 4.158rem);
+  line-height: 1.03;
+  letter-spacing: -0.034em;
+  font-weight: 700;
+  max-width: 17ch;
+}
+.con-s05-004 .head p { margin: 0; max-width: 52ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.298vw, 1.274rem); line-height: 1.6; }
+.con-s05-004 .head p b { color: var(--ink); font-weight: 650; }
+
+.con-s05-004 .shot {
+  border-radius: 26px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(13px, 1.6vw, 20px);
+}
+.con-s05-004 .shot span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.82;
+}
+
+/* Marker pills */
+.con-s05-004 .markers {
+  margin: 0 0 clamp(16px, 2.2vw, 28px);
+  padding: clamp(14px, 1.7vw, 20px);
+  border-radius: 26px;
+  border: 1px solid var(--edge);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.7vw, 24px);
+}
+.con-s05-004 .markers li { min-width: 0; }
+.con-s05-004 .markers .name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--tone, var(--ink));
+}
+.con-s05-004 .markers .name::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  flex: none;
+  background: var(--tone, var(--ink));
+}
+.con-s05-004 .markers p { margin: 0; font-size: 1rem; line-height: 1.48; color: var(--ink-soft); }
+.con-s05-004 .m-employed { --tone: var(--employed); }
+.con-s05-004 .m-owned { --tone: var(--owned); }
+.con-s05-004 .m-hire { --tone: var(--hire); }
+.con-s05-004 .m-retained { --tone: var(--retained); }
+
+/* Check panel */
+.con-s05-004 .panel {
+  border-radius: 26px;
+  background: var(--panel);
+  color: var(--panel-ink);
+  padding: clamp(20px, 2.6vw, 38px);
+}
+.con-s05-004 h3 {
+  margin: 0 0 clamp(9px, 1.2vw, 13px);
+  font-size: clamp(1.581rem, 2.562vw, 2.269rem);
+  line-height: 1.08;
+  letter-spacing: -0.026em;
+  font-weight: 700;
+  max-width: 26ch;
+}
+.con-s05-004 .panel > p { margin: 0 0 clamp(18px, 2.2vw, 26px); max-width: 68ch; color: var(--panel-soft); font-size: 1.1rem; line-height: 1.6; }
+.con-s05-004 .panel > p b { color: var(--panel-ink); font-weight: 650; }
+
+.con-s05-004 .fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+.con-s05-004 .field { min-width: 0; display: flex; flex-direction: column; gap: 7px; }
+.con-s05-004 label {
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--panel-soft);
+}
+.con-s05-004 select {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 14px;
+  border-radius: 22px;
+  border: 1px solid var(--panel-line);
+  background: #ffffff;
+  color: var(--panel-ink);
+  font-family: inherit;
+  font-size: 1.1rem;
+}
+
+.con-s05-004 .act {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(12px, 1.8vw, 24px);
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--panel-line);
+}
+.con-s05-004 button {
+  min-height: 56px;
+  padding: 0 34px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--panel-ink);
+  color: var(--panel);
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+.con-s05-004 button:hover { background: #111111; }
+.con-s05-004 .act p { margin: 0; flex: 1 1 320px; min-width: 0; color: var(--panel-soft); font-size: 1rem; line-height: 1.56; }
+.con-s05-004 .act p b { color: var(--panel-ink); font-weight: 650; }
+
+.con-s05-004 .foot {
+  margin: clamp(16px, 2.2vw, 26px) 0 0;
+  max-width: 84ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.con-s05-004 .foot b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1000px) {
+  .con-s05-004 .head { grid-template-columns: minmax(0, 1fr); }
+  .con-s05-004 .markers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .con-s05-004 .fields { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .con-s05-004 .markers { grid-template-columns: minmax(0, 1fr); }
+  .con-s05-004 h2,
+  .con-s05-004 h3,
+  .con-s05-004 .head p,
+  .con-s05-004 .panel > p,
+  .con-s05-004 .foot { max-width: none; }
+  .con-s05-004 button { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s05-004 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s05-004 {
+  --v2-accent: #d2d2d2;
+  --v2-soft: #444444;
+  background: linear-gradient(180deg, #242424 0%, #1a1a1a 30%);
+  font-size: 1.06rem;
+}
+.con-s05-004 h2 { font-weight: 800; }
+.con-s05-004 h3, .con-s05-004 h4 { font-weight: 750; }
+.con-s05-004 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #444444;
+  color: #d2d2d2;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s05-004 select {
+  border-radius: 26px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid #2b2b2b;
+}
+.con-s05-004 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #444444;
+  color: #d2d2d2;
+  font-weight: 600;
+}
+.con-s05-004.con-s05-004 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: 1px solid #444444;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s05-004.con-s05-004 .head h2, .con-s05-004.con-s05-004 .head h3, .con-s05-004.con-s05-004 .head h4, .con-s05-004.con-s05-004 .head b, .con-s05-004.con-s05-004 .head strong, .con-s05-004.con-s05-004 .head p b, .con-s05-004.con-s05-004 .head li b, .con-s05-004.con-s05-004 .head span b, .con-s05-004.con-s05-004 .head dt, .con-s05-004.con-s05-004 .head div b {
+  color: #ffffff;
+}
+.con-s05-004.con-s05-004 .head p, .con-s05-004.con-s05-004 .head li, .con-s05-004.con-s05-004 .head span, .con-s05-004.con-s05-004 .head dd, .con-s05-004.con-s05-004 .head div p, .con-s05-004.con-s05-004 .head div li, .con-s05-004.con-s05-004 .head p span, .con-s05-004.con-s05-004 .head .said, .con-s05-004.con-s05-004 .head .note {
+  color: #d2d2d2;
+}
+.con-s05-004.con-s05-004 .head .eyebrow, .con-s05-004.con-s05-004 .head .kicker, .con-s05-004.con-s05-004 .head .slot, .con-s05-004.con-s05-004 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s05-004.con-s05-004 .head i, .con-s05-004.con-s05-004 .head .bars i, .con-s05-004.con-s05-004 .head .lines i, .con-s05-004.con-s05-004 .head .measures i, .con-s05-004.con-s05-004 .head .bar, .con-s05-004.con-s05-004 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s05-004.con-s05-004 .head .plate, .con-s05-004.con-s05-004 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s05-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s05-004 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s05-004" data-study-id="CON-S05-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="con-s05-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What we hold</p>
+        <h2 id="con-s05-004-title">Is the job you have got one of ours?</h2>
+        <p>Everything we hold is marked one of four ways, and the honest two are printed the same size as the other two. <b>The useful question is not what we can do &mdash; it is whether we can resource yours, and with whose hands.</b></p>
+      </div>
+      <div class="shot"><span>Site media &mdash; our own gangs working</span></div>
+    </div>
+
+    <ul class="markers">
+      <li>
+        <p class="name m-employed">Directly employed</p>
+        <p>Our books, our insurance, our supervision.</p>
+      </li>
+      <li>
+        <p class="name m-owned">Owned outright</p>
+        <p>In our yard, and a breakdown is our cost.</p>
+      </li>
+      <li>
+        <p class="name m-hire">Long-term hire</p>
+        <p>Not ours, but the same units and people each time.</p>
+      </li>
+      <li>
+        <p class="name m-retained">Retained specialist</p>
+        <p>Not ours at all, and the same firm every job.</p>
+      </li>
+    </ul>
+
+    <div class="panel">
+      <h3>Three questions, and you will get a straight answer to them</h3>
+      <p>Enough for us to tell you which marker your job mostly falls under, and whether the part that matters would be done by our people or somebody else&rsquo;s. <b>If it is mostly somebody else&rsquo;s, we will say so and name the kind of firm to call.</b></p>
+
+      <form>
+        <div class="fields">
+          <div class="field">
+            <label for="con-s05-004-lead">What the job leads with</label>
+            <select id="con-s05-004-lead" name="lead">
+              <option>Groundworks and drainage</option>
+              <option>Concrete frame</option>
+              <option>Structural steel</option>
+              <option>Fit-out and refurbishment</option>
+              <option>Civils and external works</option>
+              <option>Mechanical and electrical</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="con-s05-004-when">When people are needed on site</label>
+            <select id="con-s05-004-when" name="when">
+              <option>As soon as it can be resourced</option>
+              <option>Later this year</option>
+              <option>Next year</option>
+              <option>Not decided</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="con-s05-004-occupied">Is the building in use while we work</label>
+            <select id="con-s05-004-occupied" name="occupied">
+              <option>Yes, fully occupied</option>
+              <option>Partly, in phases</option>
+              <option>No, empty or new build</option>
+              <option>Not decided</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="act">
+          <button type="submit">Ask whether it is ours</button>
+          <p><b>This books nothing, and it will not tell you we are free.</b> Availability is a conversation with a person who knows what the teams are already committed to, not a light that turns itself on on a web page.</p>
+        </div>
+      </form>
+    </div>
+
+    <p class="foot"><b>What we do not hold at all:</b> specialist fa&ccedil;ade and curtain walling, asbestos removal, lift installation, live process environments. Choosing one of those above will get you told so rather than sold to &mdash; buying them in to call them ours would only put a margin between you and the firm doing the work.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S03-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S03 — Projects
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : The dependable project grid — six large image tiles, each with a reserved name
+                   bar under it and a metadata line carrying the sector, the scope and the status
+  Density        : Low copy, high visual
+  Media mode     : Six large reserved project areas, 4:3. **The section is not legible with the
+                   images removed, and it is not supposed to be** — this is the most image-led
+                   section in the sector.
+  Interaction    : None (static; no JavaScript)
+  The governing constraint : The sector direction rules out client and project names, which removes
+                   the caption from every tile. What is left is what was always doing the work: the
+                   picture. The name is a reserved bar, and the real attributes underneath it —
+                   sector, scope, status — tell a client more than a building's name ever would.
+                   See ../README.md.
+  What is omitted : Contract value, duration, floor area, unit count. Each would be an invented
+                   figure repeated once per tile.
+  Content note   : Sector and scope are generic vocabulary; the delivery marker is carried through
+                   from S02 unchanged. No invented figure, client or project name, value, duration,
+                   area, certification, award or rating; no header.
+-->
+
+<meta name="study-id" content="CON-S03-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S03">
+<meta name="section-name" content="Projects">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Six-tile project grid with reserved name bars and a real metadata line">
+<meta name="density" content="medium">
+<meta name="media-mode" content="six-large-reserved-project-areas">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S03-001 — Projects, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e8e8e8; }
+
+/* Scoped study styles — namespaced to .con-s03-001 */
+.con-s03-001 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --paper: #e8e8e8;
+  --card: #ffffff;
+  --slot-a: #b4b4b4;
+  --slot-b: #969696;
+  --slot-deep-a: #444444;
+  --slot-deep-b: #2b2b2b;
+  --on-slot: #ffffff;
+  --res: #ececec;
+  --res-edge: #b4b4b4;
+  --res-ink: #969696;
+  --line: #d2d2d2;
+  --self: #2b2b2b;
+  --self-bg: #ececec;
+  --managed: #5e5e5e;
+  --managed-bg: #ececec;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s03-001 *,
+.con-s03-001 *::before,
+.con-s03-001 *::after { box-sizing: inherit; }
+.con-s03-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 22px;
+}
+.con-s03-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s03-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.con-s03-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: clamp(20px, 3vw, 60px);
+  align-items: end;
+  margin-bottom: clamp(22px, 2.8vw, 40px);
+}
+.con-s03-001 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.con-s03-001 h2 {
+  margin: 0;
+  font-size: clamp(2.44rem, 5.292vw, 4.41rem);
+  line-height: 1.02;
+  letter-spacing: -0.034em;
+  font-weight: 700;
+  max-width: 15ch;
+}
+.con-s03-001 .head p { margin: 0; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s03-001 .head b { color: var(--ink); }
+
+/* Grid */
+.con-s03-001 .grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 26px);
+}
+.con-s03-001 .grid li { min-width: 0; }
+.con-s03-001 .shot {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(155deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(12px, 1.5vw, 18px);
+}
+.con-s03-001 .deep .shot { background: linear-gradient(155deg, var(--slot-deep-a) 0%, var(--slot-deep-b) 100%); }
+.con-s03-001 .shot .tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.8;
+}
+.con-s03-001 .status {
+  position: absolute;
+  top: clamp(12px, 1.5vw, 18px);
+  right: clamp(12px, 1.5vw, 18px);
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.con-s03-001 .name {
+  display: block;
+  margin: clamp(12px, 1.4vw, 16px) 0 clamp(10px, 1.2vw, 13px);
+  padding: 11px 14px;
+  border: 1px dashed var(--res-edge);
+  border-radius: 16px;
+  background: #3a3a3a;
+  color: var(--res-ink);
+  font-size: 0.777rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.con-s03-001 .meta {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+}
+.con-s03-001 .sector { font-size: 1.1rem; font-weight: 650; }
+.con-s03-001 .scope { color: var(--ink-soft); font-size: 1rem; }
+.con-s03-001 .chip {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.con-s03-001 .c-self { background: var(--self-bg); color: var(--self); }
+.con-s03-001 .c-managed { background: var(--managed-bg); color: var(--managed); }
+
+.con-s03-001 .close {
+  margin: clamp(20px, 2.6vw, 34px) 0 0;
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--line);
+  max-width: 70ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.con-s03-001 .close b { color: var(--ink); }
+
+/* Responsive ladder */
+@media (max-width: 1000px) {
+  .con-s03-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .con-s03-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; gap: clamp(14px, 2vw, 20px); }
+  .con-s03-001 h2 { max-width: none; }
+  .con-s03-001 .grid { grid-template-columns: minmax(0, 1fr); }
+  .con-s03-001 .close { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s03-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s03-001 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
+  font-size: 1.06rem;
+}
+.con-s03-001 h2 { font-weight: 800; }
+.con-s03-001 h3, .con-s03-001 h4 { font-weight: 750; }
+.con-s03-001 .eyebrow, .con-s03-001 .tag {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s03-001 .name {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s03-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s03-001.con-s03-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s03-001.con-s03-001 .head h2, .con-s03-001.con-s03-001 .head h3, .con-s03-001.con-s03-001 .head h4, .con-s03-001.con-s03-001 .head b, .con-s03-001.con-s03-001 .head strong, .con-s03-001.con-s03-001 .head p b, .con-s03-001.con-s03-001 .head li b, .con-s03-001.con-s03-001 .head span b, .con-s03-001.con-s03-001 .head dt, .con-s03-001.con-s03-001 .head div b {
+  color: #ffffff;
+}
+.con-s03-001.con-s03-001 .head p, .con-s03-001.con-s03-001 .head li, .con-s03-001.con-s03-001 .head span, .con-s03-001.con-s03-001 .head dd, .con-s03-001.con-s03-001 .head div p, .con-s03-001.con-s03-001 .head div li, .con-s03-001.con-s03-001 .head p span, .con-s03-001.con-s03-001 .head .said, .con-s03-001.con-s03-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s03-001.con-s03-001 .head .eyebrow, .con-s03-001.con-s03-001 .head .kicker, .con-s03-001.con-s03-001 .head .slot, .con-s03-001.con-s03-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s03-001.con-s03-001 .head i, .con-s03-001.con-s03-001 .head .bars i, .con-s03-001.con-s03-001 .head .lines i, .con-s03-001.con-s03-001 .head .measures i, .con-s03-001.con-s03-001 .head .bar, .con-s03-001.con-s03-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s03-001.con-s03-001 .head .plate, .con-s03-001.con-s03-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s03-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s03-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s03-001" data-study-id="CON-S03-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s03-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The work</p>
+        <h2 id="con-s03-001-title">Buildings, not case studies</h2>
+      </div>
+      <p><b>What the job was, and what made it difficult.</b> The sector matters more than the name &mdash; it tells you whether we have worked under your constraints.</p>
+    </div>
+
+    <ul class="grid">
+      <li>
+        <div class="shot deep"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
+        <span class="name">Project name &mdash; reserved</span>
+        <p class="meta">
+          <span class="sector">Healthcare</span>
+          <span class="chip c-self">Self-delivered</span>
+          <span class="scope">Refurbishment, occupied throughout</span>
+        </p>
+      </li>
+      <li>
+        <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
+        <span class="name">Project name &mdash; reserved</span>
+        <p class="meta">
+          <span class="sector">Education</span>
+          <span class="chip c-managed">Managed</span>
+          <span class="scope">Structural frame and envelope</span>
+        </p>
+      </li>
+      <li>
+        <div class="shot"><span class="tag">Project media &mdash; on site</span><span class="status">On site</span></div>
+        <span class="name">Project name &mdash; reserved</span>
+        <p class="meta">
+          <span class="sector">Industrial</span>
+          <span class="chip c-self">Self-delivered</span>
+          <span class="scope">Groundworks and civils</span>
+        </p>
+      </li>
+      <li>
+        <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
+        <span class="name">Project name &mdash; reserved</span>
+        <p class="meta">
+          <span class="sector">Retail</span>
+          <span class="chip c-self">Self-delivered</span>
+          <span class="scope">Commercial fit-out, phased handover</span>
+        </p>
+      </li>
+      <li>
+        <div class="shot deep"><span class="tag">Project media &mdash; on site</span><span class="status">On site</span></div>
+        <span class="name">Project name &mdash; reserved</span>
+        <p class="meta">
+          <span class="sector">Civic</span>
+          <span class="chip c-managed">Managed</span>
+          <span class="scope">Demolition and enabling, live traffic alongside</span>
+        </p>
+      </li>
+      <li>
+        <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
+        <span class="name">Project name &mdash; reserved</span>
+        <p class="meta">
+          <span class="sector">Residential</span>
+          <span class="chip c-managed">Managed</span>
+          <span class="scope">New build, frame to handover</span>
+        </p>
+      </li>
+    </ul>
+
+    <p class="close"><b>No values, no floor areas, no programme lengths.</b> A number under a photograph is either commercially confidential or invented, and neither helps you judge whether we can build yours.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

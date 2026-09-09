@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S19-004
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S19 — Contact
+  Direction      : Conversion-led
+  Theme          : 004 High-Vis — see ../../CONSTRUCTION-THEME-CONTRACT.md
+  Layout model   : Compact head with a reserved hoarding panel, then one saturated action panel
+                   carrying the urgent route at display scale, then the remaining five as a strip
+  Density        : Low-medium (169 visible words; 848 before the text-budget rework)
+  Media mode     : One reserved hoarding area, held to the head so it does not compete with the
+                   action panel.
+  Interaction    : None (static; no JavaScript)
+
+  What "conversion-led" means in this role, which is the whole design problem :
+                   The section README puts the commercial enquiry LAST and says the ordering is the
+                   argument. So the conversion here is NOT the sales enquiry — promoting it would
+                   break the role. **The conversion is the urgent route**: somebody standing on a
+                   site at half past six reaching the right phone without reading anything. That is
+                   what gets the saturated panel and the display-scale field; the estimating route
+                   stays sixth and points at S15.
+
+  Content note   : Every number and mailbox is a reserved field. No response-time promise, no
+                   service level, no map, no general enquiry form, no header, no urgency device
+                   beyond the real one.
+-->
+
+<meta name="study-id" content="CON-S19-004">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S19">
+<meta name="section-name" content="Contact">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 High-Vis">
+<meta name="layout-model" content="Compact head with hoarding panel, saturated urgent-route action panel, five-route strip">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="one-reserved-hoarding-panel">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S19-004 — Contact, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .con-s19-004 */
+.con-s19-004 {
+  --paper: #ffffff;
+  --ink: #0a0a0a;
+  --ink-soft: #55585c;
+  --line: #e4e4e4;
+  --slot: #efefef;
+  --slot-edge: #c2c2c2;
+  --slot-ink: #4f5155;
+  --accent: #ffd400;
+  --accent-ink: #0a0a0a;
+  --focus: #0a0a0a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s19-004 *,
+.con-s19-004 *::before,
+.con-s19-004 *::after { box-sizing: inherit; }
+.con-s19-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 8px; }
+.con-s19-004 .vh {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+
+.con-s19-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- Head --- */
+.con-s19-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(24px, 3.6vw, 56px);
+  align-items: center;
+}
+.con-s19-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+.con-s19-004 h2 {
+  margin: 0;
+  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  font-weight: 800;
+  max-width: 17ch;
+}
+.con-s19-004 .lead { margin: clamp(14px, 1.8vw, 20px) 0 0; max-width: 46ch; color: var(--ink-soft); }
+.con-s19-004 .hoarding {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 12px;
+  background: var(--slot);
+  aspect-ratio: 3 / 2;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.con-s19-004 .hoarding span {
+  color: var(--slot-ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* --- The action panel: the urgent route, at scale --- */
+.con-s19-004 .action {
+  margin: clamp(28px, 3.4vw, 48px) 0 0;
+  padding: clamp(26px, 3.4vw, 46px) clamp(24px, 3.2vw, 44px);
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(20px, 3.4vw, 56px);
+  align-items: center;
+}
+.con-s19-004 .action .n {
+  display: block;
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+.con-s19-004 .action h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  max-width: 20ch;
+}
+.con-s19-004 .action p { margin: 12px 0 0; max-width: 52ch; font-size: clamp(1.02rem, 1.2vw, 1.14rem); }
+.con-s19-004 .duty {
+  display: grid;
+  place-items: center;
+  min-width: clamp(150px, 17vw, 240px);
+  min-height: clamp(84px, 9vw, 116px);
+  padding: 10px 22px;
+  border: 3px dashed var(--accent-ink);
+  border-radius: 12px;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+/* --- The other five, as a strip --- */
+.con-s19-004 .strip {
+  margin: clamp(24px, 3vw, 40px) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 18px);
+}
+.con-s19-004 .strip li {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: clamp(16px, 1.9vw, 22px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.con-s19-004 .strip .n { font-size: 0.78rem; font-weight: 750; letter-spacing: 0.06em; color: var(--ink-soft); }
+.con-s19-004 .what { margin: 0; font-weight: 750; font-size: 1.02rem; letter-spacing: -0.012em; }
+.con-s19-004 .can { margin: 0; color: var(--ink-soft); font-size: 0.94rem; flex: 1 1 auto; }
+.con-s19-004 .field {
+  align-self: flex-start;
+  display: inline-grid;
+  place-items: center;
+  min-width: 74px;
+  padding: 6px 14px;
+  border: 1px dashed var(--slot-edge);
+  border-radius: 999px;
+  background: var(--slot);
+  color: var(--slot-ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* --- Foot --- */
+.con-s19-004 .foot {
+  margin: clamp(22px, 2.6vw, 34px) 0 0;
+  padding-top: clamp(18px, 2.2vw, 26px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 52px);
+  color: var(--ink-soft);
+}
+.con-s19-004 .foot p { margin: 0; max-width: 48ch; }
+.con-s19-004 .foot b { color: var(--ink); font-weight: 750; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .con-s19-004 .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .con-s19-004 .head { grid-template-columns: minmax(0, 1fr); }
+  .con-s19-004 h2, .con-s19-004 .lead { max-width: none; }
+  .con-s19-004 .hoarding { aspect-ratio: 16 / 9; }
+  .con-s19-004 .action { grid-template-columns: minmax(0, 1fr); }
+  .con-s19-004 .duty { justify-self: start; }
+  .con-s19-004 .foot { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .con-s19-004 .strip { grid-template-columns: minmax(0, 1fr); }
+  .con-s19-004 .duty { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .con-s19-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="con-s19-004" data-study-id="CON-S19-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="con-s19-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 id="con-s19-004-title">The urgent one is not the one that buys anything.</h2>
+        <p class="lead">So it gets the largest thing on the page. The other five are underneath, and the enquiry is last.</p>
+      </div>
+      <div class="hoarding"><span>Site hoarding media area &mdash; the board<br>a neighbour reads the duty number from</span></div>
+    </div>
+
+    <div class="action">
+      <div>
+        <span class="n">01 &mdash; Right now</span>
+        <h3>Something is happening on a site now</h3>
+        <p>Stopped, made safe, and written down. Out of hours the same number rings a real phone.</p>
+      </div>
+      <p class="duty"><span class="vh">Site and duty phone number, reserved</span><span aria-hidden="true">&mdash;</span></p>
+    </div>
+
+    <ul class="strip">
+      <li>
+        <span class="n">02</span>
+        <p class="what">You live or work beside one</p>
+        <p class="can">What is happening, and when it stops.</p>
+        <span class="field"><span class="vh">Same number, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <p class="what">A defect in a building we finished</p>
+        <p class="can">Somebody looks, and we say who pays.</p>
+        <span class="field"><span class="vh">Aftercare line, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <p class="what">Subcontractor or supplier</p>
+        <p class="can">Where your invoice is.</p>
+        <span class="field"><span class="vh">Accounts mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+      <li>
+        <span class="n">05</span>
+        <p class="what">You want to work here</p>
+        <p class="can">Read. We do not keep a talent pool.</p>
+        <span class="field"><span class="vh">Applications mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+      <li>
+        <span class="n">06</span>
+        <p class="what">You have work for us</p>
+        <p class="can">The scope taken, and which of three answers you get.</p>
+        <span class="field"><span class="vh">Estimating mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+    </ul>
+
+    <div class="foot">
+      <p><b>Do not come to a site to talk to us.</b> You would need an induction to get past the gate.</p>
+      <p>The office is where a conversation happens. The site is where work happens.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

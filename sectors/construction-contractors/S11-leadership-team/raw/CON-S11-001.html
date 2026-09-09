@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S11-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S11 — Leadership Team
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : Three groups by how often you will deal with somebody — every day, every week, at
+                   fixed points — each person a reserved portrait and name inside one figure, with
+                   the role, the authority and the chain beside it
+  Density        : Medium
+  Media mode     : Six reserved portrait areas. Portrait and name inside a single figure so no
+                   reflow can separate them.
+  Interaction    : None (static; no JavaScript)
+  The device     : **Grouped by contact, never by seniority.** A team page shows you the people who
+                   win the work; a client wants the people who run it. Grouping by how often somebody
+                   will actually be on your site puts the site manager first and the director last,
+                   which is the true order and the opposite of the convention.
+  The honest row : The director group says *at tender and at handover, and nowhere in between.* It
+                   is the most common complaint about contractors in this industry and almost no team
+                   page addresses it, because addressing it means admitting it.
+  The authority  : Every entry says what that person can decide without asking, which is the `S07`
+                   device applied to people. A title tells a client nothing; an authority can be
+                   checked by asking the person standing next to it.
+  Deliberately not : No qualification, membership, years in the trade, biography, previous employer
+                   or personal quote &mdash; the `WELL-S26` rule. And no uniform grid of equal
+                   portraits, which is anti-pattern thirteen expressed as a shape.
+  Content note   : Role titles are generic vocabulary. Names and portraits are reserved. No digit in
+                   visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S11-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S11">
+<meta name="section-name" content="Leadership Team">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Three contact groups of reserved figures with role, authority and chain">
+<meta name="density" content="medium">
+<meta name="media-mode" content="six-reserved-portraits">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S11-001 — Leadership Team, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1f1; }
+
+/* Scoped study styles — namespaced to .con-s11-001 */
+.con-s11-001 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #969696;
+  --paper: #f1f1f1;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --rule: #d2d2d2;
+  --field: #ececec;
+  --daily: #444444;
+  --weekly: #444444;
+  --fixed: #444444;
+  --rare: #2b2b2b;
+  --slot-a: #b4b4b4;
+  --slot-b: #7a7a7a;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s11-001 *,
+.con-s11-001 *::before,
+.con-s11-001 *::after { box-sizing: inherit; }
+.con-s11-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s11-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s11-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s11-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(20px, 2.6vw, 34px);
+}
+.con-s11-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s11-001 h2 {
+  margin: 0;
+  font-size: clamp(2.318rem, 4.41vw, 3.78rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s11-001 .head p { margin: 0; max-width: 48ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
+.con-s11-001 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Contact groups */
+.con-s11-001 .group { margin-bottom: clamp(16px, 2.2vw, 28px); }
+.con-s11-001 .ghead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px clamp(14px, 2.4vw, 40px);
+  margin-bottom: clamp(11px, 1.4vw, 16px);
+  padding-bottom: clamp(9px, 1.2vw, 12px);
+  border-bottom: 3px solid var(--tone, var(--rule));
+}
+.con-s11-001 h3 {
+  margin: 0;
+  font-size: clamp(1.345rem, 1.888vw, 1.699rem);
+  line-height: 1.12;
+  letter-spacing: -0.024em;
+  font-weight: 700;
+  color: var(--tone, var(--ink));
+}
+.con-s11-001 .ghead p { margin: 0; max-width: 56ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
+.con-s11-001 .g-daily { --tone: var(--daily); }
+.con-s11-001 .g-weekly { --tone: var(--weekly); }
+.con-s11-001 .g-fixed { --tone: var(--fixed); }
+.con-s11-001 .g-rare { --tone: var(--rare); }
+
+.con-s11-001 .people { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 16px); }
+.con-s11-001 .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.con-s11-001 .one { grid-template-columns: minmax(0, 1fr); }
+.con-s11-001 .people li { min-width: 0; }
+
+.con-s11-001 .person {
+  height: 100%;
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(15px, 1.9vw, 24px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.3fr) minmax(0, 1fr);
+  gap: clamp(14px, 2vw, 28px);
+  align-items: start;
+}
+.con-s11-001 .person.wide { grid-template-columns: minmax(0, 0.16fr) minmax(0, 1fr); }
+
+/* Portrait and name in one figure — nothing may separate them */
+.con-s11-001 figure { margin: 0; }
+.con-s11-001 .face {
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: end start;
+  padding: clamp(9px, 1.1vw, 12px);
+  margin-bottom: 9px;
+}
+.con-s11-001 .face span {
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.8;
+  line-height: 1.3;
+}
+.con-s11-001 figcaption { font-size: 0.804rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-faint); }
+.con-s11-001 figcaption .slot {
+  display: block;
+  margin-top: 3px;
+  padding: 2px 9px;
+  border-radius: 16px;
+  background: var(--field);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.con-s11-001 h4 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.251rem, 1.558vw, 1.463rem);
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.con-s11-001 .says { margin: 0 0 clamp(10px, 1.3vw, 14px); font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s11-001 .says:last-child { margin-bottom: 0; }
+.con-s11-001 .says b { color: var(--ink); font-weight: 650; }
+.con-s11-001 .says .k {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s11-001 .chain {
+  margin: 0;
+  padding-top: clamp(10px, 1.3vw, 13px);
+  border-top: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.con-s11-001 .chain b { color: var(--ink); font-weight: 650; }
+
+/* Count + admission */
+.con-s11-001 .foot {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(11px, 1.4vw, 16px);
+}
+.con-s11-001 .foot > div { border-radius: 22px; padding: clamp(16px, 2vw, 26px); }
+.con-s11-001 .foot .held { background: var(--card); }
+.con-s11-001 .foot .admit { border: 2px dashed var(--rule); }
+.con-s11-001 .foot h3 { font-size: clamp(1.1rem, 1.581vw, 1.416rem); color: var(--ink); margin-bottom: clamp(10px, 1.3vw, 14px); }
+.con-s11-001 .foot p { margin: 0 0 10px; max-width: 60ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
+.con-s11-001 .foot p:last-child { margin-bottom: 0; }
+.con-s11-001 .foot p b { color: var(--ink); font-weight: 650; }
+.con-s11-001 .cnt {
+  margin: 0 0 clamp(11px, 1.4vw, 15px);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: clamp(10px, 1.3vw, 13px);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.804rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s11-001 .cnt .slot { min-width: 44px; padding: 1px 9px; border-radius: 16px; background: var(--field); text-align: center; letter-spacing: 0; }
+
+/* Responsive ladder */
+@media (max-width: 1020px) {
+  .con-s11-001 .two { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .con-s11-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .con-s11-001 .person,
+  .con-s11-001 .person.wide { grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr); }
+  .con-s11-001 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s11-001 h2, .con-s11-001 .head p, .con-s11-001 .ghead p, .con-s11-001 .foot p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s11-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s11-001 {
+  --v2-accent: #969696;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
+  font-size: 1.06rem;
+}
+.con-s11-001 h2 { font-weight: 800; }
+.con-s11-001 h3, .con-s11-001 h4 { font-weight: 750; }
+.con-s11-001 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s11-001 .person, .con-s11-001 .foot .held {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #ececec;
+}
+.con-s11-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s11-001.con-s11-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s11-001.con-s11-001 .head h2, .con-s11-001.con-s11-001 .head h3, .con-s11-001.con-s11-001 .head h4, .con-s11-001.con-s11-001 .head b, .con-s11-001.con-s11-001 .head strong, .con-s11-001.con-s11-001 .head p b, .con-s11-001.con-s11-001 .head li b, .con-s11-001.con-s11-001 .head span b, .con-s11-001.con-s11-001 .head dt, .con-s11-001.con-s11-001 .head div b {
+  color: #ffffff;
+}
+.con-s11-001.con-s11-001 .head p, .con-s11-001.con-s11-001 .head li, .con-s11-001.con-s11-001 .head span, .con-s11-001.con-s11-001 .head dd, .con-s11-001.con-s11-001 .head div p, .con-s11-001.con-s11-001 .head div li, .con-s11-001.con-s11-001 .head p span, .con-s11-001.con-s11-001 .head .said, .con-s11-001.con-s11-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s11-001.con-s11-001 .head .eyebrow, .con-s11-001.con-s11-001 .head .kicker, .con-s11-001.con-s11-001 .head .slot, .con-s11-001.con-s11-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s11-001.con-s11-001 .head i, .con-s11-001.con-s11-001 .head .bars i, .con-s11-001.con-s11-001 .head .lines i, .con-s11-001.con-s11-001 .head .measures i, .con-s11-001.con-s11-001 .head .bar, .con-s11-001.con-s11-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s11-001.con-s11-001 .head .plate, .con-s11-001.con-s11-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s11-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s11-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s11-001" data-study-id="CON-S11-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s11-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The people</p>
+        <h2 id="con-s11-001-title">A team page shows you the people who win the work.</h2>
+      </div>
+      <p><b>You want the people who run it.</b> So this one is ordered by how often you will actually deal with somebody, which puts the site manager at the top and the director at the bottom &mdash; and says what each of them can decide without asking anybody.</p>
+    </div>
+
+    <div class="group g-daily">
+      <div class="ghead">
+        <h3>Every day, on your site</h3>
+        <p>The two people whose decisions you will feel. If you remember one line from this page, make it this group.</p>
+      </div>
+      <ul class="people two">
+        <li>
+          <div class="person">
+            <figure>
+              <div class="face"><span>Portrait &mdash; on site, working</span></div>
+              <figcaption>Name<span class="slot"><span class="vh">Name of the site manager</span><span aria-hidden="true">&mdash;</span></span></figcaption>
+            </figure>
+            <div>
+              <h4>Site manager</h4>
+              <p class="says"><span class="k">Decides without asking</span>Stops the work. Orders what the job needs that day. <b>Moves the sequence within the week</b> without a phone call to anybody.</p>
+              <p class="says">One site, not three. Where we cannot resource that, we do not take the job.</p>
+              <p class="chain"><b>Answers to</b> the contracts manager, and to you every morning.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="person">
+            <figure>
+              <div class="face"><span>Portrait &mdash; on site, working</span></div>
+              <figcaption>Name<span class="slot"><span class="vh">Name of the foreman</span><span aria-hidden="true">&mdash;</span></span></figcaption>
+            </figure>
+            <div>
+              <h4>Foreman</h4>
+              <p class="says"><span class="k">Decides without asking</span>Runs the gang. <b>Stops the work.</b> Calls the site manager rather than working round a problem.</p>
+              <p class="says">The person who briefs your job every morning before anybody picks anything up.</p>
+              <p class="chain"><b>Answers to</b> the site manager, on site, in person.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="group g-weekly">
+      <div class="ghead">
+        <h3>Every week</h3>
+        <p>The person you escalate to, and the one who can actually change something.</p>
+      </div>
+      <ul class="people one">
+        <li>
+          <div class="person wide">
+            <figure>
+              <div class="face"><span>Portrait &mdash; on site, at a progress meeting</span></div>
+              <figcaption>Name<span class="slot"><span class="vh">Name of the contracts manager</span><span aria-hidden="true">&mdash;</span></span></figcaption>
+            </figure>
+            <div>
+              <h4>Contracts manager</h4>
+              <p class="says"><span class="k">Decides without asking</span><b>Agrees a variation. Moves resource between sites.</b> This is the escalation, and the number you are given at pre-start is theirs rather than a switchboard.</p>
+              <p class="says">If something has gone wrong and the site manager cannot fix it inside the week, this is the person whose problem it becomes. <b>Not the director.</b></p>
+              <p class="chain"><b>Answers to</b> the managing director, and carries your job on the same list as a small number of others.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="group g-fixed">
+      <div class="ghead">
+        <h3>At fixed points</h3>
+        <p>You will meet them, at moments that are on the programme rather than at random.</p>
+      </div>
+      <ul class="people two">
+        <li>
+          <div class="person">
+            <figure>
+              <div class="face"><span>Portrait &mdash; at a pre-start meeting</span></div>
+              <figcaption>Name<span class="slot"><span class="vh">Name of the commercial manager</span><span aria-hidden="true">&mdash;</span></span></figcaption>
+            </figure>
+            <div>
+              <h4>Commercial manager</h4>
+              <p class="says"><span class="k">Decides without asking</span><b>Agrees the valuation. Prices a change.</b></p>
+              <p class="says">The one who priced your job stays on it. Handing it to somebody who did not price it is where most variation arguments start.</p>
+              <p class="chain"><b>Answers to</b> the managing director, and to the contract.</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="person">
+            <figure>
+              <div class="face"><span>Portrait &mdash; on site, marking up a programme</span></div>
+              <figcaption>Name<span class="slot"><span class="vh">Name of the planner</span><span aria-hidden="true">&mdash;</span></span></figcaption>
+            </figure>
+            <div>
+              <h4>Planner</h4>
+              <p class="says"><span class="k">Decides without asking</span><b>Rewrites the programme. Nobody else does</b>, which is why it stays a programme rather than a wish.</p>
+              <p class="says">Walks the site before writing it, and again when it changes.</p>
+              <p class="chain"><b>Answers to</b> the contracts manager, and to the sequence.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="group g-rare">
+      <div class="ghead">
+        <h3>At tender, and at handover</h3>
+        <p>And nowhere in between. This is the row most team pages leave out.</p>
+      </div>
+      <ul class="people one">
+        <li>
+          <div class="person wide">
+            <figure>
+              <div class="face"><span>Portrait &mdash; at a tender meeting</span></div>
+              <figcaption>Name<span class="slot"><span class="vh">Name of the managing director</span><span aria-hidden="true">&mdash;</span></span></figcaption>
+            </figure>
+            <div>
+              <h4>Managing director</h4>
+              <p class="says"><span class="k">Decides without asking</span>Changes the contract. Turns work down. <b>And nothing on your site day to day.</b></p>
+              <p class="says"><b>A firm where the managing director is making site decisions is a firm with a problem</b> &mdash; either the site manager has no authority or the director cannot leave it alone. Neither is good news for the job you are paying for.</p>
+              <p class="chain"><b>You will see them</b> at the tender meeting and at handover. If you want them at the monthly progress meeting instead, say so at pre-start and it can be arranged &mdash; but it is not what makes your job go well.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="foot">
+      <div class="held">
+        <h3>Site managers on our own books</h3>
+        <p class="cnt"><span>Site managers</span><span class="slot"><span class="vh">Number of site managers on our own books</span><span aria-hidden="true">&mdash;</span></span></p>
+        <p><b>How many we employ decides how many jobs we can run properly at once</b>, and it is the reason we decline work rather than the reason we win it. The capabilities page sets out the rest of what we hold.</p>
+      </div>
+      <div class="admit" data-refusal>
+        <h3>What is not on this page</h3>
+        <p><b>No qualifications, no memberships, no years in the trade, no career histories.</b> They are true of everybody here and they distinguish nobody &mdash; every contractor&rsquo;s team page carries the same list, and none of it tells you who will be standing on your site.</p>
+        <p>What does tell you that is above: <b>who you will see, how often, and what they can decide without asking.</b> All of it is checkable by asking the person it is written under.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S27-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S27 — Office / Regional Branch Detail
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : Contact first, then what leaves the yard, who is based here, the three people who
+                   actually come, the arrival rule, and the reserved map with what it would be worth
+  Density        : Medium
+  Media mode     : One reserved map area and one reserved view of the yard. **Both come after the
+                   contact block in source order**, which is the scaffold's responsive rule made
+                   structural rather than promised.
+  Interaction    : None. The batch's anchors belong to `004`.
+  The constraint : **A contractor's office is not a shop.** Almost nobody who reads this page is
+                   coming here, and the client least of all &mdash; so the page answers the three
+                   people who genuinely do turn up, and tells the client where their answer is.
+  The arrival    : **Boots and a hi-vis, or you will be met in the office instead**, which is the one
+                   piece of real arrival information a yard can publish without inventing anything.
+  Access         : Answered by conversation, carried from `WELL-S16`. A yard is not a level floor and
+                   a row of tick icons would be a promise about a place nobody has measured.
+  Deliberately not : No address, postcode, telephone number, hours table, travel time, distance,
+                   drawn map or pin. No *nationwide* claim &mdash; the `S14` rule.
+  Content note   : Branch name, address, both telephone lines and the region are reserved. No digit
+                   in visible copy; no header; no refusal region.
+-->
+
+<meta name="study-id" content="CON-S27-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S27">
+<meta name="section-name" content="Office / Regional Branch Detail">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Contact first, what leaves the yard, who is based here, the three who come, the reserved map">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-map-and-view">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S27-001 — Branch Detail, Universal</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f1f1; }
+
+/* Scoped study styles — namespaced to .con-s27-001 */
+.con-s27-001 {
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #b4b4b4;
+  --paper: #f1f1f1;
+  --card: #ffffff;
+  --fill: #ececec;
+  --line: #d2d2d2;
+  --rule: #111111;
+  --yard: #5e5e5e;
+  --come: #2b2b2b;
+  --gate: #969696;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s27-001 *,
+.con-s27-001 *::before,
+.con-s27-001 *::after { box-sizing: inherit; }
+.con-s27-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s27-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s27-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.con-s27-001 .slot {
+  display: inline-block;
+  min-width: 96px;
+  padding: 2px 12px;
+  border-radius: 10px;
+  background: #3a3a3a;
+  color: var(--ink-faint);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: center;
+}
+
+/* Head */
+.con-s27-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  padding-bottom: clamp(16px, 2vw, 26px);
+  border-bottom: 2px solid var(--rule);
+  margin-bottom: clamp(18px, 2.3vw, 28px);
+}
+.con-s27-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s27-001 h2 {
+  margin: 0;
+  font-size: clamp(2.196rem, 4.284vw, 3.528rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s27-001 .head p { margin: 0; max-width: 52ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s27-001 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Contact, first */
+.con-s27-001 .contact {
+  background: var(--card);
+  border-radius: 22px;
+  padding: clamp(16px, 2vw, 26px);
+  margin-bottom: clamp(16px, 2.1vw, 24px);
+}
+.con-s27-001 .contact h3,
+.con-s27-001 .yard h3,
+.con-s27-001 .based h3,
+.con-s27-001 .come h3,
+.con-s27-001 .gate h3,
+.con-s27-001 .media h3,
+.con-s27-001 .not h3 {
+  margin: 0 0 clamp(10px, 1.2vw, 14px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s27-001 .contact dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(206px, 1fr));
+  gap: clamp(11px, 1.5vw, 20px);
+}
+.con-s27-001 .contact .row {
+  min-width: 0;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--line);
+}
+.con-s27-001 .contact dt {
+  margin-bottom: 5px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s27-001 .contact dd { margin: 0; }
+.con-s27-001 .contact > p { margin: clamp(12px, 1.5vw, 16px) 0 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); max-width: 76ch; }
+.con-s27-001 .contact > p b { color: var(--ink); font-weight: 650; }
+
+/* The yard */
+.con-s27-001 .yard { --tone: var(--yard); margin-bottom: clamp(16px, 2.1vw, 24px); }
+.con-s27-001 .yard ul { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(11px, 1.5vw, 20px); }
+.con-s27-001 .yard li {
+  min-width: 0;
+  padding-left: clamp(11px, 1.3vw, 14px);
+  border-left: 4px solid var(--yard);
+  font-size: 1rem;
+  line-height: 1.56;
+  color: var(--ink-soft);
+}
+.con-s27-001 .yard li b { display: block; color: var(--ink); font-weight: 700; margin-bottom: 3px; }
+.con-s27-001 .yard > p { margin: 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); max-width: 76ch; }
+.con-s27-001 .yard > p b { color: var(--ink); font-weight: 650; }
+
+/* Based here */
+.con-s27-001 .based {
+  padding-top: clamp(15px, 1.9vw, 22px);
+  border-top: 1px solid var(--line);
+  margin-bottom: clamp(16px, 2.1vw, 24px);
+}
+.con-s27-001 .based .roles { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: clamp(11px, 1.4vw, 15px); }
+.con-s27-001 .based .roles span {
+  padding: 3px 12px;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+.con-s27-001 .based p { margin: 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); max-width: 76ch; }
+.con-s27-001 .based p b { color: var(--ink); font-weight: 650; }
+
+/* The three who come */
+.con-s27-001 .come {
+  --tone: var(--come);
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 2px solid var(--rule);
+  margin-bottom: clamp(16px, 2.1vw, 24px);
+}
+.con-s27-001 .come .three {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: clamp(13px, 1.8vw, 26px);
+  margin-bottom: clamp(12px, 1.6vw, 17px);
+}
+.con-s27-001 .come .three > div { min-width: 0; padding-top: clamp(9px, 1.1vw, 12px); border-top: 4px solid var(--come); }
+.con-s27-001 .come h4 {
+  margin: 0 0 6px;
+  font-size: clamp(1.1rem, 1.558vw, 1.322rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+.con-s27-001 .come p { margin: 0 0 8px; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s27-001 .come p:last-child { margin-bottom: 0; }
+.con-s27-001 .come p b { color: var(--ink); font-weight: 650; }
+.con-s27-001 .come > p { max-width: 76ch; }
+
+/* The gate */
+.con-s27-001 .gate {
+  --tone: var(--gate);
+  background: var(--card);
+  border-radius: 22px;
+  border-left: 5px solid var(--gate);
+  padding: clamp(16px, 2vw, 26px);
+  margin-bottom: clamp(16px, 2.1vw, 24px);
+}
+.con-s27-001 .gate .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(13px, 1.8vw, 26px); }
+.con-s27-001 .gate h4 { margin: 0 0 6px; font-size: clamp(1.1rem, 1.534vw, 1.298rem); line-height: 1.2; letter-spacing: -0.015em; font-weight: 700; }
+.con-s27-001 .gate p { margin: 0 0 8px; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s27-001 .gate p:last-child { margin-bottom: 0; }
+.con-s27-001 .gate p b { color: var(--ink); font-weight: 650; }
+
+/* Media, last */
+.con-s27-001 .media {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(13px, 1.8vw, 24px);
+  margin-bottom: clamp(16px, 2.1vw, 24px);
+}
+.con-s27-001 .media > div { min-width: 0; }
+.con-s27-001 .plate {
+  height: clamp(120px, 12vw, 168px);
+  border-radius: 22px;
+  border: 1px dashed var(--line);
+  background: var(--fill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  margin-bottom: clamp(9px, 1.1vw, 12px);
+}
+.con-s27-001 .plate span {
+  font-size: 0.777rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+  text-align: center;
+  line-height: 1.5;
+}
+.con-s27-001 .media p { margin: 0; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s27-001 .media p b { color: var(--ink); font-weight: 650; }
+
+/* Not on this page */
+.con-s27-001 .not {
+  padding-top: clamp(15px, 1.9vw, 22px);
+  border-top: 2px solid var(--rule);
+}
+.con-s27-001 .not .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: clamp(13px, 1.8vw, 26px); }
+.con-s27-001 .not p { margin: 0 0 8px; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.con-s27-001 .not p:last-child { margin-bottom: 0; }
+.con-s27-001 .not p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s27-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; gap: clamp(14px, 2.4vw, 22px); }
+}
+
+@media (max-width: 620px) {
+  .con-s27-001 h2, .con-s27-001 .head p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s27-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s27-001 {
+  --v2-accent: #969696;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
+  font-size: 1.06rem;
+}
+.con-s27-001 h2 { font-weight: 800; }
+.con-s27-001 h3, .con-s27-001 h4 { font-weight: 750; }
+.con-s27-001 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s27-001 .plate {
+  border: 1px dashed #b4b4b4;
+  border-radius: 14px;
+}
+.con-s27-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s27-001.con-s27-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s27-001.con-s27-001 .head h2, .con-s27-001.con-s27-001 .head h3, .con-s27-001.con-s27-001 .head h4, .con-s27-001.con-s27-001 .head b, .con-s27-001.con-s27-001 .head strong, .con-s27-001.con-s27-001 .head p b, .con-s27-001.con-s27-001 .head li b, .con-s27-001.con-s27-001 .head span b, .con-s27-001.con-s27-001 .head dt, .con-s27-001.con-s27-001 .head div b {
+  color: #ffffff;
+}
+.con-s27-001.con-s27-001 .head p, .con-s27-001.con-s27-001 .head li, .con-s27-001.con-s27-001 .head span, .con-s27-001.con-s27-001 .head dd, .con-s27-001.con-s27-001 .head div p, .con-s27-001.con-s27-001 .head div li, .con-s27-001.con-s27-001 .head p span, .con-s27-001.con-s27-001 .head .said, .con-s27-001.con-s27-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s27-001.con-s27-001 .head .eyebrow, .con-s27-001.con-s27-001 .head .kicker, .con-s27-001.con-s27-001 .head .slot, .con-s27-001.con-s27-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s27-001.con-s27-001 .head i, .con-s27-001.con-s27-001 .head .bars i, .con-s27-001.con-s27-001 .head .lines i, .con-s27-001.con-s27-001 .head .measures i, .con-s27-001.con-s27-001 .head .bar, .con-s27-001.con-s27-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s27-001.con-s27-001 .head .plate, .con-s27-001.con-s27-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s27-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s27-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s27-001" data-study-id="CON-S27-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s27-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">One office and the yard behind it</p>
+        <h2 id="con-s27-001-title">A contractor's office is not a shop, and almost nobody reading this is coming here.</h2>
+      </div>
+      <p>The client least of all &mdash; <b>your meetings happen on your own site</b>, and the answer you want at seven in the morning is standing on it. So this page is for the three people who genuinely do turn up, and for anybody checking whether this is the office whose mornings reach their job.</p>
+    </div>
+
+    <div class="contact">
+      <h3>This office</h3>
+      <dl>
+        <div class="row"><dt>Branch</dt><dd><span class="slot"><span class="vh">Name of this branch</span>Reserved</span></dd></div>
+        <div class="row"><dt>Address</dt><dd><span class="slot"><span class="vh">Street address of this office</span>Reserved</span></dd></div>
+        <div class="row"><dt>Office line</dt><dd><span class="slot"><span class="vh">Telephone number for the office</span>Reserved</span></dd></div>
+        <div class="row"><dt>The yard itself</dt><dd><span class="slot"><span class="vh">Telephone number for the yard</span>Reserved</span></dd></div>
+        <div class="row"><dt>Jobs run from here</dt><dd><span class="slot"><span class="vh">Region this office runs jobs in</span>Reserved</span></dd></div>
+      </dl>
+      <p><b>These come first on this page and they come first on a phone</b>, above every picture, because they are the only part of it anybody has ever needed in a hurry. <b>Anything further out than the region above is run from another office</b>, and we will tell you which rather than let a job be managed from the wrong end of a motorway.</p>
+    </div>
+
+    <div class="yard">
+      <h3>What is here, and what leaves before the sites start</h3>
+      <ul>
+        <li><b>Plant off our own yard</b>Loaded and gone the same day it is asked for, which is the only reason a yard is worth what it costs to keep.</li>
+        <li><b>The fitter, in a van</b>A breakdown on a job this office runs is a drive rather than a telephone call to a hire desk.</li>
+        <li><b>The manager, first thing</b>Out before the gangs, which is what makes the morning visit on your site possible at all.</li>
+      </ul>
+      <p><b>What does not leave here is anything for a site further out</b> &mdash; that plant is hired locally, and it arrives from somebody else's yard on somebody else's schedule. <b>The yard is emptiest by the time the sites start.</b> If you want somebody standing in it, that is not the hour to come.</p>
+    </div>
+
+    <div class="based">
+      <h3>Who is based here</h3>
+      <div class="roles">
+        <span>Contracts managers</span>
+        <span>Buyer</span>
+        <span>Plant fitter</span>
+        <span>Yard foreman</span>
+        <span>Estimating</span>
+        <span>Accounts</span>
+      </div>
+      <p><b>The site managers are not.</b> They are on sites, which is the whole point of them, and a page that listed them here would be describing a firm whose people sit in an office. Names are not printed for the same reason they are not printed anywhere else in this catalog: <b>we have not been told them, and a made-up one is worse than an empty field.</b></p>
+    </div>
+
+    <div class="come">
+      <h3>The three people who actually come here</h3>
+      <div class="three">
+        <div>
+          <h4>A delivery</h4>
+          <p>The wagon comes to the yard gate, not the office door. <b>Somebody in the yard signs for it</b>, and if the yard is empty the office will come out.</p>
+          <p>The best hour is the middle of the morning, once the gangs have gone.</p>
+        </div>
+        <div>
+          <h4>A supplier or a subcontractor</h4>
+          <p><b>Turning up unannounced is not how anybody gets on a list.</b> Send what you do, where you work and your insurances, and somebody will read it.</p>
+          <p>If it is a fit, we will ask you in. <b>If it is not, you will get an answer rather than silence.</b></p>
+        </div>
+        <div>
+          <h4>Somebody looking for work</h4>
+          <p><b>Come to the yard early, before the gangs go out</b>, and ask for the yard foreman. That is the honest route and it is shorter than any other.</p>
+          <p>There is no form here for it, because a form would be slower than the walk.</p>
+        </div>
+      </div>
+      <p><b>A client is not on that list, and that is the most useful line on this page.</b> If you have a live job, the person you want is on it or driving to it, and the number you want is your site's rather than this office's.</p>
+    </div>
+
+    <div class="gate">
+      <h3>If you are coming anyway</h3>
+      <div class="pair">
+        <div>
+          <h4>You cannot cross the yard in what you drove in</h4>
+          <p><b>Boots and a hi-vis, or you will be met in the office instead</b> &mdash; which is fine, and is what most people should do anyway. Nobody is going to be pleased about a visitor walking through a load-out in trainers.</p>
+          <p><b>Ring first.</b> The person you came to see is very often not here, and the drive is longer than the call.</p>
+        </div>
+        <div>
+          <h4>Getting from the gate to the office</h4>
+          <p><b>Tell us before you come and we will say honestly what the route is like</b>, including when the answer is that it is not passable that week.</p>
+          <p>There is no row of tick icons on this page. <b>A yard is not a level floor</b>, and a tick would be a promise about a place nobody has measured.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="media">
+      <div>
+        <div class="plate"><span>Reserved area &mdash; map, never an embedded service</span></div>
+        <p><b>A map tells you where this office is, which is the one fact on this page that will not help you.</b> What matters is which sites it runs, and that is written above it.</p>
+      </div>
+      <div>
+        <div class="plate"><span>Reserved area &mdash; one view of the yard, not a stock photograph</span></div>
+        <p>If it is ever filled, it will be this yard on an ordinary morning. <b>A hired photograph of somebody else's yard would tell you nothing except that we own a camera.</b></p>
+      </div>
+    </div>
+
+    <div class="not">
+      <h3>What is not on this page, and why</h3>
+      <div class="cols">
+        <p>No opening hours. <b>An empty hours table asserts a weekly schedule</b>, and the honest version is written above: the yard is emptiest by the time the sites start, and the office answers while they are working.</p>
+        <p>No directions, no travel time and no nearest station. <b>Nobody here has measured your journey</b>, and a route written by somebody who has not driven it is worse than no route at all.</p>
+        <p>No claim about how far we reach. <b>There is no such thing as national coverage from one yard</b>, and a job past the region above is run from another office, named when you ask.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

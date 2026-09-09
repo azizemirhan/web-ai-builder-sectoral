@@ -20,11 +20,14 @@ Structural container for future Construction & Contractors section studies.
 
 # Authoring Status
 
-NOT_STARTED
+COMPLETE — S01–S27 authored (135 of 135 studies)
 
 # Notes
 
-Structure only. No sector research, design guidance, or design studies have been created.
+Sector design direction written (CONSTRUCTION-DESIGN-DIRECTION.md). S01 Hero authored from five
+supplied reference heroes; S02 Construction Services, S03 Projects, S04 Sectors Served, S05 Capabilities, S06 Project Delivery Process, S07 Safety Program, S08 Certifications & Compliance, S09 Company Stats, S10 Equipment Fleet, S11 Leadership Team, S12 Client Testimonials, S13 Case Studies, S14 Service Areas, S15 Bid RFQ, S16 Capability Downloads, S17 Sustainability, S18 BIM Technology, S19 Contact and S20 Final Project CTA follow. That completes the main-page run. S21 Subpage Hero, S22 Breadcrumb, S23 Construction Service Detail, S24 Project Detail, S25 Project Journal Detail, S26 Leader Profile and S27 Office / Regional Branch Detail complete the subpage architecture run.
+The governing rule for the sector is that the counter is its signature
+device and every figure in it is a reserved field.
 
 # Extended Site Architecture — S21–S27
 

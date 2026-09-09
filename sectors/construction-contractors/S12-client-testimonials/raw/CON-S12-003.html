@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S12-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S12 — Client Testimonials
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Three unequal columns ordered by how checkable each quotation is — contactable,
+                   named but not contactable, anonymous by request — the widest column holding the
+                   most verifiable evidence, narrowing to the right
+  Density        : High
+  Media mode     : None. A client photograph is a face this catalog does not have.
+  Interaction    : None (static; no JavaScript)
+  The device     : **Sorted by how far you can check it, and sized to match.** Every testimonials
+                   page flattens its quotations into one grid, which quietly asserts that they are
+                   equally good evidence. They are not: a name with a phone number behind it is a
+                   different object from an anonymous line, and the column widths say so before the
+                   labels do.
+  Why unequal    : The widest column is the most checkable, which also makes it the one a firm has
+                   to work hardest to fill. A page where the narrow column is the full one is telling
+                   you something, and this layout would show it rather than hide it.
+  Not a table    : The direction's trap. Three columns of different widths carrying different numbers
+                   of cards, with a key above and a dashed admission below &mdash; and *anonymous*
+                   is a group with its own reason rather than a missing cell.
+  Deliberately not : No star, score, rating, review count or aggregate &mdash; anti-pattern eight.
+                   No client logo wall, no review platform.
+  Content note   : Quotations are reserved blocks at prose cadence; names, roles and organisations
+                   are reserved fields. Sectors and scopes are generic vocabulary. No digit in
+                   visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S12-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S12">
+<meta name="section-name" content="Client Testimonials">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Three unequal columns sorted by verifiability, widest most checkable">
+<meta name="density" content="high">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S12-003 — Client Testimonials, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles — namespaced to .con-s12-003 */
+.con-s12-003 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #969696;
+  --paper: #dfdfdf;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --rule: #b4b4b4;
+  --field: #ececec;
+  --call: #111111;
+  --written: #444444;
+  --anon: #2b2b2b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s12-003 *,
+.con-s12-003 *::before,
+.con-s12-003 *::after { box-sizing: inherit; }
+.con-s12-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s12-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s12-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s12-003 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(14px, 2.4vw, 40px);
+  margin-bottom: clamp(16px, 2.2vw, 26px);
+}
+.con-s12-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s12-003 h2 {
+  margin: 0;
+  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 22ch;
+}
+.con-s12-003 .head p { margin: 0; max-width: 42ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s12-003 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Columns, unequal by verifiability */
+.con-s12-003 .lanes {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr);
+  gap: clamp(12px, 1.5vw, 18px);
+  align-items: start;
+}
+.con-s12-003 .lanes > li { min-width: 0; }
+
+.con-s12-003 .lanehead {
+  border-radius: 22px;
+  background: var(--tone, #444444);
+  color: #ffffff;
+  padding: clamp(14px, 1.8vw, 22px);
+  margin-bottom: clamp(11px, 1.4vw, 16px);
+}
+.con-s12-003 .l-call { --tone: var(--call); }
+.con-s12-003 .l-written { --tone: var(--written); }
+.con-s12-003 .l-anon { --tone: var(--anon); }
+.con-s12-003 h3 { margin: 0 0 6px; font-size: clamp(1.1rem, 1.534vw, 1.44rem); line-height: 1.14; letter-spacing: -0.02em; font-weight: 700; }
+.con-s12-003 .lanehead p { margin: 0; font-size: 1rem; line-height: 1.48; opacity: 0.9; }
+
+.con-s12-003 .stack { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 16px); }
+.con-s12-003 .card {
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(14px, 1.8vw, 22px);
+}
+.con-s12-003 .ctx {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: 0.777rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+
+.con-s12-003 blockquote {
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
+  padding-left: clamp(11px, 1.4vw, 15px);
+  border-left: 4px solid var(--tone, var(--rule));
+}
+.con-s12-003 .lines { display: block; }
+.con-s12-003 .lines i {
+  display: block;
+  height: clamp(10px, 1.2vw, 13px);
+  margin-bottom: clamp(7px, 0.9vw, 10px);
+  border-radius: 10px;
+  background: var(--field);
+}
+.con-s12-003 .lines i:nth-child(1) { width: 100%; }
+.con-s12-003 .lines i:nth-child(2) { width: 95%; }
+.con-s12-003 .lines i:nth-child(3) { width: 98%; }
+.con-s12-003 .lines i:nth-child(4) { width: 58%; margin-bottom: 0; }
+.con-s12-003 .short i:nth-child(1) { width: 97%; }
+.con-s12-003 .short i:nth-child(2) { width: 68%; margin-bottom: 0; }
+
+.con-s12-003 .attrib { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: grid; gap: 5px; }
+.con-s12-003 .attrib li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.777rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s12-003 .attrib .slot {
+  min-width: 48px;
+  padding: 1px 9px;
+  border-radius: 16px;
+  background: var(--field);
+  text-align: center;
+  letter-spacing: 0;
+}
+.con-s12-003 .facts { margin: 0; padding-top: clamp(10px, 1.3vw, 13px); border-top: 1px solid var(--line); display: grid; gap: 7px; }
+.con-s12-003 .facts p { margin: 0; font-size: 1rem; line-height: 1.48; color: var(--ink-soft); }
+.con-s12-003 .facts b { color: var(--ink); font-weight: 650; }
+
+/* Admission */
+.con-s12-003 .missing {
+  border-radius: 22px;
+  border: 2px dashed var(--rule);
+  padding: clamp(16px, 2.2vw, 30px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s12-003 .missing h3 { font-size: clamp(1.345rem, 1.888vw, 1.652rem); max-width: 18ch; color: var(--ink); }
+.con-s12-003 .none { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s12-003 .none li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px dashed var(--rule);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.con-s12-003 .missing p { margin: 0 0 10px; max-width: 76ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
+.con-s12-003 .missing p:last-child { margin-bottom: 0; }
+.con-s12-003 .missing p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1080px) {
+  .con-s12-003 .lanes { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .con-s12-003 .lanes > li:last-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 700px) {
+  .con-s12-003 .lanes { grid-template-columns: minmax(0, 1fr); }
+  .con-s12-003 .lanes > li:last-child { grid-column: auto; }
+  .con-s12-003 .missing { grid-template-columns: minmax(0, 1fr); }
+  .con-s12-003 h2, .con-s12-003 .head p, .con-s12-003 .missing h3, .con-s12-003 .missing p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s12-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s12-003 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
+  font-size: 1.06rem;
+}
+.con-s12-003 h2 { font-weight: 800; }
+.con-s12-003 h3, .con-s12-003 h4 { font-weight: 750; }
+.con-s12-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s12-003 .card {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s12-003 .none li {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s12-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s12-003.con-s12-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s12-003.con-s12-003 .head h2, .con-s12-003.con-s12-003 .head h3, .con-s12-003.con-s12-003 .head h4, .con-s12-003.con-s12-003 .head b, .con-s12-003.con-s12-003 .head strong, .con-s12-003.con-s12-003 .head p b, .con-s12-003.con-s12-003 .head li b, .con-s12-003.con-s12-003 .head span b, .con-s12-003.con-s12-003 .head dt, .con-s12-003.con-s12-003 .head div b {
+  color: #ffffff;
+}
+.con-s12-003.con-s12-003 .head p, .con-s12-003.con-s12-003 .head li, .con-s12-003.con-s12-003 .head span, .con-s12-003.con-s12-003 .head dd, .con-s12-003.con-s12-003 .head div p, .con-s12-003.con-s12-003 .head div li, .con-s12-003.con-s12-003 .head p span, .con-s12-003.con-s12-003 .head .said, .con-s12-003.con-s12-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s12-003.con-s12-003 .head .eyebrow, .con-s12-003.con-s12-003 .head .kicker, .con-s12-003.con-s12-003 .head .slot, .con-s12-003.con-s12-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s12-003.con-s12-003 .head i, .con-s12-003.con-s12-003 .head .bars i, .con-s12-003.con-s12-003 .head .lines i, .con-s12-003.con-s12-003 .head .measures i, .con-s12-003.con-s12-003 .head .bar, .con-s12-003.con-s12-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s12-003.con-s12-003 .head .plate, .con-s12-003.con-s12-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s12-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s12-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s12-003" data-study-id="CON-S12-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s12-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What clients said</p>
+        <h2 id="con-s12-003-title">Sorted by how far you can check it</h2>
+      </div>
+      <p>Every testimonials page puts its quotations in one grid, which quietly says they are equally good evidence. <b>They are not, so the most checkable column is the widest.</b></p>
+    </div>
+
+    <ul class="lanes">
+
+      <li>
+        <div class="lanehead l-call">
+          <h3>Will take your call</h3>
+          <p>Named, and the number is yours on request. We do not choose which of them you ring.</p>
+        </div>
+        <ul class="stack">
+          <li>
+            <div class="card l-call">
+              <p class="ctx">Healthcare &middot; refurbishment, occupied</p>
+              <blockquote><span class="lines" role="img" aria-label="Reserved area: the client's quotation, about four lines"><i></i><i></i><i></i><i></i></span></blockquote>
+              <ul class="attrib">
+                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
+              </ul>
+              <div class="facts">
+                <p><b>Edited for length only</b>, and they approved the cut.</p>
+                <p><b>Given nothing.</b> No discount, no fee, no retention released early.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card l-call">
+              <p class="ctx">Civic &middot; enabling and civils</p>
+              <blockquote><span class="lines" role="img" aria-label="Reserved area: the client's quotation, about four lines"><i></i><i></i><i></i><i></i></span></blockquote>
+              <ul class="attrib">
+                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
+              </ul>
+              <div class="facts">
+                <p><b>Not edited.</b> This is the whole of what they wrote.</p>
+                <p><b>Given nothing.</b></p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card l-call">
+              <p class="ctx">Industrial &middot; groundworks and frame</p>
+              <blockquote><span class="lines short" role="img" aria-label="Reserved area: the client's quotation, about two lines"><i></i><i></i></span></blockquote>
+              <ul class="attrib">
+                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
+              </ul>
+              <div class="facts">
+                <p><b>Edited for length only.</b></p>
+                <p><b>Given nothing.</b></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="lanehead l-written">
+          <h3>Quoted, not contactable</h3>
+          <p>Happy to be named, not to field calls. A busy person rather than a reluctant one.</p>
+        </div>
+        <ul class="stack">
+          <li>
+            <div class="card l-written">
+              <p class="ctx">Education &middot; frame and envelope</p>
+              <blockquote><span class="lines" role="img" aria-label="Reserved area: the client's quotation, about four lines"><i></i><i></i><i></i><i></i></span></blockquote>
+              <ul class="attrib">
+                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
+              </ul>
+              <div class="facts">
+                <p><b>Not edited.</b></p>
+                <p><b>Given nothing.</b> If you need somebody in this sector you can ring, ask and we will find one.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="card l-written">
+              <p class="ctx">Retail &middot; fit-out, trading</p>
+              <blockquote><span class="lines short" role="img" aria-label="Reserved area: the client's quotation, about two lines"><i></i><i></i></span></blockquote>
+              <ul class="attrib">
+                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
+                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
+              </ul>
+              <div class="facts">
+                <p><b>Edited for length only.</b></p>
+                <p><b>Given nothing.</b></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <div class="lanehead l-anon">
+          <h3>Anonymous at their request</h3>
+          <p>Public bodies mid-procurement, and clients under an agreement that stops them naming a contractor.</p>
+        </div>
+        <ul class="stack">
+          <li>
+            <div class="card l-anon">
+              <p class="ctx">Residential &middot; refurbishment</p>
+              <blockquote><span class="lines short" role="img" aria-label="Reserved area: the client's quotation, about two lines"><i></i><i></i></span></blockquote>
+              <ul class="attrib">
+                <li><span>Organisation type</span><span class="slot"><span class="vh">Type of organisation, no name</span><span aria-hidden="true">&mdash;</span></span></li>
+              </ul>
+              <div class="facts">
+                <p><b>Neither a bad sign nor our choice.</b> The restriction is theirs and we would rather show the gap than fill it with a name we invented.</p>
+                <p><b>Not edited. Given nothing.</b></p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+    </ul>
+
+    <div class="missing" data-refusal>
+      <h3>What the widths are telling you</h3>
+      <div>
+        <ul class="none">
+          <li>No stars</li><li>No score</li><li>No review count</li><li>No client logos</li><li>No average anything</li>
+        </ul>
+        <p><b>A page where the narrow column is the full one is telling you something</b>, and this layout would show it rather than hide it. That is the reason for sizing the columns rather than lining them up.</p>
+        <p>There is no rating anywhere. A score asserts a survey nobody ran, and an average of a handful of quotations is a handful of quotations with arithmetic on top.</p>
+        <p><b>These are also the clients who agreed to be quoted, and the ones who did not are not here &mdash; and we are not going to pretend the difference is random.</b> Ask for those instead: we will give you a reference from a job that went badly and the number of the client it went badly for.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S13-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S13 — Case Studies
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : A decision register grouped by what was found rather than by which job — the
+                   ground, the structure, the services, the people — with the jobs identified in the
+                   margin of each entry, and the wrong decisions collected in a band of their own
+  Density        : High
+  Media mode     : One reserved project area, as a band.
+  Interaction    : None (static; no JavaScript)
+  The device     : **Grouped by the discovery, not by the project.** Case studies are filed by job
+                   because that is how they were written, and it hides the useful pattern: the same
+                   four things are found on every job in this industry. Grouping by discovery lets a
+                   reader see what we do when the ground disagrees with the survey, across every job
+                   where it has, which is a more answerable question than *tell me about a project*.
+  The wrong band : The decisions we got wrong are collected in one band rather than distributed, so
+                   they cannot be skimmed past one at a time. It is the only part of this layout that
+                   is deliberately harder to avoid than the rest.
+  Not a table    : The direction's trap, and a decision register is the obvious wrong answer here.
+                   Modules instead: the discovery groups carry different numbers of entries, the
+                   wrong band is drawn in its own colour across the full width, and the job identity
+                   sits in a margin rather than a first column.
+  Deliberately not : No *on time*, no *on budget*, no *delighted client*, no client quotation.
+  Content note   : Project and client names are reserved fields; sectors and scopes are generic
+                   vocabulary. No value, duration, date or percentage. No digit in visible copy; no
+                   header.
+-->
+
+<meta name="study-id" content="CON-S13-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S13">
+<meta name="section-name" content="Case Studies">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Decision register grouped by discovery, wrong decisions collected in one band">
+<meta name="density" content="high">
+<meta name="media-mode" content="one-reserved-project-area">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S13-003 — Case Studies, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles — namespaced to .con-s13-003 */
+.con-s13-003 {
+  --ink: #111111;
+  --ink-soft: #7a7a7a;
+  --ink-faint: #969696;
+  --paper: #dfdfdf;
+  --card: #ffffff;
+  --line: #ececec;
+  --rule: #d2d2d2;
+  --field: #ececec;
+  --ground: #444444;
+  --structure: #2b2b2b;
+  --services: #5e5e5e;
+  --people: #2b2b2b;
+  --wrong: #444444;
+  --slot-a: #b4b4b4;
+  --slot-b: #969696;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s13-003 *,
+.con-s13-003 *::before,
+.con-s13-003 *::after { box-sizing: inherit; }
+.con-s13-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s13-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s13-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s13-003 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(14px, 2.4vw, 40px);
+  margin-bottom: clamp(16px, 2.2vw, 26px);
+}
+.con-s13-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s13-003 h2 {
+  margin: 0;
+  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 22ch;
+}
+.con-s13-003 .head p { margin: 0; max-width: 42ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s13-003 .head p b { color: var(--ink); font-weight: 650; }
+
+.con-s13-003 .shot {
+  border-radius: 22px;
+  overflow: hidden;
+  height: clamp(140px, 15vw, 230px);
+  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(13px, 1.6vw, 20px);
+  margin-bottom: clamp(14px, 1.8vw, 22px);
+}
+.con-s13-003 .shot span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.84;
+}
+
+/* Discovery groups */
+.con-s13-003 .group {
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(15px, 1.9vw, 26px);
+  margin-bottom: clamp(11px, 1.4vw, 16px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.36fr) minmax(0, 1.64fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s13-003 .gname {
+  margin: 0 0 6px;
+  font-size: 0.777rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s13-003 h3 {
+  margin: 0 0 clamp(9px, 1.2vw, 13px);
+  font-size: clamp(1.298rem, 1.77vw, 1.605rem);
+  line-height: 1.14;
+  letter-spacing: -0.022em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s13-003 .gsay { margin: 0; max-width: 40ch; font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
+.con-s13-003 .gsay b { color: var(--ink); font-weight: 650; }
+.con-s13-003 .g-ground { --tone: var(--ground); }
+.con-s13-003 .g-structure { --tone: var(--structure); }
+.con-s13-003 .g-services { --tone: var(--services); }
+.con-s13-003 .g-people { --tone: var(--people); }
+
+.con-s13-003 .entries { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(10px, 1.3vw, 15px); }
+.con-s13-003 .entry {
+  border-radius: 22px;
+  background: var(--field);
+  border-left: 5px solid var(--tone, var(--rule));
+  padding: clamp(13px, 1.7vw, 20px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.34fr) minmax(0, 1fr) minmax(0, 0.72fr);
+  gap: clamp(12px, 2vw, 28px);
+}
+.con-s13-003 .job { font-size: 0.777rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-faint); }
+.con-s13-003 .job .sector { display: block; margin-bottom: 5px; font-weight: 700; color: var(--ink); letter-spacing: 0.085em; }
+.con-s13-003 .job .slot {
+  display: inline-block;
+  min-width: 46px;
+  margin-left: 6px;
+  padding: 1px 9px;
+  border-radius: 16px;
+  background: var(--card);
+  letter-spacing: 0;
+}
+.con-s13-003 .part .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s13-003 .part p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.con-s13-003 .part p b { color: var(--ink); font-weight: 650; }
+
+/* The wrong band */
+.con-s13-003 .wrongband {
+  border-radius: 22px;
+  border: 2px solid var(--wrong);
+  padding: clamp(16px, 2.1vw, 28px);
+  margin-bottom: clamp(11px, 1.4vw, 16px);
+}
+.con-s13-003 .wrongband > h3 { color: var(--wrong); max-width: 28ch; }
+.con-s13-003 .wrongband > p { margin: 0 0 clamp(13px, 1.7vw, 19px); max-width: 78ch; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
+.con-s13-003 .wrongband > p b { color: var(--ink); font-weight: 650; }
+.con-s13-003 .wrongs { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(11px, 1.4vw, 16px); }
+.con-s13-003 .wrongs li { min-width: 0; }
+.con-s13-003 .wcard { height: 100%; border-radius: 22px; background: var(--card); padding: clamp(13px, 1.7vw, 20px); }
+.con-s13-003 .wcard .job { display: block; margin-bottom: 8px; }
+.con-s13-003 .wcard h4 { margin: 0 0 8px; font-size: 1.1rem; line-height: 1.22; letter-spacing: -0.014em; font-weight: 700; color: var(--wrong); }
+.con-s13-003 .wcard p { margin: 0 0 8px; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.con-s13-003 .wcard p:last-child { margin-bottom: 0; }
+.con-s13-003 .wcard p b { color: var(--ink); font-weight: 650; }
+
+/* Close */
+.con-s13-003 .close {
+  border-radius: 22px;
+  border: 2px dashed var(--rule);
+  padding: clamp(15px, 2vw, 28px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s13-003 .close h3 { max-width: 20ch; margin-bottom: 0; }
+.con-s13-003 .none { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
+.con-s13-003 .none li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px dashed var(--rule);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.con-s13-003 .close p { margin: 0 0 10px; max-width: 76ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
+.con-s13-003 .close p:last-child { margin-bottom: 0; }
+.con-s13-003 .close p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1080px) {
+  .con-s13-003 .group { grid-template-columns: minmax(0, 1fr); }
+  .con-s13-003 .entry { grid-template-columns: minmax(0, 1fr); gap: clamp(10px, 1.6vw, 15px); }
+  .con-s13-003 .wrongs { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 680px) {
+  .con-s13-003 .close { grid-template-columns: minmax(0, 1fr); }
+  .con-s13-003 h2, .con-s13-003 h3, .con-s13-003 .head p,
+  .con-s13-003 .gsay, .con-s13-003 .close p, .con-s13-003 .wrongband > p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s13-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s13-003 {
+  --v2-accent: #7a7a7a;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
+  font-size: 1.06rem;
+}
+.con-s13-003 h2 { font-weight: 800; }
+.con-s13-003 h3, .con-s13-003 h4 { font-weight: 750; }
+.con-s13-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s13-003 .job .slot, .con-s13-003 .wcard {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s13-003 .none li {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s13-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s13-003.con-s13-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s13-003.con-s13-003 .head h2, .con-s13-003.con-s13-003 .head h3, .con-s13-003.con-s13-003 .head h4, .con-s13-003.con-s13-003 .head b, .con-s13-003.con-s13-003 .head strong, .con-s13-003.con-s13-003 .head p b, .con-s13-003.con-s13-003 .head li b, .con-s13-003.con-s13-003 .head span b, .con-s13-003.con-s13-003 .head dt, .con-s13-003.con-s13-003 .head div b {
+  color: #ffffff;
+}
+.con-s13-003.con-s13-003 .head p, .con-s13-003.con-s13-003 .head li, .con-s13-003.con-s13-003 .head span, .con-s13-003.con-s13-003 .head dd, .con-s13-003.con-s13-003 .head div p, .con-s13-003.con-s13-003 .head div li, .con-s13-003.con-s13-003 .head p span, .con-s13-003.con-s13-003 .head .said, .con-s13-003.con-s13-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s13-003.con-s13-003 .head .eyebrow, .con-s13-003.con-s13-003 .head .kicker, .con-s13-003.con-s13-003 .head .slot, .con-s13-003.con-s13-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s13-003.con-s13-003 .head i, .con-s13-003.con-s13-003 .head .bars i, .con-s13-003.con-s13-003 .head .lines i, .con-s13-003.con-s13-003 .head .measures i, .con-s13-003.con-s13-003 .head .bar, .con-s13-003.con-s13-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s13-003.con-s13-003 .head .plate, .con-s13-003.con-s13-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s13-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s13-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s13-003" data-study-id="CON-S13-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s13-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Particular jobs</p>
+        <h2 id="con-s13-003-title">Filed by what was found, not by which job it was</h2>
+      </div>
+      <p>Case studies are filed by project because that is how they were written, and it hides the pattern. <b>The same four things are found on every job in this industry.</b></p>
+    </div>
+
+    <div class="shot"><span>Project media &mdash; the work in progress, wide</span></div>
+
+    <div class="group g-ground">
+      <div>
+        <p class="gname">Discovery one</p>
+        <h3>The ground disagreed with the survey</h3>
+        <p class="gsay"><b>A site investigation is a hypothesis</b>, and the dig is the test. It is the most common discovery in this industry and the one with the fewest good options.</p>
+      </div>
+      <ul class="entries">
+        <li>
+          <div class="entry g-ground">
+            <p class="job"><span class="sector">Education</span>Project<span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></p>
+            <div class="part"><span class="k">Chose</span><p><b>Self-delivered the remedial groundworks</b> rather than subletting them, because we would rather be the ones standing in the hole when it disagrees with the survey.</p></div>
+            <div class="part"><span class="k">Cost</span><p>Our own gang moved off another job. That job started later and we told its client why.</p></div>
+          </div>
+        </li>
+        <li>
+          <div class="entry g-ground">
+            <p class="job"><span class="sector">Industrial</span>Project<span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></p>
+            <div class="part"><span class="k">Chose</span><p>Stopped and re-tested rather than pressing on to the next gate, with the engineer on site before the excavator moved again.</p></div>
+            <div class="part"><span class="k">Cost</span><p>A stopped dig for most of a week, out of our float rather than the client&rsquo;s.</p></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="group g-structure">
+      <div>
+        <p class="gname">Discovery two</p>
+        <h3>The building was not what the records said</h3>
+        <p class="gsay">Drawings of older buildings record what somebody intended. <b>Openings get filled, slabs get thinner, and nobody writes it down.</b></p>
+      </div>
+      <ul class="entries">
+        <li>
+          <div class="entry g-structure">
+            <p class="job"><span class="sector">Healthcare</span>Project<span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></p>
+            <div class="part"><span class="k">Chose</span><p><b>Redesigned the fixings rather than re-pouring</b>, with the temporary works engineer on site the same day rather than the following week.</p></div>
+            <div class="part"><span class="k">Cost</span><p>The float we held on the fit-out sequence. Ours, not the client&rsquo;s.</p></div>
+          </div>
+        </li>
+        <li>
+          <div class="entry g-structure">
+            <p class="job"><span class="sector">Civic</span>Project<span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></p>
+            <div class="part"><span class="k">Chose</span><p>Monitored the neighbouring structure from before the first blow rather than after the first complaint, and pressed rather than drove.</p></div>
+            <div class="part"><span class="k">Cost</span><p>A slower method than the one we had priced. We did not ask for the difference.</p></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="group g-services">
+      <div>
+        <p class="gname">Discovery three</p>
+        <h3>A service ran where nothing was supposed to be</h3>
+        <p class="gsay">The one discovery where <b>the cheap response and the correct response look identical for about an hour</b>, and then stop.</p>
+      </div>
+      <ul class="entries">
+        <li>
+          <div class="entry g-services">
+            <p class="job"><span class="sector">Healthcare</span>Project<span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></p>
+            <div class="part"><span class="k">Chose</span><p><b>Stopped that trade and raised it as a design query the same morning</b>, rather than cutting first and asking afterwards.</p></div>
+            <div class="part"><span class="k">Cost</span><p>The trade went to another job while we waited. We took them back when the answer came.</p></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="group g-people">
+      <div>
+        <p class="gname">Discovery four</p>
+        <h3>Somebody had not been told</h3>
+        <p class="gsay">Not a technical discovery and the most common of the four. <b>The agreed hours, the access, the open evening &mdash; agreed with an office rather than with the people in the building.</b></p>
+      </div>
+      <ul class="entries">
+        <li>
+          <div class="entry g-people">
+            <p class="job"><span class="sector">Healthcare</span>Project<span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></p>
+            <div class="part"><span class="k">Chose</span><p>Moved the noisy work to the afternoons rather than asking the ward below to change what it did.</p></div>
+            <div class="part"><span class="k">Cost</span><p>Two trades on site where one would have done. We absorbed it.</p></div>
+          </div>
+        </li>
+        <li>
+          <div class="entry g-people">
+            <p class="job"><span class="sector">Education</span>Project<span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></p>
+            <div class="part"><span class="k">Chose</span><p>Moved the steel erection rather than the school&rsquo;s open evening, and <b>agreed gate times with the site staff rather than the estates office.</b></p></div>
+            <div class="part"><span class="k">Cost</span><p>The sequence rather than the price.</p></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="wrongband">
+      <h3>And the decisions we got wrong, collected rather than distributed</h3>
+      <p><b>One from each job, put in a band of their own so they cannot be skimmed past one at a time.</b> This is the only part of the layout deliberately harder to avoid than the rest, and it is the part a client should read first.</p>
+      <ul class="wrongs">
+        <li>
+          <div class="wcard">
+            <span class="job"><span class="sector">Healthcare</span></span>
+            <h4>We let the asbestos survey stay provisional at tender</h4>
+            <p>It changed the sequence when it came back, and everybody spent longer arguing about whose risk it was than the work took.</p>
+            <p><b>Changed:</b> we decline to price this work without it. Two lost tenders since.</p>
+          </div>
+        </li>
+        <li>
+          <div class="wcard">
+            <span class="job"><span class="sector">Education</span></span>
+            <h4>We took the client&rsquo;s word that a long-order item was on order</h4>
+            <p>It was signed off but never placed. We found out at the point where finding out was most expensive.</p>
+            <p><b>Changed:</b> confirmed by order number at pre-start, and re-checked by the planner.</p>
+          </div>
+        </li>
+        <li>
+          <div class="wcard">
+            <span class="job"><span class="sector">Civic</span></span>
+            <h4>We assumed one permission would arrive on the day it was promised</h4>
+            <p>The sequence had no version in it where that did not happen, which made a normal delay into a stopped site.</p>
+            <p><b>Changed:</b> every civic sequence now assumes at least one permission arrives late.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="close" data-refusal>
+      <h3>What is not on this page</h3>
+      <div>
+        <ul class="none">
+          <li>On time</li><li>On budget</li><li>A delighted client</li><li>Any percentage</li><li>Any value or duration</li><li>Any client quotation</li>
+        </ul>
+        <p><b>The closing paragraph every case study in this industry ends on appears on the case studies of firms that failed</b>, because it is written afterwards by somebody who was not on the job.</p>
+        <p>Cost here is described rather than counted. <b>Out of our float rather than yours</b> is something a client will confirm or contradict; a figure is something you would have to take on trust.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

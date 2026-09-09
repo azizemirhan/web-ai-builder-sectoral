@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S07-004
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S07 — Safety Program
+  Direction      : Conversion-led
+  Reference      : None supplied for this section.
+  Layout model   : A deep ground carrying five questions as full-width rows — the question at scale
+                   on the left, this firm's answer on the right — then a light action panel that
+                   tells the reader to go and ask them somewhere other than here
+  Density        : Medium
+  Media mode     : One reserved site area, as a band, above the action panel.
+  Interaction    : A single plain link. No form — `S05-004` carries this sector's only mechanism and
+                   `S15` owns the formal submission.
+  Conversion device : **A list the buyer takes to everybody else.** The section converts by arming
+                   the reader rather than by persuading them: five questions, our answers beside
+                   them, and an explicit instruction to put the same five to every other firm on the
+                   tender list. Only a firm confident in its own answers can print that, which is
+                   what makes it work.
+  The self-undercut : The action panel says not to take these answers from a web page &mdash; ask
+                   them standing on a site, of somebody who does not know you are a client. A safety
+                   page that pretends a web page can settle the question is doing the same thing as
+                   a days-without board.
+  Deliberately not : No urgency device and nothing hi-vis anywhere. The lighter value marks
+                   an authority anybody holds; the darker one marks a named role; nothing else in
+                   the page carries hue.
+  Content note   : Roles are generic vocabulary. No incident rate, frequency or lost-time figure, no
+                   days-without board, no zero-harm slogan, no certification, scheme, registration
+                   number or named regulation; no reserved field of any kind; no digit in visible
+                   copy; no header.
+-->
+
+<meta name="study-id" content="CON-S07-004">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S07">
+<meta name="section-name" content="Safety Program">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Five question rows on a deep ground above a light action panel">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="single-link">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S07-004 — Safety Program, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0e0e0e; }
+
+/* Scoped study styles — namespaced to .con-s07-004 */
+.con-s07-004 {
+  --ink: #ececec;
+  --ink-soft: #b4b4b4;
+  --ink-faint: #7a7a7a;
+  --paper: #0e0e0e;
+  --edge: #444444;
+  --panel: #ececec;
+  --panel-ink: #111111;
+  --panel-soft: #5e5e5e;
+  --panel-line: #d2d2d2;
+
+  /* Authority only. No hi-vis anywhere on this page. */
+  --anyone: #111111;
+  --named: #2b2b2b;
+
+  --slot-a: #444444;
+  --slot-b: #2b2b2b;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s07-004 *,
+.con-s07-004 *::before,
+.con-s07-004 *::after { box-sizing: inherit; }
+.con-s07-004 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s07-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s07-004 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s07-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(20px, 2.6vw, 36px);
+}
+.con-s07-004 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s07-004 h2 {
+  margin: 0;
+  font-size: clamp(2.379rem, 4.788vw, 4.032rem);
+  line-height: 1.03;
+  letter-spacing: -0.034em;
+  font-weight: 700;
+  max-width: 18ch;
+}
+.con-s07-004 .head p { margin: 0; max-width: 46ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s07-004 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Question rows */
+.con-s07-004 .rows { margin: 0 0 clamp(18px, 2.4vw, 30px); padding: 0; list-style: none; }
+.con-s07-004 .rows li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(16px, 2.8vw, 52px);
+  align-items: start;
+  padding: clamp(20px, 2.6vw, 36px) 0;
+  border-top: 1px solid var(--edge);
+}
+.con-s07-004 .rows li:last-child { border-bottom: 1px solid var(--edge); }
+.con-s07-004 h3 {
+  margin: 0;
+  font-size: clamp(1.463rem, 2.684vw, 2.367rem);
+  line-height: 1.08;
+  letter-spacing: -0.028em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s07-004 .who {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 clamp(9px, 1.2vw, 13px);
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s07-004 .who::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--tone, var(--ink-faint));
+}
+.con-s07-004 .t-anyone { --tone: var(--anyone); }
+.con-s07-004 .t-named { --tone: var(--named); }
+.con-s07-004 .a { margin: 0; max-width: 56ch; font-size: clamp(1.1rem, 1.298vw, 1.274rem); line-height: 1.6; color: var(--ink-soft); }
+.con-s07-004 .a + .a { margin-top: clamp(9px, 1.2vw, 13px); }
+.con-s07-004 .a b { color: var(--ink); font-weight: 650; }
+
+/* The second half of the device. An authority that is free to exercise is not an authority. */
+.con-s07-004 .cost {
+  margin: clamp(12px, 1.6vw, 18px) 0 0;
+  padding-left: clamp(13px, 1.6vw, 18px);
+  border-left: 3px solid var(--edge);
+  max-width: 54ch;
+  font-size: 1rem;
+  line-height: 1.56;
+  color: var(--ink-faint);
+}
+.con-s07-004 .cost .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.777rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+
+.con-s07-004 .shot {
+  border-radius: 22px;
+  overflow: hidden;
+  height: clamp(140px, 15vw, 230px);
+  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(13px, 1.6vw, 20px);
+  margin-bottom: clamp(16px, 2.2vw, 26px);
+}
+.con-s07-004 .shot span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.84;
+}
+
+/* Action panel */
+.con-s07-004 .act {
+  border-radius: 26px;
+  background: var(--panel);
+  color: var(--panel-ink);
+  padding: clamp(20px, 2.6vw, 38px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(18px, 3vw, 48px);
+  align-items: center;
+}
+.con-s07-004 .act h3 {
+  margin: 0 0 clamp(11px, 1.4vw, 16px);
+  font-size: clamp(1.581rem, 2.562vw, 2.318rem);
+  max-width: 24ch;
+}
+.con-s07-004 .act p { margin: 0 0 clamp(12px, 1.5vw, 17px); max-width: 60ch; color: var(--panel-soft); font-size: 1.1rem; line-height: 1.62; }
+.con-s07-004 .act p:last-of-type { margin-bottom: 0; }
+.con-s07-004 .act p b { color: var(--panel-ink); font-weight: 650; }
+.con-s07-004 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 34px;
+  border-radius: 999px;
+  background: var(--panel-ink);
+  color: var(--panel);
+  font-size: 1.1rem;
+  font-weight: 650;
+  text-decoration: none;
+  margin-bottom: clamp(12px, 1.5vw, 17px);
+}
+.con-s07-004 .go:hover { background: #111111; }
+
+.con-s07-004 .numbers {
+  padding: clamp(15px, 1.9vw, 24px);
+  border-radius: 22px;
+  border: 1px dashed var(--panel-line);
+}
+.con-s07-004 .numbers .k {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--panel-soft);
+}
+.con-s07-004 .numbers p { max-width: none; font-size: 1rem; }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s07-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .con-s07-004 .rows li { grid-template-columns: minmax(0, 1fr); gap: clamp(12px, 1.8vw, 18px); }
+  .con-s07-004 .act { grid-template-columns: minmax(0, 1fr); }
+  .con-s07-004 h2,
+  .con-s07-004 h3,
+  .con-s07-004 .head p,
+  .con-s07-004 .a,
+  .con-s07-004 .cost,
+  .con-s07-004 .act p { max-width: none; }
+  .con-s07-004 .go { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s07-004 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s07-004 {
+  --v2-accent: #b4b4b4;
+  --v2-soft: #444444;
+  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
+  font-size: 1.06rem;
+}
+.con-s07-004 h2 { font-weight: 800; }
+.con-s07-004 h3, .con-s07-004 h4 { font-weight: 750; }
+.con-s07-004 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s07-004 .numbers {
+  border: 1px dashed #7a7a7a;
+  border-radius: 14px;
+}
+.con-s07-004 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #444444;
+  color: #b4b4b4;
+  font-weight: 600;
+}
+.con-s07-004.con-s07-004 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: 1px solid #444444;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s07-004.con-s07-004 .head h2, .con-s07-004.con-s07-004 .head h3, .con-s07-004.con-s07-004 .head h4, .con-s07-004.con-s07-004 .head b, .con-s07-004.con-s07-004 .head strong, .con-s07-004.con-s07-004 .head p b, .con-s07-004.con-s07-004 .head li b, .con-s07-004.con-s07-004 .head span b, .con-s07-004.con-s07-004 .head dt, .con-s07-004.con-s07-004 .head div b {
+  color: #ffffff;
+}
+.con-s07-004.con-s07-004 .head p, .con-s07-004.con-s07-004 .head li, .con-s07-004.con-s07-004 .head span, .con-s07-004.con-s07-004 .head dd, .con-s07-004.con-s07-004 .head div p, .con-s07-004.con-s07-004 .head div li, .con-s07-004.con-s07-004 .head p span, .con-s07-004.con-s07-004 .head .said, .con-s07-004.con-s07-004 .head .note {
+  color: #d2d2d2;
+}
+.con-s07-004.con-s07-004 .head .eyebrow, .con-s07-004.con-s07-004 .head .kicker, .con-s07-004.con-s07-004 .head .slot, .con-s07-004.con-s07-004 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s07-004.con-s07-004 .head i, .con-s07-004.con-s07-004 .head .bars i, .con-s07-004.con-s07-004 .head .lines i, .con-s07-004.con-s07-004 .head .measures i, .con-s07-004.con-s07-004 .head .bar, .con-s07-004.con-s07-004 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s07-004.con-s07-004 .head .plate, .con-s07-004.con-s07-004 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s07-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s07-004 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s07-004" data-study-id="CON-S07-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="con-s07-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">How the site is run</p>
+        <h2 id="con-s07-004-title">Five questions. Ours are answered. Now ask everybody else.</h2>
+      </div>
+      <p>These are the five that separate a safety programme from a safety policy, and none of them can be answered with a figure. <b>Put the same five to every firm on your tender list, including us, and compare the answers rather than the pages.</b></p>
+    </div>
+
+    <ul class="rows">
+
+      <li>
+        <h3>Who on this site can stop the work?</h3>
+        <div>
+          <p class="who t-anyone">Anybody on site holds it</p>
+          <p class="a"><b>Anybody.</b> Somebody who started this morning, an agency operative, a driver who has come through the gate once. They do not need to find a manager first, and they do not need to be right about the trade they are stopping.</p>
+          <p class="a">If a firm answers this with a job title, you have learned something useful about how often it happens.</p>
+          <p class="cost"><span class="k">What it costs us</span>Time we do not get back, on the morning we can least afford it. That is the price of the authority being real rather than written down.</p>
+        </div>
+      </li>
+
+      <li>
+        <h3>What happens to them if they were wrong?</h3>
+        <div>
+          <p class="who t-anyone">Anybody on site holds it</p>
+          <p class="a"><b>Nothing happens to them.</b> No conversation afterwards, no note anywhere, no quiet reputation for being difficult.</p>
+          <p class="a">This is the question that decides whether the first answer was true. A stop that costs the person something is a stop that will not happen the second time, and the second time is the one that matters.</p>
+          <p class="cost"><span class="k">What it costs us</span>Some stops will be unnecessary, and we pay for those in full. It is a cheaper problem than the alternative.</p>
+        </div>
+      </li>
+
+      <li>
+        <h3>Who decides it starts again?</h3>
+        <div>
+          <p class="who t-named">A named role holds it</p>
+          <p class="a"><b>The supervisor and the person who raised it, together.</b> Not the person who stopped it alone, and not whoever is under the most programme pressure that morning &mdash; which is the combination that reliably produces a bad restart.</p>
+          <p class="cost"><span class="k">What it costs us</span>Sometimes the rest of the day. The delay is recorded against the programme, never against the person who called it.</p>
+        </div>
+      </li>
+
+      <li>
+        <h3>On safety, who does a subcontractor answer to?</h3>
+        <div>
+          <p class="who t-named">A named role holds it</p>
+          <p class="a"><b>Our supervisor</b> &mdash; regardless of who they invoice, who introduced them, or how many years they have done it their own way somewhere else.</p>
+          <p class="a">We lose subcontractors over this, and we would rather find that out at tender than at first fix.</p>
+          <p class="cost"><span class="k">What it costs us</span>Subcontractors, and occasionally a cheaper price from one who would not accept it.</p>
+        </div>
+      </li>
+
+      <li>
+        <h3>Does any of it change when the job is behind?</h3>
+        <div>
+          <p class="who t-anyone">Anybody on site holds it</p>
+          <p class="a"><b>No</b> &mdash; and this is the only circumstance in which any of the above is worth anything. Every serious incident in this industry happens on a job that is behind.</p>
+          <p class="a">We have handed time back on jobs rather than compress a sequence. It is the most expensive sentence on this page and the one we would keep.</p>
+          <p class="cost"><span class="k">What it costs us</span>Programme, on the jobs where we could least afford to give it up. That is what makes the answer worth anything.</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="shot"><span>Site media &mdash; work happening, real PPE, not posed</span></div>
+
+    <div class="act">
+      <div>
+        <h3>Do not take these answers from a web page</h3>
+        <p>Every firm you are talking to has a page like this one, and pages are written by people who are not on the site. <b>Ask the five questions standing on a job, of somebody in a hard hat who does not know you are a client.</b></p>
+        <p>Come and do it on one of ours. We will not choose which site, and we will not walk you round the part we would have picked.</p>
+        <a class="go" href="#con-s07-004-title">Ask them on one of our sites</a>
+      </div>
+      <div class="numbers" data-refusal>
+        <span class="k">And the question we get asked sixth</span>
+        <p><b>Where are your numbers?</b> Deliberately absent. An incident rate rewards under-reporting &mdash; the cheapest way to improve one is to write less down &mdash; and a days-without board punishes whoever breaks the streak, who is the person that reported something.</p>
+        <p>Both make a page look better and a site more dangerous. The certificates are real and they are not here either; they belong where a registration can be checked against a register.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

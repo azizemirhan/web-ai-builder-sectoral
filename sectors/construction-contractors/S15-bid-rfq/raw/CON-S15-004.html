@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S15-004
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S15 — Bid RFQ
+  Direction      : Conversion-led
+  Reference      : None supplied for this section.
+  Layout model   : A deep ground carrying the submission itself — six native controls, each with the
+                   reason it is asked printed beside it — and a panel saying which of the three
+                   numbers the answers will produce
+  Density        : Medium
+  Media mode     : None. A bid section has nothing to photograph.
+  Interaction    : Native `select` and `textarea` controls and a submit. **No JavaScript, so nothing
+                   computes**, and nothing in the copy claims it does.
+  Conversion device : **Every field says why it is asked.** A form that explains itself is answered
+                   more honestly, and the explanation is also the argument: these are the things a
+                   price is a function of, so a form without them cannot produce one.
+  The trap       : The sector direction names it for this variant &mdash; *becoming a quote
+                   calculator that invents a price.* This form has no arithmetic in it at all, and
+                   the panel beside it says so: **you will get a kind of number back, not a number.**
+  The budget field : Present, optional, and carrying the position rather than dodging it. Asking for
+                   a budget and saying what will not be done with it is more useful than the usual
+                   choice between demanding one and pretending not to want it.
+  Deliberately not : No price, rate, range or figure anywhere. No calculator. No response-time
+                   promise. No required field that would exclude somebody holding only a sentence.
+  Content note   : The bid contact and submission address are reserved fields. Everything else is
+                   policy and is real. No digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S15-004">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S15">
+<meta name="section-name" content="Bid RFQ">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="The submission itself — native controls each carrying the reason it is asked">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="native-form-controls">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S15-004 — Bid RFQ, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0e0e0e; }
+
+/* Scoped study styles — namespaced to .con-s15-004 */
+.con-s15-004 {
+  --ink: #ececec;
+  --ink-soft: #b4b4b4;
+  --ink-faint: #5e5e5e;
+  --paper: #0e0e0e;
+  --edge: #444444;
+  --card: #2b2b2b;
+  --panel: #ffffff;
+  --panel-ink: #111111;
+  --panel-soft: #444444;
+  --panel-line: #d2d2d2;
+  --guess: #7a7a7a;
+  --range: #d2d2d2;
+  --price: #969696;
+  --why: #7a7a7a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s15-004 *,
+.con-s15-004 *::before,
+.con-s15-004 *::after { box-sizing: inherit; }
+.con-s15-004 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s15-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s15-004 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s15-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(20px, 2.6vw, 34px);
+}
+.con-s15-004 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s15-004 h2 {
+  margin: 0;
+  font-size: clamp(2.379rem, 4.788vw, 4.032rem);
+  line-height: 1.02;
+  letter-spacing: -0.036em;
+  font-weight: 700;
+  max-width: 19ch;
+}
+.con-s15-004 .head p { margin: 0; max-width: 48ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
+.con-s15-004 .head p b { color: var(--ink); font-weight: 650; }
+
+/* The submission */
+.con-s15-004 .split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr);
+  gap: clamp(12px, 1.6vw, 20px);
+  align-items: stretch;
+  margin-bottom: clamp(12px, 1.6vw, 18px);
+}
+.con-s15-004 .form {
+  border-radius: 26px;
+  background: var(--panel);
+  color: var(--panel-ink);
+  padding: clamp(20px, 2.6vw, 36px);
+}
+.con-s15-004 .form h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 15px);
+  font-size: clamp(1.534rem, 2.562vw, 2.269rem);
+  line-height: 1.08;
+  letter-spacing: -0.026em;
+  font-weight: 700;
+  max-width: 24ch;
+}
+.con-s15-004 .form > p { margin: 0 0 clamp(18px, 2.2vw, 26px); max-width: 62ch; color: var(--panel-soft); font-size: 1.1rem; line-height: 1.6; }
+.con-s15-004 .form > p b { color: var(--panel-ink); font-weight: 650; }
+
+.con-s15-004 .field {
+  padding: clamp(14px, 1.8vw, 20px) 0;
+  border-top: 1px solid var(--panel-line);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(14px, 2.2vw, 32px);
+  align-items: start;
+}
+.con-s15-004 label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--panel-soft);
+}
+.con-s15-004 select,
+.con-s15-004 textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 22px;
+  border: 1px solid var(--panel-line);
+  background: #ffffff;
+  color: var(--panel-ink);
+  font-family: inherit;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.con-s15-004 select { min-height: 52px; }
+.con-s15-004 textarea { min-height: 92px; resize: vertical; }
+.con-s15-004 .why { margin: 0; font-size: 1rem; line-height: 1.56; color: var(--panel-soft); }
+.con-s15-004 .why .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.con-s15-004 .why b { color: var(--panel-ink); font-weight: 650; }
+
+.con-s15-004 .act {
+  margin-top: clamp(16px, 2vw, 24px);
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 2px solid var(--panel-ink);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(12px, 1.8vw, 24px);
+}
+.con-s15-004 button {
+  min-height: 56px;
+  padding: 0 34px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--panel-ink);
+  color: var(--panel);
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+.con-s15-004 button:hover { background: #111111; }
+.con-s15-004 .act p { margin: 0; flex: 1 1 300px; min-width: 0; max-width: 52ch; color: var(--panel-soft); font-size: 1rem; line-height: 1.56; }
+.con-s15-004 .act p b { color: var(--panel-ink); font-weight: 650; }
+
+/* What comes back */
+.con-s15-004 .back {
+  border-radius: 26px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--edge);
+  padding: clamp(18px, 2.2vw, 28px);
+}
+.con-s15-004 .back > .k {
+  display: block;
+  margin-bottom: clamp(12px, 1.5vw, 17px);
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s15-004 .back > .k + .k,
+.con-s15-004 .back ul + .k {
+  margin-top: clamp(16px, 2vw, 24px);
+  padding-top: clamp(14px, 1.7vw, 20px);
+  border-top: 1px solid var(--edge);
+}
+.con-s15-004 .back > ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 16px); }
+.con-s15-004 .back li { padding-left: clamp(11px, 1.4vw, 14px); border-left: 4px solid var(--tone, var(--edge)); }
+.con-s15-004 .n-guess { --tone: var(--guess); }
+.con-s15-004 .n-range { --tone: var(--range); }
+.con-s15-004 .n-price { --tone: var(--price); }
+.con-s15-004 .back h4 { margin: 0 0 5px; font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.016em; font-weight: 700; }
+.con-s15-004 .back p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.con-s15-004 .back p b { color: var(--ink); font-weight: 650; }
+.con-s15-004 .fields { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.con-s15-004 .fields li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s15-004 .fields .slot { min-width: 56px; padding: 1px 10px; border-radius: 16px; background: var(--card); text-align: center; letter-spacing: 0; }
+
+.con-s15-004 .back > [data-refusal] { margin-top: auto; }
+.con-s15-004 .close {
+  margin: clamp(16px, 2vw, 24px) 0 0;
+  padding-top: clamp(14px, 1.7vw, 20px);
+  border-top: 1px solid var(--edge);
+  color: var(--ink-faint);
+  font-size: 1rem;
+  line-height: 1.58;
+}
+.con-s15-004 .close b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1020px) {
+  .con-s15-004 .split { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .con-s15-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .con-s15-004 .field { grid-template-columns: minmax(0, 1fr); gap: clamp(10px, 1.6vw, 14px); }
+  .con-s15-004 h2, .con-s15-004 .head p, .con-s15-004 .form h3,
+  .con-s15-004 .form > p, .con-s15-004 .act p, .con-s15-004 .close { max-width: none; }
+  .con-s15-004 button { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s15-004 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s15-004 {
+  --v2-accent: #d2d2d2;
+  --v2-soft: #444444;
+  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
+  font-size: 1.06rem;
+}
+.con-s15-004 h2 { font-weight: 800; }
+.con-s15-004 h3, .con-s15-004 h4 { font-weight: 750; }
+.con-s15-004 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #444444;
+  color: #d2d2d2;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s15-004 select, .con-s15-004 textarea, .con-s15-004 .fields .slot {
+  border-radius: 26px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  border: 1px solid #2b2b2b;
+}
+.con-s15-004 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #444444;
+  color: #d2d2d2;
+  font-weight: 600;
+}
+.con-s15-004.con-s15-004 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: 1px solid #444444;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s15-004.con-s15-004 .head h2, .con-s15-004.con-s15-004 .head h3, .con-s15-004.con-s15-004 .head h4, .con-s15-004.con-s15-004 .head b, .con-s15-004.con-s15-004 .head strong, .con-s15-004.con-s15-004 .head p b, .con-s15-004.con-s15-004 .head li b, .con-s15-004.con-s15-004 .head span b, .con-s15-004.con-s15-004 .head dt, .con-s15-004.con-s15-004 .head div b {
+  color: #ffffff;
+}
+.con-s15-004.con-s15-004 .head p, .con-s15-004.con-s15-004 .head li, .con-s15-004.con-s15-004 .head span, .con-s15-004.con-s15-004 .head dd, .con-s15-004.con-s15-004 .head div p, .con-s15-004.con-s15-004 .head div li, .con-s15-004.con-s15-004 .head p span, .con-s15-004.con-s15-004 .head .said, .con-s15-004.con-s15-004 .head .note {
+  color: #d2d2d2;
+}
+.con-s15-004.con-s15-004 .head .eyebrow, .con-s15-004.con-s15-004 .head .kicker, .con-s15-004.con-s15-004 .head .slot, .con-s15-004.con-s15-004 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s15-004.con-s15-004 .head i, .con-s15-004.con-s15-004 .head .bars i, .con-s15-004.con-s15-004 .head .lines i, .con-s15-004.con-s15-004 .head .measures i, .con-s15-004.con-s15-004 .head .bar, .con-s15-004.con-s15-004 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s15-004.con-s15-004 .head .plate, .con-s15-004.con-s15-004 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s15-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s15-004 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s15-004" data-study-id="CON-S15-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="con-s15-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Putting work to us</p>
+        <h2 id="con-s15-004-title">Every question here says why it is being asked.</h2>
+      </div>
+      <p>Because these are the things a price is actually a function of &mdash; and <b>a form that does not ask for them cannot produce a price, only a number that gets revised.</b> Nothing on this page calculates anything.</p>
+    </div>
+
+    <div class="split">
+
+      <div class="form">
+        <h3>What you send us, and what each answer decides</h3>
+        <p><b>None of it is required.</b> Answer what you can; the gaps decide which of the three answers comes back, and we will tell you which one you are getting in the first line of the reply.</p>
+
+        <form>
+          <div class="field">
+            <div>
+              <label for="con-s15-004-what">What is being built</label>
+              <textarea id="con-s15-004-what" name="what" rows="3"></textarea>
+            </div>
+            <p class="why"><span class="k">Why we ask</span><b>Scope is the price.</b> Everything else on this form only modifies it, and in your own words is enough at this stage.</p>
+          </div>
+
+          <div class="field">
+            <div>
+              <label for="con-s15-004-stage">What stage the design is at</label>
+              <select id="con-s15-004-stage" name="stage">
+                <option>A sentence, or an idea</option>
+                <option>Concept drawings</option>
+                <option>Planning drawings</option>
+                <option>A tender package with a specification</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <p class="why"><span class="k">Why we ask</span><b>It decides which of the three answers you get.</b> A concept, a planning set and a tender package produce three different objects, and only one of them is a price.</p>
+          </div>
+
+          <div class="field">
+            <div>
+              <label for="con-s15-004-occupied">Will the building be in use</label>
+              <select id="con-s15-004-occupied" name="occupied">
+                <option>Yes, fully occupied</option>
+                <option>Partly, in phases</option>
+                <option>No, empty or new build</option>
+                <option>Not decided</option>
+              </select>
+            </div>
+            <p class="why"><span class="k">Why we ask</span>It decides phasing, hours and sequence, which is a different job rather than the same job done more carefully. <b>Left blank we price it as occupied</b>, which is the expensive assumption.</p>
+          </div>
+
+          <div class="field">
+            <div>
+              <label for="con-s15-004-surveys">What surveys exist</label>
+              <select id="con-s15-004-surveys" name="surveys">
+                <option>All the usual ones, in hand</option>
+                <option>Some in hand, some pending</option>
+                <option>None yet</option>
+                <option>Not sure which are needed</option>
+              </select>
+            </div>
+            <p class="why"><span class="k">Why we ask</span><b>Missing surveys are the largest single cause of a price changing after it is accepted.</b> We will not price around one &mdash; that rule came from getting it wrong on a job, and it has cost us tenders since.</p>
+          </div>
+
+          <div class="field">
+            <div>
+              <label for="con-s15-004-fixed">What fixes your start</label>
+              <select id="con-s15-004-fixed" name="fixed">
+                <option>A term, a lease or a season we cannot move</option>
+                <option>A date we would like but could move</option>
+                <option>Nothing fixed yet</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <p class="why"><span class="k">Why we ask</span>Something outside your control changes the sequence rather than the price, and <b>we would rather design the sequence around it than discover it in month two.</b></p>
+          </div>
+
+          <div class="field">
+            <div>
+              <label for="con-s15-004-budget">Your budget, if you have one</label>
+              <select id="con-s15-004-budget" name="budget">
+                <option>We have a figure and will share it</option>
+                <option>We have a figure and would rather not</option>
+                <option>We do not have one yet</option>
+              </select>
+            </div>
+            <p class="why"><span class="k">Why we ask, and what we will not do</span>A scope with no budget is a fishing trip for both of us. <b>We will not simply price to your figure: if the scope costs less we say so, and if it costs more we tell you before we bid</b> rather than after we have won.</p>
+          </div>
+
+          <div class="act">
+            <button type="submit">Send it to us</button>
+            <p><b>This does not produce a number and nothing here calculates one.</b> It tells us which of three answers we can honestly give you, and gets a date in for us to come and walk it.</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="back">
+        <span class="k">And what comes back</span>
+        <ul>
+          <li class="n-guess">
+            <h4>No number</h4>
+            <p>If what you have is a sentence. <b>A conversation and a site walk instead</b> &mdash; the honest answer, and the one most firms will not give.</p>
+          </li>
+          <li class="n-range">
+            <h4>A range, with its assumptions</h4>
+            <p>If what you have is a design. Every assumption written where you can argue with it. <b>Useful for a decision, not for a contract.</b></p>
+          </li>
+          <li class="n-price">
+            <h4>A price</h4>
+            <p>If what you have is a tender package, and after we have walked it. <b>Only this one is a price.</b></p>
+          </li>
+        </ul>
+
+        <span class="k">Or send it the other way</span>
+        <ul class="fields">
+          <li><span>Bid contact</span><span class="slot"><span class="vh">Name of the bid contact</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Send to</span><span class="slot"><span class="vh">Submission address</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Questions by</span><span class="slot"><span class="vh">Deadline for questions</span><span aria-hidden="true">&mdash;</span></span></li>
+        </ul>
+
+        <div data-refusal>
+          <p class="close"><b>There is no instant quote on this page, no calculator, and no figure of any kind.</b> Anything computable from a web form would be revised the moment somebody walked the site, and a number revised upward is worse than no number at all &mdash; by then it has already done its work of getting us onto a list. There is no response-time promise either: that is a promise about a job nobody has looked at yet, and the usual way of meeting one is to send the first of the three answers and call it the third.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

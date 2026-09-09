@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S12-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S12 — Client Testimonials
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : Four testimonial cards, each a reserved quotation drawn at prose cadence with a
+                   reserved attribution and the apparatus beneath it — contactable, edited, given
+                   anything — closing on who is missing from the page
+  Density        : Medium
+  Media mode     : None. A client photograph is a face this catalog does not have, and the section
+                   does not need one.
+  Interaction    : None (static; no JavaScript)
+  The device     : **Reserve the quotation, author the apparatus.** There is no writable content in
+                   a testimonials section &mdash; the words are somebody's actual speech and the
+                   name is a client's. What is writable is everything that decides whether the
+                   quotation is worth reading, and that turns out to be the more useful half.
+  The three answers : *Will they take your call* has three answers rather than one, and printing the
+                   difference is the first honesty available here. A busy person who will not field
+                   calls is not a reluctant one, and a public body mid-procurement cannot be named
+                   at all.
+  The admission  : A testimonials page is a selected sample and everybody knows it. Saying so, and
+                   saying that the difference is not random, is the sentence the section turns on.
+  Deliberately not : No star, score, rating, review count or aggregate of any kind &mdash;
+                   anti-pattern eight. No client logo wall. No third-party review platform.
+  Content note   : Quotations are reserved blocks at prose cadence; names, roles and organisations
+                   are reserved fields. Sectors and scopes are generic vocabulary. No digit in
+                   visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S12-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S12">
+<meta name="section-name" content="Client Testimonials">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Four reserved-quotation cards with attribution and verification apparatus">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S12-001 — Client Testimonials, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e8e8e8; }
+
+/* Scoped study styles — namespaced to .con-s12-001 */
+.con-s12-001 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #969696;
+  --paper: #e8e8e8;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --rule: #b4b4b4;
+  --field: #ececec;
+  --call: #111111;
+  --written: #444444;
+  --anon: #2b2b2b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s12-001 *,
+.con-s12-001 *::before,
+.con-s12-001 *::after { box-sizing: inherit; }
+.con-s12-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s12-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s12-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s12-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(20px, 2.6vw, 34px);
+}
+.con-s12-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s12-001 h2 {
+  margin: 0;
+  font-size: clamp(2.318rem, 4.41vw, 3.78rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s12-001 .head p { margin: 0; max-width: 48ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
+.con-s12-001 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Testimonial cards */
+.con-s12-001 .quotes {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.5vw, 18px);
+  align-items: start;
+}
+.con-s12-001 .quotes li { min-width: 0; }
+.con-s12-001 .card {
+  height: 100%;
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(17px, 2.1vw, 28px);
+  display: flex;
+  flex-direction: column;
+}
+.con-s12-001 .ctx {
+  margin: 0 0 clamp(12px, 1.5vw, 17px);
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+
+/* The quotation, reserved at prose cadence */
+.con-s12-001 blockquote {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  padding-left: clamp(14px, 1.8vw, 20px);
+  border-left: 4px solid var(--rule);
+  max-width: 46ch;
+}
+.con-s12-001 .lines { display: block; }
+.con-s12-001 .lines i {
+  display: block;
+  height: clamp(11px, 1.3vw, 14px);
+  margin-bottom: clamp(8px, 1vw, 11px);
+  border-radius: 10px;
+  background: var(--field);
+}
+.con-s12-001 .lines i:nth-child(1) { width: 100%; }
+.con-s12-001 .lines i:nth-child(2) { width: 96%; }
+.con-s12-001 .lines i:nth-child(3) { width: 99%; }
+.con-s12-001 .lines i:nth-child(4) { width: 62%; margin-bottom: 0; }
+.con-s12-001 .short i:nth-child(1) { width: 98%; }
+.con-s12-001 .short i:nth-child(2) { width: 74%; margin-bottom: 0; }
+
+/* Attribution */
+.con-s12-001 .attrib {
+  margin: 0 0 clamp(13px, 1.6vw, 18px);
+  display: grid;
+  gap: 6px;
+}
+.con-s12-001 .attrib div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s12-001 .attrib .slot {
+  min-width: 52px;
+  padding: 1px 10px;
+  border-radius: 16px;
+  background: var(--field);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+/* The apparatus */
+.con-s12-001 .apparatus {
+  margin: auto 0 0;
+  padding-top: clamp(12px, 1.5vw, 16px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: clamp(9px, 1.1vw, 12px);
+}
+.con-s12-001 .fact { display: flex; align-items: flex-start; gap: 9px; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.con-s12-001 .fact i {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+  margin-top: 6px;
+  background: var(--tone, var(--ink-faint));
+}
+.con-s12-001 .fact b { color: var(--ink); font-weight: 650; }
+.con-s12-001 .t-call { --tone: var(--call); }
+.con-s12-001 .t-written { --tone: var(--written); }
+.con-s12-001 .t-anon { --tone: var(--anon); }
+
+/* Missing */
+.con-s12-001 .missing {
+  border-radius: 22px;
+  border: 2px dashed var(--rule);
+  padding: clamp(17px, 2.2vw, 30px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s12-001 h3 {
+  margin: 0;
+  font-size: clamp(1.369rem, 1.888vw, 1.699rem);
+  line-height: 1.12;
+  letter-spacing: -0.024em;
+  font-weight: 700;
+  max-width: 18ch;
+}
+.con-s12-001 .missing p { margin: 0 0 clamp(11px, 1.4vw, 15px); max-width: 76ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.62; }
+.con-s12-001 .missing p:last-child { margin-bottom: 0; }
+.con-s12-001 .missing p b { color: var(--ink); font-weight: 650; }
+.con-s12-001 .none { margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.con-s12-001 .none li {
+  padding: 5px 13px;
+  border-radius: 999px;
+  border: 1px dashed var(--rule);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .con-s12-001 .quotes { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .con-s12-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .con-s12-001 .missing { grid-template-columns: minmax(0, 1fr); }
+  .con-s12-001 h2, .con-s12-001 .head p, .con-s12-001 blockquote,
+  .con-s12-001 h3, .con-s12-001 .missing p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s12-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s12-001 {
+  --v2-accent: #5e5e5e;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
+  font-size: 1.06rem;
+}
+.con-s12-001 h2 { font-weight: 800; }
+.con-s12-001 h3, .con-s12-001 h4 { font-weight: 750; }
+.con-s12-001 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s12-001 .card {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #ececec;
+}
+.con-s12-001 .none li {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s12-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #d2d2d2;
+  color: #5e5e5e;
+  font-weight: 600;
+}
+.con-s12-001.con-s12-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s12-001.con-s12-001 .head h2, .con-s12-001.con-s12-001 .head h3, .con-s12-001.con-s12-001 .head h4, .con-s12-001.con-s12-001 .head b, .con-s12-001.con-s12-001 .head strong, .con-s12-001.con-s12-001 .head p b, .con-s12-001.con-s12-001 .head li b, .con-s12-001.con-s12-001 .head span b, .con-s12-001.con-s12-001 .head dt, .con-s12-001.con-s12-001 .head div b {
+  color: #ffffff;
+}
+.con-s12-001.con-s12-001 .head p, .con-s12-001.con-s12-001 .head li, .con-s12-001.con-s12-001 .head span, .con-s12-001.con-s12-001 .head dd, .con-s12-001.con-s12-001 .head div p, .con-s12-001.con-s12-001 .head div li, .con-s12-001.con-s12-001 .head p span, .con-s12-001.con-s12-001 .head .said, .con-s12-001.con-s12-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s12-001.con-s12-001 .head .eyebrow, .con-s12-001.con-s12-001 .head .kicker, .con-s12-001.con-s12-001 .head .slot, .con-s12-001.con-s12-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s12-001.con-s12-001 .head i, .con-s12-001.con-s12-001 .head .bars i, .con-s12-001.con-s12-001 .head .lines i, .con-s12-001.con-s12-001 .head .measures i, .con-s12-001.con-s12-001 .head .bar, .con-s12-001.con-s12-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s12-001.con-s12-001 .head .plate, .con-s12-001.con-s12-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s12-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s12-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s12-001" data-study-id="CON-S12-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s12-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What clients said</p>
+        <h2 id="con-s12-001-title">A quotation you cannot check is a sentence we wrote about ourselves.</h2>
+      </div>
+      <p>So under each one is the part that decides whether it is worth reading: <b>who said it, whether they will take your call, what was edited, and what they were given for it.</b> The answer to the last of those is nothing, every time.</p>
+    </div>
+
+    <ul class="quotes">
+
+      <li>
+        <div class="card">
+          <p class="ctx">Healthcare &middot; refurbishment, occupied</p>
+          <blockquote>
+            <span class="lines" role="img" aria-label="Reserved area: the client's quotation, about four lines"><i></i><i></i><i></i><i></i></span>
+          </blockquote>
+          <div class="attrib">
+            <div><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+          <div class="apparatus">
+            <p class="fact t-call"><i></i><span><b>Will take your call.</b> Ask us and you get the number. We do not choose which of these people you ring.</span></p>
+            <p class="fact"><i></i><span><b>Edited for length only</b>, and they saw the cut before it went up.</span></p>
+            <p class="fact"><i></i><span><b>Given nothing.</b> No discount, no fee, no retention released early.</span></p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card">
+          <p class="ctx">Education &middot; frame and envelope</p>
+          <blockquote>
+            <span class="lines short" role="img" aria-label="Reserved area: the client's quotation, about two lines"><i></i><i></i></span>
+          </blockquote>
+          <div class="attrib">
+            <div><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+          <div class="apparatus">
+            <p class="fact t-written"><i></i><span><b>Quoted, not contactable.</b> Happy to be named, not to field calls &mdash; a busy person rather than a reluctant one, and we will not pretend otherwise.</span></p>
+            <p class="fact"><i></i><span><b>Not edited.</b> This is the whole of what they wrote.</span></p>
+            <p class="fact"><i></i><span><b>Given nothing.</b></span></p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card">
+          <p class="ctx">Civic &middot; enabling and civils</p>
+          <blockquote>
+            <span class="lines" role="img" aria-label="Reserved area: the client's quotation, about four lines"><i></i><i></i><i></i><i></i></span>
+          </blockquote>
+          <div class="attrib">
+            <div><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></div>
+            <div><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+          <div class="apparatus">
+            <p class="fact t-call"><i></i><span><b>Will take your call.</b> Ask us and you get the number.</span></p>
+            <p class="fact"><i></i><span><b>Edited for length only.</b> The cut was theirs to approve, and they did.</span></p>
+            <p class="fact"><i></i><span><b>Given nothing.</b></span></p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card">
+          <p class="ctx">Industrial &middot; groundworks and frame</p>
+          <blockquote>
+            <span class="lines short" role="img" aria-label="Reserved area: the client's quotation, about two lines"><i></i><i></i></span>
+          </blockquote>
+          <div class="attrib">
+            <div><span>Organisation type</span><span class="slot"><span class="vh">Type of organisation, no name</span><span aria-hidden="true">&mdash;</span></span></div>
+          </div>
+          <div class="apparatus">
+            <p class="fact t-anon"><i></i><span><b>Anonymous at their request.</b> Some clients are mid-procurement and some are under an agreement that stops them naming a contractor. <b>Neither is a bad sign, and neither is our choice.</b></span></p>
+            <p class="fact"><i></i><span><b>Not edited.</b></span></p>
+            <p class="fact"><i></i><span><b>Given nothing.</b> If you need a contactable reference in this sector, ask and we will find you one who can be named.</span></p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="missing" data-refusal>
+      <h3>Who is not on this page</h3>
+      <div>
+        <ul class="none">
+          <li>No stars</li>
+          <li>No score</li>
+          <li>No review count</li>
+          <li>No client logos</li>
+          <li>No average anything</li>
+        </ul>
+        <p><b>These are the clients who agreed to be quoted. The ones who did not are not here, and we are not going to pretend the difference is random.</b> Every testimonials page in this industry is a selected sample, ours included, and a page that does not say so is relying on you forgetting.</p>
+        <p>There is no rating on it either. A score asserts a survey nobody ran, and an average of four quotations is not a measurement of anything &mdash; it is four quotations with arithmetic on top.</p>
+        <p><b>So ask for the ones who are not here.</b> We will give you a reference from a job that went badly and the number of the client it went badly for. That is worth more than everything above it, and it is the one thing on this page a competitor cannot copy without meaning it.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

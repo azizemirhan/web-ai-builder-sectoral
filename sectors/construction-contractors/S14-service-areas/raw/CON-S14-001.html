@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S14-001
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S14 — Service Areas
+  Direction      : Universal / Safe
+  Reference      : None supplied for this section.
+  Layout model   : Four bands as cards, ordered outward — each with its regions reserved, what you
+                   get, what you lose, and how travel is priced — closing on the band we do not bid
+                   for and the refusal of the pin map
+  Density        : Medium
+  Media mode     : One reserved map area, and nothing drawn in it.
+  Interaction    : None (static; no JavaScript)
+  The device     : **What you lose the further out you are.** A service area is not a radius and not
+                   a county; it is the distance a site manager can cover and still be on your site
+                   every morning. Describing an area by what attendance costs at that distance is
+                   the only version of this page a client can act on.
+  Why not miles  : A distance is a figure and a drive time is a duration, and this sector omits
+                   both. That turned out to be the better answer rather than a compromise &mdash;
+                   fifty miles on a motorway and fifty across a city are different jobs, and neither
+                   says whether somebody is standing on your site at seven.
+  The map        : Reserved and nothing else. A pin map asserts at a glance something nothing on the
+                   page supports, which is anti-pattern eleven.
+  Deliberately not : No *nationwide*, no *national coverage*, no radius, no mileage, no drive time,
+                   no count of offices or depots.
+  Content note   : Region, county and town names and the yard location are reserved fields. The
+                   bands and what is lost at each are real. No digit in visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S14-001">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S14">
+<meta name="section-name" content="Service Areas">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Four outward bands as cards, each stating what is lost at that distance">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-reserved-map-area">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S14-001 — Service Areas, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e8e8e8; }
+
+/* Scoped study styles — namespaced to .con-s14-001 */
+.con-s14-001 {
+  --ink: #111111;
+  --ink-soft: #5e5e5e;
+  --ink-faint: #969696;
+  --paper: #e8e8e8;
+  --card: #ffffff;
+  --line: #ececec;
+  --rule: #d2d2d2;
+  --field: #ececec;
+  --near: #444444;
+  --mid: #444444;
+  --far: #7a7a7a;
+  --no: #2b2b2b;
+  --slot-a: #b4b4b4;
+  --slot-b: #969696;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s14-001 *,
+.con-s14-001 *::before,
+.con-s14-001 *::after { box-sizing: inherit; }
+.con-s14-001 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s14-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s14-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s14-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+}
+.con-s14-001 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s14-001 h2 {
+  margin: 0;
+  font-size: clamp(2.318rem, 4.41vw, 3.78rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s14-001 .head p { margin: 0; max-width: 48ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
+.con-s14-001 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Yard */
+.con-s14-001 .yard {
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(15px, 1.9vw, 24px);
+  margin-bottom: clamp(12px, 1.6vw, 18px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px clamp(14px, 2.4vw, 36px);
+}
+.con-s14-001 .yard p { margin: 0; max-width: 66ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.56; }
+.con-s14-001 .yard p b { color: var(--ink); font-weight: 650; }
+.con-s14-001 .yard .where { font-size: 0.804rem; letter-spacing: 0.085em; text-transform: uppercase; color: var(--ink-faint); }
+.con-s14-001 .yard .slot {
+  display: inline-block;
+  min-width: 60px;
+  margin-left: 8px;
+  padding: 1px 10px;
+  border-radius: 16px;
+  background: var(--field);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+/* Bands */
+.con-s14-001 .bands {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: clamp(11px, 1.4vw, 16px);
+}
+.con-s14-001 .band {
+  border-radius: 22px;
+  background: var(--card);
+  border-left: 8px solid var(--tone, var(--rule));
+  padding: clamp(16px, 2vw, 26px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 1.6fr);
+  gap: clamp(16px, 2.6vw, 44px);
+  align-items: start;
+}
+.con-s14-001 .band.out { background: transparent; border: 2px dashed var(--rule); border-left: 8px solid var(--no); }
+.con-s14-001 .b-near { --tone: var(--near); }
+.con-s14-001 .b-mid { --tone: var(--mid); }
+.con-s14-001 .b-far { --tone: var(--far); }
+.con-s14-001 .b-no { --tone: var(--no); }
+
+.con-s14-001 .ring {
+  margin: 0 0 6px;
+  font-size: 0.804rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s14-001 h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.298rem, 1.77vw, 1.605rem);
+  line-height: 1.14;
+  letter-spacing: -0.022em;
+  font-weight: 700;
+  max-width: 20ch;
+}
+.con-s14-001 .regions { margin: 0; padding: 0; list-style: none; display: grid; gap: 5px; }
+.con-s14-001 .regions li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.777rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s14-001 .regions .slot {
+  min-width: 56px;
+  padding: 1px 10px;
+  border-radius: 16px;
+  background: var(--field);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.con-s14-001 .facts { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 2vw, 28px); }
+.con-s14-001 .facts li { min-width: 0; }
+.con-s14-001 .facts .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s14-001 .facts p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.con-s14-001 .facts p b { color: var(--ink); font-weight: 650; }
+
+.con-s14-001 .lose {
+  margin: 0;
+  padding-top: clamp(10px, 1.3vw, 14px);
+  border-top: 1px solid var(--line);
+  max-width: 74ch;
+  font-size: 1rem;
+  line-height: 1.56;
+  color: var(--ink-soft);
+}
+.con-s14-001 .lose .k {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--tone, var(--ink-faint));
+}
+.con-s14-001 .lose b { color: var(--ink); font-weight: 650; }
+.con-s14-001 .band.out .lose { border-top-color: var(--rule); }
+
+/* Map + refusal */
+.con-s14-001 .foot {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(12px, 1.6vw, 18px);
+  align-items: stretch;
+}
+.con-s14-001 .map {
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: clamp(180px, 20vw, 280px);
+  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: start start;
+  padding: clamp(14px, 1.8vw, 22px);
+}
+.con-s14-001 .map span {
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.86;
+  max-width: 34ch;
+  line-height: 1.5;
+}
+.con-s14-001 .refuse {
+  border-radius: 22px;
+  border: 2px dashed var(--rule);
+  padding: clamp(16px, 2.2vw, 28px);
+}
+.con-s14-001 .refuse h3 { max-width: 22ch; }
+.con-s14-001 .none { margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.con-s14-001 .none li {
+  padding: 5px 13px;
+  border-radius: 999px;
+  border: 1px dashed var(--rule);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.con-s14-001 .refuse p { margin: 0 0 10px; max-width: 72ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
+.con-s14-001 .refuse p:last-child { margin-bottom: 0; }
+.con-s14-001 .refuse p b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1000px) {
+  .con-s14-001 .facts { grid-template-columns: minmax(0, 1fr); gap: clamp(10px, 1.6vw, 14px); }
+}
+
+@media (max-width: 780px) {
+  .con-s14-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .con-s14-001 .band { grid-template-columns: minmax(0, 1fr); }
+  .con-s14-001 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s14-001 h2, .con-s14-001 h3, .con-s14-001 .head p,
+  .con-s14-001 .yard p, .con-s14-001 .lose, .con-s14-001 .refuse p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s14-001 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s14-001 {
+  --v2-accent: #969696;
+  --v2-soft: #ececec;
+  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
+  font-size: 1.06rem;
+}
+.con-s14-001 h2 { font-weight: 800; }
+.con-s14-001 h3, .con-s14-001 h4 { font-weight: 750; }
+.con-s14-001 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #3a3a3a;
+  color: #969696;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s14-001 .band {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #ececec;
+}
+.con-s14-001 .none li {
+  border: 1px dashed #b4b4b4;
+  border-radius: 14px;
+}
+.con-s14-001 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #3a3a3a;
+  color: #969696;
+  font-weight: 600;
+}
+.con-s14-001.con-s14-001 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s14-001.con-s14-001 .head h2, .con-s14-001.con-s14-001 .head h3, .con-s14-001.con-s14-001 .head h4, .con-s14-001.con-s14-001 .head b, .con-s14-001.con-s14-001 .head strong, .con-s14-001.con-s14-001 .head p b, .con-s14-001.con-s14-001 .head li b, .con-s14-001.con-s14-001 .head span b, .con-s14-001.con-s14-001 .head dt, .con-s14-001.con-s14-001 .head div b {
+  color: #ffffff;
+}
+.con-s14-001.con-s14-001 .head p, .con-s14-001.con-s14-001 .head li, .con-s14-001.con-s14-001 .head span, .con-s14-001.con-s14-001 .head dd, .con-s14-001.con-s14-001 .head div p, .con-s14-001.con-s14-001 .head div li, .con-s14-001.con-s14-001 .head p span, .con-s14-001.con-s14-001 .head .said, .con-s14-001.con-s14-001 .head .note {
+  color: #d2d2d2;
+}
+.con-s14-001.con-s14-001 .head .eyebrow, .con-s14-001.con-s14-001 .head .kicker, .con-s14-001.con-s14-001 .head .slot, .con-s14-001.con-s14-001 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s14-001.con-s14-001 .head i, .con-s14-001.con-s14-001 .head .bars i, .con-s14-001.con-s14-001 .head .lines i, .con-s14-001.con-s14-001 .head .measures i, .con-s14-001.con-s14-001 .head .bar, .con-s14-001.con-s14-001 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s14-001.con-s14-001 .head .plate, .con-s14-001.con-s14-001 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s14-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s14-001 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s14-001" data-study-id="CON-S14-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="con-s14-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Where we work</p>
+        <h2 id="con-s14-001-title">A service area is not a circle. It is how far attendance survives.</h2>
+      </div>
+      <p><b>The useful question is not whether we will come, it is what you lose the further out you are.</b> So the bands below are described by that, and each one says what changes about the mornings, the plant and the fitter.</p>
+    </div>
+
+    <div class="yard">
+      <p><b>Everything on this page is measured from one yard</b>, because that is where the plant, the fitters and most of the people go home to. A firm with depots everywhere would draw this differently and should say so.</p>
+      <span class="where">Our yard<span class="slot"><span class="vh">Location of the yard</span><span aria-hidden="true">&mdash;</span></span></span>
+    </div>
+
+    <ul class="bands">
+
+      <li>
+        <div class="band b-near">
+          <div>
+            <p class="ring">Band one</p>
+            <h3>Around the yard</h3>
+            <ul class="regions">
+              <li><span>Regions</span><span class="slot"><span class="vh">Regions in band one</span><span aria-hidden="true">&mdash;</span></span></li>
+              <li><span>Towns</span><span class="slot"><span class="vh">Towns in band one</span><span aria-hidden="true">&mdash;</span></span></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="facts">
+              <li><span class="k">The mornings</span><p><b>Your site manager is there every morning and goes home at night.</b></p></li>
+              <li><span class="k">The plant</span><p>Off our own yard, on our own low-loader.</p></li>
+              <li><span class="k">When it breaks</span><p>Our fitter, the same day.</p></li>
+            </ul>
+            <p class="lose"><span class="k">What you lose</span><b>Nothing.</b> Travel is not a line on your price here because this is where we work, and it is already in our overhead.</p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="band b-mid">
+          <div>
+            <p class="ring">Band two</p>
+            <h3>The next ring out</h3>
+            <ul class="regions">
+              <li><span>Regions</span><span class="slot"><span class="vh">Regions in band two</span><span aria-hidden="true">&mdash;</span></span></li>
+              <li><span>Towns</span><span class="slot"><span class="vh">Towns in band two</span><span aria-hidden="true">&mdash;</span></span></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="facts">
+              <li><span class="k">The mornings</span><p><b>Still every morning</b>, and the day starts earlier for the people doing it.</p></li>
+              <li><span class="k">The plant</span><p>Ours where it travels sensibly, hired locally where it does not.</p></li>
+              <li><span class="k">When it breaks</span><p><b>Our fitter, but it is a drive rather than a visit.</b> Allow for that.</p></li>
+            </ul>
+            <p class="lose"><span class="k">What you lose</span>A little of the day, and some of the certainty about plant. <b>Travel is priced here and shown as its own line</b> rather than buried in a rate, so you can see what it is costing you.</p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="band b-far">
+          <div>
+            <p class="ring">Band three</p>
+            <h3>Further than that</h3>
+            <ul class="regions">
+              <li><span>Regions</span><span class="slot"><span class="vh">Regions in band three</span><span aria-hidden="true">&mdash;</span></span></li>
+              <li><span>Conditions</span><span class="slot"><span class="vh">Conditions we would attach</span><span aria-hidden="true">&mdash;</span></span></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="facts">
+              <li><span class="k">The mornings</span><p><b>Most mornings, not every morning.</b> This is the whole of what you lose and the only thing worth knowing.</p></li>
+              <li><span class="k">The plant</span><p>Hired locally. We would not be picking it.</p></li>
+              <li><span class="k">When it breaks</span><p>A hire desk rather than our fitter, on their timescale.</p></li>
+            </ul>
+            <p class="lose"><span class="k">What you lose</span><b>We will travel this far for the right job, and we are worse at it than a firm based there.</b> If your job is only worth doing with somebody on it daily, say so and we will not bid &mdash; that is a better outcome for you than a competitive price and a manager who is somewhere else on Tuesday.</p>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="band out b-no">
+          <div>
+            <p class="ring">Beyond that</p>
+            <h3>We do not bid</h3>
+            <ul class="regions">
+              <li><span>Where</span><span class="slot"><span class="vh">Regions we do not cover</span><span aria-hidden="true">&mdash;</span></span></li>
+            </ul>
+          </div>
+          <div>
+            <p class="lose"><span class="k">And what we will do instead</span><b>Name a firm nearer to you, where we know one.</b> A contractor who claims to cover a whole country is either very large or not telling the truth, and the ones in the middle just cost you more in travel and less in attendance. We would rather lose the enquiry than be the second of those.</p>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="foot">
+      <div class="map"><span>Reserved area &mdash; a map, if the finished page carries one. No pins, and no shaded country</span></div>
+      <div class="refuse" data-refusal>
+        <h3>Why there is no map of pins here</h3>
+        <ul class="none">
+          <li>No pins</li><li>No radius</li><li>No mileage</li><li>No drive times</li><li>No nationwide claim</li>
+        </ul>
+        <p><b>A row of pins says <em>we work here</em> at a glance and supports none of it.</b> It does not say whether anybody from this firm has been to most of those places this year, which is the only thing the pins are being used to imply.</p>
+        <p>There are no distances either. <b>A mile on a motorway and a mile across a city are different jobs</b>, and neither tells you whether somebody will be standing on your site at seven in the morning. Attendance does, so the bands are drawn on that instead.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

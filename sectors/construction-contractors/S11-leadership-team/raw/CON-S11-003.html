@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : CON-S11-003
+  Sector         : Construction & Contractors (CON)
+  Section        : CON-S11 — Leadership Team
+  Direction      : Structured / Visual Modular
+  Reference      : None supplied for this section.
+  Layout model   : Five stage modules — who is in the room at tender, at pre-start, on site, at
+                   handover and through the defects period — each marking who joins, who is still
+                   here and who is not, with the on-site module deliberately the largest
+  Density        : High
+  Media mode     : Two reserved portrait areas, and only two. **Only the people you will actually
+                   meet get a face.**
+  Interaction    : None (static; no JavaScript)
+  The device     : **Presence, stage by stage.** The client's question about a team page is not who
+                   is senior; it is *will the person I met still be there?* Showing the room at each
+                   stage answers it directly, and it makes the two honest facts unavoidable: the
+                   director leaves after tender, and the same site manager comes back for defects.
+  Only two faces : The portraits sit in the on-site module because that is the only place a client
+                   will meet anybody every day. A gallery of six equal portraits at the head of the
+                   page is anti-pattern thirteen; six portraits reduced to the two you will actually
+                   stand next to is the same information told honestly.
+  Not a table    : The direction's trap, and a presence matrix is the obvious wrong answer here.
+                   Modules instead: the stages carry different numbers of people, the on-site one is
+                   twice the size of the others, and *not here* is a list rather than an empty cell.
+  Deliberately not : No qualification, membership, years in the trade, biography or previous
+                   employer &mdash; the `WELL-S26` rule.
+  Content note   : Role titles are generic vocabulary. Names and portraits are reserved. No digit in
+                   visible copy; no header.
+-->
+
+<meta name="study-id" content="CON-S11-003">
+<meta name="sector" content="Construction &amp; Contractors">
+<meta name="sector-prefix" content="CON">
+<meta name="section-id" content="CON-S11">
+<meta name="section-name" content="Leadership Team">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Five stage-presence modules, the on-site one largest, with only two portraits">
+<meta name="density" content="high">
+<meta name="media-mode" content="two-reserved-portraits">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>CON-S11-003 — Leadership Team, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e8e8e8; }
+
+/* Scoped study styles — namespaced to .con-s11-003 */
+.con-s11-003 {
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #7a7a7a;
+  --paper: #e8e8e8;
+  --card: #ffffff;
+  --line: #d2d2d2;
+  --rule: #d2d2d2;
+  --field: #ececec;
+  --joins: #444444;
+  --still: #2b2b2b;
+  --gone: #969696;
+  --slot-a: #b4b4b4;
+  --slot-b: #5e5e5e;
+  --on-slot: #ffffff;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.con-s11-003 *,
+.con-s11-003 *::before,
+.con-s11-003 *::after { box-sizing: inherit; }
+.con-s11-003 :focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 16px;
+}
+.con-s11-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.con-s11-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.con-s11-003 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(14px, 2.4vw, 40px);
+  margin-bottom: clamp(14px, 2vw, 22px);
+}
+.con-s11-003 .eyebrow {
+  margin: 0 0 clamp(10px, 1.2vw, 16px);
+  font-size: 0.8rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s11-003 h2 {
+  margin: 0;
+  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  font-weight: 700;
+  max-width: 21ch;
+}
+.con-s11-003 .head p { margin: 0; max-width: 42ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s11-003 .head p b { color: var(--ink); font-weight: 650; }
+
+/* Legend */
+.con-s11-003 .legend {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(14px, 2.2vw, 34px);
+}
+.con-s11-003 .legend li { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 650; color: var(--ink-soft); }
+.con-s11-003 .legend i { display: block; width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.con-s11-003 .legend .j i { background: var(--joins); }
+.con-s11-003 .legend .s i { background: var(--still); }
+.con-s11-003 .legend .g i { background: transparent; border: 2px dashed var(--gone); }
+
+/* Stage modules */
+.con-s11-003 .stages {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(11px, 1.4vw, 16px);
+  align-items: start;
+}
+.con-s11-003 .stages > li { min-width: 0; }
+.con-s11-003 .w3 { grid-column: span 3; }
+.con-s11-003 .w6 { grid-column: span 6; }
+.con-s11-003 .w4 { grid-column: span 4; }
+.con-s11-003 .w5 { grid-column: span 5; }
+
+.con-s11-003 .stage {
+  height: 100%;
+  border-radius: 22px;
+  background: var(--card);
+  padding: clamp(15px, 1.9vw, 24px);
+}
+.con-s11-003 .when {
+  margin: 0 0 6px;
+  font-size: 0.777rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.con-s11-003 h3 {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: clamp(1.251rem, 1.558vw, 1.463rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.con-s11-003 .room { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; }
+.con-s11-003 .room li {
+  padding: clamp(8px, 1vw, 11px) 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+.con-s11-003 .room li:first-child { border-top: 0; padding-top: 0; }
+.con-s11-003 .room i {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex: none;
+  transform: translateY(1px);
+}
+.con-s11-003 .room .j i { background: var(--joins); }
+.con-s11-003 .room .s i { background: var(--still); }
+.con-s11-003 .room .role { display: block; font-size: 1rem; line-height: 1.24; font-weight: 700; }
+.con-s11-003 .room .st { display: block; margin-top: 2px; font-size: 1rem; line-height: 1.4; color: var(--ink-soft); }
+.con-s11-003 .room .nm { display: block; margin-top: 4px; font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-faint); }
+.con-s11-003 .room .nm .slot {
+  display: inline-block;
+  min-width: 40px;
+  margin-left: 6px;
+  padding: 1px 8px;
+  border-radius: 16px;
+  background: var(--field);
+  letter-spacing: 0;
+}
+
+.con-s11-003 .absent {
+  margin: 0;
+  padding-top: clamp(10px, 1.3vw, 13px);
+  border-top: 2px dashed var(--rule);
+}
+.con-s11-003 .absent .k {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.75rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gone);
+}
+.con-s11-003 .absent ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.con-s11-003 .absent li {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px dashed var(--rule);
+  color: var(--gone);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.con-s11-003 .note { margin: clamp(10px, 1.3vw, 13px) 0 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.con-s11-003 .note b { color: var(--ink); font-weight: 650; }
+
+/* The two faces, in the only module where you meet somebody daily */
+.con-s11-003 .faces {
+  margin: 0 0 clamp(12px, 1.5vw, 17px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(11px, 1.4vw, 16px);
+}
+.con-s11-003 figure { margin: 0; }
+.con-s11-003 .face {
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
+  display: grid;
+  place-items: end start;
+  padding: clamp(9px, 1.1vw, 12px);
+  margin-bottom: 8px;
+}
+.con-s11-003 .face span {
+  font-size: 0.74rem;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+  color: var(--on-slot);
+  opacity: 0.82;
+  line-height: 1.3;
+}
+.con-s11-003 figcaption { border-top: 2px solid var(--ink); padding-top: 7px; }
+.con-s11-003 figcaption .role { display: block; margin-bottom: 4px; font-size: 1rem; line-height: 1.2; font-weight: 700; }
+.con-s11-003 figcaption .nm { display: block; font-size: 0.75rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-faint); }
+.con-s11-003 figcaption .nm .slot {
+  display: block;
+  margin-top: 3px;
+  padding: 2px 8px;
+  border-radius: 16px;
+  background: var(--field);
+  text-align: center;
+  letter-spacing: 0;
+}
+.con-s11-003 .can { display: block; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); font-size: 0.8rem; line-height: 1.42; color: var(--ink-soft); }
+.con-s11-003 .can b { color: var(--ink); font-weight: 650; }
+
+/* Foot */
+.con-s11-003 .foot {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(11px, 1.4vw, 16px);
+}
+.con-s11-003 .foot > div { border-radius: 22px; padding: clamp(15px, 1.9vw, 26px); }
+.con-s11-003 .foot .held { background: var(--card); }
+.con-s11-003 .foot .admit { border: 2px dashed var(--rule); }
+.con-s11-003 .foot h3 { margin-bottom: clamp(10px, 1.3vw, 13px); }
+.con-s11-003 .foot p { margin: 0 0 9px; max-width: 60ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.58; }
+.con-s11-003 .foot p:last-child { margin-bottom: 0; }
+.con-s11-003 .foot p b { color: var(--ink); font-weight: 650; }
+.con-s11-003 .cnt {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: clamp(9px, 1.2vw, 12px);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.777rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.con-s11-003 .cnt .slot { min-width: 42px; padding: 1px 9px; border-radius: 16px; background: var(--field); text-align: center; letter-spacing: 0; }
+
+/* Responsive ladder */
+@media (max-width: 1180px) {
+  .con-s11-003 .w3, .con-s11-003 .w4, .con-s11-003 .w5 { grid-column: span 6; }
+  .con-s11-003 .w6 { grid-column: span 12; }
+}
+
+@media (max-width: 720px) {
+  .con-s11-003 .stages > li { grid-column: span 12; }
+  .con-s11-003 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s11-003 h2, .con-s11-003 .head p, .con-s11-003 .foot p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .con-s11-003 * { transition: none !important; }
+}
+
+/* ---- v2 modern pass: frame, accent, depth ---- */
+.con-s11-003 {
+  --v2-accent: #969696;
+  --v2-soft: #d2d2d2;
+  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
+  font-size: 1.06rem;
+}
+.con-s11-003 h2 { font-weight: 800; }
+.con-s11-003 h3, .con-s11-003 h4 { font-weight: 750; }
+.con-s11-003 .eyebrow {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+.con-s11-003 .stage, .con-s11-003 .foot .held {
+  border-radius: 26px;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  border: 1px solid #d2d2d2;
+}
+.con-s11-003 .absent li {
+  border: 1px dashed #969696;
+  border-radius: 14px;
+}
+.con-s11-003 .slot {
+  border-radius: 999px;
+  padding: 4px 15px;
+  background: #f2f2f2;
+  color: #7a7a7a;
+  font-weight: 600;
+}
+.con-s11-003.con-s11-003 .head {
+  padding: clamp(30px, 4vw, 64px);
+  border-radius: 34px;
+  border: none;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
+  margin-bottom: clamp(26px, 3.2vw, 48px);
+}
+.con-s11-003.con-s11-003 .head h2, .con-s11-003.con-s11-003 .head h3, .con-s11-003.con-s11-003 .head h4, .con-s11-003.con-s11-003 .head b, .con-s11-003.con-s11-003 .head strong, .con-s11-003.con-s11-003 .head p b, .con-s11-003.con-s11-003 .head li b, .con-s11-003.con-s11-003 .head span b, .con-s11-003.con-s11-003 .head dt, .con-s11-003.con-s11-003 .head div b {
+  color: #ffffff;
+}
+.con-s11-003.con-s11-003 .head p, .con-s11-003.con-s11-003 .head li, .con-s11-003.con-s11-003 .head span, .con-s11-003.con-s11-003 .head dd, .con-s11-003.con-s11-003 .head div p, .con-s11-003.con-s11-003 .head div li, .con-s11-003.con-s11-003 .head p span, .con-s11-003.con-s11-003 .head .said, .con-s11-003.con-s11-003 .head .note {
+  color: #d2d2d2;
+}
+.con-s11-003.con-s11-003 .head .eyebrow, .con-s11-003.con-s11-003 .head .kicker, .con-s11-003.con-s11-003 .head .slot, .con-s11-003.con-s11-003 .head .tag {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+.con-s11-003.con-s11-003 .head i, .con-s11-003.con-s11-003 .head .bars i, .con-s11-003.con-s11-003 .head .lines i, .con-s11-003.con-s11-003 .head .measures i, .con-s11-003.con-s11-003 .head .bar, .con-s11-003.con-s11-003 .head .rule {
+  background: rgba(255, 255, 255, 0.24);
+}
+.con-s11-003.con-s11-003 .head .plate, .con-s11-003.con-s11-003 .head .plate span {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #d2d2d2;
+}
+.con-s11-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
+.con-s11-003 .shell > *:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<div class="con-s11-003" data-study-id="CON-S11-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="con-s11-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The people</p>
+        <h2 id="con-s11-003-title">Who is in the room, at each stage of your job</h2>
+      </div>
+      <p>The question a team page is really being asked is <b>will the person I met still be there.</b> Here is the answer, stage by stage, including the parts that are not flattering.</p>
+    </div>
+
+    <ul class="legend">
+      <li class="j"><i></i>Joins here</li>
+      <li class="s"><i></i>Still here from before</li>
+      <li class="g"><i></i>Not in the room</li>
+    </ul>
+
+    <ul class="stages">
+
+      <li class="w3">
+        <div class="stage">
+          <p class="when">To begin with</p>
+          <h3>At tender</h3>
+          <ul class="room">
+            <li class="j"><i></i><span><span class="role">Managing director</span><span class="st">Turning work down is their decision.</span><span class="nm">Name<span class="slot"><span class="vh">Name of the managing director</span><span aria-hidden="true">&mdash;</span></span></span></span></li>
+            <li class="j"><i></i><span><span class="role">Contracts manager</span><span class="st">Comes on the walk, because they will carry it.</span><span class="nm">Name<span class="slot"><span class="vh">Name of the contracts manager</span><span aria-hidden="true">&mdash;</span></span></span></span></li>
+            <li class="j"><i></i><span><span class="role">Commercial manager</span><span class="st">Prices it, and stays on it afterwards.</span><span class="nm">Name<span class="slot"><span class="vh">Name of the commercial manager</span><span aria-hidden="true">&mdash;</span></span></span></span></li>
+          </ul>
+          <div class="absent">
+            <span class="k">Not in the room</span>
+            <ul><li>Site manager</li><li>Foreman</li><li>Planner</li></ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="w3">
+        <div class="stage">
+          <p class="when">Before we start</p>
+          <h3>At pre-start</h3>
+          <ul class="room">
+            <li class="s"><i></i><span><span class="role">Contracts manager</span><span class="st">Still here. You get their number, not a switchboard.</span></span></li>
+            <li class="j"><i></i><span><span class="role">Site manager</span><span class="st">Joins, and is in the room when the plan is made.</span></span></li>
+            <li class="j"><i></i><span><span class="role">Planner</span><span class="st">Writes the programme, having walked the site.</span><span class="nm">Name<span class="slot"><span class="vh">Name of the planner</span><span aria-hidden="true">&mdash;</span></span></span></span></li>
+            <li class="s"><i></i><span><span class="role">Commercial manager</span><span class="st">Still here, and still the one who priced it.</span></span></li>
+          </ul>
+          <div class="absent">
+            <span class="k">Not in the room</span>
+            <ul><li>Managing director</li></ul>
+          </div>
+          <p class="note"><b>This is where the swap happens.</b> The plan is made by the person who then has to live inside it.</p>
+        </div>
+      </li>
+
+      <li class="w6">
+        <div class="stage">
+          <p class="when">While it runs</p>
+          <h3>On site &mdash; and this is where you will spend the job</h3>
+          <ul class="faces">
+            <li>
+              <figure>
+                <div class="face"><span>Portrait &mdash; on site, working</span></div>
+                <figcaption>
+                  <span class="role">Site manager</span>
+                  <span class="nm">Name<span class="slot"><span class="vh">Name of the site manager</span><span aria-hidden="true">&mdash;</span></span></span>
+                  <span class="can"><b>Every day.</b> Stops the work, orders what the day needs, moves the sequence within the week. One site, not three.</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="face"><span>Portrait &mdash; briefing a gang before work starts</span></div>
+                <figcaption>
+                  <span class="role">Foreman</span>
+                  <span class="nm">Name<span class="slot"><span class="vh">Name of the foreman</span><span aria-hidden="true">&mdash;</span></span></span>
+                  <span class="can"><b>Every day.</b> Runs the gang, stops the work, calls the site manager rather than working round a problem.</span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+          <ul class="room">
+            <li class="s"><i></i><span><span class="role">Contracts manager</span><span class="st">Every week, and the escalation when something cannot be fixed inside one.</span></span></li>
+            <li class="s"><i></i><span><span class="role">Commercial manager</span><span class="st">At each valuation, and whenever a change needs pricing.</span></span></li>
+            <li class="s"><i></i><span><span class="role">Planner</span><span class="st">When the programme changes, which it will.</span></span></li>
+          </ul>
+          <div class="absent">
+            <span class="k">Not in the room</span>
+            <ul><li>Managing director</li></ul>
+          </div>
+          <p class="note"><b>These are the only two people on this page with a face on it</b>, because they are the only two you will stand next to every day. A gallery of six equal portraits would tell you less.</p>
+        </div>
+      </li>
+
+      <li class="w5">
+        <div class="stage">
+          <p class="when">At the end</p>
+          <h3>At handover</h3>
+          <ul class="room">
+            <li class="j"><i></i><span><span class="role">Managing director</span><span class="st">Comes back. Present at the two moments where the decision is theirs, and absent in between because the decisions in between are not.</span></span></li>
+            <li class="s"><i></i><span><span class="role">Site manager</span><span class="st">Hands over the building, the drawings and the demonstrations on the day.</span></span></li>
+            <li class="s"><i></i><span><span class="role">Commercial manager</span><span class="st">Settles the account with the person who priced it.</span></span></li>
+          </ul>
+          <div class="absent">
+            <span class="k">Not in the room</span>
+            <ul><li>Foreman</li><li>Planner</li></ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="w4">
+        <div class="stage">
+          <p class="when">Afterwards</p>
+          <h3>Through the defects period</h3>
+          <ul class="room">
+            <li class="s"><i></i><span><span class="role">Site manager</span><span class="st">The same one. Sending somebody who was not there spends your morning explaining the job to a stranger.</span></span></li>
+          </ul>
+          <div class="absent">
+            <span class="k">Not in the room</span>
+            <ul><li>Managing director</li><li>Contracts manager</li><li>Commercial manager</li><li>Planner</li><li>Foreman</li></ul>
+          </div>
+          <p class="note"><b>One name, and it is the one you already know.</b> That is the whole of this module and it is the part clients remember.</p>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="foot">
+      <div class="held">
+        <h3>How many site managers we have</h3>
+        <p class="cnt"><span>On our own books</span><span class="slot"><span class="vh">Number of site managers on our own books</span><span aria-hidden="true">&mdash;</span></span></p>
+        <p><b>It decides how many jobs we can run properly at once</b>, which makes it a reason we decline work rather than a reason we win it. What else we hold is on the capabilities page.</p>
+      </div>
+      <div class="admit" data-refusal>
+        <h3>What is not on this page</h3>
+        <p><b>No qualifications, no memberships, no years in the trade, no career histories.</b> Every competitor&rsquo;s team page carries the same list and none of it tells you who will be on your site.</p>
+        <p>What does tell you that is above: <b>who is in the room, when, and who has left.</b> All of it is checkable at the pre-start meeting, by asking who in the room will be there in month three.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>
