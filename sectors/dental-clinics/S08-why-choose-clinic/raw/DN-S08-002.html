@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S08-002
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S08 — Why Choose This Clinic
+  Direction      : Premium / Editorial
+  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area.**
+  Layout model   : **One reason given the whole measure at display size** — the only one a competitor
+                   could not copy by tomorrow — then the other three as lines, then the three refusals
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **a surgery**, at band proportion beneath the display reason.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **The useful half of this page is the part that tells you not to come.**
+
+  The editorial cut — which of the four is actually load-bearing :
+                   Three of the four reasons on this page could be adopted by a competitor within a
+                   week. Seeing the same dentist is a rota decision. Saying when something can wait is
+                   a script. Being small is an accident of premises.
+                   **`We write down what we did not do` is none of those.** It is a change to the
+                   clinical record itself — every note carrying the things that were found and left
+                   alone, and why — and a practice that keeps that record has given a future dentist,
+                   and a future complaint, something to read. It is the one reason here that has a cost
+                   attached, so it takes the measure at display size and the other three take a line
+                   each.
+                   **A `why choose us` section that weights all its reasons equally is telling you it
+                   does not know which one is true.**
+
+  And then the half that costs something :
+                   Sedation, price and out-of-hours. A visitor who needs one of them will find out
+                   after booking; every competitor lets them find out then. **A page that cannot say
+                   who it is wrong for is not saying much about who it is right for.**
+
+  Placeholder data : The surgery count, the number of us and the two referral names are PLACEHOLDER
+                   DEMO VALUES marked data-placeholder="true".
+
+  Content note   : No *experienced*, *caring*, *friendly* or *state-of-the-art*. No outcome guarantee,
+                   no superiority claim, no rating, no award, no price figure, no credential, no
+                   testimonial. No stock smile, no open mouth, no instrument near a face, no aqua
+                   palette. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S08-002">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S08">
+<meta name="section-name" content="Why Choose This Clinic">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Linen">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="One reason at display size across the measure, the other three as lines, then the three refusals">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-a-surgery-at-band-proportion">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="surgery count, number of us, two referral names — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S08-002 — Why Choose This Clinic, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f3efe8; }
+
+/* Scoped study styles — namespaced to .dn-s08-002 */
+.dn-s08-002 {
+  --paper: #f3efe8;
+  --ink: #1b1714;
+  --ink-soft: #6a6058;
+  --line: #ddd5c9;
+  --accent: #a2543a;
+  --slot: #e9e2d8;
+  --slot-edge: #c6bcae;
+  --slot-ink: #635b53;
+  --focus: #1b1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s08-002 *,
+.dn-s08-002 *::before,
+.dn-s08-002 *::after { box-sizing: inherit; }
+.dn-s08-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+
+.dn-s08-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s08-002 .eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s08-002 .lead { margin: 0 0 clamp(26px, 3.2vw, 44px); max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.08rem, 1.36vw, 1.24rem); }
+
+/* --- The one that cost something to adopt --- */
+.dn-s08-002 h2 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  line-height: 1.0; letter-spacing: -0.044em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s08-002 .why { margin: 0 0 clamp(24px, 3vw, 38px); max-width: 54ch; font-size: clamp(1.14rem, 1.6vw, 1.42rem); line-height: 1.28; letter-spacing: -0.024em; font-weight: 600; color: var(--ink-soft); }
+.dn-s08-002 .why b { color: var(--ink); font-weight: 800; }
+
+.dn-s08-002 .room {
+  border: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  aspect-ratio: 24 / 7;
+  display: grid; place-items: center;
+  padding: clamp(16px, 2.2vw, 28px);
+  margin: 0 calc(-1 * clamp(22px, 3.6vw, 58px)) clamp(30px, 3.8vw, 52px);
+}
+.dn-s08-002 .room span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; }
+
+/* --- The other three, a line each --- */
+.dn-s08-002 h4 { margin: 0 0 clamp(14px, 1.8vw, 20px); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft); }
+.dn-s08-002 .rest { margin: 0 0 clamp(30px, 3.8vw, 52px); padding: 0; list-style: none; display: grid; gap: clamp(14px, 1.8vw, 20px); }
+.dn-s08-002 .rest li {
+  padding-bottom: clamp(14px, 1.8vw, 20px);
+  border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(14px, 2.2vw, 40px);
+  align-items: baseline;
+}
+.dn-s08-002 .rest h3 { margin: 0; font-size: clamp(1.1rem, 1.4vw, 1.26rem); letter-spacing: -0.024em; font-weight: 800; }
+.dn-s08-002 .rest p { margin: 0; font-size: 1rem; color: var(--ink-soft); }
+
+/* --- The half that costs something --- */
+.dn-s08-002 .elsewhere { margin: 0 0 clamp(26px, 3.2vw, 42px); }
+.dn-s08-002 .elsewhere h4 { color: var(--accent); }
+.dn-s08-002 .elsewhere ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(14px, 1.8vw, 20px); max-width: 66ch; }
+.dn-s08-002 .elsewhere li { font-size: clamp(1.04rem, 1.24vw, 1.16rem); color: var(--ink-soft); }
+.dn-s08-002 .elsewhere b { color: var(--accent); font-weight: 800; }
+
+.dn-s08-002 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.24rem, 1.9vw, 1.7rem);
+  line-height: 1.2; letter-spacing: -0.028em; font-weight: 800;
+  max-width: 38ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s08-002 h2, .dn-s08-002 .lead, .dn-s08-002 .why, .dn-s08-002 .close { max-width: none; }
+  .dn-s08-002 .rest li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .dn-s08-002 .room { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s08-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s08-002" data-study-id="DN-S08-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="dn-s08-002-title">
+
+    <p class="eyebrow">Whether to come here</p>
+    <p class="lead">Every reason here is a fact you could check by asking. The three at the end are reasons to go somewhere else.</p>
+
+    <h2 id="dn-s08-002-title">We write down what we did not do.</h2>
+    <p class="why">Every note records what we found and left alone, and why. <b>Three of the four reasons on this page could be copied by a competitor next week. This one is a change to the record itself.</b></p>
+
+    <div class="room"><span>Image area &mdash; a surgery</span></div>
+
+    <h4>And three more, a line each</h4>
+    <ul class="rest">
+      <li>
+        <h3>You see the same dentist</h3>
+        <p>If they are away, we move the appointment rather than swap the person.</p>
+      </li>
+      <li>
+        <h3>We say when something can wait</h3>
+        <p>Not everything we find needs treating now, and the plan says which.</p>
+      </li>
+      <li>
+        <h3><span data-placeholder="true">Two</span> surgeries, <span data-placeholder="true">four</span> of us</h3>
+        <p>Small enough that the person you saw last time is still here.</p>
+      </li>
+    </ul>
+
+    <div class="elsewhere">
+      <h4>Go somewhere else if</h4>
+      <ul>
+        <li><b>You need sedation.</b> We do not offer it. Ask, and we will give you <span data-placeholder="true">two</span> names.</li>
+        <li><b>You want the cheapest price.</b> Some treatments here cost more than at a chain, and the plan says so before you agree.</li>
+        <li><b>You need someone at two in the morning.</b> We are not open. The out-of-hours number is on the contact page.</li>
+      </ul>
+    </div>
+
+    <p class="close">A page that cannot say who it is wrong for is not saying much about who it is right for.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S09-003
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S09 — Patient Reviews
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Slate — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area.**
+  Layout model   : **One grid of eight cells. Four are cards and the rest are card-shaped holes** —
+                   the structure continues where the evidence stops
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the desk and the waiting room**, across the grid width above
+                   the filled row, because it belongs to the half that has cards.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **A review can tell you how you will be treated. It cannot tell you whether the
+                   dentistry was any good.**
+
+  What the structured reading adds — the grid keeps going and the cards do not :
+                   The conventional section is a grid of identical review cards, which asserts that
+                   every cell holds the same kind of thing. **This grid holds two kinds and shows it in
+                   the geometry.** Four cells are filled cards on the white ground, and the next three
+                   are the same cells with the fill taken out — an outline, the same size, in the same
+                   row rhythm, holding the three things a review cannot reach.
+                   Nothing is styled as a warning. **The module is simply not there**, and the eighth
+                   cell carries the reason. A reader scanning the row sees the page run out of evidence
+                   before it runs out of grid, which is the honest picture of what this section is.
+
+  Why the photograph sits above the filled row :
+                   It is the reachable half — the desk, the wait, the phone — so it belongs with the
+                   cells that have a fill. Putting it between the two rows would have made it a hinge,
+                   and it is not a hinge; it is the last thing the page can actually show.
+
+  Why no testimonial appears anywhere in this batch :
+                   The contract reserves patient quotations the way it reserves credentials, and a
+                   placeholder testimonial is a fabricated endorsement. The platform name is reserved
+                   for the same reason.
+
+  Placeholder data : The listing name is a PLACEHOLDER DEMO VALUE marked data-placeholder="true".
+
+  Content note   : **No testimonial, no patient name or initial, no quotation, no star, no rating, no
+                   average, no review count, no award.** No outcome guarantee, no *pain-free* or
+                   *gentle*, no superiority claim, no price, no credential. No stock smile, no open
+                   mouth, no instrument near a face, no aqua palette. No global header.
+-->
+
+<meta name="study-id" content="DN-S09-003">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S09">
+<meta name="section-name" content="Patient Reviews">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Slate">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="One grid of eight cells, four filled cards and the rest card-shaped holes, the structure continuing where the evidence stops">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-desk-and-waiting-room-above-the-filled-row">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="listing name — demo value, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S09-003 — Patient Reviews, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eef0f2; }
+
+/* Scoped study styles — namespaced to .dn-s09-003 */
+.dn-s09-003 {
+  --paper: #eef0f2;
+  --ink: #0f1316;
+  --ink-soft: #515a61;
+  --line: #d6dbdf;
+  --card: #ffffff;
+  --accent: #2c5fd0;
+  --accent-ink: #ffffff;
+  --slot: #e1e6ea;
+  --slot-edge: #b5bec6;
+  --slot-ink: #5a636a;
+  --focus: #0f1316;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s09-003 *,
+.dn-s09-003 *::before,
+.dn-s09-003 *::after { box-sizing: inherit; }
+.dn-s09-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.dn-s09-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s09-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(22px, 2.8vw, 36px);
+}
+.dn-s09-003 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s09-003 h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s09-003 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 50ch; }
+
+.dn-s09-003 .room {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 20px;
+  background: var(--slot);
+  aspect-ratio: 32 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 24px);
+  margin-bottom: clamp(16px, 2vw, 22px);
+}
+.dn-s09-003 .room span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+
+/* --- One grid. Four cells have a fill and the rest do not. --- */
+.dn-s09-003 .grid {
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 22px);
+}
+.dn-s09-003 .grid > li {
+  border-radius: 20px;
+  padding: clamp(18px, 2.2vw, 26px);
+  min-height: clamp(132px, 15vw, 172px);
+  /* The label row is reserved in every cell, present or not, so the eight bodies sit on one line.
+     Only the first cell of each kind is labelled — the fill does the rest of the telling. */
+  display: grid; grid-template-rows: 1.55em 1fr; align-content: start;
+}
+.dn-s09-003 .can { background: var(--card); }
+.dn-s09-003 .hole { border: 2px dashed var(--slot-edge); }
+.dn-s09-003 .why {
+  grid-template-rows: 1fr !important;
+  align-content: end !important;
+  padding-left: 0 !important; padding-right: 0 !important;
+}
+
+.dn-s09-003 b {
+  display: block; grid-row: 1; margin: 0;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s09-003 .hole b { color: var(--ink-soft); }
+.dn-s09-003 .grid p { grid-row: 2; margin: 0; font-size: clamp(1.02rem, 1.24vw, 1.16rem); line-height: 1.26; letter-spacing: -0.02em; font-weight: 700; }
+.dn-s09-003 .why p { grid-row: 1; }
+.dn-s09-003 .can p { color: var(--ink-soft); font-weight: 600; }
+.dn-s09-003 .why p { font-size: 0.95rem; line-height: 1.5; font-weight: 400; color: var(--ink-soft); }
+
+/* --- The four policies --- */
+.dn-s09-003 .policy {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 32px);
+}
+.dn-s09-003 .policy strong { display: block; margin-bottom: 4px; font-size: 1rem; letter-spacing: -0.022em; font-weight: 800; }
+.dn-s09-003 .policy p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
+
+.dn-s09-003 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.08rem, 1.42vw, 1.32rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  max-width: 44ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s09-003 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dn-s09-003 .policy { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .dn-s09-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s09-003 h2, .dn-s09-003 .lead, .dn-s09-003 .close { max-width: none; }
+  .dn-s09-003 .room { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 560px) {
+  .dn-s09-003 .grid, .dn-s09-003 .policy { grid-template-columns: minmax(0, 1fr); }
+  .dn-s09-003 .grid > li { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s09-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s09-003" data-study-id="DN-S09-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="dn-s09-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What patients say</p>
+        <h2 id="dn-s09-003-title">The grid keeps going. The cards do not.</h2>
+      </div>
+      <p class="lead">Reviews are about the parts of a visit you could see. The dentistry is not one of them, and this page says so rather than showing you five of the good ones.</p>
+    </div>
+
+    <div class="room"><span>Image area &mdash; the desk and the waiting room</span></div>
+
+    <ul class="grid">
+      <li class="can"><b>A review can tell you</b><p>How long you waited.</p></li>
+      <li class="can"><p>Whether the phone was answered.</p></li>
+      <li class="can"><p>Whether anyone explained what they were doing.</p></li>
+      <li class="can"><p>Whether the bill matched the plan.</p></li>
+      <li class="hole"><b>It cannot tell you</b><p>Whether the filling was placed well.</p></li>
+      <li class="hole"><p>Whether the crown fits your bite.</p></li>
+      <li class="hole"><p>Whether the treatment was needed at all.</p></li>
+      <li class="why"><p>None of that can be judged from the chair, including by the person in it.</p></li>
+    </ul>
+
+    <ul class="policy">
+      <li>
+        <strong>They are not here</strong>
+        <p>They are on <span data-placeholder="true">the public listing</span>, where we cannot delete one or move it up.</p>
+      </li>
+      <li>
+        <strong>We do not ask at the chair</strong>
+        <p>Asking somebody while they are still numb is how a high average gets built.</p>
+      </li>
+      <li>
+        <strong>The wrong ones stay up</strong>
+        <p>Including the ones we think are unfair.</p>
+      </li>
+      <li>
+        <strong>We reply under our own name</strong>
+        <p>Never anonymously, and never twice to the same one.</p>
+      </li>
+    </ul>
+
+    <p class="close">The half a review cannot reach is the half you are paying for.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

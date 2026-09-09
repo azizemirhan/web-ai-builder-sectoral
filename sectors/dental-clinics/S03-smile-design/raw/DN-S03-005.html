@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S03-005
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S03 — Smile Design
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Dusk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **C — Type and colour. No reserved media at all.**
+  Layout model   : **The line is the page.** Everything reversible sits on the ground; at stage four
+                   the ground itself changes and does not change back
+  Density        : Structured (183 visible words, structured band 170–230)
+  Media mode     : **NONE.** The colour change is the composition, and a photograph would be a third
+                   thing competing with a page that has exactly two states.
+  Interaction    : None (static; no JavaScript). Links only, no form.
+
+  Governing idea : **A smile design is a plan you are allowed to reject. Knowing exactly when that
+                   stops being free is the part nobody explains.**
+
+  The device, which is this study alone :
+                   **The page changes ground at the point of no return, and never changes back.**
+
+                   The host element carries the *after* colour, not the *before* one, so any space
+                   beneath the section is already on the far side of the line. The first draft did it
+                   the other way round and the lighter ground reappeared under the last paragraph,
+                   which contradicted the sentence directly above it.
+
+                   `001` draws the line as a rule, `002` as a band, `003` as a break in a seam, `004`
+                   as a panel. All four are marks *on* a page. Here the line is the page: stages one to
+                   three sit on the ordinary ground, and from stage four down the section is a
+                   different colour to the end of the page.
+                   The reader does not read that it is irreversible. **They scroll into it**, and the
+                   ground does not come back — which is the one property of the process that no
+                   diagram, rule or icon has ever managed to carry.
+                   It is the only composition in this batch that could not be reordered. Move the
+                   colour change and the section stops being true.
+
+  Why this is the sector-native reading :
+                   Cosmetic dentistry is sold on a picture of an ending. What actually distinguishes a
+                   clinic is where it puts the point of no return and how loudly it says so. **A page
+                   whose own structure cannot go back is the most literal version of that available**,
+                   and it needs no photograph and makes no claim.
+
+  Why there is no image :
+                   Two grounds and one line are already the whole composition. A reserved area would
+                   be a third element on a page whose argument is that there are exactly two states,
+                   and the honest artefacts — the scanner, the plan on screen — are carried by `003`
+                   and `004`.
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price
+                   figure, no credential, no testimonial, no before/after gallery. No stock smile, no
+                   open mouth, no teeth in close-up, no instrument, no sparkle, no aqua palette. No
+                   global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S03-005">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S03">
+<meta name="section-name" content="Smile Design">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Dusk">
+<meta name="section-shape" content="C — type and colour">
+<meta name="layout-model" content="The line is the page — the ground changes at stage four and does not change back">
+<meta name="density" content="structured">
+<meta name="media-mode" content="none-deliberate-the-colour-change-is-the-composition">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="none">
+<meta name="batch" content="V1">
+
+<title>DN-S03-005 — Smile Design, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #0a0c0e; }
+
+/* Scoped study styles — namespaced to .dn-s03-005 */
+.dn-s03-005 {
+  --paper: #14161a;
+  --ink: #f2f1ef;
+  --ink-soft: #9aa0a4;
+  --line: #2b2f35;
+  --accent: #6ea8a0;
+  --accent-ink: #10201d;
+  --after-paper: #0a0c0e;
+  --focus: #6ea8a0;
+
+  box-sizing: border-box;
+  display: block;
+  /* The host ground is the AFTER colour, so nothing below the line ever reverts. */
+  background: var(--after-paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s03-005 *,
+.dn-s03-005 *::before,
+.dn-s03-005 *::after { box-sizing: inherit; }
+.dn-s03-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 26px; }
+
+.dn-s03-005 .band { width: 100%; }
+.dn-s03-005 .before { background: var(--paper); }
+.dn-s03-005 .inner {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: 0 clamp(22px, 3.6vw, 58px);
+}
+.dn-s03-005 .before .inner { padding-top: clamp(44px, 5.4vw, 100px); padding-bottom: clamp(34px, 4.2vw, 60px); }
+
+/* --- Above: the ordinary ground --- */
+.dn-s03-005 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.77rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s03-005 h2 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(1.95rem, 3.6vw, 2.95rem);
+  line-height: 1.04; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 22ch;
+}
+.dn-s03-005 .lead { margin: 0 0 clamp(30px, 3.8vw, 52px); max-width: 54ch; color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); }
+
+.dn-s03-005 .run { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(22px, 2.8vw, 42px); }
+.dn-s03-005 .fig { display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; color: var(--ink-soft); }
+.dn-s03-005 .state { display: inline-block; margin: 8px 0 6px; padding: 4px 11px; border-radius: 999px; background: rgba(110, 168, 160, 0.18); color: var(--accent); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.dn-s03-005 .run h3 { margin: 0 0 6px; font-size: clamp(1.04rem, 1.34vw, 1.18rem); line-height: 1.2; letter-spacing: -0.024em; font-weight: 800; }
+.dn-s03-005 .run p { margin: 0; font-size: 0.96rem; color: var(--ink-soft); }
+
+/* --- The change. It does not change back --- */
+.dn-s03-005 .after { background: var(--after-paper); }
+.dn-s03-005 .after .inner { padding-top: clamp(30px, 3.8vw, 54px); padding-bottom: clamp(44px, 5.4vw, 96px); }
+.dn-s03-005 .mark {
+  margin: 0 0 clamp(26px, 3.2vw, 44px);
+  font-size: clamp(1.24rem, 2vw, 1.72rem);
+  line-height: 1.16; letter-spacing: -0.03em; font-weight: 800;
+  max-width: 30ch;
+}
+.dn-s03-005 .mark em { font-style: normal; color: var(--accent); }
+.dn-s03-005 .after .run { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 66%; }
+.dn-s03-005 .after .state { background: var(--accent); color: var(--accent-ink); }
+
+.dn-s03-005 .close {
+  margin: clamp(32px, 4vw, 54px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(22px, 3vw, 46px);
+}
+.dn-s03-005 .close p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+.dn-s03-005 .close b { color: var(--ink); font-weight: 800; }
+.dn-s03-005 .close a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s03-005 .run { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dn-s03-005 .after .run { max-width: none; }
+}
+@media (max-width: 860px) {
+  .dn-s03-005 h2, .dn-s03-005 .lead, .dn-s03-005 .mark { max-width: none; }
+  .dn-s03-005 .close { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .dn-s03-005 .run { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s03-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s03-005" data-study-id="DN-S03-005" data-direction="Art-directed / Distinctive">
+  <section aria-labelledby="dn-s03-005-title">
+
+    <div class="band before">
+      <div class="inner">
+        <p class="eyebrow">Smile design</p>
+        <h2 id="dn-s03-005-title">Three of the five stages are reversible.</h2>
+        <p class="lead">A smile design is a plan you are allowed to reject. Knowing exactly when that stops being free is the part nobody explains &mdash; so this page changes colour at the point it stops.</p>
+
+        <ol class="run">
+          <li>
+            <span class="fig" aria-hidden="true">01</span>
+            <span class="state">Reversible</span>
+            <h3>Photographs and a scan</h3>
+            <p>Twenty minutes. Nothing is touched.</p>
+          </li>
+          <li>
+            <span class="fig" aria-hidden="true">02</span>
+            <span class="state">Reversible</span>
+            <h3>The digital plan</h3>
+            <p>You see it on a screen before it exists anywhere else.</p>
+          </li>
+          <li>
+            <span class="fig" aria-hidden="true">03</span>
+            <span class="state">Reversible</span>
+            <h3>The trial smile</h3>
+            <p>Worn over your own teeth for a week or two. It comes off.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="band after">
+      <div class="inner">
+        <p class="mark">Below this line, nothing comes off. <em>The page does not change back, and neither does this.</em></p>
+
+        <ol class="run" start="4">
+          <li>
+            <span class="fig" aria-hidden="true">04</span>
+            <span class="state">Irreversible</span>
+            <h3>Preparation</h3>
+            <p>Enamel is removed, and it does not grow back.</p>
+          </li>
+          <li>
+            <span class="fig" aria-hidden="true">05</span>
+            <span class="state">Irreversible</span>
+            <h3>Fitting</h3>
+            <p>Two appointments, and then they are yours.</p>
+          </li>
+        </ol>
+
+        <div class="close">
+          <p><b>No before-and-after gallery here.</b> Those photographs are lit, chosen and unverifiable. The ones we can show, and the rules that apply, are in <a href="#">smile results</a>.</p>
+          <p><b>Nobody is prepared on the day they first ask.</b> The decision sits at the end of stage three, and it is the last one that costs you only the fee for the plan.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

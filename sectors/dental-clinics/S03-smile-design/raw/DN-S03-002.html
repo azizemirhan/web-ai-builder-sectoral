@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S03-002
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S03 — Smile Design
+  Direction      : Premium / Editorial
+  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area, placed on the line itself.**
+  Layout model   : One measure. The five stages run down, and **the band sits exactly where reversible
+                   ends** — the picture is the last thing you see before the point of no return
+  Density        : Structured (176 visible words, structured band 170–230)
+  Media mode     : One reserved area — **the review appointment**, placed at the line because that is
+                   the moment the last reversible thing ends. A room and the people in it, never the
+                   object and never a mouth. See below.
+  Interaction    : None (static; no JavaScript). Links only, no form.
+
+  Governing idea : **A smile design is a plan you are allowed to reject. Knowing exactly when that
+                   stops being free is the part nobody explains.**
+
+  The editorial cut — the picture is the hinge :
+                   Cosmetic dentistry puts its best photograph at the top, and it is always the
+                   result. Here there is no photograph of a result, and the one image sits **on the
+                   line** — after the trial smile and before the preparation.
+                   That position is the argument. The reader passes the object they could have handed
+                   back, and then reads *enamel is removed, and it does not grow back.* **A section
+                   that shows you what you are about to give up, immediately before telling you that
+                   you cannot get it back, is doing the only honest thing this subject allows.**
+
+  The slot that was rejected :
+                   This area was first drafted as *the trial smile on its tray, off the patient*, and
+                   the header argued that an object is not a mouth. **That reasoning was written to
+                   permit the picture rather than to test it.** A trial smile photographed close up is
+                   a set of teeth whatever the tray is doing underneath, which is precisely what the
+                   contract bans.
+                   What replaced it is the moment rather than the object: the review appointment, where
+                   the trial comes off and the decision is made. It sits in the same position and makes
+                   the same argument, and it is a room with people in it — one of the three honest
+                   subjects the contract actually names.
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price
+                   figure, no credential, no testimonial, no before/after gallery. No stock smile, no
+                   open mouth, no teeth in close-up, no instrument, no sparkle, no aqua palette. No
+                   global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S03-002">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S03">
+<meta name="section-name" content="Smile Design">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Linen">
+<meta name="section-shape" content="B — anchored, one reserved area on the line">
+<meta name="layout-model" content="One measure, five stages running down with the band placed exactly where reversible ends">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-review-appointment-placed-at-the-line">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="none">
+<meta name="batch" content="V1">
+
+<title>DN-S03-002 — Smile Design, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f3efe8; }
+
+/* Scoped study styles — namespaced to .dn-s03-002 */
+.dn-s03-002 {
+  --paper: #f3efe8;
+  --ink: #1b1714;
+  --ink-soft: #6a6058;
+  --line: #ddd5c9;
+  --accent: #a2543a;
+  --accent-ink: #ffffff;
+  --slot: #e9e2d8;
+  --slot-edge: #c6bcae;
+  --slot-ink: #635b53;
+  --focus: #1b1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s03-002 *,
+.dn-s03-002 *::before,
+.dn-s03-002 *::after { box-sizing: inherit; }
+.dn-s03-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+
+.dn-s03-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+.dn-s03-002 .col { max-width: 74ch; }
+
+.dn-s03-002 .eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s03-002 h2 {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  line-height: 1.0; letter-spacing: -0.044em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s03-002 .lead {
+  margin: 0 0 clamp(34px, 4.2vw, 60px);
+  max-width: 48ch; color: var(--ink-soft);
+  font-size: clamp(1.1rem, 1.4vw, 1.28rem);
+}
+
+/* --- The stages, running down --- */
+.dn-s03-002 .run { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(22px, 2.8vw, 38px); }
+.dn-s03-002 .run li { display: grid; grid-template-columns: 2.6em minmax(0, 1fr); gap: clamp(14px, 2vw, 28px); align-items: baseline; }
+.dn-s03-002 .fig { font-size: 0.82rem; font-weight: 800; letter-spacing: 0.04em; color: var(--accent); }
+.dn-s03-002 .run h3 { margin: 0 0 5px; font-size: clamp(1.2rem, 1.8vw, 1.52rem); line-height: 1.16; letter-spacing: -0.026em; font-weight: 800; }
+.dn-s03-002 .state { display: inline-block; margin-bottom: 6px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.dn-s03-002 .after .state { color: var(--ink); }
+.dn-s03-002 .run p { margin: 0; font-size: 1.02rem; color: var(--ink-soft); max-width: 46ch; }
+
+/* --- The line, and the object on it --- */
+.dn-s03-002 .band {
+  margin: clamp(30px, 3.8vw, 52px) 0 clamp(9px, 1.2vw, 13px);
+  border: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  aspect-ratio: 24 / 7;
+  display: grid; place-items: center;
+  padding: clamp(16px, 2.2vw, 28px);
+}
+.dn-s03-002 .band span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; max-width: 42ch; line-height: 1.45; }
+.dn-s03-002 .divider {
+  margin: 0 0 clamp(30px, 3.8vw, 52px);
+  padding-bottom: clamp(18px, 2.2vw, 26px);
+  border-bottom: 3px solid var(--ink);
+  font-size: clamp(1.14rem, 1.6vw, 1.44rem);
+  line-height: 1.2; letter-spacing: -0.026em; font-weight: 800;
+}
+
+.dn-s03-002 .close {
+  margin: clamp(34px, 4.2vw, 58px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+}
+.dn-s03-002 .close p { margin: 0 0 12px; font-size: 1rem; color: var(--ink-soft); }
+.dn-s03-002 .close p:last-child { margin-bottom: 0; }
+.dn-s03-002 .close b { color: var(--ink); font-weight: 800; }
+.dn-s03-002 .close a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s03-002 h2, .dn-s03-002 .lead, .dn-s03-002 .run p { max-width: none; }
+  .dn-s03-002 .band { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 560px) {
+  .dn-s03-002 .run li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s03-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s03-002" data-study-id="DN-S03-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="dn-s03-002-title">
+    <div class="col">
+
+      <p class="eyebrow">Smile design</p>
+      <h2 id="dn-s03-002-title">Three of the five stages are reversible.</h2>
+      <p class="lead">A smile design is a plan you are allowed to reject. Knowing exactly when that stops being free is the part nobody explains.</p>
+
+      <ol class="run">
+        <li>
+          <span class="fig" aria-hidden="true">01</span>
+          <div>
+            <span class="state">Reversible</span>
+            <h3>Photographs and a scan</h3>
+            <p>Twenty minutes. Nothing is touched.</p>
+          </div>
+        </li>
+        <li>
+          <span class="fig" aria-hidden="true">02</span>
+          <div>
+            <span class="state">Reversible</span>
+            <h3>The digital plan</h3>
+            <p>You see it on a screen before it exists anywhere else.</p>
+          </div>
+        </li>
+        <li>
+          <span class="fig" aria-hidden="true">03</span>
+          <div>
+            <span class="state">Reversible</span>
+            <h3>The trial smile</h3>
+            <p>Worn over your own teeth for a week or two. It comes off.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="band"><span>Image area &mdash; the review appointment, where the trial smile comes off</span></div>
+      <p class="divider">Below this line, nothing comes off.</p>
+
+      <ol class="run after" start="4">
+        <li>
+          <span class="fig" aria-hidden="true">04</span>
+          <div>
+            <span class="state">Irreversible</span>
+            <h3>Preparation</h3>
+            <p>Enamel is removed, and it does not grow back.</p>
+          </div>
+        </li>
+        <li>
+          <span class="fig" aria-hidden="true">05</span>
+          <div>
+            <span class="state">Irreversible</span>
+            <h3>Fitting</h3>
+            <p>Two appointments, and then they are yours.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="close">
+        <p><b>No before-and-after gallery here.</b> Those photographs are lit, chosen and unverifiable. The ones we can show, and the rules that apply to them, are in <a href="#">smile results</a>.</p>
+        <p><b>Nobody is prepared on the day they first ask.</b> The decision sits at the end of stage three, and it is the last one that costs you only the fee for the plan.</p>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

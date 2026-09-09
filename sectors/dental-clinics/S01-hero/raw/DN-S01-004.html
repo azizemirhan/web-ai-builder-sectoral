@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S01-004
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S01 — Hero
+  Direction      : Conversion-led
+  Theme          : 004 Daylight — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area, with the refusals riding its lower edge.**
+  Layout model   : The room across the top, then **the three commitments in a filled band pulled up
+                   over its lower edge** — still ahead of the headline, so the refusals are read
+                   before the proposition
+  Density        : Low-medium (90 visible words, hero band 40–90)
+  Media mode     : One reserved area — **the room the visitor will sit in**, at 21:9, carrying the
+                   band on its lower edge rather than sitting beside the type as decoration.
+  Interaction    : None (static; no JavaScript). One action. **No form.**
+
+  Governing idea : **Nobody arrives at a dentist's website in a good mood.**
+
+  What "conversion-led" means in this sector — lead with the refusals :
+                   The conversion reflex here is a smiling model, *book now*, and a discount on
+                   whitening. It converts the visitor who was already going to book and does nothing
+                   for the one who has been putting it off for years, which is most of them.
+                   What moves that visitor is not an offer. It is **the removal of the three specific
+                   things they are braced for** — the lecture, the bill that grows, and being sold
+                   treatment they do not need. So those three sit in the band above the headline,
+                   before the clinic has said anything about itself at all.
+                   That is the trade, and it is a real one: the headline is the fourth thing on this
+                   page, not the first. A visitor who wanted a discount will not find one.
+
+  Where the picture goes, and why it does not weaken that :
+                   A hero is the one section where a photograph is not decoration, so this study takes
+                   the room — but it refuses the arrangement every competitor uses, where the picture
+                   is the promise and the copy is the caption.
+                   **The band is pulled up over the lower edge of the photograph**, inset from both
+                   sides, so the first thing that resolves is a filled amber panel holding three
+                   refusals, with the room behind and above it. The picture is the largest element and
+                   the refusals are still the first thing read. **The photograph shows the room; it is
+                   not asked to make the argument.**
+                   No scrim, no type set over the image, and nothing dimmed to make text legible —
+                   which is the mechanism that produces the clinical-blue wash the contract bans.
+
+  What is not claimed :
+                   No *pain-free*, no *gentle*, no guarantee, no price, no rating, no award. Every one
+                   of the three commitments is something a visitor could check by asking, which is the
+                   only kind of claim this sector should make.
+
+  Placeholder data : The surgery count and years open are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true".
+
+  Content note   : No stock smile, no open mouth, no instrument, no tooth iconography, no aqua
+                   palette, no countdown, no scarcity, no discount. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S01-004">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Daylight">
+<meta name="section-shape" content="B — anchored, one reserved area with the refusals riding its lower edge">
+<meta name="layout-model" content="The room across the top, the three commitments in a filled band pulled up over its lower edge, still ahead of the headline">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="one-reserved-area-the-room-carrying-the-refusals-band-on-its-lower-edge">
+<meta name="interaction" content="none-one-action-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="surgery count, years open — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S01-004 — Hero, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .dn-s01-004 */
+.dn-s01-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #55585d;
+  --line: #e6e4e1;
+  --card: #f7f5f2;
+  --accent: #e08b2c;
+  --accent-ink: #1a1204;
+  --slot: #f0eeeb;
+  --slot-edge: #cbc7c2;
+  --slot-ink: #5c5f63;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s01-004 *,
+.dn-s01-004 *::before,
+.dn-s01-004 *::after { box-sizing: inherit; }
+.dn-s01-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+
+.dn-s01-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(36px, 4.6vw, 84px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- The room, as the ground the refusals sit on --- */
+.dn-s01-004 .room {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 24px;
+  background: var(--slot);
+  aspect-ratio: 21 / 9;
+  display: grid; place-items: center;
+  padding: clamp(16px, 2.2vw, 28px);
+}
+.dn-s01-004 .room span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; line-height: 1.45; max-width: 36ch; }
+
+/* --- The refusals, riding the lower edge of the picture and still ahead of the headline --- */
+.dn-s01-004 .band {
+  position: relative;
+  padding: clamp(24px, 3vw, 40px) clamp(22px, 2.8vw, 40px);
+  border-radius: 24px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  margin: calc(-1 * clamp(34px, 5vw, 88px)) clamp(0px, 2.4vw, 44px) clamp(28px, 3.4vw, 48px);
+}
+.dn-s01-004 .band h2 {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: 0.79rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+  opacity: 0.78;
+}
+.dn-s01-004 .commits { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 38px); }
+.dn-s01-004 .commits b { display: block; margin-bottom: 6px; font-size: clamp(1.1rem, 1.5vw, 1.34rem); line-height: 1.16; letter-spacing: -0.028em; font-weight: 800; }
+.dn-s01-004 .commits p { margin: 0; font-size: 0.97rem; font-weight: 600; opacity: 0.86; }
+
+/* --- Then the clinic speaks --- */
+.dn-s01-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(24px, 3.4vw, 56px);
+  align-items: end;
+}
+.dn-s01-004 h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 3.9vw, 3.25rem);
+  line-height: 1.02; letter-spacing: -0.04em; font-weight: 800;
+  max-width: 18ch;
+}
+.dn-s01-004 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.06rem, 1.3vw, 1.22rem); max-width: 46ch; }
+
+.dn-s01-004 .act {
+  margin: clamp(26px, 3.2vw, 44px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2vw, 26px);
+}
+.dn-s01-004 .act a {
+  display: inline-block;
+  padding: 14px 26px; border-radius: 999px;
+  background: var(--ink); color: var(--paper);
+  font-size: 1.02rem; font-weight: 800; letter-spacing: -0.01em; text-decoration: none;
+}
+.dn-s01-004 .act p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); max-width: 46ch; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s01-004 .commits { grid-template-columns: minmax(0, 1fr); }
+  .dn-s01-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s01-004 h1, .dn-s01-004 .lead { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s01-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s01-004" data-study-id="DN-S01-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="dn-s01-004-title">
+
+    <div class="room"><span>Image area &mdash; a surgery, in use</span></div>
+
+    <div class="band">
+      <h2>Three things that will not happen here</h2>
+      <ul class="commits">
+        <li>
+          <b>No lecture</b>
+          <p>What we found, not what you should have done.</p>
+        </li>
+        <li>
+          <b>No bill that grows</b>
+          <p>The whole cost in writing before anything starts.</p>
+        </li>
+        <li>
+          <b>Nobody on commission</b>
+          <p>Nothing is recommended because it pays better.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="head">
+      <h1 id="dn-s01-004-title">We are not going to ask why you left it.</h1>
+      <p class="lead">You will be told what we found, what it costs, and what happens if you wait. Then you decide.</p>
+    </div>
+
+    <div class="act">
+      <a href="#">Book the first appointment</a>
+      <p>An examination and a conversation. Nothing is done unless you ask.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S14-005
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S14 — Clinic Gallery
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Dusk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **A — Item grid. Media in every item. Five reserved areas.**
+  Layout model   : **Every frame is taken from where you will be**, and the label says from where —
+                   the pavement, the chair by the window, the visitor's side of the desk
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : Five reserved areas, each with a stated vantage point. **The sixth room has no
+                   frame, because there is no vantage: you are never in it.**
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **A room is not what it looks like. It is what happens in it, so that is the
+                   caption.**
+
+  The device, which is this study alone :
+                   **Every photograph is taken from where the visitor will be standing or sitting, and
+                   the label says from where.** From the pavement. From the chair by the window. From
+                   the visitor's side of the desk. From the doorway you come in by. From the chair.
+                   A clinic gallery is shot from where a photographer would stand: the corner with the
+                   widest angle, the lens low, the room emptied to read as space. **That vantage
+                   belongs to nobody who will ever be in the building.** It produces the picture an
+                   estate agent takes, which is the shot the contract bans, and it does so through the
+                   camera position rather than through the styling.
+                   Fixing the vantage fixes the anti-pattern at its cause. **A room photographed from
+                   the seat a patient sits in cannot be an estate-agent shot**, because the estate
+                   agent never sits down.
+
+  Why there are five frames and not six :
+                   The sterilisation room is the one room a visitor is never in, so **there is no
+                   vantage to shoot it from** under this study's rule. It is named in type with the
+                   same caption it carries everywhere else in the batch, and its absence from the grid
+                   is the study's rule holding rather than a field being dropped.
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price,
+                   no credential, no testimonial. No stock smile, no open mouth, no instrument near a
+                   face, no empty-surgery shot, no tooth iconography, no aqua palette. No global header.
+-->
+
+<meta name="study-id" content="DN-S14-005">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S14">
+<meta name="section-name" content="Clinic Gallery">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Dusk">
+<meta name="section-shape" content="A — item grid, media in every item, five reserved areas">
+<meta name="layout-model" content="Every frame taken from where you will be, and the label says from where">
+<meta name="density" content="structured">
+<meta name="media-mode" content="five-reserved-areas-each-with-a-stated-vantage-the-sixth-room-has-none-because-you-are-never-in-it">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="none — no count, figure or name appears in this study">
+<meta name="batch" content="V1">
+
+<title>DN-S14-005 — Clinic Gallery, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #14161a; }
+
+/* Scoped study styles — namespaced to .dn-s14-005 */
+.dn-s14-005 {
+  --paper: #14161a;
+  --ink: #f2f1ef;
+  --ink-soft: #9aa0a4;
+  --line: #2b2f35;
+  --accent: #6ea8a0;
+  --accent-ink: #10201d;
+  --slot: #1e2126;
+  --slot-edge: #3a3f46;
+  --slot-ink: #8f959a;
+  --focus: #6ea8a0;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s14-005 *,
+.dn-s14-005 *::before,
+.dn-s14-005 *::after { box-sizing: inherit; }
+.dn-s14-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 26px; }
+
+.dn-s14-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s14-005 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(28px, 3.4vw, 46px);
+}
+.dn-s14-005 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: 0.77rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s14-005 h2 {
+  margin: 0;
+  font-size: clamp(1.95rem, 3.6vw, 2.95rem);
+  line-height: 1.04; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 22ch;
+}
+.dn-s14-005 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); max-width: 50ch; }
+
+/* --- Five frames, each from the seat it belongs to --- */
+.dn-s14-005 .seats {
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 32px);
+}
+.dn-s14-005 .seats > li:nth-child(4) { grid-column: span 2; }
+.dn-s14-005 .frame {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 26px;
+  background: var(--slot);
+  aspect-ratio: 4 / 3;
+  display: grid; place-items: end start;
+  padding: clamp(14px, 2vw, 22px);
+  margin-bottom: clamp(11px, 1.5vw, 14px);
+}
+.dn-s14-005 .seats > li:nth-child(4) .frame { aspect-ratio: 8 / 3; }
+.dn-s14-005 .frame span {
+  display: inline-block;
+  padding: 7px 14px; border-radius: 999px;
+  background: var(--paper); color: var(--slot-ink);
+  font-size: 0.76rem; font-weight: 800; line-height: 1.35;
+}
+.dn-s14-005 .frame span em { font-style: normal; color: var(--accent); }
+.dn-s14-005 .seats p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+
+/* --- The room with no vantage --- */
+.dn-s14-005 .novantage {
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  padding: clamp(20px, 2.6vw, 28px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: minmax(0, 0.5fr) minmax(0, 1.5fr);
+  gap: clamp(16px, 2.4vw, 40px);
+  align-items: baseline;
+}
+.dn-s14-005 .novantage b { font-size: clamp(1.06rem, 1.34vw, 1.24rem); letter-spacing: -0.026em; font-weight: 800; color: var(--accent); }
+.dn-s14-005 .novantage p { margin: 0; font-size: 1rem; color: var(--ink); font-weight: 600; }
+
+.dn-s14-005 .notes {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 46px);
+}
+.dn-s14-005 .notes b { display: block; margin-bottom: 5px; font-size: 1.01rem; letter-spacing: -0.022em; font-weight: 800; }
+.dn-s14-005 .notes p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+
+.dn-s14-005 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.08rem, 1.42vw, 1.32rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  max-width: 46ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s14-005 .seats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dn-s14-005 .seats > li:nth-child(4) { grid-column: span 2; }
+}
+@media (max-width: 860px) {
+  .dn-s14-005 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s14-005 h2, .dn-s14-005 .lead, .dn-s14-005 .close { max-width: none; }
+  .dn-s14-005 .novantage { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .dn-s14-005 .notes { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .dn-s14-005 .seats { grid-template-columns: minmax(0, 1fr); }
+  .dn-s14-005 .seats > li:nth-child(4) { grid-column: auto; }
+  .dn-s14-005 .seats > li:nth-child(4) .frame { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s14-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s14-005" data-study-id="DN-S14-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="dn-s14-005-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The rooms</p>
+        <h2 id="dn-s14-005-title">Every one of these is taken from where you will be.</h2>
+      </div>
+      <p class="lead">These are in the order you will see them, and the caption on each is what happens there rather than what it is.</p>
+    </div>
+
+    <ul class="seats">
+      <li>
+        <div class="frame"><span>The door <em>&mdash; from the pavement</em></span></div>
+        <p>Street level, no step, and the bell is on the left.</p>
+      </li>
+      <li>
+        <div class="frame"><span>The waiting room <em>&mdash; from the chair by the window</em></span></div>
+        <p>Where you wait if we are running late. Somebody will tell you how late.</p>
+      </li>
+      <li>
+        <div class="frame"><span>The desk <em>&mdash; from the visitor's side</em></span></div>
+        <p>Where the plan is gone through, and where you ask to see the sterilisation log.</p>
+      </li>
+      <li>
+        <div class="frame"><span>The surgery <em>&mdash; from the doorway you come in by</em></span></div>
+        <p>There are two. This is the one on the ground floor.</p>
+      </li>
+      <li>
+        <div class="frame"><span>The ceiling above the chair <em>&mdash; from the chair</em></span></div>
+        <p>The only thing you will look at for most of the appointment.</p>
+      </li>
+    </ul>
+
+    <div class="novantage">
+      <b>The sterilisation room &mdash; no vantage</b>
+      <p>Behind the desk. The one room here you will not be in, so under this study's rule there is nowhere to photograph it from.</p>
+    </div>
+
+    <ul class="notes">
+      <li>
+        <b>Nothing was tidied for these</b>
+        <p>Taken on an ordinary working day, in this order, and nothing was moved.</p>
+      </li>
+      <li>
+        <b>What is not here</b>
+        <p>Nobody's face, no treatment in progress, nothing from a supplier's catalogue.</p>
+      </li>
+    </ul>
+
+    <p class="close">You will be in five of these six. The sixth you can ask to see.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

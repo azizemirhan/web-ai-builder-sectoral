@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S14-003
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S14 — Clinic Gallery
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Slate — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **A — Item grid. Media in every item. Six reserved areas.**
+  Layout model   : **Five joined into one plate, and the sixth across a gap** — the break is where the
+                   rooms you are in stop
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : Six reserved areas. The five you enter are one object; **the sterilisation room is
+                   a separate one**, because you never go in it.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **A room is not what it looks like. It is what happens in it, so that is the
+                   caption.**
+
+  What the structured reading adds — the gap is the closing line, drawn :
+                   Every treatment of this section ends on the same sentence: *you will be in five of
+                   these six, the sixth you can ask to see.* Four of the five studies **say** it. This
+                   one builds it.
+                   The five rooms a visitor actually enters are **one object** — joined on a two-pixel
+                   seam, one ground, one radius, read as a single route. The sterilisation room sits
+                   across a real gap on the paper ground, in its own frame, because **it is not a stop
+                   on the route.** A reader who never gets to the caption has already been told which
+                   one is different, and the thing telling them is the space rather than a label.
+                   A six-cell grid would have made all six equivalent, which is the claim the closing
+                   line spends its words correcting.
+
+  The anti-pattern, and how this avoids it :
+                   The contract bans the empty white surgery — the estate-agent shot, scrubbed and
+                   over-lit, presented as evidence of quality. These are taken **on an ordinary working
+                   day, in this order, and nothing was moved**, and every caption is a fact about what
+                   happens rather than an adjective about how it looks.
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price,
+                   no credential, no testimonial. No stock smile, no open mouth, no instrument near a
+                   face, no empty-surgery shot, no tooth iconography, no aqua palette. No global header.
+-->
+
+<meta name="study-id" content="DN-S14-003">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S14">
+<meta name="section-name" content="Clinic Gallery">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Slate">
+<meta name="section-shape" content="A — item grid, media in every item, six reserved areas">
+<meta name="layout-model" content="Five joined into one plate and the sixth across a gap, the break where the rooms you are in stop">
+<meta name="density" content="structured">
+<meta name="media-mode" content="six-reserved-areas-five-joined-as-one-route-and-the-sterilisation-room-detached">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="none — no count, figure or name appears in this study">
+<meta name="batch" content="V1">
+
+<title>DN-S14-003 — Clinic Gallery, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eef0f2; }
+
+/* Scoped study styles — namespaced to .dn-s14-003 */
+.dn-s14-003 {
+  --paper: #eef0f2;
+  --ink: #0f1316;
+  --ink-soft: #515a61;
+  --line: #d6dbdf;
+  --card: #ffffff;
+  --accent: #2c5fd0;
+  --accent-ink: #ffffff;
+  --slot: #e1e6ea;
+  --slot-edge: #b5bec6;
+  --slot-ink: #5a636a;
+  --focus: #0f1316;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s14-003 *,
+.dn-s14-003 *::before,
+.dn-s14-003 *::after { box-sizing: inherit; }
+.dn-s14-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.dn-s14-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s14-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(22px, 2.8vw, 36px);
+}
+.dn-s14-003 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s14-003 h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s14-003 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 48ch; }
+
+/* --- The route, and the room that is not on it --- */
+.dn-s14-003 .route {
+  display: grid;
+  grid-template-columns: minmax(0, 3.1fr) minmax(0, 1fr);
+  gap: clamp(22px, 3vw, 46px);
+  align-items: start;
+  margin-bottom: clamp(26px, 3.2vw, 42px);
+}
+.dn-s14-003 .run {
+  margin: 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2px;
+  border-radius: 20px; overflow: hidden; background: var(--line);
+}
+.dn-s14-003 .run > li { background: var(--card); padding: clamp(10px, 1.4vw, 14px) clamp(10px, 1.4vw, 14px) clamp(14px, 1.8vw, 18px); }
+.dn-s14-003 .frame {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 12px;
+  background: var(--slot);
+  aspect-ratio: 3 / 4;
+  display: grid; place-items: center;
+  padding: clamp(8px, 1.2vw, 12px);
+  margin-bottom: clamp(9px, 1.3vw, 12px);
+}
+.dn-s14-003 .frame span { color: var(--slot-ink); font-size: 0.73rem; font-weight: 800; text-align: center; line-height: 1.3; }
+.dn-s14-003 .run p { margin: 0; font-size: 0.87rem; line-height: 1.42; color: var(--ink-soft); }
+
+.dn-s14-003 .apart b {
+  display: block; margin-bottom: clamp(9px, 1.2vw, 12px);
+  font-size: 0.73rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+/* Matched to the run in height, not in ratio: the detached room must not become the biggest
+   image on a page arguing that it is the one outside the route. */
+.dn-s14-003 .apart .frame { aspect-ratio: 4 / 3; border-radius: 20px; }
+.dn-s14-003 .apart p { margin: 0; font-size: 0.93rem; color: var(--ink); font-weight: 600; }
+
+/* --- What was and was not done to these --- */
+.dn-s14-003 .notes {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 46px);
+}
+.dn-s14-003 .notes b { display: block; margin-bottom: 5px; font-size: 1.01rem; letter-spacing: -0.022em; font-weight: 800; }
+.dn-s14-003 .notes p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+
+.dn-s14-003 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.08rem, 1.42vw, 1.32rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  max-width: 46ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 1100px) {
+  .dn-s14-003 .run { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .dn-s14-003 .route { grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); }
+}
+@media (max-width: 860px) {
+  .dn-s14-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s14-003 h2, .dn-s14-003 .lead, .dn-s14-003 .close { max-width: none; }
+  .dn-s14-003 .route { grid-template-columns: minmax(0, 1fr); }
+  .dn-s14-003 .run { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dn-s14-003 .notes { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .dn-s14-003 .run { grid-template-columns: minmax(0, 1fr); }
+  .dn-s14-003 .frame { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s14-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s14-003" data-study-id="DN-S14-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="dn-s14-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The rooms</p>
+        <h2 id="dn-s14-003-title">Five are one object. The sixth is across a gap.</h2>
+      </div>
+      <p class="lead">These are in the order you will see them, and the caption on each is what happens there rather than what it is.</p>
+    </div>
+
+    <div class="route">
+      <ul class="run">
+        <li>
+          <div class="frame"><span>The door</span></div>
+          <p>Street level, no step, and the bell is on the left.</p>
+        </li>
+        <li>
+          <div class="frame"><span>The waiting room</span></div>
+          <p>Where you wait if we are running late. Somebody will tell you how late.</p>
+        </li>
+        <li>
+          <div class="frame"><span>The desk</span></div>
+          <p>Where the plan is gone through, and where you ask to see the sterilisation log.</p>
+        </li>
+        <li>
+          <div class="frame"><span>The surgery</span></div>
+          <p>There are two. This is the one on the ground floor.</p>
+        </li>
+        <li>
+          <div class="frame"><span>The ceiling above the chair</span></div>
+          <p>The only thing you will look at for most of the appointment.</p>
+        </li>
+      </ul>
+      <div class="apart">
+        <b>Not on the route</b>
+        <div class="frame"><span>The sterilisation room</span></div>
+        <p>Behind the desk. The one room here you will not be in.</p>
+      </div>
+    </div>
+
+    <ul class="notes">
+      <li>
+        <b>Nothing was tidied for these</b>
+        <p>Taken on an ordinary working day, in this order, and nothing was moved.</p>
+      </li>
+      <li>
+        <b>What is not here</b>
+        <p>Nobody's face, no treatment in progress, nothing from a supplier's catalogue.</p>
+      </li>
+    </ul>
+
+    <p class="close">You will be in five of these six. The sixth you can ask to see.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

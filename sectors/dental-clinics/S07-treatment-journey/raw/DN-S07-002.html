@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S07-002
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S07 — Treatment Journey
+  Direction      : Premium / Editorial
+  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area.**
+  Layout model   : **The step with no appointment gets the most page.** Four stages compressed to a
+                   line each, and stage four broken out at display size across the measure
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the room the first appointment happens in**, at the head.
+                   The room the visitor will sit in, which the contract names as honest.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **Every step here has two halves, and the second one is yours.**
+
+  The editorial cut — give the page to the step nobody draws :
+                   A journey is normally set as five equal boxes, which asserts that the five steps are
+                   comparable. **They are not.** Four of them are appointments, measured in minutes,
+                   and one is six weeks long, has no appointment in it, and decides how the work
+                   settles.
+                   Setting them equal is not neutral — it is a claim, and it is false. So this study
+                   sets them at the weight they actually carry: **four lines, and one broken out across
+                   the measure at display size.**
+                   The clinic's half of that stage is the word `Nothing`, printed at the same size as
+                   the sentence beside it, because a stage where the clinic does nothing is exactly the
+                   stage a clinic would rather not draw.
+
+  The arithmetic, in all five studies :
+                   **Nine weeks from the first appointment to the check. Three hours of it in our
+                   chair.** Roughly one part in a hundred, and no competitor prints it.
+
+  The media, per the contract :
+                   The honest subjects are the room, the people and the named equipment. This is the
+                   room the first appointment happens in — the one stage of the five that has a place
+                   attached to it. **The healing stage is not photographed**, because the picture would
+                   be an empty surgery, which the contract bans outright as an anti-pattern.
+
+  Placeholder data : The five durations, the nine weeks and the three hours are PLACEHOLDER DEMO
+                   VALUES marked data-placeholder="true".
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price,
+                   no credential, no testimonial, no before/after. Nothing here reproaches the reader.
+                   No stock smile, no open mouth, no instrument near a face, no aqua palette. No
+                   global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S07-002">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S07">
+<meta name="section-name" content="Treatment Journey">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Linen">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="Four stages compressed to a line each, stage four broken out at display size across the measure">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-room-the-first-appointment-happens-in">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="five durations, nine weeks, three hours — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S07-002 — Treatment Journey, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f3efe8; }
+
+/* Scoped study styles — namespaced to .dn-s07-002 */
+.dn-s07-002 {
+  --paper: #f3efe8;
+  --ink: #1b1714;
+  --ink-soft: #6a6058;
+  --line: #ddd5c9;
+  --accent: #a2543a;
+  --slot: #e9e2d8;
+  --slot-edge: #c6bcae;
+  --slot-ink: #635b53;
+  --focus: #1b1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s07-002 *,
+.dn-s07-002 *::before,
+.dn-s07-002 *::after { box-sizing: inherit; }
+.dn-s07-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+
+.dn-s07-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s07-002 .eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s07-002 h2 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  line-height: 1.0; letter-spacing: -0.044em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s07-002 .lead { margin: 0 0 clamp(24px, 3vw, 38px); max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.08rem, 1.36vw, 1.24rem); }
+
+.dn-s07-002 .room {
+  border: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  aspect-ratio: 24 / 7;
+  display: grid; place-items: center;
+  padding: clamp(16px, 2.2vw, 28px);
+  margin: 0 calc(-1 * clamp(22px, 3.6vw, 58px)) clamp(10px, 1.3vw, 14px);
+}
+.dn-s07-002 .room span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; }
+.dn-s07-002 .sum { margin: 0 0 clamp(30px, 3.8vw, 52px); font-size: 0.92rem; color: var(--ink-soft); }
+.dn-s07-002 .sum b { color: var(--ink); font-weight: 800; }
+
+/* --- Four of them, a line each --- */
+.dn-s07-002 .brief { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(16px, 2vw, 24px); }
+.dn-s07-002 .brief li {
+  padding-bottom: clamp(16px, 2vw, 24px);
+  border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(16px, 2.4vw, 40px);
+}
+.dn-s07-002 .brief h3 { margin: 0 0 3px; font-size: clamp(1.14rem, 1.5vw, 1.34rem); letter-spacing: -0.026em; font-weight: 800; }
+.dn-s07-002 .brief .when { display: block; font-size: 0.9rem; font-weight: 700; color: var(--accent); }
+.dn-s07-002 .brief p { margin: 0; font-size: 1rem; color: var(--ink-soft); }
+.dn-s07-002 .brief .yours { margin-top: 7px !important; color: var(--ink) !important; font-weight: 600; }
+
+/* --- And the one that is six weeks long --- */
+.dn-s07-002 .long { margin: clamp(30px, 3.8vw, 54px) 0 clamp(26px, 3.2vw, 44px); }
+.dn-s07-002 .long h3 {
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  line-height: 1.02; letter-spacing: -0.04em; font-weight: 800;
+}
+.dn-s07-002 .long .when { display: inline-block; margin-left: 12px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); vertical-align: middle; }
+.dn-s07-002 .long .split { display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: clamp(16px, 2.4vw, 40px); align-items: baseline; }
+.dn-s07-002 .long .nil { margin: 0; font-size: clamp(1.3rem, 2.1vw, 1.72rem); line-height: 1.14; letter-spacing: -0.03em; font-weight: 800; }
+.dn-s07-002 .long .yours { margin: 0; font-size: clamp(1.3rem, 2.1vw, 1.72rem); line-height: 1.14; letter-spacing: -0.03em; font-weight: 800; color: var(--accent); }
+
+.dn-s07-002 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.26; letter-spacing: -0.026em; font-weight: 800;
+  max-width: 40ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s07-002 h2, .dn-s07-002 .lead, .dn-s07-002 .close { max-width: none; }
+  .dn-s07-002 .brief li, .dn-s07-002 .long .split { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .dn-s07-002 .room { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s07-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s07-002" data-study-id="DN-S07-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="dn-s07-002-title">
+
+    <p class="eyebrow">What happens</p>
+    <h2 id="dn-s07-002-title">Four of these are appointments. One is six weeks.</h2>
+    <p class="lead">Every step here has two halves, and the second one is yours. That half is missing from every journey diagram in this sector.</p>
+
+    <div class="room"><span>Image area &mdash; the room the first appointment happens in</span></div>
+    <p class="sum"><b><span data-placeholder="true">Nine weeks</span> from the first appointment to the check.</b> <span data-placeholder="true">Three hours</span> of it in our chair.</p>
+
+    <ul class="brief">
+      <li>
+        <div>
+          <h3>The first appointment</h3>
+          <span class="when" data-placeholder="true">about forty minutes</span>
+        </div>
+        <div>
+          <p>Look, and write down what we found.</p>
+          <p class="yours">Say what you have noticed, and what you are worried about.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The written plan</h3>
+          <span class="when" data-placeholder="true">as long as you want</span>
+        </div>
+        <div>
+          <p>Price every option, including doing nothing, and post it.</p>
+          <p class="yours">Read it, and say no to any part of it.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The work</h3>
+          <span class="when" data-placeholder="true">two visits, about an hour each</span>
+        </div>
+        <div>
+          <p>The agreed work, in the agreed order, stopping when you raise your hand.</p>
+          <p class="yours">Turn up, and tell us if anything has changed.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="long">
+      <h3>Healing<span class="when" data-placeholder="true">six weeks</span></h3>
+      <div class="split">
+        <p class="nil">Nothing.</p>
+        <p class="yours">The aftercare. This is the half that decides how it settles.</p>
+      </div>
+    </div>
+
+    <ul class="brief">
+      <li>
+        <div>
+          <h3>The check</h3>
+          <span class="when" data-placeholder="true">about twenty minutes</span>
+        </div>
+        <div>
+          <p>Look again, and say whether it worked.</p>
+          <p class="yours">Come back even if it feels fine.</p>
+        </div>
+      </li>
+    </ul>
+
+    <p class="close">The longest step is the one where we do nothing.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

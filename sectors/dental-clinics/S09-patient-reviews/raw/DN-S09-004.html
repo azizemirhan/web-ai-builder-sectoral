@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S09-004
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S09 — Patient Reviews
+  Direction      : Conversion-led
+  Theme          : 004 Daylight — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area.**
+  Layout model   : **The one thing we do not do**, in a filled band at display size, then the four
+                   policies, then both lists, then the room
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the desk and the waiting room**, at the foot. The first
+                   screen is spent on the refusal, so the photograph cannot be at the top.
+  Interaction    : None (static; no JavaScript). No links. **No form.**
+
+  Governing idea : **A review can tell you how you will be treated. It cannot tell you whether the
+                   dentistry was any good.**
+
+  What "conversion-led" means in this sector — give up the average :
+                   The conversion reflex on this section is a rating badge and five cards. The badge is
+                   the single highest-converting element on a clinic site, and **it is manufactured**:
+                   the reliable way to build one is to hand somebody a tablet at the desk, or ask while
+                   they are still numb and relieved it is over. Nobody says no in that chair.
+                   So the band carries the sentence that gives it up: **we do not ask for a review at
+                   the chair.** A practice that refuses the moment of maximum compliance is choosing a
+                   lower average on purpose, and that is a decision a competitor can copy only by
+                   accepting the same cost.
+                   The trade is exact and it is the largest in the batch. **This section surrenders the
+                   number every visitor scans for** and offers instead four things it will not do to
+                   the reviews it does get.
+
+  Why the photograph is at the foot :
+                   The first screen belongs to the refusal. The room appears after the policies, where
+                   it illustrates the half a review can reach rather than decorating a rating.
+
+  Placeholder data : The listing name is a PLACEHOLDER DEMO VALUE marked data-placeholder="true".
+
+  Content note   : **No testimonial, no patient name or initial, no quotation, no star, no rating, no
+                   average, no review count, no award, no badge.** No outcome guarantee, no *pain-free*
+                   or *gentle*, no superiority claim, no price, no percentage, no credential, no
+                   countdown, no scarcity, no *book now*. No stock smile, no open mouth, no instrument
+                   near a face, no aqua palette. No global header.
+-->
+
+<meta name="study-id" content="DN-S09-004">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S09">
+<meta name="section-name" content="Patient Reviews">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Daylight">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="The one thing we do not do in a filled band at display size, then the four policies, then both lists, then the room">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-desk-and-waiting-room-at-the-foot">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="listing name — demo value, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S09-004 — Patient Reviews, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .dn-s09-004 */
+.dn-s09-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #55585d;
+  --line: #e6e4e1;
+  --card: #f7f5f2;
+  --accent: #e08b2c;
+  --accent-ink: #1a1204;
+  --accent-text: #8a5210;
+  --slot: #f0eeeb;
+  --slot-edge: #cbc7c2;
+  --slot-ink: #5c5f63;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s09-004 *,
+.dn-s09-004 *::before,
+.dn-s09-004 *::after { box-sizing: inherit; }
+.dn-s09-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+
+.dn-s09-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s09-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s09-004 .lead { margin: 0 0 clamp(22px, 2.8vw, 34px); color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); max-width: 56ch; }
+
+/* --- The refusal that costs the most --- */
+.dn-s09-004 .band {
+  padding: clamp(28px, 3.4vw, 50px) clamp(22px, 2.8vw, 40px);
+  border-radius: 24px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  margin-bottom: clamp(26px, 3.2vw, 42px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(20px, 3vw, 50px);
+  align-items: end;
+}
+.dn-s09-004 .band h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.4vw, 2.85rem);
+  line-height: 1.04; letter-spacing: -0.04em; font-weight: 800;
+  max-width: 16ch;
+}
+.dn-s09-004 .band p { margin: 0; font-size: 1.02rem; font-weight: 600; opacity: 0.92; }
+
+/* --- The other three --- */
+.dn-s09-004 .policy {
+  margin: 0 0 clamp(28px, 3.4vw, 46px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 40px);
+}
+.dn-s09-004 .policy b { display: block; margin-bottom: 5px; font-size: 1.04rem; letter-spacing: -0.024em; font-weight: 800; color: var(--accent-text); }
+.dn-s09-004 .policy p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+
+/* --- What they reach, and what they do not --- */
+.dn-s09-004 .halves {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3.2vw, 54px);
+  margin-bottom: clamp(26px, 3.2vw, 42px);
+  padding-top: clamp(24px, 3vw, 36px);
+  border-top: 1px solid var(--line);
+}
+.dn-s09-004 h3 { margin: 0 0 clamp(12px, 1.6vw, 16px); font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent-text); }
+.dn-s09-004 .cannot h3 { color: var(--ink); }
+.dn-s09-004 .halves ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(8px, 1.1vw, 11px); }
+.dn-s09-004 .halves li { font-size: clamp(1.02rem, 1.24vw, 1.16rem); letter-spacing: -0.018em; color: var(--ink-soft); }
+.dn-s09-004 .cannot li { color: var(--ink); font-weight: 700; }
+.dn-s09-004 .cannot p { margin: clamp(11px, 1.5vw, 15px) 0 0; font-size: 0.96rem; color: var(--ink-soft); }
+
+.dn-s09-004 .room {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 24px;
+  background: var(--slot);
+  aspect-ratio: 32 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 24px);
+  margin-bottom: clamp(24px, 3vw, 38px);
+}
+.dn-s09-004 .room span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+
+.dn-s09-004 .close {
+  margin: 0;
+  font-size: clamp(1.08rem, 1.42vw, 1.32rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  max-width: 44ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s09-004 .policy { grid-template-columns: minmax(0, 1fr); gap: clamp(18px, 2.2vw, 26px); }
+}
+@media (max-width: 860px) {
+  .dn-s09-004 .band { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s09-004 .band h2, .dn-s09-004 .lead, .dn-s09-004 .close { max-width: none; }
+  .dn-s09-004 .halves { grid-template-columns: minmax(0, 1fr); }
+  .dn-s09-004 .room { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s09-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s09-004" data-study-id="DN-S09-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="dn-s09-004-title">
+
+    <p class="eyebrow">What patients say</p>
+    <p class="lead">Reviews are about the parts of a visit you could see. The dentistry is not one of them, and this page says so rather than showing you five of the good ones.</p>
+
+    <div class="band">
+      <h2 id="dn-s09-004-title">We do not ask at the chair.</h2>
+      <p>Asking somebody while they are still numb is how a high average gets built. Nobody says no in that chair, so we do not put them in the position of saying it.</p>
+    </div>
+
+    <ul class="policy">
+      <li>
+        <b>They are not here</b>
+        <p>They are on <span data-placeholder="true">the public listing</span>, where we cannot delete one or move it up.</p>
+      </li>
+      <li>
+        <b>The wrong ones stay up</b>
+        <p>Including the ones we think are unfair.</p>
+      </li>
+      <li>
+        <b>We reply under our own name</b>
+        <p>Never anonymously, and never twice to the same one.</p>
+      </li>
+    </ul>
+
+    <div class="halves">
+      <div>
+        <h3>A review can tell you</h3>
+        <ul>
+          <li>How long you waited.</li>
+          <li>Whether the phone was answered.</li>
+          <li>Whether anyone explained what they were doing.</li>
+          <li>Whether the bill matched the plan.</li>
+        </ul>
+      </div>
+      <div class="cannot">
+        <h3>It cannot tell you</h3>
+        <ul>
+          <li>Whether the filling was placed well.</li>
+          <li>Whether the crown fits your bite.</li>
+          <li>Whether the treatment was needed at all.</li>
+        </ul>
+        <p>None of that can be judged from the chair, including by the person in it.</p>
+      </div>
+    </div>
+
+    <div class="room"><span>Image area &mdash; the desk and the waiting room</span></div>
+
+    <p class="close">The half a review cannot reach is the half you are paying for.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

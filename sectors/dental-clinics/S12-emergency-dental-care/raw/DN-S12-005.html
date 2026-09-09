@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S12-005
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S12 — Emergency Dental Care
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Dusk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **C — Type and colour. No reserved media at all.**
+  Layout model   : **One column, everything at reading-out-loud size**, three lists stacked with
+                   nothing beside them and no second thing to look at
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : **NONE.** Recorded below, as the contract requires of a `C`.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **Most of what wakes people at night can wait until morning. Three things cannot,
+                   and they are first.**
+
+  The device, which is this study alone :
+                   **The art direction is the legibility.** Every other study in this batch is laid out
+                   for somebody who is reading — columns to compare, a picture to place the room, a
+                   band to hold a pair of facts. This one is laid out for somebody who is not reading
+                   properly: in pain, at night, on a phone, holding a tooth.
+                   So there is **one column and no second thing to look at.** Type runs at the size the
+                   rest of the sector reserves for headlines, the measure is short enough to take in
+                   without moving the eye, and the three lists stack in the order somebody needs them
+                   rather than the order that composes well.
+                   Nothing here is decorative, and that is the design rather than the absence of one.
+                   **A section that has to work at two in the morning has exactly one job**, and every
+                   choice on this page is that job or is not on the page.
+
+  Why there is no image :
+                   The reader is not browsing. **Every pixel spent on a photograph is a pixel between
+                   them and the line they need**, and the only honest subject available — a surgery —
+                   tells them nothing about which list they are on. In a study whose whole argument is
+                   that nothing should compete with the text, a reserved area would be the one thing
+                   competing with it.
+
+  Why the accent is used once :
+                   On the middle list, which is the only one that ends in *ring us*. The first list
+                   sends people to a hospital and the third sends them back to bed. **Colour here is a
+                   wayfinding budget, and it is spent on the one line that is an instruction to act.**
+
+  Placeholder data : The number of appointments held each day is a PLACEHOLDER DEMO VALUE marked
+                   data-placeholder="true".
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price,
+                   no credential, no testimonial, no *24/7*, no telephone number, no clock time. No
+                   stock smile, no open mouth, no instrument near a face, no aqua palette, no red
+                   alarm colour. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S12-005">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S12">
+<meta name="section-name" content="Emergency Dental Care">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Dusk">
+<meta name="section-shape" content="C — type and colour, no reserved media">
+<meta name="layout-model" content="One column, everything at reading-out-loud size, three lists stacked with no second thing to look at">
+<meta name="density" content="structured">
+<meta name="media-mode" content="none-deliberate-nothing-should-compete-with-the-text-at-two-in-the-morning">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="appointments held each day — demo value, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S12-005 — Emergency Dental Care, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #14161a; }
+
+/* Scoped study styles — namespaced to .dn-s12-005 */
+.dn-s12-005 {
+  --paper: #14161a;
+  --ink: #f2f1ef;
+  --ink-soft: #9aa0a4;
+  --line: #2b2f35;
+  --accent: #6ea8a0;
+  --accent-ink: #10201d;
+  --focus: #6ea8a0;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s12-005 *,
+.dn-s12-005 *::before,
+.dn-s12-005 *::after { box-sizing: inherit; }
+.dn-s12-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 26px; }
+
+/* One column. Nothing beside anything. */
+.dn-s12-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+/* An explicit measure, not a ch value: ch resolves against this element font size, not the
+   display sizes inside it, so a ch column collapses to a strip beside large type. */
+.dn-s12-005 .col { max-width: min(100%, 720px); }
+
+.dn-s12-005 .eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s12-005 h2 {
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  font-size: clamp(1.85rem, 3.6vw, 3.05rem);
+  line-height: 1.1; letter-spacing: -0.034em; font-weight: 800;
+}
+
+/* --- Three lists, at the size somebody reads them out loud --- */
+.dn-s12-005 .levels { margin: 0 0 clamp(28px, 3.4vw, 44px); padding: 0; list-style: none; display: grid; gap: clamp(26px, 3.2vw, 40px); }
+.dn-s12-005 .levels > li { padding-top: clamp(16px, 2vw, 20px); border-top: 3px solid var(--line); }
+.dn-s12-005 .levels > li:first-child { border-top-color: var(--ink); }
+.dn-s12-005 .levels > li:nth-child(2) { border-top-color: var(--accent); }
+.dn-s12-005 .levels h3 { margin: 0 0 10px; font-size: clamp(1.4rem, 2.4vw, 2rem); line-height: 1.16; letter-spacing: -0.03em; font-weight: 800; }
+.dn-s12-005 .levels > li:nth-child(2) h3 { color: var(--accent); }
+.dn-s12-005 .levels p { margin: 0; font-size: clamp(1.12rem, 1.6vw, 1.4rem); line-height: 1.4; color: var(--ink-soft); }
+.dn-s12-005 .levels .do { margin-top: 10px !important; color: var(--ink) !important; font-weight: 700; }
+.dn-s12-005 .levels > li:nth-child(2) .do { color: var(--accent) !important; }
+
+.dn-s12-005 .us { margin: 0 0 clamp(26px, 3.2vw, 40px); padding: clamp(22px, 2.8vw, 32px) 0 0; border-top: 1px solid var(--line); list-style: none; display: grid; gap: clamp(18px, 2.2vw, 26px); }
+.dn-s12-005 .us b { display: block; margin-bottom: 5px; font-size: clamp(1.04rem, 1.3vw, 1.18rem); letter-spacing: -0.022em; font-weight: 800; }
+.dn-s12-005 .us p { margin: 0; font-size: 1.02rem; color: var(--ink-soft); }
+
+.dn-s12-005 .ask { margin: 0 0 clamp(26px, 3.2vw, 40px); font-size: clamp(1.24rem, 1.9vw, 1.68rem); line-height: 1.26; letter-spacing: -0.026em; font-weight: 800; }
+
+.dn-s12-005 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.08rem, 1.36vw, 1.24rem);
+  line-height: 1.32; letter-spacing: -0.022em; font-weight: 800;
+  color: var(--ink-soft);
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s12-005 .col { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s12-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s12-005" data-study-id="DN-S12-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="dn-s12-005-title">
+    <div class="col">
+
+      <p class="eyebrow">Emergencies</p>
+      <h2 id="dn-s12-005-title">Most of what wakes people at night can wait until morning. Three things cannot, and they are first.</h2>
+
+      <ul class="levels">
+        <li>
+          <h3>Hospital, not us</h3>
+          <p>Bleeding that will not stop. Swelling closing an eye, or making it hard to swallow. A blow to the head.</p>
+          <p class="do">These are not dental appointments.</p>
+        </li>
+        <li>
+          <h3>Today, and ring first</h3>
+          <p>A tooth knocked out or knocked loose. A broken tooth with the nerve showing. Swelling in the face that is growing.</p>
+          <p class="do">Ring as soon as you can; for a knocked-out tooth the first hour matters most.</p>
+        </li>
+        <li>
+          <h3>It can wait until morning</h3>
+          <p>A lost filling. A lost crown. A chipped edge that does not hurt. An ulcer. Cold sensitivity.</p>
+          <p class="do">Frightening at midnight, and none of it is worse at nine.</p>
+        </li>
+      </ul>
+
+      <ul class="us">
+        <li>
+          <b>We are not open at night or on Sunday</b>
+          <p>The out-of-hours number is on the contact page, answered by people who do this all night.</p>
+        </li>
+        <li>
+          <b>We keep <span data-placeholder="true">two</span> appointments free every working day</b>
+          <p>They are for the middle list. Not bookable in advance &mdash; they are for that day.</p>
+        </li>
+      </ul>
+
+      <p class="ask">If you are not sure which list you are on, ring. Guessing from a list is not your job.</p>
+
+      <p class="close">Most of this list is us telling you not to come tonight.</p>
+
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

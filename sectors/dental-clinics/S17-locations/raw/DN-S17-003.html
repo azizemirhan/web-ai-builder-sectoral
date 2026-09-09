@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S17-003
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S17 — Locations
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Slate — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. Two reserved areas.**
+  Layout model   : **The building as a specification** — three blocks, ground floor, first floor, and
+                   the things that are not a floor problem, then the two frames shot from a chair
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : Two reserved areas — **the hallway and the stairs, both photographed at seated
+                   height.** The vantage is the argument; see below.
+  Interaction    : None (static; no JavaScript). No links, **no map embed.**
+
+  Governing idea : **One address, two floors, and only one of them works for everybody.**
+
+                   The structured reading of a locations section is a specification, so this is one.
+                   And a specification of a building tells the truth a claim of accessibility cannot:
+                   **the practice is in a building it did not design and does not own the failures of.**
+                   The stairs are not an attitude. They are a first floor in a building older than the
+                   practice, and no amount of *fully accessible* changes the plan of it.
+
+  The third block :
+                   `Not a floor problem` is the block that keeps the specification honest. The hearing
+                   loop and the missing sign are not architecture — **nobody is stopped by a staircase
+                   from installing a loop**, and putting them in with the floors would let the building
+                   take the blame for two things it did not do.
+
+  Why both photographs are taken from a chair :
+                   Every other frame in this batch is shot standing, because that is how most people
+                   arrive. **These two are shot at seated height, because the two facts they carry are
+                   about a chair** — a hallway is wide enough or it is not, and a staircase from a
+                   seated eye-line is a different object from a staircase you are about to walk up.
+                   A photograph taken from the wrong height is a photograph of somebody else's visit.
+                   `S14` fixed this principle for rooms; this applies it to a route.
+
+  Placeholder data : The two walking times are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
+                   No address, street name, postcode or telephone number is invented.
+
+  Content note   : No *conveniently located*, no *easy to find*, no *fully accessible*. No outcome
+                   guarantee, no *pain-free* or *gentle*, no superiority claim, no price, no
+                   credential, no testimonial. No map, no pin, no stock smile, no aqua palette. No
+                   global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S17-003">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S17">
+<meta name="section-name" content="Locations">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Slate">
+<meta name="section-shape" content="B — anchored, two reserved areas">
+<meta name="layout-model" content="The building as a specification, three blocks, then two frames shot at seated height">
+<meta name="density" content="structured">
+<meta name="media-mode" content="two-reserved-areas-the-hallway-and-the-stairs-both-at-seated-height">
+<meta name="interaction" content="none-no-links-no-form-no-map-embed">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="two walking times — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S17-003 — Locations, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eef0f2; }
+
+/* Scoped study styles — namespaced to .dn-s17-003 */
+.dn-s17-003 {
+  --paper: #eef0f2;
+  --ink: #0f1316;
+  --ink-soft: #565d63;
+  --line: #d3d8dc;
+  --card: #ffffff;
+  --accent: #2c5fd0;
+  --slot: #e2e6ea;
+  --slot-edge: #b9c0c7;
+  --slot-ink: #555c62;
+  --focus: #0f1316;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s17-003 *,
+.dn-s17-003 *::before,
+.dn-s17-003 *::after { box-sizing: inherit; }
+.dn-s17-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.dn-s17-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s17-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(28px, 3.4vw, 46px);
+}
+.dn-s17-003 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 7px 15px; border-radius: 999px;
+  background: rgba(44, 95, 208, 0.11); color: var(--accent);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s17-003 h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1.05; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 21ch;
+}
+.dn-s17-003 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 50ch; }
+
+/* --- The specification: three blocks --- */
+.dn-s17-003 .spec {
+  margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 34px);
+  margin-bottom: clamp(28px, 3.4vw, 46px);
+}
+.dn-s17-003 .spec > li {
+  background: var(--card);
+  border-radius: 20px;
+  border-top: 6px solid var(--line);
+  padding: clamp(20px, 2.4vw, 30px);
+}
+.dn-s17-003 .yes { border-top-color: var(--accent) !important; }
+.dn-s17-003 .no { border-top-color: var(--ink) !important; }
+
+.dn-s17-003 .spec h3 {
+  margin: 0 0 4px;
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.dn-s17-003 .verdict {
+  margin: 0 0 clamp(16px, 2vw, 20px);
+  padding-bottom: clamp(13px, 1.7vw, 17px);
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(1.08rem, 1.42vw, 1.3rem);
+  line-height: 1.16; letter-spacing: -0.028em; font-weight: 800;
+}
+.dn-s17-003 .yes .verdict { color: var(--accent); }
+
+.dn-s17-003 .spec ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(14px, 1.8vw, 18px); }
+.dn-s17-003 .spec b { display: block; margin-bottom: 3px; font-size: 1rem; letter-spacing: -0.022em; font-weight: 800; }
+.dn-s17-003 .spec p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
+
+/* --- The two frames, taken from a chair --- */
+.dn-s17-003 .seated {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 30px);
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+.dn-s17-003 .seated div {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 20px;
+  background: var(--slot);
+  aspect-ratio: 4 / 3;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 22px);
+}
+.dn-s17-003 .seated span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+.dn-s17-003 .vantage {
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  font-size: 0.92rem; color: var(--ink-soft); font-weight: 600;
+}
+
+/* --- Getting here --- */
+.dn-s17-003 .here {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: clamp(20px, 2.6vw, 30px) 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 44px);
+}
+.dn-s17-003 .here b { display: block; margin-bottom: 4px; font-size: 1rem; letter-spacing: -0.022em; font-weight: 800; }
+.dn-s17-003 .here p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
+
+.dn-s17-003 .close {
+  margin: 0;
+  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  max-width: 48ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 1100px) {
+  .dn-s17-003 .spec { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 860px) {
+  .dn-s17-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s17-003 h2, .dn-s17-003 .lead, .dn-s17-003 .close { max-width: none; }
+  .dn-s17-003 .seated { grid-template-columns: minmax(0, 1fr); }
+  .dn-s17-003 .here { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s17-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s17-003" data-study-id="DN-S17-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="dn-s17-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Where we are</p>
+        <h2 id="dn-s17-003-title">One address, two floors, and only one of them works for everybody.</h2>
+      </div>
+      <p class="lead">One address as a specification. The building is older than the practice, and we did not design the parts that fail.</p>
+    </div>
+
+    <ul class="spec">
+      <li class="yes">
+        <h3>Ground floor</h3>
+        <p class="verdict">You can reach all of it.</p>
+        <ul>
+          <li>
+            <b>The door</b>
+            <p>Street level, no step, and the bell is on the left.</p>
+          </li>
+          <li>
+            <b>The hallway</b>
+            <p>Wide enough for a wheelchair, through to the surgery on this floor.</p>
+          </li>
+          <li>
+            <b>The toilet</b>
+            <p>On this floor, not accessible.</p>
+          </li>
+        </ul>
+      </li>
+      <li class="no">
+        <h3>First floor</h3>
+        <p class="verdict">You cannot reach any of it.</p>
+        <ul>
+          <li>
+            <b>The stairs</b>
+            <p>The second surgery is up them and there is no lift.</p>
+          </li>
+          <li>
+            <b>Instead</b>
+            <p>Say so when you book and it is all done downstairs.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Not a floor problem</h3>
+        <p class="verdict">These two are ours.</p>
+        <ul>
+          <li>
+            <b>Hearing</b>
+            <p>There is no loop. Ask and we will write things down.</p>
+          </li>
+          <li>
+            <b>The front of the building</b>
+            <p>Between two shops. Look for the number, not a sign.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="seated">
+      <div><span>Image area &mdash; the hallway, seated height</span></div>
+      <div><span>Image area &mdash; the stairs, seated height</span></div>
+    </div>
+    <p class="vantage">Both taken from a chair, because both facts are about one.</p>
+
+    <ul class="here">
+      <li>
+        <b>Parking</b>
+        <p>None. The street is permit-only, and the nearest public car park is <span data-placeholder="true">five minutes</span> away.</p>
+      </li>
+      <li>
+        <b>By bus and train</b>
+        <p>Bus stops on the same street. The station is about <span data-placeholder="true">ten minutes</span> on foot.</p>
+      </li>
+      <li>
+        <b>Before you set out</b>
+        <p>If any of this stops you, ring before you book.</p>
+      </li>
+    </ul>
+
+    <p class="close">A staircase is not an attitude. It is a floor plan.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

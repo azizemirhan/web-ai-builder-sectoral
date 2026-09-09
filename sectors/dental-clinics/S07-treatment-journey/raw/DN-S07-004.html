@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S07-004
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S07 — Treatment Journey
+  Direction      : Conversion-led
+  Theme          : 004 Daylight — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area, under the thing being promised.**
+  Layout model   : **What booking actually commits you to**, in a filled band at display size, then the
+                   room it happens in, then the five stages in two lanes
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the consulting room**, directly under the sentence about the
+                   forty minutes that happen in it.
+  Interaction    : None (static; no JavaScript). No links. **No form.**
+
+  Governing idea : **Every step here has two halves, and the second one is yours.**
+
+  What "conversion-led" means in this sector — say what booking commits you to :
+                   The visitor is not weighing five clinics. They are afraid that walking in for a
+                   check-up ends with three thousand pounds of agreed work and no way back out. That
+                   fear, not price and not pain, is what stops a booking on this section.
+                   So the band answers it before the journey starts: **booking commits you to forty
+                   minutes.** Stage two is a posted plan you can decline in full. Stage three does not
+                   start until you reply. Nothing on this page happens because you booked stage one.
+                   That is the trade, and it is real: **a section that says the first appointment
+                   commits you to nothing has given up the assumed sale.** The competitor's version
+                   implies a funnel; this one prints the exits.
+
+  Why the picture is where it is :
+                   Directly under the promise, not beside the headline. The sentence says forty minutes
+                   in a room, so **the room is the next thing on the page.** A photograph placed
+                   anywhere else on this study would be decoration.
+
+  The arithmetic, in all five studies :
+                   **Nine weeks from the first appointment to the check. Three hours of it in our
+                   chair.**
+
+  Placeholder data : The five durations, the nine weeks and the three hours are PLACEHOLDER DEMO
+                   VALUES marked data-placeholder="true".
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price,
+                   no percentage, no credential, no testimonial, no countdown, no scarcity, no
+                   discount, no *book now*. Nothing here reproaches the reader. No stock smile, no
+                   open mouth, no instrument near a face, no aqua palette. No global header.
+-->
+
+<meta name="study-id" content="DN-S07-004">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S07">
+<meta name="section-name" content="Treatment Journey">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Daylight">
+<meta name="section-shape" content="B — anchored, one reserved area under the thing being promised">
+<meta name="layout-model" content="What booking commits you to in a filled band at display size, then the room it happens in, then the five stages in two lanes">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-consulting-room-under-the-sentence-about-the-forty-minutes">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="five durations, nine weeks, three hours — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S07-004 — Treatment Journey, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .dn-s07-004 */
+.dn-s07-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #55585d;
+  --line: #e6e4e1;
+  --card: #f7f5f2;
+  --accent: #e08b2c;
+  --accent-ink: #1a1204;
+  --accent-text: #8a5210;
+  --slot: #f0eeeb;
+  --slot-edge: #cbc7c2;
+  --slot-ink: #5c5f63;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s07-004 *,
+.dn-s07-004 *::before,
+.dn-s07-004 *::after { box-sizing: inherit; }
+.dn-s07-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+
+.dn-s07-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s07-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s07-004 .lead { margin: 0 0 clamp(22px, 2.8vw, 34px); color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); max-width: 54ch; }
+
+/* --- What booking commits you to, before the journey starts --- */
+.dn-s07-004 .band {
+  padding: clamp(28px, 3.4vw, 50px) clamp(22px, 2.8vw, 40px);
+  border-radius: 24px 24px 0 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(20px, 3vw, 50px);
+  align-items: end;
+}
+.dn-s07-004 .band h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.4vw, 2.85rem);
+  line-height: 1.04; letter-spacing: -0.04em; font-weight: 800;
+  max-width: 15ch;
+}
+.dn-s07-004 .band p { margin: 0; font-size: 1.02rem; font-weight: 600; opacity: 0.92; }
+
+.dn-s07-004 .room {
+  border: 1px dashed var(--slot-edge);
+  border-top: none;
+  border-radius: 0 0 24px 24px;
+  background: var(--slot);
+  aspect-ratio: 32 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 24px);
+  margin-bottom: clamp(12px, 1.6vw, 16px);
+}
+.dn-s07-004 .room span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+
+.dn-s07-004 .sum { margin: 0 0 clamp(26px, 3.2vw, 42px); font-size: 0.94rem; color: var(--ink-soft); }
+.dn-s07-004 .sum b { color: var(--ink); font-weight: 800; }
+
+/* --- The five, in two lanes --- */
+.dn-s07-004 .stages { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(16px, 2vw, 22px); }
+.dn-s07-004 .stages li {
+  padding-bottom: clamp(16px, 2vw, 22px);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 0.7fr) minmax(0, 0.68fr);
+  gap: clamp(14px, 2.2vw, 36px);
+}
+.dn-s07-004 .stages h3 { margin: 0 0 3px; font-size: clamp(1.06rem, 1.35vw, 1.24rem); letter-spacing: -0.026em; font-weight: 800; }
+.dn-s07-004 .when { display: block; font-size: 0.88rem; font-weight: 700; color: var(--accent-text); }
+.dn-s07-004 .stages p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+.dn-s07-004 .yours { color: var(--ink) !important; font-weight: 600; }
+.dn-s07-004 .nil { color: var(--ink) !important; font-weight: 800; }
+
+.dn-s07-004 .close {
+  margin: clamp(24px, 3vw, 38px) 0 0;
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.26; letter-spacing: -0.026em; font-weight: 800;
+  max-width: 40ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s07-004 .stages li { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
+  .dn-s07-004 .stages li > p:last-child { grid-column: 2; }
+}
+@media (max-width: 860px) {
+  .dn-s07-004 .band { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s07-004 .band h2, .dn-s07-004 .lead, .dn-s07-004 .close { max-width: none; }
+  .dn-s07-004 .room { aspect-ratio: 16 / 9; }
+  .dn-s07-004 .stages li { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .dn-s07-004 .stages li > p:last-child { grid-column: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s07-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s07-004" data-study-id="DN-S07-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="dn-s07-004-title">
+
+    <p class="eyebrow">What happens</p>
+    <p class="lead">Every step here has two halves, and the second one is yours. That half is missing from every journey diagram in this sector.</p>
+
+    <div class="band">
+      <h2 id="dn-s07-004-title">Booking commits you to <span data-placeholder="true">forty minutes</span>.</h2>
+      <p>Stage two is a plan you can decline in full. Stage three does not start until you reply. Nothing further happens because you booked stage one.</p>
+    </div>
+
+    <div class="room"><span>Image area &mdash; the consulting room</span></div>
+    <p class="sum"><b><span data-placeholder="true">Nine weeks</span> from the first appointment to the check.</b> <span data-placeholder="true">Three hours</span> of it in our chair.</p>
+
+    <ul class="stages">
+      <li>
+        <div>
+          <h3>The first appointment</h3>
+          <span class="when" data-placeholder="true">about forty minutes</span>
+        </div>
+        <p>Look, and write down what we found.</p>
+        <p class="yours">Say what you have noticed, and what you are worried about.</p>
+      </li>
+      <li>
+        <div>
+          <h3>The written plan</h3>
+          <span class="when" data-placeholder="true">as long as you want</span>
+        </div>
+        <p>Price every option, including doing nothing, and post it.</p>
+        <p class="yours">Read it, and say no to any part of it.</p>
+      </li>
+      <li>
+        <div>
+          <h3>The work</h3>
+          <span class="when" data-placeholder="true">two visits, about an hour each</span>
+        </div>
+        <p>The agreed work, in the agreed order, stopping when you raise your hand.</p>
+        <p class="yours">Turn up, and tell us if anything has changed.</p>
+      </li>
+      <li>
+        <div>
+          <h3>Healing</h3>
+          <span class="when" data-placeholder="true">six weeks</span>
+        </div>
+        <p class="nil">Nothing.</p>
+        <p class="yours">The aftercare. This is the half that decides how it settles.</p>
+      </li>
+      <li>
+        <div>
+          <h3>The check</h3>
+          <span class="when" data-placeholder="true">about twenty minutes</span>
+        </div>
+        <p>Look again, and say whether it worked.</p>
+        <p class="yours">Come back even if it feels fine.</p>
+      </li>
+    </ul>
+
+    <p class="close">The longest step is the one where we do nothing.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

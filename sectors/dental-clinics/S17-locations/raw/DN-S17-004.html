@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S17-004
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S17 — Locations
+  Direction      : Conversion-led
+  Theme          : 004 Daylight — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area.**
+  Layout model   : **The three reasons people arrive late, in a filled band**, then getting in, then
+                   the door as a stranger scanning the street would see it
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the door from across the street.** Not the door close up: the
+                   door at the distance you are actually looking for it from.
+  Interaction    : None (static; no JavaScript). No links, **no map embed, no "get directions".**
+
+  Governing idea : **People arrive late here for three reasons, and none of them is traffic.**
+
+  What "conversion-led" means in this sector — the failure is a missed appointment :
+                   The conversion device in a locations section is a map, a pin and a *get directions*
+                   button. All three answer *where*, and **nobody was ever late because they did not
+                   know the address.** They were late because the door has no sign, because they drove
+                   and there is nowhere to leave a car, or because nobody asked which floor they could
+                   get to.
+                   A missed appointment is the most expensive event in a small practice: **the chair
+                   stays empty, the hour is not resold, and the patient is the one who apologises for
+                   it.** So the band carries the three causes, and the section is built to prevent the
+                   failure rather than to look confident about the address.
+                   The trade is exact: **this section has no map and no directions button**, which are
+                   the two elements every competitor puts in the first screen.
+
+  Why the third reason is the one that matters :
+                   The first two cost a patient ten minutes. **The third costs them the appointment**,
+                   because a stairs-only surgery discovered on the day cannot be solved on the day. It
+                   is the reason the line about ringing first exists, and putting it third rather than
+                   first is deliberate — it is the one a reader has to have earned.
+
+  Placeholder data : The two walking times are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
+                   No address, street name, postcode or telephone number is invented.
+
+  Content note   : No *conveniently located*, no *easy to find*, no *fully accessible*. No outcome
+                   guarantee, no *pain-free* or *gentle*, no superiority claim, no price, no
+                   credential, no testimonial, no countdown, no scarcity. No map, no pin, no stock
+                   smile, no aqua palette. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S17-004">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S17">
+<meta name="section-name" content="Locations">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Daylight">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="The three reasons people arrive late in a filled band, then getting in, then the door from across the street">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-door-from-across-the-street">
+<meta name="interaction" content="none-no-links-no-form-no-map-embed-no-directions-button">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="two walking times — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S17-004 — Locations, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .dn-s17-004 */
+.dn-s17-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #55585d;
+  --line: #e6e4e1;
+  --card: #f7f5f2;
+  --accent: #e08b2c;
+  --accent-ink: #1a1204;
+  --accent-text: #8a5210;
+  --slot: #f0eeeb;
+  --slot-edge: #cbc7c2;
+  --slot-ink: #5c5f63;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s17-004 *,
+.dn-s17-004 *::before,
+.dn-s17-004 *::after { box-sizing: inherit; }
+.dn-s17-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+
+.dn-s17-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s17-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s17-004 .lead { margin: 0 0 clamp(22px, 2.8vw, 34px); color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); max-width: 56ch; }
+
+/* --- The three causes, in the loudest place --- */
+.dn-s17-004 .band {
+  padding: clamp(28px, 3.4vw, 50px) clamp(22px, 2.8vw, 40px);
+  border-radius: 24px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  margin-bottom: clamp(28px, 3.4vw, 46px);
+}
+.dn-s17-004 .band > b { display: block; margin-bottom: clamp(10px, 1.4vw, 14px); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; opacity: 0.72; }
+.dn-s17-004 .band h2 {
+  margin: 0 0 clamp(22px, 2.8vw, 34px);
+  font-size: clamp(1.7rem, 3.1vw, 2.5rem);
+  line-height: 1.06; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s17-004 .band ul { margin: 0; padding: clamp(22px, 2.8vw, 32px) 0 0; list-style: none; border-top: 2px solid rgba(26, 18, 4, 0.24); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 2.8vw, 44px); }
+.dn-s17-004 .band ul b { display: block; margin-bottom: 5px; font-size: clamp(1.02rem, 1.3vw, 1.18rem); letter-spacing: -0.026em; font-weight: 800; }
+.dn-s17-004 .band ul p { margin: 0; font-size: 0.97rem; font-weight: 600; opacity: 0.9; }
+
+/* --- Getting in --- */
+.dn-s17-004 h3 { margin: 0 0 clamp(14px, 1.8vw, 18px); font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent-text); }
+.dn-s17-004 .facts {
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 40px);
+}
+.dn-s17-004 .facts b { display: block; margin-bottom: 4px; font-size: 1.02rem; letter-spacing: -0.024em; font-weight: 800; }
+.dn-s17-004 .facts p { margin: 0; font-size: 0.96rem; color: var(--ink-soft); }
+
+.dn-s17-004 .door {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 24px;
+  background: var(--slot);
+  aspect-ratio: 21 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 24px);
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+.dn-s17-004 .door span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+.dn-s17-004 .vantage { margin: 0 0 clamp(26px, 3.2vw, 42px); font-size: 0.92rem; color: var(--ink-soft); font-weight: 600; max-width: 76ch; }
+
+.dn-s17-004 .ring {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: clamp(20px, 2.6vw, 28px) clamp(20px, 2.6vw, 30px);
+  border-radius: 24px;
+  background: var(--card);
+  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 700;
+  max-width: 66ch;
+}
+
+.dn-s17-004 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  padding-right: clamp(0px, 40%, 540px);
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s17-004 .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .dn-s17-004 .band ul { grid-template-columns: minmax(0, 1fr); gap: clamp(17px, 2.2vw, 24px); }
+  .dn-s17-004 .band h2, .dn-s17-004 .lead, .dn-s17-004 .ring, .dn-s17-004 .close { max-width: none; }
+  .dn-s17-004 .close { padding-right: 0; }
+  .dn-s17-004 .facts { grid-template-columns: minmax(0, 1fr); }
+  .dn-s17-004 .door { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s17-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s17-004" data-study-id="DN-S17-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="dn-s17-004-title">
+
+    <p class="eyebrow">Where we are</p>
+    <p class="lead">One address. Nobody was ever late because they did not know it, so this is the rest of what happens on the way.</p>
+
+    <div class="band">
+      <b>Why people arrive late</b>
+      <h2 id="dn-s17-004-title">None of the three reasons is traffic.</h2>
+      <ul>
+        <li>
+          <b>There is no sign</b>
+          <p>The door sits between two shops. Look for the number, not a sign.</p>
+        </li>
+        <li>
+          <b>There is nowhere to leave a car</b>
+          <p>There is none here, the street is permit-only, and the nearest public car park is <span data-placeholder="true">five minutes</span> away.</p>
+        </li>
+        <li>
+          <b>Nobody asked which floor you needed</b>
+          <p>There is no lift, and a stairs-only appointment found out about on the day cannot be fixed on the day.</p>
+        </li>
+      </ul>
+    </div>
+
+    <h3>Getting in</h3>
+    <ul class="facts">
+      <li>
+        <b>The door</b>
+        <p>Street level, no step, and the bell is on the left.</p>
+      </li>
+      <li>
+        <b>The hallway</b>
+        <p>Wide enough for a wheelchair to the ground-floor surgery.</p>
+      </li>
+      <li>
+        <b>The toilet</b>
+        <p>Not accessible, and we say so when you book.</p>
+      </li>
+      <li>
+        <b>Hearing</b>
+        <p>There is no loop. Ask and we will write things down.</p>
+      </li>
+    </ul>
+
+    <div class="door"><span>Image area &mdash; the door from across the street</span></div>
+    <p class="vantage">Taken from the far pavement, which is where you will be when you start looking for it. The bus stops are on the same street, on that side, and the station is about <span data-placeholder="true">ten minutes</span> on foot.</p>
+
+    <p class="ring">If any of this stops you coming, ring before you book rather than after.</p>
+
+    <p class="close">An apology at the desk is worth less than this paragraph.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

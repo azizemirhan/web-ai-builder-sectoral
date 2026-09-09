@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S17-002
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S17 — Locations
+  Direction      : Premium / Editorial
+  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **A — Item grid. Media in every item. Six reserved areas.**
+  Layout model   : **The walk itself, downward** — six frames in the order you meet them, a numbered
+                   rail on the left, then the three facts that are not part of the walk
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : **Six reserved areas — the walk from the corner to reception.** The corner, the
+                   shopfronts, the door, the hallway, the stairs, reception.
+  Interaction    : None (static; no JavaScript). No links, **no map embed.**
+
+  Governing idea : **You will walk past the door. So here is the walk.**
+
+                   `001` states in a sentence that the door is missed. This study **does the thing the
+                   sentence only describes.** A locations section exists so a stranger can arrive, and
+                   the only medium that gets a stranger to an unmarked door between two shopfronts is a
+                   photograph of it.
+                   **This is the first section in the sector where the picture is not an illustration
+                   of the argument, it is the argument.** Contract rule 3 says a section is not
+                   entitled to media because it could have some. This one is entitled to six, and it
+                   is the only place in sixteen sections that has been.
+
+  Why this is not `S14` again :
+                   `S14` photographs **rooms, from where the visitor will sit** — six interiors, and it
+                   asks what happens in them. This study photographs **the approach, from where the
+                   visitor will stand** — outside, in a hallway, at the foot of stairs. Only the last
+                   frame is a room, and it is there because the walk ends. `S14` answers *what is it
+                   like*; this answers *where do I put my feet.* Different subject, different vantage,
+                   and the composition runs down a single column rather than across a grid, because a
+                   walk has an order and a grid does not.
+
+  Why the three facts sit outside the walk :
+                   Parking, transport and the line about ringing first are not things you see on the
+                   way in. **Putting them in a frame would make the sequence dishonest**, so they sit
+                   below it as text.
+
+  Placeholder data : The two walking times are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
+                   No address, street name, postcode or telephone number is invented.
+
+  Content note   : No *conveniently located*, no *easy to find*, no *fully accessible*. No outcome
+                   guarantee, no *pain-free* or *gentle*, no superiority claim, no price, no
+                   credential, no testimonial. No map, no pin, no stock smile, no aqua palette. No
+                   global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S17-002">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S17">
+<meta name="section-name" content="Locations">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Linen">
+<meta name="section-shape" content="A — item grid, media in every item, six reserved areas">
+<meta name="layout-model" content="The walk downward, six frames in the order you meet them, numbered rail on the left">
+<meta name="density" content="structured">
+<meta name="media-mode" content="six-reserved-areas-the-walk-from-the-corner-to-reception">
+<meta name="interaction" content="none-no-links-no-form-no-map-embed">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="two walking times — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S17-002 — Locations, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f3efe8; }
+
+/* Scoped study styles — namespaced to .dn-s17-002 */
+.dn-s17-002 {
+  --paper: #f3efe8;
+  --ink: #1b1714;
+  --ink-soft: #5d554e;
+  --line: #ddd5c9;
+  --accent: #a2543a;
+  --slot: #e7e0d5;
+  --slot-edge: #c2b8a8;
+  --slot-ink: #5f574e;
+  --focus: #1b1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s17-002 *,
+.dn-s17-002 *::before,
+.dn-s17-002 *::after { box-sizing: inherit; }
+.dn-s17-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+
+.dn-s17-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s17-002 .head {
+  margin-bottom: clamp(30px, 3.8vw, 52px);
+  padding-bottom: clamp(22px, 2.8vw, 34px);
+  border-bottom: 2px solid var(--ink);
+}
+.dn-s17-002 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s17-002 h2 {
+  margin: 0 0 clamp(13px, 1.7vw, 18px);
+  font-size: clamp(2rem, 3.7vw, 3.05rem);
+  line-height: 1.03; letter-spacing: -0.04em; font-weight: 800;
+  max-width: 17ch;
+}
+.dn-s17-002 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); max-width: 52ch; }
+
+/* --- The walk: one row per step, reading downward --- */
+.dn-s17-002 .walk { margin: 0 0 clamp(30px, 3.8vw, 50px); padding: 0; list-style: none; }
+.dn-s17-002 .walk > li {
+  display: grid;
+  grid-template-columns: clamp(160px, 18vw, 250px) minmax(0, 700px);
+  gap: clamp(20px, 3vw, 48px);
+  align-items: start;
+  padding: clamp(20px, 2.6vw, 32px) 0;
+  border-top: 1px solid var(--line);
+}
+.dn-s17-002 .walk > li:first-child { border-top: 0; padding-top: 0; }
+
+.dn-s17-002 .step em {
+  display: block;
+  font-style: normal;
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.13em;
+  color: var(--accent);
+  margin-bottom: clamp(8px, 1.1vw, 11px);
+}
+.dn-s17-002 .step b {
+  display: block;
+  font-size: clamp(1.06rem, 1.4vw, 1.3rem);
+  line-height: 1.14; letter-spacing: -0.028em; font-weight: 800;
+  margin-bottom: clamp(7px, 1vw, 10px);
+}
+.dn-s17-002 .step p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+
+.dn-s17-002 .frame {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 2px;
+  background: var(--slot);
+  aspect-ratio: 16 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 22px);
+}
+.dn-s17-002 .frame span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+
+/* --- What is not on the walk --- */
+.dn-s17-002 h3 {
+  margin: 0 0 clamp(14px, 1.8vw, 18px);
+  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.dn-s17-002 .rest {
+  margin: 0 0 clamp(26px, 3.2vw, 40px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 44px);
+}
+.dn-s17-002 .rest b { display: block; margin-bottom: 5px; font-size: 1.03rem; letter-spacing: -0.024em; font-weight: 800; }
+.dn-s17-002 .rest p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+
+.dn-s17-002 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 2px solid var(--ink);
+  font-size: clamp(1.08rem, 1.44vw, 1.34rem);
+  line-height: 1.28; letter-spacing: -0.026em; font-weight: 800;
+  padding-right: clamp(0px, 44%, 560px);
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s17-002 .rest { grid-template-columns: minmax(0, 1fr); gap: clamp(17px, 2.2vw, 24px); }
+}
+@media (max-width: 860px) {
+  .dn-s17-002 .walk > li { grid-template-columns: minmax(0, 1fr); gap: clamp(14px, 2vw, 20px); }
+  .dn-s17-002 h2, .dn-s17-002 .lead, .dn-s17-002 .close { max-width: none; }
+  .dn-s17-002 .close { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s17-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s17-002" data-study-id="DN-S17-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="dn-s17-002-title">
+
+    <div class="head">
+      <p class="eyebrow">Where we are</p>
+      <h2 id="dn-s17-002-title">You will walk past the door. So here is the walk.</h2>
+      <p class="lead">One address, in the order you meet it. The stairs are here because they are the part that fails.</p>
+    </div>
+
+    <ol class="walk">
+      <li>
+        <div class="step">
+          <em>01</em>
+          <b>The corner</b>
+          <p>On the left, about halfway down.</p>
+        </div>
+        <div class="frame"><span>Image area &mdash; the corner, looking our way</span></div>
+      </li>
+      <li>
+        <div class="step">
+          <em>02</em>
+          <b>The shopfronts</b>
+          <p>Between two shops. Look for the number, not a sign.</p>
+        </div>
+        <div class="frame"><span>Image area &mdash; the shopfronts, door in the middle</span></div>
+      </li>
+      <li>
+        <div class="step">
+          <em>03</em>
+          <b>The door</b>
+          <p>Street level, no step, and the bell is on the left.</p>
+        </div>
+        <div class="frame"><span>Image area &mdash; the door and bell, close</span></div>
+      </li>
+      <li>
+        <div class="step">
+          <em>04</em>
+          <b>The hallway</b>
+          <p>Wide enough for a wheelchair, straight through to the ground-floor surgery.</p>
+        </div>
+        <div class="frame"><span>Image area &mdash; the hallway, from just inside</span></div>
+      </li>
+      <li>
+        <div class="step">
+          <em>05</em>
+          <b>The stairs</b>
+          <p>The second surgery is up these and there is no lift. Say so when you book and you stay downstairs.</p>
+        </div>
+        <div class="frame"><span>Image area &mdash; the stairs, bottom step</span></div>
+      </li>
+      <li>
+        <div class="step">
+          <em>06</em>
+          <b>Reception</b>
+          <p>The toilet here is not accessible. There is no loop either; ask and we will write things down.</p>
+        </div>
+        <div class="frame"><span>Image area &mdash; reception, from the hallway</span></div>
+      </li>
+    </ol>
+
+    <h3>Not on the walk</h3>
+    <ul class="rest">
+      <li>
+        <b>Parking</b>
+        <p>None. The street is permit-only, and the nearest public car park is <span data-placeholder="true">five minutes</span> away.</p>
+      </li>
+      <li>
+        <b>Bus and train</b>
+        <p>The bus stops are on the same street. The station is about <span data-placeholder="true">ten minutes</span> on foot.</p>
+      </li>
+      <li>
+        <b>Before setting out</b>
+        <p>If any of this stops you, ring before you book.</p>
+      </li>
+    </ul>
+
+    <p class="close">Six photographs of a walk people otherwise get wrong.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

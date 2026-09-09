@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S17-001
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S17 — Locations
+  Direction      : Universal / Safe
+  Theme          : 001 Chalk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. Two reserved areas.**
+  Layout model   : Getting in and getting here as two runs, the door and the corridor paired between
+                   them, then the line about ringing first
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : Two reserved areas — **the door from the street** and **the corridor.** Both are the
+                   building the visitor will walk through, which the contract names as honest.
+  Interaction    : None (static; no JavaScript). No links, **no map embed.**
+
+  Governing idea : **`Accessible` is a word. These are the parts that are and the parts that are not.**
+
+                   The sector's version is an embedded map, a pin, an address and the phrase
+                   *conveniently located*. The map answers *where*, which nobody was in doubt about,
+                   and the phrase answers nothing at all.
+                   **What a visitor actually needs to know is whether they can get in.** Not a claim of
+                   accessibility — the specific facts, including the ones that are failures: the
+                   corridor upstairs, the toilet, the loop. Every clinic in this sector says
+                   *accessible* and none of them says which parts are not.
+
+  Why there is no map :
+                   A map is a third-party embed, and the workspace takes no remote dependency in any
+                   study. That constraint costs nothing here: **an address and a street name do the
+                   same work**, and the questions a map cannot answer are the ones this section exists
+                   for.
+
+  The admissions :
+                   **The corridor to the upstairs surgery is too narrow and there is no lift. The
+                   toilet is not accessible. There is no hearing loop.** Three refusals, stated in the
+                   place a competitor puts a symbol, and each with what happens instead.
+
+  Why the parking answer leads with a negative :
+                   Because it is the true one. *There is no car park* is more use than any amount of
+                   *parking nearby*, and it is followed by what people actually do.
+
+  Placeholder data : The two walking times are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
+                   No address, street name, postcode or telephone number is invented.
+
+  Content note   : No *conveniently located*, no *easy to find*, no *fully accessible*. No outcome
+                   guarantee, no *pain-free* or *gentle*, no superiority claim, no price, no
+                   credential, no testimonial. No map, no pin, no stock smile, no aqua palette. No
+                   global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S17-001">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S17">
+<meta name="section-name" content="Locations">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="001 Chalk">
+<meta name="section-shape" content="B — anchored, two reserved areas">
+<meta name="layout-model" content="Getting in and getting here as two runs, the door and the corridor paired between them">
+<meta name="density" content="structured">
+<meta name="media-mode" content="two-reserved-areas-the-door-from-the-street-and-the-corridor">
+<meta name="interaction" content="none-no-links-no-form-no-map-embed">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="two walking times — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S17-001 — Locations, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f4f1; }
+
+/* Scoped study styles — namespaced to .dn-s17-001 */
+.dn-s17-001 {
+  --paper: #f6f4f1;
+  --ink: #16181b;
+  --ink-soft: #575c60;
+  --line: #ddd9d3;
+  --card: #ffffff;
+  --accent: #1f6f5c;
+  --accent-ink: #ffffff;
+  --slot: #eae7e2;
+  --slot-edge: #c6c2bb;
+  --slot-ink: #5d6165;
+  --focus: #16181b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s17-001 *,
+.dn-s17-001 *::before,
+.dn-s17-001 *::after { box-sizing: inherit; }
+.dn-s17-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 16px; }
+
+.dn-s17-001 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s17-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(26px, 3.2vw, 42px);
+}
+.dn-s17-001 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 7px 15px; border-radius: 999px;
+  background: rgba(31, 111, 92, 0.12); color: var(--accent);
+  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s17-001 h2 {
+  margin: 0;
+  font-size: clamp(1.95rem, 3.5vw, 2.9rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s17-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 50ch; }
+
+/* --- Getting in --- */
+.dn-s17-001 h3 {
+  margin: 0 0 clamp(14px, 1.8vw, 18px);
+  padding-bottom: clamp(10px, 1.3vw, 13px);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s17-001 .facts {
+  margin: 0 0 clamp(28px, 3.4vw, 46px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 40px);
+}
+.dn-s17-001 .facts b { display: block; margin-bottom: 5px; font-size: 1.03rem; letter-spacing: -0.024em; font-weight: 800; }
+.dn-s17-001 .facts p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+.dn-s17-001 .no b { color: var(--ink); }
+.dn-s17-001 .no p { color: var(--ink); font-weight: 600; }
+
+.dn-s17-001 .pair {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 30px);
+  margin-bottom: clamp(28px, 3.4vw, 46px);
+}
+.dn-s17-001 .pair div {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 16px;
+  background: var(--slot);
+  aspect-ratio: 16 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 22px);
+}
+.dn-s17-001 .pair span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+
+/* --- Getting here --- */
+.dn-s17-001 .here {
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 44px);
+}
+.dn-s17-001 .here b { display: block; margin-bottom: 5px; font-size: 1.03rem; letter-spacing: -0.024em; font-weight: 800; }
+.dn-s17-001 .here p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+
+.dn-s17-001 .ring {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: clamp(22px, 2.8vw, 34px) clamp(20px, 2.6vw, 32px);
+  border-radius: 16px;
+  background: var(--card);
+  font-size: clamp(1.08rem, 1.45vw, 1.32rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 700;
+  max-width: 66ch;
+}
+.dn-s17-001 .ring em { font-style: normal; color: var(--accent); }
+
+.dn-s17-001 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  padding-right: clamp(0px, 42%, 560px);
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s17-001 .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .dn-s17-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s17-001 h2, .dn-s17-001 .lead, .dn-s17-001 .ring, .dn-s17-001 .close { max-width: none; }
+  .dn-s17-001 .close { padding-right: 0; }
+  .dn-s17-001 .facts { grid-template-columns: minmax(0, 1fr); }
+  .dn-s17-001 .pair { grid-template-columns: minmax(0, 1fr); }
+  .dn-s17-001 .here { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s17-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s17-001" data-study-id="DN-S17-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="dn-s17-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Where we are</p>
+        <h2 id="dn-s17-001-title">One address, and three parts of it that are not accessible.</h2>
+      </div>
+      <p class="lead">One address. The useful part is not where it is but whether you can get in, and this says exactly which parts you can.</p>
+    </div>
+
+    <h3>Getting in</h3>
+    <ul class="facts">
+      <li>
+        <b>The door</b>
+        <p>Street level, no step, and the bell is on the left.</p>
+      </li>
+      <li class="no">
+        <b>The corridor</b>
+        <p>Wide enough for a wheelchair to the ground-floor surgery. Not to the one upstairs, and there is no lift.</p>
+      </li>
+      <li class="no">
+        <b>The toilet</b>
+        <p>Not accessible. We will tell you that when you book rather than when you arrive.</p>
+      </li>
+      <li class="no">
+        <b>Hearing</b>
+        <p>There is no loop. Ask and we will write things down.</p>
+      </li>
+    </ul>
+
+    <div class="pair">
+      <div><span>Image area &mdash; the door from the street</span></div>
+      <div><span>Image area &mdash; the corridor</span></div>
+    </div>
+
+    <h3>Getting here</h3>
+    <ul class="here">
+      <li>
+        <b>Parking</b>
+        <p>There is none. The street is permit-only, and the nearest public car park is <span data-placeholder="true">five minutes</span> away.</p>
+      </li>
+      <li>
+        <b>By bus and train</b>
+        <p>The bus stops are on the same street. The station is about <span data-placeholder="true">ten minutes</span> on foot.</p>
+      </li>
+      <li>
+        <b>Finding the door</b>
+        <p>It is between two shopfronts and people walk past it. Look for the number, not a sign.</p>
+      </li>
+    </ul>
+
+    <p class="ring"><em>If any of this stops you coming, ring before you book</em> and we will tell you what we can and cannot do.</p>
+
+    <p class="close">Every clinic says accessible. This one says which parts are not.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

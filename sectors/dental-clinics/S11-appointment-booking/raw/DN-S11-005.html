@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S11-005
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S11 — Appointment Booking
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Dusk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area.**
+  Layout model   : **The gaps between the routes are drawn.** Three blocks separated by two labelled
+                   spans, so the delay between them is a measurable thing on the page
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the desk where the phone is answered**, attached to the first
+                   block, because it is the only route that reaches a person while you are still there.
+  Interaction    : One link. **No form.**
+
+  Governing idea : **Three ways to book. The phone is the fastest, and we would rather you used it.**
+
+  The device, which is this study alone :
+                   **The page draws the gap, not the list.** Every other treatment of this section sets
+                   the three routes as three equal items and asserts in words that one is faster. Here
+                   the routes are separated by two spans that are themselves labelled and sized —
+                   `until the morning` between the first and the second, `and then you wait` between
+                   the second and the third — so **the distance between the blocks is the argument.**
+                   A reader scanning down does not have to take the ranking on trust. The empty
+                   measure between the phone and the form is doing what the sentence *the form is
+                   slower* can only claim.
+                   It is also the honest shape of the thing. **A route is not an item; it is a delay
+                   with a name on it**, and a list flattens exactly the property that distinguishes
+                   the three.
+
+  Why the image is attached to the first block :
+                   The phone reaches a person while you are still on the line, and that person is at a
+                   desk in the building. The other two reach nobody for hours. **The one route that
+                   lands in a room is the one with a room attached to it.**
+
+  Why there is no form on this page :
+                   A booking form with no system behind it is a picture of a form, and **the workspace
+                   does not draw a control it cannot honour.** The action is a link and a phone route,
+                   both of which are real.
+
+  Placeholder data : None. The number is not printed here; `S19` Contact owns it.
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price or
+                   figure, no credential, no testimonial, no countdown, no *book now*. No stock smile,
+                   no open mouth, no instrument near a face, no aqua palette. No global header.
+-->
+
+<meta name="study-id" content="DN-S11-005">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S11">
+<meta name="section-name" content="Appointment Booking">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Dusk">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="The gaps between the routes are drawn — three blocks separated by two labelled spans">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-desk-attached-to-the-only-route-that-lands-in-a-room">
+<meta name="interaction" content="one-link-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="none — the number is not printed here">
+<meta name="batch" content="V1">
+
+<title>DN-S11-005 — Appointment Booking, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #14161a; }
+
+/* Scoped study styles — namespaced to .dn-s11-005 */
+.dn-s11-005 {
+  --paper: #14161a;
+  --ink: #f2f1ef;
+  --ink-soft: #9aa0a4;
+  --line: #2b2f35;
+  --accent: #6ea8a0;
+  --accent-ink: #10201d;
+  --slot: #1e2126;
+  --slot-edge: #3a3f46;
+  --slot-ink: #8f959a;
+  --focus: #6ea8a0;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s11-005 *,
+.dn-s11-005 *::before,
+.dn-s11-005 *::after { box-sizing: inherit; }
+.dn-s11-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 26px; }
+
+.dn-s11-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s11-005 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.77rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s11-005 h2 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(1.95rem, 3.6vw, 2.95rem);
+  line-height: 1.04; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 22ch;
+}
+.dn-s11-005 .lead { margin: 0 0 clamp(30px, 3.8vw, 52px); max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); }
+
+/* --- Three blocks, and the two gaps between them are drawn --- */
+.dn-s11-005 .route {
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 1.6fr);
+  gap: clamp(16px, 2.6vw, 46px);
+  align-items: start;
+}
+.dn-s11-005 .route h3 { margin: 0; font-size: clamp(1.34rem, 2.2vw, 1.85rem); line-height: 1.12; letter-spacing: -0.032em; font-weight: 800; }
+.dn-s11-005 .first h3 { color: var(--accent); }
+.dn-s11-005 .route p { margin: 0; font-size: clamp(1rem, 1.18vw, 1.12rem); color: var(--ink-soft); }
+
+/* The gap. A rule down the page with the delay named on it. */
+.dn-s11-005 .gap {
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 1.6fr);
+  gap: clamp(16px, 2.6vw, 46px);
+}
+.dn-s11-005 .gap span {
+  grid-column: 2;
+  display: block;
+  padding: clamp(30px, 5vw, 74px) 0 clamp(30px, 5vw, 74px) clamp(16px, 2vw, 22px);
+  border-left: 1px solid var(--line);
+  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.dn-s11-005 .gap.short span { padding-top: clamp(18px, 2.8vw, 40px); padding-bottom: clamp(18px, 2.8vw, 40px); }
+
+.dn-s11-005 .desk {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 26px;
+  background: var(--slot);
+  aspect-ratio: 24 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 24px);
+  margin-top: clamp(16px, 2vw, 22px);
+}
+.dn-s11-005 .desk span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+
+/* --- The terms, which apply to all three --- */
+.dn-s11-005 .terms {
+  margin: clamp(30px, 3.8vw, 52px) 0 clamp(26px, 3.2vw, 42px);
+  padding: clamp(22px, 2.8vw, 32px) 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 46px);
+}
+.dn-s11-005 .terms b { display: block; margin-bottom: 5px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
+.dn-s11-005 .terms p { margin: 0; font-size: 0.99rem; color: var(--ink-soft); }
+
+.dn-s11-005 .act { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2vw, 26px); margin-bottom: clamp(24px, 3vw, 38px); }
+.dn-s11-005 .act a {
+  display: inline-block;
+  padding: 13px 25px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 1.01rem; font-weight: 800; text-decoration: none;
+}
+.dn-s11-005 .act p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+
+.dn-s11-005 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.08rem, 1.42vw, 1.32rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  max-width: 44ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s11-005 h2, .dn-s11-005 .lead, .dn-s11-005 .close { max-width: none; }
+  .dn-s11-005 .route { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .dn-s11-005 .gap { grid-template-columns: minmax(0, 1fr); }
+  .dn-s11-005 .gap span { grid-column: 1; }
+  .dn-s11-005 .terms { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .dn-s11-005 .desk { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s11-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s11-005" data-study-id="DN-S11-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="dn-s11-005-title">
+
+    <p class="eyebrow">Booking</p>
+    <h2 id="dn-s11-005-title">The distance between these is the point.</h2>
+    <p class="lead">Three ways to book. The phone is the fastest, and we would rather you used it.</p>
+
+    <div class="route first">
+      <h3>The phone</h3>
+      <div>
+        <p>Answered by someone in the building, during opening hours. If you get the machine, both of us are with patients; leave a number and we ring back the same day.</p>
+        <div class="desk"><span>Image area &mdash; the desk where the phone is answered</span></div>
+      </div>
+    </div>
+
+    <div class="gap"><span>Until the morning</span></div>
+
+    <div class="route">
+      <h3>The online form</h3>
+      <p>It goes into the same book, but nobody opens it until the morning. Use it outside hours.</p>
+    </div>
+
+    <div class="gap short"><span>And then you wait</span></div>
+
+    <div class="route">
+      <h3>Walking in</h3>
+      <p>We will not turn you away. You will wait, and if nothing is free that day we will book you rather than rush you.</p>
+    </div>
+
+    <ul class="terms">
+      <li>
+        <b>What booking commits you to</b>
+        <p>One appointment, about forty minutes. Nothing else is agreed by making it.</p>
+      </li>
+      <li>
+        <b>If you cannot come</b>
+        <p>Tell us the day before and there is no charge. Less than that and we may charge for the time &mdash; said when you book, and again when you cancel, never on a later bill.</p>
+      </li>
+    </ul>
+
+    <div class="act">
+      <a href="#">Book online</a>
+      <p>Or ring us during opening hours. The number is on the contact page.</p>
+    </div>
+
+    <p class="close">The fastest way to book is the one that costs us the most to answer.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

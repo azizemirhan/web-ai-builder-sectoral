@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S04-005
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S04 — Dentists & Specialists
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Dusk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **A — Item grid. Media in every item.** Five reserved portraits, at five sizes.
+  Layout model   : **Sized by how often you will actually see them.** The hygienist is the largest
+                   thing on the page and the oral surgeon is the smallest
+  Density        : Structured (216 visible words, structured band 170–230)
+  Media mode     : Five reserved portraits at deliberately unequal sizes. Labels name the **role**.
+  Interaction    : None (static; no JavaScript). Links only, no form.
+
+  Governing idea : **Specialist is a protected title, and most clinics use it loosely.**
+
+  The device, which is this study alone :
+                   **Everybody is sized by how often you will actually see them.**
+
+                   A team page gives every member the same headshot at the same size, which quietly
+                   claims they are equally likely to treat you. The clinic knows the real ratio to the
+                   appointment, and it is nothing like equal: most patients see the hygienist two or
+                   three times a year, their own dentist twice, and the oral surgeon **never**.
+                   So the hygienist — the least senior person here, and the one no clinic puts first —
+                   is the largest thing on this page, and the two registered specialists are the
+                   smallest. **The page is laid out at the true frequency rather than the flattering
+                   one**, and the reader can see at a glance who their dentistry will actually consist
+                   of.
+
+  Why this is the sector-native reading :
+                   Every other section of this sector has replaced an impression with something
+                   checkable — a symptom instead of a procedure name, a wait instead of a promise, a
+                   reversibility line instead of an outcome. **Size is the version of that available
+                   to a team page**, and it costs the clinic the one thing a team page is usually for:
+                   looking impressive.
+
+  Names, portraits and pronouns :
+                   Placeholder names in initial-and-surname form. Portrait labels name the **role**,
+                   never the placeholder person. Nobody is given a pronoun the study has no basis for.
+
+  Content note   : No fabricated credential, registration number, qualification or membership. No
+                   superiority claim. No outcome guarantee, price, testimonial or rating. No stock
+                   smile, no open mouth, no instrument. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S04-005">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S04">
+<meta name="section-name" content="Dentists &amp; Specialists">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Dusk">
+<meta name="section-shape" content="A — item grid, media in every item">
+<meta name="layout-model" content="Sized by how often you will actually see them — the hygienist largest, the surgeon smallest">
+<meta name="density" content="structured">
+<meta name="media-mode" content="five-reserved-portraits-at-five-sizes-by-frequency">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="five team names, the visit frequencies, the register reference — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S04-005 — Dentists &amp; Specialists, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #14161a; }
+
+/* Scoped study styles — namespaced to .dn-s04-005 */
+.dn-s04-005 {
+  --paper: #14161a;
+  --ink: #f2f1ef;
+  --ink-soft: #9aa0a4;
+  --line: #2b2f35;
+  --accent: #6ea8a0;
+  --accent-ink: #10201d;
+  --slot: #1e2126;
+  --slot-edge: #3a3f46;
+  --slot-ink: #8f959a;
+  --focus: #6ea8a0;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s04-005 *,
+.dn-s04-005 *::before,
+.dn-s04-005 *::after { box-sizing: inherit; }
+.dn-s04-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 26px; }
+
+.dn-s04-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s04-005 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.77rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s04-005 h2 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(1.95rem, 3.6vw, 2.95rem);
+  line-height: 1.04; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 22ch;
+}
+.dn-s04-005 .lead { margin: 0 0 clamp(32px, 4vw, 56px); max-width: 56ch; color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); }
+
+/* --- Sized by frequency. The grid is deliberately unequal --- */
+.dn-s04-005 .team {
+  margin: 0; padding: 0; list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 34px);
+  align-items: start;
+}
+.dn-s04-005 .team > li:nth-child(1) { grid-column: span 3; }
+.dn-s04-005 .team > li:nth-child(2) { grid-column: span 3; }
+.dn-s04-005 .team > li:nth-child(3) { grid-column: span 2; }
+.dn-s04-005 .team > li:nth-child(4) { grid-column: span 2; }
+.dn-s04-005 .team > li:nth-child(5) { grid-column: span 2; }
+
+.dn-s04-005 .shot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 26px;
+  background: var(--slot);
+  aspect-ratio: 16 / 10;
+  display: grid; place-items: center;
+  padding: clamp(12px, 1.8vw, 20px);
+  margin-bottom: clamp(12px, 1.6vw, 16px);
+}
+.dn-s04-005 .team > li:nth-child(n+3) .shot { aspect-ratio: 4 / 3; }
+.dn-s04-005 .shot span { color: var(--slot-ink); font-size: 0.74rem; font-weight: 700; text-align: center; line-height: 1.42; }
+
+.dn-s04-005 .freq {
+  display: block; margin-bottom: 7px;
+  font-size: clamp(1.16rem, 1.8vw, 1.62rem);
+  line-height: 1; letter-spacing: -0.036em; font-weight: 800;
+  color: var(--accent);
+}
+.dn-s04-005 .team > li:nth-child(n+3) .freq { font-size: clamp(0.95rem, 1.2vw, 1.1rem); color: var(--ink-soft); }
+.dn-s04-005 .status {
+  display: inline-block; margin-bottom: 7px;
+  padding: 4px 11px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08); color: var(--ink-soft);
+  font-size: 0.67rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.dn-s04-005 .status.reg { background: var(--accent); color: var(--accent-ink); }
+.dn-s04-005 .team h3 { margin: 0 0 2px; font-size: clamp(1.06rem, 1.4vw, 1.24rem); letter-spacing: -0.024em; font-weight: 800; }
+.dn-s04-005 .team > li:nth-child(n+3) h3 { font-size: 1rem; }
+.dn-s04-005 .role { display: block; margin-bottom: 6px; font-size: 0.85rem; font-weight: 700; color: var(--accent); }
+.dn-s04-005 .team p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
+
+.dn-s04-005 .close {
+  margin: clamp(32px, 4vw, 54px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(22px, 3vw, 46px);
+}
+.dn-s04-005 .close p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+.dn-s04-005 .close b { color: var(--ink); font-weight: 800; }
+.dn-s04-005 .close a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s04-005 .team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dn-s04-005 .team > li:nth-child(1),
+  .dn-s04-005 .team > li:nth-child(2) { grid-column: span 2; }
+  .dn-s04-005 .team > li:nth-child(n+3) { grid-column: span 1; }
+}
+@media (max-width: 860px) {
+  .dn-s04-005 h2, .dn-s04-005 .lead { max-width: none; }
+  .dn-s04-005 .close { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .dn-s04-005 .team { grid-template-columns: minmax(0, 1fr); }
+  .dn-s04-005 .team > li { grid-column: span 1 !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s04-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s04-005" data-study-id="DN-S04-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="dn-s04-005-title">
+
+    <p class="eyebrow">The team</p>
+    <h2 id="dn-s04-005-title">Sized by how often you will actually see them.</h2>
+    <p class="lead">Two of us are registered specialists and the rest are not &mdash; but that is not the order you will meet us in, so it is not the order on this page.</p>
+
+    <ul class="team">
+      <li>
+        <div class="shot"><span>Image area &mdash; the hygienist, in the hygiene room</span></div>
+        <span class="freq" data-placeholder="true">Three times a year</span>
+        <span class="status">Not a dentist</span>
+        <h3 data-placeholder="true">S. Achebe</h3>
+        <span class="role">Hygienist</span>
+        <p>Cleaning and gum care. Sees everyone between check-ups, which is more often than anyone else here.</p>
+      </li>
+      <li>
+        <div class="shot"><span>Image area &mdash; the principal dentist, mid-sentence</span></div>
+        <span class="freq" data-placeholder="true">Twice a year</span>
+        <span class="status">Not a specialist</span>
+        <h3 data-placeholder="true">J. Okafor</h3>
+        <span class="role">Principal dentist</span>
+        <p>Check-ups, fillings, crowns. Sees their own patients every visit.</p>
+      </li>
+      <li>
+        <div class="shot"><span>Image area &mdash; the dentist, mid-sentence</span></div>
+        <span class="freq" data-placeholder="true">Twice a year</span>
+        <span class="status">Not a specialist</span>
+        <h3 data-placeholder="true">T. Byrne</h3>
+        <span class="role">Dentist</span>
+        <p>Check-ups and emergencies, for their own patients.</p>
+      </li>
+      <li>
+        <div class="shot"><span>Image area &mdash; the periodontist, at work</span></div>
+        <span class="freq" data-placeholder="true">Most people, never</span>
+        <span class="status reg">Registered specialist</span>
+        <h3 data-placeholder="true">A. Lindqvist</h3>
+        <span class="role">Periodontist</span>
+        <p>Gums. Referred to, never swapped in.</p>
+      </li>
+      <li>
+        <div class="shot"><span>Image area &mdash; the oral surgeon, at work</span></div>
+        <span class="freq" data-placeholder="true">Most people, never</span>
+        <span class="status reg">Registered specialist</span>
+        <h3 data-placeholder="true">M. Rahim</h3>
+        <span class="role">Oral surgeon</span>
+        <p>Extractions and implants. Here two days a week.</p>
+      </li>
+    </ul>
+
+    <div class="close">
+      <p><b>The letters after our names are on the public register, not on this page.</b> <a href="#" data-placeholder="true">Look us up</a> before you book.</p>
+      <p><b>Whoever you start with is who you see.</b> The two specialists are referred to, never swapped in, and anything leaving the practice goes with a note addressed to a name.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

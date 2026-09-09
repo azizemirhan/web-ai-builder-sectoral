@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S10-002
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S10 — Pricing & Payment Plans
+  Direction      : Premium / Editorial
+  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area, edge to edge.**
+  Layout model   : **The commitment at display size** — the answer, not the refusal — then the room it
+                   is handed over in, then the two kinds, the three movers and how to pay
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the room where the plan is gone through**, at band proportion.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **A number you could read before anyone has looked is not a price.**
+
+  The editorial cut — lead with the answer, not the refusal :
+                   *There are no prices on this page* is true and it is not the headline. A reader who
+                   arrives at a pricing section wants one thing, and it is not a rebuttal of the
+                   sector's habits — it is **an answer to when they will know.**
+                   So the display line is the commitment: **the number comes at the end of the first
+                   appointment, in writing, before anything starts, with every option on it including
+                   doing nothing.** The refusal is demoted to the supporting line where it belongs,
+                   because a page that leads with what it will not do has made its own integrity the
+                   subject instead of the reader's question.
+                   That is the whole editorial judgement here, and it is the opposite of the one `S09`
+                   made. `S09` leads with its refusal because the reader's question there is *should I
+                   trust this*. **The question here is *what will it cost*, and it has an answer.**
+
+  Why there are no figures anywhere in this batch :
+                   The contract requires a stated price to be complete and the workspace does not
+                   invent one. **A placeholder price is a fabricated quote**, the same class of thing
+                   as a placeholder credential or testimonial. `S01` set the convention: state the
+                   policy, not the number.
+
+  Content note   : **No price, no currency, no percentage, no *from*, no interest rate, no finance
+                   provider.** No outcome guarantee, no *pain-free* or *gentle*, no superiority claim,
+                   no credential, no testimonial. No stock smile, no open mouth, no instrument near a
+                   face, no aqua palette. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S10-002">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S10">
+<meta name="section-name" content="Pricing and Payment Plans">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Linen">
+<meta name="section-shape" content="B — anchored, one reserved area edge to edge">
+<meta name="layout-model" content="The commitment at display size, then the room it is handed over in, then the two kinds, the movers and how to pay">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-room-where-the-plan-is-gone-through-at-band-proportion">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="none — no figure appears in this study">
+<meta name="batch" content="V1">
+
+<title>DN-S10-002 — Pricing and Payment Plans, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f3efe8; }
+
+/* Scoped study styles — namespaced to .dn-s10-002 */
+.dn-s10-002 {
+  --paper: #f3efe8;
+  --ink: #1b1714;
+  --ink-soft: #6a6058;
+  --line: #ddd5c9;
+  --accent: #a2543a;
+  --slot: #e9e2d8;
+  --slot-edge: #c6bcae;
+  --slot-ink: #635b53;
+  --focus: #1b1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s10-002 *,
+.dn-s10-002 *::before,
+.dn-s10-002 *::after { box-sizing: inherit; }
+.dn-s10-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+
+.dn-s10-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s10-002 .eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s10-002 h2 {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: clamp(2rem, 3.9vw, 3.15rem);
+  line-height: 1.02; letter-spacing: -0.042em; font-weight: 800;
+  max-width: 22ch;
+}
+.dn-s10-002 .lead { margin: 0 0 clamp(30px, 3.8vw, 52px); max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.08rem, 1.36vw, 1.24rem); }
+
+.dn-s10-002 .room {
+  border: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  aspect-ratio: 24 / 7;
+  display: grid; place-items: center;
+  padding: clamp(16px, 2.2vw, 28px);
+  margin: 0 calc(-1 * clamp(22px, 3.6vw, 58px)) clamp(30px, 3.8vw, 52px);
+}
+.dn-s10-002 .room span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; }
+
+/* --- The two kinds, on one measure --- */
+.dn-s10-002 .kinds { display: grid; gap: clamp(22px, 2.8vw, 34px); margin-bottom: clamp(28px, 3.4vw, 46px); max-width: 76ch; }
+.dn-s10-002 h3 { margin: 0 0 clamp(9px, 1.2vw, 12px); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
+.dn-s10-002 .open h3 { color: var(--ink); }
+.dn-s10-002 .kinds p { margin: 0; font-size: clamp(1.06rem, 1.3vw, 1.22rem); color: var(--ink-soft); }
+.dn-s10-002 .kinds b { color: var(--ink); font-weight: 800; }
+
+/* --- The three that can move it --- */
+.dn-s10-002 .movers {
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  padding: clamp(22px, 2.8vw, 32px) 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  display: grid; gap: clamp(14px, 1.8vw, 20px);
+  max-width: 76ch;
+}
+.dn-s10-002 .movers li { font-size: 1.02rem; color: var(--ink-soft); }
+.dn-s10-002 .movers b { color: var(--accent); font-weight: 800; }
+.dn-s10-002 .movers li:last-child b { color: var(--ink); }
+
+.dn-s10-002 .paying { margin: 0 0 clamp(26px, 3.2vw, 42px); padding: 0; list-style: none; display: grid; gap: clamp(10px, 1.3vw, 13px); max-width: 62ch; }
+.dn-s10-002 .paying li { font-size: 1.02rem; color: var(--ink-soft); }
+
+.dn-s10-002 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.24rem, 1.9vw, 1.7rem);
+  line-height: 1.2; letter-spacing: -0.028em; font-weight: 800;
+  max-width: 34ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s10-002 h2, .dn-s10-002 .lead, .dn-s10-002 .kinds, .dn-s10-002 .movers, .dn-s10-002 .paying, .dn-s10-002 .close { max-width: none; }
+  .dn-s10-002 .room { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s10-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s10-002" data-study-id="DN-S10-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="dn-s10-002-title">
+
+    <p class="eyebrow">What it costs</p>
+    <h2 id="dn-s10-002-title">The number comes at the end of the first appointment, in writing, before anything starts.</h2>
+    <p class="lead">Every option is on it, including doing nothing. There are no prices on this page, because a number you could read before anyone has looked is not a price.</p>
+
+    <div class="room"><span>Image area &mdash; the room where the plan is gone through</span></div>
+
+    <div class="kinds">
+      <div>
+        <h3>One price, and it does not change</h3>
+        <p><b>The examination, the hygienist, an X-ray, the emergency appointment.</b> Ask on the phone and you will be told.</p>
+      </div>
+      <div class="open">
+        <h3>Cannot be quoted until somebody looks</h3>
+        <p><b>A filling, a crown, an implant, aligners.</b> What they cost depends on how much tooth is left, how many surfaces, and whether the root is involved. Nobody can know that from a website.</p>
+      </div>
+    </div>
+
+    <ul class="movers">
+      <li><b>What is under an old filling.</b> We cannot see it until it is out. If there is more, we stop and re-quote before continuing.</li>
+      <li><b>A material you choose after seeing both.</b> Same work, different price, and you choose.</li>
+      <li><b>Nothing else.</b> If it is not on this list, it does not move the number.</li>
+    </ul>
+
+    <ul class="paying">
+      <li>You can pay in instalments, and the total is the same either way.</li>
+      <li>If you stop part way, you pay for what was done and nothing more.</li>
+    </ul>
+
+    <p class="close">The only honest number is the one written after someone has looked.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S05-005
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S05 — Smile Results
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Dusk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **A — Item grid. Media in every item.** Four reserved before-and-after areas.
+  Layout model   : Every case carries a second caption: **what this photograph does not show**, set in
+                   the accent directly beneath the pair
+  Density        : Structured (214 visible words, structured band 170–230)
+  Media mode     : Four reserved before-and-after areas. **No face in any**, one case each.
+  Interaction    : None (static; no JavaScript). Links only, no form.
+
+  Governing idea : **A before-and-after tells you nothing unless you know what changed between the two
+                   photographs besides the teeth.**
+
+  The device, which is this study alone :
+                   **Every picture is captioned twice — once with what it shows, and once with what it
+                   does not.**
+
+                   The other four studies disclose the *conditions* of the photograph: the light, the
+                   retouching, the selection, the timing. Those are honest and they are still about
+                   the image.
+                   This one goes after the thing the image cannot contain at all. A pair of
+                   photographs shows the last ten minutes of something that took fourteen months, and
+                   it shows none of the waiting, none of the cost, and nothing about how the shade
+                   looks in daylight rather than under a clinic lamp.
+                   **A results gallery that prints its own blind spots beside each case is telling the
+                   reader how to look at it**, which is the only thing a gallery can honestly offer
+                   somebody who has already learned to distrust one.
+
+  Why this is the sector-native reading :
+                   Every section of this sector has replaced an impression with something checkable.
+                   Here the checkable thing is **the limit of the evidence itself**, printed at the
+                   same weight as the evidence.
+
+  Placeholder data : The case count, the year total and the four timings are PLACEHOLDER DEMO VALUES
+                   marked data-placeholder="true".
+
+  Content note   : No outcome guarantee, no superiority claim, no price figure, no credential, no
+                   testimonial, no patient name. **No face in any reserved area.** No stock smile, no
+                   instrument, no sparkle, no aqua palette. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S05-005">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S05">
+<meta name="section-name" content="Smile Results">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Dusk">
+<meta name="section-shape" content="A — item grid, media in every item">
+<meta name="layout-model" content="Every case captioned twice — what it shows, and what this photograph does not show">
+<meta name="density" content="structured">
+<meta name="media-mode" content="four-reserved-before-and-after-areas-no-face-each-double-captioned">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="case count, year total, four timings — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S05-005 — Smile Results, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #14161a; }
+
+/* Scoped study styles — namespaced to .dn-s05-005 */
+.dn-s05-005 {
+  --paper: #14161a;
+  --ink: #f2f1ef;
+  --ink-soft: #9aa0a4;
+  --line: #2b2f35;
+  --accent: #6ea8a0;
+  --accent-ink: #10201d;
+  --slot: #1e2126;
+  --slot-edge: #3a3f46;
+  --slot-ink: #8f959a;
+  --focus: #6ea8a0;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s05-005 *,
+.dn-s05-005 *::before,
+.dn-s05-005 *::after { box-sizing: inherit; }
+.dn-s05-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 26px; }
+
+.dn-s05-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s05-005 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.77rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s05-005 h2 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(1.95rem, 3.6vw, 2.95rem);
+  line-height: 1.04; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 26ch;
+}
+.dn-s05-005 .lead { margin: 0 0 clamp(32px, 4vw, 56px); max-width: 58ch; color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); }
+
+/* --- Four cases, each captioned twice --- */
+.dn-s05-005 .cases {
+  margin: 0 0 clamp(30px, 3.8vw, 52px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 44px);
+}
+.dn-s05-005 .pair {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 26px;
+  background: var(--slot);
+  aspect-ratio: 21 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 22px);
+  margin-bottom: clamp(12px, 1.6vw, 16px);
+  position: relative;
+}
+.dn-s05-005 .pair::after {
+  content: "";
+  position: absolute; top: 14px; bottom: 14px; left: 50%; width: 1px;
+  background: var(--slot-edge);
+}
+.dn-s05-005 .pair span { color: var(--slot-ink); font-size: 0.76rem; font-weight: 700; text-align: center; }
+
+.dn-s05-005 .cases h3 { margin: 0 0 4px; font-size: 1.06rem; letter-spacing: -0.024em; font-weight: 800; }
+.dn-s05-005 .did { display: block; margin-bottom: 3px; font-size: 0.94rem; color: var(--ink-soft); }
+.dn-s05-005 .when { display: block; margin-bottom: clamp(11px, 1.4vw, 14px); font-size: 0.9rem; font-weight: 700; color: var(--ink-soft); }
+
+/* The second caption */
+.dn-s05-005 .blind {
+  margin: 0;
+  padding-left: clamp(12px, 1.5vw, 16px);
+  border-left: 2px solid var(--accent);
+  font-size: 0.95rem; color: var(--ink);
+}
+.dn-s05-005 .blind b {
+  display: block; margin-bottom: 3px;
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* --- The rules, and the line the second captions are for --- */
+.dn-s05-005 .why {
+  margin: 0 0 clamp(26px, 3.2vw, 44px);
+  padding-top: clamp(22px, 2.8vw, 34px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.08rem, 1.42vw, 1.32rem);
+  line-height: 1.3; letter-spacing: -0.022em; font-weight: 600;
+}
+.dn-s05-005 .why em { font-style: normal; color: var(--accent); }
+
+.dn-s05-005 .rules { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 34px); }
+.dn-s05-005 .rules b { display: block; margin-bottom: 5px; font-size: 0.95rem; letter-spacing: -0.022em; font-weight: 800; color: var(--accent); }
+.dn-s05-005 .rules li:last-child b { color: var(--ink); }
+.dn-s05-005 .rules p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+.dn-s05-005 .note { margin: clamp(22px, 2.8vw, 34px) 0 0; font-size: 0.95rem; color: var(--ink-soft); max-width: 72ch; }
+.dn-s05-005 .note b { color: var(--ink); font-weight: 800; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s05-005 .rules { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .dn-s05-005 h2, .dn-s05-005 .lead, .dn-s05-005 .note { max-width: none; }
+  .dn-s05-005 .cases { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .dn-s05-005 .rules { grid-template-columns: minmax(0, 1fr); }
+  .dn-s05-005 .pair { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s05-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s05-005" data-study-id="DN-S05-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="dn-s05-005-title">
+
+    <p class="eyebrow">Results</p>
+    <h2 id="dn-s05-005-title">Each of these is captioned twice.</h2>
+    <p class="lead">Once with what it shows, and once with what never reached the frame.</p>
+
+    <ul class="cases">
+      <li>
+        <div class="pair"><span>Before and after &mdash; case one</span></div>
+        <h3>Two chipped front teeth</h3>
+        <span class="did">Composite bonding, one visit.</span>
+        <span class="when">Second photograph: <span data-placeholder="true">the same day</span></span>
+        <p class="blind"><b>Does not show</b>What it cost.</p>
+      </li>
+      <li>
+        <div class="pair"><span>Before and after &mdash; case two</span></div>
+        <h3>Discoloured after a root canal</h3>
+        <span class="did">Internal whitening and one crown, six weeks.</span>
+        <span class="when">Second photograph: <span data-placeholder="true">eleven months later</span></span>
+        <p class="blind"><b>Does not show</b>How the shade looks in daylight.</p>
+      </li>
+      <li>
+        <div class="pair"><span>Before and after &mdash; case three</span></div>
+        <h3>Crowding, upper front</h3>
+        <span class="did">Aligners for fourteen months, then polishing.</span>
+        <span class="when">Second photograph: <span data-placeholder="true">four months after finishing</span></span>
+        <p class="blind"><b>Does not show</b>Fourteen months of wearing them.</p>
+      </li>
+      <li>
+        <div class="pair"><span>Before and after &mdash; case four</span></div>
+        <h3>A missing premolar</h3>
+        <span class="did">Implant, five months of healing.</span>
+        <span class="when">Second photograph: <span data-placeholder="true">two weeks after fitting</span></span>
+        <p class="blind"><b>Does not show</b>Five months of waiting.</p>
+      </li>
+    </ul>
+
+    <p class="why">A pair of photographs shows <em>the last ten minutes of something that took months</em>.</p>
+
+    <ul class="rules">
+      <li>
+        <b>Same camera, same light</b>
+        <p>Both photographs, every case. Different light is most of what you see.</p>
+      </li>
+      <li>
+        <b>Not retouched</b>
+        <p>Cropped, and nothing else.</p>
+      </li>
+      <li>
+        <b>We chose these</b>
+        <p><span data-placeholder="true">Four</span> shown out of <span data-placeholder="true">sixty-one</span> that year, and we picked the clear ones.</p>
+      </li>
+      <li>
+        <b>One case each</b>
+        <p>Not a typical result. Yours will not look like this.</p>
+      </li>
+    </ul>
+
+    <p class="note"><b>No face appears in any of these.</b> The pairs are cropped to the work, and consent covers that crop only.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S16-001
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S16 — Insurance & Financing
+  Direction      : Universal / Safe
+  Theme          : 001 Chalk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area.**
+  Layout model   : Two runs — what is between you and your insurer, and what is between you and us —
+                   then the line about ringing first, then the person who does the paperwork
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the person who does the paperwork.** Labelled by role, never
+                   by name, per `S04`. A new subject for the sector: the receipt side of the desk.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **Your policy is between you and your insurer. We are not part of it, and what you
+                   owe us does not change if they say no.**
+
+                   The sector's version is a row of insurer logos under the words *we work with*, which
+                   implies a relationship that does not exist. A small practice is not on anybody's
+                   panel: **the patient is treated, the patient pays, and the patient claims it back.**
+                   Almost nobody knows that until the claim comes back short.
+                   So this page states the structure first and the services second. **The useful facts
+                   are the ones about where the money actually goes**, and none of them needs a logo.
+
+  Why no insurer is named anywhere in this batch :
+                   `S13` reserved named bodies and brands, and an insurer or a plan is both. Naming one
+                   asserts a business relationship the workspace cannot verify — the same class of
+                   thing as a fabricated credential. **`S10` reserved the figures**, so there is no
+                   rate, no monthly amount, no excess and no percentage either.
+                   What is left is the only part that was ever worth reading.
+
+  The refusal that costs something :
+                   **We do not arrange credit, and we take no commission from anybody who does.**
+                   Arranging finance is a revenue line for a great many practices. Refusing it costs
+                   that revenue and removes the pressure it puts on a treatment plan, which is the same
+                   argument `S01` makes about commission on treatment.
+
+  Content note   : **No insurer, plan or finance provider named. No figure, rate, percentage or
+                   currency anywhere.** No outcome guarantee, no *pain-free* or *gentle*, no
+                   superiority claim, no credential, no testimonial. No stock smile, no open mouth, no
+                   instrument near a face, no aqua palette. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S16-001">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S16">
+<meta name="section-name" content="Insurance and Financing">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="001 Chalk">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="Two runs, what is between you and your insurer and what is between you and us, then the line about ringing first">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-person-who-does-the-paperwork-labelled-by-role">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="none — no figure, rate or provider appears in this study">
+<meta name="batch" content="V1">
+
+<title>DN-S16-001 — Insurance and Financing, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f4f1; }
+
+/* Scoped study styles — namespaced to .dn-s16-001 */
+.dn-s16-001 {
+  --paper: #f6f4f1;
+  --ink: #16181b;
+  --ink-soft: #575c60;
+  --line: #ddd9d3;
+  --card: #ffffff;
+  --accent: #1f6f5c;
+  --accent-ink: #ffffff;
+  --slot: #eae7e2;
+  --slot-edge: #c6c2bb;
+  --slot-ink: #5d6165;
+  --focus: #16181b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s16-001 *,
+.dn-s16-001 *::before,
+.dn-s16-001 *::after { box-sizing: inherit; }
+.dn-s16-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 16px; }
+
+.dn-s16-001 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s16-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(26px, 3.2vw, 42px);
+}
+.dn-s16-001 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 7px 15px; border-radius: 999px;
+  background: rgba(31, 111, 92, 0.12); color: var(--accent);
+  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s16-001 h2 {
+  margin: 0;
+  font-size: clamp(1.95rem, 3.5vw, 2.9rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s16-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 50ch; }
+
+/* --- Two runs, two parties --- */
+.dn-s16-001 .sides {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3.2vw, 54px);
+  margin-bottom: clamp(28px, 3.4vw, 46px);
+}
+.dn-s16-001 h3 {
+  margin: 0 0 clamp(14px, 1.8vw, 18px);
+  padding-bottom: clamp(10px, 1.3vw, 13px);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.dn-s16-001 .ours h3 { color: var(--accent); border-bottom-color: var(--accent); }
+.dn-s16-001 .sides ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(16px, 2.1vw, 22px); }
+.dn-s16-001 .sides b { display: block; margin-bottom: 4px; font-size: 1.04rem; letter-spacing: -0.024em; font-weight: 800; }
+.dn-s16-001 .sides p { margin: 0; font-size: 0.98rem; color: var(--ink-soft); }
+
+.dn-s16-001 .who {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 16px;
+  background: var(--slot);
+  aspect-ratio: 32 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 24px);
+  margin-bottom: clamp(26px, 3.2vw, 42px);
+}
+.dn-s16-001 .who span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+
+.dn-s16-001 .first {
+  margin: 0 0 clamp(24px, 3vw, 38px);
+  padding: clamp(22px, 2.8vw, 34px) clamp(20px, 2.6vw, 32px);
+  border-radius: 16px;
+  background: var(--card);
+  font-size: clamp(1.08rem, 1.45vw, 1.32rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 700;
+  max-width: 64ch;
+}
+.dn-s16-001 .first em { font-style: normal; color: var(--accent); }
+
+.dn-s16-001 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  max-width: 46ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s16-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s16-001 h2, .dn-s16-001 .lead, .dn-s16-001 .first, .dn-s16-001 .close { max-width: none; }
+  .dn-s16-001 .sides { grid-template-columns: minmax(0, 1fr); }
+  .dn-s16-001 .who { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s16-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s16-001" data-study-id="DN-S16-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="dn-s16-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Paying for it</p>
+        <h2 id="dn-s16-001-title">There are two relationships here, and we are only in one.</h2>
+      </div>
+      <p class="lead">Your policy is between you and your insurer. We are not part of it, and what you owe us does not change if they say no.</p>
+    </div>
+
+    <div class="sides">
+      <div>
+        <h3>Between you and your insurer</h3>
+        <ul>
+          <li>
+            <b>We are not on anyone's panel</b>
+            <p>You are treated here, you pay here, and you claim it back yourself.</p>
+          </li>
+          <li>
+            <b>What policies usually will not cover</b>
+            <p>Cosmetic work, anything started before the policy began, and the excess.</p>
+          </li>
+          <li>
+            <b>If the claim is refused</b>
+            <p>You owe us the same amount, and we will have told you that amount before you agreed to anything.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="ours">
+        <h3>Between you and us</h3>
+        <ul>
+          <li>
+            <b>The paperwork you need</b>
+            <p>An itemised receipt with the treatment codes on it, on the day, without asking.</p>
+          </li>
+          <li>
+            <b>We do not arrange credit</b>
+            <p>No third party, no commission to us, and nobody's application to fill in.</p>
+          </li>
+          <li>
+            <b>If you need to spread it</b>
+            <p>We do it ourselves. Same total, and it stops when you stop.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="who"><span>Image area &mdash; the person who does the paperwork</span></div>
+
+    <p class="first"><em>If your policy matters to what you decide, ring and ask before the first appointment</em> rather than after it.</p>
+
+    <p class="close">A page that says which claims fail is more use than a page listing insurers.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

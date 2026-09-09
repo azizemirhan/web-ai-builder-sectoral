@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S04-003
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S04 — Dentists & Specialists
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Slate — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **A — Item grid. Media in every item.** Five reserved portraits.
+  Layout model   : **An offset gallery** — two columns, the right one dropped so no pair ever aligns,
+                   with the title status as a **badge over each portrait**
+  Density        : Structured (194 visible words, structured band 170–230)
+  Media mode     : Five reserved portraits, each carrying its status badge. Labels name the **role**.
+  Interaction    : None (static; no JavaScript). Links only, no form.
+
+  Governing idea : **Specialist is a protected title, and most clinics use it loosely.**
+
+  What the structured reading adds — the badge is the point of the picture :
+                   A team grid`s photographs normally carry nothing: the name and the letters sit
+                   underneath in type, and the image is decoration with a face in it.
+                   Here the **status rides on the portrait** — *registered specialist* or *not a
+                   specialist* — so the one checkable fact about each person is the first thing the
+                   eye lands on and cannot be separated from them. That is the badge-over-media device
+                   doing work rather than marking a favourite.
+                   The offset drop is not styling either. **An aligned grid of five faces states that
+                   they are interchangeable**, and the whole argument of this section is that they are
+                   not: two are on a register, two are not, and one is not a dentist.
+
+  Credentials are reserved, never invented :
+                   No letters after any name. The page gives the register instead, which cannot be
+                   fabricated and is more use.
+
+  Names, portraits and pronouns :
+                   Placeholder names in initial-and-surname form. Portrait labels name the **role**.
+                   Nobody is given a pronoun the study has no basis for.
+
+  Content note   : No fabricated credential, registration number, qualification or membership. No
+                   superiority claim. No outcome guarantee, price, testimonial or rating. No stock
+                   smile, no open mouth, no instrument. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S04-003">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S04">
+<meta name="section-name" content="Dentists &amp; Specialists">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Slate">
+<meta name="section-shape" content="A — item grid, media in every item">
+<meta name="layout-model" content="An offset gallery, two columns with the right dropped, status as a badge over each portrait">
+<meta name="density" content="structured">
+<meta name="media-mode" content="five-reserved-portraits-each-carrying-its-status-badge">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="five team names, the register reference — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S04-003 — Dentists &amp; Specialists, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eef0f2; }
+
+/* Scoped study styles — namespaced to .dn-s04-003 */
+.dn-s04-003 {
+  --paper: #eef0f2;
+  --ink: #0f1316;
+  --ink-soft: #515a61;
+  --line: #d6dbdf;
+  --card: #ffffff;
+  --accent: #2c5fd0;
+  --accent-ink: #ffffff;
+  --slot: #e1e6ea;
+  --slot-edge: #b5bec6;
+  --slot-ink: #5a636a;
+  --focus: #0f1316;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s04-003 *,
+.dn-s04-003 *::before,
+.dn-s04-003 *::after { box-sizing: inherit; }
+.dn-s04-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.dn-s04-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s04-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(26px, 3.2vw, 44px);
+}
+.dn-s04-003 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s04-003 h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 26ch;
+}
+.dn-s04-003 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 50ch; }
+
+/* --- Offset gallery. No pair ever aligns --- */
+.dn-s04-003 .team {
+  margin: 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 2.6vw, 40px);
+}
+.dn-s04-003 .team > li:nth-child(even) { margin-top: clamp(28px, 4vw, 72px); }
+
+.dn-s04-003 .frame { position: relative; margin-bottom: clamp(12px, 1.6vw, 16px); }
+.dn-s04-003 .shot {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 20px;
+  background: var(--slot);
+  aspect-ratio: 16 / 10;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 22px);
+}
+.dn-s04-003 .shot span { color: var(--slot-ink); font-size: 0.76rem; font-weight: 700; text-align: center; line-height: 1.42; }
+
+/* The one checkable fact rides on the picture */
+.dn-s04-003 .status {
+  position: absolute;
+  top: clamp(12px, 1.6vw, 18px); left: clamp(12px, 1.6vw, 18px);
+  padding: 6px 13px; border-radius: 999px;
+  background: var(--card); color: var(--ink-soft);
+  font-size: 0.69rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.dn-s04-003 .status.reg { background: var(--accent); color: var(--accent-ink); }
+
+.dn-s04-003 .team h3 { margin: 0 0 2px; font-size: clamp(1.1rem, 1.45vw, 1.28rem); letter-spacing: -0.024em; font-weight: 800; }
+.dn-s04-003 .role { display: block; margin-bottom: 6px; font-size: 0.87rem; font-weight: 700; color: var(--accent); }
+.dn-s04-003 .team p { margin: 0; font-size: 0.96rem; color: var(--ink-soft); max-width: 42ch; }
+
+.dn-s04-003 .close {
+  margin: clamp(30px, 3.8vw, 52px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(22px, 3vw, 46px);
+}
+.dn-s04-003 .close p { margin: 0; font-size: 0.98rem; color: var(--ink-soft); }
+.dn-s04-003 .close b { color: var(--ink); font-weight: 800; }
+.dn-s04-003 .close a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s04-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s04-003 h2, .dn-s04-003 .lead, .dn-s04-003 .team p { max-width: none; }
+  .dn-s04-003 .close { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .dn-s04-003 .team { grid-template-columns: minmax(0, 1fr); }
+  .dn-s04-003 .team > li:nth-child(even) { margin-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s04-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s04-003" data-study-id="DN-S04-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="dn-s04-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The team</p>
+        <h2 id="dn-s04-003-title">Two of us are registered specialists. The rest are not.</h2>
+      </div>
+      <p class="lead">Specialist is a protected title and most clinics use it loosely. This page says which of us holds it, and which of us does not.</p>
+    </div>
+
+    <ul class="team">
+      <li>
+        <div class="frame">
+          <div class="shot"><span>Image area &mdash; the principal dentist, mid-sentence</span></div>
+          <span class="status">Not a specialist</span>
+        </div>
+        <h3 data-placeholder="true">J. Okafor</h3>
+        <span class="role">Principal dentist</span>
+        <p>Check-ups, fillings, crowns. Sees their own patients every visit.</p>
+      </li>
+      <li>
+        <div class="frame">
+          <div class="shot"><span>Image area &mdash; the periodontist, at work</span></div>
+          <span class="status reg">Registered specialist</span>
+        </div>
+        <h3 data-placeholder="true">A. Lindqvist</h3>
+        <span class="role">Periodontist</span>
+        <p>Gums. Referred to from inside the practice, never swapped in.</p>
+      </li>
+      <li>
+        <div class="frame">
+          <div class="shot"><span>Image area &mdash; the oral surgeon, at work</span></div>
+          <span class="status reg">Registered specialist</span>
+        </div>
+        <h3 data-placeholder="true">M. Rahim</h3>
+        <span class="role">Oral surgeon</span>
+        <p>Extractions and implant placement. Here two days a week.</p>
+      </li>
+      <li>
+        <div class="frame">
+          <div class="shot"><span>Image area &mdash; the dentist, mid-sentence</span></div>
+          <span class="status">Not a specialist</span>
+        </div>
+        <h3 data-placeholder="true">T. Byrne</h3>
+        <span class="role">Dentist</span>
+        <p>Check-ups and emergencies. Sees their own patients every visit.</p>
+      </li>
+      <li>
+        <div class="frame">
+          <div class="shot"><span>Image area &mdash; the hygienist, in the hygiene room</span></div>
+          <span class="status">Not a dentist</span>
+        </div>
+        <h3 data-placeholder="true">S. Achebe</h3>
+        <span class="role">Hygienist</span>
+        <p>Cleaning and gum care. Sees everyone between check-ups.</p>
+      </li>
+    </ul>
+
+    <div class="close">
+      <p><b>The letters after our names are on the public register, not on this page.</b> <a href="#" data-placeholder="true">Look us up</a> before you book.</p>
+      <p><b>Whoever you start with is who you see.</b> The two specialists are referred to, never swapped in, and anything leaving the practice goes with a note addressed to a name.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

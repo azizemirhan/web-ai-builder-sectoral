@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S09-002
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S09 — Patient Reviews
+  Direction      : Premium / Editorial
+  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area, edge to edge.**
+  Layout model   : **One sentence at display size** — the thing a review cannot reach — then the room
+                   it can, then both lists as running type and the four policies
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the desk and the waiting room**, at band proportion. The
+                   photograph is the reachable half, and it is the only half illustrated.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **A review can tell you how you will be treated. It cannot tell you whether the
+                   dentistry was any good.**
+
+  The editorial cut — lead with the sentence the format cannot survive :
+                   A `patient reviews` section is a format that only works if nobody says out loud what
+                   it is evidence of. So the study says it first, at the largest size on the page:
+                   **whether the filling was placed well is not in any of them.**
+                   Everything after that sentence is consequence. The four things a review does reach
+                   are real and worth reading — the wait, the phone, the explanation, the bill — and
+                   they are listed plainly rather than dismissed. **The point is not that reviews are
+                   worthless. It is that they are evidence about reception**, and a wall of five-star
+                   cards presented as evidence about dentistry is a category error the whole sector
+                   makes on purpose.
+
+  Why no testimonial appears anywhere in this batch :
+                   The contract reserves patient quotations the way it reserves credentials. They are
+                   statements by real people and the workspace does not invent them; **a placeholder
+                   testimonial is a fabricated endorsement.** The platform name is reserved for the
+                   same reason.
+
+  Placeholder data : The listing name is a PLACEHOLDER DEMO VALUE marked data-placeholder="true".
+
+  Content note   : **No testimonial, no patient name or initial, no quotation, no star, no rating, no
+                   average, no review count, no award.** No outcome guarantee, no *pain-free* or
+                   *gentle*, no superiority claim, no price, no credential. No stock smile, no open
+                   mouth, no instrument near a face, no aqua palette. No global header.
+-->
+
+<meta name="study-id" content="DN-S09-002">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S09">
+<meta name="section-name" content="Patient Reviews">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="002 Linen">
+<meta name="section-shape" content="B — anchored, one reserved area edge to edge">
+<meta name="layout-model" content="One sentence at display size, then the room a review can reach, then both lists as running type and the four policies">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-desk-and-waiting-room-at-band-proportion">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="listing name — demo value, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S09-002 — Patient Reviews, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f3efe8; }
+
+/* Scoped study styles — namespaced to .dn-s09-002 */
+.dn-s09-002 {
+  --paper: #f3efe8;
+  --ink: #1b1714;
+  --ink-soft: #6a6058;
+  --line: #ddd5c9;
+  --accent: #a2543a;
+  --slot: #e9e2d8;
+  --slot-edge: #c6bcae;
+  --slot-ink: #635b53;
+  --focus: #1b1714;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s09-002 *,
+.dn-s09-002 *::before,
+.dn-s09-002 *::after { box-sizing: inherit; }
+.dn-s09-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+
+.dn-s09-002 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s09-002 .eyebrow {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s09-002 h2 {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  line-height: 1.0; letter-spacing: -0.044em; font-weight: 800;
+  max-width: 21ch;
+}
+.dn-s09-002 .lead { margin: 0 0 clamp(30px, 3.8vw, 52px); max-width: 52ch; color: var(--ink-soft); font-size: clamp(1.08rem, 1.36vw, 1.24rem); }
+
+.dn-s09-002 .room {
+  border: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  aspect-ratio: 24 / 7;
+  display: grid; place-items: center;
+  padding: clamp(16px, 2.2vw, 28px);
+  margin: 0 calc(-1 * clamp(22px, 3.6vw, 58px)) clamp(10px, 1.3vw, 14px);
+}
+.dn-s09-002 .room span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; }
+.dn-s09-002 .cap { margin: 0 0 clamp(30px, 3.8vw, 52px); font-size: 0.9rem; color: var(--ink-soft); }
+
+/* --- Both lists, as running type on one measure --- */
+.dn-s09-002 .runs { display: grid; gap: clamp(24px, 3vw, 38px); margin-bottom: clamp(28px, 3.4vw, 46px); max-width: 74ch; }
+.dn-s09-002 h3 { margin: 0 0 clamp(10px, 1.4vw, 14px); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
+.dn-s09-002 .runs ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(8px, 1.1vw, 11px); }
+.dn-s09-002 .runs li { font-size: clamp(1.06rem, 1.32vw, 1.24rem); letter-spacing: -0.02em; color: var(--ink-soft); }
+.dn-s09-002 .cannot h3 { color: var(--ink); }
+.dn-s09-002 .cannot li { color: var(--ink); font-weight: 700; }
+.dn-s09-002 .cannot p { margin: clamp(11px, 1.5vw, 15px) 0 0; font-size: 0.98rem; color: var(--ink-soft); }
+
+/* --- The four policies, small --- */
+.dn-s09-002 .policy {
+  margin: 0 0 clamp(26px, 3.2vw, 42px);
+  padding: clamp(22px, 2.8vw, 32px) 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2.2vw, 28px) clamp(24px, 3.2vw, 48px);
+}
+.dn-s09-002 .policy li { font-size: 0.99rem; color: var(--ink-soft); }
+.dn-s09-002 .policy b { color: var(--accent); font-weight: 800; }
+
+.dn-s09-002 .close {
+  margin: 0;
+  font-size: clamp(1.24rem, 1.9vw, 1.7rem);
+  line-height: 1.2; letter-spacing: -0.028em; font-weight: 800;
+  max-width: 34ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s09-002 h2, .dn-s09-002 .lead, .dn-s09-002 .runs, .dn-s09-002 .close { max-width: none; }
+  .dn-s09-002 .policy { grid-template-columns: minmax(0, 1fr); }
+  .dn-s09-002 .room { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s09-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s09-002" data-study-id="DN-S09-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="dn-s09-002-title">
+
+    <p class="eyebrow">What patients say</p>
+    <h2 id="dn-s09-002-title">Whether the filling was placed well is not in any of them.</h2>
+    <p class="lead">Reviews are about the parts of a visit you could see. The dentistry is not one of them, and this page says so rather than showing you five of the good ones.</p>
+
+    <div class="room"><span>Image area &mdash; the desk and the waiting room</span></div>
+    <p class="cap">The half a review can reach.</p>
+
+    <div class="runs">
+      <div>
+        <h3>A review can tell you</h3>
+        <ul>
+          <li>How long you waited.</li>
+          <li>Whether the phone was answered.</li>
+          <li>Whether anyone explained what they were doing.</li>
+          <li>Whether the bill matched the plan.</li>
+        </ul>
+      </div>
+      <div class="cannot">
+        <h3>It cannot tell you</h3>
+        <ul>
+          <li>Whether the filling was placed well.</li>
+          <li>Whether the crown fits your bite.</li>
+          <li>Whether the treatment was needed at all.</li>
+        </ul>
+        <p>None of that can be judged from the chair, including by the person in it.</p>
+      </div>
+    </div>
+
+    <ul class="policy">
+      <li><b>They are not here.</b> They are on <span data-placeholder="true">the public listing</span>, where we cannot delete one or move it up.</li>
+      <li><b>We do not ask at the chair.</b> Asking somebody while they are still numb is how a high average gets built.</li>
+      <li><b>The wrong ones stay up.</b> Including the ones we think are unfair.</li>
+      <li><b>We reply under our own name.</b> Never anonymously, and never twice to the same one.</li>
+    </ul>
+
+    <p class="close">The half a review cannot reach is the half you are paying for.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

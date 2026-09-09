@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S07-005
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S07 — Treatment Journey
+  Direction      : Art-directed / Distinctive
+  Theme          : 005 Dusk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. One reserved area.**
+  Layout model   : **The lanes inverted.** Your half at display size, ours set beneath each one as a
+                   small annotation, which is the reverse of how the genre is drawn
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : One reserved area — **the chair, on a treatment day.** One stage of five has a
+                   place attached to it, and the page shows that one rather than pretending to five.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **Every step here has two halves, and the second one is yours.**
+
+  The device, which is this study alone :
+                   **The proportions of the genre, reversed.** A treatment journey is drawn entirely in
+                   the clinic's voice: five things we do, at display size, with the patient present
+                   only as the object of the verbs.
+                   Here the patient's half is the display type and **the clinic's half is a footnote
+                   under it** — the same information, at the weight it actually carries. Read down the
+                   large type and the page is a list of things you will do. That is what a course of
+                   treatment is from inside it.
+                   Stage four is where the inversion pays: your half is a full display sentence about
+                   the aftercare, and directly beneath it, in the smallest type on the page, the
+                   clinic's half reads `Nothing.` **The punchline of the section is set at footnote
+                   size, which is exactly where a competitor would have put it if they had printed it
+                   at all.**
+
+  Why this is the sector-native reading :
+                   Every section of this sector replaces an impression with something checkable, and
+                   the check here is one the reader performs on the layout itself: **count how much of
+                   the page is you.** No other reading of a journey section makes the reader do the
+                   arithmetic by looking.
+
+  The arithmetic, in all five studies :
+                   **Nine weeks from the first appointment to the check. Three hours of it in our
+                   chair.**
+
+  The media, per the contract :
+                   The room the visitor will sit in. Not the healing stage, which has no picture — the
+                   only available one is an empty surgery, which the contract bans outright.
+
+  Placeholder data : The five durations, the nine weeks and the three hours are PLACEHOLDER DEMO
+                   VALUES marked data-placeholder="true".
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price,
+                   no credential, no testimonial, no before/after. Nothing here reproaches the reader.
+                   No stock smile, no open mouth, no instrument near a face, no empty-surgery shot, no
+                   aqua palette. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S07-005">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S07">
+<meta name="section-name" content="Treatment Journey">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="theme" content="005 Dusk">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="The lanes inverted — your half at display size, ours as a small annotation beneath each one">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area-the-chair-on-a-treatment-day">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="five durations, nine weeks, three hours — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S07-005 — Treatment Journey, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #14161a; }
+
+/* Scoped study styles — namespaced to .dn-s07-005 */
+.dn-s07-005 {
+  --paper: #14161a;
+  --ink: #f2f1ef;
+  --ink-soft: #9aa0a4;
+  --line: #2b2f35;
+  --accent: #6ea8a0;
+  --accent-ink: #10201d;
+  --slot: #1e2126;
+  --slot-edge: #3a3f46;
+  --slot-ink: #8f959a;
+  --focus: #6ea8a0;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s07-005 *,
+.dn-s07-005 *::before,
+.dn-s07-005 *::after { box-sizing: inherit; }
+.dn-s07-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; border-radius: 26px; }
+
+.dn-s07-005 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s07-005 .eyebrow {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: 0.77rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.dn-s07-005 h2 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(1.95rem, 3.6vw, 2.95rem);
+  line-height: 1.04; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 22ch;
+}
+.dn-s07-005 .lead { margin: 0 0 clamp(22px, 2.8vw, 34px); max-width: 52ch; color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); }
+.dn-s07-005 .sum { margin: 0 0 clamp(30px, 3.8vw, 52px); font-size: 0.94rem; color: var(--ink-soft); }
+.dn-s07-005 .sum b { color: var(--ink); font-weight: 800; }
+
+/* --- Your half, at the size the genre gives to ours --- */
+.dn-s07-005 .yours {
+  margin: 0 0 clamp(30px, 3.8vw, 52px);
+  padding: 0; list-style: none;
+  display: grid; gap: clamp(24px, 3vw, 40px);
+}
+.dn-s07-005 .yours > li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.58fr);
+  gap: clamp(16px, 2.6vw, 46px);
+  padding-bottom: clamp(22px, 2.8vw, 34px);
+  border-bottom: 1px solid var(--line);
+}
+.dn-s07-005 h3 { margin: 0 0 3px; font-size: clamp(1.02rem, 1.25vw, 1.14rem); letter-spacing: -0.024em; font-weight: 800; color: var(--ink-soft); }
+.dn-s07-005 .when { display: block; font-size: 0.86rem; font-weight: 700; color: var(--accent); }
+
+.dn-s07-005 .big {
+  margin: 0;
+  font-size: clamp(1.34rem, 2.35vw, 1.95rem);
+  line-height: 1.14; letter-spacing: -0.032em; font-weight: 800;
+}
+/* And ours, at the weight the genre gives to yours */
+.dn-s07-005 .ours {
+  margin: clamp(12px, 1.6vw, 16px) 0 0;
+  font-size: 0.86rem; color: var(--ink-soft);
+}
+.dn-s07-005 .ours b { font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase; font-size: 0.76rem; color: var(--accent); }
+
+.dn-s07-005 .chair {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 26px;
+  background: var(--slot);
+  aspect-ratio: 21 / 9;
+  display: grid; place-items: center;
+  padding: clamp(16px, 2.2vw, 30px);
+  margin: 0 0 clamp(26px, 3.2vw, 44px);
+}
+.dn-s07-005 .chair span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; }
+
+.dn-s07-005 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.26; letter-spacing: -0.026em; font-weight: 800;
+  max-width: 40ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s07-005 h2, .dn-s07-005 .lead, .dn-s07-005 .close { max-width: none; }
+  .dn-s07-005 .yours > li { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+}
+@media (max-width: 560px) {
+  .dn-s07-005 .chair { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s07-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s07-005" data-study-id="DN-S07-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="dn-s07-005-title">
+
+    <p class="eyebrow">What happens</p>
+    <h2 id="dn-s07-005-title">Read the large type. All of it is you.</h2>
+    <p class="lead">Every step here has two halves, and the second one is yours. That half is missing from every journey diagram in this sector.</p>
+    <p class="sum"><b><span data-placeholder="true">Nine weeks</span> from the first appointment to the check.</b> <span data-placeholder="true">Three hours</span> of it in our chair.</p>
+
+    <ul class="yours">
+      <li>
+        <div>
+          <h3>The first appointment</h3>
+          <span class="when" data-placeholder="true">about forty minutes</span>
+        </div>
+        <div>
+          <p class="big">Say what you have noticed, and what you are worried about.</p>
+          <p class="ours"><b>Us</b> Look, and write down what we found.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The written plan</h3>
+          <span class="when" data-placeholder="true">as long as you want</span>
+        </div>
+        <div>
+          <p class="big">Read it, and say no to any part of it.</p>
+          <p class="ours"><b>Us</b> Price every option, including doing nothing, and post it.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The work</h3>
+          <span class="when" data-placeholder="true">two visits, about an hour each</span>
+        </div>
+        <div>
+          <p class="big">Turn up, and tell us if anything has changed.</p>
+          <p class="ours"><b>Us</b> The agreed work, in the agreed order, stopping when you raise your hand.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Healing</h3>
+          <span class="when" data-placeholder="true">six weeks</span>
+        </div>
+        <div>
+          <p class="big">The aftercare. This is the half that decides how it settles.</p>
+          <p class="ours"><b>Us</b> Nothing.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The check</h3>
+          <span class="when" data-placeholder="true">about twenty minutes</span>
+        </div>
+        <div>
+          <p class="big">Come back even if it feels fine.</p>
+          <p class="ours"><b>Us</b> Look again, and say whether it worked.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="chair"><span>Image area &mdash; the chair, on a treatment day</span></div>
+
+    <p class="close">The longest step is the one where we do nothing.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

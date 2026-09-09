@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S13-003
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S13 — Credentials & Trust
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Slate — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. Two reserved areas.**
+  Layout model   : **Two objects that are not the same kind of object** — the required half set as a
+                   ruled notice with no card under it, the voluntary half as a raised plate
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : Two reserved areas — **the sterilisation room** above both, and **the instrument
+                   tray after the cycle** inside the voluntary plate. Both named by the copy.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **Half of what a trust section lists is the law, and obeying it is not an
+                   achievement. This one marks which half.**
+
+  What the structured reading adds — two lists, two kinds of thing :
+                   The conventional section renders every fact in the same container, which is the
+                   whole trick: **a legal minimum in a card with a tick on it looks exactly like a
+                   distinction.** Sameness of container is what does the persuading, and it is done by
+                   the layout rather than by the copy.
+                   So the two halves here are **not the same kind of object.** The required four are a
+                   ruled notice — hairlines, no fill, no radius, the visual language of the thing
+                   already screwed to the wall in the waiting room. The voluntary four are a raised
+                   plate on the card ground, because they are the practice speaking rather than the
+                   regulator.
+                   **A reader who never gets to the headings can still see that one of these is not a
+                   claim.**
+
+  Where the two images sit :
+                   The sterilisation room spans both, because the standard is required and reading the
+                   log is not — one room, two statuses. The instrument tray sits inside the voluntary
+                   plate, next to the sentence that invites somebody to come and look at it.
+
+  Credentials stay reserved :
+                   `S04` set it for the sector: no letters after any name, and no invented registration
+                   number, membership or inspection grade. **What is printed instead is where to look.**
+
+  Content note   : No letters after a name, no registration number, no association mark, no award, no
+                   inspection grade, no year founded, no patient count. No outcome guarantee, no
+                   *pain-free* or *gentle*, no superiority claim, no price, no testimonial. No stock
+                   smile, no open mouth, no instrument near a face, no aqua palette. No global header.
+-->
+
+<meta name="study-id" content="DN-S13-003">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S13">
+<meta name="section-name" content="Credentials and Trust">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Slate">
+<meta name="section-shape" content="B — anchored, two reserved areas">
+<meta name="layout-model" content="Two objects that are not the same kind of object — the required half as a ruled notice, the voluntary half as a raised plate">
+<meta name="density" content="structured">
+<meta name="media-mode" content="two-reserved-areas-the-sterilisation-room-spanning-both-and-the-instrument-tray-inside-the-voluntary-plate">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="none — no number, grade or registration appears in this study">
+<meta name="batch" content="V1">
+
+<title>DN-S13-003 — Credentials and Trust, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eef0f2; }
+
+/* Scoped study styles — namespaced to .dn-s13-003 */
+.dn-s13-003 {
+  --paper: #eef0f2;
+  --ink: #0f1316;
+  --ink-soft: #515a61;
+  --line: #d6dbdf;
+  --rule: #aab4bc;
+  --card: #ffffff;
+  --accent: #2c5fd0;
+  --accent-ink: #ffffff;
+  --slot: #e1e6ea;
+  --slot-edge: #b5bec6;
+  --slot-ink: #5a636a;
+  --focus: #0f1316;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s13-003 *,
+.dn-s13-003 *::before,
+.dn-s13-003 *::after { box-sizing: inherit; }
+.dn-s13-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.dn-s13-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s13-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(20px, 2.6vw, 34px);
+}
+.dn-s13-003 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s13-003 h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s13-003 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 46ch; }
+
+.dn-s13-003 .room {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 20px;
+  background: var(--slot);
+  aspect-ratio: 32 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 24px);
+  margin-bottom: clamp(22px, 2.8vw, 34px);
+}
+.dn-s13-003 .room span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+
+/* --- Two objects, and they are not the same kind of object --- */
+.dn-s13-003 .pair {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 3vw, 46px);
+  align-items: start;
+  margin-bottom: clamp(26px, 3.2vw, 42px);
+}
+
+/* The required half: a notice. Hairlines, no fill, no radius. */
+.dn-s13-003 .notice { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: clamp(16px, 2vw, 22px) 0; }
+.dn-s13-003 .notice h3 { margin: 0 0 clamp(12px, 1.6vw, 16px); font-size: 0.73rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-soft); }
+.dn-s13-003 .notice ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(9px, 1.2vw, 12px); }
+.dn-s13-003 .notice li { font-size: 0.96rem; line-height: 1.5; color: var(--ink-soft); padding-bottom: clamp(9px, 1.2vw, 12px); border-bottom: 1px solid var(--line); }
+.dn-s13-003 .notice li:last-child { border-bottom: none; padding-bottom: 0; }
+
+/* The voluntary half: a plate. Raised, filled, radiused. */
+.dn-s13-003 .plate { background: var(--card); border-radius: 20px; padding: clamp(22px, 2.8vw, 34px) clamp(20px, 2.6vw, 30px); }
+.dn-s13-003 .plate h3 { margin: 0 0 clamp(14px, 1.8vw, 18px); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
+.dn-s13-003 .plate ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(12px, 1.5vw, 15px); }
+.dn-s13-003 .plate li { font-size: 1.01rem; font-weight: 600; }
+.dn-s13-003 .tray {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 14px;
+  background: var(--slot);
+  aspect-ratio: 20 / 9;
+  display: grid; place-items: center;
+  padding: clamp(12px, 1.6vw, 18px);
+  margin-top: clamp(16px, 2vw, 22px);
+}
+.dn-s13-003 .tray span { color: var(--slot-ink); font-size: 0.76rem; font-weight: 700; text-align: center; }
+
+.dn-s13-003 .letters {
+  margin: 0 0 clamp(22px, 2.8vw, 34px);
+  font-size: clamp(1.08rem, 1.42vw, 1.3rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 700;
+  max-width: 64ch;
+}
+.dn-s13-003 .letters b { color: var(--accent); font-weight: 800; }
+
+.dn-s13-003 .close {
+  margin: 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  max-width: 44ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s13-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s13-003 h2, .dn-s13-003 .lead, .dn-s13-003 .letters, .dn-s13-003 .close { max-width: none; }
+  .dn-s13-003 .pair { grid-template-columns: minmax(0, 1fr); }
+  .dn-s13-003 .room { aspect-ratio: 16 / 9; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s13-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s13-003" data-study-id="DN-S13-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="dn-s13-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Checking us</p>
+        <h2 id="dn-s13-003-title">One of these is a notice. One is a claim.</h2>
+      </div>
+      <p class="lead">Half of what a trust section usually lists is the law, and obeying it is not an achievement. We have marked which half.</p>
+    </div>
+
+    <div class="room"><span>Image area &mdash; the sterilisation room</span></div>
+
+    <div class="pair">
+      <div class="notice">
+        <h3>Required by law</h3>
+        <ul>
+          <li>Every one of us is on the public register. Practising without it is a criminal offence.</li>
+          <li>Instruments are sterilised to a national standard and the log is kept.</li>
+          <li>The practice carries indemnity insurance.</li>
+          <li>There is a complaints procedure, and it is on the wall.</li>
+        </ul>
+      </div>
+      <div class="plate">
+        <h3>Not required. We do it anyway</h3>
+        <ul>
+          <li>Last year's complaints are published here, with what changed after each one.</li>
+          <li>The inspection report is linked whether it reads well or not.</li>
+          <li>If a treatment is the first of its kind for the person doing it, you are told before you agree.</li>
+          <li>Ask at the desk and you can read the sterilisation log.</li>
+        </ul>
+        <div class="tray"><span>Image area &mdash; the instrument tray after the cycle</span></div>
+      </div>
+    </div>
+
+    <p class="letters"><b>No letters appear after any name on this site.</b> They are on the public register, which is the only place they mean anything.</p>
+
+    <p class="close">Most trust sections are the first list with badges around it.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

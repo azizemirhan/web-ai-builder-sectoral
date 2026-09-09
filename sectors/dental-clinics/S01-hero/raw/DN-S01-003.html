@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S01-003
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S01 — Hero
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Slate — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. Three reserved areas on one rail.**
+  Layout model   : **A slider across the top** — three areas on a scroll-snap rail — then the
+                   proposition on its own plate, then **three joined commitment modules** with the
+                   action inside the last
+  Density        : Low-medium (89 visible words, hero band 40–90)
+  Media mode     : Three reserved areas — **the waiting room, the surgery, and the dentist who would
+                   see you**, in the order the visit happens. Labelled by role, never by name.
+  Interaction    : **Horizontal scroll-snap.** No JavaScript, no autoplay, no timer.
+
+  The slider, and why it is built this way :
+                   A hero slider is normally a carousel that moves on its own, which takes the page
+                   away from a reader who has not finished with it and is the single most complained-of
+                   pattern on the web. **This one only moves when the visitor moves it.**
+                   `scroll-snap-type: x mandatory` does the paging, the panels are sized so the next
+                   one is already visibly peeking at the right edge, and the scrollbar is styled into
+                   an accent track so the affordance is **shown rather than implied by a chevron that
+                   may or may not be noticed.** No script, no dependency, no autoplay, and it degrades
+                   to an ordinary horizontal scroller anywhere the snap properties are unsupported.
+
+  Why these three, in this order :
+                   Not three photographs of the same room at three angles, which is what a clinic
+                   carousel usually is. **It is the visit in sequence** — the waiting room, then the
+                   surgery, then the person — so pushing the rail walks the visitor through the
+                   arrival they are nervous about, in the order it will actually happen.
+
+  Governing idea : **Nobody arrives at a dentist's website in a good mood.**
+                   They are bracing, and the fear nobody addresses is being judged for how long it
+                   has been. So that is the headline.
+
+  What the structured reading adds :
+                   The three commitments are **joined modules on one `2px` seam**, not three separate
+                   cards, because they are one offer and not three features. A visitor reading them
+                   as a set understands that the clinic has adopted a way of working; reading them as
+                   three cards, they look like three marketing points.
+                   The action lives **inside the third module** rather than under the row, so the row
+                   ends in the thing it was arguing towards. Nothing here is a text-only card with
+                   rounded corners: the modules share a ground and a seam, which is a structure, not
+                   a set of boxes.
+
+  The media, per the contract :
+                   The honest subjects are the room, the people and the named equipment. Two of the
+                   three panels are **the rooms the visitor will sit in** and the third is **the
+                   person** — labelled by role, never by name, because a name on a portrait slot
+                   presents a placeholder individual as a real one.
+                   No equipment panel: the contract licenses equipment only when the copy names it,
+                   and this hero names none. A fourth panel was available and was not taken.
+
+  Why the eyebrow was dropped :
+                   Three panel labels cost words the hero band does not have. Between a decorative
+                   *Dental care* pill and the labels that say what each photograph is, the labels win.
+
+  Placeholder data : The surgery count and years open are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true".
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no
+                   fabricated credential, registration number or price, no patient testimonial or
+                   rating, no before/after. No stock smile, no open mouth, no instrument, no tooth
+                   iconography, no aqua palette. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S01-003">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Slate">
+<meta name="section-shape" content="B — anchored, three reserved areas on one rail">
+<meta name="layout-model" content="A scroll-snap slider across the top, then the proposition plate, then three joined commitment modules with the action inside the last">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="three-reserved-areas-on-a-scroll-snap-rail-waiting-room-surgery-dentist">
+<meta name="interaction" content="horizontal-scroll-snap-no-javascript-no-autoplay">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="surgery count, years open — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S01-003 — Hero, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eef0f2; }
+
+/* Scoped study styles — namespaced to .dn-s01-003 */
+.dn-s01-003 {
+  --paper: #eef0f2;
+  --ink: #0f1316;
+  --ink-soft: #515a61;
+  --line: #d6dbdf;
+  --card: #ffffff;
+  --accent: #2c5fd0;
+  --accent-ink: #ffffff;
+  --slot: #e1e6ea;
+  --slot-edge: #b5bec6;
+  --slot-ink: #5a636a;
+  --focus: #0f1316;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s01-003 *,
+.dn-s01-003 *::before,
+.dn-s01-003 *::after { box-sizing: inherit; }
+.dn-s01-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.dn-s01-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* --- The rail. Three reserved areas on one scroll track, in the order the visit happens.
+       A real slider with no JavaScript: scroll-snap does the paging, and the scrollbar is
+       styled into the track so the affordance is visible rather than implied. --- */
+.dn-s01-003 .rail {
+  display: flex;
+  gap: clamp(14px, 1.8vw, 22px);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: clamp(16px, 2vw, 22px);
+  margin: 0 calc(-1 * clamp(22px, 3.6vw, 58px)) clamp(22px, 2.8vw, 38px);
+  padding-left: clamp(22px, 3.6vw, 58px);
+  padding-right: clamp(22px, 3.6vw, 58px);
+  scroll-padding-left: clamp(22px, 3.6vw, 58px);
+}
+.dn-s01-003 .rail::-webkit-scrollbar { height: 6px; }
+.dn-s01-003 .rail::-webkit-scrollbar-track { background: var(--line); border-radius: 999px; }
+.dn-s01-003 .rail::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 999px; }
+.dn-s01-003 .rail { scrollbar-width: thin; scrollbar-color: var(--accent) var(--line); }
+
+.dn-s01-003 .frame {
+  flex: 0 0 clamp(240px, 62%, 780px);
+  scroll-snap-align: start;
+  border: 2px dashed var(--slot-edge);
+  border-radius: 20px;
+  background: var(--slot);
+  aspect-ratio: 16 / 10;
+  display: grid; place-items: end start;
+  padding: clamp(16px, 2.2vw, 26px);
+}
+.dn-s01-003 .frame span {
+  display: inline-block;
+  padding: 8px 15px; border-radius: 999px;
+  background: var(--card); color: var(--slot-ink);
+  font-size: 0.79rem; font-weight: 700; line-height: 1.4;
+}
+
+/* --- The proposition, on its own plate under the rail --- */
+.dn-s01-003 .say {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: clamp(20px, 3vw, 54px);
+  align-items: end;
+  padding: clamp(26px, 3.2vw, 46px) clamp(24px, 3vw, 42px);
+  border-radius: 20px;
+  background: var(--card);
+  margin-bottom: clamp(22px, 2.8vw, 40px);
+}
+.dn-s01-003 h1 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  line-height: 1.03; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 18ch;
+}
+.dn-s01-003 .lead { margin: 0; max-width: 46ch; color: var(--ink-soft); font-size: clamp(1.04rem, 1.24vw, 1.18rem); }
+
+/* --- Three joined modules. One offer, not three features --- */
+.dn-s01-003 .commits {
+  margin: 0; padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px;
+}
+.dn-s01-003 .commits > li { display: flex; }
+.dn-s01-003 .mod {
+  display: flex; flex-direction: column;
+  width: 100%;
+  padding: clamp(20px, 2.4vw, 30px) clamp(20px, 2.4vw, 30px) clamp(22px, 2.6vw, 32px);
+  background: var(--card);
+}
+.dn-s01-003 .commits > li:first-child .mod { border-radius: 20px 0 0 20px; }
+.dn-s01-003 .commits > li:last-child .mod {
+  border-radius: 0 20px 20px 0;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.dn-s01-003 .mod b { display: block; margin-bottom: 7px; font-size: clamp(1.04rem, 1.3vw, 1.18rem); letter-spacing: -0.024em; font-weight: 800; color: var(--accent); }
+.dn-s01-003 .commits > li:last-child .mod b { color: var(--accent-ink); }
+.dn-s01-003 .mod p { margin: 0; font-size: 0.96rem; color: var(--ink-soft); flex: 1 1 auto; }
+.dn-s01-003 .commits > li:last-child .mod p { color: rgba(255, 255, 255, 0.92); }
+
+.dn-s01-003 .mod a {
+  display: inline-block; align-self: flex-start;
+  margin-top: clamp(16px, 2vw, 22px);
+  padding: 11px 20px; border-radius: 999px;
+  background: var(--accent-ink); color: var(--accent);
+  font-size: 0.95rem; font-weight: 800; text-decoration: none;
+}
+.dn-s01-003 .note { margin: clamp(14px, 1.8vw, 20px) 0 0; font-size: 0.94rem; color: var(--ink-soft); max-width: 62ch; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s01-003 .say { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s01-003 h1, .dn-s01-003 .lead, .dn-s01-003 .note { max-width: none; }
+  .dn-s01-003 .frame { flex-basis: 84%; aspect-ratio: 4 / 3; }
+  .dn-s01-003 .commits { grid-template-columns: minmax(0, 1fr); }
+  .dn-s01-003 .commits > li:first-child .mod { border-radius: 20px 20px 0 0; }
+  .dn-s01-003 .commits > li:last-child .mod { border-radius: 0 0 20px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s01-003 * { transition: none !important; }
+  .dn-s01-003 .rail { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s01-003" data-study-id="DN-S01-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="dn-s01-003-title">
+
+    <div class="rail">
+      <div class="frame"><span>The waiting room</span></div>
+      <div class="frame"><span>The surgery</span></div>
+      <div class="frame"><span>The dentist you would see</span></div>
+    </div>
+
+    <div class="say">
+      <h1 id="dn-s01-003-title">We are not going to ask why you left it.</h1>
+      <p class="lead">You will be told what we found, what it costs, and what happens if you wait. Then you decide.</p>
+    </div>
+
+    <ul class="commits">
+      <li>
+        <div class="mod">
+          <b>No lecture</b>
+          <p>What we found, not what you should have done.</p>
+        </div>
+      </li>
+      <li>
+        <div class="mod">
+          <b>The whole cost, in writing</b>
+          <p>Before anything starts, including what you can leave.</p>
+        </div>
+      </li>
+      <li>
+        <div class="mod">
+          <b>Nobody works on commission</b>
+          <p>Nothing is recommended because it pays better.</p>
+          <a href="#">Book the first appointment</a>
+        </div>
+      </li>
+    </ul>
+
+    <p class="note">An examination and a conversation. Nothing is done unless you ask.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

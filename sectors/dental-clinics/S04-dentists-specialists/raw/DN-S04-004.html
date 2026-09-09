@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S04-004
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S04 — Dentists & Specialists
+  Direction      : Conversion-led
+  Theme          : 004 Daylight — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. Two reserved portraits.**
+  Layout model   : The five in a compact run, then a filled panel: **how to check every claim on this
+                   page before you book**, with the two checkable ones portrayed
+  Density        : Structured (189 visible words, structured band 170–230)
+  Media mode     : Two reserved portraits — **the two registered specialists**, because theirs are the
+                   two claims the register can confirm. Labelled by role.
+  Interaction    : None (static; no JavaScript). Links only. **No form.**
+
+  Governing idea : **Specialist is a protected title, and most clinics use it loosely.**
+
+  What "conversion-led" means in this sector — hand over the check :
+                   A team page converts on impression: the best headshots, the longest string of
+                   letters, the word *specialist* applied generously. Every one of those is a claim the
+                   reader cannot test from the page, which is why none of them moves an anxious person.
+                   So this study converts by **handing over the means of verification.** Three checks:
+                   the public register for the title, the appointment book for who you will actually
+                   see, and the referral note for what happens when it leaves the practice.
+                   **A team page that tells you how to catch it lying is the only kind worth reading**
+                   — and it gives up the impression, which is the entire conventional asset here.
+
+  Credentials are reserved, never invented :
+                   The contract requires it, and the conversion depends on it. A page that printed
+                   invented letters and then invited you to check them would fail on the first click.
+
+  Names, portraits and pronouns :
+                   Placeholder names in initial-and-surname form. Portrait labels name the **role**.
+                   Nobody is given a pronoun the study has no basis for.
+
+  Content note   : No fabricated credential, registration number, qualification or membership. No
+                   superiority claim, no *award-winning*, no rating. No outcome guarantee, price,
+                   testimonial, countdown or scarcity. No stock smile, no open mouth, no instrument.
+                   No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S04-004">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S04">
+<meta name="section-name" content="Dentists &amp; Specialists">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="004 Daylight">
+<meta name="section-shape" content="B — anchored, two reserved portraits">
+<meta name="layout-model" content="The five in a compact run, then a filled panel giving three ways to check every claim">
+<meta name="density" content="structured">
+<meta name="media-mode" content="two-reserved-portraits-the-two-checkable-claims">
+<meta name="interaction" content="none-links-only-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="five team names, the register reference — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S04-004 — Dentists &amp; Specialists, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ffffff; }
+
+/* Scoped study styles — namespaced to .dn-s04-004 */
+.dn-s04-004 {
+  --paper: #ffffff;
+  --ink: #0a0b0d;
+  --ink-soft: #55585d;
+  --line: #e6e4e1;
+  --card: #f7f5f2;
+  --accent: #e08b2c;
+  --accent-ink: #1a1204;
+  --slot: #f0eeeb;
+  --slot-edge: #cbc7c2;
+  --slot-ink: #5c5f63;
+  --focus: #0a0b0d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s04-004 *,
+.dn-s04-004 *::before,
+.dn-s04-004 *::after { box-sizing: inherit; }
+.dn-s04-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+
+.dn-s04-004 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s04-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+.dn-s04-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s04-004 h2 {
+  margin: 0;
+  font-size: clamp(1.95rem, 3.5vw, 2.9rem);
+  line-height: 1.04; letter-spacing: -0.038em; font-weight: 800;
+  max-width: 26ch;
+}
+.dn-s04-004 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 50ch; }
+
+/* --- The two whose claim the register can confirm --- */
+.dn-s04-004 .pair {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 34px);
+  margin-bottom: clamp(22px, 2.8vw, 36px);
+}
+.dn-s04-004 .pair > div { display: grid; grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr); gap: clamp(14px, 1.9vw, 22px); align-items: center; }
+.dn-s04-004 .shot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 24px;
+  background: var(--slot);
+  aspect-ratio: 4 / 5;
+  display: grid; place-items: center;
+  padding: 13px;
+}
+.dn-s04-004 .shot span { color: var(--slot-ink); font-size: 0.72rem; font-weight: 700; text-align: center; line-height: 1.4; }
+
+.dn-s04-004 .status {
+  display: inline-block; margin-bottom: 8px;
+  padding: 4px 11px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.67rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.dn-s04-004 .status.no { background: rgba(10, 11, 13, 0.07); color: var(--ink-soft); }
+.dn-s04-004 h3 { margin: 0 0 2px; font-size: 1.08rem; letter-spacing: -0.024em; font-weight: 800; }
+.dn-s04-004 .role { display: block; margin-bottom: 6px; font-size: 0.85rem; font-weight: 700; color: #8a5210; }
+.dn-s04-004 .pair p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
+
+/* --- The three you will actually see --- */
+.dn-s04-004 .rest {
+  margin: 0 0 clamp(26px, 3.2vw, 44px);
+  padding: 0 0 clamp(20px, 2.6vw, 30px);
+  border-bottom: 1px solid var(--line);
+  list-style: none;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 34px);
+}
+.dn-s04-004 .rest p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
+
+/* --- Hand over the check --- */
+.dn-s04-004 .checks {
+  padding: clamp(24px, 3vw, 42px) clamp(22px, 2.8vw, 40px);
+  border-radius: 24px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.dn-s04-004 .checks h4 {
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+  font-size: clamp(1.24rem, 2vw, 1.72rem);
+  line-height: 1.14; letter-spacing: -0.03em; font-weight: 800;
+}
+.dn-s04-004 .checks ol { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 36px); }
+.dn-s04-004 .checks .fig { display: block; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.07em; opacity: 0.75; }
+.dn-s04-004 .checks b { display: block; margin: 7px 0 5px; font-size: 1.02rem; font-weight: 800; }
+.dn-s04-004 .checks p { margin: 0; font-size: 0.95rem; font-weight: 600; opacity: 0.92; }
+.dn-s04-004 .checks a { color: var(--accent-ink); font-weight: 800; text-underline-offset: 3px; }
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s04-004 .pair { grid-template-columns: minmax(0, 1fr); }
+  .dn-s04-004 .rest { grid-template-columns: minmax(0, 1fr); }
+  .dn-s04-004 .checks ol { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 860px) {
+  .dn-s04-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s04-004 h2, .dn-s04-004 .lead { max-width: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s04-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s04-004" data-study-id="DN-S04-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="dn-s04-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The team</p>
+        <h2 id="dn-s04-004-title">Two of us are registered specialists. The rest are not.</h2>
+      </div>
+      <p class="lead">Specialist is a protected title and most clinics use it loosely. This page says which of us holds it, and tells you how to check.</p>
+    </div>
+
+    <div class="pair">
+      <div>
+        <div class="shot"><span>Image area &mdash; the periodontist, at work</span></div>
+        <div>
+          <span class="status">Registered specialist</span>
+          <h3 data-placeholder="true">A. Lindqvist</h3>
+          <span class="role">Periodontist</span>
+          <p>Gums. Referred to from inside the practice, never swapped in.</p>
+        </div>
+      </div>
+      <div>
+        <div class="shot"><span>Image area &mdash; the oral surgeon, at work</span></div>
+        <div>
+          <span class="status">Registered specialist</span>
+          <h3 data-placeholder="true">M. Rahim</h3>
+          <span class="role">Oral surgeon</span>
+          <p>Extractions and implant placement. Here two days a week.</p>
+        </div>
+      </div>
+    </div>
+
+    <ul class="rest">
+      <li>
+        <span class="status no">Not a specialist</span>
+        <h3 data-placeholder="true">J. Okafor</h3>
+        <span class="role">Principal dentist</span>
+        <p>Check-ups, fillings, crowns. Sees their own patients every visit.</p>
+      </li>
+      <li>
+        <span class="status no">Not a specialist</span>
+        <h3 data-placeholder="true">T. Byrne</h3>
+        <span class="role">Dentist</span>
+        <p>Check-ups and emergencies. Sees their own patients every visit.</p>
+      </li>
+      <li>
+        <span class="status no">Not a dentist</span>
+        <h3 data-placeholder="true">S. Achebe</h3>
+        <span class="role">Hygienist</span>
+        <p>Cleaning and gum care. Sees everyone between check-ups.</p>
+      </li>
+    </ul>
+
+    <div class="checks">
+      <h4>Do not take any of this on trust. Three ways to check it.</h4>
+      <ol>
+        <li>
+          <span class="fig" aria-hidden="true">01</span>
+          <b>The public register</b>
+          <p>The letters are on it, not on this page. <a href="#" data-placeholder="true">Look us up</a>.</p>
+        </li>
+        <li>
+          <span class="fig" aria-hidden="true">02</span>
+          <b>Ask who you are booked with</b>
+          <p>If the name changes between visits, we did not keep this.</p>
+        </li>
+        <li>
+          <span class="fig" aria-hidden="true">03</span>
+          <b>Ask for the referral note</b>
+          <p>Anything leaving the practice comes with one, addressed to a name.</p>
+        </li>
+      </ol>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

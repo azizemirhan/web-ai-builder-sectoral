@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S08-001
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S08 — Why Choose This Clinic
+  Direction      : Universal / Safe
+  Theme          : 001 Chalk — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. Two reserved areas.**
+  Layout model   : Four reasons in two runs, **the two surgeries paired as one image**, then the three
+                   reasons to go elsewhere on a separate ground
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : Two reserved areas — **both surgeries**, because the countable fact this section
+                   rests on is that there are two of them.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **The useful half of this page is the part that tells you not to come.**
+
+                   *Experienced team. Latest technology. Comfortable environment. Personalised care.*
+                   Every clinic in the sector has that list, none of it can be checked, and a visitor
+                   who has read two other clinic sites has already stopped reading this one.
+                   **A reason is only a reason if it could have been otherwise.** So every item here is
+                   a fact somebody could confirm by asking at the desk — not an adjective — and the
+                   section ends with the three cases where this practice is the wrong answer.
+                   **A page that cannot say who it is wrong for is not saying much about who it is
+                   right for.**
+
+  Why the refusals are the load-bearing half :
+                   Sedation, price and out-of-hours are the three things a small practice genuinely
+                   cannot cover, and a visitor who needs one of them will find out after booking. Every
+                   competitor lets them find out then. Stating it here costs the practice the
+                   appointments it was going to lose anyway, and buys the only thing this section can
+                   actually earn: **the reader believing the other four.**
+
+  What is not claimed :
+                   No *experienced*, no *caring*, no *state-of-the-art*, no *friendly*. No rating, no
+                   award, no testimonial, no *voted best*. Not one item on this page is an adjective
+                   about the practice.
+
+  Placeholder data : The surgery count, the number of us and the two referral names are PLACEHOLDER
+                   DEMO VALUES marked data-placeholder="true".
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price
+                   figure, no credential, no testimonial. No stock smile, no open mouth, no instrument
+                   near a face, no tooth iconography, no aqua palette. No global header.
+-->
+
+<meta name="study-id" content="DN-S08-001">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S08">
+<meta name="section-name" content="Why Choose This Clinic">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="001 Chalk">
+<meta name="section-shape" content="B — anchored, two reserved areas">
+<meta name="layout-model" content="Four reasons in two runs, the two surgeries paired as one image, then the three reasons to go elsewhere on a separate ground">
+<meta name="density" content="structured">
+<meta name="media-mode" content="two-reserved-areas-both-surgeries-the-countable-fact-the-section-rests-on">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="surgery count, number of us, two referral names — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S08-001 — Why Choose This Clinic, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f4f1; }
+
+/* Scoped study styles — namespaced to .dn-s08-001 */
+.dn-s08-001 {
+  --paper: #f6f4f1;
+  --ink: #16181b;
+  --ink-soft: #575c60;
+  --line: #ddd9d3;
+  --card: #ffffff;
+  --accent: #1f6f5c;
+  --accent-ink: #ffffff;
+  --slot: #eae7e2;
+  --slot-edge: #c6c2bb;
+  --slot-ink: #5d6165;
+  --focus: #16181b;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s08-001 *,
+.dn-s08-001 *::before,
+.dn-s08-001 *::after { box-sizing: inherit; }
+.dn-s08-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 16px; }
+
+.dn-s08-001 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s08-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(26px, 3.2vw, 42px);
+}
+.dn-s08-001 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 7px 15px; border-radius: 999px;
+  background: rgba(31, 111, 92, 0.12); color: var(--accent);
+  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s08-001 h2 {
+  margin: 0;
+  font-size: clamp(1.95rem, 3.5vw, 2.9rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s08-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 46ch; }
+
+/* --- The four --- */
+.dn-s08-001 .reasons {
+  margin: 0 0 clamp(28px, 3.4vw, 46px);
+  padding: 0; list-style: none;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 2.8vw, 40px) clamp(28px, 3.6vw, 60px);
+}
+.dn-s08-001 .reasons h3 { margin: 0 0 5px; font-size: clamp(1.14rem, 1.5vw, 1.34rem); letter-spacing: -0.026em; font-weight: 800; }
+.dn-s08-001 .reasons p { margin: 0; font-size: 1rem; color: var(--ink-soft); }
+
+/* --- Both surgeries, because the fact this rests on is that there are two --- */
+.dn-s08-001 .rooms {
+  margin: 0 0 clamp(30px, 3.8vw, 52px);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 26px);
+}
+.dn-s08-001 .rooms div {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 16px;
+  background: var(--slot);
+  aspect-ratio: 16 / 9;
+  display: grid; place-items: center;
+  padding: clamp(14px, 2vw, 24px);
+}
+.dn-s08-001 .rooms span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+
+/* --- And the half that costs something --- */
+.dn-s08-001 .elsewhere {
+  padding: clamp(26px, 3.2vw, 42px) clamp(22px, 2.8vw, 38px);
+  border-radius: 16px;
+  background: var(--card);
+}
+.dn-s08-001 .elsewhere h3 {
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  letter-spacing: -0.028em; font-weight: 800; color: var(--accent);
+}
+.dn-s08-001 .elsewhere ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 40px); }
+.dn-s08-001 .elsewhere b { display: block; margin-bottom: 5px; font-size: 1.02rem; letter-spacing: -0.022em; font-weight: 800; }
+.dn-s08-001 .elsewhere p { margin: 0; font-size: 0.96rem; color: var(--ink-soft); }
+
+.dn-s08-001 .close {
+  margin: clamp(26px, 3.2vw, 42px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.08rem, 1.42vw, 1.32rem);
+  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
+  max-width: 48ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 980px) {
+  .dn-s08-001 .elsewhere ul { grid-template-columns: minmax(0, 1fr); gap: clamp(18px, 2.2vw, 26px); }
+}
+@media (max-width: 860px) {
+  .dn-s08-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s08-001 h2, .dn-s08-001 .lead, .dn-s08-001 .close { max-width: none; }
+  .dn-s08-001 .reasons { grid-template-columns: minmax(0, 1fr); }
+  .dn-s08-001 .rooms { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s08-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s08-001" data-study-id="DN-S08-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="dn-s08-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Whether to come here</p>
+        <h2 id="dn-s08-001-title">Four reasons, and three not to.</h2>
+      </div>
+      <p class="lead">Every reason here is a fact you could check by asking. The three at the end are reasons to go somewhere else.</p>
+    </div>
+
+    <ul class="reasons">
+      <li>
+        <h3>You see the same dentist</h3>
+        <p>If they are away, we move the appointment rather than swap the person.</p>
+      </li>
+      <li>
+        <h3>We say when something can wait</h3>
+        <p>Not everything we find needs treating now, and the plan says which.</p>
+      </li>
+      <li>
+        <h3><span data-placeholder="true">Two</span> surgeries, <span data-placeholder="true">four</span> of us</h3>
+        <p>Small enough that the person you saw last time is still here.</p>
+      </li>
+      <li>
+        <h3>We write down what we did not do</h3>
+        <p>Every note records what we found and left alone, and why.</p>
+      </li>
+    </ul>
+
+    <div class="rooms">
+      <div><span>Image area &mdash; the first surgery</span></div>
+      <div><span>Image area &mdash; the second surgery</span></div>
+    </div>
+
+    <div class="elsewhere">
+      <h3>Go somewhere else if</h3>
+      <ul>
+        <li>
+          <b>You need sedation</b>
+          <p>We do not offer it. Ask, and we will give you <span data-placeholder="true">two</span> names.</p>
+        </li>
+        <li>
+          <b>You want the cheapest price</b>
+          <p>Some treatments here cost more than at a chain, and the plan says so before you agree.</p>
+        </li>
+        <li>
+          <b>You need someone at two in the morning</b>
+          <p>We are not open. The out-of-hours number is on the contact page.</p>
+        </li>
+      </ul>
+    </div>
+
+    <p class="close">A page that cannot say who it is wrong for is not saying much about who it is right for.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

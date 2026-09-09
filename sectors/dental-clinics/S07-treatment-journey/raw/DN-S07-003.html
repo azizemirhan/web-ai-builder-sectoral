@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S07-003
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S07 — Treatment Journey
+  Direction      : Structured / Visual Modular
+  Theme          : 003 Slate — see ../../DENTAL-THEME-CONTRACT.md
+  Section shape  : **B — Anchored. Two reserved areas, both inside the clinic's lane.**
+  Layout model   : One plate, five paired cells on a vertical seam — us on the left, you on the right —
+                   and **the seam moves once**, at the stage where the work moves
+  Density        : Structured (see count below, structured band 170–230)
+  Media mode     : Two reserved areas — **the consulting room and the surgery on a treatment day**,
+                   both in the left lane. See below: only one of the two lanes is photographable.
+  Interaction    : None (static; no JavaScript). No links, no form.
+
+  Governing idea : **Every step here has two halves, and the second one is yours.**
+
+  What the structured reading adds — the seam is the argument :
+                   The two lanes are held apart by one continuous vertical seam, so the page reads as
+                   **a division of labour** rather than as five records with two fields each. Four rows
+                   split the seam down the middle.
+                   **At stage four the seam moves.** The clinic's cell collapses to a strip wide enough
+                   for one word, and the patient's cell takes the rest of the plate. Nothing about that
+                   row is styled differently — the geometry does it. A journey drawn as five equal
+                   boxes asserts that the five steps are comparable, and **setting them equal is not
+                   neutral, it is a claim, and it is false.**
+
+  Why the images are only on one side :
+                   Both reserved areas sit in the left lane, and that is not an oversight. **The
+                   clinic's half of this happens in two rooms and can be photographed. The patient's
+                   half happens somewhere this practice will never see** — at home, at work, over six
+                   weeks. The lane with no pictures in it is the lane the sector leaves out, and the
+                   asymmetry of the media is the same asymmetry the copy is about.
+                   The healing row carries no image either, because the only available picture is an
+                   empty surgery, which the contract bans outright.
+
+  The arithmetic, in all five studies :
+                   **Nine weeks from the first appointment to the check. Three hours of it in our
+                   chair.**
+
+  Placeholder data : The five durations, the nine weeks and the three hours are PLACEHOLDER DEMO
+                   VALUES marked data-placeholder="true".
+
+  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price,
+                   no credential, no testimonial, no before/after. Nothing here reproaches the reader.
+                   No stock smile, no open mouth, no instrument near a face, no empty-surgery shot, no
+                   aqua palette. No global header or navigation.
+-->
+
+<meta name="study-id" content="DN-S07-003">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S07">
+<meta name="section-name" content="Treatment Journey">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Slate">
+<meta name="section-shape" content="B — anchored, two reserved areas both inside the clinic lane">
+<meta name="layout-model" content="One plate, five paired cells on a vertical seam, and the seam moves once at the stage where the work moves">
+<meta name="density" content="structured">
+<meta name="media-mode" content="two-reserved-areas-consulting-room-and-surgery-both-in-the-left-lane-the-right-lane-is-unphotographable">
+<meta name="interaction" content="none-no-links-no-form">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="five durations, nine weeks, three hours — demo values, clear before real use">
+<meta name="batch" content="V1">
+
+<title>DN-S07-003 — Treatment Journey, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eef0f2; }
+
+/* Scoped study styles — namespaced to .dn-s07-003 */
+.dn-s07-003 {
+  --paper: #eef0f2;
+  --ink: #0f1316;
+  --ink-soft: #515a61;
+  --line: #d6dbdf;
+  --card: #ffffff;
+  --accent: #2c5fd0;
+  --accent-ink: #ffffff;
+  --slot: #e1e6ea;
+  --slot-edge: #b5bec6;
+  --slot-ink: #5a636a;
+  --focus: #0f1316;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.dn-s07-003 *,
+.dn-s07-003 *::before,
+.dn-s07-003 *::after { box-sizing: inherit; }
+.dn-s07-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+
+.dn-s07-003 .shell {
+  width: 100%; max-width: 1320px; margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+.dn-s07-003 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  gap: clamp(24px, 3.4vw, 54px);
+  align-items: end;
+  margin-bottom: clamp(18px, 2.4vw, 30px);
+}
+.dn-s07-003 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(12px, 1.6vw, 17px);
+  padding: 6px 14px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
+}
+.dn-s07-003 h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
+  max-width: 20ch;
+}
+.dn-s07-003 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 44ch; }
+
+.dn-s07-003 .sum { margin: 0 0 clamp(18px, 2.2vw, 26px); font-size: 0.94rem; color: var(--ink-soft); }
+.dn-s07-003 .sum b { color: var(--ink); font-weight: 800; }
+
+/* --- One plate. Two lanes held apart by a seam that moves once. --- */
+.dn-s07-003 .plate {
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--line);
+  display: grid; gap: 2px;
+}
+.dn-s07-003 .keys, .dn-s07-003 .plate > li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
+}
+.dn-s07-003 .keys { gap: 0; background: var(--line); }
+.dn-s07-003 .keys span {
+  background: var(--card);
+  padding: clamp(11px, 1.4vw, 14px) clamp(18px, 2.2vw, 26px);
+  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.dn-s07-003 .keys span:last-child { color: var(--accent); }
+.dn-s07-003 .keys i { background: var(--line); }
+
+.dn-s07-003 .plate { list-style: none; margin: 0; padding: 0; }
+.dn-s07-003 .plate > li { gap: 0; }
+.dn-s07-003 .seam { background: var(--line); }
+.dn-s07-003 .us, .dn-s07-003 .you {
+  background: var(--card);
+  padding: clamp(18px, 2.2vw, 26px);
+}
+/* The right lane has no pictures in it, so its rows run tall beside the left.
+   Centre it: the emptiness is the argument, but it has to read as placed rather than left over. */
+.dn-s07-003 .you { background: #f7f9fa; display: grid; align-content: center; }
+
+.dn-s07-003 h3 { margin: 0 0 4px; font-size: clamp(1.08rem, 1.35vw, 1.24rem); letter-spacing: -0.026em; font-weight: 800; }
+.dn-s07-003 .when { display: block; margin-bottom: clamp(10px, 1.3vw, 13px); font-size: 0.86rem; font-weight: 700; color: var(--accent); }
+.dn-s07-003 .us p, .dn-s07-003 .you p { margin: 0; font-size: 0.97rem; }
+.dn-s07-003 .us p { color: var(--ink-soft); }
+.dn-s07-003 .you p { color: var(--ink); font-weight: 600; }
+
+.dn-s07-003 .slot {
+  border: 2px dashed var(--slot-edge);
+  border-radius: 14px;
+  background: var(--slot);
+  aspect-ratio: 20 / 9;
+  display: grid; place-items: center;
+  padding: clamp(12px, 1.6vw, 18px);
+  margin-bottom: clamp(14px, 1.8vw, 18px);
+}
+.dn-s07-003 .slot span { color: var(--slot-ink); font-size: 0.76rem; font-weight: 700; text-align: center; }
+
+/* The seam moves at the stage where the work moves. Nothing else about this row is styled. */
+.dn-s07-003 .plate > li.shift { grid-template-columns: minmax(0, 0.3fr) 2px minmax(0, 1.7fr); }
+.dn-s07-003 .nil { color: var(--ink) !important; font-weight: 800 !important; }
+
+.dn-s07-003 .close {
+  margin: clamp(24px, 3vw, 38px) 0 0;
+  padding-top: clamp(20px, 2.6vw, 30px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.26; letter-spacing: -0.026em; font-weight: 800;
+  max-width: 40ch;
+}
+
+/* --- Responsive ladder --- */
+@media (max-width: 860px) {
+  .dn-s07-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .dn-s07-003 h2, .dn-s07-003 .lead, .dn-s07-003 .close { max-width: none; }
+  .dn-s07-003 .keys { display: none; }
+  .dn-s07-003 .plate > li,
+  .dn-s07-003 .plate > li.shift { grid-template-columns: minmax(0, 1fr); }
+  .dn-s07-003 .seam { display: none; }
+  .dn-s07-003 .you { border-top: 2px solid var(--line); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dn-s07-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="dn-s07-003" data-study-id="DN-S07-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="dn-s07-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What happens</p>
+        <h2 id="dn-s07-003-title">One seam, and it moves once.</h2>
+      </div>
+      <p class="lead">Every step here has two halves, and the second one is yours. That half is missing from every journey diagram in this sector.</p>
+    </div>
+
+    <p class="sum"><b><span data-placeholder="true">Nine weeks</span> from the first appointment to the check.</b> <span data-placeholder="true">Three hours</span> of it in our chair.</p>
+
+    <div class="keys">
+      <span>Us</span><i class="seam"></i><span>You</span>
+    </div>
+
+    <ul class="plate">
+      <li>
+        <div class="us">
+          <div class="slot"><span>the consulting room</span></div>
+          <h3>The first appointment</h3>
+          <span class="when" data-placeholder="true">about forty minutes</span>
+          <p>Look, and write down what we found.</p>
+        </div>
+        <i class="seam"></i>
+        <div class="you"><p>Say what you have noticed, and what you are worried about.</p></div>
+      </li>
+      <li>
+        <div class="us">
+          <h3>The written plan</h3>
+          <span class="when" data-placeholder="true">as long as you want</span>
+          <p>Price every option, including doing nothing, and post it.</p>
+        </div>
+        <i class="seam"></i>
+        <div class="you"><p>Read it, and say no to any part of it.</p></div>
+      </li>
+      <li>
+        <div class="us">
+          <div class="slot"><span>the surgery on a treatment day</span></div>
+          <h3>The work</h3>
+          <span class="when" data-placeholder="true">two visits, about an hour each</span>
+          <p>The agreed work, in the agreed order, stopping when you raise your hand.</p>
+        </div>
+        <i class="seam"></i>
+        <div class="you"><p>Turn up, and tell us if anything has changed.</p></div>
+      </li>
+      <li class="shift">
+        <div class="us"><p class="nil">Nothing.</p></div>
+        <i class="seam"></i>
+        <div class="you">
+          <h3>Healing</h3>
+          <span class="when" data-placeholder="true">six weeks</span>
+          <p>The aftercare. This is the half that decides how it settles.</p>
+        </div>
+      </li>
+      <li>
+        <div class="us">
+          <h3>The check</h3>
+          <span class="when" data-placeholder="true">about twenty minutes</span>
+          <p>Look again, and say whether it worked.</p>
+        </div>
+        <i class="seam"></i>
+        <div class="you"><p>Come back even if it feels fine.</p></div>
+      </li>
+    </ul>
+
+    <p class="close">The longest step is the one where we do nothing.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

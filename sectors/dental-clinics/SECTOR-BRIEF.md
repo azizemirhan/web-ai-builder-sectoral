@@ -20,11 +20,21 @@ Structural container for future Dental Clinics section studies.
 
 # Authoring Status
 
-NOT_STARTED
+IN_PROGRESS — S01-S18 authored (90 studies)
 
 # Notes
 
-Structure only. No sector research, design guidance, or design studies have been created.
+Sector direction, anti-patterns, the media rule, claims limits and the five-theme system are recorded
+in DENTAL-THEME-CONTRACT.md, which was written with S01 and governs all twenty-seven sections. S01
+Hero, S02 Dental Treatments, S03 Smile Design and S04 Dentists & Specialists are authored;
+S05-S27 remain scaffolded.
+
+The sector's governing constraint: **nobody arrives at a dentist's website in a good mood.** Studies
+answer the three named anxieties — it will hurt, it will cost more than they said, and they will be
+judged for leaving it — with commitments a visitor can check by asking, never with adjectives.
+
+Three photographs are ruled out sector-wide: the stock smile model, the open mouth, and the instrument
+near a face. The honest subjects are the room, the people and the named equipment.
 
 # Extended Site Architecture — S21–S27
 
