@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S20-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S20 — Final Booking CTA
+  Direction      : Structured / Visual Modular
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : Four modules in a square block. The first holds the ask and the action on a dark
+                   ground; the other three answer the three questions somebody actually has at this
+                   point — what happens next, what can still change, and what they are not agreeing
+                   to
+  Density        : Medium
+  Media mode     : None.
+  Interaction    : None (static; no JavaScript). No form field, no select, no date, no time.
+  The device     : **The modules are the small print, promoted.** Everything in the three answer
+                   modules is normally either omitted or buried under a link at the foot of a
+                   booking page. Structured as equals to the ask itself, they do the work a scarcity
+                   line would otherwise be doing — and unlike a scarcity line, every word of it is
+                   true of any studio that chooses to operate this way.
+  Not a table    : Four modules with different internal shapes, not rows of a matrix. See the 003
+                   trap in ../../WELLNESS-DESIGN-DIRECTION.md.
+  Content note   : "What happens next" is **one step, not a schedule** — the S08 rule. No countdown,
+                   deadline, scarcity or availability line; no client, booking or review count; no
+                   rating, price, discount or offer; no invented figure of any kind.
+-->
+
+<meta name="study-id" content="WELL-S20-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S20">
+<meta name="section-name" content="Final Booking CTA">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Four-module square: the ask plus what happens, what changes, what you are not agreeing to">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S20-003 — Final Booking CTA, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e6e3ec; }
+
+/* Scoped study styles — namespaced to .well-s20-003 */
+.well-s20-003 {
+  --ink: #241f2c;
+  --ink-soft: #5f5870;
+  --paper: #e6e3ec;
+  --card: #ffffff;
+  --dark: #2c2639;
+  --dark-ink: #f1eff5;
+  --dark-soft: #b9b2c8;
+  --line: #e5e2eb;
+  --focus: #43395a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s20-003 *,
+.well-s20-003 *::before,
+.well-s20-003 *::after { box-sizing: inherit; }
+.well-s20-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.well-s20-003 .shell {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 92px) clamp(20px, 3.6vw, 52px);
+}
+
+.well-s20-003 .grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 24px);
+  align-items: stretch;
+}
+.well-s20-003 .mod {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 16px;
+  padding: clamp(20px, 2.4vw, 34px);
+}
+.well-s20-003 .mod h2 {
+  margin: 0 0 clamp(11px, 1.3vw, 15px);
+  font-size: 1.06rem;
+  font-weight: 650;
+  letter-spacing: -0.008em;
+}
+.well-s20-003 .mod p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.64;
+}
+.well-s20-003 .mod p + p { margin-top: clamp(10px, 1.2vw, 13px); }
+.well-s20-003 .mod .list { margin: clamp(12px, 1.4vw, 15px) 0 0; padding: 0; list-style: none; }
+.well-s20-003 .mod .list li {
+  padding: clamp(9px, 1.1vw, 11px) 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+/* The ask */
+.well-s20-003 .ask {
+  background: var(--dark);
+  color: var(--dark-ink);
+  display: flex;
+  flex-direction: column;
+}
+.well-s20-003 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dark-soft);
+}
+.well-s20-003 h1 {
+  margin: 0 0 clamp(12px, 1.5vw, 18px);
+  font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+}
+.well-s20-003 .ask p {
+  margin: 0;
+  color: var(--dark-soft);
+  font-size: 0.96rem;
+  line-height: 1.64;
+}
+.well-s20-003 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: clamp(20px, 2.4vw, 32px);
+  min-height: 52px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: var(--dark-ink);
+  color: var(--dark);
+  font-size: 0.98rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.well-s20-003 .go:hover { background: #ffffff; }
+.well-s20-003 .or {
+  margin-top: clamp(14px, 1.6vw, 18px);
+  font-size: 0.9rem;
+  color: var(--dark-soft);
+}
+.well-s20-003 .or a { color: var(--dark-ink); text-underline-offset: 4px; }
+
+/* Responsive ladder */
+@media (max-width: 768px) {
+  .well-s20-003 .grid { grid-template-columns: minmax(0, 1fr); }
+  .well-s20-003 .go { align-self: stretch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s20-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s20-003" data-study-id="WELL-S20-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="well-s20-003-title">
+
+    <div class="grid">
+
+      <div class="mod ask">
+        <p class="eyebrow">When you are ready</p>
+        <h1 id="well-s20-003-title">Ask for a time and we will sort the rest out.</h1>
+        <p>The three things people want to know before they press it are answered beside this, rather than hidden behind a link at the foot of the page.</p>
+        <a class="go" href="#well-s20-003-title">Book a time</a>
+        <p class="or">Not sure yet? <a href="#well-s20-003-title">Ask us a question instead</a>.</p>
+      </div>
+
+      <div class="mod">
+        <h2>What happens next</h2>
+        <p>One of us gets in touch to agree a time with you. Nothing is confirmed until you have both settled on one, so the step you are taking now is small.</p>
+        <p>It is a conversation, not a queue. Nobody is assigned to you by a system and no time is taken out of the diary until you have agreed one.</p>
+      </div>
+
+      <div class="mod">
+        <h2>What can still change</h2>
+        <ul class="list">
+          <li>The time, right up to the day itself</li>
+          <li>The treatment, once we have talked about it</li>
+          <li>Who does it, if you would rather somebody else</li>
+        </ul>
+        <p>Tell us rather than quietly not turning up — it is easier for everybody, and nobody is cross about it.</p>
+      </div>
+
+      <div class="mod">
+        <h2>What you are not agreeing to</h2>
+        <p>Not a course, not a plan, and not a treatment you have not discussed. If it turns out that what you asked for is not right for you, we say so and nothing has been spent.</p>
+        <p>Changing your mind in the room is normal and we would rather you did.</p>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S07-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S07 — Benefits
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : One commitment promoted to a full panel — media beside copy, carrying the
+                   action — over a row of three smaller supporting commitments. The hierarchy is
+                   the conversion device: one reason is made the reason, and the rest hold it up.
+  Density        : Medium
+  Media mode     : One reserved media area inside the promoted panel. The three supporting items
+                   deliberately carry none, so the scale difference does the ranking.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Every item is an operating commitment, not a claim about what a treatment
+                   achieves — see ../README.md. Nothing is collected: the action opens a booking
+                   route. No efficacy claim, outcome description, percentage, rating, review,
+                   client, superlative comparison, award, certification, price, duration or
+                   invented statistic. In particular there is **no urgency device** — no limited
+                   availability, no countdown, no "spaces going fast" — which would be both an
+                   invented diary state and the wrong register for this sector.
+-->
+
+<meta name="study-id" content="WELL-S07-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S07">
+<meta name="section-name" content="Benefits">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="One promoted commitment panel with the action above three supporting items">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-media-single-in-promoted-panel">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S07-004 — Benefits, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #1a4a3c; }
+
+/* Scoped study styles — namespaced to .well-s07-004 */
+.well-s07-004 {
+  --ink: #eef4f0;
+  --ink-soft: #a8c4b7;
+  --paper: #1a4a3c;
+  --panel: #f2f0e8;
+  --panel-ink: #16281f;
+  --panel-soft: #5b6b60;
+  --slot: #dcdccf;
+  --slot-ink: #566057;
+  --line: #35604f;
+  --accent: #16281f;
+  --accent-ink: #f2f0e8;
+  --focus: #bfe0cd;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s07-004 *,
+.well-s07-004 *::before,
+.well-s07-004 *::after { box-sizing: inherit; }
+.well-s07-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.well-s07-004 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.well-s07-004 .head {
+  max-width: 44rem;
+  margin-bottom: clamp(22px, 2.8vw, 38px);
+}
+.well-s07-004 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s07-004 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 18ch;
+}
+
+/* Promoted panel */
+.well-s07-004 .promoted {
+  background: var(--panel);
+  color: var(--panel-ink);
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: stretch;
+}
+.well-s07-004 .media {
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  min-height: clamp(240px, 26vw, 380px);
+}
+.well-s07-004 .slot-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s07-004 .promoted-copy {
+  min-width: 0;
+  padding: clamp(24px, 3vw, 46px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.well-s07-004 h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  max-width: 15ch;
+}
+.well-s07-004 .promoted-copy p {
+  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  max-width: 42ch;
+  color: var(--panel-soft);
+  font-size: clamp(0.98rem, 1.05vw, 1.06rem);
+  line-height: 1.6;
+}
+.well-s07-004 .btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(22px, 2.6vw, 32px);
+  min-height: 54px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 140ms ease;
+}
+.well-s07-004 .btn:hover { background: #22392d; }
+
+/* Supporting row */
+.well-s07-004 .supports {
+  margin: clamp(16px, 2vw, 26px) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 40px);
+}
+.well-s07-004 .supports li {
+  min-width: 0;
+  border-top: 1px solid var(--line);
+  padding-top: clamp(14px, 1.8vw, 22px);
+}
+.well-s07-004 h3 {
+  margin: 0 0 7px;
+  font-size: clamp(1rem, 1.15vw, 1.14rem);
+  line-height: 1.24;
+  letter-spacing: -0.012em;
+  font-weight: 600;
+}
+.well-s07-004 .supports p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.89rem;
+  line-height: 1.5;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s07-004 .promoted { grid-template-columns: minmax(0, 1fr); }
+  .well-s07-004 .media { min-height: 0; aspect-ratio: 16 / 7; }
+  .well-s07-004 h2 { max-width: 20ch; }
+}
+
+@media (max-width: 768px) {
+  .well-s07-004 .supports {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(14px, 2vw, 20px);
+  }
+  .well-s07-004 h1 { max-width: none; }
+  .well-s07-004 h2 { max-width: none; }
+  .well-s07-004 .promoted-copy p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s07-004 .media { aspect-ratio: 3 / 2; }
+  .well-s07-004 .promoted { border-radius: 16px; }
+  .well-s07-004 .btn { align-self: stretch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s07-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s07-004" data-study-id="WELL-S07-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s07-004-title">
+
+    <div class="head">
+      <p class="eyebrow">What is different here</p>
+      <h1 id="well-s07-004-title">If only one thing makes you book, make it this one</h1>
+    </div>
+
+    <div class="promoted">
+      <div class="media"><span class="slot-label">Treatment room</span></div>
+      <div class="promoted-copy">
+        <h2>One guest at a time</h2>
+        <p>The room is yours for the whole appointment. Nobody else is brought in and out around you, and nothing is going on next door.</p>
+        <a class="btn" href="#well-s07-004-title">Book a treatment</a>
+      </div>
+    </div>
+
+    <ul class="supports">
+      <li>
+        <h3>The same hands throughout</h3>
+        <p>Whoever you booked does the treatment from start to finish.</p>
+      </li>
+      <li>
+        <h3>Nothing sold in the room</h3>
+        <p>If a product would suit you, we say so afterwards.</p>
+      </li>
+      <li>
+        <h3>Easy to move</h3>
+        <p>Changing an appointment is a message, not a process.</p>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

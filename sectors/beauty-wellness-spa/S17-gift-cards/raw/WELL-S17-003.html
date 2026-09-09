@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S17-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S17 — Gift Cards
+  Direction      : Structured / Visual Modular
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : The three decisions a buyer actually makes, as three numbered modules — how it
+                   arrives, what it is for, and what goes with it — each showing its options rather
+                   than describing them
+  Density        : Medium-high, carried by the decision structure
+  Media mode     : Two small reserved card artwork areas inside the first module, one per form.
+  Interaction    : None (static; no JavaScript). The options are shown, not selected — the
+                   selection belongs to a real checkout, and a study that mocked one would be
+                   inventing a flow rather than a section.
+  The device     : A gift section is usually a price grid with a picture. What it actually is, is a
+                   short sequence of three choices, and this study makes that sequence the
+                   structure. Each module carries its own option shape — two artwork cards, two
+                   text choices, one reserved message field — so the three read as three different
+                   kinds of decision rather than as three columns of one table.
+  Content note   : No invented amount, denomination, currency symbol, figure, expiry date or
+                   period, delivery time, postage cost, booking fee, discount or bonus-credit
+                   offer; no denomination tiers. The amount and the message are reserved slots with
+                   visually hidden labels. See ../README.md.
+-->
+
+<meta name="study-id" content="WELL-S17-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S17">
+<meta name="section-name" content="Gift Cards">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Three numbered decision modules with differing option shapes">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="reserved-card-artwork-two-small">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S17-003 — Gift Cards, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #efe7e2; }
+
+/* Scoped study styles — namespaced to .well-s17-003 */
+.well-s17-003 {
+  --ink: #261f1c;
+  --ink-soft: #6d5f58;
+  --paper: #efe7e2;
+  --card: #ffffff;
+  --slot: #e6dcd6;
+  --slot-ink: #635550;
+  --chip: #f1eae6;
+  --line: #ece3de;
+  --label: #d9cbc3;
+  --num: #b9a79e;
+  --focus: #4d3830;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s17-003 *,
+.well-s17-003 *::before,
+.well-s17-003 *::after { box-sizing: inherit; }
+.well-s17-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s17-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s17-003 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.well-s17-003 .head {
+  max-width: 46rem;
+  margin-bottom: clamp(24px, 3vw, 42px);
+}
+.well-s17-003 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s17-003 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 18ch;
+}
+.well-s17-003 .head p {
+  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  max-width: 52ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Modules */
+.well-s17-003 .steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 26px);
+  align-items: start;
+}
+.well-s17-003 .step {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 16px;
+  padding: clamp(18px, 2.1vw, 28px);
+}
+.well-s17-003 .num {
+  display: block;
+  margin-bottom: clamp(8px, 1vw, 12px);
+  color: var(--num);
+  font-size: clamp(1.3rem, 1.9vw, 1.8rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.well-s17-003 h2 {
+  margin: 0 0 clamp(13px, 1.6vw, 19px);
+  padding-bottom: clamp(10px, 1.2vw, 14px);
+  border-bottom: 1px solid var(--label);
+  font-size: clamp(1.04rem, 1.25vw, 1.24rem);
+  line-height: 1.22;
+  letter-spacing: -0.014em;
+  font-weight: 600;
+}
+
+/* Option shape one — two artwork cards */
+.well-s17-003 .arts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 14px);
+}
+.well-s17-003 .art {
+  background: var(--slot);
+  border-radius: 8px;
+  aspect-ratio: 8 / 5;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  margin-bottom: 7px;
+}
+.well-s17-003 .art span {
+  font-size: 0.54rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s17-003 .arts p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.83rem;
+  line-height: 1.45;
+}
+
+/* Option shape two — two text choices with a reserved amount */
+.well-s17-003 .choices { margin: 0; padding: 0; list-style: none; }
+.well-s17-003 .choices li {
+  border-top: 1px solid var(--line);
+  padding: clamp(11px, 1.3vw, 15px) 0;
+}
+.well-s17-003 .choices li:first-child { border-top: 0; padding-top: 0; }
+.well-s17-003 .choices b {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.well-s17-003 .choices p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.well-s17-003 .amount {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: clamp(13px, 1.6vw, 18px) 0 0;
+  padding-top: clamp(11px, 1.3vw, 15px);
+  border-top: 1px solid var(--label);
+}
+.well-s17-003 .fname {
+  font-size: 0.63rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s17-003 .slot {
+  min-width: clamp(54px, 4.8vw, 68px);
+  padding: 2px 10px;
+  border-radius: 5px;
+  background: var(--chip);
+  color: var(--ink-soft);
+  font-size: 0.97rem;
+  text-align: center;
+}
+
+/* Option shape three — a reserved message area */
+.well-s17-003 .message {
+  border: 1px dashed var(--label);
+  border-radius: 10px;
+  background: var(--chip);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  min-height: clamp(104px, 10vw, 138px);
+  text-align: center;
+}
+.well-s17-003 .message span {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  line-height: 1.6;
+}
+.well-s17-003 .step > p {
+  margin: clamp(12px, 1.5vw, 17px) 0 0;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+/* Foot */
+.well-s17-003 .foot {
+  margin-top: clamp(22px, 2.6vw, 36px);
+  max-width: 78ch;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.62;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s17-003 .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s17-003 .step--last { grid-column: 1 / -1; }
+  .well-s17-003 h1 { max-width: none; }
+}
+
+@media (max-width: 768px) {
+  .well-s17-003 .steps { grid-template-columns: minmax(0, 1fr); }
+  .well-s17-003 .step--last { grid-column: auto; }
+  .well-s17-003 .head p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s17-003 .step { border-radius: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s17-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s17-003" data-study-id="WELL-S17-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="well-s17-003-title">
+
+    <div class="head">
+      <p class="eyebrow">For someone else</p>
+      <h1 id="well-s17-003-title">Three decisions, and that is the whole thing</h1>
+      <p>Each one is shown here rather than described. Nothing is selected on this page — that part happens when you buy it.</p>
+    </div>
+
+    <ol class="steps">
+
+      <li class="step">
+        <span class="num" aria-hidden="true">01</span>
+        <h2>How it arrives</h2>
+        <ul class="arts">
+          <li>
+            <div class="art"><span>Printed</span></div>
+            <p>Posted or collected, to hand over.</p>
+          </li>
+          <li>
+            <div class="art"><span>Digital</span></div>
+            <p>Sent by email to an address you give.</p>
+          </li>
+        </ul>
+      </li>
+
+      <li class="step">
+        <span class="num" aria-hidden="true">02</span>
+        <h2>What it is for</h2>
+        <ul class="choices">
+          <li>
+            <b>An amount</b>
+            <p>Spent on anything, or put toward something dearer.</p>
+          </li>
+          <li>
+            <b>A named treatment</b>
+            <p>Chosen by you, and still swappable by them.</p>
+          </li>
+        </ul>
+        <p class="amount">
+          <span class="fname">Amount</span>
+          <span class="slot"><span class="vh">Gift amount</span><span aria-hidden="true">&mdash;</span></span>
+        </p>
+      </li>
+
+      <li class="step step--last">
+        <span class="num" aria-hidden="true">03</span>
+        <h2>What goes with it</h2>
+        <div class="message"><span>Your message<br>reproduced as written</span></div>
+        <p>Written by you and printed or sent exactly as you typed it. We do not tidy it up or add anything of our own.</p>
+      </li>
+
+    </ol>
+
+    <p class="foot">Whichever combination you pick: the amount is not printed on the card, it does not expire, and whatever is left after a treatment stays on it.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

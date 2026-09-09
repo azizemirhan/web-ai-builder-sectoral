@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S21-005
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S21 — Subpage Hero
+  Direction      : Sector-native / Distinctive
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : A soft mauve field. The page identity sits at the left; a short reserved media
+                   band is offset to the right and **pulled up so that it rises alongside the title**
+                   rather than sitting under it — wide, low, and calm rather than tall
+  Density        : Low
+  Media mode     : One reserved media band, 16:7 and **capped in height**, interlocked with the type
+                   rather than stacked beneath it. It is a band, not a stage.
+  Interaction    : None (static; no JavaScript)
+  Why this is sector-native rather than art-directed : The extended architecture roles ask for a
+                   variant that is **distinctive to this sector**, not a general-purpose art
+                   direction. In beauty and wellness an interior page is usually reached from a busy
+                   index, and the job of its opening is to **lower the temperature** — so this study
+                   is wide, low, soft in tone, and lets type and image interlock instead of stacking.
+                   The band rises past the title rather than sitting below it, which makes the
+                   section read as one calm object rather than a header on top of a picture.
+  Deliberately not rotated : `WELL-S17-005` is the sector's one rotated study. The interlock here is
+                   built from offset alone.
+  Correction recorded : The first build tried to run the **title** over the panel. A page name is
+                   short — two or three words — so it never reached the panel and left a dead gap
+                   instead of an overlap. Interlocking vertically works whatever the title says,
+                   which is the version an interior hero actually needs.
+  The S01 test   : A homepage hero would use this composition at full height with a proposition in
+                   it. This one is capped, carries a page name, and says only what the page holds.
+  Content note   : "Hands & feet" is generic sector vocabulary, as used in S03 and S18. No invented
+                   item count, price, rating, duration or reading time; no breadcrumb or parent
+                   link; no viewport-height unit anywhere in the CSS.
+-->
+
+<meta name="study-id" content="WELL-S21-005">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S21">
+<meta name="section-name" content="Subpage Hero">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="direction" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Wide low field with a short reserved media band interlocked beside the title">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-short-interlocked-band">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S21-005 — Subpage Hero, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #d8cdd2; }
+
+/* Scoped study styles — namespaced to .well-s21-005 */
+.well-s21-005 {
+  --ink: #2c2429;
+  --ink-soft: #6a5c63;
+  --paper: #d8cdd2;
+  --panel: #b9a8b1;
+  --panel-ink: #4a3d44;
+  --panel-edge: #a8949e;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s21-005 *,
+.well-s21-005 *::before,
+.well-s21-005 *::after { box-sizing: inherit; }
+
+.well-s21-005 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(32px, 3.6vw, 62px) clamp(20px, 3.6vw, 52px) clamp(28px, 3.2vw, 52px);
+}
+
+/* Page identity, held left */
+.well-s21-005 .say { position: relative; z-index: 1; max-width: 40ch; }
+.well-s21-005 .parent {
+  margin: 0 0 clamp(10px, 1.2vw, 14px);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s21-005 h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4.2vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  font-weight: 550;
+}
+.well-s21-005 .frames {
+  margin: clamp(14px, 1.7vw, 20px) 0 0;
+  max-width: 36ch;
+  color: var(--ink-soft);
+  font-size: clamp(0.96rem, 1.05vw, 1.04rem);
+  line-height: 1.6;
+}
+
+/* The band, offset right and pulled up so it rises alongside the title */
+.well-s21-005 .band {
+  position: relative;
+  z-index: 0;
+  margin-left: clamp(380px, 44%, 640px);
+  margin-top: clamp(-150px, -11vw, -80px);
+  border: 1px dashed var(--panel-edge);
+  border-radius: 14px;
+  background: var(--panel);
+  aspect-ratio: 16 / 7;
+  max-height: clamp(180px, 19vw, 260px);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+.well-s21-005 .band span {
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--panel-ink);
+  text-align: center;
+}
+
+/* Responsive ladder — the interlock goes before the title does */
+@media (max-width: 1024px) {
+  .well-s21-005 .band {
+    margin-left: clamp(300px, 40%, 420px);
+    margin-top: clamp(-120px, -9vw, -60px);
+  }
+}
+
+@media (max-width: 860px) {
+  .well-s21-005 .say { max-width: none; }
+  .well-s21-005 .frames { max-width: none; }
+  .well-s21-005 .band {
+    margin-left: 0;
+    margin-top: clamp(20px, 2.6vw, 28px);
+    max-height: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s21-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s21-005" data-study-id="WELL-S21-005" data-direction="Sector-native / Distinctive">
+  <section class="shell" aria-labelledby="well-s21-005-title">
+
+    <div class="say">
+      <p class="parent">Treatments</p>
+      <h1 id="well-s21-005-title">Hands &amp; feet</h1>
+      <p class="frames">Nails, cuticles and the quiet that goes with them. Everything on this page can be booked on its own or added to something else.</p>
+    </div>
+
+    <div class="band"><span>Media &mdash; hands at rest</span></div>
+
+  </section>
+</div>
+
+</body>
+</html>

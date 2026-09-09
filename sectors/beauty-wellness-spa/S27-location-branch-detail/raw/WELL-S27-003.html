@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S27-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S27 — Studio / Location Detail
+  Direction      : Structured / Visual Modular
+  Revision       : V2. Rebuilt. The header had the studio name sharing a cell with the address, so
+                   the three fields sat on different baselines and **the whole page was jammed
+                   against the top edge with no header of its own.** The record is now its own band,
+                   and the two columns below it are weighted to finish together.
+  Layout model   : A record band, then two balanced columns: the reserved map and the access
+                   questions on the left, what is done here and who is based here on the right
+  Density        : High
+  Media mode     : One reserved map area. **A reserved area rather than a third-party embed**, so the
+                   page carries no remote dependency of any kind.
+  Interaction    : None (static; no JavaScript).
+  The head       : A record band with the studio name on its own line above three equal fields
+                   &mdash; the fix to the fault this revision exists for.
+  Content note   : Address, telephone and email are reserved fields. No invented address, city,
+                   coordinate, travel time, transport line, parking or access claim; no description
+                   of the building; no opening hours. **Access is answered as questions rather than
+                   as a row of symbols**, because a tick beside a step is a promise about a building
+                   nobody has measured.
+  Palette        : Black and white only.
+-->
+
+<meta name="study-id" content="WELL-S27-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S27">
+<meta name="section-name" content="Studio / Location Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="A record band over two balanced columns: map and access, services and people">
+<meta name="density" content="high">
+<meta name="media-mode" content="reserved-map">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S27-003 — Studio Detail, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e6e6e6; }
+
+/* Scoped study styles - namespaced to .well-s27-003 */
+/* monochrome: hand-graded. Black and white only. */
+.well-s27-003 {
+  --ink: #111111;
+  --ink-soft: #4d4d4d;
+  --ink-faint: #6c6c6c;
+  --paper: #e6e6e6;
+  --card: #ffffff;
+  --tint: #d6d6d6;
+  --line: #c8c8c8;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s27-003 *,
+.well-s27-003 *::before,
+.well-s27-003 *::after { box-sizing: inherit; }
+.well-s27-003 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
+.well-s27-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s27-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(44px, 5.4vw, 96px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Record band */
+.well-s27-003 .kicker {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.well-s27-003 h1 {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+.well-s27-003 .fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(14px, 2vw, 30px);
+  padding-bottom: clamp(16px, 2vw, 24px);
+  border-bottom: 4px solid var(--ink);
+  margin-bottom: clamp(22px, 2.8vw, 38px);
+}
+.well-s27-003 .fields > div { min-width: 0; }
+.well-s27-003 .fields dt {
+  margin-bottom: 7px;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s27-003 .fields dd { margin: 0; }
+.well-s27-003 .slot {
+  display: inline-block;
+  width: 100%;
+  max-width: 260px;
+  padding: 9px 18px;
+  border-radius: 12px;
+  background: var(--tint);
+  color: var(--ink-faint);
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Two columns */
+.well-s27-003 .cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.4vw, 36px);
+  align-items: start;
+}
+.well-s27-003 .col { display: grid; gap: clamp(14px, 1.9vw, 24px); }
+.well-s27-003 .box {
+  background: var(--card);
+  border-radius: 26px;
+  padding: clamp(18px, 2.2vw, 28px);
+}
+.well-s27-003 .box h2 {
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
+  font-size: clamp(1.06rem, 1.4vw, 1.24rem);
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+}
+.well-s27-003 .box p { margin: 0; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.well-s27-003 .box p b { color: var(--ink); font-weight: 650; }
+
+.well-s27-003 .map {
+  aspect-ratio: 4 / 3;
+  border: 1px dashed #a4a4a4;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #d8d8d8 0%, #f0f0f0 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(14px, 1.8vw, 22px);
+  margin-bottom: 11px;
+}
+.well-s27-003 .map span {
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.well-s27-003 .mapnote { margin: 0; font-size: 0.95rem; line-height: 1.5; color: var(--ink-faint); }
+
+.well-s27-003 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; }
+.well-s27-003 .tags li {
+  padding: 7px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+}
+.well-s27-003 .people { margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; display: grid; gap: 10px; }
+.well-s27-003 .people li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+.well-s27-003 .people li:last-child { border-bottom: 0; padding-bottom: 0; }
+.well-s27-003 .people b { color: var(--ink); font-weight: 700; }
+
+.well-s27-003 .qs { margin: 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+.well-s27-003 .qs li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: 650;
+}
+.well-s27-003 .qs li:last-child { border-bottom: 0; padding-bottom: 0; }
+.well-s27-003 .qs em {
+  font-style: normal;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.well-s27-003 .box .lead { margin-bottom: clamp(12px, 1.5vw, 16px); }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .well-s27-003 .cols { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s27-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s27-003" data-study-id="WELL-S27-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="well-s27-003-title">
+
+    <p class="kicker">One studio, the full record</p>
+    <h1 id="well-s27-003-title">Studio 01</h1>
+
+    <dl class="fields">
+      <div>
+        <dt>Address</dt>
+        <dd><span class="slot"><span class="vh">Street address of this studio</span><span aria-hidden="true">&mdash;</span></span></dd>
+      </div>
+      <div>
+        <dt>Telephone</dt>
+        <dd><span class="slot"><span class="vh">Telephone number for this studio</span><span aria-hidden="true">&mdash;</span></span></dd>
+      </div>
+      <div>
+        <dt>Email</dt>
+        <dd><span class="slot"><span class="vh">Email address for this studio</span><span aria-hidden="true">&mdash;</span></span></dd>
+      </div>
+    </dl>
+
+    <div class="cols">
+
+      <div class="col">
+        <div class="box">
+          <div class="map"><span>Map area &mdash; reserved, not an embedded service</span></div>
+          <p class="mapnote">A reserved area rather than a third-party embed, so the page carries no remote dependency of any kind.</p>
+        </div>
+
+        <div class="box">
+          <h2>Getting in, and getting about</h2>
+          <p class="lead">These are the questions people ring to ask. <b>There is no row of symbols on this page</b>, because a tick beside a step is a promise about a building nobody has measured.</p>
+          <ul class="qs">
+            <li>Is there a step at the door<em>Ask</em></li>
+            <li>Can I be treated without going upstairs<em>Ask</em></li>
+            <li>Where can I leave a car or a bike<em>Ask</em></li>
+            <li>Can somebody come in with me<em>Ask</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="box">
+          <h2>What is done here</h2>
+          <ul class="tags">
+            <li>Facials</li>
+            <li>Body &amp; massage</li>
+            <li>Hands &amp; feet</li>
+            <li>Brows &amp; lashes</li>
+          </ul>
+          <p><b>Not everything we do happens in every studio.</b> If you are travelling for something in particular, ring first.</p>
+        </div>
+
+        <div class="box">
+          <h2>Who is based here</h2>
+          <ul class="people">
+            <li><b>Practitioner 01</b> &mdash; works mostly on faces</li>
+            <li><b>Practitioner 02</b> &mdash; works mostly on bodies</li>
+            <li><b>Practitioner 03</b> &mdash; hands, feet, brows and lashes</li>
+          </ul>
+          <p>You can <b>ask for any of them by name</b> when you book, and you will be told if they are away rather than quietly given somebody else.</p>
+        </div>
+
+        <div class="box">
+          <h2>Before a long journey</h2>
+          <p>Ring and say what you are coming for. <b>If it is done in the other studio we will tell you before you travel</b> rather than after you arrive.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

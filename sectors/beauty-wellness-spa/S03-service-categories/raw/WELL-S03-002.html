@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S03-002
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S03 — Service Categories
+  Direction      : Premium / Editorial
+  Reference      : None. Originated for this batch. One reference image was supplied and was
+                   placed at 001; the remaining four directions were authored from nothing at the
+                   user's request. The editorial territory here inverts the usual hierarchy of a
+                   categories section: the category names are the largest thing on the page and
+                   the media is reduced to a small inline plate, which no supplied reference did.
+  Layout model   : Oversized typographic index on a dark ground — four full-width rows separated
+                   by hairline rules, each running a very large serif category name, a small
+                   square media plate, one line of coverage, and an arrow at the far right
+  Density        : Low
+  Media mode     : Four small reserved media plates, one per category, deliberately subordinate
+                   to the typography. No image is supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Neutral placeholder copy. Each category line says what the category covers,
+                   never what it achieves. No efficacy claim, percentage, price, duration,
+                   practitioner name, qualification, client, rating or address. No individual
+                   treatment is presented here — that is WELL-S02's role. No sequence numbers are
+                   used: WELL-S02-002 already carries that editorial device in this sector. All
+                   media areas are reserved and intentionally empty.
+-->
+
+<meta name="study-id" content="WELL-S03-002">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S03">
+<meta name="section-name" content="Service Categories">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Oversized serif typographic index with subordinate inline media plates">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-small-inline-plate-per-row">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S03-002 — Service Categories, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #241d17; }
+
+/* Scoped study styles — namespaced to .well-s03-002 */
+.well-s03-002 {
+  --ink: #f2ece0;
+  --ink-soft: #b0a291;
+  --paper: #241d17;
+  --slot: #3a2f26;
+  --slot-ink: #b3a390;
+  --line: #4a3d32;
+  --focus: #e0c9a4;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s03-002 *,
+.well-s03-002 *::before,
+.well-s03-002 *::after { box-sizing: inherit; }
+.well-s03-002 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+.well-s03-002 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(48px, 5.6vw, 100px) clamp(20px, 3.6vw, 56px);
+}
+
+/* Compact header — deliberately smaller than the list below it */
+.well-s03-002 .head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(14px, 2vw, 40px);
+  margin-bottom: clamp(30px, 3.6vw, 52px);
+}
+.well-s03-002 h1 {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.well-s03-002 .head p {
+  margin: 0;
+  max-width: 38ch;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* Typographic index */
+.well-s03-002 .index { margin: 0; padding: 0; list-style: none; }
+.well-s03-002 .index li { border-top: 1px solid var(--line); }
+.well-s03-002 .index li:last-child { border-bottom: 1px solid var(--line); }
+
+.well-s03-002 .row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(74px, 7vw, 108px) minmax(0, 17rem) auto;
+  align-items: center;
+  gap: clamp(18px, 2.4vw, 44px);
+  padding: clamp(20px, 2.4vw, 34px) 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.well-s03-002 .name {
+  margin: 0;
+  min-width: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2rem, 5.2vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.022em;
+  font-weight: 400;
+  transition: color 150ms ease;
+}
+.well-s03-002 .row:hover .name { color: #ffffff; }
+
+.well-s03-002 .plate {
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 8px;
+}
+.well-s03-002 .slot-label {
+  font-size: 0.54rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+
+.well-s03-002 .desc {
+  margin: 0;
+  min-width: 0;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.well-s03-002 .go {
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--ink-soft);
+  transition: transform 150ms ease, color 150ms ease;
+}
+.well-s03-002 .row:hover .go { color: var(--ink); transform: translateX(4px); }
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s03-002 .row {
+    grid-template-columns: minmax(0, 1fr) clamp(66px, 8vw, 88px) auto;
+    gap: clamp(16px, 2vw, 28px);
+  }
+  .well-s03-002 .desc {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: 46ch;
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .well-s03-002 .head { align-items: flex-start; }
+  .well-s03-002 .row { padding: clamp(18px, 2.2vw, 26px) 0; }
+  .well-s03-002 .head p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s03-002 .row {
+    grid-template-columns: minmax(0, 1fr) 56px;
+    gap: 14px;
+  }
+  .well-s03-002 .go { display: none; }
+  .well-s03-002 .desc { max-width: none; }
+  .well-s03-002 .name { font-size: clamp(1.9rem, 11vw, 2.6rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s03-002 * { transition: none !important; }
+  .well-s03-002 .row:hover .go { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s03-002" data-study-id="WELL-S03-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="well-s03-002-title">
+
+    <div class="head">
+      <h1 id="well-s03-002-title">The work, in four parts</h1>
+      <p>Every treatment sits inside one of these. Start with the one closest to what you came for.</p>
+    </div>
+
+    <ul class="index">
+      <li>
+        <a class="row" href="#well-s03-002-title">
+          <h2 class="name">Facials</h2>
+          <div class="plate"><span class="slot-label">Media</span></div>
+          <p class="desc">Cleansing, steam and hands-on work for the face and neck.</p>
+          <span class="go" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="row" href="#well-s03-002-title">
+          <h2 class="name">Body &amp; massage</h2>
+          <div class="plate"><span class="slot-label">Media</span></div>
+          <p class="desc">Full-body work, from slow massage to scrubs and wraps.</p>
+          <span class="go" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="row" href="#well-s03-002-title">
+          <h2 class="name">Hands &amp; feet</h2>
+          <div class="plate"><span class="slot-label">Media</span></div>
+          <p class="desc">Soaking, shaping and massage for hands and feet.</p>
+          <span class="go" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="row" href="#well-s03-002-title">
+          <h2 class="name">Brows &amp; lashes</h2>
+          <div class="plate"><span class="slot-label">Media</span></div>
+          <p class="desc">Shaping, tinting and detail work around the eyes.</p>
+          <span class="go" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S05-005
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S05 — Results / Before & After
+  Direction      : Art-directed / Distinctive
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : One full-bleed stage split into two equal halves meeting at a hard vertical
+                   seam with no gap, the Before and After marks held at the outer top corners, and
+                   a translucent band running the full width at mid-height carrying the treatment
+                   name in oversized type across the seam
+  Density        : Low — one case, at the largest scale in the batch
+  Media mode     : Two reserved media areas forming one uninterrupted split field. No image is
+                   supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Structure is authored; evidence is reserved. No fabricated comparison, outcome
+                   statement, efficacy word, percentage, session count, time-to-result,
+                   identifiable client or rating. The oversized type is the treatment name, which
+                   is a real generic name drawn from the set used in WELL-S02 and WELL-S03; it is
+                   not a claim and not a brand.
+  Empty state    : The two halves are given slightly different tones so the seam is visible before
+                   any photography arrives; with real images the photographs themselves make the
+                   split. The type band is a translucent backdrop rather than plain overlaid text,
+                   so the name stays legible over the empty tone now and over two different
+                   photographs later.
+  Distinction    : WELL-S04-005 is the nearest full-bleed study and is a four-column band of
+                   separate people. This is one field cut once, and the type crosses the cut
+                   rather than sitting inside a column.
+-->
+
+<meta name="study-id" content="WELL-S05-005">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S05">
+<meta name="section-name" content="Results Before After">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Full-bleed split field with a hard seam and an oversized name band crossing it">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-single-split-field-full-bleed">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S05-005 — Results Before After, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #1b2530; }
+
+/* Scoped study styles — namespaced to .well-s05-005 */
+.well-s05-005 {
+  --pad: clamp(20px, 3.6vw, 56px);
+  --ink: #eef1f4;
+  --ink-soft: #9aabbb;
+  --paper: #1b2530;
+  --half-a: #2f3d4b;
+  --half-b: #27333f;
+  --half-ink: #b9c8d5;
+  --seam: #55697c;
+  --focus: #cfe0ee;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s05-005 *,
+.well-s05-005 *::before,
+.well-s05-005 *::after { box-sizing: inherit; }
+.well-s05-005 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -5px;
+  border-radius: 2px;
+}
+
+/* Header, inside the padded measure */
+.well-s05-005 .head {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(48px, 5.6vw, 100px) var(--pad) clamp(24px, 2.8vw, 38px);
+}
+.well-s05-005 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s05-005 h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 20ch;
+}
+
+/* The split field */
+.well-s05-005 .stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: clamp(400px, 52vw, 720px);
+  overflow: hidden;
+}
+.well-s05-005 .half {
+  position: relative;
+  display: grid;
+  align-content: end;
+  justify-items: center;
+  /* the slot label sits low so it stays clear of the name band at mid-height */
+  padding: 20px 20px clamp(26px, 4.4vw, 64px);
+  background: var(--half-a);
+}
+.well-s05-005 .half + .half {
+  background: var(--half-b);
+  box-shadow: inset 1px 0 0 var(--seam);
+}
+.well-s05-005 .slot-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--half-ink);
+  text-align: center;
+}
+.well-s05-005 .mark {
+  position: absolute;
+  top: clamp(14px, 1.8vw, 26px);
+  color: var(--half-ink);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.well-s05-005 .half:first-child .mark { left: clamp(14px, 1.8vw, 26px); }
+.well-s05-005 .half + .half .mark { right: clamp(14px, 1.8vw, 26px); }
+
+/* The name band, crossing the seam */
+.well-s05-005 .band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: clamp(14px, 2vw, 30px) var(--pad);
+  background: rgba(12, 19, 26, 0.66);
+  text-align: center;
+}
+.well-s05-005 .band .cat {
+  display: block;
+  margin: 0 0 clamp(6px, 0.8vw, 10px);
+  color: var(--ink-soft);
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.well-s05-005 .band h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 5.6vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+/* Closing line */
+.well-s05-005 .foot {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(22px, 2.6vw, 34px) var(--pad) clamp(44px, 5vw, 84px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 28px;
+}
+.well-s05-005 .foot p {
+  margin: 0;
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+.well-s05-005 .textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  color: var(--ink);
+  font-size: 0.93rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+.well-s05-005 .textlink:hover { text-decoration-thickness: 2px; }
+
+/* Responsive ladder — the field is never stacked; a split that becomes
+   two rows stops reading as one comparison */
+@media (max-width: 1024px) {
+  .well-s05-005 .stage { height: clamp(360px, 58vw, 520px); }
+}
+
+@media (max-width: 768px) {
+  .well-s05-005 .stage { height: clamp(320px, 72vw, 460px); }
+  .well-s05-005 h1 { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s05-005 .stage { height: clamp(280px, 88vw, 380px); }
+  .well-s05-005 .band { padding-inline: 14px; }
+  .well-s05-005 .mark { font-size: 0.56rem; letter-spacing: 0.16em; }
+  .well-s05-005 .slot-label { display: none; }
+  .well-s05-005 .foot { justify-content: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s05-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s05-005" data-study-id="WELL-S05-005" data-direction="Art-directed / Distinctive">
+  <section aria-labelledby="well-s05-005-title">
+
+    <div class="head">
+      <p class="eyebrow">Before and after</p>
+      <h1 id="well-s05-005-title">One field, cut down the middle</h1>
+    </div>
+
+    <div class="stage">
+      <div class="half">
+        <span class="mark">Before</span>
+        <span class="slot-label">Reserved</span>
+      </div>
+      <div class="half">
+        <span class="mark">After</span>
+        <span class="slot-label">Reserved</span>
+      </div>
+      <div class="band">
+        <span class="cat">Facials</span>
+        <h2>Deep cleansing facial</h2>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p>Both halves are photographed in the same room, in the same light and at the same distance.</p>
+      <a class="textlink" href="#well-s05-005-title">
+        Ask what this would mean for you
+        <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

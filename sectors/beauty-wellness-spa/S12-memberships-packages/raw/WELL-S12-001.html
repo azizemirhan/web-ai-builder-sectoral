@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S12-001
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S12 — Memberships & Packages
+  Direction      : Universal / Safe
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : The three commercial forms as three cards — each naming the form, describing it
+                   in a line, carrying its own reserved fields, listing how it behaves, and ending
+                   in an action
+  Density        : Medium
+  Media mode     : None. Deliberate across this batch: the subject is a commercial arrangement, and
+                   a photograph would say nothing about how visits are distributed over time.
+  Interaction    : None (static; no JavaScript)
+  Reserved-field note : Price, session count and membership rhythm are **reserved slots** — em
+                   dashes at the size the real values will occupy, each with a visually hidden
+                   field label. Each card reserves **different** fields, because a course has a
+                   count and a membership has a rhythm; a uniform field set across the three would
+                   be a comparison matrix, which this sector rules out. See ../README.md.
+  Content note   : **No saving, package value, "worth" figure, discount or percentage anywhere** —
+                   a saving is a relationship between two figures, so reserving it would reserve a
+                   claim rather than a number, and an empty saving field would assert that this
+                   studio discounts bundles at all. No invented price, count, term, currency
+                   symbol, joining fee, minimum term, notice period or expiry date; no popularity
+                   or value badge. The behaviour lines are written without numbers so no term is
+                   invented in the act of describing the policy.
+-->
+
+<meta name="study-id" content="WELL-S12-001">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S12">
+<meta name="section-name" content="Memberships Packages">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Three form cards with per-form reserved fields and behaviour lines">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none-deliberate">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S12-001 — Memberships Packages, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f2eeee; }
+
+/* Scoped study styles — namespaced to .well-s12-001 */
+.well-s12-001 {
+  --ink: #26211f;
+  --ink-soft: #6b615e;
+  --paper: #f2eeee;
+  --card: #ffffff;
+  --chip: #ece6e6;
+  --chip-ink: #6b615e;
+  --line: #ebe4e4;
+  --rule-strong: #d8cfcf;
+  --accent: #2f2725;
+  --accent-ink: #f7f4f4;
+  --focus: #4a3b38;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s12-001 *,
+.well-s12-001 *::before,
+.well-s12-001 *::after { box-sizing: inherit; }
+.well-s12-001 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s12-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s12-001 .shell {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.well-s12-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(24px, 3vw, 42px);
+}
+.well-s12-001 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s12-001 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 16ch;
+}
+.well-s12-001 .head p {
+  margin: 0;
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Form cards */
+.well-s12-001 .forms {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 26px);
+}
+.well-s12-001 .forms li { min-width: 0; display: flex; }
+.well-s12-001 .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--card);
+  border-radius: 16px;
+  padding: clamp(20px, 2.4vw, 32px);
+}
+.well-s12-001 h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.14rem, 1.45vw, 1.42rem);
+  line-height: 1.2;
+  letter-spacing: -0.016em;
+  font-weight: 600;
+}
+.well-s12-001 .what {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+/* Reserved fields — different per form */
+.well-s12-001 .fields {
+  margin: clamp(18px, 2vw, 24px) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.well-s12-001 .fields li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 12px;
+}
+.well-s12-001 .fname {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+.well-s12-001 .slot {
+  justify-self: end;
+  min-width: clamp(56px, 5vw, 70px);
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--chip);
+  color: var(--chip-ink);
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Behaviour */
+.well-s12-001 .how {
+  margin: clamp(18px, 2vw, 24px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.well-s12-001 .how li {
+  border-top: 1px solid var(--line);
+  padding: clamp(9px, 1.1vw, 13px) 0;
+  color: var(--ink-soft);
+  font-size: 0.87rem;
+  line-height: 1.5;
+}
+.well-s12-001 .btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 0 26px;
+  min-height: 50px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 140ms ease;
+}
+.well-s12-001 .btn-space { margin-top: clamp(20px, 2.4vw, 28px); }
+.well-s12-001 .btn:hover { background: #3d3330; }
+
+/* Foot */
+.well-s12-001 .foot {
+  margin-top: clamp(24px, 2.8vw, 38px);
+  padding-top: clamp(18px, 2.2vw, 26px);
+  border-top: 1px solid var(--rule-strong);
+  max-width: 74ch;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s12-001 .forms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s12-001 .forms li:last-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  .well-s12-001 .head {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(14px, 2vw, 20px);
+  }
+  .well-s12-001 h1 { max-width: none; }
+  .well-s12-001 .head p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s12-001 .forms { grid-template-columns: minmax(0, 1fr); }
+  .well-s12-001 .forms li:last-child { grid-column: auto; }
+  .well-s12-001 .card { border-radius: 13px; }
+  .well-s12-001 .btn { align-self: stretch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s12-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s12-001" data-study-id="WELL-S12-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="well-s12-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Coming back</p>
+        <h1 id="well-s12-001-title">Three ways to keep coming</h1>
+      </div>
+      <p>They differ in how the visits are spread out, not in how good they are. Pick the one that matches how you actually want to come in.</p>
+    </div>
+
+    <ul class="forms">
+
+      <li>
+        <article class="card">
+          <h2>A course</h2>
+          <p class="what">The same treatment, booked as a series and paid for once.</p>
+          <ul class="fields">
+            <li><span class="fname">Visits</span><span class="slot"><span class="vh">Number of visits</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span class="fname">Price</span><span class="slot"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+          </ul>
+          <ul class="how">
+            <li>Sessions do not expire. Use them when you can.</li>
+            <li>A course can be shared with someone else.</li>
+            <li>If you stop, what you have paid for stays yours.</li>
+          </ul>
+          <a class="btn btn-space" href="#well-s12-001-title">Ask about a course</a>
+        </article>
+      </li>
+
+      <li>
+        <article class="card">
+          <h2>A mixed course</h2>
+          <p class="what">A set of visits to spend across the menu, decided as you go.</p>
+          <ul class="fields">
+            <li><span class="fname">Visits</span><span class="slot"><span class="vh">Number of visits</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span class="fname">Price</span><span class="slot"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+          </ul>
+          <ul class="how">
+            <li>Choose the treatment on the day, every time.</li>
+            <li>Sessions do not expire, and can be shared.</li>
+            <li>Swap between treatments without asking first.</li>
+          </ul>
+          <a class="btn btn-space" href="#well-s12-001-title">Ask about a mixed course</a>
+        </article>
+      </li>
+
+      <li>
+        <article class="card">
+          <h2>A membership</h2>
+          <p class="what">One visit on a regular rhythm, running on until you stop it.</p>
+          <ul class="fields">
+            <li><span class="fname">Rhythm</span><span class="slot"><span class="vh">Visit rhythm</span><span aria-hidden="true">&mdash;</span></span></li>
+            <li><span class="fname">Price</span><span class="slot"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+          </ul>
+          <ul class="how">
+            <li>Pause it when you need to, and pick it up after.</li>
+            <li>Stop it whenever. Nothing renews without telling you.</li>
+            <li>A missed visit rolls forward rather than disappearing.</li>
+          </ul>
+          <a class="btn btn-space" href="#well-s12-001-title">Ask about membership</a>
+        </article>
+      </li>
+
+    </ul>
+
+    <p class="foot">None of these are cheaper for being bought together — they exist so you can stop thinking about booking, not so you can chase a deal.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

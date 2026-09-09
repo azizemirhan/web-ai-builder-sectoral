@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S08-002
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S08 — Treatment Process
+  Direction      : Premium / Editorial
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : Five full-width bands stacked down the page, alternating between two close
+                   ground tones so the sequence is read as a slow descent rather than as a list.
+                   The third band — the treatment itself — is the one that opens into two columns
+                   and carries the media, so the centre of the visit is also the centre of the
+                   composition.
+  Density        : Medium — five steps at serif display scale
+  Media mode     : One tall reserved media area, inside the third band only. Its singularity is
+                   the device: giving every step an image would flatten the sequence into five
+                   equal cards.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Every step says what is done, not what it achieves. No duration, per-step
+                   timing, session count or course length anywhere — see the constraint in
+                   ../README.md. No efficacy claim, outcome description, percentage, rating,
+                   review, client, award, certification, price or invented statistic.
+-->
+
+<meta name="study-id" content="WELL-S08-002">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S08">
+<meta name="section-name" content="Treatment Process">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Five alternating-tone full-width bands with media in the third">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-media-single-in-central-band">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S08-002 — Treatment Process, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #efe7dd; }
+
+/* Scoped study styles — namespaced to .well-s08-002 */
+.well-s08-002 {
+  --ink: #2a241c;
+  --ink-soft: #6e6355;
+  --paper: #efe7dd;
+  --paper-alt: #e5dace;
+  --slot: #d5c8b7;
+  --slot-ink: #675c4d;
+  --focus: #55462f;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s08-002 *,
+.well-s08-002 *::before,
+.well-s08-002 *::after { box-sizing: inherit; }
+.well-s08-002 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.well-s08-002 .inner {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 3.6vw, 56px);
+}
+
+/* Header */
+.well-s08-002 .head {
+  padding-top: clamp(48px, 5.6vw, 100px);
+  padding-bottom: clamp(30px, 3.6vw, 56px);
+}
+.well-s08-002 .eyebrow {
+  margin: 0 0 clamp(14px, 1.6vw, 20px);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s08-002 h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.014em;
+  font-weight: 400;
+  max-width: 16ch;
+}
+
+/* Bands */
+.well-s08-002 .bands { margin: 0; padding: 0; list-style: none; }
+.well-s08-002 .band { background: var(--paper); }
+.well-s08-002 .band:nth-child(even) { background: var(--paper-alt); }
+.well-s08-002 .band .inner {
+  padding-top: clamp(30px, 3.6vw, 56px);
+  padding-bottom: clamp(30px, 3.6vw, 56px);
+}
+
+.well-s08-002 .n {
+  display: block;
+  margin-bottom: clamp(10px, 1.2vw, 14px);
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.well-s08-002 h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.016em;
+  font-weight: 400;
+  max-width: 16ch;
+}
+.well-s08-002 .band p {
+  margin: clamp(12px, 1.4vw, 18px) 0 0;
+  max-width: 48ch;
+  color: var(--ink-soft);
+  font-size: clamp(0.98rem, 1.05vw, 1.06rem);
+  line-height: 1.62;
+}
+
+/* The central band opens into two columns */
+.well-s08-002 .band--wide .inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.86fr);
+  gap: clamp(24px, 3.4vw, 64px);
+  align-items: center;
+  padding-top: clamp(40px, 4.8vw, 76px);
+  padding-bottom: clamp(40px, 4.8vw, 76px);
+}
+.well-s08-002 .slot {
+  background: var(--slot);
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.well-s08-002 .slot-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s08-002 .band--wide .inner { gap: clamp(20px, 3vw, 36px); }
+  .well-s08-002 h2 { max-width: 18ch; }
+}
+
+@media (max-width: 768px) {
+  .well-s08-002 .band--wide .inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(20px, 2.6vw, 28px);
+  }
+  .well-s08-002 .slot { aspect-ratio: 16 / 10; }
+  .well-s08-002 h1,
+  .well-s08-002 h2 { max-width: none; }
+  .well-s08-002 .band p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s08-002 .slot { aspect-ratio: 4 / 3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s08-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s08-002" data-study-id="WELL-S08-002" data-direction="Premium / Editorial">
+  <section aria-labelledby="well-s08-002-title">
+
+    <div class="head inner">
+      <p class="eyebrow">What happens</p>
+      <h1 id="well-s08-002-title">A visit, from the door onwards.</h1>
+    </div>
+
+    <ol class="bands">
+      <li class="band">
+        <div class="inner">
+          <span class="n">Step one</span>
+          <h2>Arriving</h2>
+          <p>You come in, leave your things somewhere safe, and sit down. Nothing starts until you say you are ready.</p>
+        </div>
+      </li>
+
+      <li class="band">
+        <div class="inner">
+          <span class="n">Step two</span>
+          <h2>A short conversation</h2>
+          <p>We ask what you want from the session and what your skin has been doing lately. No clipboard, no questionnaire.</p>
+        </div>
+      </li>
+
+      <li class="band band--wide">
+        <div class="inner">
+          <div>
+            <span class="n">Step three</span>
+            <h2>The treatment</h2>
+            <p>You lie down and the work begins. Pressure, warmth and what gets used are adjusted as we go, whenever you say so.</p>
+          </div>
+          <div class="slot"><span class="slot-label">Treatment in progress</span></div>
+        </div>
+      </li>
+
+      <li class="band">
+        <div class="inner">
+          <span class="n">Step four</span>
+          <h2>Coming back up</h2>
+          <p>Time to sit, have something to drink and come round properly before you stand up and go anywhere.</p>
+        </div>
+      </li>
+
+      <li class="band">
+        <div class="inner">
+          <span class="n">Step five</span>
+          <h2>Afterwards</h2>
+          <p>If something would suit you at home, we say so now — after the treatment, never during it.</p>
+        </div>
+      </li>
+    </ol>
+
+  </section>
+</div>
+
+</body>
+</html>

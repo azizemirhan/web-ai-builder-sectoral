@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S01-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S01 — Hero
+  Direction      : Conversion-led
+  Reference      : Supplied visual research — reference 4 of five images provided with the
+                   authoring request (a dim stone interior with water as the full-bleed ground,
+                   a short paragraph placed top-left over the media, a pill action placed
+                   opposite it top-right, and an oversized lowercase word running off the bottom
+                   edge of the frame). Taken for its full-bleed ambient ground, its
+                   copy-opposite-action placement over the media, and its bottom-cropped
+                   oversized type. Its site header and primary navigation were not taken, per the
+                   section-shell rule; its wordmark was not taken and is not replaced by an
+                   invented brand — the cropped word here is a typographic device, not a name.
+                   No layout, brand, wording or photograph from that image is reproduced.
+  Layout model   : Full-bleed ambient media stage with overlaid copy and bottom-cropped display
+                   word, closed by an integrated three-field availability band that overlaps the
+                   stage edge
+  Density        : Low
+  Media mode     : One full-bleed reserved ambient media area serving as the ground of the
+                   composition. No image is supplied.
+  Interaction    : Native form controls only — two selects and a date input. No JavaScript.
+  Content note   : Neutral placeholder copy. No treatment claim, efficacy statement, percentage,
+                   ingredient claim, price, duration, practitioner name, qualification, client,
+                   rating or address. The band is a route-opener carrying three fields, not a
+                   booking or intake form, and it is part of this hero rather than site-wide
+                   chrome. Studio and location fields were deliberately omitted rather than
+                   filled with invented branches. The media area is reserved and intentionally
+                   empty, and every overlaid element stays legible in that empty state.
+-->
+
+<meta name="study-id" content="WELL-S01-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S01">
+<meta name="section-name" content="Hero">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Full-bleed ambient stage with overlaid copy and overlapping availability band">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-full-bleed-ground">
+<meta name="interaction" content="native-form-controls-no-javascript">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S01-004 — Hero, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #1e1b17; }
+
+/* Scoped study styles — namespaced to .well-s01-004 */
+.well-s01-004 {
+  --ink: #f5f1ea;
+  --ink-soft: #cfc6ba;
+  --paper: #1e1b17;
+  --stage: #5f574d;
+  --stage-ink: #d7cec3;
+  --band: #f2eee7;
+  --band-ink: #24201b;
+  --band-soft: #6d6459;
+  --band-line: #d6cfc4;
+  --accent: #24201b;
+  --accent-ink: #f5f1ea;
+  --focus: #e6d9c4;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s01-004 *,
+.well-s01-004 *::before,
+.well-s01-004 *::after { box-sizing: inherit; }
+.well-s01-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.well-s01-004 .shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(16px, 2vw, 28px) clamp(16px, 3vw, 40px) clamp(30px, 3.4vw, 48px);
+}
+
+/* Ambient media stage */
+.well-s01-004 .stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--stage);
+  min-height: clamp(480px, 74vh, 720px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(26px, 3.2vw, 52px) clamp(22px, 3vw, 48px) 0;
+}
+.well-s01-004 .stage-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stage-ink);
+  text-align: center;
+}
+
+.well-s01-004 .top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(20px, 3vw, 48px);
+}
+.well-s01-004 .lead {
+  margin: 0;
+  max-width: 34ch;
+  color: var(--ink);
+  font-size: clamp(0.98rem, 1.05vw, 1.1rem);
+  line-height: 1.55;
+}
+.well-s01-004 .btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 30px;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+.well-s01-004 .btn:hover { background: var(--ink); color: var(--band-ink); }
+
+/* Bottom-cropped display word */
+.well-s01-004 .wordline {
+  position: relative;
+  z-index: 1;
+  margin: clamp(24px, 3vw, 40px) 0 0;
+  line-height: 0.78;
+  pointer-events: none;
+}
+.well-s01-004 h1 {
+  margin: 0;
+  font-size: clamp(4.2rem, 19vw, 17rem);
+  line-height: 0.78;
+  letter-spacing: -0.045em;
+  font-weight: 400;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* Integrated availability band */
+.well-s01-004 .band {
+  position: relative;
+  z-index: 2;
+  margin: clamp(-46px, -3vw, -28px) auto 0;
+  width: min(100%, 1180px);
+  background: var(--band);
+  color: var(--band-ink);
+  border-radius: 18px;
+  padding: clamp(16px, 1.8vw, 24px) clamp(18px, 2vw, 28px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  align-items: end;
+  gap: clamp(14px, 1.6vw, 26px);
+}
+.well-s01-004 .field { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.well-s01-004 .field label {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--band-soft);
+  font-weight: 600;
+}
+.well-s01-004 .field select,
+.well-s01-004 .field input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 12px 0 0;
+  border: 0;
+  border-bottom: 1px solid var(--band-line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--band-ink);
+  font-family: inherit;
+  font-size: 0.98rem;
+}
+.well-s01-004 .submit {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+.well-s01-004 .submit:hover { background: #3a3229; }
+
+.well-s01-004 .note {
+  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  text-align: center;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s01-004 .stage { min-height: clamp(440px, 62vh, 560px); }
+  .well-s01-004 .band { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s01-004 .submit { grid-column: span 2; width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .well-s01-004 .top { flex-direction: column; align-items: flex-start; }
+  .well-s01-004 .lead { max-width: none; }
+  .well-s01-004 .btn { width: 100%; }
+  .well-s01-004 h1 { font-size: clamp(3.4rem, 21vw, 8rem); }
+  .well-s01-004 .stage { border-radius: 18px; min-height: clamp(420px, 58vh, 520px); }
+}
+
+@media (max-width: 480px) {
+  .well-s01-004 .band {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: -22px;
+    border-radius: 16px;
+  }
+  .well-s01-004 .submit { grid-column: auto; }
+  .well-s01-004 .stage { border-radius: 16px; }
+  .well-s01-004 h1 { letter-spacing: -0.035em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s01-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<main class="well-s01-004" data-study-id="WELL-S01-004" data-direction="Conversion-led">
+  <section class="hero" aria-labelledby="well-s01-004-title">
+    <div class="shell">
+
+      <div class="stage">
+        <span class="stage-label">Treatment space</span>
+
+        <div class="top">
+          <p class="lead">Professional treatments in a room designed to slow you down — space, water, warmth, and time that is yours.</p>
+          <a class="btn" href="#well-s01-004-band">Plan your visit</a>
+        </div>
+
+        <div class="wordline">
+          <h1 id="well-s01-004-title">stillness</h1>
+        </div>
+      </div>
+
+      <form class="band" id="well-s01-004-band" aria-label="Check treatment availability">
+        <div class="field">
+          <label for="well-s01-004-treatment">Treatment</label>
+          <select id="well-s01-004-treatment" name="treatment">
+            <option>Facial</option>
+            <option>Massage</option>
+            <option>Body treatment</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="well-s01-004-guests">Guests</label>
+          <select id="well-s01-004-guests" name="guests">
+            <option>One</option>
+            <option>Two</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="well-s01-004-day">Preferred day</label>
+          <input id="well-s01-004-day" name="day" type="date">
+        </div>
+        <button class="submit" type="submit">Check availability</button>
+      </form>
+
+      <p class="note">Nothing is confirmed here — we will talk it through with you first.</p>
+
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S09-001
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S09 — Technology & Products
+  Direction      : Universal / Safe
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : Section header above a four-column grid of equipment cards, closed by a
+                   labelled row of reserved partner-mark slots — the two halves of the role in
+                   their most legible arrangement
+  Density        : Medium
+  Media mode     : Four object-scale reserved media areas, one per piece of equipment, plus five
+                   small reserved mark slots in the closing row. No image is supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Function and policy lead; brand is reserved — see ../README.md. Each card names
+                   a generic room object and states how it is looked after, which is a fact about
+                   the studio. **No invented device name, product name, range, manufacturer,
+                   ingredient, patent or partner mark; no certification or approval mark; no
+                   "medical grade" or "clinically tested"; no efficacy claim about any device; no
+                   specification block, ingredient table or datasheet; no price, percentage or
+                   award.** The mark row is reserved rather than omitted, so the structure a real
+                   page needs is demonstrated without inventing the brands that would fill it.
+-->
+
+<meta name="study-id" content="WELL-S09-001">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S09">
+<meta name="section-name" content="Technology Products">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Four-column equipment card grid above a reserved partner-mark row">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-media-object-cards-plus-mark-row">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S09-001 — Technology Products, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f4f5f6; }
+
+/* Scoped study styles — namespaced to .well-s09-001 */
+.well-s09-001 {
+  --ink: #1f2225;
+  --ink-soft: #626870;
+  --paper: #f4f5f6;
+  --card: #ffffff;
+  --slot: #e2e5e8;
+  --slot-ink: #5e646a;
+  --mark: #e7eaec;
+  --mark-ink: #7b828a;
+  --line: #dfe3e6;
+  --focus: #2f4756;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s09-001 *,
+.well-s09-001 *::before,
+.well-s09-001 *::after { box-sizing: inherit; }
+.well-s09-001 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.well-s09-001 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.well-s09-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(20px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+.well-s09-001 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s09-001 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 17ch;
+}
+.well-s09-001 .head p {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Equipment cards */
+.well-s09-001 .kit {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 1.6vw, 24px);
+}
+.well-s09-001 .kit li { min-width: 0; display: flex; }
+.well-s09-001 .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.well-s09-001 .media {
+  background: var(--slot);
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+.well-s09-001 .slot-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s09-001 .body {
+  flex: 1 1 auto;
+  padding: clamp(16px, 1.8vw, 24px);
+}
+.well-s09-001 h2 {
+  margin: 0 0 7px;
+  font-size: clamp(1.04rem, 1.25vw, 1.24rem);
+  line-height: 1.22;
+  letter-spacing: -0.014em;
+  font-weight: 600;
+}
+.well-s09-001 .body p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.89rem;
+  line-height: 1.52;
+}
+
+/* Reserved partner marks */
+.well-s09-001 .marks {
+  margin-top: clamp(26px, 3.2vw, 44px);
+  padding-top: clamp(20px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
+}
+.well-s09-001 .marks h2 {
+  margin: 0 0 clamp(14px, 1.6vw, 20px);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s09-001 .mark-row {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 18px);
+}
+.well-s09-001 .mark-slot {
+  background: var(--mark);
+  border-radius: 8px;
+  aspect-ratio: 5 / 2;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+.well-s09-001 .mark-slot span {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mark-ink);
+  text-align: center;
+}
+.well-s09-001 .marks p {
+  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  max-width: 56ch;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s09-001 .kit { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s09-001 .mark-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .well-s09-001 .head {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(14px, 2vw, 20px);
+  }
+  .well-s09-001 h1 { max-width: none; }
+  .well-s09-001 .head p { max-width: none; }
+  .well-s09-001 .media { aspect-ratio: 16 / 9; }
+}
+
+@media (max-width: 480px) {
+  .well-s09-001 .kit { grid-template-columns: minmax(0, 1fr); }
+  .well-s09-001 .mark-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s09-001 .card { border-radius: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s09-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s09-001" data-study-id="WELL-S09-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="well-s09-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">What we work with</p>
+        <h1 id="well-s09-001-title">The kit in the room, and how it is kept</h1>
+      </div>
+      <p>Nothing here is unusual. What matters is how it is looked after and how it gets chosen.</p>
+    </div>
+
+    <ul class="kit">
+      <li>
+        <article class="card">
+          <div class="media"><span class="slot-label">Couch</span></div>
+          <div class="body">
+            <h2>The couch</h2>
+            <p>Heated, and set to your height and angle before anything starts.</p>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <div class="media"><span class="slot-label">Steamer</span></div>
+          <div class="body">
+            <h2>The steamer</h2>
+            <p>Used before cleansing, at a temperature you agree to first.</p>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <div class="media"><span class="slot-label">Hand tools</span></div>
+          <div class="body">
+            <h2>Hand tools</h2>
+            <p>Cleaned and sterilised between every guest, without exception.</p>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <div class="media"><span class="slot-label">Warm stones</span></div>
+          <div class="body">
+            <h2>Warm stones</h2>
+            <p>Heated in water and tested on our own wrist before they touch you.</p>
+          </div>
+        </article>
+      </li>
+    </ul>
+
+    <div class="marks">
+      <h2>Ranges we carry</h2>
+      <ul class="mark-row">
+        <li><div class="mark-slot"><span>Mark</span></div></li>
+        <li><div class="mark-slot"><span>Mark</span></div></li>
+        <li><div class="mark-slot"><span>Mark</span></div></li>
+        <li><div class="mark-slot"><span>Mark</span></div></li>
+        <li><div class="mark-slot"><span>Mark</span></div></li>
+      </ul>
+      <p>Cleansers, oils, masks and exfoliants are chosen in the room for the skin in front of us. Any label can be read on request.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

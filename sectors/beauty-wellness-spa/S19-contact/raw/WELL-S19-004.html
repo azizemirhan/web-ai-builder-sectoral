@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S19-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S19 — Contact
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : A three-field message form holding the left of the composition, with a short
+                   column beside it saying what the form does not do and offering the faster route
+                   instead — the reserved telephone number
+  Density        : Medium
+  Media mode     : None.
+  Interaction    : Native form controls only. No JavaScript, no validation script, no success state.
+  It is a message form, not a booking form : Three fields — who you are, how to reach you, what you
+                   want to ask. **No treatment picker, no date, no time.** The moment it acquires
+                   those it has become S06 in the wrong place, and it would also be promising to
+                   hold something it cannot hold.
+  Conversion device : The honest limit is the device again. A conversion-led contact section
+                   normally implies that sending the form starts something; this one says plainly
+                   that **it holds nothing**, and then offers the telephone as the faster route for
+                   anyone who actually wants a time. Sending people away from the form is the
+                   conversion decision, because the wrong channel produces a worse outcome for both
+                   sides.
+  What it avoids : No response-time promise, no live-chat widget, no availability indicator, no
+                   urgency device, no newsletter capture, no consent-to-marketing checkbox
+                   pre-ticked or otherwise.
+  Content note   : No placeholder text inside any field — a placeholder that reads like real data is
+                   invented data. Telephone is a reserved field with a visually hidden label. No
+                   invented number, address, opening hours, response time, staff name or social
+                   handle; no map or embed.
+-->
+
+<meta name="study-id" content="WELL-S19-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S19">
+<meta name="section-name" content="Contact">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Three-field message form beside a column of limits and the faster route">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="native-form-controls">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S19-004 — Contact, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #1c2f3a; }
+
+/* Scoped study styles — namespaced to .well-s19-004 */
+.well-s19-004 {
+  --ink: #eef4f6;
+  --ink-soft: #9fb3bc;
+  --paper: #1c2f3a;
+  --panel: #16262f;
+  --field: #24404d;
+  --field-edge: #3a5765;
+  --slot: transparent;
+  --slot-ink: #cfe2e9;
+  --slot-edge: #3a5765;
+  --line: #33505d;
+  --focus: #cfe2e9;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s19-004 *,
+.well-s19-004 *::before,
+.well-s19-004 *::after { box-sizing: inherit; }
+.well-s19-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s19-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s19-004 .shell {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 92px) clamp(20px, 3.6vw, 52px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(24px, 3.6vw, 68px);
+  align-items: start;
+}
+
+.well-s19-004 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s19-004 h1 {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 16ch;
+}
+.well-s19-004 .lead {
+  margin: 0 0 clamp(22px, 2.8vw, 34px);
+  max-width: 48ch;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* Form */
+.well-s19-004 .form { margin: 0; }
+.well-s19-004 .row { margin-bottom: clamp(14px, 1.8vw, 20px); }
+.well-s19-004 label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s19-004 .hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.86rem;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+.well-s19-004 input,
+.well-s19-004 textarea {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--field-edge);
+  border-radius: 10px;
+  background: var(--field);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.well-s19-004 textarea { min-height: 132px; resize: vertical; }
+.well-s19-004 .send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: clamp(6px, 0.8vw, 10px);
+  padding: 0 28px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+.well-s19-004 .send:hover { background: #ffffff; }
+
+/* Aside */
+.well-s19-004 .aside {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: clamp(20px, 2.6vw, 32px);
+}
+.well-s19-004 .aside h2 {
+  margin: 0 0 clamp(10px, 1.2vw, 13px);
+  font-size: 1.02rem;
+  font-weight: 650;
+}
+.well-s19-004 .aside p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  line-height: 1.64;
+}
+.well-s19-004 .aside .block {
+  padding-top: clamp(16px, 2vw, 22px);
+  margin-top: clamp(16px, 2vw, 22px);
+  border-top: 1px solid var(--line);
+}
+.well-s19-004 .fname {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s19-004 .slot {
+  display: block;
+  border: 1px dashed var(--slot-edge);
+  border-radius: 8px;
+  background: var(--slot);
+  padding: 12px 14px;
+  min-height: 48px;
+  color: var(--slot-ink);
+  font-size: 1.05rem;
+}
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .well-s19-004 .shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(24px, 3vw, 34px);
+  }
+  .well-s19-004 h1,
+  .well-s19-004 .lead { max-width: none; }
+  .well-s19-004 .send { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s19-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s19-004" data-study-id="WELL-S19-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s19-004-title">
+
+    <div>
+      <p class="eyebrow">Getting hold of us</p>
+      <h1 id="well-s19-004-title">Send us the question.</h1>
+      <p class="lead">Three things, and none of them is a treatment menu. Tell us what you are actually wondering about and somebody here will answer it.</p>
+
+      <form class="form">
+        <div class="row">
+          <label for="well-s19-004-name">Your name</label>
+          <input id="well-s19-004-name" name="name" type="text" autocomplete="name">
+        </div>
+        <div class="row">
+          <label for="well-s19-004-reply">How to reach you
+            <span class="hint">A phone number or an email address — whichever you would rather we used.</span>
+          </label>
+          <input id="well-s19-004-reply" name="reply" type="text" autocomplete="email">
+        </div>
+        <div class="row">
+          <label for="well-s19-004-ask">What you want to ask
+            <span class="hint">Say as much or as little as you like. If a particular time matters, put it in here.</span>
+          </label>
+          <textarea id="well-s19-004-ask" name="ask" rows="5"></textarea>
+        </div>
+        <button class="send" type="submit">Send it</button>
+      </form>
+    </div>
+
+    <div class="aside">
+      <h2>This holds nothing</h2>
+      <p>Sending this does not reserve a time, a person or a room. It starts a conversation, and a time is only yours once one of us has answered and you have said yes to it.</p>
+
+      <div class="block">
+        <h2>Want a time rather than an answer?</h2>
+        <p>Then ringing is faster than this form, and you will know where you stand before you hang up.</p>
+        <p class="block">
+          <span class="fname">Telephone</span>
+          <span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span>
+        </p>
+      </div>
+
+      <div class="block">
+        <h2>One thing we will not do here</h2>
+        <p>Tell you in writing whether a treatment is right for you in particular. That is a conversation, and if it is about something changing on your skin it is a question for a doctor.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

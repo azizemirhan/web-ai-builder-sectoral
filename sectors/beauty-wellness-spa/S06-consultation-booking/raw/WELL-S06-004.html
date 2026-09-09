@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S06-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S06 — Consultation Booking
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : A single centred column on a saturated ground — one large invitation, one
+                   field, one action, and a line saying what is deliberately not being asked for
+                   yet
+  Density        : Low — the shortest request in the batch by a wide margin
+  Media mode     : None. Deliberate: any media here would sit between the visitor and the one
+                   field, which is the opposite of what this direction is for.
+  Interaction    : One native text input and one submit. No JavaScript.
+  Direction note : Every study in this section carries a booking route, so this one cannot be
+                   distinguished by having one. It is distinguished by **friction**: it asks for a
+                   single thing and defers the rest to the call, where 001 collects the full
+                   request and 003 makes its stages visible. See ../README.md.
+  Content note   : The form is structure, not collection: no action, no endpoint, no script.
+                   No invented availability, named slot, waiting time, opening hours or diary
+                   state. No price, fee, deposit or treatment duration. **No response-time
+                   guarantee** — this is the study where "we will call you within an hour" would
+                   be the natural conversion line, and it is exactly the promise a placeholder may
+                   not make. The copy says what will be asked, not when it will happen.
+-->
+
+<meta name="study-id" content="WELL-S06-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S06">
+<meta name="section-name" content="Consultation Booking">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Centred single-field request on a saturated ground">
+<meta name="density" content="low">
+<meta name="media-mode" content="none-deliberate">
+<meta name="interaction" content="native-form-controls-no-javascript">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S06-004 — Consultation Booking, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #c96f4f; }
+
+/* Scoped study styles — namespaced to .well-s06-004 */
+.well-s06-004 {
+  --ink: #2b1710;
+  --ink-soft: #58301f;
+  --paper: #c96f4f;
+  --field: #fbf5ef;
+  --field-ink: #2b1710;
+  --accent: #2b1710;
+  --accent-ink: #fbf5ef;
+  --focus: #2b1710;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s06-004 *,
+.well-s06-004 *::before,
+.well-s06-004 *::after { box-sizing: inherit; }
+.well-s06-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.well-s06-004 .shell {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(56px, 7vw, 128px) clamp(20px, 3.6vw, 52px);
+  text-align: center;
+}
+
+.well-s06-004 .eyebrow {
+  margin: 0 0 clamp(14px, 1.6vw, 22px);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s06-004 h1 {
+  margin: 0 auto;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.026em;
+  font-weight: 600;
+  max-width: 14ch;
+}
+.well-s06-004 .lead {
+  margin: clamp(18px, 2.2vw, 28px) auto 0;
+  max-width: 40ch;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.1vw, 1.12rem);
+}
+
+/* The one field */
+.well-s06-004 form {
+  border: 0;
+  margin: clamp(28px, 3.4vw, 44px) auto 0;
+  padding: 0;
+  max-width: 34rem;
+}
+.well-s06-004 label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s06-004 .row {
+  display: flex;
+  gap: 10px;
+}
+.well-s06-004 input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 60px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--field);
+  color: var(--field-ink);
+  font-family: inherit;
+  font-size: 1.02rem;
+}
+.well-s06-004 input::placeholder { color: #9a8073; }
+.well-s06-004 .btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: inherit;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+.well-s06-004 .btn:hover { background: #3d2118; }
+
+.well-s06-004 .after {
+  margin: clamp(20px, 2.4vw, 30px) auto 0;
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.well-s06-004 .alt {
+  margin: clamp(12px, 1.4vw, 18px) auto 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+.well-s06-004 .alt a {
+  color: var(--ink);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+/* Responsive ladder */
+@media (max-width: 768px) {
+  .well-s06-004 h1 { max-width: none; }
+  .well-s06-004 .lead { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s06-004 .row { flex-direction: column; }
+  .well-s06-004 .btn { width: 100%; }
+  .well-s06-004 .after { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s06-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s06-004" data-study-id="WELL-S06-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s06-004-title">
+
+    <p class="eyebrow">Book a consultation</p>
+    <h1 id="well-s06-004-title">Leave a number and we will call you</h1>
+    <p class="lead">One field. That is the whole thing.</p>
+
+    <form aria-labelledby="well-s06-004-title">
+      <label for="well-s06-004-reach">Phone or email</label>
+      <div class="row">
+        <input id="well-s06-004-reach" name="reach" type="text" autocomplete="tel" placeholder="Whichever you prefer">
+        <button class="btn" type="submit">Call me back</button>
+      </div>
+    </form>
+
+    <p class="after">The treatment, the day and the time are all worked out on the call, so there is nothing else to fill in here.</p>
+    <p class="alt">Would you rather write it out? <a href="#well-s06-004-title">Use the full request form</a>.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

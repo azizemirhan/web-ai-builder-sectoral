@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S16-001
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S16 — Locations
+  Direction      : Universal / Safe
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : The two-site case. Two equal location cards, each carrying a reserved map area,
+                   the site token, reserved address and phone fields, and a directions route —
+                   closed by the access line that applies to both
+  Density        : Medium
+  Media mode     : Two reserved map areas, one per site.
+  Interaction    : None (static; no JavaScript)
+  Map note       : **The map is a reserved area, never an embedded frame.** An embedded map is a
+                   remote runtime dependency, which the workspace forbids outright, so no study in
+                   this batch loads one. The slot shows where a map goes and at what size.
+  Reserved-field note : Address and phone are reserved slots with visually hidden field labels, on
+                   the S11 field-versus-figure test — every studio has an address, so the empty
+                   field asserts nothing. The site names are tokens on the `Practitioner NN`
+                   convention from S04.
+  Content note   : **No description of the building anywhere.** Writing what a site looks like or
+                   what it is near invents a property as surely as inventing its address does. No
+                   invented address, street, postcode, city, region, phone number, email, map
+                   coordinate, travel time, distance, transport line, parking claim, access claim
+                   or opening hour. Access needs are handled by asking, which is honest for a
+                   placeholder and better practice than a badge that turns out to be wrong.
+-->
+
+<meta name="study-id" content="WELL-S16-001">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S16">
+<meta name="section-name" content="Locations">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Two equal location cards with reserved map areas and address fields">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-map-area-per-site">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S16-001 — Locations, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f5f2ed; }
+
+/* Scoped study styles — namespaced to .well-s16-001 */
+.well-s16-001 {
+  --ink: #242019;
+  --ink-soft: #6a6357;
+  --paper: #f5f2ed;
+  --card: #ffffff;
+  --slot: #e4dfd5;
+  --slot-ink: #61594c;
+  --chip: #eeeae1;
+  --line: #e6e1d7;
+  --rule: #d4cec1;
+  --focus: #45402f;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s16-001 *,
+.well-s16-001 *::before,
+.well-s16-001 *::after { box-sizing: inherit; }
+.well-s16-001 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s16-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s16-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.well-s16-001 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 56px);
+  align-items: end;
+  margin-bottom: clamp(22px, 2.8vw, 38px);
+}
+.well-s16-001 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s16-001 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 15ch;
+}
+.well-s16-001 .head p {
+  margin: 0;
+  max-width: 42ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Cards */
+.well-s16-001 .sites {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 30px);
+}
+.well-s16-001 .sites li { min-width: 0; display: flex; }
+.well-s16-001 .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.well-s16-001 .map {
+  background: var(--slot);
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.well-s16-001 .map span {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s16-001 .body {
+  flex: 1 1 auto;
+  padding: clamp(18px, 2.2vw, 30px);
+  display: flex;
+  flex-direction: column;
+}
+.well-s16-001 h2 {
+  margin: 0 0 clamp(14px, 1.7vw, 20px);
+  font-size: clamp(1.14rem, 1.4vw, 1.38rem);
+  line-height: 1.2;
+  letter-spacing: -0.016em;
+  font-weight: 600;
+}
+.well-s16-001 .fields { margin: 0; padding: 0; list-style: none; }
+.well-s16-001 .fields li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: baseline;
+  border-top: 1px solid var(--line);
+  padding: clamp(10px, 1.2vw, 14px) 0;
+}
+.well-s16-001 .fname {
+  min-width: clamp(64px, 6vw, 82px);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s16-001 .slot {
+  padding: 2px 10px;
+  border-radius: 5px;
+  background: var(--chip);
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+}
+.well-s16-001 .go {
+  margin-top: auto;
+  padding-top: clamp(16px, 2vw, 24px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+}
+.well-s16-001 .go:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+/* Access line */
+.well-s16-001 .access {
+  margin-top: clamp(22px, 2.6vw, 36px);
+  padding-top: clamp(18px, 2.2vw, 26px);
+  border-top: 1px solid var(--rule);
+  max-width: 76ch;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.62;
+}
+
+/* Responsive ladder */
+@media (max-width: 768px) {
+  .well-s16-001 .head {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(14px, 2vw, 20px);
+  }
+  .well-s16-001 h1 { max-width: none; }
+  .well-s16-001 .head p { max-width: none; }
+  .well-s16-001 .sites { grid-template-columns: minmax(0, 1fr); }
+  .well-s16-001 .map { aspect-ratio: 3 / 2; }
+}
+
+@media (max-width: 480px) {
+  .well-s16-001 .card { border-radius: 13px; }
+  .well-s16-001 .fields li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s16-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s16-001" data-study-id="WELL-S16-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="well-s16-001-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">Where we are</p>
+        <h1 id="well-s16-001-title">Two studios</h1>
+      </div>
+      <p>They run the same way and cost the same. Pick whichever is easier for you to get to.</p>
+    </div>
+
+    <ul class="sites">
+      <li>
+        <article class="card">
+          <div class="map"><span>Map</span></div>
+          <div class="body">
+            <h2>Studio 01</h2>
+            <ul class="fields">
+              <li><span class="fname">Address</span><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></li>
+              <li><span class="fname">Phone</span><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></li>
+            </ul>
+            <a class="go" href="#well-s16-001-title">Directions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="card">
+          <div class="map"><span>Map</span></div>
+          <div class="body">
+            <h2>Studio 02</h2>
+            <ul class="fields">
+              <li><span class="fname">Address</span><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></li>
+              <li><span class="fname">Phone</span><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></li>
+            </ul>
+            <a class="go" href="#well-s16-001-title">Directions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+      </li>
+    </ul>
+
+    <p class="access">Tell us what you need to get in and around comfortably when you book, and we will tell you exactly what the building is like before you travel. We would rather answer that properly than put a symbol on a page and hope it fits.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

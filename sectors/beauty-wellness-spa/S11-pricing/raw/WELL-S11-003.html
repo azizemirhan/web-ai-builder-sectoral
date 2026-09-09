@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S11-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S11 — Pricing
+  Direction      : Structured / Visual Modular
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : Three category panels, each holding rows that carry a treatment name, a reserved
+                   price slot, and beneath a hairline a short line saying what the price covers —
+                   so the section answers "what does that include?" without a second column
+  Density        : Medium-high, carried by the second tier rather than by more rows
+  Media mode     : None. Deliberate, as across this batch.
+  Interaction    : None (static; no JavaScript)
+  Anti-pattern   : A per-row "what's included" column plus a price column plus a duration column is
+                   a rate matrix, which ../WELLNESS-DESIGN-DIRECTION.md rules out. This study
+                   stacks the second tier **under** the row rather than beside it, carries no
+                   duration column at all, and keeps one figure per row. A price list is a list; a
+                   rate matrix is paperwork.
+  Reserved-price note : The price is reserved, not omitted — an em dash at the size the real figure
+                   will occupy, with a visually hidden "Price" label and no currency symbol.
+  Content note   : No invented price, figure, range, currency symbol, deposit, fee, tax statement,
+                   package value, saving, discount or "was/now" pair; no duration or session count;
+                   no popularity or value badge. The inclusion lines describe what happens in the
+                   room, following the S02 procedural rule, never what a treatment achieves.
+-->
+
+<meta name="study-id" content="WELL-S11-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S11">
+<meta name="section-name" content="Pricing">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Three category panels of two-tier price rows">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="none-deliberate">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S11-003 — Pricing, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e3ebe6; }
+
+/* Scoped study styles — namespaced to .well-s11-003 */
+.well-s11-003 {
+  --ink: #1f2723;
+  --ink-soft: #5c6963;
+  --paper: #e3ebe6;
+  --card: #ffffff;
+  --chip: #e9efeb;
+  --chip-ink: #4f5c56;
+  --line: #e6ece9;
+  --label: #bccbc3;
+  --focus: #2f4a3c;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s11-003 *,
+.well-s11-003 *::before,
+.well-s11-003 *::after { box-sizing: inherit; }
+.well-s11-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s11-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s11-003 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.well-s11-003 .head {
+  max-width: 46rem;
+  margin-bottom: clamp(24px, 3vw, 42px);
+}
+.well-s11-003 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s11-003 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 18ch;
+}
+.well-s11-003 .head p {
+  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  max-width: 50ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Panels */
+.well-s11-003 .panels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 26px);
+  align-items: start;
+}
+.well-s11-003 .panel {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 16px;
+  padding: clamp(18px, 2.1vw, 28px);
+}
+.well-s11-003 h2 {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  padding-bottom: clamp(10px, 1.2vw, 14px);
+  border-bottom: 1px solid var(--label);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s11-003 .panel ul { margin: 0; padding: 0; list-style: none; }
+.well-s11-003 .row {
+  border-top: 1px solid var(--line);
+  padding: clamp(13px, 1.5vw, 18px) 0;
+}
+.well-s11-003 .panel ul li:first-child .row { border-top: 0; padding-top: 0; }
+
+.well-s11-003 .top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: clamp(10px, 1.4vw, 18px);
+}
+.well-s11-003 h3 {
+  margin: 0;
+  font-size: clamp(0.98rem, 1.12vw, 1.1rem);
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+.well-s11-003 .price {
+  justify-self: end;
+  min-width: clamp(52px, 4.6vw, 64px);
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--chip);
+  color: var(--chip-ink);
+  font-size: 0.98rem;
+  text-align: center;
+}
+.well-s11-003 .covers {
+  margin: clamp(9px, 1.1vw, 12px) 0 0;
+  padding-top: clamp(9px, 1.1vw, 12px);
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+/* Policy */
+.well-s11-003 .policy {
+  margin-top: clamp(20px, 2.4vw, 32px);
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  max-width: 74ch;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s11-003 .panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s11-003 .panel--last { grid-column: 1 / -1; }
+  .well-s11-003 h1 { max-width: none; }
+}
+
+@media (max-width: 768px) {
+  .well-s11-003 .panels { grid-template-columns: minmax(0, 1fr); }
+  .well-s11-003 .panel--last { grid-column: auto; }
+  .well-s11-003 .head p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s11-003 .panel { border-radius: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s11-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s11-003" data-study-id="WELL-S11-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="well-s11-003-title">
+
+    <div class="head">
+      <p class="eyebrow">What things cost</p>
+      <h1 id="well-s11-003-title">Every price, and what it covers</h1>
+      <p>Sorted by kind, with a line under each saying what happens for that price. There is no separate consultation charge.</p>
+    </div>
+
+    <div class="panels">
+
+      <section class="panel">
+        <h2>Facials</h2>
+        <ul>
+          <li><div class="row">
+            <div class="top"><h3>Deep cleansing facial</h3><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+            <p class="covers">Cleansing, steam, extraction and a slow massage through the face and neck.</p>
+          </div></li>
+          <li><div class="row">
+            <div class="top"><h3>Hydrating facial</h3><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+            <p class="covers">Cleansing, a mask mixed in the room, and a face and neck massage.</p>
+          </div></li>
+          <li><div class="row">
+            <div class="top"><h3>Scalp &amp; neck ritual</h3><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+            <p class="covers">Work through the scalp, neck and shoulders while you stay seated.</p>
+          </div></li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Body &amp; massage</h2>
+        <ul>
+          <li><div class="row">
+            <div class="top"><h3>Hot stone massage</h3><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+            <p class="covers">Warm stones worked slowly across the back, shoulders and legs.</p>
+          </div></li>
+          <li><div class="row">
+            <div class="top"><h3>Aromatherapy massage</h3><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+            <p class="covers">Oils chosen with you, then long slow strokes from start to finish.</p>
+          </div></li>
+          <li><div class="row">
+            <div class="top"><h3>Body scrub &amp; wrap</h3><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+            <p class="covers">A salt scrub, a wrap, and quiet time before you get up.</p>
+          </div></li>
+        </ul>
+      </section>
+
+      <section class="panel panel--last">
+        <h2>Hands, feet &amp; brows</h2>
+        <ul>
+          <li><div class="row">
+            <div class="top"><h3>Hands &amp; feet care</h3><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+            <p class="covers">Soak, shape, and a hand and foot massage to close.</p>
+          </div></li>
+          <li><div class="row">
+            <div class="top"><h3>Brow shaping</h3><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+            <p class="covers">Shaping around the brow, with the line agreed before we start.</p>
+          </div></li>
+        </ul>
+      </section>
+
+    </div>
+
+    <p class="policy">The price shown is the price paid, nothing is added at the desk, and if a treatment runs shorter than planned you pay for the shorter one.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

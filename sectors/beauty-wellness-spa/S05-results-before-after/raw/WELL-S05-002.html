@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S05-002
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S05 — Results / Before & After
+  Direction      : Premium / Editorial
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : One case given a full editorial spread — a serif header, a single large
+                   diptych of two tall frames meeting at a hairline seam, and a caption row
+                   beneath the fold line carrying the treatment name opposite one procedural
+                   sentence
+  Density        : Low — one case rather than several, at the largest scale in the batch
+  Media mode     : Two reserved media areas forming one diptych. No image is supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Structure is authored; evidence is reserved. No fabricated comparison, outcome
+                   statement, efficacy word, percentage, session count, time-to-result,
+                   identifiable client or rating. "Before" and "After" are slot labels naming the
+                   two positions in a comparison. The caption sentence describes how the pair is
+                   photographed, which is procedural and non-fabricated; it says nothing about
+                   what the treatment achieved. A deliberate choice for this direction: the
+                   editorial register invites a caption that interprets the image, and that is
+                   exactly what this role may not do, so the caption stays on method.
+-->
+
+<meta name="study-id" content="WELL-S05-002">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S05">
+<meta name="section-name" content="Results Before After">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Single large editorial diptych with a hairline seam and a caption row beneath">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-single-large-diptych">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S05-002 — Results Before After, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e9ece3; }
+
+/* Scoped study styles — namespaced to .well-s05-002 */
+.well-s05-002 {
+  --ink: #21261f;
+  --ink-soft: #626a5e;
+  --paper: #e9ece3;
+  --slot: #d3d9cb;
+  --slot-ink: #5a6155;
+  --seam: #e9ece3;
+  --line: #cdd4c5;
+  --focus: #3f4a37;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s05-002 *,
+.well-s05-002 *::before,
+.well-s05-002 *::after { box-sizing: inherit; }
+.well-s05-002 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.well-s05-002 .shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(48px, 5.6vw, 104px) clamp(20px, 3.6vw, 56px);
+}
+
+/* Header */
+.well-s05-002 .eyebrow {
+  margin: 0 0 clamp(14px, 1.6vw, 20px);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s05-002 h1 {
+  margin: 0 0 clamp(30px, 3.6vw, 56px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.014em;
+  font-weight: 400;
+  max-width: 14ch;
+}
+
+/* The diptych */
+.well-s05-002 .diptych {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(6px, 0.8vw, 12px);
+}
+.well-s05-002 .frame {
+  position: relative;
+  background: var(--slot);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.well-s05-002 .slot-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s05-002 .tag {
+  position: absolute;
+  top: clamp(12px, 1.4vw, 20px);
+  left: clamp(12px, 1.4vw, 20px);
+  color: var(--slot-ink);
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Caption row */
+.well-s05-002 .cap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 56px);
+  align-items: baseline;
+  margin-top: clamp(22px, 2.6vw, 34px);
+  padding-top: clamp(20px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
+}
+.well-s05-002 .cat {
+  margin: 0 0 6px;
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.well-s05-002 h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  line-height: 1.14;
+  letter-spacing: -0.012em;
+  font-weight: 400;
+}
+.well-s05-002 .method {
+  margin: 0;
+  max-width: 40ch;
+  color: var(--ink-soft);
+  font-size: clamp(0.96rem, 1.02vw, 1.04rem);
+  line-height: 1.6;
+}
+.well-s05-002 .textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: clamp(16px, 1.8vw, 22px);
+  min-height: 44px;
+  color: var(--ink);
+  font-size: 0.93rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+.well-s05-002 .textlink:hover { text-decoration-thickness: 2px; }
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s05-002 .frame { aspect-ratio: 3 / 4; }
+}
+
+@media (max-width: 768px) {
+  .well-s05-002 .cap {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(14px, 2vw, 20px);
+  }
+  .well-s05-002 .method { max-width: none; }
+  .well-s05-002 h1 { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  /* the pair stays a pair — it is never stacked, because two frames
+     above one another stop reading as one comparison */
+  .well-s05-002 .diptych { gap: 5px; }
+  .well-s05-002 .frame { aspect-ratio: 3 / 4; padding: 12px; }
+  .well-s05-002 .tag { font-size: 0.56rem; letter-spacing: 0.14em; }
+  .well-s05-002 .slot-label { font-size: 0.56rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s05-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s05-002" data-study-id="WELL-S05-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="well-s05-002-title">
+
+    <p class="eyebrow">Before and after</p>
+    <h1 id="well-s05-002-title">One treatment, two frames</h1>
+
+    <div class="diptych">
+      <div class="frame">
+        <span class="tag">Before</span>
+        <span class="slot-label">Reserved</span>
+      </div>
+      <div class="frame">
+        <span class="tag">After</span>
+        <span class="slot-label">Reserved</span>
+      </div>
+    </div>
+
+    <div class="cap">
+      <div>
+        <p class="cat">Facials</p>
+        <h2>Deep cleansing facial</h2>
+      </div>
+      <div>
+        <p class="method">Both frames are taken in the same room, in the same daylight, at the same distance and with the same lens, so that nothing in the pair changes except the subject.</p>
+        <a class="textlink" href="#well-s05-002-title">
+          Ask what this would mean for you
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

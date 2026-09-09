@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S24-002
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S24 — Programme / Case Study Detail
+  Direction      : Premium / Editorial
+  Revision       : V2. Replaced. The account ran as a single narrow column against the left edge with
+                   the reserved areas dropped into the middle of it, so the page was **unbalanced and
+                   the record &mdash; who, when, reference &mdash; had nowhere to live.**
+  Layout model   : An editorial spread. Four numbered decisions in the main column, and a record
+                   column beside them holding the reserved token, the reserved fields, the reserved
+                   plan and the statement about what is missing
+  Density        : Medium
+  Media mode     : One reserved area, the plan as it was rewritten. No faces, no before-and-after.
+  Interaction    : None (static; no JavaScript).
+  The head       : **No hero panel.** The page opens as a case report opens &mdash; a label, the
+                   subject line, and the record beside it &mdash; because the first thing a reader
+                   needs is to know what kind of document this is.
+  The constraint : The page cannot document a result, so it documents a method: **how a programme is
+                   agreed, run, changed and stopped.** The absence of a result is stated rather than
+                   left to be noticed.
+  Content note   : The person is a reserved token. Their words, the dates and the reference are
+                   reserved. No result, no improvement, no before-and-after, no visit count, no
+                   duration, no price, no satisfaction figure.
+  Palette        : Black and white only.
+-->
+
+<meta name="study-id" content="WELL-S24-002">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S24">
+<meta name="section-name" content="Programme / Case Study Detail">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Four decisions in the main column, a record column beside them">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-media-single-plan">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S24-002 — Programme Detail, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fafafa; }
+
+/* Scoped study styles - namespaced to .well-s24-002 */
+/* monochrome: hand-graded. Black and white only. */
+.well-s24-002 {
+  --ink: #111111;
+  --ink-soft: #4d4d4d;
+  --ink-faint: #767676;
+  --paper: #fafafa;
+  --card: #ffffff;
+  --tint: #ececec;
+  --line: #d6d6d6;
+  --line-soft: #e6e6e6;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.06rem;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s24-002 *,
+.well-s24-002 *::before,
+.well-s24-002 *::after { box-sizing: inherit; }
+.well-s24-002 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
+.well-s24-002 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.well-s24-002 .sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.well-s24-002 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.well-s24-002 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr);
+  gap: clamp(20px, 3vw, 56px);
+  align-items: end;
+  padding-bottom: clamp(18px, 2.2vw, 26px);
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: clamp(5px, 0.7vw, 8px);
+}
+.well-s24-002 .kicker {
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.well-s24-002 h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 4.2vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+  max-width: 20ch;
+}
+.well-s24-002 .head p { margin: 0; max-width: 40ch; font-size: 1.04rem; line-height: 1.6; color: var(--ink-soft); }
+.well-s24-002 .head p b { color: var(--ink); font-weight: 700; }
+.well-s24-002 .rule2 { height: 3px; background: var(--ink); margin-bottom: clamp(22px, 2.8vw, 38px); }
+
+/* Spread */
+.well-s24-002 .spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: clamp(20px, 3vw, 54px);
+  align-items: start;
+}
+.well-s24-002 .decisions { margin: 0; padding: 0; list-style: none; }
+.well-s24-002 .decisions > li {
+  padding: clamp(18px, 2.2vw, 28px) 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+.well-s24-002 .decisions > li:first-child { padding-top: 0; }
+.well-s24-002 .decisions > li:last-child { border-bottom: 0; }
+.well-s24-002 .n {
+  display: block;
+  margin-bottom: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s24-002 .decisions h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.3rem, 1.9vw, 1.72rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+}
+.well-s24-002 .decisions p { margin: 0 0 10px; max-width: 62ch; font-size: 1.04rem; line-height: 1.64; color: var(--ink-soft); }
+.well-s24-002 .decisions p:last-child { margin-bottom: 0; }
+.well-s24-002 .decisions p b { color: var(--ink); font-weight: 700; }
+
+/* Record column */
+.well-s24-002 .record { display: grid; gap: clamp(14px, 1.8vw, 22px); }
+.well-s24-002 .card {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 26px;
+  padding: clamp(18px, 2.2vw, 28px);
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.06);
+}
+.well-s24-002 .card h3 {
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s24-002 .fields { margin: 0; display: grid; gap: 10px; }
+.well-s24-002 .fields.spaced { margin-top: clamp(13px, 1.6vw, 17px); }
+.well-s24-002 .fields > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.well-s24-002 .fields > div:last-child { border-bottom: 0; padding-bottom: 0; }
+.well-s24-002 .fields dt {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s24-002 .fields dd { margin: 0; }
+.well-s24-002 .slot {
+  display: inline-block;
+  min-width: 78px;
+  padding: 6px 15px;
+  border-radius: 10px;
+  background: var(--tint);
+  color: var(--ink-faint);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+}
+.well-s24-002 .token {
+  display: inline-block;
+  padding: 6px 15px;
+  border-radius: 999px;
+  background: #111111;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.well-s24-002 .said {
+  margin-top: clamp(13px, 1.6vw, 17px);
+  border: 1px dashed #b4b4b4;
+  border-radius: 16px;
+  background: #f2f2f2;
+  padding: clamp(16px, 2vw, 24px);
+  text-align: center;
+}
+.well-s24-002 .said span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.well-s24-002 .plate {
+  aspect-ratio: 4 / 3;
+  border: 1px dashed #b4b4b4;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #e4e4e4 0%, #f6f6f6 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(14px, 1.7vw, 20px);
+}
+.well-s24-002 .plate span {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.well-s24-002 .missing {
+  background: #111111;
+  color: #c4c4c4;
+  border-radius: 26px;
+  padding: clamp(18px, 2.2vw, 28px);
+}
+.well-s24-002 .missing h3 { color: #a8a8a8; }
+.well-s24-002 .missing p { margin: 0; font-size: 1rem; line-height: 1.58; }
+.well-s24-002 .missing p b { color: #ffffff; font-weight: 700; }
+
+/* Responsive ladder */
+@media (max-width: 980px) {
+  .well-s24-002 .head,
+  .well-s24-002 .spread { grid-template-columns: minmax(0, 1fr); }
+  .well-s24-002 .head { align-items: start; }
+}
+
+@media (max-width: 620px) {
+  .well-s24-002 h1, .well-s24-002 .head p, .well-s24-002 .decisions p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s24-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s24-002" data-study-id="WELL-S24-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="well-s24-002-title">
+
+    <div class="head">
+      <div>
+        <p class="kicker">One programme, anonymised</p>
+        <h1 id="well-s24-002-title">Written as a plan, not sold as a package.</h1>
+      </div>
+      <p>Four decisions, in the order they were taken. <b>None of them is about a result</b> &mdash; they are about how the work was agreed, run, changed and stopped.</p>
+    </div>
+    <div class="rule2"></div>
+
+    <div class="spread">
+
+      <ol class="decisions">
+        <li>
+          <span class="n">Decision one</span>
+          <h2>It was written as a plan rather than sold as a course.</h2>
+          <p>Somebody came in for something that was going to take more than one visit. <b>The obvious thing to sell at that point is a course, paid for at the start</b>, which is good for us and bad for them: it commits somebody to a number before anybody knows what the number is.</p>
+          <p>So it was written as a plan instead &mdash; a piece of paper saying what we think will happen and what we will do first. <b>It has no invoice attached to it</b>, and it can be abandoned after the first visit without anybody being out of pocket.</p>
+        </li>
+        <li>
+          <span class="n">Decision two</span>
+          <h2>The same person did all of it.</h2>
+          <p>Continuity is not a luxury in this work, it is most of the information. Someone who saw a face last month can see what has changed; <b>someone reading a note about it cannot.</b></p>
+          <p>So the plan was written around one practitioner's diary rather than around the next available slot, which made it <b>slower to start and better afterwards.</b></p>
+        </li>
+        <li>
+          <span class="n">Decision three</span>
+          <h2>It changed partway through, in the room.</h2>
+          <p>The plan we wrote is not the plan that was followed. It rarely is. Something in it was not doing what we expected, so it was rewritten <b>in front of the guest, on the same piece of paper, with the old version crossed out rather than replaced quietly.</b></p>
+          <p>Rewriting a plan in the room is uncomfortable and it is the honest version. <b>A plan that never changes is either lucky or is not being looked at.</b></p>
+        </li>
+        <li>
+          <span class="n">Decision four</span>
+          <h2>It stopped, and stopping was allowed.</h2>
+          <p>A review said there was no reason to keep going, and <b>stopping was one of the things the review was allowed to conclude.</b></p>
+          <p>That is the part we would most like people to read: <b>a programme that ends is not a programme that failed</b>, and one that never ends is usually being sold rather than run.</p>
+        </li>
+      </ol>
+
+      <div class="record">
+
+        <div class="card">
+          <h3>The record</h3>
+          <span class="token">Guest 01</span>
+          <div class="said">
+            <span>Reserved &mdash; what they came in for, in their words</span>
+          </div>
+          <dl class="fields spaced">
+            <div><dt>Started</dt><dd><span class="slot"><span class="vh">Start date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+            <div><dt>Reviewed</dt><dd><span class="slot"><span class="vh">Review date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+            <div><dt>Reference</dt><dd><span class="slot"><span class="vh">Reference</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          </dl>
+        </div>
+
+        <div class="plate"><span>Reserved &mdash; the plan, rewritten. No names, no faces</span></div>
+
+        <div class="missing">
+          <h3>What is not in this account</h3>
+          <p><b>You will notice there is no result here.</b> That is not modesty and it is not an omission &mdash; results imagery and outcome claims are regulated in this sector, and we would not print somebody's face in any case. What a page like this can honestly show is how the work is decided, so that is what it shows.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

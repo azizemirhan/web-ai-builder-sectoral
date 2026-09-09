@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S22-005
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S22 — Breadcrumb / Context Navigation
+  Direction      : Sector-native / Distinctive
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : The trail written as **a sentence** on a soft sage band — the levels are links
+                   inside plain English rather than words in a chain
+  Density        : Very low
+  Media mode     : None.
+  Interaction    : Links only (static; no JavaScript)
+  Content responsibility : The trail as prose. Same three levels as `001`, said rather than listed.
+  Why this is sector-native : Wellness sites speak in sentences. A chevron chain is interface
+                   grammar borrowed from software, and in a register built on calm it reads as
+                   machinery. Saying where somebody is in the words a receptionist would use is the
+                   version of this role that belongs to **this** sector rather than to any sector.
+  The device, and it is the interesting part : The markup is still **an ordered list of levels**,
+                   root first. The connective words — *Under*, *inside*, *you are on* — are separate
+                   spans marked `aria-hidden`, so a screen reader hears a clean three-level trail
+                   while a sighted reader gets a sentence. **Neither audience is served the other
+                   one's version.** The alternative, a paragraph with links in it, would have looked
+                   the same and lost the list semantics entirely.
+  Real navigation, not a picture of it : Named <nav> landmark, ordered list, real links for the two
+                   usable levels, `aria-current="page"` on the current one.
+  Responsive note: It is prose, so it reflows. Nothing truncates and nothing scrolls.
+  Content note   : Every level is vocabulary established in S02 and S03. No count, price, rating or
+                   duration; no primary menu; no search field.
+-->
+
+<meta name="study-id" content="WELL-S22-005">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="005">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="direction" content="Sector-native / Distinctive">
+<meta name="layout-model" content="Trail written as a sentence, list semantics kept underneath">
+<meta name="density" content="very-low">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="links-only">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S22-005 — Breadcrumb / Context Navigation, Sector-native / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #c6cdc4; }
+
+/* Scoped study styles — namespaced to .well-s22-005 */
+.well-s22-005 {
+  --ink: #232a22;
+  --ink-soft: #4f5a4d;
+  --paper: #c6cdc4;
+  --focus: #2f3a2d;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s22-005 *,
+.well-s22-005 *::before,
+.well-s22-005 *::after { box-sizing: inherit; }
+.well-s22-005 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.well-s22-005 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.well-s22-005 .shell {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: clamp(22px, 2.6vw, 40px) clamp(20px, 3.6vw, 56px);
+}
+
+/* The sentence */
+.well-s22-005 .said {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 48ch;
+  font-size: clamp(1.02rem, 1.4vw, 1.24rem);
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.well-s22-005 .said li { display: inline; }
+.well-s22-005 .say { color: var(--ink-soft); }
+.well-s22-005 .said a {
+  display: inline;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1px;
+}
+.well-s22-005 .said a:hover { border-bottom-color: transparent; }
+.well-s22-005 .here { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder — prose reflows */
+@media (max-width: 600px) {
+  .well-s22-005 .said { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s22-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s22-005" data-study-id="WELL-S22-005" data-direction="Sector-native / Distinctive">
+  <section class="shell" aria-labelledby="well-s22-005-title">
+
+    <h1 class="vh" id="well-s22-005-title">Where you are</h1>
+
+    <nav aria-label="Breadcrumb">
+      <ol class="said">
+        <li><span class="say" aria-hidden="true">Under </span><a href="#well-s22-005-title">Treatments</a><span class="say" aria-hidden="true">,</span></li>
+        <li><span class="say" aria-hidden="true">inside </span><a href="#well-s22-005-title">Facials</a><span class="say" aria-hidden="true">,</span></li>
+        <li><span class="say" aria-hidden="true">you are looking at the </span><span class="here" aria-current="page">Deep cleansing facial</span><span class="say" aria-hidden="true">.</span></li>
+      </ol>
+    </nav>
+
+  </section>
+</div>
+
+</body>
+</html>

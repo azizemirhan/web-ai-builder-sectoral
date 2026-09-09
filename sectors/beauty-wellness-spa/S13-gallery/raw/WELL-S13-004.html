@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S13-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S13 — Gallery
+  Direction      : Conversion-led
+  Revision       : V2. Replaced. One dominant picture with three static supporting ones became a
+                   **slider with a rail of views under it**, and the invitation moved alongside the
+                   picture rather than under the fold.
+  Layout model   : A four-slide scroll-snap rail at full width, and the invitation set beside it: the
+                   gallery makes its case and then says the honest thing about galleries
+  Density        : Low
+  Media mode     : Four reserved areas at one wide proportion.
+  Interaction    : **Scroll-snap, in CSS**, plus the batch's anchors, which route in-page.
+  The argument   : Pictures only go so far. **The conversion here is not a booking &mdash; it is a
+                   look round with nothing attached to it**, which is the honest ask for a section
+                   whose subject is a room.
+  Content note   : The place, not results. Nothing staged. Consent stated where a person could
+                   appear.
+  Palette        : Black and white only.
+-->
+
+<meta name="study-id" content="WELL-S13-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S13">
+<meta name="section-name" content="Gallery">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="A four-slide rail with the invitation beside it">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-four-slides">
+<meta name="interaction" content="css-scroll-snap-and-in-page-anchors">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S13-004 — Gallery, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dfdfdf; }
+
+/* Scoped study styles - namespaced to .well-s13-004 */
+/* monochrome: hand-graded. Black and white only. */
+.well-s13-004 {
+  --ink: #111111;
+  --ink-soft: #4d4d4d;
+  --ink-faint: #6c6c6c;
+  --paper: #dfdfdf;
+  --card: #ffffff;
+  --line: #c4c4c4;
+  --line-soft: #d6d6d6;
+
+  box-sizing: border-box;
+  display: block;
+  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 34%);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s13-004 *,
+.well-s13-004 *::before,
+.well-s13-004 *::after { box-sizing: inherit; }
+.well-s13-004 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 10px; }
+.well-s13-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s13-004 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Head */
+.well-s13-004 .head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(18px, 3vw, 56px);
+  align-items: end;
+  padding: clamp(30px, 4vw, 60px);
+  border-radius: 34px;
+  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
+  color: #ffffff;
+  box-shadow: 0 22px 50px rgba(17, 17, 17, 0.2);
+  margin-bottom: clamp(22px, 2.8vw, 40px);
+}
+.well-s13-004 .eyebrow {
+  display: inline-block;
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+.well-s13-004 h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 4.6vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: #ffffff;
+  max-width: 15ch;
+}
+.well-s13-004 .head p { margin: 0; max-width: 42ch; font-size: 1.04rem; line-height: 1.62; color: #d2d2d2; }
+.well-s13-004 .head p b { color: #ffffff; font-weight: 650; }
+
+/* Rail and ask */
+.well-s13-004 .body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.55fr);
+  gap: clamp(18px, 2.4vw, 36px);
+  align-items: start;
+  margin-bottom: clamp(20px, 2.4vw, 32px);
+}
+.well-s13-004 .hint {
+  margin: 0 0 clamp(10px, 1.3vw, 14px);
+  font-size: 0.76rem;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s13-004 .rail {
+  display: flex;
+  gap: clamp(14px, 1.8vw, 24px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 14px;
+}
+.well-s13-004 .rail > figure {
+  flex: 0 0 100%;
+  margin: 0;
+  scroll-snap-align: center;
+}
+.well-s13-004 .shot {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed #a8a8a8;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #d2d2d2 0%, #ededed 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(14px, 1.7vw, 20px);
+  margin-bottom: 11px;
+}
+.well-s13-004 .shot span {
+  font-size: 0.72rem;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.well-s13-004 figcaption { font-size: 1.02rem; line-height: 1.4; font-weight: 650; }
+.well-s13-004 figcaption b { display: block; font-weight: 400; font-size: 0.95rem; color: var(--ink-faint); }
+
+.well-s13-004 .ask {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 30px;
+  padding: clamp(20px, 2.4vw, 34px);
+  box-shadow: 0 22px 50px rgba(17, 17, 17, 0.08);
+}
+.well-s13-004 .ask h2 {
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
+  font-size: clamp(1.4rem, 1.9vw, 1.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.well-s13-004 .ask p { margin: 0 0 clamp(16px, 2vw, 22px); font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.well-s13-004 .ask p b { color: var(--ink); font-weight: 650; }
+.well-s13-004 .btn {
+  display: inline-block;
+  padding: 15px 28px;
+  border-radius: 999px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.well-s13-004 .btn:hover { background: #333333; }
+.well-s13-004 .second { margin: clamp(14px, 1.8vw, 18px) 0 0; font-size: 0.95rem; color: var(--ink-faint); }
+.well-s13-004 .second a { color: var(--ink); font-weight: 650; }
+
+/* Foot */
+.well-s13-004 .foot {
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 2px solid var(--ink);
+  max-width: 86ch;
+  font-size: 1rem;
+  line-height: 1.58;
+  color: var(--ink-soft);
+}
+.well-s13-004 .foot b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 1000px) {
+  .well-s13-004 .head,
+  .well-s13-004 .body { grid-template-columns: minmax(0, 1fr); }
+  .well-s13-004 .head { align-items: start; }
+}
+
+@media (max-width: 620px) {
+  .well-s13-004 h1, .well-s13-004 .head p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s13-004 * { transition: none !important; }
+  .well-s13-004 .rail { scroll-behavior: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s13-004" data-study-id="WELL-S13-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s13-004-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow">The place</p>
+        <h1 id="well-s13-004-title">The room you would be in. Come and stand in it.</h1>
+      </div>
+      <p>Four views, one at a time. <b>Pictures only go so far</b> &mdash; if you are deciding whether this is somewhere you want to lie down for an hour, the room itself settles it faster than a gallery can.</p>
+    </div>
+
+    <div class="body">
+
+      <div>
+        <p class="hint">Four views &mdash; scroll sideways</p>
+        <div class="rail" tabindex="0" role="group" aria-label="Four views of the studio, scrollable">
+          <figure>
+            <div class="shot"><span>Reserved &mdash; the treatment room</span></div>
+            <figcaption>The room you would be in<b>Photographed empty, with nothing moved.</b></figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><span>Reserved &mdash; reception</span></div>
+            <figcaption>Reception<b>Where you wait.</b></figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><span>Reserved &mdash; where you come round after</span></div>
+            <figcaption>Where you come round after<b>The part of the visit nobody photographs.</b></figcaption>
+          </figure>
+          <figure>
+            <div class="shot"><span>Reserved &mdash; the corridor between them</span></div>
+            <figcaption>The corridor<b>Short, and quieter than the street.</b></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="ask">
+        <h2>Come and look round</h2>
+        <p><b>No appointment, no obligation, no treatment involved.</b> Somebody shows you the room, answers what you ask, and you leave having booked nothing at all.</p>
+        <a class="btn" href="#well-s13-004-title">Arrange a look round</a>
+        <p class="second">Already decided? <a href="#well-s13-004-title">Book a treatment instead</a>.</p>
+      </div>
+
+    </div>
+
+    <p class="foot"><b>Nothing here is staged for the camera and nothing is a treatment result.</b> Before-and-after photography is kept in its own section and is only ever published with the guest's written permission.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

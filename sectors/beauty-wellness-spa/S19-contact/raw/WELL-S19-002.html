@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S19-002
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S19 — Contact
+  Direction      : Premium / Editorial
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : A short serif proposition holding the left half, with the reserved details set on
+                   the right as a colophon — small caps labels, hairline rules, nothing else
+  Density        : Low — the lowest word count in the batch
+  Media mode     : None.
+  Interaction    : None (static; no JavaScript)
+  The editorial reading : A contact section is normally a utility block. Treated editorially it is
+                   **the endmatter of a printed programme** — the details set precisely, small, at
+                   the foot of a page whose argument has already been made. So the study spends its
+                   scale on one sentence and lets the reserved fields stay quiet, which is also the
+                   honest hierarchy: the sentence is real and the details are not written yet.
+  Content note   : Telephone and email are reserved fields with visually hidden labels. No street
+                   address here — the set of locations is S16, and an editorial colophon that listed
+                   one would read as a headquarters. No invented number, address, opening hours,
+                   response time, staff name or social handle; no map, embed or chat widget.
+-->
+
+<meta name="study-id" content="WELL-S19-002">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S19">
+<meta name="section-name" content="Contact">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Serif proposition beside a colophon of reserved details">
+<meta name="density" content="low">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S19-002 — Contact, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f3efe6; }
+
+/* Scoped study styles — namespaced to .well-s19-002 */
+.well-s19-002 {
+  --ink: #262114;
+  --ink-soft: #6c634e;
+  --paper: #f3efe6;
+  --slot: #eae4d6;
+  --slot-ink: #675e49;
+  --slot-edge: #d5cbb6;
+  --line: #ddd4c0;
+  --focus: #4c4229;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s19-002 *,
+.well-s19-002 *::before,
+.well-s19-002 *::after { box-sizing: inherit; }
+.well-s19-002 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+.well-s19-002 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s19-002 .shell {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(52px, 6vw, 116px) clamp(20px, 3.6vw, 56px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(28px, 4.4vw, 92px);
+  align-items: start;
+}
+
+.well-s19-002 .eyebrow {
+  margin: 0 0 clamp(16px, 1.8vw, 24px);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s19-002 h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.9rem, 3.8vw, 3.15rem);
+  line-height: 1.08;
+  letter-spacing: -0.014em;
+  font-weight: 400;
+  max-width: 16ch;
+}
+.well-s19-002 .said {
+  margin: clamp(20px, 2.4vw, 30px) 0 0;
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
+  line-height: 1.66;
+}
+
+/* Colophon */
+.well-s19-002 .colophon { min-width: 0; }
+.well-s19-002 .colophon dl { margin: 0; }
+.well-s19-002 .colophon dt {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+  padding-top: clamp(15px, 1.8vw, 20px);
+  border-top: 1px solid var(--line);
+}
+.well-s19-002 .colophon dd {
+  margin: clamp(9px, 1.1vw, 12px) 0 clamp(17px, 2.1vw, 24px);
+}
+.well-s19-002 .slot {
+  display: block;
+  border-bottom: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  padding: 10px 12px;
+  min-height: 44px;
+  color: var(--slot-ink);
+  font-size: 1.02rem;
+}
+.well-s19-002 .colophon .note {
+  margin: 0;
+  padding-top: clamp(15px, 1.8vw, 20px);
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.62;
+}
+.well-s19-002 .colophon .note b { color: var(--ink); }
+
+/* Responsive ladder */
+@media (max-width: 860px) {
+  .well-s19-002 .shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 44px);
+  }
+  .well-s19-002 h1,
+  .well-s19-002 .said { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s19-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s19-002" data-study-id="WELL-S19-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="well-s19-002-title">
+
+    <div>
+      <p class="eyebrow">Getting hold of us</p>
+      <h1 id="well-s19-002-title">If you are unsure, speak to somebody before you book.</h1>
+      <p class="said">It is the shortest route to the right answer, and it is free. Nobody here is paid to talk you into anything, so the worst that happens is we say it is not for you.</p>
+    </div>
+
+    <div class="colophon">
+      <dl>
+        <dt>Telephone</dt>
+        <dd><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></dd>
+        <dt>Email</dt>
+        <dd><span class="slot"><span class="vh">Email address</span><span aria-hidden="true">&mdash;</span></span></dd>
+      </dl>
+      <p class="note"><b>Writing in does not hold anything.</b> A time is only yours once one of us has answered and you have said yes.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

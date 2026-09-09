@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S26-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S26 — Practitioner / Specialist Profile
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : The paired identity beside one panel that does the whole job — ask for them by
+                   name, what that gets you, and the honest line about when somebody else would be
+                   better
+  Density        : Medium
+  Media mode     : One reserved portrait, 4:5, paired with the name inside a single <figure>.
+  Interaction    : None (static; no JavaScript)
+  Conversion device : **The action is not a booking, it is a name.** `S20` owns the closing ask and
+                   `S06` owns the flow; what this page converts is a preference — the visitor
+                   deciding they want *this* person rather than whoever is free. So the action is
+                   *ask for them by name*, and the panel explains exactly what asking gets you and
+                   what happens when it cannot be honoured.
+  The steer away : *"Somebody else here might be better for what you are asking about, and you will
+                   be told so."* A profile that cannot say that is a sales page. It is also the same
+                   move as `S23-004`'s ask-us-instead column and `S17`'s worry list.
+  What it avoids : No rating, no review count, no testimonial attributed to a person, no
+                   availability indicator, no *"books up fast"*, no social handle, no personal email
+                   — the scaffold's Out Of Scope list and the S10 and S20 rules all hold at once.
+  Content note   : No invented name, portrait, qualification, registration, membership, award,
+                   count of years or treatments, price or duration.
+-->
+
+<meta name="study-id" content="WELL-S26-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S26">
+<meta name="section-name" content="Practitioner / Specialist Profile">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Paired identity beside an ask-by-name panel with the steer away">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-reserved-portrait-paired-in-figure">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S26-004 — Practitioner Profile, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #3b3630; }
+
+/* Scoped study styles — namespaced to .well-s26-004 */
+.well-s26-004 {
+  --ink: #f3efe9;
+  --ink-soft: #b9b0a4;
+  --paper: #3b3630;
+  --panel: #2c2823;
+  --slot: #4a443c;
+  --slot-ink: #ded6c9;
+  --slot-edge: #625b51;
+  --line: #524b42;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s26-004 *,
+.well-s26-004 *::before,
+.well-s26-004 *::after { box-sizing: inherit; }
+.well-s26-004 :focus-visible {
+  outline: 2px solid #ded6c9;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s26-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s26-004 .shell {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(34px, 4vw, 72px) clamp(20px, 3.6vw, 52px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+  gap: clamp(22px, 3.2vw, 56px);
+  align-items: start;
+}
+
+.well-s26-004 .who { margin: 0; min-width: 0; }
+.well-s26-004 .portrait {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 14px;
+  background: var(--slot);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+.well-s26-004 .portrait span {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+  line-height: 1.7;
+}
+.well-s26-004 figcaption { margin-top: clamp(14px, 1.7vw, 20px); }
+.well-s26-004 .r-name {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 8px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  min-height: clamp(54px, 4.8vw, 66px);
+  text-align: center;
+}
+.well-s26-004 .r-name span {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+}
+.well-s26-004 .role { margin: clamp(10px, 1.2vw, 14px) 0 0; font-size: 0.98rem; font-weight: 650; }
+.well-s26-004 .works { margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.well-s26-004 .works span {
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: var(--slot);
+  font-size: 0.85rem;
+  color: var(--slot-ink);
+}
+
+/* The panel that does the job */
+.well-s26-004 .ask {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: clamp(22px, 2.8vw, 40px);
+}
+.well-s26-004 h2 {
+  margin: 0 0 clamp(12px, 1.5vw, 18px);
+  font-size: clamp(1.36rem, 2.2vw, 1.85rem);
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+  font-weight: 600;
+  max-width: 20ch;
+}
+.well-s26-004 .lead { margin: 0 0 clamp(18px, 2.2vw, 26px); max-width: 52ch; color: var(--ink-soft); line-height: 1.66; }
+.well-s26-004 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.96rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.well-s26-004 .go:hover { background: #ffffff; }
+
+.well-s26-004 .gets {
+  margin: clamp(20px, 2.4vw, 30px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.well-s26-004 .gets li {
+  padding: clamp(11px, 1.3vw, 15px) 0;
+  border-top: 1px solid var(--line);
+}
+.well-s26-004 .gets b { display: block; margin-bottom: 4px; font-size: 0.98rem; font-weight: 650; }
+.well-s26-004 .gets span { color: var(--ink-soft); font-size: 0.93rem; line-height: 1.58; }
+
+.well-s26-004 .honest {
+  margin: clamp(18px, 2.2vw, 26px) 0 0;
+  padding-top: clamp(16px, 2vw, 22px);
+  border-top: 1px solid var(--line);
+  max-width: 58ch;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.66;
+}
+.well-s26-004 .honest b { color: var(--ink); }
+
+/* Responsive ladder — identity stays whole and leads */
+@media (max-width: 860px) {
+  .well-s26-004 .shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(22px, 2.8vw, 30px);
+  }
+  .well-s26-004 .portrait { aspect-ratio: 3 / 2; }
+  .well-s26-004 h2,
+  .well-s26-004 .lead,
+  .well-s26-004 .honest { max-width: none; }
+  .well-s26-004 .go { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s26-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s26-004" data-study-id="WELL-S26-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s26-004-title">
+
+    <figure class="who">
+      <div class="portrait"><span>Portrait &mdash; a real person<br>who has agreed to appear</span></div>
+      <figcaption>
+        <div class="r-name"><span>Name</span></div>
+        <p class="role">Works mostly on faces</p>
+        <p class="works"><span>Facials</span><span>Brows &amp; lashes</span></p>
+      </figcaption>
+    </figure>
+
+    <div class="ask">
+      <h2 id="well-s26-004-title">Ask for them by name.</h2>
+      <p class="lead">It is the only thing this page is asking you to do, and it costs nothing. Put the name on the booking and it is kept to.</p>
+      <a class="go" href="#well-s26-004-title">Book with this practitioner</a>
+
+      <ul class="gets">
+        <li><b>The same hands each time</b><span>Which matters more than most things on a page like this, because somebody who saw your face last month can see what has changed.</span></li>
+        <li><b>Notes that carry over</b><span>What was used and what was avoided is written down, so you are not asked the same questions every visit.</span></li>
+        <li><b>Told if they are away</b><span>You get a choice rather than a substitute, and the choice includes waiting.</span></li>
+      </ul>
+
+      <p class="honest"><b>Somebody else here might suit you better.</b> If what you are asking about is not what this person does most, you will be told and pointed at whoever it is &mdash; before the booking, not after you have arrived.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

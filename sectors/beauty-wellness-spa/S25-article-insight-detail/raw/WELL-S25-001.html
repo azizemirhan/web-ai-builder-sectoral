@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S25-001
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S25 — Article / Insight Detail
+  Direction      : Universal / Safe
+  Revision       : V2. Replaced. The batch was rebuilt because the five studies sat differently on
+                   the screen from one another &mdash; one centred, one hard left, one hard right
+                   &mdash; and none of them was balanced. **All five now hold the frame**, and each
+                   one opens differently from the other four.
+  Layout model   : A reading page in three columns. The article column at a real measure in the
+                   middle, the record in a rail at the left, the limits and the policy in a rail at
+                   the right &mdash; so the apparatus balances the page on both sides of the reading
+  Density        : Low
+  Media mode     : One reserved area inside the body, held to the measure.
+  Interaction    : None (static; no JavaScript).
+  The head       : **No hero panel.** A ruled line of record &mdash; kind, topic, author, date
+                   &mdash; and then the reserved title at title scale, which is how a piece of
+                   writing announces itself.
+  The reservation : Reserve the article, author the apparatus. Title, standfirst, body, sub-headings
+                   and the author and date are all reserved; the measure and the rhythm are real,
+                   so reading comfort can be judged before a word exists.
+  Content note   : No reading time, no citation, no invented title or body. The limits line appears,
+                   as it does in every study in this batch.
+  Palette        : Black and white only.
+-->
+
+<meta name="study-id" content="WELL-S25-001">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S25">
+<meta name="section-name" content="Article / Insight Detail">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="A three-column reading page: record rail, article measure, limits rail">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-in-body">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S25-001 — Article Detail, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fafafa; }
+
+/* Scoped study styles - namespaced to .well-s25-001 */
+/* monochrome: hand-graded. Black and white only. */
+.well-s25-001 {
+  --ink: #111111;
+  --ink-soft: #4d4d4d;
+  --ink-faint: #767676;
+  --paper: #fafafa;
+  --card: #ffffff;
+  --tint: #ececec;
+  --line: #d6d6d6;
+  --line-soft: #e6e6e6;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s25-001 *,
+.well-s25-001 *::before,
+.well-s25-001 *::after { box-sizing: inherit; }
+.well-s25-001 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
+.well-s25-001 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s25-001 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Record line */
+.well-s25-001 .rec {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  padding-bottom: clamp(12px, 1.5vw, 16px);
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: clamp(18px, 2.2vw, 28px);
+}
+.well-s25-001 .chip {
+  display: inline-block;
+  padding: 5px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s25-001 .rec .pair { display: inline-flex; align-items: center; gap: 8px; }
+.well-s25-001 .rec dt {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s25-001 .rec dd { margin: 0; }
+.well-s25-001 .slot {
+  display: inline-block;
+  min-width: 70px;
+  padding: 5px 14px;
+  border-radius: 10px;
+  background: var(--tint);
+  color: var(--ink-faint);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* The page */
+.well-s25-001 .page {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.16fr) minmax(0, 0.42fr);
+  gap: clamp(18px, 2.6vw, 44px);
+  align-items: start;
+}
+.well-s25-001 .rail h2 {
+  margin: 0 0 10px;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s25-001 .rail p { margin: 0 0 12px; font-size: 0.97rem; line-height: 1.55; color: var(--ink-soft); }
+.well-s25-001 .rail p:last-child { margin-bottom: 0; }
+.well-s25-001 .rail p b { color: var(--ink); font-weight: 650; }
+.well-s25-001 .rail .box {
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+  border-radius: 22px;
+  padding: clamp(16px, 2vw, 22px);
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+.well-s25-001 .rail .box:last-child { margin-bottom: 0; }
+.well-s25-001 .rail .dark { background: #111111; color: #c4c4c4; border-color: #111111; }
+.well-s25-001 .rail .dark h2 { color: #a8a8a8; }
+.well-s25-001 .rail .dark p { color: #c4c4c4; }
+.well-s25-001 .rail .dark p b { color: #ffffff; }
+
+/* The article itself, reserved */
+.well-s25-001 .title { display: block; margin-bottom: clamp(14px, 1.8vw, 20px); }
+.well-s25-001 .title i {
+  display: block;
+  height: clamp(28px, 3.6vw, 46px);
+  border-radius: 5px;
+  background: var(--tint);
+  margin-bottom: 12px;
+}
+.well-s25-001 .stand { display: block; margin-bottom: clamp(18px, 2.2vw, 28px); }
+.well-s25-001 .stand i {
+  display: block;
+  height: clamp(14px, 1.6vw, 18px);
+  border-radius: 4px;
+  background: #f0f0f0;
+  margin-bottom: 9px;
+}
+.well-s25-001 .label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s25-001 .sub {
+  display: block;
+  height: clamp(18px, 2vw, 24px);
+  width: 46%;
+  border-radius: 4px;
+  background: #dcdcdc;
+  margin: clamp(22px, 2.6vw, 32px) 0 clamp(13px, 1.6vw, 18px);
+}
+.well-s25-001 .para { display: block; margin-bottom: clamp(18px, 2.2vw, 26px); }
+.well-s25-001 .para i {
+  display: block;
+  height: 12px;
+  border-radius: 3px;
+  background: #ececec;
+  margin-bottom: 10px;
+}
+.well-s25-001 .para i:last-child { width: 58%; }
+.well-s25-001 .w88 { width: 88%; }
+.well-s25-001 .w94 { width: 94%; }
+.well-s25-001 .shot {
+  aspect-ratio: 16 / 9;
+  border: 1px dashed #b4b4b4;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #e2e2e2 0%, #f4f4f4 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  margin-bottom: 10px;
+}
+.well-s25-001 .shot span {
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.well-s25-001 figure { margin: 0 0 clamp(20px, 2.4vw, 28px); }
+.well-s25-001 figcaption { font-size: 0.94rem; line-height: 1.5; color: var(--ink-faint); }
+
+/* Responsive ladder */
+@media (max-width: 1040px) {
+  .well-s25-001 .page { grid-template-columns: minmax(0, 1fr); }
+  .well-s25-001 .rail { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(14px, 1.8vw, 20px); }
+  .well-s25-001 .rail .box { margin-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s25-001 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s25-001" data-study-id="WELL-S25-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="well-s25-001-title">
+
+    <dl class="rec">
+      <span class="chip">A guide</span>
+      <span class="chip">Skin</span>
+      <span class="pair"><dt>Written by</dt><dd><span class="slot"><span class="vh">Author</span><span aria-hidden="true">&mdash;</span></span></dd></span>
+      <span class="pair"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></span>
+    </dl>
+
+    <div class="page">
+
+      <div class="rail">
+        <div class="box">
+          <h2>Who writes these</h2>
+          <p><b>Whoever does the treatment</b>, not anybody paid to write. They are corrected when we change how we work.</p>
+        </div>
+        <div class="box">
+          <h2>What is not here</h2>
+          <p>No reading time, no citations, and <b>nothing on this page has been paid for by a brand.</b></p>
+        </div>
+      </div>
+
+      <article>
+        <h1 id="well-s25-001-title" class="vh">One guide, read in full</h1>
+        <span class="label">Title, reserved</span>
+        <span class="title" role="img" aria-label="Reserved area: the article title, two lines at title scale">
+          <i class="w94"></i><i class="w88"></i>
+        </span>
+        <span class="label">Standfirst, reserved</span>
+        <span class="stand" role="img" aria-label="Reserved area: the standfirst, two lines">
+          <i></i><i class="w88"></i>
+        </span>
+
+        <span class="para" role="img" aria-label="Reserved area: an opening paragraph at the real measure">
+          <i></i><i></i><i class="w94"></i><i></i><i></i>
+        </span>
+
+        <span class="sub" role="img" aria-label="Reserved area: a sub-heading"></span>
+
+        <span class="para" role="img" aria-label="Reserved area: a paragraph at the real measure">
+          <i></i><i class="w94"></i><i></i><i></i>
+        </span>
+
+        <figure>
+          <div class="shot"><span>Reserved &mdash; in body, held to the measure</span></div>
+          <figcaption>Captions belong to the piece and are written for the reader, rather than left to an alt attribute.</figcaption>
+        </figure>
+
+        <span class="sub" role="img" aria-label="Reserved area: a sub-heading"></span>
+
+        <span class="para" role="img" aria-label="Reserved area: a closing paragraph at the real measure">
+          <i></i><i></i><i class="w88"></i><i></i>
+        </span>
+      </article>
+
+      <div class="rail">
+        <div class="box dark">
+          <h2>Where this stops</h2>
+          <p><b>None of this is medical advice.</b> It is what we tell people in the room, written down. If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa.</p>
+        </div>
+        <div class="box">
+          <h2>Why the page is empty</h2>
+          <p>The article is reserved rather than invented, <b>so the measure and the rhythm can be judged before a word exists</b> &mdash; which is the only thing a reading page has to get right.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

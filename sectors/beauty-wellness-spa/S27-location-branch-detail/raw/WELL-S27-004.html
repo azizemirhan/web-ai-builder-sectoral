@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S27-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S27 — Spa / Studio Location Detail
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : Contact first, then one panel: ring before you travel, what we will tell you, and
+                   the honest line about when the other studio is the better one
+  Density        : Medium
+  Media mode     : One reserved map area, 16:9, after the contact block in source order.
+  Interaction    : None (static; no JavaScript)
+  Conversion device : **The conversion is a phone call before a journey, not a booking.** `S20` owns
+                   the closing ask and `S06` the flow. What this page can usefully convert is
+                   somebody about to travel to the wrong building — so the ask is *ring before you
+                   come*, and the panel says exactly what that call gets you.
+  The steer away : *"Sometimes the answer is that the other studio is the better one, and you will
+                   be told that before you set off rather than after."* A location page that cannot
+                   send you elsewhere is a page that would rather you wasted the journey.
+  What it avoids : No opening hours, no travel time, no distance, no *"minutes from the station"*,
+                   no parking promise, no facilities row of ticks, no rating or review attributed to
+                   the place, no urgency.
+  Content note   : Address, telephone and the map are reserved. No invented address, postcode,
+                   coordinate, number, hours or direction; no embedded map or remote dependency.
+-->
+
+<meta name="study-id" content="WELL-S27-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S27">
+<meta name="section-name" content="Spa / Studio Location Detail">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Contact first, then a ring-before-you-travel panel with the steer away">
+<meta name="density" content="medium">
+<meta name="media-mode" content="one-reserved-map-area">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S27-004 — Location Detail, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #25302c; }
+
+/* Scoped study styles — namespaced to .well-s27-004 */
+.well-s27-004 {
+  --ink: #eef4f1;
+  --ink-soft: #a3bdb2;
+  --paper: #25302c;
+  --panel: #1c2523;
+  --slot: #32403a;
+  --slot-ink: #cfe2d9;
+  --slot-edge: #47574f;
+  --line: #38473f;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s27-004 *,
+.well-s27-004 *::before,
+.well-s27-004 *::after { box-sizing: inherit; }
+.well-s27-004 :focus-visible {
+  outline: 2px solid #cfe2d9;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s27-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s27-004 .shell {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(34px, 4vw, 72px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Contact first, and large */
+.well-s27-004 .contact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.4vw, 36px);
+  margin-bottom: clamp(20px, 2.6vw, 34px);
+}
+.well-s27-004 .studio { margin: 0 0 clamp(12px, 1.5vw, 18px); font-size: 1.06rem; font-weight: 650; }
+.well-s27-004 .fname {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s27-004 .slot {
+  display: block;
+  border: 1px dashed var(--slot-edge);
+  border-radius: 8px;
+  background: var(--slot);
+  padding: 13px 15px;
+  min-height: 56px;
+  color: var(--slot-ink);
+  font-size: 1.04rem;
+}
+.well-s27-004 .field { margin: 0; }
+
+/* Map, after contact */
+.well-s27-004 figure { margin: 0 0 clamp(20px, 2.6vw, 34px); }
+.well-s27-004 .map {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 14px;
+  background: var(--slot);
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+.well-s27-004 .map span {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+  line-height: 1.7;
+}
+.well-s27-004 figcaption {
+  margin-top: 9px;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+/* The panel */
+.well-s27-004 .ask {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: clamp(22px, 2.8vw, 40px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 48px);
+  align-items: start;
+}
+.well-s27-004 h2 {
+  margin: 0 0 clamp(12px, 1.5vw, 18px);
+  font-size: clamp(1.36rem, 2.2vw, 1.85rem);
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+  font-weight: 600;
+  max-width: 20ch;
+}
+.well-s27-004 .lead { margin: 0 0 clamp(18px, 2.2vw, 24px); max-width: 46ch; color: var(--ink-soft); line-height: 1.66; }
+.well-s27-004 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.96rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.well-s27-004 .go:hover { background: #ffffff; }
+.well-s27-004 ul { margin: 0; padding: 0; list-style: none; }
+.well-s27-004 li {
+  padding: clamp(10px, 1.2vw, 14px) 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  line-height: 1.58;
+}
+.well-s27-004 li:first-child { border-top: 0; padding-top: 0; }
+.well-s27-004 li b { color: var(--ink); font-weight: 650; }
+.well-s27-004 .honest {
+  margin: clamp(18px, 2.2vw, 26px) 0 0;
+  padding-top: clamp(16px, 2vw, 22px);
+  border-top: 1px solid var(--line);
+  max-width: 60ch;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.66;
+}
+.well-s27-004 .honest b { color: var(--ink); }
+
+/* Responsive ladder — contact first and full width */
+@media (max-width: 860px) {
+  .well-s27-004 .contact,
+  .well-s27-004 .ask {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(18px, 2.4vw, 26px);
+  }
+  .well-s27-004 h2,
+  .well-s27-004 .lead,
+  .well-s27-004 .honest { max-width: none; }
+  .well-s27-004 .go { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s27-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s27-004" data-study-id="WELL-S27-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s27-004-title">
+
+    <div class="contact">
+      <div>
+        <p class="studio">Studio 01</p>
+        <p class="field">
+          <span class="fname">Address</span>
+          <span class="slot"><span class="vh">Street address of this studio</span><span aria-hidden="true">&mdash;</span></span>
+        </p>
+      </div>
+      <div>
+        <p class="studio">&nbsp;</p>
+        <p class="field">
+          <span class="fname">Telephone</span>
+          <span class="slot"><span class="vh">Telephone number for this studio</span><span aria-hidden="true">&mdash;</span></span>
+        </p>
+      </div>
+    </div>
+
+    <figure>
+      <div class="map"><span>Map area &mdash; reserved<br>not an embedded service</span></div>
+      <figcaption>A reserved area rather than a third-party embed. The page carries no remote dependency of any kind.</figcaption>
+    </figure>
+
+    <div class="ask">
+      <div>
+        <h2 id="well-s27-004-title">Ring before you travel.</h2>
+        <p class="lead">It is the one thing worth doing before a journey to a room you have not been to, and it takes less time than reading this page.</p>
+        <a class="go" href="#well-s27-004-title">Ask about coming here</a>
+      </div>
+
+      <div>
+        <ul>
+          <li><b>Whether this studio does what you want.</b> Not everything we do happens in every room, and finding that out on arrival is nobody&rsquo;s idea of a good start.</li>
+          <li><b>What the building is actually like.</b> The door, what is underfoot, what is upstairs &mdash; described by somebody who works in it rather than ticked on a list.</li>
+          <li><b>What is nearby for leaving a car or a bike.</b> What it is usually like at the time you are coming, without a promise about a space we do not own.</li>
+          <li><b>Whether somebody can come in with you.</b> Say so and the room is picked accordingly.</li>
+        </ul>
+        <p class="honest"><b>Sometimes the answer is that the other studio is the better one</b> &mdash; and you will be told that before you set off rather than after you have arrived.</p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

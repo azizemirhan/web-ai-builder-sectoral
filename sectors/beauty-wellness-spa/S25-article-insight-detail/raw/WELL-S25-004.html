@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S25-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S25 — Article / Insight Detail
+  Direction      : Conversion-led
+  Revision       : V2. Replaced as part of the rebuilt batch. Balanced across the frame, opening
+                   differently from the other four.
+  Layout model   : A lead media band across the top with its caption, then the reading measure with a
+                   standing column beside it carrying the one thing this piece leads to and the
+                   refusal that goes with it
+  Density        : Low
+  Media mode     : One reserved lead area, full width.
+  Interaction    : Two in-page anchors, both in the standing column.
+  The head       : **The picture is the top.** A reading page that leads somewhere opens on the lead
+                   image and its caption, not on a headline block &mdash; and the caption is written
+                   for the reader rather than left to an alt attribute.
+  The ask        : One treatment, named as a category rather than a product, and **the refusal that
+                   makes it honest: there is nothing to subscribe to and reading this puts you on no
+                   list.**
+  Content note   : Title, standfirst, body, sub-headings and the date are reserved. No reading time,
+                   no citations, no email capture. The limits line is present, as in every study.
+  Palette        : Black and white only.
+-->
+
+<meta name="study-id" content="WELL-S25-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S25">
+<meta name="section-name" content="Article / Insight Detail">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Lead media band, then reading measure beside a standing column with the one ask">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-lead">
+<meta name="interaction" content="in-page-anchors">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S25-004 — Article Detail, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dcdcdc; }
+
+/* Scoped study styles - namespaced to .well-s25-004 */
+/* monochrome: hand-graded. Black and white only. */
+.well-s25-004 {
+  --ink: #111111;
+  --ink-soft: #4d4d4d;
+  --ink-faint: #6c6c6c;
+  --paper: #dcdcdc;
+  --card: #ffffff;
+  --tint: #cccccc;
+  --line: #bebebe;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s25-004 *,
+.well-s25-004 *::before,
+.well-s25-004 *::after { box-sizing: inherit; }
+.well-s25-004 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
+.well-s25-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s25-004 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Lead */
+.well-s25-004 .lead { margin-bottom: clamp(20px, 2.6vw, 34px); }
+.well-s25-004 .shot {
+  aspect-ratio: 21 / 9;
+  border: 1px dashed #a4a4a4;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #cfcfcf 0%, #eaeaea 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(16px, 2vw, 26px);
+  margin-bottom: 12px;
+}
+.well-s25-004 .shot span {
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.well-s25-004 .cap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding-bottom: clamp(14px, 1.8vw, 20px);
+  border-bottom: 4px solid var(--ink);
+}
+.well-s25-004 .cap p { margin: 0; max-width: 68ch; font-size: 0.98rem; line-height: 1.55; color: var(--ink-soft); }
+.well-s25-004 .cap .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 0; }
+.well-s25-004 .chip {
+  display: inline-block;
+  padding: 5px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s25-004 .slot {
+  display: inline-block;
+  min-width: 70px;
+  padding: 5px 14px;
+  border-radius: 10px;
+  background: var(--tint);
+  color: var(--ink-faint);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Body and ask */
+.well-s25-004 .body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr);
+  gap: clamp(20px, 2.8vw, 48px);
+  align-items: start;
+}
+.well-s25-004 .label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s25-004 .title { display: block; margin-bottom: clamp(14px, 1.8vw, 20px); }
+.well-s25-004 .title i {
+  display: block;
+  height: clamp(28px, 3.6vw, 46px);
+  border-radius: 5px;
+  background: var(--tint);
+  margin-bottom: 12px;
+}
+.well-s25-004 .stand { display: block; margin-bottom: clamp(18px, 2.2vw, 26px); }
+.well-s25-004 .stand i { display: block; height: 15px; border-radius: 4px; background: #d2d2d2; margin-bottom: 9px; }
+.well-s25-004 .sub {
+  display: block;
+  height: clamp(18px, 2vw, 24px);
+  width: 46%;
+  border-radius: 4px;
+  background: #c4c4c4;
+  margin: clamp(22px, 2.6vw, 32px) 0 clamp(13px, 1.6vw, 18px);
+}
+.well-s25-004 .para { display: block; margin-bottom: clamp(18px, 2.2vw, 26px); }
+.well-s25-004 .para i { display: block; height: 12px; border-radius: 3px; background: #d2d2d2; margin-bottom: 10px; }
+.well-s25-004 .para i:last-child { width: 58%; }
+.well-s25-004 .w94 { width: 94%; }
+.well-s25-004 .w88 { width: 88%; }
+
+.well-s25-004 .side { display: grid; gap: clamp(14px, 1.8vw, 22px); }
+.well-s25-004 .ask {
+  background: var(--card);
+  border-radius: 26px;
+  padding: clamp(20px, 2.4vw, 30px);
+}
+.well-s25-004 .ask h2 {
+  margin: 0 0 10px;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.well-s25-004 .ask p { margin: 0 0 clamp(14px, 1.8vw, 20px); font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
+.well-s25-004 .ask p b { color: var(--ink); font-weight: 650; }
+.well-s25-004 .btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.well-s25-004 .btn:hover { background: #333333; }
+.well-s25-004 .second { margin: clamp(12px, 1.5vw, 16px) 0 0; font-size: 0.95rem; color: var(--ink-faint); }
+.well-s25-004 .second a { color: var(--ink); font-weight: 650; }
+.well-s25-004 .refuse {
+  background: #111111;
+  color: #c4c4c4;
+  border-radius: 26px;
+  padding: clamp(20px, 2.4vw, 30px);
+}
+.well-s25-004 .refuse h2 {
+  margin: 0 0 10px;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #a8a8a8;
+}
+.well-s25-004 .refuse p { margin: 0 0 10px; font-size: 1rem; line-height: 1.56; }
+.well-s25-004 .refuse p:last-child { margin-bottom: 0; }
+.well-s25-004 .refuse p b { color: #ffffff; font-weight: 700; }
+
+/* Responsive ladder */
+@media (max-width: 980px) {
+  .well-s25-004 .body { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .well-s25-004 .cap p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s25-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s25-004" data-study-id="WELL-S25-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s25-004-title">
+
+    <div class="lead">
+      <div class="shot"><span>Reserved &mdash; lead image</span></div>
+      <div class="cap">
+        <p>The caption is written for the reader and says what the picture is, rather than leaving it to an alt attribute.</p>
+        <dl class="meta">
+          <span class="chip">An aftercare note</span>
+          <span class="chip">Skin</span>
+          <dt class="vh">Published</dt>
+          <dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="body">
+
+      <article>
+        <h1 id="well-s25-004-title" class="vh">One guide, and what follows it</h1>
+        <span class="label">Title, reserved</span>
+        <span class="title" role="img" aria-label="Reserved area: the article title, two lines at title scale">
+          <i class="w94"></i><i class="w88"></i>
+        </span>
+        <span class="stand" role="img" aria-label="Reserved area: the standfirst, two lines">
+          <i></i><i class="w88"></i>
+        </span>
+        <span class="para" role="img" aria-label="Reserved area: an opening paragraph at the real measure">
+          <i></i><i></i><i class="w94"></i><i></i>
+        </span>
+        <span class="sub" role="img" aria-label="Reserved area: a sub-heading"></span>
+        <span class="para" role="img" aria-label="Reserved area: a paragraph at the real measure">
+          <i></i><i class="w94"></i><i></i><i></i>
+        </span>
+        <span class="sub" role="img" aria-label="Reserved area: a sub-heading"></span>
+        <span class="para" role="img" aria-label="Reserved area: a closing paragraph at the real measure">
+          <i></i><i></i><i class="w88"></i>
+        </span>
+      </article>
+
+      <div class="side">
+        <div class="ask">
+          <h2>This one is about a treatment we do</h2>
+          <p>If you have read this far you are probably wondering about the thing itself rather than about more reading. <b>It is a deep cleansing facial</b>, and the page for it says what happens in the room.</p>
+          <a class="btn" href="#well-s25-004-title">Read about that treatment</a>
+          <p class="second">Or <a href="#well-s25-004-title">ask us the question directly</a>.</p>
+        </div>
+
+        <div class="refuse">
+          <h2>What this page will not do</h2>
+          <p><b>Ask for your email.</b> There is nothing to subscribe to, and reading this does not put you on a list.</p>
+          <p><b>None of this is medical advice.</b> If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

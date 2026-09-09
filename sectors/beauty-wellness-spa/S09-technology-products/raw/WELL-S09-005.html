@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S09-005
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S09 — Technology & Products
+  Direction      : Art-directed / Distinctive
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : A shelf. Four reserved object areas of deliberately different widths and
+                   heights stand on one continuous rule, bottom-aligned to it the way objects
+                   stand on a real shelf, with their names below the line
+  Density        : Low — four objects, one line each
+  Media mode     : Four object-scale reserved areas at four different proportions, plus four
+                   reserved mark slots in the closing row. The differing proportions are the
+                   device: equal tiles would be a grid, and a grid is not a shelf.
+  Interaction    : None (static; no JavaScript)
+  Empty state    : The objects are tonal blocks standing on a lit rule. Because they differ in
+                   width and height, the arrangement reads as a shelf of things before any
+                   photography arrives, which is the state a reviewer sees.
+  Responsive note: The shelf is horizontal by nature. Below 768px it becomes two shelves of two
+                   objects, each with its own rule, rather than a stack with the rule dropped —
+                   the object-standing-on-a-line relationship is the study's identity and survives
+                   at every width.
+  Content note   : Function and policy lead; brand is reserved — see ../README.md. No invented
+                   device name, product name, range, manufacturer, ingredient, patent or partner
+                   mark; no certification or approval mark; no "medical grade" or "clinically
+                   tested"; no efficacy claim; no specification block or ingredient table; no
+                   price, percentage or award.
+-->
+
+<meta name="study-id" content="WELL-S09-005">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S09">
+<meta name="section-name" content="Technology Products">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Four unequal object areas standing bottom-aligned on one continuous shelf rule">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-unequal-objects-on-a-shelf-plus-mark-row">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S09-005 — Technology Products, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #191713; }
+
+/* Scoped study styles — namespaced to .well-s09-005 */
+.well-s09-005 {
+  --shelf-h: clamp(190px, 23vw, 340px);
+  --ink: #f2ede4;
+  --ink-soft: #a49a8a;
+  --paper: #191713;
+  --object: #322c24;
+  --object-ink: #b0a595;
+  --rule: #7a6d5b;
+  --mark: #262019;
+  --mark-ink: #8d8271;
+  --line: #332d24;
+  --focus: #e3caa0;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s09-005 *,
+.well-s09-005 *::before,
+.well-s09-005 *::after { box-sizing: inherit; }
+.well-s09-005 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.well-s09-005 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(48px, 5.6vw, 100px) clamp(20px, 3.6vw, 56px);
+}
+
+/* Header */
+.well-s09-005 .head {
+  max-width: 42rem;
+  margin-bottom: clamp(34px, 4.4vw, 70px);
+}
+.well-s09-005 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s09-005 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 18ch;
+}
+
+/* The shelf */
+.well-s09-005 .shelf {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 0.82fr 1.24fr 0.68fr 1.12fr;
+  gap: clamp(14px, 1.8vw, 30px);
+}
+.well-s09-005 .shelf::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--shelf-h);
+  height: 2px;
+  background: var(--rule);
+}
+.well-s09-005 .shelf li { min-width: 0; }
+
+/* Objects stand on the rule, at four different heights */
+.well-s09-005 .stand {
+  height: var(--shelf-h);
+  display: flex;
+  align-items: flex-end;
+}
+.well-s09-005 .object {
+  width: 100%;
+  background: var(--object);
+  display: grid;
+  place-items: center;
+  padding: 12px;
+}
+.well-s09-005 .shelf li:nth-child(1) .object { height: 62%; }
+.well-s09-005 .shelf li:nth-child(2) .object { height: 100%; }
+.well-s09-005 .shelf li:nth-child(3) .object { height: 44%; }
+.well-s09-005 .shelf li:nth-child(4) .object { height: 78%; }
+
+.well-s09-005 .object span {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--object-ink);
+  text-align: center;
+}
+
+/* Names below the line */
+.well-s09-005 .cap { padding-top: clamp(14px, 1.7vw, 22px); }
+.well-s09-005 h2 {
+  margin: 0 0 6px;
+  font-size: clamp(1.04rem, 1.3vw, 1.28rem);
+  line-height: 1.2;
+  letter-spacing: -0.014em;
+  font-weight: 600;
+}
+.well-s09-005 .cap p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Closing row */
+.well-s09-005 .marks {
+  margin-top: clamp(34px, 4vw, 60px);
+  padding-top: clamp(20px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(20px, 3vw, 52px);
+  align-items: center;
+}
+.well-s09-005 .marks p {
+  margin: 0;
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+.well-s09-005 .mark-row {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 16px);
+}
+.well-s09-005 .mark-slot {
+  background: var(--mark);
+  aspect-ratio: 5 / 2;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+}
+.well-s09-005 .mark-slot span {
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mark-ink);
+  text-align: center;
+}
+
+/* Responsive ladder — two shelves of two, never a stack with no line */
+@media (max-width: 1024px) {
+  .well-s09-005 { --shelf-h: clamp(170px, 26vw, 250px); }
+  .well-s09-005 .shelf { grid-template-columns: 1.15fr 0.85fr; row-gap: clamp(26px, 3.4vw, 44px); }
+  .well-s09-005 .shelf::after { display: none; }
+  .well-s09-005 .stand { border-bottom: 2px solid var(--rule); }
+  .well-s09-005 .shelf li:nth-child(3) .object { height: 66%; }
+  .well-s09-005 .shelf li:nth-child(4) .object { height: 88%; }
+}
+
+@media (max-width: 768px) {
+  .well-s09-005 h1 { max-width: none; }
+  .well-s09-005 .marks {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  .well-s09-005 .marks p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s09-005 { --shelf-h: clamp(140px, 40vw, 190px); }
+  .well-s09-005 .shelf { grid-template-columns: minmax(0, 1fr); }
+  .well-s09-005 .mark-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s09-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s09-005" data-study-id="WELL-S09-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="well-s09-005-title">
+
+    <div class="head">
+      <p class="eyebrow">What we work with</p>
+      <h1 id="well-s09-005-title">Four things, and how each is kept</h1>
+    </div>
+
+    <ul class="shelf">
+      <li>
+        <div class="stand"><div class="object"><span>Couch</span></div></div>
+        <div class="cap">
+          <h2>The couch</h2>
+          <p>Heated, and set to your height before anything starts.</p>
+        </div>
+      </li>
+      <li>
+        <div class="stand"><div class="object"><span>Steamer</span></div></div>
+        <div class="cap">
+          <h2>The steamer</h2>
+          <p>Used before cleansing, at a temperature you agree to first.</p>
+        </div>
+      </li>
+      <li>
+        <div class="stand"><div class="object"><span>Tools</span></div></div>
+        <div class="cap">
+          <h2>Hand tools</h2>
+          <p>Sterilised between every guest, without exception.</p>
+        </div>
+      </li>
+      <li>
+        <div class="stand"><div class="object"><span>Stones</span></div></div>
+        <div class="cap">
+          <h2>Warm stones</h2>
+          <p>Heated in water and tested on our own wrist first.</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="marks">
+      <p>Cleansers, oils, masks and exfoliants are chosen in the room. Any label can be read on request.</p>
+      <ul class="mark-row">
+        <li><div class="mark-slot"><span>Mark</span></div></li>
+        <li><div class="mark-slot"><span>Mark</span></div></li>
+        <li><div class="mark-slot"><span>Mark</span></div></li>
+        <li><div class="mark-slot"><span>Mark</span></div></li>
+      </ul>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S10-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S10 — Testimonials
+  Direction      : Structured / Visual Modular
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : Quotations sorted by the category they came from — three labelled groups, two
+                   reserved quotation areas in each, at deliberately unequal lengths so the study
+                   shows how the structure behaves when real quotes differ in size
+  Density        : Medium, carried by the grouping rather than by copy
+  Media mode     : Six reserved quotation areas across three groups, at three lengths, plus six
+                   small reserved portrait slots.
+  Interaction    : None (static; no JavaScript)
+  Reserved-quote note : The quotation structure is authored; the quotation is reserved. The point
+                   of this study is that the six areas are **not** the same height — a grouped
+                   testimonial layout has to survive quotes of different lengths, and reserving
+                   them at one uniform size would hide the only structural problem this direction
+                   exists to solve.
+  Grouping note  : The three group labels are the sector's own categories, used across S01, S02,
+                   S03 and S04. They are an organising device for quotations, not a taxonomy, and
+                   the category is not attributed to any individual guest.
+  Content note   : No invented quotation, guest name, initial, age, location, photograph,
+                   treatment attribution or occupation. No star rating, score, average or review
+                   count, and no review-platform name. See ../README.md.
+-->
+
+<meta name="study-id" content="WELL-S10-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S10">
+<meta name="section-name" content="Testimonials">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Three labelled category groups holding six reserved quotations at unequal lengths">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-quotation-areas-grouped-unequal">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S10-003 — Testimonials, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7ece4; }
+
+/* Scoped study styles — namespaced to .well-s10-003 */
+.well-s10-003 {
+  --ink: #2b2019;
+  --ink-soft: #6f6055;
+  --paper: #f7ece4;
+  --card: #ffffff;
+  --slot: #f1e7de;
+  --slot-ink: #7a6a5d;
+  --slot-edge: #ddcec1;
+  --line: #ece0d5;
+  --label: #d8c8ba;
+  --focus: #6a4a34;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s10-003 *,
+.well-s10-003 *::before,
+.well-s10-003 *::after { box-sizing: inherit; }
+.well-s10-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.well-s10-003 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.well-s10-003 .head {
+  max-width: 46rem;
+  margin-bottom: clamp(24px, 3vw, 42px);
+}
+.well-s10-003 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s10-003 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 18ch;
+}
+.well-s10-003 .head p {
+  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  max-width: 50ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Groups */
+.well-s10-003 .groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 34px);
+  align-items: start;
+}
+.well-s10-003 .group { min-width: 0; }
+.well-s10-003 h2 {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  padding-bottom: clamp(9px, 1.1vw, 13px);
+  border-bottom: 1px solid var(--label);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s10-003 .group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: clamp(10px, 1.2vw, 16px);
+}
+
+.well-s10-003 .card {
+  margin: 0;
+  background: var(--card);
+  border-radius: 14px;
+  padding: clamp(14px, 1.7vw, 22px);
+}
+
+/* Reserved quotation areas at three lengths */
+.well-s10-003 .quote-slot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 9px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  text-align: center;
+}
+.well-s10-003 .q-short { min-height: clamp(92px, 9vw, 120px); }
+.well-s10-003 .q-medium { min-height: clamp(126px, 12.5vw, 165px); }
+.well-s10-003 .q-long { min-height: clamp(158px, 16vw, 210px); }
+.well-s10-003 .quote-slot span {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  line-height: 1.6;
+}
+
+/* Attribution */
+.well-s10-003 .attrib {
+  margin: clamp(12px, 1.4vw, 17px) 0 0;
+  padding-top: clamp(11px, 1.3vw, 15px);
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.well-s10-003 .portrait {
+  flex: none;
+  width: clamp(32px, 3vw, 40px);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+}
+.well-s10-003 .portrait span {
+  font-size: 0.48rem;
+  color: var(--slot-ink);
+}
+.well-s10-003 .who {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s10-003 .groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s10-003 .group--last { grid-column: 1 / -1; }
+  .well-s10-003 .group--last ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .well-s10-003 .groups {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(22px, 3vw, 30px);
+  }
+  .well-s10-003 .group--last ul { grid-template-columns: minmax(0, 1fr); }
+  .well-s10-003 h1 { max-width: none; }
+  .well-s10-003 .head p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s10-003 .card { border-radius: 12px; }
+  .well-s10-003 .q-long { min-height: clamp(140px, 34vw, 170px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s10-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s10-003" data-study-id="WELL-S10-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="well-s10-003-title">
+
+    <div class="head">
+      <p class="eyebrow">What guests say</p>
+      <h1 id="well-s10-003-title">Sorted by what they came in for</h1>
+      <p>Two from each group, at the length they were written. Published with permission, printed as written, and never given in exchange for anything.</p>
+    </div>
+
+    <div class="groups">
+
+      <section class="group">
+        <h2>Facials</h2>
+        <ul>
+          <li>
+            <figure class="card">
+              <div class="quote-slot q-medium"><span>Guest quotation<br>medium</span></div>
+              <figcaption class="attrib">
+                <div class="portrait"><span>&mdash;</span></div>
+                <span class="who">Guest 01</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="card">
+              <div class="quote-slot q-short"><span>Guest quotation<br>short</span></div>
+              <figcaption class="attrib">
+                <div class="portrait"><span>&mdash;</span></div>
+                <span class="who">Guest 02</span>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+
+      <section class="group">
+        <h2>Body &amp; massage</h2>
+        <ul>
+          <li>
+            <figure class="card">
+              <div class="quote-slot q-long"><span>Guest quotation<br>long</span></div>
+              <figcaption class="attrib">
+                <div class="portrait"><span>&mdash;</span></div>
+                <span class="who">Guest 03</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="card">
+              <div class="quote-slot q-short"><span>Guest quotation<br>short</span></div>
+              <figcaption class="attrib">
+                <div class="portrait"><span>&mdash;</span></div>
+                <span class="who">Guest 04</span>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+
+      <section class="group group--last">
+        <h2>Hands &amp; feet</h2>
+        <ul>
+          <li>
+            <figure class="card">
+              <div class="quote-slot q-short"><span>Guest quotation<br>short</span></div>
+              <figcaption class="attrib">
+                <div class="portrait"><span>&mdash;</span></div>
+                <span class="who">Guest 05</span>
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="card">
+              <div class="quote-slot q-medium"><span>Guest quotation<br>medium</span></div>
+              <figcaption class="attrib">
+                <div class="portrait"><span>&mdash;</span></div>
+                <span class="who">Guest 06</span>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

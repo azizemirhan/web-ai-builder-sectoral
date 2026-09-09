@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S22-002
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S22 — Breadcrumb / Context Navigation
+  Direction      : Premium / Editorial
+  Revision       : V2. Replaced. The stacked context block had been given a full page's worth of
+                   height for **four words and a reserved title** &mdash; a trail is the smallest
+                   component on any page and it was behaving like a hero. It is now one band.
+  Layout model   : One band, two halves. The trail stacked at the left with each level on its own
+                   line, and the level that cannot be written drawn at title scale on the right
+  Density        : Low
+  Media mode     : None.
+  Interaction    : Real links for every level except the current one.
+  The head       : **No headline and no hero.** A breadcrumb is not introduced; it is simply where
+                   you are, so the study opens on the trail itself with nothing above it but a rule.
+  The mechanics  : A `nav` landmark with an accessible name, an ordered list, real links, the current
+                   level marked with `aria-current`, and separators marked `aria-hidden`. **It is
+                   navigation, not a picture of navigation.**
+  Content note   : Page names are generic sector vocabulary. The last level is an article title,
+                   which cannot be invented, so it is a reserved area at the size the real title
+                   would occupy.
+  Palette        : Black and white only.
+-->
+
+<meta name="study-id" content="WELL-S22-002">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="One band: the stacked trail at the left, the reserved title at the right">
+<meta name="density" content="low">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="real-links-current-marked">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S22-002 — Breadcrumb / Context Navigation, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f6f6; }
+
+/* Scoped study styles - namespaced to .well-s22-002 */
+/* monochrome: hand-graded. Black and white only. */
+.well-s22-002 {
+  --ink: #111111;
+  --ink-soft: #4d4d4d;
+  --ink-faint: #767676;
+  --paper: #f6f6f6;
+  --tint: #e6e6e6;
+  --line: #d2d2d2;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s22-002 *,
+.well-s22-002 *::before,
+.well-s22-002 *::after { box-sizing: inherit; }
+.well-s22-002 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+.well-s22-002 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.well-s22-002 .sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.well-s22-002 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(28px, 3.4vw, 56px) clamp(22px, 3.6vw, 58px);
+}
+
+/* The band */
+.well-s22-002 .band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+  gap: clamp(20px, 3vw, 60px);
+  align-items: start;
+  padding-top: clamp(16px, 2vw, 22px);
+  border-top: 3px solid var(--ink);
+}
+
+/* The trail */
+.well-s22-002 .where {
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.well-s22-002 ol { margin: 0; padding: 0; list-style: none; }
+.well-s22-002 ol li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 7px 0;
+}
+.well-s22-002 .sep {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 1px;
+  background: var(--line);
+}
+.well-s22-002 ol a {
+  font-size: clamp(1.02rem, 1.25vw, 1.16rem);
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+}
+.well-s22-002 ol a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.well-s22-002 ol .here {
+  font-size: clamp(1.02rem, 1.25vw, 1.16rem);
+  font-weight: 700;
+  color: var(--ink);
+}
+.well-s22-002 .depth {
+  margin: clamp(14px, 1.8vw, 20px) 0 0;
+  padding-top: clamp(12px, 1.5vw, 16px);
+  border-top: 1px solid var(--line);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
+
+/* The level that cannot be written */
+.well-s22-002 .last .label {
+  display: block;
+  margin-bottom: clamp(12px, 1.5vw, 16px);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.well-s22-002 .title { display: block; margin-bottom: clamp(14px, 1.8vw, 20px); }
+.well-s22-002 .title i {
+  display: block;
+  height: clamp(26px, 3.4vw, 44px);
+  border-radius: 5px;
+  background: var(--tint);
+  margin-bottom: 12px;
+}
+.well-s22-002 .title .w92 { width: 92%; }
+.well-s22-002 .title .w58 { width: 58%; }
+.well-s22-002 .note {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 1.04rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.well-s22-002 .note b { color: var(--ink); font-weight: 700; }
+
+/* Responsive ladder */
+@media (max-width: 860px) {
+  .well-s22-002 .band { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .well-s22-002 .note { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s22-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s22-002" data-study-id="WELL-S22-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="well-s22-002-title">
+
+    <div class="band">
+
+      <div>
+        <p class="where" id="well-s22-002-title">Where you are</p>
+        <nav aria-label="Breadcrumb">
+          <ol>
+            <li><a href="#well-s22-002-title">Home</a></li>
+            <li><span class="sep" aria-hidden="true"></span><a href="#well-s22-002-title">Wellness resources</a></li>
+            <li><span class="sep" aria-hidden="true"></span><a href="#well-s22-002-title">Skin</a></li>
+            <li><span class="sep" aria-hidden="true"></span><span class="here" aria-current="page">This article</span></li>
+          </ol>
+        </nav>
+        <p class="depth">Four levels deep. Every level above this one is a link you can use; the current one is marked rather than merely styled.</p>
+      </div>
+
+      <div class="last">
+        <span class="label">The level that cannot be written</span>
+        <span class="title" role="img" aria-label="Reserved area: the article title, two lines at title scale">
+          <i class="w92"></i><i class="w58"></i>
+        </span>
+        <p class="note">The last crumb on an article page is the article's title, and a title is invented content in this catalog &mdash; so it is <b>drawn at the size it will occupy</b> rather than filled with something plausible. What the composition is settling is how much room a two-line title needs before the trail above it stops being readable.</p>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S04-002
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S04 — Specialists
+  Direction      : Premium / Editorial
+  Reference      : None. Originated for this batch; no reference images were supplied for this
+                   section.
+  Layout model   : Editorial hierarchy — one featured practitioner given a large portrait and a
+                   full text column, a pull-quote-scale studio statement beneath a hairline, then
+                   a strip of three smaller portraits carrying the rest of the team
+  Density        : Low-medium
+  Media mode     : One large reserved portrait plus three smaller ones in a strip. No image is
+                   supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Role leads and identity is reserved, as across this batch — see ../README.md.
+                   The pull-quote-scale line is a **studio statement, not a personal quotation**,
+                   and is deliberately unattributed: a quote attributed to a placeholder person
+                   would be a fabricated testimonial, which ../WELLNESS-DESIGN-DIRECTION.md
+                   forbids. No invented personal name, qualification, licence, registration,
+                   membership, award, years of experience, rating, review or social handle appears
+                   anywhere. Featuring one practitioner above the others is a compositional
+                   device, not a seniority claim, and no title implying rank is used. Portrait
+                   areas are reserved and intentionally empty.
+-->
+
+<meta name="study-id" content="WELL-S04-002">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S04">
+<meta name="section-name" content="Specialists">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Featured practitioner with studio statement above a strip of three smaller portraits">
+<meta name="density" content="low-medium">
+<meta name="media-mode" content="reserved-portrait-one-large-plus-three-strip">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S04-002 — Specialists, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #eee3e0; }
+
+/* Scoped study styles — namespaced to .well-s04-002 */
+.well-s04-002 {
+  --ink: #2a2220;
+  --ink-soft: #6f605c;
+  --paper: #eee3e0;
+  --slot: #ddcdc9;
+  --slot-ink: #6b5b57;
+  --line: #d5c4c0;
+  --focus: #5c4540;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s04-002 *,
+.well-s04-002 *::before,
+.well-s04-002 *::after { box-sizing: inherit; }
+.well-s04-002 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.well-s04-002 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(48px, 5.6vw, 100px) clamp(20px, 3.6vw, 56px);
+}
+
+/* Header */
+.well-s04-002 .eyebrow {
+  margin: 0 0 clamp(14px, 1.6vw, 20px);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s04-002 h1 {
+  margin: 0 0 clamp(30px, 3.6vw, 56px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.014em;
+  font-weight: 400;
+  max-width: 15ch;
+}
+
+/* Featured practitioner */
+.well-s04-002 .feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(26px, 3.6vw, 64px);
+  align-items: center;
+}
+.well-s04-002 .feature .portrait {
+  background: var(--slot);
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.well-s04-002 .slot-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s04-002 .feature-copy { min-width: 0; }
+.well-s04-002 .feature h2 {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.014em;
+  font-weight: 400;
+}
+.well-s04-002 .who {
+  margin: 0 0 clamp(18px, 2vw, 26px);
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+}
+.well-s04-002 .focus {
+  margin: 0;
+  max-width: 38ch;
+  color: var(--ink-soft);
+  font-size: clamp(0.98rem, 1.05vw, 1.06rem);
+  line-height: 1.6;
+}
+.well-s04-002 .textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: clamp(18px, 2vw, 26px);
+  min-height: 44px;
+  color: var(--ink);
+  font-size: 0.93rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+.well-s04-002 .textlink:hover { text-decoration-thickness: 2px; }
+
+/* Studio statement — not a personal quotation */
+.well-s04-002 .statement {
+  margin: clamp(34px, 4vw, 60px) 0 clamp(30px, 3.6vw, 52px);
+  padding-top: clamp(24px, 2.8vw, 38px);
+  border-top: 1px solid var(--line);
+}
+.well-s04-002 .statement p {
+  margin: 0;
+  max-width: 24ch;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+  line-height: 1.16;
+  letter-spacing: -0.014em;
+}
+
+/* Strip of the rest */
+.well-s04-002 .strip {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 34px);
+}
+.well-s04-002 .strip li { min-width: 0; }
+.well-s04-002 .member {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.well-s04-002 .strip .portrait {
+  background: var(--slot);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  padding: 14px;
+}
+.well-s04-002 .strip h2 {
+  margin: clamp(12px, 1.4vw, 16px) 0 4px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.08rem, 1.4vw, 1.36rem);
+  line-height: 1.2;
+  font-weight: 400;
+}
+.well-s04-002 .strip .who { margin: 0; font-size: 0.78rem; }
+.well-s04-002 .member:hover h2 { text-decoration: underline; text-underline-offset: 5px; }
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s04-002 .feature { gap: clamp(22px, 3vw, 40px); }
+  .well-s04-002 .statement p { max-width: 30ch; }
+}
+
+@media (max-width: 768px) {
+  .well-s04-002 .feature {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(20px, 2.6vw, 28px);
+  }
+  .well-s04-002 .feature .portrait { aspect-ratio: 3 / 2; }
+  .well-s04-002 .focus { max-width: none; }
+  .well-s04-002 .statement p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s04-002 .strip {
+    grid-template-columns: repeat(3, 62vw);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .well-s04-002 .strip li { scroll-snap-align: start; }
+  .well-s04-002 h1 { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s04-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s04-002" data-study-id="WELL-S04-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="well-s04-002-title">
+
+    <p class="eyebrow">The team</p>
+    <h1 id="well-s04-002-title">Four people, four pairs of hands</h1>
+
+    <div class="feature">
+      <div class="portrait"><span class="slot-label">Portrait</span></div>
+      <div class="feature-copy">
+        <h2>Facialist</h2>
+        <p class="who">Practitioner 01</p>
+        <p class="focus">Spends most of the week on facials and skin consultations, and will change the plan halfway through if your skin asks for something else that day.</p>
+        <a class="textlink" href="#well-s04-002-title">
+          Read the full profile
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="statement">
+      <p>The person you book is the person who does the treatment.</p>
+    </div>
+
+    <ul class="strip">
+      <li>
+        <a class="member" href="#well-s04-002-title">
+          <div class="portrait"><span class="slot-label">Portrait</span></div>
+          <h2>Massage therapist</h2>
+          <p class="who">Practitioner 02</p>
+        </a>
+      </li>
+      <li>
+        <a class="member" href="#well-s04-002-title">
+          <div class="portrait"><span class="slot-label">Portrait</span></div>
+          <h2>Nail technician</h2>
+          <p class="who">Practitioner 03</p>
+        </a>
+      </li>
+      <li>
+        <a class="member" href="#well-s04-002-title">
+          <div class="portrait"><span class="slot-label">Portrait</span></div>
+          <h2>Brow &amp; lash specialist</h2>
+          <p class="who">Practitioner 04</p>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

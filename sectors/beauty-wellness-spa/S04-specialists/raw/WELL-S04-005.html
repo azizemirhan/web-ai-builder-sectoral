@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S04-005
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S04 — Specialists
+  Direction      : Art-directed / Distinctive
+  Reference      : None. Originated for this batch; no reference images were supplied for this
+                   section.
+  Layout model   : A continuous full-bleed portrait band — four columns of unequal width running
+                   edge to edge at equal height with no gaps between them, under a ruled header row whose cells
+                   align to the same columns and carry the reserved name tokens
+  Density        : Low
+  Media mode     : Four reserved portrait areas forming one uninterrupted band. No image is
+                   supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Role leads and identity is reserved, as across this batch — see ../README.md.
+                   No invented personal name, qualification, licence, registration, membership,
+                   award, years of experience, rating, review or social handle appears anywhere.
+                   Portrait areas are reserved and intentionally empty.
+  Empty state    : A gapless band of four identically toned panels would read as one solid block
+                   before any photography arrives. Two devices keep it legible empty: the columns
+                   alternate between two close tones, and each carries its role over a scrim at
+                   its foot. Once real portraits are placed, the photographs themselves do that
+                   work and the alternation becomes invisible.
+  Distinction    : WELL-S03-005 is the nearest art-directed study and uses separated columns at
+                   staggered vertical offsets. This one does the opposite — the columns are
+                   flush, gapless and equal-height, and the rhythm comes from their differing
+                   widths rather than from their positions.
+-->
+
+<meta name="study-id" content="WELL-S04-005">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S04">
+<meta name="section-name" content="Specialists">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Continuous full-bleed portrait band of unequal-width columns under an aligned ruled header row">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-portrait-continuous-gapless-band">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S04-005 — Specialists, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #40211c; }
+
+/* Scoped study styles — namespaced to .well-s04-005 */
+.well-s04-005 {
+  --pad: clamp(20px, 3.6vw, 56px);
+  --cols: 1.28fr 0.84fr 1.08fr 0.8fr;
+  --ink: #f4e7de;
+  --ink-soft: #c0a091;
+  --paper: #40211c;
+  --slot-a: #613830;
+  --slot-b: #522c26;
+  --slot-ink: #d6b8aa;
+  --line: #6a4139;
+  --focus: #e8c39c;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s04-005 *,
+.well-s04-005 *::before,
+.well-s04-005 *::after { box-sizing: inherit; }
+.well-s04-005 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -4px;
+  border-radius: 2px;
+}
+
+/* Header, inside the padded measure */
+.well-s04-005 .head {
+  padding: clamp(48px, 5.6vw, 100px) var(--pad) clamp(26px, 3vw, 40px);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.well-s04-005 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s04-005 h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.6vw, 3.1rem);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  font-weight: 550;
+  max-width: 16ch;
+}
+
+/* Ruled header row — cells align to the band columns below */
+.well-s04-005 .rule-row {
+  display: grid;
+  grid-template-columns: var(--cols);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.well-s04-005 .rule-row span {
+  padding: clamp(10px, 1.2vw, 15px) clamp(12px, 1.4vw, 20px);
+  border-left: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.well-s04-005 .rule-row span:first-child { border-left: 0; }
+
+/* Continuous band */
+.well-s04-005 .band {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: var(--cols);
+}
+.well-s04-005 .band li { min-width: 0; }
+
+.well-s04-005 .col {
+  position: relative;
+  display: block;
+  height: clamp(380px, 42vw, 620px);
+  overflow: hidden;
+  background: var(--slot-a);
+  color: var(--ink);
+  text-decoration: none;
+}
+.well-s04-005 .band li:nth-child(even) .col { background: var(--slot-b); }
+
+.well-s04-005 .slot {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.well-s04-005 .slot-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s04-005 .scrim {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 52%;
+  background: linear-gradient(to top, rgba(30, 12, 9, 0.9), rgba(30, 12, 9, 0.45) 48%, rgba(30, 12, 9, 0));
+}
+.well-s04-005 .cap {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: clamp(16px, 1.8vw, 26px) clamp(12px, 1.4vw, 20px);
+}
+.well-s04-005 h2 {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.5vw, 1.5rem);
+  line-height: 1.14;
+  letter-spacing: -0.014em;
+  font-weight: 600;
+}
+.well-s04-005 .go {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: color 150ms ease, gap 150ms ease;
+}
+.well-s04-005 .col:hover .go { color: var(--ink); gap: 11px; }
+
+/* Closing line, back inside the measure */
+.well-s04-005 .foot {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(24px, 2.8vw, 38px) var(--pad) clamp(44px, 5vw, 84px);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+/* Responsive ladder — the band stays gapless, the column count halves */
+@media (max-width: 1024px) {
+  .well-s04-005 { --cols: 1.18fr 0.82fr; }
+  .well-s04-005 .rule-row span:nth-child(3) { border-left: 0; }
+  .well-s04-005 .col { height: clamp(340px, 44vw, 470px); }
+}
+
+@media (max-width: 768px) {
+  .well-s04-005 .rule-row { display: none; }
+  .well-s04-005 .col { height: clamp(300px, 56vw, 420px); }
+  .well-s04-005 h1 { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s04-005 { --cols: 1fr; }
+  .well-s04-005 .col { height: clamp(230px, 58vw, 300px); }
+  .well-s04-005 .band li:nth-child(even) .col { background: var(--slot-a); }
+  .well-s04-005 .band li:nth-child(4n + 2) .col,
+  .well-s04-005 .band li:nth-child(4n + 3) .col { background: var(--slot-b); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s04-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s04-005" data-study-id="WELL-S04-005" data-direction="Art-directed / Distinctive">
+  <section aria-labelledby="well-s04-005-title">
+
+    <div class="head">
+      <p class="eyebrow">The team</p>
+      <h1 id="well-s04-005-title">Four people, side by side</h1>
+    </div>
+
+    <div class="rule-row" aria-hidden="true">
+      <span>Practitioner 01</span>
+      <span>Practitioner 02</span>
+      <span>Practitioner 03</span>
+      <span>Practitioner 04</span>
+    </div>
+
+    <ul class="band">
+      <li>
+        <a class="col" href="#well-s04-005-title">
+          <div class="slot"><span class="slot-label">Portrait</span></div>
+          <div class="scrim"></div>
+          <div class="cap">
+            <h2>Facialist</h2>
+            <span class="go">Practitioner 01 <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="col" href="#well-s04-005-title">
+          <div class="slot"><span class="slot-label">Portrait</span></div>
+          <div class="scrim"></div>
+          <div class="cap">
+            <h2>Massage therapist</h2>
+            <span class="go">Practitioner 02 <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="col" href="#well-s04-005-title">
+          <div class="slot"><span class="slot-label">Portrait</span></div>
+          <div class="scrim"></div>
+          <div class="cap">
+            <h2>Nail technician</h2>
+            <span class="go">Practitioner 03 <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="col" href="#well-s04-005-title">
+          <div class="slot"><span class="slot-label">Portrait</span></div>
+          <div class="scrim"></div>
+          <div class="cap">
+            <h2>Brow &amp; lash specialist</h2>
+            <span class="go">Practitioner 04 <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <p class="foot">Any of the four can be asked for by name when you book.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S10-002
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S10 — Testimonials
+  Direction      : Premium / Editorial
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : One quotation, given the whole section. A centred measure holds a small serif
+                   heading, a single large reserved quotation area set at display proportion, a
+                   portrait and attribution beneath it, and the gathering policy on a hairline at
+                   the foot.
+  Density        : Low — one quotation where 001 carries three
+  Media mode     : One large reserved quotation area plus one reserved portrait slot.
+  Interaction    : None (static; no JavaScript)
+  Reserved-quote note : The quotation structure is authored; the quotation is reserved. The area
+                   here is deliberately proportioned for a **short** quote at display size rather
+                   than a long one at reading size — that ratio is the editorial decision this
+                   study exists to record, and it stays legible with the words absent.
+  Content note   : No invented quotation, guest name, initial, age, location, photograph,
+                   treatment attribution or occupation. No star rating, score, average or review
+                   count, and no review-platform name. See ../README.md. The only unreserved text
+                   is the studio's own policy on how quotes are gathered.
+-->
+
+<meta name="study-id" content="WELL-S10-002">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S10">
+<meta name="section-name" content="Testimonials">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="layout-model" content="Single display-scale reserved quotation on a centred measure">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-quotation-single-large-plus-portrait">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S10-002 — Testimonials, Premium / Editorial</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e0dad2; }
+
+/* Scoped study styles — namespaced to .well-s10-002 */
+.well-s10-002 {
+  --ink: #2a2620;
+  --ink-soft: #6d655a;
+  --paper: #e0dad2;
+  --slot: #d3ccc2;
+  --slot-ink: #6a6255;
+  --slot-edge: #bfb6a9;
+  --line: #c5bcb0;
+  --focus: #55483a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s10-002 *,
+.well-s10-002 *::before,
+.well-s10-002 *::after { box-sizing: inherit; }
+.well-s10-002 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.well-s10-002 .shell {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: clamp(52px, 6vw, 112px) clamp(20px, 3.6vw, 56px);
+}
+
+.well-s10-002 .measure {
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.well-s10-002 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s10-002 h1 {
+  margin: 0 auto clamp(30px, 3.6vw, 54px);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.16;
+  letter-spacing: -0.012em;
+  font-weight: 400;
+  max-width: 24ch;
+}
+
+/* The one reserved quotation, at display proportion */
+.well-s10-002 .quote { margin: 0; }
+.well-s10-002 .quote-slot {
+  border: 1px dashed var(--slot-edge);
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 2.6vw, 34px);
+  min-height: clamp(210px, 22vw, 320px);
+}
+.well-s10-002 .quote-slot span {
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  line-height: 1.8;
+}
+
+/* Attribution */
+.well-s10-002 .attrib {
+  margin: clamp(22px, 2.6vw, 34px) 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.4vw, 18px);
+}
+.well-s10-002 .portrait {
+  flex: none;
+  width: clamp(46px, 4.4vw, 60px);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+}
+.well-s10-002 .portrait span {
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+}
+.well-s10-002 .who {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(1rem, 1.2vw, 1.16rem);
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+/* Foot */
+.well-s10-002 .foot {
+  margin: clamp(38px, 4.4vw, 72px) auto 0;
+  max-width: 50rem;
+  padding-top: clamp(20px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.well-s10-002 .foot p {
+  margin: 0 auto;
+  max-width: 54ch;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+/* Responsive ladder */
+@media (max-width: 768px) {
+  .well-s10-002 h1 { max-width: none; }
+  .well-s10-002 .quote-slot { min-height: clamp(190px, 34vw, 240px); }
+}
+
+@media (max-width: 480px) {
+  .well-s10-002 .measure,
+  .well-s10-002 .foot { text-align: left; }
+  .well-s10-002 .attrib { justify-content: flex-start; }
+  .well-s10-002 .quote-slot { min-height: clamp(170px, 48vw, 210px); }
+  .well-s10-002 .foot p { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s10-002 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s10-002" data-study-id="WELL-S10-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="well-s10-002-title">
+
+    <div class="measure">
+      <p class="eyebrow">What guests say</p>
+      <h1 id="well-s10-002-title">One at a time, the way they were written.</h1>
+
+      <figure class="quote">
+        <div class="quote-slot"><span>Guest quotation<br>short, set at display size</span></div>
+        <figcaption class="attrib">
+          <div class="portrait"><span>&mdash;</span></div>
+          <span class="who">Guest 01</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="foot">
+      <p>Published with permission and printed as it was written. Nothing is edited for length, and nothing is given in exchange for a kind word.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

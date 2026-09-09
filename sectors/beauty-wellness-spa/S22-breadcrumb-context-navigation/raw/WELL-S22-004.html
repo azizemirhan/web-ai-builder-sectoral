@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S22-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S22 — Breadcrumb / Context Navigation
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : A prominent **return to the set** on the left — the parent level given the weight
+                   of a control rather than a word — with the full trail set small beside it and one
+                   line explaining why it is there
+  Density        : Low
+  Media mode     : None.
+  Interaction    : Links only (static; no JavaScript)
+  Content responsibility : **The trail plus a return to the parent.** The scaffold allows *optional
+                   contextual back navigation to the parent*, and this is the study that takes it
+                   seriously rather than as a decoration on the trail.
+  What conversion means for a breadcrumb : Not urgency — there is nothing here to hurry. The
+                   commercially useful thing a breadcrumb does is **give the way back to the set** to
+                   somebody who landed deep from a search engine and has never seen the category
+                   page. For them the trail is not orientation, it is the only route to the rest of
+                   the catalogue, so this study promotes it from a small grey word to a real
+                   control. The full trail is kept beside it, because promoting one level is not a
+                   reason to hide the others.
+  The honest line : *"Most people reach a page like this from a search rather than from our menu."*
+                   It says why the control exists, and it is an observation about how sites are used
+                   rather than a claim about this studio — so it needs no figure behind it, and it
+                   carries none.
+  Responsive note: The return goes full width and the trail wraps beneath it. Nothing is truncated.
+  Content note   : No count, price, rating, duration or percentage; no invented search figure; no
+                   primary menu; no search field. Every level is S02 and S03 vocabulary.
+-->
+
+<meta name="study-id" content="WELL-S22-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S22">
+<meta name="section-name" content="Breadcrumb / Context Navigation">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Promoted parent return beside a small full trail">
+<meta name="density" content="low">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="links-only">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S22-004 — Breadcrumb / Context Navigation, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #233028; }
+
+/* Scoped study styles — namespaced to .well-s22-004 */
+.well-s22-004 {
+  --ink: #eef4f0;
+  --ink-soft: #a6bfb2;
+  --paper: #233028;
+  --edge: #3c5147;
+  --rule: #35473d;
+  --focus: #cfe6d9;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s22-004 *,
+.well-s22-004 *::before,
+.well-s22-004 *::after { box-sizing: inherit; }
+.well-s22-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.well-s22-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+.well-s22-004 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(20px, 2.4vw, 34px) clamp(20px, 3.6vw, 52px);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(16px, 2.4vw, 40px);
+  align-items: center;
+}
+
+.well-s22-004 .back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid var(--edge);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.96rem;
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.well-s22-004 .back:hover { border-color: var(--ink); }
+.well-s22-004 .back .arrow { font-size: 0.9em; }
+
+.well-s22-004 .side { min-width: 0; }
+.well-s22-004 .trail {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.well-s22-004 .trail li { display: inline-flex; align-items: center; min-width: 0; }
+.well-s22-004 .trail a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.well-s22-004 .trail a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.well-s22-004 .sep { padding: 0 9px; color: var(--ink-soft); font-size: 0.8rem; }
+.well-s22-004 .here {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+.well-s22-004 .why {
+  margin: 4px 0 0;
+  max-width: 58ch;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+/* Responsive ladder */
+@media (max-width: 780px) {
+  .well-s22-004 .shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(14px, 2vw, 20px);
+    align-items: start;
+  }
+  .well-s22-004 .back { width: 100%; justify-content: center; }
+  .well-s22-004 .why { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s22-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s22-004" data-study-id="WELL-S22-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s22-004-title">
+
+    <h1 class="vh" id="well-s22-004-title">Where you are, and the way back to the rest</h1>
+
+    <a class="back" href="#well-s22-004-title"><span class="arrow" aria-hidden="true">&larr;</span> All facials</a>
+
+    <div class="side">
+      <nav aria-label="Breadcrumb">
+        <ol class="trail">
+          <li><a href="#well-s22-004-title">Home</a></li>
+          <li><span class="sep" aria-hidden="true">/</span><a href="#well-s22-004-title">Treatments</a></li>
+          <li><span class="sep" aria-hidden="true">/</span><a href="#well-s22-004-title">Facials</a></li>
+          <li><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Deep cleansing facial</span></li>
+        </ol>
+      </nav>
+      <p class="why">Most people reach a page like this from a search rather than from our menu, so the way back to the rest of them is here rather than only at the top of the site.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

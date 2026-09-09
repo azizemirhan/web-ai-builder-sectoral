@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S24-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S24 — Treatment Programme Case Context Detail
+  Direction      : Dense / Information-heavy
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : The programme record in full — a metadata strip, the stages with what happened at
+                   each, a two-column account of what is recorded against what is deliberately not
+                   recorded, and the confidentiality position as native disclosures
+  Density        : High
+  Media mode     : **None.** The canonical role calls media central; this sector forbids the media
+                   set it would normally carry, so the density variant proves the page stands with
+                   none at all and leaves the media problem to `005`.
+  Interaction    : Native <details>/<summary> only. No JavaScript, and every answer is present in the
+                   document with the disclosures closed.
+  The device     : **What is not recorded is given equal weight to what is.** A case study normally
+                   lists its evidence; this one lists the evidence it deliberately does not collect
+                   — no photographs of a face, no measurements, no scoring of anybody's skin. In a
+                   sector where the evidence is regulated, the record of what you refuse to record is
+                   the more informative half.
+  What is omitted : The number of visits, weeks or sessions. A reserved *"visits: —"* would assert
+                   that programmes have a fixed length; they do not.
+  Content note   : No invented client name, quotation, testimonial or photograph; no before-and-
+                   after; no outcome, improvement or efficacy claim; no success rate, satisfaction
+                   figure, count, price or duration; no named condition presented as treated.
+-->
+
+<meta name="study-id" content="WELL-S24-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S24">
+<meta name="section-name" content="Treatment Programme Case Context Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="direction" content="Dense / Information-heavy">
+<meta name="layout-model" content="Metadata strip, stage record, recorded-against-not-recorded, confidentiality disclosures">
+<meta name="density" content="high">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="native-details-disclosure">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S24-003 — Programme Case Context, Dense / Information-heavy</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dde8f0; }
+
+/* Scoped study styles — namespaced to .well-s24-003 */
+.well-s24-003 {
+  --ink: #1c2530;
+  --ink-soft: #536373;
+  --paper: #dde8f0;
+  --card: #ffffff;
+  --chip: #e7eef4;
+  --line: #e0e6eb;
+  --rule: #c3d1dc;
+  --focus: #2c4459;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s24-003 *,
+.well-s24-003 *::before,
+.well-s24-003 *::after { box-sizing: inherit; }
+.well-s24-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s24-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s24-003 .shell {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: clamp(32px, 3.8vw, 68px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Metadata strip */
+.well-s24-003 .meta {
+  margin: 0 0 clamp(20px, 2.4vw, 32px);
+  padding: 0 0 clamp(16px, 1.9vw, 24px);
+  border-bottom: 1px solid var(--rule);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 28px);
+}
+.well-s24-003 .meta li { min-width: 0; }
+.well-s24-003 .fname {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s24-003 .value { font-size: 0.94rem; font-weight: 600; }
+.well-s24-003 .slot {
+  display: inline-block;
+  padding: 3px 11px;
+  border-radius: 6px;
+  background: var(--chip);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.well-s24-003 .grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(16px, 2.4vw, 34px);
+  align-items: start;
+}
+.well-s24-003 .panel {
+  background: var(--card);
+  border-radius: 14px;
+  padding: clamp(18px, 2.2vw, 28px);
+}
+.well-s24-003 .panel + .panel { margin-top: clamp(14px, 1.8vw, 22px); }
+.well-s24-003 h2 {
+  margin: 0 0 clamp(11px, 1.3vw, 15px);
+  font-size: 1.04rem;
+  font-weight: 650;
+  letter-spacing: -0.008em;
+}
+.well-s24-003 h3 {
+  margin: 0 0 9px;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s24-003 ul { margin: 0; padding: 0; list-style: none; }
+
+.well-s24-003 .stages li {
+  padding: clamp(10px, 1.2vw, 13px) 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+.well-s24-003 .stages li:first-child { border-top: 0; padding-top: 0; }
+.well-s24-003 .stages b { color: var(--ink); font-weight: 650; }
+
+.well-s24-003 .split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 30px);
+}
+.well-s24-003 .split li {
+  padding: 6px 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* Disclosures */
+.well-s24-003 details { border-top: 1px solid var(--line); }
+.well-s24-003 details:first-of-type { border-top: 0; }
+.well-s24-003 summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 48px;
+  padding: 6px 0;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+.well-s24-003 summary::-webkit-details-marker { display: none; }
+.well-s24-003 summary .mark { flex: none; width: 20px; text-align: center; color: var(--ink-soft); font-weight: 400; }
+.well-s24-003 details[open] summary .mark { color: var(--ink); }
+.well-s24-003 details p {
+  margin: 0 0 12px;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.well-s24-003 .limits {
+  margin: clamp(20px, 2.4vw, 32px) 0 0;
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--rule);
+  max-width: 84ch;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.64;
+}
+.well-s24-003 .limits b { color: var(--ink); }
+
+/* Responsive ladder */
+@media (max-width: 1100px) {
+  .well-s24-003 .meta { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px) {
+  .well-s24-003 .grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .well-s24-003 .meta { grid-template-columns: minmax(0, 1fr); }
+  .well-s24-003 .split { grid-template-columns: minmax(0, 1fr); gap: clamp(14px, 2vw, 20px); }
+  .well-s24-003 .limits { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s24-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s24-003" data-study-id="WELL-S24-003" data-direction="Dense / Information-heavy">
+  <section class="shell" aria-labelledby="well-s24-003-title">
+
+    <h2 class="vh" id="well-s24-003-title">The programme record</h2>
+
+    <ul class="meta">
+      <li><span class="fname">Guest</span><span class="value">Guest 01</span></li>
+      <li><span class="fname">Reference</span><span class="slot"><span class="vh">Programme reference</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><span class="fname">Started</span><span class="slot"><span class="vh">Start date</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><span class="fname">Kind</span><span class="value">Facials</span></li>
+      <li><span class="fname">Studio</span><span class="value">Studio 01</span></li>
+    </ul>
+
+    <div class="grid">
+
+      <div>
+        <div class="panel">
+          <h2>The stages, and what happened at each</h2>
+          <ul class="stages">
+            <li><b>Agreed.</b> A conversation, then a plan written on paper that the guest keeps. Nothing bought up front, nothing booked past the first visit.</li>
+            <li><b>First visit.</b> The plan is tested rather than executed. What was used is written down so it can be repeated or avoided.</li>
+            <li><b>Revised.</b> The plan was rewritten in the room, on the same sheet, with the previous version crossed out rather than replaced quietly.</li>
+            <li><b>Reviewed.</b> Built into the plan rather than requested. Stopping is one of the conclusions a review is allowed to reach.</li>
+            <li><b>Ended.</b> By agreement, at a review. Ending costs nothing and closes nothing off.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>What is recorded, and what is not</h2>
+          <div class="split">
+            <div>
+              <h3>Kept on file</h3>
+              <ul>
+                <li>What was used, and in what order</li>
+                <li>Anything the guest said not to use</li>
+                <li>What was changed in the plan, and why</li>
+                <li>Reactions, however minor</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Deliberately not kept</h3>
+              <ul>
+                <li>Photographs of anybody&rsquo;s face</li>
+                <li>Measurements or scores of anybody&rsquo;s skin</li>
+                <li>A rating of how the programme went</li>
+                <li>Anything we would not read out to the guest</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel">
+          <h2>The confidentiality position</h2>
+
+          <details>
+            <summary>Why there is no photograph here<span class="mark" aria-hidden="true">+</span></summary>
+            <p>Results imagery is regulated in this sector, and we would not publish somebody&rsquo;s face in any case. A picture of a stranger&rsquo;s skin tells you nothing about your own.</p>
+          </details>
+
+          <details>
+            <summary>Why the guest is a reference rather than a name<span class="mark" aria-hidden="true">+</span></summary>
+            <p>Because consent to be treated is not consent to be published, and the two get confused often enough that we keep them separate by default rather than by request.</p>
+          </details>
+
+          <details>
+            <summary>What we would need before publishing anything<span class="mark" aria-hidden="true">+</span></summary>
+            <p>Written permission, for that specific use, which can be withdrawn afterwards without explanation. Anything published under those terms is taken down when it is withdrawn.</p>
+          </details>
+
+          <details>
+            <summary>Whether a programme like this would suit you<span class="mark" aria-hidden="true">+</span></summary>
+            <p>That is not answerable from a page. It is a conversation, and if what you are describing is a change on your skin rather than a preference about it, it is a conversation with a doctor first.</p>
+          </details>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="limits"><b>This record documents a method, not a result.</b> There is no outcome printed on this page, no comparison of two states, and no account of what the programme achieved &mdash; those are regulated in this sector, and we would rather leave them out than invent them.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

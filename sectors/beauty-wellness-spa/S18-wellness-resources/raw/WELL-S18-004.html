@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S18-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S18 — Wellness Resources
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : A held panel on the left saying why any of this is written down and what it is
+                   not, with the one action beneath it; a compact list of four entries on the right,
+                   each a reserved title bar with its kind, topic and reserved date
+  Density        : Medium
+  Media mode     : None. Reserved title bars only.
+  Interaction    : None (static; no JavaScript)
+  Conversion device : **The limits paragraph is the conversion device, not a disclaimer at the
+                   foot.** A visitor deciding whether to read a wellness studio's writing about skin
+                   is deciding whether to trust it, and the fastest way to earn that is to say
+                   plainly what the writing is not and where it stops. So the sentence most sites
+                   bury in small print is given the panel, above the action.
+  What it avoids : No newsletter capture, no email field, no "subscribe for tips", no gated
+                   download, no subscriber figure. The action is to read, which is the only thing
+                   this section can honestly ask for; booking belongs to S19 and S20.
+  Content note   : Topics and kinds are real generic vocabulary; dates are reserved fields with
+                   visually hidden labels. No invented title, summary, author name, date, reading
+                   time, subscriber, view or share count. No efficacy, outcome or ingredient claim;
+                   no diagnostic statement; no "trending" or "most read" label.
+-->
+
+<meta name="study-id" content="WELL-S18-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S18">
+<meta name="section-name" content="Wellness Resources">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Why-we-publish panel with the limits statement and one action, beside a compact entry list">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none-reserved-title-bars-only">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S18-004 — Wellness Resources, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #1f3835; }
+
+/* Scoped study styles — namespaced to .well-s18-004 */
+.well-s18-004 {
+  --ink: #eef3f1;
+  --ink-soft: #a9c2bb;
+  --paper: #1f3835;
+  --panel: #172b29;
+  --slot: #2b4642;
+  --slot-ink: #cfe0da;
+  --slot-edge: #3f5a55;
+  --chip: #2b4642;
+  --line: #33504b;
+  --focus: #cfe0da;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s18-004 *,
+.well-s18-004 *::before,
+.well-s18-004 *::after { box-sizing: inherit; }
+.well-s18-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s18-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s18-004 .shell {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 92px) clamp(20px, 3.6vw, 52px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  gap: clamp(22px, 3.4vw, 64px);
+  align-items: start;
+}
+
+/* Panel */
+.well-s18-004 .panel {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: clamp(22px, 2.8vw, 40px);
+}
+.well-s18-004 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s18-004 h1 {
+  margin: 0 0 clamp(14px, 1.8vw, 22px);
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+}
+.well-s18-004 .why {
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+.well-s18-004 .limits {
+  margin: 0;
+  padding: clamp(16px, 2vw, 22px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: var(--ink-soft);
+}
+.well-s18-004 .limits b { color: var(--ink); }
+.well-s18-004 .cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: clamp(18px, 2.2vw, 26px);
+  min-height: 48px;
+  padding: 0 26px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.well-s18-004 .cta:hover { background: #ffffff; }
+.well-s18-004 .aside {
+  margin: clamp(11px, 1.4vw, 14px) 0 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+/* Entries */
+.well-s18-004 .entries { margin: 0; padding: 0; list-style: none; }
+.well-s18-004 .entries li {
+  border-bottom: 1px solid var(--line);
+  padding: clamp(16px, 2vw, 24px) 0;
+}
+.well-s18-004 .entries li:first-child { padding-top: 0; }
+.well-s18-004 .entries li:last-child { border-bottom: 0; padding-bottom: 0; }
+.well-s18-004 .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: clamp(10px, 1.4vw, 16px);
+  margin: 0 0 clamp(11px, 1.4vw, 14px);
+}
+.well-s18-004 .kind {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--chip);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--slot-ink);
+}
+.well-s18-004 .topic { font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+.well-s18-004 .fname {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-right: 8px;
+}
+.well-s18-004 .slot {
+  padding: 2px 9px;
+  border-radius: 5px;
+  background: var(--chip);
+  color: var(--slot-ink);
+  font-size: 0.85rem;
+}
+.well-s18-004 .title-slot {
+  border: 1px dashed var(--slot-edge);
+  border-radius: 8px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  min-height: clamp(66px, 6.2vw, 86px);
+  text-align: center;
+}
+.well-s18-004 .title-slot span {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  line-height: 1.6;
+}
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .well-s18-004 .shell {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(24px, 3vw, 34px);
+  }
+  .well-s18-004 .cta { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s18-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s18-004" data-study-id="WELL-S18-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s18-004-title">
+
+    <div class="panel">
+      <p class="eyebrow">Things we have written down</p>
+      <h1 id="well-s18-004-title">Read it before you decide anything.</h1>
+      <p class="why">These exist so you do not have to ring us about the same five things. Most of them we hand over on paper anyway, at the end of an appointment, and most of those go in a bag and stay there.</p>
+      <p class="limits"><b>None of this is medical advice.</b> It is what we tell people in the room, written down. If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa — and we will say so rather than guess.</p>
+      <a class="cta" href="#well-s18-004-title">Read what we have written</a>
+      <p class="aside">Nothing to sign up to, and no email needed to open any of it.</p>
+    </div>
+
+    <ul class="entries">
+      <li>
+        <p class="row">
+          <span class="kind">Aftercare note</span>
+          <span class="topic">Skin</span>
+          <span><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></span>
+        </p>
+        <div class="title-slot"><span>Title<br>two lines</span></div>
+      </li>
+      <li>
+        <p class="row">
+          <span class="kind">A guide</span>
+          <span class="topic">Body &amp; massage</span>
+          <span><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></span>
+        </p>
+        <div class="title-slot"><span>Title<br>one line</span></div>
+      </li>
+      <li>
+        <p class="row">
+          <span class="kind">A question answered</span>
+          <span class="topic">Hands &amp; feet</span>
+          <span><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></span>
+        </p>
+        <div class="title-slot"><span>Title<br>two lines</span></div>
+      </li>
+      <li>
+        <p class="row">
+          <span class="kind">Aftercare note</span>
+          <span class="topic">Brows &amp; lashes</span>
+          <span><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></span>
+        </p>
+        <div class="title-slot"><span>Title<br>one line</span></div>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>

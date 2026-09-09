@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S03-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S03 — Service Categories
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch. One reference image was supplied and was
+                   placed at 001; the remaining four directions were authored from nothing at the
+                   user's request.
+  Layout model   : Question-led chooser — an oversized question occupying the top of the section,
+                   four equal answer targets beneath it, and a fallback route as a full-width
+                   band for the visitor who cannot answer the question
+  Density        : Low
+  Media mode     : Four reserved media bands, one across the top of each answer target,
+                   deliberately subordinate to the target's name. No image is supplied.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Neutral placeholder copy. Each category line says what the category covers,
+                   never what it achieves. Nothing is collected: the targets are routes into a
+                   category and the fallback band opens a conversation, so this section carries a
+                   conversion shape without becoming a form. No efficacy claim, percentage,
+                   price, duration, practitioner name, qualification, client, rating or address.
+                   No individual treatment is presented — that is WELL-S02's role. All media
+                   areas are reserved and intentionally empty.
+  Distinction    : This is not WELL-S03-001 with a heading. There the compact header sits above
+                   full-bleed overlay cards and the media does the sorting; here the question is
+                   the largest element in the composition, the targets are name-led blocks with
+                   subordinate media, and the composition ends on a fallback route rather than on
+                   the last card. WELL-S02-004 is the other conversion study in this pair and
+                   uses a master-detail picker with a selection state, which this study does not.
+-->
+
+<meta name="study-id" content="WELL-S03-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S03">
+<meta name="section-name" content="Service Categories">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Question-led chooser with four equal answer targets and a fallback route band">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-band-per-target-subordinate">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S03-004 — Service Categories, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f0e5d2; }
+
+/* Scoped study styles — namespaced to .well-s03-004 */
+.well-s03-004 {
+  --ink: #2b2216;
+  --ink-soft: #6f6350;
+  --paper: #f0e5d2;
+  --tile: #fbf6ec;
+  --slot: #ddcfb6;
+  --slot-ink: #6a5e49;
+  --line: #ddd0b8;
+  --accent: #2b2216;
+  --accent-ink: #f7f1e5;
+  --focus: #2b2216;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s03-004 *,
+.well-s03-004 *::before,
+.well-s03-004 *::after { box-sizing: inherit; }
+.well-s03-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+.well-s03-004 .shell {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: clamp(48px, 5.6vw, 96px) clamp(20px, 3.6vw, 52px);
+}
+
+/* The question — the largest thing in the section */
+.well-s03-004 .ask {
+  margin-bottom: clamp(12px, 1.6vw, 20px);
+}
+.well-s03-004 h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5.4vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.026em;
+  font-weight: 550;
+  max-width: 11ch;
+}
+.well-s03-004 .sub {
+  margin: 0 0 clamp(30px, 3.6vw, 52px);
+  max-width: 44ch;
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.05vw, 1.1rem);
+}
+
+/* Answer targets */
+.well-s03-004 .answers {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 20px);
+}
+.well-s03-004 .answers li { min-width: 0; display: flex; }
+
+.well-s03-004 .target {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--tile);
+  border-radius: 16px;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+.well-s03-004 .target:hover { background: #ffffff; }
+
+.well-s03-004 .band {
+  background: var(--slot);
+  height: clamp(78px, 8vw, 116px);
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+.well-s03-004 .slot-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+
+.well-s03-004 .body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: clamp(18px, 1.9vw, 26px);
+}
+.well-s03-004 h2 {
+  margin: 0 0 9px;
+  font-size: clamp(1.2rem, 1.6vw, 1.55rem);
+  line-height: 1.18;
+  letter-spacing: -0.016em;
+  font-weight: 600;
+}
+.well-s03-004 .desc {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.well-s03-004 .go {
+  margin-top: auto;
+  padding-top: clamp(16px, 1.8vw, 22px);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+.well-s03-004 .target:hover .go { gap: 12px; }
+
+/* Fallback route */
+.well-s03-004 .fallback {
+  margin-top: clamp(14px, 1.6vw, 22px);
+  padding: clamp(20px, 2.2vw, 30px) clamp(20px, 2.4vw, 34px);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-radius: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 32px);
+}
+.well-s03-004 .fallback p {
+  margin: 0;
+  max-width: 52ch;
+  font-size: clamp(0.98rem, 1.05vw, 1.08rem);
+}
+.well-s03-004 .btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: var(--accent-ink);
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 140ms ease;
+}
+.well-s03-004 .btn:hover { background: #ffffff; }
+.well-s03-004 .fallback :focus-visible { outline-color: var(--accent-ink); }
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s03-004 .answers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s03-004 h1 { max-width: 12ch; }
+}
+
+@media (max-width: 768px) {
+  .well-s03-004 .sub { max-width: none; }
+  .well-s03-004 .fallback { flex-direction: column; align-items: flex-start; }
+  .well-s03-004 .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .well-s03-004 .answers { grid-template-columns: minmax(0, 1fr); }
+  .well-s03-004 .band { height: 92px; }
+  .well-s03-004 .target { border-radius: 14px; }
+  .well-s03-004 h1 { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s03-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s03-004" data-study-id="WELL-S03-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s03-004-title">
+
+    <div class="ask">
+      <h1 id="well-s03-004-title">What are you here for?</h1>
+    </div>
+    <p class="sub">Four kinds of work. Pick the one closest to what you came for and we will take it from there.</p>
+
+    <ul class="answers">
+      <li>
+        <a class="target" href="#well-s03-004-title">
+          <div class="band"><span class="slot-label">Facials media</span></div>
+          <div class="body">
+            <h2>My face</h2>
+            <p class="desc">Cleansing, steam and hands-on work for the face and neck.</p>
+            <span class="go">Facials <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="target" href="#well-s03-004-title">
+          <div class="band"><span class="slot-label">Body and massage media</span></div>
+          <div class="body">
+            <h2>My whole body</h2>
+            <p class="desc">Full-body work, from slow massage to scrubs and wraps.</p>
+            <span class="go">Body &amp; massage <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="target" href="#well-s03-004-title">
+          <div class="band"><span class="slot-label">Hands and feet media</span></div>
+          <div class="body">
+            <h2>My hands and feet</h2>
+            <p class="desc">Soaking, shaping and massage for hands and feet.</p>
+            <span class="go">Hands &amp; feet <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="target" href="#well-s03-004-title">
+          <div class="band"><span class="slot-label">Brows and lashes media</span></div>
+          <div class="body">
+            <h2>My brows and lashes</h2>
+            <p class="desc">Shaping, tinting and detail work around the eyes.</p>
+            <span class="go">Brows &amp; lashes <span aria-hidden="true">&rarr;</span></span>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <div class="fallback">
+      <p>None of those quite it? Tell us how you want to feel afterwards and we will suggest where to start.</p>
+      <a class="btn" href="#well-s03-004-title">Talk to us first</a>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

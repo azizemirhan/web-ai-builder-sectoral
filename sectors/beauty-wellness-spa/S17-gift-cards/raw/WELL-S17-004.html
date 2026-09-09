@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S17-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S17 — Gift Cards
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : The five things a gift buyer is actually worried about, answered in a panel with
+                   the action, beside a reserved card artwork and the reserved amount
+  Density        : Medium
+  Media mode     : One reserved card artwork area at object scale.
+  Interaction    : None (static; no JavaScript)
+  Conversion note: A gift card section normally sells warmth. What a buyer is anxious about is
+                   narrower and more practical — **that the other person will see what was spent**,
+                   that it will expire before they use it, that they will feel obliged to have the
+                   thing that was chosen for them. Every one of those is answerable with an
+                   operating commitment rather than a claim, so this study answers them in order
+                   and puts the action next to the answers.
+  The strongest line : *The amount is not printed on it.* Printing the value turns a present into a
+                   receipt, most sites do it, and saying plainly that this one does not costs the
+                   studio nothing while removing the single largest reason someone hesitates.
+  Content note   : No invented amount, denomination, currency symbol, figure, expiry date or
+                   period, delivery time, postage cost, booking fee, discount or bonus-credit
+                   offer; no denomination tiers; **no urgency device** — a gift section is where
+                   "order by Friday" would normally sit, and that is an invented deadline.
+-->
+
+<meta name="study-id" content="WELL-S17-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S17">
+<meta name="section-name" content="Gift Cards">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Five buyer worries answered in a panel with the action, beside the card">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-card-artwork-single">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S17-004 — Gift Cards, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #35243a; }
+
+/* Scoped study styles — namespaced to .well-s17-004 */
+.well-s17-004 {
+  --ink: #f1ecf3;
+  --ink-soft: #b3a0ba;
+  --paper: #35243a;
+  --panel: #f1ecf3;
+  --panel-ink: #26192a;
+  --panel-soft: #665a6c;
+  --panel-line: #ded4e2;
+  --slot: #45304c;
+  --slot-ink: #cdb9d4;
+  --chip: #45304c;
+  --accent: #26192a;
+  --accent-ink: #f1ecf3;
+  --focus: #dcc0e6;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s17-004 *,
+.well-s17-004 *::before,
+.well-s17-004 *::after { box-sizing: inherit; }
+.well-s17-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+.well-s17-004 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s17-004 .shell {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+.well-s17-004 .split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(18px, 2.4vw, 44px);
+  align-items: start;
+}
+
+/* Panel */
+.well-s17-004 .panel {
+  background: var(--panel);
+  color: var(--panel-ink);
+  border-radius: 18px;
+  padding: clamp(24px, 3vw, 44px);
+  display: flex;
+  flex-direction: column;
+}
+.well-s17-004 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--panel-soft);
+}
+.well-s17-004 h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 17ch;
+}
+.well-s17-004 .panel > p {
+  margin: clamp(14px, 1.8vw, 22px) 0 0;
+  max-width: 46ch;
+  color: var(--panel-soft);
+  font-size: clamp(0.98rem, 1.05vw, 1.06rem);
+  line-height: 1.62;
+}
+.well-s17-004 .worries {
+  margin: clamp(20px, 2.4vw, 30px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.well-s17-004 .worries li {
+  border-top: 1px solid var(--panel-line);
+  padding: clamp(11px, 1.3vw, 15px) 0;
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+.well-s17-004 .worries b {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--panel-soft);
+}
+.well-s17-004 .btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(22px, 2.6vw, 32px);
+  min-height: 54px;
+  padding: 0 32px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 140ms ease;
+}
+.well-s17-004 .btn:hover { background: #332339; }
+
+/* Card side */
+.well-s17-004 .side { min-width: 0; }
+.well-s17-004 .art {
+  background: var(--slot);
+  border-radius: 14px;
+  aspect-ratio: 8 / 5;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.well-s17-004 .art span {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s17-004 .amount {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: clamp(16px, 2vw, 24px) 0 0;
+}
+.well-s17-004 .fname {
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s17-004 .slot {
+  min-width: clamp(58px, 5.2vw, 74px);
+  padding: 3px 11px;
+  border-radius: 6px;
+  background: var(--chip);
+  color: var(--slot-ink);
+  font-size: 1rem;
+  text-align: center;
+}
+.well-s17-004 .side p {
+  margin: clamp(14px, 1.8vw, 22px) 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.58;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s17-004 .split { grid-template-columns: minmax(0, 1fr); }
+  .well-s17-004 h1 { max-width: none; }
+}
+
+@media (max-width: 768px) {
+  .well-s17-004 .panel > p { max-width: none; }
+  .well-s17-004 .btn { align-self: stretch; }
+}
+
+@media (max-width: 480px) {
+  .well-s17-004 .panel { border-radius: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s17-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s17-004" data-study-id="WELL-S17-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s17-004-title">
+    <div class="split">
+
+      <div class="panel">
+        <p class="eyebrow">For someone else</p>
+        <h1 id="well-s17-004-title">The five things that make people hesitate</h1>
+        <p>A gift card is easy to buy and easy to get wrong. These are the parts people worry about, and what we do about each of them.</p>
+        <ul class="worries">
+          <li><b>They will see what I spent</b>The amount is not printed on the card, front or back. A present should not arrive as a receipt.</li>
+          <li><b>It will expire</b>It does not. There is no date on it and nothing is lost by leaving it a while.</li>
+          <li><b>They will feel stuck with my choice</b>It can go on anything, or toward something dearer. A named treatment is still swappable.</li>
+          <li><b>There will be an awkward balance left</b>Whatever is left stays on it. Nothing is written off and nothing is topped up in front of them.</li>
+          <li><b>It will feel impersonal</b>Your message is reproduced exactly as you write it. We do not tidy it or add anything of ours.</li>
+        </ul>
+        <a class="btn" href="#well-s17-004-title">Buy a gift card</a>
+      </div>
+
+      <div class="side">
+        <div class="art"><span>The card</span></div>
+        <p class="amount">
+          <span class="fname">Amount</span>
+          <span class="slot"><span class="vh">Gift amount</span><span aria-hidden="true">&mdash;</span></span>
+        </p>
+        <p>Choose the amount yourself rather than picking from a set. Printed or by email, whichever suits how you are giving it.</p>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

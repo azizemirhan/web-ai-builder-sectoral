@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S24-005
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S24 — Programme / Case Study Detail
+  Direction      : Art-directed / Distinctive
+  Revision       : V2. Replaced. The old study was six photography rules and nothing else &mdash; a
+                   media policy rather than a programme page. **The rules were good content in the
+                   wrong role**, so the method is now the subject and the rules are a footnote strip.
+  Layout model   : The method drawn as four moments across the top &mdash; agreed, revised, reviewed,
+                   stopped &mdash; then the record: the rewritten plan at scale beside the reserved
+                   fields, and the picture rules compressed into a strip at the foot
+  Density        : Low
+  Media mode     : One large reserved area for the plan, three small ones in the footnote strip.
+  Interaction    : None (static; no JavaScript).
+  The head       : **No hero panel and no headline.** The page opens on the four moments themselves,
+                   because a case study whose subject is a method should begin with the method.
+  The constraint : The page cannot document a result, so it documents how the work was agreed, run,
+                   changed and stopped. **A programme that ends is not a programme that failed.**
+  Content note   : The person is a reserved token; the dates and reference are reserved fields; the
+                   plan is a reserved area. No result, no improvement, no before-and-after, no visit
+                   count, no duration, no price.
+  Palette        : Black and white only.
+-->
+
+<meta name="study-id" content="WELL-S24-005">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S24">
+<meta name="section-name" content="Programme / Case Study Detail">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Four moments across the top, the rewritten plan and the record beneath, picture rules at the foot">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-plan-and-strip">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S24-005 — Programme Detail, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e4e4e4; }
+
+/* Scoped study styles - namespaced to .well-s24-005 */
+/* monochrome: hand-graded. Black and white only. */
+.well-s24-005 {
+  --ink: #111111;
+  --ink-soft: #4d4d4d;
+  --ink-faint: #6c6c6c;
+  --paper: #e4e4e4;
+  --card: #ffffff;
+  --line: #c8c8c8;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s24-005 *,
+.well-s24-005 *::before,
+.well-s24-005 *::after { box-sizing: inherit; }
+.well-s24-005 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
+.well-s24-005 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s24-005 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* The four moments */
+.well-s24-005 .kicker {
+  margin: 0 0 clamp(12px, 1.5vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.well-s24-005 .moments {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.8vw, 26px);
+  margin: 0 0 clamp(24px, 3vw, 44px);
+  padding: 0;
+  padding-top: clamp(14px, 1.8vw, 20px);
+  border-top: 5px solid var(--ink);
+  list-style: none;
+}
+.well-s24-005 .moments > li { min-width: 0; }
+.well-s24-005 .moments h1,
+.well-s24-005 .moments h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.3rem, 2.3vw, 2.1rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+.well-s24-005 .moments p { margin: 0; font-size: 0.97rem; line-height: 1.5; color: var(--ink-soft); }
+.well-s24-005 .moments p b { color: var(--ink); font-weight: 650; }
+.well-s24-005 .moments .stop h2 { color: var(--ink); }
+.well-s24-005 .moments .stop { border-left: 3px solid var(--ink); padding-left: clamp(12px, 1.5vw, 16px); }
+
+/* The record */
+.well-s24-005 .record {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+  gap: clamp(18px, 2.4vw, 36px);
+  align-items: start;
+  margin-bottom: clamp(24px, 3vw, 42px);
+}
+.well-s24-005 .plan {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed #a4a4a4;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #d6d6d6 0%, #f0f0f0 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(16px, 2vw, 26px);
+}
+.well-s24-005 .plan span {
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.well-s24-005 .side { display: grid; gap: clamp(14px, 1.8vw, 20px); }
+.well-s24-005 .card {
+  background: var(--card);
+  border-radius: 26px;
+  padding: clamp(18px, 2.2vw, 26px);
+}
+.well-s24-005 .card h3 {
+  margin: 0 0 clamp(12px, 1.5vw, 16px);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s24-005 .token {
+  display: inline-block;
+  margin-bottom: clamp(12px, 1.5vw, 16px);
+  padding: 6px 15px;
+  border-radius: 999px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+.well-s24-005 .fields { margin: 0; display: grid; gap: 10px; }
+.well-s24-005 .fields > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.well-s24-005 .fields > div:last-child { border-bottom: 0; padding-bottom: 0; }
+.well-s24-005 .fields dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s24-005 .fields dd { margin: 0; }
+.well-s24-005 .slot {
+  display: inline-block;
+  min-width: 78px;
+  padding: 6px 15px;
+  border-radius: 10px;
+  background: #ececec;
+  color: var(--ink-faint);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+}
+.well-s24-005 .noresult {
+  background: #111111;
+  color: #c4c4c4;
+  border-radius: 26px;
+  padding: clamp(18px, 2.2vw, 26px);
+}
+.well-s24-005 .noresult h3 { color: #a8a8a8; }
+.well-s24-005 .noresult p { margin: 0; font-size: 1rem; line-height: 1.56; }
+.well-s24-005 .noresult p b { color: #ffffff; font-weight: 700; }
+
+/* The picture rules, as a footnote */
+.well-s24-005 .rules {
+  padding-top: clamp(16px, 2vw, 24px);
+  border-top: 1px solid var(--line);
+}
+.well-s24-005 .rules > h3 {
+  margin: 0 0 clamp(14px, 1.8vw, 20px);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s24-005 .strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: clamp(14px, 1.8vw, 24px);
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+.well-s24-005 .strip figure { margin: 0; min-width: 0; }
+.well-s24-005 .thumb {
+  aspect-ratio: 3 / 2;
+  border: 1px dashed #a4a4a4;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #d6d6d6 0%, #ededed 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 11px;
+  margin-bottom: 9px;
+}
+.well-s24-005 .thumb span {
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #5e5e5e;
+}
+.well-s24-005 .strip figcaption { font-size: 0.94rem; line-height: 1.45; color: var(--ink-soft); }
+.well-s24-005 .strip figcaption b { display: block; color: var(--ink); font-weight: 700; margin-bottom: 2px; }
+.well-s24-005 .why { margin: 0; max-width: 88ch; font-size: 0.98rem; line-height: 1.56; color: var(--ink-soft); }
+.well-s24-005 .why b { color: var(--ink); font-weight: 650; }
+
+/* Responsive ladder */
+@media (max-width: 980px) {
+  .well-s24-005 .moments { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 22px); }
+  .well-s24-005 .record { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .well-s24-005 .moments { grid-template-columns: minmax(0, 1fr); }
+  .well-s24-005 .why { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s24-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s24-005" data-study-id="WELL-S24-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="well-s24-005-title">
+
+    <p class="kicker">One programme, anonymised &mdash; the method, in four moments</p>
+
+    <ol class="moments">
+      <li>
+        <h1 id="well-s24-005-title">Agreed</h1>
+        <p>Written as a plan rather than sold as a course. <b>No invoice attached</b>, and abandonable after the first visit.</p>
+      </li>
+      <li>
+        <h2>Revised</h2>
+        <p>Rewritten in the room, on the same sheet, <b>with the old version crossed out rather than replaced quietly.</b></p>
+      </li>
+      <li>
+        <h2>Reviewed</h2>
+        <p>Looked at with the guest, not reported to them. <b>One practitioner throughout</b>, because continuity is most of the information.</p>
+      </li>
+      <li class="stop">
+        <h2>Stopped</h2>
+        <p>Because the review said there was no reason to keep going. <b>A programme that ends is not a programme that failed.</b></p>
+      </li>
+    </ol>
+
+    <div class="record">
+      <div class="plan"><span>Reserved &mdash; the plan, as it was rewritten. No names, no reference, no legible date</span></div>
+
+      <div class="side">
+        <div class="card">
+          <h3>The record</h3>
+          <span class="token">Guest 01</span>
+          <dl class="fields">
+            <div><dt>Started</dt><dd><span class="slot"><span class="vh">Start date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+            <div><dt>Reviewed</dt><dd><span class="slot"><span class="vh">Review date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+            <div><dt>Ended</dt><dd><span class="slot"><span class="vh">End date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+            <div><dt>Reference</dt><dd><span class="slot"><span class="vh">Reference</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          </dl>
+        </div>
+
+        <div class="noresult">
+          <h3>What is not here</h3>
+          <p><b>No result, and no face.</b> Results imagery and outcome claims are regulated in this sector, and consent to be treated is not consent to be published. What this page can honestly show is how the work was decided.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rules">
+      <h3>What a programme like this is photographed with</h3>
+      <div class="strip">
+        <figure>
+          <div class="thumb"><span>Reserved &mdash; the room, set up</span></div>
+          <figcaption><b>The room, before anybody is in it</b>May not contain a person, a name, or anything on the notes board.</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb"><span>Reserved &mdash; what was used</span></div>
+          <figcaption><b>What was used, laid out</b>Products and tools only. No skin in frame.</figcaption>
+        </figure>
+        <figure>
+          <div class="thumb"><span>Reserved &mdash; hands, working</span></div>
+          <figcaption><b>A practitioner's hands</b>Hands and forearms only. No face, and nobody identifiable.</figcaption>
+        </figure>
+      </div>
+      <p class="why"><b>Every rule above exists for the same reason.</b> A photograph of a stranger's skin would tell you nothing about your own, so what these pictures can honestly show is where the work happens and how it is recorded &mdash; and that is the whole set.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S11-005
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S11 — Pricing
+  Direction      : Art-directed / Distinctive
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : The figure made the subject. Six reserved price slots set at display scale in a
+                   staggered two-column rhythm, with the treatment name reduced to a small line
+                   above each — the inverse of the usual price list, where the name leads and the
+                   number follows.
+  Density        : Low — six treatments, no supporting copy beyond the header and one closing line
+  Media mode     : None. The type is the event.
+  Interaction    : None (static; no JavaScript)
+  Direction note : This study and WELL-S11-002 are deliberate inverses and were authored as a pair.
+                   There the name is at display scale and the price is a footnote; here the
+                   reserved price slot is the largest element on the page and the name is a label.
+                   Between them they record the two ends of the only real design decision this
+                   section has, so a reviewer can pick a point on that axis rather than a style.
+  Reserved-price note : The price is reserved, not omitted — an em dash at the size the real figure
+                   will occupy, with a visually hidden "Price" label and no currency symbol. At
+                   this scale the reservation is doing the most work in the batch: the slot's width
+                   is what tells a reviewer whether a three-figure number will fit the composition.
+  Content note   : No invented price, figure, range, currency symbol, deposit, fee, tax statement,
+                   package value, saving, discount or "was/now" pair; no duration or session count;
+                   no popularity or value badge.
+-->
+
+<meta name="study-id" content="WELL-S11-005">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S11">
+<meta name="section-name" content="Pricing">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Display-scale reserved price slots in a staggered two-column rhythm">
+<meta name="density" content="low">
+<meta name="media-mode" content="none-deliberate">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S11-005 — Pricing, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #1a1714; }
+
+/* Scoped study styles — namespaced to .well-s11-005 */
+.well-s11-005 {
+  --ink: #f3ede4;
+  --ink-soft: #a3988a;
+  --paper: #1a1714;
+  --chip: #2b2620;
+  --chip-ink: #cbbca8;
+  --chip-edge: #3d362d;
+  --line: #2e2921;
+  --focus: #e3c79a;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s11-005 *,
+.well-s11-005 *::before,
+.well-s11-005 *::after { box-sizing: inherit; }
+.well-s11-005 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.well-s11-005 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s11-005 .shell {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: clamp(48px, 5.6vw, 100px) clamp(20px, 3.6vw, 56px);
+}
+
+/* Header */
+.well-s11-005 .head {
+  max-width: 40rem;
+  margin-bottom: clamp(30px, 3.8vw, 58px);
+}
+.well-s11-005 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s11-005 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 18ch;
+}
+
+/* Staggered rhythm */
+.well-s11-005 .figures {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(20px, 3vw, 64px);
+  row-gap: clamp(22px, 2.8vw, 44px);
+}
+.well-s11-005 .figures li { min-width: 0; }
+.well-s11-005 .figures li:nth-child(even) { margin-top: clamp(18px, 2.6vw, 46px); }
+
+.well-s11-005 .name {
+  display: block;
+  margin-bottom: clamp(10px, 1.2vw, 15px);
+  padding-bottom: clamp(9px, 1.1vw, 13px);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* The reserved price, at display scale */
+.well-s11-005 .price {
+  display: block;
+  border: 1px dashed var(--chip-edge);
+  border-radius: 12px;
+  background: var(--chip);
+  color: var(--chip-ink);
+  padding: clamp(14px, 1.8vw, 26px) clamp(18px, 2.2vw, 32px);
+  font-size: clamp(2.6rem, 6vw, 5.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+/* Closing line */
+.well-s11-005 .foot {
+  margin: clamp(34px, 4vw, 62px) 0 0;
+  padding-top: clamp(20px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+/* Responsive ladder — the stagger goes, the display scale stays */
+@media (max-width: 1024px) {
+  .well-s11-005 .figures li:nth-child(even) { margin-top: clamp(14px, 2vw, 26px); }
+  .well-s11-005 h1 { max-width: none; }
+}
+
+@media (max-width: 768px) {
+  .well-s11-005 .figures { grid-template-columns: minmax(0, 1fr); row-gap: clamp(18px, 3vw, 26px); }
+  .well-s11-005 .figures li:nth-child(even) { margin-top: 0; }
+  .well-s11-005 .price { font-size: clamp(2.4rem, 12vw, 3.6rem); }
+}
+
+@media (max-width: 480px) {
+  .well-s11-005 .price { font-size: clamp(2.2rem, 15vw, 3rem); border-radius: 10px; }
+  .well-s11-005 .foot { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s11-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s11-005" data-study-id="WELL-S11-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="well-s11-005-title">
+
+    <div class="head">
+      <p class="eyebrow">What things cost</p>
+      <h1 id="well-s11-005-title">The number, said out loud</h1>
+    </div>
+
+    <ul class="figures">
+      <li>
+        <span class="name">Deep cleansing facial</span>
+        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+      <li>
+        <span class="name">Hydrating facial</span>
+        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+      <li>
+        <span class="name">Hot stone massage</span>
+        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+      <li>
+        <span class="name">Aromatherapy massage</span>
+        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+      <li>
+        <span class="name">Body scrub &amp; wrap</span>
+        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+      <li>
+        <span class="name">Hands &amp; feet care</span>
+        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
+      </li>
+    </ul>
+
+    <p class="foot">Nothing is hidden behind an enquiry form. The price shown is the price paid, nothing is added at the desk, and if a treatment runs shorter than planned you pay for the shorter one.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

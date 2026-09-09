@@ -20,11 +20,13 @@ Structural container for future Beauty, Wellness & Spa section studies.
 
 # Authoring Status
 
-NOT_STARTED
+IN_PROGRESS — S01–S26 authored (core catalog complete, extended set nearly complete)
 
 # Notes
 
-Structure only. No sector research, design guidance, or design studies have been created.
+Sector design guidance exists: `WELLNESS-DESIGN-DIRECTION.md` defines the visual language,
+anti-patterns, claims and evidence limits, copy and media direction, and the section-shell rule
+for every `WELL` study. No design studies have been created yet.
 
 # Extended Site Architecture — S21–S27
 

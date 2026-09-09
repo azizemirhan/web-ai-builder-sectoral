@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S06-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S06 — Consultation Booking
+  Direction      : Structured / Visual Modular
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : One request shown as three visible stages — what you want, when suits you, how
+                   to reach you — as three numbered modules side by side inside a single form,
+                   closed by one action across the full width
+  Density        : Medium, carried by the staged structure rather than by copy volume
+  Media mode     : None. Deliberate, as in 001: the subject is an interface, and the capacity in
+                   this study is structural rather than visual.
+  Interaction    : Native form controls only. No JavaScript. The three modules are stages of one
+                   form, not three forms — everything submits together, so nothing depends on a
+                   script to carry state between steps.
+  Content note   : The form is structure, not collection: no action, no endpoint, no script.
+                   No invented availability, named slot, waiting time, opening hours or diary
+                   state; timing is expressed as preference bands. No price, fee, deposit or
+                   treatment duration. No response-time guarantee.
+  Numbering note : The 01 / 02 / 03 marks are stage indicators for a sequence the visitor actually
+                   moves through. They are not the editorial sequence device used in WELL-S02-002,
+                   and not a register, schedule or document numbering scheme.
+-->
+
+<meta name="study-id" content="WELL-S06-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S06">
+<meta name="section-name" content="Consultation Booking">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Three numbered stage modules inside a single form">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none-deliberate">
+<meta name="interaction" content="native-form-controls-no-javascript">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S06-003 — Consultation Booking, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #dae0e6; }
+
+/* Scoped study styles — namespaced to .well-s06-003 */
+.well-s06-003 {
+  --ink: #1f272c;
+  --ink-soft: #5c686f;
+  --paper: #dae0e6;
+  --card: #ffffff;
+  --line: #e2e7ea;
+  --field-line: #c3ccd2;
+  --num: #93a2ab;
+  --accent: #1f272c;
+  --accent-ink: #f2f5f7;
+  --focus: #3a5866;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s06-003 *,
+.well-s06-003 *::before,
+.well-s06-003 *::after { box-sizing: inherit; }
+.well-s06-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.well-s06-003 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.well-s06-003 .head {
+  max-width: 44rem;
+  margin-bottom: clamp(24px, 3vw, 42px);
+}
+.well-s06-003 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s06-003 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 17ch;
+}
+.well-s06-003 .head p {
+  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Stages */
+.well-s06-003 form { border: 0; margin: 0; padding: 0; }
+.well-s06-003 .stages {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.6vw, 24px);
+}
+.well-s06-003 .stage {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 16px;
+  padding: clamp(20px, 2.2vw, 30px);
+  display: flex;
+  flex-direction: column;
+}
+.well-s06-003 .num {
+  display: block;
+  margin-bottom: clamp(10px, 1.2vw, 14px);
+  color: var(--num);
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+.well-s06-003 h2 {
+  margin: 0 0 clamp(16px, 1.8vw, 22px);
+  padding-bottom: clamp(14px, 1.6vw, 18px);
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(1.05rem, 1.25vw, 1.24rem);
+  line-height: 1.24;
+  letter-spacing: -0.012em;
+  font-weight: 600;
+}
+
+.well-s06-003 .field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: clamp(16px, 1.8vw, 22px);
+}
+.well-s06-003 .field:last-of-type { margin-bottom: 0; }
+.well-s06-003 label {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.well-s06-003 select,
+.well-s06-003 input {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 0 8px;
+  border: 0;
+  border-bottom: 1px solid var(--field-line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1rem;
+}
+.well-s06-003 .hint {
+  margin: 4px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.79rem;
+}
+
+/* Close */
+.well-s06-003 .close {
+  margin-top: clamp(18px, 2.2vw, 28px);
+  background: var(--card);
+  border-radius: 16px;
+  padding: clamp(18px, 2.2vw, 28px) clamp(20px, 2.2vw, 30px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(14px, 2vw, 28px);
+}
+.well-s06-003 .close p {
+  margin: 0;
+  max-width: 52ch;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+.well-s06-003 .btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0 34px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: inherit;
+  font-size: 0.96rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+.well-s06-003 .btn:hover { background: #2e3a41; }
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s06-003 .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s06-003 .stage:last-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  .well-s06-003 h1 { max-width: none; }
+  .well-s06-003 .head p { max-width: none; }
+  .well-s06-003 .close { flex-direction: column; align-items: flex-start; }
+  .well-s06-003 .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .well-s06-003 .stages { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .well-s06-003 .stage:last-child { grid-column: auto; }
+  .well-s06-003 .stage,
+  .well-s06-003 .close { border-radius: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s06-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s06-003" data-study-id="WELL-S06-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="well-s06-003-title">
+
+    <div class="head">
+      <p class="eyebrow">Book a consultation</p>
+      <h1 id="well-s06-003-title">Three things, then we call you</h1>
+      <p>The request is split into three so you can see how short it is. It all sends together.</p>
+    </div>
+
+    <form aria-labelledby="well-s06-003-title">
+      <ol class="stages">
+
+        <li class="stage">
+          <span class="num" aria-hidden="true">01</span>
+          <h2>What you want</h2>
+          <div class="field">
+            <label for="well-s06-003-treatment">Treatment</label>
+            <select id="well-s06-003-treatment" name="treatment">
+              <option>Not sure yet</option>
+              <option>Facial</option>
+              <option>Massage</option>
+              <option>Body treatment</option>
+              <option>Hands &amp; feet</option>
+              <option>Brows &amp; lashes</option>
+            </select>
+            <p class="hint">"Not sure yet" is a normal answer.</p>
+          </div>
+        </li>
+
+        <li class="stage">
+          <span class="num" aria-hidden="true">02</span>
+          <h2>When suits you</h2>
+          <div class="field">
+            <label for="well-s06-003-date">Preferred day</label>
+            <input id="well-s06-003-date" name="date" type="date">
+          </div>
+          <div class="field">
+            <label for="well-s06-003-when">Time of day</label>
+            <select id="well-s06-003-when" name="when">
+              <option>No preference</option>
+              <option>Morning</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+            </select>
+          </div>
+        </li>
+
+        <li class="stage">
+          <span class="num" aria-hidden="true">03</span>
+          <h2>How to reach you</h2>
+          <div class="field">
+            <label for="well-s06-003-name">Your name</label>
+            <input id="well-s06-003-name" name="name" type="text" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="well-s06-003-reach">Phone or email</label>
+            <input id="well-s06-003-reach" name="reach" type="text" autocomplete="tel">
+          </div>
+        </li>
+
+      </ol>
+
+      <div class="close">
+        <p>We will come back to you to settle the time. Nothing is booked and nothing is charged by sending this.</p>
+        <button class="btn" type="submit">Send all three</button>
+      </div>
+    </form>
+
+  </section>
+</div>
+
+</body>
+</html>

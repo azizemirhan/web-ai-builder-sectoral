@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S04-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S04 — Specialists
+  Direction      : Structured / Visual Modular
+  Reference      : None. Originated for this batch; no reference images were supplied for this
+                   section.
+  Layout model   : Asymmetric split — a narrow standing intro column beside a stacked roster of
+                   four horizontal person rows, each pairing a small portrait with a body that
+                   carries an inline disclosure of what that practitioner covers
+  Density        : Medium when opened, low when closed — the capacity is held in progressive
+                   disclosure rather than in visible copy
+  Media mode     : Four reserved portrait areas, one per row, at small square scale so the row
+                   stays a row. No image is supplied.
+  Interaction    : Native <details> / <summary> disclosure, one per practitioner. No JavaScript.
+                   Summary elements are natively focusable and announce their expanded state; the
+                   first row is open by default so the pattern is visible on arrival. The row is
+                   deliberately not wrapped in a link, because an anchor may not contain a
+                   summary — the profile link sits as a separate control at the row end.
+  Content note   : Role leads and identity is reserved, as across this batch — see ../README.md.
+                   The treatment names revealed by each disclosure are plain routing text with no
+                   description, media or action of their own, and they describe what a post
+                   covers, not what a person is qualified in. No invented personal name,
+                   qualification, licence, registration, membership, award, years of experience,
+                   rating, review or social handle appears anywhere. Portrait areas are reserved
+                   and intentionally empty.
+-->
+
+<meta name="study-id" content="WELL-S04-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S04">
+<meta name="section-name" content="Specialists">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Standing intro column beside a roster of horizontal rows with per-person disclosure">
+<meta name="density" content="medium">
+<meta name="media-mode" content="reserved-portrait-small-square-per-row">
+<meta name="interaction" content="native-details-disclosure-no-javascript">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S04-003 — Specialists, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #ded7cc; }
+
+/* Scoped study styles — namespaced to .well-s04-003 */
+.well-s04-003 {
+  --ink: #262119;
+  --ink-soft: #6a6055;
+  --paper: #ded7cc;
+  --panel: #fcfaf6;
+  --slot: #cec5b7;
+  --slot-ink: #5d554a;
+  --line: #e6e0d6;
+  --focus: #4a3f31;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s04-003 *,
+.well-s04-003 *::before,
+.well-s04-003 *::after { box-sizing: inherit; }
+.well-s04-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.well-s04-003 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+.well-s04-003 .split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.4fr) minmax(0, 1.6fr);
+  gap: clamp(24px, 3.4vw, 64px);
+  align-items: start;
+}
+
+/* Standing intro column */
+.well-s04-003 .intro { min-width: 0; }
+.well-s04-003 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s04-003 h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+}
+.well-s04-003 .intro p {
+  margin: clamp(16px, 1.8vw, 22px) 0 0;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+}
+
+/* Roster rows */
+.well-s04-003 .rows { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(10px, 1.2vw, 16px); }
+.well-s04-003 .row {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: clamp(14px, 1.5vw, 20px);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: clamp(14px, 1.8vw, 26px);
+  align-items: start;
+}
+
+.well-s04-003 .portrait {
+  flex: none;
+  width: clamp(88px, 9vw, 128px);
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  background: var(--slot);
+  display: grid;
+  place-items: center;
+  padding: 8px;
+}
+.well-s04-003 .slot-label {
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+
+.well-s04-003 .body { min-width: 0; }
+.well-s04-003 h2 {
+  margin: 0 0 4px;
+  font-size: clamp(1.06rem, 1.3vw, 1.26rem);
+  line-height: 1.22;
+  letter-spacing: -0.012em;
+  font-weight: 600;
+}
+.well-s04-003 .who {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+}
+.well-s04-003 .focus {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Per-person disclosure */
+.well-s04-003 .covers { margin-top: clamp(12px, 1.4vw, 16px); }
+.well-s04-003 .covers summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.well-s04-003 .covers summary::-webkit-details-marker { display: none; }
+.well-s04-003 .chev { transition: transform 160ms ease; font-size: 0.8em; }
+.well-s04-003 .covers[open] .chev { transform: rotate(180deg); }
+
+.well-s04-003 .covers ul {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 42ch;
+}
+.well-s04-003 .covers li {
+  border-top: 1px solid var(--line);
+  padding: 7px 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.well-s04-003 .go {
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.well-s04-003 .go:hover { text-decoration: underline; text-underline-offset: 5px; }
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s04-003 .split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(22px, 3vw, 32px);
+  }
+  .well-s04-003 .intro p { max-width: 52ch; }
+}
+
+@media (max-width: 768px) {
+  .well-s04-003 .row { grid-template-columns: auto minmax(0, 1fr); }
+  .well-s04-003 .go {
+    grid-column: 2;
+    justify-self: start;
+    padding-left: 0;
+  }
+  .well-s04-003 .focus { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s04-003 .row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(12px, 2vw, 16px);
+  }
+  .well-s04-003 .portrait { width: 100%; aspect-ratio: 3 / 2; }
+  .well-s04-003 .go { grid-column: auto; }
+  .well-s04-003 .covers ul { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s04-003 * { transition: none !important; }
+  .well-s04-003 .covers[open] .chev { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s04-003" data-study-id="WELL-S04-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="well-s04-003-title">
+    <div class="split">
+
+      <div class="intro">
+        <p class="eyebrow">The team</p>
+        <h1 id="well-s04-003-title">Who does what</h1>
+        <p>Open a name to see what that practitioner covers. Anyone on the list can be asked for by name when you book.</p>
+      </div>
+
+      <ul class="rows">
+        <li class="row">
+          <div class="portrait"><span class="slot-label">Portrait</span></div>
+          <div class="body">
+            <h2>Facialist</h2>
+            <p class="who">Practitioner 01</p>
+            <p class="focus">Spends most of the week on facials and skin consultations.</p>
+            <details class="covers" open>
+              <summary>What they cover <span class="chev" aria-hidden="true">&#9662;</span></summary>
+              <ul>
+                <li>Deep cleansing facial</li>
+                <li>Hydrating facial</li>
+                <li>Scalp &amp; neck ritual</li>
+              </ul>
+            </details>
+          </div>
+          <a class="go" href="#well-s04-003-title">Profile <span aria-hidden="true">&rarr;</span></a>
+        </li>
+
+        <li class="row">
+          <div class="portrait"><span class="slot-label">Portrait</span></div>
+          <div class="body">
+            <h2>Massage therapist</h2>
+            <p class="who">Practitioner 02</p>
+            <p class="focus">Works across massage, hot stone and body treatments.</p>
+            <details class="covers">
+              <summary>What they cover <span class="chev" aria-hidden="true">&#9662;</span></summary>
+              <ul>
+                <li>Hot stone massage</li>
+                <li>Aromatherapy massage</li>
+                <li>Body scrub &amp; wrap</li>
+              </ul>
+            </details>
+          </div>
+          <a class="go" href="#well-s04-003-title">Profile <span aria-hidden="true">&rarr;</span></a>
+        </li>
+
+        <li class="row">
+          <div class="portrait"><span class="slot-label">Portrait</span></div>
+          <div class="body">
+            <h2>Nail technician</h2>
+            <p class="who">Practitioner 03</p>
+            <p class="focus">Hands and feet, from quick shaping to longer treatments.</p>
+            <details class="covers">
+              <summary>What they cover <span class="chev" aria-hidden="true">&#9662;</span></summary>
+              <ul>
+                <li>Hands &amp; feet care</li>
+                <li>Hand massage</li>
+                <li>Foot soak</li>
+              </ul>
+            </details>
+          </div>
+          <a class="go" href="#well-s04-003-title">Profile <span aria-hidden="true">&rarr;</span></a>
+        </li>
+
+        <li class="row">
+          <div class="portrait"><span class="slot-label">Portrait</span></div>
+          <div class="body">
+            <h2>Brow &amp; lash specialist</h2>
+            <p class="who">Practitioner 04</p>
+            <p class="focus">Detail work around the eyes, shaping and tinting.</p>
+            <details class="covers">
+              <summary>What they cover <span class="chev" aria-hidden="true">&#9662;</span></summary>
+              <ul>
+                <li>Brow shaping</li>
+                <li>Brow tint</li>
+                <li>Lash lift</li>
+              </ul>
+            </details>
+          </div>
+          <a class="go" href="#well-s04-003-title">Profile <span aria-hidden="true">&rarr;</span></a>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

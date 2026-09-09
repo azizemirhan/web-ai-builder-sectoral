@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S20-004
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S20 — Final Booking CTA
+  Direction      : Conversion-led
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : Two routes side by side — book one, or talk first — each with its own action and
+                   the one line that distinguishes it, above a short row of what is being taken off
+                   the table and a closing statement about what this section refuses to do
+  Density        : Medium
+  Media mode     : None.
+  Interaction    : None (static; no JavaScript). No form field, no select, no date, no time.
+  Conversion device : **Every device that would normally go here is missing on purpose, and the
+                   study says so.** No countdown, no "two slots left", no "book by Friday", no
+                   client count, no offer. What replaces them is risk removal — the step is small,
+                   reversible and free — followed by the statement that this page will never tell
+                   you the diary is nearly full. In a sector built on trust, naming the pressure you
+                   are not applying converts better than applying it, and unlike a scarcity line it
+                   is true.
+  Why two routes : A single button assumes readiness. Roughly half the people who reach the foot of
+                   a wellness page are still deciding, and sending them to a question rather than to
+                   a form is the difference between a lost visitor and a conversation. The second
+                   route is one line and a link, never a second form — S19 owns that.
+  Content note   : No invented figure of any kind, no price, discount, count, rating or testimonial;
+                   no telephone number, email address or street address.
+-->
+
+<meta name="study-id" content="WELL-S20-004">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S20">
+<meta name="section-name" content="Final Booking CTA">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="layout-model" content="Two routes with their own actions above a risk-removal row and a no-pressure statement">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S20-004 — Final Booking CTA, Conversion-led</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #123a35; }
+
+/* Scoped study styles — namespaced to .well-s20-004 */
+.well-s20-004 {
+  --ink: #eef5f2;
+  --ink-soft: #a2c2ba;
+  --paper: #123a35;
+  --panel: #0d2c28;
+  --edge: #2c534d;
+  --line: #275049;
+  --focus: #cfe6df;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s20-004 *,
+.well-s20-004 *::before,
+.well-s20-004 *::after { box-sizing: inherit; }
+.well-s20-004 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+.well-s20-004 .shell {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: clamp(48px, 5.6vw, 100px) clamp(20px, 3.6vw, 52px);
+}
+
+.well-s20-004 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s20-004 h1 {
+  margin: 0 0 clamp(24px, 3vw, 44px);
+  font-size: clamp(1.85rem, 3.4vw, 2.85rem);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  font-weight: 550;
+  max-width: 19ch;
+}
+
+/* Routes */
+.well-s20-004 .routes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 24px);
+}
+.well-s20-004 .routes li { min-width: 0; display: flex; }
+.well-s20-004 .route {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--panel);
+  border-radius: 16px;
+  padding: clamp(20px, 2.4vw, 32px);
+}
+.well-s20-004 .route h2 {
+  margin: 0 0 clamp(10px, 1.2vw, 14px);
+  font-size: 1.12rem;
+  font-weight: 650;
+}
+.well-s20-004 .route p {
+  margin: 0 0 clamp(18px, 2.2vw, 26px);
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.64;
+}
+.well-s20-004 .go,
+.well-s20-004 .ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: auto;
+  min-height: 52px;
+  padding: 0 30px;
+  border-radius: 999px;
+  font-size: 0.98rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.well-s20-004 .go { background: var(--ink); color: var(--paper); }
+.well-s20-004 .go:hover { background: #ffffff; }
+.well-s20-004 .ghost { border: 1px solid var(--edge); color: var(--ink); }
+.well-s20-004 .ghost:hover { border-color: var(--ink); }
+
+/* Off the table */
+.well-s20-004 .off {
+  margin: clamp(24px, 3vw, 44px) 0 0;
+  padding: clamp(20px, 2.4vw, 30px) 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.6vw, 46px);
+}
+.well-s20-004 .off li { min-width: 0; color: var(--ink-soft); font-size: 0.93rem; line-height: 1.6; }
+.well-s20-004 .off b { display: block; margin-bottom: 5px; color: var(--ink); font-size: 0.97rem; }
+
+.well-s20-004 .never {
+  margin: clamp(22px, 2.8vw, 36px) 0 0;
+  max-width: 74ch;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  line-height: 1.66;
+}
+.well-s20-004 .never b { color: var(--ink); }
+
+/* Responsive ladder */
+@media (max-width: 900px) {
+  .well-s20-004 .routes { grid-template-columns: minmax(0, 1fr); }
+  .well-s20-004 .off { grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 22px); }
+  .well-s20-004 h1,
+  .well-s20-004 .never { max-width: none; }
+  .well-s20-004 .go,
+  .well-s20-004 .ghost { align-self: stretch; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s20-004 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s20-004" data-study-id="WELL-S20-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="well-s20-004-title">
+
+    <p class="eyebrow">When you are ready</p>
+    <h1 id="well-s20-004-title">Two ways to end up in the room, and both of them start small.</h1>
+
+    <ul class="routes">
+      <li>
+        <div class="route">
+          <h2>You know what you want</h2>
+          <p>Ask for a time and we will confirm one with you. You are agreeing to an appointment, not to a course of anything.</p>
+          <a class="go" href="#well-s20-004-title">Book a time</a>
+        </div>
+      </li>
+      <li>
+        <div class="route">
+          <h2>You are still deciding</h2>
+          <p>Then a question is a better first move than a booking, and it costs you nothing but the asking. Most people who write in start here.</p>
+          <a class="ghost" href="#well-s20-004-title">Ask us instead</a>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="off">
+      <li><b>Moving it is easy</b>Tell us and we will find another time. No fuss, and no lecture about it.</li>
+      <li><b>Asking is not buying</b>A conversation about whether something suits you is not a treatment and is not charged for.</li>
+      <li><b>Saying no is allowed</b>At the end of the conversation you can decide it is not for you, and that is a perfectly good outcome.</li>
+    </ul>
+
+    <p class="never"><b>You will not find a countdown on this page.</b> No timer, no last few places, and no offer that expires while you are thinking about it. If the day you want has gone we will tell you when you ask, and if we are quiet we will tell you that too.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

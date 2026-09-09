@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S12-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S12 — Memberships & Packages
+  Direction      : Structured / Visual Modular
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : Three panels, each with a **different internal anatomy** matched to what its
+                   form actually is — a repeat block for the course, a chooser block for the mixed
+                   course, and a recurrence block for the membership
+  Density        : Medium-high, carried by the three differing anatomies
+  Media mode     : None, as across this batch.
+  Interaction    : None (static; no JavaScript)
+  Anti-pattern   : The default device for this role on the open web is a tick-grid tier table. That
+                   is a specification matrix, which ../WELLNESS-DESIGN-DIRECTION.md rules out for
+                   this sector — and unlike S11's price list, a comparison matrix is not the native
+                   form of a membership, it is the native form of software pricing. **No study in
+                   this batch uses one.** What replaces it here is the same move as WELL-S09-003:
+                   give each panel its own item shape so the three read as three modules rather
+                   than as three columns of one table. Nothing aligns across the panels because
+                   nothing compares across them.
+  Reserved-field note : Price, visit count and rhythm are reserved slots with visually hidden field
+                   labels. The three panels reserve **different** fields, which is the structural
+                   point.
+  Content note   : **No saving, package value, "worth" figure, discount or percentage** — see
+                   ../README.md. No invented price, count, term, currency symbol, joining fee,
+                   minimum term, notice period or expiry date; no popularity or value badge.
+-->
+
+<meta name="study-id" content="WELL-S12-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S12">
+<meta name="section-name" content="Memberships Packages">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Three form panels with three different internal anatomies">
+<meta name="density" content="medium-high">
+<meta name="media-mode" content="none-deliberate">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S12-003 — Memberships Packages, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e6e8f2; }
+
+/* Scoped study styles — namespaced to .well-s12-003 */
+.well-s12-003 {
+  --ink: #1f2230;
+  --ink-soft: #5c6076;
+  --paper: #e6e8f2;
+  --card: #ffffff;
+  --chip: #eceef6;
+  --chip-ink: #4f5468;
+  --line: #e8eaf1;
+  --label: #c3c7db;
+  --focus: #333a5c;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s12-003 *,
+.well-s12-003 *::before,
+.well-s12-003 *::after { box-sizing: inherit; }
+.well-s12-003 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.well-s12-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s12-003 .shell {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Header */
+.well-s12-003 .head {
+  max-width: 48rem;
+  margin-bottom: clamp(24px, 3vw, 42px);
+}
+.well-s12-003 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s12-003 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 18ch;
+}
+.well-s12-003 .head p {
+  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  max-width: 54ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Panels */
+.well-s12-003 .panels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 26px);
+  align-items: start;
+}
+.well-s12-003 .panel {
+  min-width: 0;
+  background: var(--card);
+  border-radius: 16px;
+  padding: clamp(20px, 2.3vw, 30px);
+}
+.well-s12-003 h2 {
+  margin: 0 0 7px;
+  font-size: clamp(1.1rem, 1.4vw, 1.36rem);
+  line-height: 1.2;
+  letter-spacing: -0.016em;
+  font-weight: 600;
+}
+.well-s12-003 .what {
+  margin: 0 0 clamp(16px, 1.9vw, 22px);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.well-s12-003 .aname {
+  display: block;
+  margin-bottom: clamp(10px, 1.2vw, 14px);
+  padding-bottom: clamp(8px, 1vw, 11px);
+  border-bottom: 1px solid var(--label);
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.well-s12-003 .slot {
+  display: inline-block;
+  min-width: clamp(52px, 4.6vw, 64px);
+  padding: 2px 9px;
+  border-radius: 6px;
+  background: var(--chip);
+  color: var(--chip-ink);
+  font-size: 0.98rem;
+  text-align: center;
+}
+
+/* Anatomy one — the course: a repeat block */
+.well-s12-003 .repeat { margin: 0; padding: 0; list-style: none; }
+.well-s12-003 .repeat li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: clamp(8px, 1vw, 11px) 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+.well-s12-003 .repeat li:first-child { border-top: 0; }
+.well-s12-003 .tick {
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: var(--label);
+}
+.well-s12-003 .repeat li:last-child .tick { background: transparent; border: 1px dashed var(--label); }
+
+/* Anatomy two — the mixed course: a chooser block */
+.well-s12-003 .choose {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.well-s12-003 .choose li {
+  border: 1px solid var(--label);
+  border-radius: 999px;
+  padding: 5px 12px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+/* Anatomy three — the membership: a recurrence block */
+.well-s12-003 .recur { margin: 0; padding: 0; list-style: none; }
+.well-s12-003 .recur li {
+  padding: clamp(8px, 1vw, 11px) 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.well-s12-003 .recur li:first-child { border-top: 0; }
+.well-s12-003 .recur b {
+  display: block;
+  color: var(--ink);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.well-s12-003 .price-row {
+  margin: clamp(16px, 1.9vw, 22px) 0 0;
+  padding-top: clamp(13px, 1.5vw, 17px);
+  border-top: 1px solid var(--label);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.well-s12-003 .price-row span:first-child {
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.well-s12-003 .foot {
+  margin-top: clamp(20px, 2.4vw, 32px);
+  max-width: 76ch;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s12-003 .panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s12-003 .panel--last { grid-column: 1 / -1; }
+  .well-s12-003 h1 { max-width: none; }
+}
+
+@media (max-width: 768px) {
+  .well-s12-003 .panels { grid-template-columns: minmax(0, 1fr); }
+  .well-s12-003 .panel--last { grid-column: auto; }
+  .well-s12-003 .head p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s12-003 .panel { border-radius: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s12-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s12-003" data-study-id="WELL-S12-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="well-s12-003-title">
+
+    <div class="head">
+      <p class="eyebrow">Coming back</p>
+      <h1 id="well-s12-003-title">Three arrangements, shaped like what they are</h1>
+      <p>A course repeats, a mixed course lets you choose, a membership recurs. Each panel is built the way its arrangement behaves, so there is nothing to compare across the columns.</p>
+    </div>
+
+    <div class="panels">
+
+      <section class="panel">
+        <h2>A course</h2>
+        <p class="what">The same treatment, booked as a series and paid for once.</p>
+        <span class="aname">The same visit, repeated</span>
+        <ul class="repeat">
+          <li><span class="tick" aria-hidden="true"></span><span>Deep cleansing facial</span></li>
+          <li><span class="tick" aria-hidden="true"></span><span>Deep cleansing facial</span></li>
+          <li><span class="tick" aria-hidden="true"></span><span>Deep cleansing facial</span></li>
+          <li><span class="tick" aria-hidden="true"></span><span>and on, for the length of the course</span></li>
+        </ul>
+        <div class="price-row"><span>Visits</span><span class="slot"><span class="vh">Number of visits</span><span aria-hidden="true">&mdash;</span></span></div>
+        <div class="price-row"><span>Price</span><span class="slot"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+      </section>
+
+      <section class="panel">
+        <h2>A mixed course</h2>
+        <p class="what">A set of visits to spend across the menu, decided as you go.</p>
+        <span class="aname">Spend them on any of these</span>
+        <ul class="choose">
+          <li>Facials</li>
+          <li>Body &amp; massage</li>
+          <li>Hands &amp; feet</li>
+          <li>Brows &amp; lashes</li>
+          <li>Scalp &amp; neck</li>
+        </ul>
+        <div class="price-row"><span>Visits</span><span class="slot"><span class="vh">Number of visits</span><span aria-hidden="true">&mdash;</span></span></div>
+        <div class="price-row"><span>Price</span><span class="slot"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+      </section>
+
+      <section class="panel panel--last">
+        <h2>A membership</h2>
+        <p class="what">One visit on a regular rhythm, running on until you stop it.</p>
+        <span class="aname">How it carries on</span>
+        <ul class="recur">
+          <li><b>If you pause</b>It waits, and picks up where it left off.</li>
+          <li><b>If you miss one</b>It rolls forward rather than disappearing.</li>
+          <li><b>If you stop</b>It ends. Nothing renews without telling you first.</li>
+        </ul>
+        <div class="price-row"><span>Rhythm</span><span class="slot"><span class="vh">Visit rhythm</span><span aria-hidden="true">&mdash;</span></span></div>
+        <div class="price-row"><span>Price</span><span class="slot"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></div>
+      </section>
+
+    </div>
+
+    <p class="foot">None of the three is cheaper for being bought together. They exist so you can stop thinking about booking, not so you can chase a deal.</p>
+
+  </section>
+</div>
+
+</body>
+</html>

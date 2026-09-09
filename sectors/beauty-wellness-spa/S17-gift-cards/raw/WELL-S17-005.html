@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S17-005
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S17 — Gift Cards
+  Direction      : Art-directed / Distinctive
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : Two reserved card plates overlapping on a saturated ground, the back one turned
+                   slightly, with an oversized line set across the composition and the reserved
+                   amount held small beneath
+  Density        : Low
+  Media mode     : Two reserved card artwork areas — the printed form and the digital one, shown
+                   as one object photographed twice rather than as two products.
+  Interaction    : None (static; no JavaScript)
+  The device     : This is the only study in the WELL sector that **rotates anything**. A gift card
+                   is a physical object that gets handed over, and a pair of them lying overlapped
+                   and slightly askew reads as objects on a table rather than as assets in a grid.
+                   The angle is small — three degrees — because the point is that they are real
+                   things, not that the page is tilted.
+  Responsive note: The rotation is removed below 768px. At phone width two overlapping rotated
+                   plates either clip or force a horizontal scroll, and neither is worth the
+                   effect; the plates stack square and the overlap becomes a simple offset, so the
+                   "two objects" reading survives without the tilt.
+  Content note   : No invented amount, denomination, currency symbol, figure, expiry date or
+                   period, delivery time, postage cost, booking fee, discount or bonus-credit
+                   offer; no denomination tiers. The amount is a reserved slot with a visually
+                   hidden label. See ../README.md.
+-->
+
+<meta name="study-id" content="WELL-S17-005">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S17">
+<meta name="section-name" content="Gift Cards">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Two overlapping reserved card plates, one turned, under an oversized line">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-card-artwork-two-overlapping">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S17-005 — Gift Cards, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #7a2f42; }
+
+/* Scoped study styles — namespaced to .well-s17-005 */
+.well-s17-005 {
+  --ink: #f7ecef;
+  --ink-soft: #d5a9b6;
+  --paper: #7a2f42;
+  --slot-a: #8f4256;
+  --slot-b: #672435;
+  --slot-ink: #edcfd8;
+  --chip: #672435;
+  --line: #944a5c;
+  --focus: #f3cfd9;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s17-005 *,
+.well-s17-005 *::before,
+.well-s17-005 *::after { box-sizing: inherit; }
+.well-s17-005 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.well-s17-005 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s17-005 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(48px, 5.6vw, 104px) clamp(20px, 3.6vw, 56px);
+}
+
+.well-s17-005 .eyebrow {
+  margin: 0 0 clamp(14px, 1.6vw, 22px);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s17-005 h1 {
+  margin: 0 0 clamp(34px, 4.4vw, 72px);
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  font-weight: 550;
+  max-width: 17ch;
+}
+
+/* The two objects */
+.well-s17-005 .objects {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 56px);
+  align-items: center;
+  max-width: 60rem;
+}
+.well-s17-005 .plate {
+  aspect-ratio: 8 / 5;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.well-s17-005 .plate span {
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s17-005 .plate--back {
+  background: var(--slot-b);
+  transform: rotate(-3deg);
+  margin-right: -18%;
+  position: relative;
+  z-index: 0;
+}
+.well-s17-005 .plate--front {
+  background: var(--slot-a);
+  position: relative;
+  z-index: 1;
+}
+
+/* Amount and line */
+.well-s17-005 .under {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: clamp(16px, 2.4vw, 40px);
+  margin: clamp(30px, 3.8vw, 58px) 0 0;
+  padding-top: clamp(20px, 2.4vw, 30px);
+  border-top: 1px solid var(--line);
+}
+.well-s17-005 .fname {
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-right: 10px;
+}
+.well-s17-005 .slot {
+  min-width: clamp(60px, 5.4vw, 78px);
+  padding: 3px 12px;
+  border-radius: 6px;
+  background: var(--chip);
+  color: var(--slot-ink);
+  font-size: 1.02rem;
+  text-align: center;
+}
+.well-s17-005 .under p {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+/* Responsive ladder — the tilt goes, the two objects stay */
+@media (max-width: 1024px) {
+  .well-s17-005 .plate--back { margin-right: -12%; }
+  .well-s17-005 h1 { max-width: none; }
+}
+
+@media (max-width: 768px) {
+  .well-s17-005 .objects {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(14px, 2.4vw, 22px);
+    max-width: none;
+  }
+  .well-s17-005 .plate--back {
+    transform: none;
+    margin-right: 0;
+    margin-left: clamp(14px, 6vw, 42px);
+  }
+  .well-s17-005 .plate--front { margin-right: clamp(14px, 6vw, 42px); }
+  .well-s17-005 .under p { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s17-005 * { transition: none !important; }
+  .well-s17-005 .plate--back { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s17-005" data-study-id="WELL-S17-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="well-s17-005-title">
+
+    <p class="eyebrow">For someone else</p>
+    <h1 id="well-s17-005-title">Something to hand over, not a code to forward.</h1>
+
+    <div class="objects">
+      <div class="plate plate--back"><span>Digital card</span></div>
+      <div class="plate plate--front"><span>Printed card</span></div>
+    </div>
+
+    <div class="under">
+      <span><span class="fname">Amount</span><span class="slot"><span class="vh">Gift amount</span><span aria-hidden="true">&mdash;</span></span></span>
+      <p>Chosen by you rather than picked from a set. Not printed on the card, and it does not expire.</p>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

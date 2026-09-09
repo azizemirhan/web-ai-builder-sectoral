@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S25-003
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S25 — Article / Insight Detail
+  Direction      : Structured / Visual Modular
+  Revision       : V2. Replaced as part of the rebuilt batch. Balanced across the frame, opening
+                   differently from the other four.
+  Layout model   : The apparatus study. A contents rail at the left with four reserved section
+                   headings, the reading measure in the middle, and the record at the right &mdash;
+                   the three columns weighted so the reading stays the widest thing on the page
+  Density        : Medium
+  Media mode     : None.
+  Interaction    : Four in-page anchors, the contents rail.
+  The head       : **A record band.** Kind, topic, author, published and corrected sit across the top
+                   as one ruled line of fields, because this is the study that shows a piece with its
+                   full apparatus &mdash; including the correction date the others leave out.
+  Content note   : Section headings, title, standfirst, body, author and dates are reserved. No
+                   reading time, no citations. The limits line is present, as in every study.
+  Palette        : Black and white only.
+-->
+
+<meta name="study-id" content="WELL-S25-003">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S25">
+<meta name="section-name" content="Article / Insight Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="layout-model" content="Contents rail, reading measure and record, under a ruled band of fields">
+<meta name="density" content="medium">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="in-page-anchors">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S25-003 — Article Detail, Structured / Visual Modular</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e8e8e8; }
+
+/* Scoped study styles - namespaced to .well-s25-003 */
+/* monochrome: hand-graded. Black and white only. */
+.well-s25-003 {
+  --ink: #111111;
+  --ink-soft: #4d4d4d;
+  --ink-faint: #6c6c6c;
+  --paper: #e8e8e8;
+  --card: #ffffff;
+  --tint: #d8d8d8;
+  --line: #c8c8c8;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s25-003 *,
+.well-s25-003 *::before,
+.well-s25-003 *::after { box-sizing: inherit; }
+.well-s25-003 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
+.well-s25-003 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s25-003 .shell {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
+}
+
+/* Record band */
+.well-s25-003 .band {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: clamp(12px, 1.6vw, 22px);
+  padding-bottom: clamp(14px, 1.8vw, 20px);
+  border-bottom: 4px solid var(--ink);
+  margin-bottom: clamp(20px, 2.6vw, 34px);
+}
+.well-s25-003 .band > div { min-width: 0; }
+.well-s25-003 .band dt {
+  margin-bottom: 6px;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s25-003 .band dd { margin: 0; font-size: 1.02rem; font-weight: 650; }
+.well-s25-003 .slot {
+  display: inline-block;
+  min-width: 72px;
+  padding: 5px 14px;
+  border-radius: 10px;
+  background: var(--tint);
+  color: var(--ink-faint);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Three columns */
+.well-s25-003 .page {
+  display: grid;
+  grid-template-columns: minmax(0, 0.44fr) minmax(0, 1.12fr) minmax(0, 0.44fr);
+  gap: clamp(18px, 2.6vw, 44px);
+  align-items: start;
+}
+.well-s25-003 .rail h2,
+.well-s25-003 .side h2 {
+  margin: 0 0 12px;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s25-003 .toc { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.well-s25-003 .toc a {
+  display: block;
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: var(--card);
+  text-decoration: none;
+}
+.well-s25-003 .toc a:hover { background: #f6f6f6; }
+.well-s25-003 .toc i {
+  display: block;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--tint);
+}
+.well-s25-003 .toc .w72 { width: 72%; }
+.well-s25-003 .toc .w88 { width: 88%; }
+.well-s25-003 .toc .w58 { width: 58%; }
+.well-s25-003 .toc em {
+  display: block;
+  margin-top: 7px;
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+
+.well-s25-003 .label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink-faint);
+}
+.well-s25-003 .title { display: block; margin-bottom: clamp(14px, 1.8vw, 20px); }
+.well-s25-003 .title i {
+  display: block;
+  height: clamp(26px, 3.4vw, 42px);
+  border-radius: 5px;
+  background: var(--tint);
+  margin-bottom: 12px;
+}
+.well-s25-003 .stand { display: block; margin-bottom: clamp(18px, 2.2vw, 26px); }
+.well-s25-003 .stand i { display: block; height: 15px; border-radius: 4px; background: #dedede; margin-bottom: 9px; }
+.well-s25-003 .sub {
+  display: block;
+  height: clamp(18px, 2vw, 24px);
+  width: 46%;
+  border-radius: 4px;
+  background: #cccccc;
+  margin: clamp(22px, 2.6vw, 32px) 0 clamp(13px, 1.6vw, 18px);
+}
+.well-s25-003 .para { display: block; margin-bottom: clamp(18px, 2.2vw, 26px); }
+.well-s25-003 .para i { display: block; height: 12px; border-radius: 3px; background: #dcdcdc; margin-bottom: 10px; }
+.well-s25-003 .para i:last-child { width: 58%; }
+.well-s25-003 .w94 { width: 94%; }
+.well-s25-003 .w88 { width: 88%; }
+
+.well-s25-003 .side .box {
+  background: var(--card);
+  border-radius: 22px;
+  padding: clamp(16px, 2vw, 22px);
+  margin-bottom: clamp(14px, 1.8vw, 20px);
+}
+.well-s25-003 .side .box:last-child { margin-bottom: 0; }
+.well-s25-003 .side .dark { background: #111111; color: #c4c4c4; }
+.well-s25-003 .side .dark h2 { color: #a8a8a8; }
+.well-s25-003 .side p { margin: 0; font-size: 0.98rem; line-height: 1.55; color: var(--ink-soft); }
+.well-s25-003 .side .dark p { color: #c4c4c4; }
+.well-s25-003 .side p b { color: var(--ink); font-weight: 650; }
+.well-s25-003 .side .dark p b { color: #ffffff; }
+
+/* Responsive ladder */
+@media (max-width: 1040px) {
+  .well-s25-003 .page { grid-template-columns: minmax(0, 1fr); }
+  .well-s25-003 .side { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(14px, 1.8vw, 20px); }
+  .well-s25-003 .side .box { margin-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s25-003 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s25-003" data-study-id="WELL-S25-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="well-s25-003-title">
+
+    <dl class="band">
+      <div><dt>Kind</dt><dd>A guide</dd></div>
+      <div><dt>Topic</dt><dd>Skin</dd></div>
+      <div><dt>Written by</dt><dd><span class="slot"><span class="vh">Author</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+      <div><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+      <div><dt>Corrected</dt><dd><span class="slot"><span class="vh">Correction date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+    </dl>
+
+    <div class="page">
+
+      <nav class="rail" aria-label="On this page">
+        <h2>On this page</h2>
+        <ul class="toc">
+          <li><a href="#well-s25-003-title"><i class="w88"></i><em>Section heading, reserved</em></a></li>
+          <li><a href="#well-s25-003-title"><i class="w72"></i><em>Section heading, reserved</em></a></li>
+          <li><a href="#well-s25-003-title"><i></i><em>Section heading, reserved</em></a></li>
+          <li><a href="#well-s25-003-title"><i class="w58"></i><em>Section heading, reserved</em></a></li>
+        </ul>
+      </nav>
+
+      <article>
+        <h1 id="well-s25-003-title" class="vh">One guide, in full, with its apparatus</h1>
+        <span class="label">Title, reserved</span>
+        <span class="title" role="img" aria-label="Reserved area: the article title, two lines at title scale">
+          <i class="w94"></i><i class="w88"></i>
+        </span>
+        <span class="stand" role="img" aria-label="Reserved area: the standfirst, two lines">
+          <i></i><i class="w88"></i>
+        </span>
+
+        <span class="para" role="img" aria-label="Reserved area: an opening paragraph at the real measure">
+          <i></i><i></i><i class="w94"></i><i></i>
+        </span>
+        <span class="sub" role="img" aria-label="Reserved area: a sub-heading"></span>
+        <span class="para" role="img" aria-label="Reserved area: a paragraph at the real measure">
+          <i></i><i class="w94"></i><i></i><i></i><i></i>
+        </span>
+        <span class="sub" role="img" aria-label="Reserved area: a sub-heading"></span>
+        <span class="para" role="img" aria-label="Reserved area: a paragraph at the real measure">
+          <i></i><i></i><i class="w88"></i>
+        </span>
+      </article>
+
+      <div class="side">
+        <div class="box dark">
+          <h2>Where this stops</h2>
+          <p><b>None of this is medical advice.</b> If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa.</p>
+        </div>
+        <div class="box">
+          <h2>Corrections</h2>
+          <p>The correction date at the top is not decoration. <b>These are corrected when we change how we work</b>, and the old version is not quietly replaced.</p>
+        </div>
+        <div class="box">
+          <h2>Why headings are reserved too</h2>
+          <p>A contents rail is only useful if the hierarchy is visible. <b>The bars show the shape of the piece</b> &mdash; four sections, uneven lengths &mdash; before anything is written.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

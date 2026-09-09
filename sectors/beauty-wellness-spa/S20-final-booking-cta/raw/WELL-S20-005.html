@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S20-005
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S20 — Final Booking CTA
+  Direction      : Art-directed / Distinctive
+  Reference      : None. Originated for this batch; no reference images were supplied.
+  Layout model   : One sentence at display scale across the whole composition with **the action set
+                   inside the sentence itself**, on a deep bark ground, closed by a wide reserved
+                   media band at the foot
+  Density        : Low
+  Media mode     : One reserved media band, 21:9 — the only reserved media in this batch. It is the
+                   room a visitor would be walking into, held at the foot so it follows the decision
+                   rather than competing with it.
+  Interaction    : None (static; no JavaScript). No form field, no select, no date, no time.
+  The device     : **The button is a word in the sentence.** Setting the action inline means the ask
+                   cannot be skimmed past as furniture, and it makes the sentence do the persuading
+                   instead of the colour — which is the batch's whole argument in one composition.
+                   The pill is set smaller than the display type around it so it reads as part of
+                   the line rather than as a badge dropped into it.
+  Why it holds up : An inline action is usually a risk because it is easy to miss. Here it is the
+                   only interactive thing on the page, it keeps a full-size target, and the line it
+                   sits in is the largest type in the section — so the thing you cannot miss and the
+                   thing you can press are the same object.
+  Content note   : No countdown, deadline, scarcity or availability line; no client, booking or
+                   review count; no rating, testimonial, price, discount or offer; no invented
+                   figure of any kind.
+-->
+
+<meta name="study-id" content="WELL-S20-005">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S20">
+<meta name="section-name" content="Final Booking CTA">
+<meta name="variant" content="005">
+<meta name="territory" content="Art-directed / Distinctive">
+<meta name="direction" content="Art-directed / Distinctive">
+<meta name="layout-model" content="Display sentence with the action set inline, above a wide reserved media band">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-reserved-media-band">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S20-005 — Final Booking CTA, Art-directed / Distinctive</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #4a3524; }
+
+/* Scoped study styles — namespaced to .well-s20-005 */
+.well-s20-005 {
+  --ink: #f8f0e6;
+  --ink-soft: #cbb69f;
+  --paper: #4a3524;
+  --slot: #2a1a0e;
+  --slot-ink: #cbb69f;
+  --slot-edge: #6b5238;
+  --line: #6b5238;
+  --focus: #f3ddc4;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s20-005 *,
+.well-s20-005 *::before,
+.well-s20-005 *::after { box-sizing: inherit; }
+.well-s20-005 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+.well-s20-005 .vh {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.well-s20-005 .shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(52px, 6vw, 116px) clamp(20px, 3.6vw, 56px);
+}
+
+.well-s20-005 .eyebrow {
+  margin: 0 0 clamp(18px, 2vw, 28px);
+  font-size: 0.7rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* The sentence, with the action inside it */
+.well-s20-005 h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 4.6vw, 3.9rem);
+  line-height: 1.24;
+  letter-spacing: -0.026em;
+  font-weight: 550;
+  max-width: 20ch;
+}
+.well-s20-005 .go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin: 0 0.1em;
+  padding: 0 clamp(18px, 1.6vw, 26px);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.62em;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+.well-s20-005 .go:hover { background: #ffffff; }
+
+.well-s20-005 .said {
+  margin: clamp(24px, 3vw, 42px) 0 0;
+  max-width: 56ch;
+  color: var(--ink-soft);
+  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
+  line-height: 1.64;
+}
+.well-s20-005 .said a { color: var(--ink); text-underline-offset: 4px; }
+
+/* The band */
+.well-s20-005 .band {
+  margin: clamp(34px, 4.4vw, 76px) 0 0;
+  border: 1px dashed var(--slot-edge);
+  border-radius: 12px;
+  background: var(--slot);
+  aspect-ratio: 21 / 9;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.well-s20-005 .band span {
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+
+/* Responsive ladder */
+@media (max-width: 768px) {
+  .well-s20-005 h1,
+  .well-s20-005 .said { max-width: none; }
+  .well-s20-005 h1 { line-height: 1.3; }
+  .well-s20-005 .band { aspect-ratio: 4 / 3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s20-005 * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s20-005" data-study-id="WELL-S20-005" data-direction="Art-directed / Distinctive">
+  <section class="shell" aria-labelledby="well-s20-005-title">
+
+    <p class="eyebrow">When you are ready</p>
+    <h1 id="well-s20-005-title">When it suits you, <a class="go" href="#well-s20-005-title">book a time</a> and not a minute before.</h1>
+
+    <p class="said">Nobody here is counting down at you. If it is this week, good; if it is next spring, the room will still be here and so will we. <a href="#well-s20-005-title">Ask us something first</a> if you would rather start there.</p>
+
+    <div class="band"><span>Media &mdash; the room</span></div>
+
+  </section>
+</div>
+
+</body>
+</html>

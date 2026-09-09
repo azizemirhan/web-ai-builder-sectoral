@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : WELL-S03-001
+  Sector         : Beauty, Wellness & Spa (WELL)
+  Section        : WELL-S03 — Service Categories
+  Direction      : Universal / Safe
+  Reference      : Supplied visual research — the single image provided with the authoring
+                   request (a row of tall rounded cards, each a full-bleed light photograph with
+                   a category name and one short line set over its top-left corner; the row runs
+                   past the right edge of the frame). Taken for the tall media card, the
+                   top-aligned overlay of name and line, the rounded corner treatment and the
+                   bright airy register. Its row was resolved as a static four-up grid rather
+                   than a scrolling rail, deliberately: WELL-S02-005 already occupies the
+                   scrolling-rail topology in this sector, and a categories section is short
+                   enough that all four should be visible at once. No layout, brand, wording or
+                   photograph from that image is reproduced.
+  Layout model   : Compact section header above a static four-column grid of tall media cards,
+                   each carrying its category name and one line over the top of the image
+  Density       : Low
+  Media mode     : Four reserved media areas, one per category, each filling a whole card. A CSS
+                   gradient scrim sits over the top third of each so the overlaid name stays
+                   legible once real photography is placed; no image or asset is embedded.
+  Interaction    : None (static; no JavaScript)
+  Content note   : Neutral placeholder copy. Each category line says what the category covers,
+                   never what it achieves. No efficacy claim, percentage, price, duration,
+                   practitioner name, qualification, client, rating or address. No individual
+                   treatment is presented here — that is WELL-S02's role. All media areas are
+                   reserved and intentionally empty, and every overlaid name is contrast-checked
+                   against the empty slot tone.
+-->
+
+<meta name="study-id" content="WELL-S03-001">
+<meta name="sector" content="Beauty, Wellness &amp; Spa">
+<meta name="sector-prefix" content="WELL">
+<meta name="section-id" content="WELL-S03">
+<meta name="section-name" content="Service Categories">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="layout-model" content="Static four-column grid of tall media cards with top-aligned overlay captions">
+<meta name="density" content="low">
+<meta name="media-mode" content="reserved-media-full-card-four-up-with-scrim">
+<meta name="interaction" content="none">
+<meta name="dependencies" content="none">
+<meta name="batch" content="V1">
+
+<title>WELL-S03-001 — Service Categories, Universal / Safe</title>
+
+<style>
+/* Standalone host baseline */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #faf8f4; }
+
+/* Scoped study styles — namespaced to .well-s03-001 */
+.well-s03-001 {
+  --ink: #232019;
+  --ink-soft: #6d675b;
+  --paper: #faf8f4;
+  --slot: #e2ddd3;
+  --slot-ink: #6b6558;
+  --line: #e6e1d7;
+  --focus: #3f4a37;
+
+  box-sizing: border-box;
+  display: block;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.well-s03-001 *,
+.well-s03-001 *::before,
+.well-s03-001 *::after { box-sizing: inherit; }
+.well-s03-001 :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.well-s03-001 .shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
+}
+
+/* Section header */
+.well-s03-001 .head {
+  max-width: 42rem;
+  margin-bottom: clamp(26px, 3.2vw, 44px);
+}
+.well-s03-001 .eyebrow {
+  margin: 0 0 clamp(12px, 1.4vw, 18px);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.well-s03-001 h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 550;
+  max-width: 17ch;
+}
+.well-s03-001 .head p {
+  margin: clamp(14px, 1.6vw, 20px) 0 0;
+  max-width: 42ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+/* Category grid */
+.well-s03-001 .grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 22px);
+}
+.well-s03-001 .grid li { min-width: 0; }
+
+.well-s03-001 .card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--slot);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 160ms ease;
+}
+.well-s03-001 .card:hover { transform: translateY(-4px); }
+
+.well-s03-001 .slot {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+.well-s03-001 .slot-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slot-ink);
+  text-align: center;
+}
+.well-s03-001 .scrim {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 54%;
+  background: linear-gradient(to bottom, rgba(250, 248, 244, 0.92), rgba(250, 248, 244, 0.68) 44%, rgba(250, 248, 244, 0));
+}
+
+.well-s03-001 .cap {
+  position: absolute;
+  inset: 0 0 auto 0;
+  padding: clamp(16px, 1.7vw, 24px);
+}
+.well-s03-001 h2 {
+  margin: 0 0 7px;
+  font-size: clamp(1.08rem, 1.35vw, 1.34rem);
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+  font-weight: 600;
+}
+.well-s03-001 .desc {
+  margin: 0;
+  max-width: 22ch;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.well-s03-001 .go {
+  position: absolute;
+  right: clamp(14px, 1.5vw, 20px);
+  bottom: clamp(14px, 1.5vw, 20px);
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  font-size: 0.95rem;
+  transition: transform 160ms ease;
+}
+.well-s03-001 .card:hover .go { transform: translateX(3px); }
+
+/* Responsive ladder */
+@media (max-width: 1024px) {
+  .well-s03-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s03-001 .card { aspect-ratio: 4 / 3; }
+  .well-s03-001 .desc { max-width: 34ch; }
+}
+
+@media (max-width: 768px) {
+  .well-s03-001 .card { aspect-ratio: 3 / 2; }
+  .well-s03-001 .head p { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .well-s03-001 .grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .well-s03-001 .card { aspect-ratio: 4 / 3; border-radius: 14px; }
+  .well-s03-001 .desc { max-width: none; }
+  .well-s03-001 h1 { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .well-s03-001 .card,
+  .well-s03-001 .go { transition: none !important; }
+  .well-s03-001 .card:hover { transform: none; }
+  .well-s03-001 .card:hover .go { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="well-s03-001" data-study-id="WELL-S03-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="well-s03-001-title">
+
+    <div class="head">
+      <p class="eyebrow">Where to start</p>
+      <h1 id="well-s03-001-title">Four kinds of work</h1>
+      <p>Pick the one closest to what you came for. Every treatment sits inside one of these.</p>
+    </div>
+
+    <ul class="grid">
+      <li>
+        <a class="card" href="#well-s03-001-title">
+          <div class="slot"><span class="slot-label">Facials media</span></div>
+          <div class="scrim"></div>
+          <div class="cap">
+            <h2>Facials</h2>
+            <p class="desc">Cleansing, steam and hands-on work for the face and neck.</p>
+          </div>
+          <span class="go" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#well-s03-001-title">
+          <div class="slot"><span class="slot-label">Body and massage media</span></div>
+          <div class="scrim"></div>
+          <div class="cap">
+            <h2>Body &amp; massage</h2>
+            <p class="desc">Full-body work, from slow massage to scrubs and wraps.</p>
+          </div>
+          <span class="go" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#well-s03-001-title">
+          <div class="slot"><span class="slot-label">Hands and feet media</span></div>
+          <div class="scrim"></div>
+          <div class="cap">
+            <h2>Hands &amp; feet</h2>
+            <p class="desc">Soaking, shaping and massage for hands and feet.</p>
+          </div>
+          <span class="go" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="#well-s03-001-title">
+          <div class="slot"><span class="slot-label">Brows and lashes media</span></div>
+          <div class="scrim"></div>
+          <div class="cap">
+            <h2>Brows &amp; lashes</h2>
+            <p class="desc">Shaping, tinting and detail work around the eyes.</p>
+          </div>
+          <span class="go" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+</div>
+
+</body>
+</html>
