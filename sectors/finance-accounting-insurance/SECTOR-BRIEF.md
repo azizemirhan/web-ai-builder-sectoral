@@ -8,7 +8,7 @@ FIN
 
 # Purpose
 
-Structural container for future Finance, Accounting & Insurance section studies.
+Modern Finance, Accounting & Insurance studies organised around clear service context, human expertise and practical enquiry preparation.
 
 # Planned Sections
 
@@ -20,11 +20,13 @@ Structural container for future Finance, Accounting & Insurance section studies.
 
 # Authoring Status
 
-NOT_STARTED
+AUTHORED — S01-S27 authored (135 studies); pending Design Lab ingestion
+
+RE-AUTHORED (V2 DETAILING PASS) — all 135 studies re-authored in the reference register (standards/08-VISUAL-REFERENCE-STYLE.md, translated in FINANCE-THEME-CONTRACT.md → Detailing Pass) on 23 September 2026; each section carries a BATCH-V2.md design record.
 
 # Notes
 
-Structure only. No sector research, design guidance, or design studies have been created.
+S01-S27 contain one hundred and thirty-five authored hero, services, audience, adviser, trust, engagement, business-stage, pricing, tool, testimonial, case, firm-fact, resource, compliance-calendar, technology-integration, security, FAQ, office, contact, consultation CTA, subpage hero, context navigation, service detail, engagement detail, insight detail, adviser profile and office detail studies. FINANCE-THEME-CONTRACT.md establishes Ivory & Olive, Rosewood, Lagoon, Iris and Ink & Apricot themes with evidence and media rules. All 27 planned sections are authored and all 135 studies are re-authored in the V2 detailing pass. No further finance sections are scheduled in the current catalogue.
 
 # Extended Site Architecture — S21–S27
 

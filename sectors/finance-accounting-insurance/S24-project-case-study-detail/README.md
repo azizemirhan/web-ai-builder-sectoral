@@ -98,8 +98,14 @@ Nearest existing section in this sector: S11 Case Studies (`S11-case-studies/`).
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Review
+
+[Compare five case detail layouts](../../../review/finance-case-detail.html)
+
+Batch record: [BATCH-V1.md](BATCH-V1.md).
