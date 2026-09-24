@@ -8,7 +8,7 @@ ENG
 
 # Purpose
 
-Structural container for future Energy, Solar & Engineering section studies.
+Modern Energy, Solar & Engineering studies organised around energy possibilities, solutions, project evidence and practical enquiry context.
 
 # Planned Sections
 
@@ -20,11 +20,13 @@ Structural container for future Energy, Solar & Engineering section studies.
 
 # Authoring Status
 
-NOT_STARTED
+AUTHORED — S01-S27 authored (135 studies); pending Design Lab ingestion
+
+RE-AUTHORED (V2 DETAILING PASS) — all 135 studies re-authored in the reference register (standards/08-VISUAL-REFERENCE-STYLE.md, translated in ENERGY-THEME-CONTRACT.md → Detailing Pass) on 23 September 2026; each section carries a BATCH-V2.md design record.
 
 # Notes
 
-Structure only. No sector research, design guidance, or design studies have been created.
+S01-S27 contain one hundred and thirty-five authored hero, solutions, applications, project, capability, technology, infrastructure, process, credential, sustainability, metric, product, financing, case, resource, service-area, team, enquiry, FAQ, contact, subpage hero, context navigation, service detail, project detail, article detail, expert profile and location detail studies. ENERGY-THEME-CONTRACT.md establishes Sunlit, Terracotta, Tidal, Daybreak and Night Current themes with evidence and media rules. All 27 planned sections are authored. No further energy sections are scheduled in the current catalogue.
 
 # Extended Site Architecture — S21–S27
 

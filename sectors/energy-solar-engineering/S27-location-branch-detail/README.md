@@ -89,8 +89,14 @@ Every address, coordinate, hour and contact route in a study must be an obvious 
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Review
+
+[Compare five location layouts](../../../review/energy-location-detail.html)
+
+Batch notes: [BATCH-V1.md](BATCH-V1.md).

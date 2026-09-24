@@ -90,8 +90,12 @@ Sits directly above or below S21 on an internal page, and never replaces it.
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Review
+
+[Compare five navigation layouts](../../../review/energy-navigation.html)

@@ -91,8 +91,14 @@ Nearest existing section in this sector: S08 Engineering Process (`S08-engineeri
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Review
+
+[Compare five expert profiles](../../../review/energy-profile-detail.html)
+
+Batch notes: [BATCH-V1.md](BATCH-V1.md).
