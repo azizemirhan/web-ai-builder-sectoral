@@ -96,7 +96,7 @@ This is the depth page behind one entry in the sector's work index. Product, pro
 
 # Status
 
-NOT_STARTED
+AUTHORED IN THE V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Authoring and design record in [BATCH-V2.md](BATCH-V2.md); this section had no V1 studies, so it carries no BATCH-V1.md.
 
 # Raw Path
 

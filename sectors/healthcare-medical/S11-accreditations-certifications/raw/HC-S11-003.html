@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S11-003
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S11 — Accreditations & Certifications
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the three checks as a four-column ledger: REGISTERED AND INSPECTED as the
+                   eyebrow, V1's headline as the display h2 with "you can look up" in the accent
+                   and V1's lead, with the equipment-log field at 4:3 beside them; then one
+                   bordered grid whose 1px lines are shared, three rows carrying what is
+                   checked, V1's Checked by, its Look it up on the band tone and the reserved
+                   value as a bordered edge in the refusal tone; V1's refusal and the ask as the
+                   foot. V1 is kept whole.
+  Layout model   : Head with a 4:3 equipment-log field; a three-row four-column ledger in a bordered grid sharing 1px lines, the look-it-up column on the band tone
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the nurse checking the equipment log, clipboard on the
+                   machine, at 4:3 in the head, as V1 set it. The check being done, not a seal
+                   saying it was.
+  Interaction    : One link only — Ask at the desk, held at `#` because S19 contact is not yet
+                   authored, exactly as V1 left it. No form, no script.
+  Content note   : V1's eyebrow, headline, lead, the three checks with their look-it-up lines,
+                   the ledger labels in 003, the ask-to-see-it panel in 004 and the
+                   not-shown-here refusal are kept word for word. NO REGISTER, BODY, NUMBER,
+                   DATE, REGULATOR OR SEAL IS NAMED: the register name and number, the date of
+                   the last inspection and the service schedule are RESERVED VALUES marked
+                   data-placeholder="true" and declared in the meta block. V1's refusal names
+                   what the page will not carry — logos of bodies it is not a member of, awards,
+                   and any seal that could not be explained at the desk. No SVG, no icon, no
+                   badge, no seal, no logo. No global header or navigation.
+-->
+<meta name="study-id" content="HC-S11-003">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S11">
+<meta name="section-name" content="Accreditations Certifications">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Sky & Slate">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="Head with the equipment-log field at 4:3; V1's three checks as rows in one bordered grid sharing 1px lines, with Checked by, Look it up on the band tone and the reserved value as a bordered edge in the refusal tone">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="one link, held at #">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="the register name and number, the date of the last inspection and the service schedule — reserved values, named by nobody">
+<meta name="batch" content="V2-detailing">
+<title>HC-S11-003 — Accreditations, Sky & Slate</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f5f8; }
+
+.hc-s11-003 {
+  --paper: #f1f5f8; --ink: #172530; --muted: #526270; --line: #d5dee6; --line-strong: #172530;
+  --media: #d8e2ea; --band: #e6edf2; --accent: #2c5f8a; --no: #5f6a72; --onacc: #f1f5f8;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s11-003 *, .hc-s11-003 *::before, .hc-s11-003 *::after { box-sizing: inherit; }
+.hc-s11-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s11-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s11-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s11-003 .eyebrow .sep { color: var(--muted); }
+.hc-s11-003 h1, .hc-s11-003 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s11-003 h1 .ac, .hc-s11-003 h2.display .ac { color: var(--accent); }
+.hc-s11-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s11-003 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s11-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s11-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s11-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s11-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s11-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s11-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s11-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s11-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s11-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s11-003 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s11-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s11-003 .r1 { left: 18%; } .hc-s11-003 .r2 { left: 41%; } .hc-s11-003 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s11-003 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s11-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s11-003 .u::before, .hc-s11-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s11-003 .u::before { left: 0; } .hc-s11-003 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s11-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s11-003 .res { display: inline-block; padding: 0.3rem 0.55rem; border: 1px solid var(--no); border-radius: 2px; color: var(--no); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.2; }
+
+.hc-s11-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.62fr); gap: clamp(1.8rem, 4.5vw, 4rem); align-items: end; }
+.hc-s11-003 .ledger { list-style: none; display: grid; margin: clamp(2rem, 4vw, 3.2rem) 0 0; padding: 0; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.hc-s11-003 .item { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) minmax(0, 1.2fr) minmax(0, 0.7fr); border-bottom: 1px solid var(--line-strong); }
+.hc-s11-003 .item:last-child { border-bottom: 0; }
+.hc-s11-003 .item > div { padding: clamp(1rem, 2vw, 1.4rem); border-right: 1px solid var(--line); }
+.hc-s11-003 .item > div:last-child { border-right: 0; }
+.hc-s11-003 .how { background: var(--band); }
+.hc-s11-003 .lab { display: block; margin-bottom: 0.45rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s11-003 .item b { display: block; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s11-003 .item p { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.89rem; line-height: 1.5; }
+.hc-s11-003 .how p { color: var(--ink); }
+.hc-s11-003 .foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(1.2rem, 3vw, 2.4rem); align-items: end; margin-top: clamp(1.8rem, 3.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.hc-s11-003 .not { margin: 0; max-width: 52rem; color: var(--no); font-size: 0.9rem; line-height: 1.55; }
+.hc-s11-003 .not b { color: var(--no); }
+@media (max-width: 1100px) { .hc-s11-003 .item { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hc-s11-003 .item > div:nth-child(2n) { border-right: 0; } .hc-s11-003 .item > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
+@media (max-width: 860px) { .hc-s11-003 .head, .hc-s11-003 .item, .hc-s11-003 .foot { grid-template-columns: minmax(0, 1fr); } .hc-s11-003 .item > div { border-right: 0; border-bottom: 1px solid var(--line); } .hc-s11-003 .item > div:last-child { border-bottom: 0; } }
+@media (prefers-reduced-motion: reduce) { .hc-s11-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s11-003" data-study-id="HC-S11-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="hc-s11-003-title">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Registered and inspected</p>
+        <h2 class="display" id="hc-s11-003-title">A register <span class="ac">you can look up</span>, not a wall of badges.</h2>
+        <p class="lead">Three things about this clinic that are checked by somebody other than us, and how you check them yourself.</p>
+      </div>
+      <div class="media" data-media="nurse-checking-the-equipment-log" role="img" aria-label="Reserved image area: the nurse checking the equipment log, clipboard on the machine" style="aspect-ratio: 4 / 3;"><span>THE EQUIPMENT LOG &middot; 4:3</span></div>
+    </div>
+    <ul class="ledger">
+      <li class="item"><div><b>The people</b><p>Every clinician here, by number.</p></div><div><span class="lab">Checked by</span><p>A public register, which keeps them on it only while they meet its conditions.</p></div><div class="how"><span class="lab">Look it up</span><p>The register and the number are on the letter you take home, and at the desk.</p></div><div><span class="lab">Reserved</span><span class="res" data-placeholder="true">Register name and number</span></div></li><li class="item"><div><b>The building</b><p>Rooms, records, the way things are done.</p></div><div><span class="lab">Checked by</span><p>The regulator, on its schedule, not ours. The last report says what was found and what was asked of us.</p></div><div class="how"><span class="lab">Look it up</span><p>The report is at the desk, and on the regulator&rsquo;s own site.</p></div><div><span class="lab">Reserved</span><span class="res" data-placeholder="true">Date of last inspection</span></div></li><li class="item"><div><b>The equipment</b><p>Every machine used on you.</p></div><div><span class="lab">Checked by</span><p>A service schedule, and a log. Anything overdue is not used until it is done.</p></div><div class="how"><span class="lab">Look it up</span><p>Ask to see the log for the machine used on you.</p></div><div><span class="lab">Reserved</span><span class="res" data-placeholder="true">Service schedule</span></div></li>
+    </ul>
+    <div class="foot">
+      <p class="not"><b>Not shown here:</b> logos of bodies we are not members of. Awards. Any seal we could not explain to you at the desk.</p>
+      <a class="lnk" href="#">Ask at the desk</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

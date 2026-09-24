@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S12-003
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S12 — Insurance & Payment
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the three ways as a four-column ledger: PAYING FOR IT as the eyebrow, V1's
+                   headline as the display h2 with "in writing" in the accent and V1's lead
+                   opposite; then one bordered grid whose 1px lines are shared, three rows
+                   carrying the route, V1's You need, its What happens on the band tone and the
+                   reserved value as a bordered edge in the refusal tone; V1's two closing
+                   modules — the never-charged list and the cannot-pay line with the action —
+                   side by side beneath. V1 is kept whole.
+  Layout model   : Head split; a three-row four-column ledger in a bordered grid sharing 1px lines; two closing modules
+  Density        : Structured — V1's spine kept in full
+  Media mode     : NONE — V1 set this study without a reserved area, and none is added. The
+                   ledger is the composition.
+  Interaction    : One link only — Book a first appointment, pointing at the same-variant S05,
+                   which is authored, exactly as V1 routed it. No form anywhere: V1's own line
+                   says the way to raise not being able to pay is a conversation, not a form.
+                   No script.
+  Content note   : V1's eyebrow, headline, lead, the three ways to pay with what you need and
+                   what happens, the never-charged list, the before-booking panel in 004 and the
+                   if-you-cannot-pay line are kept word for word. NO PRICE, FEE, CURRENCY,
+                   INSURER, PLAN OR COVERAGE IS NAMED: the first-visit fee, the insurers worked
+                   with and the referral arrangements are RESERVED VALUES marked
+                   data-placeholder="true" and declared in the meta block. No SVG, no icon, no
+                   badge, no insurer logo. No global header or navigation.
+-->
+<meta name="study-id" content="HC-S12-003">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S12">
+<meta name="section-name" content="Insurance Payment">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Sky & Slate">
+<meta name="section-shape" content="C — type and colour, no reserved area">
+<meta name="layout-model" content="Head split; V1's three ways as rows in one bordered grid sharing 1px lines, You need, What happens on the band tone and the reserved value as a bordered edge; V1's never-charged list and cannot-pay module side by side beneath">
+<meta name="density" content="structured">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="one link to the same-variant S05">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="the first-visit fee, the insurers worked with and the referral arrangements — reserved values, never invented">
+<meta name="batch" content="V2-detailing">
+<title>HC-S12-003 — Insurance & Payment, Sky & Slate</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f5f8; }
+
+.hc-s12-003 {
+  --paper: #f1f5f8; --ink: #172530; --muted: #526270; --line: #d5dee6; --line-strong: #172530;
+  --media: #d8e2ea; --band: #e6edf2; --accent: #2c5f8a; --no: #5f6a72; --onacc: #f1f5f8;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s12-003 *, .hc-s12-003 *::before, .hc-s12-003 *::after { box-sizing: inherit; }
+.hc-s12-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s12-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s12-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s12-003 .eyebrow .sep { color: var(--muted); }
+.hc-s12-003 h1, .hc-s12-003 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s12-003 h1 .ac, .hc-s12-003 h2.display .ac { color: var(--accent); }
+.hc-s12-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s12-003 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s12-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s12-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s12-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s12-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s12-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s12-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s12-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s12-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s12-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s12-003 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s12-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s12-003 .r1 { left: 18%; } .hc-s12-003 .r2 { left: 41%; } .hc-s12-003 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s12-003 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s12-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s12-003 .u::before, .hc-s12-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s12-003 .u::before { left: 0; } .hc-s12-003 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s12-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s12-003 .res { display: inline-block; padding: 0.3rem 0.55rem; border: 1px solid var(--no); border-radius: 2px; color: var(--no); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.2; }
+
+.hc-s12-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.7fr); gap: clamp(1.8rem, 4.5vw, 4rem); align-items: end; }
+.hc-s12-003 .lead { margin: 0; }
+.hc-s12-003 .ledger { list-style: none; display: grid; margin: clamp(2rem, 4vw, 3.2rem) 0 0; padding: 0; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.hc-s12-003 .item { display: grid; grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.1fr) minmax(0, 1.3fr) minmax(0, 0.7fr); border-bottom: 1px solid var(--line-strong); }
+.hc-s12-003 .item:last-child { border-bottom: 0; }
+.hc-s12-003 .item > div { padding: clamp(1rem, 2vw, 1.4rem); border-right: 1px solid var(--line); }
+.hc-s12-003 .item > div:last-child { border-right: 0; }
+.hc-s12-003 .happens { background: var(--band); }
+.hc-s12-003 .lab { display: block; margin-bottom: 0.45rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s12-003 .item b { display: block; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s12-003 .item p { margin: 0; color: var(--muted); font-size: 0.89rem; line-height: 1.5; }
+.hc-s12-003 .happens p { color: var(--ink); }
+.hc-s12-003 .mods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.4rem, 3.4vw, 2.8rem); margin-top: clamp(1.8rem, 3.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.hc-s12-003 .mod b { display: block; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s12-003 .never { list-style: none; display: grid; margin: 0.7rem 0 0; padding: 0; }
+.hc-s12-003 .never li { padding: 0.45rem 0; border-top: 1px solid var(--line); color: var(--no); font-size: 0.9rem; line-height: 1.5; }
+.hc-s12-003 .never li:first-child { border-top: 0; padding-top: 0; }
+.hc-s12-003 .mod > p { margin: 0.5rem 0 1rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+@media (max-width: 1100px) { .hc-s12-003 .item { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hc-s12-003 .item > div:nth-child(2n) { border-right: 0; } .hc-s12-003 .item > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); } }
+@media (max-width: 860px) { .hc-s12-003 .head, .hc-s12-003 .item, .hc-s12-003 .mods { grid-template-columns: minmax(0, 1fr); } .hc-s12-003 .item > div { border-right: 0; border-bottom: 1px solid var(--line); } .hc-s12-003 .item > div:last-child { border-bottom: 0; } }
+@media (prefers-reduced-motion: reduce) { .hc-s12-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s12-003" data-study-id="HC-S12-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="hc-s12-003-title">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Paying for it</p>
+        <h2 class="display" id="hc-s12-003-title">The price of the first visit is told to you before you book, <span class="ac">in writing</span>, and nothing is added on the day without your yes.</h2>
+      </div>
+      <p class="lead">Three ways it can be paid for, what is never charged for, and what to do if you cannot pay.</p>
+    </div>
+    <ul class="ledger">
+      <li class="item"><div><b>Yourself</b></div><div><span class="lab">You need</span><p>Nothing in advance. The fee is on the letter you get when you book.</p></div><div class="happens"><span class="lab">What happens</span><p>You pay at the desk after the visit, for what was agreed, and get a receipt that says what for.</p></div><div><span class="lab">Reserved</span><span class="res" data-placeholder="true">First-visit fee</span></div></li><li class="item"><div><b>Through an insurer</b></div><div><span class="lab">You need</span><p>Your policy details and, if your insurer asks for one, an authorisation before the visit.</p></div><div class="happens"><span class="lab">What happens</span><p>We tell you before you book whether we work with them, and what they usually do not cover.</p></div><div><span class="lab">Reserved</span><span class="res" data-placeholder="true">The insurers we work with</span></div></li><li class="item"><div><b>Through a referral</b></div><div><span class="lab">You need</span><p>The referral letter from whoever sent you.</p></div><div class="happens"><span class="lab">What happens</span><p>We tell you before you book who pays, and whether anything falls to you.</p></div><div><span class="lab">Reserved</span><span class="res" data-placeholder="true">Referral arrangements</span></div></li>
+    </ul>
+    <div class="mods">
+      <div class="mod">
+        <b>Never charged for</b>
+        <ul class="never"><li>Being told this is not the place for it.</li><li>A referral letter.</li><li>Asking a question, before or after.</li></ul>
+      </div>
+      <div class="mod">
+        <b>If you cannot pay</b>
+        <p>Say so at the desk. There is a conversation to be had, not a form.</p>
+        <a class="btn" href="../../S05-appointment-booking/raw/HC-S05-003.html">Book a first appointment</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

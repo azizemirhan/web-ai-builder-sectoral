@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S03-003
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S03 — Doctors & Specialists
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the five roles as shared cells: WHO YOU WILL SEE as the eyebrow, V1's
+                   headline as the display h2 with "in the room." in the accent and V1's lead
+                   opposite; then one bordered grid whose 1px lines are shared, holding the
+                   doctor's field tall down the first column, V1's five role modules with their
+                   Sees / First visit / In the room fields, and the nurse's field closing the
+                   last row; V1's booking note and its refusal as the foot, the refusal in the
+                   refusal tone. V1 is kept whole.
+  Layout model   : Head split; one bordered grid sharing 1px lines — a tall doctor field, five role modules as bare labelled fields, a closing nurse field
+  Density        : Structured — V1's spine kept in full
+  Media mode     : TWO reserved areas — the doctor at work, standing tall through two rows,
+                   and the nurse at work closing the grid, exactly where V1 placed them. Named
+                   by role only.
+  Interaction    : Links only — Registrations and accreditations held at `#` because S11 is
+                   not yet authored, and in 004 Book a first appointment held at `#` for S05,
+                   exactly as V1 left them. In 005 V1's rail is a labelled, keyboard-reachable
+                   scroller, so the five roles are readable without a pointer. No form, no
+                   script.
+  Content note   : V1's eyebrow, headline, leads, the five role names and every line under
+                   them, the booking note and the refusal to list qualifications are kept word
+                   for word. Everyone is named by ROLE ONLY — no clinician name, no
+                   qualification, registration, licence, board or professional body appears
+                   anywhere, and V1's statement that a CV does not tell you what someone is like
+                   in the room is carried in the copy in the refusal tone. No SVG, no icon, no
+                   badge. No global header or navigation.
+-->
+<meta name="study-id" content="HC-S03-003">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S03">
+<meta name="section-name" content="Doctors Specialists">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Sky & Slate">
+<meta name="section-shape" content="A — item grid, media in every item">
+<meta name="layout-model" content="Head split; one bordered grid sharing 1px lines with the doctor's field tall down the first column, V1's five role modules as bare labelled fields and the nurse's field closing the last row">
+<meta name="density" content="structured">
+<meta name="media-mode" content="two-reserved-areas">
+<meta name="interaction" content="links held at #">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="none — this section carries no demo value">
+<meta name="batch" content="V2-detailing">
+<title>HC-S03-003 — Doctors & Specialists, Sky & Slate</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f5f8; }
+
+.hc-s03-003 {
+  --paper: #f1f5f8; --ink: #172530; --muted: #526270; --line: #d5dee6; --line-strong: #172530;
+  --media: #d8e2ea; --band: #e6edf2; --accent: #2c5f8a; --no: #5f6a72; --onacc: #f1f5f8;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s03-003 *, .hc-s03-003 *::before, .hc-s03-003 *::after { box-sizing: inherit; }
+.hc-s03-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s03-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s03-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s03-003 .eyebrow .sep { color: var(--muted); }
+.hc-s03-003 h1, .hc-s03-003 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s03-003 h1 .ac, .hc-s03-003 h2.display .ac { color: var(--accent); }
+.hc-s03-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s03-003 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s03-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s03-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s03-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s03-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s03-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s03-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s03-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s03-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s03-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s03-003 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s03-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s03-003 .r1 { left: 18%; } .hc-s03-003 .r2 { left: 41%; } .hc-s03-003 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s03-003 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s03-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s03-003 .u::before, .hc-s03-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s03-003 .u::before { left: 0; } .hc-s03-003 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s03-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s03-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.7fr); gap: clamp(1.8rem, 4.5vw, 4rem); align-items: end; }
+.hc-s03-003 .lead { margin: 0; }
+.hc-s03-003 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: clamp(2rem, 4vw, 3.2rem) 0 0; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.hc-s03-003 .grid > * { padding: clamp(1.1rem, 2.2vw, 1.5rem); border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.hc-s03-003 .f1 { grid-column: 1; grid-row: 1 / span 2; }
+.hc-s03-003 .f2 { grid-column: 2 / -1; border-right: 0; }
+.hc-s03-003 .mod:nth-of-type(2), .hc-s03-003 .mod:nth-of-type(4) { border-right: 0; }
+.hc-s03-003 .grid > :nth-last-child(-n+2) { border-bottom: 0; }
+.hc-s03-003 .grid .media { border-radius: 4px; }
+.hc-s03-003 .mod b { display: block; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s03-003 .rec { margin: 0.8rem 0 0; display: grid; gap: 0.7rem; }
+.hc-s03-003 .rec > div { padding-top: 0.6rem; border-top: 1px solid var(--line); }
+.hc-s03-003 .rec dt { color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s03-003 .rec dd { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.hc-s03-003 .foot { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.4rem, 3.4vw, 2.8rem); margin-top: clamp(1.8rem, 3.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.hc-s03-003 .foot b { display: block; font-size: 1rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s03-003 .foot p { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+.hc-s03-003 .not b, .hc-s03-003 .not p { color: var(--no); }
+@media (max-width: 980px) { .hc-s03-003 .head, .hc-s03-003 .foot { grid-template-columns: minmax(0, 1fr); } .hc-s03-003 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hc-s03-003 .f1 { grid-column: 1; grid-row: 1; } .hc-s03-003 .f2 { grid-column: 1 / -1; } .hc-s03-003 .mod:nth-of-type(2), .hc-s03-003 .mod:nth-of-type(4) { border-right: 1px solid var(--line-strong); } .hc-s03-003 .grid > :nth-child(2n) { border-right: 0; } }
+@media (max-width: 560px) { .hc-s03-003 .grid { grid-template-columns: minmax(0, 1fr); } .hc-s03-003 .grid > * { border-right: 0; } .hc-s03-003 .f2 { grid-column: 1; } }
+@media (prefers-reduced-motion: reduce) { .hc-s03-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s03-003" data-study-id="HC-S03-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="hc-s03-003-title">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Who you will see</p>
+        <h2 class="display" id="hc-s03-003-title">You are not choosing a CV. You are choosing who will be <span class="ac">in the room.</span></h2>
+      </div>
+      <p class="lead">Five people, by role: who they see, the first visit, and what they are like.</p>
+    </div>
+    <div class="grid">
+      <div class="f1"><div class="media" data-media="doctor-at-work" role="img" aria-label="Reserved image area: the doctor at work, named by role only" style="aspect-ratio: 3 / 4;"><span>THE DOCTOR &middot; 3:4</span></div></div>
+      <section class="item mod" aria-label="The doctor"><b>The doctor</b><dl class="rec"><div><dt>Sees</dt><dd>Adults, for skin, joints and heart.</dd></div><div><dt>First visit</dt><dd>A conversation, then an examination.</dd></div><div><dt>In the room</dt><dd>Asks first, examines second, writes down what they found.</dd></div></dl></section><section class="item mod" aria-label="The children&rsquo;s doctor"><b>The children&rsquo;s doctor</b><dl class="rec"><div><dt>Sees</dt><dd>Children, with a parent in the room.</dd></div><div><dt>First visit</dt><dd>Mostly talking, with the child.</dd></div><div><dt>In the room</dt><dd>Slow, and talks to the child rather than over them.</dd></div></dl></section><section class="item mod" aria-label="The nurse"><b>The nurse</b><dl class="rec"><div><dt>Sees</dt><dd>Checks, screening, samples, dressings.</dd></div><div><dt>First visit</dt><dd>Often the first person you meet.</dd></div><div><dt>In the room</dt><dd>Tells you what comes next before it happens.</dd></div></dl></section><section class="item mod" aria-label="The physiotherapist"><b>The physiotherapist</b><dl class="rec"><div><dt>Sees</dt><dd>Joints, bones and muscles.</dd></div><div><dt>First visit</dt><dd>An examination, hands-on.</dd></div><div><dt>In the room</dt><dd>You leave with a plan you can do at home.</dd></div></dl></section><section class="item mod" aria-label="The women&rsquo;s health doctor"><b>The women&rsquo;s health doctor</b><dl class="rec"><div><dt>Sees</dt><dd>Cycles, contraception, pregnancy, the menopause.</dd></div><div><dt>First visit</dt><dd>A conversation first.</dd></div><div><dt>In the room</dt><dd>Nothing else happens unless you agree.</dd></div></dl></section>
+      <div class="f2"><div class="media" data-media="nurse-at-work" role="img" aria-label="Reserved image area: the nurse at work, named by role only" style="aspect-ratio: 21 / 9;"><span>THE NURSE &middot; 21:9</span></div></div>
+    </div>
+    <div class="foot">
+      <div class="ask"><b>Ask for them by role when you book.</b><p>If they are away, you are told, not quietly given somebody else.</p></div>
+      <div class="not"><b>No list of qualifications here.</b><p>They are real and checkable, and they do not tell you what someone is like in the room. <a class="lnk" href="#">Registrations and accreditations</a></p></div>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

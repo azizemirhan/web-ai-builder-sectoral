@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S14-003
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S14 — Locations & Departments
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the walk as a shared-line ledger: THE BUILDING as the eyebrow, the headline
+                   as the display h2 with "find your way in it" in the accent and the lead, with
+                   the corridor field at 4:3 beside them; then one bordered grid whose 1px lines
+                   are shared, six rows each opened by a word-numeral chip — ONE to SIX, never a
+                   digit — and carrying What happens and To know as bare labelled fields, the
+                   to-know column on the band tone; the where-it-is line and the contact link as
+                   the foot.
+  Layout model   : Head with a 4:3 corridor field; a six-row ledger in a bordered grid sharing 1px lines, word-numeralled, the to-know column on the band tone
+  Density        : Structured — the section's spine kept in full
+  Media mode     : ONE reserved area — the corridor with the consulting-room doors along it, at
+                   4:3 in the head. The one view that shows the building is a corridor of rooms
+                   and not a department directory.
+  Interaction    : One link only — Contact and directions, held at `#` because S19 is not yet
+                   authored. In 004 a second control, Book a first appointment, points at the
+                   same-variant S05, which is authored. No form, no script, no map.
+  Content note   : The six places, what happens in each and the one practical thing to know at
+                   each are the section's spine, kept word for word across all five studies.
+                   Whether the door is step-free and how many consulting rooms there are stay
+                   DEMO VALUES marked data-placeholder="true" and spelled as words. NO ADDRESS,
+                   STREET, MAP, TELEPHONE NUMBER OR OPENING HOUR APPEARS — V1's own line sends
+                   those to the contact page. No department table, no floor plan drawn as a
+                   diagram, no clinician name. No SVG, no icon, no badge. No global header or
+                   navigation.
+  Authoring note : This study had NO V1. It is authored directly in the V2 register and its
+                   content spine is taken from the two V1 studies that did exist, HC-S14-001 and
+                   HC-S14-002, so that the five studies carry the same six places, the same
+                   statements and the same practical lines. No new claim, value or fact is
+                   introduced.
+-->
+<meta name="study-id" content="HC-S14-003">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S14">
+<meta name="section-name" content="Locations Departments">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Sky & Slate">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="Head with the corridor field at 4:3; the six places as rows in one bordered grid sharing 1px lines, each opened by a word-numeral chip and carrying What happens and To know as bare labelled fields">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="one link, held at #">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="whether the door is step-free and how many consulting rooms there are, spelled as words — demo values">
+<meta name="batch" content="V2-detailing">
+<title>HC-S14-003 — Locations & Departments, Sky & Slate</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f5f8; }
+
+.hc-s14-003 {
+  --paper: #f1f5f8; --ink: #172530; --muted: #526270; --line: #d5dee6; --line-strong: #172530;
+  --media: #d8e2ea; --band: #e6edf2; --accent: #2c5f8a; --no: #5f6a72; --onacc: #f1f5f8;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s14-003 *, .hc-s14-003 *::before, .hc-s14-003 *::after { box-sizing: inherit; }
+.hc-s14-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s14-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s14-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s14-003 .eyebrow .sep { color: var(--muted); }
+.hc-s14-003 h1, .hc-s14-003 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s14-003 h1 .ac, .hc-s14-003 h2.display .ac { color: var(--accent); }
+.hc-s14-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s14-003 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s14-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s14-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s14-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s14-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s14-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s14-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s14-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s14-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s14-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s14-003 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s14-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s14-003 .r1 { left: 18%; } .hc-s14-003 .r2 { left: 41%; } .hc-s14-003 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s14-003 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s14-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s14-003 .u::before, .hc-s14-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s14-003 .u::before { left: 0; } .hc-s14-003 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s14-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s14-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.58fr); gap: clamp(1.8rem, 4.5vw, 4rem); align-items: end; }
+.hc-s14-003 .ledger { list-style: none; display: grid; margin: clamp(2rem, 4vw, 3.2rem) 0 0; padding: 0; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.hc-s14-003 .item { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr) minmax(0, 1fr); align-items: stretch; border-bottom: 1px solid var(--line-strong); }
+.hc-s14-003 .item:last-child { border-bottom: 0; }
+.hc-s14-003 .item > div { padding: clamp(0.9rem, 1.8vw, 1.3rem); border-right: 1px solid var(--line); }
+.hc-s14-003 .item > div:last-child { border-right: 0; }
+.hc-s14-003 .name { display: grid; gap: 0.5rem; justify-items: start; }
+.hc-s14-003 .item b { font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s14-003 .lab { display: block; margin-bottom: 0.4rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s14-003 .item p { margin: 0; color: var(--muted); font-size: 0.89rem; line-height: 1.5; }
+.hc-s14-003 .know { background: var(--band); }
+.hc-s14-003 .h > div { padding-top: 0.8rem; padding-bottom: 0.8rem; }
+.hc-s14-003 .lab { margin-bottom: 0; }
+.hc-s14-003 .know p { color: var(--ink); }
+.hc-s14-003 .foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(1.2rem, 3vw, 2.4rem); align-items: end; margin-top: clamp(1.8rem, 3.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.hc-s14-003 .where { margin: 0; max-width: 56rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+@media (max-width: 980px) { .hc-s14-003 .item { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hc-s14-003 .item > div:nth-child(2n) { border-right: 0; } .hc-s14-003 .item > div:first-child { grid-column: 1 / -1; border-right: 0; border-bottom: 1px solid var(--line); } }
+@media (max-width: 860px) { .hc-s14-003 .head, .hc-s14-003 .item, .hc-s14-003 .foot { grid-template-columns: minmax(0, 1fr); } .hc-s14-003 .item > div { border-right: 0; border-bottom: 1px solid var(--line); } .hc-s14-003 .item > div:last-child { border-bottom: 0; } }
+@media (prefers-reduced-motion: reduce) { .hc-s14-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s14-003" data-study-id="HC-S14-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="hc-s14-003-title">
+    <div class="head">
+      <div>
+        <p class="eyebrow">The building</p>
+        <h2 class="display" id="hc-s14-003-title">One building, described so you can <span class="ac">find your way in it</span>: the door, the desk, the rooms, by what happens in them.</h2>
+        <p class="lead">Six places, in the order you meet them, with the one practical thing to know at each.</p>
+      </div>
+      <div class="media" data-media="the-corridor-of-consulting-rooms" role="img" aria-label="Reserved image area: the corridor, the consulting-room doors along it" style="aspect-ratio: 4 / 3;"><span>THE CORRIDOR &middot; 4:3</span></div>
+    </div>
+    <ol class="ledger">
+      <li class="item h" aria-hidden="true"><div class="name"><span class="lab">The place</span></div><div><span class="lab">What happens</span></div><div class="know"><span class="lab">To know</span></div></li>
+      <li class="item"><div class="name"><span class="num">One</span><b>The door</b></div><div><p>One door from the street, marked. It opens into the desk, not a corridor.</p></div><div class="know"><p><span data-placeholder="true">Step-free from the pavement</span>; a buzzer if you need it opened.</p></div></li><li class="item"><div class="name"><span class="num">Two</span><b>The desk</b></div><div><p>Where you say your name and are asked who you are: the only place that happens.</p></div><div class="know"><p>Say if you cannot stand long; you can sit and be called.</p></div></li><li class="item"><div class="name"><span class="num">Three</span><b>The waiting room</b></div><div><p>Chairs, water, a window. You are called by name, by the person who will see you.</p></div><div class="know"><p>Bring someone if you like; there is a seat for them.</p></div></li><li class="item"><div class="name"><span class="num">Four</span><b>The consulting rooms</b></div><div><p><span data-placeholder="true">Six</span> of them, off one corridor. Two chairs, a couch, a desk. The conversation and the examination happen here.</p></div><div class="know"><p>The door is closed while you are in it, and nobody comes in without knocking.</p></div></li><li class="item"><div class="name"><span class="num">Five</span><b>The treatment room</b></div><div><p>Where samples are taken and the trace is done. The nurse&rsquo;s room.</p></div><div class="know"><p>You are walked here; you do not have to find it.</p></div></li><li class="item"><div class="name"><span class="num">Six</span><b>The way out</b></div><div><p>Back past the desk, with your letter. The desk is where anything is paid and the next visit is booked.</p></div><div class="know"><p>Ask for a taxi to be called if you need one.</p></div></li>
+    </ol>
+    <div class="foot">
+      <p class="where"><b>Where it is:</b> the street, how to get here and the plan of the ground floor are on the contact page, with the door photographed from the pavement.</p>
+      <a class="lnk" href="#">Contact and directions</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

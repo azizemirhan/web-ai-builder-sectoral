@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S08-003
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S08 — Patient Journey
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the six steps as shared cells: THE FIRST VISIT as the eyebrow, V1's headline
+                   as the display h2 with "in order" in the accent and V1's lead opposite; then
+                   one bordered grid whose 1px lines are shared, each cell opened by a
+                   word-numeral chip — ONE to SIX, in place of V1's decorative numeral rail,
+                   because no digit belongs in visible copy — and holding V1's Happens / Asked /
+                   You can as bare labelled fields; V1's at-any-point line and the booking
+                   action as the foot. V1 is kept whole.
+  Layout model   : Head split; six word-numeralled step cells in a bordered grid sharing 1px lines, Happens / Asked / You can as bare labelled fields
+  Density        : Structured — V1's spine kept in full
+  Media mode     : NONE — V1 set this study without a reserved area, and none is added. The
+                   order is the content.
+  Interaction    : One link only — Book a first appointment, pointing at the same-variant S05,
+                   which is authored, exactly as V1 routed it. No form, no script.
+  Content note   : V1's eyebrow, headline, lead, the six steps with what happens, what is
+                   asked and what you can do at each, the nothing-to-prepare panel in 004 and
+                   the at-any-point line are kept word for word. The length of the conversation
+                   and the wait for results stay DEMO VALUES marked data-placeholder="true" and
+                   spelled as words — no duration is promised. Nothing on the page is a
+                   protocol, a pathway flowchart or a consent form; the order is written, not
+                   drawn. No clinician is named. No SVG, no icon, no badge. No global header or
+                   navigation.
+-->
+<meta name="study-id" content="HC-S08-003">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S08">
+<meta name="section-name" content="Patient Journey">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Sky & Slate">
+<meta name="section-shape" content="C — type and colour, no reserved area">
+<meta name="layout-model" content="Head split; V1's six steps as cells in one bordered grid sharing 1px lines, each opened by a word-numeral chip and holding Happens, Asked and You can as bare labelled fields">
+<meta name="density" content="structured">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="one link to the same-variant S05">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="how long the conversation usually takes and how long results take, spelled as words — demo values, not promises">
+<meta name="batch" content="V2-detailing">
+<title>HC-S08-003 — Patient Journey, Sky & Slate</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f5f8; }
+
+.hc-s08-003 {
+  --paper: #f1f5f8; --ink: #172530; --muted: #526270; --line: #d5dee6; --line-strong: #172530;
+  --media: #d8e2ea; --band: #e6edf2; --accent: #2c5f8a; --no: #5f6a72; --onacc: #f1f5f8;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s08-003 *, .hc-s08-003 *::before, .hc-s08-003 *::after { box-sizing: inherit; }
+.hc-s08-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s08-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s08-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s08-003 .eyebrow .sep { color: var(--muted); }
+.hc-s08-003 h1, .hc-s08-003 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s08-003 h1 .ac, .hc-s08-003 h2.display .ac { color: var(--accent); }
+.hc-s08-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s08-003 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s08-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s08-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s08-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s08-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s08-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s08-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s08-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s08-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s08-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s08-003 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s08-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s08-003 .r1 { left: 18%; } .hc-s08-003 .r2 { left: 41%; } .hc-s08-003 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s08-003 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s08-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s08-003 .u::before, .hc-s08-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s08-003 .u::before { left: 0; } .hc-s08-003 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s08-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s08-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.7fr); gap: clamp(1.8rem, 4.5vw, 4rem); align-items: end; }
+.hc-s08-003 .lead { margin: 0; }
+.hc-s08-003 .steps { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: clamp(2rem, 4vw, 3.2rem) 0 0; padding: 0; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.hc-s08-003 .item { padding: clamp(1.1rem, 2.2vw, 1.5rem); border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.hc-s08-003 .item:nth-child(3n) { border-right: 0; }
+.hc-s08-003 .item:nth-last-child(-n+3) { border-bottom: 0; }
+.hc-s08-003 .item h3 { margin: 0.8rem 0 0; font-size: 1.05rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s08-003 .rec { margin: 0.8rem 0 0; display: grid; gap: 0.7rem; }
+.hc-s08-003 .rec > div { padding-top: 0.6rem; border-top: 1px solid var(--line); }
+.hc-s08-003 .rec dt { color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s08-003 .rec dd { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.hc-s08-003 .rec > div:last-child dd { color: var(--ink); }
+.hc-s08-003 .foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(1.2rem, 3vw, 2.4rem); align-items: end; margin-top: clamp(1.8rem, 3.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.hc-s08-003 .not { margin: 0; max-width: 50rem; color: var(--no); font-size: 0.9rem; line-height: 1.55; }
+.hc-s08-003 .not b { color: var(--no); }
+@media (max-width: 1100px) { .hc-s08-003 .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hc-s08-003 .item:nth-child(3n) { border-right: 1px solid var(--line-strong); } .hc-s08-003 .item:nth-child(2n) { border-right: 0; } .hc-s08-003 .item:nth-last-child(-n+3) { border-bottom: 1px solid var(--line-strong); } .hc-s08-003 .item:nth-last-child(-n+2) { border-bottom: 0; } }
+@media (max-width: 860px) { .hc-s08-003 .head, .hc-s08-003 .foot { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .hc-s08-003 .steps { grid-template-columns: minmax(0, 1fr); } .hc-s08-003 .item { border-right: 0; } }
+@media (prefers-reduced-motion: reduce) { .hc-s08-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s08-003" data-study-id="HC-S08-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="hc-s08-003-title">
+    <div class="head">
+      <div>
+        <p class="eyebrow">The first visit</p>
+        <h2 class="display" id="hc-s08-003-title">What happens, <span class="ac">in order</span>, what you are asked at each step, and what you can do at each step.</h2>
+      </div>
+      <p class="lead">Six things, from the call to the letter. None of them is a surprise.</p>
+    </div>
+    <ol class="steps">
+      <li class="item"><span class="num">One</span><h3>The call</h3><dl class="rec"><div><dt>Happens</dt><dd>Four questions about what is wrong. You are told who and when.</dd></div><div><dt>Asked</dt><dd>The four questions.</dd></div><div><dt>You can</dt><dd>Ask for a particular person.</dd></div></dl></li><li class="item"><span class="num">Two</span><h3>The desk</h3><dl class="rec"><div><dt>Happens</dt><dd>Only now do we ask who you are: name and date of birth.</dd></div><div><dt>Asked</dt><dd>Your name and date of birth.</dd></div><div><dt>You can</dt><dd>Bring someone with you.</dd></div></dl></li><li class="item"><span class="num">Three</span><h3>The conversation</h3><dl class="rec"><div><dt>Happens</dt><dd>What is wrong, in your words, to the person you were told about. Usually <span data-placeholder="true">half an hour</span>.</dd></div><div><dt>Asked</dt><dd>To say it your way.</dd></div><div><dt>You can</dt><dd>Ask for it said again.</dd></div></dl></li><li class="item"><span class="num">Four</span><h3>The examination</h3><dl class="rec"><div><dt>Happens</dt><dd>Told before it starts. Nothing without your yes.</dd></div><div><dt>Asked</dt><dd>For your yes.</dd></div><div><dt>You can</dt><dd>Ask to stop, at any point.</dd></div></dl></li><li class="item"><span class="num">Five</span><h3>Tests, if any</h3><dl class="rec"><div><dt>Happens</dt><dd>Only if the result would change what we do. Results usually within <span data-placeholder="true">a few days</span>.</dd></div><div><dt>Asked</dt><dd>Nothing. You are told why.</dd></div><div><dt>You can</dt><dd>Ask what the result would change.</dd></div></dl></li><li class="item"><span class="num">Six</span><h3>The letter</h3><dl class="rec"><div><dt>Happens</dt><dd>What was found and what happens next, in plain words, in your hand before you leave.</dd></div><div><dt>Asked</dt><dd>Nothing more.</dd></div><div><dt>You can</dt><dd>Ask for a copy for someone else.</dd></div></dl></li>
+    </ol>
+    <div class="foot">
+      <p class="not"><b>At any point:</b> if this is not the place for it, you are told, and referred. Emergencies go to the emergency service.</p>
+      <a class="btn" href="../../S05-appointment-booking/raw/HC-S05-003.html">Book a first appointment</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

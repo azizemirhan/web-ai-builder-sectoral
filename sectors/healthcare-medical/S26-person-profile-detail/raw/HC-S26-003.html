@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S26-003
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S26 — Doctor / Specialist Profile Detail
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the profile as one bordered plate whose 1px lines are shared: the head row on
+                   the band tone beside the portrait at 3:4; the bracketed register in its own
+                   band-tone cell against what the post covers and how the appointment runs; then a
+                   row with what the person will not do, what is attached and how to reach them.
+                   The ask sits under the plate on the lead rule.
+  Layout model   : One bordered plate, 1px lines shared: head row, register against the post and the appointment, a limits row
+  Density        : Detail band — one post in full
+  Media mode     : ONE reserved area — the portrait, the doctor at work named by role only, at
+                   3:4, the right-hand cell of the head row of the plate.
+  Interaction    : Links only — the emergency service, the area in full, the pathway and the
+                   route to say what is wrong. Nothing opens, expands or submits. No script.
+  Content note   : EVERY value that identifies the person is a BRACKETED PLACEHOLDER marked
+                   data-placeholder="true" and declared in the meta block — the name, the role, the
+                   registration, the department, the description of the post and the portrait
+                   caption. No clinician name, qualification, registration, licence, board,
+                   membership, award or credential is invented; no social handle or profile link;
+                   no testimonial, rating or figure attributed to a person. The page says so on
+                   itself: a value that is not in the register stays empty. What IS written is what
+                   is true of the post rather than of the holder — how the appointment runs, what
+                   the person will not do, and that every route goes through the desk. Numerals are
+                   spelled as words. No SVG, no icon, no badge; no global header or footer.
+  Authoring note : This section had NO V1 study. It is authored directly in the V2 register
+                   against HEALTHCARE-THEME-CONTRACT.md. The person's name is the page's h1,
+                   because a profile page is a page; here it is the reserved value.
+-->
+<meta name="study-id" content="HC-S26-003">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S26">
+<meta name="section-name" content="Doctor / Specialist Profile Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Sky & Slate">
+<meta name="section-shape" content="B — anchored profile page, one reserved area">
+<meta name="layout-model" content="One bordered plate sharing 1px lines — the head on the band tone with the portrait at 3:4, the bracketed register in a band-tone cell against the post and the appointment, and a limits row">
+<meta name="density" content="detail band">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="links to the same-variant S18, S23, S24 and S05">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="approved role (label and register); approved name (h1 and register); approved registration; approved department; approved description of the post; approved portrait caption - bracketed placeholders">
+<meta name="batch" content="V2-detailing">
+<title>HC-S26-003 — The Post, Not The Biography, Sky & Slate</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f5f8; }
+
+.hc-s26-003 {
+  --paper: #f1f5f8; --ink: #172530; --muted: #526270; --line: #d5dee6; --line-strong: #172530;
+  --media: #d8e2ea; --band: #e6edf2; --accent: #2c5f8a; --no: #5f6a72; --onacc: #f1f5f8;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s26-003 *, .hc-s26-003 *::before, .hc-s26-003 *::after { box-sizing: inherit; }
+.hc-s26-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s26-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s26-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s26-003 .eyebrow .sep { color: var(--muted); }
+.hc-s26-003 h1, .hc-s26-003 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s26-003 h1 .ac, .hc-s26-003 h2.display .ac { color: var(--accent); }
+.hc-s26-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s26-003 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s26-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s26-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s26-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s26-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s26-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s26-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s26-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s26-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s26-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s26-003 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s26-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s26-003 .r1 { left: 18%; } .hc-s26-003 .r2 { left: 41%; } .hc-s26-003 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s26-003 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s26-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s26-003 .u::before, .hc-s26-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s26-003 .u::before { left: 0; } .hc-s26-003 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s26-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s26-003 .cat { margin: 0 0 1rem; font-size: 0.74rem; font-weight: 650; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.hc-s26-003 .cat .sep { margin: 0 0.5rem; color: var(--muted); font-weight: 400; }
+.hc-s26-003 .lab { margin: 0 0 0.8rem; font-size: 0.72rem; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.hc-s26-003 .meta { margin: 0 0 1rem; }
+.hc-s26-003 .meta > div { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 0.9rem; padding: 0.5rem 0; border-top: 1px solid var(--line); }
+.hc-s26-003 .meta > div:first-child { border-top: 0; padding-top: 0; }
+.hc-s26-003 .meta dt { font-size: 0.78rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); align-self: center; }
+.hc-s26-003 .meta dd { margin: 0; line-height: 1.5; }
+.hc-s26-003 .steps { margin: 0; padding: 0; list-style: none; }
+.hc-s26-003 .steps li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.9rem; align-items: start; padding: 0.6rem 0; border-top: 1px solid var(--line); line-height: 1.5; }
+.hc-s26-003 .steps li:first-child { border-top: 0; padding-top: 0; }
+.hc-s26-003 .not { margin: 0; color: var(--no); line-height: 1.55; font-size: 0.94rem; }
+.hc-s26-003 .who { margin: 0 0 0.7rem; line-height: 1.55; }
+.hc-s26-003 .note { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+.hc-s26-003 .next { margin: 0; padding: 0; list-style: none; }
+.hc-s26-003 .next li { padding: 0.35rem 0; }
+.hc-s26-003 .cap { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+
+.hc-s26-003 .plate { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.hc-s26-003 .cell { padding: clamp(1.2rem, 2.6vw, 1.9rem); border-top: 1px solid var(--line-strong); border-right: 1px solid var(--line-strong); }
+.hc-s26-003 .cell:nth-child(1), .hc-s26-003 .cell:nth-child(2) { border-top: 0; }
+.hc-s26-003 .hd { grid-column: 1 / 3; background: var(--band); display: grid; align-content: center; }
+.hc-s26-003 .pic { grid-column: 3 / 4; border-right: 0; display: grid; align-content: center; }
+.hc-s26-003 .rg { grid-column: 1 / 2; background: var(--band); }
+.hc-s26-003 .pc { grid-column: 2 / 3; } .hc-s26-003 .rn { grid-column: 3 / 4; border-right: 0; }
+.hc-s26-003 .l1 { grid-column: 1 / 2; } .hc-s26-003 .l2 { grid-column: 2 / 3; } .hc-s26-003 .l3 { grid-column: 3 / 4; border-right: 0; }
+.hc-s26-003 .port { margin: 0; }
+.hc-s26-003 .meta > div { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
+.hc-s26-003 .foot { margin-top: clamp(1.8rem, 4vw, 2.8rem); padding-top: 1.3rem; border-top: 3px solid var(--accent); display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+@media (max-width: 980px) { .hc-s26-003 .plate { grid-template-columns: 1fr; } .hc-s26-003 .cell { border-right: 0; border-top: 1px solid var(--line-strong); } .hc-s26-003 .cell:nth-child(1) { border-top: 0; } .hc-s26-003 .hd, .hc-s26-003 .pic, .hc-s26-003 .rg, .hc-s26-003 .pc, .hc-s26-003 .rn, .hc-s26-003 .l1, .hc-s26-003 .l2, .hc-s26-003 .l3 { grid-column: 1 / -1; } }
+@media (prefers-reduced-motion: reduce) { .hc-s26-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s26-003" data-study-id="HC-S26-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="hc-s26-003-title">
+    <div class="plate">
+      <div class="cell hd">
+        <p class="cat">Doctors and specialists <span class="sep" aria-hidden="true">/</span> <span data-placeholder="true">[Approved role]</span></p>
+        <h1 class="display" id="hc-s26-003-title" data-placeholder="true">[Approved <span class="ac">name]</span></h1>
+        <p class="lead">What the post covers, how the person works, and how to reach them. Everything that names the person is an approved value, and stays empty until it is approved.</p>
+      </div>
+      <div class="cell pic"><div class="port"><div class="media" data-media="portrait" role="img" aria-label="Reserved image area: the doctor at work, named by role only" style="aspect-ratio: 3 / 4;"><span>THE DOCTOR &middot; 3:4</span></div><p class="cap" data-placeholder="true">[Approved portrait caption]</p></div></div>
+      <div class="cell rg"><p class="lab">On the register</p>
+        <dl class="meta">
+          <div><dt>Name</dt><dd data-placeholder="true">[Approved name]</dd></div>
+          <div><dt>Role</dt><dd data-placeholder="true">[Approved role]</dd></div>
+          <div><dt>Registration</dt><dd data-placeholder="true">[Approved registration]</dd></div>
+          <div><dt>Where they work</dt><dd data-placeholder="true">[Approved department]</dd></div>
+        </dl>
+        <p class="not">Nothing in this block is written here. Each value comes from the register that holds it, and a value that is not in the register stays empty.</p></div>
+      <div class="cell pc"><p class="lab">What the post covers</p>
+        <p class="who" data-placeholder="true">[Approved description of what this post covers and how the person works]</p>
+        <p class="note">The rest of this page is the same for everybody who holds it.</p></div>
+      <div class="cell rn"><p class="lab">How the appointment runs</p>
+        <ol class="steps">
+          <li><span class="num">One</span><span class="st">You say what changed, and when.</span></li>
+          <li><span class="num">Two</span><span class="st">They look, and ask.</span></li>
+          <li><span class="num">Three</span><span class="st">You are told what it is not, and what happens next, in writing.</span></li>
+        </ol></div>
+      <div class="cell l1"><p class="lab">What they will not do</p>
+        <p class="not">Give a diagnosis through a link. Take an emergency. Answer a message that is not an appointment. Use the emergency service. <a class="lnk" href="../../S18-emergency-quick-contact/raw/HC-S18-003.html">If it cannot wait</a></p></div>
+      <div class="cell l2"><p class="lab">Attached to</p>
+        <ul class="next">
+          <li><a class="lnk" href="../../S23-service-offering-detail/raw/HC-S23-003.html">Skin, in full</a></li>
+          <li><a class="lnk" href="../../S24-project-case-study-detail/raw/HC-S24-003.html">The skin pathway</a></li>
+        </ul></div>
+      <div class="cell l3"><p class="lab">Reaching them</p>
+        <p class="not">There is no direct line and no address on this page. Every route goes through the desk.</p></div>
+    </div>
+    <div class="foot">
+      <p class="not">A name on this page does not mean an appointment with that person. The desk books whoever is free first.</p>
+      <a class="btn" href="../../S05-appointment-booking/raw/HC-S05-003.html">Tell us what is wrong</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

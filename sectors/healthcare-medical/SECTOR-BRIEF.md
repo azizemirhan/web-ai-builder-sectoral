@@ -20,11 +20,16 @@ Structural container for future Healthcare & Medical Clinics section studies.
 
 # Authoring Status
 
-NOT_STARTED
+COMPLETE — all 27 sections, 135 studies.
+
+RE-AUTHORED IN THE V2 DETAILING PASS, 24 September 2026. S01-S13 were re-authored from
+their V1 content spine; S14-S27 had no V1 and were authored directly in the V2 register.
+The register and its per-variant devices are in HEALTHCARE-THEME-CONTRACT.md under
+"Detailing Pass".
 
 # Notes
 
-Structure only. No sector research, design guidance, or design studies have been created.
+HEALTHCARE-THEME-CONTRACT.md establishes the register, anti-patterns, media rules, claims limits, five fixed themes and page-rhythm rules for every HC study. Authoring began with S01 on 2026-09-16.
 
 # Extended Site Architecture — S21–S27
 

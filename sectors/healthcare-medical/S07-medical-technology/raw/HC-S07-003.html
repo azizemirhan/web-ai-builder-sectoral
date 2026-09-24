@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S07-003
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S07 — Medical Technology
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the six machines as shared cells: WHAT WE USE as the eyebrow, V1's headline
+                   as the display h2 with "when it is not used" in the accent and V1's lead
+                   opposite; then one bordered grid whose 1px lines are shared, each cell
+                   holding its field at 4:3, the machine's name and V1's Answers / Not for as
+                   bare labelled fields with the limit in the refusal tone; V1's rule, its
+                   not-held-here line and the booking action as the foot. V1 is kept whole.
+  Layout model   : Head split; six machine cells at 4:3 in a bordered grid sharing 1px lines, Answers / Not for as bare labelled fields; a three-part foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : SIX reserved areas — the ultrasound room, the X-ray room, the trace machine,
+                   the sample room, the take-home monitor and the skin scope, one to each machine
+                   at 4:3, exactly as V1 paired them. The equipment the copy names, as the thing
+                   itself.
+  Interaction    : One link only — Book a first appointment, pointing at the same-variant S05,
+                   which is authored, exactly as V1 routed it. No form, no script.
+  Content note   : V1's eyebrow, headline, leads, the six machines with what each answers and
+                   what each cannot do, the rule and the not-held-here line are kept word for
+                   word. Every machine is named as the thing itself and paired with its LIMIT —
+                   no accuracy figure, no detection rate, no diagnosis and no outcome is
+                   claimed, and V1's rule that a test not worth doing is not done stands on the
+                   page. The trace length and the time results take stay DEMO VALUES marked
+                   data-placeholder="true" and spelled as words. No SVG, no icon, no badge. No
+                   global header or navigation.
+-->
+<meta name="study-id" content="HC-S07-003">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S07">
+<meta name="section-name" content="Medical Technology">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Sky & Slate">
+<meta name="section-shape" content="A — item grid, media in every item">
+<meta name="layout-model" content="Head split; V1's six machines as cells at 4:3 in one bordered grid sharing 1px lines, each with Answers and Not for as bare labelled fields and the limit in the refusal tone">
+<meta name="density" content="structured">
+<meta name="media-mode" content="six-reserved-areas">
+<meta name="interaction" content="one link to the same-variant S05">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="how long a heart trace takes and how long blood results take, spelled as words — demo values, not promises">
+<meta name="batch" content="V2-detailing">
+<title>HC-S07-003 — Medical Technology, Sky & Slate</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f5f8; }
+
+.hc-s07-003 {
+  --paper: #f1f5f8; --ink: #172530; --muted: #526270; --line: #d5dee6; --line-strong: #172530;
+  --media: #d8e2ea; --band: #e6edf2; --accent: #2c5f8a; --no: #5f6a72; --onacc: #f1f5f8;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s07-003 *, .hc-s07-003 *::before, .hc-s07-003 *::after { box-sizing: inherit; }
+.hc-s07-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s07-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s07-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s07-003 .eyebrow .sep { color: var(--muted); }
+.hc-s07-003 h1, .hc-s07-003 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s07-003 h1 .ac, .hc-s07-003 h2.display .ac { color: var(--accent); }
+.hc-s07-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s07-003 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s07-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s07-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s07-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s07-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s07-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s07-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s07-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s07-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s07-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s07-003 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s07-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s07-003 .r1 { left: 18%; } .hc-s07-003 .r2 { left: 41%; } .hc-s07-003 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s07-003 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s07-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s07-003 .u::before, .hc-s07-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s07-003 .u::before { left: 0; } .hc-s07-003 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s07-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s07-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.7fr); gap: clamp(1.8rem, 4.5vw, 4rem); align-items: end; }
+.hc-s07-003 .lead { margin: 0; }
+.hc-s07-003 .kit { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: clamp(2rem, 4vw, 3.2rem) 0 0; padding: 0; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.hc-s07-003 .item { padding: clamp(1.1rem, 2.2vw, 1.5rem); border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.hc-s07-003 .item:nth-child(3n) { border-right: 0; }
+.hc-s07-003 .item:nth-last-child(-n+3) { border-bottom: 0; }
+.hc-s07-003 .item h3 { margin: 0.9rem 0 0; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s07-003 .rec { margin: 0.8rem 0 0; display: grid; gap: 0.7rem; }
+.hc-s07-003 .rec > div { padding-top: 0.6rem; border-top: 1px solid var(--line); }
+.hc-s07-003 .rec dt { color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s07-003 .rec dd { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.hc-s07-003 .rec .limit { color: var(--no); }
+.hc-s07-003 .foot { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto; gap: clamp(1.4rem, 3.4vw, 2.8rem); align-items: end; margin-top: clamp(1.8rem, 3.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.hc-s07-003 .foot b { display: block; font-size: 1rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s07-003 .foot p { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+.hc-s07-003 .not b, .hc-s07-003 .not p { color: var(--no); }
+@media (max-width: 1100px) { .hc-s07-003 .kit { grid-template-columns: repeat(2, minmax(0, 1fr)); } .hc-s07-003 .item:nth-child(3n) { border-right: 1px solid var(--line-strong); } .hc-s07-003 .item:nth-child(2n) { border-right: 0; } .hc-s07-003 .item:nth-last-child(-n+3) { border-bottom: 1px solid var(--line-strong); } .hc-s07-003 .item:nth-last-child(-n+2) { border-bottom: 0; } }
+@media (max-width: 860px) { .hc-s07-003 .head, .hc-s07-003 .foot { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .hc-s07-003 .kit { grid-template-columns: minmax(0, 1fr); } .hc-s07-003 .item { border-right: 0; } }
+@media (prefers-reduced-motion: reduce) { .hc-s07-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s07-003" data-study-id="HC-S07-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="hc-s07-003-title">
+    <div class="head">
+      <div>
+        <p class="eyebrow">What we use</p>
+        <h2 class="display" id="hc-s07-003-title">The machine is named, what it is for is said, and <span class="ac">when it is not used</span> is said too.</h2>
+      </div>
+      <p class="lead">Six things in the building, each with the question it answers and the question it cannot.</p>
+    </div>
+    <ul class="kit">
+      <li class="item"><div class="media" data-media="ultrasound-room" role="img" aria-label="Reserved image area: the ultrasound room, in use" style="aspect-ratio: 4 / 3;"><span>THE ULTRASOUND ROOM &middot; 4:3</span></div><h3>Ultrasound</h3><dl class="rec"><div><dt>Answers</dt><dd>Soft tissue and organs, without radiation, on the day.</dd></div><div><dt>Not for</dt><dd class="limit">Bone.</dd></div></dl></li><li class="item"><div class="media" data-media="x-ray-room" role="img" aria-label="Reserved image area: the X-ray room" style="aspect-ratio: 4 / 3;"><span>THE X-RAY ROOM &middot; 4:3</span></div><h3>X-ray</h3><dl class="rec"><div><dt>Answers</dt><dd>Bones and chests, read the same day.</dd></div><div><dt>Not for</dt><dd class="limit">A picture that would not change what we do.</dd></div></dl></li><li class="item"><div class="media" data-media="trace-machine-by-the-couch" role="img" aria-label="Reserved image area: the trace machine by the couch" style="aspect-ratio: 4 / 3;"><span>THE TRACE MACHINE &middot; 4:3</span></div><h3>Heart trace</h3><dl class="rec"><div><dt>Answers</dt><dd>The heart&rsquo;s rhythm, <span data-placeholder="true">ten minutes</span> on the couch.</dd></div><div><dt>Not for</dt><dd class="limit">Blockages.</dd></div></dl></li><li class="item"><div class="media" data-media="sample-room" role="img" aria-label="Reserved image area: the sample room" style="aspect-ratio: 4 / 3;"><span>THE SAMPLE ROOM &middot; 4:3</span></div><h3>Blood tests</h3><dl class="rec"><div><dt>Answers</dt><dd>The sample taken here; results back, usually in <span data-placeholder="true">a few days</span>.</dd></div><div><dt>Not for</dt><dd class="limit">A panel of everything.</dd></div></dl></li><li class="item"><div class="media" data-media="take-home-monitor-on-the-desk" role="img" aria-label="Reserved image area: the take-home monitor on the desk" style="aspect-ratio: 4 / 3;"><span>THE TAKE-HOME MONITOR &middot; 4:3</span></div><h3>Pressure monitor to take home</h3><dl class="rec"><div><dt>Answers</dt><dd>A day and a night of readings, worn under a sleeve.</dd></div><div><dt>Not for</dt><dd class="limit">Replacing the conversation about why.</dd></div></dl></li><li class="item"><div class="media" data-media="skin-scope-in-hand" role="img" aria-label="Reserved image area: the skin scope in hand" style="aspect-ratio: 4 / 3;"><span>THE SKIN SCOPE &middot; 4:3</span></div><h3>Skin scope</h3><dl class="rec"><div><dt>Answers</dt><dd>A close look at a mole, with a photograph kept for next time.</dd></div><div><dt>Not for</dt><dd class="limit">A diagnosis.</dd></div></dl></li>
+    </ul>
+    <div class="foot">
+      <div class="rulebox"><b>The rule</b><p>Nothing here is new for the sake of it. If a test would not change what we do, it is not done, whatever machine we own.</p></div>
+      <div class="not"><b>Not held here</b><p>The scans a hospital does. Arranged for you, and you are told why.</p></div>
+      <a class="btn" href="../../S05-appointment-booking/raw/HC-S05-003.html">Book a first appointment</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -24,7 +24,7 @@ HC-S14-005
 
 # Status
 
-NOT_STARTED
+AUTHORED IN THE V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Authoring and design record in [BATCH-V2.md](BATCH-V2.md). This section was half-built: 001 and 002 existed as V1 studies and keep their spine; 003, 004 and 005 are authored in this pass. There is no BATCH-V1.md.
 
 # Raw Path
 

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S08-002
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S08 — Patient Journey
+  Direction      : Premium / Editorial
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 2 —
+                   the visit told as six places: the 002 open bracket at the top-left of the
+                   head, THE FIRST VISIT as the eyebrow, V1's headline as the display h2 with
+                   "in order" in the accent and V1's lead opposite; the six steps as cells at
+                   4:3 on the lead rule, each opened by the step name as a tracked label, then
+                   the statement in ink, its detail in the muted tone and the you-can line in
+                   the accent; V1's at-any-point line and the booking action as the foot. V1 is
+                   kept whole.
+  Layout model   : Bracketed head split; six step cells at 4:3 on the lead rule, each with the step name as a tracked label; a two-part foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : SIX reserved areas — reception on the phone, the desk, the two chairs in the
+                   consulting room, the couch, the sample room and the letter on the desk, one to
+                   each step at 4:3, exactly as V1 paired them. The place each step happens in.
+  Interaction    : One link only — Book a first appointment, pointing at the same-variant S05,
+                   which is authored, exactly as V1 routed it. No form, no script.
+  Content note   : V1's eyebrow, headline, lead, the six steps with what happens, what is
+                   asked and what you can do at each, the nothing-to-prepare panel in 004 and
+                   the at-any-point line are kept word for word. The length of the conversation
+                   and the wait for results stay DEMO VALUES marked data-placeholder="true" and
+                   spelled as words — no duration is promised. Nothing on the page is a
+                   protocol, a pathway flowchart or a consent form; the order is written, not
+                   drawn. No clinician is named. No SVG, no icon, no badge. No global header or
+                   navigation.
+-->
+<meta name="study-id" content="HC-S08-002">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S08">
+<meta name="section-name" content="Patient Journey">
+<meta name="variant" content="002">
+<meta name="territory" content="Premium / Editorial">
+<meta name="direction" content="Premium / Editorial">
+<meta name="theme" content="Porcelain & Plum">
+<meta name="section-shape" content="A — item grid, media in every item">
+<meta name="layout-model" content="Open bracket at the head; V1's six steps as cells at 4:3 on the lead rule, each opened by the step name as a tracked label with its statement, detail and you-can line; V1's at-any-point line and the booking action as the foot">
+<meta name="density" content="structured">
+<meta name="media-mode" content="six-reserved-areas">
+<meta name="interaction" content="one link to the same-variant S05">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="how long the conversation usually takes and how long results take, spelled as words — demo values, not promises">
+<meta name="batch" content="V2-detailing">
+<title>HC-S08-002 — Patient Journey, Porcelain & Plum</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #faf6f7; }
+
+.hc-s08-002 {
+  --paper: #faf6f7; --ink: #33222c; --muted: #6f5c66; --line: #e7dae0; --line-strong: #33222c;
+  --media: #eedde4; --band: #f4eaee; --accent: #7a3b5c; --no: #5f6a72; --onacc: #faf6f7;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s08-002 *, .hc-s08-002 *::before, .hc-s08-002 *::after { box-sizing: inherit; }
+.hc-s08-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s08-002 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s08-002 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s08-002 .eyebrow .sep { color: var(--muted); }
+.hc-s08-002 h1, .hc-s08-002 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s08-002 h1 .ac, .hc-s08-002 h2.display .ac { color: var(--accent); }
+.hc-s08-002 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s08-002 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s08-002 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s08-002 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s08-002 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s08-002 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s08-002 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s08-002 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s08-002 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s08-002 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s08-002 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s08-002 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s08-002 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s08-002 .r1 { left: 18%; } .hc-s08-002 .r2 { left: 41%; } .hc-s08-002 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s08-002 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s08-002 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s08-002 .u::before, .hc-s08-002 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s08-002 .u::before { left: 0; } .hc-s08-002 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s08-002 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s08-002 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.7fr); gap: clamp(1.8rem, 4.5vw, 4rem); align-items: end; padding: 2.4rem 0 0 2.2rem; }
+.hc-s08-002 .head > :not(.bracket) { position: relative; z-index: 1; }
+.hc-s08-002 .lead { margin: 0; }
+.hc-s08-002 .essay { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.2rem, 2.8vw, 2.2rem); margin: clamp(2rem, 4vw, 3.2rem) 0 0; padding: 1.3rem 0 0; border-top: 3px solid var(--accent); }
+.hc-s08-002 .n { display: block; margin: 0.9rem 0 0.5rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s08-002 .item b { display: block; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; line-height: 1.35; }
+.hc-s08-002 .item p { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.hc-s08-002 .can { margin-top: 0.45rem !important; padding-top: 0.45rem; border-top: 1px solid var(--line); color: var(--accent) !important; }
+.hc-s08-002 .foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(1.2rem, 3vw, 2.4rem); align-items: end; margin-top: clamp(1.8rem, 3.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.hc-s08-002 .not { margin: 0; max-width: 50rem; color: var(--no); font-size: 0.9rem; line-height: 1.55; }
+.hc-s08-002 .not b { color: var(--no); }
+@media (max-width: 1100px) { .hc-s08-002 .essay { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .hc-s08-002 .head, .hc-s08-002 .foot { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .hc-s08-002 .essay { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .hc-s08-002 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s08-002" data-study-id="HC-S08-002" data-direction="Premium / Editorial">
+  <section class="shell" aria-labelledby="hc-s08-002-title">
+    <div class="head">
+      <span class="bracket" aria-hidden="true"></span>
+      <div>
+        <p class="eyebrow">The first visit</p>
+        <h2 class="display" id="hc-s08-002-title">What happens, <span class="ac">in order</span>, what you are asked at each step, and what you can do at each step.</h2>
+      </div>
+      <p class="lead">Six things, from the call to the letter. None of them is a surprise.</p>
+    </div>
+    <ol class="essay">
+      <li class="item"><div class="media" data-media="reception-on-the-phone" role="img" aria-label="Reserved image area: reception on the phone" style="aspect-ratio: 4 / 3;"><span>RECEPTION, ON THE PHONE &middot; 4:3</span></div><span class="n">The call</span><b>Four questions about what is wrong.</b><p>You are told who and when.</p><p class="can">You can ask for a particular person.</p></li><li class="item"><div class="media" data-media="the-desk" role="img" aria-label="Reserved image area: the reception desk, in use" style="aspect-ratio: 4 / 3;"><span>THE DESK &middot; 4:3</span></div><span class="n">The desk</span><b>Only now do we ask who you are.</b><p>Name and date of birth.</p><p class="can">You can bring someone with you.</p></li><li class="item"><div class="media" data-media="two-chairs-consulting-room" role="img" aria-label="Reserved image area: the two chairs in the consulting room" style="aspect-ratio: 4 / 3;"><span>THE TWO CHAIRS &middot; 4:3</span></div><span class="n">The conversation</span><b>What is wrong, in your words.</b><p>To the person you were told about. Usually <span data-placeholder="true">half an hour</span>.</p><p class="can">You can ask for it said again.</p></li><li class="item"><div class="media" data-media="the-couch" role="img" aria-label="Reserved image area: the examination couch" style="aspect-ratio: 4 / 3;"><span>THE COUCH &middot; 4:3</span></div><span class="n">The examination</span><b>Told before it starts.</b><p>Nothing without your yes.</p><p class="can">You can ask to stop, at any point.</p></li><li class="item"><div class="media" data-media="the-sample-room" role="img" aria-label="Reserved image area: the sample room" style="aspect-ratio: 4 / 3;"><span>THE SAMPLE ROOM &middot; 4:3</span></div><span class="n">Tests, if any</span><b>Only if the result would change what we do.</b><p>Results usually within <span data-placeholder="true">a few days</span>.</p><p class="can">You can ask what the result would change.</p></li><li class="item"><div class="media" data-media="the-letter-on-the-desk" role="img" aria-label="Reserved image area: the letter on the desk at the end of the visit" style="aspect-ratio: 4 / 3;"><span>THE LETTER &middot; 4:3</span></div><span class="n">The letter</span><b>What was found and what happens next.</b><p>In plain words, in your hand before you leave.</p><p class="can">You can ask for a copy for someone else.</p></li>
+    </ol>
+    <div class="foot">
+      <p class="not"><b>At any point:</b> if this is not the place for it, you are told, and referred. Emergencies go to the emergency service.</p>
+      <a class="btn" href="../../S05-appointment-booking/raw/HC-S05-002.html">Book a first appointment</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

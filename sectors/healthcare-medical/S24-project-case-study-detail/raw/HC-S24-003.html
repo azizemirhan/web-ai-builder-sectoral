@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S24-003
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S24 — Case / Care-Pathway Context Detail
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the pathway as one bordered plate whose 1px lines are shared: the head row on
+                   the band tone with the letter at 4:3; a row carrying why there is no case beside
+                   the four stages; a record row with what is recorded, what is not, and the
+                   metadata as bare labelled fields, which this is the only variant to carry; then
+                   what the page cannot show across the width. The ask sits under the plate on the
+                   lead rule.
+  Layout model   : One bordered plate, 1px lines shared: head row, limit-and-route row, record row with the metadata; the ask beneath
+  Density        : Detail band — one pathway in full, with the metadata
+  Media mode     : ONE reserved area — the letter being handed over at the desk, at 4:3 in the
+                   head row. A document is what this page is allowed to show; the person who
+                   receives it is not in the frame.
+  Interaction    : Links only — the area in full, the people by role and the route to say what
+                   is wrong. Nothing opens, expands or submits. No script.
+  Content note   : The section README carries a SECTOR SEMANTIC LIMITATION: clinical case
+                   material is regulated and often patient-identifiable, so this role is scoped to
+                   anonymised care-pathway context and NEVER to a named patient case. The page is
+                   written to that limitation rather than around it — the subject is the route, and
+                   the first thing the page says is why there is no case on it. No patient, name,
+                   photograph, age, town, date, outcome, figure, before-and-after or quotation. No
+                   clinician named; roles only. No price, hour or claim. Numerals are spelled as
+                   words. No SVG, no icon, no badge; no global header or footer.
+  Authoring note : This section had NO V1 study. It is authored directly in the V2 register
+                   against HEALTHCARE-THEME-CONTRACT.md. The section title is the page's h1,
+                   because a case-context detail page is a page.
+-->
+<meta name="study-id" content="HC-S24-003">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S24">
+<meta name="section-name" content="Case / Care-Pathway Context Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Sky & Slate">
+<meta name="section-shape" content="B — anchored detail page, one reserved area">
+<meta name="layout-model" content="One bordered plate sharing 1px lines — the head on the band tone with the letter at 4:3, the limit beside the route, a record row carrying the metadata as bare labelled fields">
+<meta name="density" content="detail band">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="links to the same-variant S23, S03 and S05">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="approved department; approved image caption — bracketed placeholders">
+<meta name="batch" content="V2-detailing">
+<title>HC-S24-003 — The Pathway, Without The Person, Sky & Slate</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f5f8; }
+
+.hc-s24-003 {
+  --paper: #f1f5f8; --ink: #172530; --muted: #526270; --line: #d5dee6; --line-strong: #172530;
+  --media: #d8e2ea; --band: #e6edf2; --accent: #2c5f8a; --no: #5f6a72; --onacc: #f1f5f8;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s24-003 *, .hc-s24-003 *::before, .hc-s24-003 *::after { box-sizing: inherit; }
+.hc-s24-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s24-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s24-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s24-003 .eyebrow .sep { color: var(--muted); }
+.hc-s24-003 h1, .hc-s24-003 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s24-003 h1 .ac, .hc-s24-003 h2.display .ac { color: var(--accent); }
+.hc-s24-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s24-003 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s24-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s24-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s24-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s24-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s24-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s24-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s24-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s24-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s24-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s24-003 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s24-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s24-003 .r1 { left: 18%; } .hc-s24-003 .r2 { left: 41%; } .hc-s24-003 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s24-003 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s24-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s24-003 .u::before, .hc-s24-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s24-003 .u::before { left: 0; } .hc-s24-003 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s24-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s24-003 .lab { margin: 0 0 0.8rem; font-size: 0.72rem; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.hc-s24-003 .stages { margin: 0; padding: 0; list-style: none; }
+.hc-s24-003 .stages li { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.4rem 0.9rem; align-items: start; padding: 0.7rem 0; border-top: 1px solid var(--line); }
+.hc-s24-003 .stages li:first-child { border-top: 0; padding-top: 0; }
+.hc-s24-003 .sn { font-weight: 600; line-height: 1.4; }
+.hc-s24-003 .sd { grid-column: 2 / 3; color: var(--muted); font-size: 0.94rem; line-height: 1.5; }
+.hc-s24-003 .not { margin: 0; color: var(--no); line-height: 1.55; }
+.hc-s24-003 .who { margin: 0; line-height: 1.55; }
+.hc-s24-003 .meta { margin: 0; }
+.hc-s24-003 .meta > div { display: grid; grid-template-columns: minmax(7rem, auto) minmax(0, 1fr); gap: 0.9rem; padding: 0.55rem 0; border-top: 1px solid var(--line); }
+.hc-s24-003 .meta > div:first-child { border-top: 0; padding-top: 0; }
+.hc-s24-003 .meta dt { font-size: 0.78rem; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); align-self: center; }
+.hc-s24-003 .meta dd { margin: 0; line-height: 1.5; }
+.hc-s24-003 .next { margin: 0; padding: 0; list-style: none; }
+.hc-s24-003 .next li { padding: 0.35rem 0; }
+.hc-s24-003 .cap { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+
+.hc-s24-003 .plate { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.hc-s24-003 .cell { padding: clamp(1.2rem, 2.6vw, 1.9rem); border-top: 1px solid var(--line-strong); border-right: 1px solid var(--line-strong); }
+.hc-s24-003 .cell:nth-child(1), .hc-s24-003 .cell:nth-child(2) { border-top: 0; }
+.hc-s24-003 .hd { grid-column: 1 / 3; background: var(--band); display: grid; align-content: center; }
+.hc-s24-003 .pic { grid-column: 3 / 4; border-right: 0; display: grid; align-content: center; }
+.hc-s24-003 .w1 { grid-column: 1 / 2; } .hc-s24-003 .w2 { grid-column: 2 / 4; border-right: 0; }
+.hc-s24-003 .r1c { grid-column: 1 / 2; } .hc-s24-003 .r2c { grid-column: 2 / 3; } .hc-s24-003 .r3c { grid-column: 3 / 4; border-right: 0; }
+.hc-s24-003 .m1 { grid-column: 1 / -1; border-right: 0; }
+.hc-s24-003 .port { margin: 0; }
+.hc-s24-003 .foot { margin-top: clamp(1.8rem, 4vw, 2.8rem); padding-top: 1.3rem; border-top: 3px solid var(--accent); display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+@media (max-width: 980px) { .hc-s24-003 .plate { grid-template-columns: 1fr; } .hc-s24-003 .cell { border-right: 0; border-top: 1px solid var(--line-strong); } .hc-s24-003 .cell:nth-child(1) { border-top: 0; } .hc-s24-003 .hd, .hc-s24-003 .pic, .hc-s24-003 .w1, .hc-s24-003 .w2, .hc-s24-003 .r1c, .hc-s24-003 .r2c, .hc-s24-003 .r3c, .hc-s24-003 .m1 { grid-column: 1 / -1; } }
+@media (prefers-reduced-motion: reduce) { .hc-s24-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s24-003" data-study-id="HC-S24-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="hc-s24-003-title">
+    <div class="plate">
+      <div class="cell hd">
+        <h1 class="display" id="hc-s24-003-title">The skin pathway, followed through, with <span class="ac">nobody in it</span></h1>
+        <p class="lead">This is the route a skin referral takes. It is not somebody's story, and it never will be.</p>
+      </div>
+      <div class="cell pic"><div class="port"><div class="media" data-media="the-letter" role="img" aria-label="Reserved image area: the letter being handed over at the desk" style="aspect-ratio: 4 / 3;"><span>THE LETTER, HANDED OVER &middot; 4:3</span></div><p class="cap" data-placeholder="true">[Approved image caption]</p></div></div>
+      <div class="cell w1"><p class="lab">Why this page has no case</p>
+        <p class="not">Clinical case material identifies people. A date, a town, an age and a photograph are enough between them. So this page documents the route and leaves the person out.</p></div>
+      <div class="cell w2"><p class="lab">The route</p>
+        <ol class="stages">
+          <li><span class="num">One</span><span class="sn">The first appointment</span><span class="sd">What changed, and when. Written down as you said it.</span></li>
+          <li><span class="num">Two</span><span class="sn">The look</span><span class="sd">In daylight, with a second opinion in the room if you want one.</span></li>
+          <li><span class="num">Three</span><span class="sn">The decision</span><span class="sd">What it looks like, what it is not, and what is still being ruled out.</span></li>
+          <li><span class="num">Four</span><span class="sn">The letter</span><span class="sd">All of the above, in writing, to you and to whoever asked.</span></li>
+        </ol></div>
+      <div class="cell r1c"><p class="lab">What is recorded</p>
+        <p class="who">The stage, the day it happened, the decision, and who made it, by role.</p></div>
+      <div class="cell r2c"><p class="lab">What is not</p>
+        <p class="not">No name, no photograph, no age, no town. Nothing that would let this page be read backwards to a person.</p></div>
+      <div class="cell r3c"><p class="lab">On the record</p>
+        <dl class="meta">
+          <div><dt>Area</dt><dd>Skin</dd></div>
+          <div><dt>Department</dt><dd data-placeholder="true">[Approved department]</dd></div>
+        </dl></div>
+      <div class="cell m1"><p class="lab">What this cannot show you</p>
+        <p class="not">An outcome, a figure, a before and after, or a quote from somebody who went through it. None of those can be shown without showing the person.</p></div>
+    </div>
+    <div class="foot">
+      <div><p class="lab">Read next</p>
+        <ul class="next">
+          <li><a class="lnk" href="../../S23-service-offering-detail/raw/HC-S23-003.html">Skin, in full</a></li>
+          <li><a class="lnk" href="../../S03-doctors-specialists/raw/HC-S03-003.html">Doctors and specialists</a></li>
+        </ul></div>
+      <a class="btn" href="../../S05-appointment-booking/raw/HC-S05-003.html">Tell us what is wrong</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

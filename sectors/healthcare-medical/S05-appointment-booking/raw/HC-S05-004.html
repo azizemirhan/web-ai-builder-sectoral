@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S05-004
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S05 — Appointment Booking
+  Direction      : Conversion-led
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 4 —
+                   the online route raised to a standing panel: V1's ONLINE label as a tracked
+                   eyebrow rather than a tag, its "You will be asked four things. Nothing else."
+                   line, the four questions and the action with its call-back note, all on the
+                   band tone down the left; opposite, BOOKING as the eyebrow and V1's headline
+                   as the display h2 with the 004 measure rule drawn under "a short
+                   conversation", V1's lead, the waiting-room field at 21:9 and the other two
+                   routes with the what-you-get line as ruled rows; V1's emergency refusal as
+                   the foot in the refusal tone. V1 is kept whole.
+  Layout model   : An online panel on the band tone down the left; head with the measure rule, a 21:9 waiting-room field and three ruled rows opposite; the emergency refusal as the foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the waiting room from the door, at 21:9 in the right
+                   column, as V1 set it.
+  Interaction    : One link only — Answer the four questions, held at `#`. There is no form
+                   anywhere in this study: the contract forbids one and V1 described the route
+                   rather than imitating it, so nothing here implies a booking is taken on the
+                   page. No script.
+  Content note   : V1's eyebrow, headline, leads, the four questions, the three routes, the
+                   what-you-get line and the emergency refusal are kept word for word. The
+                   call-back time and the usual wait before a first appointment stay DEMO VALUES
+                   marked data-placeholder="true" and spelled as words, declared in the meta
+                   block — no waiting time is promised and no hour, number or address is
+                   invented. That emergencies are not booked is carried in the refusal tone. No
+                   SVG, no icon, no badge. No global header or navigation.
+-->
+<meta name="study-id" content="HC-S05-004">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S05">
+<meta name="section-name" content="Appointment Booking">
+<meta name="variant" content="004">
+<meta name="territory" content="Conversion-led">
+<meta name="direction" content="Conversion-led">
+<meta name="theme" content="Sand & Terracotta">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="V1's online route as a standing panel on the band tone with the four questions and the action; opposite, the head with the 004 measure rule, the waiting-room field at 21:9 and the other routes as ruled rows; the emergency refusal as the foot">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="one link, held at #">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="the call-back time and the usual wait before a first appointment, spelled as words — demo values, not promises">
+<meta name="batch" content="V2-detailing">
+<title>HC-S05-004 — Appointment Booking, Sand & Terracotta</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fbf7f1; }
+
+.hc-s05-004 {
+  --paper: #fbf7f1; --ink: #2d241c; --muted: #6d6157; --line: #e6dccd; --line-strong: #2d241c;
+  --media: #efe1d1; --band: #f4ece1; --accent: #b8562f; --no: #5f6a72; --onacc: #fbf7f1;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s05-004 *, .hc-s05-004 *::before, .hc-s05-004 *::after { box-sizing: inherit; }
+.hc-s05-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s05-004 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s05-004 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s05-004 .eyebrow .sep { color: var(--muted); }
+.hc-s05-004 h1, .hc-s05-004 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s05-004 h1 .ac, .hc-s05-004 h2.display .ac { color: var(--accent); }
+.hc-s05-004 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s05-004 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s05-004 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s05-004 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s05-004 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s05-004 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s05-004 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s05-004 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s05-004 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s05-004 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s05-004 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s05-004 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s05-004 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s05-004 .r1 { left: 18%; } .hc-s05-004 .r2 { left: 41%; } .hc-s05-004 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s05-004 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s05-004 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s05-004 .u::before, .hc-s05-004 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s05-004 .u::before { left: 0; } .hc-s05-004 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s05-004 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s05-004 .grid { display: grid; grid-template-columns: minmax(16rem, 0.5fr) minmax(0, 1fr); gap: clamp(1.8rem, 4.5vw, 4rem); align-items: start; }
+.hc-s05-004 .panel { padding: clamp(1.4rem, 3vw, 2.2rem); background: var(--band); border-radius: 6px; border-left: 3px solid var(--accent); }
+.hc-s05-004 .tag { display: block; margin: 0 0 0.9rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s05-004 .panel h3 { margin: 0; font-size: clamp(1.1rem, 1.7vw, 1.45rem); font-weight: 650; line-height: 1.3; letter-spacing: -0.02em; }
+.hc-s05-004 .questions { margin: 1.1rem 0 0; padding-left: 1.3rem; display: grid; gap: 0.55rem; color: var(--ink); font-size: 0.95rem; line-height: 1.5; }
+.hc-s05-004 .act { margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+.hc-s05-004 .act p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.hc-s05-004 .right { display: grid; gap: clamp(1.4rem, 3vw, 2.2rem); }
+.hc-s05-004 .other { list-style: none; display: grid; margin: 0; padding: 1.3rem 0 0; border-top: 3px solid var(--accent); }
+.hc-s05-004 .item { padding: 0.9rem 0; border-top: 1px solid var(--line); }
+.hc-s05-004 .item:first-child { border-top: 0; padding-top: 0; }
+.hc-s05-004 .item b { display: block; font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s05-004 .item p { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+.hc-s05-004 .foot { margin-top: clamp(1.6rem, 3vw, 2.4rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.hc-s05-004 .not { margin: 0; color: var(--no); font-size: 0.9rem; line-height: 1.55; }
+.hc-s05-004 .not b { color: var(--no); }
+@media (max-width: 980px) { .hc-s05-004 .grid { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .hc-s05-004 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s05-004" data-study-id="HC-S05-004" data-direction="Conversion-led">
+  <section class="shell" aria-labelledby="hc-s05-004-title">
+    <div class="grid">
+      <div class="panel">
+        <span class="tag">Online</span>
+        <h3>You will be asked four things. Nothing else.</h3>
+        <ol class="questions"><li>What is wrong, in your own words.</li><li>How long it has been going on, and whether it is getting worse.</li><li>Whether you would like to see a particular person.</li><li>Any dates that do not work for you.</li></ol>
+        <div class="act">
+          <a class="btn" href="#">Answer the four questions</a>
+          <p>Reception rings you back with a time, usually <span data-placeholder="true">the same working day</span>.</p>
+        </div>
+      </div>
+      <div class="right">
+        <div>
+          <p class="eyebrow">Booking</p>
+          <h2 class="display" id="hc-s05-004-title">Booking is <span class="u">a short conversation</span> about what is wrong, not a form about who you are.</h2>
+          <p class="lead">Four questions, then you are told who you will see, when, and what the first visit involves.</p>
+        </div>
+        <div class="media" data-media="waiting-room-from-the-door" role="img" aria-label="Reserved image area: the waiting room from the door" style="aspect-ratio: 21 / 9;"><span>THE WAITING ROOM &middot; 21:9</span></div>
+        <ul class="other">
+          <li class="item"><b>Ring</b><p>You speak to reception. They ask the four questions and offer a time on the call.</p></li>
+          <li class="item"><b>At the desk</b><p>Walk in and ask. If a first appointment can be made there and then, it is.</p></li>
+          <li class="item"><b>What you get</b><p>A time, who you will see by role, and what the first visit involves, in writing. Usually within <span data-placeholder="true">a week</span>.</p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">
+      <p class="not"><b>Emergencies are not booked.</b> Use the emergency service.</p>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : HC-S07-001
+  Sector         : Healthcare & Medical Clinics (HC)
+  Section        : HC-S07 — Medical Technology
+  Direction      : Universal / Safe
+  Register       : Detailing pass — HEALTHCARE-THEME-CONTRACT.md → Detailing Pass. Device 1 —
+                   each machine with its limit under it: WHAT WE USE as the eyebrow, V1's
+                   headline as the display h2 with "when it is not used" in the accent and V1's
+                   lead, with the 001 column rules standing quietly behind the head; V1's
+                   ultrasound field at 4:5 beside the six machines as ruled rows on the lead
+                   rule, each answer in ink and each limit beneath it in the refusal tone; V1's
+                   rule, its not-held-here line and the booking action as the foot. V1 is kept
+                   whole.
+  Layout model   : Head with the column rules; a 4:5 ultrasound field beside six ruled machine rows on the lead rule; a three-part foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the ultrasound room, in use, at 4:5 beside the list, as
+                   V1 set it. The room the machine stands in, never a scan image and never a
+                   patient.
+  Interaction    : One link only — Book a first appointment, pointing at the same-variant S05,
+                   which is authored, exactly as V1 routed it. No form, no script.
+  Content note   : V1's eyebrow, headline, leads, the six machines with what each answers and
+                   what each cannot do, the rule and the not-held-here line are kept word for
+                   word. Every machine is named as the thing itself and paired with its LIMIT —
+                   no accuracy figure, no detection rate, no diagnosis and no outcome is
+                   claimed, and V1's rule that a test not worth doing is not done stands on the
+                   page. The trace length and the time results take stay DEMO VALUES marked
+                   data-placeholder="true" and spelled as words. No SVG, no icon, no badge. No
+                   global header or navigation.
+-->
+<meta name="study-id" content="HC-S07-001">
+<meta name="sector" content="Healthcare &amp; Medical Clinics">
+<meta name="sector-prefix" content="HC">
+<meta name="section-id" content="HC-S07">
+<meta name="section-name" content="Medical Technology">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="Linen & Sage">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="Head with the column rules behind it; V1's ultrasound field at 4:5 beside the six machines as ruled rows on the lead rule, each limit in the refusal tone beneath its answer; V1's rule, its not-held-here line and the booking action as the foot">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="one link to the same-variant S05">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="how long a heart trace takes and how long blood results take, spelled as words — demo values, not promises">
+<meta name="batch" content="V2-detailing">
+<title>HC-S07-001 — Medical Technology, Linen & Sage</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f7f5f0; }
+
+.hc-s07-001 {
+  --paper: #f7f5f0; --ink: #1f2a26; --muted: #5f6a64; --line: #dfddd4; --line-strong: #1f2a26;
+  --media: #e4e7dc; --band: #edeee5; --accent: #3f6f5a; --no: #5f6a72; --onacc: #f7f5f0;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.hc-s07-001 *, .hc-s07-001 *::before, .hc-s07-001 *::after { box-sizing: inherit; }
+.hc-s07-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.hc-s07-001 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.hc-s07-001 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.hc-s07-001 .eyebrow .sep { color: var(--muted); }
+.hc-s07-001 h1, .hc-s07-001 h2.display { margin: 0; max-width: 18ch; font-weight: 550; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--muted); }
+.hc-s07-001 h1 .ac, .hc-s07-001 h2.display .ac { color: var(--accent); }
+.hc-s07-001 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.02rem, 1.4vw, 1.18rem); line-height: 1.5; }
+.hc-s07-001 .statement { margin: 0; font-size: clamp(1.1rem, 1.8vw, 1.55rem); line-height: 1.35; color: var(--ink); }
+
+.hc-s07-001 .media { position: relative; background: var(--media); border-radius: 6px; }
+.hc-s07-001 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+.hc-s07-001 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s07-001 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.hc-s07-001 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s07-001 .lnk::after { content: " \2192"; color: var(--accent); }
+.hc-s07-001 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.hc-s07-001 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.hc-s07-001 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.hc-s07-001 .limit { color: var(--no); }
+
+/* 001 column rules */
+.hc-s07-001 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.hc-s07-001 .r1 { left: 18%; } .hc-s07-001 .r2 { left: 41%; } .hc-s07-001 .r3 { left: 64%; }
+/* 002 open bracket */
+.hc-s07-001 .bracket { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 measure rule under the key phrase */
+.hc-s07-001 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.hc-s07-001 .u::before, .hc-s07-001 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.hc-s07-001 .u::before { left: 0; } .hc-s07-001 .u::after { right: 0; }
+/* 005 corner frame */
+.hc-s07-001 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.hc-s07-001 .head { position: relative; }
+.hc-s07-001 .head > :not(.rule) { position: relative; z-index: 1; }
+.hc-s07-001 .rule { top: -14%; bottom: -8%; }
+.hc-s07-001 .r1 { left: 13%; } .hc-s07-001 .r2 { left: 30%; } .hc-s07-001 .r3 { left: 47%; }
+.hc-s07-001 .grid { display: grid; grid-template-columns: minmax(13rem, 0.42fr) minmax(0, 1fr); gap: clamp(1.8rem, 4.5vw, 4rem); align-items: start; margin-top: clamp(2rem, 4vw, 3.2rem); }
+.hc-s07-001 .kit { list-style: none; display: grid; margin: 0; padding: 1.3rem 0 0; border-top: 3px solid var(--accent); }
+.hc-s07-001 .item { display: grid; grid-template-columns: minmax(0, 0.46fr) minmax(0, 1fr); gap: clamp(0.8rem, 2vw, 1.6rem); align-items: baseline; padding: 0.9rem 0; border-top: 1px solid var(--line); }
+.hc-s07-001 .item:first-child { border-top: 0; padding-top: 0; }
+.hc-s07-001 .item b { font-size: 1.02rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s07-001 .for { margin: 0; color: var(--ink); font-size: 0.9rem; line-height: 1.55; }
+.hc-s07-001 .limit { grid-column: 2; margin: 0.3rem 0 0; color: var(--no); font-size: 0.86rem; line-height: 1.5; }
+.hc-s07-001 .limit i { font-style: normal; font-weight: 700; }
+.hc-s07-001 .foot { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) auto; gap: clamp(1.4rem, 3.4vw, 2.8rem); align-items: end; margin-top: clamp(1.8rem, 3.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.hc-s07-001 .foot b { display: block; font-size: 1rem; font-weight: 650; letter-spacing: -0.015em; }
+.hc-s07-001 .foot p { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+.hc-s07-001 .not b, .hc-s07-001 .not p { color: var(--no); }
+@media (max-width: 980px) { .hc-s07-001 .grid, .hc-s07-001 .item, .hc-s07-001 .foot { grid-template-columns: minmax(0, 1fr); } .hc-s07-001 .limit { grid-column: 1; } }
+@media (prefers-reduced-motion: reduce) { .hc-s07-001 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="hc-s07-001" data-study-id="HC-S07-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="hc-s07-001-title">
+    <div class="head">
+      <span class="rule r1" aria-hidden="true"></span><span class="rule r2" aria-hidden="true"></span><span class="rule r3" aria-hidden="true"></span>
+      <p class="eyebrow">What we use</p>
+      <h2 class="display" id="hc-s07-001-title">The machine is named, what it is for is said, and <span class="ac">when it is not used</span> is said too.</h2>
+      <p class="lead">Six things in the building, each with the question it answers and the question it cannot.</p>
+    </div>
+    <div class="grid">
+      <div class="media" data-media="ultrasound-room-in-use" role="img" aria-label="Reserved image area: the ultrasound room, in use" style="aspect-ratio: 4 / 5;"><span>THE ULTRASOUND ROOM &middot; 4:5</span></div>
+      <ul class="kit">
+        <li class="item"><b>Ultrasound</b><p class="for">Soft tissue and organs, without radiation, on the day.</p><p class="limit"><i>Not for</i> bone.</p></li><li class="item"><b>X-ray</b><p class="for">Bones and chests, read the same day.</p><p class="limit"><i>Only</i> if the picture would change what we do.</p></li><li class="item"><b>Heart trace</b><p class="for">The heart&rsquo;s rhythm, <span data-placeholder="true">ten minutes</span> on the couch.</p><p class="limit"><i>Rhythm,</i> not blockages.</p></li><li class="item"><b>Blood tests</b><p class="for">The sample taken here; results back, usually in <span data-placeholder="true">a few days</span>.</p><p class="limit"><i>Only</i> the tests the visit calls for.</p></li><li class="item"><b>Pressure monitor to take home</b><p class="for">A day and a night of readings, worn under a sleeve.</p><p class="limit"><i>Instead of</i> one nervous reading in a room.</p></li><li class="item"><b>Skin scope</b><p class="for">A close look at a mole, with a photograph kept for next time.</p><p class="limit"><i>A look,</i> not a diagnosis.</p></li>
+      </ul>
+    </div>
+    <div class="foot">
+      <div class="rulebox"><b>The rule</b><p>Nothing here is new for the sake of it. If a test would not change what we do, it is not done, whatever machine we own.</p></div>
+      <div class="not"><b>Not held here</b><p>The scans a hospital does. Arranged for you, and you are told why.</p></div>
+      <a class="btn" href="../../S05-appointment-booking/raw/HC-S05-001.html">Book a first appointment</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>
