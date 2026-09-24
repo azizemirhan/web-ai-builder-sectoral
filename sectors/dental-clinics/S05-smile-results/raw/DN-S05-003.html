@@ -12,38 +12,23 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S05 — Smile Results
   Direction      : Structured / Visual Modular
-  Theme          : 003 Slate — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **A — Item grid. Media in every item.** Four reserved before-and-after areas.
-  Layout model   : Four joined case modules on one `2px` seam, **each with its own rule strip**, so
-                   the disclosure travels with the picture rather than sitting above the set
-  Density        : Structured (204 visible words, structured band 170–230)
-  Media mode     : Four reserved before-and-after areas. **No face in any**, one case each.
-  Interaction    : None (static; no JavaScript). Links only, no form.
-
-  Governing idea : **A before-and-after tells you nothing unless you know what changed between the two
-                   photographs besides the teeth.**
-
-  What the structured reading adds — the disclosure travels with the picture :
-                   `001` prints the four rules once, above the set. That is honest and it is how a
-                   regulator would want it, but it has a weakness: **a reader who lands mid-gallery,
-                   or who shares one case, has the picture without the rules.**
-                   Here each case module carries its own strip — the timing, and the selection note —
-                   joined to its own image on the same seam. The set-level rules stay at the foot
-                   where they bind all four, but no single case can travel without the one field that
-                   makes it readable: **how long after the treatment the second photograph was taken.**
-                   That is what joined modules are for. The four are one object, and each part of it
-                   is still complete on its own.
-
-  The admission :
-                   **We chose these.** Four shown out of sixty-one that year, and the clear ones were
-                   picked, like everyone does.
-
-  Placeholder data : The case count, the year total and the four timings are PLACEHOLDER DEMO VALUES
-                   marked data-placeholder="true".
-
-  Content note   : No outcome guarantee, no superiority claim, no price, no credential, no testimonial,
-                   no patient name. **No face in any reserved area.** No stock smile, no instrument, no
-                   sparkle, no aqua palette. No global header or navigation.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 3 — four
+                   joined modules: the 003 dot grid drawn once behind; the head split; four
+                   bordered cells in one row sharing lines, each holding its paired field with
+                   BEFORE and AFTER slates, the word-numeral chip, the case, what was done, the
+                   timing, and its own rule strip on the band tone — "one case, not a typical
+                   result" — so no case travels without its note; the three shared rules as a
+                   ruled row on the lead rule; the no-face line as the foot. Shape A. V1 is
+                   kept whole.
+  Layout model   : Dot grid behind; head split; four bordered case modules each with a rule strip; ruled row of three rules; foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : FOUR reserved before-and-after areas, paired fields cropped to the work — no
+                   face in any, one case each. Empty flat fields, labelled BEFORE and AFTER.
+  Interaction    : None. No link, no form.
+  Content note   : The case count, the year total and the four timings are PLACEHOLDER DEMO
+                   VALUES marked data-placeholder="true" and declared in the meta block. No
+                   outcome promise, no price, no retouching; the selection is admitted. No
+                   tooth iconography, no aqua. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S05-003">
@@ -56,219 +41,116 @@
 <meta name="direction" content="Structured / Visual Modular">
 <meta name="theme" content="003 Slate">
 <meta name="section-shape" content="A — item grid, media in every item">
-<meta name="layout-model" content="Four joined case modules on one seam, each carrying its own rule strip">
+<meta name="layout-model" content="Dot grid behind; head split; four bordered case modules in one row, each with its paired field, chip, case, timing and its own rule strip; three shared rules as a ruled row; the no-face line">
 <meta name="density" content="structured">
-<meta name="media-mode" content="four-reserved-before-and-after-areas-no-face">
-<meta name="interaction" content="none-links-only-no-form">
+<meta name="media-mode" content="four-reserved-paired-areas">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="case count, year total, four timings — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S05-003 — Smile Results, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #eef0f2; }
 
-/* Scoped study styles — namespaced to .dn-s05-003 */
 .dn-s05-003 {
-  --paper: #eef0f2;
-  --ink: #0f1316;
-  --ink-soft: #515a61;
-  --line: #d6dbdf;
-  --card: #ffffff;
-  --accent: #2c5fd0;
-  --accent-ink: #ffffff;
-  --slot: #e1e6ea;
-  --slot-edge: #b5bec6;
-  --slot-ink: #5a636a;
-  --focus: #0f1316;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eef0f2; --ink: #0f1316; --muted: #535b63; --line: #d2d7dc; --line-strong: #0f1316;
+  --media: #dfe3e7; --band: #e6e9ec; --accent: #2c5fd0; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s05-003 *,
-.dn-s05-003 *::before,
-.dn-s05-003 *::after { box-sizing: inherit; }
-.dn-s05-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+.dn-s05-003 *, .dn-s05-003 *::before, .dn-s05-003 *::after { box-sizing: inherit; }
+.dn-s05-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s05-003 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.dn-s05-003 .draw { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--line); pointer-events: none; }
+.dn-s05-003 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s05-003 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s05-003 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(24px, 3.4vw, 54px);
-  align-items: end;
-  margin-bottom: clamp(22px, 2.8vw, 38px);
-}
-.dn-s05-003 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 17px);
-  padding: 6px 14px; border-radius: 999px;
-  background: var(--accent); color: var(--accent-ink);
-  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
-}
-.dn-s05-003 h2 {
-  margin: 0;
-  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
-  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
-  max-width: 24ch;
-}
-.dn-s05-003 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 50ch; }
+.dn-s05-003 .head { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.dn-s05-003 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s05-003 h2 { margin: 0; max-width: 14ch; font-weight: 600; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 0.98; letter-spacing: -0.035em; }
+.dn-s05-003 h2 .ac { color: var(--accent); }
+.dn-s05-003 .lead { margin: 0 0 0.3em; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
 
-/* --- Four joined modules. Each complete on its own --- */
-.dn-s05-003 .cases {
-  margin: 0; padding: 0; list-style: none;
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2px;
-}
-.dn-s05-003 .mod { display: flex; flex-direction: column; height: 100%; background: var(--card); padding: clamp(16px, 2vw, 22px); }
-.dn-s05-003 .cases > li:nth-child(1) .mod { border-radius: 20px 0 0 0; }
-.dn-s05-003 .cases > li:nth-child(2) .mod { border-radius: 0 20px 0 0; }
-.dn-s05-003 .cases > li:nth-child(3) .mod { border-radius: 0 0 0 20px; }
-.dn-s05-003 .cases > li:nth-child(4) .mod { border-radius: 0 0 20px 0; }
+.dn-s05-003 .mods { list-style: none; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); background: var(--paper); }
+.dn-s05-003 .mods > li { display: grid; grid-template-rows: auto 1fr auto; min-width: 0; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.dn-s05-003 figure { margin: 0; }
+.dn-s05-003 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.dn-s05-003 .pair > div { position: relative; aspect-ratio: 1 / 1; background: var(--media); }
+.dn-s05-003 .pair span { position: absolute; left: 0.7rem; bottom: 0.6rem; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.dn-s05-003 figcaption { padding: 0.5rem 1rem 0; color: var(--muted); font-size: 0.72rem; }
+.dn-s05-003 .body { padding: 0.5rem 1rem 1rem; }
+.dn-s05-003 .chip { display: inline-block; padding: 0.16rem 0.45rem; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.2; }
+.dn-s05-003 .mods h3 { margin: 0.4rem 0 0; font-weight: 600; font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.15; letter-spacing: -0.02em; }
+.dn-s05-003 .mods p { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.dn-s05-003 .mods p.when { margin-top: 0.4rem; color: var(--ink); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.dn-s05-003 .mods p.when span[data-placeholder] { color: var(--accent); }
+.dn-s05-003 .strip { margin: 0; padding: 0.6rem 1rem 0.7rem; background: var(--band); border-top: 1px solid var(--line-strong); color: var(--no); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 
-.dn-s05-003 .pair {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 12px;
-  background: var(--slot);
-  aspect-ratio: 21 / 9;
-  display: grid; place-items: center;
-  padding: clamp(12px, 1.8vw, 20px);
-  margin-bottom: clamp(12px, 1.6vw, 16px);
-  position: relative;
-}
-.dn-s05-003 .pair::after {
-  content: "";
-  position: absolute; top: 12px; bottom: 12px; left: 50%; width: 2px;
-  background: var(--slot-edge);
-}
-.dn-s05-003 .pair span { color: var(--slot-ink); font-size: 0.75rem; font-weight: 700; text-align: center; }
+.dn-s05-003 .rules { list-style: none; margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; padding: 1.1rem 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem clamp(1.2rem, 2.5vw, 2.4rem); border-top: 3px solid var(--accent); }
+.dn-s05-003 .rules li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.15rem 0.6rem; align-content: start; }
+.dn-s05-003 .rules .mk { grid-row: 1 / 3; width: 1.3rem; height: 1.3rem; color: var(--accent); margin-top: 0.1rem; }
+.dn-s05-003 .rules h3 { margin: 0; font-weight: 600; font-size: 1.05rem; line-height: 1.2; letter-spacing: -0.02em; }
+.dn-s05-003 .rules p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.dn-s05-003 .rules p span[data-placeholder] { color: var(--ink); font-weight: 600; }
 
-.dn-s05-003 .mod h3 { margin: 0 0 5px; font-size: 1.05rem; letter-spacing: -0.024em; font-weight: 800; }
-.dn-s05-003 .did { display: block; margin-bottom: 10px; font-size: 0.93rem; color: var(--ink-soft); flex: 1 1 auto; }
+.dn-s05-003 .foot { display: flex; gap: 0.6rem; align-items: baseline; margin: clamp(1.4rem, 2.5vw, 2rem) 0 0; padding-top: 0.9rem; border-top: 1px solid var(--line-strong); color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.dn-s05-003 .foot .mk { color: var(--no); width: 1rem; height: 1rem; transform: translateY(0.15rem); }
+.dn-s05-003 .foot b { color: var(--ink); font-weight: 600; }
 
-/* The strip that travels with the picture */
-.dn-s05-003 .strip {
-  margin: 0; padding: clamp(10px, 1.3vw, 13px) clamp(12px, 1.5vw, 15px);
-  border-radius: 12px;
-  background: rgba(44, 95, 208, 0.09);
-  font-size: 0.87rem; color: var(--ink-soft);
-}
-.dn-s05-003 .strip b { display: block; color: var(--accent); font-weight: 800; }
-
-/* --- The rules that bind all four --- */
-.dn-s05-003 .rules {
-  margin: clamp(24px, 3vw, 40px) 0 0;
-  padding: 0; list-style: none;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 34px);
-}
-.dn-s05-003 .rules b { display: block; margin-bottom: 5px; font-size: 0.96rem; letter-spacing: -0.022em; font-weight: 800; color: var(--accent); }
-.dn-s05-003 .rules li:last-child b { color: var(--ink); }
-.dn-s05-003 .rules p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
-
-.dn-s05-003 .note {
-  margin: clamp(22px, 2.8vw, 36px) 0 0;
-  padding-top: clamp(18px, 2.4vw, 28px);
-  border-top: 1px solid var(--line);
-  font-size: 0.96rem; color: var(--ink-soft); max-width: 72ch;
-}
-.dn-s05-003 .note b { color: var(--ink); font-weight: 800; }
-
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .dn-s05-003 .rules { grid-template-columns: minmax(0, 1fr); }
-}
-@media (max-width: 860px) {
-  .dn-s05-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .dn-s05-003 h2, .dn-s05-003 .lead, .dn-s05-003 .note { max-width: none; }
-}
-@media (max-width: 560px) {
-  .dn-s05-003 .cases { grid-template-columns: minmax(0, 1fr); }
-  .dn-s05-003 .cases > li .mod { border-radius: 0 !important; }
-  .dn-s05-003 .cases > li:first-child .mod { border-radius: 20px 20px 0 0 !important; }
-  .dn-s05-003 .cases > li:last-child .mod { border-radius: 0 0 20px 20px !important; }
-  .dn-s05-003 .pair { aspect-ratio: 16 / 9; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s05-003 * { transition: none !important; }
-}
+@media (max-width: 1000px) { .dn-s05-003 .mods { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .dn-s05-003 .head { grid-template-columns: minmax(0, 1fr); } .dn-s05-003 .rules { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .dn-s05-003 .mods { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .dn-s05-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="dn-s05-003" data-study-id="DN-S05-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" aria-hidden="true" focusable="false"><defs><pattern id="dn-s05-003-dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor"/></pattern></defs><rect width="100%" height="100%" fill="url(#dn-s05-003-dots)"/></svg>
   <section class="shell" aria-labelledby="dn-s05-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">Results</p>
-        <h2 id="dn-s05-003-title">Four cases, and what changed between the two photographs.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18v13H3zM3 6l4-3h10l4 3M12 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>Results</p>
+        <h2 id="dn-s05-003-title">Four cases, and <span class="ac">what changed</span> between the two photographs.</h2>
       </div>
       <p class="lead">A before-and-after tells you nothing unless you know what changed besides the teeth. Each case carries its own note, so none of them travels without it.</p>
     </div>
 
-    <ul class="cases">
+    <ul class="mods">
       <li>
-        <div class="mod">
-          <div class="pair"><span>Before and after &mdash; case one</span></div>
-          <h3>Two chipped front teeth</h3>
-          <span class="did">Composite bonding, one visit.</span>
-          <p class="strip"><b>Second photograph: <span data-placeholder="true">the same day</span></b>One case, not a typical result.</p>
-        </div>
+        <figure><div class="pair" role="img" aria-label="Reserved before-and-after area: case one, cropped to the work, no face"><div><span>Before</span></div><div><span>After</span></div></div><figcaption>Before and after &mdash; case one</figcaption></figure>
+        <div class="body"><span class="chip">One</span><h3>Two chipped front teeth</h3><p>Composite bonding, one visit.</p><p class="when">Second photograph: <span data-placeholder="true">the same day</span></p></div>
+        <p class="strip">One case, not a typical result.</p>
       </li>
       <li>
-        <div class="mod">
-          <div class="pair"><span>Before and after &mdash; case two</span></div>
-          <h3>Discoloured after a root canal</h3>
-          <span class="did">Internal whitening and one crown, six weeks.</span>
-          <p class="strip"><b>Second photograph: <span data-placeholder="true">eleven months later</span></b>One case, not a typical result.</p>
-        </div>
+        <figure><div class="pair" role="img" aria-label="Reserved before-and-after area: case two, cropped to the work, no face"><div><span>Before</span></div><div><span>After</span></div></div><figcaption>Before and after &mdash; case two</figcaption></figure>
+        <div class="body"><span class="chip">Two</span><h3>Discoloured after a root canal</h3><p>Internal whitening and one crown, six weeks.</p><p class="when">Second photograph: <span data-placeholder="true">eleven months later</span></p></div>
+        <p class="strip">One case, not a typical result.</p>
       </li>
       <li>
-        <div class="mod">
-          <div class="pair"><span>Before and after &mdash; case three</span></div>
-          <h3>Crowding, upper front</h3>
-          <span class="did">Aligners for fourteen months, then polishing.</span>
-          <p class="strip"><b>Second photograph: <span data-placeholder="true">four months after finishing</span></b>One case, not a typical result.</p>
-        </div>
+        <figure><div class="pair" role="img" aria-label="Reserved before-and-after area: case three, cropped to the work, no face"><div><span>Before</span></div><div><span>After</span></div></div><figcaption>Before and after &mdash; case three</figcaption></figure>
+        <div class="body"><span class="chip">Three</span><h3>Crowding, upper front</h3><p>Aligners for fourteen months, then polishing.</p><p class="when">Second photograph: <span data-placeholder="true">four months after finishing</span></p></div>
+        <p class="strip">One case, not a typical result.</p>
       </li>
       <li>
-        <div class="mod">
-          <div class="pair"><span>Before and after &mdash; case four</span></div>
-          <h3>A missing premolar</h3>
-          <span class="did">Implant, five months of healing.</span>
-          <p class="strip"><b>Second photograph: <span data-placeholder="true">two weeks after fitting</span></b>One case, not a typical result.</p>
-        </div>
+        <figure><div class="pair" role="img" aria-label="Reserved before-and-after area: case four, cropped to the work, no face"><div><span>Before</span></div><div><span>After</span></div></div><figcaption>Before and after &mdash; case four</figcaption></figure>
+        <div class="body"><span class="chip">Four</span><h3>A missing premolar</h3><p>Implant, five months of healing.</p><p class="when">Second photograph: <span data-placeholder="true">two weeks after fitting</span></p></div>
+        <p class="strip">One case, not a typical result.</p>
       </li>
     </ul>
 
     <ul class="rules">
-      <li>
-        <b>Same camera, same light</b>
-        <p>Both photographs, every case. Different light is most of what you see in a before and after.</p>
-      </li>
-      <li>
-        <b>Not retouched</b>
-        <p>Cropped, and nothing else.</p>
-      </li>
-      <li>
-        <b>We chose these</b>
-        <p><span data-placeholder="true">Four</span> shown out of <span data-placeholder="true">sixty-one</span> that year. We picked the clear ones, like everyone does.</p>
-      </li>
+      <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18v13H3zM3 6l4-3h10l4 3M12 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><h3>Same camera, same light</h3><p>Both photographs, every case. Different light is most of what you see in a before and after.</p></li>
+      <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg><h3>Not retouched</h3><p>Cropped, and nothing else.</p></li>
+      <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg><h3>We chose these</h3><p><span data-placeholder="true">Four</span> shown out of <span data-placeholder="true">sixty-one</span> that year. We picked the clear ones, like everyone does.</p></li>
     </ul>
 
-    <p class="note"><b>No face appears in any of these.</b> The pairs are cropped to the work, and consent covers that crop only.</p>
+    <p class="foot"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0M3 3l18 18"/></svg><span><b>No face appears in any of these.</b> The pairs are cropped to the work, and consent covers that crop only.</span></p>
 
   </section>
 </div>

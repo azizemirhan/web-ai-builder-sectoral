@@ -12,38 +12,23 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S05 — Smile Results
   Direction      : Premium / Editorial
-  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. One reserved before-and-after area.**
-  Layout model   : One measure. **One case shown properly**, at full width with all four rules
-                   attached to it, and the other three listed underneath in type
-  Density        : Structured (178 visible words, structured band 170–230)
-  Media mode     : One reserved before-and-after area. **No face**, one case, not a typical result.
-  Interaction    : None (static; no JavaScript). Links only, no form.
-
-  Governing idea : **A before-and-after tells you nothing unless you know what changed between the two
-                   photographs besides the teeth.**
-
-  The editorial cut — one case, properly, instead of four badly :
-                   A results gallery is a grid, and a grid forces every case down to a thumbnail and a
-                   two-word caption. **The caption is where the honest information would have gone**,
-                   so the format destroys the thing it exists to show.
-                   This study gives the whole width to one case and attaches all four rules to it —
-                   the light, the retouching, the selection, the timing. The other three are listed in
-                   type beneath, with their timings, because a reader who has understood the first one
-                   can read the rest as a line each.
-                   **One case a reader can interrogate is worth four they can only look at.**
-
-  The admission :
-                   Rule three is the one nothing in this sector says out loud: **we chose these.** Four
-                   shown out of sixty-one that year, and the clear ones were picked, like everyone
-                   does.
-
-  Placeholder data : The case count, the year total and the four timings are PLACEHOLDER DEMO VALUES
-                   marked data-placeholder="true".
-
-  Content note   : No outcome guarantee, no superiority claim, no price, no credential, no testimonial,
-                   no patient name. **No face in the reserved area.** No stock smile, no instrument, no
-                   sparkle, no aqua palette. No global header or navigation.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 2 in one
+                   measure: the head with the 002 arc at its corner and "one case" in the
+                   accent; the one case shown properly — a paired field at full measure with
+                   BEFORE and AFTER slates, the case, what was done and the timing; the four
+                   rules as ruled lines on the lead rule; THE OTHER THREE, IN A LINE EACH as
+                   ruled lines with their timings; the no-face line as the close. Shape B. V1
+                   is kept whole.
+  Layout model   : Head with an arc; one paired field at full measure with its caption; four ruled rules; three ruled lines; close
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved before-and-after area, a paired field cropped to the work — no
+                   face, one case, not a typical result. Empty flat field, labelled BEFORE and
+                   AFTER.
+  Interaction    : None. No link, no form.
+  Content note   : The case count, the year total and the four timings are PLACEHOLDER DEMO
+                   VALUES marked data-placeholder="true" and declared in the meta block. No
+                   outcome promise, no price, no retouching; the selection is admitted. No
+                   tooth iconography, no aqua. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S05-002">
@@ -56,172 +41,113 @@
 <meta name="direction" content="Premium / Editorial">
 <meta name="theme" content="002 Linen">
 <meta name="section-shape" content="B — anchored, one reserved before-and-after area">
-<meta name="layout-model" content="One measure, one case shown properly with all four rules attached, the other three in type">
+<meta name="layout-model" content="Head with an arc; one case as a paired field at full measure; the four rules as ruled lines on the lead rule; the other three as ruled lines; the no-face line">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-before-and-after-area-no-face">
-<meta name="interaction" content="none-links-only-no-form">
+<meta name="media-mode" content="one-reserved-paired-area">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="case count, year total, four timings — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S05-002 — Smile Results, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #f3efe8; }
 
-/* Scoped study styles — namespaced to .dn-s05-002 */
 .dn-s05-002 {
-  --paper: #f3efe8;
-  --ink: #1b1714;
-  --ink-soft: #6a6058;
-  --line: #ddd5c9;
-  --accent: #a2543a;
-  --slot: #e9e2d8;
-  --slot-edge: #c6bcae;
-  --slot-ink: #635b53;
-  --focus: #1b1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f3efe8; --ink: #1b1714; --muted: #68625a; --line: #dad2c6; --line-strong: #1b1714;
+  --media: #e6dfd4; --band: #ebe5da; --accent: #a2543a; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s05-002 *,
-.dn-s05-002 *::before,
-.dn-s05-002 *::after { box-sizing: inherit; }
-.dn-s05-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+.dn-s05-002 *, .dn-s05-002 *::before, .dn-s05-002 *::after { box-sizing: inherit; }
+.dn-s05-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s05-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
-.dn-s05-002 .col { max-width: 78ch; }
+.dn-s05-002 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s05-002 .measure { width: min(100%, 56rem); }
+.dn-s05-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s05-002 .eyebrow {
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent);
-}
-.dn-s05-002 h2 {
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
-  line-height: 1.0; letter-spacing: -0.044em; font-weight: 800;
-  max-width: 22ch;
-}
-.dn-s05-002 .lead { margin: 0 0 clamp(30px, 3.8vw, 52px); max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.08rem, 1.36vw, 1.24rem); }
+.dn-s05-002 .head { position: relative; }
+.dn-s05-002 .head > svg.arc { position: absolute; right: 0; top: -1.2rem; width: clamp(9rem, 16vw, 15rem); height: clamp(9rem, 16vw, 15rem); color: var(--accent); pointer-events: none; z-index: 0; }
+.dn-s05-002 .eyebrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s05-002 h2 { position: relative; z-index: 1; margin: 0; max-width: 16ch; font-weight: 600; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 0.98; letter-spacing: -0.035em; }
+.dn-s05-002 h2 .ac { color: var(--accent); }
+.dn-s05-002 .lead { position: relative; z-index: 1; margin: 1.2rem 0 0; max-width: 34rem; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
 
-/* --- One case, properly --- */
-.dn-s05-002 .pair {
-  border: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  aspect-ratio: 24 / 9;
-  display: grid; place-items: center;
-  padding: clamp(16px, 2.2vw, 28px);
-  margin-bottom: clamp(11px, 1.4vw, 15px);
-  position: relative;
-}
-.dn-s05-002 .pair::after {
-  content: "";
-  position: absolute; top: 16px; bottom: 16px; left: 50%; width: 1px;
-  background: var(--slot-edge);
-}
-.dn-s05-002 .pair span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+.dn-s05-002 figure { margin: clamp(2rem, 4vw, 3.4rem) 0 0; }
+.dn-s05-002 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line-strong); border-radius: 6px; overflow: hidden; }
+.dn-s05-002 .pair > div { position: relative; aspect-ratio: 4 / 3; background: var(--media); }
+.dn-s05-002 .pair span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s05-002 figcaption { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; }
+.dn-s05-002 .case { margin: 1rem 0 0; }
+.dn-s05-002 .case h3 { margin: 0; font-weight: 600; font-size: clamp(1.4rem, 2.2vw, 2rem); line-height: 1.1; letter-spacing: -0.025em; }
+.dn-s05-002 .case p { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.dn-s05-002 .case p.when { margin-top: 0.5rem; color: var(--ink); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.dn-s05-002 .case p.when span[data-placeholder] { color: var(--accent); }
 
-.dn-s05-002 .one h3 { margin: 0 0 4px; font-size: clamp(1.3rem, 2vw, 1.72rem); line-height: 1.14; letter-spacing: -0.028em; font-weight: 800; }
-.dn-s05-002 .one .did { display: block; margin-bottom: 3px; font-size: 1.02rem; color: var(--ink-soft); }
-.dn-s05-002 .one .when { display: block; margin-bottom: clamp(20px, 2.6vw, 30px); font-size: 0.98rem; font-weight: 700; color: var(--accent); }
+.dn-s05-002 .rules { list-style: none; margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; padding: 0; border-top: 3px solid var(--accent); }
+.dn-s05-002 .rules li { display: flex; gap: 0.7rem; align-items: baseline; padding: 0.8rem 0 0.9rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.dn-s05-002 .rules li .mk { color: var(--accent); transform: translateY(0.2rem); }
+.dn-s05-002 .rules b { color: var(--ink); font-weight: 600; }
+.dn-s05-002 .rules span[data-placeholder] { color: var(--ink); font-weight: 600; }
 
-/* --- The rules, attached to it --- */
-.dn-s05-002 .rules {
-  margin: 0 0 clamp(30px, 3.8vw, 54px);
-  padding: 0; list-style: none;
-  display: grid; gap: clamp(10px, 1.3vw, 14px);
-  max-width: 66ch;
-}
-.dn-s05-002 .rules li { font-size: 1.01rem; color: var(--ink-soft); }
-.dn-s05-002 .rules b { color: var(--accent); font-weight: 800; }
-.dn-s05-002 .rules li:last-child b { color: var(--ink); }
+.dn-s05-002 .sub { display: flex; align-items: baseline; gap: 0.7rem; margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; color: var(--ink); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s05-002 .sub .mk { color: var(--accent); transform: translateY(0.15rem); }
+.dn-s05-002 .rest { list-style: none; margin: 0.7rem 0 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.dn-s05-002 .rest li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.6fr); gap: 0.2rem 1.5rem; align-items: baseline; padding: 0.9rem 0 1rem; border-bottom: 1px solid var(--line); }
+.dn-s05-002 .rest h3 { margin: 0; font-weight: 600; font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.02em; }
+.dn-s05-002 .rest p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.dn-s05-002 .rest p.when { color: var(--ink); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.dn-s05-002 .rest p.when span[data-placeholder] { color: var(--accent); }
 
-/* --- The other three, in type --- */
-.dn-s05-002 h4 { margin: 0 0 clamp(14px, 1.8vw, 20px); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft); }
-.dn-s05-002 .rest { margin: 0 0 clamp(26px, 3.2vw, 44px); padding: 0; list-style: none; display: grid; gap: clamp(14px, 1.8vw, 20px); }
-.dn-s05-002 .rest li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(14px, 2vw, 28px); align-items: baseline; }
-.dn-s05-002 .rest h3 { margin: 0 0 3px; font-size: 1.06rem; letter-spacing: -0.022em; font-weight: 800; }
-.dn-s05-002 .rest .did { font-size: 0.96rem; color: var(--ink-soft); }
-.dn-s05-002 .rest .when { font-size: 0.94rem; font-weight: 700; color: var(--accent); }
+.dn-s05-002 .foot { display: flex; gap: 0.6rem; align-items: baseline; margin: clamp(1.4rem, 2.5vw, 2rem) 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.dn-s05-002 .foot .mk { color: var(--no); width: 1rem; height: 1rem; transform: translateY(0.15rem); }
+.dn-s05-002 .foot b { color: var(--ink); font-weight: 600; }
 
-.dn-s05-002 .note { margin: 0; padding-top: clamp(20px, 2.6vw, 30px); border-top: 1px solid var(--line); font-size: 0.98rem; color: var(--ink-soft); }
-.dn-s05-002 .note b { color: var(--ink); font-weight: 800; }
-
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .dn-s05-002 h2, .dn-s05-002 .lead, .dn-s05-002 .rules { max-width: none; }
-  .dn-s05-002 .pair { aspect-ratio: 16 / 9; }
-}
-@media (max-width: 560px) {
-  .dn-s05-002 .rest li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s05-002 * { transition: none !important; }
-}
+@media (max-width: 560px) { .dn-s05-002 .rest li { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .dn-s05-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="dn-s05-002" data-study-id="DN-S05-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="dn-s05-002-title">
-    <div class="col">
+    <div class="measure">
 
-      <p class="eyebrow">Results</p>
-      <h2 id="dn-s05-002-title">One case, with everything that changed between the two photographs.</h2>
-      <p class="lead">A before-and-after tells you nothing unless you know what changed besides the teeth. So this one says all of it.</p>
+      <div class="head">
+        <svg class="arc" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M2 98A96 96 0 0 1 98 2" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18v13H3zM3 6l4-3h10l4 3M12 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg>Results</p>
+        <h2 id="dn-s05-002-title"><span class="ac">One case</span>, with everything that changed between the two photographs.</h2>
+        <p class="lead">A before-and-after tells you nothing unless you know what changed besides the teeth. So this one says all of it.</p>
+      </div>
 
-      <div class="one">
-        <div class="pair"><span>Before and after &mdash; case one</span></div>
+      <figure>
+        <div class="pair" role="img" aria-label="Reserved before-and-after area: case one, cropped to the work, no face"><div><span>Before</span></div><div><span>After</span></div></div>
+        <figcaption>Before and after &mdash; case one</figcaption>
+      </figure>
+      <div class="case">
         <h3>Two chipped front teeth</h3>
-        <span class="did">Composite bonding, one visit.</span>
-        <span class="when">Second photograph: <span data-placeholder="true">the same day</span></span>
+        <p>Composite bonding, one visit.</p>
+        <p class="when">Second photograph: <span data-placeholder="true">the same day</span></p>
       </div>
 
       <ul class="rules">
-        <li><b>Same camera, same light.</b> Both photographs. Different light is most of what you see in a before and after.</li>
-        <li><b>Not retouched.</b> Cropped, and nothing else.</li>
-        <li><b>We chose this one.</b> <span data-placeholder="true">Four</span> shown out of <span data-placeholder="true">sixty-one</span> that year. We picked the clear ones, like everyone does.</li>
-        <li><b>One case.</b> Not a typical result. Yours will not look like this.</li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18v13H3zM3 6l4-3h10l4 3M12 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/></svg><span><b>Same camera, same light.</b> Both photographs. Different light is most of what you see in a before and after.</span></li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg><span><b>Not retouched.</b> Cropped, and nothing else.</span></li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg><span><b>We chose this one.</b> <span data-placeholder="true">Four</span> shown out of <span data-placeholder="true">sixty-one</span> that year. We picked the clear ones, like everyone does.</span></li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 3v18"/></svg><span><b>One case.</b> Not a typical result. Yours will not look like this.</span></li>
       </ul>
 
-      <h4>The other three, in a line each</h4>
+      <p class="sub"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg>The other three, in a line each</p>
       <ul class="rest">
-        <li>
-          <div>
-            <h3>Discoloured after a root canal</h3>
-            <span class="did">Internal whitening and one crown, six weeks.</span>
-          </div>
-          <span class="when">Second photograph: <span data-placeholder="true">eleven months later</span></span>
-        </li>
-        <li>
-          <div>
-            <h3>Crowding, upper front</h3>
-            <span class="did">Aligners for fourteen months, then polishing.</span>
-          </div>
-          <span class="when">Second photograph: <span data-placeholder="true">four months after finishing</span></span>
-        </li>
-        <li>
-          <div>
-            <h3>A missing premolar</h3>
-            <span class="did">Implant, five months of healing.</span>
-          </div>
-          <span class="when">Second photograph: <span data-placeholder="true">two weeks after fitting</span></span>
-        </li>
+        <li><h3>Discoloured after a root canal</h3><p class="when">Second photograph: <span data-placeholder="true">eleven months later</span></p><p>Internal whitening and one crown, six weeks.</p></li>
+        <li><h3>Crowding, upper front</h3><p class="when">Second photograph: <span data-placeholder="true">four months after finishing</span></p><p>Aligners for fourteen months, then polishing.</p></li>
+        <li><h3>A missing premolar</h3><p class="when">Second photograph: <span data-placeholder="true">two weeks after fitting</span></p><p>Implant, five months of healing.</p></li>
       </ul>
 
-      <p class="note"><b>No face appears in any of these.</b> The pairs are cropped to the work, and consent covers that crop only.</p>
+      <p class="foot"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0M3 3l18 18"/></svg><span><b>No face appears in any of these.</b> The pairs are cropped to the work, and consent covers that crop only.</span></p>
 
     </div>
   </section>

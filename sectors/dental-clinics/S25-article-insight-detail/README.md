@@ -63,9 +63,9 @@ DN-S25-005
 | --- | --- |
 | `DN-S25-001` | Universal / Safe |
 | `DN-S25-002` | Premium / Editorial |
-| `DN-S25-003` | Dense / Information-heavy |
+| `DN-S25-003` | Structured / Visual Modular |
 | `DN-S25-004` | Conversion-led |
-| `DN-S25-005` | Sector-native / Distinctive |
+| `DN-S25-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,8 +91,16 @@ Nearest existing section in this sector: S18 Oral Health Resources (`S18-oral-he
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope and Preview
+
+Five modern patient-guide layouts for Make room for your questions. Complete non-clinical editorial copy, reserved attribution and optional supporting media.
+
+[Compare five studies](../../../review/dental-article-detail.html).
+
+Regenerate: powershell -NoProfile -ExecutionPolicy Bypass -File review/build-dental-article-detail.ps1

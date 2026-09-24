@@ -63,9 +63,9 @@ DN-S23-005
 | --- | --- |
 | `DN-S23-001` | Universal / Safe |
 | `DN-S23-002` | Premium / Editorial |
-| `DN-S23-003` | Dense / Information-heavy |
+| `DN-S23-003` | Structured / Visual Modular |
 | `DN-S23-004` | Conversion-led |
-| `DN-S23-005` | Sector-native / Distinctive |
+| `DN-S23-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,8 +91,16 @@ Nearest existing section in this sector: S02 Dental Treatments (`S02-dental-trea
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope and Preview
+
+Five modern detail studies for a first dental consultation, covering scope, suitability, process, preparation and enquiry. Supporting media remains reserved.
+
+[Compare the five studies](../../../review/dental-treatment-detail.html).
+
+Regenerate: powershell -NoProfile -ExecutionPolicy Bypass -File review/build-dental-treatment-detail.ps1

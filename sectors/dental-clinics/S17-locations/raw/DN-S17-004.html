@@ -12,43 +12,24 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S17 — Locations
   Direction      : Conversion-led
-  Theme          : 004 Daylight — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. One reserved area.**
-  Layout model   : **The three reasons people arrive late, in a filled band**, then getting in, then
-                   the door as a stranger scanning the street would see it
-  Density        : Structured (see count below, structured band 170–230)
-  Media mode     : One reserved area — **the door from across the street.** Not the door close up: the
-                   door at the distance you are actually looking for it from.
-  Interaction    : None (static; no JavaScript). No links, **no map embed, no "get directions".**
-
-  Governing idea : **People arrive late here for three reasons, and none of them is traffic.**
-
-  What "conversion-led" means in this sector — the failure is a missed appointment :
-                   The conversion device in a locations section is a map, a pin and a *get directions*
-                   button. All three answer *where*, and **nobody was ever late because they did not
-                   know the address.** They were late because the door has no sign, because they drove
-                   and there is nowhere to leave a car, or because nobody asked which floor they could
-                   get to.
-                   A missed appointment is the most expensive event in a small practice: **the chair
-                   stays empty, the hour is not resold, and the patient is the one who apologises for
-                   it.** So the band carries the three causes, and the section is built to prevent the
-                   failure rather than to look confident about the address.
-                   The trade is exact: **this section has no map and no directions button**, which are
-                   the two elements every competitor puts in the first screen.
-
-  Why the third reason is the one that matters :
-                   The first two cost a patient ten minutes. **The third costs them the appointment**,
-                   because a stairs-only surgery discovered on the day cannot be solved on the day. It
-                   is the reason the line about ringing first exists, and putting it third rather than
-                   first is deliberate — it is the one a reader has to have earned.
-
-  Placeholder data : The two walking times are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
-                   No address, street name, postcode or telephone number is invented.
-
-  Content note   : No *conveniently located*, no *easy to find*, no *fully accessible*. No outcome
-                   guarantee, no *pain-free* or *gentle*, no superiority claim, no price, no
-                   credential, no testimonial, no countdown, no scarcity. No map, no pin, no stock
-                   smile, no aqua palette. No global header or navigation.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 4 — the
+                   three reasons people arrive late, first: the head at statement size with
+                   "the rest of what happens on the way" in the accent; a band holding WHY
+                   PEOPLE ARRIVE LATE with "None of the three reasons is traffic." at display
+                   size and the 004 bar under "is traffic", the three reasons as ruled lines
+                   on the plum edge inside it; GETTING IN as a ruled row of four, the two that
+                   fail in the plum; the door from across the street as a bare 3:1 field with
+                   V1's caption carrying the transport lines; the ring line on the lead rule;
+                   the closing line. No map, no directions link. Shape B. V1 is kept whole.
+  Layout model   : Head; band with the display line, the bar and three ruled reasons; ruled row of four; 3:1 field with a long caption; ring line on the lead rule; closing line
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the door from across the street, from the far pavement
+                   where you start looking. Never a map tile. Empty flat field, labelled.
+  Interaction    : None. No link, no map embed, no directions.
+  Content note   : The two walking times are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true" and declared in the meta block. No address line,
+                   no postcode, no map. No tooth iconography, no aqua. Inline SVG, decorative.
+                   No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S17-004">
@@ -61,138 +42,77 @@
 <meta name="direction" content="Conversion-led">
 <meta name="theme" content="004 Daylight">
 <meta name="section-shape" content="B — anchored, one reserved area">
-<meta name="layout-model" content="The three reasons people arrive late in a filled band, then getting in, then the door from across the street">
+<meta name="layout-model" content="Head; why people arrive late as a band at display size with the bar and three ruled reasons on the plum edge; getting in as a ruled row of four; the door from across the street as a 3:1 field with the transport lines in its caption; the ring line on the lead rule; the closing line">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-door-from-across-the-street">
-<meta name="interaction" content="none-no-links-no-form-no-map-embed-no-directions-button">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="two walking times — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S17-004 — Locations, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #ffffff; }
+body { margin: 0; background: #fdfdfc; }
 
-/* Scoped study styles — namespaced to .dn-s17-004 */
 .dn-s17-004 {
-  --paper: #ffffff;
-  --ink: #0a0b0d;
-  --ink-soft: #55585d;
-  --line: #e6e4e1;
-  --card: #f7f5f2;
-  --accent: #e08b2c;
-  --accent-ink: #1a1204;
-  --accent-text: #8a5210;
-  --slot: #f0eeeb;
-  --slot-edge: #cbc7c2;
-  --slot-ink: #5c5f63;
-  --focus: #0a0b0d;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fdfdfc; --ink: #0a0b0d; --muted: #565a5f; --line: #e3e3e0; --line-strong: #0a0b0d;
+  --media: #ededea; --band: #f3f3f0; --accent: #c9781f; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s17-004 *,
-.dn-s17-004 *::before,
-.dn-s17-004 *::after { box-sizing: inherit; }
-.dn-s17-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+.dn-s17-004 *, .dn-s17-004 *::before, .dn-s17-004 *::after { box-sizing: inherit; }
+.dn-s17-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s17-004 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.dn-s17-004 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s17-004 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s17-004 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 20px);
-  padding: 6px 14px; border-radius: 999px;
-  background: var(--accent); color: var(--accent-ink);
-  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
-}
-.dn-s17-004 .lead { margin: 0 0 clamp(22px, 2.8vw, 34px); color: var(--ink-soft); font-size: clamp(1.04rem, 1.26vw, 1.2rem); max-width: 56ch; }
+.dn-s17-004 .head { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.dn-s17-004 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s17-004 h2 { margin: 0; max-width: 24ch; font-weight: 600; font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1.05; letter-spacing: -0.03em; }
+.dn-s17-004 h2 .ac { color: var(--accent); }
 
-/* --- The three causes, in the loudest place --- */
-.dn-s17-004 .band {
-  padding: clamp(28px, 3.4vw, 50px) clamp(22px, 2.8vw, 40px);
-  border-radius: 24px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  margin-bottom: clamp(28px, 3.4vw, 46px);
-}
-.dn-s17-004 .band > b { display: block; margin-bottom: clamp(10px, 1.4vw, 14px); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; opacity: 0.72; }
-.dn-s17-004 .band h2 {
-  margin: 0 0 clamp(22px, 2.8vw, 34px);
-  font-size: clamp(1.7rem, 3.1vw, 2.5rem);
-  line-height: 1.06; letter-spacing: -0.038em; font-weight: 800;
-  max-width: 20ch;
-}
-.dn-s17-004 .band ul { margin: 0; padding: clamp(22px, 2.8vw, 32px) 0 0; list-style: none; border-top: 2px solid rgba(26, 18, 4, 0.24); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 2.8vw, 44px); }
-.dn-s17-004 .band ul b { display: block; margin-bottom: 5px; font-size: clamp(1.02rem, 1.3vw, 1.18rem); letter-spacing: -0.026em; font-weight: 800; }
-.dn-s17-004 .band ul p { margin: 0; font-size: 0.97rem; font-weight: 600; opacity: 0.9; }
+.dn-s17-004 .band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 1.1fr); gap: clamp(1.6rem, 4vw, 4rem); align-items: start; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: clamp(1.6rem, 3vw, 2.6rem) clamp(1.2rem, 2.5vw, 2.4rem); background: var(--band); border-radius: 6px; }
+.dn-s17-004 .band .k { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1rem; color: var(--no); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s17-004 .band h3 { margin: 0; max-width: 14ch; font-weight: 600; font-size: clamp(2.2rem, 4.2vw, 4.4rem); line-height: 0.98; letter-spacing: -0.035em; }
+.dn-s17-004 .u { position: relative; display: inline-block; white-space: nowrap; }
+.dn-s17-004 .u > svg { position: absolute; left: 0; bottom: -0.1em; width: 100%; height: 0.2em; color: var(--accent); pointer-events: none; }
+.dn-s17-004 .band ul { list-style: none; margin: 0; padding: 0 0 0 1.1rem; border-left: 2px solid var(--no); }
+.dn-s17-004 .band li { padding: 0.7rem 0 0.8rem; border-bottom: 1px solid var(--line); }
+.dn-s17-004 .band li:first-child { padding-top: 0; }
+.dn-s17-004 .band li:last-child { border-bottom: 0; padding-bottom: 0; }
+.dn-s17-004 .band h4 { margin: 0 0 0.2rem; font-weight: 600; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.2; letter-spacing: -0.02em; color: var(--no); }
+.dn-s17-004 .band p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.dn-s17-004 .band p span[data-placeholder] { color: var(--ink); font-weight: 600; }
 
-/* --- Getting in --- */
-.dn-s17-004 h3 { margin: 0 0 clamp(14px, 1.8vw, 18px); font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent-text); }
-.dn-s17-004 .facts {
-  margin: 0 0 clamp(26px, 3.2vw, 42px);
-  padding: 0; list-style: none;
-  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 40px);
-}
-.dn-s17-004 .facts b { display: block; margin-bottom: 4px; font-size: 1.02rem; letter-spacing: -0.024em; font-weight: 800; }
-.dn-s17-004 .facts p { margin: 0; font-size: 0.96rem; color: var(--ink-soft); }
+.dn-s17-004 .in { margin: clamp(2rem, 4vw, 3.4rem) 0 0; }
+.dn-s17-004 .in > h3 { display: flex; align-items: center; gap: 0.55rem; margin: 0; padding-bottom: 0.7rem; border-bottom: 1px solid var(--line-strong); color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s17-004 .in ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 clamp(1.2rem, 2.5vw, 2.4rem); }
+.dn-s17-004 .in li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.2rem 0.6rem; align-items: start; padding: 1rem 0 1.1rem; min-width: 0; }
+.dn-s17-004 .in li .mk { grid-row: 1 / 3; color: var(--accent); margin-top: 0.15rem; }
+.dn-s17-004 .in li.no .mk { color: var(--no); }
+.dn-s17-004 .in h4 { margin: 0; font-weight: 600; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.2; letter-spacing: -0.02em; }
+.dn-s17-004 .in li.no h4 { color: var(--no); }
+.dn-s17-004 .in p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
 
-.dn-s17-004 .door {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 24px;
-  background: var(--slot);
-  aspect-ratio: 21 / 9;
-  display: grid; place-items: center;
-  padding: clamp(14px, 2vw, 24px);
-  margin-bottom: clamp(14px, 1.8vw, 20px);
-}
-.dn-s17-004 .door span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
-.dn-s17-004 .vantage { margin: 0 0 clamp(26px, 3.2vw, 42px); font-size: 0.92rem; color: var(--ink-soft); font-weight: 600; max-width: 76ch; }
+.dn-s17-004 figure { margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; }
+.dn-s17-004 .media { position: relative; aspect-ratio: 3 / 1; background: var(--media); border-radius: 6px; }
+.dn-s17-004 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s17-004 figcaption { margin: 0.7rem 0 0; max-width: 70ch; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.dn-s17-004 figcaption b { color: var(--ink); font-weight: 600; }
+.dn-s17-004 figcaption span[data-placeholder] { color: var(--ink); font-weight: 600; }
 
-.dn-s17-004 .ring {
-  margin: 0 0 clamp(24px, 3vw, 38px);
-  padding: clamp(20px, 2.6vw, 28px) clamp(20px, 2.6vw, 30px);
-  border-radius: 24px;
-  background: var(--card);
-  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
-  line-height: 1.3; letter-spacing: -0.024em; font-weight: 700;
-  max-width: 66ch;
-}
+.dn-s17-004 .ring-line { margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; padding-top: 1rem; border-top: 3px solid var(--accent); width: min(100%, 44rem); font-weight: 600; font-size: clamp(1.15rem, 1.8vw, 1.55rem); line-height: 1.3; letter-spacing: -0.015em; }
+.dn-s17-004 .ring-line .ac { color: var(--accent); }
 
-.dn-s17-004 .close {
-  margin: 0;
-  padding-top: clamp(20px, 2.6vw, 30px);
-  border-top: 1px solid var(--line);
-  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
-  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
-  padding-right: clamp(0px, 40%, 540px);
-}
+.dn-s17-004 .foot { margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; width: min(100%, 44rem); font-weight: 600; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.3; letter-spacing: -0.015em; }
 
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .dn-s17-004 .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 860px) {
-  .dn-s17-004 .band ul { grid-template-columns: minmax(0, 1fr); gap: clamp(17px, 2.2vw, 24px); }
-  .dn-s17-004 .band h2, .dn-s17-004 .lead, .dn-s17-004 .ring, .dn-s17-004 .close { max-width: none; }
-  .dn-s17-004 .close { padding-right: 0; }
-  .dn-s17-004 .facts { grid-template-columns: minmax(0, 1fr); }
-  .dn-s17-004 .door { aspect-ratio: 16 / 9; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s17-004 * { transition: none !important; }
-}
+@media (max-width: 1000px) { .dn-s17-004 .in ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .dn-s17-004 .head, .dn-s17-004 .band { grid-template-columns: minmax(0, 1fr); } .dn-s17-004 .media { aspect-ratio: 16 / 9; } }
+@media (max-width: 560px) { .dn-s17-004 .in ul { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .dn-s17-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -200,54 +120,43 @@ body { margin: 0; background: #ffffff; }
 <div class="dn-s17-004" data-study-id="DN-S17-004" data-direction="Conversion-led">
   <section class="shell" aria-labelledby="dn-s17-004-title">
 
-    <p class="eyebrow">Where we are</p>
-    <p class="lead">One address. Nobody was ever late because they did not know it, so this is the rest of what happens on the way.</p>
+    <div class="head">
+      <div>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V4h16v17M4 21h16M9 21v-6h6v6M8 8h3M13 8h3M8 12h3M13 12h3"/></svg>Where we are</p>
+        <h2 id="dn-s17-004-title">One address. Nobody was ever late because they did not know it, so this is <span class="ac">the rest of what happens on the way.</span></h2>
+      </div>
+    </div>
 
     <div class="band">
-      <b>Why people arrive late</b>
-      <h2 id="dn-s17-004-title">None of the three reasons is traffic.</h2>
+      <div>
+        <p class="k"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>Why people arrive late</p>
+        <h3>None of the three reasons <span class="u">is traffic.<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M2 4h96" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></h3>
+      </div>
       <ul>
-        <li>
-          <b>There is no sign</b>
-          <p>The door sits between two shops. Look for the number, not a sign.</p>
-        </li>
-        <li>
-          <b>There is nowhere to leave a car</b>
-          <p>There is none here, the street is permit-only, and the nearest public car park is <span data-placeholder="true">five minutes</span> away.</p>
-        </li>
-        <li>
-          <b>Nobody asked which floor you needed</b>
-          <p>There is no lift, and a stairs-only appointment found out about on the day cannot be fixed on the day.</p>
-        </li>
+        <li><h4>There is no sign</h4><p>The door sits between two shops. Look for the number, not a sign.</p></li>
+        <li><h4>There is nowhere to leave a car</h4><p>There is none here, the street is permit-only, and the nearest public car park is <span data-placeholder="true">five minutes</span> away.</p></li>
+        <li><h4>Nobody asked which floor you needed</h4><p>There is no lift, and a stairs-only appointment found out about on the day cannot be fixed on the day.</p></li>
       </ul>
     </div>
 
-    <h3>Getting in</h3>
-    <ul class="facts">
-      <li>
-        <b>The door</b>
-        <p>Street level, no step, and the bell is on the left.</p>
-      </li>
-      <li>
-        <b>The hallway</b>
-        <p>Wide enough for a wheelchair to the ground-floor surgery.</p>
-      </li>
-      <li>
-        <b>The toilet</b>
-        <p>Not accessible, and we say so when you book.</p>
-      </li>
-      <li>
-        <b>Hearing</b>
-        <p>There is no loop. Ask and we will write things down.</p>
-      </li>
-    </ul>
+    <div class="in">
+      <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 3h6v18h-6M9 8l-4 4 4 4M5 12h10"/></svg>Getting in</h3>
+      <ul>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg><h4>The door</h4><p>Street level, no step, and the bell is on the left.</p></li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg><h4>The hallway</h4><p>Wide enough for a wheelchair to the ground-floor surgery.</p></li>
+        <li class="no"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg><h4>The toilet</h4><p>Not accessible, and we say so when you book.</p></li>
+        <li class="no"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg><h4>Hearing</h4><p>There is no loop. Ask and we will write things down.</p></li>
+      </ul>
+    </div>
 
-    <div class="door"><span>Image area &mdash; the door from across the street</span></div>
-    <p class="vantage">Taken from the far pavement, which is where you will be when you start looking for it. The bus stops are on the same street, on that side, and the station is about <span data-placeholder="true">ten minutes</span> on foot.</p>
+    <figure>
+      <div class="media" role="img" aria-label="Reserved image area: the door from across the street"><span>The door, from across the street &middot; 3:1</span></div>
+      <figcaption><b>Taken from the far pavement, which is where you will be when you start looking for it.</b> The bus stops are on the same street, on that side, and the station is about <span data-placeholder="true">ten minutes</span> on foot.</figcaption>
+    </figure>
 
-    <p class="ring">If any of this stops you coming, ring before you book rather than after.</p>
+    <p class="ring-line">If any of this stops you coming, <span class="ac">ring before you book</span> rather than after.</p>
 
-    <p class="close">An apology at the desk is worth less than this paragraph.</p>
+    <p class="foot">An apology at the desk is worth less than this paragraph.</p>
 
   </section>
 </div>

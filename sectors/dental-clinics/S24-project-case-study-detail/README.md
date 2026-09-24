@@ -70,9 +70,9 @@ DN-S24-005
 | --- | --- |
 | `DN-S24-001` | Universal / Safe |
 | `DN-S24-002` | Premium / Editorial |
-| `DN-S24-003` | Dense / Information-heavy |
+| `DN-S24-003` | Structured / Visual Modular |
 | `DN-S24-004` | Conversion-led |
-| `DN-S24-005` | Sector-native / Distinctive |
+| `DN-S24-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -98,8 +98,16 @@ Nearest existing section in this sector: S14 Clinic Gallery (`S14-clinic-gallery
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope and Preview
+
+Five modern anonymised case-detail studies. Case-specific content and all photography remain explicitly reserved; no patient story or outcome is fabricated.
+
+[Compare five studies](../../../review/dental-case-detail.html).
+
+Regenerate: powershell -NoProfile -ExecutionPolicy Bypass -File review/build-dental-case-detail.ps1

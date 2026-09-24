@@ -12,45 +12,23 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S12 — Emergency Dental Care
   Direction      : Premium / Editorial
-  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. One reserved area.**
-  Layout model   : **The third list takes the measure at display size** — the one most readers are on —
-                   with the two urgent lists above it as short blocks
-  Density        : Structured (see count below, structured band 170–230)
-  Media mode     : One reserved area — **the surgery the middle list ends up in**, placed after the
-                   two urgent lists and before the one that can wait.
-  Interaction    : None (static; no JavaScript). No links, no form.
-
-  Governing idea : **Most of what wakes people at night can wait until morning. Three things cannot,
-                   and they are first.**
-
-  The editorial cut — weight the lists by who is reading :
-                   A triage is normally set with the most serious list largest, which is a judgement
-                   about severity and not about readership. **Almost nobody reading a clinic website at
-                   midnight has an airway closing.** They have a filling that has come out, or a crown
-                   in their hand, or an ache that started at ten.
-                   So the two urgent lists are short, hard blocks at the top — they need to be
-                   findable, not large — and **the list that takes the measure at display size is the
-                   one that ends `none of it is worse at nine`.** That sentence is the most useful on
-                   the page and the one no competitor prints, because it talks somebody out of ringing.
-                   Severity decides the order. **Readership decides the size.**
-
-  The media, per the contract :
-                   The surgery, and it belongs between the lists rather than above them. The first list
-                   goes to a hospital and the third goes back to bed; **the only list that arrives in
-                   this room is the middle one**, so the room sits where that list ends.
-
-  The escape hatch :
-                   **If you are not sure which list you are on, ring.** No triage on a website is a
-                   substitute for somebody asking questions.
-
-  Placeholder data : The number of appointments held each day is a PLACEHOLDER DEMO VALUE marked
-                   data-placeholder="true".
-
-  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price,
-                   no credential, no testimonial, no *24/7*, no telephone number, no clock time. No
-                   stock smile, no open mouth, no instrument near a face, no aqua palette, no red
-                   alarm colour. No global header or navigation.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 2 — the
+                   third list takes the measure: the eyebrow and V1's lead as the head; the
+                   first two lists as ruled columns — HOSPITAL, NOT US on the plum rule and
+                   TODAY, AND RING FIRST on the lead rule; the surgery the middle list ends up
+                   in edge to edge at 21:9 captioned with V1's line; then "It can wait until
+                   morning." at display size under the 002 arc with the wait list beneath it as
+                   one run of sentences; the two facts as ruled columns; the ring line; the
+                   closing line on the lead rule. Shape B. V1 is kept whole.
+  Layout model   : Head; two ruled list columns; 21:9 field edge to edge; the third list at display size with the arc; two ruled facts; ring line; closing line on the lead rule
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the surgery the middle list ends up in, after the
+                   second list. Never a patient, never a mouth. Empty flat field, labelled.
+  Interaction    : None. No link, no form.
+  Content note   : The number of appointments held each day is a PLACEHOLDER DEMO VALUE marked
+                   data-placeholder="true" and declared in the meta block. No phone number
+                   printed. No countdown, no pain word, no guarantee. No tooth iconography, no
+                   aqua. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S12-002">
@@ -63,125 +41,74 @@
 <meta name="direction" content="Premium / Editorial">
 <meta name="theme" content="002 Linen">
 <meta name="section-shape" content="B — anchored, one reserved area">
-<meta name="layout-model" content="The third list takes the measure at display size, the two urgent lists above it as short blocks">
+<meta name="layout-model" content="Head; the hospital and today lists as ruled columns; the surgery the middle list ends up in edge to edge at 21:9; it can wait until morning at display size under the arc with its list as one run; the two facts as ruled columns; the ring line; the closing line on the lead rule">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-surgery-the-middle-list-ends-up-in">
-<meta name="interaction" content="none-no-links-no-form">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="appointments held each day — demo value, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S12-002 — Emergency Dental Care, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #f3efe8; }
 
-/* Scoped study styles — namespaced to .dn-s12-002 */
 .dn-s12-002 {
-  --paper: #f3efe8;
-  --ink: #1b1714;
-  --ink-soft: #6a6058;
-  --line: #ddd5c9;
-  --accent: #a2543a;
-  --slot: #e9e2d8;
-  --slot-edge: #c6bcae;
-  --slot-ink: #635b53;
-  --focus: #1b1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f3efe8; --ink: #1b1714; --muted: #68625a; --line: #dad2c6; --line-strong: #1b1714;
+  --media: #e6dfd4; --band: #ebe5da; --accent: #a2543a; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s12-002 *,
-.dn-s12-002 *::before,
-.dn-s12-002 *::after { box-sizing: inherit; }
-.dn-s12-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+.dn-s12-002 *, .dn-s12-002 *::before, .dn-s12-002 *::after { box-sizing: inherit; }
+.dn-s12-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s12-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
+.dn-s12-002 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s12-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s12-002 .eyebrow {
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent);
-}
-.dn-s12-002 .lead { margin: 0 0 clamp(26px, 3.2vw, 42px); max-width: 52ch; color: var(--ink-soft); font-size: clamp(1.08rem, 1.36vw, 1.24rem); }
+.dn-s12-002 .head { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.dn-s12-002 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s12-002 h2 { margin: 0; max-width: 18ch; font-weight: 600; font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1.05; letter-spacing: -0.03em; }
+.dn-s12-002 h2 .ac { color: var(--accent); }
 
-/* --- The two that must be findable, not large --- */
-.dn-s12-002 .urgent {
-  margin: 0 0 clamp(26px, 3.2vw, 42px);
-  padding: 0 0 clamp(24px, 3vw, 36px);
-  border-bottom: 1px solid var(--line);
-  list-style: none;
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(24px, 3.2vw, 54px);
-}
-.dn-s12-002 .urgent h3 { margin: 0 0 7px; font-size: clamp(1.16rem, 1.55vw, 1.38rem); letter-spacing: -0.028em; font-weight: 800; }
-.dn-s12-002 .urgent li:last-child h3 { color: var(--accent); }
-.dn-s12-002 .urgent p { margin: 0; font-size: 1rem; color: var(--ink-soft); }
-.dn-s12-002 .urgent .do { margin-top: 7px !important; color: var(--ink) !important; font-weight: 700; }
+.dn-s12-002 .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin: clamp(2rem, 4vw, 3.4rem) 0 0; }
+.dn-s12-002 .two h3 { display: flex; align-items: center; gap: 0.55rem; margin: 0; padding-bottom: 0.7rem; border-bottom: 3px solid var(--accent); color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s12-002 .two .no h3 { border-bottom-color: var(--no); color: var(--no); }
+.dn-s12-002 .two ul { list-style: none; margin: 0; padding: 0; }
+.dn-s12-002 .two li { padding: 0.65rem 0 0.7rem; border-bottom: 1px solid var(--line); font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.35; }
+.dn-s12-002 .two p { margin: 0.8rem 0 0; font-weight: 600; font-size: 0.92rem; line-height: 1.5; }
+.dn-s12-002 .two .no p { color: var(--no); }
 
-.dn-s12-002 .room {
-  border: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  aspect-ratio: 24 / 7;
-  display: grid; place-items: center;
-  padding: clamp(16px, 2.2vw, 28px);
-  margin: 0 calc(-1 * clamp(22px, 3.6vw, 58px)) clamp(10px, 1.3vw, 14px);
-}
-.dn-s12-002 .room span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; }
-.dn-s12-002 .cap { margin: 0 0 clamp(30px, 3.8vw, 52px); font-size: 0.9rem; color: var(--ink-soft); }
+.dn-s12-002 figure { margin: clamp(1.8rem, 3.5vw, 3rem) calc(-1 * clamp(1rem, 4.5vw, 4.5rem)) 0; }
+.dn-s12-002 .media { position: relative; aspect-ratio: 21 / 9; background: var(--media); }
+.dn-s12-002 .media span { position: absolute; left: clamp(1rem, 4.5vw, 4.5rem); bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s12-002 figcaption { margin: 0.6rem 0 0; padding: 0 clamp(1rem, 4.5vw, 4.5rem); color: var(--muted); font-size: 0.8rem; }
+.dn-s12-002 figcaption b { color: var(--ink); font-weight: 600; }
 
-/* --- And the one most people are on --- */
-.dn-s12-002 h2 {
-  margin: 0 0 clamp(14px, 1.8vw, 20px);
-  font-size: clamp(2rem, 3.9vw, 3.15rem);
-  line-height: 1.02; letter-spacing: -0.042em; font-weight: 800;
-  max-width: 20ch;
-}
-.dn-s12-002 .wait { margin: 0 0 clamp(28px, 3.4vw, 46px); max-width: 56ch; font-size: clamp(1.14rem, 1.6vw, 1.42rem); line-height: 1.28; letter-spacing: -0.024em; color: var(--ink-soft); }
-.dn-s12-002 .wait b { color: var(--ink); font-weight: 800; }
+.dn-s12-002 .wait { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; margin: clamp(2.4rem, 5vw, 4.6rem) 0 0; padding-top: 1.2rem; }
+.dn-s12-002 .wait > svg.arc { position: absolute; right: 0; top: -1.2rem; width: clamp(9rem, 16vw, 15rem); height: clamp(9rem, 16vw, 15rem); color: var(--accent); pointer-events: none; }
+.dn-s12-002 .wait h3 { position: relative; margin: 0; max-width: 12ch; font-weight: 600; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 0.98; letter-spacing: -0.035em; }
+.dn-s12-002 .wait h3 .ac { color: var(--accent); }
+.dn-s12-002 .wait p { position: relative; margin: 0 0 0.3em; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
+.dn-s12-002 .wait p b { font-weight: 600; }
 
-/* --- What we are, and are not --- */
-.dn-s12-002 .us {
-  margin: 0 0 clamp(24px, 3vw, 38px);
-  padding: clamp(22px, 2.8vw, 32px) 0 0;
-  border-top: 1px solid var(--line);
-  list-style: none;
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 46px);
-}
-.dn-s12-002 .us b { display: block; margin-bottom: 5px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
-.dn-s12-002 .us p { margin: 0; font-size: 0.99rem; color: var(--ink-soft); }
+.dn-s12-002 .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin: clamp(2rem, 4vw, 3.4rem) 0 0; }
+.dn-s12-002 .facts div { padding-top: 0.9rem; border-top: 1px solid var(--line-strong); }
+.dn-s12-002 .facts h3 { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 0.4rem; font-weight: 600; font-size: clamp(1.15rem, 1.8vw, 1.55rem); line-height: 1.15; letter-spacing: -0.025em; }
+.dn-s12-002 .facts h3 .mk { color: var(--accent); }
+.dn-s12-002 .facts div.no h3 .mk { color: var(--no); }
+.dn-s12-002 .facts p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.dn-s12-002 .facts span[data-placeholder] { color: var(--accent); }
 
-.dn-s12-002 .ask { margin: 0 0 clamp(24px, 3vw, 38px); font-size: clamp(1.1rem, 1.45vw, 1.32rem); line-height: 1.3; letter-spacing: -0.024em; font-weight: 800; max-width: 52ch; }
+.dn-s12-002 .ring-line { margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; max-width: 40ch; font-weight: 600; font-size: clamp(1.15rem, 1.8vw, 1.55rem); line-height: 1.3; letter-spacing: -0.015em; }
+.dn-s12-002 .ring-line .ac { color: var(--accent); }
 
-.dn-s12-002 .close {
-  margin: 0;
-  padding-top: clamp(20px, 2.6vw, 30px);
-  border-top: 1px solid var(--line);
-  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
-  line-height: 1.22; letter-spacing: -0.028em; font-weight: 800;
-  max-width: 34ch;
-}
+.dn-s12-002 .foot { margin: clamp(1.4rem, 2.5vw, 2rem) 0 0; padding-top: 0.9rem; border-top: 3px solid var(--accent); width: min(100%, 44rem); font-weight: 600; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.3; letter-spacing: -0.015em; }
 
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .dn-s12-002 h2, .dn-s12-002 .lead, .dn-s12-002 .wait, .dn-s12-002 .ask, .dn-s12-002 .close { max-width: none; }
-  .dn-s12-002 .urgent { grid-template-columns: minmax(0, 1fr); }
-  .dn-s12-002 .us { grid-template-columns: minmax(0, 1fr); }
-  .dn-s12-002 .room { aspect-ratio: 16 / 9; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s12-002 * { transition: none !important; }
-}
+@media (max-width: 860px) { .dn-s12-002 .head, .dn-s12-002 .two, .dn-s12-002 .wait, .dn-s12-002 .facts { grid-template-columns: minmax(0, 1fr); } .dn-s12-002 .media { aspect-ratio: 16 / 9; } .dn-s12-002 .wait > svg.arc { width: 7rem; height: 7rem; top: -0.4rem; } }
+@media (prefers-reduced-motion: reduce) { .dn-s12-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -189,42 +116,59 @@ body { margin: 0; background: #f3efe8; }
 <div class="dn-s12-002" data-study-id="DN-S12-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="dn-s12-002-title">
 
-    <p class="eyebrow">Emergencies</p>
-    <p class="lead">Most of what wakes people at night can wait until morning. Three things cannot, and they are first.</p>
+    <div class="head">
+      <div>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 8v5M12 16v.5"/></svg>Emergencies</p>
+        <h2 id="dn-s12-002-title">Most of what wakes people at night can wait until morning. <span class="ac">Three things cannot,</span> and they are first.</h2>
+      </div>
+    </div>
 
-    <ul class="urgent">
-      <li>
-        <h3>Hospital, not us</h3>
-        <p>Bleeding that will not stop. Swelling closing an eye, or making it hard to swallow. A blow to the head.</p>
-        <p class="do">These are not dental appointments.</p>
-      </li>
-      <li>
-        <h3>Today, and ring first</h3>
-        <p>A tooth knocked out or knocked loose. A broken tooth with the nerve showing. Swelling in the face that is growing.</p>
-        <p class="do">Ring as soon as you can; for a knocked-out tooth the first hour matters most.</p>
-      </li>
-    </ul>
+    <div class="two">
+      <div class="no">
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>Hospital, not us</h3>
+        <ul>
+          <li>Bleeding that will not stop.</li>
+          <li>Swelling closing an eye, or making it hard to swallow.</li>
+          <li>A blow to the head.</li>
+        </ul>
+        <p>These are not dental appointments.</p>
+      </div>
+      <div>
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h16v10H4zM8 8V5h8v3M12 13h.01"/></svg>Today, and ring first</h3>
+        <ul>
+          <li>A tooth knocked out or knocked loose.</li>
+          <li>A broken tooth with the nerve showing.</li>
+          <li>Swelling in the face that is growing.</li>
+        </ul>
+        <p>Ring as soon as you can; for a knocked-out tooth the first hour matters most.</p>
+      </div>
+    </div>
 
-    <div class="room"><span>Image area &mdash; the surgery the middle list ends up in</span></div>
-    <p class="cap">The only list that arrives in this room is the second one.</p>
+    <figure>
+      <div class="media" role="img" aria-label="Reserved image area: the surgery the middle list ends up in"><span>The room &middot; 21:9</span></div>
+      <figcaption><b>The only list that arrives in this room is the second one.</b> Image area &mdash; the surgery the middle list ends up in</figcaption>
+    </figure>
 
-    <h2 id="dn-s12-002-title">It can wait until morning.</h2>
-    <p class="wait">A lost filling. A lost crown. A chipped edge that does not hurt. An ulcer. Cold sensitivity. <b>Frightening at midnight, and none of it is worse at nine.</b></p>
+    <div class="wait">
+      <svg class="arc" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M2 98A96 96 0 0 1 98 2" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <h3>It can wait <span class="ac">until morning.</span></h3>
+      <p>A lost filling. A lost crown. A chipped edge that does not hurt. An ulcer. Cold sensitivity. <b>Frightening at midnight, and none of it is worse at nine.</b></p>
+    </div>
 
-    <ul class="us">
-      <li>
-        <b>We are not open at night or on Sunday</b>
+    <div class="facts">
+      <div class="no">
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>We are not open at night or on Sunday</h3>
         <p>The out-of-hours number is on the contact page, answered by people who do this all night.</p>
-      </li>
-      <li>
-        <b>We keep <span data-placeholder="true">two</span> appointments free every working day</b>
+      </div>
+      <div>
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v15H4zM4 10h16M8 3v4M16 3v4"/></svg>We keep <span data-placeholder="true">two</span> appointments free every working day</h3>
         <p>They are for the middle list. Not bookable in advance &mdash; they are for that day.</p>
-      </li>
-    </ul>
+      </div>
+    </div>
 
-    <p class="ask">If you are not sure which list you are on, ring. Guessing from a list is not your job.</p>
+    <p class="ring-line">If you are not sure which list you are on, <span class="ac">ring.</span> Guessing from a list is not your job.</p>
 
-    <p class="close">Most of this list is us telling you not to come tonight.</p>
+    <p class="foot">Most of this list is us telling you not to come tonight.</p>
 
   </section>
 </div>

@@ -105,7 +105,7 @@ Authored against `../DENTAL-THEME-CONTRACT.md`. Every answer points back to `S01
 
 # Status
 
-AUTHORED — five studies. Batch record in `./BATCH-V1.md`.
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in `./BATCH-V2.md`; original authoring record in `./BATCH-V1.md`.
 
 # Raw Path
 

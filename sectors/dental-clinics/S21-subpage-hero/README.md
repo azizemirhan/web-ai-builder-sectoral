@@ -63,9 +63,9 @@ DN-S21-005
 | --- | --- |
 | `DN-S21-001` | Universal / Safe |
 | `DN-S21-002` | Premium / Editorial |
-| `DN-S21-003` | Dense / Information-heavy |
+| `DN-S21-003` | Structured / Visual Modular |
 | `DN-S21-004` | Conversion-led |
-| `DN-S21-005` | Sector-native / Distinctive |
+| `DN-S21-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,8 +91,23 @@ Homepage hero for this sector: S01 Hero (`S01-hero/`).
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Example
+
+All five variants introduce the internal patient-information page **Your first visit**.
+They use a page-level h1 and data-region="page-context". Variants 001 and 004 deliberately omit
+media. Only 004 has an action, linking to the matching S19 contact study. No breadcrumb navigation
+or page-body content is included.
+
+# Preview
+
+[Compare the five subpage heroes](../../../review/dental-subpage-hero.html).
+
+Regenerate from the workspace root:
+
+    powershell -NoProfile -ExecutionPolicy Bypass -File review/build-dental-subpage-hero.ps1

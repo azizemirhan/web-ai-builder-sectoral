@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : DN-S19-001
+  Sector         : Dental Clinics (DN)
+  Section        : DN-S19 — Contact
+  Direction      : Universal / Safe
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 1 — the
+                   welcome beside the message: the head "A little hello. A good start." with
+                   "A good start." in the accent and the 001 ring behind it; the reception
+                   area as a bare 3:2 field; the three routes — CALL RECEPTION, EMAIL THE
+                   TEAM, PLAN YOUR VISIT — as ruled rows with their reserved tokens shown open
+                   as placeholder chips, no disclosure to open; beside them the message form
+                   with three fields on 1px ink borders and the review action as a bordered
+                   button that does nothing on this page, said plainly beneath. No script.
+                   Shape B. V1 is kept whole.
+  Layout model   : Head with a ring; 3:2 field; three ruled contact rows beside a three-field form; the honesty line
+  Density        : Standard — V1's spine kept in full
+  Media mode     : ONE reserved area — the reception area, the first point of contact. Never
+                   a patient, never a mouth. Empty flat field, labelled.
+  Interaction    : A static form. Nothing is sent, stored or copied; no script runs. The
+                   review action is a button that goes nowhere, and the copy beneath says so.
+  Content note   : Clinic telephone, email, address and hours are RESERVED TOKENS marked
+                   data-placeholder="true" and declared in the meta block — never real
+                   contact details. No tooth iconography, no aqua. Inline SVG, decorative. No
+                   header or navigation.
+-->
+
+<meta name="study-id" content="DN-S19-001">
+<meta name="sector" content="Dental Clinics">
+<meta name="sector-prefix" content="DN">
+<meta name="section-id" content="DN-S19">
+<meta name="section-name" content="Contact">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="001 Chalk">
+<meta name="section-shape" content="B — anchored, one reserved area">
+<meta name="layout-model" content="Head with the ring behind; the reception area as a 3:2 field; the three contact routes as ruled rows with their reserved tokens open, beside a static three-field message form with the review action and the honesty line">
+<meta name="density" content="standard">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="static form; nothing sent, no script">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="Clinic telephone, email, address and hours are reserved tokens, not real contact details.">
+<meta name="batch" content="V2-detailing">
+
+<title>DN-S19-001 — Contact, Universal / Safe</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f6f4f1; }
+
+.dn-s19-001 {
+  --paper: #f6f4f1; --ink: #16181b; --muted: #5b5f64; --line: #dcd9d3; --line-strong: #16181b;
+  --media: #e7e4de; --band: #eeece7; --accent: #1f6f5c; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.dn-s19-001 *, .dn-s19-001 *::before, .dn-s19-001 *::after { box-sizing: inherit; }
+.dn-s19-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.dn-s19-001 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s19-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.dn-s19-001 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.dn-s19-001 .head > svg.ring { position: absolute; right: -4%; top: -60%; width: clamp(14rem, 26vw, 24rem); height: clamp(14rem, 26vw, 24rem); color: var(--line); pointer-events: none; z-index: 0; }
+.dn-s19-001 .eyebrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s19-001 h2 { position: relative; z-index: 1; margin: 0; max-width: 14ch; font-weight: 600; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 0.98; letter-spacing: -0.035em; }
+.dn-s19-001 h2 .ac { color: var(--accent); }
+.dn-s19-001 .lead { position: relative; z-index: 1; margin: 0 0 0.3em; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
+
+.dn-s19-001 figure { margin: clamp(2rem, 4vw, 3.4rem) 0 0; }
+.dn-s19-001 .media { position: relative; aspect-ratio: 3 / 1; background: var(--media); border-radius: 6px; }
+.dn-s19-001 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s19-001 figcaption { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; }
+
+.dn-s19-001 .body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 1fr); gap: clamp(2rem, 5vw, 5rem); margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; }
+.dn-s19-001 .routes { list-style: none; margin: 0; padding: 0; border-top: 3px solid var(--accent); }
+.dn-s19-001 .routes li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.3rem 0.8rem; align-items: start; padding: 1rem 0 1.1rem; border-bottom: 1px solid var(--line); }
+.dn-s19-001 .routes li .mk { grid-row: 1 / 4; color: var(--accent); margin-top: 0.2rem; }
+.dn-s19-001 .routes h3 { margin: 0; font-weight: 600; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.15; letter-spacing: -0.02em; }
+.dn-s19-001 .routes p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.dn-s19-001 .routes .tok { display: flex; flex-wrap: wrap; gap: 0.4rem 0.6rem; margin: 0.2rem 0 0; }
+.dn-s19-001 .chip { display: inline-block; padding: 0.25rem 0.5rem; border: 1px solid var(--ink); border-radius: 4px; color: var(--ink); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.2; }
+.dn-s19-001 .chip b { font-weight: 700; color: var(--muted); margin-right: 0.35rem; }
+
+.dn-s19-001 form { margin: 0; padding-top: 1rem; border-top: 1px solid var(--line-strong); }
+.dn-s19-001 form h3 { margin: 0 0 0.3rem; font-weight: 600; font-size: clamp(1.15rem, 1.8vw, 1.55rem); line-height: 1.15; letter-spacing: -0.025em; }
+.dn-s19-001 form > p { margin: 0 0 1.2rem; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.dn-s19-001 .field { display: grid; gap: 0.35rem; margin: 0 0 0.9rem; }
+.dn-s19-001 label { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+.dn-s19-001 input, .dn-s19-001 textarea { width: 100%; padding: 0.75rem 0.85rem; border: 1px solid var(--line-strong); border-radius: 4px; background: var(--paper); color: var(--ink); font: inherit; font-size: 0.95rem; line-height: 1.4; }
+.dn-s19-001 textarea { min-height: 7rem; resize: vertical; }
+.dn-s19-001 input::placeholder, .dn-s19-001 textarea::placeholder { color: var(--muted); }
+.dn-s19-001 .hint { margin: 0 0 1rem; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+.dn-s19-001 .act { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem 1.4rem; }
+.dn-s19-001 .btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.3rem; border: 1px solid var(--ink); border-radius: 4px; background: transparent; color: var(--ink); cursor: pointer; font: inherit; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+.dn-s19-001 .btn .mk { width: 1rem; height: 1rem; }
+.dn-s19-001 .act p { margin: 0; color: var(--muted); font-size: 0.85rem; }
+.dn-s19-001 .honest { margin: 1.2rem 0 0; padding-left: 1.1rem; border-left: 2px solid var(--no); color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+.dn-s19-001 .honest b { color: var(--no); font-weight: 600; }
+
+@media (max-width: 860px) { .dn-s19-001 .head, .dn-s19-001 .body { grid-template-columns: minmax(0, 1fr); } .dn-s19-001 .media { aspect-ratio: 16 / 9; } }
+@media (prefers-reduced-motion: reduce) { .dn-s19-001 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="dn-s19-001" data-study-id="DN-S19-001" data-direction="Universal / Safe">
+  <section class="shell" aria-labelledby="dn-s19-001-title">
+
+    <div class="head">
+      <svg class="ring" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="48.5" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+      <div>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Let&rsquo;s talk</p>
+        <h2 id="dn-s19-001-title">A little hello. <span class="ac">A good start.</span></h2>
+      </div>
+      <p class="lead">A first visit, a small question, or something you&rsquo;ve been putting off. Start wherever feels right.</p>
+    </div>
+
+    <figure>
+      <div class="media" role="img" aria-label="Reserved image area: the reception area, your first point of contact"><span>Reception &middot; 3:1</span></div>
+      <figcaption>Image area &mdash; the reception area, your first point of contact</figcaption>
+    </figure>
+
+    <div class="body">
+      <ul class="routes">
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h16v10H4zM8 8V5h8v3M12 13h.01"/></svg><h3>Call reception</h3><div class="tok" data-placeholder="true"><span class="chip"><b>Telephone</b>[Clinic telephone]</span><span class="chip"><b>Reception hours</b>[Opening days and hours]</span></div></li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg><h3>Email the team</h3><div class="tok" data-placeholder="true"><span class="chip"><b>Email</b>[Clinic email]</span></div><p>For general questions. Keep sensitive health information out of your first email.</p></li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V4h16v17M4 21h16M9 21v-6h6v6M8 8h3M13 8h3M8 12h3M13 12h3"/></svg><h3>Plan your visit</h3><div class="tok" data-placeholder="true"><span class="chip"><b>Find us</b>[Clinic address], [Town / postcode]</span><span class="chip"><b>Reception hours</b>[Opening days and hours]</span></div></li>
+      </ul>
+
+      <form>
+        <h3>What&rsquo;s on your mind?</h3>
+        <p>You don&rsquo;t need to know the treatment name. A few words are enough.</p>
+        <div class="field"><label for="dn-s19-001-name">Your name</label><input id="dn-s19-001-name" name="name" type="text" autocomplete="name" placeholder="How should we address you?"></div>
+        <div class="field"><label for="dn-s19-001-email">Email address</label><input id="dn-s19-001-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="dn-s19-001-message">How can we help?</label><textarea id="dn-s19-001-message" name="message" placeholder="A question is a good place to start."></textarea></div>
+        <p class="hint">For general enquiries. Please leave out sensitive health information.</p>
+        <div class="act">
+          <button type="button" class="btn"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg>Review message</button>
+          <p>Review your message before sharing it by email.</p>
+        </div>
+        <p class="honest"><b>Nothing has been sent.</b> Your message, ready to copy into your email to <span data-placeholder="true">[Clinic email]</span>.</p>
+      </form>
+    </div>
+
+  </section>
+</div>
+
+</body>
+</html>

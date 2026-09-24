@@ -12,49 +12,22 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S15 — Dental FAQ
   Direction      : Universal / Safe
-  Theme          : 001 Chalk — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. One reserved area.**
-  Layout model   : Six questions in two runs, in the order they are actually asked, then the three we
-                   cannot answer, then the desk they are asked at
-  Density        : Structured (see count below, structured band 170–230)
-  Media mode     : One reserved area — **the desk where these are actually asked.** The only honest
-                   subject an FAQ has, and the one that supports the claim about where the list came
-                   from.
-  Interaction    : None (static; no JavaScript). No links, no form, **no accordion.**
-
-  Governing idea : **Nobody asks the questions in a normal FAQ. These are the six we are asked, in the
-                   order we are asked them, and the first one is money.**
-
-                   The sector's version is a list the clinic wishes it were asked — *do you accept new
-                   patients, how often should I visit, what are your opening hours* — answered with
-                   reassurance. It is a marketing surface wearing question marks, and every reader can
-                   feel that nobody said those sentences out loud.
-                   **The check here is the source.** These six are what gets asked at a desk, and the
-                   ordering is a claim that can be tested by anybody who works at one: **money first,
-                   because it always is.** Every FAQ in this sector puts opening hours first and the
-                   price question fourth, if it appears at all.
-
-  Why there is no accordion :
-                   The collapsed FAQ exists to make a long list look short, and it hides the answers a
-                   clinic would rather not have read. **If six questions are the right six, they fit on
-                   the page open.** No JavaScript, no `<details>`, nothing to click.
-
-  The answers repay commitments made elsewhere :
-                   The price answer is `S10`'s. The stop signal is `S01`'s. *Sometimes not yet* is
-                   `S08`'s. *Pay for what was done* is `S10`'s again, and *we move the appointment
-                   rather than swap the person* is `S08`'s. **An FAQ that answers with new material is
-                   an FAQ making things up.**
-
-  The three we cannot answer :
-                   How long a filling will last, whether more work will be needed, whether the pain
-                   comes back. **We can tell you what usually happens. Nobody can tell you what will
-                   happen to you.** No clinic prints this and it is the only honest limit on the whole
-                   section.
-
-  Content note   : No outcome guarantee, **no *pain-free* or *gentle*** — the hurt question is answered
-                   with a procedure rather than a reassurance. No superiority claim, no price figure,
-                   no credential, no testimonial. No stock smile, no open mouth, no instrument near a
-                   face, no aqua palette. No global header or navigation.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 1 — six
+                   questions in the order they are actually asked: the head with "actually
+                   asked" in the accent and the 001 ring behind it; the six as ruled lines in
+                   two columns, each with a word-numeral key, the question at subhead size and
+                   the answer beneath — ONE on the lead rule; the desk where these are
+                   actually asked as a bare 3:1 field; THREE WE CANNOT ANSWER as a ruled row
+                   of three on the plum rule with struck marks and V1's line beneath; the
+                   closing line. No accordion, nothing folds. Shape B. V1 is kept whole.
+  Layout model   : Head with a ring; six ruled question lines in two columns; 3:1 field; ruled row of three on the plum rule; closing line
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the desk where these are actually asked. Never a
+                   patient, never a mouth. Empty flat field, labelled.
+  Interaction    : None. No link, no form, no accordion.
+  Content note   : No figure, count or name appears in this study. The duration is V1's
+                   word-numeral. No pain-free or guarantee word. No tooth iconography, no
+                   aqua. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S15-001">
@@ -67,129 +40,65 @@
 <meta name="direction" content="Universal / Safe">
 <meta name="theme" content="001 Chalk">
 <meta name="section-shape" content="B — anchored, one reserved area">
-<meta name="layout-model" content="Six questions in two runs in the order they are actually asked, then the three we cannot answer, then the desk">
+<meta name="layout-model" content="Head with the ring behind; the six questions as ruled lines in two columns with word-numeral keys, the first on the lead rule; the desk as a 3:1 field; three we cannot answer as a ruled row on the plum rule; the closing line">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-desk-where-these-are-actually-asked">
-<meta name="interaction" content="none-no-links-no-form-no-accordion">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="none — no figure, count or name appears in this study">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S15-001 — Dental FAQ, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #f6f4f1; }
 
-/* Scoped study styles — namespaced to .dn-s15-001 */
 .dn-s15-001 {
-  --paper: #f6f4f1;
-  --ink: #16181b;
-  --ink-soft: #575c60;
-  --line: #ddd9d3;
-  --card: #ffffff;
-  --accent: #1f6f5c;
-  --accent-ink: #ffffff;
-  --slot: #eae7e2;
-  --slot-edge: #c6c2bb;
-  --slot-ink: #5d6165;
-  --focus: #16181b;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f4f1; --ink: #16181b; --muted: #5b5f64; --line: #dcd9d3; --line-strong: #16181b;
+  --media: #e7e4de; --band: #eeece7; --accent: #1f6f5c; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s15-001 *,
-.dn-s15-001 *::before,
-.dn-s15-001 *::after { box-sizing: inherit; }
-.dn-s15-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 16px; }
+.dn-s15-001 *, .dn-s15-001 *::before, .dn-s15-001 *::after { box-sizing: inherit; }
+.dn-s15-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s15-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.dn-s15-001 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s15-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s15-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
-  gap: clamp(24px, 3.4vw, 54px);
-  align-items: end;
-  margin-bottom: clamp(26px, 3.2vw, 42px);
-}
-.dn-s15-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 17px);
-  padding: 7px 15px; border-radius: 999px;
-  background: rgba(31, 111, 92, 0.12); color: var(--accent);
-  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
-}
-.dn-s15-001 h2 {
-  margin: 0;
-  font-size: clamp(1.95rem, 3.5vw, 2.9rem);
-  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
-  max-width: 20ch;
-}
-.dn-s15-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 50ch; }
+.dn-s15-001 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.dn-s15-001 .head > svg.ring { position: absolute; right: -4%; top: -60%; width: clamp(14rem, 26vw, 24rem); height: clamp(14rem, 26vw, 24rem); color: var(--line); pointer-events: none; z-index: 0; }
+.dn-s15-001 .eyebrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s15-001 h2 { position: relative; z-index: 1; margin: 0; max-width: 14ch; font-weight: 600; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 0.98; letter-spacing: -0.035em; }
+.dn-s15-001 h2 .ac { color: var(--accent); }
+.dn-s15-001 .lead { position: relative; z-index: 1; margin: 0 0 0.3em; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
 
-/* --- Six, in the order they are asked. Open, not collapsed. --- */
-.dn-s15-001 .asked {
-  margin: 0 0 clamp(28px, 3.4vw, 46px);
-  padding: 0; list-style: none;
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 2.6vw, 32px) clamp(28px, 3.6vw, 58px);
-}
-.dn-s15-001 .asked > li { padding-bottom: clamp(18px, 2.3vw, 26px); border-bottom: 1px solid var(--line); }
-.dn-s15-001 .asked h3 { margin: 0 0 7px; font-size: clamp(1.1rem, 1.42vw, 1.28rem); letter-spacing: -0.026em; font-weight: 800; }
-.dn-s15-001 .asked li:first-child h3 { color: var(--accent); }
-.dn-s15-001 .asked p { margin: 0; font-size: 0.99rem; color: var(--ink-soft); }
+.dn-s15-001 .qs { list-style: none; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); }
+.dn-s15-001 .qs li { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); gap: 0.3rem 0.6rem; align-items: baseline; padding: 1rem 0 1.1rem; border-top: 1px solid var(--line); min-width: 0; }
+.dn-s15-001 .qs li.first { border-top: 3px solid var(--accent); }
+.dn-s15-001 .qs .k { color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s15-001 .qs h3 { margin: 0; font-weight: 600; font-size: clamp(1.15rem, 1.8vw, 1.55rem); line-height: 1.15; letter-spacing: -0.025em; }
+.dn-s15-001 .qs p { grid-column: 2; margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.dn-s15-001 .qs p b { color: var(--ink); font-weight: 600; }
 
-.dn-s15-001 .desk {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 16px;
-  background: var(--slot);
-  aspect-ratio: 32 / 9;
-  display: grid; place-items: center;
-  padding: clamp(14px, 2vw, 24px);
-  margin-bottom: clamp(26px, 3.2vw, 42px);
-}
-.dn-s15-001 .desk span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+.dn-s15-001 figure { margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; }
+.dn-s15-001 .media { position: relative; aspect-ratio: 3 / 1; background: var(--media); border-radius: 6px; }
+.dn-s15-001 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s15-001 figcaption { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; }
 
-/* --- And the three we cannot --- */
-.dn-s15-001 .cannot {
-  margin: 0 0 clamp(24px, 3vw, 38px);
-  padding: clamp(24px, 3vw, 38px) clamp(22px, 2.8vw, 34px);
-  border-radius: 16px;
-  background: var(--card);
-}
-.dn-s15-001 .cannot b { display: block; margin-bottom: 8px; font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); }
-.dn-s15-001 .cannot p { margin: 0; font-size: clamp(1.06rem, 1.36vw, 1.24rem); line-height: 1.34; letter-spacing: -0.02em; }
-.dn-s15-001 .cannot .why { margin-top: 9px; font-size: 0.99rem; color: var(--ink-soft); font-weight: 600; letter-spacing: 0; }
+.dn-s15-001 .cant { margin: clamp(2rem, 4vw, 3.4rem) 0 0; }
+.dn-s15-001 .cant > h3 { display: flex; align-items: center; gap: 0.55rem; margin: 0; padding-bottom: 0.7rem; border-bottom: 3px solid var(--no); color: var(--no); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s15-001 .cant ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.2rem, 2.5vw, 2.4rem); }
+.dn-s15-001 .cant li { display: flex; gap: 0.6rem; align-items: baseline; padding: 1rem 0 0.6rem; font-weight: 600; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.25; letter-spacing: -0.015em; }
+.dn-s15-001 .cant li .mk { color: var(--no); transform: translateY(0.2rem); }
+.dn-s15-001 .cant p { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.dn-s15-001 .cant p b { color: var(--ink); font-weight: 600; }
 
-.dn-s15-001 .close {
-  margin: 0;
-  padding-top: clamp(20px, 2.6vw, 30px);
-  border-top: 1px solid var(--line);
-  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
-  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
-  max-width: 46ch;
-}
+.dn-s15-001 .foot { margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; width: min(100%, 44rem); font-weight: 600; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.3; letter-spacing: -0.015em; }
 
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .dn-s15-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .dn-s15-001 h2, .dn-s15-001 .lead, .dn-s15-001 .close { max-width: none; }
-  .dn-s15-001 .asked { grid-template-columns: minmax(0, 1fr); }
-  .dn-s15-001 .desk { aspect-ratio: 16 / 9; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s15-001 * { transition: none !important; }
-}
+@media (max-width: 860px) { .dn-s15-001 .head, .dn-s15-001 .qs, .dn-s15-001 .cant ul { grid-template-columns: minmax(0, 1fr); } .dn-s15-001 .media { aspect-ratio: 16 / 9; } }
+@media (prefers-reduced-motion: reduce) { .dn-s15-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -198,49 +107,39 @@ body { margin: 0; background: #f6f4f1; }
   <section class="shell" aria-labelledby="dn-s15-001-title">
 
     <div class="head">
+      <svg class="ring" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="48.5" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
       <div>
-        <p class="eyebrow">What gets asked</p>
-        <h2 id="dn-s15-001-title">Six questions, in the order they are actually asked.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>What gets asked</p>
+        <h2 id="dn-s15-001-title">Six questions, in the order they are <span class="ac">actually asked.</span></h2>
       </div>
       <p class="lead">These are the six we are asked at the desk, ordered by how often. The first one is money, because it always is.</p>
     </div>
 
-    <ul class="asked">
-      <li>
-        <h3>How much is it going to be?</h3>
-        <p>Nobody can tell you before someone looks. The number comes at the end of the first appointment, in writing.</p>
-      </li>
-      <li>
-        <h3>Will it hurt?</h3>
-        <p>We do not know, and anyone who promises is guessing. You are told before each part, and if you raise your hand we stop.</p>
-      </li>
-      <li>
-        <h3>Do I actually need this?</h3>
-        <p>Sometimes not yet. The plan says which, and doing nothing is priced with everything else.</p>
-      </li>
-      <li>
-        <h3>Can I stop part way?</h3>
-        <p>Yes. You pay for what was done and nothing more.</p>
-      </li>
-      <li>
-        <h3>How long will I be here?</h3>
-        <p>About forty minutes for the first appointment. The work varies, and the plan says.</p>
-      </li>
-      <li>
-        <h3>Will I see the same dentist?</h3>
-        <p>Yes, unless they are away, and then we move the appointment rather than swap the person.</p>
-      </li>
+    <ul class="qs">
+      <li class="first"><span class="k">One</span><h3>How much is it going to be?</h3><p><b>Nobody can tell you before someone looks.</b> The number comes at the end of the first appointment, in writing.</p></li>
+      <li><span class="k">Two</span><h3>Will it hurt?</h3><p><b>We do not know, and anyone who promises is guessing.</b> You are told before each part, and if you raise your hand we stop.</p></li>
+      <li><span class="k">Three</span><h3>Do I actually need this?</h3><p><b>Sometimes not yet.</b> The plan says which, and doing nothing is priced with everything else.</p></li>
+      <li><span class="k">Four</span><h3>Can I stop part way?</h3><p><b>Yes.</b> You pay for what was done and nothing more.</p></li>
+      <li><span class="k">Five</span><h3>How long will I be here?</h3><p><b>About forty minutes for the first appointment.</b> The work varies, and the plan says.</p></li>
+      <li><span class="k">Six</span><h3>Will I see the same dentist?</h3><p><b>Yes, unless they are away,</b> and then we move the appointment rather than swap the person.</p></li>
     </ul>
 
-    <div class="desk"><span>Image area &mdash; the desk where these are actually asked</span></div>
+    <figure>
+      <div class="media" role="img" aria-label="Reserved image area: the desk where these are actually asked"><span>The desk &middot; 3:1</span></div>
+      <figcaption>Image area &mdash; the desk where these are actually asked</figcaption>
+    </figure>
 
-    <div class="cannot">
-      <b>Three we cannot answer</b>
-      <p>How long a filling will last. Whether you will need more work later. Whether the pain comes back.</p>
-      <p class="why">We can tell you what usually happens. Nobody can tell you what will happen to you.</p>
+    <div class="cant">
+      <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>Three we cannot answer</h3>
+      <ul>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>How long a filling will last.</li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>Whether you will need more work later.</li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>Whether the pain comes back.</li>
+      </ul>
+      <p>We can tell you what usually happens. <b>Nobody can tell you what will happen to you.</b></p>
     </div>
 
-    <p class="close">An FAQ nobody asks is an advertisement with question marks in it.</p>
+    <p class="foot">An FAQ nobody asks is an advertisement with question marks in it.</p>
 
   </section>
 </div>

@@ -78,7 +78,7 @@ Authored against `../DENTAL-THEME-CONTRACT.md`. `S01` sets the register this sec
 
 # Status
 
-AUTHORED — five studies. Batch record in `./BATCH-V1.md`.
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in `./BATCH-V2.md`; original authoring record in `./BATCH-V1.md`.
 
 # Raw Path
 

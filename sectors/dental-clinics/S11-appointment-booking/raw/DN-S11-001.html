@@ -12,44 +12,22 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S11 — Appointment Booking
   Direction      : Universal / Safe
-  Theme          : 001 Chalk — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. One reserved area.**
-  Layout model   : Three routes as a row, the desk the first one is answered at, then the two terms
-                   and the one action
-  Density        : Structured (see count below, structured band 170–230)
-  Media mode     : One reserved area — **the desk where the phone is answered.** The room the visitor
-                   will sit in, and the place the fastest route actually lands.
-  Interaction    : One link. **No form** — see below.
-
-  Governing idea : **Three ways to book. The phone is the fastest, and we would rather you used it.**
-
-                   Every clinic in the sector pushes online booking, because a form costs the practice
-                   nothing to receive and a phone call costs somebody stopping what they are doing.
-                   The visitor is told this is *convenience*. It is not: **a form that nobody opens
-                   until the morning is slower than a call answered in four rings**, and the person
-                   sending it at eleven at night has no way of knowing that.
-                   So this section ranks the three routes honestly and puts the slowest one second.
-
-  Why there is no form on this page :
-                   A booking form with no system behind it is a picture of a form. It would collect
-                   nothing, confirm nothing and mean nothing, and the sector already has enough
-                   elements that look like function and are not.
-                   **The workspace does not draw a control it cannot honour**, which is the same rule
-                   that keeps prices, credentials and testimonials off these pages. The action here is
-                   a link and a phone route, both of which are real things.
-
-  The two terms, stated before the action rather than after it :
-                   **What booking commits you to** — one appointment, about forty minutes, and nothing
-                   else — and **what happens if you cannot come.** The second is the one that stops
-                   people booking, and every competitor keeps it on a policy page nobody reads until
-                   they are being charged.
-
-  Placeholder data : None. The number is not printed here; `S19` Contact owns it, and a fabricated
-                   telephone number is the same class of thing as a fabricated price.
-
-  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price or
-                   figure, no credential, no testimonial, no countdown, no *book now*. No stock smile,
-                   no open mouth, no instrument near a face, no aqua palette. No global header.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 1 — the
+                   three routes as a row: the head with "the slowest one" in the accent and the
+                   001 ring behind it; THE PHONE, THE ONLINE FORM, WALKING IN as a bordered row
+                   of three with word-numeral chips (ONE · FASTEST in the accent, TWO · SLOWEST
+                   in the plum, THREE); the desk where the phone is answered as a bare 3:1
+                   field; the two terms as ruled columns; the action with the calendar mark and
+                   the secondary line; the closing line on the lead rule. Shape B. V1 is kept
+                   whole.
+  Layout model   : Head with a ring; bordered row of three routes with chips; 3:1 field; two ruled terms; action row; closing line on the lead rule
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the desk where the phone is answered. Never a patient,
+                   never a mouth. Empty flat field, labelled.
+  Interaction    : One link — Book online. No form.
+  Content note   : No number is printed here; the phone number lives on the contact page. The
+                   duration is V1's word-numeral. No guarantee word. No tooth iconography, no
+                   aqua. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S11-001">
@@ -62,139 +40,72 @@
 <meta name="direction" content="Universal / Safe">
 <meta name="theme" content="001 Chalk">
 <meta name="section-shape" content="B — anchored, one reserved area">
-<meta name="layout-model" content="Three routes as a row, the desk the first is answered at, then the two terms and the one action">
+<meta name="layout-model" content="Head with the ring behind; the three routes as a bordered row with word-numeral chips; the desk where the phone is answered as a 3:1 field; the two terms as ruled columns; the action with the calendar mark and the secondary line; the closing line on the lead rule">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-desk-where-the-phone-is-answered">
-<meta name="interaction" content="one-link-no-form">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="one-link">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="none — the number is not printed here">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S11-001 — Appointment Booking, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #f6f4f1; }
 
-/* Scoped study styles — namespaced to .dn-s11-001 */
 .dn-s11-001 {
-  --paper: #f6f4f1;
-  --ink: #16181b;
-  --ink-soft: #575c60;
-  --line: #ddd9d3;
-  --card: #ffffff;
-  --accent: #1f6f5c;
-  --accent-ink: #ffffff;
-  --slot: #eae7e2;
-  --slot-edge: #c6c2bb;
-  --slot-ink: #5d6165;
-  --focus: #16181b;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f4f1; --ink: #16181b; --muted: #5b5f64; --line: #dcd9d3; --line-strong: #16181b;
+  --media: #e7e4de; --band: #eeece7; --accent: #1f6f5c; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s11-001 *,
-.dn-s11-001 *::before,
-.dn-s11-001 *::after { box-sizing: inherit; }
-.dn-s11-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 16px; }
+.dn-s11-001 *, .dn-s11-001 *::before, .dn-s11-001 *::after { box-sizing: inherit; }
+.dn-s11-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s11-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.dn-s11-001 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s11-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s11-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  gap: clamp(24px, 3.4vw, 54px);
-  align-items: end;
-  margin-bottom: clamp(26px, 3.2vw, 42px);
-}
-.dn-s11-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 17px);
-  padding: 7px 15px; border-radius: 999px;
-  background: rgba(31, 111, 92, 0.12); color: var(--accent);
-  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
-}
-.dn-s11-001 h2 {
-  margin: 0;
-  font-size: clamp(1.95rem, 3.5vw, 2.9rem);
-  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
-  max-width: 20ch;
-}
-.dn-s11-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 44ch; }
+.dn-s11-001 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.dn-s11-001 .head > svg.ring { position: absolute; right: -4%; top: -60%; width: clamp(14rem, 26vw, 24rem); height: clamp(14rem, 26vw, 24rem); color: var(--line); pointer-events: none; z-index: 0; }
+.dn-s11-001 .eyebrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s11-001 h2 { position: relative; z-index: 1; margin: 0; max-width: 14ch; font-weight: 600; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 0.98; letter-spacing: -0.035em; }
+.dn-s11-001 h2 .ac { color: var(--accent); }
+.dn-s11-001 .lead { position: relative; z-index: 1; margin: 0 0 0.3em; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
 
-/* --- The three routes --- */
-.dn-s11-001 .routes {
-  margin: 0 0 clamp(28px, 3.4vw, 46px);
-  padding: 0; list-style: none;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(22px, 2.8vw, 44px);
-}
-.dn-s11-001 .routes h3 { margin: 0 0 6px; font-size: clamp(1.14rem, 1.5vw, 1.34rem); letter-spacing: -0.026em; font-weight: 800; }
-.dn-s11-001 .routes li:first-child h3 { color: var(--accent); }
-.dn-s11-001 .routes p { margin: 0; font-size: 0.99rem; color: var(--ink-soft); }
+.dn-s11-001 .routes { list-style: none; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.dn-s11-001 .routes li { display: grid; gap: 0.6rem; align-content: start; padding: 1.1rem 1.2rem 1.3rem; min-width: 0; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.dn-s11-001 .routes li.fast { border-bottom: 3px solid var(--accent); }
+.dn-s11-001 .routes li.slow { border-bottom: 3px solid var(--no); }
+.dn-s11-001 .chip { display: inline-block; justify-self: start; padding: 0.25rem 0.5rem; border: 1px solid var(--ink); border-radius: 4px; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.2; }
+.dn-s11-001 .routes li.fast .chip { border-color: var(--accent); color: var(--accent); }
+.dn-s11-001 .routes li.slow .chip { border-color: var(--no); color: var(--no); }
+.dn-s11-001 .routes h3 { display: flex; align-items: center; gap: 0.5rem; margin: 0; font-weight: 600; font-size: clamp(1.2rem, 1.9vw, 1.7rem); line-height: 1.1; letter-spacing: -0.025em; }
+.dn-s11-001 .routes h3 .mk { color: var(--accent); }
+.dn-s11-001 .routes li.slow h3 .mk { color: var(--no); }
+.dn-s11-001 .routes p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
 
-.dn-s11-001 .desk {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 16px;
-  background: var(--slot);
-  aspect-ratio: 32 / 9;
-  display: grid; place-items: center;
-  padding: clamp(14px, 2vw, 24px);
-  margin-bottom: clamp(28px, 3.4vw, 46px);
-}
-.dn-s11-001 .desk span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+.dn-s11-001 figure { margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; }
+.dn-s11-001 .media { position: relative; aspect-ratio: 3 / 1; background: var(--media); border-radius: 6px; }
+.dn-s11-001 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s11-001 figcaption { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; }
 
-/* --- The two terms, before the action --- */
-.dn-s11-001 .terms {
-  margin: 0 0 clamp(26px, 3.2vw, 42px);
-  padding: clamp(24px, 3vw, 38px) clamp(22px, 2.8vw, 34px);
-  border-radius: 16px;
-  background: var(--card);
-  list-style: none;
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 44px);
-}
-.dn-s11-001 .terms b { display: block; margin-bottom: 5px; font-size: 1.04rem; letter-spacing: -0.024em; font-weight: 800; }
-.dn-s11-001 .terms p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+.dn-s11-001 .terms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin: clamp(2rem, 4vw, 3.4rem) 0 0; }
+.dn-s11-001 .terms div { padding-top: 0.9rem; border-top: 1px solid var(--line-strong); }
+.dn-s11-001 .terms h3 { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 0.5rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s11-001 .terms p { margin: 0; font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.45; }
+.dn-s11-001 .terms p b { font-weight: 600; }
 
-/* --- The one action --- */
-.dn-s11-001 .act { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(14px, 2vw, 26px); }
-.dn-s11-001 .act a {
-  display: inline-block;
-  padding: 14px 26px; border-radius: 999px;
-  background: var(--accent); color: var(--accent-ink);
-  font-size: 1.02rem; font-weight: 800; letter-spacing: -0.01em; text-decoration: none;
-}
-.dn-s11-001 .act p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); max-width: 46ch; }
+.dn-s11-001 .act { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; }
+.dn-s11-001 .btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.3rem; border: 1px solid var(--ink); border-radius: 4px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+.dn-s11-001 .btn .mk { width: 1rem; height: 1rem; }
+.dn-s11-001 .act p { margin: 0; color: var(--muted); font-size: 0.9rem; }
 
-.dn-s11-001 .close {
-  margin: clamp(26px, 3.2vw, 42px) 0 0;
-  padding-top: clamp(20px, 2.6vw, 30px);
-  border-top: 1px solid var(--line);
-  font-size: clamp(1.08rem, 1.42vw, 1.32rem);
-  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
-  max-width: 44ch;
-}
+.dn-s11-001 .foot { margin: clamp(1.4rem, 2.5vw, 2rem) 0 0; padding-top: 0.9rem; border-top: 3px solid var(--accent); width: min(100%, 44rem); font-weight: 600; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.3; letter-spacing: -0.015em; }
 
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .dn-s11-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .dn-s11-001 h2, .dn-s11-001 .lead, .dn-s11-001 .close { max-width: none; }
-  .dn-s11-001 .routes { grid-template-columns: minmax(0, 1fr); gap: clamp(18px, 2.2vw, 26px); }
-  .dn-s11-001 .terms { grid-template-columns: minmax(0, 1fr); }
-  .dn-s11-001 .desk { aspect-ratio: 16 / 9; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s11-001 * { transition: none !important; }
-}
+@media (max-width: 860px) { .dn-s11-001 .head, .dn-s11-001 .routes, .dn-s11-001 .terms { grid-template-columns: minmax(0, 1fr); } .dn-s11-001 .media { aspect-ratio: 16 / 9; } }
+@media (prefers-reduced-motion: reduce) { .dn-s11-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -203,47 +114,42 @@ body { margin: 0; background: #f6f4f1; }
   <section class="shell" aria-labelledby="dn-s11-001-title">
 
     <div class="head">
+      <svg class="ring" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="48.5" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
       <div>
-        <p class="eyebrow">Booking</p>
-        <h2 id="dn-s11-001-title">Three ways in, and the slowest one is second.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v15H4zM4 10h16M8 3v4M16 3v4"/></svg>Booking</p>
+        <h2 id="dn-s11-001-title">Three ways in, and <span class="ac">the slowest one</span> is second.</h2>
       </div>
       <p class="lead">Three ways to book. The phone is the fastest, and we would rather you used it.</p>
     </div>
 
     <ul class="routes">
-      <li>
-        <h3>The phone</h3>
-        <p>Answered by someone in the building, during opening hours. If you get the machine, both of us are with patients; leave a number and we ring back the same day.</p>
-      </li>
-      <li>
-        <h3>The online form</h3>
-        <p>It goes into the same book, but nobody opens it until the morning. Use it outside hours.</p>
-      </li>
-      <li>
-        <h3>Walking in</h3>
-        <p>We will not turn you away. You will wait, and if nothing is free that day we will book you rather than rush you.</p>
-      </li>
+      <li class="fast"><span class="chip">One &middot; Fastest</span><h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h16v10H4zM8 8V5h8v3M12 13h.01"/></svg>The phone</h3><p>Answered by someone in the building, during opening hours. If you get the machine, both of us are with patients; leave a number and we ring back the same day.</p></li>
+      <li class="slow"><span class="chip">Two &middot; Slowest</span><h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v11H4zM9 20h6M12 16v4"/></svg>The online form</h3><p>It goes into the same book, but nobody opens it until the morning. Use it outside hours.</p></li>
+      <li><span class="chip">Three</span><h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V4h16v17M4 21h16M9 21v-6h6v6M8 8h3M13 8h3M8 12h3M13 12h3"/></svg>Walking in</h3><p>We will not turn you away. You will wait, and if nothing is free that day we will book you rather than rush you.</p></li>
     </ul>
 
-    <div class="desk"><span>Image area &mdash; the desk where the phone is answered</span></div>
+    <figure>
+      <div class="media" role="img" aria-label="Reserved image area: the desk where the phone is answered"><span>The desk &middot; 3:1</span></div>
+      <figcaption>Image area &mdash; the desk where the phone is answered</figcaption>
+    </figure>
 
-    <ul class="terms">
-      <li>
-        <b>What booking commits you to</b>
-        <p>One appointment, about forty minutes. Nothing else is agreed by making it.</p>
-      </li>
-      <li>
-        <b>If you cannot come</b>
-        <p>Tell us the day before and there is no charge. Less than that and we may charge for the time &mdash; said when you book, and again when you cancel, never on a later bill.</p>
-      </li>
-    </ul>
+    <div class="terms">
+      <div>
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>What booking commits you to</h3>
+        <p><b>One appointment, about forty minutes.</b> Nothing else is agreed by making it.</p>
+      </div>
+      <div>
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 8v5M12 16v.5"/></svg>If you cannot come</h3>
+        <p><b>Tell us the day before and there is no charge.</b> Less than that and we may charge for the time &mdash; said when you book, and again when you cancel, never on a later bill.</p>
+      </div>
+    </div>
 
     <div class="act">
-      <a href="#">Book online</a>
+      <a class="btn" href="#"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v15H4zM4 10h16M8 3v4M16 3v4"/></svg>Book online</a>
       <p>Or ring us during opening hours. The number is on the contact page.</p>
     </div>
 
-    <p class="close">The fastest way to book is the one that costs us the most to answer.</p>
+    <p class="foot">The fastest way to book is the one that costs us the most to answer.</p>
 
   </section>
 </div>

@@ -12,187 +12,92 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S13 — Credentials & Trust
   Direction      : Universal / Safe
-  Theme          : 001 Chalk — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. One reserved area.**
-  Layout model   : The two halves side by side — what the law requires and what it does not — then the
-                   sterilisation room, then the line about the letters
-  Density        : Structured (see count below, structured band 170–230)
-  Media mode     : One reserved area — **the sterilisation room.** Named equipment: the copy says the
-                   instruments are sterilised and that the log can be read, so the room is a licensed
-                   subject rather than a decorative one.
-  Interaction    : None (static; no JavaScript). No links, no form.
-
-  Governing idea : **Half of what a trust section lists is the law, and obeying it is not an
-                   achievement. This one marks which half.**
-
-                   The sector's version is a wall of badges: a regulator's logo, an association mark, a
-                   string of letters, a shield with a tick in it. **Most of what is in there is
-                   compulsory.** Registration, sterilisation to standard, indemnity cover and a
-                   complaints procedure are not distinctions; they are the conditions of being open at
-                   all, and printing them as achievements is claiming credit for obeying the law.
-                   So this page splits them. Four things are required and are stated plainly with no
-                   credit taken. **Four are not required, and those are the only ones that say anything
-                   about this practice.**
-
-  The one no competitor prints :
-                   **If a treatment is the first of its kind for the person doing it, you are told
-                   before you agree.** Every dentist has a first time for every procedure. Nobody
-                   discloses it, the disclosure costs bookings, and it is the single most useful thing
-                   a trust section could contain.
-
-  Credentials stay reserved :
-                   `S04` set it for the sector: no letters after any name, anywhere. The workspace does
-                   not invent a qualification, a registration number, a membership or an inspection
-                   grade — the same class of thing as a fabricated price or a fabricated testimonial.
-                   **What is printed instead is where to look**, which cannot be faked and is more use
-                   than the letters would have been.
-
-  Content note   : No letters after a name, no registration number, no association mark, no award, no
-                   inspection grade, no year founded, no patient count. No outcome guarantee, no
-                   *pain-free* or *gentle*, no superiority claim, no price, no testimonial. No stock
-                   smile, no open mouth, no instrument near a face, no aqua palette. No global header.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 1 — the
+                   two halves side by side: the head with "Four are not" in the accent and the
+                   001 ring behind it; REQUIRED BY LAW as a ruled list on the ink rule with the
+                   document mark and an ink THE LAW chip on every line, beside NOT REQUIRED.
+                   WE DO IT ANYWAY as a ruled list on the lead rule with the tick mark and an
+                   accent CHOSEN chip; the sterilisation room as a bare 3:1 field; the letters
+                   line on the plum edge with the struck-person mark; the closing line. No
+                   badge, no grade, no number. Shape B. V1 is kept whole.
+  Layout model   : Head with a ring; two ruled lists side by side with chips; 3:1 field; letters line on the plum edge; closing line
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the sterilisation room. Named equipment: the copy says
+                   the log is kept, so the room where it is kept. Never a patient, never a
+                   mouth, never a certificate. Empty flat field, labelled.
+  Interaction    : None. No link, no form.
+  Content note   : No number, grade or registration appears in this study. No award badge, no
+                   star, no letters after any name. No tooth iconography, no aqua. Inline SVG,
+                   decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S13-001">
 <meta name="sector" content="Dental Clinics">
 <meta name="sector-prefix" content="DN">
 <meta name="section-id" content="DN-S13">
-<meta name="section-name" content="Credentials and Trust">
+<meta name="section-name" content="Credentials & Trust">
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
 <meta name="theme" content="001 Chalk">
 <meta name="section-shape" content="B — anchored, one reserved area">
-<meta name="layout-model" content="The two halves side by side, what the law requires and what it does not, then the sterilisation room and the line about the letters">
+<meta name="layout-model" content="Head with the ring behind; required by law and not required as two ruled lists side by side, the law lines chipped in ink and the chosen lines chipped in the accent; the sterilisation room as a 3:1 field; the letters line on the plum edge; the closing line">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-sterilisation-room-named-by-the-copy">
-<meta name="interaction" content="none-no-links-no-form">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="none — no number, grade or registration appears in this study">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>DN-S13-001 — Credentials and Trust, Universal / Safe</title>
+<title>DN-S13-001 — Credentials &amp; Trust, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #f6f4f1; }
 
-/* Scoped study styles — namespaced to .dn-s13-001 */
 .dn-s13-001 {
-  --paper: #f6f4f1;
-  --ink: #16181b;
-  --ink-soft: #575c60;
-  --line: #ddd9d3;
-  --card: #ffffff;
-  --accent: #1f6f5c;
-  --accent-ink: #ffffff;
-  --slot: #eae7e2;
-  --slot-edge: #c6c2bb;
-  --slot-ink: #5d6165;
-  --focus: #16181b;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f4f1; --ink: #16181b; --muted: #5b5f64; --line: #dcd9d3; --line-strong: #16181b;
+  --media: #e7e4de; --band: #eeece7; --accent: #1f6f5c; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s13-001 *,
-.dn-s13-001 *::before,
-.dn-s13-001 *::after { box-sizing: inherit; }
-.dn-s13-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 16px; }
+.dn-s13-001 *, .dn-s13-001 *::before, .dn-s13-001 *::after { box-sizing: inherit; }
+.dn-s13-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s13-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.dn-s13-001 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s13-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s13-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
-  gap: clamp(24px, 3.4vw, 54px);
-  align-items: end;
-  margin-bottom: clamp(26px, 3.2vw, 42px);
-}
-.dn-s13-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 17px);
-  padding: 7px 15px; border-radius: 999px;
-  background: rgba(31, 111, 92, 0.12); color: var(--accent);
-  font-size: 0.76rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
-}
-.dn-s13-001 h2 {
-  margin: 0;
-  font-size: clamp(1.95rem, 3.5vw, 2.9rem);
-  line-height: 1.04; letter-spacing: -0.036em; font-weight: 800;
-  max-width: 20ch;
-}
-.dn-s13-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.02rem, 1.22vw, 1.16rem); max-width: 48ch; }
+.dn-s13-001 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.dn-s13-001 .head > svg.ring { position: absolute; right: -4%; top: -60%; width: clamp(14rem, 26vw, 24rem); height: clamp(14rem, 26vw, 24rem); color: var(--line); pointer-events: none; z-index: 0; }
+.dn-s13-001 .eyebrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s13-001 h2 { position: relative; z-index: 1; margin: 0; max-width: 14ch; font-weight: 600; font-size: clamp(2.4rem, 4.6vw, 5rem); line-height: 0.98; letter-spacing: -0.035em; }
+.dn-s13-001 h2 .ac { color: var(--accent); }
+.dn-s13-001 .lead { position: relative; z-index: 1; margin: 0 0 0.3em; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
 
-/* --- The two halves --- */
-.dn-s13-001 .halves {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(24px, 3.2vw, 54px);
-  margin-bottom: clamp(28px, 3.4vw, 46px);
-}
-.dn-s13-001 h3 {
-  margin: 0 0 clamp(14px, 1.8vw, 18px);
-  padding-bottom: clamp(10px, 1.3vw, 13px);
-  border-bottom: 1px solid var(--line);
-  font-size: 0.77rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.dn-s13-001 .ours h3 { color: var(--accent); border-bottom-color: var(--accent); }
-.dn-s13-001 .halves ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 14px); }
-.dn-s13-001 .halves li { font-size: 1rem; color: var(--ink-soft); }
-.dn-s13-001 .ours li { color: var(--ink); font-weight: 600; }
+.dn-s13-001 .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 3rem); margin: clamp(2rem, 4vw, 3.4rem) 0 0; }
+.dn-s13-001 .two h3 { display: flex; align-items: center; gap: 0.55rem; margin: 0; padding-bottom: 0.7rem; border-bottom: 1px solid var(--line-strong); color: var(--ink); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s13-001 .two .yes h3 { border-bottom: 3px solid var(--accent); color: var(--accent); }
+.dn-s13-001 .two ul { list-style: none; margin: 0; padding: 0; }
+.dn-s13-001 .two li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.3rem 1rem; align-items: start; padding: 0.8rem 0 0.85rem; border-bottom: 1px solid var(--line); font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.4; }
+.dn-s13-001 .chip { display: inline-block; padding: 0.25rem 0.5rem; border: 1px solid var(--ink); border-radius: 4px; color: var(--ink); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.2; white-space: nowrap; margin-top: 0.25rem; }
+.dn-s13-001 .two .yes .chip { border-color: var(--accent); color: var(--accent); }
+.dn-s13-001 .two p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
 
-.dn-s13-001 .room {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 16px;
-  background: var(--slot);
-  aspect-ratio: 32 / 9;
-  display: grid; place-items: center;
-  padding: clamp(14px, 2vw, 24px);
-  margin-bottom: clamp(26px, 3.2vw, 42px);
-}
-.dn-s13-001 .room span { color: var(--slot-ink); font-size: 0.78rem; font-weight: 700; text-align: center; }
+.dn-s13-001 figure { margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; }
+.dn-s13-001 .media { position: relative; aspect-ratio: 3 / 1; background: var(--media); border-radius: 6px; }
+.dn-s13-001 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s13-001 figcaption { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; }
 
-/* --- The letters, and where they are --- */
-.dn-s13-001 .letters {
-  margin: 0 0 clamp(24px, 3vw, 38px);
-  padding: clamp(22px, 2.8vw, 34px) clamp(20px, 2.6vw, 32px);
-  border-radius: 16px;
-  background: var(--card);
-  font-size: clamp(1.1rem, 1.5vw, 1.36rem);
-  line-height: 1.3; letter-spacing: -0.024em; font-weight: 700;
-  max-width: 64ch;
-}
-.dn-s13-001 .letters em { font-style: normal; color: var(--accent); }
+.dn-s13-001 .letters { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.9rem; align-items: start; margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; padding-left: 1.1rem; border-left: 2px solid var(--no); }
+.dn-s13-001 .letters .mk { color: var(--no); width: 1.4rem; height: 1.4rem; margin-top: 0.25rem; }
+.dn-s13-001 .letters p { margin: 0; max-width: 44ch; font-weight: 600; font-size: clamp(1.15rem, 1.8vw, 1.55rem); line-height: 1.3; letter-spacing: -0.015em; }
+.dn-s13-001 .letters p .no { color: var(--no); }
 
-.dn-s13-001 .close {
-  margin: 0;
-  padding-top: clamp(20px, 2.6vw, 30px);
-  border-top: 1px solid var(--line);
-  font-size: clamp(1.06rem, 1.4vw, 1.28rem);
-  line-height: 1.3; letter-spacing: -0.024em; font-weight: 800;
-  max-width: 44ch;
-}
+.dn-s13-001 .foot { margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; width: min(100%, 44rem); font-weight: 600; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.3; letter-spacing: -0.015em; }
 
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .dn-s13-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .dn-s13-001 h2, .dn-s13-001 .lead, .dn-s13-001 .letters, .dn-s13-001 .close { max-width: none; }
-  .dn-s13-001 .halves { grid-template-columns: minmax(0, 1fr); }
-  .dn-s13-001 .room { aspect-ratio: 16 / 9; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s13-001 * { transition: none !important; }
-}
+@media (max-width: 860px) { .dn-s13-001 .head, .dn-s13-001 .two { grid-template-columns: minmax(0, 1fr); } .dn-s13-001 .media { aspect-ratio: 16 / 9; } }
+@media (prefers-reduced-motion: reduce) { .dn-s13-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -201,39 +106,46 @@ body { margin: 0; background: #f6f4f1; }
   <section class="shell" aria-labelledby="dn-s13-001-title">
 
     <div class="head">
+      <svg class="ring" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="48.5" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
       <div>
-        <p class="eyebrow">Checking us</p>
-        <h2 id="dn-s13-001-title">Four of these are the law. Four are not.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>Checking us</p>
+        <h2 id="dn-s13-001-title">Four of these are the law. <span class="ac">Four are not.</span></h2>
       </div>
       <p class="lead">Half of what a trust section usually lists is the law, and obeying it is not an achievement. We have marked which half.</p>
     </div>
 
-    <div class="halves">
+    <div class="two">
       <div>
-        <h3>Required by law</h3>
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg>Required by law</h3>
         <ul>
-          <li>Every one of us is on the public register. Practising without it is a criminal offence.</li>
-          <li>Instruments are sterilised to a national standard and the log is kept.</li>
-          <li>The practice carries indemnity insurance.</li>
-          <li>There is a complaints procedure, and it is on the wall.</li>
+          <li>Every one of us is on the public register. Practising without it is a criminal offence.<span class="chip">The law</span></li>
+          <li>Instruments are sterilised to a national standard and the log is kept.<span class="chip">The law</span></li>
+          <li>The practice carries indemnity insurance.<span class="chip">The law</span></li>
+          <li>There is a complaints procedure, and it is on the wall.<span class="chip">The law</span></li>
         </ul>
       </div>
-      <div class="ours">
-        <h3>Not required. We do it anyway</h3>
+      <div class="yes">
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>Not required. We do it anyway</h3>
         <ul>
-          <li>Last year's complaints are published here, with what changed after each one.</li>
-          <li>The inspection report is linked whether it reads well or not.</li>
-          <li>If a treatment is the first of its kind for the person doing it, you are told before you agree.</li>
-          <li>Ask at the desk and you can read the sterilisation log.</li>
+          <li>Last year's complaints are published here, with what changed after each one.<span class="chip">Chosen</span></li>
+          <li>The inspection report is linked whether it reads well or not.<span class="chip">Chosen</span></li>
+          <li>If a treatment is the first of its kind for the person doing it, you are told before you agree.<span class="chip">Chosen</span></li>
+          <li>Ask at the desk and you can read the sterilisation log.<span class="chip">Chosen</span></li>
         </ul>
       </div>
     </div>
 
-    <div class="room"><span>Image area &mdash; the sterilisation room</span></div>
+    <figure>
+      <div class="media" role="img" aria-label="Reserved image area: the sterilisation room"><span>The sterilisation room &middot; 3:1</span></div>
+      <figcaption>Image area &mdash; the sterilisation room</figcaption>
+    </figure>
 
-    <p class="letters"><em>No letters appear after any name on this site.</em> They are on the public register, which is the only place they mean anything.</p>
+    <div class="letters">
+      <svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0M3 3l18 18"/></svg>
+      <p><span class="no">No letters appear after any name on this site.</span> They are on the public register, which is the only place they mean anything.</p>
+    </div>
 
-    <p class="close">Most trust sections are the first list with badges around it.</p>
+    <p class="foot">Most trust sections are the first list with badges around it.</p>
 
   </section>
 </div>

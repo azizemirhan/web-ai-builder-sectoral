@@ -12,43 +12,23 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S03 — Smile Design
   Direction      : Premium / Editorial
-  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. One reserved area, placed on the line itself.**
-  Layout model   : One measure. The five stages run down, and **the band sits exactly where reversible
-                   ends** — the picture is the last thing you see before the point of no return
-  Density        : Structured (176 visible words, structured band 170–230)
-  Media mode     : One reserved area — **the review appointment**, placed at the line because that is
-                   the moment the last reversible thing ends. A room and the people in it, never the
-                   object and never a mouth. See below.
-  Interaction    : None (static; no JavaScript). Links only, no form.
-
-  Governing idea : **A smile design is a plan you are allowed to reject. Knowing exactly when that
-                   stops being free is the part nobody explains.**
-
-  The editorial cut — the picture is the hinge :
-                   Cosmetic dentistry puts its best photograph at the top, and it is always the
-                   result. Here there is no photograph of a result, and the one image sits **on the
-                   line** — after the trial smile and before the preparation.
-                   That position is the argument. The reader passes the object they could have handed
-                   back, and then reads *enamel is removed, and it does not grow back.* **A section
-                   that shows you what you are about to give up, immediately before telling you that
-                   you cannot get it back, is doing the only honest thing this subject allows.**
-
-  The slot that was rejected :
-                   This area was first drafted as *the trial smile on its tray, off the patient*, and
-                   the header argued that an object is not a mouth. **That reasoning was written to
-                   permit the picture rather than to test it.** A trial smile photographed close up is
-                   a set of teeth whatever the tray is doing underneath, which is precisely what the
-                   contract bans.
-                   What replaced it is the moment rather than the object: the review appointment, where
-                   the trial comes off and the decision is made. It sits in the same position and makes
-                   the same argument, and it is a room with people in it — one of the three honest
-                   subjects the contract actually names.
-
-  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price
-                   figure, no credential, no testimonial, no before/after gallery. No stock smile, no
-                   open mouth, no teeth in close-up, no instrument, no sparkle, no aqua palette. No
-                   global header or navigation.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 2 in one
+                   measure: the head with the 002 arc at its corner and "reversible" in the
+                   accent; the five stages as ruled lines — word-numeral chip and state chip
+                   in the margin, the stage at subhead size, what happens beneath; the review
+                   appointment as a bare 3:1 field placed exactly on the line, where the trial
+                   smile comes off, the line sentence as its caption on the plum rule; the
+                   no-gallery line with its link and the last-free-no line as the close.
+                   Shape B. V1 is kept whole.
+  Layout model   : Head with an arc; five ruled lines in one measure with the field placed on the line; close
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the review appointment, where the trial smile comes off,
+                   3:1, placed at the line. Never teeth, never a mouth. Empty flat field.
+  Interaction    : None. One link, no form.
+  Content note   : No placeholder values in this study. No outcome, no before/after gallery,
+                   no price, no guarantee; irreversibility stated as a material fact. Stage
+                   numbers are word-numerals. No tooth iconography, no aqua. Inline SVG,
+                   decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S03-002">
@@ -60,179 +40,95 @@
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
 <meta name="theme" content="002 Linen">
-<meta name="section-shape" content="B — anchored, one reserved area on the line">
-<meta name="layout-model" content="One measure, five stages running down with the band placed exactly where reversible ends">
+<meta name="section-shape" content="B — anchored, one reserved area placed on the line itself">
+<meta name="layout-model" content="Head with an arc; the five stages as ruled lines in one measure with chips in the margin; the review appointment as a 3:1 field on the line with the line sentence as its caption; close with the no-gallery link">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-review-appointment-placed-at-the-line">
-<meta name="interaction" content="none-links-only-no-form">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S03-002 — Smile Design, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #f3efe8; }
 
-/* Scoped study styles — namespaced to .dn-s03-002 */
 .dn-s03-002 {
-  --paper: #f3efe8;
-  --ink: #1b1714;
-  --ink-soft: #6a6058;
-  --line: #ddd5c9;
-  --accent: #a2543a;
-  --accent-ink: #ffffff;
-  --slot: #e9e2d8;
-  --slot-edge: #c6bcae;
-  --slot-ink: #635b53;
-  --focus: #1b1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f3efe8; --ink: #1b1714; --muted: #68625a; --line: #dad2c6; --line-strong: #1b1714;
+  --media: #e6dfd4; --band: #ebe5da; --accent: #a2543a; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s03-002 *,
-.dn-s03-002 *::before,
-.dn-s03-002 *::after { box-sizing: inherit; }
-.dn-s03-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+.dn-s03-002 *, .dn-s03-002 *::before, .dn-s03-002 *::after { box-sizing: inherit; }
+.dn-s03-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s03-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
-.dn-s03-002 .col { max-width: 74ch; }
+.dn-s03-002 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s03-002 .measure { width: min(100%, 56rem); }
+.dn-s03-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.dn-s03-002 a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.dn-s03-002 a::after { content: " \2192"; color: var(--accent); }
 
-.dn-s03-002 .eyebrow {
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent);
-}
-.dn-s03-002 h2 {
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
-  line-height: 1.0; letter-spacing: -0.044em; font-weight: 800;
-  max-width: 20ch;
-}
-.dn-s03-002 .lead {
-  margin: 0 0 clamp(34px, 4.2vw, 60px);
-  max-width: 48ch; color: var(--ink-soft);
-  font-size: clamp(1.1rem, 1.4vw, 1.28rem);
-}
+.dn-s03-002 .head { position: relative; }
+.dn-s03-002 .head > svg.arc { position: absolute; right: 0; top: -1.2rem; width: clamp(9rem, 16vw, 15rem); height: clamp(9rem, 16vw, 15rem); color: var(--accent); pointer-events: none; z-index: 0; }
+.dn-s03-002 .eyebrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s03-002 h2 { position: relative; z-index: 1; margin: 0; max-width: 13ch; font-weight: 600; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.96; letter-spacing: -0.04em; }
+.dn-s03-002 h2 .ac { color: var(--accent); }
+.dn-s03-002 .lead { position: relative; z-index: 1; margin: 1.2rem 0 0; max-width: 34rem; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
 
-/* --- The stages, running down --- */
-.dn-s03-002 .run { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(22px, 2.8vw, 38px); }
-.dn-s03-002 .run li { display: grid; grid-template-columns: 2.6em minmax(0, 1fr); gap: clamp(14px, 2vw, 28px); align-items: baseline; }
-.dn-s03-002 .fig { font-size: 0.82rem; font-weight: 800; letter-spacing: 0.04em; color: var(--accent); }
-.dn-s03-002 .run h3 { margin: 0 0 5px; font-size: clamp(1.2rem, 1.8vw, 1.52rem); line-height: 1.16; letter-spacing: -0.026em; font-weight: 800; }
-.dn-s03-002 .state { display: inline-block; margin-bottom: 6px; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
-.dn-s03-002 .after .state { color: var(--ink); }
-.dn-s03-002 .run p { margin: 0; font-size: 1.02rem; color: var(--ink-soft); max-width: 46ch; }
+.dn-s03-002 .list { list-style: none; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.dn-s03-002 .list > li { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 0.2rem clamp(1.2rem, 2.5vw, 2.4rem); align-items: baseline; padding: 1.1rem 0 1.2rem; border-bottom: 1px solid var(--line); }
+.dn-s03-002 .chips { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.dn-s03-002 .chip { display: inline-block; padding: 0.18rem 0.5rem; border: 1px solid var(--line-strong); border-radius: 4px; color: var(--ink); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.2; }
+.dn-s03-002 .chip.ok { border-color: var(--accent); color: var(--accent); }
+.dn-s03-002 .chip.no { border-color: var(--no); color: var(--no); }
+.dn-s03-002 .list h3 { margin: 0; font-weight: 600; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.12; letter-spacing: -0.025em; }
+.dn-s03-002 .list p { grid-column: 2; margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.dn-s03-002 .list > li.fig { display: block; padding: 1.4rem 0 0; border-bottom: 0; }
+.dn-s03-002 figure { margin: 0; }
+.dn-s03-002 .media { position: relative; aspect-ratio: 3 / 1; background: var(--media); border-radius: 6px; }
+.dn-s03-002 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s03-002 figcaption { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; }
+.dn-s03-002 .line { display: flex; align-items: center; gap: 0.7rem; margin: 1rem 0 0; padding: 0.9rem 0; border-top: 3px solid var(--no); font-weight: 600; font-size: clamp(1.1rem, 1.6vw, 1.4rem); letter-spacing: -0.015em; color: var(--no); }
+.dn-s03-002 .line .mk { color: var(--no); }
 
-/* --- The line, and the object on it --- */
-.dn-s03-002 .band {
-  margin: clamp(30px, 3.8vw, 52px) 0 clamp(9px, 1.2vw, 13px);
-  border: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  aspect-ratio: 24 / 7;
-  display: grid; place-items: center;
-  padding: clamp(16px, 2.2vw, 28px);
-}
-.dn-s03-002 .band span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; max-width: 42ch; line-height: 1.45; }
-.dn-s03-002 .divider {
-  margin: 0 0 clamp(30px, 3.8vw, 52px);
-  padding-bottom: clamp(18px, 2.2vw, 26px);
-  border-bottom: 3px solid var(--ink);
-  font-size: clamp(1.14rem, 1.6vw, 1.44rem);
-  line-height: 1.2; letter-spacing: -0.026em; font-weight: 800;
-}
+.dn-s03-002 .close { margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; padding-top: 0.9rem; border-top: 1px solid var(--line-strong); color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.dn-s03-002 .close p { margin: 0; }
+.dn-s03-002 .close p + p { margin-top: 0.5rem; }
+.dn-s03-002 .close b { color: var(--ink); font-weight: 600; }
 
-.dn-s03-002 .close {
-  margin: clamp(34px, 4.2vw, 58px) 0 0;
-  padding-top: clamp(20px, 2.6vw, 30px);
-  border-top: 1px solid var(--line);
-}
-.dn-s03-002 .close p { margin: 0 0 12px; font-size: 1rem; color: var(--ink-soft); }
-.dn-s03-002 .close p:last-child { margin-bottom: 0; }
-.dn-s03-002 .close b { color: var(--ink); font-weight: 800; }
-.dn-s03-002 .close a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
-
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .dn-s03-002 h2, .dn-s03-002 .lead, .dn-s03-002 .run p { max-width: none; }
-  .dn-s03-002 .band { aspect-ratio: 16 / 9; }
-}
-@media (max-width: 560px) {
-  .dn-s03-002 .run li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s03-002 * { transition: none !important; }
-}
+@media (max-width: 640px) { .dn-s03-002 .list > li { grid-template-columns: minmax(0, 1fr); } .dn-s03-002 .list p { grid-column: 1; } }
+@media (prefers-reduced-motion: reduce) { .dn-s03-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="dn-s03-002" data-study-id="DN-S03-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="dn-s03-002-title">
-    <div class="col">
+    <div class="measure">
 
-      <p class="eyebrow">Smile design</p>
-      <h2 id="dn-s03-002-title">Three of the five stages are reversible.</h2>
-      <p class="lead">A smile design is a plan you are allowed to reject. Knowing exactly when that stops being free is the part nobody explains.</p>
+      <div class="head">
+        <svg class="arc" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M2 98A96 96 0 0 1 98 2" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v11H4zM9 20h6M12 16v4"/></svg>Smile design</p>
+        <h2 id="dn-s03-002-title">Three of the five stages are <span class="ac">reversible.</span></h2>
+        <p class="lead">A smile design is a plan you are allowed to reject. Knowing exactly when that stops being free is the part nobody explains.</p>
+      </div>
 
-      <ol class="run">
-        <li>
-          <span class="fig" aria-hidden="true">01</span>
-          <div>
-            <span class="state">Reversible</span>
-            <h3>Photographs and a scan</h3>
-            <p>Twenty minutes. Nothing is touched.</p>
-          </div>
+      <ol class="list">
+        <li><div class="chips"><span class="chip">One</span><span class="chip ok">Reversible</span></div><h3>Photographs and a scan</h3><p>Twenty minutes. Nothing is touched.</p></li>
+        <li><div class="chips"><span class="chip">Two</span><span class="chip ok">Reversible</span></div><h3>The digital plan</h3><p>You see it on a screen before it exists anywhere else.</p></li>
+        <li><div class="chips"><span class="chip">Three</span><span class="chip ok">Reversible</span></div><h3>The trial smile</h3><p>Worn over your own teeth for a week or two. It comes off.</p></li>
+        <li class="fig">
+          <figure>
+            <div class="media" role="img" aria-label="Reserved image area: the review appointment, where the trial smile comes off"><span>The review &middot; 3:1</span></div>
+            <figcaption>Image area &mdash; the review appointment, where the trial smile comes off</figcaption>
+          </figure>
+          <p class="line"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 3v18"/></svg>Below this line, nothing comes off.</p>
         </li>
-        <li>
-          <span class="fig" aria-hidden="true">02</span>
-          <div>
-            <span class="state">Reversible</span>
-            <h3>The digital plan</h3>
-            <p>You see it on a screen before it exists anywhere else.</p>
-          </div>
-        </li>
-        <li>
-          <span class="fig" aria-hidden="true">03</span>
-          <div>
-            <span class="state">Reversible</span>
-            <h3>The trial smile</h3>
-            <p>Worn over your own teeth for a week or two. It comes off.</p>
-          </div>
-        </li>
-      </ol>
-
-      <div class="band"><span>Image area &mdash; the review appointment, where the trial smile comes off</span></div>
-      <p class="divider">Below this line, nothing comes off.</p>
-
-      <ol class="run after" start="4">
-        <li>
-          <span class="fig" aria-hidden="true">04</span>
-          <div>
-            <span class="state">Irreversible</span>
-            <h3>Preparation</h3>
-            <p>Enamel is removed, and it does not grow back.</p>
-          </div>
-        </li>
-        <li>
-          <span class="fig" aria-hidden="true">05</span>
-          <div>
-            <span class="state">Irreversible</span>
-            <h3>Fitting</h3>
-            <p>Two appointments, and then they are yours.</p>
-          </div>
-        </li>
+        <li><div class="chips"><span class="chip">Four</span><span class="chip no">Irreversible</span></div><h3>Preparation</h3><p>Enamel is removed, and it does not grow back.</p></li>
+        <li><div class="chips"><span class="chip">Five</span><span class="chip no">Irreversible</span></div><h3>Fitting</h3><p>Two appointments, and then they are yours.</p></li>
       </ol>
 
       <div class="close">

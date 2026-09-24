@@ -214,3 +214,137 @@ at AA or better, `--line` for hairlines, `--card` for raised grounds, and `--slo
 Large confident type, generous negative space, warm grounds rather than clinical white, real
 photography of rooms and people, one decisive accent, and **a stated commitment rather than a
 described feeling.** *Gentle, caring dentistry* is what a clinic says when it has nothing to state.
+
+---
+
+# Detailing Pass — the modern register applied to DN
+
+Status: ACTIVE from 18 September 2026. Governs the V2 re-authoring of all one hundred and
+thirty-five `DN` studies. Source: `../../standards/08-VISUAL-REFERENCE-STYLE.md`, read through
+the sector's own constraint — *nobody is browsing, they are bracing* — and through the one word
+the pass was asked for: **modern**. Everything above this line (the anti-patterns, the media rule,
+the claims limits, the placeholder rule, the page rhythm, the text budget) stays in force; the pass
+rewrites only the design layer. The V1 content spine of every study is kept whole.
+
+## The DN reading in one sentence
+
+**A calm, modern clinic page: a confident sans display with one word in the accent, bare warm
+fields of the room and the people, hairline structure, soft 6px corners, and one thin line of
+geometry drawn behind the composition — never a badge, a sparkle, a tooth or a shade of blue.**
+
+Where the reference register's voice is a serif magazine, DN's is a contemporary clinic identity:
+the serif is dropped, the sans carries the display, and the softness the sector's language needs is
+carried by corner radius on large fields (6px, never more) rather than by pills or shadows.
+
+## What DN translates
+
+| Reference device | DN reading |
+| --- | --- |
+| Serif display with one italic word | **Sans display**, weight 600, `clamp(2.4rem, 4.6vw, 5rem)`, line-height 0.98, tracking −0.035em, sentence case, **one word or phrase in the accent** (`.ac`), never italic, never bold-inside-bold |
+| Statement line | Sans 400, `clamp(1.15rem, 1.8vw, 1.6rem)`, line-height 1.3, ink |
+| Item title | Sans 600, 1.05–1.4rem, tracking −0.02em |
+| Eyebrow | 0.64rem, 700, 0.2em tracked, accent, with a 24px stroke mark |
+| Index numeral | **Word-numeral chip** — ONE … SIX as a bordered 4px chip in the accent, 0.58rem tracked — never a digit, never a giant numeral |
+| Hairlines + one 3px accent rule | Kept exactly: `--line` soft, ink strong, one 3px accent bar per composition (the *lead rule*) |
+| Tinted band | Paper darkened (`--band`), 6px radius, never a card stack |
+| Bare media field | Flat `--media`, 6px radius, slate label bottom-left: `THE ROOM · 4:3`, `IN USE · 21:9`, `THE PERSON · 4:5`, `THE SCANNER · 1:1`, `THE CEILING · 21:9`, `THE DOOR · 3:2`, `WAITING ROOM · 16:9`; never a mouth, never a face |
+| Bordered rectangle action | 1px ink border, **4px radius**, uppercase 0.68rem tracked, leading mark; second action an underlined link with `→` |
+| Pencil layer (WELL/CON/CONS) | **Geometry layer**, one thin stroke per variant, in the line tone or the accent at low weight — see below |
+| `--no` deep red | **`--no` is not red in this sector** (red reads as blood and emergency): the refusal token is a dusk plum, `#5a4a57`, used as an edge, a chip border or a struck-circle stroke — never a surface |
+
+## The geometry layer, by variant
+
+| Variant | Device | Where |
+| --- | --- | --- |
+| `001` | **Ring** — one thin stroke circle, `clamp(14rem, 26vw, 24rem)`, in the line tone | behind the head, right, clipped by the shell |
+| `002` | **Arc** — a quarter-circle stroke in the accent at 1.5px | top-right of the head, `.head > svg.arc` |
+| `003` | **Dot grid** — 1px dots on a 32px grid in the line tone, an SVG `<pattern>` | behind the whole composition, `.draw` |
+| `004` | **Bar** — a straight 4px accent bar with rounded ends under the key phrase | `.u` + `svg`, inline-block |
+| `005` | **Corner marks** — four short L-strokes framing the display column | `.frame` absolute, `.frame > svg` |
+
+One device per study; the device is drawn once. It sits behind text (`z-index: 0`) or on the edge
+of a phrase, never across a field.
+
+## DN themes for the detailing pass
+
+The five contract themes are kept by name and accent; the grounds are tuned to the register (warm,
+never clinical white floating on white) and **Dusk is inverted** — the register forbids a dark
+panel as a page ground, so `005` keeps the sea-green accent on a pale cool paper and the accent is
+darkened to reach AA as text.
+
+| Variant | Theme | `--paper` | `--ink` | `--muted` | `--line` | `--media` | `--band` | `--accent` |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `001` | Chalk | `#f6f4f1` | `#16181b` | `#5b5f64` | `#dcd9d3` | `#e7e4de` | `#eeece7` | `#1f6f5c` forest |
+| `002` | Linen | `#f3efe8` | `#1b1714` | `#68625a` | `#dad2c6` | `#e6dfd4` | `#ebe5da` | `#a2543a` terracotta |
+| `003` | Slate | `#eef0f2` | `#0f1316` | `#535b63` | `#d2d7dc` | `#dfe3e7` | `#e6e9ec` | `#2c5fd0` ultramarine |
+| `004` | Daylight | `#fdfdfc` | `#0a0b0d` | `#565a5f` | `#e3e3e0` | `#ededea` | `#f3f3f0` | `#c9781f` amber (darkened from `#e08b2c` for AA) |
+| `005` | Dusk, inverted | `#eef2f1` | `#14161a` | `#55605d` | `#d1dad7` | `#dfe6e3` | `#e6ebe9` | `#2f7a70` sea green (darkened from `#6ea8a0` for AA) |
+
+`--no: #5a4a57` on every theme. `--line-strong` is the ink. The sans is the system stack; no
+serif anywhere in DN; no web font.
+
+## Sector rules that remain in force
+
+The anti-pattern list above, unchanged: no stock smile, no open mouth, no instrument near a face,
+no empty surgery shot wide, **no tooth iconography** (no molar mark, ever), no aqua or cyan, no
+sparkle, no countdown, no award badge or star rating, no before/after as an outcome promise.
+The claims limits: no *pain-free* / *painless* / *gentle*, no guarantee / permanent / lifetime,
+no *best* / *leading* / *number one* / *award-winning* / *voted*, no fabricated credential or
+price, no attributed testimonial or rating. Placeholder demo values stay marked
+`data-placeholder="true"` and declared in a `placeholder-data` meta; **no digit appears in visible
+copy outside a placeholder element** (word-numerals elsewhere). Portraits stay reserved and are
+labelled by role. Pronouns are never invented.
+
+## The checker
+
+`dncheck.ps1` — theme tokens per variant, the `.dn-sNN-vvv` namespace, `batch = V2-detailing`,
+`data-study-id`, reduced-motion, no script / iframe / img / remote URL / form / header / nav /
+footer (form and nav allowed only where the role carries them), balanced tags, inline SVG only with
+`aria-hidden`, radius ≤ 8px, no gradient / shadow / dashed / pill, no solid border with max-width on
+one rule, the dental claims vocabulary, the digit rule, one `<h1>` on hero-like and detail pages
+only, and field parity across the five studies.
+
+## Completion record — 21 September 2026
+
+The detailing pass is applied to all one hundred and thirty-five `DN` studies, S01 through S27.
+Every section carries a `BATCH-V2.md` design record beside its `BATCH-V1.md`; every study passes
+`dncheck.ps1` (tokens, namespace, flat register, inline-SVG-only, reduced-motion rule, shell rule,
+h1 rule, digit and dental claims vocabulary, placeholder declaration, field parity) and was rendered
+and read at 1440. The only parity gaps recorded are V1's own wordings, listed per section.
+
+What the pass settled beyond the tables above, and what the next sector should inherit:
+
+- **The geometry layer is assigned by variant, not by section**: `001` the hairline ring behind
+  the head, `002` the accent arc above the display line, `003` the dot grid drawn once behind the
+  whole composition, `004` the 4px bar under the phrase that carries the ask, `005` the corner
+  marks framing the display column. S22 puts the lead mark, the bar and the corner marks on five
+  words and omits the ring, the arc and the grid, because a breadcrumb cannot carry them.
+- **Word-numerals, never digits, outside a placeholder.** V1's `01 … 06` frames (S17) and every
+  step or reason index became *One … Six* as chips, keys or tracked labels; demo counts stay digits
+  only inside `data-placeholder` elements. `3D` in S06 is the one allowed digit token, recorded.
+- **`--no` (dusk plum, `#5a4a57`) carries every refusal in the sector, and nothing is red**: the
+  irreversible side (S03), the not-registered chip (S04), the does-not line (S06), *go somewhere
+  else if* (S08), *it cannot tell you* (S09), *cannot be quoted until somebody looks* (S10), the
+  slowest route (S11), *hospital, not us* (S12), the letters line (S13), the room you will not be
+  in (S14), *three we cannot answer* (S15), the insurer's side (S16), every part that fails (S17),
+  whitening and the monthly post (S18), *nothing has been sent* (S19), the pending chips and
+  disclaimers (S24–S27). It is a rule, an edge, a chip border or a struck-circle stroke — never a
+  surface behind body text, never a second accent.
+- **Fields are bare, soft-cornered (6px) and labelled by what they are**, never by who is in them:
+  THE ROOM, THE DESK, THE CEILING, THE CLINICIAN · IN CONVERSATION, THE STERILISATION ROOM, THE
+  BRUSH SIZES · ACTUAL SIZE, LOCATION MAP · VERIFIED LOCATION PENDING. Ratios are stated in the
+  label and chosen so a field never outruns its caption column (3:1 strips, 3:2 and 4:3 panels,
+  4:5 portraits, 21:9 edge to edge, 1:1 objects); the sixth room in S14-005 has no field because
+  it has no vantage.
+- **The one ask is a bordered rectangle with a leading mark, never a filled button**: 1px ink
+  border, 4px radius, 0.68rem tracked uppercase, the calendar or speech mark before it; the
+  secondary is an underlined line with the arrow. S19's form keeps V1's fields, drops the script
+  and says *Nothing has been sent* on the plum edge; V1's `<details>` disclosures open as chips
+  and ruled rows everywhere, because the register folds nothing.
+- **Detail pages S23–S27 keep V1's `<h1>` as the page title** (the bracketed name, location or
+  article title), printed in muted ink where it is a placeholder; the checker's hero list covers
+  S01, S21 and S23–S27 for that reason. Variant N of S21–S27 routes to variant N of S02, S04,
+  S11, S17, S18, S19 and S23, so the pages assemble into one site.
+- **Three claims tokens are allowed by exception and recorded**: ` best` in S05 where V1 admits
+  *the best of a year*, `award` in S26 where V1's placeholder reads *awarding institutions*, and
+  the digit token `3D` in S06.

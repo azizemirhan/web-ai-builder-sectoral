@@ -12,46 +12,23 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S07 — Treatment Journey
   Direction      : Premium / Editorial
-  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. One reserved area.**
-  Layout model   : **The step with no appointment gets the most page.** Four stages compressed to a
-                   line each, and stage four broken out at display size across the measure
-  Density        : Structured (see count below, structured band 170–230)
-  Media mode     : One reserved area — **the room the first appointment happens in**, at the head.
-                   The room the visitor will sit in, which the contract names as honest.
-  Interaction    : None (static; no JavaScript). No links, no form.
-
-  Governing idea : **Every step here has two halves, and the second one is yours.**
-
-  The editorial cut — give the page to the step nobody draws :
-                   A journey is normally set as five equal boxes, which asserts that the five steps are
-                   comparable. **They are not.** Four of them are appointments, measured in minutes,
-                   and one is six weeks long, has no appointment in it, and decides how the work
-                   settles.
-                   Setting them equal is not neutral — it is a claim, and it is false. So this study
-                   sets them at the weight they actually carry: **four lines, and one broken out across
-                   the measure at display size.**
-                   The clinic's half of that stage is the word `Nothing`, printed at the same size as
-                   the sentence beside it, because a stage where the clinic does nothing is exactly the
-                   stage a clinic would rather not draw.
-
-  The arithmetic, in all five studies :
-                   **Nine weeks from the first appointment to the check. Three hours of it in our
-                   chair.** Roughly one part in a hundred, and no competitor prints it.
-
-  The media, per the contract :
-                   The honest subjects are the room, the people and the named equipment. This is the
-                   room the first appointment happens in — the one stage of the five that has a place
-                   attached to it. **The healing stage is not photographed**, because the picture would
-                   be an empty surgery, which the contract bans outright as an anti-pattern.
-
-  Placeholder data : The five durations, the nine weeks and the three hours are PLACEHOLDER DEMO
-                   VALUES marked data-placeholder="true".
-
-  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no price,
-                   no credential, no testimonial, no before/after. Nothing here reproaches the reader.
-                   No stock smile, no open mouth, no instrument near a face, no aqua palette. No
-                   global header or navigation.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 2 — the
+                   step with no appointment gets the most page: the head with the 002 arc at
+                   its corner and "six weeks" in the accent; the room the first appointment
+                   happens in as a bare 3:1 field with the arithmetic as its caption on the
+                   lead rule; the four appointments as compact ruled lines with US and YOU as
+                   tracked labels; healing broken out into a band on the tinted paper at
+                   display size, "Nothing." in the accent; V1's longest-step line as the foot.
+                   Shape B. V1 is kept whole.
+  Layout model   : Head with an arc; 3:1 room field with the arithmetic caption; four compact ruled lines; healing as a band; foot line
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the room the first appointment happens in, 3:1. Never a
+                   mouth. Empty flat field, labelled.
+  Interaction    : None. No link, no form.
+  Content note   : The five durations, the nine weeks and the three hours are PLACEHOLDER DEMO
+                   VALUES marked data-placeholder="true" and declared in the meta block. No
+                   should-have, ought-to, neglect or failed-to anywhere. No tooth iconography,
+                   no aqua. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S07-002">
@@ -64,120 +41,70 @@
 <meta name="direction" content="Premium / Editorial">
 <meta name="theme" content="002 Linen">
 <meta name="section-shape" content="B — anchored, one reserved area">
-<meta name="layout-model" content="Four stages compressed to a line each, stage four broken out at display size across the measure">
+<meta name="layout-model" content="Head with an arc; the room as a 3:1 field with the arithmetic as its caption; four appointments as compact ruled lines with US and YOU labels; healing as a band at display size; the longest-step line">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-room-the-first-appointment-happens-in">
-<meta name="interaction" content="none-no-links-no-form">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="five durations, nine weeks, three hours — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S07-002 — Treatment Journey, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #f3efe8; }
 
-/* Scoped study styles — namespaced to .dn-s07-002 */
 .dn-s07-002 {
-  --paper: #f3efe8;
-  --ink: #1b1714;
-  --ink-soft: #6a6058;
-  --line: #ddd5c9;
-  --accent: #a2543a;
-  --slot: #e9e2d8;
-  --slot-edge: #c6bcae;
-  --slot-ink: #635b53;
-  --focus: #1b1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f3efe8; --ink: #1b1714; --muted: #68625a; --line: #dad2c6; --line-strong: #1b1714;
+  --media: #e6dfd4; --band: #ebe5da; --accent: #a2543a; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s07-002 *,
-.dn-s07-002 *::before,
-.dn-s07-002 *::after { box-sizing: inherit; }
-.dn-s07-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+.dn-s07-002 *, .dn-s07-002 *::before, .dn-s07-002 *::after { box-sizing: inherit; }
+.dn-s07-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s07-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
+.dn-s07-002 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s07-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s07-002 .eyebrow {
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent);
-}
-.dn-s07-002 h2 {
-  margin: 0 0 clamp(14px, 1.8vw, 20px);
-  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
-  line-height: 1.0; letter-spacing: -0.044em; font-weight: 800;
-  max-width: 20ch;
-}
-.dn-s07-002 .lead { margin: 0 0 clamp(24px, 3vw, 38px); max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.08rem, 1.36vw, 1.24rem); }
+.dn-s07-002 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.dn-s07-002 .head > svg.arc { position: absolute; right: 0; top: -1.6rem; width: clamp(9rem, 16vw, 15rem); height: clamp(9rem, 16vw, 15rem); color: var(--accent); pointer-events: none; z-index: 0; }
+.dn-s07-002 .eyebrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s07-002 h2 { position: relative; z-index: 1; margin: 0; max-width: 14ch; font-weight: 600; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.96; letter-spacing: -0.04em; }
+.dn-s07-002 h2 .ac { color: var(--accent); }
+.dn-s07-002 .lead { position: relative; z-index: 1; margin: 0 0 0.3em; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
 
-.dn-s07-002 .room {
-  border: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  aspect-ratio: 24 / 7;
-  display: grid; place-items: center;
-  padding: clamp(16px, 2.2vw, 28px);
-  margin: 0 calc(-1 * clamp(22px, 3.6vw, 58px)) clamp(10px, 1.3vw, 14px);
-}
-.dn-s07-002 .room span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; }
-.dn-s07-002 .sum { margin: 0 0 clamp(30px, 3.8vw, 52px); font-size: 0.92rem; color: var(--ink-soft); }
-.dn-s07-002 .sum b { color: var(--ink); font-weight: 800; }
+.dn-s07-002 figure { margin: clamp(2rem, 4vw, 3.4rem) 0 0; }
+.dn-s07-002 .media { position: relative; aspect-ratio: 3 / 1; background: var(--media); border-radius: 6px; }
+.dn-s07-002 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s07-002 figcaption { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.9fr); gap: 0.4rem 2rem; align-items: baseline; margin: 0.8rem 0 0; padding-top: 0.8rem; border-top: 3px solid var(--accent); color: var(--muted); font-size: 0.8rem; }
+.dn-s07-002 figcaption b { color: var(--ink); font-weight: 600; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.3; letter-spacing: -0.015em; }
+.dn-s07-002 figcaption b span[data-placeholder] { color: var(--accent); }
 
-/* --- Four of them, a line each --- */
-.dn-s07-002 .brief { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(16px, 2vw, 24px); }
-.dn-s07-002 .brief li {
-  padding-bottom: clamp(16px, 2vw, 24px);
-  border-bottom: 1px solid var(--line);
-  display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
-  gap: clamp(16px, 2.4vw, 40px);
-}
-.dn-s07-002 .brief h3 { margin: 0 0 3px; font-size: clamp(1.14rem, 1.5vw, 1.34rem); letter-spacing: -0.026em; font-weight: 800; }
-.dn-s07-002 .brief .when { display: block; font-size: 0.9rem; font-weight: 700; color: var(--accent); }
-.dn-s07-002 .brief p { margin: 0; font-size: 1rem; color: var(--ink-soft); }
-.dn-s07-002 .brief .yours { margin-top: 7px !important; color: var(--ink) !important; font-weight: 600; }
+.dn-s07-002 .list { list-style: none; margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.dn-s07-002 .list li { display: grid; grid-template-columns: minmax(10rem, 0.5fr) minmax(0, 1fr) minmax(0, 1fr); gap: 0.2rem clamp(1.2rem, 2.5vw, 2.4rem); align-items: baseline; padding: 0.9rem 0 1rem; border-bottom: 1px solid var(--line); }
+.dn-s07-002 .list h3 { margin: 0; font-weight: 600; font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.02em; }
+.dn-s07-002 .when { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.dn-s07-002 .list p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.dn-s07-002 .list p b { display: block; margin-bottom: 0.1rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s07-002 .list p.you { color: var(--ink); }
+.dn-s07-002 .list p.you b { color: var(--ink); }
 
-/* --- And the one that is six weeks long --- */
-.dn-s07-002 .long { margin: clamp(30px, 3.8vw, 54px) 0 clamp(26px, 3.2vw, 44px); }
-.dn-s07-002 .long h3 {
-  margin: 0 0 clamp(12px, 1.6vw, 18px);
-  font-size: clamp(2rem, 3.8vw, 3rem);
-  line-height: 1.02; letter-spacing: -0.04em; font-weight: 800;
-}
-.dn-s07-002 .long .when { display: inline-block; margin-left: 12px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); vertical-align: middle; }
-.dn-s07-002 .long .split { display: grid; grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr); gap: clamp(16px, 2.4vw, 40px); align-items: baseline; }
-.dn-s07-002 .long .nil { margin: 0; font-size: clamp(1.3rem, 2.1vw, 1.72rem); line-height: 1.14; letter-spacing: -0.03em; font-weight: 800; }
-.dn-s07-002 .long .yours { margin: 0; font-size: clamp(1.3rem, 2.1vw, 1.72rem); line-height: 1.14; letter-spacing: -0.03em; font-weight: 800; color: var(--accent); }
+.dn-s07-002 .band { margin: 0; padding: 1.6rem 1.6rem 1.8rem; background: var(--band); border-radius: 0 0 6px 6px; display: grid; grid-template-columns: minmax(10rem, 0.5fr) minmax(0, 1fr) minmax(0, 1fr); gap: 0.4rem clamp(1.2rem, 2.5vw, 2.4rem); align-items: start; }
+.dn-s07-002 .band h3 { margin: 0; font-weight: 600; font-size: clamp(1.8rem, 3.2vw, 3.2rem); line-height: 1; letter-spacing: -0.035em; }
+.dn-s07-002 .band .when { font-size: 0.64rem; color: var(--accent); }
+.dn-s07-002 .band p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.dn-s07-002 .band p b { display: block; margin-bottom: 0.1rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s07-002 .band p.none { color: var(--accent); font-weight: 600; font-size: clamp(1.4rem, 2.2vw, 2rem); line-height: 1.1; }
+.dn-s07-002 .band p.you { color: var(--ink); }
+.dn-s07-002 .band p.you b { color: var(--ink); }
 
-.dn-s07-002 .close {
-  margin: 0;
-  padding-top: clamp(20px, 2.6vw, 30px);
-  border-top: 1px solid var(--line);
-  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-  line-height: 1.26; letter-spacing: -0.026em; font-weight: 800;
-  max-width: 40ch;
-}
+.dn-s07-002 .foot { margin: clamp(1.4rem, 2.5vw, 2rem) 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.dn-s07-002 .foot b { color: var(--ink); font-weight: 600; }
 
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .dn-s07-002 h2, .dn-s07-002 .lead, .dn-s07-002 .close { max-width: none; }
-  .dn-s07-002 .brief li, .dn-s07-002 .long .split { grid-template-columns: minmax(0, 1fr); gap: 8px; }
-  .dn-s07-002 .room { aspect-ratio: 16 / 9; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s07-002 * { transition: none !important; }
-}
+@media (max-width: 860px) { .dn-s07-002 .head, .dn-s07-002 figcaption { grid-template-columns: minmax(0, 1fr); } .dn-s07-002 .list li, .dn-s07-002 .band { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .dn-s07-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -185,68 +112,35 @@ body { margin: 0; background: #f3efe8; }
 <div class="dn-s07-002" data-study-id="DN-S07-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="dn-s07-002-title">
 
-    <p class="eyebrow">What happens</p>
-    <h2 id="dn-s07-002-title">Four of these are appointments. One is six weeks.</h2>
-    <p class="lead">Every step here has two halves, and the second one is yours. That half is missing from every journey diagram in this sector.</p>
-
-    <div class="room"><span>Image area &mdash; the room the first appointment happens in</span></div>
-    <p class="sum"><b><span data-placeholder="true">Nine weeks</span> from the first appointment to the check.</b> <span data-placeholder="true">Three hours</span> of it in our chair.</p>
-
-    <ul class="brief">
-      <li>
-        <div>
-          <h3>The first appointment</h3>
-          <span class="when" data-placeholder="true">about forty minutes</span>
-        </div>
-        <div>
-          <p>Look, and write down what we found.</p>
-          <p class="yours">Say what you have noticed, and what you are worried about.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h3>The written plan</h3>
-          <span class="when" data-placeholder="true">as long as you want</span>
-        </div>
-        <div>
-          <p>Price every option, including doing nothing, and post it.</p>
-          <p class="yours">Read it, and say no to any part of it.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h3>The work</h3>
-          <span class="when" data-placeholder="true">two visits, about an hour each</span>
-        </div>
-        <div>
-          <p>The agreed work, in the agreed order, stopping when you raise your hand.</p>
-          <p class="yours">Turn up, and tell us if anything has changed.</p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="long">
-      <h3>Healing<span class="when" data-placeholder="true">six weeks</span></h3>
-      <div class="split">
-        <p class="nil">Nothing.</p>
-        <p class="yours">The aftercare. This is the half that decides how it settles.</p>
+    <div class="head">
+      <svg class="arc" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M2 98A96 96 0 0 1 98 2" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <div>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg>What happens</p>
+        <h2 id="dn-s07-002-title">Four of these are appointments. One is <span class="ac">six weeks.</span></h2>
       </div>
+      <p class="lead">Every step here has two halves, and the second one is yours. That half is missing from every journey diagram in this sector.</p>
     </div>
 
-    <ul class="brief">
-      <li>
-        <div>
-          <h3>The check</h3>
-          <span class="when" data-placeholder="true">about twenty minutes</span>
-        </div>
-        <div>
-          <p>Look again, and say whether it worked.</p>
-          <p class="yours">Come back even if it feels fine.</p>
-        </div>
-      </li>
-    </ul>
+    <figure>
+      <div class="media" role="img" aria-label="Reserved image area: the room the first appointment happens in"><span>The room &middot; 3:1</span></div>
+      <figcaption><b><span data-placeholder="true">Nine weeks</span> from the first appointment to the check. <span data-placeholder="true">Three hours</span> of it in our chair.</b><span>Image area &mdash; the room the first appointment happens in</span></figcaption>
+    </figure>
 
-    <p class="close">The longest step is the one where we do nothing.</p>
+    <ol class="list">
+      <li><h3>The first appointment<span class="when" data-placeholder="true">about forty minutes</span></h3><p><b>Us</b>Look, and write down what we found.</p><p class="you"><b>You</b>Say what you have noticed, and what you are worried about.</p></li>
+      <li><h3>The written plan<span class="when" data-placeholder="true">as long as you want</span></h3><p><b>Us</b>Price every option, including doing nothing, and post it.</p><p class="you"><b>You</b>Read it, and say no to any part of it.</p></li>
+      <li><h3>The work<span class="when" data-placeholder="true">two visits, about an hour each</span></h3><p><b>Us</b>The agreed work, in the agreed order, stopping when you raise your hand.</p><p class="you"><b>You</b>Turn up, and tell us if anything has changed.</p></li>
+    </ol>
+    <div class="band">
+      <h3>Healing<span class="when" data-placeholder="true">six weeks</span></h3>
+      <p class="none"><b>Us</b>Nothing.</p>
+      <p class="you"><b>You</b>The aftercare. This is the half that decides how it settles.</p>
+    </div>
+    <ol class="list">
+      <li><h3>The check<span class="when" data-placeholder="true">about twenty minutes</span></h3><p><b>Us</b>Look again, and say whether it worked.</p><p class="you"><b>You</b>Come back even if it feels fine.</p></li>
+    </ol>
+
+    <p class="foot"><b>The longest step is the one where we do nothing.</b></p>
 
   </section>
 </div>

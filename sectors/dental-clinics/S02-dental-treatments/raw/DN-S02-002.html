@@ -12,36 +12,22 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S02 — Dental Treatments
   Direction      : Premium / Editorial
-  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. One reserved area, placed inside the list.**
-  Layout model   : One measure. The six run down at reading scale, **the symptom at subhead size and
-                   the procedure name small beside it**, with one band placed at the turn
-  Density        : Structured (210 visible words, structured band 170–230)
-  Media mode     : One reserved area — the hygiene room — placed **between the urgent three and the
-                   unhurried three**, where the section changes register.
-  Interaction    : None (static; no JavaScript). Links only, no form.
-
-  Governing idea : **Nobody looks up composite bonding. They look up the thing that is wrong.**
-                   So the symptom is the title and the procedure name is the small label.
-
-  The editorial cut — the list is ordered by urgency, and the order is the argument :
-                   A treatments section is conventionally ordered by what the clinic wants to sell,
-                   which puts implants and aligners at the top. Here the order is **how soon it needs
-                   looking at**, which puts the toothache first and the two most expensive treatments
-                   last — and the band sits at the hinge, where *now* becomes *when you are ready*.
-                   A reader scanning down passes from the things that will not wait to the things that
-                   will, and the two ends of that list are also the two ends of the price range. The
-                   section never says so, and does not need to.
-
-  Why one image and not six :
-                   The contract`s first test is what the photograph is *of*. Six symptoms do not have
-                   six honest photographs; three have none, and the images a clinic reaches for to
-                   fill the gap are the three the contract bans. One honest area is worth more than
-                   six filled cells.
-
-  Content note   : No *pain-free* or *gentle*, no outcome guarantee, no superiority claim, no price,
-                   no credential, no testimonial, no before/after. No stock smile, no open mouth, no
-                   instrument, no tooth iconography, no aqua palette. No global header or navigation.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 2 in one
+                   measure: the head with the 002 arc at its corner and "the name for it" in
+                   the accent; the six run down as ruled lines in the order they need looking
+                   at — the how-soon chip in the margin, the symptom at subhead size, the
+                   procedure as the tracked label, the first visit beneath; the hygiene room as
+                   a bare 3:1 field placed between the urgent three and the rest, with V1's
+                   "Below this line, nothing is urgent" as its caption; the one link. Shape B.
+                   V1 is kept whole.
+  Layout model   : Head with an arc; six ruled lines in one measure with the field placed inside the list; foot link
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the hygiene room, in use, 3:1, placed between the urgent
+                   three and the three that can wait. Never a mouth. Empty flat field, labelled.
+  Interaction    : None. One link, no form.
+  Content note   : No placeholder values in this study. No price, no guarantee, no comfort
+                   claim. No tooth iconography, no aqua. Inline SVG, decorative. No header or
+                   navigation.
 -->
 
 <meta name="study-id" content="DN-S02-002">
@@ -53,187 +39,94 @@
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
 <meta name="theme" content="002 Linen">
-<meta name="section-shape" content="B — anchored, one reserved area inside the list">
-<meta name="layout-model" content="One measure, six running down with the symptom at subhead size, one band at the hinge">
+<meta name="section-shape" content="B — anchored, one reserved area placed inside the list">
+<meta name="layout-model" content="Head with an arc; the six as ruled lines in one measure with how-soon chips in the margin; the hygiene room as a 3:1 field between the urgent three and the rest; the one link">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-at-the-hinge-between-urgent-and-unhurried">
-<meta name="interaction" content="none-links-only-no-form">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S02-002 — Dental Treatments, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #f3efe8; }
 
-/* Scoped study styles — namespaced to .dn-s02-002 */
 .dn-s02-002 {
-  --paper: #f3efe8;
-  --ink: #1b1714;
-  --ink-soft: #6a6058;
-  --line: #ddd5c9;
-  --accent: #a2543a;
-  --slot: #e9e2d8;
-  --slot-edge: #c6bcae;
-  --slot-ink: #635b53;
-  --focus: #1b1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f3efe8; --ink: #1b1714; --muted: #68625a; --line: #dad2c6; --line-strong: #1b1714;
+  --media: #e6dfd4; --band: #ebe5da; --accent: #a2543a; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s02-002 *,
-.dn-s02-002 *::before,
-.dn-s02-002 *::after { box-sizing: inherit; }
-.dn-s02-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+.dn-s02-002 *, .dn-s02-002 *::before, .dn-s02-002 *::after { box-sizing: inherit; }
+.dn-s02-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s02-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
-.dn-s02-002 .col { max-width: 76ch; }
+.dn-s02-002 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s02-002 .measure { width: min(100%, 56rem); }
+.dn-s02-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s02-002 .eyebrow {
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent);
-}
-.dn-s02-002 h2 {
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
-  line-height: 1.0; letter-spacing: -0.044em; font-weight: 800;
-  max-width: 20ch;
-}
-.dn-s02-002 .lead {
-  margin: 0 0 clamp(34px, 4.2vw, 62px);
-  max-width: 48ch; color: var(--ink-soft);
-  font-size: clamp(1.1rem, 1.4vw, 1.28rem);
-}
+.dn-s02-002 .head { position: relative; }
+.dn-s02-002 .head > svg.arc { position: absolute; right: 0; top: -1.2rem; width: clamp(9rem, 16vw, 15rem); height: clamp(9rem, 16vw, 15rem); color: var(--accent); pointer-events: none; z-index: 0; }
+.dn-s02-002 .eyebrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s02-002 h2 { position: relative; z-index: 1; margin: 0; max-width: 14ch; font-weight: 600; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.96; letter-spacing: -0.04em; }
+.dn-s02-002 h2 .ac { color: var(--accent); }
+.dn-s02-002 .lead { position: relative; z-index: 1; margin: 1.2rem 0 0; max-width: 34rem; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
 
-/* --- The six, running down, ordered by urgency --- */
-.dn-s02-002 .six { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(24px, 3vw, 40px); }
-.dn-s02-002 .six li { display: grid; grid-template-columns: clamp(88px, 11vw, 148px) minmax(0, 1fr); gap: clamp(16px, 2.4vw, 34px); align-items: baseline; }
-.dn-s02-002 .when { font-size: 0.76rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
-.dn-s02-002 .six li:first-child .when { color: var(--accent); }
-.dn-s02-002 .six h3 {
-  margin: 0;
-  font-size: clamp(1.24rem, 1.9vw, 1.62rem);
-  line-height: 1.18; letter-spacing: -0.026em; font-weight: 800;
-  max-width: 30ch;
-}
-.dn-s02-002 .proc { display: block; margin-top: 5px; font-size: 0.88rem; font-weight: 700; color: var(--accent); }
-.dn-s02-002 .six p { margin: 7px 0 0; font-size: 1.02rem; color: var(--ink-soft); max-width: 46ch; }
+.dn-s02-002 .list { list-style: none; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.dn-s02-002 .list > li { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.2rem clamp(1.2rem, 2.5vw, 2.4rem); align-items: baseline; padding: 1.1rem 0 1.2rem; border-bottom: 1px solid var(--line); }
+.dn-s02-002 .chip { display: inline-block; justify-self: start; padding: 0.18rem 0.5rem; border: 1px solid var(--line-strong); border-radius: 4px; color: var(--ink); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.2; }
+.dn-s02-002 .chip.now { border-color: var(--accent); color: var(--accent); }
+.dn-s02-002 .list h3 { margin: 0; font-weight: 600; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.12; letter-spacing: -0.025em; }
+.dn-s02-002 .list p { grid-column: 2; margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.dn-s02-002 .list p.proc { margin-top: 0.2rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.dn-s02-002 .list > li.fig { display: block; padding: 1.4rem 0; border-bottom: 3px solid var(--accent); }
+.dn-s02-002 figure { margin: 0; }
+.dn-s02-002 .media { position: relative; aspect-ratio: 3 / 1; background: var(--media); border-radius: 6px; }
+.dn-s02-002 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s02-002 figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem 1rem; margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; }
+.dn-s02-002 figcaption b { color: var(--ink); font-weight: 600; font-size: 0.9rem; }
 
-/* --- The band, at the hinge --- */
-.dn-s02-002 .band {
-  margin: clamp(30px, 3.8vw, 54px) 0;
-  border: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  aspect-ratio: 24 / 7;
-  display: grid; place-items: center;
-  padding: clamp(16px, 2.2vw, 28px);
-}
-.dn-s02-002 .band span { color: var(--slot-ink); font-size: 0.79rem; font-weight: 700; text-align: center; max-width: 40ch; line-height: 1.45; }
-.dn-s02-002 .hinge { margin: -18px 0 clamp(30px, 3.8vw, 54px); font-size: 0.9rem; color: var(--ink-soft); }
+.dn-s02-002 .foot { margin: clamp(1.4rem, 2.5vw, 2rem) 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.dn-s02-002 .foot b { color: var(--ink); font-weight: 600; }
+.dn-s02-002 .foot a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.dn-s02-002 .foot a::after { content: " \2192"; color: var(--accent); }
 
-.dn-s02-002 .note {
-  margin: clamp(34px, 4.2vw, 60px) 0 0;
-  padding-top: clamp(20px, 2.6vw, 30px);
-  border-top: 1px solid var(--line);
-  font-size: 1.02rem;
-}
-.dn-s02-002 .note b { font-weight: 800; }
-.dn-s02-002 .note a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
-
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .dn-s02-002 h2, .dn-s02-002 .lead, .dn-s02-002 .six h3, .dn-s02-002 .six p { max-width: none; }
-  .dn-s02-002 .band { aspect-ratio: 16 / 9; }
-}
-@media (max-width: 560px) {
-  .dn-s02-002 .six li { grid-template-columns: minmax(0, 1fr); gap: 5px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s02-002 * { transition: none !important; }
-}
+@media (max-width: 640px) { .dn-s02-002 .list > li { grid-template-columns: minmax(0, 1fr); } .dn-s02-002 .list p { grid-column: 1; } }
+@media (prefers-reduced-motion: reduce) { .dn-s02-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="dn-s02-002" data-study-id="DN-S02-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="dn-s02-002-title">
-    <div class="col">
+    <div class="measure">
 
-      <p class="eyebrow">Treatments</p>
-      <h2 id="dn-s02-002-title">Find the thing that is wrong, not the name for it.</h2>
-      <p class="lead">Nobody looks up composite bonding. They look up what is actually bothering them, so that is what these say &mdash; in the order they need looking at.</p>
+      <div class="head">
+        <svg class="arc" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M2 98A96 96 0 0 1 98 2" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 8v5M12 16v.5"/></svg>Treatments</p>
+        <h2 id="dn-s02-002-title">Find the thing that is wrong, not <span class="ac">the name for it.</span></h2>
+        <p class="lead">Nobody looks up composite bonding. They look up what is actually bothering them, so that is what these say &mdash; in the order they need looking at.</p>
+      </div>
 
-      <ul class="six">
-        <li>
-          <span class="when">Now</span>
-          <div>
-            <h3>A tooth hurts and it is keeping you awake</h3>
-            <span class="proc">Root canal or extraction</span>
-            <p>Seen the same day. We stop the pain first and decide after.</p>
-          </div>
+      <ul class="list">
+        <li><span class="chip now">Now</span><h3>A tooth hurts and it is keeping you awake</h3><p class="proc">Root canal or extraction</p><p>Seen the same day. We stop the pain first and decide after.</p></li>
+        <li><span class="chip">Soon</span><h3>A filling has come out</h3><p class="proc">Replacement filling</p><p>Usually one visit. We check what made the last one fail.</p></li>
+        <li><span class="chip">Soon</span><h3>Your gums bleed when you brush</h3><p class="proc">Gum treatment</p><p>A clean, and a plan you can actually keep to.</p></li>
+        <li class="fig">
+          <figure>
+            <div class="media" role="img" aria-label="Reserved image area: the hygiene room, in use"><span>The room &middot; 3:1</span></div>
+            <figcaption><span>Image area &mdash; the hygiene room, in use</span><b>Below this line, nothing is urgent.</b></figcaption>
+          </figure>
         </li>
-        <li>
-          <span class="when">Soon</span>
-          <div>
-            <h3>A filling has come out</h3>
-            <span class="proc">Replacement filling</span>
-            <p>Usually one visit. We check what made the last one fail.</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">Soon</span>
-          <div>
-            <h3>Your gums bleed when you brush</h3>
-            <span class="proc">Gum treatment</span>
-            <p>A clean, and a plan you can actually keep to.</p>
-          </div>
-        </li>
+        <li><span class="chip">When you are ready</span><h3>One is missing and you avoid that side</h3><p class="proc">Implant or bridge</p><p>We show you both, with the whole cost of each.</p></li>
+        <li><span class="chip">When you are ready</span><h3>They are crooked and you have thought about it for years</h3><p class="proc">Aligners or braces</p><p>A scan, and what it would take. No pressure to start.</p></li>
+        <li><span class="chip">When you are ready</span><h3>It has been years and you do not know where to start</h3><p class="proc">Examination</p><p>The one we get most. Nothing is done on the day.</p></li>
       </ul>
 
-      <div class="band"><span>Image area &mdash; the hygiene room, in use</span></div>
-      <p class="hinge">Below this line, nothing is urgent.</p>
-
-      <ul class="six">
-        <li>
-          <span class="when">When you are ready</span>
-          <div>
-            <h3>One is missing and you avoid that side</h3>
-            <span class="proc">Implant or bridge</span>
-            <p>We show you both, with the whole cost of each.</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">When you are ready</span>
-          <div>
-            <h3>They are crooked and you have thought about it for years</h3>
-            <span class="proc">Aligners or braces</span>
-            <p>A scan, and what it would take. No pressure to start.</p>
-          </div>
-        </li>
-        <li>
-          <span class="when">When you are ready</span>
-          <div>
-            <h3>It has been years and you do not know where to start</h3>
-            <span class="proc">Examination</span>
-            <p>The one we get most. Nothing is done on the day.</p>
-          </div>
-        </li>
-      </ul>
-
-      <p class="note"><b>Not sure which?</b> <a href="#">Book the examination</a>. It is the same appointment either way.</p>
+      <p class="foot"><b>Not sure which?</b> <a href="#">Book the examination</a>. It is the same appointment either way.</p>
 
     </div>
   </section>

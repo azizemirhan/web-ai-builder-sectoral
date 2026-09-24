@@ -63,9 +63,9 @@ DN-S26-005
 | --- | --- |
 | `DN-S26-001` | Universal / Safe |
 | `DN-S26-002` | Premium / Editorial |
-| `DN-S26-003` | Dense / Information-heavy |
+| `DN-S26-003` | Structured / Visual Modular |
 | `DN-S26-004` | Conversion-led |
-| `DN-S26-005` | Sector-native / Distinctive |
+| `DN-S26-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,8 +91,16 @@ Nearest existing section in this sector: S04 Dentists Specialists (`S04-dentists
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope and Preview
+
+Five modern single-clinician profiles. Identity, credentials, approach and associated work are reserved fields; portraits remain empty.
+
+[Compare five studies](../../../review/dental-profile-detail.html).
+
+Regenerate: powershell -NoProfile -ExecutionPolicy Bypass -File review/build-dental-profile-detail.ps1

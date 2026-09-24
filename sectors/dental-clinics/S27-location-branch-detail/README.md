@@ -63,9 +63,9 @@ DN-S27-005
 | --- | --- |
 | `DN-S27-001` | Universal / Safe |
 | `DN-S27-002` | Premium / Editorial |
-| `DN-S27-003` | Dense / Information-heavy |
+| `DN-S27-003` | Structured / Visual Modular |
 | `DN-S27-004` | Conversion-led |
-| `DN-S27-005` | Sector-native / Distinctive |
+| `DN-S27-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,8 +91,16 @@ Nearest existing section in this sector: S17 Locations (`S17-locations/`).
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope and Preview
+
+Five modern single-clinic location studies. Address, contact, opening hours, arrival, access and local care are reserved fields. Mobile contact information precedes media.
+
+[Compare five studies](../../../review/dental-location-detail.html).
+
+Regenerate: powershell -NoProfile -ExecutionPolicy Bypass -File review/build-dental-location-detail.ps1

@@ -62,9 +62,9 @@ DN-S22-005
 | --- | --- |
 | `DN-S22-001` | Universal / Safe |
 | `DN-S22-002` | Premium / Editorial |
-| `DN-S22-003` | Dense / Information-heavy |
+| `DN-S22-003` | Structured / Visual Modular |
 | `DN-S22-004` | Conversion-led |
-| `DN-S22-005` | Sector-native / Distinctive |
+| `DN-S22-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -90,8 +90,26 @@ Sits directly above or below S21 on an internal page, and never replaces it.
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Context
+
+All five show Home > Appointments > Your first visit, matching the S21 internal-page example.
+Home and parent links open the matching S01 and S11 studies. The current page is a non-link label
+with aria-current="page". Optional related routes use existing S15, S17 and S19 files.
+
+Every study has named navigation landmarks, no media, no page heading and no JavaScript.
+001, 002, 003 and 005 wrap on narrow screens; 004 uses a focusable native horizontal rail with a
+visible scrolling cue. No ancestor is removed or hidden behind an inaccessible truncation.
+
+# Preview
+
+[Compare the five navigation studies](../../../review/dental-context-navigation.html).
+
+Regenerate from the workspace root:
+
+    powershell -NoProfile -ExecutionPolicy Bypass -File review/build-dental-context-navigation.ps1

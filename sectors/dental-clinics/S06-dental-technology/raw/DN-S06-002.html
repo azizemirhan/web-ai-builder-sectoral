@@ -12,48 +12,23 @@
   Sector         : Dental Clinics (DN)
   Section        : DN-S06 — Dental Technology
   Direction      : Premium / Editorial
-  Theme          : 002 Linen — see ../../DENTAL-THEME-CONTRACT.md
-  Section shape  : **C — Type and colour. No reserved media at all.**
-  Layout model   : One statement, then **the four swaps inside a single colour field** at display
-                   size, then the demotion on the paper below it
-  Density        : Structured (see count below, structured band 170–230)
-  Media mode     : **NONE.** See below — this is the study that refuses the photograph in the one
-                   section where the contract would license it.
-  Interaction    : None (static; no JavaScript). No links, no form.
-
-  Governing idea : **Every machine here replaced something. That is the only reason it is listed.**
-
-  Why this study has no photograph, in the section where it could :
-                   The contract licenses **the equipment the text names** as an honest subject, so a
-                   picture of the scanner would be permitted here. This study still refuses it.
-                   **A photograph of a machine carries no information a patient can use.** It is a
-                   beige box on a stand. It cannot show what the machine replaced, how long the scan
-                   takes, or what it fails to see — and those are the only three things on this page
-                   that matter. The picture would occupy the space at the top of the reader's
-                   attention and answer none of it.
-                   That is the editorial cut: **permitted is not the same as useful.** Contract rule 3
-                   says a section is not entitled to media just because it could have some, and this is
-                   the section where that rule earns its keep.
-
-  What replaces the image, since something has to :
-                   **A colour field.** The four swaps sit together on one tinted ground at display
-                   size, so the block that would have been a photograph is instead the sentence *the
-                   putty tray is gone.* Scale and ground do the work the picture was going to do
-                   badly.
-
-  The page-rhythm debt this pays :
-                   The contract requires **at least one shape `C` in every assembled page.** Variant
-                   `002` had none in `S01`–`S05` — five anchored sections in a row. This is the `C`.
-
-  The field nobody prints :
-                   The 3D X-ray **uses more radiation than a flat one**, which is why there is a rule
-                   about when we take one. Every clinic holds that fact and none publishes it.
-
-  Placeholder data : The scan duration is a PLACEHOLDER DEMO VALUE marked data-placeholder="true".
-
-  Content note   : No outcome guarantee, no *pain-free* or *gentle*, no superiority claim, no brand
-                   name, no acronym, no price, no credential, no testimonial. No aqua palette. No
-                   global header or navigation.
+  Register       : Detailing pass — DENTAL-THEME-CONTRACT.md → Detailing Pass. Device 2 —
+                   no photograph of any of it: the head with the 002 arc at its corner and
+                   "no photograph" in the accent; the four swaps inside one band on the
+                   tinted paper as ruled lines at display size — the absence in the ink, the
+                   machine in the accent as a tracked label, what you notice, and what it does
+                   not do on the plum edge; the closing demotion on the lead rule. No field —
+                   the study refuses the photograph in the one section where the equipment is
+                   an honest subject. Shape C. V1 is kept whole.
+  Layout model   : Head with an arc; one band holding four ruled swaps at display size; closing line
+  Density        : Structured — V1's spine kept in full
+  Media mode     : NONE — a picture of the box would not show you which part was replaced.
+  Interaction    : None. No link, no form.
+  Content note   : The scan duration is a PLACEHOLDER DEMO VALUE marked data-placeholder="true"
+                   and declared in the meta block. No acronym, no brand, no model name; the
+                   radiation rule printed in full; the one digit in visible copy is V1's name
+                   for the 3D X-ray, an allowed token. No tooth iconography, no aqua. Inline
+                   SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="DN-S06-002">
@@ -66,96 +41,54 @@
 <meta name="direction" content="Premium / Editorial">
 <meta name="theme" content="002 Linen">
 <meta name="section-shape" content="C — type and colour, no reserved media">
-<meta name="layout-model" content="One statement, the four swaps inside a single colour field at display size, the demotion on the paper below">
+<meta name="layout-model" content="Head with an arc; the four swaps as ruled lines at display size inside one band — the absence in the ink, the machine as a tracked label, the does-not line on the plum edge; the closing demotion on the lead rule">
 <meta name="density" content="structured">
-<meta name="media-mode" content="none-deliberate-a-photograph-of-a-machine-carries-nothing-a-patient-can-use">
-<meta name="interaction" content="none-no-links-no-form">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="scan duration — demo value, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>DN-S06-002 — Dental Technology, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: #f3efe8; }
 
-/* Scoped study styles — namespaced to .dn-s06-002 */
 .dn-s06-002 {
-  --paper: #f3efe8;
-  --ink: #1b1714;
-  --ink-soft: #6a6058;
-  --line: #ddd5c9;
-  --field: #e7ded1;
-  --accent: #a2543a;
-  --accent-ink: #ffffff;
-  --focus: #1b1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f3efe8; --ink: #1b1714; --muted: #68625a; --line: #dad2c6; --line-strong: #1b1714;
+  --media: #e6dfd4; --band: #ebe5da; --accent: #a2543a; --no: #5a4a57;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.dn-s06-002 *,
-.dn-s06-002 *::before,
-.dn-s06-002 *::after { box-sizing: inherit; }
-.dn-s06-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 2px; }
+.dn-s06-002 *, .dn-s06-002 *::before, .dn-s06-002 *::after { box-sizing: inherit; }
+.dn-s06-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.dn-s06-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
+.dn-s06-002 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.dn-s06-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.dn-s06-002 .eyebrow {
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  font-size: 0.79rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent);
-}
-.dn-s06-002 h2 {
-  margin: 0 0 clamp(14px, 1.8vw, 20px);
-  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
-  line-height: 1.0; letter-spacing: -0.044em; font-weight: 800;
-  max-width: 20ch;
-}
-.dn-s06-002 .lead { margin: 0 0 clamp(30px, 3.8vw, 52px); max-width: 48ch; color: var(--ink-soft); font-size: clamp(1.08rem, 1.36vw, 1.24rem); }
+.dn-s06-002 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.dn-s06-002 .head > svg.arc { position: absolute; right: 0; top: -1.6rem; width: clamp(9rem, 16vw, 15rem); height: clamp(9rem, 16vw, 15rem); color: var(--accent); pointer-events: none; z-index: 0; }
+.dn-s06-002 .eyebrow { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.dn-s06-002 h2 { position: relative; z-index: 1; margin: 0; max-width: 14ch; font-weight: 600; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.96; letter-spacing: -0.04em; }
+.dn-s06-002 h2 .ac { color: var(--accent); }
+.dn-s06-002 .lead { position: relative; z-index: 1; margin: 0 0 0.3em; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
 
-/* --- The colour field, where the photograph would have gone --- */
-.dn-s06-002 .field {
-  background: var(--field);
-  padding: clamp(30px, 4vw, 62px) clamp(24px, 3.4vw, 56px);
-  margin: 0 calc(-1 * clamp(22px, 3.6vw, 58px)) clamp(30px, 3.8vw, 52px);
-}
-.dn-s06-002 .swaps { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(26px, 3.2vw, 44px); }
-.dn-s06-002 .swaps li { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(18px, 2.6vw, 46px); align-items: baseline; }
-.dn-s06-002 .swaps h3 {
-  margin: 0;
-  font-size: clamp(1.36rem, 2.4vw, 2.05rem);
-  line-height: 1.1; letter-spacing: -0.032em; font-weight: 800;
-}
-.dn-s06-002 .swaps h3 em { font-style: normal; display: block; margin-top: 5px; font-size: 0.95rem; letter-spacing: 0.02em; font-weight: 700; color: var(--accent); }
-.dn-s06-002 .swaps p { margin: 0; font-size: clamp(1.02rem, 1.2vw, 1.13rem); color: var(--ink-soft); }
-.dn-s06-002 .limit { margin-top: 9px !important; color: var(--ink) !important; font-weight: 600; }
+.dn-s06-002 .band { margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0.4rem clamp(1.2rem, 2.5vw, 2.4rem) 0.8rem; background: var(--band); border-radius: 6px; }
+.dn-s06-002 .band ol { list-style: none; margin: 0; padding: 0; }
+.dn-s06-002 .band li { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 0.3rem clamp(1.5rem, 3vw, 3rem); align-items: baseline; padding: 1.2rem 0 1.3rem; border-bottom: 1px solid var(--line); }
+.dn-s06-002 .band li.last { border-bottom: 0; }
+.dn-s06-002 .band h3 { margin: 0; font-weight: 600; font-size: clamp(1.5rem, 2.6vw, 2.6rem); line-height: 1.05; letter-spacing: -0.03em; }
+.dn-s06-002 .band h3 small { display: block; margin-top: 0.4rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.dn-s06-002 .band p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.dn-s06-002 .band p span[data-placeholder] { color: var(--ink); font-weight: 600; }
+.dn-s06-002 .band p.not { grid-column: 2; margin-top: 0.3rem; padding-left: 0.7rem; border-left: 2px solid var(--no); color: var(--ink); font-size: 0.9rem; }
 
-.dn-s06-002 .close {
-  margin: 0;
-  font-size: clamp(1.3rem, 2.2vw, 1.95rem);
-  line-height: 1.16; letter-spacing: -0.03em; font-weight: 800;
-  max-width: 36ch;
-}
+.dn-s06-002 .close { margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; padding-top: 1rem; border-top: 3px solid var(--accent); width: min(100%, 44rem); font-weight: 600; font-size: clamp(1.2rem, 1.9vw, 1.7rem); line-height: 1.25; letter-spacing: -0.02em; }
 
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .dn-s06-002 h2, .dn-s06-002 .lead, .dn-s06-002 .close { max-width: none; }
-  .dn-s06-002 .swaps li { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .dn-s06-002 * { transition: none !important; }
-}
+@media (max-width: 860px) { .dn-s06-002 .head, .dn-s06-002 .band li { grid-template-columns: minmax(0, 1fr); } .dn-s06-002 .band p.not { grid-column: 1; } }
+@media (prefers-reduced-motion: reduce) { .dn-s06-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -163,41 +96,22 @@ body { margin: 0; background: #f3efe8; }
 <div class="dn-s06-002" data-study-id="DN-S06-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="dn-s06-002-title">
 
-    <p class="eyebrow">Equipment</p>
-    <h2 id="dn-s06-002-title">There is no photograph of any of it.</h2>
-    <p class="lead">Every machine here replaced something. That is the only reason it is on this page, and a picture of the box would not show you which part.</p>
+    <div class="head">
+      <svg class="arc" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M2 98A96 96 0 0 1 98 2" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+      <div>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg>Equipment</p>
+        <h2 id="dn-s06-002-title">There is <span class="ac">no photograph</span> of any of it.</h2>
+      </div>
+      <p class="lead">Every machine here replaced something. That is the only reason it is on this page, and a picture of the box would not show you which part.</p>
+    </div>
 
-    <div class="field">
-      <ul class="swaps">
-        <li>
-          <h3>The putty tray is gone.<em>The scanner</em></h3>
-          <div>
-            <p>Nothing sets in your mouth, and the scan takes about <span data-placeholder="true">four minutes</span>.</p>
-            <p class="limit">It cannot see under the gum.</p>
-          </div>
-        </li>
-        <li>
-          <h3>The referral is gone.<em>The 3D X-ray</em></h3>
-          <div>
-            <p>No trip to a hospital scanner. One appointment instead of two.</p>
-            <p class="limit">It uses more radiation than a flat X-ray, so we take one only when a flat picture cannot answer the question.</p>
-          </div>
-        </li>
-        <li>
-          <h3>The temporary crown is gone.<em>The milling unit</em></h3>
-          <div>
-            <p>One visit, and nothing to come loose over the weekend.</p>
-            <p class="limit">It does not suit every crown.</p>
-          </div>
-        </li>
-        <li>
-          <h3>Our description is gone.<em>The screen at the chair</em></h3>
-          <div>
-            <p>You see what we found while we are looking at it.</p>
-            <p class="limit">A picture is not a diagnosis. Someone still has to read it.</p>
-          </div>
-        </li>
-      </ul>
+    <div class="band">
+      <ol>
+        <li><h3>The putty tray is gone.<small>The scanner</small></h3><p>Nothing sets in your mouth, and the scan takes about <span data-placeholder="true">four minutes</span>.</p><p class="not">It cannot see under the gum.</p></li>
+        <li><h3>The referral is gone.<small>The 3D X-ray</small></h3><p>No trip to a hospital scanner. One appointment instead of two.</p><p class="not">It uses more radiation than a flat X-ray, so we take one only when a flat picture cannot answer the question.</p></li>
+        <li><h3>The temporary crown is gone.<small>The milling unit</small></h3><p>One visit, and nothing to come loose over the weekend.</p><p class="not">It does not suit every crown.</p></li>
+        <li class="last"><h3>Our description is gone.<small>The screen at the chair</small></h3><p>You see what we found while we are looking at it.</p><p class="not">A picture is not a diagnosis. Someone still has to read it.</p></li>
+      </ol>
     </div>
 
     <p class="close">None of it makes a filling last longer than the hands that place it.</p>
