@@ -70,9 +70,9 @@ EDU-S24-005
 | --- | --- |
 | `EDU-S24-001` | Universal / Safe |
 | `EDU-S24-002` | Premium / Editorial |
-| `EDU-S24-003` | Dense / Information-heavy |
+| `EDU-S24-003` | Structured / Visual Modular |
 | `EDU-S24-004` | Conversion-led |
-| `EDU-S24-005` | Sector-native / Distinctive |
+| `EDU-S24-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -98,8 +98,14 @@ Nearest existing section in this sector: S10 Student Projects (`S10-student-proj
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope
+
+Five anonymised cohort case studies reserve one completed-work image, one process image and one delivered-detail image. Context, approach and reflection fields await verified project evidence. No success rates or employment outcomes are invented.
+
+[Compare five studies](../../../review/education-case-detail.html). See BATCH-V1.md for media and validation records.

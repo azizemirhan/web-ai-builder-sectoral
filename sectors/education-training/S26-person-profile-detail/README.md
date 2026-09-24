@@ -63,9 +63,9 @@ EDU-S26-005
 | --- | --- |
 | `EDU-S26-001` | Universal / Safe |
 | `EDU-S26-002` | Premium / Editorial |
-| `EDU-S26-003` | Dense / Information-heavy |
+| `EDU-S26-003` | Structured / Visual Modular |
 | `EDU-S26-004` | Conversion-led |
-| `EDU-S26-005` | Sector-native / Distinctive |
+| `EDU-S26-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,8 +91,14 @@ Nearest existing section in this sector: S05 Instructors Faculty (`S05-instructo
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope
+
+Five single-instructor profile layouts cover identity, focus, professional background, teaching involvement and contact. All personal facts remain reserved. Three variants include a consented-portrait slot; two are complete without media.
+
+[Compare five studies](../../../review/education-profile-detail.html). See BATCH-V1.md for routes, media and validation.

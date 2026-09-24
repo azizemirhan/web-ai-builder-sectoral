@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : EDU-S12-003
+  Sector         : Education & Training (EDU)
+  Section        : EDU-S12 — Campus & Facilities
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — EDUCATION-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the introduction beside a joined mosaic: the 003 cross grid drawn once
+                   behind; a narrow intro column with the head, V1's lead, the graphite
+                   CAMPUS SPACES chip, the action and V1's note on the lead rule; one
+                   bordered plate of three horizontal modules on 1px ink seams — each a 4:5
+                   field of the room at the left, then the bracketed campus chip, name,
+                   purpose and location and V1's access disclosure opened as a row with the
+                   document mark. Shape A. V1 is kept whole.
+  Layout model   : Cross grid behind; intro column with the action and the note on the lead rule; three horizontal space modules in a bordered plate with 4:5 fields
+  Density        : Structured — V1's spine kept in full
+  Media mode     : THREE reserved areas — learning spaces one to three, labelled by role
+                   only. Never a named person. Empty flat fields.
+  Interaction    : One link — Explore programmes to the same-variant S02, as V1 routed it.
+                   V1's disclosures open as rows; no form, no script.
+  Content note   : Every campus line, name, purpose, location and access line is a
+                   BRACKETED PLACEHOLDER marked data-placeholder="true" and declared in the
+                   meta block; facilities await confirmation. No campus, hour or address is
+                   invented. Inline SVG, decorative. No header or navigation.
+-->
+
+<meta name="study-id" content="EDU-S12-003">
+<meta name="sector" content="Education &amp; Training">
+<meta name="sector-prefix" content="EDU">
+<meta name="section-id" content="EDU-S12">
+<meta name="section-name" content="Campus &amp; Facilities">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Cobalt">
+<meta name="section-shape" content="A — item grid, media in every item, three reserved areas">
+<meta name="layout-model" content="Cross grid behind; a narrow intro column with the head, V1's lead, the graphite spaces chip, the action and the note on the lead rule; three horizontal learning-space modules in a bordered plate on ink seams, each a 4:5 field beside the bracketed campus chip, name, purpose, location and the opened access row">
+<meta name="density" content="structured">
+<meta name="media-mode" content="three-reserved-areas">
+<meta name="interaction" content="one-link">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="campus spaces, facilities awaiting confirmation; three learning spaces — campus and facility type, name, purpose, location within the campus, equipment and hours, access and adjustments — bracketed placeholders">
+<meta name="batch" content="V2-detailing">
+
+<title>EDU-S12-003 — Campus &amp; Facilities, Structured / Visual Modular</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f3f9; }
+
+.edu-s12-003 {
+  --paper: #f1f3f9; --ink: #17253d; --muted: #536078; --line: #d3dae8; --line-strong: #17253d;
+  --media: #e1e6f1; --band: #e9edf5; --accent: #2856c9; --no: #3d4a5c;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.edu-s12-003 *, .edu-s12-003 *::before, .edu-s12-003 *::after { box-sizing: inherit; }
+.edu-s12-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.edu-s12-003 .draw { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--line); pointer-events: none; }
+.edu-s12-003 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.edu-s12-003 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.edu-s12-003 .grid { display: grid; grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.edu-s12-003 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.edu-s12-003 h2 { margin: 0; max-width: 10ch; font-weight: 600; font-size: clamp(2.4rem, 4.4vw, 4.6rem); line-height: 0.96; letter-spacing: -0.04em; }
+.edu-s12-003 h2 .ac { color: var(--accent); }
+.edu-s12-003 .lead { margin: 1.2rem 0 0; font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.45; }
+.edu-s12-003 .chip { display: inline-block; padding: 0.25rem 0.5rem; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.2; }
+.edu-s12-003 .chip.no { border-color: var(--no); color: var(--no); }
+.edu-s12-003 .intro .chip { margin: 1rem 0 0; }
+.edu-s12-003 .act { margin: 1.4rem 0 0; padding-top: 1rem; border-top: 3px solid var(--accent); }
+.edu-s12-003 .btn { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 2.75rem; padding: 0.85rem 1.3rem; border: 1px solid var(--ink); border-radius: 4px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+.edu-s12-003 .btn .mk { width: 1rem; height: 1rem; }
+.edu-s12-003 .note { margin: 1.2rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+
+.edu-s12-003 .plate { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line-strong); border-radius: 8px; overflow: hidden; background: var(--paper); }
+.edu-s12-003 .plate li { display: grid; grid-template-columns: minmax(9rem, 11rem) minmax(0, 1fr); column-gap: clamp(1.2rem, 2.5vw, 2rem); padding: 1.3rem 1.4rem 1.5rem; border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.edu-s12-003 .plate li:last-child { border-bottom: 0; }
+.edu-s12-003 figure { margin: 0; }
+.edu-s12-003 .media { position: relative; aspect-ratio: 4 / 5; background: var(--media); border-radius: 8px; }
+.edu-s12-003 .media span { position: absolute; left: 0.8rem; bottom: 0.7rem; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.edu-s12-003 figcaption { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.72rem; }
+.edu-s12-003 .text { display: grid; gap: 0.45rem; align-content: start; min-width: 0; }
+.edu-s12-003 .text .chip { justify-self: start; }
+.edu-s12-003 h3 { margin: 0; font-weight: 600; font-size: clamp(1.2rem, 1.8vw, 1.6rem); line-height: 1.15; letter-spacing: -0.03em; color: var(--muted); }
+.edu-s12-003 .role { margin: 0; color: var(--muted); font-size: 0.8rem; }
+.edu-s12-003 .bio { margin: 0; font-size: 0.92rem; line-height: 1.5; width: min(100%, 36rem); }
+.edu-s12-003 .bg { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.2rem 0.6rem; align-items: start; margin-top: 0.5rem; padding-top: 0.8rem; border-top: 1px solid var(--line); }
+.edu-s12-003 .bg .mk { color: var(--accent); width: 1rem; height: 1rem; margin-top: 0.15rem; }
+.edu-s12-003 h4 { margin: 0; font-size: 0.84rem; font-weight: 700; letter-spacing: -0.01em; }
+.edu-s12-003 .bg p { margin: 0; grid-column: 2; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+
+@media (max-width: 960px) { .edu-s12-003 .grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .edu-s12-003 .plate li { grid-template-columns: minmax(0, 1fr); row-gap: 0.8rem; } .edu-s12-003 .plate figure { width: min(100%, 12rem); } }
+@media (prefers-reduced-motion: reduce) { .edu-s12-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="edu-s12-003" data-study-id="EDU-S12-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" aria-hidden="true" focusable="false"><defs><pattern id="edu-s12-003-cross" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20 16v8M16 20h8" fill="none" stroke="currentColor" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#edu-s12-003-cross)"/></svg>
+  <section class="shell" aria-labelledby="edu-s12-003-title">
+    <div class="grid">
+
+      <div class="intro">
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V5l8-2 8 2v16M4 21h16M9 10h2M13 10h2M9 14h2M13 14h2M10 21v-4h4v4"/></svg>Campus &amp; facilities</p>
+        <h2 id="edu-s12-003-title">Space to focus. <span class="ac">Room to explore.</span></h2>
+        <p class="lead">Explore the spaces that shape the study experience, from focused work to practical activity and shared learning. Find the context that matters to your programme.</p>
+        <span class="chip no" data-placeholder="true">Campus spaces &middot; Facilities awaiting confirmation</span>
+        <div class="act">
+          <a class="btn" href="../../S02-programs-courses/raw/EDU-S02-003.html"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Explore programmes</a>
+        </div>
+        <p class="note">Facilities and access arrangements vary by campus and programme. Check the confirmed location, availability and accessibility information before planning a visit.</p>
+      </div>
+
+      <ul class="plate">
+        <li>
+          <figure><div class="media" role="img" aria-label="Reserved image area: learning space one"><span>The room &middot; 4:5</span></div><figcaption>Image area &mdash; learning space one</figcaption></figure>
+          <div class="text">
+            <span class="chip" data-placeholder="true">[Campus &middot; Facility type]</span>
+            <h3 data-placeholder="true">[Learning space 1]</h3>
+            <p class="bio" data-placeholder="true">[Purpose of this space and the learning activities it supports.]</p>
+            <p class="role" data-placeholder="true">[Location within the campus]</p>
+            <div class="bg"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg><h4>Access &amp; facilities</h4><p data-placeholder="true">[Equipment, opening hours and any booking requirements.]</p><p data-placeholder="true">[Step-free access, available adjustments and support contact.]</p></div>
+          </div>
+        </li>
+        <li>
+          <figure><div class="media" role="img" aria-label="Reserved image area: learning space two"><span>The room &middot; 4:5</span></div><figcaption>Image area &mdash; learning space two</figcaption></figure>
+          <div class="text">
+            <span class="chip" data-placeholder="true">[Campus &middot; Facility type]</span>
+            <h3 data-placeholder="true">[Learning space 2]</h3>
+            <p class="bio" data-placeholder="true">[Purpose of this space and the learning activities it supports.]</p>
+            <p class="role" data-placeholder="true">[Location within the campus]</p>
+            <div class="bg"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg><h4>Access &amp; facilities</h4><p data-placeholder="true">[Equipment, opening hours and any booking requirements.]</p><p data-placeholder="true">[Step-free access, available adjustments and support contact.]</p></div>
+          </div>
+        </li>
+        <li>
+          <figure><div class="media" role="img" aria-label="Reserved image area: learning space three"><span>The room &middot; 4:5</span></div><figcaption>Image area &mdash; learning space three</figcaption></figure>
+          <div class="text">
+            <span class="chip" data-placeholder="true">[Campus &middot; Facility type]</span>
+            <h3 data-placeholder="true">[Learning space 3]</h3>
+            <p class="bio" data-placeholder="true">[Purpose of this space and the learning activities it supports.]</p>
+            <p class="role" data-placeholder="true">[Location within the campus]</p>
+            <div class="bg"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg><h4>Access &amp; facilities</h4><p data-placeholder="true">[Equipment, opening hours and any booking requirements.]</p><p data-placeholder="true">[Step-free access, available adjustments and support contact.]</p></div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

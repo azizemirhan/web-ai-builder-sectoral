@@ -63,9 +63,9 @@ EDU-S21-005
 | --- | --- |
 | `EDU-S21-001` | Universal / Safe |
 | `EDU-S21-002` | Premium / Editorial |
-| `EDU-S21-003` | Dense / Information-heavy |
+| `EDU-S21-003` | Structured / Visual Modular |
 | `EDU-S21-004` | Conversion-led |
-| `EDU-S21-005` | Sector-native / Distinctive |
+| `EDU-S21-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,8 +91,14 @@ Homepage hero for this sector: S01 Hero (`S01-hero/`).
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope
+
+Five modern internal-page heroes for Admissions & enrolment, with one contextual admissions-guide link. See BATCH-V1.md for decisions and checks.
+
+[Compare five designs](../../../review/education-subpage-hero.html)

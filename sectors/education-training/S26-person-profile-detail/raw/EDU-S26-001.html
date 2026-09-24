@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : EDU-S26-001
+  Sector         : Education & Training (EDU)
+  Section        : EDU-S26 — Person Profile Detail
+  Direction      : Universal / Safe
+  Register       : Detailing pass — EDUCATION-THEME-CONTRACT.md → Detailing Pass. Device 1 —
+                   the identity and portrait beside a continuous biography: V1's context
+                   line PEOPLE / INSTRUCTOR PROFILE as the eyebrow with the person mark; the
+                   bracketed name as the h1 with the 001 loop behind it, the bracketed role
+                   and summary, and V1's 4:5 portrait field labelled by role beneath; V1's
+                   "Background & approach", "Teaching & current work" with its catalogue
+                   link and "Get in touch" with the action to admissions as ruled sections
+                   in the biography column. Shape B. V1 is kept whole.
+  Layout model   : Identity column with the loop, the bracketed name, role, summary and a 4:5 portrait field beside the biography as three ruled sections
+  Density        : Reading — V1's spine kept in full
+  Media mode     : ONE reserved area — the consented instructor portrait, 4:5, labelled
+                   by role only. Empty flat field.
+  Interaction    : Two links — Browse programme catalogue to the same-variant S02 and
+                   Contact admissions to the same-variant S19, as V1 routed them. No form,
+                   no direct contact control, no script. The bracketed name is the h1 this
+                   detail page owns.
+  Content note   : The name, role, summary, background, approach, teaching and contact
+                   route are BRACKETED PLACEHOLDERS marked data-placeholder="true" and
+                   declared in the meta block, each carrying V1's instruction to use the
+                   person's approved words and confirmed facts. No identity, qualification,
+                   affiliation or pronoun is invented; the portrait is labelled by role
+                   only. Inline SVG, decorative. No header or navigation.
+-->
+
+<meta name="study-id" content="EDU-S26-001">
+<meta name="sector" content="Education &amp; Training">
+<meta name="sector-prefix" content="EDU">
+<meta name="section-id" content="EDU-S26">
+<meta name="section-name" content="Person Profile Detail">
+<meta name="variant" content="001">
+<meta name="territory" content="Universal / Safe">
+<meta name="direction" content="Universal / Safe">
+<meta name="theme" content="001 Apricot">
+<meta name="section-shape" content="B — profile with one reserved portrait area">
+<meta name="layout-model" content="Identity column with the loop behind it, the bracketed name as the h1, the bracketed role and summary and a 4:5 portrait field labelled by role; the biography beside as three ruled sections — Background & approach, Teaching & current work with the catalogue link, Get in touch with the note and the action to admissions">
+<meta name="density" content="reading">
+<meta name="media-mode" content="one-reserved-portrait-area">
+<meta name="interaction" content="two-links">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="instructor name; verified teaching role and department; subject focus and responsibilities in approved words; relevant experience and confirmed qualifications; approach to teaching; confirmed programmes, modules or projects; approved professional contact route — bracketed placeholders">
+<meta name="batch" content="V2-detailing">
+
+<title>EDU-S26-001 — Person Profile Detail, Universal / Safe</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #fbf6ee; }
+
+.edu-s26-001 {
+  --paper: #fbf6ee; --ink: #24231f; --muted: #625c52; --line: #e3d9c9; --line-strong: #24231f;
+  --media: #efe4d3; --band: #f5ecdf; --accent: #c44a21; --no: #3d4a5c;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.edu-s26-001 *, .edu-s26-001 *::before, .edu-s26-001 *::after { box-sizing: inherit; }
+.edu-s26-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.edu-s26-001 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.edu-s26-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.edu-s26-001 .eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.edu-s26-001 .eyebrow .sep { color: var(--muted); }
+.edu-s26-001 h1 { margin: 0; max-width: 12ch; font-weight: 600; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.96; letter-spacing: -0.04em; color: var(--muted); }
+.edu-s26-001 .role { margin: 0.8rem 0 0; color: var(--muted); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.edu-s26-001 .summary { margin: 1.2rem 0 0; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
+.edu-s26-001 figure { margin: 0; }
+.edu-s26-001 .media { position: relative; background: var(--media); border-radius: 8px; }
+.edu-s26-001 .media span { position: absolute; left: 0.9rem; bottom: 0.75rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.edu-s26-001 figcaption { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.76rem; }
+.edu-s26-001 h3 { margin: 0 0 0.6rem; display: flex; align-items: center; gap: 0.6rem; font-weight: 600; font-size: clamp(1.15rem, 1.7vw, 1.5rem); line-height: 1.15; letter-spacing: -0.03em; }
+.edu-s26-001 h3 .mk { color: var(--accent); }
+.edu-s26-001 .block p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.55; }
+.edu-s26-001 .block p + p { margin-top: 0.6rem; }
+.edu-s26-001 .lnk { display: inline-block; margin-top: 0.8rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.edu-s26-001 .lnk::after { content: " \2192"; }
+.edu-s26-001 .ask .eyebrow { margin-bottom: 0.6rem; }
+.edu-s26-001 .big { display: block; font-size: clamp(1.5rem, 2.6vw, 2.4rem); letter-spacing: -0.035em; line-height: 1.05; }
+.edu-s26-001 .ask .note { color: var(--ink); font-size: 0.88rem; }
+.edu-s26-001 .btn { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 2.75rem; margin-top: 1rem; padding: 0.85rem 1.3rem; border: 1px solid var(--ink); border-radius: 4px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; white-space: nowrap; }
+.edu-s26-001 .btn .mk { width: 1rem; height: 1rem; }
+
+.edu-s26-001 .grid { display: grid; grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.edu-s26-001 .idt { position: relative; }
+.edu-s26-001 .idt > svg.loop { position: absolute; right: -24%; top: -26%; width: clamp(12rem, 22vw, 20rem); height: clamp(12rem, 22vw, 20rem); color: var(--line); pointer-events: none; z-index: 0; }
+.edu-s26-001 .idt > * { position: relative; z-index: 1; }
+.edu-s26-001 h1 { font-size: clamp(2.4rem, 4.4vw, 4.6rem); }
+.edu-s26-001 .idt figure { margin-top: 1.6rem; }
+.edu-s26-001 .bio { border-top: 1px solid var(--line-strong); }
+.edu-s26-001 .block { padding: 1.3rem 0 1.5rem; border-bottom: 1px solid var(--line); }
+.edu-s26-001 .ask { border-bottom: 0; padding-top: 1.2rem; border-top: 3px solid var(--accent); margin-top: 0.4rem; }
+@media (max-width: 900px) { .edu-s26-001 .grid { grid-template-columns: minmax(0, 1fr); } .edu-s26-001 .idt figure { width: min(100%, 20rem); } }
+@media (prefers-reduced-motion: reduce) { .edu-s26-001 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="edu-s26-001" data-study-id="EDU-S26-001" data-direction="Universal / Safe">
+  <article class="shell" aria-labelledby="edu-s26-001-title">
+    <div class="grid">
+      <div class="idt">
+        <svg class="loop" viewBox="0 0 140 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="48.5" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/><circle cx="90" cy="50" r="48.5" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM4 21a8 8 0 0 1 16 0"/></svg>People <span class="sep" aria-hidden="true">/</span> Instructor profile</p>
+        <h1 id="edu-s26-001-title" data-placeholder="true">[Instructor name]</h1>
+        <p class="role" data-placeholder="true">[Verified teaching role and department]</p>
+        <p class="summary" data-placeholder="true">[Introduce the person&rsquo;s subject focus and current teaching responsibilities in their approved words. Explain the area of learning they help students explore.]</p>
+        <figure><div class="media" style="aspect-ratio: 4 / 5;" role="img" aria-label="Reserved portrait area: the instructor named in this profile, with consent"><span>The instructor &middot; 4:5</span></div><figcaption>Portrait area &mdash; consented instructor portrait</figcaption></figure>
+      </div>
+      <div class="bio">
+        <section class="block bg">
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h6M9 16h6"/></svg>Background &amp; approach</h3>
+        <p data-placeholder="true">[Describe the professional experience relevant to this role, using the person&rsquo;s supplied biography. Include only confirmed qualifications and affiliations.]</p>
+        <p data-placeholder="true">[Explain their approach to teaching, the kinds of questions they work with and how they support learning. Avoid unsupported claims about student outcomes.]</p>
+      </section>
+        <section class="block teach">
+        <h3><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg>Teaching &amp; current work</h3>
+        <p data-placeholder="true">[Name the confirmed programmes, modules or projects associated with this instructor. Describe their contribution and identify the period or scope of that involvement.]</p>
+        <a class="lnk" href="../../S02-programs-courses/raw/EDU-S02-001.html">Browse programme catalogue</a>
+      </section>
+        <section class="block ask">
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v11H9l-4 4v-4H4z"/></svg>Get in touch</p>
+        <h3 class="big">A question about their teaching?</h3>
+        <p data-placeholder="true">[Approved professional contact route, suitable enquiry topics and any published contact arrangements.]</p>
+        <p class="note">For course or application questions, admissions can help you find the appropriate route. Mention the instructor and programme in your enquiry.</p>
+        <a class="btn" href="../../S19-contact-admissions/raw/EDU-S19-001.html"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Contact admissions</a>
+      </section>
+      </div>
+    </div>
+  </article>
+</div>
+
+</body>
+</html>

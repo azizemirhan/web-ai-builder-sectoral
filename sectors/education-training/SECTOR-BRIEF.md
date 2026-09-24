@@ -8,7 +8,7 @@ EDU
 
 # Purpose
 
-Structural container for future Education & Training section studies.
+Modern Education & Training section studies, organised around learning discovery, programme information and practical enrolment context.
 
 # Planned Sections
 
@@ -20,11 +20,11 @@ Structural container for future Education & Training section studies.
 
 # Authoring Status
 
-NOT_STARTED
+AUTHORED — S01-S27 authored (135 studies); V2 DETAILING PASS COMPLETE — all 135 studies re-authored in the reference register (see EDUCATION-THEME-CONTRACT.md → Detailing Pass, and each section's BATCH-V2.md); pending Design Lab ingestion
 
 # Notes
 
-Structure only. No sector research, design guidance, or design studies have been created.
+S01-S27 have one hundred and thirty-five authored studies covering learning discovery, programmes, faculty, admissions, student work, accreditations, campus facilities, events, resources, FAQs, tuition, funding, learning locations, admissions contact, the final application CTA, the internal-page hero, context navigation, admissions guidance service detail, cohort case detail, article detail, instructor profiles and campus detail. EDUCATION-THEME-CONTRACT.md establishes the five visual themes and evidence rules. All 27 planned sections are authored and re-authored in the detailing-pass register; Design Lab ingestion remains pending.
 
 # Extended Site Architecture — S21–S27
 
@@ -51,3 +51,5 @@ The primary depth page in this sector is the programme or course itself, a likel
 S24 — Programme Outcome / Cohort Case Detail
 
 Outcome and employability claims are regulated. Scoped to anonymised cohort context with no success-rate claim.
+
+The S01-S20 core catalogue is authored: 20 sections with five studies each. S21-S27 are also authored: all 27 planned sections and 135 studies are complete at the raw-authoring stage and carry the V2 detailing pass.

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+
+  Study ID       : EDU-S03-003
+  Sector         : Education & Training (EDU)
+  Section        : EDU-S03 — Course Categories
+  Direction      : Structured / Visual Modular
+  Register       : Detailing pass — EDUCATION-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   six field-led subjects in a compact mosaic: the 003 cross grid drawn once
+                   behind; the head split with the lead, the example-structure chip and the
+                   action; six cells in a bordered grid of three on 1px ink seams, each a
+                   bare 3:2 field of a learning space, a word-numeral chip, the bracketed
+                   name, V1's line and the scope placeholder; V1's note on the lead rule.
+                   Shape A. V1 is kept whole.
+  Layout model   : Cross grid behind; head split with the action; six field-led cells in a bordered grid of three; the note on the lead rule
+  Density        : Structured — V1's spine kept in full
+  Media mode     : SIX reserved areas — the creative studio, the collaborative space, the
+                   practical studio, the group space, the independent desk, the specialist
+                   studio. Never a named person. Empty flat fields, labelled.
+  Interaction    : One link — Browse all programmes to the same-variant S02, as V1 routed it.
+                   V1's disclosures open as rows; no form, no script.
+  Content note   : The six category names and their scope lines are BRACKETED PLACEHOLDERS
+                   marked data-placeholder="true" and declared in the meta block. No crest,
+                   no notebook. Inline SVG, decorative. No header or navigation.
+-->
+
+<meta name="study-id" content="EDU-S03-003">
+<meta name="sector" content="Education &amp; Training">
+<meta name="sector-prefix" content="EDU">
+<meta name="section-id" content="EDU-S03">
+<meta name="section-name" content="Course Categories">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="003 Cobalt">
+<meta name="section-shape" content="A — item grid, media in every item, six reserved areas">
+<meta name="layout-model" content="Cross grid behind; head split with the lead, the example-structure chip and the action; six subject areas as field-led cells in a bordered grid of three; the note on the lead rule">
+<meta name="density" content="structured">
+<meta name="media-mode" content="six-reserved-areas">
+<meta name="interaction" content="one-link">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="six category names and their confirmed scope lines — bracketed placeholders; example category structure, categories to be confirmed">
+<meta name="batch" content="V2-detailing">
+
+<title>EDU-S03-003 — Course Categories, Structured / Visual Modular</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f3f9; }
+
+.edu-s03-003 {
+  --paper: #f1f3f9; --ink: #17253d; --muted: #536078; --line: #d3dae8; --line-strong: #17253d;
+  --media: #e1e6f1; --band: #e9edf5; --accent: #2856c9; --no: #3d4a5c;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.edu-s03-003 *, .edu-s03-003 *::before, .edu-s03-003 *::after { box-sizing: inherit; }
+.edu-s03-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.edu-s03-003 .draw { position: absolute; inset: 0; width: 100%; height: 100%; color: var(--line); pointer-events: none; }
+.edu-s03-003 .shell { position: relative; width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.edu-s03-003 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.edu-s03-003 .head { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.edu-s03-003 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.edu-s03-003 h2 { margin: 0; max-width: 12ch; font-weight: 600; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.96; letter-spacing: -0.04em; }
+.edu-s03-003 h2 .ac { color: var(--accent); }
+.edu-s03-003 .lead { margin: 0; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.4; }
+.edu-s03-003 .chip { display: inline-block; padding: 0.25rem 0.5rem; border: 1px solid var(--accent); border-radius: 4px; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.2; }
+.edu-s03-003 .chip.no { border-color: var(--no); color: var(--no); }
+.edu-s03-003 .head .row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 1.4rem; margin: 1rem 0 0.3em; }
+.edu-s03-003 .btn { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 2.75rem; padding: 0.85rem 1.3rem; border: 1px solid var(--ink); border-radius: 4px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+.edu-s03-003 .btn .mk { width: 1rem; height: 1rem; }
+
+.edu-s03-003 .subjects { list-style: none; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.edu-s03-003 .subjects li { display: grid; gap: 0.45rem; align-content: start; padding: 1.1rem 1.2rem 1.3rem; min-width: 0; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.edu-s03-003 figure { margin: 0 0 0.3rem; }
+.edu-s03-003 .media { position: relative; aspect-ratio: 3 / 2; background: var(--media); border-radius: 8px; }
+.edu-s03-003 .media span { position: absolute; left: 0.9rem; bottom: 0.75rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.edu-s03-003 figcaption { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.76rem; }
+.edu-s03-003 .subjects .chip { justify-self: start; }
+.edu-s03-003 h3 { margin: 0; font-weight: 600; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.15; letter-spacing: -0.025em; color: var(--muted); }
+.edu-s03-003 .subjects p { margin: 0; font-size: 0.9rem; line-height: 1.5; }
+.edu-s03-003 .subjects p.scope { color: var(--muted); font-size: 0.8rem; padding-top: 0.5rem; border-top: 1px solid var(--line); }
+
+.edu-s03-003 .note { margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; padding-top: 0.9rem; border-top: 3px solid var(--accent); width: min(100%, 44rem); font-weight: 600; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.3; letter-spacing: -0.015em; }
+.edu-s03-003 .note span { display: block; margin-top: 0.3rem; font-weight: 400; color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 1000px) { .edu-s03-003 .subjects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .edu-s03-003 .head { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .edu-s03-003 .subjects { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .edu-s03-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="edu-s03-003" data-study-id="EDU-S03-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" aria-hidden="true" focusable="false"><defs><pattern id="edu-s03-003-cross" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M20 16v8M16 20h8" fill="none" stroke="currentColor" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(#edu-s03-003-cross)"/></svg>
+  <section class="shell" aria-labelledby="edu-s03-003-title">
+
+    <div class="head">
+      <div>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg>Course categories</p>
+        <h2 id="edu-s03-003-title">Follow what <span class="ac">interests you.</span></h2>
+      </div>
+      <div>
+        <p class="lead">Start with a subject area, then explore the programmes within it. Categories help you find a direction before comparing individual courses.</p>
+        <div class="row">
+          <a class="btn" href="../../S02-programs-courses/raw/EDU-S02-003.html"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Browse all programmes</a>
+          <span class="chip no" data-placeholder="true">Example category structure &middot; Categories to be confirmed</span>
+        </div>
+      </div>
+    </div>
+
+    <ul class="subjects">
+      <li><figure><div class="media" role="img" aria-label="Reserved image area: a creative learning studio"><span>The studio &middot; 3:2</span></div><figcaption>Image area &mdash; creative learning studio</figcaption></figure><span class="chip">One</span><h3 data-placeholder="true">[Creative subjects]</h3><p>Explore subjects concerned with ideas, expression and making.</p><p class="scope" data-placeholder="true">[Confirmed scope and associated programmes]</p></li>
+      <li><figure><div class="media" role="img" aria-label="Reserved image area: a collaborative learning space"><span>The shared table &middot; 3:2</span></div><figcaption>Image area &mdash; collaborative learning space</figcaption></figure><span class="chip">Two</span><h3 data-placeholder="true">[Business subjects]</h3><p>Explore subjects concerned with organisations, decisions and enterprise.</p><p class="scope" data-placeholder="true">[Confirmed scope and associated programmes]</p></li>
+      <li><figure><div class="media" role="img" aria-label="Reserved image area: a practical learning studio"><span>The workshop &middot; 3:2</span></div><figcaption>Image area &mdash; practical learning studio</figcaption></figure><span class="chip">Three</span><h3 data-placeholder="true">[Technology subjects]</h3><p>Explore subjects concerned with digital tools and systems.</p><p class="scope" data-placeholder="true">[Confirmed scope and associated programmes]</p></li>
+      <li><figure><div class="media" role="img" aria-label="Reserved image area: a group learning space"><span>The group room &middot; 3:2</span></div><figcaption>Image area &mdash; group learning space</figcaption></figure><span class="chip">Four</span><h3 data-placeholder="true">[Languages]</h3><p>Explore subjects concerned with language, communication and understanding.</p><p class="scope" data-placeholder="true">[Confirmed scope and associated programmes]</p></li>
+      <li><figure><div class="media" role="img" aria-label="Reserved image area: an independent study space"><span>The quiet desk &middot; 3:2</span></div><figcaption>Image area &mdash; independent study space</figcaption></figure><span class="chip">Five</span><h3 data-placeholder="true">[Personal development]</h3><p>Explore subjects concerned with individual interests and development.</p><p class="scope" data-placeholder="true">[Confirmed scope and associated programmes]</p></li>
+      <li><figure><div class="media" role="img" aria-label="Reserved image area: a specialist learning studio"><span>The specialist studio &middot; 3:2</span></div><figcaption>Image area &mdash; specialist learning studio</figcaption></figure><span class="chip">Six</span><h3 data-placeholder="true">[Specialist subjects]</h3><p>Explore focused subjects within a particular field of practice.</p><p class="scope" data-placeholder="true">[Confirmed scope and associated programmes]</p></li>
+    </ul>
+
+    <p class="note">A subject area is a starting point.<span>Check each programme for its own content, entry requirements and study commitment.</span></p>
+
+  </section>
+</div>
+
+</body>
+</html>

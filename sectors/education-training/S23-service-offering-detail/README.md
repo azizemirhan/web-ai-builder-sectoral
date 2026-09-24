@@ -70,9 +70,9 @@ EDU-S23-005
 | --- | --- |
 | `EDU-S23-001` | Universal / Safe |
 | `EDU-S23-002` | Premium / Editorial |
-| `EDU-S23-003` | Dense / Information-heavy |
+| `EDU-S23-003` | Structured / Visual Modular |
 | `EDU-S23-004` | Conversion-led |
-| `EDU-S23-005` | Sector-native / Distinctive |
+| `EDU-S23-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -98,8 +98,14 @@ Nearest existing section in this sector: S02 Programs Courses (`S02-programs-cou
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope
+
+Five admissions guidance service-detail studies cover scope, intended applicants, preparation, delivery and a contact route. This is a student service, not a programme curriculum page. Institution-specific terms remain clearly reserved.
+
+[Compare five studies](../../../review/education-service-detail.html). See BATCH-V1.md for composition and validation records.

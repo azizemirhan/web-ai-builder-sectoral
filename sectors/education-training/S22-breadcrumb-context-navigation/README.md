@@ -62,9 +62,9 @@ EDU-S22-005
 | --- | --- |
 | `EDU-S22-001` | Universal / Safe |
 | `EDU-S22-002` | Premium / Editorial |
-| `EDU-S22-003` | Dense / Information-heavy |
+| `EDU-S22-003` | Structured / Visual Modular |
 | `EDU-S22-004` | Conversion-led |
-| `EDU-S22-005` | Sector-native / Distinctive |
+| `EDU-S22-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -90,8 +90,14 @@ Sits directly above or below S21 on an internal page, and never replaces it.
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope
+
+Five navigation-only studies pair an admissions breadcrumb with three related topic links. Each uses two named navigation landmarks and marks the current page with aria-current. No page heading or media is included, preserving the S22 role.
+
+[Compare all five studies](../../../review/education-context-navigation.html). See BATCH-V1.md for routes and validation.

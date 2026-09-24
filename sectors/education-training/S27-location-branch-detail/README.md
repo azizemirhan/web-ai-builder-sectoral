@@ -63,9 +63,9 @@ EDU-S27-005
 | --- | --- |
 | `EDU-S27-001` | Universal / Safe |
 | `EDU-S27-002` | Premium / Editorial |
-| `EDU-S27-003` | Dense / Information-heavy |
+| `EDU-S27-003` | Structured / Visual Modular |
 | `EDU-S27-004` | Conversion-led |
-| `EDU-S27-005` | Sector-native / Distinctive |
+| `EDU-S27-005` | Art-directed / Distinctive |
 
 These are authoring and research directions, not production enums. The five studies must
 differ structurally. They must not become five colour schemes, five font themes, five
@@ -91,8 +91,14 @@ Nearest existing section in this sector: S12 Campus Facilities (`S12-campus-faci
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+# Authored Scope
+
+Five single-campus layouts cover practical contact information, teaching context, arrival and visiting. Address, hours, contact details and directions remain explicit placeholders. On phones, practical details precede optional media.
+
+[Compare five studies](../../../review/education-campus-detail.html). See BATCH-V1.md for routes, media and validation.

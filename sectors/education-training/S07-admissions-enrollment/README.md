@@ -24,8 +24,16 @@ EDU-S07-005
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 
 ./raw/
+
+## Authored Scope
+
+Five modern admissions studies, EDU-S07-001 through EDU-S07-005, with three preparation steps, native information disclosures and matching S02 catalogue links. Actual application requirements and media remain reserved.
+
+See BATCH-V1.md for composition, media and QA records.
+
+[Compare the five designs](../../../review/education-admissions.html).
