@@ -10,248 +10,127 @@
 
   Study ID       : WELL-S26-001
   Sector         : Beauty, Wellness & Spa (WELL)
-  Section        : WELL-S26 — Practitioner / Specialist Profile
+  Section        : WELL-S26 — Person / Profile Detail
   Direction      : Universal / Safe
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : Portrait and name paired in one figure at the left, with what this person works
-                   on, how they work in the room, and what they will say no to running beside it —
-                   closed by the contact route
-  Density        : Medium
-  Media mode     : One reserved portrait slot, 4:5. **Paired with the name inside a single
-                   <figure>**, so no reflow can put a name beside the wrong portrait — the
-                   scaffold's responsive rule, made structural rather than promised.
-  Interaction    : None (static; no JavaScript)
-  The governing constraint : S04 established that role leads and identity is reserved. Here the
-                   whole page is one person, so the name is a reserved area and the portrait a
-                   reserved slot — while **qualifications, registrations, memberships and awards are
-                   omitted entirely rather than reserved**, because an empty credential field
-                   asserts that the studio lists credentials. See ../README.md.
-  What a visitor is choosing : Not a biography — how somebody works. That is entirely authorable,
-                   and it is what this page is made of.
-  Content note   : No invented name, portrait, qualification, registration, membership, award,
-                   social handle, personal email, testimonial, rating, count of years or treatments,
-                   price or duration.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 10 (a
+                   portrait with an offset tinted tab, after ARC-S08-001) beside ruled rows.
+                   V1 is kept: role leads, identity reserved — the name a reserved area in the
+                   portrait's own figcaption so no reflow can separate them; credentials,
+                   years, counts, handles and ratings omitted entirely; how they work, what
+                   they will say no to, and ask for them by name.
+  Layout model   : Two columns. Left, sticky: the identity figure — a 4:5 portrait field with
+                   a tinted tab offset behind it, the reserved name bar and the role in the
+                   figcaption, the categories as a ruled line. Right: HOW THEY WORK as four
+                   ruled rows with serif leads; WHAT THEY WILL SAY NO TO as three; ASKING FOR
+                   THEM on the foot rule.
+  Density        : Long-form (detail page)
+  Media mode     : One reserved portrait field (a filled slot means a consenting person); one
+                   reserved name area.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No name, qualification, registration, award, years, count, handle, email,
+                   testimonial or rating.
 -->
 
 <meta name="study-id" content="WELL-S26-001">
 <meta name="sector" content="Beauty, Wellness &amp; Spa">
 <meta name="sector-prefix" content="WELL">
 <meta name="section-id" content="WELL-S26">
-<meta name="section-name" content="Practitioner / Specialist Profile">
+<meta name="section-name" content="Person / Profile Detail">
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Paired portrait-and-name figure beside how-they-work and what-they-decline">
-<meta name="density" content="medium">
-<meta name="media-mode" content="one-reserved-portrait-paired-in-figure">
+<meta name="theme" content="001 Linen &amp; Olive">
+<meta name="layout-model" content="Sticky identity figure — portrait with offset tab, reserved name in the figcaption — beside ruled rows of how they work and what they say no to; asking for them on the foot rule">
+<meta name="density" content="long-form">
+<meta name="media-mode" content="one-reserved-portrait-one-reserved-name">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S26-001 — Practitioner Profile, Universal / Safe</title>
+<title>WELL-S26-001 — Person / Profile Detail, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #d0d7de; }
+body { margin: 0; background: #f2f0ea; }
 
-/* Scoped study styles — namespaced to .well-s26-001 */
 .well-s26-001 {
-  --ink: #1d242b;
-  --ink-soft: #4b5763;
-  --paper: #d0d7de;
-  --card: #eef1f4;
-  --slot: #dde3e9;
-  --slot-ink: #4f5b66;
-  --slot-edge: #bcc6d0;
-  --chip: #e4e9ee;
-  --line: #dbe1e6;
-  --rule: #b6c0ca;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f2f0ea; --ink: #23281f; --muted: #6a6d62; --line: #d3d0c5; --line-strong: #23281f;
+  --media: #e1dfd5; --tab: #e9e7de; --accent: #5a6b48;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s26-001 *,
-.well-s26-001 *::before,
-.well-s26-001 *::after { box-sizing: inherit; }
-.well-s26-001 :focus-visible {
-  outline: 2px solid #2b4356;
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-.well-s26-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s26-001 *, .well-s26-001 *::before, .well-s26-001 *::after { box-sizing: inherit; }
+.well-s26-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s26-001 .shell {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: clamp(32px, 3.8vw, 68px) clamp(20px, 3.6vw, 52px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
-  gap: clamp(22px, 3.2vw, 56px);
-  align-items: start;
-}
+.well-s26-001 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s26-001 .grid { display: grid; grid-template-columns: minmax(16rem, 0.6fr) minmax(0, 1.4fr); gap: clamp(2rem, 5vw, 6rem); align-items: start; }
 
-/* Identity — portrait and name are one element, never separable */
-.well-s26-001 .who { margin: 0; min-width: 0; }
-.well-s26-001 .portrait {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 14px;
-  background: var(--slot);
-  aspect-ratio: 4 / 5;
-  display: grid;
-  place-items: center;
-  padding: 14px;
-}
-.well-s26-001 .portrait span {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-  line-height: 1.7;
-}
-.well-s26-001 figcaption { margin-top: clamp(14px, 1.7vw, 20px); }
-.well-s26-001 .r-name {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 8px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: 14px;
-  min-height: clamp(56px, 5vw, 70px);
-  text-align: center;
-}
-.well-s26-001 .r-name span {
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-}
-.well-s26-001 .role {
-  margin: clamp(10px, 1.2vw, 14px) 0 0;
-  font-size: 0.98rem;
-  font-weight: 650;
-}
-.well-s26-001 .works {
-  margin: 8px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.well-s26-001 .works span {
-  padding: 3px 11px;
-  border-radius: 999px;
-  background: var(--chip);
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-}
+.well-s26-001 .id { position: sticky; top: 2rem; margin: 0; }
+.well-s26-001 .frame { position: relative; padding: 0 1.2rem 1.2rem 0; }
+.well-s26-001 .frame::before { content: ""; position: absolute; top: 1.2rem; right: 0; bottom: 0; left: 1.2rem; background: var(--tab); border-radius: 4px; }
+.well-s26-001 .portrait { position: relative; aspect-ratio: 4 / 5; background: var(--media); border-radius: 4px; }
+.well-s26-001 .slate { position: absolute; left: 0.9rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s26-001 figcaption { margin-top: 1.2rem; }
+.well-s26-001 .name { position: relative; height: 2.4rem; max-width: 16rem; background: var(--media); border-radius: 3px; }
+.well-s26-001 .name .slate { left: 0.6rem; bottom: 0.5rem; font-size: 0.5rem; }
+.well-s26-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.well-s26-001 .role { margin: 0.7rem 0 0; font-family: var(--serif); font-size: 1.1rem; }
+.well-s26-001 .cats { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin: 0.8rem 0 0; padding: 0.7rem 0; list-style: none; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
 
-/* The practice */
-.well-s26-001 .body { min-width: 0; }
-.well-s26-001 h2 {
-  margin: 0 0 clamp(11px, 1.3vw, 15px);
-  font-size: 1.08rem;
-  font-weight: 650;
-  letter-spacing: -0.008em;
-}
-.well-s26-001 .block + .block {
-  margin-top: clamp(22px, 2.6vw, 34px);
-  padding-top: clamp(18px, 2.2vw, 26px);
-  border-top: 1px solid var(--rule);
-}
-.well-s26-001 ul { margin: 0; padding: 0; list-style: none; max-width: 62ch; }
-.well-s26-001 li {
-  padding: clamp(10px, 1.2vw, 13px) 0;
-  border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.58;
-}
-.well-s26-001 li:first-child { border-top: 0; padding-top: 0; }
-.well-s26-001 li b { color: var(--ink); font-weight: 650; }
-.well-s26-001 p { margin: 0; max-width: 62ch; color: var(--ink-soft); line-height: 1.64; }
+.well-s26-001 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s26-001 h2 { margin: 0 0 clamp(1.2rem, 2.4vw, 2.4rem); max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(1.9rem, 3.2vw, 3.2rem); line-height: 1.02; letter-spacing: -0.03em; }
+.well-s26-001 h2 em { font-style: italic; }
+.well-s26-001 h3 { margin: 0; padding: 0.8rem 0; border-top: 1px solid var(--line-strong); color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s26-001 .rows { margin: 0 0 clamp(1.4rem, 2.6vw, 2.6rem); padding: 0; list-style: none; }
+.well-s26-001 .rows li { padding: 0.8rem 0; border-top: 1px solid var(--line); font-size: 0.9rem; line-height: 1.5; color: var(--muted); }
+.well-s26-001 .rows strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.15rem; color: var(--ink); }
+.well-s26-001 .ask { margin: 0; max-width: 36rem; color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
 
-.well-s26-001 .reach {
-  margin-top: clamp(22px, 2.6vw, 34px);
-  padding: clamp(18px, 2.2vw, 26px);
-  background: var(--card);
-  border-radius: 14px;
-}
-.well-s26-001 .reach p { color: var(--ink-soft); font-size: 0.95rem; }
-.well-s26-001 .reach b { color: var(--ink); }
-
-/* Responsive ladder — identity stays whole, and leads */
-@media (max-width: 860px) {
-  .well-s26-001 .shell {
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(22px, 2.8vw, 30px);
-  }
-  .well-s26-001 .portrait { aspect-ratio: 3 / 2; }
-  .well-s26-001 ul,
-  .well-s26-001 p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s26-001 * { transition: none !important; }
-}
+@media (max-width: 860px) { .well-s26-001 .grid { grid-template-columns: minmax(0, 1fr); } .well-s26-001 .id { position: static; } .well-s26-001 .portrait { aspect-ratio: 3 / 2; } .well-s26-001 h2 { max-width: none; } }
+@media (prefers-reduced-motion: reduce) { .well-s26-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="well-s26-001" data-study-id="WELL-S26-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="well-s26-001-title">
+    <div class="grid">
 
-    <figure class="who">
-      <div class="portrait"><span>Portrait &mdash; a real person<br>who has agreed to appear</span></div>
-      <figcaption>
-        <div class="r-name"><span>Name</span></div>
-        <p class="role">Works mostly on faces</p>
-        <p class="works"><span>Facials</span><span>Brows &amp; lashes</span></p>
-      </figcaption>
-    </figure>
+      <figure class="id">
+        <div class="frame"><div class="portrait" role="img" aria-label="Reserved portrait field: a real person who has agreed to appear"><p class="slate" aria-hidden="true">Portrait area &middot; 4:5 &middot; consented</p></div></div>
+        <figcaption>
+          <div class="name" role="img" aria-label="Reserved name area"><p class="slate" aria-hidden="true">Name &middot; reserved</p></div>
+          <p class="role">Works mostly on faces</p>
+          <ul class="cats"><li>Facials</li><li>Brows &amp; lashes</li></ul>
+        </figcaption>
+      </figure>
 
-    <div class="body">
-      <h2 class="vh" id="well-s26-001-title">One practitioner, in full</h2>
+      <div>
+        <p class="eyebrow">One practitioner, in full</p>
+        <h2 id="well-s26-001-title">What you are choosing is how somebody <em>works.</em></h2>
 
-      <div class="block">
-        <h2>How they work</h2>
-        <ul>
-          <li><b>Asks a lot at the start.</b> What your skin has been doing, what you use at home, and what you are hoping for &mdash; before anything is decided.</li>
-          <li><b>Explains while working, if you want it.</b> Says at the beginning that you can ask for quiet instead, and means it.</li>
-          <li><b>Writes it down.</b> What was used and why, so the next appointment starts where this one finished rather than from scratch.</li>
-          <li><b>Changes the plan out loud.</b> If something is not doing what was expected, you are told during, not afterwards.</li>
+        <h3>How they work</h3>
+        <ul class="rows">
+          <li><strong>Asks a lot at the start.</strong>What your skin has been doing, what you use at home, and what you are hoping for &mdash; before anything is decided.</li>
+          <li><strong>Explains while working, if you want it.</strong>Says at the beginning that you can ask for quiet instead, and means it.</li>
+          <li><strong>Writes it down.</strong>What was used and why, so the next appointment starts where this one finished rather than from scratch.</li>
+          <li><strong>Changes the plan out loud.</strong>If something is not doing what was expected, you are told during, not afterwards.</li>
         </ul>
-      </div>
 
-      <div class="block">
-        <h2>What they will say no to</h2>
-        <ul>
-          <li><b>A first appointment the day before an event.</b> Not because it will go wrong, but because there is nowhere to put it if it does.</li>
-          <li><b>Working over something that is changing.</b> If your skin is sore, broken or doing something new, you will be asked to see a doctor first.</li>
-          <li><b>Selling you a course.</b> If you would get the same from coming back twice a year, that is what you will be told.</li>
+        <h3>What they will say no to</h3>
+        <ul class="rows">
+          <li><strong>A first appointment the day before an event.</strong>Not because it will go wrong, but because there is nowhere to put it if it does.</li>
+          <li><strong>Working over something that is changing.</strong>If your skin is sore, broken or doing something new, you will be asked to see a doctor first.</li>
+          <li><strong>Selling you a course.</strong>If you would get the same from coming back twice a year, that is what you will be told.</li>
         </ul>
+
+        <h3>Asking for them</h3>
+        <p class="ask">Ask by name when you book. If they are away or full, you will be told rather than quietly given somebody else &mdash; and if somebody else would suit you better for what you are asking about, you will be told that too.</p>
       </div>
 
-      <div class="reach">
-        <h2>Asking for them</h2>
-        <p><b>Ask by name when you book.</b> If they are away or full, you will be told rather than quietly given somebody else &mdash; and if somebody else would suit you better for what you are asking about, you will be told that too.</p>
-      </div>
     </div>
-
   </section>
 </div>
 

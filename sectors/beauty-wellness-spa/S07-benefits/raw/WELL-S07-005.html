@@ -12,26 +12,19 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S07 — Benefits
   Direction      : Art-directed / Distinctive
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : Four plates on a deep calm ground, each carrying an oversized tonal numeral set
-                   only slightly off the ground colour, with the commitment and its line sitting
-                   over the numeral's lower half
-  Density        : Low — four commitments, one line each
-  Media mode     : None. The oversized tonal numerals are the visual event; a photograph in each
-                   plate would compete with them and flatten the one device the study has.
-  Interaction    : None (static; no JavaScript)
-  Contrast note  : The numerals are set at 1.43:1 against the ground — deliberately, as a
-                   watermark. **This is allowed here and was not allowed in WELL-S01-005**, where
-                   the same low-contrast treatment was applied to the study's `h1` and had to be
-                   raised to 3.43:1. The difference is that these numerals are decorative: they
-                   carry no information the list order does not already carry, and each is marked
-                   `aria-hidden`. Every element that conveys meaning in this study is set at full
-                   contrast.
-  Content note   : Every item is an operating commitment, not a claim about what a treatment
-                   achieves — see ../README.md. No efficacy claim, outcome description, percentage,
-                   rating, review, client, superlative comparison, award, certification, price,
-                   duration or invented statistic. The numerals are an ordering device, not a
-                   count of anything.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 3 (a bordered
+                   cell grid with large serif figures) after ARC-S18-001. V1's oversized tonal
+                   numerals are kept as the device and set in the accent serif at display size
+                   inside four cells that share hairlines; the deep ground is replaced by ivory.
+  Layout model   : Head split: serif display left, lead right at the baseline. Four cells
+                   sharing hairlines, each carrying a numeral at clamp(4rem, 8vw, 8rem) in the
+                   accent serif, the commitment in serif and one supporting line at the base
+  Density        : Low (60–120)
+  Media mode     : None. Recorded: the numerals are the composition; the section is type by
+                   intent. Contract rule 2.
+  Interaction    : None (static; no JavaScript).
+  Content note   : The commitments are about how the room is run, never about what a treatment
+                   does. No claim, price, duration, practitioner name or rating.
 -->
 
 <meta name="study-id" content="WELL-S07-005">
@@ -42,148 +35,65 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Four plates with oversized decorative tonal numerals behind the commitments">
+<meta name="theme" content="005 Ivory &amp; Plum">
+<meta name="layout-model" content="Head split; four cells sharing hairlines with display-size accent serif numerals, the commitment in serif and one line at the base">
 <meta name="density" content="low">
-<meta name="media-mode" content="none-deliberate">
+<meta name="media-mode" content="none-deliberate-the-numerals-are-the-visual">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S07-005 — Benefits, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #14302e; }
+body { margin: 0; background: #f8f4f3; }
 
-/* Scoped study styles — namespaced to .well-s07-005 */
 .well-s07-005 {
-  --ink: #edf2f0;
-  --ink-soft: #9db8b3;
-  --paper: #14302e;
-  --watermark: #224a46;
-  --line: #27514d;
-  --focus: #cfe6df;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f8f4f3; --ink: #2b2226; --muted: #6d6266; --line: #e0d6d9; --line-strong: #2b2226;
+  --media: #eae1e3; --accent: #6e3b4e;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s07-005 *,
-.well-s07-005 *::before,
-.well-s07-005 *::after { box-sizing: inherit; }
-.well-s07-005 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
+.well-s07-005 *, .well-s07-005 *::before, .well-s07-005 *::after { box-sizing: inherit; }
+.well-s07-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s07-005 .shell {
-  width: 100%;
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: clamp(48px, 5.6vw, 100px) clamp(20px, 3.6vw, 56px);
-}
+.well-s07-005 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s07-005 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.5fr); gap: 3rem; align-items: end; padding-bottom: 1.4rem; }
+.well-s07-005 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s07-005 h2 { margin: 0; max-width: 12ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 4.4vw, 4.6rem); line-height: 0.95; letter-spacing: -0.04em; }
+.well-s07-005 h2 em { font-style: italic; }
+.well-s07-005 .lead { max-width: 22rem; margin: 0 0 0.3rem auto; color: var(--muted); font-size: 0.86rem; line-height: 1.55; text-align: right; }
 
-/* Header */
-.well-s07-005 .head {
-  max-width: 40rem;
-  margin-bottom: clamp(28px, 3.6vw, 54px);
-}
-.well-s07-005 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s07-005 h1 {
-  margin: 0;
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
+.well-s07-005 .cells { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); margin: 0; padding: 0; list-style: none; }
+.well-s07-005 .cells li { display: flex; flex-direction: column; min-width: 0; min-height: clamp(20rem, 26vw, 26rem); padding: clamp(1.4rem, 2.4vw, 2.4rem) clamp(1rem, 1.6vw, 1.5rem); }
+.well-s07-005 .cells li + li { border-left: 1px solid var(--line); }
+.well-s07-005 .cells li:first-child { padding-left: 0; }
+.well-s07-005 .cells li:last-child { padding-right: 0; }
+.well-s07-005 .num { margin: 0; color: var(--accent); font-family: var(--serif); font-size: clamp(4rem, 8vw, 8rem); line-height: 0.8; letter-spacing: -0.04em; }
+.well-s07-005 h3 { margin: auto 0 0; padding-top: 2rem; font-family: var(--serif); font-weight: 400; font-size: clamp(1.15rem, 1.6vw, 1.5rem); letter-spacing: -0.015em; }
+.well-s07-005 p.what { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
 
-/* Plates */
-.well-s07-005 .plates {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 2.6vw, 44px);
-}
-.well-s07-005 .plate {
-  position: relative;
-  min-width: 0;
-  border-top: 1px solid var(--line);
-  padding: clamp(26px, 3.4vw, 52px) 0 clamp(20px, 2.4vw, 30px);
-  overflow: hidden;
-}
-
-/* The watermark numeral — decorative, aria-hidden, never load-bearing */
-.well-s07-005 .numeral {
-  position: absolute;
-  top: clamp(6px, 1vw, 14px);
-  left: -0.06em;
-  z-index: 0;
-  color: var(--watermark);
-  font-size: clamp(6rem, 13vw, 12rem);
-  line-height: 0.78;
-  letter-spacing: -0.06em;
-  font-weight: 700;
-  pointer-events: none;
-  user-select: none;
-}
-
-.well-s07-005 .text {
-  position: relative;
-  z-index: 1;
-  padding-top: clamp(34px, 5vw, 82px);
-}
-.well-s07-005 h2 {
-  margin: 0 0 clamp(9px, 1.1vw, 13px);
-  font-size: clamp(1.24rem, 1.8vw, 1.72rem);
-  line-height: 1.16;
-  letter-spacing: -0.018em;
-  font-weight: 600;
-}
-.well-s07-005 .plate p {
-  margin: 0;
-  max-width: 40ch;
-  color: var(--ink-soft);
-  font-size: clamp(0.93rem, 1vw, 1.02rem);
-  line-height: 1.58;
-}
-
-/* Responsive ladder — the watermark shrinks with the plate but never leaves */
 @media (max-width: 1024px) {
-  .well-s07-005 .numeral { font-size: clamp(5rem, 15vw, 8.5rem); }
-  .well-s07-005 .text { padding-top: clamp(30px, 6vw, 58px); }
+  .well-s07-005 .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s07-005 .cells li + li { border-left: 0; }
+  .well-s07-005 .cells li:nth-child(even) { border-left: 1px solid var(--line); }
+  .well-s07-005 .cells li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .well-s07-005 .cells li:first-child, .well-s07-005 .cells li:last-child { padding-inline: clamp(1rem, 1.6vw, 1.5rem); }
+  .well-s07-005 .cells li:nth-child(odd) { padding-left: 0; }
+  .well-s07-005 .cells li:nth-child(even) { padding-right: 0; }
 }
-
-@media (max-width: 768px) {
-  .well-s07-005 .plates { grid-template-columns: minmax(0, 1fr); gap: clamp(4px, 1vw, 10px); }
-  .well-s07-005 .numeral { font-size: clamp(4.5rem, 20vw, 7rem); }
-  .well-s07-005 h1 { max-width: none; }
-  .well-s07-005 .plate p { max-width: none; }
-}
-
+@media (max-width: 768px) { .well-s07-005 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .well-s07-005 .lead { margin-left: 0; text-align: left; } .well-s07-005 h2 { max-width: none; } }
 @media (max-width: 480px) {
-  .well-s07-005 .numeral { font-size: clamp(4rem, 24vw, 5.5rem); }
-  .well-s07-005 .text { padding-top: clamp(26px, 12vw, 44px); }
+  .well-s07-005 .cells { grid-template-columns: minmax(0, 1fr); }
+  .well-s07-005 .cells li { min-height: 0; padding-inline: 0 !important; }
+  .well-s07-005 .cells li:nth-child(even) { border-left: 0; }
+  .well-s07-005 .cells li:nth-child(n+2) { border-top: 1px solid var(--line); }
+  .well-s07-005 h3 { padding-top: 1rem; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s07-005 * { transition: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .well-s07-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -192,39 +102,18 @@ body { margin: 0; background: #14302e; }
   <section class="shell" aria-labelledby="well-s07-005-title">
 
     <div class="head">
-      <p class="eyebrow">What is different here</p>
-      <h1 id="well-s07-005-title">Four things that hold, every visit</h1>
+      <div>
+        <p class="eyebrow">What is different here</p>
+        <h2 id="well-s07-005-title">Four things that hold, <em>every</em> visit</h2>
+      </div>
+      <p class="lead">Things we decide, so things we can keep.</p>
     </div>
 
-    <ul class="plates">
-      <li class="plate">
-        <span class="numeral" aria-hidden="true">01</span>
-        <div class="text">
-          <h2>One guest at a time</h2>
-          <p>The room is yours for the whole appointment. Nobody else is brought in and out around you.</p>
-        </div>
-      </li>
-      <li class="plate">
-        <span class="numeral" aria-hidden="true">02</span>
-        <div class="text">
-          <h2>The same hands throughout</h2>
-          <p>Whoever you booked does the treatment from start to finish. You are not passed between people.</p>
-        </div>
-      </li>
-      <li class="plate">
-        <span class="numeral" aria-hidden="true">03</span>
-        <div class="text">
-          <h2>Nothing sold in the room</h2>
-          <p>If a product would suit you, we say so afterwards. Not while you are lying down.</p>
-        </div>
-      </li>
-      <li class="plate">
-        <span class="numeral" aria-hidden="true">04</span>
-        <div class="text">
-          <h2>Unhurried appointments</h2>
-          <p>Nothing is booked so tightly that a treatment has to be cut short to make the next one.</p>
-        </div>
-      </li>
+    <ul class="cells">
+      <li><p class="num" aria-hidden="true">01</p><h3>One guest at a time</h3><p class="what">The room is yours for the whole appointment. Nobody else is brought in and out around you.</p></li>
+      <li><p class="num" aria-hidden="true">02</p><h3>The same hands throughout</h3><p class="what">Whoever you booked does the treatment from start to finish. You are not passed between people.</p></li>
+      <li><p class="num" aria-hidden="true">03</p><h3>Nothing sold in the room</h3><p class="what">If a product would suit you, we say so afterwards. Not while you are lying down.</p></li>
+      <li><p class="num" aria-hidden="true">04</p><h3>Unhurried appointments</h3><p class="what">Nothing is booked so tightly that a treatment has to be cut short to make the next one.</p></li>
     </ul>
 
   </section>

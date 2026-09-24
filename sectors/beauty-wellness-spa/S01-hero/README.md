@@ -36,8 +36,8 @@ These are the current authoring directions from `../../../standards/01-AUTHORING
 read for this sector in `../WELLNESS-DESIGN-DIRECTION.md`. They are research directions, not
 production enums, and the study IDs do not change with them.
 
-The five authored studies differ in layout topology, not in styling: centred stack, asymmetric
-split, modular bento field, full-bleed stage, and layered overlapping planes.
+The five studies differ in composition, not in styling: split column and field, display type
+crossing the media edge, column and mosaic, ruled sheet, bordered cell grid (V2 detailing pass).
 
 # Authoring Questions
 
@@ -61,7 +61,7 @@ belongs to that hero composition rather than to the site.
 
 # Status
 
-AUTHORED — PENDING DESIGN LAB INGESTION
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
@@ -69,4 +69,4 @@ AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Batch Document
 
-./BATCH-V1.md
+./BATCH-V2.md (design layer, current) · ./BATCH-V1.md (original authoring record)

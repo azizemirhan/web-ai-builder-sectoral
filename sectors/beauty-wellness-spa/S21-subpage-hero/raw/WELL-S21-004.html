@@ -12,28 +12,18 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S21 — Subpage Hero
   Direction      : Conversion-led
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : A treatment page hero on a dark ground — parent label, the treatment name, one
-                   framing line, and **exactly one action**, with a line under it saying who the
-                   action is for
-  Density        : Low
-  Media mode     : None. On a treatment page the pictures belong to the body, where they can show
-                   the thing being described.
-  Interaction    : None (static; no JavaScript). One link. No form, no field, no picker.
-  Exactly one action : The section scaffold rules out *multiple competing calls to action*, and the
-                   discipline matters most in the conversion-led variant, where two buttons are the
-                   obvious move. The single action is tied to **this page** rather than to the
-                   business — you are booking the thing you are reading about.
-  The honest line : The action repeats what is at the foot of the page, and the study says so. It is
-                   here for the visitor who arrived already decided and should not have to read a
-                   page to act; everybody else can carry on reading, and the line tells them that.
-                   Recording it is the point — an interior hero that pretends its button is the only
-                   one is arguing with its own page.
-  The S01 test   : The title is a treatment, not a proposition; the action books that treatment
-                   rather than the studio. Neither would function on a homepage.
-  Content note   : "Deep cleansing facial" is the generic vocabulary already used in S02. No price,
-                   duration, rating, review count, availability or scarcity line; no breadcrumb or
-                   parent link; no viewport-height unit.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, the head split with
+                   a single contextual action at the right, after the reworked ARC-S21-004:
+                   the panel framing around the action is gone, and so is the dark ground.
+                   Exactly one action, booking this page's treatment, with the honest line
+                   about the duplicate at the foot of the page.
+  Layout model   : A dark rule. Parent label, page title in serif, standfirst — left. One
+                   bordered action bottom-aligned at the right, the honest line beneath it in
+                   a narrow right-aligned measure. A 21:8 field beneath.
+  Density        : Hero (40–90)
+  Media mode     : One reserved field — hands at work. No image is supplied.
+  Interaction    : None (static; no JavaScript). One action, a relative link.
+  Content note   : No count, price, duration, rating, name or breadcrumb. One action only.
 -->
 
 <meta name="study-id" content="WELL-S21-004">
@@ -44,118 +34,47 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="layout-model" content="Treatment page hero with one page-tied action and a line saying who it is for">
-<meta name="density" content="low">
-<meta name="media-mode" content="none">
+<meta name="theme" content="004 Sand &amp; Ochre">
+<meta name="layout-model" content="Head split with parent label, serif title and standfirst left, one bordered action right with the honest line; a 21:8 field beneath">
+<meta name="density" content="hero">
+<meta name="media-mode" content="one-reserved-field">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S21-004 — Subpage Hero, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #1d2a33; }
+body { margin: 0; background: #f7f2e8; }
 
-/* Scoped study styles — namespaced to .well-s21-004 */
 .well-s21-004 {
-  --ink: #eef3f6;
-  --ink-soft: #a3b6c1;
-  --paper: #1d2a33;
-  --rule: #33454f;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f7f2e8; --ink: #2b251d; --muted: #6e655a; --line: #dfd6c8; --line-strong: #2b251d;
+  --media: #e9e1d2; --accent: #9a6b2a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s21-004 *,
-.well-s21-004 *::before,
-.well-s21-004 *::after { box-sizing: inherit; }
-.well-s21-004 :focus-visible {
-  outline: 2px solid #cfe2ea;
-  outline-offset: 3px;
-  border-radius: 999px;
-}
+.well-s21-004 *, .well-s21-004 *::before, .well-s21-004 *::after { box-sizing: inherit; }
+.well-s21-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s21-004 .shell {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: clamp(34px, 3.8vw, 64px) clamp(20px, 3.6vw, 52px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  gap: clamp(20px, 3vw, 56px);
-  align-items: end;
-}
+.well-s21-004 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 4.5vw, 4.5rem) clamp(1rem, 4vw, 4rem) clamp(1.6rem, 3vw, 3rem); }
+.well-s21-004 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.45fr); gap: 3rem; align-items: end; padding-top: 1rem; border-top: 1px solid var(--line-strong); margin-bottom: clamp(1.2rem, 2.4vw, 2.4rem); }
+.well-s21-004 .parent { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s21-004 h1 { margin: 0 0 0.8rem; max-width: 12ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.96; letter-spacing: -0.04em; }
+.well-s21-004 h1 em { font-style: italic; }
+.well-s21-004 .stand { margin: 0; max-width: 32rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+.well-s21-004 .act { display: flex; flex-direction: column; align-items: flex-end; gap: 0.8rem; }
+.well-s21-004 .btn { display: inline-block; padding: 0.9rem 1.5rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+.well-s21-004 .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.well-s21-004 .act p { margin: 0; max-width: 18rem; color: var(--muted); font-size: 0.8rem; line-height: 1.5; text-align: right; }
+.well-s21-004 .media { position: relative; aspect-ratio: 21 / 8; background: var(--media); border-radius: 4px; }
+.well-s21-004 .slate { position: absolute; left: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-.well-s21-004 .parent {
-  margin: 0 0 clamp(10px, 1.2vw, 14px);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s21-004 h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.4vw, 2.85rem);
-  line-height: 1.06;
-  letter-spacing: -0.024em;
-  font-weight: 550;
-  max-width: 15ch;
-}
-.well-s21-004 .frames {
-  margin: clamp(12px, 1.5vw, 18px) 0 0;
-  max-width: 52ch;
-  color: var(--ink-soft);
-  font-size: clamp(0.98rem, 1.05vw, 1.06rem);
-  line-height: 1.62;
-}
-
-.well-s21-004 .act { min-width: 0; }
-.well-s21-004 .go {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 52px;
-  padding: 0 30px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 0.98rem;
-  font-weight: 650;
-  text-decoration: none;
-}
-.well-s21-004 .go:hover { background: #ffffff; }
-.well-s21-004 .who {
-  margin: clamp(12px, 1.4vw, 16px) 0 0;
-  max-width: 34ch;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.58;
-}
-
-/* Responsive ladder — the title stays first, the action follows it */
-@media (max-width: 860px) {
-  .well-s21-004 .shell {
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(20px, 2.6vw, 28px);
-    align-items: start;
-  }
-  .well-s21-004 h1,
-  .well-s21-004 .frames,
-  .well-s21-004 .who { max-width: none; }
-  .well-s21-004 .go { width: 100%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s21-004 * { transition: none !important; }
-}
+@media (max-width: 860px) { .well-s21-004 .head { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; } .well-s21-004 .act { align-items: flex-start; } .well-s21-004 .act p { text-align: left; } .well-s21-004 h1 { max-width: none; } .well-s21-004 .media { aspect-ratio: 16 / 7; } }
+@media (max-width: 480px) { .well-s21-004 .btn { width: 100%; text-align: center; } .well-s21-004 .media { aspect-ratio: 3 / 2; } }
+@media (prefers-reduced-motion: reduce) { .well-s21-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -163,16 +82,19 @@ body { margin: 0; background: #1d2a33; }
 <div class="well-s21-004" data-study-id="WELL-S21-004" data-direction="Conversion-led">
   <section class="shell" aria-labelledby="well-s21-004-title">
 
-    <div>
-      <p class="parent">Facials</p>
-      <h1 id="well-s21-004-title">Deep cleansing facial</h1>
-      <p class="frames">What it involves, who it tends to suit, what your skin does for a day or two afterwards, and the reasons we sometimes suggest something else instead.</p>
+    <div class="head">
+      <div>
+        <p class="parent">Facials</p>
+        <h1 id="well-s21-004-title">Deep cleansing <em>facial</em></h1>
+        <p class="stand">What it involves, who it tends to suit, what your skin does for a day or two afterwards, and the reasons we sometimes suggest something else instead.</p>
+      </div>
+      <div class="act">
+        <a class="btn" href="#book">Book this one</a>
+        <p>The same button is at the foot of the page. This one is for anyone who arrived already knowing.</p>
+      </div>
     </div>
 
-    <div class="act">
-      <a class="go" href="#well-s21-004-title">Book this one</a>
-      <p class="who">The same button is at the foot of the page. This one is for anyone who arrived already knowing.</p>
-    </div>
+    <div class="media" role="img" aria-label="Reserved image field: hands at work, wide"><p class="slate" aria-hidden="true">Detail area &middot; 21:8 &middot; hands at work</p></div>
 
   </section>
 </div>

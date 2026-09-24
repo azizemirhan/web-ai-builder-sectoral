@@ -11,27 +11,22 @@
   Study ID       : WELL-S10-004
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S10 — Testimonials
-  Direction      : Conversion-led
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : A cream panel carrying how the quotes were gathered, the action, and a second
-                   route for guests who have already been, beside a stacked column of three
-                   reserved quotations on the dark ground
-  Density        : Medium
-  Media mode     : Three reserved quotation areas at three lengths, plus three small reserved
-                   portrait slots. No decorative media.
-  Interaction    : None (static; no JavaScript)
-  Conversion note: The conversion argument in a testimonials section is **the method, not the
-                   praise**. A visitor who does not trust how the quotes were collected does not
-                   believe any of them, so the panel that carries the action carries the gathering
-                   policy with it — permission, verbatim, no incentive — which is a commitment the
-                   studio controls and can keep. There is no score, no count and no
-                   "join 500 happy guests", because those are figures and figures cannot be
-                   reserved.
-  Reserved-quote note : The quotation structure is authored; the quotation is reserved. See
-                   ../README.md.
-  Content note   : No invented quotation, guest name, initial, age, location, photograph,
-                   treatment attribution or occupation. No star rating, score, average or review
-                   count, and no review-platform name.
+  Direction      : Conversion-led / Direct
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 4 (a tinted
+                   band carrying the argument and the action) beside a ruled stack. V1's
+                   argument is kept whole: the method is the persuasion, so the three
+                   collection rules travel with the action. The dark ground is gone; the
+                   quotations are a ruled column on paper.
+  Layout model   : Two columns. Left, a tinted band — eyebrow, serif display, three ruled rules
+                   with accent indices, one bordered action, the second route as an underlined
+                   link. Right, three reserved quotation areas at medium / short / long stacked
+                   between hairlines, each with a portrait field and token.
+  Density        : Low (60–120)
+  Media mode     : Three reserved quotation areas and three reserved portrait fields. No
+                   quotation, name or image is supplied.
+  Interaction    : None (static; no JavaScript). Actions are relative links.
+  Content note   : No quotation, guest name, rating, score, count or platform. No figure of any
+                   kind.
 -->
 
 <meta name="study-id" content="WELL-S10-004">
@@ -40,265 +35,97 @@
 <meta name="section-id" content="WELL-S10">
 <meta name="section-name" content="Testimonials">
 <meta name="variant" content="004">
-<meta name="territory" content="Conversion-led">
-<meta name="direction" content="Conversion-led">
-<meta name="layout-model" content="Gathering-policy panel with the action beside a stack of reserved quotations">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-quotation-areas-stacked">
+<meta name="territory" content="Conversion-led / Direct">
+<meta name="direction" content="Conversion-led / Direct">
+<meta name="theme" content="004 Sand &amp; Ochre">
+<meta name="layout-model" content="Tinted band with the three collection rules, action and second route, beside a ruled stack of three reserved quotation areas">
+<meta name="density" content="low">
+<meta name="media-mode" content="three-reserved-quotations-three-reserved-portraits">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S10-004 — Testimonials, Conversion-led</title>
+<title>WELL-S10-004 — Testimonials, Conversion-led / Direct</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #3b2d33; }
+body { margin: 0; background: #f7f2e8; }
 
-/* Scoped study styles — namespaced to .well-s10-004 */
 .well-s10-004 {
-  --ink: #f4efee;
-  --ink-soft: #c4b0b8;
-  --paper: #3b2d33;
-  --slot: #4a3a41;
-  --slot-ink: #cbb7bf;
-  --slot-edge: #63505a;
-  --panel: #f4efee;
-  --panel-ink: #2a1f24;
-  --panel-soft: #6a5b60;
-  --panel-line: #e0d5d7;
-  --accent: #2a1f24;
-  --accent-ink: #f4efee;
-  --focus: #e8c8d2;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f7f2e8; --ink: #2b251d; --muted: #6e655a; --line: #dfd6c8; --line-strong: #2b251d;
+  --media: #e9e1d2; --band: #efe6d6; --accent: #9a6b2a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s10-004 *,
-.well-s10-004 *::before,
-.well-s10-004 *::after { box-sizing: inherit; }
-.well-s10-004 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 8px;
-}
+.well-s10-004 *, .well-s10-004 *::before, .well-s10-004 *::after { box-sizing: inherit; }
+.well-s10-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s10-004 .shell {
-  width: 100%;
-  max-width: 1340px;
-  margin: 0 auto;
-  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
-}
+.well-s10-004 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s10-004 .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 3.5vw, 4.5rem); align-items: stretch; }
 
-.well-s10-004 .split {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: clamp(18px, 2.4vw, 40px);
-  align-items: start;
-}
+.well-s10-004 .band { display: flex; flex-direction: column; padding: clamp(1.6rem, 3vw, 3rem); background: var(--band); border-radius: 4px; }
+.well-s10-004 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s10-004 h2 { margin: 0 0 1rem; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.4vw, 3.4rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s10-004 h2 em { font-style: italic; }
+.well-s10-004 .lead { margin: 0 0 1.6rem; max-width: 30rem; color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+.well-s10-004 .rules { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.well-s10-004 .rules li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0.8rem; align-items: baseline; padding: 0.9rem 0; border-bottom: 1px solid var(--line); font-size: 0.92rem; }
+.well-s10-004 .n { margin: 0; color: var(--accent); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s10-004 .act { display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem 1.8rem; margin-top: auto; padding-top: clamp(1.4rem, 2.6vw, 2.6rem); }
+.well-s10-004 .btn { display: inline-block; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+.well-s10-004 .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.well-s10-004 .alt { margin: 0; color: var(--muted); font-size: 0.84rem; }
+.well-s10-004 .alt a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-color: var(--accent); }
 
-/* Panel */
-.well-s10-004 .panel {
-  background: var(--panel);
-  color: var(--panel-ink);
-  border-radius: 18px;
-  padding: clamp(24px, 3vw, 44px);
-  display: flex;
-  flex-direction: column;
-}
-.well-s10-004 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--panel-soft);
-}
-.well-s10-004 h1 {
-  margin: 0;
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 16ch;
-}
-.well-s10-004 .lead {
-  margin: clamp(14px, 1.8vw, 22px) 0 0;
-  max-width: 44ch;
-  color: var(--panel-soft);
-  font-size: clamp(0.98rem, 1.05vw, 1.06rem);
-  line-height: 1.62;
-}
-.well-s10-004 .rules {
-  margin: clamp(20px, 2.4vw, 30px) 0 0;
-  padding: 0;
-  list-style: none;
-}
-.well-s10-004 .rules li {
-  border-top: 1px solid var(--panel-line);
-  padding: clamp(11px, 1.3vw, 15px) 0;
-  font-size: 0.93rem;
-  line-height: 1.5;
-}
-.well-s10-004 .btn {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: clamp(22px, 2.6vw, 32px);
-  min-height: 54px;
-  padding: 0 32px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 140ms ease;
-}
-.well-s10-004 .btn:hover { background: #3b2c32; }
-.well-s10-004 .alt {
-  margin: clamp(12px, 1.4vw, 18px) 0 0;
-  color: var(--panel-soft);
-  font-size: 0.89rem;
-}
-.well-s10-004 .alt a { color: var(--panel-ink); font-weight: 600; text-underline-offset: 4px; }
+.well-s10-004 .stack { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.well-s10-004 .stack li { padding: 1.2rem 0; border-bottom: 1px solid var(--line); }
+.well-s10-004 figure { margin: 0; }
+.well-s10-004 .quote { position: relative; background: var(--media); border-radius: 3px; }
+.well-s10-004 .quote.short { height: 6rem; }
+.well-s10-004 .quote.medium { height: 9rem; }
+.well-s10-004 .quote.long { height: 13rem; }
+.well-s10-004 .glyph { position: absolute; left: 0.8rem; top: 0.3rem; margin: 0; color: var(--accent); font-family: var(--serif); font-size: 2.2rem; line-height: 1; }
+.well-s10-004 .slate { position: absolute; left: 0.8rem; bottom: 0.6rem; margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s10-004 figcaption { display: flex; align-items: center; gap: 0.7rem; margin-top: 0.7rem; }
+.well-s10-004 .portrait { width: 2.4rem; height: 2.4rem; flex: 0 0 auto; background: var(--media); border-radius: 3px; }
+.well-s10-004 .who { margin: 0; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s10-004 .who span { display: block; margin-top: 0.1rem; color: var(--muted); font-weight: 400; letter-spacing: 0; text-transform: none; font-size: 0.78rem; }
 
-/* Stacked reserved quotations */
-.well-s10-004 .stack {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: clamp(12px, 1.4vw, 18px);
-}
-.well-s10-004 .card { margin: 0; }
-.well-s10-004 .quote-slot {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 12px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: 16px;
-  text-align: center;
-}
-.well-s10-004 .q-short { min-height: clamp(104px, 10vw, 132px); }
-.well-s10-004 .q-medium { min-height: clamp(136px, 13vw, 174px); }
-.well-s10-004 .q-long { min-height: clamp(170px, 16.5vw, 216px); }
-.well-s10-004 .quote-slot span {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  line-height: 1.6;
-}
-.well-s10-004 .attrib {
-  margin: clamp(11px, 1.3vw, 15px) 0 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.well-s10-004 .portrait {
-  flex: none;
-  width: clamp(34px, 3.2vw, 42px);
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-}
-.well-s10-004 .portrait span { font-size: 0.48rem; color: var(--slot-ink); }
-.well-s10-004 .who {
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
-  color: var(--ink-soft);
-}
-
-/* Responsive ladder */
-@media (max-width: 1024px) {
-  .well-s10-004 .split { grid-template-columns: minmax(0, 1fr); }
-  .well-s10-004 .stack { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .well-s10-004 .q-long,
-  .well-s10-004 .q-medium,
-  .well-s10-004 .q-short { min-height: clamp(140px, 16vw, 180px); }
-}
-
-@media (max-width: 768px) {
-  .well-s10-004 .stack { grid-template-columns: minmax(0, 1fr); }
-  .well-s10-004 .q-short { min-height: clamp(104px, 22vw, 132px); }
-  .well-s10-004 .q-medium { min-height: clamp(136px, 28vw, 174px); }
-  .well-s10-004 .q-long { min-height: clamp(170px, 34vw, 216px); }
-  .well-s10-004 h1 { max-width: none; }
-  .well-s10-004 .lead { max-width: none; }
-  .well-s10-004 .btn { align-self: stretch; }
-}
-
-@media (max-width: 480px) {
-  .well-s10-004 .panel { border-radius: 14px; }
-  .well-s10-004 .quote-slot { border-radius: 10px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s10-004 * { transition: none !important; }
-}
+@media (max-width: 1024px) { .well-s10-004 .grid { grid-template-columns: minmax(0, 1fr); } .well-s10-004 h2 { max-width: none; } }
+@media (max-width: 480px) { .well-s10-004 .band { padding: 1.2rem; } .well-s10-004 .rules li { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; } }
+@media (prefers-reduced-motion: reduce) { .well-s10-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
-<div class="well-s10-004" data-study-id="WELL-S10-004" data-direction="Conversion-led">
+<div class="well-s10-004" data-study-id="WELL-S10-004" data-direction="Conversion-led / Direct">
   <section class="shell" aria-labelledby="well-s10-004-title">
-    <div class="split">
 
-      <div class="panel">
+    <div class="grid">
+      <div class="band">
         <p class="eyebrow">What guests say</p>
-        <h1 id="well-s10-004-title">How these got here matters more than what they say</h1>
+        <h2 id="well-s10-004-title">How these got here matters more than what they <em>say</em></h2>
         <p class="lead">Anyone can print a compliment. What is worth knowing is where it came from, so here is exactly how we collect them.</p>
-        <ul class="rules">
-          <li>Asked for after the visit, never during it.</li>
-          <li>Printed as written, with nothing edited for length.</li>
-          <li>Nothing is offered in exchange for a kind word.</li>
-        </ul>
-        <a class="btn" href="#well-s10-004-title">Book a treatment</a>
-        <p class="alt">Been in before? <a href="#well-s10-004-title">Leave one of your own</a>.</p>
+        <ol class="rules">
+          <li><p class="n">01</p><span>Asked for after the visit, never during it.</span></li>
+          <li><p class="n">02</p><span>Printed as written, with nothing edited for length.</span></li>
+          <li><p class="n">03</p><span>Nothing is offered in exchange for a kind word.</span></li>
+        </ol>
+        <div class="act">
+          <a class="btn" href="#book">Book a treatment</a>
+          <p class="alt">Been in before? <a href="#leave">Leave one of your own</a>.</p>
+        </div>
       </div>
 
       <ul class="stack">
-        <li>
-          <figure class="card">
-            <div class="quote-slot q-medium"><span>Guest quotation<br>medium</span></div>
-            <figcaption class="attrib">
-              <div class="portrait"><span>&mdash;</span></div>
-              <span class="who">Guest 01</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="card">
-            <div class="quote-slot q-short"><span>Guest quotation<br>short</span></div>
-            <figcaption class="attrib">
-              <div class="portrait"><span>&mdash;</span></div>
-              <span class="who">Guest 02</span>
-            </figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="card">
-            <div class="quote-slot q-long"><span>Guest quotation<br>long</span></div>
-            <figcaption class="attrib">
-              <div class="portrait"><span>&mdash;</span></div>
-              <span class="who">Guest 03</span>
-            </figcaption>
-          </figure>
-        </li>
+        <li><figure><div class="quote medium" role="img" aria-label="Reserved quotation area, medium"><p class="glyph" aria-hidden="true">&#8220;</p><p class="slate" aria-hidden="true">Quotation area &middot; medium</p></div><figcaption><div class="portrait" role="img" aria-label="Reserved portrait field"></div><p class="who">Guest 01<span>Attribution reserved</span></p></figcaption></figure></li>
+        <li><figure><div class="quote short" role="img" aria-label="Reserved quotation area, short"><p class="glyph" aria-hidden="true">&#8220;</p><p class="slate" aria-hidden="true">Quotation area &middot; short</p></div><figcaption><div class="portrait" role="img" aria-label="Reserved portrait field"></div><p class="who">Guest 02<span>Attribution reserved</span></p></figcaption></figure></li>
+        <li><figure><div class="quote long" role="img" aria-label="Reserved quotation area, long"><p class="glyph" aria-hidden="true">&#8220;</p><p class="slate" aria-hidden="true">Quotation area &middot; long</p></div><figcaption><div class="portrait" role="img" aria-label="Reserved portrait field"></div><p class="who">Guest 03<span>Attribution reserved</span></p></figcaption></figure></li>
       </ul>
-
     </div>
+
   </section>
 </div>
 

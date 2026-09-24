@@ -12,20 +12,20 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S25 — Article / Insight Detail
   Direction      : Premium / Editorial
-  Revision       : V2. Replaced as part of the rebuilt batch. Balanced across the frame, and opening
-                   differently from the other four.
-  Layout model   : The reserved title across the full frame at display scale, then the reading
-                   measure on the left with an editorial margin on the right carrying the reserved
-                   pull quote, the limits and the policy
-  Density        : Low
-  Media mode     : None. A page whose body is reserved does not need a picture as well.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, the reading
+                   column alone, on a ruled sheet. V1 is kept: the measure is the subject — one
+                   58ch column and nothing beside it, the title reserved at display scale, a
+                   reserved pull-quote area with the accent glyph, no media at all, the limits
+                   and policy as the only real prose.
+  Layout model   : One centred 58ch column: a ruled kicker (kind, topic, reserved date), the
+                   reserved title at display scale, reserved body blocks in prose cadence, a
+                   reserved pull-quote area with a large accent glyph, more blocks, the limits
+                   and the policy as two ruled notes.
+  Density        : Long-form (detail page)
+  Media mode     : None, by design. Reserved title, body and pull-quote areas; one slot.
   Interaction    : None (static; no JavaScript).
-  The head       : **The title is the top.** No panel, no kicker block, no headline about the studio
-                   &mdash; the reserved title occupies the full width at display scale, which is
-                   exactly what it will do when it is written.
-  Content note   : Title, standfirst, body, sub-headings, pull quote, author and date are reserved.
-                   No reading time, no citations. The limits line is present, as in every study.
-  Palette        : Black and white only.
+  Content note   : No title, body sentence, quotation, author, date, citation, reading time,
+                   claim, condition or newsletter field.
 -->
 
 <meta name="study-id" content="WELL-S25-002">
@@ -36,286 +36,92 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="Full-width reserved title, then reading measure with an editorial margin">
-<meta name="density" content="low">
-<meta name="media-mode" content="none">
+<meta name="theme" content="002 Bone &amp; Clay">
+<meta name="layout-model" content="One centred 58ch column: ruled kicker, reserved title at display scale, body blocks, a reserved pull-quote with accent glyph, limits and policy as ruled notes">
+<meta name="density" content="long-form">
+<meta name="media-mode" content="no-media-reserved-text-areas-one-slot">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S25-002 — Article Detail, Premium / Editorial</title>
+<title>WELL-S25-002 — Article / Insight Detail, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #f6f1ea; }
 
-/* Scoped study styles - namespaced to .well-s25-002 */
-/* monochrome: hand-graded. Black and white only. */
 .well-s25-002 {
-  --ink: #111111;
-  --ink-soft: #4d4d4d;
-  --ink-faint: #767676;
-  --paper: #f1f1f1;
-  --card: #ffffff;
-  --tint: #e2e2e2;
-  --line: #d2d2d2;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1.06rem;
-  line-height: 1.62;
-  -webkit-font-smoothing: antialiased;
-}
-.well-s25-002 *,
-.well-s25-002 *::before,
-.well-s25-002 *::after { box-sizing: inherit; }
-.well-s25-002 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
-.well-s25-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-.well-s25-002 .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-
-.well-s25-002 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
-
-/* Title first, full width */
-.well-s25-002 .titleblock { margin-bottom: clamp(20px, 2.6vw, 34px); }
-.well-s25-002 .label {
-  display: block;
-  margin-bottom: clamp(12px, 1.5vw, 16px);
+  --paper: #f6f1ea; --ink: #2a2420; --muted: #6f665e; --line: #dbd1c5; --line-strong: #2a2420;
+  --media: #e7ded3; --accent: #a5583a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s25-002 .title { display: block; }
-.well-s25-002 .title i {
-  display: block;
-  height: clamp(38px, 5.4vw, 76px);
-  border-radius: 6px;
-  background: var(--tint);
-  margin-bottom: 14px;
-}
-.well-s25-002 .title .w92 { width: 92%; }
-.well-s25-002 .title .w64 { width: 64%; }
-.well-s25-002 .meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 18px;
-  padding-top: clamp(14px, 1.8vw, 20px);
-  margin-top: clamp(6px, 0.8vw, 10px);
-  border-top: 3px solid var(--ink);
-}
-.well-s25-002 .chip {
-  display: inline-block;
-  padding: 5px 13px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s25-002 .pair { display: inline-flex; align-items: center; gap: 8px; }
-.well-s25-002 .pair dt {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s25-002 .pair dd { margin: 0; }
-.well-s25-002 .slot {
-  display: inline-block;
-  min-width: 70px;
-  padding: 5px 14px;
-  border-radius: 10px;
-  background: var(--tint);
-  color: var(--ink-faint);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-align: center;
-}
+.well-s25-002 *, .well-s25-002 *::before, .well-s25-002 *::after { box-sizing: inherit; }
+.well-s25-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-/* Body and margin */
-.well-s25-002 .spread {
-  display: grid;
-  grid-template-columns: minmax(0, 1.28fr) minmax(0, 0.72fr);
-  gap: clamp(20px, 3vw, 58px);
-  align-items: start;
-}
-.well-s25-002 .stand { display: block; margin-bottom: clamp(20px, 2.4vw, 30px); }
-.well-s25-002 .stand i {
-  display: block;
-  height: clamp(17px, 2vw, 22px);
-  border-radius: 4px;
-  background: #e8e8e8;
-  margin-bottom: 10px;
-}
-.well-s25-002 .stand i:last-child { width: 72%; }
-.well-s25-002 .sub {
-  display: block;
-  height: clamp(20px, 2.2vw, 26px);
-  width: 44%;
-  border-radius: 4px;
-  background: #d6d6d6;
-  margin: clamp(24px, 2.8vw, 34px) 0 clamp(14px, 1.7vw, 19px);
-}
-.well-s25-002 .para { display: block; margin-bottom: clamp(18px, 2.2vw, 26px); }
-.well-s25-002 .para i {
-  display: block;
-  height: 13px;
-  border-radius: 3px;
-  background: #e6e6e6;
-  margin-bottom: 11px;
-}
-.well-s25-002 .para i:last-child { width: 56%; }
-.well-s25-002 .w94 { width: 94%; }
+.well-s25-002 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s25-002 .body { max-width: 58ch; margin: 0 auto; font-family: var(--serif); font-size: 1.05rem; }
+.well-s25-002 .kicker { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.6rem 1.5rem; margin: 0 0 clamp(1.6rem, 3vw, 3rem); padding: 0.9rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.well-s25-002 .kicker .k { color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s25-002 .kicker .k span { color: var(--muted); margin-left: 0.8rem; }
+.well-s25-002 .field { display: flex; align-items: center; gap: 0.6rem; margin: 0; }
+.well-s25-002 .field dt { margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s25-002 .field dd { margin: 0; }
+.well-s25-002 .slot { display: inline-flex; align-items: center; justify-content: center; min-width: 6rem; height: 1.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.85rem; }
+.well-s25-002 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.well-s25-002 .margin { display: grid; gap: clamp(16px, 2vw, 24px); }
-.well-s25-002 .pull {
-  background: var(--card);
-  border-radius: 26px;
-  padding: clamp(20px, 2.4vw, 32px);
-}
-.well-s25-002 .pull i {
-  display: block;
-  height: clamp(20px, 2.4vw, 28px);
-  border-radius: 4px;
-  background: var(--tint);
-  margin-bottom: 12px;
-}
-.well-s25-002 .pull i:last-of-type { width: 62%; margin-bottom: 14px; }
-.well-s25-002 .pull em {
-  display: block;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s25-002 .note {
-  border-radius: 26px;
-  padding: clamp(20px, 2.4vw, 32px);
-  background: #111111;
-  color: #c4c4c4;
-}
-.well-s25-002 .note h2 {
-  margin: 0 0 10px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #a8a8a8;
-}
-.well-s25-002 .note p { margin: 0; font-size: 1.02rem; line-height: 1.58; }
-.well-s25-002 .note p b { color: #ffffff; font-weight: 700; }
-.well-s25-002 .policy { padding: 0 clamp(4px, 0.6vw, 8px); }
-.well-s25-002 .policy h2 {
-  margin: 0 0 10px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s25-002 .policy p { margin: 0; font-size: 1.02rem; line-height: 1.6; color: var(--ink-soft); }
-.well-s25-002 .policy p b { color: var(--ink); font-weight: 700; }
+.well-s25-002 .area { position: relative; background: var(--media); border-radius: 3px; }
+.well-s25-002 .slate { position: absolute; left: 0.8rem; bottom: 0.6rem; margin: 0; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s25-002 h2 { margin: 0 0 1.6rem; }
+.well-s25-002 .title { display: block; height: clamp(6.4rem, 9.6vw, 9rem); }
+.well-s25-002 .p { margin: 0 0 1.1rem; }
+.well-s25-002 .p.l { height: 7.2rem; }
+.well-s25-002 .p.m { height: 5.4rem; }
+.well-s25-002 .p.s { height: 3.6rem; }
+.well-s25-002 .quote { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1rem; margin: 2rem 0; padding: 1.4rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); }
+.well-s25-002 .glyph { margin: 0; color: var(--accent); font-family: var(--serif); font-size: 3rem; line-height: 0.8; }
+.well-s25-002 .q { height: 5rem; }
+.well-s25-002 .notes { margin: 2rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.well-s25-002 .notes li { padding: 1rem 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.86rem; line-height: 1.55; }
+.well-s25-002 .notes strong { display: block; margin-bottom: 0.3rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 
-/* Responsive ladder */
-@media (max-width: 980px) {
-  .well-s25-002 .spread { grid-template-columns: minmax(0, 1fr); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s25-002 * { transition: none !important; }
-}
+@media (max-width: 480px) { .well-s25-002 .kicker { flex-direction: column; align-items: flex-start; } }
+@media (prefers-reduced-motion: reduce) { .well-s25-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="well-s25-002" data-study-id="WELL-S25-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="well-s25-002-title">
+    <div class="body">
 
-    <div class="titleblock">
-      <h1 id="well-s25-002-title" class="vh">One guide, read in full</h1>
-      <span class="label">Title, reserved &mdash; two or three lines at display scale</span>
-      <span class="title" role="img" aria-label="Reserved area: the article title, three lines at display scale">
-        <i></i><i class="w92"></i><i class="w64"></i>
-      </span>
-      <dl class="meta">
-        <span class="chip">A guide</span>
-        <span class="chip">Body &amp; massage</span>
-        <span class="pair"><dt>Written by</dt><dd><span class="slot"><span class="vh">Author</span><span aria-hidden="true">&mdash;</span></span></dd></span>
-        <span class="pair"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></span>
-      </dl>
-    </div>
-
-    <div class="spread">
-
-      <article>
-        <span class="stand" role="img" aria-label="Reserved area: the standfirst, two lines">
-          <i></i><i></i>
-        </span>
-
-        <span class="para" role="img" aria-label="Reserved area: an opening paragraph at the real measure">
-          <i></i><i></i><i class="w94"></i><i></i><i></i>
-        </span>
-
-        <span class="sub" role="img" aria-label="Reserved area: a sub-heading"></span>
-
-        <span class="para" role="img" aria-label="Reserved area: a paragraph at the real measure">
-          <i></i><i class="w94"></i><i></i><i></i><i></i>
-        </span>
-
-        <span class="sub" role="img" aria-label="Reserved area: a sub-heading"></span>
-
-        <span class="para" role="img" aria-label="Reserved area: a closing paragraph at the real measure">
-          <i></i><i></i><i class="w94"></i><i></i>
-        </span>
-      </article>
-
-      <div class="margin">
-        <div class="pull">
-          <i></i><i></i><i></i>
-          <em>Reserved &mdash; a line pulled from the piece</em>
-        </div>
-        <div class="note">
-          <h2>Where this stops</h2>
-          <p><b>None of this is medical advice.</b> It is what we tell people in the room, written down. If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa.</p>
-        </div>
-        <div class="policy">
-          <h2>Who writes them</h2>
-          <p>These are written by <b>whoever does the treatment</b>, not by anybody paid to write. They are corrected when we change how we work, and <b>nothing on this page has been paid for by a brand.</b></p>
-        </div>
+      <div class="kicker">
+        <p class="k">A guide<span>Skin</span></p>
+        <dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl>
       </div>
 
-    </div>
+      <h2 id="well-s25-002-title"><span class="vh">Article title, reserved</span><span class="area title" role="img" aria-label="Reserved title area, display scale"><span class="slate" aria-hidden="true">Title &middot; reserved &middot; display scale</span></span></h2>
+      <div class="area p l" role="img" aria-label="Reserved paragraph, long"></div>
+      <div class="area p m" role="img" aria-label="Reserved paragraph, medium"></div>
+      <div class="area p s" role="img" aria-label="Reserved paragraph, short"></div>
 
+      <div class="quote">
+        <p class="glyph" aria-hidden="true">&#8220;</p>
+        <div class="area q" role="img" aria-label="Reserved pull-quote area, the article's own words"><p class="slate" aria-hidden="true">Pull quote &middot; reserved &middot; the piece's own words</p></div>
+      </div>
+
+      <div class="area p m" role="img" aria-label="Reserved paragraph, medium"></div>
+      <div class="area p l" role="img" aria-label="Reserved paragraph, long"></div>
+      <div class="area p s" role="img" aria-label="Reserved paragraph, short"></div>
+
+      <ul class="notes">
+        <li><strong>Where this stops</strong>None of this is medical advice. If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa.</li>
+        <li><strong>How these are written</strong>By whoever does the treatment, corrected when we change how we work, and paid for by nobody.</li>
+      </ul>
+
+    </div>
   </section>
 </div>
 

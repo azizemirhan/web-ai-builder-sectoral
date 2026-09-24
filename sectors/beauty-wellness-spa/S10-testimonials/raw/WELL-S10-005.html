@@ -12,27 +12,22 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S10 — Testimonials
   Direction      : Art-directed / Distinctive
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : A wall. Six reserved quotation areas of six different widths and heights packed
-                   into a twelve-column field over an oversized decorative quotation mark, so the
-                   section reads as a body of voices rather than as a row of cards
-  Density        : Low — six quotations, no supporting copy beyond the header and one closing line
-  Media mode     : Six reserved quotation areas at six different proportions. No portraits: at
-                   this density a portrait per brick would turn a wall of voices into a wall of
-                   faces, which is S04's role.
-  Interaction    : None (static; no JavaScript)
-  Contrast note  : The oversized quotation mark sits at 1.55:1 against the ground, as a
-                   watermark. It is decorative and marked `aria-hidden`: it carries no information
-                   the section's heading does not already carry. This follows the precedent set in
-                   WELL-S07-005 and is the opposite case to WELL-S01-005, where low-contrast
-                   display type was the study's `h1` and had to be raised. Every element that
-                   conveys meaning here is at full contrast.
-  Reserved-quote note : The quotation structure is authored; the quotation is reserved. The
-                   unequal brick sizes are the device — a wall of identically sized quotes is a
-                   grid, and real quotations are never the same length.
-  Content note   : No invented quotation, guest name, initial, age, location, photograph,
-                   treatment attribution or occupation. No star rating, score, average or review
-                   count, and no review-platform name. See ../README.md.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 3 as a
+                   bordered brick grid of unequal spans, with device 5 (type crossing an edge):
+                   one serif quotation mark at display size in the accent, crossing the wall's
+                   top rule. V1's wall of voices — six reserved areas, six widths, three
+                   heights, no portraits — is kept; the near-black ground and watermark are
+                   replaced by hairlines on paper.
+  Layout model   : Mast line, serif display. A twelve-column wall of six cells with spans
+                   5 / 4 / 3 / 4 / 3 / 5 and three heights, separated by hairlines; each cell
+                   holds a small accent glyph, its slate label and the token. One large glyph
+                   overlaps the wall's top-right corner. The gathering policy sits beneath the
+                   wall as a right-aligned line.
+  Density        : Low (60–120)
+  Media mode     : Six reserved quotation areas. No portraits, by design. No quotation or name
+                   is supplied.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No quotation, guest name, rating, score, count or platform.
 -->
 
 <meta name="study-id" content="WELL-S10-005">
@@ -43,189 +38,77 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Six unequal reserved quotation bricks packed over a decorative oversized quotation mark">
+<meta name="theme" content="005 Ivory &amp; Plum">
+<meta name="layout-model" content="A twelve-column wall of six hairlined cells at unequal spans and heights; one display-size accent quotation mark crossing the wall's top rule">
 <meta name="density" content="low">
-<meta name="media-mode" content="reserved-quotation-areas-unequal-wall">
+<meta name="media-mode" content="six-reserved-quotations-no-portraits">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S10-005 — Testimonials, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #17161a; }
+body { margin: 0; background: #f8f4f3; }
 
-/* Scoped study styles — namespaced to .well-s10-005 */
 .well-s10-005 {
-  --ink: #f0eef2;
-  --ink-soft: #9a95a3;
-  --paper: #17161a;
-  --mark: #3b3647;
-  --slot: #211f26;
-  --slot-ink: #a8a2b2;
-  --slot-edge: #383343;
-  --line: #2c2934;
-  --focus: #d8c7e6;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f8f4f3; --ink: #2b2226; --muted: #6d6266; --line: #e0d6d9; --line-strong: #2b2226;
+  --media: #eae1e3; --accent: #6e3b4e;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s10-005 *,
-.well-s10-005 *::before,
-.well-s10-005 *::after { box-sizing: inherit; }
-.well-s10-005 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
+.well-s10-005 *, .well-s10-005 *::before, .well-s10-005 *::after { box-sizing: inherit; }
+.well-s10-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s10-005 .shell {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: clamp(48px, 5.6vw, 100px) clamp(20px, 3.6vw, 56px);
-}
+.well-s10-005 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s10-005 .mast { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0; border-top: 1px solid var(--line-strong); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s10-005 .mast span + span { color: var(--muted); }
+.well-s10-005 .top { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 2rem; }
+.well-s10-005 h2 { margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 clamp(1.6rem, 3vw, 3rem); max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 4vw, 4.2rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s10-005 h2 em { font-style: italic; }
+.well-s10-005 .big { position: relative; z-index: 1; margin: 0 clamp(0.5rem, 2vw, 2rem) -0.75em 0; color: var(--accent); font-family: var(--serif); font-size: clamp(6rem, 13vw, 13rem); line-height: 0.7; }
 
-/* Header */
-.well-s10-005 .head {
-  max-width: 42rem;
-  margin-bottom: clamp(28px, 3.4vw, 50px);
-}
-.well-s10-005 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s10-005 h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
+.well-s10-005 .wall { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1px; margin: 0; padding: 0; list-style: none; background: var(--line); border: 1px solid var(--line); }
+.well-s10-005 .wall li { position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.8rem; padding: clamp(1rem, 1.6vw, 1.4rem); background: var(--paper); }
+.well-s10-005 .area { position: relative; background: var(--media); border-radius: 3px; }
+.well-s10-005 .area.short { height: 4.5rem; }
+.well-s10-005 .area.medium { height: 6.5rem; }
+.well-s10-005 .area.long { height: 9rem; }
+.well-s10-005 .wall li:nth-child(1) { grid-column: span 5; }
+.well-s10-005 .wall li:nth-child(2) { grid-column: span 4; }
+.well-s10-005 .wall li:nth-child(3) { grid-column: span 3; }
+.well-s10-005 .wall li:nth-child(4) { grid-column: span 4; }
+.well-s10-005 .wall li:nth-child(5) { grid-column: span 3; }
+.well-s10-005 .wall li:nth-child(6) { grid-column: span 5; }
+.well-s10-005 .glyph { position: absolute; left: 0.8rem; top: 0.3rem; margin: 0; color: var(--accent); font-family: var(--serif); font-size: 2.2rem; line-height: 1; }
+.well-s10-005 .slate { margin: 0 0 0.4rem; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s10-005 .who { margin: 0; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 
-/* The wall */
-.well-s10-005 .wall {
-  position: relative;
-  overflow: hidden;
-  padding-top: clamp(58px, 7.5vw, 128px);
-}
+.well-s10-005 .policy { margin: 1.2rem 0 0; max-width: 40rem; margin-left: auto; color: var(--muted); font-size: 0.84rem; line-height: 1.55; text-align: right; }
 
-/* Decorative watermark — aria-hidden, never load-bearing */
-.well-s10-005 .glyph {
-  position: absolute;
-  top: 0;
-  right: 2%;
-  z-index: 0;
-  color: var(--mark);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(14rem, 32vw, 30rem);
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-}
-
-.well-s10-005 .bricks {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(12px, 1.4vw, 20px);
-}
-.well-s10-005 .bricks li { min-width: 0; }
-.well-s10-005 .bricks li:nth-child(1) { grid-column: span 5; }
-.well-s10-005 .bricks li:nth-child(2) { grid-column: span 4; }
-.well-s10-005 .bricks li:nth-child(3) { grid-column: span 3; }
-.well-s10-005 .bricks li:nth-child(4) { grid-column: span 4; }
-.well-s10-005 .bricks li:nth-child(5) { grid-column: span 3; }
-.well-s10-005 .bricks li:nth-child(6) { grid-column: span 5; }
-
-.well-s10-005 .card { margin: 0; }
-.well-s10-005 .quote-slot {
-  border: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: 16px;
-  text-align: center;
-}
-.well-s10-005 .bricks li:nth-child(1) .quote-slot { min-height: clamp(150px, 15vw, 200px); }
-.well-s10-005 .bricks li:nth-child(2) .quote-slot { min-height: clamp(196px, 20vw, 268px); }
-.well-s10-005 .bricks li:nth-child(3) .quote-slot { min-height: clamp(122px, 12vw, 162px); }
-.well-s10-005 .bricks li:nth-child(4) .quote-slot { min-height: clamp(150px, 15vw, 200px); }
-.well-s10-005 .bricks li:nth-child(5) .quote-slot { min-height: clamp(196px, 20vw, 268px); }
-.well-s10-005 .bricks li:nth-child(6) .quote-slot { min-height: clamp(122px, 12vw, 162px); }
-
-.well-s10-005 .quote-slot span {
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  line-height: 1.6;
-}
-.well-s10-005 .who {
-  display: block;
-  margin-top: clamp(9px, 1.1vw, 13px);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  color: var(--ink-soft);
-}
-
-/* Closing line */
-.well-s10-005 .foot {
-  margin: clamp(28px, 3.4vw, 48px) 0 0;
-  padding-top: clamp(18px, 2.2vw, 28px);
-  border-top: 1px solid var(--line);
-  max-width: 60ch;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-}
-
-/* Responsive ladder — the wall keeps unequal bricks, at fewer per row */
 @media (max-width: 1024px) {
-  .well-s10-005 .bricks { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .well-s10-005 .bricks li:nth-child(1) { grid-column: span 4; }
-  .well-s10-005 .bricks li:nth-child(2) { grid-column: span 2; }
-  .well-s10-005 .bricks li:nth-child(3) { grid-column: span 3; }
-  .well-s10-005 .bricks li:nth-child(4) { grid-column: span 3; }
-  .well-s10-005 .bricks li:nth-child(5) { grid-column: span 2; }
-  .well-s10-005 .bricks li:nth-child(6) { grid-column: span 4; }
+  .well-s10-005 .wall { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .well-s10-005 .wall li:nth-child(1) { grid-column: span 4; }
+  .well-s10-005 .wall li:nth-child(2) { grid-column: span 2; }
+  .well-s10-005 .wall li:nth-child(3) { grid-column: span 3; }
+  .well-s10-005 .wall li:nth-child(4) { grid-column: span 3; }
+  .well-s10-005 .wall li:nth-child(5) { grid-column: span 2; }
+  .well-s10-005 .wall li:nth-child(6) { grid-column: span 4; }
 }
-
 @media (max-width: 768px) {
-  .well-s10-005 .bricks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .well-s10-005 .bricks li:nth-child(1),
-  .well-s10-005 .bricks li:nth-child(2),
-  .well-s10-005 .bricks li:nth-child(3),
-  .well-s10-005 .bricks li:nth-child(4),
-  .well-s10-005 .bricks li:nth-child(5),
-  .well-s10-005 .bricks li:nth-child(6) { grid-column: span 1; }
-  .well-s10-005 h1 { max-width: none; }
-  .well-s10-005 .glyph { font-size: clamp(11rem, 44vw, 18rem); }
+  .well-s10-005 .wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s10-005 .wall li:nth-child(n) { grid-column: span 1; }
+  .well-s10-005 .top { grid-template-columns: minmax(0, 1fr); }
+  .well-s10-005 .big { display: none; }
+  .well-s10-005 h2 { max-width: none; }
+  .well-s10-005 .mast { flex-direction: column; gap: 0.2rem; }
+  .well-s10-005 .policy { margin-left: 0; text-align: left; }
 }
-
-@media (max-width: 480px) {
-  .well-s10-005 .bricks { grid-template-columns: minmax(0, 1fr); }
-  .well-s10-005 .glyph { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s10-005 * { transition: none !important; }
-}
+@media (max-width: 480px) { .well-s10-005 .wall { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .well-s10-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -233,54 +116,23 @@ body { margin: 0; background: #17161a; }
 <div class="well-s10-005" data-study-id="WELL-S10-005" data-direction="Art-directed / Distinctive">
   <section class="shell" aria-labelledby="well-s10-005-title">
 
-    <div class="head">
-      <p class="eyebrow">What guests say</p>
-      <h1 id="well-s10-005-title">Six voices, at the length they came in</h1>
+    <p class="mast"><span>What guests say</span><span>Six voices, none of them ours</span></p>
+
+    <div class="top">
+      <h2 id="well-s10-005-title">A wall of <em>voices,</em> each at the length it was written.</h2>
+      <p class="big" aria-hidden="true">&#8220;</p>
     </div>
 
-    <div class="wall">
-      <span class="glyph" aria-hidden="true">&rdquo;</span>
-      <ul class="bricks">
-        <li>
-          <figure class="card">
-            <div class="quote-slot"><span>Guest quotation<br>medium</span></div>
-            <figcaption><span class="who">Guest 01</span></figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="card">
-            <div class="quote-slot"><span>Guest quotation<br>long</span></div>
-            <figcaption><span class="who">Guest 02</span></figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="card">
-            <div class="quote-slot"><span>Guest quotation<br>short</span></div>
-            <figcaption><span class="who">Guest 03</span></figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="card">
-            <div class="quote-slot"><span>Guest quotation<br>medium</span></div>
-            <figcaption><span class="who">Guest 04</span></figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="card">
-            <div class="quote-slot"><span>Guest quotation<br>long</span></div>
-            <figcaption><span class="who">Guest 05</span></figcaption>
-          </figure>
-        </li>
-        <li>
-          <figure class="card">
-            <div class="quote-slot"><span>Guest quotation<br>short</span></div>
-            <figcaption><span class="who">Guest 06</span></figcaption>
-          </figure>
-        </li>
-      </ul>
-    </div>
+    <ul class="wall">
+      <li><div class="area long" role="img" aria-label="Reserved quotation area, long"><p class="glyph" aria-hidden="true">&#8220;</p></div><p class="slate">Quotation area &middot; long</p><p class="who">Guest 01</p></li>
+      <li><div class="area medium" role="img" aria-label="Reserved quotation area, medium"><p class="glyph" aria-hidden="true">&#8220;</p></div><p class="slate">Quotation area &middot; medium</p><p class="who">Guest 02</p></li>
+      <li><div class="area short" role="img" aria-label="Reserved quotation area, short"><p class="glyph" aria-hidden="true">&#8220;</p></div><p class="slate">Quotation area &middot; short</p><p class="who">Guest 03</p></li>
+      <li><div class="area medium" role="img" aria-label="Reserved quotation area, medium"><p class="glyph" aria-hidden="true">&#8220;</p></div><p class="slate">Quotation area &middot; medium</p><p class="who">Guest 04</p></li>
+      <li><div class="area short" role="img" aria-label="Reserved quotation area, short"><p class="glyph" aria-hidden="true">&#8220;</p></div><p class="slate">Quotation area &middot; short</p><p class="who">Guest 05</p></li>
+      <li><div class="area long" role="img" aria-label="Reserved quotation area, long"><p class="glyph" aria-hidden="true">&#8220;</p></div><p class="slate">Quotation area &middot; long</p><p class="who">Guest 06</p></li>
+    </ul>
 
-    <p class="foot">Published with permission and printed as written. Nothing is edited for length and nothing is given in exchange.</p>
+    <p class="policy">Asked for after the visit, printed as written, and never given in exchange for anything.</p>
 
   </section>
 </div>

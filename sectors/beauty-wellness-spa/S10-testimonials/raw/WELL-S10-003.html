@@ -12,25 +12,21 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S10 — Testimonials
   Direction      : Structured / Visual Modular
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : Quotations sorted by the category they came from — three labelled groups, two
-                   reserved quotation areas in each, at deliberately unequal lengths so the study
-                   shows how the structure behaves when real quotes differ in size
-  Density        : Medium, carried by the grouping rather than by copy
-  Media mode     : Six reserved quotation areas across three groups, at three lengths, plus six
-                   small reserved portrait slots.
-  Interaction    : None (static; no JavaScript)
-  Reserved-quote note : The quotation structure is authored; the quotation is reserved. The point
-                   of this study is that the six areas are **not** the same height — a grouped
-                   testimonial layout has to survive quotes of different lengths, and reserving
-                   them at one uniform size would hide the only structural problem this direction
-                   exists to solve.
-  Grouping note  : The three group labels are the sector's own categories, used across S01, S02,
-                   S03 and S04. They are an organising device for quotations, not a taxonomy, and
-                   the category is not attributed to any individual guest.
-  Content note   : No invented quotation, guest name, initial, age, location, photograph,
-                   treatment attribution or occupation. No star rating, score, average or review
-                   count, and no review-platform name. See ../README.md.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 3 (bordered
+                   cells sharing hairlines) with group labels. V1's sorting — two reserved
+                   quotations from each of the sector's three categories, at deliberately
+                   unequal lengths — is kept as the structure; the category is a heading over a
+                   column, never an attribution.
+  Layout model   : Head split. Three columns separated by hairlines, each headed by the
+                   category in serif with a small accent index, holding two reserved quotation
+                   areas of different heights, each with a small portrait field and token. A
+                   ruled foot carries the gathering policy.
+  Density        : Low (60–120)
+  Media mode     : Six reserved quotation areas and six reserved portrait fields. No quotation,
+                   name or image is supplied.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No quotation, guest name, rating, score, count or platform. Categories are
+                   organising labels only.
 -->
 
 <meta name="study-id" content="WELL-S10-003">
@@ -41,192 +37,69 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Three labelled category groups holding six reserved quotations at unequal lengths">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-quotation-areas-grouped-unequal">
+<meta name="theme" content="003 Mist &amp; Moss">
+<meta name="layout-model" content="Head split; three category columns sharing hairlines, each with two reserved quotation areas of unequal height and portrait tokens; policy on the foot rule">
+<meta name="density" content="low">
+<meta name="media-mode" content="six-reserved-quotations-six-reserved-portraits">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S10-003 — Testimonials, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f7ece4; }
+body { margin: 0; background: #eef0ee; }
 
-/* Scoped study styles — namespaced to .well-s10-003 */
 .well-s10-003 {
-  --ink: #2b2019;
-  --ink-soft: #6f6055;
-  --paper: #f7ece4;
-  --card: #ffffff;
-  --slot: #f1e7de;
-  --slot-ink: #7a6a5d;
-  --slot-edge: #ddcec1;
-  --line: #ece0d5;
-  --label: #d8c8ba;
-  --focus: #6a4a34;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eef0ee; --ink: #1f2624; --muted: #5f6764; --line: #cdd2cf; --line-strong: #1f2624;
+  --media: #dcdfdb; --accent: #2f5c4b;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s10-003 *,
-.well-s10-003 *::before,
-.well-s10-003 *::after { box-sizing: inherit; }
-.well-s10-003 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
+.well-s10-003 *, .well-s10-003 *::before, .well-s10-003 *::after { box-sizing: inherit; }
+.well-s10-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s10-003 .shell {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
-}
+.well-s10-003 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s10-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr); gap: 3rem; align-items: end; margin-bottom: clamp(1.4rem, 2.6vw, 2.6rem); }
+.well-s10-003 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s10-003 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.6vw, 3.6rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s10-003 h2 em { font-style: italic; }
+.well-s10-003 .lead { max-width: 24rem; margin: 0 0 0.3rem auto; color: var(--muted); font-size: 0.86rem; line-height: 1.55; text-align: right; }
 
-/* Header */
-.well-s10-003 .head {
-  max-width: 46rem;
-  margin-bottom: clamp(24px, 3vw, 42px);
-}
-.well-s10-003 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s10-003 h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
-.well-s10-003 .head p {
-  margin: clamp(14px, 1.6vw, 20px) 0 0;
-  max-width: 50ch;
-  color: var(--ink-soft);
-  font-size: 1rem;
-}
+.well-s10-003 .groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.well-s10-003 .groups > li { min-width: 0; padding: clamp(1.2rem, 2vw, 2rem) clamp(0.9rem, 1.6vw, 1.6rem); }
+.well-s10-003 .groups > li + li { border-left: 1px solid var(--line); }
+.well-s10-003 .gh { display: flex; align-items: baseline; gap: 0.8rem; margin: 0 0 1.2rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line); }
+.well-s10-003 .gh .n { margin: 0; color: var(--accent); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s10-003 h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.3rem, 1.9vw, 1.8rem); letter-spacing: -0.02em; }
+.well-s10-003 figure { margin: 0; }
+.well-s10-003 figure + figure { margin-top: 1.4rem; }
+.well-s10-003 .quote { position: relative; background: var(--media); border-radius: 3px; }
+.well-s10-003 .quote.short { height: 6rem; }
+.well-s10-003 .quote.medium { height: 9rem; }
+.well-s10-003 .quote.long { height: 13rem; }
+.well-s10-003 .glyph { position: absolute; left: 0.8rem; top: 0.3rem; margin: 0; color: var(--accent); font-family: var(--serif); font-size: 2.2rem; line-height: 1; }
+.well-s10-003 .slate { position: absolute; left: 0.8rem; bottom: 0.6rem; margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s10-003 figcaption { display: flex; align-items: center; gap: 0.7rem; margin-top: 0.7rem; }
+.well-s10-003 .portrait { width: 2.4rem; height: 2.4rem; flex: 0 0 auto; background: var(--media); border-radius: 3px; }
+.well-s10-003 .who { margin: 0; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 
-/* Groups */
-.well-s10-003 .groups {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(16px, 2vw, 34px);
-  align-items: start;
-}
-.well-s10-003 .group { min-width: 0; }
-.well-s10-003 h2 {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  padding-bottom: clamp(9px, 1.1vw, 13px);
-  border-bottom: 1px solid var(--label);
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s10-003 .group ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: clamp(10px, 1.2vw, 16px);
-}
+.well-s10-003 .policy { display: flex; justify-content: space-between; gap: 2rem; margin: 0; padding-top: 1rem; }
+.well-s10-003 .policy span { color: var(--muted); font-size: 0.82rem; line-height: 1.5; max-width: 22rem; }
+.well-s10-003 .policy span + span { text-align: right; }
 
-.well-s10-003 .card {
-  margin: 0;
-  background: var(--card);
-  border-radius: 14px;
-  padding: clamp(14px, 1.7vw, 22px);
-}
-
-/* Reserved quotation areas at three lengths */
-.well-s10-003 .quote-slot {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 9px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: 14px;
-  text-align: center;
-}
-.well-s10-003 .q-short { min-height: clamp(92px, 9vw, 120px); }
-.well-s10-003 .q-medium { min-height: clamp(126px, 12.5vw, 165px); }
-.well-s10-003 .q-long { min-height: clamp(158px, 16vw, 210px); }
-.well-s10-003 .quote-slot span {
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  line-height: 1.6;
-}
-
-/* Attribution */
-.well-s10-003 .attrib {
-  margin: clamp(12px, 1.4vw, 17px) 0 0;
-  padding-top: clamp(11px, 1.3vw, 15px);
-  border-top: 1px solid var(--line);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.well-s10-003 .portrait {
-  flex: none;
-  width: clamp(32px, 3vw, 40px);
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-}
-.well-s10-003 .portrait span {
-  font-size: 0.48rem;
-  color: var(--slot-ink);
-}
-.well-s10-003 .who {
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  color: var(--ink-soft);
-}
-
-/* Responsive ladder */
 @media (max-width: 1024px) {
   .well-s10-003 .groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .well-s10-003 .group--last { grid-column: 1 / -1; }
-  .well-s10-003 .group--last ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s10-003 .groups > li:nth-child(3) { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); }
+  .well-s10-003 .groups > li:nth-child(3) .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem; }
+  .well-s10-003 .groups > li:nth-child(3) figure + figure { margin-top: 0; }
 }
-
-@media (max-width: 768px) {
-  .well-s10-003 .groups {
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(22px, 3vw, 30px);
-  }
-  .well-s10-003 .group--last ul { grid-template-columns: minmax(0, 1fr); }
-  .well-s10-003 h1 { max-width: none; }
-  .well-s10-003 .head p { max-width: none; }
-}
-
-@media (max-width: 480px) {
-  .well-s10-003 .card { border-radius: 12px; }
-  .well-s10-003 .q-long { min-height: clamp(140px, 34vw, 170px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s10-003 * { transition: none !important; }
-}
+@media (max-width: 768px) { .well-s10-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .well-s10-003 .lead { margin-left: 0; text-align: left; } .well-s10-003 h2 { max-width: none; } .well-s10-003 .policy { flex-direction: column; gap: 0.4rem; } .well-s10-003 .policy span + span { text-align: left; } }
+@media (max-width: 480px) { .well-s10-003 .groups { grid-template-columns: minmax(0, 1fr); } .well-s10-003 .groups > li { padding-inline: 0; } .well-s10-003 .groups > li + li { border-left: 0; border-top: 1px solid var(--line); } .well-s10-003 .groups > li:nth-child(3) .pair { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .well-s10-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -235,86 +108,38 @@ body { margin: 0; background: #f7ece4; }
   <section class="shell" aria-labelledby="well-s10-003-title">
 
     <div class="head">
-      <p class="eyebrow">What guests say</p>
-      <h1 id="well-s10-003-title">Sorted by what they came in for</h1>
-      <p>Two from each group, at the length they were written. Published with permission, printed as written, and never given in exchange for anything.</p>
+      <div>
+        <p class="eyebrow">What guests say</p>
+        <h2 id="well-s10-003-title">Sorted by what they <em>came in</em> for</h2>
+      </div>
+      <p class="lead">Two from each group, at the length they were written.</p>
     </div>
 
-    <div class="groups">
+    <ul class="groups">
+      <li>
+        <div class="gh"><p class="n">01</p><h3>Facials</h3></div>
+        <div class="pair">
+          <figure><div class="quote medium" role="img" aria-label="Reserved quotation area, medium"><p class="glyph" aria-hidden="true">&#8220;</p><p class="slate" aria-hidden="true">Quotation &middot; medium</p></div><figcaption><div class="portrait" role="img" aria-label="Reserved portrait field"></div><p class="who">Guest 01</p></figcaption></figure>
+          <figure><div class="quote short" role="img" aria-label="Reserved quotation area, short"><p class="glyph" aria-hidden="true">&#8220;</p><p class="slate" aria-hidden="true">Quotation &middot; short</p></div><figcaption><div class="portrait" role="img" aria-label="Reserved portrait field"></div><p class="who">Guest 02</p></figcaption></figure>
+        </div>
+      </li>
+      <li>
+        <div class="gh"><p class="n">02</p><h3>Body &amp; massage</h3></div>
+        <div class="pair">
+          <figure><div class="quote long" role="img" aria-label="Reserved quotation area, long"><p class="glyph" aria-hidden="true">&#8220;</p><p class="slate" aria-hidden="true">Quotation &middot; long</p></div><figcaption><div class="portrait" role="img" aria-label="Reserved portrait field"></div><p class="who">Guest 03</p></figcaption></figure>
+          <figure><div class="quote short" role="img" aria-label="Reserved quotation area, short"><p class="glyph" aria-hidden="true">&#8220;</p><p class="slate" aria-hidden="true">Quotation &middot; short</p></div><figcaption><div class="portrait" role="img" aria-label="Reserved portrait field"></div><p class="who">Guest 04</p></figcaption></figure>
+        </div>
+      </li>
+      <li>
+        <div class="gh"><p class="n">03</p><h3>Hands &amp; feet</h3></div>
+        <div class="pair">
+          <figure><div class="quote short" role="img" aria-label="Reserved quotation area, short"><p class="glyph" aria-hidden="true">&#8220;</p><p class="slate" aria-hidden="true">Quotation &middot; short</p></div><figcaption><div class="portrait" role="img" aria-label="Reserved portrait field"></div><p class="who">Guest 05</p></figcaption></figure>
+          <figure><div class="quote medium" role="img" aria-label="Reserved quotation area, medium"><p class="glyph" aria-hidden="true">&#8220;</p><p class="slate" aria-hidden="true">Quotation &middot; medium</p></div><figcaption><div class="portrait" role="img" aria-label="Reserved portrait field"></div><p class="who">Guest 06</p></figcaption></figure>
+        </div>
+      </li>
+    </ul>
 
-      <section class="group">
-        <h2>Facials</h2>
-        <ul>
-          <li>
-            <figure class="card">
-              <div class="quote-slot q-medium"><span>Guest quotation<br>medium</span></div>
-              <figcaption class="attrib">
-                <div class="portrait"><span>&mdash;</span></div>
-                <span class="who">Guest 01</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure class="card">
-              <div class="quote-slot q-short"><span>Guest quotation<br>short</span></div>
-              <figcaption class="attrib">
-                <div class="portrait"><span>&mdash;</span></div>
-                <span class="who">Guest 02</span>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
-      </section>
-
-      <section class="group">
-        <h2>Body &amp; massage</h2>
-        <ul>
-          <li>
-            <figure class="card">
-              <div class="quote-slot q-long"><span>Guest quotation<br>long</span></div>
-              <figcaption class="attrib">
-                <div class="portrait"><span>&mdash;</span></div>
-                <span class="who">Guest 03</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure class="card">
-              <div class="quote-slot q-short"><span>Guest quotation<br>short</span></div>
-              <figcaption class="attrib">
-                <div class="portrait"><span>&mdash;</span></div>
-                <span class="who">Guest 04</span>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
-      </section>
-
-      <section class="group group--last">
-        <h2>Hands &amp; feet</h2>
-        <ul>
-          <li>
-            <figure class="card">
-              <div class="quote-slot q-short"><span>Guest quotation<br>short</span></div>
-              <figcaption class="attrib">
-                <div class="portrait"><span>&mdash;</span></div>
-                <span class="who">Guest 05</span>
-              </figcaption>
-            </figure>
-          </li>
-          <li>
-            <figure class="card">
-              <div class="quote-slot q-medium"><span>Guest quotation<br>medium</span></div>
-              <figcaption class="attrib">
-                <div class="portrait"><span>&mdash;</span></div>
-                <span class="who">Guest 06</span>
-              </figcaption>
-            </figure>
-          </li>
-        </ul>
-      </section>
-
-    </div>
+    <p class="policy"><span>Published with permission, printed as written, and never given in exchange for anything.</span><span>The group is where the guest was seen, not a claim about what they were told.</span></p>
 
   </section>
 </div>

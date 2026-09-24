@@ -12,28 +12,21 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S02 — Treatments / Services
   Direction      : Universal / Safe
-  Reference      : Supplied visual research — reference 2 of three images provided with the
-                   authoring request (a "POPULAR SERVICES" grid: a row of service cards each
-                   carrying a photograph, an icon, a name and a short description, over a second
-                   row mixing text-only cards with a studio panel). Taken for the even
-                   media-topped card grid, the name-plus-one-line card contract and the
-                   section-header-above-grid hierarchy. Its icon set was not taken — an invented
-                   iconography would be fabricated brand material — and is replaced by a small
-                   category tag. Its outcome copy ("improve skin texture, tone, and reduce
-                   imperfections", "lift, firm, and rejuvenate for younger-looking skin") was not
-                   carried across at all, per the claims rule in
-                   ../../WELLNESS-DESIGN-DIRECTION.md. No layout, brand, wording or photograph
-                   from that image is reproduced.
-  Layout model   : Section header above an even three-column, two-row card grid; each card is
-                   media-topped with a category tag, name, one procedural line and an onward link
-  Density        : Medium
-  Media mode     : Six reserved media areas, one per treatment, at equal and generous scale. No
-                   image is supplied.
-  Interaction    : None (static; no JavaScript)
-  Content note   : Neutral placeholder copy. Treatment descriptions are procedural — what happens
-                   in the room, in order — never what a treatment achieves. No efficacy claim,
-                   percentage, price, duration, practitioner name, qualification, client, rating
-                   or address. All media areas are reserved and intentionally empty.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 1 (narrow
+                   intro column beside a media grid) after ARC-S03-001 / ARC-S03-002. The white
+                   cards, pill tags and "Read more" links of V1 are retired; each treatment is a
+                   bare 4:5 field with a serif title and one line of what happens.
+  Layout model   : Intro column left — eyebrow, serif display with one italic word, lead, an
+                   underlined "all treatments" link; a three-by-two grid of 4:5 fields right,
+                   each captioned with the treatment name in serif, the family as a tiny tracked
+                   label and one sentence of what happens
+  Density        : Standard (90–170)
+  Media mode     : Six reserved fields — a detail of each treatment in the room. No image is
+                   supplied.
+  Interaction    : None (static; no JavaScript). One text link; six caption links.
+  Content note   : Treatments are described by what happens, never by what they achieve. No
+                   claim, percentage, ingredient claim, price, duration, practitioner name or
+                   rating.
 -->
 
 <meta name="study-id" content="WELL-S02-001">
@@ -44,308 +37,95 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Section header above an even three-column media-topped card grid">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-media-one-per-card-equal-scale">
-<meta name="interaction" content="none">
+<meta name="theme" content="001 Linen &amp; Olive">
+<meta name="layout-model" content="Intro column beside a three-by-two grid of 4:5 fields with serif titles and one-line captions">
+<meta name="density" content="standard">
+<meta name="media-mode" content="six-reserved-fields">
+<meta name="interaction" content="none-one-link">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S02-001 — Treatments / Services, Universal / Safe</title>
+<title>WELL-S02-001 — Treatments, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f6f3ed; }
+body { margin: 0; background: #f2f0ea; }
 
-/* Scoped study styles — namespaced to .well-s02-001 */
 .well-s02-001 {
-  --ink: #23211c;
-  --ink-soft: #6b665c;
-  --paper: #f6f3ed;
-  --card: #ffffff;
-  --slot: #e4dfd4;
-  --slot-ink: #6f695d;
-  --line: #e0dbd0;
-  --tag: #efeae0;
-  --accent: #3d4a3c;
-  --focus: #3d4a3c;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f2f0ea; --ink: #23281f; --muted: #6a6d62; --line: #d3d0c5; --line-strong: #23281f;
+  --media: #e1dfd5; --accent: #5a6b48;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s02-001 *,
-.well-s02-001 *::before,
-.well-s02-001 *::after { box-sizing: inherit; }
-.well-s02-001 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
+.well-s02-001 *, .well-s02-001 *::before, .well-s02-001 *::after { box-sizing: inherit; }
+.well-s02-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s02-001 .shell {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
-}
+.well-s02-001 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s02-001 .layout { display: grid; grid-template-columns: minmax(14rem, 0.6fr) minmax(0, 2.2fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 
-/* Section header */
-.well-s02-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(20px, 3vw, 56px);
-  align-items: end;
-  padding-bottom: clamp(24px, 2.8vw, 38px);
-  margin-bottom: clamp(24px, 3vw, 40px);
-  border-bottom: 1px solid var(--line);
-}
-.well-s02-001 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s02-001 h1 {
-  margin: 0;
-  font-size: clamp(1.85rem, 3.4vw, 2.9rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
-.well-s02-001 .head-side { min-width: 0; }
-.well-s02-001 .head-side p {
-  margin: 0;
-  max-width: 40ch;
-  color: var(--ink-soft);
-  font-size: 1rem;
-}
-.well-s02-001 .textlink {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: clamp(14px, 1.6vw, 20px);
-  min-height: 44px;
-  color: var(--ink);
-  font-size: 0.94rem;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-thickness: 1px;
-}
-.well-s02-001 .textlink:hover { text-decoration-thickness: 2px; }
+.well-s02-001 .intro { position: sticky; top: 2rem; }
+.well-s02-001 .eyebrow { margin: 0 0 1.2rem; color: var(--accent); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s02-001 h2 { margin: 0; max-width: 9ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.6vw, 3.6rem); line-height: 0.96; letter-spacing: -0.035em; }
+.well-s02-001 h2 em { font-style: italic; }
+.well-s02-001 .lead { margin: 1.4rem 0 0; max-width: 18rem; color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+.well-s02-001 .all { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: 1.4rem; color: var(--ink); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.well-s02-001 .all .arrow { margin-left: 0.8rem; color: var(--accent); }
+.well-s02-001 .all:hover { color: var(--accent); }
 
-/* Card grid */
-.well-s02-001 .grid {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(16px, 1.8vw, 28px);
-}
-.well-s02-001 .grid li { min-width: 0; display: flex; }
+.well-s02-001 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.4rem, 2.4vw, 2.4rem) clamp(1rem, 1.8vw, 1.6rem); margin: 0; padding: 0; list-style: none; }
+.well-s02-001 li { min-width: 0; }
+.well-s02-001 .media { position: relative; aspect-ratio: 4 / 5; background: var(--media); border-radius: 3px; }
+.well-s02-001 .slate { position: absolute; left: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s02-001 .family { margin: 1rem 0 0.3rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.well-s02-001 h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.1rem, 1.5vw, 1.4rem); letter-spacing: -0.01em; }
+.well-s02-001 h3 a { color: var(--ink); text-decoration: none; border-bottom: 1px solid transparent; }
+.well-s02-001 h3 a:hover { border-bottom-color: var(--ink); }
+.well-s02-001 .what { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.82rem; line-height: 1.55; }
 
-.well-s02-001 .card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background: var(--card);
-  border-radius: 16px;
-  overflow: hidden;
-  color: inherit;
-  text-decoration: none;
-  transition: transform 150ms ease, box-shadow 150ms ease;
-}
-.well-s02-001 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 26px rgba(35, 33, 28, 0.10);
-}
-
-.well-s02-001 .media {
-  display: grid;
-  place-items: center;
-  background: var(--slot);
-  aspect-ratio: 4 / 3;
-  padding: 16px;
-}
-.well-s02-001 .slot-label {
-  font-size: 0.66rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-
-.well-s02-001 .body {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  padding: clamp(18px, 1.9vw, 26px);
-}
-.well-s02-001 .tag {
-  align-self: flex-start;
-  margin-bottom: clamp(12px, 1.3vw, 16px);
-  padding: 5px 11px;
-  border-radius: 999px;
-  background: var(--tag);
-  color: var(--ink-soft);
-  font-size: 0.64rem;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-.well-s02-001 h2 {
-  margin: 0 0 8px;
-  font-size: clamp(1.12rem, 1.3vw, 1.3rem);
-  line-height: 1.25;
-  letter-spacing: -0.012em;
-  font-weight: 600;
-}
-.well-s02-001 .desc {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-  line-height: 1.55;
-}
-.well-s02-001 .go {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: clamp(16px, 1.8vw, 22px);
-  padding-top: clamp(14px, 1.5vw, 18px);
-  border-top: 1px solid var(--line);
-  color: var(--accent);
-  font-size: 0.87rem;
-  font-weight: 600;
-}
-.well-s02-001 .card:hover .go { gap: 12px; }
-
-/* Responsive ladder */
 @media (max-width: 1024px) {
+  .well-s02-001 .layout { grid-template-columns: minmax(0, 1fr); }
+  .well-s02-001 .intro { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: end; }
+  .well-s02-001 .lead { margin-top: 0; }
   .well-s02-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .well-s02-001 h1 { max-width: 20ch; }
 }
-
-@media (max-width: 768px) {
-  .well-s02-001 .head {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    gap: clamp(16px, 2.4vw, 24px);
-  }
-  .well-s02-001 .head-side p { max-width: none; }
-  .well-s02-001 .media { aspect-ratio: 16 / 9; }
-}
-
 @media (max-width: 480px) {
-  .well-s02-001 .grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .well-s02-001 .media { aspect-ratio: 3 / 2; }
-  .well-s02-001 .card { border-radius: 14px; }
+  .well-s02-001 .intro { grid-template-columns: 1fr; }
+  .well-s02-001 .lead { max-width: none; }
+  .well-s02-001 .grid { grid-template-columns: minmax(0, 1fr); }
+  .well-s02-001 .media { aspect-ratio: 16 / 10; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s02-001 .card,
-  .well-s02-001 .go { transition: none !important; }
-  .well-s02-001 .card:hover { transform: none; }
-}
+@media (prefers-reduced-motion: reduce) { .well-s02-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="well-s02-001" data-study-id="WELL-S02-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="well-s02-001-title">
+    <div class="layout">
 
-    <div class="head">
-      <div>
-        <p class="eyebrow">What we do</p>
-        <h1 id="well-s02-001-title">Treatments, described by what actually happens</h1>
+      <div class="intro">
+        <div>
+          <p class="eyebrow">What we do</p>
+          <h2 id="well-s02-001-title">Treatments, described by what <em>actually</em> happens</h2>
+        </div>
+        <div>
+          <p class="lead">Six of the treatments we book most often. Each one is adapted in the room on the day.</p>
+          <a class="all" href="#well-s02-001-title">All treatments <span class="arrow" aria-hidden="true">&#8599;</span></a>
+        </div>
       </div>
-      <div class="head-side">
-        <p>Six of the treatments we book most often. Each one is adapted in the room on the day.</p>
-        <a class="textlink" href="#well-s02-001-title">
-          All treatments
-          <span aria-hidden="true">&rarr;</span>
-        </a>
-      </div>
+
+      <ul class="grid">
+        <li><div class="media" role="img" aria-label="Reserved image field: facial detail"><p class="slate" aria-hidden="true">Detail &middot; 4:5</p></div><p class="family">Facials</p><h3><a href="#well-s02-001-title">Deep cleansing facial</a></h3><p class="what">Cleansing, steam, extraction, then a slow massage through the face and neck.</p></li>
+        <li><div class="media" role="img" aria-label="Reserved image field: warm stones on linen"><p class="slate" aria-hidden="true">Still life</p></div><p class="family">Body &amp; massage</p><h3><a href="#well-s02-001-title">Hot stone massage</a></h3><p class="what">Warm stones worked slowly across the back, shoulders and legs.</p></li>
+        <li><div class="media" role="img" aria-label="Reserved image field: salt and wrap linen"><p class="slate" aria-hidden="true">Texture</p></div><p class="family">Body &amp; massage</p><h3><a href="#well-s02-001-title">Body scrub &amp; wrap</a></h3><p class="what">A salt scrub, then a wrap, then quiet time before you get up.</p></li>
+        <li><div class="media" role="img" aria-label="Reserved image field: oils on the shelf"><p class="slate" aria-hidden="true">Still life</p></div><p class="family">Body &amp; massage</p><h3><a href="#well-s02-001-title">Aromatherapy massage</a></h3><p class="what">Oils chosen with you at the start, then long slow strokes throughout.</p></li>
+        <li><div class="media" role="img" aria-label="Reserved image field: the seated chair by the window"><p class="slate" aria-hidden="true">Room</p></div><p class="family">Facials</p><h3><a href="#well-s02-001-title">Scalp &amp; neck ritual</a></h3><p class="what">Work through the scalp, neck and shoulders while you stay seated.</p></li>
+        <li><div class="media" role="img" aria-label="Reserved image field: hands in the basin"><p class="slate" aria-hidden="true">Detail</p></div><p class="family">Hands &amp; feet</p><h3><a href="#well-s02-001-title">Hands &amp; feet care</a></h3><p class="what">A soak, shaping, and a hand and foot massage to close.</p></li>
+      </ul>
+
     </div>
-
-    <ul class="grid">
-      <li>
-        <a class="card" href="#well-s02-001-title">
-          <div class="media"><span class="slot-label">Treatment media</span></div>
-          <div class="body">
-            <span class="tag">Facials</span>
-            <h2>Deep cleansing facial</h2>
-            <p class="desc">Cleansing, steam, extraction, then a slow massage through the face and neck.</p>
-            <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a class="card" href="#well-s02-001-title">
-          <div class="media"><span class="slot-label">Treatment media</span></div>
-          <div class="body">
-            <span class="tag">Body &amp; massage</span>
-            <h2>Hot stone massage</h2>
-            <p class="desc">Warm stones worked slowly across the back, shoulders and legs.</p>
-            <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a class="card" href="#well-s02-001-title">
-          <div class="media"><span class="slot-label">Treatment media</span></div>
-          <div class="body">
-            <span class="tag">Body &amp; massage</span>
-            <h2>Body scrub &amp; wrap</h2>
-            <p class="desc">A salt scrub, then a wrap, then quiet time before you get up.</p>
-            <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a class="card" href="#well-s02-001-title">
-          <div class="media"><span class="slot-label">Treatment media</span></div>
-          <div class="body">
-            <span class="tag">Body &amp; massage</span>
-            <h2>Aromatherapy massage</h2>
-            <p class="desc">Oils chosen with you at the start, then long slow strokes throughout.</p>
-            <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a class="card" href="#well-s02-001-title">
-          <div class="media"><span class="slot-label">Treatment media</span></div>
-          <div class="body">
-            <span class="tag">Facials</span>
-            <h2>Scalp &amp; neck ritual</h2>
-            <p class="desc">Work through the scalp, neck and shoulders while you stay seated.</p>
-            <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
-      </li>
-      <li>
-        <a class="card" href="#well-s02-001-title">
-          <div class="media"><span class="slot-label">Treatment media</span></div>
-          <div class="body">
-            <span class="tag">Hands &amp; feet</span>
-            <h2>Hands &amp; feet care</h2>
-            <p class="desc">A soak, shaping, and a hand and foot massage to close.</p>
-            <span class="go">Read more <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
-      </li>
-    </ul>
-
   </section>
 </div>
 

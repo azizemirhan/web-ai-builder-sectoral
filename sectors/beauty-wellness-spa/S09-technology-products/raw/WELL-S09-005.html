@@ -10,243 +10,96 @@
 
   Study ID       : WELL-S09-005
   Sector         : Beauty, Wellness & Spa (WELL)
-  Section        : WELL-S09 — Technology & Products
+  Section        : WELL-S09 — Technology / Products
   Direction      : Art-directed / Distinctive
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : A shelf. Four reserved object areas of deliberately different widths and
-                   heights stand on one continuous rule, bottom-aligned to it the way objects
-                   stand on a real shelf, with their names below the line
-  Density        : Low — four objects, one line each
-  Media mode     : Four object-scale reserved areas at four different proportions, plus four
-                   reserved mark slots in the closing row. The differing proportions are the
-                   device: equal tiles would be a grid, and a grid is not a shelf.
-  Interaction    : None (static; no JavaScript)
-  Empty state    : The objects are tonal blocks standing on a lit rule. Because they differ in
-                   width and height, the arrangement reads as a shelf of things before any
-                   photography arrives, which is the state a reviewer sees.
-  Responsive note: The shelf is horizontal by nature. Below 768px it becomes two shelves of two
-                   objects, each with its own rule, rather than a stack with the rule dropped —
-                   the object-standing-on-a-line relationship is the study's identity and survives
-                   at every width.
-  Content note   : Function and policy lead; brand is reserved — see ../README.md. No invented
-                   device name, product name, range, manufacturer, ingredient, patent or partner
-                   mark; no certification or approval mark; no "medical grade" or "clinically
-                   tested"; no efficacy claim; no specification block or ingredient table; no
-                   price, percentage or award.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 8 (a
+                   mixed-ratio gallery whose deliberate unevenness is the composition). V1's
+                   shelf — four things, and how each is kept — is kept as the idea; here it is
+                   four bare fields of different widths and heights standing on one rule, like
+                   objects on a shelf, with the names beneath the rule and the way each is kept
+                   in one line.
+  Layout model   : Mast line. A shelf: four fields of different widths (2 / 1.2 / 1.6 / 1fr) and
+                   heights (12 / 9 / 15 / 7 rem at 1440), bottom-aligned on a single dark rule;
+                   beneath the rule, one caption column per field — serif name, one line. A
+                   ruled foot with the labels-on-request line and reserved marks.
+  Density        : Low (60–120)
+  Media mode     : Four reserved fields — the couch, the steamer, hand tools, warm stones — at
+                   unequal sizes. Four reserved mark slots. No image or mark is supplied.
+  Interaction    : None (static; no JavaScript).
+  Content note   : Generic objects described by how they are kept, never by what they do to
+                   skin. No brand, no price, no rating.
 -->
 
 <meta name="study-id" content="WELL-S09-005">
 <meta name="sector" content="Beauty, Wellness &amp; Spa">
 <meta name="sector-prefix" content="WELL">
 <meta name="section-id" content="WELL-S09">
-<meta name="section-name" content="Technology Products">
+<meta name="section-name" content="Technology / Products">
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Four unequal object areas standing bottom-aligned on one continuous shelf rule">
+<meta name="theme" content="005 Ivory &amp; Plum">
+<meta name="layout-model" content="A shelf — four fields of unequal width and height bottom-aligned on one rule, serif names and one line beneath; a ruled foot with reserved marks">
 <meta name="density" content="low">
-<meta name="media-mode" content="reserved-media-unequal-objects-on-a-shelf-plus-mark-row">
+<meta name="media-mode" content="four-reserved-fields-unequal-plus-marks">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S09-005 — Technology Products, Art-directed / Distinctive</title>
+<title>WELL-S09-005 — Technology / Products, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #191713; }
+body { margin: 0; background: #f8f4f3; }
 
-/* Scoped study styles — namespaced to .well-s09-005 */
 .well-s09-005 {
-  --shelf-h: clamp(190px, 23vw, 340px);
-  --ink: #f2ede4;
-  --ink-soft: #a49a8a;
-  --paper: #191713;
-  --object: #322c24;
-  --object-ink: #b0a595;
-  --rule: #7a6d5b;
-  --mark: #262019;
-  --mark-ink: #8d8271;
-  --line: #332d24;
-  --focus: #e3caa0;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f8f4f3; --ink: #2b2226; --muted: #6d6266; --line: #e0d6d9; --line-strong: #2b2226;
+  --media: #eae1e3; --accent: #6e3b4e;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s09-005 *,
-.well-s09-005 *::before,
-.well-s09-005 *::after { box-sizing: inherit; }
-.well-s09-005 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
+.well-s09-005 *, .well-s09-005 *::before, .well-s09-005 *::after { box-sizing: inherit; }
+.well-s09-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s09-005 .shell {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: clamp(48px, 5.6vw, 100px) clamp(20px, 3.6vw, 56px);
-}
+.well-s09-005 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s09-005 .mast { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0; border-top: 1px solid var(--line-strong); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s09-005 .mast span + span { color: var(--muted); }
+.well-s09-005 h2 { margin: clamp(1.6rem, 3vw, 3rem) 0 clamp(2.4rem, 5vw, 6rem); max-width: 18ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 4vw, 4.2rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s09-005 h2 em { font-style: italic; }
 
-/* Header */
-.well-s09-005 .head {
-  max-width: 42rem;
-  margin-bottom: clamp(34px, 4.4vw, 70px);
-}
-.well-s09-005 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s09-005 h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
-
-/* The shelf */
-.well-s09-005 .shelf {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: 0.82fr 1.24fr 0.68fr 1.12fr;
-  gap: clamp(14px, 1.8vw, 30px);
-}
-.well-s09-005 .shelf::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: var(--shelf-h);
-  height: 2px;
-  background: var(--rule);
-}
+.well-s09-005 .shelf { display: grid; grid-template-columns: 2fr 1.2fr 1.6fr 1fr; gap: clamp(1rem, 2.4vw, 3rem); align-items: end; margin: 0; padding: 0 0 0.9rem; list-style: none; border-bottom: 1px solid var(--line-strong); }
 .well-s09-005 .shelf li { min-width: 0; }
+.well-s09-005 .media { position: relative; background: var(--media); border-radius: 3px; }
+.well-s09-005 .shelf li:nth-child(1) .media { height: clamp(8rem, 13vw, 12rem); }
+.well-s09-005 .shelf li:nth-child(2) .media { height: clamp(6rem, 9.5vw, 9rem); }
+.well-s09-005 .shelf li:nth-child(3) .media { height: clamp(10rem, 16vw, 15rem); }
+.well-s09-005 .shelf li:nth-child(4) .media { height: clamp(5rem, 7.5vw, 7rem); }
+.well-s09-005 .slate { position: absolute; left: 0.7rem; bottom: 0.6rem; margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Objects stand on the rule, at four different heights */
-.well-s09-005 .stand {
-  height: var(--shelf-h);
-  display: flex;
-  align-items: flex-end;
-}
-.well-s09-005 .object {
-  width: 100%;
-  background: var(--object);
-  display: grid;
-  place-items: center;
-  padding: 12px;
-}
-.well-s09-005 .shelf li:nth-child(1) .object { height: 62%; }
-.well-s09-005 .shelf li:nth-child(2) .object { height: 100%; }
-.well-s09-005 .shelf li:nth-child(3) .object { height: 44%; }
-.well-s09-005 .shelf li:nth-child(4) .object { height: 78%; }
+.well-s09-005 .names { display: grid; grid-template-columns: 2fr 1.2fr 1.6fr 1fr; gap: clamp(1rem, 2.4vw, 3rem); margin: 0; padding: 1rem 0 0; list-style: none; }
+.well-s09-005 .names li { min-width: 0; }
+.well-s09-005 .n { margin: 0 0 0.3rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s09-005 h3 { margin: 0 0 0.3rem; font-family: var(--serif); font-weight: 400; font-size: clamp(1.1rem, 1.6vw, 1.5rem); letter-spacing: -0.015em; }
+.well-s09-005 .kept { margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
 
-.well-s09-005 .object span {
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--object-ink);
-  text-align: center;
-}
-
-/* Names below the line */
-.well-s09-005 .cap { padding-top: clamp(14px, 1.7vw, 22px); }
-.well-s09-005 h2 {
-  margin: 0 0 6px;
-  font-size: clamp(1.04rem, 1.3vw, 1.28rem);
-  line-height: 1.2;
-  letter-spacing: -0.014em;
-  font-weight: 600;
-}
-.well-s09-005 .cap p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.88rem;
-  line-height: 1.5;
-}
-
-/* Closing row */
-.well-s09-005 .marks {
-  margin-top: clamp(34px, 4vw, 60px);
-  padding-top: clamp(20px, 2.4vw, 30px);
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  gap: clamp(20px, 3vw, 52px);
-  align-items: center;
-}
-.well-s09-005 .marks p {
-  margin: 0;
-  max-width: 44ch;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-}
-.well-s09-005 .mark-row {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(10px, 1.2vw, 16px);
-}
-.well-s09-005 .mark-slot {
-  background: var(--mark);
-  aspect-ratio: 5 / 2;
-  display: grid;
-  place-items: center;
-  padding: 8px;
-}
-.well-s09-005 .mark-slot span {
-  font-size: 0.56rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--mark-ink);
-  text-align: center;
-}
-
-/* Responsive ladder — two shelves of two, never a stack with no line */
-@media (max-width: 1024px) {
-  .well-s09-005 { --shelf-h: clamp(170px, 26vw, 250px); }
-  .well-s09-005 .shelf { grid-template-columns: 1.15fr 0.85fr; row-gap: clamp(26px, 3.4vw, 44px); }
-  .well-s09-005 .shelf::after { display: none; }
-  .well-s09-005 .stand { border-bottom: 2px solid var(--rule); }
-  .well-s09-005 .shelf li:nth-child(3) .object { height: 66%; }
-  .well-s09-005 .shelf li:nth-child(4) .object { height: 88%; }
-}
+.well-s09-005 .foot { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem; align-items: center; margin-top: clamp(2rem, 4vw, 4rem); padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.well-s09-005 .foot p { margin: 0; max-width: 34rem; color: var(--muted); font-size: 0.86rem; line-height: 1.55; }
+.well-s09-005 .marks { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.6rem; margin: 0; padding: 0; list-style: none; }
+.well-s09-005 .marks li { display: grid; place-items: center; width: 7rem; height: 2.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
 @media (max-width: 768px) {
-  .well-s09-005 h1 { max-width: none; }
-  .well-s09-005 .marks {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-  }
-  .well-s09-005 .marks p { max-width: none; }
+  .well-s09-005 .shelf, .well-s09-005 .names { grid-template-columns: 1.4fr 1fr; }
+  .well-s09-005 .shelf li:nth-child(n) .media { height: 9rem; }
+  .well-s09-005 .shelf li:nth-child(3) .media { height: 12rem; }
+  .well-s09-005 .foot { grid-template-columns: minmax(0, 1fr); }
+  .well-s09-005 .marks { justify-content: flex-start; }
+  .well-s09-005 .mast { flex-direction: column; gap: 0.2rem; }
+  .well-s09-005 h2 { max-width: none; }
 }
-
-@media (max-width: 480px) {
-  .well-s09-005 { --shelf-h: clamp(140px, 40vw, 190px); }
-  .well-s09-005 .shelf { grid-template-columns: minmax(0, 1fr); }
-  .well-s09-005 .mark-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s09-005 * { transition: none !important; }
-}
+@media (max-width: 480px) { .well-s09-005 .shelf, .well-s09-005 .names { grid-template-columns: minmax(0, 1fr); } .well-s09-005 .shelf li:nth-child(n) .media { height: 7rem; } .well-s09-005 .names li + li { padding-top: 0.8rem; border-top: 1px solid var(--line); } }
+@media (prefers-reduced-motion: reduce) { .well-s09-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -254,50 +107,25 @@ body { margin: 0; background: #191713; }
 <div class="well-s09-005" data-study-id="WELL-S09-005" data-direction="Art-directed / Distinctive">
   <section class="shell" aria-labelledby="well-s09-005-title">
 
-    <div class="head">
-      <p class="eyebrow">What we work with</p>
-      <h1 id="well-s09-005-title">Four things, and how each is kept</h1>
-    </div>
+    <p class="mast"><span>What we work with</span><span>Four things, and how each is kept</span></p>
+    <h2 id="well-s09-005-title">Nothing on the shelf is <em>unusual.</em> How it is kept is the point.</h2>
 
     <ul class="shelf">
-      <li>
-        <div class="stand"><div class="object"><span>Couch</span></div></div>
-        <div class="cap">
-          <h2>The couch</h2>
-          <p>Heated, and set to your height before anything starts.</p>
-        </div>
-      </li>
-      <li>
-        <div class="stand"><div class="object"><span>Steamer</span></div></div>
-        <div class="cap">
-          <h2>The steamer</h2>
-          <p>Used before cleansing, at a temperature you agree to first.</p>
-        </div>
-      </li>
-      <li>
-        <div class="stand"><div class="object"><span>Tools</span></div></div>
-        <div class="cap">
-          <h2>Hand tools</h2>
-          <p>Sterilised between every guest, without exception.</p>
-        </div>
-      </li>
-      <li>
-        <div class="stand"><div class="object"><span>Stones</span></div></div>
-        <div class="cap">
-          <h2>Warm stones</h2>
-          <p>Heated in water and tested on our own wrist first.</p>
-        </div>
-      </li>
+      <li><div class="media" role="img" aria-label="Reserved image field: the couch"><p class="slate" aria-hidden="true">Couch</p></div></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: the steamer"><p class="slate" aria-hidden="true">Steamer</p></div></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: hand tools"><p class="slate" aria-hidden="true">Tools</p></div></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: warm stones"><p class="slate" aria-hidden="true">Stones</p></div></li>
+    </ul>
+    <ul class="names">
+      <li><p class="n">01</p><h3>The couch</h3><p class="kept">Heated, set to you, fresh linen for every guest.</p></li>
+      <li><p class="n">02</p><h3>The steamer</h3><p class="kept">Emptied, dried and refilled between guests.</p></li>
+      <li><p class="n">03</p><h3>Hand tools</h3><p class="kept">Sterilised between every guest, without exception.</p></li>
+      <li><p class="n">04</p><h3>Warm stones</h3><p class="kept">Heated in water, tested on our own wrist first.</p></li>
     </ul>
 
-    <div class="marks">
-      <p>Cleansers, oils, masks and exfoliants are chosen in the room. Any label can be read on request.</p>
-      <ul class="mark-row">
-        <li><div class="mark-slot"><span>Mark</span></div></li>
-        <li><div class="mark-slot"><span>Mark</span></div></li>
-        <li><div class="mark-slot"><span>Mark</span></div></li>
-        <li><div class="mark-slot"><span>Mark</span></div></li>
-      </ul>
+    <div class="foot">
+      <p>Cleansers, oils, masks and exfoliants are chosen in the room for the skin in front of us, not in advance. Any label can be read on request.</p>
+      <ul class="marks" aria-label="Reserved partner marks"><li>Mark</li><li>Mark</li><li>Mark</li><li>Mark</li></ul>
     </div>
 
   </section>

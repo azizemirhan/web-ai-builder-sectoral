@@ -12,27 +12,21 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S17 — Gift Cards
   Direction      : Art-directed / Distinctive
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : Two reserved card plates overlapping on a saturated ground, the back one turned
-                   slightly, with an oversized line set across the composition and the reserved
-                   amount held small beneath
-  Density        : Low
-  Media mode     : Two reserved card artwork areas — the printed form and the digital one, shown
-                   as one object photographed twice rather than as two products.
-  Interaction    : None (static; no JavaScript)
-  The device     : This is the only study in the WELL sector that **rotates anything**. A gift card
-                   is a physical object that gets handed over, and a pair of them lying overlapped
-                   and slightly askew reads as objects on a table rather than as assets in a grid.
-                   The angle is small — three degrees — because the point is that they are real
-                   things, not that the page is tilted.
-  Responsive note: The rotation is removed below 768px. At phone width two overlapping rotated
-                   plates either clip or force a horizontal scroll, and neither is worth the
-                   effect; the plates stack square and the overlap becomes a simple offset, so the
-                   "two objects" reading survives without the tilt.
-  Content note   : No invented amount, denomination, currency symbol, figure, expiry date or
-                   period, delivery time, postage cost, booking fee, discount or bonus-credit
-                   offer; no denomination tiers. The amount is a reserved slot with a visually
-                   hidden label. See ../README.md.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 5 (serif
+                   display type beside overlapping bare fields, after WELL-S01-002's offset
+                   plate). V1's reading is kept — two cards lying overlapped like objects on a
+                   table rather than assets in a grid — but without the rotation and the
+                   saturated ground: the two 8:5 plates overlap by a third, the back one
+                   offset up and right, and the reserved amount is held small beneath.
+  Layout model   : Mast line. Two columns: the serif line at display size left, with the
+                   reserved amount and a single line beneath on a hairline; right, two 8:5
+                   plates overlapping, the front one lower-left, the back one upper-right at a
+                   slightly lighter tone. The closing line on the foot rule.
+  Density        : Low (60–120)
+  Media mode     : Two reserved artwork plates; one reserved amount slot. No image or figure.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No amount, denomination, currency, expiry, delivery time, fee, discount or
+                   urgency device.
 -->
 
 <meta name="study-id" content="WELL-S17-005">
@@ -43,177 +37,58 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Two overlapping reserved card plates, one turned, under an oversized line">
+<meta name="theme" content="005 Ivory &amp; Plum">
+<meta name="layout-model" content="A serif line at display size with the reserved amount beneath, beside two 8:5 artwork plates overlapping by a third; closing line on the foot rule">
 <meta name="density" content="low">
-<meta name="media-mode" content="reserved-card-artwork-two-overlapping">
+<meta name="media-mode" content="two-reserved-artwork-plates-overlapping-one-slot">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S17-005 — Gift Cards, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #7a2f42; }
+body { margin: 0; background: #f8f4f3; }
 
-/* Scoped study styles — namespaced to .well-s17-005 */
 .well-s17-005 {
-  --ink: #f7ecef;
-  --ink-soft: #d5a9b6;
-  --paper: #7a2f42;
-  --slot-a: #8f4256;
-  --slot-b: #672435;
-  --slot-ink: #edcfd8;
-  --chip: #672435;
-  --line: #944a5c;
-  --focus: #f3cfd9;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f8f4f3; --ink: #2b2226; --muted: #6d6266; --line: #e0d6d9; --line-strong: #2b2226;
+  --media: #eae1e3; --media-2: #e1d5d9; --accent: #6e3b4e;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s17-005 *,
-.well-s17-005 *::before,
-.well-s17-005 *::after { box-sizing: inherit; }
-.well-s17-005 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-.well-s17-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s17-005 *, .well-s17-005 *::before, .well-s17-005 *::after { box-sizing: inherit; }
+.well-s17-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s17-005 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(48px, 5.6vw, 104px) clamp(20px, 3.6vw, 56px);
-}
+.well-s17-005 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s17-005 .mast { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0; border-top: 1px solid var(--line-strong); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s17-005 .mast span + span { color: var(--muted); }
 
-.well-s17-005 .eyebrow {
-  margin: 0 0 clamp(14px, 1.6vw, 22px);
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s17-005 h1 {
-  margin: 0 0 clamp(34px, 4.4vw, 72px);
-  font-size: clamp(2rem, 5vw, 4.2rem);
-  line-height: 1.04;
-  letter-spacing: -0.028em;
-  font-weight: 550;
-  max-width: 17ch;
-}
+.well-s17-005 .stage { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 6rem); align-items: center; margin-top: clamp(1.6rem, 3vw, 3rem); }
+.well-s17-005 h2 { margin: 0 0 1.4rem; font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5vw, 5.2rem); line-height: 0.98; letter-spacing: -0.04em; }
+.well-s17-005 h2 em { font-style: italic; color: var(--accent); }
+.well-s17-005 .field { display: flex; align-items: center; gap: 0.8rem; margin: 0; padding: 0.9rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); }
+.well-s17-005 .field dt { margin: 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s17-005 .field dd { margin: 0; }
+.well-s17-005 .slot { display: inline-flex; align-items: center; justify-content: center; min-width: 7rem; height: 2rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 1rem; }
+.well-s17-005 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.well-s17-005 .under { margin: 0.8rem 0 0; max-width: 24rem; color: var(--muted); font-size: 0.86rem; line-height: 1.55; }
 
-/* The two objects */
-.well-s17-005 .objects {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(20px, 3vw, 56px);
-  align-items: center;
-  max-width: 60rem;
-}
-.well-s17-005 .plate {
-  aspect-ratio: 8 / 5;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  padding: 18px;
-}
-.well-s17-005 .plate span {
-  font-size: 0.64rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-.well-s17-005 .plate--back {
-  background: var(--slot-b);
-  transform: rotate(-3deg);
-  margin-right: -18%;
-  position: relative;
-  z-index: 0;
-}
-.well-s17-005 .plate--front {
-  background: var(--slot-a);
-  position: relative;
-  z-index: 1;
-}
+.well-s17-005 .stack { position: relative; aspect-ratio: 8 / 6.4; }
+.well-s17-005 .plate { position: absolute; width: 74%; aspect-ratio: 8 / 5; border-radius: 6px; }
+.well-s17-005 .plate.back { top: 0; right: 0; background: var(--media-2); }
+.well-s17-005 .plate.back .slate { left: auto; right: 0.9rem; }
+.well-s17-005 .plate.front { bottom: 0; left: 0; background: var(--media); }
+.well-s17-005 .slate { position: absolute; left: 0.9rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Amount and line */
-.well-s17-005 .under {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: clamp(16px, 2.4vw, 40px);
-  margin: clamp(30px, 3.8vw, 58px) 0 0;
-  padding-top: clamp(20px, 2.4vw, 30px);
-  border-top: 1px solid var(--line);
-}
-.well-s17-005 .fname {
-  font-size: 0.66rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-  margin-right: 10px;
-}
-.well-s17-005 .slot {
-  min-width: clamp(60px, 5.4vw, 78px);
-  padding: 3px 12px;
-  border-radius: 6px;
-  background: var(--chip);
-  color: var(--slot-ink);
-  font-size: 1.02rem;
-  text-align: center;
-}
-.well-s17-005 .under p {
-  margin: 0;
-  max-width: 46ch;
-  color: var(--ink-soft);
-  font-size: 0.93rem;
-  line-height: 1.6;
-}
+.well-s17-005 .foot { margin: clamp(1.6rem, 3vw, 3rem) 0 0; padding-top: 1rem; border-top: 1px solid var(--line-strong); color: var(--muted); font-size: 0.84rem; line-height: 1.55; }
+.well-s17-005 .foot span { display: block; max-width: 40rem; }
 
-/* Responsive ladder — the tilt goes, the two objects stay */
-@media (max-width: 1024px) {
-  .well-s17-005 .plate--back { margin-right: -12%; }
-  .well-s17-005 h1 { max-width: none; }
-}
-
-@media (max-width: 768px) {
-  .well-s17-005 .objects {
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(14px, 2.4vw, 22px);
-    max-width: none;
-  }
-  .well-s17-005 .plate--back {
-    transform: none;
-    margin-right: 0;
-    margin-left: clamp(14px, 6vw, 42px);
-  }
-  .well-s17-005 .plate--front { margin-right: clamp(14px, 6vw, 42px); }
-  .well-s17-005 .under p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s17-005 * { transition: none !important; }
-  .well-s17-005 .plate--back { transform: none; }
-}
+@media (max-width: 1024px) { .well-s17-005 .stage { grid-template-columns: minmax(0, 1fr); } .well-s17-005 .stack { max-width: 34rem; } }
+@media (max-width: 768px) { .well-s17-005 .mast { flex-direction: column; gap: 0.2rem; } }
+@media (prefers-reduced-motion: reduce) { .well-s17-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -221,18 +96,21 @@ body { margin: 0; background: #7a2f42; }
 <div class="well-s17-005" data-study-id="WELL-S17-005" data-direction="Art-directed / Distinctive">
   <section class="shell" aria-labelledby="well-s17-005-title">
 
-    <p class="eyebrow">For someone else</p>
-    <h1 id="well-s17-005-title">Something to hand over, not a code to forward.</h1>
+    <p class="mast"><span>For someone else</span><span>Two cards, laid down</span></p>
 
-    <div class="objects">
-      <div class="plate plate--back"><span>Digital card</span></div>
-      <div class="plate plate--front"><span>Printed card</span></div>
+    <div class="stage">
+      <div>
+        <h2 id="well-s17-005-title">Something to <em>hand over,</em> not a code to forward.</h2>
+        <dl class="field"><dt>Amount</dt><dd><span class="slot"><span class="vh">Gift amount</span><span aria-hidden="true">&mdash;</span></span></dd></dl>
+        <p class="under">Chosen by you rather than picked from a set. Printed and handed over, or sent by email with your message.</p>
+      </div>
+      <div class="stack">
+        <div class="plate back" role="img" aria-label="Reserved artwork plate: digital card, 8:5"><p class="slate" aria-hidden="true">Digital card &middot; 8:5</p></div>
+        <div class="plate front" role="img" aria-label="Reserved artwork plate: printed card, 8:5"><p class="slate" aria-hidden="true">Printed card &middot; 8:5</p></div>
+      </div>
     </div>
 
-    <div class="under">
-      <span><span class="fname">Amount</span><span class="slot"><span class="vh">Gift amount</span><span aria-hidden="true">&mdash;</span></span></span>
-      <p>Chosen by you rather than picked from a set. Not printed on the card, and it does not expire.</p>
-    </div>
+    <p class="foot"><span>The amount is not printed on the card, it does not expire, and whatever is left after a treatment stays on it.</span></p>
 
   </section>
 </div>

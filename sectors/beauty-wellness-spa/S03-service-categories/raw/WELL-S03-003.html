@@ -12,25 +12,19 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S03 — Service Categories
   Direction      : Structured / Visual Modular
-  Reference      : None. Originated for this batch. One reference image was supplied and was
-                   placed at 001; the remaining four directions were authored from nothing at the
-                   user's request. The modular territory for a categories section is the panel
-                   that can show what is inside a category without becoming a treatment list,
-                   which the supplied reference did not attempt.
-  Layout model   : Two-by-two field of wide split panels — media held on the left of each panel,
-                   content on the right — where each panel carries the category name, one line of
-                   coverage, and a subordinate preview of the treatment names inside it
-  Density        : Medium, carried by the panel's internal structure rather than by copy volume
-  Media mode     : Four reserved media areas, one held on the left of each panel at a tall
-                   proportion. No image is supplied.
-  Interaction    : None (static; no JavaScript)
-  Content note   : Neutral placeholder copy. Each category line says what the category covers,
-                   never what it achieves. The treatment names inside each panel are plain
-                   routing text only — no description, no media and no action of their own — so
-                   this remains category-level navigation and does not take over WELL-S02's role.
-                   See the boundary note in ../README.md. No efficacy claim, percentage, price,
-                   duration, practitioner name, qualification, client, rating or address. All
-                   media areas are reserved and intentionally empty.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 3 (a bordered
+                   cell grid whose cells share hairlines) after ARC-S02-002 / ARC-S18-001, with
+                   each cell a split panel. Structure is carried by the four panels and a visible
+                   three-line preview list per category, not by prose.
+  Layout model   : Head split — serif display left, lead right at the baseline. A two-by-two
+                   bordered grid; each cell a split panel: a 4:5 field on the left, and on the
+                   right the category in serif, one line of coverage, and a ruled preview of
+                   three treatment names inside it with a circular arrow
+  Density        : Standard (90–170)
+  Media mode     : Four reserved fields — a face, a back, hands, eyes. No image is supplied.
+  Interaction    : None (static; no JavaScript). Four circular arrows.
+  Content note   : Categories are named by the part of the body and the kind of work, never by
+                   an outcome. No claim, price, duration, practitioner name or rating.
 -->
 
 <meta name="study-id" content="WELL-S03-003">
@@ -41,194 +35,71 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Two-by-two field of split panels with media left and an internal category preview right">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-media-left-panel-per-category">
-<meta name="interaction" content="none">
+<meta name="theme" content="003 Mist &amp; Moss">
+<meta name="layout-model" content="Head split, a two-by-two bordered grid of split panels with a 4:5 field, category, coverage and a ruled three-line preview">
+<meta name="density" content="standard">
+<meta name="media-mode" content="four-reserved-fields-panels">
+<meta name="interaction" content="none-links">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S03-003 — Service Categories, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #dee3db; }
+body { margin: 0; background: #eef0ee; }
 
-/* Scoped study styles — namespaced to .well-s03-003 */
 .well-s03-003 {
-  --ink: #202520;
-  --ink-soft: #61695f;
-  --paper: #dee3db;
-  --panel: #fbfcfa;
-  --slot: #c9d0c6;
-  --slot-ink: #545c52;
-  --line: #e0e4dd;
-  --rule: #c6ccc3;
-  --focus: #3d4a3c;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eef0ee; --ink: #1f2624; --muted: #5f6764; --line: #cdd2cf; --line-strong: #1f2624;
+  --media: #dcdfdb; --accent: #2f5c4b;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s03-003 *,
-.well-s03-003 *::before,
-.well-s03-003 *::after { box-sizing: inherit; }
-.well-s03-003 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 8px;
-}
+.well-s03-003 *, .well-s03-003 *::before, .well-s03-003 *::after { box-sizing: inherit; }
+.well-s03-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s03-003 .shell {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
-}
+.well-s03-003 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s03-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.5fr); gap: 3rem; align-items: end; padding-bottom: 1.4rem; }
+.well-s03-003 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s03-003 h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 3.8rem); line-height: 0.96; letter-spacing: -0.035em; }
+.well-s03-003 h2 em { font-style: italic; }
+.well-s03-003 .lead { max-width: 24rem; margin: 0 0 0.3rem auto; color: var(--muted); font-size: 0.86rem; line-height: 1.55; text-align: right; }
 
-/* Section header */
-.well-s03-003 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(20px, 3vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(24px, 3vw, 40px);
-}
-.well-s03-003 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s03-003 h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 16ch;
-}
-.well-s03-003 .head p {
-  margin: 0;
-  max-width: 40ch;
-  color: var(--ink-soft);
-  font-size: 1rem;
-}
+.well-s03-003 .cells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); margin: 0; padding: 0; list-style: none; }
+.well-s03-003 .cells > li { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(1rem, 2vw, 1.8rem); padding: clamp(1.2rem, 2vw, 1.8rem) clamp(1rem, 1.8vw, 1.6rem); border-bottom: 1px solid var(--line); min-width: 0; }
+.well-s03-003 .cells > li:nth-child(odd) { border-right: 1px solid var(--line); padding-left: 0; }
+.well-s03-003 .cells > li:nth-child(even) { padding-right: 0; }
+.well-s03-003 .cells > li:nth-last-child(-n+2) { border-bottom: 0; }
+.well-s03-003 .media { position: relative; aspect-ratio: 4 / 5; background: var(--media); border-radius: 3px; }
+.well-s03-003 .slate { position: absolute; left: 0.7rem; bottom: 0.6rem; margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s03-003 .body { display: flex; flex-direction: column; min-width: 0; }
+.well-s03-003 .n { margin: 0 0 0.6rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s03-003 h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 2rem); letter-spacing: -0.02em; }
+.well-s03-003 .cover { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.well-s03-003 .inside { margin: auto 0 0; padding: 0.8rem 0 0; list-style: none; border-top: 1px solid var(--line); }
+.well-s03-003 .inside li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.35rem 0; font-size: 0.82rem; }
+.well-s03-003 .inside li span { color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; align-self: center; }
+.well-s03-003 .go { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; min-height: 2.6rem; margin-top: 0.8rem; align-self: flex-end; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--ink); text-decoration: none; }
+.well-s03-003 .go:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
 
-/* Panel field */
-.well-s03-003 .grid {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(14px, 1.6vw, 24px);
-}
-.well-s03-003 .grid li { min-width: 0; display: flex; }
-
-.well-s03-003 .panel {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-  width: 100%;
-  background: var(--panel);
-  border-radius: 18px;
-  overflow: hidden;
-  color: inherit;
-  text-decoration: none;
-}
-
-.well-s03-003 .media {
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: 14px;
-  min-height: clamp(210px, 20vw, 280px);
-}
-.well-s03-003 .slot-label {
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-
-.well-s03-003 .body {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: clamp(18px, 2vw, 28px);
-}
-.well-s03-003 h2 {
-  margin: 0 0 8px;
-  font-size: clamp(1.16rem, 1.45vw, 1.45rem);
-  line-height: 1.2;
-  letter-spacing: -0.014em;
-  font-weight: 600;
-}
-.well-s03-003 .desc {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* Subordinate category preview */
-.well-s03-003 .inside {
-  margin: clamp(14px, 1.6vw, 20px) 0 0;
-  padding: 0;
-  list-style: none;
-}
-.well-s03-003 .inside li {
-  border-top: 1px solid var(--line);
-  padding: 7px 0;
-  color: var(--ink-soft);
-  font-size: 0.81rem;
-  line-height: 1.4;
-}
-.well-s03-003 .go {
-  margin-top: auto;
-  padding-top: clamp(14px, 1.6vw, 20px);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--ink);
-}
-.well-s03-003 .panel:hover .go { gap: 12px; }
-
-/* Responsive ladder */
 @media (max-width: 1024px) {
-  .well-s03-003 .grid { grid-template-columns: minmax(0, 1fr); }
-  .well-s03-003 .panel { grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr); }
-  .well-s03-003 .media { min-height: clamp(180px, 22vw, 230px); }
-  .well-s03-003 .head p { max-width: none; }
+  .well-s03-003 .cells { grid-template-columns: minmax(0, 1fr); }
+  .well-s03-003 .cells > li:nth-child(odd) { border-right: 0; padding-right: 0; }
+  .well-s03-003 .cells > li:nth-child(even) { padding-left: 0; }
+  .well-s03-003 .cells > li:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .well-s03-003 .cells > li:last-child { border-bottom: 0; }
 }
-
 @media (max-width: 768px) {
-  .well-s03-003 .head {
-    grid-template-columns: minmax(0, 1fr);
-    align-items: start;
-    gap: clamp(14px, 2vw, 20px);
-  }
-  .well-s03-003 h1 { max-width: none; }
+  .well-s03-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .well-s03-003 .lead { margin-left: 0; text-align: left; }
 }
-
 @media (max-width: 480px) {
-  .well-s03-003 .panel { grid-template-columns: minmax(0, 1fr); border-radius: 14px; }
-  .well-s03-003 .media { min-height: 0; aspect-ratio: 16 / 9; }
+  .well-s03-003 .cells > li { grid-template-columns: minmax(0, 1fr); }
+  .well-s03-003 .media { aspect-ratio: 16 / 10; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s03-003 * { transition: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .well-s03-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -239,74 +110,35 @@ body { margin: 0; background: #dee3db; }
     <div class="head">
       <div>
         <p class="eyebrow">Where to start</p>
-        <h1 id="well-s03-003-title">Four kinds of work, and what is in each</h1>
+        <h2 id="well-s03-003-title">Four kinds of <em>work</em></h2>
       </div>
-      <p>Open a category to see the full list. These are the treatments people ask for most.</p>
+      <p class="lead">Pick the one closest to what you came for. Every treatment sits inside one of these.</p>
     </div>
 
-    <ul class="grid">
+    <ul class="cells">
       <li>
-        <a class="panel" href="#well-s03-003-title">
-          <div class="media"><span class="slot-label">Facials media</span></div>
-          <div class="body">
-            <h2>Facials</h2>
-            <p class="desc">Cleansing, steam and hands-on work for the face and neck.</p>
-            <ul class="inside">
-              <li>Deep cleansing facial</li>
-              <li>Hydrating facial</li>
-              <li>Scalp &amp; neck ritual</li>
-            </ul>
-            <span class="go">Open the category <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
+        <div class="media" role="img" aria-label="Reserved image field: a face"><p class="slate" aria-hidden="true">Face &middot; 4:5</p></div>
+        <div class="body"><p class="n">01</p><h3>Facials</h3><p class="cover">Cleansing, steam and hands-on work for the face and neck.</p>
+          <ul class="inside" aria-label="Inside facials"><li>Deep cleansing facial<span>Skin</span></li><li>Scalp &amp; neck ritual<span>Seated</span></li><li>Quiet facial<span>Rest</span></li></ul>
+          <a class="go" href="#well-s03-003-title" aria-label="Facials">&#8599;</a></div>
       </li>
-
       <li>
-        <a class="panel" href="#well-s03-003-title">
-          <div class="media"><span class="slot-label">Body and massage media</span></div>
-          <div class="body">
-            <h2>Body &amp; massage</h2>
-            <p class="desc">Full-body work, from slow massage to scrubs and wraps.</p>
-            <ul class="inside">
-              <li>Hot stone massage</li>
-              <li>Aromatherapy massage</li>
-              <li>Body scrub &amp; wrap</li>
-            </ul>
-            <span class="go">Open the category <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
+        <div class="media" role="img" aria-label="Reserved image field: a back"><p class="slate" aria-hidden="true">Back &middot; 4:5</p></div>
+        <div class="body"><p class="n">02</p><h3>Body &amp; massage</h3><p class="cover">Full-body work, from slow massage to scrubs and wraps.</p>
+          <ul class="inside" aria-label="Inside body and massage"><li>Hot stone massage<span>Warmth</span></li><li>Aromatherapy massage<span>Oils</span></li><li>Body scrub &amp; wrap<span>Salt</span></li></ul>
+          <a class="go" href="#well-s03-003-title" aria-label="Body and massage">&#8599;</a></div>
       </li>
-
       <li>
-        <a class="panel" href="#well-s03-003-title">
-          <div class="media"><span class="slot-label">Hands and feet media</span></div>
-          <div class="body">
-            <h2>Hands &amp; feet</h2>
-            <p class="desc">Soaking, shaping and massage for hands and feet.</p>
-            <ul class="inside">
-              <li>Hands &amp; feet care</li>
-              <li>Hand massage</li>
-              <li>Foot soak</li>
-            </ul>
-            <span class="go">Open the category <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
+        <div class="media" role="img" aria-label="Reserved image field: hands"><p class="slate" aria-hidden="true">Hands &middot; 4:5</p></div>
+        <div class="body"><p class="n">03</p><h3>Hands &amp; feet</h3><p class="cover">Soaking, shaping and massage for hands and feet.</p>
+          <ul class="inside" aria-label="Inside hands and feet"><li>Hands &amp; feet care<span>Soak</span></li><li>Hand massage<span>Short</span></li><li>Foot soak &amp; shaping<span>Seated</span></li></ul>
+          <a class="go" href="#well-s03-003-title" aria-label="Hands and feet">&#8599;</a></div>
       </li>
-
       <li>
-        <a class="panel" href="#well-s03-003-title">
-          <div class="media"><span class="slot-label">Brows and lashes media</span></div>
-          <div class="body">
-            <h2>Brows &amp; lashes</h2>
-            <p class="desc">Shaping, tinting and detail work around the eyes.</p>
-            <ul class="inside">
-              <li>Brow shaping</li>
-              <li>Brow tint</li>
-              <li>Lash lift</li>
-            </ul>
-            <span class="go">Open the category <span aria-hidden="true">&rarr;</span></span>
-          </div>
-        </a>
+        <div class="media" role="img" aria-label="Reserved image field: eyes"><p class="slate" aria-hidden="true">Eyes &middot; 4:5</p></div>
+        <div class="body"><p class="n">04</p><h3>Brows &amp; lashes</h3><p class="cover">Shaping, tinting and detail work around the eyes.</p>
+          <ul class="inside" aria-label="Inside brows and lashes"><li>Brow shaping<span>Detail</span></li><li>Brow &amp; lash tint<span>Colour</span></li><li>Lash lift<span>Detail</span></li></ul>
+          <a class="go" href="#well-s03-003-title" aria-label="Brows and lashes">&#8599;</a></div>
       </li>
     </ul>
 

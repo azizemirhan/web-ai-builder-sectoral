@@ -10,222 +10,89 @@
 
   Study ID       : WELL-S06-005
   Sector         : Beauty, Wellness & Spa (WELL)
-  Section        : WELL-S06 — Consultation Booking
+  Section        : WELL-S06 — Consultation / Booking
   Direction      : Art-directed / Distinctive
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Revision       : V2. Repaired and rebuilt. The idea was right &mdash; **the request written as one
-                   sentence** &mdash; but the controls were bare underlines whose visible content
-                   was an em-dash, so a page that was working looked like a page that had failed:
-                   floating chevrons, dashes where words should be, and two thirds of the frame
-                   empty beneath it.
-  Layout model   : One black panel carrying the sentence at display scale, with every control drawn
-                   as a white pill inside it, and a three-note band beneath
-  Density        : Low copy, high scale
-  Media mode     : None. The sentence is the image.
-  Interaction    : Native form controls only &mdash; two selects and two text inputs, set inline in
-                   running text. No JavaScript.
-  What changed   : **A control now looks like a control.** Every select and input is a white pill on
-                   black, at the size of the words around it, with a hint inside instead of a dash.
-                   The panel gives the sentence a frame, and the band beneath gives the page a
-                   bottom &mdash; the first version simply stopped.
-  Content note   : The form is structure, not collection: no action, no endpoint, no script.
-                   Nothing is sent and nothing is stored. No invented availability, named slot,
-                   waiting time, opening hours or diary state. No price, fee, deposit or duration.
-                   No response-time promise. No contact facts &mdash; those belong to `S19`.
-  Palette        : Black and white only.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md. V1's sentence-form
+                   is kept as the composition — the request written as one sentence with the
+                   controls inline — and moved from a black panel with white pills onto ivory
+                   paper, the sentence set in serif at display size with underlined controls.
+  Layout model   : Mast line. One sentence at display size in serif: "I would like [a facial],
+                   ideally [in the morning]. My name is [ ] and you can reach me on [ ]." The
+                   selects and inputs are underlined and inherit the serif; one bordered action
+                   ends the sentence. A ruled three-note row beneath: why a sentence, what it
+                   does not decide, if you would rather talk.
+  Density        : Standard (90–170)
+  Media mode     : None. A working form is the section's role.
+  Interaction    : Native form controls; no JavaScript. The form has no action target.
+  Content note   : Nothing is booked or charged by sending; the copy says so. No price, no
+                   duration, no practitioner name.
 -->
 
 <meta name="study-id" content="WELL-S06-005">
 <meta name="sector" content="Beauty, Wellness &amp; Spa">
 <meta name="sector-prefix" content="WELL">
 <meta name="section-id" content="WELL-S06">
-<meta name="section-name" content="Consultation Booking">
+<meta name="section-name" content="Consultation / Booking">
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="The request as one sentence at display scale on a black panel, with a three-note band beneath">
-<meta name="density" content="low">
-<meta name="media-mode" content="none">
-<meta name="interaction" content="native-form-controls-no-javascript">
+<meta name="theme" content="005 Ivory &amp; Plum">
+<meta name="layout-model" content="The request as one serif sentence at display size with inline underlined controls; a ruled three-note row beneath">
+<meta name="density" content="standard">
+<meta name="media-mode" content="none-form-role">
+<meta name="interaction" content="native-form">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S06-005 — Consultation Booking, Art-directed / Distinctive</title>
+<title>WELL-S06-005 — Consultation / Booking, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #0e0e0e; }
+body { margin: 0; background: #f8f4f3; }
 
-/* Scoped study styles - namespaced to .well-s06-005 */
-/* monochrome: hand-graded. Black and white only. */
 .well-s06-005 {
-  --ink: #f4f4f4;
-  --ink-soft: #b8b8b8;
-  --ink-faint: #8b8b8b;
-  --paper: #0e0e0e;
-  --panel: #171717;
-  --line: #333333;
-  --white: #ffffff;
-
-  box-sizing: border-box;
-  display: block;
-  background: linear-gradient(180deg, #181818 0%, #0e0e0e 34%);
-  color: var(--ink);
+  --paper: #f8f4f3; --ink: #2b2226; --muted: #6d6266; --line: #e0d6d9; --line-strong: #2b2226;
+  --media: #eae1e3; --accent: #6e3b4e;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s06-005 *,
-.well-s06-005 *::before,
-.well-s06-005 *::after { box-sizing: inherit; }
-.well-s06-005 :focus-visible {
-  outline: 2px solid var(--white);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
-.well-s06-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s06-005 *, .well-s06-005 *::before, .well-s06-005 *::after { box-sizing: inherit; }
+.well-s06-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s06-005 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.well-s06-005 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s06-005 .mast { display: flex; justify-content: space-between; gap: 2rem; padding: 1rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s06-005 .mast span + span { color: var(--muted); }
 
-/* The panel */
-.well-s06-005 .panel {
-  padding: clamp(28px, 4vw, 68px);
-  border: 1px solid var(--line);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #232323 0%, #141414 58%, #050505 100%);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
-  margin-bottom: clamp(22px, 2.8vw, 40px);
-}
-.well-s06-005 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(16px, 2vw, 26px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  color: var(--white);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-}
-.well-s06-005 h1 {
-  margin: 0 0 clamp(20px, 2.6vw, 36px);
-  font-size: clamp(1.9rem, 3.6vw, 3.1rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  font-weight: 800;
-  color: var(--white);
-  max-width: 20ch;
-}
+.well-s06-005 form { margin: clamp(2rem, 4vw, 4rem) 0 0; }
+.well-s06-005 .sentence { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 3.4vw, 3.4rem); line-height: 1.5; letter-spacing: -0.02em; max-width: 40ch; }
+.well-s06-005 .sentence em { font-style: italic; color: var(--accent); }
+.well-s06-005 select, .well-s06-005 input { display: inline-block; vertical-align: baseline; min-height: 1.3em; margin: 0 0.1em; padding: 0 0.15em; border: 0; border-bottom: 1px solid var(--line-strong); border-radius: 0; background: transparent; color: var(--accent); font: inherit; font-family: var(--serif); font-size: inherit; line-height: 1.2; }
+.well-s06-005 select { appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 0.9em; background-image: none; }
+.well-s06-005 .sel { position: relative; display: inline-block; }
+.well-s06-005 .sel::after { content: "\2193"; position: absolute; right: 0.15em; bottom: 0.25em; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 0.45em; color: var(--muted); pointer-events: none; }
+.well-s06-005 input { width: 9ch; }
+.well-s06-005 input.long { width: 12ch; }
+.well-s06-005 select:focus, .well-s06-005 input:focus { outline: none; border-bottom-color: var(--accent); }
+.well-s06-005 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.well-s06-005 .send { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem; margin-top: 1.8rem; }
+.well-s06-005 button { display: inline-flex; align-items: center; justify-content: center; min-height: 3.1rem; padding: 0 1.6rem; border: 1px solid var(--line-strong); border-radius: 2px; background: transparent; color: var(--ink); font: inherit; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; }
+.well-s06-005 button:hover { background: var(--ink); color: var(--paper); }
+.well-s06-005 .send p { margin: 0; color: var(--muted); font-size: 0.8rem; max-width: 30rem; }
 
-/* The sentence, and the controls set inside it */
-.well-s06-005 .sentence {
-  margin: 0 0 clamp(24px, 3vw, 44px);
-  max-width: 46ch;
-  font-size: clamp(1.5rem, 3vw, 2.6rem);
-  line-height: 1.62;
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  color: var(--ink-soft);
-}
-.well-s06-005 .fill {
-  display: inline-block;
-  max-width: 100%;
-  margin: 0 4px;
-  padding: 4px 20px;
-  border: 0;
-  border-radius: 999px;
-  background: var(--white);
-  color: #111111;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: 1.35;
-  font-weight: 650;
-  letter-spacing: -0.02em;
-  vertical-align: baseline;
-}
-.well-s06-005 select.fill { padding-right: 14px; }
-.well-s06-005 input.fill { min-width: 8ch; }
-.well-s06-005 input.w-name { width: 9ch; }
-.well-s06-005 input.w-reach { width: 13ch; }
-.well-s06-005 input.fill::placeholder { color: #8b8b8b; font-weight: 400; font-style: italic; }
-.well-s06-005 .fill:focus { outline: 3px solid var(--white); outline-offset: 3px; }
+.well-s06-005 .notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.4rem, 2.4vw, 3rem); margin: clamp(2rem, 4vw, 4rem) 0 0; padding: 0; list-style: none; }
+.well-s06-005 .notes li { padding-top: 0.9rem; border-top: 1px solid var(--line-strong); }
+.well-s06-005 .notes b { display: block; margin-bottom: 0.3rem; font-family: var(--serif); font-weight: 400; font-size: 1.1rem; }
+.well-s06-005 .notes p { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
 
-/* Send */
-.well-s06-005 .send {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: clamp(16px, 2vw, 28px);
-  padding-top: clamp(18px, 2.2vw, 28px);
-  border-top: 1px solid var(--line);
+@media (max-width: 768px) {
+  .well-s06-005 .notes { grid-template-columns: minmax(0, 1fr); }
+  .well-s06-005 .mast { display: grid; gap: 0.2rem; }
+  .well-s06-005 .sentence { max-width: none; }
 }
-.well-s06-005 .btn {
-  display: inline-block;
-  padding: 17px 34px;
-  border: 0;
-  border-radius: 999px;
-  background: var(--white);
-  color: #111111;
-  font-family: inherit;
-  font-size: 1.04rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-.well-s06-005 .btn:hover { background: #d6d6d6; }
-.well-s06-005 .after { margin: 0; max-width: 46ch; font-size: 1rem; line-height: 1.55; color: var(--ink-faint); }
-.well-s06-005 .after b { color: var(--ink); font-weight: 650; }
-
-/* The band beneath */
-.well-s06-005 .notes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: clamp(16px, 2.2vw, 34px);
-}
-.well-s06-005 .notes > div {
-  min-width: 0;
-  padding-top: clamp(12px, 1.5vw, 17px);
-  border-top: 3px solid var(--white);
-}
-.well-s06-005 .notes h2 {
-  margin: 0 0 8px;
-  font-size: 0.78rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s06-005 .notes p { margin: 0 0 9px; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
-.well-s06-005 .notes p:last-child { margin-bottom: 0; }
-.well-s06-005 .notes p b { color: var(--white); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 760px) {
-  .well-s06-005 .sentence { max-width: none; line-height: 1.85; }
-  .well-s06-005 .fill { margin: 0 2px; padding: 3px 14px; }
-}
-
-@media (max-width: 620px) {
-  .well-s06-005 h1, .well-s06-005 .after { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s06-005 * { transition: none !important; }
-}
+@media (max-width: 480px) { .well-s06-005 button { width: 100%; } .well-s06-005 input, .well-s06-005 input.long { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .well-s06-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -233,34 +100,23 @@ body { margin: 0; background: #0e0e0e; }
 <div class="well-s06-005" data-study-id="WELL-S06-005" data-direction="Art-directed / Distinctive">
   <section class="shell" aria-labelledby="well-s06-005-title">
 
-    <div class="panel">
-      <p class="eyebrow">Book a consultation</p>
-      <h1 id="well-s06-005-title">Ask for it in one sentence.</h1>
+    <p class="mast" id="well-s06-005-title"><span>Book a consultation</span><span>Ask for it in one sentence</span></p>
 
-      <form aria-labelledby="well-s06-005-title">
-        <p class="sentence">I would like<label class="vh" for="well-s06-005-treatment">Treatment</label><select class="fill" id="well-s06-005-treatment" name="treatment"><option>a facial</option><option>a massage</option><option>a body treatment</option><option>hands &amp; feet</option><option>brows &amp; lashes</option><option>to talk first</option></select>, ideally<label class="vh" for="well-s06-005-when">Time of day</label><select class="fill" id="well-s06-005-when" name="when"><option>whenever suits you</option><option>in the morning</option><option>in the afternoon</option><option>in the evening</option></select>. My name is<label class="vh" for="well-s06-005-name">Your name</label><input class="fill w-name" id="well-s06-005-name" name="name" type="text" autocomplete="name" placeholder="name"> and you can reach me on<label class="vh" for="well-s06-005-reach">Phone or email</label><input class="fill w-reach" id="well-s06-005-reach" name="reach" type="text" autocomplete="tel" placeholder="phone or email">.</p>
+    <form aria-label="Consultation request, written as a sentence">
+      <p class="sentence">
+        I would like <span class="sel"><label class="vh" for="well-s06-005-treat">Treatment</label><select id="well-s06-005-treat" name="treatment"><option>a facial</option><option>a massage</option><option>a body treatment</option><option>hands and feet</option><option>brows and lashes</option><option>to talk first</option></select></span>,
+        ideally <span class="sel"><label class="vh" for="well-s06-005-when">Time of day</label><select id="well-s06-005-when" name="when"><option>whenever suits you</option><option>in the morning</option><option>in the afternoon</option><option>in the evening</option></select></span>.
+        My name is <label class="vh" for="well-s06-005-name">Your name</label><input id="well-s06-005-name" type="text" name="name" autocomplete="name">
+        and you can reach me on <label class="vh" for="well-s06-005-contact">Phone or email</label><input class="long" id="well-s06-005-contact" type="text" name="contact" autocomplete="tel">.
+      </p>
+      <div class="send"><button type="button">Send it</button><p>Nothing is booked and nothing is charged by sending this. It is a sentence, and the day and the time are settled between us afterwards.</p></div>
+    </form>
 
-        <div class="send">
-          <button class="btn" type="submit">Send it</button>
-          <p class="after"><b>Nothing is booked and nothing is charged by sending this.</b> It is a sentence, and the day and the time are settled between us afterwards.</p>
-        </div>
-      </form>
-    </div>
-
-    <div class="notes">
-      <div>
-        <h2>Why a sentence</h2>
-        <p>A booking form asks you to fill in a table about yourself before anybody has spoken to you. <b>This asks for the same four things in the order you would say them out loud.</b></p>
-      </div>
-      <div>
-        <h2>What it does not decide</h2>
-        <p>Not the day, not the time, not the treatment. <b>Choosing one above is a starting point rather than a commitment</b>, and changing your mind in the room costs nothing.</p>
-      </div>
-      <div>
-        <h2>If you would rather talk it through</h2>
-        <p>Choose <b>to talk first</b> in the sentence and leave the rest as it is. That is a consultation with nothing attached to it, which is what most people should be asking for.</p>
-      </div>
-    </div>
+    <ul class="notes">
+      <li><b>Why a sentence</b><p>A booking form asks you to fill in a table about yourself before anybody has spoken to you. This asks for the same four things in the order you would say them out loud.</p></li>
+      <li><b>What it does not decide</b><p>Not the day, not the time, not the treatment. Choosing one above is a starting point, and changing your mind in the room costs nothing.</p></li>
+      <li><b>If you would rather talk</b><p>Choose &ldquo;to talk first&rdquo; in the sentence and leave the rest. We will call.</p></li>
+    </ul>
 
   </section>
 </div>

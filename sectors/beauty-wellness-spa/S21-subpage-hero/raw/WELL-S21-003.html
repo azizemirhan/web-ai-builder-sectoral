@@ -12,28 +12,18 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S21 — Subpage Hero
   Direction      : Dense / Information-heavy
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : The hero of an article page — parent label, a reserved title area, a reserved
-                   standfirst area, and a four-item metadata strip along the foot
-  Density        : High for this role — the densest hero in the batch, and still shallower than any
-                   S01 study
-  Media mode     : None. The density is in the metadata; a picture as well would make an interior
-                   hero taller than the article it introduces.
-  Interaction    : None (static; no JavaScript)
-  Why the title is reserved : This is the hero of an `S25` article page, and **an article title is
-                   invented content** — the `S18` rule. Writing one here would invent a publication
-                   and, in this sector, would very likely also be an efficacy claim. So the densest
-                   study in the batch is also the one whose largest element is empty, which is the
-                   honest result rather than an awkward one.
-  The metadata, filtered : The canonical scope for this role allows *category, date, reading time,
-                   discipline or reference*. Read through this sector's claims rule: topic and kind
-                   are **real**, the date is a **reserved field**, the author is a **reserved
-                   token**, and **reading time is omitted entirely** — a placeholder cannot compute
-                   it and this sector prints no durations.
-  The S01 test   : A homepage hero has no publication metadata and never leaves its own headline
-                   empty. This study could not stand in for one.
-  Content note   : No invented title, standfirst, author name, date, reading time, view or share
-                   count; no breadcrumb, trail or parent link; no viewport-height unit.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, the article hero
+                   whose largest element is reserved: title and standfirst areas sized to the
+                   scale they will hold (the S18 rule), and one light ruled metadata line —
+                   topic and kind real, date and author reserved, reading time omitted. Kept
+                   to a single hairline row so it never reads as a document header.
+  Layout model   : Parent label. A reserved title area at display scale held to a headline
+                   measure, a reserved standfirst area beneath it, and one ruled line of four
+                   small items: TOPIC, KIND, PUBLISHED slot, WRITTEN BY slot.
+  Density        : Hero (40–90)
+  Media mode     : Two reserved text areas; two reserved slots. No title, date or name.
+  Interaction    : None (static; no JavaScript). No action.
+  Content note   : No article title, author, date, reading time, count or rating.
 -->
 
 <meta name="study-id" content="WELL-S21-003">
@@ -44,146 +34,46 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Dense / Information-heavy">
 <meta name="direction" content="Dense / Information-heavy">
-<meta name="layout-model" content="Article-page hero with reserved title and standfirst above a four-item metadata strip">
-<meta name="density" content="high">
-<meta name="media-mode" content="none">
+<meta name="theme" content="003 Mist &amp; Moss">
+<meta name="layout-model" content="Parent label; reserved title and standfirst areas at their scale; one ruled line of topic, kind, reserved date and reserved author">
+<meta name="density" content="hero">
+<meta name="media-mode" content="two-reserved-text-areas-two-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S21-003 — Subpage Hero, Dense / Information-heavy</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e9ece6; }
+body { margin: 0; background: #eef0ee; }
 
-/* Scoped study styles — namespaced to .well-s21-003 */
 .well-s21-003 {
-  --ink: #1f251f;
-  --ink-soft: #5c6659;
-  --paper: #e9ece6;
-  --slot: #e0e4dc;
-  --slot-ink: #59634f;
-  --slot-edge: #c8cfc0;
-  --chip: #e3e7df;
-  --rule: #ccd4c6;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eef0ee; --ink: #1f2624; --muted: #5f6764; --line: #cdd2cf; --line-strong: #1f2624;
+  --media: #dcdfdb; --accent: #2f5c4b;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s21-003 *,
-.well-s21-003 *::before,
-.well-s21-003 *::after { box-sizing: inherit; }
-.well-s21-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s21-003 *, .well-s21-003 *::before, .well-s21-003 *::after { box-sizing: inherit; }
+.well-s21-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s21-003 .shell {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: clamp(30px, 3.4vw, 56px) clamp(20px, 3.6vw, 52px) clamp(22px, 2.6vw, 36px);
-}
+.well-s21-003 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 4.5vw, 4.5rem) clamp(1rem, 4vw, 4rem) clamp(1.6rem, 3vw, 3rem); }
+.well-s21-003 .parent { margin: 0 0 1.2rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s21-003 h1 { margin: 0; }
+.well-s21-003 .title { position: relative; display: block; max-width: 42rem; height: clamp(6rem, 9.6vw, 9rem); background: var(--media); border-radius: 3px; }
+.well-s21-003 .stand { position: relative; max-width: 34rem; height: 3.2rem; margin-top: 1rem; background: var(--media); border-radius: 3px; }
+.well-s21-003 .slate { position: absolute; left: 0.8rem; bottom: 0.6rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s21-003 .meta { display: flex; flex-wrap: wrap; gap: 0.8rem 2.4rem; margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 0; padding: 0.9rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); }
+.well-s21-003 .meta div { display: flex; align-items: center; gap: 0.6rem; }
+.well-s21-003 .meta dt { margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s21-003 .meta dd { margin: 0; font-family: var(--serif); font-size: 0.95rem; }
+.well-s21-003 .slot { display: inline-flex; align-items: center; min-width: 8rem; height: 1.6rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.85rem; }
+.well-s21-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.well-s21-003 .parent {
-  margin: 0 0 clamp(12px, 1.4vw, 16px);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-/* Reserved page identity */
-.well-s21-003 .title-slot {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 10px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: clamp(16px, 2vw, 24px);
-  min-height: clamp(92px, 8.4vw, 122px);
-  max-width: 30rem;
-  text-align: center;
-}
-.well-s21-003 .stand-slot {
-  margin-top: clamp(12px, 1.4vw, 16px);
-  border: 1px dashed var(--slot-edge);
-  border-radius: 10px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: clamp(14px, 1.6vw, 20px);
-  min-height: clamp(58px, 5vw, 72px);
-  max-width: 42rem;
-  text-align: center;
-}
-.well-s21-003 .title-slot span,
-.well-s21-003 .stand-slot span {
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  line-height: 1.7;
-}
-
-/* Metadata strip */
-.well-s21-003 .meta {
-  margin: clamp(22px, 2.6vw, 34px) 0 0;
-  padding: 0;
-  padding-top: clamp(16px, 1.9vw, 24px);
-  border-top: 1px solid var(--rule);
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 34px);
-  max-width: 62rem;
-}
-.well-s21-003 .meta li { min-width: 0; }
-.well-s21-003 .fname {
-  display: block;
-  margin-bottom: 7px;
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s21-003 .value { font-size: 0.96rem; font-weight: 600; }
-.well-s21-003 .slot {
-  display: inline-block;
-  padding: 3px 11px;
-  border-radius: 6px;
-  background: var(--chip);
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-}
-
-/* Responsive ladder — metadata wraps rather than truncates */
-@media (max-width: 900px) {
-  .well-s21-003 .meta { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 22px); }
-}
-
-@media (max-width: 480px) {
-  .well-s21-003 .meta { grid-template-columns: minmax(0, 1fr); }
-  .well-s21-003 .title-slot,
-  .well-s21-003 .stand-slot { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s21-003 * { transition: none !important; }
-}
+@media (max-width: 480px) { .well-s21-003 .meta div { width: 100%; } .well-s21-003 .slot { min-width: 0; flex: 1; } }
+@media (prefers-reduced-motion: reduce) { .well-s21-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -191,30 +81,16 @@ body { margin: 0; background: #e9ece6; }
 <div class="well-s21-003" data-study-id="WELL-S21-003" data-direction="Dense / Information-heavy">
   <section class="shell" aria-labelledby="well-s21-003-title">
 
-    <h1 class="vh" id="well-s21-003-title">Article page hero</h1>
     <p class="parent">Wellness resources</p>
+    <h1 id="well-s21-003-title"><span class="vh">Article title, reserved</span><span class="title" role="img" aria-label="Reserved title area, two lines at display scale"><span class="slate" aria-hidden="true">Article title &middot; two lines</span></span></h1>
+    <p class="stand" role="img" aria-label="Reserved standfirst area, one or two lines"><span class="slate" aria-hidden="true">Standfirst &middot; one or two lines</span></p>
 
-    <div class="title-slot"><span>Article title<br>two lines</span></div>
-    <div class="stand-slot"><span>Standfirst<br>one or two lines</span></div>
-
-    <ul class="meta">
-      <li>
-        <span class="fname">Topic</span>
-        <span class="value">Skin</span>
-      </li>
-      <li>
-        <span class="fname">Kind</span>
-        <span class="value">A guide</span>
-      </li>
-      <li>
-        <span class="fname">Published</span>
-        <span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span>
-      </li>
-      <li>
-        <span class="fname">Written by</span>
-        <span class="slot"><span class="vh">Author name</span><span aria-hidden="true">&mdash;</span></span>
-      </li>
-    </ul>
+    <dl class="meta">
+      <div><dt>Topic</dt><dd>Skin</dd></div>
+      <div><dt>Kind</dt><dd>A guide</dd></div>
+      <div><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+      <div><dt>Written by</dt><dd><span class="slot"><span class="vh">Author name</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+    </dl>
 
   </section>
 </div>

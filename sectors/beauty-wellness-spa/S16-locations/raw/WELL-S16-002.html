@@ -12,27 +12,19 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S16 — Locations
   Direction      : Premium / Editorial
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : The single-site case. One reserved exterior plate given the full width at
-                   editorial scale, a serif line above it, and a spare address block beneath on a
-                   hairline
-  Density        : Very low
-  Media mode     : One large reserved exterior area and one small reserved map area.
-  Interaction    : None (static; no JavaScript)
-  The structural point : **How many sites there are is a structural fact, not a claim, and it
-                   changes the section completely.** A single-site studio does not need a chooser,
-                   a comparison or a set — it needs one door shown well. This study is the
-                   one-site case, where WELL-S16-001 is the two-site case and WELL-S16-003 is the
-                   network. A reviewer picks the shape that matches the business rather than
-                   adapting a multi-site grid down to one card.
-  The copy problem, and how it is solved : An editorial locations section wants to describe the
-                   building — "a converted townhouse on a quiet street" — and that invents a
-                   property as surely as inventing its address does. So there is **no description
-                   of the place anywhere here**. The editorial act is the composition: the plate is
-                   given the room the prose would have taken.
-  Content note   : No invented address, street, postcode, city, region, phone number, email, map
-                   coordinate, travel time, distance, transport line, parking claim, access claim
-                   or opening hour; no embedded map or remote frame.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 2 (ruled
+                   head) over one wide plate, then a split. V1's single-site case is kept: one
+                   door, shown well — the plate is given the room the prose would have taken,
+                   because the building cannot be described.
+  Layout model   : Ruled head with the serif line right. A 21:9 entrance plate. A lower split:
+                   left, "The studio" in serif and ADDRESS / PHONE reserved rows; right, a 1:1
+                   map area. The access line beneath the rows.
+  Density        : Low (60–120)
+  Media mode     : One reserved entrance plate; one reserved map area; two reserved fields.
+                   No map, image or fact is supplied.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No address, city, phone, hour or access claim; no description of the
+                   building; no embedded map.
 -->
 
 <meta name="study-id" content="WELL-S16-002">
@@ -43,182 +35,54 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="Single-site case — one full-width exterior plate above a spare address block">
+<meta name="theme" content="002 Bone &amp; Clay">
+<meta name="layout-model" content="Ruled head; a 21:9 entrance plate; a split of reserved address rows beside a 1:1 map area; access line beneath">
 <meta name="density" content="low">
-<meta name="media-mode" content="reserved-exterior-plate-plus-small-map">
+<meta name="media-mode" content="one-reserved-plate-one-reserved-map-two-reserved-fields">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S16-002 — Locations, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e0e5e0; }
+body { margin: 0; background: #f6f1ea; }
 
-/* Scoped study styles — namespaced to .well-s16-002 */
 .well-s16-002 {
-  --ink: #1f2620;
-  --ink-soft: #5e6a5f;
-  --paper: #e0e5e0;
-  --slot: #cfd6cf;
-  --slot-ink: #556056;
-  --chip: #d7dcd7;
-  --line: #c2cbc2;
-  --focus: #34492f;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f1ea; --ink: #2a2420; --muted: #6f665e; --line: #dbd1c5; --line-strong: #2a2420;
+  --media: #e7ded3; --accent: #a5583a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s16-002 *,
-.well-s16-002 *::before,
-.well-s16-002 *::after { box-sizing: inherit; }
-.well-s16-002 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 3px;
-}
-.well-s16-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s16-002 *, .well-s16-002 *::before, .well-s16-002 *::after { box-sizing: inherit; }
+.well-s16-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s16-002 .shell {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: clamp(48px, 5.6vw, 104px) clamp(20px, 3.6vw, 56px);
-}
+.well-s16-002 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s16-002 .head { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0 1.4rem; border-top: 1px solid var(--line-strong); }
+.well-s16-002 .eyebrow { margin: 0; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s16-002 h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 2rem); letter-spacing: -0.015em; }
+.well-s16-002 h2 em { font-style: italic; }
+.well-s16-002 .plate { position: relative; aspect-ratio: 21 / 9; background: var(--media); border-radius: 4px; }
+.well-s16-002 .slate { position: absolute; left: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Header */
-.well-s16-002 .eyebrow {
-  margin: 0 0 clamp(14px, 1.6vw, 20px);
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s16-002 h1 {
-  margin: 0 0 clamp(30px, 3.8vw, 60px);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(1.9rem, 3.6vw, 3rem);
-  line-height: 1.06;
-  letter-spacing: -0.014em;
-  font-weight: 400;
-  max-width: 18ch;
-}
+.well-s16-002 .lower { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(14rem, 0.7fr); gap: clamp(2rem, 4vw, 5rem); align-items: start; margin-top: clamp(1.6rem, 3vw, 3rem); }
+.well-s16-002 h3 { margin: 0; padding: 0.8rem 0; border-top: 1px solid var(--line-strong); font-family: var(--serif); font-weight: 400; font-size: clamp(1.6rem, 2.4vw, 2.2rem); letter-spacing: -0.025em; }
+.well-s16-002 .fields { margin: 0; padding: 0; }
+.well-s16-002 .fields div { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1rem; align-items: center; padding: 0.8rem 0; border-top: 1px solid var(--line); }
+.well-s16-002 .fields div:last-child { border-bottom: 1px solid var(--line); }
+.well-s16-002 .fields dt { margin: 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s16-002 .fields dd { margin: 0; }
+.well-s16-002 .slot { display: inline-flex; align-items: center; min-width: 14rem; height: 1.9rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.95rem; }
+.well-s16-002 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.well-s16-002 .access { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: 0.86rem; line-height: 1.55; }
+.well-s16-002 .map { position: relative; aspect-ratio: 1 / 1; background: var(--media); border-radius: 3px; }
 
-/* The plate */
-.well-s16-002 .plate {
-  background: var(--slot);
-  aspect-ratio: 21 / 9;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-.well-s16-002 .plate span {
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-
-/* Address block */
-.well-s16-002 .block {
-  margin-top: clamp(28px, 3.4vw, 50px);
-  padding-top: clamp(22px, 2.6vw, 34px);
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(24px, 3.4vw, 64px);
-  align-items: start;
-}
-.well-s16-002 h2 {
-  margin: 0 0 clamp(14px, 1.7vw, 20px);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(1.3rem, 1.9vw, 1.7rem);
-  line-height: 1.18;
-  font-weight: 400;
-}
-.well-s16-002 .fields { margin: 0; padding: 0; list-style: none; }
-.well-s16-002 .fields li {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 16px;
-  align-items: baseline;
-  padding: clamp(9px, 1.1vw, 13px) 0;
-}
-.well-s16-002 .fname {
-  min-width: clamp(66px, 6vw, 86px);
-  font-size: 0.66rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s16-002 .slot {
-  padding: 2px 10px;
-  border-radius: 5px;
-  background: var(--chip);
-  color: var(--ink-soft);
-  font-size: 0.98rem;
-}
-.well-s16-002 .side .map {
-  background: var(--slot);
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: center;
-  padding: 14px;
-}
-.well-s16-002 .side .map span {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-}
-.well-s16-002 .access {
-  margin: clamp(26px, 3.2vw, 44px) 0 0;
-  max-width: 62ch;
-  color: var(--ink-soft);
-  font-size: 0.93rem;
-  line-height: 1.64;
-}
-
-/* Responsive ladder */
-@media (max-width: 1024px) {
-  .well-s16-002 .plate { aspect-ratio: 16 / 8; }
-  .well-s16-002 h1 { max-width: none; }
-}
-
-@media (max-width: 768px) {
-  .well-s16-002 .plate { aspect-ratio: 16 / 10; }
-  .well-s16-002 .block {
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(22px, 3vw, 30px);
-  }
-  .well-s16-002 .access { max-width: none; }
-}
-
-@media (max-width: 480px) {
-  .well-s16-002 .plate { aspect-ratio: 4 / 3; }
-  .well-s16-002 .fields li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s16-002 * { transition: none !important; }
-}
+@media (max-width: 768px) { .well-s16-002 .head { flex-direction: column; align-items: flex-start; gap: 0.3rem; } .well-s16-002 .plate { aspect-ratio: 16 / 10; } .well-s16-002 .lower { grid-template-columns: minmax(0, 1fr); } .well-s16-002 .map { max-width: 18rem; } }
+@media (max-width: 480px) { .well-s16-002 .plate { aspect-ratio: 4 / 3; } .well-s16-002 .fields div { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; } .well-s16-002 .slot { min-width: 0; width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .well-s16-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -226,23 +90,20 @@ body { margin: 0; background: #e0e5e0; }
 <div class="well-s16-002" data-study-id="WELL-S16-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="well-s16-002-title">
 
-    <p class="eyebrow">Where we are</p>
-    <h1 id="well-s16-002-title">One door, and this is it.</h1>
+    <div class="head">
+      <p class="eyebrow">Where we are</p>
+      <h2 id="well-s16-002-title">One door, and this is <em>it.</em></h2>
+    </div>
 
-    <div class="plate"><span>The entrance</span></div>
+    <div class="plate" role="img" aria-label="Reserved image field: the entrance, 21:9"><p class="slate" aria-hidden="true">Image area &middot; 21:9 &middot; the entrance</p></div>
 
-    <div class="block">
+    <div class="lower">
       <div>
-        <h2>The studio</h2>
-        <ul class="fields">
-          <li><span class="fname">Address</span><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span class="fname">Phone</span><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></li>
-        </ul>
-        <p class="access">Tell us what you need to get in and around comfortably when you book, and we will describe the building to you properly before you travel — including the parts that are awkward.</p>
+        <h3>The studio</h3>
+        <dl class="fields"><div><dt>Address</dt><dd><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></dd></div><div><dt>Phone</dt><dd><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl>
+        <p class="access">Tell us what you need to get in and around comfortably when you book, and we will describe the building to you properly before you travel &mdash; including the parts that are awkward.</p>
       </div>
-      <div class="side">
-        <div class="map"><span>Map</span></div>
-      </div>
+      <div class="map" role="img" aria-label="Reserved map area, 1:1"><p class="slate" aria-hidden="true">Map area &middot; 1:1</p></div>
     </div>
 
   </section>

@@ -172,7 +172,7 @@ belongs to `S21` and the trail to `S22`; this section is the body beneath them.
 
 # Status
 
-AUTHORED — PENDING DESIGN LAB INGESTION
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
@@ -180,4 +180,4 @@ AUTHORED — PENDING DESIGN LAB INGESTION
 
 # Batch Document
 
-./BATCH-V1.md
+./BATCH-V2.md (design layer, current) · ./BATCH-V1.md (original authoring record)

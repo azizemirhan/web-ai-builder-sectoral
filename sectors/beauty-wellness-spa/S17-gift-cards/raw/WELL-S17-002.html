@@ -12,21 +12,20 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S17 — Gift Cards
   Direction      : Premium / Editorial
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : The card as an object. One reserved card artwork plate given the left half at
-                   real object scale, with a short serif line, the reserved amount and one action
-                   beside it — and the commitments held to a single quiet line at the foot
-  Density        : Low — the fewest words in the batch
-  Media mode     : One large reserved card artwork area at card proportion.
-  Interaction    : None (static; no JavaScript)
-  Direction note : The editorial reading of a gift section is that the card is a **designed
-                   artefact, not a product thumbnail**. So the plate is given half the composition
-                   and the copy is cut back to what a buyer needs to decide, which is very little
-                   once the object is doing the work.
-  Content note   : No invented amount, denomination, currency symbol, figure, expiry date or
-                   period, delivery time, postage cost, booking fee, discount or bonus-credit
-                   offer; no denomination tiers; no popularity or value tier. The amount is a
-                   reserved slot with a visually hidden label. See ../README.md.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 1 (one
+                   field at object scale beside an editorial column). V1's reading is kept:
+                   the card as a designed artefact, not a product thumbnail — one plate given
+                   the left half, a short serif proposition, the reserved amount and one
+                   action beside it, every commitment in a single closing line.
+  Layout model   : Two columns. Left, an 8:5 artwork plate at object scale. Right, a ruled
+                   column: eyebrow, serif proposition with an italic word, one line, AMOUNT
+                   slot on a hairline, one bordered action, and the closing line on the foot
+                   rule.
+  Density        : Low (60–120)
+  Media mode     : One reserved artwork plate; one reserved amount slot. No image or figure.
+  Interaction    : None (static; no JavaScript). The action is a relative link.
+  Content note   : No amount, denomination, currency, expiry, delivery time, fee, discount or
+                   urgency device.
 -->
 
 <meta name="study-id" content="WELL-S17-002">
@@ -37,180 +36,52 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="Card artwork at object scale beside a short serif proposition">
+<meta name="theme" content="002 Bone &amp; Clay">
+<meta name="layout-model" content="An 8:5 artwork plate at object scale beside a ruled column with a serif proposition, reserved amount, one action and the closing line">
 <meta name="density" content="low">
-<meta name="media-mode" content="reserved-card-artwork-single-large">
+<meta name="media-mode" content="one-reserved-artwork-plate-one-reserved-slot">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S17-002 — Gift Cards, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #dfe3d9; }
+body { margin: 0; background: #f6f1ea; }
 
-/* Scoped study styles — namespaced to .well-s17-002 */
 .well-s17-002 {
-  --ink: #212619;
-  --ink-soft: #5f6957;
-  --paper: #dfe3d9;
-  --slot: #ccd2c4;
-  --slot-ink: #545e4b;
-  --chip: #d6dbcf;
-  --line: #c3cab8;
-  --accent: #29301f;
-  --accent-ink: #f0f2ec;
-  --focus: #3c4a2c;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f1ea; --ink: #2a2420; --muted: #6f665e; --line: #dbd1c5; --line-strong: #2a2420;
+  --media: #e7ded3; --accent: #a5583a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s17-002 *,
-.well-s17-002 *::before,
-.well-s17-002 *::after { box-sizing: inherit; }
-.well-s17-002 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 3px;
-}
-.well-s17-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s17-002 *, .well-s17-002 *::before, .well-s17-002 *::after { box-sizing: inherit; }
+.well-s17-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s17-002 .shell {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: clamp(48px, 5.6vw, 104px) clamp(20px, 3.6vw, 56px);
-}
+.well-s17-002 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4vw, 4rem); }
+.well-s17-002 .grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr); gap: clamp(2rem, 5vw, 6rem); align-items: center; }
+.well-s17-002 .media { position: relative; aspect-ratio: 8 / 5; background: var(--media); border-radius: 6px; }
+.well-s17-002 .slate { position: absolute; left: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s17-002 .col { display: flex; flex-direction: column; }
+.well-s17-002 .eyebrow { margin: 0; padding: 1rem 0; border-top: 1px solid var(--line-strong); color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s17-002 h2 { margin: 0.4rem 0 1rem; max-width: 12ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 3.8rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s17-002 h2 em { font-style: italic; }
+.well-s17-002 .lead { margin: 0 0 1.4rem; max-width: 24rem; color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+.well-s17-002 .field { display: flex; align-items: center; gap: 0.8rem; margin: 0; padding: 0.9rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); }
+.well-s17-002 .field dt { margin: 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s17-002 .field dd { margin: 0; }
+.well-s17-002 .slot { display: inline-flex; align-items: center; justify-content: center; min-width: 7rem; height: 2rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 1rem; }
+.well-s17-002 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.well-s17-002 .btn { align-self: flex-start; display: inline-block; margin-top: 1.6rem; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+.well-s17-002 .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.well-s17-002 .close { margin: 1.6rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.84rem; line-height: 1.55; }
+.well-s17-002 .close span { display: block; max-width: 26rem; }
 
-.well-s17-002 .split {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(26px, 4vw, 76px);
-  align-items: center;
-}
-
-/* The object */
-.well-s17-002 .art {
-  background: var(--slot);
-  border-radius: 12px;
-  aspect-ratio: 8 / 5;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-.well-s17-002 .art span {
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-
-/* The proposition */
-.well-s17-002 .copy { min-width: 0; }
-.well-s17-002 .eyebrow {
-  margin: 0 0 clamp(14px, 1.6vw, 20px);
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s17-002 h1 {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(1.9rem, 3.6vw, 3rem);
-  line-height: 1.06;
-  letter-spacing: -0.014em;
-  font-weight: 400;
-  max-width: 15ch;
-}
-.well-s17-002 .copy > p {
-  margin: clamp(16px, 2vw, 24px) 0 0;
-  max-width: 40ch;
-  color: var(--ink-soft);
-  font-size: clamp(0.98rem, 1.05vw, 1.06rem);
-  line-height: 1.66;
-}
-.well-s17-002 .amount {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  margin: clamp(22px, 2.6vw, 32px) 0 0;
-}
-.well-s17-002 .fname {
-  font-size: 0.66rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s17-002 .slot {
-  min-width: clamp(60px, 5.4vw, 78px);
-  padding: 3px 12px;
-  border-radius: 6px;
-  background: var(--chip);
-  color: var(--ink-soft);
-  font-size: 1.05rem;
-  text-align: center;
-}
-.well-s17-002 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: clamp(22px, 2.6vw, 32px);
-  min-height: 54px;
-  padding: 0 34px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 140ms ease;
-}
-.well-s17-002 .btn:hover { background: #333c27; }
-
-/* Foot */
-.well-s17-002 .foot {
-  margin: clamp(32px, 4vw, 62px) 0 0;
-  padding-top: clamp(20px, 2.4vw, 30px);
-  border-top: 1px solid var(--line);
-  max-width: 76ch;
-  color: var(--ink-soft);
-  font-size: 0.93rem;
-  line-height: 1.64;
-}
-
-/* Responsive ladder */
-@media (max-width: 768px) {
-  .well-s17-002 .split {
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(24px, 3vw, 34px);
-  }
-  .well-s17-002 h1 { max-width: none; }
-  .well-s17-002 .copy > p { max-width: none; }
-  .well-s17-002 .btn { width: 100%; }
-  .well-s17-002 .foot { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s17-002 * { transition: none !important; }
-}
+@media (max-width: 1024px) { .well-s17-002 .grid { grid-template-columns: minmax(0, 1fr); } .well-s17-002 .media { max-width: 34rem; } .well-s17-002 h2 { max-width: none; } }
+@media (prefers-reduced-motion: reduce) { .well-s17-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -218,22 +89,17 @@ body { margin: 0; background: #dfe3d9; }
 <div class="well-s17-002" data-study-id="WELL-S17-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="well-s17-002-title">
 
-    <div class="split">
-      <div class="art"><span>The card</span></div>
-
-      <div class="copy">
+    <div class="grid">
+      <div class="media" role="img" aria-label="Reserved artwork plate: the card, 8:5"><p class="slate" aria-hidden="true">Card artwork &middot; 8:5</p></div>
+      <div class="col">
         <p class="eyebrow">For someone else</p>
-        <h1 id="well-s17-002-title">A card, not a code.</h1>
-        <p>Printed properly, with your own message on it, and no amount anywhere on the front or the back.</p>
-        <p class="amount">
-          <span class="fname">Amount</span>
-          <span class="slot"><span class="vh">Gift amount</span><span aria-hidden="true">&mdash;</span></span>
-        </p>
-        <a class="btn" href="#well-s17-002-title">Buy one</a>
+        <h2 id="well-s17-002-title">An hour, given to someone <em>else.</em></h2>
+        <p class="lead">Printed and handed over, or sent by email with your message. Either way it is theirs to spend on anything, whenever they like.</p>
+        <dl class="field"><dt>Amount</dt><dd><span class="slot"><span class="vh">Gift amount</span><span aria-hidden="true">&mdash;</span></span></dd></dl>
+        <a class="btn" href="#buy">Buy a gift card</a>
+        <p class="close"><span>The amount is not printed on the card, it does not expire, and whatever is left after a treatment stays on it.</span></p>
       </div>
     </div>
-
-    <p class="foot">It does not expire, it can be spent on anything or put toward something dearer, and whatever is left stays on it. A digital version is available if you need it to arrive by email instead.</p>
 
   </section>
 </div>

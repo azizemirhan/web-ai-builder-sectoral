@@ -163,7 +163,7 @@ Nearest existing section in this sector: S04 Specialists (`S04-specialists/`).
 
 # Status
 
-NOT_STARTED
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 
@@ -171,4 +171,4 @@ NOT_STARTED
 
 # Batch Document
 
-./BATCH-V1.md
+./BATCH-V2.md (design layer, current) · ./BATCH-V1.md (original authoring record)

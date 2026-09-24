@@ -12,27 +12,17 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S22 — Breadcrumb / Context Navigation
   Direction      : Universal / Safe
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : The plain trail — four levels on one line above a hairline, the current page
-                   marked and not a link
-  Density        : Very low
-  Media mode     : None. The scaffold is explicit: this role is navigation, not presentation.
-  Interaction    : Links only (static; no JavaScript)
-  Content responsibility : **The trail alone.** No siblings, no return button, no context line —
-                   this is the variant that establishes what the role is before the others add to
-                   it.
-  Why <nav> is here : Every other WELL section forbids <nav> to keep global chrome out of section
-                   studies. S22 is the one section where a navigation landmark is **required**,
-                   because a breadcrumb without one is decoration. It carries an accessible name so
-                   it can be found and skipped. <header>, <footer>, a logo and a primary menu remain
-                   forbidden.
-  Real navigation, not a picture of it : An ordered list, real links for every level except the
-                   last, `aria-current="page"` on the current level, and separators marked
-                   `aria-hidden` because a slash is not a word.
-  Responsive note: The trail **wraps to a second line**. It is never truncated and never hidden —
-                   the scaffold rules both out.
-  Content note   : Every level is vocabulary already established in S02 and S03. No item count, no
-                   price, no rating, no duration; no primary menu; no search field.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, the tracked
+                   uppercase label line on a hairline. V1 is kept: the trail alone, a real
+                   nav landmark with an ordered list, links for every level but the current,
+                   aria-current on the current, separators hidden from assistive technology.
+  Layout model   : One line: four levels in tracked uppercase at label size, separated by thin
+                   accent slashes, the current level in ink and not a link. A hairline beneath.
+  Density        : Hero (40–90)
+  Media mode     : None, by design.
+  Interaction    : Links only; no JavaScript.
+  Content note   : Page names from the sector's established vocabulary only; no count, price,
+                   rating or duration.
 -->
 
 <meta name="study-id" content="WELL-S22-001">
@@ -43,133 +33,54 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Single-line four-level trail above a hairline">
-<meta name="density" content="very-low">
+<meta name="theme" content="001 Linen &amp; Olive">
+<meta name="layout-model" content="Four-level trail in tracked uppercase with accent slashes on a hairline; current level marked and not a link">
+<meta name="density" content="hero">
 <meta name="media-mode" content="none">
-<meta name="interaction" content="links-only">
+<meta name="interaction" content="links">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S22-001 — Breadcrumb / Context Navigation, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f0ec; }
+body { margin: 0; background: #f2f0ea; }
 
-/* Scoped study styles — namespaced to .well-s22-001 */
 .well-s22-001 {
-  --ink: #23241f;
-  --ink-soft: #64665c;
-  --paper: #f1f0ec;
-  --rule: #d8d7cf;
-  --focus: #3f4136;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f2f0ea; --ink: #23281f; --muted: #6a6d62; --line: #d3d0c5; --line-strong: #23281f;
+  --media: #e1dfd5; --accent: #5a6b48;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s22-001 *,
-.well-s22-001 *::before,
-.well-s22-001 *::after { box-sizing: inherit; }
-.well-s22-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-.well-s22-001 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
+.well-s22-001 *, .well-s22-001 *::before, .well-s22-001 *::after { box-sizing: inherit; }
+.well-s22-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s22-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(18px, 2vw, 28px) clamp(20px, 3.6vw, 52px);
-}
+.well-s22-001 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(1.2rem, 2.4vw, 2.4rem) clamp(1rem, 4vw, 4rem); }
+.well-s22-001 .trail { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 0.9rem; margin: 0; padding: 0 0 0.9rem; list-style: none; border-bottom: 1px solid var(--line); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s22-001 .trail li { display: flex; align-items: baseline; gap: 0.9rem; }
+.well-s22-001 .trail a { color: var(--muted); text-decoration: none; padding: 0.4rem 0; transition: color 160ms ease; }
+.well-s22-001 .trail a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: var(--accent); }
+.well-s22-001 .trail [aria-current="page"] { color: var(--ink); }
+.well-s22-001 .sep { color: var(--accent); font-weight: 400; }
 
-.well-s22-001 .trail {
-  margin: 0;
-  padding: 0 0 clamp(14px, 1.6vw, 20px);
-  border-bottom: 1px solid var(--rule);
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0;
-}
-.well-s22-001 .trail li {
-  display: inline-flex;
-  align-items: center;
-  min-width: 0;
-}
-.well-s22-001 .trail a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 2px;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-.well-s22-001 .trail a:hover {
-  color: var(--ink);
-  border-bottom-color: var(--ink);
-}
-.well-s22-001 .sep {
-  padding: 0 clamp(8px, 1vw, 12px);
-  color: var(--ink-soft);
-  font-size: 0.86rem;
-}
-.well-s22-001 .here {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 2px;
-  color: var(--ink);
-  font-size: 0.92rem;
-  font-weight: 650;
-}
-
-/* Responsive ladder — it wraps, it is never cut */
-@media (max-width: 600px) {
-  .well-s22-001 .sep { padding: 0 8px; }
-  .well-s22-001 .trail a,
-  .well-s22-001 .here { font-size: 0.88rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s22-001 * { transition: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .well-s22-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="well-s22-001" data-study-id="WELL-S22-001" data-direction="Universal / Safe">
-  <section class="shell" aria-labelledby="well-s22-001-title">
-
-    <h1 class="vh" id="well-s22-001-title">Where you are</h1>
-
-    <nav aria-label="Breadcrumb">
+  <section class="shell">
+    <nav aria-label="Where you are">
       <ol class="trail">
-        <li><a href="#well-s22-001-title">Home</a></li>
-        <li><span class="sep" aria-hidden="true">/</span><a href="#well-s22-001-title">Treatments</a></li>
-        <li><span class="sep" aria-hidden="true">/</span><a href="#well-s22-001-title">Facials</a></li>
-        <li><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Deep cleansing facial</span></li>
+        <li><a href="#home">Home</a><span class="sep" aria-hidden="true">/</span></li>
+        <li><a href="#treatments">Treatments</a><span class="sep" aria-hidden="true">/</span></li>
+        <li><a href="#facials">Facials</a><span class="sep" aria-hidden="true">/</span></li>
+        <li><span aria-current="page">Deep cleansing facial</span></li>
       </ol>
     </nav>
-
   </section>
 </div>
 

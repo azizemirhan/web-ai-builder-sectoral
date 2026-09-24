@@ -237,3 +237,74 @@ Each section README records its own answers to questions 1 and 2 under *Authorin
 This direction covers `WELL` sections S01–S27. No `S28` or higher exists in this sector and none
 is planned; sector-native extensions are outside the planned catalog and would be governed only
 after their taxonomy is decided.
+
+## Detailing Pass — the reference register applied to WELL
+
+Effective from the detailing pass (September 2026). Every `WELL` study is re-authored to the
+register recorded in `../../standards/08-VISUAL-REFERENCE-STYLE.md`, which was derived from the
+user-confirmed KEEP set of the Architecture sector. The **content** of each study — governing idea,
+role, shared fields, claims and evidence limits — is retained; the **design layer** is rewritten.
+
+### What WELL keeps from the register unchanged
+
+Bare flat media fields with a corner slate label; serif display voice with one italic word;
+structure by hairline rules and tinted bands, never by white cards or dark panels; one earth
+accent used small; thin-bordered or underlined actions; low copy density; asymmetric editorial
+grids; the ten rhythm devices.
+
+### What WELL translates
+
+| Register element | WELL reading |
+| --- | --- |
+| Paper temperature | Warmer and softer than architecture: linen, bone, mist, sand, ivory. |
+| Corner radius | Large media fields may carry up to 6px; small tiles 3px; actions 2px. Never pills. |
+| Serif role | Display **and** statement; the italic word is the sector's only ornament. |
+| Media subjects | The treatment room; hands and skin in detail; stone, linen, water, steam, clay, botanicals as still life; product and tool still life; the practitioner at work, by role. |
+| Slate labels | `ROOM`, `DETAIL`, `STILL LIFE`, `TEXTURE`, `PORTRAIT AREA`, `IMAGE AREA · 4:5`. |
+| Accent | One per variant, from the WELL table below; on eyebrow, numeral, arrow, hover, italic word. |
+| Bands | Tinted paper only; no dark bands, no saturated fields. |
+
+### WELL themes for the detailing pass
+
+| Variant | Name | paper | ink | muted | line | media | accent |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 001 | Linen & Olive | `#f2f0ea` | `#23281f` | `#6a6d62` | `#d3d0c5` | `#e1dfd5` | `#5a6b48` |
+| 002 | Bone & Clay | `#f6f1ea` | `#2a2420` | `#6f665e` | `#dbd1c5` | `#e7ded3` | `#a5583a` |
+| 003 | Mist & Moss | `#eef0ee` | `#1f2624` | `#5f6764` | `#cdd2cf` | `#dcdfdb` | `#2f5c4b` |
+| 004 | Sand & Ochre | `#f7f2e8` | `#2b251d` | `#6e655a` | `#dfd6c8` | `#e9e1d2` | `#9a6b2a` |
+| 005 | Ivory & Plum | `#f8f4f3` | `#2b2226` | `#6d6266` | `#e0d6d9` | `#eae1e3` | `#6e3b4e` |
+
+Media tone is the paper darkened; the slate label uses the muted colour. Focus outline uses the
+accent. No study introduces a second accent.
+
+### Sector rules that remain in force
+
+The anti-pattern list, the claims and evidence limits, the section-shell rule and the reserved
+`.slot` convention above are unchanged. Reserved fields stay empty and are drawn as media fields,
+not as dashed boxes with sentences inside them.
+
+### Detailing pass — completion record
+
+All 135 `WELL` studies (S01–S27) were re-authored in this register on 16 September 2026. Each
+section carries a `BATCH-V2.md` beside its `BATCH-V1.md`; V1 remains the authoring record
+(content, claims limits, reserved fields), V2 the design record. Sector-wide rules the pass added
+or clarified:
+
+- **Device rotation across a section's five studies.** No two studies in a section share a
+  register device, and the conversion study (`004`) alternates between the tinted band, the ruled
+  column and the ruled sheet across sections so the direction does not become one shape.
+- **Reserved facts are bordered slots on hairlines** — a 1px `--line` rectangle at 2px radius
+  holding an em dash, with a visually hidden label — never a chip, never a dashed box.
+- **Reserved text is drawn at prose cadence.** Where a title, standfirst, quotation or body cannot
+  be written, it is a flat media-tone block sized to the lines it will hold (short / medium / long),
+  so measure and rhythm can be judged before a word exists.
+- **Portraits use the offset tab** (register device 10) and stay inside a `<figure>` whose
+  `<figcaption>` holds the reserved name.
+- **No gradients, no rotation, no type over a photograph.** Where V1 used a repeating gradient
+  (S12-005), a tilt (S17-005) or a scrim (S16-005, S13), the pass found the same reading in flat
+  marks, offset and overlap, or type crossing a field's edge.
+- **Sections that require markup the shell rule otherwise forbids:** `S06` and `S19` carry native
+  forms; `S22` and `S25-003` carry a named `<nav>`; `S21` carries the page's single `<h1>`. The
+  checker (`wellcheck.ps1`) takes `-AllowForm` and `-AllowNav` for exactly those sections.
+- **Height discipline at 1440:** core sections sit under ~1300px; detail pages (S23–S27) and the
+  gallery route (S13-005) may run longer and are paced by chapters rather than compressed.

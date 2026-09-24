@@ -12,26 +12,21 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S04 — Specialists
   Direction      : Conversion-led
-  Reference      : None. Originated for this batch; no reference images were supplied for this
-                   section.
-  Layout model   : A row of five equal columns in which four are practitioners carrying their own
-                   booking route and the fifth is the "no preference" option, given the same
-                   weight as a person rather than being demoted to a note underneath
-  Density        : Low
-  Media mode     : Four reserved portrait areas. The fifth column deliberately has none — its
-                   different anatomy is what marks it as the alternative rather than a person.
-  Interaction    : None (static; no JavaScript)
-  Content note   : Role leads and identity is reserved, as across this batch — see ../README.md.
-                   Nothing is collected: each action opens a booking route, so the section carries
-                   a conversion shape without becoming a form. No invented personal name,
-                   qualification, licence, registration, membership, award, years of experience,
-                   rating, review or social handle appears anywhere — and no availability,
-                   waiting time or price, which would be invented facts about a real diary.
-                   Portrait areas are reserved and intentionally empty.
-  Distinction    : WELL-S03-004 is the other conversion study nearby and places its fallback as a
-                   full-width band beneath the targets. Here the alternative sits inside the row
-                   as a peer, because in this sector not choosing a practitioner is a normal
-                   choice rather than a failure to choose.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 3 (a bordered
+                   cell row whose cells share hairlines) after ARC-S18-001. V1's idea — the
+                   "no preference" option given the same weight as a person — is kept as the
+                   fifth cell, type-only, with the accent index.
+  Layout model   : Head split — serif display left, lead right at the baseline. A five-cell
+                   bordered row: four cells each a 4:5 portrait field, role in serif, reserved
+                   token, one focus line and a bordered "book with them" action; the fifth cell
+                   carries a large accent serif index, "No preference" in serif, one line, and
+                   the same action reading "First available"
+  Density        : Standard (90–170)
+  Media mode     : Four reserved portrait fields. No image is supplied; names are reserved
+                   tokens.
+  Interaction    : None (static; no JavaScript). Five bordered actions.
+  Content note   : Roles only; no practitioner name, qualification, registration, award or
+                   years. No countdown, no scarcity.
 -->
 
 <meta name="study-id" content="WELL-S04-004">
@@ -42,216 +37,75 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="layout-model" content="Five equal columns — four practitioners with their own booking route plus a peer no-preference option">
-<meta name="density" content="low">
-<meta name="media-mode" content="reserved-portrait-four-of-five-columns">
-<meta name="interaction" content="none">
+<meta name="theme" content="004 Sand &amp; Ochre">
+<meta name="layout-model" content="Head split; a five-cell bordered row — four portrait cells with bordered actions and a type-only no-preference cell with an accent index">
+<meta name="density" content="standard">
+<meta name="media-mode" content="four-reserved-portrait-fields-cells">
+<meta name="interaction" content="none-five-actions">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S04-004 — Specialists, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #24373d; }
+body { margin: 0; background: #f7f2e8; }
 
-/* Scoped study styles — namespaced to .well-s04-004 */
 .well-s04-004 {
-  --ink: #e8efe9;
-  --ink-soft: #a9c0be;
-  --paper: #24373d;
-  --card: #f4f1e9;
-  --card-ink: #1d2a2c;
-  --card-soft: #5c6b68;
-  --slot: #dcd8cc;
-  --slot-ink: #565f5b;
-  --line: #3d5359;
-  --accent: #1d2a2c;
-  --accent-ink: #f4f1e9;
-  --focus: #bcd8cf;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f7f2e8; --ink: #2b251d; --muted: #6e655a; --line: #dfd6c8; --line-strong: #2b251d;
+  --media: #e9e1d2; --accent: #9a6b2a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s04-004 *,
-.well-s04-004 *::before,
-.well-s04-004 *::after { box-sizing: inherit; }
-.well-s04-004 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 8px;
-}
+.well-s04-004 *, .well-s04-004 *::before, .well-s04-004 *::after { box-sizing: inherit; }
+.well-s04-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s04-004 .shell {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
-}
+.well-s04-004 .shell { width: min(100%, 100rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4vw, 4rem); }
+.well-s04-004 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.5fr); gap: 3rem; align-items: end; margin-bottom: clamp(1.4rem, 2.4vw, 2.4rem); }
+.well-s04-004 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s04-004 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 3.8rem); line-height: 0.96; letter-spacing: -0.035em; }
+.well-s04-004 h2 em { font-style: italic; }
+.well-s04-004 .lead { max-width: 24rem; margin: 0 0 0.3rem auto; color: var(--muted); font-size: 0.86rem; line-height: 1.55; text-align: right; }
 
-/* Section header */
-.well-s04-004 .head {
-  max-width: 46rem;
-  margin-bottom: clamp(26px, 3.2vw, 44px);
-}
-.well-s04-004 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s04-004 h1 {
-  margin: 0;
-  font-size: clamp(1.85rem, 3.4vw, 2.9rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
-.well-s04-004 .head p {
-  margin: clamp(14px, 1.6vw, 20px) 0 0;
-  max-width: 48ch;
-  color: var(--ink-soft);
-  font-size: 1rem;
-}
+.well-s04-004 .cells { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); margin: 0; padding: 0; list-style: none; }
+.well-s04-004 .cells > li { display: flex; flex-direction: column; min-width: 0; padding: clamp(1rem, 1.6vw, 1.4rem) clamp(0.8rem, 1.2vw, 1.1rem) clamp(1.2rem, 1.8vw, 1.6rem); }
+.well-s04-004 .cells > li + li { border-left: 1px solid var(--line); }
+.well-s04-004 .media { position: relative; aspect-ratio: 4 / 5; background: var(--media); border-radius: 3px; }
+.well-s04-004 .slate { position: absolute; left: 0.7rem; bottom: 0.6rem; margin: 0; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s04-004 .index { margin: 0; color: var(--accent); font-family: var(--serif); font-size: clamp(3rem, 6vw, 6rem); line-height: 0.8; }
+.well-s04-004 .none .top { flex: 0 0 auto; aspect-ratio: 4 / 5; display: flex; align-items: flex-end; }
+.well-s04-004 h3 { margin: 1rem 0 0.2rem; font-family: var(--serif); font-weight: 400; font-size: clamp(1.1rem, 1.5vw, 1.35rem); letter-spacing: -0.015em; }
+.well-s04-004 .tok { margin: 0 0 0.4rem; color: var(--accent); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s04-004 .focus { margin: 0; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+.well-s04-004 .action { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; min-height: 2.75rem; margin-top: auto; padding: 0.9rem 0.9rem 0 0.9rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 0 0.9rem; }
+.well-s04-004 .act { margin-top: auto; padding-top: 1rem; }
+.well-s04-004 .action:hover { background: var(--ink); color: var(--paper); }
 
-/* Five columns */
-.well-s04-004 .row {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(12px, 1.3vw, 18px);
+@media (max-width: 1100px) {
+  .well-s04-004 .cells { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .well-s04-004 .cells > li + li { border-left: 0; }
+  .well-s04-004 .cells > li:nth-child(3n+2), .well-s04-004 .cells > li:nth-child(3n+3) { border-left: 1px solid var(--line); }
+  .well-s04-004 .cells > li:nth-child(n+4) { border-top: 1px solid var(--line); }
 }
-.well-s04-004 .row li { min-width: 0; display: flex; }
-
-.well-s04-004 .card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background: var(--card);
-  color: var(--card-ink);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.well-s04-004 .portrait {
-  background: var(--slot);
-  aspect-ratio: 4 / 5;
-  display: grid;
-  place-items: center;
-  padding: 12px;
-}
-.well-s04-004 .slot-label {
-  font-size: 0.58rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-
-.well-s04-004 .body {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  padding: clamp(15px, 1.6vw, 21px);
-}
-.well-s04-004 h2 {
-  margin: 0 0 4px;
-  font-size: clamp(1rem, 1.15vw, 1.14rem);
-  line-height: 1.22;
-  letter-spacing: -0.012em;
-  font-weight: 600;
-}
-.well-s04-004 .who {
-  margin: 0 0 9px;
-  color: var(--card-soft);
-  font-size: 0.74rem;
-  letter-spacing: 0.07em;
-}
-.well-s04-004 .focus {
-  margin: 0;
-  color: var(--card-soft);
-  font-size: 0.83rem;
-  line-height: 1.45;
-}
-.well-s04-004 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  margin-top: auto;
-  padding: 0 16px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 140ms ease;
-}
-.well-s04-004 .btn:hover { background: #2c3d3f; }
-
-/* The fifth column — the alternative, given the same weight */
-.well-s04-004 .any {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: clamp(18px, 2vw, 26px);
-  color: var(--ink);
-}
-.well-s04-004 .any h2 {
-  margin: 0 0 10px;
-  color: var(--ink);
-  font-size: clamp(1.02rem, 1.2vw, 1.2rem);
-}
-.well-s04-004 .any p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-.well-s04-004 .any .btn {
-  background: var(--card);
-  color: var(--card-ink);
-}
-.well-s04-004 .any .btn:hover { background: #ffffff; }
-
-/* Responsive ladder */
-@media (max-width: 1200px) {
-  .well-s04-004 .row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .well-s04-004 .any { justify-content: flex-start; }
-}
-
 @media (max-width: 768px) {
-  .well-s04-004 .row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .well-s04-004 .portrait { aspect-ratio: 1 / 1; }
-  .well-s04-004 .head p { max-width: none; }
-  .well-s04-004 h1 { max-width: none; }
+  .well-s04-004 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .well-s04-004 .lead { margin-left: 0; text-align: left; }
+  .well-s04-004 .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s04-004 .cells > li:nth-child(n) { border-left: 0; border-top: 0; }
+  .well-s04-004 .cells > li:nth-child(even) { border-left: 1px solid var(--line); }
+  .well-s04-004 .cells > li:nth-child(n+3) { border-top: 1px solid var(--line); }
 }
-
 @media (max-width: 480px) {
-  .well-s04-004 .row { grid-template-columns: minmax(0, 1fr); }
-  .well-s04-004 .portrait { aspect-ratio: 3 / 2; }
-  .well-s04-004 .card,
-  .well-s04-004 .any { border-radius: 14px; }
+  .well-s04-004 .cells { grid-template-columns: minmax(0, 1fr); }
+  .well-s04-004 .cells > li:nth-child(even) { border-left: 0; }
+  .well-s04-004 .cells > li:nth-child(n+2) { border-top: 1px solid var(--line); }
+  .well-s04-004 .cells > li { padding-inline: 0; }
+  .well-s04-004 .none .top { aspect-ratio: auto; padding-top: 1rem; }
+  .well-s04-004 .action { width: 100%; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s04-004 * { transition: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .well-s04-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -260,63 +114,19 @@ body { margin: 0; background: #24373d; }
   <section class="shell" aria-labelledby="well-s04-004-title">
 
     <div class="head">
-      <p class="eyebrow">Book with a specialist</p>
-      <h1 id="well-s04-004-title">Choose who you see, or let us choose</h1>
-      <p>Ask for any of the four by name, or take whoever is free first. Both are normal here.</p>
+      <div>
+        <p class="eyebrow">Book with a specialist</p>
+        <h2 id="well-s04-004-title">Choose who you see, or let <em>us</em> choose</h2>
+      </div>
+      <p class="lead">Ask for any of the four by name, or take whoever is free first. Both are normal here.</p>
     </div>
 
-    <ul class="row">
-      <li>
-        <article class="card">
-          <div class="portrait"><span class="slot-label">Portrait</span></div>
-          <div class="body">
-            <h2>Facialist</h2>
-            <p class="who">Practitioner 01</p>
-            <p class="focus">Facials and skin consultations.</p>
-            <a class="btn" href="#well-s04-004-title">Book with them</a>
-          </div>
-        </article>
-      </li>
-      <li>
-        <article class="card">
-          <div class="portrait"><span class="slot-label">Portrait</span></div>
-          <div class="body">
-            <h2>Massage therapist</h2>
-            <p class="who">Practitioner 02</p>
-            <p class="focus">Massage, hot stone and body treatments.</p>
-            <a class="btn" href="#well-s04-004-title">Book with them</a>
-          </div>
-        </article>
-      </li>
-      <li>
-        <article class="card">
-          <div class="portrait"><span class="slot-label">Portrait</span></div>
-          <div class="body">
-            <h2>Nail technician</h2>
-            <p class="who">Practitioner 03</p>
-            <p class="focus">Hands and feet, shaping and longer treatments.</p>
-            <a class="btn" href="#well-s04-004-title">Book with them</a>
-          </div>
-        </article>
-      </li>
-      <li>
-        <article class="card">
-          <div class="portrait"><span class="slot-label">Portrait</span></div>
-          <div class="body">
-            <h2>Brow &amp; lash specialist</h2>
-            <p class="who">Practitioner 04</p>
-            <p class="focus">Detail work around the eyes.</p>
-            <a class="btn" href="#well-s04-004-title">Book with them</a>
-          </div>
-        </article>
-      </li>
-      <li>
-        <article class="any">
-          <h2>No preference</h2>
-          <p>Take whoever is free first. Everyone here works across the treatments they are listed under.</p>
-          <a class="btn" href="#well-s04-004-title">First available</a>
-        </article>
-      </li>
+    <ul class="cells">
+      <li><div class="media" role="img" aria-label="Reserved portrait field"><p class="slate" aria-hidden="true">Portrait</p></div><h3>Facialist</h3><p class="tok">Practitioner 01 &middot; reserved</p><p class="focus">Facials and skin consultations.</p><div class="act"><a class="action" href="#well-s04-004-title">Book with them</a></div></li>
+      <li><div class="media" role="img" aria-label="Reserved portrait field"><p class="slate" aria-hidden="true">Portrait</p></div><h3>Massage therapist</h3><p class="tok">Practitioner 02 &middot; reserved</p><p class="focus">Massage, hot stone and body treatments.</p><div class="act"><a class="action" href="#well-s04-004-title">Book with them</a></div></li>
+      <li><div class="media" role="img" aria-label="Reserved portrait field"><p class="slate" aria-hidden="true">Portrait</p></div><h3>Nail technician</h3><p class="tok">Practitioner 03 &middot; reserved</p><p class="focus">Hands and feet, shaping and longer treatments.</p><div class="act"><a class="action" href="#well-s04-004-title">Book with them</a></div></li>
+      <li><div class="media" role="img" aria-label="Reserved portrait field"><p class="slate" aria-hidden="true">Portrait</p></div><h3>Brow &amp; lash specialist</h3><p class="tok">Practitioner 04 &middot; reserved</p><p class="focus">Detail work around the eyes.</p><div class="act"><a class="action" href="#well-s04-004-title">Book with them</a></div></li>
+      <li class="none"><div class="top"><p class="index" aria-hidden="true">05</p></div><h3>No preference</h3><p class="tok">Whoever is free first</p><p class="focus">Everyone here works across the treatments they are listed under.</p><div class="act"><a class="action" href="#well-s04-004-title">First available</a></div></li>
     </ul>
 
   </section>

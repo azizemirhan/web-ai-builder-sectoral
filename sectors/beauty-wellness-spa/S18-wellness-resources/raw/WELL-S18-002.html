@@ -12,23 +12,20 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S18 — Wellness Resources
   Direction      : Premium / Editorial
-  Revision       : V2. Replaced, and set as what it actually is: **a contents page.** The reserved
-                   titles now sit in a ruled column of their own, at the measure a real title would
-                   occupy, with the category, the kind and the date ranged against them.
-  Layout model   : An editorial contents page. A two-line masthead with the standfirst ranged right,
-                   then five ruled entries: number and category at the left, the reserved title at
-                   the centre measure, kind and date at the right
-  Density        : Medium
-  Media mode     : None, and that is the argument &mdash; **a headline should be able to hold a page
-                   on its own**, so the only pictures a reading list needs are the titles.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, ruled rows with
+                   the display element in each (device 6's scale, five times). V1 is kept: a
+                   reading list carried by its headlines, so the reserved title areas are the
+                   subject — held to a headline measure of 36rem with two-line and one-line
+                   heights so each states the shape of the headline it holds. No media.
+  Layout model   : Ruled head. Five ruled rows: a narrow margin column with the accent index,
+                   topic, kind and PUBLISHED slot; a reserved title area at display scale
+                   filling the measure. The limits line on the foot rule.
+  Density        : Low (60–120)
+  Media mode     : Five reserved title areas; five reserved date slots. No image, title or
+                   date is supplied.
   Interaction    : None (static; no JavaScript).
-  The head       : **No hero panel.** A contents page opens the way a contents page opens: a rule, a
-                   name, and the standfirst set against it. Every section in this sector should open
-                   differently, and this is the quietest of them.
-  Content note   : Titles are reserved areas, never written &mdash; which is what keeps *boost*,
-                   *detox* and *reset your skin* out of the section by construction. Dates are
-                   reserved fields; authors are role tokens; no reading time anywhere.
-  Palette        : Black and white only.
+  Content note   : No article title, summary, author, date, reading time, count, popularity
+                   label, newsletter capture or claim. None of it is medical advice.
 -->
 
 <meta name="study-id" content="WELL-S18-002">
@@ -39,223 +36,56 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="An editorial contents page: ruled entries with the reserved title at the centre measure">
-<meta name="density" content="medium">
-<meta name="media-mode" content="none">
+<meta name="theme" content="002 Bone &amp; Clay">
+<meta name="layout-model" content="Ruled head; five ruled rows with a margin column and a reserved title area at display scale held to a headline measure; limits line on the foot rule">
+<meta name="density" content="low">
+<meta name="media-mode" content="five-reserved-titles-five-slots-no-media">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S18-002 — Wellness Resources, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #f6f1ea; }
 
-/* Scoped study styles - namespaced to .well-s18-002 */
-/* monochrome: hand-graded. Black and white only. */
 .well-s18-002 {
-  --ink: #111111;
-  --ink-soft: #4d4d4d;
-  --ink-faint: #767676;
-  --paper: #fafafa;
-  --tint: #ececec;
-  --line: #d6d6d6;
-  --line-soft: #e6e6e6;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-.well-s18-002 *,
-.well-s18-002 *::before,
-.well-s18-002 *::after { box-sizing: inherit; }
-.well-s18-002 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 8px; }
-.well-s18-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-.well-s18-002 .sans {
+  --paper: #f6f1ea; --ink: #2a2420; --muted: #6f665e; --line: #dbd1c5; --line-strong: #2a2420;
+  --media: #e7ded3; --accent: #a5583a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
+.well-s18-002 *, .well-s18-002 *::before, .well-s18-002 *::after { box-sizing: inherit; }
+.well-s18-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s18-002 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.well-s18-002 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s18-002 .head { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0 1.2rem; border-top: 1px solid var(--line-strong); }
+.well-s18-002 .eyebrow { margin: 0; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s18-002 h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 2rem); letter-spacing: -0.015em; }
+.well-s18-002 h2 em { font-style: italic; }
 
-/* Masthead */
-.well-s18-002 .mast {
-  padding-bottom: clamp(14px, 1.8vw, 20px);
-  border-bottom: 1px solid var(--ink);
-  margin-bottom: clamp(6px, 0.8vw, 9px);
-}
-.well-s18-002 .kicker {
-  margin: 0 0 clamp(10px, 1.3vw, 14px);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.well-s18-002 .line {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(18px, 3vw, 54px);
-  align-items: end;
-}
-.well-s18-002 h1 {
-  margin: 0;
-  font-size: clamp(2.2rem, 4.4vw, 3.7rem);
-  line-height: 1.02;
-  letter-spacing: -0.028em;
-  font-weight: 400;
-  max-width: 18ch;
-}
-.well-s18-002 .line p { margin: 0; max-width: 46ch; font-size: 1.06rem; line-height: 1.6; color: var(--ink-soft); }
-.well-s18-002 .line p b { color: var(--ink); font-weight: 700; }
-.well-s18-002 .rule2 { height: 3px; background: var(--ink); margin-bottom: clamp(20px, 2.4vw, 32px); }
+.well-s18-002 .rows { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.well-s18-002 .rows li { display: grid; grid-template-columns: minmax(12rem, 0.35fr) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 4rem); align-items: start; padding: clamp(1.2rem, 2.2vw, 2.2rem) 0; border-bottom: 1px solid var(--line); }
+.well-s18-002 .n { margin: 0 0 0.5rem; color: var(--accent); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s18-002 .topic { margin: 0; font-family: var(--serif); font-size: 1.1rem; }
+.well-s18-002 .kind { margin: 0.1rem 0 0.6rem; color: var(--muted); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s18-002 .field { display: flex; align-items: center; gap: 0.6rem; margin: 0; }
+.well-s18-002 .field dt { margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s18-002 .field dd { margin: 0; }
+.well-s18-002 .slot { display: inline-flex; align-items: center; justify-content: center; min-width: 6rem; height: 1.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.85rem; }
+.well-s18-002 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.well-s18-002 .title { position: relative; max-width: 36rem; background: var(--media); border-radius: 3px; }
+.well-s18-002 .title.two { height: clamp(5.4rem, 7.6vw, 7.2rem); }
+.well-s18-002 .title.one { height: clamp(2.8rem, 3.8vw, 3.6rem); }
+.well-s18-002 .slate { position: absolute; left: 0.8rem; bottom: 0.6rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* The contents */
-.well-s18-002 .heads,
-.well-s18-002 .entry {
-  display: grid;
-  grid-template-columns: minmax(0, 0.32fr) minmax(0, 1.15fr) minmax(0, 0.4fr);
-  gap: clamp(14px, 2.2vw, 40px);
-  align-items: baseline;
-}
-.well-s18-002 .heads {
-  padding-bottom: 10px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid var(--line);
-}
-.well-s18-002 .heads span {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s18-002 .list { margin: 0; padding: 0; list-style: none; }
-.well-s18-002 .entry {
-  padding: clamp(20px, 2.4vw, 30px) 0;
-  border-bottom: 1px solid var(--line-soft);
-}
-.well-s18-002 .entry:last-child { border-bottom: 0; }
-.well-s18-002 .no {
-  display: block;
-  margin-bottom: 6px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s18-002 .cat {
-  margin: 0;
-  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
-  line-height: 1.16;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.well-s18-002 .title {
-  display: block;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 10px;
-}
-.well-s18-002 .title i {
-  display: block;
-  height: clamp(15px, 1.7vw, 20px);
-  border-radius: 3px;
-  background: var(--tint);
-  margin-bottom: 9px;
-}
-.well-s18-002 .title i:last-of-type { margin-bottom: 12px; }
-.well-s18-002 .title .w80 { width: 80%; }
-.well-s18-002 .title .w62 { width: 62%; }
-.well-s18-002 .title .w94 { width: 94%; }
-.well-s18-002 .title em {
-  display: block;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s18-002 .meta { text-align: right; }
-.well-s18-002 .kind {
-  display: block;
-  margin-bottom: 8px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 650;
-  color: var(--ink);
-}
-.well-s18-002 .slot {
-  display: inline-block;
-  min-width: 68px;
-  padding: 5px 14px;
-  border-radius: 10px;
-  background: var(--tint);
-  color: var(--ink-faint);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-align: center;
-}
+.well-s18-002 .foot { margin: 1rem 0 0; max-width: 44rem; margin-left: auto; color: var(--muted); font-size: 0.84rem; line-height: 1.55; text-align: right; }
 
-/* Foot */
-.well-s18-002 .foot {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: clamp(16px, 2.4vw, 40px);
-  margin-top: clamp(22px, 2.8vw, 38px);
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 3px solid var(--ink);
-}
-.well-s18-002 .foot h2 {
-  margin: 0 0 8px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s18-002 .foot p { margin: 0; font-size: 1.04rem; line-height: 1.6; color: var(--ink-soft); }
-.well-s18-002 .foot p b { color: var(--ink); font-weight: 700; }
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .well-s18-002 .line { grid-template-columns: minmax(0, 1fr); }
-  .well-s18-002 .heads { display: none; }
-  .well-s18-002 .entry { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .well-s18-002 .meta { text-align: left; }
-}
-
-@media (max-width: 620px) {
-  .well-s18-002 h1, .well-s18-002 .line p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s18-002 * { transition: none !important; }
-}
+@media (max-width: 768px) { .well-s18-002 .head { flex-direction: column; align-items: flex-start; gap: 0.3rem; } .well-s18-002 .rows li { grid-template-columns: minmax(0, 1fr); gap: 0.8rem; } .well-s18-002 .foot { margin-left: 0; text-align: left; } }
+@media (prefers-reduced-motion: reduce) { .well-s18-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -263,110 +93,20 @@ body { margin: 0; background: #fafafa; }
 <div class="well-s18-002" data-study-id="WELL-S18-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="well-s18-002-title">
 
-    <div class="mast">
-      <p class="kicker">Things we have written down</p>
-      <div class="line">
-        <h1 id="well-s18-002-title">A reading list, not a content strategy.</h1>
-        <p>Five things worth having written down, and nothing written for a search engine. <b>No pictures</b>, because a headline should be able to hold a page on its own.</p>
-      </div>
-    </div>
-    <div class="rule2"></div>
-
-    <div class="heads">
-      <span>Topic</span>
-      <span>Title</span>
-      <span>Kind &amp; date</span>
+    <div class="head">
+      <p class="eyebrow">Things we have written down</p>
+      <h2 id="well-s18-002-title">Five pieces, titles <em>reserved</em></h2>
     </div>
 
-    <ul class="list">
+    <ol class="rows">
+      <li><div><p class="n">01</p><p class="topic">Skin</p><p class="kind">An aftercare note</p><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div><div class="title two" role="img" aria-label="Reserved title area, two lines at display scale"><p class="slate" aria-hidden="true">Title &middot; two lines</p></div></li>
+      <li><div><p class="n">02</p><p class="topic">Body &amp; massage</p><p class="kind">A guide</p><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div><div class="title one" role="img" aria-label="Reserved title area, one line at display scale"><p class="slate" aria-hidden="true">Title &middot; one line</p></div></li>
+      <li><div><p class="n">03</p><p class="topic">Hands &amp; feet</p><p class="kind">A question answered</p><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div><div class="title two" role="img" aria-label="Reserved title area, two lines at display scale"><p class="slate" aria-hidden="true">Title &middot; two lines</p></div></li>
+      <li><div><p class="n">04</p><p class="topic">Brows &amp; lashes</p><p class="kind">An aftercare note</p><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div><div class="title one" role="img" aria-label="Reserved title area, one line at display scale"><p class="slate" aria-hidden="true">Title &middot; one line</p></div></li>
+      <li><div><p class="n">05</p><p class="topic">Scalp &amp; neck</p><p class="kind">A guide</p><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div><div class="title two" role="img" aria-label="Reserved title area, two lines at display scale"><p class="slate" aria-hidden="true">Title &middot; two lines</p></div></li>
+    </ol>
 
-      <li class="entry">
-        <div>
-          <span class="no">One</span>
-          <p class="cat">Aftercare</p>
-        </div>
-        <span class="title" role="img" aria-label="Reserved area: the title, two lines at display scale">
-          <i class="w94"></i><i class="w62"></i>
-          <em>Reserved &mdash; title, two lines</em>
-        </span>
-        <div class="meta">
-          <span class="kind">An aftercare note</span>
-          <span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span>
-        </div>
-      </li>
-
-      <li class="entry">
-        <div>
-          <span class="no">Two</span>
-          <p class="cat">Skin</p>
-        </div>
-        <span class="title" role="img" aria-label="Reserved area: the title, one line at display scale">
-          <i class="w80"></i>
-          <em>Reserved &mdash; title, one line</em>
-        </span>
-        <div class="meta">
-          <span class="kind">A guide</span>
-          <span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span>
-        </div>
-      </li>
-
-      <li class="entry">
-        <div>
-          <span class="no">Three</span>
-          <p class="cat">Body &amp; massage</p>
-        </div>
-        <span class="title" role="img" aria-label="Reserved area: the title, two lines at display scale">
-          <i class="w94"></i><i class="w80"></i>
-          <em>Reserved &mdash; title, two lines</em>
-        </span>
-        <div class="meta">
-          <span class="kind">A question answered</span>
-          <span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span>
-        </div>
-      </li>
-
-      <li class="entry">
-        <div>
-          <span class="no">Four</span>
-          <p class="cat">Hands &amp; feet</p>
-        </div>
-        <span class="title" role="img" aria-label="Reserved area: the title, one line at display scale">
-          <i class="w62"></i>
-          <em>Reserved &mdash; title, one line</em>
-        </span>
-        <div class="meta">
-          <span class="kind">An aftercare note</span>
-          <span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span>
-        </div>
-      </li>
-
-      <li class="entry">
-        <div>
-          <span class="no">Five</span>
-          <p class="cat">Brows &amp; lashes</p>
-        </div>
-        <span class="title" role="img" aria-label="Reserved area: the title, one line at display scale">
-          <i class="w80"></i>
-          <em>Reserved &mdash; title, one line</em>
-        </span>
-        <div class="meta">
-          <span class="kind">A guide</span>
-          <span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span>
-        </div>
-      </li>
-
-    </ul>
-
-    <div class="foot">
-      <div>
-        <h2>Why the titles are drawn rather than written</h2>
-        <p>A plausible-sounding placeholder title on a page like this is nearly always a claim &mdash; <i>boost</i>, <i>detox</i>, <i>reset your skin</i>. <b>Reserving them keeps the claim out by construction</b>, and what is being settled here is how a title sits against its category, which the measures show exactly.</p>
-      </div>
-      <div>
-        <h2>What this is not</h2>
-        <p><b>None of this is medical advice.</b> It is what we tell people in the room, written down so you do not have to ring us for it. If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa &mdash; and we will say so rather than guess.</p>
-      </div>
-    </div>
+    <p class="foot">None of this is medical advice. It is what we tell people in the room, written down. If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa &mdash; and we will say so rather than guess.</p>
 
   </section>
 </div>

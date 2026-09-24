@@ -12,26 +12,21 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S18 — Wellness Resources
   Direction      : Structured / Visual Modular
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : Four modules. Three are topic groups, each holding two entries with a reserved
-                   title bar; the fourth is a legend saying what the three kinds of resource are and
-                   what each is for
-  Density        : Medium-high
-  Media mode     : None. Reserved title bars only — the modules are sorted by topic, and a picture
-                   per entry would compete with the sorting the study is trying to show.
-  Interaction    : None (static; no JavaScript)
-  The device     : **The fourth module is the one that earns the direction.** Sorting an index into
-                   topic groups is ordinary; explaining what an "aftercare note" is, and how it
-                   differs from a guide and from a question answered, is the part a visitor actually
-                   needs — and it is entirely authorable, because it describes the studio's own
-                   publishing habits rather than the content of anything published.
-  Not a table    : The groups are modules with their own internal shape, not rows of one matrix. See
-                   ../../WELLNESS-DESIGN-DIRECTION.md on the 003 trap.
-  Content note   : Topics and kinds are real generic vocabulary; dates are reserved fields with
-                   visually hidden labels. No invented title, summary, author name, date, reading
-                   time, view or share count, and no per-topic article count — a count is a figure a
-                   placeholder cannot know. No efficacy, outcome or ingredient claim; no diagnostic
-                   statement; no "trending" or "most read" label.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 3 (three
+                   cells sharing hairlines) with a ruled legend row beneath. V1 is kept: the
+                   index sorted by topic, two entries per topic, and the legend that explains
+                   what an aftercare note is, how a guide differs, and what a question
+                   answered is — the part a visitor actually needs. The dark legend ground is
+                   gone; the legend is a ruled three-column row.
+  Layout model   : Head split. Three topic cells separated by hairlines, each with the topic
+                   in serif, one line, and two entries — kind, reserved title area, PUBLISHED
+                   slot — on hairlines. A ruled row: THREE KINDS OF THING with three columns.
+                   The limits line on the foot rule.
+  Density        : Structured (170–230)
+  Media mode     : Six reserved title areas; six reserved date slots. No image, title or date.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No article title, summary, author, date, reading time, count, popularity
+                   label, newsletter capture or claim. None of it is medical advice.
 -->
 
 <meta name="study-id" content="WELL-S18-003">
@@ -42,233 +37,74 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Three topic modules plus a legend module explaining the kinds">
-<meta name="density" content="medium-high">
-<meta name="media-mode" content="none-reserved-title-bars-only">
+<meta name="theme" content="003 Mist &amp; Moss">
+<meta name="layout-model" content="Head split; three topic cells sharing hairlines with two reserved entries each; a ruled three-column legend; limits line on the foot rule">
+<meta name="density" content="structured">
+<meta name="media-mode" content="six-reserved-titles-six-slots-no-media">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S18-003 — Wellness Resources, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e5e8ec; }
+body { margin: 0; background: #eef0ee; }
 
-/* Scoped study styles — namespaced to .well-s18-003 */
 .well-s18-003 {
-  --ink: #1e242b;
-  --ink-soft: #5b6673;
-  --paper: #e5e8ec;
-  --card: #ffffff;
-  --slot: #dfe4ea;
-  --slot-ink: #59636f;
-  --slot-edge: #c7cfd8;
-  --chip: #eaeef2;
-  --line: #e2e7ec;
-  --rule: #ccd4dc;
-  --legend: #2b333c;
-  --legend-ink: #eef1f4;
-  --legend-soft: #b3bdc8;
-  --focus: #2f4356;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eef0ee; --ink: #1f2624; --muted: #5f6764; --line: #cdd2cf; --line-strong: #1f2624;
+  --media: #dcdfdb; --accent: #2f5c4b;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s18-003 *,
-.well-s18-003 *::before,
-.well-s18-003 *::after { box-sizing: inherit; }
-.well-s18-003 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-.well-s18-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s18-003 *, .well-s18-003 *::before, .well-s18-003 *::after { box-sizing: inherit; }
+.well-s18-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s18-003 .shell {
-  width: 100%;
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
-}
+.well-s18-003 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s18-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr); gap: 3rem; align-items: end; margin-bottom: clamp(1.4rem, 2.6vw, 2.6rem); }
+.well-s18-003 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s18-003 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.6vw, 3.6rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s18-003 h2 em { font-style: italic; }
+.well-s18-003 .lead { max-width: 24rem; margin: 0 0 0.3rem auto; color: var(--muted); font-size: 0.86rem; line-height: 1.55; text-align: right; }
 
-/* Header */
-.well-s18-003 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s18-003 h1 {
-  margin: 0 0 clamp(24px, 3.2vw, 46px);
-  font-size: clamp(1.8rem, 3.3vw, 2.7rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
+.well-s18-003 .cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.well-s18-003 .cells > li { min-width: 0; padding: clamp(1.2rem, 2vw, 2rem) clamp(0.9rem, 1.6vw, 1.6rem); }
+.well-s18-003 .cells > li + li { border-left: 1px solid var(--line); }
+.well-s18-003 .n { margin: 0 0 0.5rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s18-003 h3 { margin: 0 0 0.3rem; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2vw, 1.9rem); letter-spacing: -0.02em; }
+.well-s18-003 .about { margin: 0 0 1rem; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.well-s18-003 .entries { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.well-s18-003 .entries li { padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
+.well-s18-003 .kind { margin: 0 0 0.5rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s18-003 .title { position: relative; background: var(--media); border-radius: 3px; }
+.well-s18-003 .title.two { height: 4.2rem; }
+.well-s18-003 .title.one { height: 2.2rem; }
+.well-s18-003 .slate { position: absolute; left: 0.6rem; bottom: 0.45rem; margin: 0; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s18-003 .field { display: flex; align-items: center; gap: 0.6rem; margin: 0.6rem 0 0; }
+.well-s18-003 .field dt { margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s18-003 .field dd { margin: 0; }
+.well-s18-003 .slot { display: inline-flex; align-items: center; justify-content: center; min-width: 6rem; height: 1.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.85rem; }
+.well-s18-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Modules */
-.well-s18-003 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 1.8vw, 24px);
-  align-items: start;
-}
-.well-s18-003 .mod {
-  min-width: 0;
-  background: var(--card);
-  border-radius: 14px;
-  padding: clamp(18px, 2.2vw, 28px);
-}
-.well-s18-003 .mod h2 {
-  margin: 0;
-  font-size: 1.06rem;
-  letter-spacing: -0.008em;
-  font-weight: 650;
-}
-.well-s18-003 .mod > p {
-  margin: 7px 0 clamp(16px, 2vw, 22px);
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
+.well-s18-003 .legend { display: grid; grid-template-columns: minmax(10rem, 0.5fr) repeat(3, minmax(0, 1fr)); gap: 2rem; margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 0; padding: 1rem 0 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.well-s18-003 .legend h4 { margin: 0; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s18-003 .legend h4 span { display: block; margin-top: 0.5rem; color: var(--muted); font-size: 0.8rem; font-weight: 400; letter-spacing: 0; text-transform: none; line-height: 1.5; }
+.well-s18-003 .legend li { color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.well-s18-003 .legend strong { display: block; margin-bottom: 0.2rem; color: var(--ink); font-family: var(--serif); font-weight: 400; font-size: 1.05rem; }
+.well-s18-003 .foot { margin: 1.4rem 0 0; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.84rem; line-height: 1.55; }
+.well-s18-003 .foot span { display: block; max-width: 46rem; }
 
-/* Entries inside a topic module */
-.well-s18-003 .entries { margin: 0; padding: 0; list-style: none; }
-.well-s18-003 .entries li { border-top: 1px solid var(--line); padding: clamp(14px, 1.7vw, 18px) 0; }
-.well-s18-003 .entries li:last-child { padding-bottom: 0; }
-.well-s18-003 .kind {
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background: var(--chip);
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s18-003 .title-slot {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 7px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: 12px;
-  min-height: clamp(62px, 5.8vw, 78px);
-  text-align: center;
-}
-.well-s18-003 .title-slot span {
-  font-size: 0.58rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  line-height: 1.6;
-}
-.well-s18-003 .when {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  margin: 11px 0 0;
-}
-.well-s18-003 .fname {
-  font-size: 0.58rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s18-003 .slot {
-  padding: 2px 9px;
-  border-radius: 5px;
-  background: var(--chip);
-  color: var(--ink-soft);
-  font-size: 0.84rem;
-}
-
-/* The legend module */
-.well-s18-003 .legend {
-  grid-column: 1 / -1;
-  background: var(--legend);
-  color: var(--legend-ink);
-  border-radius: 14px;
-  padding: clamp(20px, 2.6vw, 34px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 2.4vw, 40px);
-}
-.well-s18-003 .legend h2 { margin: 0 0 8px; font-size: 1.06rem; font-weight: 650; }
-.well-s18-003 .legend .intro {
-  margin: 0;
-  color: var(--legend-soft);
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-.well-s18-003 .legend dl { margin: 0; }
-.well-s18-003 .legend dt {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--legend-ink);
-  padding-bottom: 9px;
-  border-bottom: 1px solid #48525c;
-}
-.well-s18-003 .legend dd {
-  margin: 10px 0 0;
-  color: var(--legend-soft);
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-/* Limits */
-.well-s18-003 .limits {
-  margin: clamp(24px, 3vw, 40px) 0 0;
-  padding-top: clamp(18px, 2.2vw, 26px);
-  border-top: 1px solid var(--rule);
-  max-width: 78ch;
-  color: var(--ink-soft);
-  font-size: 0.93rem;
-  line-height: 1.64;
-}
-.well-s18-003 .limits b { color: var(--ink); }
-
-/* Responsive ladder */
 @media (max-width: 1024px) {
-  .well-s18-003 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .well-s18-003 .legend {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(16px, 2.4vw, 28px);
-  }
-  .well-s18-003 .legend > .head { grid-column: 1 / -1; }
+  .well-s18-003 .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s18-003 .cells > li:nth-child(3) { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); }
+  .well-s18-003 .legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s18-003 .legend li:first-child { grid-column: 1 / -1; }
 }
-
-@media (max-width: 768px) {
-  .well-s18-003 .grid { grid-template-columns: minmax(0, 1fr); }
-  .well-s18-003 .legend { grid-template-columns: minmax(0, 1fr); }
-  .well-s18-003 h1 { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s18-003 * { transition: none !important; }
-}
+@media (max-width: 768px) { .well-s18-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .well-s18-003 .lead { margin-left: 0; text-align: left; } .well-s18-003 h2 { max-width: none; } .well-s18-003 .legend { grid-template-columns: minmax(0, 1fr); gap: 1rem; } }
+@media (max-width: 480px) { .well-s18-003 .cells { grid-template-columns: minmax(0, 1fr); } .well-s18-003 .cells > li { padding-inline: 0; } .well-s18-003 .cells > li + li { border-left: 0; border-top: 1px solid var(--line); } }
+@media (prefers-reduced-motion: reduce) { .well-s18-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -276,84 +112,46 @@ body { margin: 0; background: #e5e8ec; }
 <div class="well-s18-003" data-study-id="WELL-S18-003" data-direction="Structured / Visual Modular">
   <section class="shell" aria-labelledby="well-s18-003-title">
 
-    <p class="eyebrow">Things we have written down</p>
-    <h1 id="well-s18-003-title">Sorted by what it is about</h1>
-
-    <div class="grid">
-
-      <div class="mod">
-        <h2>Skin</h2>
-        <p>Faces, and what happens to them for a day or two afterwards.</p>
-        <ul class="entries">
-          <li>
-            <span class="kind">Aftercare note</span>
-            <div class="title-slot"><span>Title<br>two lines</span></div>
-            <p class="when"><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></p>
-          </li>
-          <li>
-            <span class="kind">A guide</span>
-            <div class="title-slot"><span>Title<br>one line</span></div>
-            <p class="when"><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></p>
-          </li>
-        </ul>
+    <div class="head">
+      <div>
+        <p class="eyebrow">Things we have written down</p>
+        <h2 id="well-s18-003-title">Sorted by what it is <em>about</em></h2>
       </div>
-
-      <div class="mod">
-        <h2>Body &amp; massage</h2>
-        <p>Pressure, breathing, and the things people apologise for asking.</p>
-        <ul class="entries">
-          <li>
-            <span class="kind">A question answered</span>
-            <div class="title-slot"><span>Title<br>two lines</span></div>
-            <p class="when"><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></p>
-          </li>
-          <li>
-            <span class="kind">Aftercare note</span>
-            <div class="title-slot"><span>Title<br>one line</span></div>
-            <p class="when"><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="mod">
-        <h2>Hands &amp; feet</h2>
-        <p>Nails, cuticles, and how long anything is realistically going to last.</p>
-        <ul class="entries">
-          <li>
-            <span class="kind">A guide</span>
-            <div class="title-slot"><span>Title<br>two lines</span></div>
-            <p class="when"><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></p>
-          </li>
-          <li>
-            <span class="kind">A question answered</span>
-            <div class="title-slot"><span>Title<br>one line</span></div>
-            <p class="when"><span class="fname">Published</span><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="legend">
-        <div class="head">
-          <h2>Three kinds of thing</h2>
-          <p class="intro">Everything here is one of three. Knowing which is which saves you opening the wrong one.</p>
-        </div>
-        <dl>
-          <dt>Aftercare note</dt>
-          <dd>What we hand you on paper on the way out, in case it went in the bin. Short, and specific to one treatment.</dd>
-        </dl>
-        <dl>
-          <dt>A guide</dt>
-          <dd>Longer, and about a subject rather than an appointment. Written when we got tired of explaining the same thing.</dd>
-        </dl>
-        <dl>
-          <dt>A question answered</dt>
-          <dd>One question somebody actually asked, answered properly. Usually the ones people feel silly asking out loud.</dd>
-        </dl>
-      </div>
-
+      <p class="lead">Two from each subject, and a note on the three kinds of thing you will find here.</p>
     </div>
 
-    <p class="limits"><b>None of this is medical advice.</b> It is what we tell people in the room, written down so you do not have to ring us for it. If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa — and we will say so rather than guess.</p>
+    <ul class="cells">
+      <li>
+        <p class="n">01</p><h3>Skin</h3><p class="about">Faces, and what happens to them for a day or two afterwards.</p>
+        <ul class="entries">
+          <li><p class="kind">Aftercare note</p><div class="title two" role="img" aria-label="Reserved title area, two lines"><p class="slate" aria-hidden="true">Title &middot; two lines</p></div><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="kind">A guide</p><div class="title one" role="img" aria-label="Reserved title area, one line"><p class="slate" aria-hidden="true">Title &middot; one line</p></div><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+        </ul>
+      </li>
+      <li>
+        <p class="n">02</p><h3>Body &amp; massage</h3><p class="about">Pressure, breathing, and the things people apologise for asking.</p>
+        <ul class="entries">
+          <li><p class="kind">A question answered</p><div class="title two" role="img" aria-label="Reserved title area, two lines"><p class="slate" aria-hidden="true">Title &middot; two lines</p></div><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="kind">Aftercare note</p><div class="title one" role="img" aria-label="Reserved title area, one line"><p class="slate" aria-hidden="true">Title &middot; one line</p></div><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+        </ul>
+      </li>
+      <li>
+        <p class="n">03</p><h3>Hands &amp; feet</h3><p class="about">Nails, cuticles, and how long anything is realistically going to last.</p>
+        <ul class="entries">
+          <li><p class="kind">A guide</p><div class="title two" role="img" aria-label="Reserved title area, two lines"><p class="slate" aria-hidden="true">Title &middot; two lines</p></div><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="kind">A question answered</p><div class="title one" role="img" aria-label="Reserved title area, one line"><p class="slate" aria-hidden="true">Title &middot; one line</p></div><dl class="field"><dt>Published</dt><dd><span class="slot"><span class="vh">Publication date</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="legend">
+      <li><h4>Three kinds of thing<span>Everything here is one of three. Knowing which is which saves you opening the wrong one.</span></h4></li>
+      <li><strong>Aftercare note</strong>What we hand you on paper on the way out, in case it went in the bin. Short, and specific to one treatment.</li>
+      <li><strong>A guide</strong>Longer, and about a subject rather than an appointment. Written when we got tired of explaining the same thing.</li>
+      <li><strong>A question answered</strong>One question somebody actually asked, answered properly. Usually the ones people feel silly asking out loud.</li>
+    </ul>
+
+    <p class="foot"><span>None of this is medical advice. If something on your skin is changing, sore or worrying you, that is a question for a doctor rather than for a spa &mdash; and we will say so rather than guess.</span></p>
 
   </section>
 </div>

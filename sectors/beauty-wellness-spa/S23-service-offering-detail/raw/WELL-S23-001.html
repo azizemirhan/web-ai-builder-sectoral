@@ -10,321 +10,134 @@
 
   Study ID       : WELL-S23-001
   Sector         : Beauty, Wellness & Spa (WELL)
-  Section        : WELL-S23 — Treatment / Wellness Service Detail
+  Section        : WELL-S23 — Service / Offering Detail
   Direction      : Universal / Safe
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : The dependable detail body — a described sequence and an includes list in the
-                   main measure, with a supporting rail carrying the reserved price and duration
-                   fields and the one route to ask about this treatment
-  Density        : Medium
-  Media mode     : One reserved media area, 4:3, in the rail. **Supporting, not carrying** — the
-                   page reads complete with the slot empty, which is what the scaffold requires.
-  Interaction    : None (static; no JavaScript)
-  The governing rule : **Describe the room, not the result.** Every sentence about the treatment is
-                   a description of events or of suitability. There is no outcome claim, no
-                   mechanism, no ingredient action and no named condition presented as treatable.
-                   See ../README.md.
-  Sequence, not schedule : The steps are what happens in **this** treatment, in order, with no
-                   timings attached — the S08 rule. A sequence that would read identically on every
-                   other treatment page would be S08 written by mistake.
-  Reserved fields : Price and overall duration are reserved fields with visually hidden labels, on
-                   the S11 test. Availability and turnaround are omitted entirely.
-  Responsive note: The rail releases into normal flow **below** the body at 900px rather than
-                   sitting beside a narrowed measure, which is what the scaffold asks of a
-                   supporting rail.
-  Content note   : No efficacy, outcome or ingredient claim; no price, duration or availability
-                   figure; no guarantee; no rating, review count or testimonial; no per-step timing;
-                   no invented practitioner name.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 1 (the
+                   working measure beside a sticky column) with the sequence as ruled rows.
+                   V1 is kept: describe what happens in the room and who it suits, never what
+                   it will do to the person; price and one overall duration reserved; per-step
+                   timings omitted; headings start at h2 because S21 holds the page title.
+  Layout model   : Two columns. Main measure: WHAT IT IS in serif, the sequence as six ruled
+                   rows with accent indices and serif step names, INCLUDES / DOES NOT INCLUDE
+                   as two ruled columns, WHO BOOKS IT. A sticky rail: a 4:5 field, PRICE and
+                   HOW LONG slots on hairlines, one bordered action, the asking line.
+  Density        : Long-form (detail page)
+  Media mode     : One reserved field — the treatment room. Two reserved slots.
+  Interaction    : None (static; no JavaScript). The action is a relative link.
+  Content note   : No efficacy claim, condition name, per-step timing, availability,
+                   guarantee, price or duration figure.
 -->
 
 <meta name="study-id" content="WELL-S23-001">
 <meta name="sector" content="Beauty, Wellness &amp; Spa">
 <meta name="sector-prefix" content="WELL">
 <meta name="section-id" content="WELL-S23">
-<meta name="section-name" content="Treatment / Wellness Service Detail">
+<meta name="section-name" content="Service / Offering Detail">
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Body measure with a supporting rail carrying reserved fields and one action">
-<meta name="density" content="medium">
-<meta name="media-mode" content="one-supporting-reserved-area">
+<meta name="theme" content="001 Linen &amp; Olive">
+<meta name="layout-model" content="Main measure with the sequence as ruled rows and two ruled include columns, beside a sticky rail with a 4:5 field, reserved price and duration, one action">
+<meta name="density" content="long-form">
+<meta name="media-mode" content="one-reserved-field-two-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S23-001 — Treatment Detail, Universal / Safe</title>
+<title>WELL-S23-001 — Service / Offering Detail, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f0f2ef; }
+body { margin: 0; background: #f2f0ea; }
 
-/* Scoped study styles — namespaced to .well-s23-001 */
 .well-s23-001 {
-  --ink: #1f261f;
-  --ink-soft: #5c665a;
-  --paper: #f0f2ef;
-  --card: #ffffff;
-  --slot: #e6eae5;
-  --slot-ink: #59634f;
-  --slot-edge: #ccd4c9;
-  --chip: #ecefea;
-  --line: #e4e8e2;
-  --rule: #d1d8ce;
-  --focus: #2f4a35;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f2f0ea; --ink: #23281f; --muted: #6a6d62; --line: #d3d0c5; --line-strong: #23281f;
+  --media: #e1dfd5; --accent: #5a6b48;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s23-001 *,
-.well-s23-001 *::before,
-.well-s23-001 *::after { box-sizing: inherit; }
-.well-s23-001 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-.well-s23-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s23-001 *, .well-s23-001 *::before, .well-s23-001 *::after { box-sizing: inherit; }
+.well-s23-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s23-001 .shell {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: clamp(36px, 4.2vw, 76px) clamp(20px, 3.6vw, 52px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
-  gap: clamp(24px, 3.4vw, 64px);
-  align-items: start;
-}
+.well-s23-001 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s23-001 .grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.6fr); gap: clamp(2rem, 5vw, 6rem); align-items: start; }
 
-/* Body */
-.well-s23-001 .body { min-width: 0; }
-.well-s23-001 h2 {
-  margin: 0 0 clamp(11px, 1.3vw, 15px);
-  font-size: 1.12rem;
-  font-weight: 650;
-  letter-spacing: -0.008em;
-}
-.well-s23-001 .lede {
-  margin: 0;
-  max-width: 62ch;
-  font-size: clamp(1.02rem, 1.15vw, 1.14rem);
-  line-height: 1.66;
-}
-.well-s23-001 .block {
-  margin-top: clamp(24px, 3vw, 40px);
-  padding-top: clamp(20px, 2.4vw, 30px);
-  border-top: 1px solid var(--rule);
-}
-.well-s23-001 .body p {
-  margin: 0 0 clamp(10px, 1.2vw, 14px);
-  max-width: 62ch;
-  color: var(--ink-soft);
-  line-height: 1.66;
-}
-.well-s23-001 .body p:last-child { margin-bottom: 0; }
+.well-s23-001 .eyebrow { margin: 0; padding: 1rem 0 0.8rem; border-top: 1px solid var(--line-strong); color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s23-001 h2 { margin: 0 0 1rem; max-width: 18ch; font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3vw, 3rem); line-height: 1.05; letter-spacing: -0.03em; }
+.well-s23-001 h2 em { font-style: italic; }
+.well-s23-001 .intro { margin: 0 0 clamp(1.6rem, 3vw, 3rem); max-width: 36rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.well-s23-001 h3 { margin: 0; padding: 0.8rem 0; border-top: 1px solid var(--line-strong); color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s23-001 .steps { margin: 0 0 clamp(1.6rem, 3vw, 3rem); padding: 0; list-style: none; }
+.well-s23-001 .steps li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1rem; padding: 0.9rem 0; border-top: 1px solid var(--line); }
+.well-s23-001 .n { margin: 0; color: var(--accent); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s23-001 .steps strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.15rem; }
+.well-s23-001 .steps p { margin: 0.1rem 0 0; max-width: 32rem; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.well-s23-001 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin: 0 0 clamp(1.6rem, 3vw, 3rem); }
+.well-s23-001 .pair ul { margin: 0; padding: 0; list-style: none; }
+.well-s23-001 .pair li { padding: 0.5rem 0; border-top: 1px solid var(--line); font-size: 0.9rem; }
+.well-s23-001 .who { margin: 0; max-width: 36rem; color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
 
-.well-s23-001 .steps { margin: 0; padding: 0; list-style: none; max-width: 62ch; }
-.well-s23-001 .steps li {
-  padding: clamp(11px, 1.3vw, 14px) 0;
-  border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  line-height: 1.6;
-}
-.well-s23-001 .steps li:first-child { border-top: 0; padding-top: 0; }
-.well-s23-001 .steps b { color: var(--ink); font-weight: 650; }
+.well-s23-001 .rail { position: sticky; top: 2rem; }
+.well-s23-001 .media { position: relative; aspect-ratio: 4 / 5; background: var(--media); border-radius: 4px; }
+.well-s23-001 .slate { position: absolute; left: 0.9rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s23-001 .fields { margin: 1.2rem 0 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.well-s23-001 .fields div { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+.well-s23-001 .fields dt { margin: 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s23-001 .fields dd { margin: 0; }
+.well-s23-001 .slot { display: inline-flex; align-items: center; justify-content: center; min-width: 6rem; height: 1.8rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.9rem; }
+.well-s23-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.well-s23-001 .btn { display: block; margin-top: 1.2rem; padding: 0.9rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-align: center; text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+.well-s23-001 .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.well-s23-001 .rail p.note { margin: 0.9rem 0 0; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
 
-.well-s23-001 .two {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 2.4vw, 40px);
-  max-width: 62ch;
-}
-.well-s23-001 .two h3 {
-  margin: 0 0 9px;
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s23-001 .two ul { margin: 0; padding: 0; list-style: none; }
-.well-s23-001 .two li {
-  padding: 7px 0;
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.55;
-}
-
-/* Rail */
-.well-s23-001 .rail { min-width: 0; }
-.well-s23-001 .media {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 14px;
-  background: var(--slot);
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: center;
-  padding: 14px;
-  margin-bottom: clamp(16px, 2vw, 22px);
-}
-.well-s23-001 .media span {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-.well-s23-001 .card {
-  background: var(--card);
-  border-radius: 14px;
-  padding: clamp(18px, 2.2vw, 26px);
-}
-.well-s23-001 .field {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding: clamp(10px, 1.2vw, 13px) 0;
-  border-bottom: 1px solid var(--line);
-}
-.well-s23-001 .field:first-child { padding-top: 0; }
-.well-s23-001 .fname {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s23-001 .slot {
-  padding: 3px 12px;
-  border-radius: 6px;
-  background: var(--chip);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-}
-.well-s23-001 .go {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 50px;
-  margin-top: clamp(16px, 2vw, 22px);
-  padding: 0 24px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 0.96rem;
-  font-weight: 650;
-  text-decoration: none;
-}
-.well-s23-001 .go:hover { background: #16211a; }
-.well-s23-001 .aside {
-  margin: clamp(12px, 1.4vw, 16px) 0 0;
-  color: var(--ink-soft);
-  font-size: 0.88rem;
-  line-height: 1.55;
-}
-
-/* Responsive ladder — the rail releases before it competes with the body */
-@media (max-width: 900px) {
-  .well-s23-001 .shell {
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(24px, 3vw, 34px);
-  }
-  .well-s23-001 .lede,
-  .well-s23-001 .body p,
-  .well-s23-001 .steps,
-  .well-s23-001 .two { max-width: none; }
-  .well-s23-001 .media { aspect-ratio: 16 / 9; }
-}
-
-@media (max-width: 560px) {
-  .well-s23-001 .two { grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 22px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s23-001 * { transition: none !important; }
-}
+@media (max-width: 900px) { .well-s23-001 .grid { grid-template-columns: minmax(0, 1fr); } .well-s23-001 .rail { position: static; } .well-s23-001 .media { aspect-ratio: 16 / 9; } }
+@media (max-width: 480px) { .well-s23-001 .pair { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .well-s23-001 .steps li { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; } .well-s23-001 .media { aspect-ratio: 4 / 3; } }
+@media (prefers-reduced-motion: reduce) { .well-s23-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="well-s23-001" data-study-id="WELL-S23-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="well-s23-001-title">
+    <div class="grid">
 
-    <div class="body">
-      <h2 id="well-s23-001-title">What it is</h2>
-      <p class="lede">A thorough clean, done slowly. It is the facial we suggest when somebody has not had one before, or has not had one in a long while and would rather start with something straightforward than with something aimed at a particular thing.</p>
+      <div>
+        <p class="eyebrow">What it is</p>
+        <h2 id="well-s23-001-title">A thorough clean, done <em>slowly.</em></h2>
+        <p class="intro">It is the facial we suggest when somebody has not had one before, or has not had one in a long while and would rather start with something straightforward than with something aimed at a particular thing.</p>
 
-      <div class="block">
-        <h2>What happens</h2>
-        <ul class="steps">
-          <li><b>You talk first.</b> Someone looks at your skin, asks what it has been doing lately, and asks what you use on it at home.</li>
-          <li><b>Cleansed twice.</b> Once to take the day off, once properly.</li>
-          <li><b>Steam, then a gentle exfoliation.</b> How gentle depends on what your skin is like when we get there.</li>
-          <li><b>Extractions, only if you want them.</b> We ask before, not during, and we stop when you say so.</li>
-          <li><b>A mask, and the quiet bit.</b> Most people go to sleep here and we let them.</li>
-          <li><b>Finished off.</b> Whatever is right for your skin that day, and you are told what it was.</li>
-        </ul>
-      </div>
+        <h3>What happens</h3>
+        <ol class="steps">
+          <li><p class="n">01</p><div><strong>You talk first.</strong><p>Someone looks at your skin, asks what it has been doing lately, and asks what you use on it at home.</p></div></li>
+          <li><p class="n">02</p><div><strong>Cleansed twice.</strong><p>Once to take the day off, once properly.</p></div></li>
+          <li><p class="n">03</p><div><strong>Steam, then a gentle exfoliation.</strong><p>How gentle depends on what your skin is like when we get there.</p></div></li>
+          <li><p class="n">04</p><div><strong>Extractions, only if you want them.</strong><p>We ask before, not during, and we stop when you say so.</p></div></li>
+          <li><p class="n">05</p><div><strong>A mask, and the quiet bit.</strong><p>Most people go to sleep here and we let them.</p></div></li>
+          <li><p class="n">06</p><div><strong>Finished off.</strong><p>Whatever is right for your skin that day, and you are told what it was.</p></div></li>
+        </ol>
 
-      <div class="block">
-        <div class="two">
-          <div>
-            <h3>Includes</h3>
-            <ul>
-              <li>The conversation at the start</li>
-              <li>Everything described above</li>
-              <li>Written aftercare, on paper</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Does not include</h3>
-            <ul>
-              <li>Any peel or acid treatment</li>
-              <li>Extractions, unless you ask</li>
-              <li>Anything sold to you afterwards</li>
-            </ul>
-          </div>
+        <div class="pair">
+          <div><h3>Includes</h3><ul><li>The conversation at the start</li><li>Everything described above</li><li>Written aftercare, on paper</li></ul></div>
+          <div><h3>Does not include</h3><ul><li>Any peel or acid treatment</li><li>Extractions, unless you ask</li><li>Anything sold to you afterwards</li></ul></div>
         </div>
+
+        <h3>Who books it</h3>
+        <p class="who">People who want their face properly cleaned and would rather be told the truth about it than sold a course. It suits most skin, and if yours is sore, broken or changing, say so when you book &mdash; we may suggest waiting, or suggest a doctor instead of us.</p>
       </div>
 
-      <div class="block">
-        <h2>Who books it</h2>
-        <p>People who want their face properly cleaned and would rather be told the truth about it than sold a course. It suits most skin, and if yours is sore, broken or changing, say so when you book — we may suggest waiting, or suggest a doctor instead of us.</p>
+      <div class="rail">
+        <div class="media" role="img" aria-label="Reserved image field: the treatment room, 4:5"><p class="slate" aria-hidden="true">Room area &middot; 4:5</p></div>
+        <dl class="fields">
+          <div><dt>Price</dt><dd><span class="slot"><span class="vh">Treatment price</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>How long</dt><dd><span class="slot"><span class="vh">How long the treatment takes</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        </dl>
+        <a class="btn" href="#ask">Ask about this one</a>
+        <p class="note">Asking is not booking. Tell us anything you are unsure about and somebody will answer before a time is held.</p>
       </div>
+
     </div>
-
-    <div class="rail">
-      <div class="media"><span>Media &mdash; the treatment room</span></div>
-      <div class="card">
-        <p class="field">
-          <span class="fname">Price</span>
-          <span class="slot"><span class="vh">Treatment price</span><span aria-hidden="true">&mdash;</span></span>
-        </p>
-        <p class="field">
-          <span class="fname">How long</span>
-          <span class="slot"><span class="vh">How long the treatment takes</span><span aria-hidden="true">&mdash;</span></span>
-        </p>
-        <a class="go" href="#well-s23-001-title">Ask about this one</a>
-        <p class="aside">Asking is not booking. Tell us anything you are unsure about and somebody will answer before a time is held.</p>
-      </div>
-    </div>
-
   </section>
 </div>
 

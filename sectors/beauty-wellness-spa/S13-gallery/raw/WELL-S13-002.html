@@ -12,18 +12,19 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S13 — Gallery
   Direction      : Premium / Editorial
-  Revision       : V2. Replaced. Three stacked pictures became **three slides on one rail**, one at a
-                   time, each with its caption set beside it rather than under it.
-  Layout model   : A one-up scroll-snap rail. Each slide is a wide reserved area with an editorial
-                   caption panel alongside, so a picture and the sentence about it are read together
-  Density        : Low
-  Media mode     : Three reserved areas, large, at the same wide proportion.
-  Interaction    : **Scroll-snap, in CSS.** One slide per view, snapping. No JavaScript, no autoplay.
-  Why three      : Editorial pacing. A room you will actually be in, a surface you will actually
-                   touch, and the light at the time of day most people come.
-  Content note   : The place, not results and not products. Nothing staged for the camera. Consent is
-                   stated where a person could appear.
-  Palette        : Black and white only.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, chapter pacing
+                   (device 9) with mixed ratios. V1's argument is kept: a gallery improved by
+                   removing images — three plates, each given the whole frame, the sentence
+                   about it beside rather than beneath. Captions are about the photograph,
+                   never the treatment.
+  Layout model   : Ruled head. A 21:8 plate. Beneath, a narrow caption column left — index in
+                   serif, the plate's name, one line — and two 4:5 plates right, each with its
+                   own caption block beneath. The consent line closes on the foot rule.
+  Density        : Low (60–120)
+  Media mode     : Three reserved fields — the main room empty, linen and surfaces, window
+                   light. No image is supplied.
+  Interaction    : None (static; no JavaScript).
+  Content note   : Nothing is a result; no paired comparison; anyone appearing has agreed to.
 -->
 
 <meta name="study-id" content="WELL-S13-002">
@@ -34,191 +35,58 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="A one-up scroll-snap rail: three wide slides, each with a caption panel beside it">
+<meta name="theme" content="002 Bone &amp; Clay">
+<meta name="layout-model" content="Ruled head; a 21:8 plate; a caption column beside two 4:5 plates; consent line on the foot rule">
 <meta name="density" content="low">
-<meta name="media-mode" content="reserved-media-three-slides">
-<meta name="interaction" content="css-scroll-snap-no-javascript">
+<meta name="media-mode" content="three-reserved-fields-mixed-ratio">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S13-002 — Gallery, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #f6f1ea; }
 
-/* Scoped study styles - namespaced to .well-s13-002 */
-/* monochrome: hand-graded. Black and white only. */
 .well-s13-002 {
-  --ink: #111111;
-  --ink-soft: #4d4d4d;
-  --ink-faint: #767676;
-  --paper: #f1f1f1;
-  --card: #ffffff;
-  --line: #d6d6d6;
-  --line-soft: #e6e6e6;
-
-  box-sizing: border-box;
-  display: block;
-  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 34%);
-  color: var(--ink);
+  --paper: #f6f1ea; --ink: #2a2420; --muted: #6f665e; --line: #dbd1c5; --line-strong: #2a2420;
+  --media: #e7ded3; --accent: #a5583a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s13-002 *,
-.well-s13-002 *::before,
-.well-s13-002 *::after { box-sizing: inherit; }
-.well-s13-002 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 10px; }
-.well-s13-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s13-002 *, .well-s13-002 *::before, .well-s13-002 *::after { box-sizing: inherit; }
+.well-s13-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s13-002 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.well-s13-002 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s13-002 .head { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0 1.4rem; border-top: 1px solid var(--line-strong); }
+.well-s13-002 .eyebrow { margin: 0; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s13-002 h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 2rem); letter-spacing: -0.015em; }
+.well-s13-002 h2 em { font-style: italic; }
 
-/* Head */
-.well-s13-002 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  padding-bottom: clamp(18px, 2.2vw, 28px);
-  border-bottom: 3px solid var(--ink);
-  margin-bottom: clamp(20px, 2.6vw, 34px);
-}
-.well-s13-002 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 18px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #e2e2e2;
-  color: var(--ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-}
-.well-s13-002 h1 {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(2.3rem, 4.6vw, 4rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-weight: 400;
-  max-width: 17ch;
-}
-.well-s13-002 .head p { margin: 0; max-width: 44ch; font-size: 1.04rem; line-height: 1.6; color: var(--ink-soft); }
-.well-s13-002 .head p b { color: var(--ink); font-weight: 650; }
+.well-s13-002 .media { position: relative; background: var(--media); border-radius: 4px; }
+.well-s13-002 .wide { aspect-ratio: 21 / 8; }
+.well-s13-002 .tall { aspect-ratio: 4 / 5; }
+.well-s13-002 .slate { position: absolute; left: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s13-002 .cap { margin: 0; }
+.well-s13-002 .cap .n { display: block; margin-bottom: 0.4rem; color: var(--accent); font-family: var(--serif); font-size: 1.6rem; line-height: 1; }
+.well-s13-002 .cap h3 { margin: 0 0 0.3rem; font-family: var(--serif); font-weight: 400; font-size: clamp(1.2rem, 1.8vw, 1.6rem); letter-spacing: -0.015em; }
+.well-s13-002 .cap p { margin: 0; max-width: 22rem; color: var(--muted); font-size: 0.84rem; line-height: 1.55; }
 
-/* The rail */
-.well-s13-002 .hint {
-  margin: 0 0 clamp(12px, 1.5vw, 16px);
-  font-size: 0.78rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s13-002 .rail {
-  display: flex;
-  gap: clamp(16px, 2vw, 28px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 16px;
-  margin-bottom: clamp(20px, 2.4vw, 32px);
-}
-.well-s13-002 .rail > figure {
-  flex: 0 0 100%;
-  margin: 0;
-  scroll-snap-align: center;
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.45fr);
-  gap: clamp(14px, 2vw, 30px);
-  align-items: stretch;
-}
-.well-s13-002 .shot {
-  aspect-ratio: 16 / 9;
-  border: 1px dashed #b4b4b4;
-  border-radius: 26px;
-  background: linear-gradient(145deg, #dedede 0%, #f6f6f6 100%);
-  display: flex;
-  align-items: flex-end;
-  padding: clamp(14px, 1.8vw, 22px);
-}
-.well-s13-002 .shot span {
-  font-size: 0.72rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #5e5e5e;
-}
-.well-s13-002 figcaption {
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-radius: 26px;
-  padding: clamp(18px, 2.2vw, 30px);
-  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.06);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.well-s13-002 .n {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 0.72rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s13-002 figcaption h2 {
-  margin: 0 0 10px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(1.4rem, 1.9vw, 1.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 400;
-}
-.well-s13-002 figcaption p { margin: 0; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
-.well-s13-002 figcaption p b { color: var(--ink); font-weight: 650; }
+.well-s13-002 .lower { display: grid; grid-template-columns: minmax(12rem, 0.7fr) minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.2rem, 2.6vw, 3rem); align-items: start; margin-top: clamp(1.4rem, 2.6vw, 2.6rem); }
+.well-s13-002 .lower .cap.first { padding-top: 0.2rem; }
+.well-s13-002 .plate .cap { margin-top: 1rem; }
 
-/* Foot */
-.well-s13-002 .foot {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(16px, 2.2vw, 34px);
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 1px solid var(--line);
-}
-.well-s13-002 .foot p { margin: 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
-.well-s13-002 .foot p b { color: var(--ink); font-weight: 650; }
+.well-s13-002 .foot { display: flex; justify-content: space-between; gap: 2rem; margin-top: clamp(1.6rem, 3vw, 3rem); padding-top: 1rem; border-top: 1px solid var(--line-strong); }
+.well-s13-002 .foot p { margin: 0; max-width: 32rem; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.well-s13-002 .foot p + p { text-align: right; }
 
-/* Responsive ladder */
-@media (max-width: 1000px) {
-  .well-s13-002 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .well-s13-002 .rail > figure { grid-template-columns: minmax(0, 1fr); }
-}
-
-@media (max-width: 620px) {
-  .well-s13-002 h1, .well-s13-002 .head p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s13-002 * { transition: none !important; }
-  .well-s13-002 .rail { scroll-behavior: auto; }
-}
+@media (max-width: 1024px) { .well-s13-002 .lower { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .well-s13-002 .lower .cap.first { grid-column: 1 / -1; } }
+@media (max-width: 768px) { .well-s13-002 .head { flex-direction: column; align-items: flex-start; gap: 0.3rem; } .well-s13-002 .wide { aspect-ratio: 16 / 10; } .well-s13-002 .foot { flex-direction: column; gap: 0.6rem; } .well-s13-002 .foot p + p { text-align: left; } }
+@media (max-width: 480px) { .well-s13-002 .lower { grid-template-columns: minmax(0, 1fr); } .well-s13-002 .wide { aspect-ratio: 4 / 3; } .well-s13-002 .tall { aspect-ratio: 1 / 1; } }
+@media (prefers-reduced-motion: reduce) { .well-s13-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -227,45 +95,31 @@ body { margin: 0; background: #f1f1f1; }
   <section class="shell" aria-labelledby="well-s13-002-title">
 
     <div class="head">
-      <div>
-        <p class="eyebrow">The place</p>
-        <h1 id="well-s13-002-title">Three pictures, one at a time, rather than thirty.</h1>
-      </div>
-      <p>A room you will actually be in, a surface you will actually touch, and the light at the time of day most people come. <b>Each one gets the whole frame</b>, and the sentence about it sits beside rather than beneath.</p>
+      <p class="eyebrow">The place</p>
+      <h2 id="well-s13-002-title">Three pictures rather than <em>thirty</em></h2>
     </div>
 
-    <p class="hint">Slide one of three &mdash; scroll sideways</p>
+    <div class="media wide" role="img" aria-label="Reserved image field: the main treatment room, photographed empty, 21:8"><p class="slate" aria-hidden="true">Room area &middot; 21:8 &middot; photographed empty</p></div>
 
-    <div class="rail" tabindex="0" role="group" aria-label="Three views of the studio, scrollable">
-      <figure>
-        <div class="shot"><span>Reserved &mdash; the main treatment room, photographed empty</span></div>
-        <figcaption>
-          <span class="n">One</span>
-          <h2>The main treatment room</h2>
-          <p>The room most treatments happen in. <b>Photographed empty, in the afternoon, with nothing moved.</b></p>
-        </figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; linen and surfaces</span></div>
-        <figcaption>
-          <span class="n">Two</span>
-          <h2>Linen and surfaces</h2>
-          <p>What the room is made of. <b>Everything here is changed between guests.</b></p>
-        </figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; window light, unassisted</span></div>
-        <figcaption>
-          <span class="n">Three</span>
-          <h2>Window light</h2>
-          <p>The light, unassisted. <b>No lamps were brought in for the photograph.</b></p>
-        </figcaption>
-      </figure>
+    <div class="lower">
+      <div class="cap first">
+        <span class="n" aria-hidden="true">One</span>
+        <h3>The main treatment room</h3>
+        <p>The room most treatments happen in. Photographed empty, in the afternoon, with nothing moved. It gets the whole width because it is where you will spend the hour.</p>
+      </div>
+      <div class="plate">
+        <div class="media tall" role="img" aria-label="Reserved image field: linen and surfaces, 4:5"><p class="slate" aria-hidden="true">Texture area &middot; 4:5</p></div>
+        <div class="cap"><span class="n" aria-hidden="true">Two</span><h3>Linen and surfaces</h3><p>What the room is made of. Everything here is changed between guests.</p></div>
+      </div>
+      <div class="plate">
+        <div class="media tall" role="img" aria-label="Reserved image field: window light, unassisted, 4:5"><p class="slate" aria-hidden="true">Room area &middot; 4:5 &middot; window light</p></div>
+        <div class="cap"><span class="n" aria-hidden="true">Three</span><h3>Window light</h3><p>The light, unassisted. No lamps were brought in for the photograph.</p></div>
+      </div>
     </div>
 
     <div class="foot">
-      <p><b>Three is the whole gallery, and that is deliberate.</b> A studio with thirty pictures of itself is asking you to hunt for the one that answers your question; three chosen ones answer it directly.</p>
-      <p>Before-and-after photography is kept in its own section and is only ever published with the guest's written permission. <b>Anyone appearing in these pictures has agreed to be in them.</b></p>
+      <p>Three is the whole gallery, and that is deliberate. Three chosen pictures answer the question directly.</p>
+      <p>Before-and-after photography is kept in its own section. Anyone appearing here has agreed to be in the picture.</p>
     </div>
 
   </section>

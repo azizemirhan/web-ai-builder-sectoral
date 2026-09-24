@@ -12,23 +12,20 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S13 — Gallery
   Direction      : Universal / Safe
-  Revision       : V2. Replaced. The batch was a set of static grids; the instruction on record now
-                   is that a gallery should behave like one. **All five studies are sliders**, and
-                   this is the plain one: nine views on a rail, three in view at a time.
-  Layout model   : A horizontal scroll-snap rail. Nine reserved areas, three visible, captioned
-                   underneath, with a counter rail beneath rather than a wall of thumbnails
-  Density        : Low
-  Media mode     : Nine reserved areas, all the same proportion, so the difference between them is
-                   what is in them rather than how they are cropped.
-  Interaction    : **Scroll-snap, in CSS.** The rail is a native horizontal scroller with snap
-                   points; there is no JavaScript, no autoplay and no hidden slides.
-  Why a slider   : Nine areas in a grid is a wall. Nine on a rail is a room you move through, and it
-                   holds the sector rule &mdash; fewer, larger, better-proportioned areas in view at
-                   any one moment.
-  Content note   : The rooms, the surfaces and the light. Nothing here is a result and nothing is
-                   staged. Where a person would appear, the label says so, because a filled slot
-                   means a real person who has consented to appear.
-  Palette        : Black and white only.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 8 (gallery
+                   of bare fields with slate captions) held to the user's stated gallery cap:
+                   three by three, exactly, at a size that is a photograph and not a thumbnail.
+                   Nine 4:3 fields, each with a serif name and one line beneath; the two
+                   person-bearing views are labelled so the consent rule is visible where it
+                   applies.
+  Layout model   : Head split. Nine 4:3 fields in three columns with small gaps, slate labels
+                   bottom-left, serif name and one line beneath each. A ruled foot carrying the
+                   consent line.
+  Density        : Standard (90–170)
+  Media mode     : Nine reserved fields — the rooms, the surfaces, the light, hands at work,
+                   a guest at rest. No image is supplied.
+  Interaction    : None (static; no JavaScript).
+  Content note   : Nothing is a result; no paired comparison; anyone appearing has agreed to.
 -->
 
 <meta name="study-id" content="WELL-S13-001">
@@ -39,188 +36,53 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="A nine-slide scroll-snap rail, three in view, captioned">
-<meta name="density" content="low">
-<meta name="media-mode" content="reserved-media-nine-slides">
-<meta name="interaction" content="css-scroll-snap-no-javascript">
+<meta name="theme" content="001 Linen &amp; Olive">
+<meta name="layout-model" content="Head split; nine 4:3 fields in a three-by-three grid with slate labels and serif captions; consent line on the foot rule">
+<meta name="density" content="standard">
+<meta name="media-mode" content="nine-reserved-fields-three-by-three">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S13-001 — Gallery, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #f2f0ea; }
 
-/* Scoped study styles - namespaced to .well-s13-001 */
-/* monochrome: hand-graded. Black and white only. */
 .well-s13-001 {
-  --ink: #111111;
-  --ink-soft: #4d4d4d;
-  --ink-faint: #767676;
-  --paper: #fafafa;
-  --line: #d6d6d6;
-  --line-soft: #e8e8e8;
-
-  box-sizing: border-box;
-  display: block;
-  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 34%);
-  color: var(--ink);
+  --paper: #f2f0ea; --ink: #23281f; --muted: #6a6d62; --line: #d3d0c5; --line-strong: #23281f;
+  --media: #e1dfd5; --accent: #5a6b48;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s13-001 *,
-.well-s13-001 *::before,
-.well-s13-001 *::after { box-sizing: inherit; }
-.well-s13-001 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 10px; }
-.well-s13-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s13-001 *, .well-s13-001 *::before, .well-s13-001 *::after { box-sizing: inherit; }
+.well-s13-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s13-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.well-s13-001 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s13-001 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr); gap: 3rem; align-items: end; margin-bottom: clamp(1.6rem, 3vw, 3rem); }
+.well-s13-001 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s13-001 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.6vw, 3.6rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s13-001 h2 em { font-style: italic; }
+.well-s13-001 .lead { max-width: 24rem; margin: 0 0 0.3rem auto; color: var(--muted); font-size: 0.86rem; line-height: 1.55; text-align: right; }
 
-/* Head */
-.well-s13-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  padding: clamp(30px, 4vw, 60px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(17, 17, 17, 0.18);
-  margin-bottom: clamp(24px, 3vw, 42px);
-}
-.well-s13-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-}
-.well-s13-001 h1 {
-  margin: 0;
-  font-size: clamp(2.2rem, 4.4vw, 3.8rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-  font-weight: 800;
-  color: #ffffff;
-  max-width: 16ch;
-}
-.well-s13-001 .head p { margin: 0; max-width: 40ch; font-size: 1.04rem; line-height: 1.62; color: #d2d2d2; }
-.well-s13-001 .head p b { color: #ffffff; font-weight: 650; }
+.well-s13-001 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.4rem, 2.4vw, 2.4rem) clamp(0.9rem, 1.6vw, 1.6rem); margin: 0; padding: 0; list-style: none; }
+.well-s13-001 .grid li { min-width: 0; }
+.well-s13-001 .media { position: relative; aspect-ratio: 4 / 3; background: var(--media); border-radius: 3px; }
+.well-s13-001 .slate { position: absolute; left: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s13-001 h3 { margin: 0.8rem 0 0.1rem; font-family: var(--serif); font-weight: 400; font-size: clamp(1.05rem, 1.4vw, 1.3rem); }
+.well-s13-001 .line { margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
 
-/* The rail */
-.well-s13-001 .railhead {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px 20px;
-  margin-bottom: clamp(12px, 1.6vw, 18px);
-}
-.well-s13-001 .railhead h2 {
-  margin: 0;
-  font-size: 0.78rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s13-001 .hint { margin: 0; font-size: 0.9rem; color: var(--ink-faint); }
+.well-s13-001 .foot { display: flex; justify-content: space-between; gap: 2rem; margin-top: clamp(1.6rem, 3vw, 3rem); padding-top: 1rem; border-top: 1px solid var(--line-strong); }
+.well-s13-001 .foot p { margin: 0; max-width: 30rem; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.well-s13-001 .foot p + p { text-align: right; }
 
-.well-s13-001 .rail {
-  display: flex;
-  gap: clamp(12px, 1.6vw, 22px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 14px;
-  margin-bottom: clamp(18px, 2.2vw, 28px);
-}
-.well-s13-001 .rail > figure {
-  flex: 0 0 calc((100% - 2 * clamp(12px, 1.6vw, 22px)) / 3);
-  min-width: 240px;
-  margin: 0;
-  scroll-snap-align: start;
-}
-.well-s13-001 .shot {
-  aspect-ratio: 4 / 3;
-  border: 1px dashed #b4b4b4;
-  border-radius: 22px;
-  background: linear-gradient(145deg, #e2e2e2 0%, #f6f6f6 100%);
-  display: flex;
-  align-items: flex-end;
-  padding: clamp(12px, 1.4vw, 16px);
-  margin-bottom: 11px;
-}
-.well-s13-001 .shot span {
-  font-size: 0.7rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #5e5e5e;
-}
-.well-s13-001 figcaption {
-  font-size: 1rem;
-  line-height: 1.4;
-  font-weight: 650;
-  color: var(--ink);
-}
-.well-s13-001 figcaption b { display: block; font-weight: 400; font-size: 0.94rem; color: var(--ink-faint); }
-
-/* Foot */
-.well-s13-001 .foot {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(16px, 2.2vw, 34px);
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 2px solid var(--ink);
-}
-.well-s13-001 .foot h3 {
-  margin: 0 0 8px;
-  font-size: 0.78rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s13-001 .foot p { margin: 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
-.well-s13-001 .foot p b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 1000px) {
-  .well-s13-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .well-s13-001 .rail > figure { flex: 0 0 calc((100% - clamp(12px, 1.6vw, 22px)) / 2); }
-}
-
-@media (max-width: 620px) {
-  .well-s13-001 h1, .well-s13-001 .head p { max-width: none; }
-  .well-s13-001 .rail > figure { flex: 0 0 84%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s13-001 * { transition: none !important; }
-  .well-s13-001 .rail { scroll-behavior: auto; }
-}
+@media (max-width: 1024px) { .well-s13-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 768px) { .well-s13-001 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .well-s13-001 .lead { margin-left: 0; text-align: left; } .well-s13-001 h2 { max-width: none; } .well-s13-001 .foot { flex-direction: column; gap: 0.6rem; } .well-s13-001 .foot p + p { text-align: left; } }
+@media (max-width: 480px) { .well-s13-001 .grid { grid-template-columns: minmax(0, 1fr); } .well-s13-001 .media { aspect-ratio: 3 / 2; } }
+@media (prefers-reduced-motion: reduce) { .well-s13-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -231,64 +93,26 @@ body { margin: 0; background: #fafafa; }
     <div class="head">
       <div>
         <p class="eyebrow">The place</p>
-        <h1 id="well-s13-001-title">Nine views, three at a time.</h1>
+        <h2 id="well-s13-001-title">Nine views of an ordinary <em>day</em></h2>
       </div>
-      <p>The rooms, the surfaces and the light. <b>Nothing here is a result, and nothing is staged for the camera</b> &mdash; it is the studio on an ordinary day.</p>
+      <p class="lead">The rooms, the surfaces and the light. Nothing here is a result, and nothing is staged for the camera.</p>
     </div>
 
-    <div class="railhead">
-      <h2>The studio, on a rail</h2>
-      <p class="hint">Scroll sideways &mdash; nine areas, three in view.</p>
-    </div>
-
-    <div class="rail" tabindex="0" role="group" aria-label="Nine views of the studio, scrollable">
-      <figure>
-        <div class="shot"><span>Reserved &mdash; treatment room</span></div>
-        <figcaption>Treatment room<b>The room most treatments happen in.</b></figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; reception</span></div>
-        <figcaption>Reception<b>Where you wait, and where you come round after.</b></figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; corridor</span></div>
-        <figcaption>Corridor<b>The walk between the two.</b></figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; linen</span></div>
-        <figcaption>Linen<b>Changed between guests, every time.</b></figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; hands at work, with consent</span></div>
-        <figcaption>Hands at work<b>A person appears here only if they agreed to.</b></figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; water</span></div>
-        <figcaption>Water<b>What is poured, and where it is poured.</b></figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; shelf</span></div>
-        <figcaption>Shelf<b>What is kept in the room, in the open.</b></figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; window light</span></div>
-        <figcaption>Window light<b>The light, unassisted, at the usual hour.</b></figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; guest at rest, with consent</span></div>
-        <figcaption>Guest at rest<b>Published only with written permission.</b></figcaption>
-      </figure>
-    </div>
+    <ul class="grid">
+      <li><div class="media" role="img" aria-label="Reserved image field: treatment room"><p class="slate" aria-hidden="true">Room area &middot; 4:3</p></div><h3>Treatment room</h3><p class="line">The room most treatments happen in.</p></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: reception"><p class="slate" aria-hidden="true">Room area &middot; 4:3</p></div><h3>Reception</h3><p class="line">Where you wait, and where you come round after.</p></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: corridor"><p class="slate" aria-hidden="true">Room area &middot; 4:3</p></div><h3>Corridor</h3><p class="line">The walk between the two.</p></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: linen"><p class="slate" aria-hidden="true">Texture area &middot; 4:3</p></div><h3>Linen</h3><p class="line">Changed between guests, every time.</p></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: hands at work, with consent"><p class="slate" aria-hidden="true">Detail area &middot; 4:3 &middot; with consent</p></div><h3>Hands at work</h3><p class="line">A person appears here only if they agreed to.</p></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: water"><p class="slate" aria-hidden="true">Still life &middot; 4:3</p></div><h3>Water</h3><p class="line">What is poured, and where it is poured.</p></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: shelf"><p class="slate" aria-hidden="true">Still life &middot; 4:3</p></div><h3>Shelf</h3><p class="line">What is kept in the room, in the open.</p></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: window light"><p class="slate" aria-hidden="true">Room area &middot; 4:3</p></div><h3>Window light</h3><p class="line">The light, unassisted, at the usual hour.</p></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: guest at rest, with consent"><p class="slate" aria-hidden="true">Portrait area &middot; 4:3 &middot; with consent</p></div><h3>Guest at rest</h3><p class="line">Published only with written permission.</p></li>
+    </ul>
 
     <div class="foot">
-      <div>
-        <h3>Why a rail rather than a grid</h3>
-        <p>Nine areas in a grid is a wall of thumbnails, and a wall reads as a catalogue. <b>Three in view at a time keeps every area large enough to be worth looking at</b>, and the other six are a scroll away rather than shrunk to fit.</p>
-      </div>
-      <div>
-        <h3>Consent</h3>
-        <p>Before-and-after photography is kept in its own section and is only ever published with the guest's written permission. <b>Anyone appearing in these pictures has agreed to be in them.</b></p>
-      </div>
+      <p>Before-and-after photography is kept in its own section and is only ever published with the guest's written permission.</p>
+      <p>Anyone appearing in these pictures has agreed to be in them.</p>
     </div>
 
   </section>

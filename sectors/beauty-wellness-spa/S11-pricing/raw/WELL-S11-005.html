@@ -12,26 +12,20 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S11 — Pricing
   Direction      : Art-directed / Distinctive
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : The figure made the subject. Six reserved price slots set at display scale in a
-                   staggered two-column rhythm, with the treatment name reduced to a small line
-                   above each — the inverse of the usual price list, where the name leads and the
-                   number follows.
-  Density        : Low — six treatments, no supporting copy beyond the header and one closing line
-  Media mode     : None. The type is the event.
-  Interaction    : None (static; no JavaScript)
-  Direction note : This study and WELL-S11-002 are deliberate inverses and were authored as a pair.
-                   There the name is at display scale and the price is a footnote; here the
-                   reserved price slot is the largest element on the page and the name is a label.
-                   Between them they record the two ends of the only real design decision this
-                   section has, so a reviewer can pick a point on that axis rather than a style.
-  Reserved-price note : The price is reserved, not omitted — an em dash at the size the real figure
-                   will occupy, with a visually hidden "Price" label and no currency symbol. At
-                   this scale the reservation is doing the most work in the batch: the slot's width
-                   is what tells a reviewer whether a three-figure number will fit the composition.
-  Content note   : No invented price, figure, range, currency symbol, deposit, fee, tax statement,
-                   package value, saving, discount or "was/now" pair; no duration or session count;
-                   no popularity or value badge.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 6 (a ruled
+                   sheet whose giant serif element is the subject). V1's inversion of 002 is
+                   kept: the figure made the subject — six reserved price slots at display
+                   scale with the treatment name reduced to a small uppercase label. The slots
+                   are set in a staggered two-column rhythm on hairlines.
+  Layout model   : Mast line, serif display statement. Six items on a two-column grid; each a
+                   ruled cell with the name as a tracked label and the reserved slot as a serif
+                   em dash at clamp(3rem, 6vw, 5.4rem); even items are pushed down by half a
+                   cell so the columns stagger. The policy closes on the foot rule.
+  Density        : Low (60–120)
+  Media mode     : Six reserved price slots at display scale. No image is required; no figure
+                   is supplied.
+  Interaction    : None (static; no JavaScript).
+  Content note   : Prices reserved; no currency, figure, duration, badge or discount.
 -->
 
 <meta name="study-id" content="WELL-S11-005">
@@ -42,154 +36,62 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Display-scale reserved price slots in a staggered two-column rhythm">
+<meta name="theme" content="005 Ivory &amp; Plum">
+<meta name="layout-model" content="Six reserved price slots at display scale on a staggered two-column ruled grid, names as small tracked labels; policy on the foot rule">
 <meta name="density" content="low">
-<meta name="media-mode" content="none-deliberate">
+<meta name="media-mode" content="six-reserved-price-slots-display-scale">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S11-005 — Pricing, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #1a1714; }
+body { margin: 0; background: #f8f4f3; }
 
-/* Scoped study styles — namespaced to .well-s11-005 */
 .well-s11-005 {
-  --ink: #f3ede4;
-  --ink-soft: #a3988a;
-  --paper: #1a1714;
-  --chip: #2b2620;
-  --chip-ink: #cbbca8;
-  --chip-edge: #3d362d;
-  --line: #2e2921;
-  --focus: #e3c79a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f8f4f3; --ink: #2b2226; --muted: #6d6266; --line: #e0d6d9; --line-strong: #2b2226;
+  --media: #eae1e3; --accent: #6e3b4e;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s11-005 *,
-.well-s11-005 *::before,
-.well-s11-005 *::after { box-sizing: inherit; }
-.well-s11-005 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-.well-s11-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s11-005 *, .well-s11-005 *::before, .well-s11-005 *::after { box-sizing: inherit; }
+.well-s11-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s11-005 .shell {
-  width: 100%;
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: clamp(48px, 5.6vw, 100px) clamp(20px, 3.6vw, 56px);
-}
+.well-s11-005 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s11-005 .mast { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0; border-top: 1px solid var(--line-strong); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s11-005 .mast span + span { color: var(--muted); }
+.well-s11-005 h2 { margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 clamp(2rem, 4vw, 4rem); max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 4vw, 4.2rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s11-005 h2 em { font-style: italic; }
 
-/* Header */
-.well-s11-005 .head {
-  max-width: 40rem;
-  margin-bottom: clamp(30px, 3.8vw, 58px);
-}
-.well-s11-005 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s11-005 h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
+.well-s11-005 .sheet { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(2rem, 5vw, 6rem); row-gap: 0; margin: 0; padding: 0; list-style: none; }
+.well-s11-005 .sheet li { display: flex; flex-direction: column; gap: 0.8rem; padding: clamp(1.2rem, 2.2vw, 2.2rem) 0; border-top: 1px solid var(--line-strong); }
+.well-s11-005 .sheet li:nth-child(even) { transform: translateY(clamp(2.6rem, 5vw, 5rem)); }
+.well-s11-005 .sheet li:last-child { border-bottom: 1px solid var(--line); }
+.well-s11-005 .sheet li:nth-child(5) { border-bottom: 1px solid var(--line); }
+.well-s11-005 .lab { display: flex; align-items: baseline; gap: 0.8rem; margin: 0; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s11-005 .lab .n { color: var(--accent); }
+.well-s11-005 .price { align-self: flex-start; display: inline-flex; align-items: center; justify-content: flex-start; min-width: 12rem; height: clamp(4rem, 7vw, 6rem); padding: 0 1rem; border: 1px solid var(--line); border-radius: 3px; color: var(--muted); font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.4rem); line-height: 1; letter-spacing: -0.03em; }
+.well-s11-005 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Staggered rhythm */
-.well-s11-005 .figures {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: clamp(20px, 3vw, 64px);
-  row-gap: clamp(22px, 2.8vw, 44px);
-}
-.well-s11-005 .figures li { min-width: 0; }
-.well-s11-005 .figures li:nth-child(even) { margin-top: clamp(18px, 2.6vw, 46px); }
-
-.well-s11-005 .name {
-  display: block;
-  margin-bottom: clamp(10px, 1.2vw, 15px);
-  padding-bottom: clamp(9px, 1.1vw, 13px);
-  border-bottom: 1px solid var(--line);
-  font-size: 0.74rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-/* The reserved price, at display scale */
-.well-s11-005 .price {
-  display: block;
-  border: 1px dashed var(--chip-edge);
-  border-radius: 12px;
-  background: var(--chip);
-  color: var(--chip-ink);
-  padding: clamp(14px, 1.8vw, 26px) clamp(18px, 2.2vw, 32px);
-  font-size: clamp(2.6rem, 6vw, 5.4rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  text-align: center;
-}
-
-/* Closing line */
-.well-s11-005 .foot {
-  margin: clamp(34px, 4vw, 62px) 0 0;
-  padding-top: clamp(20px, 2.4vw, 30px);
-  border-top: 1px solid var(--line);
-  max-width: 62ch;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-/* Responsive ladder — the stagger goes, the display scale stays */
-@media (max-width: 1024px) {
-  .well-s11-005 .figures li:nth-child(even) { margin-top: clamp(14px, 2vw, 26px); }
-  .well-s11-005 h1 { max-width: none; }
-}
+.well-s11-005 .policy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; margin: clamp(4rem, 8vw, 8rem) 0 0; padding-top: 1rem; border-top: 1px solid var(--line-strong); }
+.well-s11-005 .policy p { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.55; max-width: 30rem; }
+.well-s11-005 .policy p + p { text-align: right; margin-left: auto; }
 
 @media (max-width: 768px) {
-  .well-s11-005 .figures { grid-template-columns: minmax(0, 1fr); row-gap: clamp(18px, 3vw, 26px); }
-  .well-s11-005 .figures li:nth-child(even) { margin-top: 0; }
-  .well-s11-005 .price { font-size: clamp(2.4rem, 12vw, 3.6rem); }
+  .well-s11-005 .sheet { grid-template-columns: minmax(0, 1fr); }
+  .well-s11-005 .sheet li:nth-child(even) { transform: none; }
+  .well-s11-005 .sheet li:nth-child(5) { border-bottom: 0; }
+  .well-s11-005 .policy { grid-template-columns: minmax(0, 1fr); margin-top: 2rem; }
+  .well-s11-005 .policy p + p { text-align: left; margin-left: 0; }
+  .well-s11-005 .mast { flex-direction: column; gap: 0.2rem; }
+  .well-s11-005 h2 { max-width: none; }
 }
-
-@media (max-width: 480px) {
-  .well-s11-005 .price { font-size: clamp(2.2rem, 15vw, 3rem); border-radius: 10px; }
-  .well-s11-005 .foot { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s11-005 * { transition: none !important; }
-}
+@media (max-width: 480px) { .well-s11-005 .price { min-width: 9rem; } }
+@media (prefers-reduced-motion: reduce) { .well-s11-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -197,39 +99,22 @@ body { margin: 0; background: #1a1714; }
 <div class="well-s11-005" data-study-id="WELL-S11-005" data-direction="Art-directed / Distinctive">
   <section class="shell" aria-labelledby="well-s11-005-title">
 
-    <div class="head">
-      <p class="eyebrow">What things cost</p>
-      <h1 id="well-s11-005-title">The number, said out loud</h1>
-    </div>
+    <p class="mast"><span>What things cost</span><span>The number, said out loud</span></p>
+    <h2 id="well-s11-005-title">Nothing is hidden behind an <em>enquiry</em> form.</h2>
 
-    <ul class="figures">
-      <li>
-        <span class="name">Deep cleansing facial</span>
-        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
-      </li>
-      <li>
-        <span class="name">Hydrating facial</span>
-        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
-      </li>
-      <li>
-        <span class="name">Hot stone massage</span>
-        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
-      </li>
-      <li>
-        <span class="name">Aromatherapy massage</span>
-        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
-      </li>
-      <li>
-        <span class="name">Body scrub &amp; wrap</span>
-        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
-      </li>
-      <li>
-        <span class="name">Hands &amp; feet care</span>
-        <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
-      </li>
+    <ul class="sheet">
+      <li><p class="lab"><span class="n">01</span>Deep cleansing facial</p><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><p class="lab"><span class="n">02</span>Hydrating facial</p><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><p class="lab"><span class="n">03</span>Hot stone massage</p><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><p class="lab"><span class="n">04</span>Aromatherapy massage</p><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><p class="lab"><span class="n">05</span>Body scrub &amp; wrap</p><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><p class="lab"><span class="n">06</span>Hands &amp; feet care</p><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
     </ul>
 
-    <p class="foot">Nothing is hidden behind an enquiry form. The price shown is the price paid, nothing is added at the desk, and if a treatment runs shorter than planned you pay for the shorter one.</p>
+    <div class="policy">
+      <p>The price shown is the price paid, and nothing is added at the desk.</p>
+      <p>If a treatment runs shorter than planned you pay for the shorter one.</p>
+    </div>
 
   </section>
 </div>

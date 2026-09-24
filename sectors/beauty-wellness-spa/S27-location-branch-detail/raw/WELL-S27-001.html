@@ -10,212 +10,95 @@
 
   Study ID       : WELL-S27-001
   Sector         : Beauty, Wellness & Spa (WELL)
-  Section        : WELL-S27 — Spa / Studio Location Detail
+  Section        : WELL-S27 — Location / Branch Detail
   Direction      : Universal / Safe
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : Contact first and unmissable — the reserved address and telephone at the head,
-                   then the reserved map area, then what happens when you arrive, what is available
-                   here, and who is based here
-  Density        : Medium
-  Media mode     : One reserved map area, 16:9, and one reserved photograph of the place. **Both sit
-                   after the contact block in source order**, so no reflow can push the address
-                   below them — the scaffold's responsive rule, made structural.
-  Interaction    : None (static; no JavaScript)
-  The governing constraint : The scaffold rules out invented directions, fabricated addresses, hours
-                   and maps, and S16 already established that a map is a reserved area and never an
-                   embed. **So the page cannot describe the place; it describes the arrival**, which
-                   is authorable because it is the studio's own practice. See ../README.md.
-  Access, not icons : No facilities list. A tick beside a step is a promise about a building nobody
-                   has measured. Access is answered by conversation, which is S16's rule and is more
-                   useful than a row of symbols.
-  Content note   : No invented address, postcode, coordinate, telephone number, opening hours,
-                   travel time, distance or direction; no embedded map or remote dependency; no
-                   review, rating or claim attributed to the place; no invented practitioner name.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, a ruled record
+                   line first, a mixed-ratio media pair, then ruled rows beside a ruled
+                   column. V1 is kept: the page cannot describe the place, so it describes
+                   the arrival; address, telephone and map reserved; directions and hours
+                   omitted; access as a conversation; the contact block precedes any reserved
+                   area in source order.
+  Layout model   : A ruled record line — Studio 01 in serif, ADDRESS and TELEPHONE slots. A
+                   media pair: a 16:9 map area and a 4:5 field of the door, with captions.
+                   Then two columns: WHEN YOU ARRIVE as four ruled rows; GETTING IN, AND
+                   GETTING ABOUT as a ruled column. WHAT IS DONE HERE as a ruled line on the
+                   foot.
+  Density        : Long-form (detail page)
+  Media mode     : One reserved map area; one reserved field — the door from the street. Two
+                   reserved slots.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No address, number, hours, directions, distance, map embed, review, rating
+                   or description of the building.
 -->
 
 <meta name="study-id" content="WELL-S27-001">
 <meta name="sector" content="Beauty, Wellness &amp; Spa">
 <meta name="sector-prefix" content="WELL">
 <meta name="section-id" content="WELL-S27">
-<meta name="section-name" content="Spa / Studio Location Detail">
+<meta name="section-name" content="Location / Branch Detail">
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Contact block first, then reserved map and place media, then arrival and what is here">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-map-area-and-one-place-image">
+<meta name="theme" content="001 Linen &amp; Olive">
+<meta name="layout-model" content="Ruled record line first; a 16:9 map area and 4:5 door field; WHEN YOU ARRIVE as ruled rows beside the access column; what is done here on the foot rule">
+<meta name="density" content="long-form">
+<meta name="media-mode" content="one-reserved-map-one-reserved-field-two-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S27-001 — Location Detail, Universal / Safe</title>
+<title>WELL-S27-001 — Location / Branch Detail, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e4e7ea; }
+body { margin: 0; background: #f2f0ea; }
 
-/* Scoped study styles — namespaced to .well-s27-001 */
 .well-s27-001 {
-  --ink: #1e242a;
-  --ink-soft: #4d5762;
-  --paper: #e4e7ea;
-  --card: #f4f6f7;
-  --slot: #dadee2;
-  --slot-ink: #4f5963;
-  --slot-edge: #c1c8ce;
-  --chip: #eaedef;
-  --line: #dfe3e6;
-  --rule: #c6cdd3;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f2f0ea; --ink: #23281f; --muted: #6a6d62; --line: #d3d0c5; --line-strong: #23281f;
+  --media: #e1dfd5; --accent: #5a6b48;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s27-001 *,
-.well-s27-001 *::before,
-.well-s27-001 *::after { box-sizing: inherit; }
-.well-s27-001 :focus-visible {
-  outline: 2px solid #2b4356;
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-.well-s27-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s27-001 *, .well-s27-001 *::before, .well-s27-001 *::after { box-sizing: inherit; }
+.well-s27-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s27-001 .shell {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: clamp(32px, 3.8vw, 68px) clamp(20px, 3.6vw, 52px);
-}
+.well-s27-001 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s27-001 .eyebrow { margin: 0; padding: 1rem 0 0.6rem; border-top: 1px solid var(--line-strong); color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s27-001 .record { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem 2.6rem; padding: 0 0 1rem; border-bottom: 1px solid var(--line-strong); }
+.well-s27-001 h2 { margin: 0 1rem 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.4vw, 3.4rem); line-height: 1; letter-spacing: -0.035em; }
+.well-s27-001 .field { display: flex; align-items: center; gap: 0.7rem; margin: 0; }
+.well-s27-001 .field dt { margin: 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s27-001 .field dd { margin: 0; }
+.well-s27-001 .slot { display: inline-flex; align-items: center; min-width: 12rem; height: 1.8rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.9rem; }
+.well-s27-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Contact — first in the source, always */
-.well-s27-001 .contact {
-  background: var(--card);
-  border-radius: 16px;
-  padding: clamp(20px, 2.6vw, 34px);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 2.6vw, 44px);
-}
-.well-s27-001 .fname {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s27-001 .slot {
-  display: block;
-  border: 1px dashed var(--slot-edge);
-  border-radius: 8px;
-  background: var(--slot);
-  padding: 12px 14px;
-  min-height: 52px;
-  color: var(--slot-ink);
-  font-size: 1rem;
-}
-.well-s27-001 .field { margin: 0; }
-.well-s27-001 .field + .field { margin-top: clamp(14px, 1.7vw, 20px); }
-.well-s27-001 .studio { margin: 0 0 clamp(12px, 1.5vw, 18px); font-size: 1.06rem; font-weight: 650; }
-.well-s27-001 .here { margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.well-s27-001 .here span {
-  padding: 3px 11px;
-  border-radius: 999px;
-  background: var(--chip);
-  font-size: 0.86rem;
-  color: var(--ink-soft);
-}
+.well-s27-001 .pair { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); gap: clamp(1rem, 2vw, 2rem); margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 0; padding: 0; list-style: none; align-items: end; }
+.well-s27-001 .media { position: relative; background: var(--media); border-radius: 4px; }
+.well-s27-001 .map { aspect-ratio: 16 / 9; }
+.well-s27-001 .door { aspect-ratio: 4 / 5; }
+.well-s27-001 .slate { position: absolute; left: 0.9rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s27-001 .cap { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
 
-/* Media, after the contact block */
-.well-s27-001 .set {
-  margin: clamp(18px, 2.2vw, 28px) 0 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(14px, 1.8vw, 24px);
-}
-.well-s27-001 figure { margin: 0; }
-.well-s27-001 .area {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 12px;
-  background: var(--slot);
-  aspect-ratio: 16 / 9;
-  display: grid;
-  place-items: center;
-  padding: 14px;
-}
-.well-s27-001 .area span {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-  line-height: 1.7;
-}
-.well-s27-001 figcaption {
-  margin-top: 9px;
-  color: var(--ink-soft);
-  font-size: 0.86rem;
-  line-height: 1.5;
-}
+.well-s27-001 .grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: clamp(2rem, 5vw, 6rem); align-items: start; margin-top: clamp(1.6rem, 3vw, 3rem); }
+.well-s27-001 h3 { margin: 0; padding: 0.8rem 0; border-top: 1px solid var(--line-strong); color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s27-001 .rows { margin: 0; padding: 0; list-style: none; }
+.well-s27-001 .rows li { padding: 0.8rem 0; border-top: 1px solid var(--line); font-size: 0.9rem; line-height: 1.5; color: var(--muted); }
+.well-s27-001 .rows li:last-child { border-bottom: 1px solid var(--line); }
+.well-s27-001 .rows strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.15rem; color: var(--ink); }
+.well-s27-001 .access p { margin: 0 0 0.8rem; color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+.well-s27-001 .access p em { color: var(--ink); font-family: var(--serif); font-style: italic; }
 
-/* Arrival and access */
-.well-s27-001 .cols {
-  margin: clamp(22px, 2.8vw, 38px) 0 0;
-  padding-top: clamp(20px, 2.4vw, 30px);
-  border-top: 1px solid var(--rule);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 3vw, 48px);
-  align-items: start;
-}
-.well-s27-001 h2 {
-  margin: 0 0 clamp(11px, 1.3vw, 15px);
-  font-size: 1.06rem;
-  font-weight: 650;
-  letter-spacing: -0.008em;
-}
-.well-s27-001 ul { margin: 0; padding: 0; list-style: none; }
-.well-s27-001 li {
-  padding: clamp(10px, 1.2vw, 13px) 0;
-  border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 0.95rem;
-  line-height: 1.58;
-}
-.well-s27-001 li:first-child { border-top: 0; padding-top: 0; }
-.well-s27-001 li b { color: var(--ink); font-weight: 650; }
-.well-s27-001 p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.64; }
-.well-s27-001 .access { margin-top: clamp(12px, 1.4vw, 16px); }
-.well-s27-001 .access b { color: var(--ink); }
+.well-s27-001 .done { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6rem 2rem; margin: clamp(1.6rem, 3vw, 3rem) 0 0; padding: 1rem 0 0; border-top: 1px solid var(--line-strong); }
+.well-s27-001 .done h4 { margin: 0; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s27-001 .done ul { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; margin: 0; padding: 0; list-style: none; font-family: var(--serif); font-size: 1rem; }
+.well-s27-001 .done p { flex-basis: 100%; margin: 0.4rem 0 0; max-width: 44rem; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
 
-/* Responsive ladder — contact stays first and goes full width */
-@media (max-width: 860px) {
-  .well-s27-001 .contact,
-  .well-s27-001 .set,
-  .well-s27-001 .cols {
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(18px, 2.4vw, 26px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s27-001 * { transition: none !important; }
-}
+@media (max-width: 900px) { .well-s27-001 .grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 768px) { .well-s27-001 .pair { grid-template-columns: minmax(0, 1fr); } .well-s27-001 .door { aspect-ratio: 16 / 10; } .well-s27-001 .record { flex-direction: column; align-items: flex-start; } }
+@media (max-width: 480px) { .well-s27-001 .slot { min-width: 0; width: 100%; } .well-s27-001 .field { width: 100%; flex-wrap: wrap; } }
+@media (prefers-reduced-motion: reduce) { .well-s27-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -223,53 +106,39 @@ body { margin: 0; background: #e4e7ea; }
 <div class="well-s27-001" data-study-id="WELL-S27-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="well-s27-001-title">
 
-    <h2 class="vh" id="well-s27-001-title">One studio, in full</h2>
-
-    <div class="contact">
-      <div>
-        <p class="studio">Studio 01</p>
-        <p class="field">
-          <span class="fname">Address</span>
-          <span class="slot"><span class="vh">Street address of this studio</span><span aria-hidden="true">&mdash;</span></span>
-        </p>
-        <p class="field">
-          <span class="fname">Telephone</span>
-          <span class="slot"><span class="vh">Telephone number for this studio</span><span aria-hidden="true">&mdash;</span></span>
-        </p>
-      </div>
-      <div>
-        <p class="fname">What is done here</p>
-        <p class="here"><span>Facials</span><span>Body &amp; massage</span><span>Hands &amp; feet</span><span>Brows &amp; lashes</span></p>
-        <p class="access"><b>Not everything we do happens in every studio.</b> If you are travelling for something in particular, ring first and we will tell you whether this is the right one.</p>
-      </div>
+    <p class="eyebrow">One studio, in full</p>
+    <div class="record">
+      <h2 id="well-s27-001-title">Studio 01</h2>
+      <dl class="field"><dt>Address</dt><dd><span class="slot"><span class="vh">Street address of this studio</span><span aria-hidden="true">&mdash;</span></span></dd></dl>
+      <dl class="field"><dt>Telephone</dt><dd><span class="slot"><span class="vh">Telephone number for this studio</span><span aria-hidden="true">&mdash;</span></span></dd></dl>
     </div>
 
-    <div class="set">
-      <figure>
-        <div class="area"><span>Map area &mdash; reserved<br>not an embedded service</span></div>
-        <figcaption>A map goes here when there is one to place. It is a reserved area rather than a third-party embed.</figcaption>
-      </figure>
-      <figure>
-        <div class="area"><span>Media &mdash; the door, from the street</span></div>
-        <figcaption>What the front looks like, so you are not standing outside checking the number.</figcaption>
-      </figure>
-    </div>
+    <ul class="pair">
+      <li><div class="media map" role="img" aria-label="Reserved map area, not an embedded service"><p class="slate" aria-hidden="true">Map area &middot; 16:9 &middot; not an embedded service</p></div><p class="cap">A map goes here when there is one to place. It is a reserved area rather than a third-party embed.</p></li>
+      <li><div class="media door" role="img" aria-label="Reserved image field: the door, from the street"><p class="slate" aria-hidden="true">Image area &middot; 4:5 &middot; the door</p></div><p class="cap">What the front looks like, so you are not standing outside checking the number.</p></li>
+    </ul>
 
-    <div class="cols">
+    <div class="grid">
       <div>
-        <h2>When you arrive</h2>
-        <ul>
-          <li><b>Come in and sit down.</b> There is no check-in to do and nobody expects you to announce yourself.</li>
-          <li><b>Early is fine.</b> If you are early you can sit; the room may not be ready but the chair is.</li>
-          <li><b>Late is fine too, up to a point.</b> Ring rather than rushing, and we will tell you honestly whether it still works.</li>
-          <li><b>Somebody comes out to get you.</b> You are walked in rather than called for.</li>
+        <h3>When you arrive</h3>
+        <ul class="rows">
+          <li><strong>Come in and sit down.</strong>There is no check-in to do and nobody expects you to announce yourself.</li>
+          <li><strong>Early is fine.</strong>If you are early you can sit; the room may not be ready but the chair is.</li>
+          <li><strong>Late is fine too, up to a point.</strong>Ring rather than rushing, and we will tell you honestly whether it still works.</li>
+          <li><strong>Somebody comes out to get you.</strong>You are walked in rather than called for.</li>
         </ul>
       </div>
-      <div>
-        <h2>Getting in, and getting about</h2>
-        <p><b>Tell us what you need and we will tell you what this building can do.</b> Not with a row of symbols &mdash; with somebody who knows the place describing it to you honestly, including when the answer is that it will not work and another studio would be better.</p>
-        <p class="access">Ask before you travel rather than after. It is a short conversation and it is nobody&rsquo;s inconvenience.</p>
+      <div class="access">
+        <h3>Getting in, and getting about</h3>
+        <p>Tell us what you need and we will tell you what this building can do. <em>Not with a row of symbols</em> &mdash; with somebody who knows the place describing it to you honestly, including when the answer is that it will not work and another studio would be better.</p>
+        <p>Ask before you travel rather than after. It is a short conversation and it is nobody's inconvenience.</p>
       </div>
+    </div>
+
+    <div class="done">
+      <h4>What is done here</h4>
+      <ul><li>Facials</li><li>Body &amp; massage</li><li>Hands &amp; feet</li><li>Brows &amp; lashes</li></ul>
+      <p>Not everything we do happens in every studio. If you are travelling for something in particular, ring first and we will tell you whether this is the right one.</p>
     </div>
 
   </section>

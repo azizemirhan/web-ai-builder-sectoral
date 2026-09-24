@@ -12,19 +12,20 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S13 — Gallery
   Direction      : Structured / Visual Modular
-  Revision       : V2. Replaced. The three groups were three static blocks of different shapes; they
-                   are now **three rails**, one per group, each snapping on its own.
-  Layout model   : Three stacked scroll-snap rails &mdash; the rooms, the surfaces, the light. Each
-                   rail keeps its group's proportion, so the groups are told apart by shape before a
-                   word of the labels is read
-  Density        : Medium
-  Media mode     : Six reserved areas in three groups of two. Wide for rooms, square for surfaces,
-                   tall for light.
-  Interaction    : **Scroll-snap, in CSS**, three independent rails. No JavaScript.
-  Content note   : Two pictures in a group are two views of the same thing, not a before and after.
-                   Before-and-after photography is kept in its own section and is only ever published
-                   with the guest's written permission.
-  Palette        : Black and white only.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, ruled rows whose
+                   media ratios differ by group (device 8's deliberate mix, ordered). V1's
+                   device is kept: structure found in the imagery — the rooms wide, the
+                   surfaces square, the light tall — so the three kinds of picture read before
+                   a label does. Two pictures in a group are two views of one subject, and the
+                   copy says so.
+  Layout model   : Head split. Three ruled rows, each with the group label and one line in a
+                   narrow left column and a pair of fields right: 16:10 across the full
+                   measure, 1:1 held to a narrower measure, 3:4 narrower again. Serif captions
+                   beneath each field. The consent line closes on the foot rule.
+  Density        : Standard (90–170)
+  Media mode     : Six reserved fields in three ratios. No image is supplied.
+  Interaction    : None (static; no JavaScript).
+  Content note   : Nothing is a result; a pair is never a before and after.
 -->
 
 <meta name="study-id" content="WELL-S13-003">
@@ -35,178 +36,63 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Three stacked scroll-snap rails, one per group, each with its own proportion">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-media-six-slides-three-rails">
-<meta name="interaction" content="css-scroll-snap-no-javascript">
+<meta name="theme" content="003 Mist &amp; Moss">
+<meta name="layout-model" content="Three ruled rows — label column beside a pair of fields at 16:10, 1:1 and 3:4, each pair held to a different measure; consent line on the foot rule">
+<meta name="density" content="standard">
+<meta name="media-mode" content="six-reserved-fields-three-ratios">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S13-003 — Gallery, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e8e8e8; }
+body { margin: 0; background: #eef0ee; }
 
-/* Scoped study styles - namespaced to .well-s13-003 */
-/* monochrome: hand-graded. Black and white only. */
 .well-s13-003 {
-  --ink: #111111;
-  --ink-soft: #4d4d4d;
-  --ink-faint: #767676;
-  --paper: #e8e8e8;
-  --card: #ffffff;
-  --line: #cfcfcf;
-  --line-soft: #dedede;
-
-  box-sizing: border-box;
-  display: block;
-  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 34%);
-  color: var(--ink);
+  --paper: #eef0ee; --ink: #1f2624; --muted: #5f6764; --line: #cdd2cf; --line-strong: #1f2624;
+  --media: #dcdfdb; --accent: #2f5c4b;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s13-003 *,
-.well-s13-003 *::before,
-.well-s13-003 *::after { box-sizing: inherit; }
-.well-s13-003 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 10px; }
-.well-s13-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s13-003 *, .well-s13-003 *::before, .well-s13-003 *::after { box-sizing: inherit; }
+.well-s13-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s13-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.well-s13-003 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s13-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr); gap: 3rem; align-items: end; margin-bottom: clamp(1.4rem, 2.6vw, 2.6rem); }
+.well-s13-003 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s13-003 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.6vw, 3.6rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s13-003 h2 em { font-style: italic; }
+.well-s13-003 .lead { max-width: 24rem; margin: 0 0 0.3rem auto; color: var(--muted); font-size: 0.86rem; line-height: 1.55; text-align: right; }
 
-/* Head */
-.well-s13-003 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  padding: clamp(30px, 4vw, 60px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(17, 17, 17, 0.18);
-  margin-bottom: clamp(24px, 3vw, 42px);
-}
-.well-s13-003 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-}
-.well-s13-003 h1 {
-  margin: 0;
-  font-size: clamp(2.2rem, 4.4vw, 3.8rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-  font-weight: 800;
-  color: #ffffff;
-  max-width: 16ch;
-}
-.well-s13-003 .head p { margin: 0; max-width: 40ch; font-size: 1.04rem; line-height: 1.62; color: #d2d2d2; }
-.well-s13-003 .head p b { color: #ffffff; font-weight: 650; }
+.well-s13-003 .rows { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.well-s13-003 .rows > li { display: grid; grid-template-columns: minmax(12rem, 0.4fr) minmax(0, 1.6fr); gap: clamp(1.5rem, 3vw, 4rem); padding: clamp(1.4rem, 2.6vw, 2.6rem) 0; border-bottom: 1px solid var(--line); }
+.well-s13-003 .n { margin: 0 0 0.5rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s13-003 h3 { margin: 0 0 0.3rem; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2vw, 1.9rem); letter-spacing: -0.02em; }
+.well-s13-003 .shape { margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.5; max-width: 16rem; }
+.well-s13-003 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(0.9rem, 1.6vw, 1.6rem); margin: 0; padding: 0; list-style: none; }
+.well-s13-003 .pair.sq { max-width: 36rem; }
+.well-s13-003 .pair.tall { max-width: 28rem; }
+.well-s13-003 .pair li { min-width: 0; }
+.well-s13-003 .media { position: relative; background: var(--media); border-radius: 3px; }
+.well-s13-003 .wide .media { aspect-ratio: 16 / 10; }
+.well-s13-003 .sq .media { aspect-ratio: 1 / 1; }
+.well-s13-003 .tall .media { aspect-ratio: 3 / 4; }
+.well-s13-003 .slate { position: absolute; left: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s13-003 h4 { margin: 0.7rem 0 0.1rem; font-family: var(--serif); font-weight: 400; font-size: 1.05rem; }
+.well-s13-003 .line { margin: 0; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
 
-/* A group */
-.well-s13-003 .group { margin-bottom: clamp(24px, 3vw, 42px); }
-.well-s13-003 .group > header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px 20px;
-  padding-bottom: clamp(10px, 1.3vw, 14px);
-  margin-bottom: clamp(14px, 1.8vw, 20px);
-  border-bottom: 2px solid var(--ink);
-}
-.well-s13-003 .group h2 {
-  margin: 0;
-  font-size: clamp(1.3rem, 1.9vw, 1.7rem);
-  line-height: 1.06;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-}
-.well-s13-003 .group > header p { margin: 0; font-size: 0.9rem; color: var(--ink-faint); }
+.well-s13-003 .foot { display: flex; justify-content: space-between; gap: 2rem; margin-top: 1rem; }
+.well-s13-003 .foot p { margin: 0; max-width: 30rem; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.well-s13-003 .foot p + p { text-align: right; }
 
-.well-s13-003 .rail {
-  display: flex;
-  gap: clamp(14px, 1.8vw, 24px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 14px;
-}
-.well-s13-003 .rail > figure {
-  flex: 0 0 calc((100% - clamp(14px, 1.8vw, 24px)) / 2);
-  min-width: 260px;
-  margin: 0;
-  scroll-snap-align: start;
-}
-.well-s13-003 .shot {
-  border: 1px dashed #b4b4b4;
-  border-radius: 22px;
-  background: linear-gradient(145deg, #dcdcdc 0%, #f2f2f2 100%);
-  display: flex;
-  align-items: flex-end;
-  padding: clamp(12px, 1.4vw, 16px);
-  margin-bottom: 10px;
-}
-.well-s13-003 .g-rooms .shot { aspect-ratio: 16 / 9; }
-.well-s13-003 .g-surfaces .shot { aspect-ratio: 1 / 1; }
-.well-s13-003 .g-light .shot { aspect-ratio: 3 / 4; }
-.well-s13-003 .shot span {
-  font-size: 0.7rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #5e5e5e;
-}
-.well-s13-003 figcaption { font-size: 1rem; line-height: 1.4; font-weight: 650; color: var(--ink); }
-.well-s13-003 figcaption b { display: block; font-weight: 400; font-size: 0.94rem; color: var(--ink-faint); }
-
-/* Foot */
-.well-s13-003 .foot {
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 2px solid var(--ink);
-  max-width: 86ch;
-  font-size: 1rem;
-  line-height: 1.58;
-  color: var(--ink-soft);
-}
-.well-s13-003 .foot b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 1000px) {
-  .well-s13-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-}
-
-@media (max-width: 620px) {
-  .well-s13-003 h1, .well-s13-003 .head p { max-width: none; }
-  .well-s13-003 .rail > figure { flex: 0 0 86%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s13-003 * { transition: none !important; }
-  .well-s13-003 .rail { scroll-behavior: auto; }
-}
+@media (max-width: 1024px) { .well-s13-003 .rows > li { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .well-s13-003 .shape { max-width: 30rem; } }
+@media (max-width: 768px) { .well-s13-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .well-s13-003 .lead { margin-left: 0; text-align: left; } .well-s13-003 h2 { max-width: none; } .well-s13-003 .foot { flex-direction: column; gap: 0.6rem; } .well-s13-003 .foot p + p { text-align: left; } }
+@media (max-width: 480px) { .well-s13-003 .pair { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .well-s13-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -217,63 +103,39 @@ body { margin: 0; background: #e8e8e8; }
     <div class="head">
       <div>
         <p class="eyebrow">The place</p>
-        <h1 id="well-s13-003-title">Three kinds of picture, three rails, three shapes.</h1>
+        <h2 id="well-s13-003-title">Three kinds of picture, three <em>shapes</em></h2>
       </div>
-      <p>The rooms are wide, the surfaces are square, the light is tall. <b>You can tell the groups apart before you read a word of it</b>, and each rail moves on its own.</p>
+      <p class="lead">The rooms are wide, the surfaces are square, the light is tall. You can tell the groups apart before you read a word of it.</p>
     </div>
 
-    <div class="group g-rooms">
-      <header>
-        <h2>The rooms</h2>
-        <p>Wide &mdash; two views, scroll sideways</p>
-      </header>
-      <div class="rail" tabindex="0" role="group" aria-label="The rooms, two views, scrollable">
-        <figure>
-          <div class="shot"><span>Reserved &mdash; treatment room</span></div>
-          <figcaption>Treatment room<b>Photographed empty, with nothing moved.</b></figcaption>
-        </figure>
-        <figure>
-          <div class="shot"><span>Reserved &mdash; reception</span></div>
-          <figcaption>Reception<b>Where you wait, and where you come round after.</b></figcaption>
-        </figure>
-      </div>
-    </div>
+    <ul class="rows">
+      <li class="wide">
+        <div><p class="n">01</p><h3>The rooms</h3><p class="shape">Wide, because a room is something you stand in and look across.</p></div>
+        <ul class="pair">
+          <li><div class="media" role="img" aria-label="Reserved image field: treatment room, 16:10"><p class="slate" aria-hidden="true">Room area &middot; 16:10</p></div><h4>Treatment room</h4><p class="line">Photographed empty, with nothing moved.</p></li>
+          <li><div class="media" role="img" aria-label="Reserved image field: reception, 16:10"><p class="slate" aria-hidden="true">Room area &middot; 16:10</p></div><h4>Reception</h4><p class="line">Where you wait, and where you come round after.</p></li>
+        </ul>
+      </li>
+      <li class="sq">
+        <div><p class="n">02</p><h3>The surfaces</h3><p class="shape">Square, because a surface is something you look at up close.</p></div>
+        <ul class="pair sq">
+          <li><div class="media" role="img" aria-label="Reserved image field: linen, 1:1"><p class="slate" aria-hidden="true">Texture area &middot; 1:1</p></div><h4>Linen</h4><p class="line">Changed between guests, every time.</p></li>
+          <li><div class="media" role="img" aria-label="Reserved image field: stone and wood, 1:1"><p class="slate" aria-hidden="true">Texture area &middot; 1:1</p></div><h4>Stone and wood</h4><p class="line">What the room is made of, up close.</p></li>
+        </ul>
+      </li>
+      <li class="tall">
+        <div><p class="n">03</p><h3>The light</h3><p class="shape">Tall, because light comes down through a window.</p></div>
+        <ul class="pair tall">
+          <li><div class="media" role="img" aria-label="Reserved image field: morning light, 3:4"><p class="slate" aria-hidden="true">Room area &middot; 3:4</p></div><h4>Morning</h4><p class="line">Before the first appointment.</p></li>
+          <li><div class="media" role="img" aria-label="Reserved image field: late afternoon light, 3:4"><p class="slate" aria-hidden="true">Room area &middot; 3:4</p></div><h4>Late afternoon</h4><p class="line">The hour most people come.</p></li>
+        </ul>
+      </li>
+    </ul>
 
-    <div class="group g-surfaces">
-      <header>
-        <h2>The surfaces</h2>
-        <p>Square &mdash; two views, scroll sideways</p>
-      </header>
-      <div class="rail" tabindex="0" role="group" aria-label="The surfaces, two views, scrollable">
-        <figure>
-          <div class="shot"><span>Reserved &mdash; linen</span></div>
-          <figcaption>Linen<b>Changed between guests, every time.</b></figcaption>
-        </figure>
-        <figure>
-          <div class="shot"><span>Reserved &mdash; stone and wood</span></div>
-          <figcaption>Stone and wood<b>What the room is made of, up close.</b></figcaption>
-        </figure>
-      </div>
+    <div class="foot">
+      <p>Two pictures in a group are two views of the same thing, not a before and after.</p>
+      <p>Before-and-after photography is kept in its own section, and anyone appearing here has agreed to be in the picture.</p>
     </div>
-
-    <div class="group g-light">
-      <header>
-        <h2>The light</h2>
-        <p>Tall &mdash; two views, scroll sideways</p>
-      </header>
-      <div class="rail" tabindex="0" role="group" aria-label="The light, two views, scrollable">
-        <figure>
-          <div class="shot"><span>Reserved &mdash; morning light</span></div>
-          <figcaption>Morning<b>Before the first appointment.</b></figcaption>
-        </figure>
-        <figure>
-          <div class="shot"><span>Reserved &mdash; late afternoon light</span></div>
-          <figcaption>Late afternoon<b>The hour most people come.</b></figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <p class="foot"><b>Two pictures in a group are two views of the same thing, not a before and after.</b> Before-and-after photography is kept in its own section and is only ever published with the guest's written permission.</p>
 
   </section>
 </div>

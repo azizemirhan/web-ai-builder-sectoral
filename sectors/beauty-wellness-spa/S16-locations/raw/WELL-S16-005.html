@@ -12,24 +12,21 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S16 — Locations
   Direction      : Art-directed / Distinctive
-  Revision       : V2. Replaced. Three full-bleed map bands stacked down the page made a
-                   three-studio section **taller than most whole pages** &mdash; a visitor scrolled
-                   past two studios to reach the third. The set now sits in one row and the section
-                   is about a third of its old height.
-  Layout model   : Three studios abreast. A ruled index line across the top, then one card each:
-                   reserved map, the studio mark set large, reserved address and telephone, and the
-                   route out
-  Density        : Low
-  Media mode     : Three reserved map areas, deliberately equal, at a proportion that fits three
-                   across rather than one per screen.
-  Interaction    : Three in-page anchors, one per studio.
-  The head       : **No hero panel.** This section opens on a ruled index line with the studio marks
-                   listed at the right, because the first question here is *how many are there*,
-                   and an index answers that before a sentence can.
-  Content note   : No invented address, street, postcode, city, phone number, coordinate, travel
-                   time, transport line, parking or access claim. **No description of the building**
-                   &mdash; the map areas carry that weight. No opening hours anywhere.
-  Palette        : Black and white only.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 5 (serif
+                   type crossing a field's edge), three times down the page. V1's device is
+                   kept: the map as the subject, one wide band per site, the site's name in
+                   the band rather than beside it — here the name sits in the left margin and
+                   crosses into the band's left edge, so the reserved area is unmistakably
+                   what the row is about. No scrim, no type over a photograph.
+  Layout model   : Mast line. Three ruled rows; in each, a wide 4:1 map area set to the right
+                   of the measure and the site token in serif at display size crossing its left
+                   edge; beneath the band, ADDRESS and PHONE slots and a directions link on one
+                   line. The access line closes on the foot rule.
+  Density        : Low (60–120)
+  Media mode     : Three reserved map areas; six reserved fields. No map or fact supplied.
+  Interaction    : None (static; no JavaScript). Links are relative.
+  Content note   : No address, city, phone, hour or access claim; no description of any
+                   building; no embedded map.
 -->
 
 <meta name="study-id" content="WELL-S16-005">
@@ -40,224 +37,56 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="A ruled index line, then three studios abreast in one row">
+<meta name="theme" content="005 Ivory &amp; Plum">
+<meta name="layout-model" content="Three ruled rows, each a wide 4:1 map area with the site token in serif at display size crossing its left edge; reserved fields and directions beneath">
 <meta name="density" content="low">
-<meta name="media-mode" content="reserved-map-three-equal">
-<meta name="interaction" content="in-page-anchors">
+<meta name="media-mode" content="three-reserved-map-areas-six-reserved-fields">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S16-005 — Locations, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #141414; }
+body { margin: 0; background: #f8f4f3; }
 
-/* Scoped study styles - namespaced to .well-s16-005 */
-/* monochrome: hand-graded. Black and white only. */
 .well-s16-005 {
-  --ink: #f4f4f4;
-  --ink-soft: #b4b4b4;
-  --ink-faint: #8b8b8b;
-  --paper: #141414;
-  --panel: #1e1e1e;
-  --line: #383838;
-  --white: #ffffff;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f8f4f3; --ink: #2b2226; --muted: #6d6266; --line: #e0d6d9; --line-strong: #2b2226;
+  --media: #eae1e3; --accent: #6e3b4e;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s16-005 *,
-.well-s16-005 *::before,
-.well-s16-005 *::after { box-sizing: inherit; }
-.well-s16-005 :focus-visible { outline: 2px solid var(--white); outline-offset: 3px; border-radius: 8px; }
-.well-s16-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s16-005 *, .well-s16-005 *::before, .well-s16-005 *::after { box-sizing: inherit; }
+.well-s16-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s16-005 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.well-s16-005 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s16-005 .mast { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0; border-top: 1px solid var(--line-strong); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s16-005 .mast span + span { color: var(--muted); }
 
-/* The index line */
-.well-s16-005 .index {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 14px 30px;
-  padding-bottom: clamp(12px, 1.5vw, 18px);
-  border-bottom: 1px solid var(--line);
-  margin-bottom: clamp(10px, 1.3vw, 14px);
-}
-.well-s16-005 .kicker {
-  margin: 0;
-  font-size: 0.74rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.well-s16-005 .marks { display: flex; gap: 8px; margin: 0; padding: 0; list-style: none; }
-.well-s16-005 .marks a {
-  display: inline-block;
-  padding: 5px 13px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--ink-soft);
-  font-size: 0.76rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-decoration: none;
-}
-.well-s16-005 .marks a:hover { border-color: var(--white); color: var(--white); }
+.well-s16-005 .rows { margin: 0; padding: 0; list-style: none; }
+.well-s16-005 .rows > li { padding: clamp(1.6rem, 3vw, 3rem) 0; border-bottom: 1px solid var(--line); }
+.well-s16-005 .band { position: relative; display: grid; grid-template-columns: minmax(5rem, 0.16fr) minmax(0, 1fr); align-items: center; }
+.well-s16-005 .media { position: relative; aspect-ratio: 4 / 1; background: var(--media); border-radius: 4px; }
+.well-s16-005 .slate { position: absolute; right: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s16-005 h2 { position: relative; z-index: 1; margin: 0 clamp(-14rem, -20vw, -8rem) 0 0; font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.95; letter-spacing: -0.04em; white-space: nowrap; }
+.well-s16-005 h2 em { font-style: italic; color: var(--accent); }
+.well-s16-005 .line { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 0.8rem 2.4rem; margin: 1rem 0 0; }
+.well-s16-005 .field { display: flex; align-items: center; gap: 0.8rem; }
+.well-s16-005 .field span:first-child { color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s16-005 .slot { display: inline-flex; align-items: center; min-width: 11rem; height: 1.8rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.9rem; }
+.well-s16-005 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.well-s16-005 .line a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.25em; text-decoration-color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s16-005 .line a span { color: var(--accent); margin-left: 0.3rem; }
 
-.well-s16-005 .top {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  padding-bottom: clamp(20px, 2.6vw, 34px);
-  border-bottom: 3px solid var(--white);
-  margin-bottom: clamp(22px, 2.8vw, 40px);
-}
-.well-s16-005 h1 {
-  margin: 0;
-  font-size: clamp(2.1rem, 4.2vw, 3.5rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  font-weight: 800;
-  color: var(--white);
-  max-width: 17ch;
-}
-.well-s16-005 .top p { margin: 0; max-width: 44ch; font-size: 1.02rem; line-height: 1.6; color: var(--ink-soft); }
-.well-s16-005 .top p b { color: var(--white); font-weight: 650; }
+.well-s16-005 .foot { margin: 1.2rem 0 0; max-width: 44rem; color: var(--muted); font-size: 0.84rem; line-height: 1.55; }
 
-/* Three abreast */
-.well-s16-005 .set {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(16px, 2vw, 26px);
-  margin-bottom: clamp(22px, 2.8vw, 38px);
-}
-.well-s16-005 .studio {
-  min-width: 0;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 26px;
-  padding: clamp(14px, 1.6vw, 18px);
-}
-.well-s16-005 .map {
-  aspect-ratio: 4 / 3;
-  border: 1px dashed #4d4d4d;
-  border-radius: 18px;
-  background: linear-gradient(145deg, #232323 0%, #2e2e2e 100%);
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 12px;
-  margin-bottom: clamp(13px, 1.6vw, 17px);
-}
-.well-s16-005 .map span {
-  font-size: 0.66rem;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #8b8b8b;
-}
-.well-s16-005 .studio h2 {
-  margin: 0 0 clamp(11px, 1.4vw, 15px);
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  font-weight: 800;
-  color: var(--white);
-}
-.well-s16-005 .fields { margin: 0 0 clamp(12px, 1.5vw, 16px); display: grid; gap: 9px; }
-.well-s16-005 .fields > div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--line);
-}
-.well-s16-005 .fields dt {
-  font-size: 0.68rem;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s16-005 .fields dd { margin: 0; }
-.well-s16-005 .slot {
-  display: inline-block;
-  min-width: 72px;
-  padding: 5px 14px;
-  border-radius: 10px;
-  background: #2b2b2b;
-  color: #a8a8a8;
-  font-size: 0.94rem;
-  font-weight: 700;
-  text-align: center;
-}
-.well-s16-005 .go {
-  display: inline-block;
-  font-size: 0.94rem;
-  font-weight: 700;
-  color: var(--white);
-  text-decoration: none;
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 2px;
-}
-.well-s16-005 .go:hover { border-bottom-color: var(--white); }
-
-/* Access */
-.well-s16-005 .access {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(16px, 2.2vw, 34px);
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 3px solid var(--white);
-}
-.well-s16-005 .access h3 {
-  margin: 0 0 8px;
-  font-size: 0.76rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s16-005 .access p { margin: 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
-.well-s16-005 .access p b { color: var(--white); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .well-s16-005 .top { grid-template-columns: minmax(0, 1fr); align-items: start; }
-}
-
-@media (max-width: 620px) {
-  .well-s16-005 h1, .well-s16-005 .top p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s16-005 * { transition: none !important; }
-}
+@media (max-width: 1024px) { .well-s16-005 h2 { font-size: clamp(2.2rem, 4.4vw, 3.6rem); } }
+@media (max-width: 768px) { .well-s16-005 .band { grid-template-columns: minmax(0, 1fr); gap: 0.8rem; } .well-s16-005 h2 { margin-right: 0; white-space: normal; } .well-s16-005 .media { aspect-ratio: 16 / 9; } .well-s16-005 .line { justify-content: flex-start; } .well-s16-005 .mast { flex-direction: column; gap: 0.2rem; } }
+@media (max-width: 480px) { .well-s16-005 .slot { min-width: 0; width: 100%; } .well-s16-005 .field { width: 100%; } .well-s16-005 .media { aspect-ratio: 4 / 3; } }
+@media (prefers-reduced-motion: reduce) { .well-s16-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -265,64 +94,24 @@ body { margin: 0; background: #141414; }
 <div class="well-s16-005" data-study-id="WELL-S16-005" data-direction="Art-directed / Distinctive">
   <section class="shell" aria-labelledby="well-s16-005-title">
 
-    <div class="index">
-      <p class="kicker">Where we are</p>
-      <ul class="marks">
-        <li><a href="#well-s16-005-title">Studio 01</a></li>
-        <li><a href="#well-s16-005-title">Studio 02</a></li>
-        <li><a href="#well-s16-005-title">Studio 03</a></li>
-      </ul>
-    </div>
+    <p class="mast" id="well-s16-005-title"><span>Where we are</span><span>Three studios, the map as the subject</span></p>
 
-    <div class="top">
-      <h1 id="well-s16-005-title">Three studios, side by side rather than one per screen.</h1>
-      <p>A map is only useful next to the two others you are choosing between. <b>So all three sit on one line</b>, at the same size, and nothing about the buildings is described &mdash; the areas are reserved for what they actually look like.</p>
-    </div>
+    <ul class="rows">
+      <li>
+        <div class="band"><h2>Studio <em>01</em></h2><div class="media" role="img" aria-label="Reserved map area: Studio 01, 4:1"><p class="slate" aria-hidden="true">Map area &middot; 4:1</p></div></div>
+        <p class="line"><span class="field"><span>Address</span><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></span><span class="field"><span>Phone</span><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></span><a href="#directions-01">Directions<span aria-hidden="true">&#8599;</span></a></p>
+      </li>
+      <li>
+        <div class="band"><h2>Studio <em>02</em></h2><div class="media" role="img" aria-label="Reserved map area: Studio 02, 4:1"><p class="slate" aria-hidden="true">Map area &middot; 4:1</p></div></div>
+        <p class="line"><span class="field"><span>Address</span><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></span><span class="field"><span>Phone</span><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></span><a href="#directions-02">Directions<span aria-hidden="true">&#8599;</span></a></p>
+      </li>
+      <li>
+        <div class="band"><h2>Studio <em>03</em></h2><div class="media" role="img" aria-label="Reserved map area: Studio 03, 4:1"><p class="slate" aria-hidden="true">Map area &middot; 4:1</p></div></div>
+        <p class="line"><span class="field"><span>Address</span><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></span><span class="field"><span>Phone</span><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></span><a href="#directions-03">Directions<span aria-hidden="true">&#8599;</span></a></p>
+      </li>
+    </ul>
 
-    <div class="set">
-
-      <div class="studio">
-        <div class="map"><span>Reserved &mdash; map</span></div>
-        <h2>Studio 01</h2>
-        <dl class="fields">
-          <div><dt>Address</dt><dd><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></dd></div>
-          <div><dt>Telephone</dt><dd><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></dd></div>
-        </dl>
-        <a class="go" href="#well-s16-005-title">Directions</a>
-      </div>
-
-      <div class="studio">
-        <div class="map"><span>Reserved &mdash; map</span></div>
-        <h2>Studio 02</h2>
-        <dl class="fields">
-          <div><dt>Address</dt><dd><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></dd></div>
-          <div><dt>Telephone</dt><dd><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></dd></div>
-        </dl>
-        <a class="go" href="#well-s16-005-title">Directions</a>
-      </div>
-
-      <div class="studio">
-        <div class="map"><span>Reserved &mdash; map</span></div>
-        <h2>Studio 03</h2>
-        <dl class="fields">
-          <div><dt>Address</dt><dd><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></dd></div>
-          <div><dt>Telephone</dt><dd><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></dd></div>
-        </dl>
-        <a class="go" href="#well-s16-005-title">Directions</a>
-      </div>
-
-    </div>
-
-    <div class="access">
-      <div>
-        <h3>Getting in and around</h3>
-        <p><b>Tell us what you need when you book</b> and we will describe the studio you are coming to properly before you travel &mdash; including the parts that are awkward.</p>
-      </div>
-      <div>
-        <h3>Why no badges and no description</h3>
-        <p>An access icon is a promise about a building, and a wrong one is the promise that actually harms somebody. <b>The exact address is confirmed with your appointment</b>, and nothing here describes a building we cannot photograph.</p>
-      </div>
-    </div>
+    <p class="foot">Tell us what you need to get in and around comfortably when you book, and we will describe the building you are coming to properly before you travel, including the parts that are awkward.</p>
 
   </section>
 </div>

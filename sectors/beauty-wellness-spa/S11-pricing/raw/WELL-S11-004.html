@@ -11,28 +11,22 @@
   Study ID       : WELL-S11-004
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S11 — Pricing
-  Direction      : Conversion-led
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : One treatment promoted as the way in for a first visit, given a panel with a
-                   large reserved price slot and the action, beside a compact list of everything
-                   else at list scale
-  Density        : Medium
-  Media mode     : None. Deliberate: the promoted panel earns its rank through scale and colour,
-                   and a photograph would make it a treatment card rather than a price decision.
-  Interaction    : None (static; no JavaScript)
-  Conversion note: The conversion problem in a pricing section is that a visitor who does not know
-                   the sector cannot choose from a list. The device is therefore **an entry point,
-                   not a recommendation about what other people buy**: the promoted row is framed
-                   as where to start if you have not been before, which is the studio's own advice
-                   and something it can stand behind. It carries **no "most popular" or "best
-                   value" badge**, because those assert real purchase data a placeholder does not
-                   have. See ../README.md.
-  Reserved-price note : The price is reserved, not omitted — an em dash at the size the real figure
-                   will occupy, with a visually hidden "Price" label and no currency symbol. The
-                   promoted slot is deliberately larger than the list slots, because relative price
-                   prominence is exactly what this direction is deciding.
-  Content note   : No invented price, figure, range, currency symbol, deposit, fee, tax statement,
-                   package value, saving, discount or "was/now" pair; no duration or session count.
+  Direction      : Conversion-led / Direct
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 4 (a tinted
+                   band carrying the promoted item and the action) beside a ruled list. V1's
+                   argument is kept: an entry point, not a recommendation about what others
+                   bought — "where we would start you", the studio's own advice, with no
+                   popularity or value badge. Two price scales in one study: large in the band,
+                   list-size in the rows.
+  Layout model   : Two columns. Left, a tinted band: eyebrow, the promoted treatment in serif
+                   display, one line, a large reserved price slot with its label, one bordered
+                   action, and a 16:9 field at the foot. Right, "Everything else" as ruled
+                   rows, name left and reserved slot right, then the policy beneath the last rule.
+  Density        : Standard (90–170)
+  Media mode     : One reserved field — the room. Eight reserved price slots at two scales. No
+                   image or figure is supplied.
+  Interaction    : None (static; no JavaScript). The action is a relative link.
+  Content note   : Prices reserved; no currency, figure, duration, badge, saving or discount.
 -->
 
 <meta name="study-id" content="WELL-S11-004">
@@ -41,256 +35,93 @@
 <meta name="section-id" content="WELL-S11">
 <meta name="section-name" content="Pricing">
 <meta name="variant" content="004">
-<meta name="territory" content="Conversion-led">
-<meta name="direction" content="Conversion-led">
-<meta name="layout-model" content="Promoted entry-point price panel beside a compact list of the rest">
-<meta name="density" content="medium">
-<meta name="media-mode" content="none-deliberate">
+<meta name="territory" content="Conversion-led / Direct">
+<meta name="direction" content="Conversion-led / Direct">
+<meta name="theme" content="004 Sand &amp; Ochre">
+<meta name="layout-model" content="Tinted band with the promoted treatment, a large reserved price slot, action and 16:9 field, beside ruled rows of everything else at list scale">
+<meta name="density" content="standard">
+<meta name="media-mode" content="one-reserved-field-eight-reserved-price-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S11-004 — Pricing, Conversion-led</title>
+<title>WELL-S11-004 — Pricing, Conversion-led / Direct</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #232a44; }
+body { margin: 0; background: #f7f2e8; }
 
-/* Scoped study styles — namespaced to .well-s11-004 */
 .well-s11-004 {
-  --ink: #eef0f7;
-  --ink-soft: #a8aec9;
-  --paper: #232a44;
-  --panel: #f2f1f6;
-  --panel-ink: #1b2036;
-  --panel-soft: #5d6178;
-  --panel-chip: #e2e1ea;
-  --chip: #333a58;
-  --chip-ink: #c3c8de;
-  --line: #3a4162;
-  --accent: #1b2036;
-  --accent-ink: #f2f1f6;
-  --focus: #b9c4ee;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f7f2e8; --ink: #2b251d; --muted: #6e655a; --line: #dfd6c8; --line-strong: #2b251d;
+  --media: #e9e1d2; --band: #efe6d6; --accent: #9a6b2a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s11-004 *,
-.well-s11-004 *::before,
-.well-s11-004 *::after { box-sizing: inherit; }
-.well-s11-004 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 8px;
-}
-.well-s11-004 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s11-004 *, .well-s11-004 *::before, .well-s11-004 *::after { box-sizing: inherit; }
+.well-s11-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s11-004 .shell {
-  width: 100%;
-  max-width: 1340px;
-  margin: 0 auto;
-  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
-}
+.well-s11-004 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s11-004 .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.5rem, 3.5vw, 4.5rem); align-items: stretch; }
+.well-s11-004 .list { display: flex; flex-direction: column; }
 
-/* Header */
-.well-s11-004 .head {
-  max-width: 44rem;
-  margin-bottom: clamp(22px, 2.8vw, 38px);
-}
-.well-s11-004 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s11-004 h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
+.well-s11-004 .band { display: flex; flex-direction: column; padding: clamp(1.6rem, 3vw, 3rem); background: var(--band); border-radius: 4px; }
+.well-s11-004 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s11-004 .kicker { margin: 0 0 0.4rem; color: var(--muted); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s11-004 h2 { margin: 0 0 0.8rem; max-width: 12ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 3.4vw, 3.4rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s11-004 h2 em { font-style: italic; }
+.well-s11-004 .lead { margin: 0 0 1.4rem; max-width: 28rem; color: var(--muted); font-size: 0.88rem; line-height: 1.55; }
+.well-s11-004 .big { display: flex; align-items: center; gap: 1rem; margin: 0 0 1.4rem; padding: 1rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); }
+.well-s11-004 .big .lab { color: var(--muted); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s11-004 .big .price { min-width: 9rem; height: 3.6rem; font-size: 2.2rem; }
+.well-s11-004 .price { display: inline-flex; align-items: center; justify-content: center; min-width: 5rem; height: 1.9rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.95rem; }
+.well-s11-004 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.well-s11-004 .btn { align-self: flex-start; display: inline-block; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+.well-s11-004 .btn:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+.well-s11-004 .media { position: relative; aspect-ratio: 16 / 9; margin-top: clamp(1.4rem, 2.6vw, 2.6rem); background: var(--media); border-radius: 3px; }
+.well-s11-004 .slate { position: absolute; left: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Split */
-.well-s11-004 .split {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  gap: clamp(18px, 2.4vw, 40px);
-  align-items: start;
-}
+.well-s11-004 h3 { margin: 0; padding: 0.9rem 0; border-top: 1px solid var(--line-strong); font-family: var(--serif); font-weight: 400; font-size: clamp(1.2rem, 1.7vw, 1.5rem); letter-spacing: -0.015em; }
+.well-s11-004 .rows { margin: 0; padding: 0; list-style: none; }
+.well-s11-004 .rows li { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 0.85rem 0; border-top: 1px solid var(--line); font-size: 0.95rem; }
+.well-s11-004 .rows li:last-child { border-bottom: 1px solid var(--line); }
+.well-s11-004 .policy { margin: auto 0 0; padding-top: 1.2rem; color: var(--muted); font-size: 0.84rem; line-height: 1.55; max-width: 32rem; }
 
-/* Promoted panel */
-.well-s11-004 .promoted {
-  background: var(--panel);
-  color: var(--panel-ink);
-  border-radius: 18px;
-  padding: clamp(24px, 3vw, 44px);
-  display: flex;
-  flex-direction: column;
-}
-.well-s11-004 .kicker {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--panel-soft);
-}
-.well-s11-004 h2 {
-  margin: 0;
-  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-  max-width: 15ch;
-}
-.well-s11-004 .promoted p {
-  margin: clamp(12px, 1.5vw, 18px) 0 0;
-  max-width: 42ch;
-  color: var(--panel-soft);
-  font-size: 0.96rem;
-  line-height: 1.6;
-}
-.well-s11-004 .big-price {
-  display: inline-block;
-  margin: clamp(20px, 2.4vw, 30px) 0 0;
-  min-width: clamp(96px, 9vw, 132px);
-  padding: 6px 18px;
-  border-radius: 10px;
-  background: var(--panel-chip);
-  color: var(--panel-soft);
-  font-size: clamp(2rem, 3.4vw, 2.9rem);
-  line-height: 1.16;
-  text-align: center;
-}
-.well-s11-004 .btn {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: clamp(22px, 2.6vw, 32px);
-  min-height: 54px;
-  padding: 0 32px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 140ms ease;
-}
-.well-s11-004 .btn:hover { background: #2a3050; }
-
-/* The rest, at list scale */
-.well-s11-004 .rest { min-width: 0; }
-.well-s11-004 .rest h2 {
-  margin: 0 0 clamp(10px, 1.2vw, 15px);
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-  max-width: none;
-}
-.well-s11-004 .rest ul { margin: 0; padding: 0; list-style: none; }
-.well-s11-004 .rest li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: clamp(12px, 1.8vw, 24px);
-  border-top: 1px solid var(--line);
-  padding: clamp(12px, 1.5vw, 17px) 0;
-}
-.well-s11-004 .name { font-size: 1rem; line-height: 1.3; }
-.well-s11-004 .price {
-  justify-self: end;
-  min-width: clamp(54px, 5vw, 68px);
-  padding: 3px 10px;
-  border-radius: 6px;
-  background: var(--chip);
-  color: var(--chip-ink);
-  font-size: 0.98rem;
-  text-align: center;
-}
-.well-s11-004 .note {
-  margin: clamp(16px, 2vw, 24px) 0 0;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.55;
-}
-
-/* Responsive ladder */
-@media (max-width: 1024px) {
-  .well-s11-004 .split { grid-template-columns: minmax(0, 1fr); }
-  .well-s11-004 h1 { max-width: none; }
-}
-
-@media (max-width: 768px) {
-  .well-s11-004 h2 { max-width: none; }
-  .well-s11-004 .promoted p { max-width: none; }
-  .well-s11-004 .btn { align-self: stretch; }
-}
-
-@media (max-width: 480px) {
-  .well-s11-004 .promoted { border-radius: 14px; }
-  .well-s11-004 .big-price { width: 100%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s11-004 * { transition: none !important; }
-}
+@media (max-width: 1024px) { .well-s11-004 .grid { grid-template-columns: minmax(0, 1fr); } .well-s11-004 h2 { max-width: none; } }
+@media (max-width: 480px) { .well-s11-004 .band { padding: 1.2rem; } .well-s11-004 .big .price { min-width: 7rem; height: 3rem; font-size: 1.8rem; } }
+@media (prefers-reduced-motion: reduce) { .well-s11-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
-<div class="well-s11-004" data-study-id="WELL-S11-004" data-direction="Conversion-led">
+<div class="well-s11-004" data-study-id="WELL-S11-004" data-direction="Conversion-led / Direct">
   <section class="shell" aria-labelledby="well-s11-004-title">
 
-    <div class="head">
-      <p class="eyebrow">What things cost</p>
-      <h1 id="well-s11-004-title">If you have not been before, start here</h1>
-    </div>
-
-    <div class="split">
-
-      <div class="promoted">
+    <div class="grid">
+      <div class="band">
+        <p class="eyebrow">What things cost</p>
         <p class="kicker">Where we would start you</p>
-        <h2>Deep cleansing facial</h2>
-        <p>The one we suggest for a first visit, because it tells us most about your skin and gives you the most say as it goes.</p>
-        <span class="big-price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span>
-        <a class="btn" href="#well-s11-004-title">Book this one</a>
+        <h2 id="well-s11-004-title">Deep cleansing <em>facial</em></h2>
+        <p class="lead">The one we suggest for a first visit, because it tells us most about your skin and gives you the most say as it goes.</p>
+        <p class="big"><span class="lab">Price</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></p>
+        <a class="btn" href="#book">Book this one</a>
+        <div class="media" role="img" aria-label="Reserved image field: the treatment room, 16:9"><p class="slate" aria-hidden="true">Image area &middot; 16:9</p></div>
       </div>
 
-      <div class="rest">
-        <h2>Everything else</h2>
-        <ul>
-          <li><span class="name">Hydrating facial</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span class="name">Scalp &amp; neck ritual</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span class="name">Hot stone massage</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span class="name">Aromatherapy massage</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span class="name">Body scrub &amp; wrap</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span class="name">Hands &amp; feet care</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span class="name">Brow shaping</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+      <div class="list">
+        <h3>Everything else</h3>
+        <ul class="rows">
+          <li>Hydrating facial <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li>Scalp &amp; neck ritual <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li>Hot stone massage <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li>Aromatherapy massage <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li>Body scrub &amp; wrap <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li>Hands &amp; feet care <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li>Brow shaping <span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></li>
         </ul>
-        <p class="note">The price shown is the price paid. No consultation charge, nothing added at the desk, and moving an appointment costs nothing.</p>
+        <p class="policy">The price shown is the price paid. No consultation charge, nothing added at the desk, and moving an appointment costs nothing.</p>
       </div>
-
     </div>
 
   </section>

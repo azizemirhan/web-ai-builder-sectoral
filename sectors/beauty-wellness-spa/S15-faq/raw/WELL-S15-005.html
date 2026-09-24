@@ -12,24 +12,21 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S15 — FAQ
   Direction      : Art-directed / Distinctive
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : The hierarchy inverted. Four questions reduced to small uppercase labels, with
-                   the **answers** set at display scale beneath them on alternating alignment, so
-                   the page is made of the reassurance rather than of the worry
-  Density        : Low — four questions where the rest of the batch carries eight
-  Media mode     : None, as across this batch.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, ruled rows with
+                   the serif at display size (device 6's scale, four times). V1's inversion is
+                   kept: the question reduced to a small tracked label, the answer set in serif
+                   at display size, on alternating alignment — so a visitor scanning sees four
+                   reassurances rather than four anxieties. Four, not eight, is what the device
+                   costs.
+  Layout model   : Mast line. Four ruled rows; each carries the question as an eyebrow-sized
+                   label and the answer in serif at clamp(1.6rem, 2.8vw, 2.6rem), rows
+                   alternating left and right alignment, with a 1:1 field set into the second
+                   and fourth rows' empty side.
+  Density        : Low (60–120)
+  Media mode     : Two reserved fields — a detail of linen, a detail of the room — 1:1. No
+                   image is supplied.
   Interaction    : None (static; no JavaScript).
-  The device     : Every conventional FAQ makes the question the loud element and the answer the
-                   quiet one, which means the page is visually a list of things that might be
-                   wrong. Reversing it means a visitor scanning without reading sees four
-                   reassurances rather than four anxieties. That is the whole study, and it is why
-                   it carries four questions rather than eight — at display scale, eight answers
-                   would be a wall.
-  The deliberate silence : The question about length keeps its explanation rather than a number, at
-                   the same scale as every other answer. See ../README.md.
-  Content note   : Every answer is grounded in a commitment established elsewhere in the catalog.
-                   No invented duration, price, figure, currency symbol, opening hour, availability,
-                   waiting time or response time; no efficacy claim; no medical answer.
+  Content note   : No duration, price, hour, day, availability or response time.
 -->
 
 <meta name="study-id" content="WELL-S15-005">
@@ -40,104 +37,57 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Inverted hierarchy — small question labels above display-scale answers">
+<meta name="theme" content="005 Ivory &amp; Plum">
+<meta name="layout-model" content="Four ruled rows with the question as a small label and the answer in serif at display size, alternating alignment, two 1:1 fields set into the empty sides">
 <meta name="density" content="low">
-<meta name="media-mode" content="none-deliberate">
+<meta name="media-mode" content="two-reserved-fields-1-1">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S15-005 — FAQ, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #c98f6e; }
+body { margin: 0; background: #f8f4f3; }
 
-/* Scoped study styles — namespaced to .well-s15-005 */
 .well-s15-005 {
-  --ink: #2a1710;
-  --ink-soft: #5d3624;
-  --paper: #c98f6e;
-  --line: #b2795a;
-  --focus: #2a1710;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f8f4f3; --ink: #2b2226; --muted: #6d6266; --line: #e0d6d9; --line-strong: #2b2226;
+  --media: #eae1e3; --accent: #6e3b4e;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s15-005 *,
-.well-s15-005 *::before,
-.well-s15-005 *::after { box-sizing: inherit; }
-.well-s15-005 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
+.well-s15-005 *, .well-s15-005 *::before, .well-s15-005 *::after { box-sizing: inherit; }
+.well-s15-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s15-005 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(48px, 5.6vw, 104px) clamp(20px, 3.6vw, 56px);
-}
+.well-s15-005 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s15-005 .mast { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0; border-top: 1px solid var(--line-strong); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s15-005 .mast span + span { color: var(--muted); }
 
-.well-s15-005 .eyebrow {
-  margin: 0 0 clamp(26px, 3.2vw, 48px);
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
+.well-s15-005 .rows { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.well-s15-005 .rows > li { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr); gap: clamp(1.5rem, 4vw, 5rem); align-items: center; padding: clamp(1.4rem, 2.6vw, 2.6rem) 0; border-bottom: 1px solid var(--line); }
+.well-s15-005 .rows > li:nth-child(even) { grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr); }
+.well-s15-005 .rows > li:nth-child(even) .qa { grid-column: 2; text-align: right; }
+.well-s15-005 .rows > li:nth-child(even) .qa .ans { margin-left: auto; }
+.well-s15-005 .rows > li:nth-child(even) .media { grid-column: 1; grid-row: 1; }
+.well-s15-005 .q { margin: 0 0 0.6rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s15-005 .qa .ans { margin: 0; max-width: 24ch; font-family: var(--serif); font-size: clamp(1.6rem, 2.8vw, 2.6rem); line-height: 1.12; letter-spacing: -0.025em; }
+.well-s15-005 .qa .ans em { font-style: italic; color: var(--accent); }
+.well-s15-005 .media { position: relative; aspect-ratio: 1 / 1; max-width: 18rem; width: 100%; justify-self: end; background: var(--media); border-radius: 3px; }
+.well-s15-005 .rows > li:nth-child(even) .media { justify-self: start; }
+.well-s15-005 .slate { position: absolute; left: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Inverted pairs */
-.well-s15-005 .pairs { margin: 0; padding: 0; list-style: none; }
-.well-s15-005 .pairs > li {
-  border-top: 1px solid var(--line);
-  padding: clamp(24px, 3vw, 46px) 0;
-}
-.well-s15-005 .pairs > li:last-child { border-bottom: 1px solid var(--line); }
-
-/* The question, made small */
-.well-s15-005 .q {
-  display: block;
-  margin-bottom: clamp(11px, 1.4vw, 17px);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-
-/* The answer, made the event */
-.well-s15-005 .a {
-  margin: 0;
-  font-size: clamp(1.4rem, 3.1vw, 2.6rem);
-  line-height: 1.16;
-  letter-spacing: -0.022em;
-  font-weight: 500;
-  max-width: 26ch;
-}
-
-/* Alternating alignment */
-.well-s15-005 .pairs > li:nth-child(even) { text-align: right; }
-.well-s15-005 .pairs > li:nth-child(even) .a { margin-left: auto; }
-
-/* Responsive ladder — the inversion holds, the alternation goes */
 @media (max-width: 768px) {
-  .well-s15-005 .a { font-size: clamp(1.3rem, 5.4vw, 1.9rem); max-width: none; }
-  .well-s15-005 .pairs > li:nth-child(even) { text-align: left; }
-  .well-s15-005 .pairs > li:nth-child(even) .a { margin-left: 0; }
+  .well-s15-005 .rows > li, .well-s15-005 .rows > li:nth-child(even) { grid-template-columns: minmax(0, 1fr); }
+  .well-s15-005 .rows > li:nth-child(even) .qa { grid-column: 1; text-align: left; }
+  .well-s15-005 .rows > li:nth-child(even) .qa .ans { margin-left: 0; }
+  .well-s15-005 .rows > li:nth-child(even) .media { grid-row: auto; }
+  .well-s15-005 .media { max-width: 10rem; justify-self: start; }
+  .well-s15-005 .mast { flex-direction: column; gap: 0.2rem; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s15-005 * { transition: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .well-s15-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -145,25 +95,13 @@ body { margin: 0; background: #c98f6e; }
 <div class="well-s15-005" data-study-id="WELL-S15-005" data-direction="Art-directed / Distinctive">
   <section class="shell" aria-labelledby="well-s15-005-title">
 
-    <p class="eyebrow" id="well-s15-005-title">Before you book</p>
+    <p class="mast" id="well-s15-005-title"><span>Before you book</span><span>Four answers, read before the questions</span></p>
 
-    <ul class="pairs">
-      <li>
-        <span class="q">Do I need to know what I want?</span>
-        <p class="a">No. Not sure yet is a normal answer, and we work it out together at the start.</p>
-      </li>
-      <li>
-        <span class="q">How long will it take?</span>
-        <p class="a">We agree that with you in the room, rather than printing a number you would be held to.</p>
-      </li>
-      <li>
-        <span class="q">Will I be sold anything?</span>
-        <p class="a">Not while you are lying down. If something would suit you, we say so afterwards.</p>
-      </li>
-      <li>
-        <span class="q">Is it awkward to say stop?</span>
-        <p class="a">No. Lighter, heavier or stop are all fine at any point, and none of them needs a reason.</p>
-      </li>
+    <ul class="rows">
+      <li><div class="qa"><p class="q">Do I need to know what I want?</p><p class="ans"><em>No.</em> Not sure yet is a normal answer, and we work it out together at the start.</p></div></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: linen, detail, 1:1"><p class="slate" aria-hidden="true">Detail &middot; 1:1</p></div><div class="qa"><p class="q">How long will it take?</p><p class="ans">We agree that with you <em>in the room,</em> rather than printing a number you would be held to.</p></div></li>
+      <li><div class="qa"><p class="q">Will I be sold anything?</p><p class="ans"><em>Not while you are lying down.</em> If something would suit you, we say so afterwards.</p></div></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: the room, detail, 1:1"><p class="slate" aria-hidden="true">Detail &middot; 1:1</p></div><div class="qa"><p class="q">Is it awkward to say stop?</p><p class="ans"><em>No.</em> Lighter, heavier or stop are all fine at any point, and none of them needs a reason.</p></div></li>
     </ul>
 
   </section>

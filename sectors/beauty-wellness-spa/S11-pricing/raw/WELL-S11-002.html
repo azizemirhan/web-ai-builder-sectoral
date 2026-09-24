@@ -12,24 +12,20 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S11 — Pricing
   Direction      : Premium / Editorial
-  Revision       : V2. Replaced. The first study stacked each treatment name above its own price
-                   chip with a rule between, which made five prices into a page you scrolled: **very
-                   tall, tiring to read, and the one thing a visitor came for &mdash; the figure
-                   &mdash; was the smallest thing on it.**
-  Layout model   : A price list that behaves like one. Name on the left, a leader across, the
-                   reserved figure on the right, five rows deep, with the pricing policy beside it
-  Density        : Medium
-  Media mode     : None.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, ruled rows with
+                   serif titles at display size (after ARC-S24-002's pacing). V1's decision is
+                   kept: the price demoted. Five treatments as large serif names on hairlines;
+                   the reserved price a small labelled line beneath each, not a figure to scan.
+  Layout model   : Ruled head. Five ruled rows — accent index, treatment name in serif at
+                   clamp(1.8rem, 3.4vw, 3.4rem), and beneath the name a small PRICE label with
+                   the reserved slot — beside a sticky 4:5 field. The policy sits on the foot
+                   rule, right-aligned.
+  Density        : Low (60–120)
+  Media mode     : One reserved field — hands and linen. Five reserved price slots. No image or
+                   figure is supplied.
   Interaction    : None (static; no JavaScript).
-  What changed   : The name and the figure sit **on the same line** and are read together, which is
-                   the only design question a price list has. The section is now a third of the
-                   height and the price is set at the size it will be paid in.
-  The reservation : The price is reserved, not omitted &mdash; an em dash at the size the real figure
-                   will occupy, in a quiet chip. **No currency symbol anywhere**, because a symbol
-                   would invent a market. No duration column: a rate matrix is paperwork.
-  Content note   : No invented price, figure, range, deposit, consultation fee, cancellation charge,
-                   package value, saving or discount. No *most popular* or *best value* badge.
-  Palette        : Black and white only.
+  Content note   : Prices reserved, never omitted. No currency, figure, duration, badge or
+                   discount.
 -->
 
 <meta name="study-id" content="WELL-S11-002">
@@ -40,206 +36,54 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="A five-row price list, name and reserved figure on one line, policy beside it">
-<meta name="density" content="medium">
-<meta name="media-mode" content="none">
+<meta name="theme" content="002 Bone &amp; Clay">
+<meta name="layout-model" content="Ruled head; five ruled rows with display-size serif names and a small labelled price slot beneath each, beside a sticky 4:5 field; policy on the foot rule">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-reserved-field-five-reserved-price-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S11-002 — Pricing, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #f6f1ea; }
 
-/* Scoped study styles - namespaced to .well-s11-002 */
-/* monochrome: hand-graded. Black and white only. */
 .well-s11-002 {
-  --ink: #111111;
-  --ink-soft: #4d4d4d;
-  --ink-faint: #767676;
-  --paper: #fafafa;
-  --card: #ffffff;
-  --line: #d6d6d6;
-  --line-soft: #e8e8e8;
-  --chip: #ececec;
-
-  box-sizing: border-box;
-  display: block;
-  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 34%);
-  color: var(--ink);
+  --paper: #f6f1ea; --ink: #2a2420; --muted: #6f665e; --line: #dbd1c5; --line-strong: #2a2420;
+  --media: #e7ded3; --accent: #a5583a;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s11-002 *,
-.well-s11-002 *::before,
-.well-s11-002 *::after { box-sizing: inherit; }
-.well-s11-002 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 10px; }
-.well-s11-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s11-002 *, .well-s11-002 *::before, .well-s11-002 *::after { box-sizing: inherit; }
+.well-s11-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s11-002 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.well-s11-002 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s11-002 .head { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0 1.2rem; border-top: 1px solid var(--line-strong); }
+.well-s11-002 .eyebrow { margin: 0; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s11-002 h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.2rem, 1.8vw, 1.6rem); letter-spacing: -0.01em; }
+.well-s11-002 h2 em { font-style: italic; }
+.well-s11-002 .body { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.75fr); gap: clamp(2rem, 4vw, 5rem); align-items: start; }
+.well-s11-002 .media { position: sticky; top: 2rem; aspect-ratio: 4 / 5; background: var(--media); border-radius: 4px; }
+.well-s11-002 .slate { position: absolute; left: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Hero */
-.well-s11-002 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  padding: clamp(30px, 4vw, 60px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(17, 17, 17, 0.18);
-  margin-bottom: clamp(24px, 3vw, 44px);
-}
-.well-s11-002 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-}
-.well-s11-002 h1 {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(2.3rem, 4.6vw, 4rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-weight: 400;
-  color: #ffffff;
-  max-width: 16ch;
-}
-.well-s11-002 .hero p { margin: 0; max-width: 40ch; font-size: 1.04rem; line-height: 1.62; color: #d2d2d2; }
-.well-s11-002 .hero p b { color: #ffffff; font-weight: 650; }
+.well-s11-002 .rows { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.well-s11-002 .rows li { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: clamp(1rem, 2.4vw, 3rem); align-items: baseline; padding: clamp(1.2rem, 2.2vw, 2.2rem) 0; border-bottom: 1px solid var(--line); }
+.well-s11-002 .n { margin: 0; color: var(--accent); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s11-002 h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 3.4rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s11-002 .pl { display: flex; align-items: center; gap: 0.8rem; margin: 0.9rem 0 0; }
+.well-s11-002 .lab { color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s11-002 .price { display: inline-flex; align-items: center; justify-content: center; min-width: 4.5rem; height: 1.7rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.9rem; }
+.well-s11-002 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* The list and the policy */
-.well-s11-002 .body {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.5fr);
-  gap: clamp(18px, 2.6vw, 40px);
-  align-items: start;
-}
-.well-s11-002 .list {
-  background: var(--card);
-  border: 1px solid var(--line-soft);
-  border-radius: 30px;
-  padding: clamp(10px, 1.4vw, 20px) clamp(18px, 2.4vw, 38px);
-  box-shadow: 0 22px 50px rgba(17, 17, 17, 0.07);
-}
-.well-s11-002 .list dl { margin: 0; }
-.well-s11-002 .row {
-  display: flex;
-  align-items: baseline;
-  gap: clamp(12px, 1.6vw, 22px);
-  padding: clamp(16px, 2vw, 26px) 0;
-  border-bottom: 1px solid var(--line-soft);
-}
-.well-s11-002 .row:last-child { border-bottom: 0; }
-.well-s11-002 .row dt {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(1.3rem, 2vw, 1.86rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-.well-s11-002 .leader {
-  flex: 1 1 auto;
-  height: 1px;
-  min-width: 20px;
-  background: var(--line);
-}
-.well-s11-002 .row dd { margin: 0; }
-.well-s11-002 .price {
-  display: inline-block;
-  min-width: 104px;
-  padding: 10px 20px;
-  border-radius: 14px;
-  background: var(--chip);
-  color: var(--ink-faint);
-  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
-  line-height: 1.1;
-  font-weight: 700;
-  text-align: center;
-}
-.well-s11-002 .heads {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  padding: clamp(12px, 1.5vw, 18px) 0 0;
-  font-size: 0.74rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
+.well-s11-002 .policy { margin: 1.2rem 0 0; max-width: 36rem; margin-left: auto; color: var(--muted); font-size: 0.84rem; line-height: 1.55; text-align: right; }
 
-/* Policy */
-.well-s11-002 .policy {
-  background: #111111;
-  color: #e8e8e8;
-  border-radius: 30px;
-  padding: clamp(20px, 2.4vw, 34px);
-}
-.well-s11-002 .policy h2 {
-  margin: 0 0 clamp(12px, 1.5vw, 16px);
-  font-size: 0.78rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #a8a8a8;
-}
-.well-s11-002 .policy ul { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(12px, 1.5vw, 16px); }
-.well-s11-002 .policy li { font-size: 1rem; line-height: 1.56; color: #c4c4c4; }
-.well-s11-002 .policy li b { display: block; margin-bottom: 3px; color: #ffffff; font-weight: 700; }
-.well-s11-002 .note {
-  margin: clamp(20px, 2.4vw, 32px) 0 0;
-  padding-top: clamp(16px, 2vw, 22px);
-  border-top: 2px solid var(--ink);
-  font-size: 1rem;
-  line-height: 1.58;
-  color: var(--ink-soft);
-}
-.well-s11-002 .note span { display: block; max-width: 78ch; }
-.well-s11-002 .note b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 980px) {
-  .well-s11-002 .hero,
-  .well-s11-002 .body { grid-template-columns: minmax(0, 1fr); }
-  .well-s11-002 .hero { align-items: start; }
-}
-
-@media (max-width: 620px) {
-  .well-s11-002 h1, .well-s11-002 .hero p { max-width: none; }
-  .well-s11-002 .row { flex-wrap: wrap; gap: 10px; }
-  .well-s11-002 .leader { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s11-002 * { transition: none !important; }
-}
+@media (max-width: 768px) { .well-s11-002 .rows li { grid-template-columns: 3rem minmax(0, 1fr); } .well-s11-002 .head { flex-direction: column; align-items: flex-start; gap: 0.3rem; } .well-s11-002 .policy { margin-left: 0; text-align: left; } .well-s11-002 .body { grid-template-columns: minmax(0, 1fr); } .well-s11-002 .media { position: static; aspect-ratio: 16 / 9; order: -1; } }
+@media (max-width: 480px) { .well-s11-002 .rows li { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; } .well-s11-002 .media { aspect-ratio: 4 / 3; } }
+@media (prefers-reduced-motion: reduce) { .well-s11-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -247,59 +91,23 @@ body { margin: 0; background: #fafafa; }
 <div class="well-s11-002" data-study-id="WELL-S11-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="well-s11-002-title">
 
-    <div class="hero">
-      <div>
-        <p class="eyebrow">What things cost</p>
-        <h1 id="well-s11-002-title">The treatment first, the number on the same line.</h1>
-      </div>
-      <p>Five things we are asked for most often. <b>The price is here because you should know it before you arrive</b>, not because it is the point of the page.</p>
+    <div class="head">
+      <p class="eyebrow">What things cost</p>
+      <h2 id="well-s11-002-title">Five treatments, and what each one <em>costs</em></h2>
     </div>
 
     <div class="body">
-
-      <div class="list">
-        <div class="heads"><span>Treatment</span><span>Price</span></div>
-        <dl>
-          <div class="row">
-            <dt>Deep cleansing facial</dt>
-            <span class="leader" aria-hidden="true"></span>
-            <dd><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></dd>
-          </div>
-          <div class="row">
-            <dt>Hot stone massage</dt>
-            <span class="leader" aria-hidden="true"></span>
-            <dd><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></dd>
-          </div>
-          <div class="row">
-            <dt>Aromatherapy massage</dt>
-            <span class="leader" aria-hidden="true"></span>
-            <dd><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></dd>
-          </div>
-          <div class="row">
-            <dt>Body scrub &amp; wrap</dt>
-            <span class="leader" aria-hidden="true"></span>
-            <dd><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></dd>
-          </div>
-          <div class="row">
-            <dt>Hands &amp; feet care</dt>
-            <span class="leader" aria-hidden="true"></span>
-            <dd><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></dd>
-          </div>
-        </dl>
-      </div>
-
-      <div class="policy">
-        <h2>How pricing works here</h2>
-        <ul>
-          <li><b>The price shown is the price paid</b>Nothing is added at the desk, and there is no separate consultation charge.</li>
-          <li><b>A shorter treatment costs less</b>If a treatment runs shorter than planned, you pay for the shorter one.</li>
-          <li><b>You are told before, not after</b>If anything would change the figure, it is said in the room before it happens.</li>
-        </ul>
-      </div>
-
+    <ol class="rows">
+      <li><p class="n">01</p><div><h3>Deep cleansing facial</h3><p class="pl"><span class="lab">Price</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></p></div></li>
+      <li><p class="n">02</p><div><h3>Hydrating facial</h3><p class="pl"><span class="lab">Price</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></p></div></li>
+      <li><p class="n">03</p><div><h3>Hot stone massage</h3><p class="pl"><span class="lab">Price</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></p></div></li>
+      <li><p class="n">04</p><div><h3>Aromatherapy massage</h3><p class="pl"><span class="lab">Price</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></p></div></li>
+      <li><p class="n">05</p><div><h3>Body scrub &amp; wrap</h3><p class="pl"><span class="lab">Price</span><span class="price"><span class="vh">Price</span><span aria-hidden="true">&mdash;</span></span></p></div></li>
+    </ol>
+    <div class="media" role="img" aria-label="Reserved image field: hands and linen, 4:5"><p class="slate" aria-hidden="true">Image area &middot; 4:5 &middot; hands and linen</p></div>
     </div>
 
-    <p class="note"><span><b>The figures are reserved rather than invented, and no currency appears anywhere</b> &mdash; a symbol would decide which country this studio is in. What the layout is settling is the only real question a price list has: how loudly the number is set against the name of the thing it belongs to.</span></p>
+    <p class="policy">The price shown is the price paid. Nothing is added at the desk, there is no separate consultation charge, and moving an appointment costs nothing.</p>
 
   </section>
 </div>

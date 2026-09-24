@@ -12,28 +12,17 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S22 — Breadcrumb / Context Navigation
   Direction      : Dense / Information-heavy
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : The trail on the first line and **the sibling set on the second** — the other
-                   categories at this level, with the current one marked and not a link
-  Density        : High for this role
-  Media mode     : None.
-  Interaction    : Links only (static; no JavaScript). The sibling set is a plain link list, which
-                   is what the scaffold asks any local navigation to degrade to.
-  Content responsibility : **The trail plus sibling navigation.** The scaffold allows *local
-                   navigation across sibling pages*, and it is the one addition that makes a
-                   breadcrumb genuinely denser rather than merely longer — it answers *what else is
-                   at this level*, which a trail alone cannot.
-  Two landmarks, two names : Two <nav> regions, each with its own accessible name — "Breadcrumb"
-                   and "Other treatment categories". Two unnamed navs would be worse than one.
-  The current sibling : Marked with `aria-current="page"` and rendered as text rather than a link,
-                   so the set says where you already are instead of offering you a link to it.
-  Responsive note: The trail **scrolls horizontally with a visible edge affordance** rather than
-                   wrapping — the second of the three strategies the scaffold permits, taken here
-                   because a wrapping trail above a wrapping sibling row produces four ragged lines.
-                   It is never hidden and never silently cut.
-  Content note   : Every level and every sibling is vocabulary established in S02 and S03. **No item
-                   count beside a category** — "Facials (12)" is an invented figure. No price,
-                   rating or duration; no primary menu; no search field.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, a label line over
+                   device 3 (cells sharing hairlines). V1 is kept: the trail on the first
+                   line and the sibling set on the second, as two separately named landmarks —
+                   answering what else is at this level.
+  Layout model   : The trail in tracked uppercase on a hairline. Beneath, ALSO UNDER TREATMENTS
+                   as a label and four sibling cells sharing hairlines, the current one marked
+                   in ink with an accent index.
+  Density        : Hero (40–90)
+  Media mode     : None, by design.
+  Interaction    : Links only; no JavaScript.
+  Content note   : Page names from the sector's vocabulary; no item counts.
 -->
 
 <meta name="study-id" content="WELL-S22-003">
@@ -44,186 +33,73 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Dense / Information-heavy">
 <meta name="direction" content="Dense / Information-heavy">
-<meta name="layout-model" content="Trail line above a sibling category set, both scoped navigation landmarks">
-<meta name="density" content="high">
+<meta name="theme" content="003 Mist &amp; Moss">
+<meta name="layout-model" content="Trail in tracked uppercase on a hairline; sibling categories as four cells sharing hairlines beneath, the current marked">
+<meta name="density" content="hero">
 <meta name="media-mode" content="none">
-<meta name="interaction" content="links-only">
+<meta name="interaction" content="links">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S22-003 — Breadcrumb / Context Navigation, Dense / Information-heavy</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e7eaed; }
+body { margin: 0; background: #eef0ee; }
 
-/* Scoped study styles — namespaced to .well-s22-003 */
 .well-s22-003 {
-  --ink: #1f242a;
-  --ink-soft: #5c6672;
-  --paper: #e7eaed;
-  --chip: #eff2f4;
-  --chip-edge: #ccd3da;
-  --rule: #cfd6dc;
-  --focus: #35485c;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eef0ee; --ink: #1f2624; --muted: #5f6764; --line: #cdd2cf; --line-strong: #1f2624;
+  --media: #dcdfdb; --accent: #2f5c4b;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s22-003 *,
-.well-s22-003 *::before,
-.well-s22-003 *::after { box-sizing: inherit; }
-.well-s22-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-.well-s22-003 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
+.well-s22-003 *, .well-s22-003 *::before, .well-s22-003 *::after { box-sizing: inherit; }
+.well-s22-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s22-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(18px, 2vw, 28px) clamp(20px, 3.6vw, 52px);
-}
+.well-s22-003 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(1.2rem, 2.4vw, 2.4rem) clamp(1rem, 4vw, 4rem); }
+.well-s22-003 .trail { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 0.9rem; margin: 0; padding: 0 0 0.9rem; list-style: none; border-bottom: 1px solid var(--line-strong); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s22-003 .trail li { display: flex; align-items: baseline; gap: 0.9rem; }
+.well-s22-003 .trail a { color: var(--muted); text-decoration: none; padding: 0.4rem 0; }
+.well-s22-003 .trail a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: var(--accent); }
+.well-s22-003 .trail [aria-current="page"] { color: var(--ink); }
+.well-s22-003 .sep { color: var(--accent); font-weight: 400; }
 
-/* The trail */
-.well-s22-003 .trail {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 0;
-}
-.well-s22-003 .trail li { display: inline-flex; align-items: center; white-space: nowrap; }
-.well-s22-003 .trail a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-}
-.well-s22-003 .trail a:hover { color: var(--ink); border-bottom-color: var(--ink); }
-.well-s22-003 .sep { padding: 0 clamp(7px, 0.9vw, 11px); color: var(--ink-soft); font-size: 0.82rem; }
-.well-s22-003 .here {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: var(--ink);
-  font-size: 0.9rem;
-  font-weight: 650;
-}
+.well-s22-003 .also { margin: 0; padding: 0.8rem 0 0.5rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s22-003 .sibs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.well-s22-003 .sibs li { display: flex; align-items: baseline; gap: 0.7rem; padding: 0.8rem 1rem; }
+.well-s22-003 .sibs li + li { border-left: 1px solid var(--line); }
+.well-s22-003 .sibs .n { color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s22-003 .sibs a, .well-s22-003 .sibs [aria-current="page"] { font-family: var(--serif); font-size: 1rem; color: var(--muted); text-decoration: none; }
+.well-s22-003 .sibs a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 0.25em; text-decoration-color: var(--accent); }
+.well-s22-003 .sibs [aria-current="page"] { color: var(--ink); }
 
-/* Sibling set */
-.well-s22-003 .also {
-  margin: clamp(10px, 1.2vw, 14px) 0 0;
-  padding-top: clamp(12px, 1.4vw, 18px);
-  border-top: 1px solid var(--rule);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: clamp(8px, 1vw, 12px);
-}
-.well-s22-003 .also-label {
-  margin: 0;
-  padding-right: 4px;
-  font-size: 0.6rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s22-003 .sibs {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(8px, 1vw, 12px);
-}
-.well-s22-003 .sibs a,
-.well-s22-003 .sibs .sib-here {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 0 16px;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-.well-s22-003 .sibs a {
-  border: 1px solid var(--chip-edge);
-  background: var(--chip);
-  color: var(--ink);
-}
-.well-s22-003 .sibs a:hover { border-color: var(--ink); }
-.well-s22-003 .sibs .sib-here {
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: var(--paper);
-  font-weight: 650;
-}
-
-/* Responsive ladder — the trail scrolls with a visible edge, the siblings wrap */
-@media (max-width: 720px) {
-  .well-s22-003 .scroller {
-    overflow-x: auto;
-    border-right: 2px solid var(--rule);
-    padding-right: 10px;
-    -webkit-overflow-scrolling: touch;
-  }
-  .well-s22-003 .trail { width: max-content; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s22-003 * { transition: none !important; }
-}
+@media (max-width: 768px) { .well-s22-003 .sibs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .well-s22-003 .sibs li + li { border-left: 0; } .well-s22-003 .sibs li:nth-child(even) { border-left: 1px solid var(--line); } .well-s22-003 .sibs li:nth-child(n+3) { border-top: 1px solid var(--line); } }
+@media (max-width: 480px) { .well-s22-003 .sibs { grid-template-columns: minmax(0, 1fr); } .well-s22-003 .sibs li { padding-inline: 0; } .well-s22-003 .sibs li:nth-child(even) { border-left: 0; } .well-s22-003 .sibs li:nth-child(n+2) { border-top: 1px solid var(--line); } }
+@media (prefers-reduced-motion: reduce) { .well-s22-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="well-s22-003" data-study-id="WELL-S22-003" data-direction="Dense / Information-heavy">
-  <section class="shell" aria-labelledby="well-s22-003-title">
-
-    <h1 class="vh" id="well-s22-003-title">Where you are, and what else is at this level</h1>
-
-    <nav aria-label="Breadcrumb">
-      <div class="scroller">
-        <ol class="trail">
-          <li><a href="#well-s22-003-title">Home</a></li>
-          <li><span class="sep" aria-hidden="true">/</span><a href="#well-s22-003-title">Treatments</a></li>
-          <li><span class="sep" aria-hidden="true">/</span><span class="here" aria-current="page">Facials</span></li>
-        </ol>
-      </div>
+  <section class="shell">
+    <nav aria-label="Where you are">
+      <ol class="trail">
+        <li><a href="#home">Home</a><span class="sep" aria-hidden="true">/</span></li>
+        <li><a href="#treatments">Treatments</a><span class="sep" aria-hidden="true">/</span></li>
+        <li><span aria-current="page">Facials</span></li>
+      </ol>
     </nav>
-
-    <nav class="also" aria-label="Other treatment categories">
-      <p class="also-label">Also under treatments</p>
+    <nav aria-label="Also under treatments">
+      <p class="also">Also under treatments</p>
       <ul class="sibs">
-        <li><span class="sib-here" aria-current="page">Facials</span></li>
-        <li><a href="#well-s22-003-title">Body &amp; massage</a></li>
-        <li><a href="#well-s22-003-title">Hands &amp; feet</a></li>
-        <li><a href="#well-s22-003-title">Brows &amp; lashes</a></li>
+        <li><span class="n">01</span><span aria-current="page">Facials</span></li>
+        <li><span class="n">02</span><a href="#body">Body &amp; massage</a></li>
+        <li><span class="n">03</span><a href="#hands">Hands &amp; feet</a></li>
+        <li><span class="n">04</span><a href="#brows">Brows &amp; lashes</a></li>
       </ul>
     </nav>
-
   </section>
 </div>
 

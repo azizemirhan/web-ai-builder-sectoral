@@ -12,28 +12,21 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S01 — Hero
   Direction      : Structured / Visual Modular
-  Reference      : Supplied visual research — reference 3 of five images provided with the
-                   authoring request (a warm dark tonal frame, a centred two-line statement set
-                   over a dominant face, one word of the statement carried inside a soft rounded
-                   box, a very short lead and a single pill action). Taken for its warm dark
-                   tonal field and for the marked-word device inside the heading. Its centred
-                   full-bleed overlay arrangement was not taken — that topology belongs to the
-                   conversion-led study in this set — and its "built on Proof" and
-                   "tested to perform" efficacy language was not carried across at all, per the
-                   claims rule in ../../WELLNESS-DESIGN-DIRECTION.md. No layout, brand, wording
-                   or photograph from that image is reproduced.
-  Layout model   : Modular bento hero — a twelve-column field holding a copy module, one
-                   dominant media module, one small media module, a grouped category module and
-                   a short statement module
-  Density        : Medium, carried by module structure rather than by copy volume
-  Media mode     : Two reserved media areas at two scales — one dominant, one small. No image is
-                   supplied.
-  Interaction    : None (static; no JavaScript)
-  Content note   : Neutral placeholder copy. No treatment claim, efficacy statement, percentage,
-                   ingredient claim, price, duration, practitioner name, qualification, client,
-                   rating or address. The category module carries four category names only — it
-                   is a grouping device, not a treatment menu or a tariff. All media areas are
-                   reserved and intentionally empty.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 1 + 8 (a
+                   narrow intro column beside a mosaic of mixed ratios with slate captions),
+                   after ARC-S02-001. Structure is carried by the mosaic, not by fields of text.
+  Layout model   : Intro column on the left — eyebrow, serif display with the italic word, lead,
+                   one bordered action; on the right a four-field mosaic: a lead field spanning
+                   two rows, two square fields stacked, a tall field at the end; each field
+                   captioned with a treatment family and a two-word meta line, so the four ways
+                   in are the four pictures
+  Density        : Low (hero band 40–90)
+  Media mode     : Four reserved fields — the room; hands at work; a product still life; the
+                   quiet corner. No image is supplied.
+  Interaction    : None (static; no JavaScript). One action; four caption links.
+  Content note   : Neutral copy. No treatment claim, efficacy statement, percentage, ingredient
+                   claim, price, duration, practitioner name, qualification, client, rating or
+                   address. Hero only: no header, navigation or footer.
 -->
 
 <meta name="study-id" content="WELL-S01-003">
@@ -44,270 +37,103 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Modular bento hero on a twelve-column field with two media scales">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-media-two-scales-modular">
-<meta name="interaction" content="none">
+<meta name="theme" content="003 Mist &amp; Moss">
+<meta name="layout-model" content="Intro column beside a four-field mosaic of mixed ratios, each field captioned with a treatment family">
+<meta name="density" content="low">
+<meta name="media-mode" content="four-reserved-fields-mosaic">
+<meta name="interaction" content="none-one-action-caption-links">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S01-003 — Hero, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #191210; }
+body { margin: 0; background: #eef0ee; }
 
-/* Scoped study styles — namespaced to .well-s01-003 */
 .well-s01-003 {
-  --ink: #f4ece5;
-  --ink-soft: #b09a8d;
-  --paper: #191210;
-  --panel: #221816;
-  --slot: #2e211b;
-  --slot-ink: #a08a7c;
-  --line: #3a2b25;
-  --accent: #c9714b;
-  --accent-ink: #191210;
-  --mark: #3a2620;
-  --focus: #e0996f;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eef0ee; --ink: #1f2624; --muted: #5f6764; --line: #cdd2cf; --line-strong: #1f2624;
+  --media: #dcdfdb; --accent: #2f5c4b;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s01-003 *,
-.well-s01-003 *::before,
-.well-s01-003 *::after { box-sizing: inherit; }
-.well-s01-003 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
+.well-s01-003 *, .well-s01-003 *::before, .well-s01-003 *::after { box-sizing: inherit; }
+.well-s01-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s01-003 .shell {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: clamp(32px, 4vw, 60px) clamp(20px, 3.6vw, 52px);
-}
+.well-s01-003 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 5vw, 5.5rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s01-003 .layout { display: grid; grid-template-columns: minmax(15rem, 0.62fr) minmax(0, 2fr); gap: clamp(2rem, 5vw, 5rem); }
 
-.well-s01-003 .grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(12px, 1.4vw, 20px);
-}
+.well-s01-003 .intro { align-self: center; }
+.well-s01-003 .eyebrow { margin: 0 0 1.2rem; color: var(--accent); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s01-003 h1 { margin: 0; max-width: 8ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 3.9vw, 4.1rem); line-height: 0.92; letter-spacing: -0.04em; }
+.well-s01-003 h1 em { font-style: italic; }
+.well-s01-003 .lead { margin: 1.4rem 0 0; max-width: 18rem; color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+.well-s01-003 .action { display: inline-flex; align-items: center; min-height: 2.9rem; margin-top: 1.4rem; padding: 0 1.2rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; }
+.well-s01-003 .action .arrow { margin-left: 1rem; color: var(--accent); }
+.well-s01-003 .action:hover { background: var(--ink); color: var(--paper); }
+.well-s01-003 .action:hover .arrow { color: var(--paper); }
 
-.well-s01-003 .cell {
-  min-width: 0;
-  border-radius: 16px;
-}
+.well-s01-003 .mosaic { display: grid; grid-template-columns: 1.35fr 0.72fr 0.72fr; grid-template-rows: 1fr 1fr; gap: 1rem; min-width: 0; margin: 0; padding: 0; list-style: none; }
+.well-s01-003 li { min-width: 0; display: flex; }
+.well-s01-003 figure { min-width: 0; margin: 0; display: flex; flex-direction: column; width: 100%; }
+.well-s01-003 .lead-field { grid-row: 1 / 3; }
+.well-s01-003 .tall { grid-column: 3; grid-row: 1 / 3; }
+.well-s01-003 .media { position: relative; width: 100%; aspect-ratio: 4 / 3; background: var(--media); border-radius: 3px; }
+.well-s01-003 .lead-field .media, .well-s01-003 .tall .media { flex: 1 1 auto; min-height: 20rem; aspect-ratio: auto; }
+.well-s01-003 .slate { position: absolute; left: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s01-003 figcaption { display: grid; grid-template-columns: 1fr auto; gap: 0.8rem; padding-top: 0.6rem; }
+.well-s01-003 h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1rem, 1.4vw, 1.35rem); }
+.well-s01-003 .meta { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.well-s01-003 .go { display: inline-flex; align-items: center; justify-content: center; min-width: 2.75rem; min-height: 2.75rem; color: var(--ink); text-decoration: none; }
+.well-s01-003 .go:hover { color: var(--accent); }
 
-/* Copy module */
-.well-s01-003 .cell--copy {
-  grid-column: span 5;
-  background: var(--panel);
-  padding: clamp(26px, 2.8vw, 44px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.well-s01-003 .eyebrow {
-  margin: 0 0 clamp(16px, 1.8vw, 22px);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s01-003 h1 {
-  margin: 0;
-  font-size: clamp(1.9rem, 3.2vw, 3rem);
-  line-height: 1.1;
-  letter-spacing: -0.018em;
-  font-weight: 500;
-  max-width: 15ch;
-}
-.well-s01-003 h1 .marked {
-  display: inline-block;
-  padding: 0.04em 0.3em;
-  border-radius: 8px;
-  background: var(--mark);
-  color: var(--accent);
-}
-.well-s01-003 .lead {
-  margin: clamp(18px, 2vw, 24px) 0 0;
-  max-width: 32ch;
-  color: var(--ink-soft);
-  font-size: 0.98rem;
-}
-.well-s01-003 .btn {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: clamp(24px, 2.6vw, 34px) 0 0;
-  min-height: 52px;
-  padding: 0 28px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 140ms ease;
-}
-.well-s01-003 .btn:hover { background: #d98259; }
-.well-s01-003 .btn .arrow { font-size: 1.05em; line-height: 1; }
-
-/* Media modules */
-.well-s01-003 .cell--media-major { grid-column: span 7; }
-.well-s01-003 .cell--media-minor { grid-column: span 3; }
-
-.well-s01-003 .slot {
-  height: 100%;
-  border-radius: 16px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-.well-s01-003 .cell--media-major .slot { min-height: clamp(340px, 40vw, 520px); }
-.well-s01-003 .cell--media-minor .slot { min-height: clamp(180px, 18vw, 230px); }
-.well-s01-003 .slot-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-
-/* Grouped category module */
-.well-s01-003 .cell--group {
-  grid-column: span 5;
-  background: var(--panel);
-  padding: clamp(20px, 2.2vw, 30px);
-}
-.well-s01-003 .cell--group h2 {
-  margin: 0 0 clamp(14px, 1.6vw, 18px);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: var(--ink-soft);
-}
-.well-s01-003 .cats { margin: 0; padding: 0; list-style: none; }
-.well-s01-003 .cats li { border-top: 1px solid var(--line); }
-.well-s01-003 .cats li:first-child { border-top: 0; }
-.well-s01-003 .cats a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 48px;
-  color: var(--ink);
-  font-size: 0.97rem;
-  text-decoration: none;
-}
-.well-s01-003 .cats a:hover { color: var(--accent); }
-.well-s01-003 .cats .arrow { color: var(--ink-soft); font-size: 1em; line-height: 1; }
-.well-s01-003 .cats a:hover .arrow { color: var(--accent); }
-
-/* Short statement module */
-.well-s01-003 .cell--note {
-  grid-column: span 4;
-  background: var(--panel);
-  padding: clamp(20px, 2.2vw, 30px);
-  display: flex;
-  align-items: center;
-}
-.well-s01-003 .cell--note p {
-  margin: 0;
-  max-width: 26ch;
-  color: var(--ink-soft);
-  font-size: 0.93rem;
-  line-height: 1.55;
-}
-
-/* Responsive ladder */
 @media (max-width: 1024px) {
-  .well-s01-003 .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .well-s01-003 .cell--copy { grid-column: span 6; }
-  .well-s01-003 .cell--media-major { grid-column: span 6; }
-  .well-s01-003 .cell--media-major .slot { min-height: 0; aspect-ratio: 16 / 9; }
-  .well-s01-003 .cell--media-minor { grid-column: span 2; }
-  .well-s01-003 .cell--media-minor .slot { min-height: 0; aspect-ratio: 3 / 4; }
-  .well-s01-003 .cell--group { grid-column: span 4; }
-  .well-s01-003 .cell--note { grid-column: span 6; }
-  .well-s01-003 h1 { max-width: 18ch; }
+  .well-s01-003 .layout { grid-template-columns: 1fr; }
+  .well-s01-003 .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: end; }
+  .well-s01-003 .lead { margin-top: 0; }
 }
-
 @media (max-width: 768px) {
-  .well-s01-003 .cell--media-minor { grid-column: span 6; }
-  .well-s01-003 .cell--media-minor .slot { aspect-ratio: 16 / 9; }
-  .well-s01-003 .cell--group { grid-column: span 6; }
-  .well-s01-003 .cell--media-major .slot { aspect-ratio: 4 / 3; }
-  .well-s01-003 .lead { max-width: none; }
-  .well-s01-003 .cell--note p { max-width: none; }
+  .well-s01-003 .mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .well-s01-003 .lead-field, .well-s01-003 .tall { grid-column: auto; grid-row: auto; }
+  .well-s01-003 .lead-field { grid-column: 1 / -1; }
+  .well-s01-003 .lead-field .media, .well-s01-003 .tall .media { min-height: 0; aspect-ratio: 16 / 10; flex: none; }
 }
-
 @media (max-width: 480px) {
-  .well-s01-003 .grid { gap: 10px; }
-  .well-s01-003 .cell { border-radius: 14px; }
-  .well-s01-003 .cell--media-major .slot { aspect-ratio: 1 / 1; }
-  .well-s01-003 .btn { width: 100%; justify-content: center; }
-  .well-s01-003 h1 { max-width: none; }
+  .well-s01-003 .intro { grid-template-columns: 1fr; }
+  .well-s01-003 .lead { max-width: none; }
+  .well-s01-003 .mosaic { grid-template-columns: 1fr; }
+  .well-s01-003 .media, .well-s01-003 .lead-field .media, .well-s01-003 .tall .media { aspect-ratio: 4 / 3; }
+  .well-s01-003 .action { width: 100%; justify-content: center; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s01-003 * { transition: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .well-s01-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <main class="well-s01-003" data-study-id="WELL-S01-003" data-direction="Structured / Visual Modular">
-  <section class="hero" aria-labelledby="well-s01-003-title">
-    <div class="shell">
-      <div class="grid">
+  <section class="shell" aria-labelledby="well-s01-003-title">
+    <div class="layout">
 
-        <div class="cell cell--copy">
+      <div class="intro">
+        <div>
           <p class="eyebrow">The studio</p>
-          <h1 id="well-s01-003-title">Treatments built around <span class="marked">your</span> skin</h1>
+          <h1 id="well-s01-003-title">Treatments built around <em>your</em> skin</h1>
+        </div>
+        <div>
           <p class="lead">Four ways in. Start wherever makes sense today.</p>
-          <a class="btn" href="#well-s01-003-title">
-            Find your treatment
-            <span class="arrow" aria-hidden="true">&rarr;</span>
-          </a>
+          <a class="action" href="#well-s01-003-mosaic">Book a treatment <span class="arrow" aria-hidden="true">&#8599;</span></a>
         </div>
-
-        <div class="cell cell--media-major">
-          <div class="slot"><span class="slot-label">Treatment in progress</span></div>
-        </div>
-
-        <div class="cell cell--media-minor">
-          <div class="slot"><span class="slot-label">Texture</span></div>
-        </div>
-
-        <div class="cell cell--group">
-          <h2>Where to begin</h2>
-          <ul class="cats">
-            <li><a href="#well-s01-003-title">Facials <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-            <li><a href="#well-s01-003-title">Body &amp; massage <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-            <li><a href="#well-s01-003-title">Hands &amp; feet <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-            <li><a href="#well-s01-003-title">Brows &amp; lashes <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-          </ul>
-        </div>
-
-        <div class="cell cell--note">
-          <p>Every visit opens with a short conversation, not a form.</p>
-        </div>
-
       </div>
+
+      <ul class="mosaic" id="well-s01-003-mosaic" aria-label="Four treatment families">
+        <li class="lead-field"><figure><div class="media" role="img" aria-label="Reserved image field: the treatment room"><p class="slate" aria-hidden="true">Image area &middot; room</p></div><figcaption><div><h2>Facials</h2><p class="meta">Skin &middot; unhurried</p></div><a class="go" href="#well-s01-003-title" aria-label="Facials">&#8599;</a></figcaption></figure></li>
+        <li><figure><div class="media" role="img" aria-label="Reserved image field: hands at work"><p class="slate" aria-hidden="true">Detail</p></div><figcaption><div><h2>Body &amp; massage</h2><p class="meta">Warmth &middot; time</p></div><a class="go" href="#well-s01-003-title" aria-label="Body and massage">&#8599;</a></figcaption></figure></li>
+        <li><figure><div class="media" role="img" aria-label="Reserved image field: product still life"><p class="slate" aria-hidden="true">Still life</p></div><figcaption><div><h2>Hands &amp; feet</h2><p class="meta">Care &middot; shaping</p></div><a class="go" href="#well-s01-003-title" aria-label="Hands and feet">&#8599;</a></figcaption></figure></li>
+        <li class="tall"><figure><div class="media" role="img" aria-label="Reserved image field: the quiet corner"><p class="slate" aria-hidden="true">Image area &middot; 4:5</p></div><figcaption><div><h2>Rest</h2><p class="meta">Steam &middot; stillness</p></div><a class="go" href="#well-s01-003-title" aria-label="Rest">&#8599;</a></figcaption></figure></li>
+      </ul>
+
     </div>
   </section>
 </main>

@@ -12,25 +12,20 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S19 — Contact
   Direction      : Structured / Visual Modular
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : Three channel modules, each stating what it is good for **and what it is not**,
-                   above a full-width module on a dark ground setting out what happens after you get
-                   in touch
-  Density        : Medium-high
-  Media mode     : None.
-  Interaction    : None (static; no JavaScript)
-  The device     : **Every module carries a "not this" line.** A contact section that only lists
-                   channels tells a visitor nothing they could not guess; saying what each channel
-                   is bad at is the part that actually routes them, and it is authorable because it
-                   describes the studio's own working habits rather than a service promise.
-  Not a table    : The modules have their own internal shape and the closing module is a different
-                   kind of thing entirely. There is no matrix of channels against attributes. See
-                   the 003 trap in ../../WELLNESS-DESIGN-DIRECTION.md.
-  Content note   : Phone, email and address are reserved fields with visually hidden labels. The
-                   three stages after contact are named in words — **first, then, after that** —
-                   rather than numbered, because a numbered sequence in this sector starts to read
-                   as a protocol. No invented number, address, opening hours, response time, staff
-                   name or social handle; no map, embed or chat widget.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 3 (three
+                   cells sharing hairlines) with a ruled three-column row beneath. V1 is
+                   kept: every channel carries a NOT FOR line — the part that actually routes
+                   a visitor — and the stages after you get in touch are named, not numbered.
+                   The dark closing module becomes a ruled row.
+  Layout model   : Head split. Three channel cells separated by hairlines: channel in serif,
+                   reserved slot on a hairline, a short ruled list of what it is good for, a
+                   NOT FOR line in the accent. Beneath, a ruled row — AFTER YOU GET IN TOUCH —
+                   with three columns: first, then, after that.
+  Density        : Structured (170–230)
+  Media mode     : Three reserved contact slots. No image or fact.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No phone, email, address, hours, response time, staff name, social handle,
+                   map or chat. No digit in visible copy.
 -->
 
 <meta name="study-id" content="WELL-S19-003">
@@ -41,202 +36,68 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Three channel modules with good-for and not-for, plus an after-you-write module">
-<meta name="density" content="medium-high">
-<meta name="media-mode" content="none">
+<meta name="theme" content="003 Mist &amp; Moss">
+<meta name="layout-model" content="Head split; three channel cells sharing hairlines with reserved slots, good-for lists and NOT FOR lines; a ruled three-column row of what happens next">
+<meta name="density" content="structured">
+<meta name="media-mode" content="three-reserved-slots-no-media">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S19-003 — Contact, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e8eaee; }
+body { margin: 0; background: #eef0ee; }
 
-/* Scoped study styles — namespaced to .well-s19-003 */
 .well-s19-003 {
-  --ink: #1f232a;
-  --ink-soft: #5c6470;
-  --paper: #e8eaee;
-  --card: #ffffff;
-  --slot: #e3e6eb;
-  --slot-ink: #59616d;
-  --slot-edge: #c9cfd8;
-  --line: #e3e6ea;
-  --rule: #ccd2da;
-  --dark: #2b3239;
-  --dark-ink: #eef0f3;
-  --dark-soft: #b2bac4;
-  --dark-line: #47505a;
-  --focus: #35485c;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eef0ee; --ink: #1f2624; --muted: #5f6764; --line: #cdd2cf; --line-strong: #1f2624;
+  --media: #dcdfdb; --accent: #2f5c4b;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s19-003 *,
-.well-s19-003 *::before,
-.well-s19-003 *::after { box-sizing: inherit; }
-.well-s19-003 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 6px;
-}
-.well-s19-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s19-003 *, .well-s19-003 *::before, .well-s19-003 *::after { box-sizing: inherit; }
+.well-s19-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s19-003 .shell {
-  width: 100%;
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
-}
+.well-s19-003 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s19-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr); gap: 3rem; align-items: end; margin-bottom: clamp(1.4rem, 2.6vw, 2.6rem); }
+.well-s19-003 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s19-003 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.6vw, 3.6rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s19-003 h2 em { font-style: italic; }
+.well-s19-003 .lead { max-width: 24rem; margin: 0 0 0.3rem auto; color: var(--muted); font-size: 0.86rem; line-height: 1.55; text-align: right; }
 
-.well-s19-003 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s19-003 h1 {
-  margin: 0 0 clamp(24px, 3.2vw, 44px);
-  font-size: clamp(1.8rem, 3.3vw, 2.7rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 20ch;
-}
-
-.well-s19-003 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 1.8vw, 24px);
-  align-items: start;
-}
-.well-s19-003 .mod {
-  min-width: 0;
-  background: var(--card);
-  border-radius: 14px;
-  padding: clamp(18px, 2.2vw, 28px);
-}
-.well-s19-003 .mod h2 {
-  margin: 0 0 clamp(13px, 1.6vw, 18px);
-  font-size: 1.06rem;
-  font-weight: 650;
-  letter-spacing: -0.008em;
-}
-.well-s19-003 .fname {
-  display: block;
-  margin-bottom: 7px;
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.well-s19-003 .slot {
-  display: block;
-  border: 1px dashed var(--slot-edge);
-  border-radius: 8px;
-  background: var(--slot);
-  padding: 11px 13px;
-  min-height: 46px;
-  color: var(--slot-ink);
-  font-size: 0.98rem;
-}
-.well-s19-003 .field { margin: 0 0 clamp(15px, 1.8vw, 20px); }
+.well-s19-003 .cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.well-s19-003 .cells > li { display: flex; flex-direction: column; min-width: 0; padding: clamp(1.2rem, 2vw, 2rem) clamp(0.9rem, 1.6vw, 1.6rem); }
+.well-s19-003 .cells > li + li { border-left: 1px solid var(--line); }
+.well-s19-003 .n { margin: 0 0 0.5rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; }
+.well-s19-003 h3 { margin: 0 0 0.8rem; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2vw, 1.9rem); letter-spacing: -0.02em; }
+.well-s19-003 .field { display: flex; align-items: center; gap: 0.8rem; margin: 0 0 0.6rem; padding: 0.8rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); }
+.well-s19-003 .field dt { margin: 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s19-003 .field dd { margin: 0; min-width: 0; flex: 1; }
+.well-s19-003 .slot { display: inline-flex; align-items: center; min-width: 11rem; height: 1.8rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-family: var(--serif); font-size: 0.9rem; }
+.well-s19-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .well-s19-003 .good { margin: 0; padding: 0; list-style: none; }
-.well-s19-003 .good li {
-  padding: clamp(9px, 1.1vw, 11px) 0;
-  border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 0.93rem;
-  line-height: 1.55;
-}
-.well-s19-003 .not {
-  margin: clamp(13px, 1.6vw, 17px) 0 0;
-  padding-top: clamp(12px, 1.4vw, 15px);
-  border-top: 1px solid var(--rule);
-  font-size: 0.9rem;
-  line-height: 1.55;
-  color: var(--ink-soft);
-}
-.well-s19-003 .not b {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
+.well-s19-003 .good li { padding: 0.45rem 0; border-bottom: 1px solid var(--line); font-size: 0.88rem; line-height: 1.45; }
+.well-s19-003 .not { margin: auto 0 0; padding-top: 0.9rem; font-size: 0.84rem; line-height: 1.5; color: var(--muted); }
+.well-s19-003 .not strong { display: block; margin-bottom: 0.2rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 
-/* After-you-write module */
-.well-s19-003 .after {
-  grid-column: 1 / -1;
-  background: var(--dark);
-  color: var(--dark-ink);
-  border-radius: 14px;
-  padding: clamp(20px, 2.6vw, 34px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 2.4vw, 40px);
-}
-.well-s19-003 .after h2 { margin: 0 0 8px; font-size: 1.06rem; font-weight: 650; }
-.well-s19-003 .after .intro {
-  margin: 0;
-  color: var(--dark-soft);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-.well-s19-003 .after dl { margin: 0; }
-.well-s19-003 .after dt {
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding-bottom: 9px;
-  border-bottom: 1px solid var(--dark-line);
-}
-.well-s19-003 .after dd {
-  margin: 10px 0 0;
-  color: var(--dark-soft);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
+.well-s19-003 .after { display: grid; grid-template-columns: minmax(10rem, 0.5fr) repeat(3, minmax(0, 1fr)); gap: 2rem; margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 0; padding: 1rem 0 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.well-s19-003 .after h4 { margin: 0; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s19-003 .after h4 span { display: block; margin-top: 0.5rem; color: var(--muted); font-size: 0.8rem; font-weight: 400; letter-spacing: 0; text-transform: none; line-height: 1.5; }
+.well-s19-003 .after li { color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.well-s19-003 .after strong { display: block; margin-bottom: 0.2rem; color: var(--ink); font-family: var(--serif); font-weight: 400; font-size: 1.1rem; font-style: italic; }
 
-/* Responsive ladder */
 @media (max-width: 1024px) {
-  .well-s19-003 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .well-s19-003 .after {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(16px, 2.4vw, 28px);
-  }
-  .well-s19-003 .after > .head { grid-column: 1 / -1; }
+  .well-s19-003 .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s19-003 .cells > li:nth-child(3) { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); }
+  .well-s19-003 .after { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .well-s19-003 .after li:first-child { grid-column: 1 / -1; }
 }
-
-@media (max-width: 768px) {
-  .well-s19-003 .grid { grid-template-columns: minmax(0, 1fr); }
-  .well-s19-003 .after { grid-template-columns: minmax(0, 1fr); }
-  .well-s19-003 h1 { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s19-003 * { transition: none !important; }
-}
+@media (max-width: 768px) { .well-s19-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .well-s19-003 .lead { margin-left: 0; text-align: left; } .well-s19-003 h2 { max-width: none; } .well-s19-003 .after { grid-template-columns: minmax(0, 1fr); gap: 1rem; } }
+@media (max-width: 480px) { .well-s19-003 .cells { grid-template-columns: minmax(0, 1fr); } .well-s19-003 .cells > li { padding-inline: 0; } .well-s19-003 .cells > li + li { border-left: 0; border-top: 1px solid var(--line); } }
+@media (prefers-reduced-motion: reduce) { .well-s19-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -244,73 +105,41 @@ body { margin: 0; background: #e8eaee; }
 <div class="well-s19-003" data-study-id="WELL-S19-003" data-direction="Structured / Visual Modular">
   <section class="shell" aria-labelledby="well-s19-003-title">
 
-    <p class="eyebrow">Getting hold of us</p>
-    <h1 id="well-s19-003-title">Which way in suits which question</h1>
-
-    <div class="grid">
-
-      <div class="mod">
-        <h2>Ring us</h2>
-        <p class="field">
-          <span class="fname">Telephone</span>
-          <span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span>
-        </p>
-        <ul class="good">
-          <li>Whether something would suit you at all</li>
-          <li>Whether there is anything left this week</li>
-          <li>Moving or cancelling something already booked</li>
-        </ul>
-        <p class="not"><b>Not for</b>Anything you want a record of afterwards. If it needs to be in writing, write.</p>
+    <div class="head">
+      <div>
+        <p class="eyebrow">Getting hold of us</p>
+        <h2 id="well-s19-003-title">Which way in suits which <em>question</em></h2>
       </div>
-
-      <div class="mod">
-        <h2>Write to us</h2>
-        <p class="field">
-          <span class="fname">Email</span>
-          <span class="slot"><span class="vh">Email address</span><span aria-hidden="true">&mdash;</span></span>
-        </p>
-        <ul class="good">
-          <li>Questions with a list or a photograph in them</li>
-          <li>Anything you would rather set down carefully</li>
-          <li>Telling us something before you arrive</li>
-        </ul>
-        <p class="not"><b>Not for</b>Holding a time. Writing in does not reserve anything until somebody has answered you.</p>
-      </div>
-
-      <div class="mod">
-        <h2>Come in</h2>
-        <p class="field">
-          <span class="fname">Address</span>
-          <span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span>
-        </p>
-        <ul class="good">
-          <li>Seeing the room before you commit to it</li>
-          <li>Meeting whoever would be treating you</li>
-          <li>Asking the thing you would rather not put in writing</li>
-        </ul>
-        <p class="not"><b>Not for</b>Being treated there and then. Turning up gets you a conversation, not an appointment.</p>
-      </div>
-
-      <div class="after">
-        <div class="head">
-          <h2>After you get in touch</h2>
-          <p class="intro">Three things happen, in this order, whichever way you came in.</p>
-        </div>
-        <dl>
-          <dt>First</dt>
-          <dd>Somebody reads it properly — whoever would be doing the treatment, not a shared inbox and not anything automatic.</dd>
-        </dl>
-        <dl>
-          <dt>Then</dt>
-          <dd>You get an answer to what you asked, including when the answer is that we are not the right people for it.</dd>
-        </dl>
-        <dl>
-          <dt>After that</dt>
-          <dd>Only then is a time held, once you have said yes to one. Nothing is reserved before that point.</dd>
-        </dl>
-      </div>
-
+      <p class="lead">Each way in is good at some things and bad at others. The bad part is the useful part.</p>
     </div>
+
+    <ul class="cells">
+      <li>
+        <p class="n">01</p><h3>Ring us</h3>
+        <dl class="field"><dt>Telephone</dt><dd><span class="slot"><span class="vh">Telephone number</span><span aria-hidden="true">&mdash;</span></span></dd></dl>
+        <ul class="good"><li>Whether something would suit you at all</li><li>Whether there is anything left this week</li><li>Moving or cancelling something already booked</li></ul>
+        <p class="not"><strong>Not for</strong>Anything you want a record of afterwards. If it needs to be in writing, write.</p>
+      </li>
+      <li>
+        <p class="n">02</p><h3>Write to us</h3>
+        <dl class="field"><dt>Email</dt><dd><span class="slot"><span class="vh">Email address</span><span aria-hidden="true">&mdash;</span></span></dd></dl>
+        <ul class="good"><li>Questions with a list or a photograph in them</li><li>Anything you would rather set down carefully</li><li>Telling us something before you arrive</li></ul>
+        <p class="not"><strong>Not for</strong>Holding a time. Writing in does not reserve anything until somebody has answered you.</p>
+      </li>
+      <li>
+        <p class="n">03</p><h3>Come in</h3>
+        <dl class="field"><dt>Address</dt><dd><span class="slot"><span class="vh">Street address</span><span aria-hidden="true">&mdash;</span></span></dd></dl>
+        <ul class="good"><li>Seeing the room before you commit to it</li><li>Meeting whoever would be treating you</li><li>Asking the thing you would rather not put in writing</li></ul>
+        <p class="not"><strong>Not for</strong>Being treated there and then. Turning up gets you a conversation, not an appointment.</p>
+      </li>
+    </ul>
+
+    <ul class="after">
+      <li><h4>After you get in touch<span>Three things happen, in this order, whichever way you came in.</span></h4></li>
+      <li><strong>First</strong>Somebody reads it properly &mdash; whoever would be doing the treatment, not a shared inbox and not anything automatic.</li>
+      <li><strong>Then</strong>You get an answer to what you asked, including when the answer is that we are not the right people for it.</li>
+      <li><strong>After that</strong>Only then is a time held, once you have said yes to one. Nothing is reserved before that point.</li>
+    </ul>
 
   </section>
 </div>

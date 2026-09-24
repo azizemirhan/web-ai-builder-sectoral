@@ -12,18 +12,20 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S13 — Gallery
   Direction      : Art-directed / Distinctive
-  Revision       : V2. Replaced. The route was right and the form was wrong: four stacked pictures
-                   growing down the page. **A route is a horizontal thing**, so it is now one rail
-                   you move along, and each slide is wider than the one before it.
-  Layout model   : A four-slide scroll-snap rail on black, read as a walk: the door, the corridor,
-                   the room, the couch. Each slide is wider than the last, so arriving takes longer
-                   than setting off
-  Density        : Low
-  Media mode     : Four reserved areas of increasing width.
-  Interaction    : **Scroll-snap, in CSS.** Moving along the rail is the walk. No JavaScript.
-  Content note   : A route through the building rather than a set of views of it. Nothing here is a
-                   treatment result, and anyone appearing in these pictures has agreed to be in them.
-  Palette        : Black and white only.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 9 (chapter
+                   pacing down a long measure) with the widening frame as the composition.
+                   V1's route is kept: the door, the corridor, the room, the couch — four
+                   fields down the page at 46 / 60 / 76 / 92 percent of the measure, the
+                   caption running in the space each one leaves, so the frame opens as you
+                   descend. Captions are locations, not stages.
+  Layout model   : Mast line, serif display. Four ruled rows; in each, the field takes a
+                   growing share of the width and the caption — serif index word, place, one
+                   line — sits in the remaining column, right-aligned; the last frame takes the full measure with its caption above. The consent line closes
+                   on the foot rule.
+  Density        : Standard (90–170)
+  Media mode     : Four reserved fields at 4:3, 2:1, 12:5 and 3:1 — one height band, growing width. No image is supplied.
+  Interaction    : None (static; no JavaScript).
+  Content note   : Nothing is a result; captions are places, never treatment steps.
 -->
 
 <meta name="study-id" content="WELL-S13-005">
@@ -34,188 +36,77 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="A four-slide rail read as a walk, each slide wider than the last">
-<meta name="density" content="low">
-<meta name="media-mode" content="reserved-media-four-slides-increasing">
-<meta name="interaction" content="css-scroll-snap-no-javascript">
+<meta name="theme" content="005 Ivory &amp; Plum">
+<meta name="layout-model" content="Four ruled rows down the page, each field wider than the last (40 to 100 percent), the caption in the space it leaves; consent line on the foot rule">
+<meta name="density" content="standard">
+<meta name="media-mode" content="four-reserved-fields-widening">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>WELL-S13-005 — Gallery, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #0e0e0e; }
+body { margin: 0; background: #f8f4f3; }
 
-/* Scoped study styles - namespaced to .well-s13-005 */
-/* monochrome: hand-graded. Black and white only. */
 .well-s13-005 {
-  --ink: #f4f4f4;
-  --ink-soft: #b8b8b8;
-  --ink-faint: #8b8b8b;
-  --paper: #0e0e0e;
-  --line: #333333;
-  --white: #ffffff;
-
-  box-sizing: border-box;
-  display: block;
-  background: linear-gradient(180deg, #181818 0%, #0e0e0e 34%);
-  color: var(--ink);
+  --paper: #f8f4f3; --ink: #2b2226; --muted: #6d6266; --line: #e0d6d9; --line-strong: #2b2226;
+  --media: #eae1e3; --accent: #6e3b4e;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s13-005 *,
-.well-s13-005 *::before,
-.well-s13-005 *::after { box-sizing: inherit; }
-.well-s13-005 :focus-visible { outline: 2px solid var(--white); outline-offset: 3px; border-radius: 10px; }
-.well-s13-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.well-s13-005 *, .well-s13-005 *::before, .well-s13-005 *::after { box-sizing: inherit; }
+.well-s13-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s13-005 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.well-s13-005 .shell { width: min(100%, 92rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 4rem); }
+.well-s13-005 .mast { display: flex; justify-content: space-between; align-items: baseline; gap: 2rem; padding: 1rem 0; border-top: 1px solid var(--line-strong); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s13-005 .mast span + span { color: var(--muted); }
+.well-s13-005 h2 { margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 clamp(1.6rem, 3vw, 3rem); max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 4vw, 4.2rem); line-height: 0.98; letter-spacing: -0.035em; }
+.well-s13-005 h2 em { font-style: italic; }
 
-/* Head */
-.well-s13-005 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  padding-bottom: clamp(18px, 2.2vw, 28px);
-  border-bottom: 3px solid var(--white);
-  margin-bottom: clamp(20px, 2.6vw, 36px);
-}
-.well-s13-005 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 20px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  color: var(--white);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-}
-.well-s13-005 h1 {
-  margin: 0;
-  font-size: clamp(2.3rem, 4.8vw, 4.2rem);
-  line-height: 0.96;
-  letter-spacing: -0.045em;
-  font-weight: 800;
-  color: var(--white);
-  max-width: 15ch;
-}
-.well-s13-005 .head p { margin: 0; max-width: 42ch; font-size: 1.04rem; line-height: 1.6; color: var(--ink-soft); }
-.well-s13-005 .head p b { color: var(--white); font-weight: 650; }
+.well-s13-005 .route { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.well-s13-005 .route li { display: flex; gap: clamp(1.5rem, 3vw, 4rem); align-items: flex-end; padding: clamp(1rem, 1.8vw, 1.8rem) 0; border-bottom: 1px solid var(--line); }
+.well-s13-005 .media { position: relative; flex: 0 0 auto; background: var(--media); border-radius: 3px; }
+.well-s13-005 .route li:nth-child(1) .media { width: 40%; aspect-ratio: 4 / 3; }
+.well-s13-005 .route li:nth-child(2) .media { width: 56%; aspect-ratio: 2 / 1; }
+.well-s13-005 .route li:nth-child(3) .media { width: 74%; aspect-ratio: 12 / 5; }
+.well-s13-005 .route li:nth-child(4) { flex-wrap: wrap; justify-content: flex-end; }
+.well-s13-005 .route li:nth-child(4) .media { width: 100%; aspect-ratio: 3 / 1; }
+.well-s13-005 .route li:nth-child(4) .cap { order: -1; flex: 0 0 100%; }
+.well-s13-005 .slate { position: absolute; left: 0.9rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s13-005 .cap { flex: 1 1 auto; min-width: 0; text-align: right; }
+.well-s13-005 .w { display: block; margin-bottom: 0.4rem; color: var(--accent); font-family: var(--serif); font-size: 1.4rem; line-height: 1; }
+.well-s13-005 h3 { margin: 0 0 0.3rem; font-family: var(--serif); font-weight: 400; font-size: clamp(1.3rem, 2vw, 1.9rem); letter-spacing: -0.02em; }
+.well-s13-005 .cap p { margin: 0 0 0 auto; max-width: 18rem; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.well-s13-005 .route li:nth-child(4) .cap p { max-width: 28rem; }
 
-/* The walk */
-.well-s13-005 .hint {
-  margin: 0 0 clamp(12px, 1.5vw, 16px);
-  font-size: 0.76rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s13-005 .rail {
-  display: flex;
-  align-items: stretch;
-  gap: clamp(14px, 1.8vw, 26px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 16px;
-  margin-bottom: clamp(20px, 2.4vw, 32px);
-}
-.well-s13-005 .rail > figure { margin: 0; scroll-snap-align: center; }
-.well-s13-005 .rail > figure:nth-of-type(1) { flex: 0 0 min(38%, 380px); }
-.well-s13-005 .rail > figure:nth-of-type(2) { flex: 0 0 min(52%, 520px); }
-.well-s13-005 .rail > figure:nth-of-type(3) { flex: 0 0 min(66%, 660px); }
-.well-s13-005 .rail > figure:nth-of-type(4) { flex: 0 0 min(80%, 800px); }
-.well-s13-005 .shot {
-  aspect-ratio: 4 / 3;
-  border: 1px dashed #4d4d4d;
-  border-radius: 24px;
-  background: linear-gradient(145deg, #1d1d1d 0%, #2e2e2e 100%);
-  display: flex;
-  align-items: flex-end;
-  padding: clamp(14px, 1.7vw, 20px);
-  margin-bottom: 12px;
-}
-.well-s13-005 .shot span {
-  font-size: 0.72rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #a8a8a8;
-}
-.well-s13-005 .n {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 0.7rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s13-005 figcaption h2 {
-  margin: 0 0 5px;
-  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-  color: var(--white);
-}
-.well-s13-005 figcaption p { margin: 0; font-size: 0.98rem; line-height: 1.5; color: var(--ink-soft); }
+.well-s13-005 .foot { display: flex; justify-content: space-between; gap: 2rem; margin-top: 1rem; }
+.well-s13-005 .foot p { margin: 0; max-width: 30rem; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.well-s13-005 .foot p + p { text-align: right; }
 
-/* Foot */
-.well-s13-005 .foot {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(16px, 2.2vw, 34px);
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 3px solid var(--white);
-}
-.well-s13-005 .foot h3 {
-  margin: 0 0 8px;
-  font-size: 0.78rem;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.well-s13-005 .foot p { margin: 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
-.well-s13-005 .foot p b { color: var(--white); font-weight: 650; }
+@media (max-width: 1024px) {
+  .well-s13-005 .route li:nth-child(1) .media { width: 52%; }
+  .well-s13-005 .route li:nth-child(2) .media { width: 64%; }
+  .well-s13-005 .route li:nth-child(3) .media { width: 78%; }
 
-/* Responsive ladder */
-@media (max-width: 1000px) {
-  .well-s13-005 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
 }
-
-@media (max-width: 620px) {
-  .well-s13-005 h1, .well-s13-005 .head p { max-width: none; }
-  .well-s13-005 .rail > figure:nth-of-type(1) { flex: 0 0 72%; }
-  .well-s13-005 .rail > figure:nth-of-type(2) { flex: 0 0 80%; }
-  .well-s13-005 .rail > figure:nth-of-type(3) { flex: 0 0 88%; }
-  .well-s13-005 .rail > figure:nth-of-type(4) { flex: 0 0 94%; }
+@media (max-width: 768px) {
+  .well-s13-005 .route li { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+  .well-s13-005 .cap { text-align: left; }
+  .well-s13-005 .cap p { margin-left: 0; }
+  .well-s13-005 .route li:nth-child(1) .media { width: 60%; aspect-ratio: 4 / 3; }
+  .well-s13-005 .route li:nth-child(2) .media { width: 72%; aspect-ratio: 16 / 10; }
+  .well-s13-005 .route li:nth-child(3) .media { width: 86%; aspect-ratio: 16 / 10; }
+  .well-s13-005 .route li:nth-child(4) .media { width: 100%; aspect-ratio: 16 / 9; }
+  .well-s13-005 .mast { flex-direction: column; gap: 0.2rem; }
+  .well-s13-005 h2 { max-width: none; }
+  .well-s13-005 .foot { flex-direction: column; gap: 0.6rem; }
+  .well-s13-005 .foot p + p { text-align: left; }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s13-005 * { transition: none !important; }
-  .well-s13-005 .rail { scroll-behavior: auto; }
-}
+@media (prefers-reduced-motion: reduce) { .well-s13-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -223,60 +114,19 @@ body { margin: 0; background: #0e0e0e; }
 <div class="well-s13-005" data-study-id="WELL-S13-005" data-direction="Art-directed / Distinctive">
   <section class="shell" aria-labelledby="well-s13-005-title">
 
-    <div class="head">
-      <div>
-        <p class="eyebrow">The place</p>
-        <h1 id="well-s13-005-title">From the door to the couch, one slide at a time.</h1>
-      </div>
-      <p>A route through the building rather than a set of views of it. <b>Each slide is wider than the one before it</b>, so arriving takes longer than setting off &mdash; which is how it feels.</p>
-    </div>
+    <p class="mast"><span>The place</span><span>From the door to the couch</span></p>
+    <h2 id="well-s13-005-title">A route through the building, not a set of <em>views</em> of it.</h2>
 
-    <p class="hint">Four stops &mdash; scroll sideways to walk in</p>
-
-    <div class="rail" tabindex="0" role="group" aria-label="A route through the studio in four stops, scrollable">
-      <figure>
-        <div class="shot"><span>Reserved &mdash; the door, from the street</span></div>
-        <figcaption>
-          <span class="n">First</span>
-          <h2>The door</h2>
-          <p>The door, from the street, at the hour you would arrive.</p>
-        </figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; the corridor</span></div>
-        <figcaption>
-          <span class="n">Then</span>
-          <h2>The corridor</h2>
-          <p>The corridor, once you are inside and the street has gone quiet.</p>
-        </figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; the room, door closed</span></div>
-        <figcaption>
-          <span class="n">Then</span>
-          <h2>The room</h2>
-          <p>The room, with the door closed, photographed empty.</p>
-        </figcaption>
-      </figure>
-      <figure>
-        <div class="shot"><span>Reserved &mdash; the couch</span></div>
-        <figcaption>
-          <span class="n">Last</span>
-          <h2>The couch</h2>
-          <p>Where you spend the hour. The widest slide, because it is the longest part.</p>
-        </figcaption>
-      </figure>
-    </div>
+    <ol class="route">
+      <li><div class="media" role="img" aria-label="Reserved image field: the door, from the street"><p class="slate" aria-hidden="true">Image area &middot; 4:3 &middot; the door</p></div><div class="cap"><span class="w" aria-hidden="true">First</span><h3>The door</h3><p>From the street, at the hour you would arrive.</p></div></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: the corridor"><p class="slate" aria-hidden="true">Image area &middot; 2:1 &middot; the corridor</p></div><div class="cap"><span class="w" aria-hidden="true">Then</span><h3>The corridor</h3><p>Once you are inside and the street has gone quiet.</p></div></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: the room, door closed"><p class="slate" aria-hidden="true">Image area &middot; 12:5 &middot; the room</p></div><div class="cap"><span class="w" aria-hidden="true">Then</span><h3>The room</h3><p>With the door closed, photographed empty.</p></div></li>
+      <li><div class="media" role="img" aria-label="Reserved image field: the couch"><p class="slate" aria-hidden="true">Image area &middot; 3:1 &middot; the couch</p></div><div class="cap"><span class="w" aria-hidden="true">Last</span><h3>The couch</h3><p>Where you spend the hour. The widest frame, because it is the longest part.</p></div></li>
+    </ol>
 
     <div class="foot">
-      <div>
-        <h3>Why the slides grow</h3>
-        <p>A gallery of equal squares says every part of a visit is the same size. <b>They are not</b> &mdash; the door takes a second and the couch takes an hour, and the rail is drawn in that proportion.</p>
-      </div>
-      <div>
-        <h3>Consent</h3>
-        <p>Nothing here is a treatment result, and <b>anyone appearing in these pictures has agreed to be in them.</b> Before-and-after photography is kept in its own section.</p>
-      </div>
+      <p>Each frame is wider than the one before it, so arriving takes longer than setting off, which is how it feels.</p>
+      <p>Nothing here is a treatment result; before-and-after photography is kept in its own section. Anyone appearing has agreed to be in the picture.</p>
     </div>
 
   </section>

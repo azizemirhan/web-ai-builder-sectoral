@@ -12,246 +12,86 @@
   Sector         : Beauty, Wellness & Spa (WELL)
   Section        : WELL-S05 — Results / Before & After
   Direction      : Structured / Visual Modular
-  Reference      : None. Originated for this batch; no reference images were supplied.
-  Layout model   : Three case modules in a row, each holding one frame footprint that carries two
-                   states in place — a segmented Before / After switch swaps which reserved area
-                   occupies the frame, so the comparison happens in the same position rather than
-                   across two positions
-  Density        : Medium in capacity, low on screen — six reserved areas exist, three are visible
-                   at a time
-  Media mode     : Six reserved media areas in three stacked pairs. Each pair shares one frame
-                   footprint at identical scale and crop, which is the strongest possible
-                   guarantee that the two views are comparable.
-  Interaction    : Native radio inputs plus CSS sibling selectors, one group per case. No
-                   JavaScript. Each group sits in a fieldset with a visually-hidden legend naming
-                   its treatment, every option is a real label bound to its input, and arrow keys
-                   move through each group as a native radiogroup.
-  Content note   : Structure is authored; evidence is reserved. No fabricated comparison, outcome
-                   statement, efficacy word, percentage, session count, time-to-result,
-                   identifiable client or rating. "Before" and "After" are the names of the two
-                   states, not a description of a change. The in-place swap is the point of this
-                   direction: it holds twice the content in the same footprint through structure,
-                   not through more copy.
+  Register       : Detailing pass — standards/08-VISUAL-REFERENCE-STYLE.md, device 3 (a bordered
+                   cell row) with the two-field labelled caption of ARC-S11-001. V1's in-place
+                   switch is retired (it needed a control); structure is now carried by three
+                   cells that share hairlines and by three visible micro-labels per case —
+                   TREATMENT, PHOTOGRAPHED, SHOWS.
+  Layout model   : Head split; three cells sharing hairlines, each holding a seamed pair of 4:5
+                   fields and a labelled caption: TREATMENT (serif), PHOTOGRAPHED (the method in
+                   one line), SHOWS (a method, not a promise); a hairline foot
+  Density        : Standard (90–170)
+  Media mode     : Six reserved fields as three pairs, empty. No outcome is shown or described.
+  Interaction    : None (static; no JavaScript).
+  Content note   : Structure only — no result, no claim, no timescale, no percentage, no
+                   testimonial.
 -->
 
 <meta name="study-id" content="WELL-S05-003">
 <meta name="sector" content="Beauty, Wellness &amp; Spa">
 <meta name="sector-prefix" content="WELL">
 <meta name="section-id" content="WELL-S05">
-<meta name="section-name" content="Results Before After">
+<meta name="section-name" content="Results / Before &amp; After">
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Three case modules with an in-place Before/After state swap in a shared frame footprint">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-media-three-stacked-pairs-one-visible-each">
-<meta name="interaction" content="css-only-radio-state-swap-no-javascript">
+<meta name="theme" content="003 Mist &amp; Moss">
+<meta name="layout-model" content="Head split; three cells sharing hairlines, each a seamed pair of 4:5 fields with a three-label caption — treatment, photographed, shows">
+<meta name="density" content="standard">
+<meta name="media-mode" content="six-reserved-fields-three-pairs">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>WELL-S05-003 — Results Before After, Structured / Visual Modular</title>
+<title>WELL-S05-003 — Before &amp; After, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #2e3a3a; }
+body { margin: 0; background: #eef0ee; }
 
-/* Scoped study styles — namespaced to .well-s05-003 */
 .well-s05-003 {
-  --ink: #eef2ef;
-  --ink-soft: #a7b8b4;
-  --paper: #2e3a3a;
-  --card: #f3f5f2;
-  --card-ink: #1e2726;
-  --card-soft: #5f6b69;
-  --slot: #d5dcd7;
-  --slot-ink: #556059;
-  --track: #e2e7e3;
-  --sel: #1e2726;
-  --sel-ink: #f3f5f2;
-  --focus: #bcd8cf;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eef0ee; --ink: #1f2624; --muted: #5f6764; --line: #cdd2cf; --line-strong: #1f2624;
+  --media: #dcdfdb; --accent: #2f5c4b;
+  --serif: Georgia, "Times New Roman", "Iowan Old Style", serif;
+  box-sizing: border-box; display: block; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.well-s05-003 *,
-.well-s05-003 *::before,
-.well-s05-003 *::after { box-sizing: inherit; }
+.well-s05-003 *, .well-s05-003 *::before, .well-s05-003 *::after { box-sizing: inherit; }
+.well-s05-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.well-s05-003 .shell {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: clamp(44px, 5vw, 88px) clamp(20px, 3.6vw, 52px);
-}
+.well-s05-003 .shell { width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.well-s05-003 .head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.5fr); gap: 3rem; align-items: end; padding-bottom: 1.4rem; }
+.well-s05-003 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.well-s05-003 h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 3.8rem); line-height: 0.96; letter-spacing: -0.035em; }
+.well-s05-003 h2 em { font-style: italic; }
+.well-s05-003 .lead { max-width: 24rem; margin: 0 0 0.3rem auto; color: var(--muted); font-size: 0.86rem; line-height: 1.55; text-align: right; }
 
-/* Section header */
-.well-s05-003 .head {
-  max-width: 46rem;
-  margin-bottom: clamp(24px, 3vw, 42px);
-}
-.well-s05-003 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.well-s05-003 h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.3vw, 2.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  font-weight: 550;
-  max-width: 18ch;
-}
-.well-s05-003 .head p {
-  margin: clamp(14px, 1.6vw, 20px) 0 0;
-  max-width: 48ch;
-  color: var(--ink-soft);
-  font-size: 1rem;
-}
+.well-s05-003 .cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); margin: 0; padding: 0; list-style: none; }
+.well-s05-003 .cells > li { min-width: 0; padding: clamp(1rem, 1.8vw, 1.6rem) clamp(0.8rem, 1.4vw, 1.2rem); }
+.well-s05-003 .cells > li + li { border-left: 1px solid var(--line); }
+.well-s05-003 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.well-s05-003 .media { position: relative; aspect-ratio: 4 / 5; background: var(--media); }
+.well-s05-003 .media:first-child { border-radius: 3px 0 0 3px; }
+.well-s05-003 .media:last-child { border-radius: 0 3px 3px 0; }
+.well-s05-003 .slate { position: absolute; left: 0.6rem; top: 0.5rem; margin: 0; color: var(--ink); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.well-s05-003 .res { position: absolute; left: 0.6rem; bottom: 0.5rem; margin: 0; color: var(--muted); font-size: 0.48rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s05-003 .lab { display: block; margin: 0.9rem 0 0.1rem; color: var(--accent); font-size: 0.55rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.well-s05-003 h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.1rem, 1.5vw, 1.4rem); }
+.well-s05-003 .val { margin: 0; font-size: 0.84rem; line-height: 1.5; color: var(--muted); }
+.well-s05-003 .foot { margin-top: 1rem; color: var(--muted); font-size: 0.8rem; }
+.well-s05-003 .foot p { margin: 0; }
 
-/* Case modules */
-.well-s05-003 .cases {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(16px, 1.8vw, 28px);
-}
-.well-s05-003 .cases li { min-width: 0; }
-
-.well-s05-003 .case {
-  background: var(--card);
-  color: var(--card-ink);
-  border-radius: 14px;
-  overflow: hidden;
-}
-.well-s05-003 .ctrl { border: 0; margin: 0; padding: 0; min-width: 0; }
-.well-s05-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-.well-s05-003 .pick {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: 0;
-  opacity: 0;
-}
-
-/* One footprint, two states */
-.well-s05-003 .stage { position: relative; }
-.well-s05-003 .frame {
-  background: var(--slot);
-  aspect-ratio: 4 / 5;
-  display: grid;
-  place-items: center;
-  padding: 14px;
-}
-.well-s05-003 .frame--after { display: none; }
-
-.well-s05-003 .c1-after:checked ~ .stage .frame--before,
-.well-s05-003 .c2-after:checked ~ .stage .frame--before,
-.well-s05-003 .c3-after:checked ~ .stage .frame--before { display: none; }
-.well-s05-003 .c1-after:checked ~ .stage .frame--after,
-.well-s05-003 .c2-after:checked ~ .stage .frame--after,
-.well-s05-003 .c3-after:checked ~ .stage .frame--after { display: grid; }
-
-.well-s05-003 .slot-label {
-  font-size: 0.6rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-
-/* Segmented switch */
-.well-s05-003 .switch {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
-  margin: clamp(12px, 1.4vw, 16px) clamp(15px, 1.7vw, 22px) 0;
-  padding: 3px;
-  border-radius: 999px;
-  background: var(--track);
-}
-.well-s05-003 .switch label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  border-radius: 999px;
-  cursor: pointer;
-  color: var(--card-soft);
-  font-size: 0.76rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 600;
-  transition: background-color 140ms ease, color 140ms ease;
-}
-.well-s05-003 .c1-before:checked ~ .switch label:nth-child(1),
-.well-s05-003 .c2-before:checked ~ .switch label:nth-child(1),
-.well-s05-003 .c3-before:checked ~ .switch label:nth-child(1),
-.well-s05-003 .c1-after:checked ~ .switch label:nth-child(2),
-.well-s05-003 .c2-after:checked ~ .switch label:nth-child(2),
-.well-s05-003 .c3-after:checked ~ .switch label:nth-child(2) {
-  background: var(--sel);
-  color: var(--sel-ink);
-}
-.well-s05-003 .pick:focus-visible ~ .switch {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-}
-
-.well-s05-003 .cap { padding: clamp(12px, 1.4vw, 18px) clamp(15px, 1.7vw, 22px) clamp(16px, 1.8vw, 22px); }
-.well-s05-003 .cat {
-  margin: 0 0 5px;
-  color: var(--card-soft);
-  font-size: 0.66rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-.well-s05-003 h2 {
-  margin: 0;
-  font-size: clamp(1rem, 1.2vw, 1.18rem);
-  line-height: 1.22;
-  letter-spacing: -0.012em;
-  font-weight: 600;
-}
-
-/* Responsive ladder */
 @media (max-width: 1024px) {
-  .well-s05-003 .cases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .well-s05-003 .frame { aspect-ratio: 1 / 1; }
+  .well-s05-003 .cells { grid-template-columns: minmax(0, 1fr); }
+  .well-s05-003 .cells > li { padding-inline: 0; }
+  .well-s05-003 .cells > li + li { border-left: 0; border-top: 1px solid var(--line); }
 }
-
 @media (max-width: 768px) {
-  .well-s05-003 .head p { max-width: none; }
-  .well-s05-003 h1 { max-width: none; }
+  .well-s05-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .well-s05-003 .lead { margin-left: 0; text-align: left; }
 }
-
-@media (max-width: 480px) {
-  .well-s05-003 .cases { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .well-s05-003 .frame { aspect-ratio: 4 / 3; }
-  .well-s05-003 .case { border-radius: 12px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .well-s05-003 * { transition: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .well-s05-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -260,78 +100,20 @@ body { margin: 0; background: #2e3a3a; }
   <section class="shell" aria-labelledby="well-s05-003-title">
 
     <div class="head">
-      <p class="eyebrow">Before and after</p>
-      <h1 id="well-s05-003-title">Switch the view, keep the frame</h1>
-      <p>Each pair swaps in place rather than sitting side by side, so both views are seen at exactly the same size, crop and position.</p>
+      <div>
+        <p class="eyebrow">Before and after</p>
+        <h2 id="well-s05-003-title">Same frame, same <em>light</em></h2>
+      </div>
+      <p class="lead">Each pair is photographed at the same scale, in the same light and from the same distance, so the two frames can actually be compared.</p>
     </div>
 
-    <ul class="cases">
-      <li>
-        <article class="case">
-          <fieldset class="ctrl">
-            <legend class="vh">Deep cleansing facial — choose a view</legend>
-            <input class="pick c1-before" type="radio" name="well-s05-003-c1" id="well-s05-003-c1b" checked>
-            <input class="pick c1-after" type="radio" name="well-s05-003-c1" id="well-s05-003-c1a">
-            <div class="stage">
-              <div class="frame frame--before"><span class="slot-label">Reserved &mdash; before</span></div>
-              <div class="frame frame--after"><span class="slot-label">Reserved &mdash; after</span></div>
-            </div>
-            <div class="switch">
-              <label for="well-s05-003-c1b">Before</label>
-              <label for="well-s05-003-c1a">After</label>
-            </div>
-          </fieldset>
-          <div class="cap">
-            <p class="cat">Facials</p>
-            <h2>Deep cleansing facial</h2>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article class="case">
-          <fieldset class="ctrl">
-            <legend class="vh">Body scrub and wrap — choose a view</legend>
-            <input class="pick c2-before" type="radio" name="well-s05-003-c2" id="well-s05-003-c2b" checked>
-            <input class="pick c2-after" type="radio" name="well-s05-003-c2" id="well-s05-003-c2a">
-            <div class="stage">
-              <div class="frame frame--before"><span class="slot-label">Reserved &mdash; before</span></div>
-              <div class="frame frame--after"><span class="slot-label">Reserved &mdash; after</span></div>
-            </div>
-            <div class="switch">
-              <label for="well-s05-003-c2b">Before</label>
-              <label for="well-s05-003-c2a">After</label>
-            </div>
-          </fieldset>
-          <div class="cap">
-            <p class="cat">Body &amp; massage</p>
-            <h2>Body scrub &amp; wrap</h2>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article class="case">
-          <fieldset class="ctrl">
-            <legend class="vh">Brow shaping — choose a view</legend>
-            <input class="pick c3-before" type="radio" name="well-s05-003-c3" id="well-s05-003-c3b" checked>
-            <input class="pick c3-after" type="radio" name="well-s05-003-c3" id="well-s05-003-c3a">
-            <div class="stage">
-              <div class="frame frame--before"><span class="slot-label">Reserved &mdash; before</span></div>
-              <div class="frame frame--after"><span class="slot-label">Reserved &mdash; after</span></div>
-            </div>
-            <div class="switch">
-              <label for="well-s05-003-c3b">Before</label>
-              <label for="well-s05-003-c3a">After</label>
-            </div>
-          </fieldset>
-          <div class="cap">
-            <p class="cat">Brows &amp; lashes</p>
-            <h2>Brow shaping</h2>
-          </div>
-        </article>
-      </li>
+    <ul class="cells">
+      <li><div class="pair"><div class="media" role="img" aria-label="Reserved before field"><p class="slate" aria-hidden="true">Before</p><p class="res" aria-hidden="true">Reserved</p></div><div class="media" role="img" aria-label="Reserved after field"><p class="slate" aria-hidden="true">After</p><p class="res" aria-hidden="true">Reserved</p></div></div><span class="lab">Treatment</span><h3>Deep cleansing facial</h3><span class="lab">Photographed</span><p class="val">Same room, same daylight, same distance.</p><span class="lab">Shows</span><p class="val">A method, not a promise about your skin.</p></li>
+      <li><div class="pair"><div class="media" role="img" aria-label="Reserved before field"><p class="slate" aria-hidden="true">Before</p><p class="res" aria-hidden="true">Reserved</p></div><div class="media" role="img" aria-label="Reserved after field"><p class="slate" aria-hidden="true">After</p><p class="res" aria-hidden="true">Reserved</p></div></div><span class="lab">Treatment</span><h3>Body scrub &amp; wrap</h3><span class="lab">Photographed</span><p class="val">Same room, same daylight, same distance.</p><span class="lab">Shows</span><p class="val">A method, not a promise about your skin.</p></li>
+      <li><div class="pair"><div class="media" role="img" aria-label="Reserved before field"><p class="slate" aria-hidden="true">Before</p><p class="res" aria-hidden="true">Reserved</p></div><div class="media" role="img" aria-label="Reserved after field"><p class="slate" aria-hidden="true">After</p><p class="res" aria-hidden="true">Reserved</p></div></div><span class="lab">Treatment</span><h3>Brow shaping</h3><span class="lab">Photographed</span><p class="val">Same room, same daylight, same distance.</p><span class="lab">Shows</span><p class="val">A method, not a promise about your brows.</p></li>
     </ul>
+
+    <div class="foot"><p>What a treatment does depends on the person.</p></div>
 
   </section>
 </div>
