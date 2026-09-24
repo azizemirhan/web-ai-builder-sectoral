@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : AUTO-S23-003
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S23 — Service / Offering Detail
+  Direction      : Structured / Visual Modular
+  Register       : Device 3 - the whole page as one itemised sheet: the head row with the
+                   serif display h1 and the lead on the band tone beside the bay at 4:3; a row of
+                   three cells for what is in it, what is not, and how it runs; then a full-width
+                   cell for who it is for with the adjacent pages beside it; the action under the
+                   plate on the lead rule.
+  Layout model   : One bordered plate sharing 1px lines - head row, three body cells, an audience row; the action beneath
+  Density        : Detail band
+  Media mode     : ONE reserved area - the workshop bay at 4:3, the right-hand cell of the head
+                   row of the plate.
+  Interaction    : Links only - the parts counter, the process page and the booking route, all
+                   same-variant. Nothing opens, expands or submits. No script.
+  Content note   : The detail view of ONE job this sector's own S04 already names - a service -
+                   written from that section's words. NO PRICE, LABOUR RATE, TURNAROUND TIME,
+                   SERVICE INTERVAL, MILEAGE OR FIGURE appears; no manufacturer, model, badge or
+                   plate; no rating, award or urgency device. What the job does NOT include is
+                   stated in the refusal tone, and the page says that a service which quietly
+                   becomes three jobs is not a service. The only placeholder is the image caption.
+                   Numerals are spelled as words. No SVG, no icon; no header, navigation or footer.
+  Authoring note : This section had NO V1 study. Authored directly in the V2 register against
+                   AUTOMOTIVE-THEME-CONTRACT.md. The section title is the page's h1, because a
+                   service detail page is a page. There is no BATCH-V1.md.
+-->
+<meta name="study-id" content="AUTO-S23-003">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S23">
+<meta name="section-name" content="Service / Offering Detail">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Steel & Cobalt">
+<meta name="section-shape" content="B — anchored detail page, one reserved area">
+<meta name="layout-model" content="One bordered plate sharing 1px lines: the head on the band tone with the bay at 4:3, three cells for the inclusions, the limit and the steps, and an audience row">
+<meta name="density" content="detail band">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="links to the same-variant S09, S16 and S08">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="approved image caption - a bracketed placeholder">
+<meta name="batch" content="V2-detailing">
+<title>AUTO-S23-003 — A Service, In Full, Steel & Cobalt</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f4f8; }
+
+.auto-s23-003 {
+  --paper: #f1f4f8; --ink: #1a222c; --muted: #54606d; --line: #d6dde6; --line-strong: #1a222c;
+  --media: #dae1ea; --band: #e7ecf2; --accent: #2b5493; --no: #66707a; --onacc: #f1f4f8;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.auto-s23-003 *, .auto-s23-003 *::before, .auto-s23-003 *::after { box-sizing: inherit; }
+.auto-s23-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.auto-s23-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.auto-s23-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.72rem; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; }
+.auto-s23-003 .eyebrow .sep { margin: 0 0.5rem; color: var(--muted); font-weight: 400; }
+
+/* the serif display line; the emphasis device is one italic word in the accent */
+.auto-s23-003 h1, .auto-s23-003 h2.display { margin: 0; max-width: 20ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.3rem, 4.4vw, 4.2rem); line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); }
+.auto-s23-003 h1 .em, .auto-s23-003 h2.display .em { font-style: italic; color: var(--accent); }
+.auto-s23-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.0rem, 1.35vw, 1.14rem); line-height: 1.55; }
+.auto-s23-003 .statement { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.9rem); line-height: 1.25; color: var(--ink); }
+.auto-s23-003 .statement .em { font-style: italic; color: var(--accent); }
+
+.auto-s23-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.auto-s23-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.62rem; font-weight: 650; letter-spacing: 0.16em; text-transform: uppercase; }
+
+.auto-s23-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.auto-s23-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.auto-s23-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.auto-s23-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.auto-s23-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.auto-s23-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.auto-s23-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+
+/* 001 the bay lines */
+.auto-s23-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.auto-s23-003 .r1 { left: 18%; } .auto-s23-003 .r2 { left: 41%; } .auto-s23-003 .r3 { left: 64%; }
+/* 002 the plate edge */
+.auto-s23-003 .plateedge { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 the torque mark, under the phrase the page turns on */
+.auto-s23-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.auto-s23-003 .u::before, .auto-s23-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.auto-s23-003 .u::before { left: 0; } .auto-s23-003 .u::after { right: 0; }
+/* 005 the ramp frame */
+.auto-s23-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.auto-s23-003 .plate { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.auto-s23-003 .cell { padding: clamp(1.2rem, 2.6vw, 1.9rem); border-top: 1px solid var(--line-strong); border-right: 1px solid var(--line-strong); }
+.auto-s23-003 .cell:nth-child(1), .auto-s23-003 .cell:nth-child(2) { border-top: 0; }
+.auto-s23-003 .hd { grid-column: 1 / 3; background: var(--band); display: grid; align-content: center; }
+.auto-s23-003 .pic { grid-column: 3 / 4; border-right: 0; display: grid; align-content: center; }
+.auto-s23-003 .plate .port { margin: 0; }
+@media (max-width: 980px) { .auto-s23-003 .plate { grid-template-columns: 1fr; } .auto-s23-003 .cell { border-right: 0; border-top: 1px solid var(--line-strong); } .auto-s23-003 .cell:nth-child(1) { border-top: 0; } .auto-s23-003 .cell { grid-column: 1 / -1 !important; } }
+.auto-s23-003 .lab { margin: 0 0 0.9rem; font-size: 0.72rem; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.auto-s23-003 .not { margin: 0; color: var(--no); line-height: 1.55; font-size: 0.94rem; }
+.auto-s23-003 .not b { color: var(--ink); font-weight: 600; }
+.auto-s23-003 .note { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.auto-s23-003 .who { margin: 0; line-height: 1.55; }
+.auto-s23-003 .cap { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+.auto-s23-003 .acts { display: flex; flex-wrap: wrap; gap: 0.9rem 1.6rem; align-items: center; }
+.auto-s23-003 .lead-rule { margin-top: clamp(2.2rem, 5vw, 3.6rem); padding-top: 1.5rem; border-top: 3px solid var(--accent); }
+.auto-s23-003 .hair { margin-top: clamp(2rem, 4.5vw, 3rem); padding-top: 1.3rem; border-top: 1px solid var(--line); }
+.auto-s23-003 .band { padding: clamp(1.4rem, 3vw, 2.2rem); background: var(--band); border-radius: 6px; }
+.auto-s23-003 .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.8rem, 4.5vw, 3.6rem); align-items: start; }
+.auto-s23-003 .foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.4rem clamp(1.8rem, 5vw, 4rem); align-items: center; }
+.auto-s23-003 .meta { margin: 0; }
+.auto-s23-003 .meta > div { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.9rem; padding: 0.55rem 0; border-top: 1px solid var(--line); }
+.auto-s23-003 .meta > div:first-child { border-top: 0; padding-top: 0; }
+.auto-s23-003 .cell .meta > div { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
+.auto-s23-003 .meta dt { font-size: 0.74rem; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); align-self: center; }
+.auto-s23-003 .meta dd { margin: 0; line-height: 1.5; }
+.auto-s23-003 .steps { margin: 0; padding: 0; list-style: none; }
+.auto-s23-003 .steps li { display: grid; grid-template-columns: 4.8rem minmax(0, 1fr); gap: 0.4rem 1rem; align-items: start; padding: 0.7rem 0; border-top: 1px solid var(--line); }
+.auto-s23-003 .steps li:first-child { border-top: 0; padding-top: 0; }
+.auto-s23-003 .sn { font-weight: 600; line-height: 1.4; }
+.auto-s23-003 .sd { grid-column: 2 / 3; color: var(--muted); font-size: 0.94rem; line-height: 1.5; }
+.auto-s23-003 .next { margin: 0; padding: 0; list-style: none; }
+.auto-s23-003 .next li { padding: 0.35rem 0; }
+@media (max-width: 860px) { .auto-s23-003 .two, .auto-s23-003 .foot { grid-template-columns: 1fr; } }
+
+.auto-s23-003 .cov { margin: 0; padding: 0; list-style: none; }
+.auto-s23-003 .cov li { padding: 0.55rem 0; border-top: 1px solid var(--line); line-height: 1.5; }
+.auto-s23-003 .cov li:first-child { border-top: 0; padding-top: 0; }
+
+.auto-s23-003 .lead { margin: 1rem 0 0; }
+.auto-s23-003 .b1 { grid-column: 1 / 2; } .auto-s23-003 .b2 { grid-column: 2 / 3; } .auto-s23-003 .b3 { grid-column: 3 / 4; border-right: 0; }
+.auto-s23-003 .au { grid-column: 1 / 3; } .auto-s23-003 .nx { grid-column: 3 / 4; border-right: 0; }
+.auto-s23-003 .footr { margin-top: clamp(1.8rem, 4vw, 2.8rem); padding-top: 1.4rem; border-top: 3px solid var(--accent); display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+.auto-s23-003 .footr .not { margin: 0; max-width: 40rem; }
+@media (prefers-reduced-motion: reduce) { .auto-s23-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="auto-s23-003" data-study-id="AUTO-S23-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="auto-s23-003-title">
+    <div class="plate">
+      <div class="cell hd">
+        <p class="eyebrow">Workshop <span class="sep" aria-hidden="true">/</span> One job</p>
+        <h1 id="auto-s23-003-title">A service, and everything that is <span class="em">in</span> it</h1>
+        <p class="lead">One job, written out in full, so you can decide whether it is the one your car needs.</p>
+      </div>
+      <div class="cell pic"><div class="port"><div class="media" data-media="the-bay" role="img" aria-label="Reserved image area: the workshop bay, in use" style="aspect-ratio: 4 / 3;"><span>THE BAY &middot; 4:3</span></div><p class="cap" data-placeholder="true">[Approved image caption]</p></div></div>
+      <div class="cell b1"><p class="lab">What is in it</p>
+        <ul class="cov">
+          <li>Oil drained and replaced, filter with it.</li>
+          <li>Fluids topped and the levels written down.</li>
+          <li>Lights, wipers and tyres looked at and reported.</li>
+          <li>Brakes measured, and the reading put on the sheet.</li>
+        </ul></div>
+      <div class="cell b2"><p class="lab">What is not in it</p>
+        <p class="not">Anything found while looking. It gets quoted and it waits for your yes; a service that quietly becomes three jobs is not a service.</p></div>
+      <div class="cell b3"><p class="lab">How it runs</p>
+        <ol class="steps">
+          <li><span class="num">One</span><span class="sn">You leave it, or wait. Either is fine.</span></li>
+          <li><span class="num">Two</span><span class="sn">It goes on the ramp and somebody works through the list.</span></li>
+          <li><span class="num">Three</span><span class="sn">You are told what was checked, what was found, and what was left alone.</span></li>
+        </ol></div>
+      <div class="cell au"><p class="lab">Who it is for</p>
+        <p class="who">Anybody whose car is due one, and anybody who is not sure whether it is. If it is not due, the desk will say so.</p></div>
+      <div class="cell nx"><p class="lab">Read next</p>
+        <ul class="next">
+          <li><a class="lnk" href="../../S09-parts-accessories/raw/AUTO-S09-003.html">Parts and accessories</a></li>
+          <li><a class="lnk" href="../../S16-buying-service-process/raw/AUTO-S16-003.html">How it goes</a></li>
+        </ul></div>
+    </div>
+    <div class="footr">
+      <p class="not">Everything above is what the job is, not what your car needs. Somebody has to look.</p>
+      <a class="btn" href="../../S08-service-booking/raw/AUTO-S08-003.html">Book the bay</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

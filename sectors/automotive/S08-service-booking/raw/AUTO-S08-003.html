@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  WebAIBuilder — Sector Design Authoring Workspace
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
+
+  Study ID       : AUTO-S08-003
+  Sector         : Automotive (AUTO)
+  Section        : AUTO-S08 — Service Booking
+  Direction      : Structured / Visual Modular
+  Register       : Device 3 - the page as one itemised sheet: the head on the band tone
+                   beside the reception at 4:3, the four routes across the row beneath, then what
+                   we need, the refusal and the diary at 16:9. The actions sit under the plate on
+                   the lead rule.
+  Layout model   : One bordered plate sharing 1px lines - head row, a four-route row, a needs row with a 16:9 field
+  Density        : Standard band
+  Media mode     : TWO reserved areas - the service reception at 4:3 in the head row of the
+                   plate, and the booking diary open on the desk at 16:9 in the row beneath. The
+                   diary is the booking system.
+  Interaction    : Links only - the workshop list and the locations page, both same-variant.
+                   NOTHING ON THIS PAGE BOOKS ANYTHING. No form, no field, no control, no script.
+  Content note   : The telephone route and the written route are BRACKETED PLACEHOLDERS marked
+                   data-placeholder="true" and declared in the meta block: no number, address, email
+                   or opening hour is invented. The page carries NO FORM and says so - the register
+                   and the dependency list forbid one, and the honest description of a booking in
+                   this trade is somebody writing a name in a diary. No price, rate, turnaround
+                   promise, figure, rating or urgency device; no manufacturer, model, badge or
+                   plate. Numerals are spelled as words. No SVG, no icon; no header, navigation
+                   or footer.
+  Authoring note : This section had NO V1 study. Content and design are authored together in the
+                   V2 register against AUTOMOTIVE-THEME-CONTRACT.md; there is no BATCH-V1.md.
+-->
+<meta name="study-id" content="AUTO-S08-003">
+<meta name="sector" content="Automotive">
+<meta name="sector-prefix" content="AUTO">
+<meta name="section-id" content="AUTO-S08">
+<meta name="section-name" content="Service Booking">
+<meta name="variant" content="003">
+<meta name="territory" content="Structured / Visual Modular">
+<meta name="direction" content="Structured / Visual Modular">
+<meta name="theme" content="Steel & Cobalt">
+<meta name="section-shape" content="B — itemised sheet, two reserved areas">
+<meta name="layout-model" content="A bordered plate sharing 1px lines: the head on the band tone with the reception at 4:3, the four routes across the row beneath, what we need and the refusal beside the diary at 16:9">
+<meta name="density" content="standard band">
+<meta name="media-mode" content="two-reserved-areas">
+<meta name="interaction" content="links to the same-variant S04 and S10">
+<meta name="dependencies" content="none">
+<meta name="placeholder-data" content="the telephone number and the hours it is answered; the written route and how long a reply takes - bracketed placeholders">
+<meta name="batch" content="V2-detailing">
+<title>AUTO-S08-003 — Four Ways In, None A Form, Steel & Cobalt</title>
+
+<style>
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #f1f4f8; }
+
+.auto-s08-003 {
+  --paper: #f1f4f8; --ink: #1a222c; --muted: #54606d; --line: #d6dde6; --line-strong: #1a222c;
+  --media: #dae1ea; --band: #e7ecf2; --accent: #2b5493; --no: #66707a; --onacc: #f1f4f8;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+.auto-s08-003 *, .auto-s08-003 *::before, .auto-s08-003 *::after { box-sizing: inherit; }
+.auto-s08-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.auto-s08-003 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.auto-s08-003 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.72rem; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; }
+.auto-s08-003 .eyebrow .sep { margin: 0 0.5rem; color: var(--muted); font-weight: 400; }
+
+/* the serif display line; the emphasis device is one italic word in the accent */
+.auto-s08-003 h1, .auto-s08-003 h2.display { margin: 0; max-width: 20ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.3rem, 4.4vw, 4.2rem); line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); }
+.auto-s08-003 h1 .em, .auto-s08-003 h2.display .em { font-style: italic; color: var(--accent); }
+.auto-s08-003 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.0rem, 1.35vw, 1.14rem); line-height: 1.55; }
+.auto-s08-003 .statement { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.9rem); line-height: 1.25; color: var(--ink); }
+.auto-s08-003 .statement .em { font-style: italic; color: var(--accent); }
+
+.auto-s08-003 .media { position: relative; background: var(--media); border-radius: 6px; }
+.auto-s08-003 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.62rem; font-weight: 650; letter-spacing: 0.16em; text-transform: uppercase; }
+
+.auto-s08-003 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.auto-s08-003 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.auto-s08-003 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.auto-s08-003 .lnk::after { content: " \2192"; color: var(--accent); }
+.auto-s08-003 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.auto-s08-003 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
+
+.auto-s08-003 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+
+/* 001 the bay lines */
+.auto-s08-003 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.auto-s08-003 .r1 { left: 18%; } .auto-s08-003 .r2 { left: 41%; } .auto-s08-003 .r3 { left: 64%; }
+/* 002 the plate edge */
+.auto-s08-003 .plateedge { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 the torque mark, under the phrase the page turns on */
+.auto-s08-003 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.auto-s08-003 .u::before, .auto-s08-003 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.auto-s08-003 .u::before { left: 0; } .auto-s08-003 .u::after { right: 0; }
+/* 005 the ramp frame */
+.auto-s08-003 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
+
+.auto-s08-003 .plate { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; }
+.auto-s08-003 .cell { padding: clamp(1.2rem, 2.6vw, 1.9rem); border-top: 1px solid var(--line-strong); border-right: 1px solid var(--line-strong); }
+.auto-s08-003 .cell:nth-child(1), .auto-s08-003 .cell:nth-child(2) { border-top: 0; }
+.auto-s08-003 .hd { grid-column: 1 / 3; background: var(--band); display: grid; align-content: center; }
+.auto-s08-003 .pic { grid-column: 3 / 4; border-right: 0; display: grid; align-content: center; }
+.auto-s08-003 .plate .port { margin: 0; }
+@media (max-width: 980px) { .auto-s08-003 .plate { grid-template-columns: 1fr; } .auto-s08-003 .cell { border-right: 0; border-top: 1px solid var(--line-strong); } .auto-s08-003 .cell:nth-child(1) { border-top: 0; } .auto-s08-003 .cell { grid-column: 1 / -1 !important; } }
+.auto-s08-003 .lab { margin: 0 0 0.9rem; font-size: 0.72rem; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.auto-s08-003 .not { margin: 0; color: var(--no); line-height: 1.55; font-size: 0.94rem; }
+.auto-s08-003 .not b { color: var(--ink); font-weight: 600; }
+.auto-s08-003 .note { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.auto-s08-003 .who { margin: 0; line-height: 1.55; }
+.auto-s08-003 .cap { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+.auto-s08-003 .acts { display: flex; flex-wrap: wrap; gap: 0.9rem 1.6rem; align-items: center; }
+.auto-s08-003 .lead-rule { margin-top: clamp(2.2rem, 5vw, 3.6rem); padding-top: 1.5rem; border-top: 3px solid var(--accent); }
+.auto-s08-003 .hair { margin-top: clamp(2rem, 4.5vw, 3rem); padding-top: 1.3rem; border-top: 1px solid var(--line); }
+.auto-s08-003 .band { padding: clamp(1.4rem, 3vw, 2.2rem); background: var(--band); border-radius: 6px; }
+.auto-s08-003 .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.8rem, 4.5vw, 3.6rem); align-items: start; }
+.auto-s08-003 .foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.4rem clamp(1.8rem, 5vw, 4rem); align-items: center; }
+.auto-s08-003 .meta { margin: 0; }
+.auto-s08-003 .meta > div { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.9rem; padding: 0.55rem 0; border-top: 1px solid var(--line); }
+.auto-s08-003 .meta > div:first-child { border-top: 0; padding-top: 0; }
+.auto-s08-003 .cell .meta > div { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
+.auto-s08-003 .meta dt { font-size: 0.74rem; font-weight: 650; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); align-self: center; }
+.auto-s08-003 .meta dd { margin: 0; line-height: 1.5; }
+.auto-s08-003 .steps { margin: 0; padding: 0; list-style: none; }
+.auto-s08-003 .steps li { display: grid; grid-template-columns: 4.8rem minmax(0, 1fr); gap: 0.4rem 1rem; align-items: start; padding: 0.7rem 0; border-top: 1px solid var(--line); }
+.auto-s08-003 .steps li:first-child { border-top: 0; padding-top: 0; }
+.auto-s08-003 .sn { font-weight: 600; line-height: 1.4; }
+.auto-s08-003 .sd { grid-column: 2 / 3; color: var(--muted); font-size: 0.94rem; line-height: 1.5; }
+.auto-s08-003 .next { margin: 0; padding: 0; list-style: none; }
+.auto-s08-003 .next li { padding: 0.35rem 0; }
+@media (max-width: 860px) { .auto-s08-003 .two, .auto-s08-003 .foot { grid-template-columns: 1fr; } }
+
+.auto-s08-003 .routes { margin: 0; padding: 0; list-style: none; }
+.auto-s08-003 .routes li { display: grid; grid-template-columns: auto minmax(0, 0.42fr) minmax(0, 1fr); gap: 0.5rem 1.2rem; align-items: baseline; padding: 0.9rem 0; border-top: 1px solid var(--line); }
+.auto-s08-003 .routes li:first-child { border-top: 0; padding-top: 0; }
+.auto-s08-003 .rn { font-size: 1.08rem; font-weight: 600; letter-spacing: -0.005em; }
+.auto-s08-003 .rd { color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.auto-s08-003 .needs { margin: 0; padding: 0; list-style: none; }
+.auto-s08-003 .needs li { padding: 0.55rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.auto-s08-003 .needs li:first-child { border-top: 0; padding-top: 0; }
+@media (max-width: 860px) { .auto-s08-003 .routes li { grid-template-columns: auto minmax(0, 1fr); } .auto-s08-003 .rd { grid-column: 2 / 3; } }
+
+.auto-s08-003 .lst { grid-column: 1 / -1; border-right: 0; }
+.auto-s08-003 .n1 { grid-column: 1 / 2; } .auto-s08-003 .n2 { grid-column: 2 / 3; }
+.auto-s08-003 .pic2 { grid-column: 3 / 4; border-right: 0; display: grid; align-content: center; }
+.auto-s08-003 .footr { margin-top: clamp(1.8rem, 4vw, 2.8rem); padding-top: 1.4rem; border-top: 3px solid var(--accent); display: flex; flex-wrap: wrap; gap: 1rem 1.6rem; justify-content: flex-end; align-items: center; }
+@media (prefers-reduced-motion: reduce) { .auto-s08-003 * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<div class="auto-s08-003" data-study-id="AUTO-S08-003" data-direction="Structured / Visual Modular">
+  <section class="shell" aria-labelledby="auto-s08-003-title">
+    <div class="plate">
+      <div class="cell hd">
+        <p class="eyebrow">Booking the bay</p>
+        <h2 class="display" id="auto-s08-003-title">Four ways in, and <span class="em">none</span> of them is a form</h2>
+        <p class="lead">Nothing here books anything. It says which route to use, and what comes back.</p>
+      </div>
+      <div class="cell pic"><div class="media" data-media="the-reception" role="img" aria-label="Reserved image area: the service reception, in use" style="aspect-ratio: 4 / 3;"><span>THE SERVICE RECEPTION &middot; 4:3</span></div></div>
+      <div class="cell lst"><p class="lab">The four routes</p>
+        <ol class="routes">
+          <li><span class="num">One</span><span class="rn">At the desk</span><span class="rd">Walk in and say what the car is doing.</span></li>
+          <li><span class="num">Two</span><span class="rn">By telephone</span><span class="rd" data-placeholder="true">[Approved number, and the hours it is answered]</span></li>
+          <li><span class="num">Three</span><span class="rn">In writing</span><span class="rd" data-placeholder="true">[Approved written route, and how long a reply takes]</span></li>
+          <li><span class="num">Four</span><span class="rn">None of these</span><span class="rd">If it is not safe to drive, do not drive it here.</span></li>
+        </ol></div>
+      <div class="cell n1"><p class="lab">What we need from you</p>
+        <ul class="needs">
+          <li>What it is doing, and when it started.</li>
+          <li>Whether it is safe to drive.</li>
+          <li>Whether you need it back the same day. We will say yes or no, not that we will try.</li>
+        </ul></div>
+      <div class="cell n2"><p class="not"><b>There is no form on this page and no booking system behind it.</b> A slot is somebody writing your name in a diary, and they tell you the day before you hang up.</p></div>
+      <div class="cell pic2"><div class="media" data-media="the-diary" role="img" aria-label="Reserved image area: the booking diary open on the desk" style="aspect-ratio: 16 / 9;"><span>THE BOOKING DIARY &middot; 16:9</span></div></div>
+    </div>
+    <div class="footr">
+      <a class="lnk" href="../../S04-workshop-services/raw/AUTO-S04-003.html">What the bay does</a>
+      <a class="btn" href="../../S10-dealership-locations/raw/AUTO-S10-003.html">Where to find us</a>
+    </div>
+  </section>
+</div>
+
+</body>
+</html>

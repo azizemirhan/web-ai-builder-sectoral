@@ -6,308 +6,147 @@
 
 <!--
   WebAIBuilder — Sector Design Authoring Workspace
-  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, or remote runtime dependency.
+  Raw study. Standalone HTML. Scoped CSS. No framework, CDN, script, image, iframe, SVG or form.
 
   Study ID       : AUTO-S02-005
   Sector         : Automotive (AUTO)
-  Section        : AUTO-S02 — Vehicle / Service Categories
+  Section        : AUTO-S02 — Vehicle Service Categories
   Direction      : Art-directed / Distinctive
-  Reference      : None supplied. Authored to brief.
-  Category model : Vehicle categories — SUV, Electric, Performance, Touring, Commercial.
-  Layout model   : Horizontal category rail on a full-bleed near-black stage. Five tall
-                   cinematic crops on a staggered baseline with alternating proportions, the
-                   category name set oversized across the foot of each crop, and the run
-                   continuing past the right edge so the fifth panel is deliberately cropped.
-  Density        : Very low — an index and a category name per panel, nothing else.
-  Media mode     : One reserved media area per category — five areas, two proportions.
-  Interaction    : Native horizontal scroll with scroll-snap. No JavaScript. The rail is an
-                   labelled scrollable region so it is keyboard operable, and every panel is a
-                   real link, so tabbing through the categories scrolls the rail.
-  Section role   : Category-level discovery only. No model names, stock, prices or
-                   specifications — AUTO-S03 owns specific vehicles.
-  Content note   : Category names and ordinal indices. The oversized type is the navigation
-                   itself, not decoration. Media areas are reserved and intentionally empty.
+  Register       : Detailing pass - AUTOMOTIVE-THEME-CONTRACT.md, the job sheet. Device 5 -
+                   the head held in the 005 ramp frame; the four categories offset beneath on the
+                   band tone against the yard at 3:2; the refusal across the width on the lead
+                   rule, the index action last.
+  Layout model   : A ramp frame at the head; an offset band-tone category list against a 3:2 field; the refusal across the width
+  Density        : Standard band
+  Media mode     : ONE reserved area - the yard where cars wait to be seen, at 3:2, offset
+                   beside the category list.
+  Interaction    : Links only - each category and the full index go to the same-variant S03.
+                   Nothing opens, expands or submits. No script.
+  Content note   : The V1 content spine is kept - the eyebrow, the heading, the lead, the four
+                   categories with V1's own descriptions, the per-category link and the index
+                   action. One block is ADDED: the refusal that a category tells you the shape of
+                   a journey and not the cost of one. V1-004 built its categories from scripted button
+                   elements with data attributes and a radio role; the register and the dependency
+                   list forbid both, so it is re-authored as links. No manufacturer, wordmark,
+                   badge, model name, plate, price, payment, rate, figure, rating or urgency
+                   device. Numerals are spelled as words. No SVG, no icon; no global header,
+                   navigation or footer.
+  V1 note        : Original authoring record in BATCH-V1.md. The V1 per-category media tiles are
+                   NOT carried over: the contract allows a place, a person by role, or the thing
+                   the copy names, and a photograph standing for "SUV" would be a vehicle
+                   presented as a specific vehicle. The categories are hairline rows instead.
 -->
-
 <meta name="study-id" content="AUTO-S02-005">
 <meta name="sector" content="Automotive">
 <meta name="sector-prefix" content="AUTO">
 <meta name="section-id" content="AUTO-S02">
-<meta name="section-name" content="Vehicle / Service Categories">
+<meta name="section-name" content="Vehicle Service Categories">
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Staggered horizontal category rail with oversized names over cinematic crops">
-<meta name="density" content="very-low">
-<meta name="media-mode" content="reserved-media-area-per-category-x5-alternating-crops">
-<meta name="interaction" content="native-horizontal-scroll-snap">
+<meta name="theme" content="Night & Signal, inverted">
+<meta name="section-shape" content="B — anchored category list, one reserved area">
+<meta name="layout-model" content="A ramp frame at the head; the four categories offset on the band tone against the yard at 3:2; the refusal across the width on the lead rule">
+<meta name="density" content="standard band">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="links to the same-variant S03">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
-
-<title>AUTO-S02-005 — Vehicle Categories, Art-directed / Distinctive</title>
+<meta name="placeholder-data" content="none - this study carries no bracketed placeholder">
+<meta name="batch" content="V2-detailing">
+<title>AUTO-S02-005 — Four Ways Into The Range, Night & Signal, inverted</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #0b0c0e; }
+body { margin: 0; background: #16181a; }
 
-/* Scoped study styles — namespaced to .auto-s02-005 */
 .auto-s02-005 {
-  --ink: #f2f3f5;
-  --ink-soft: #b0b4ba;
-  --ground: #0b0c0e;
-  --slot: #1e2024;
-  --slot-hover: #26292e;
-  --slot-ink: #9aa0a8;
-  --line: #2c2f34;
-  --focus: #ffffff;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--ground);
-  color: var(--ink);
+  --paper: #16181a; --ink: #edeff0; --muted: #a3aaad; --line: #2d3134; --line-strong: #edeff0;
+  --media: #22262a; --band: #1d2124; --accent: #d9a441; --no: #9a9d99; --onacc: #16181a;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.auto-s02-005 *,
-.auto-s02-005 *::before,
-.auto-s02-005 *::after { box-sizing: inherit; }
-.auto-s02-005 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
+.auto-s02-005 *, .auto-s02-005 *::before, .auto-s02-005 *::after { box-sizing: inherit; }
+.auto-s02-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.auto-s02-005 .stage { padding: clamp(50px, 5.6vw, 84px) 0 clamp(46px, 5.2vw, 76px); }
+.auto-s02-005 .shell { position: relative; max-width: 1320px; margin: 0 auto; padding: clamp(2.6rem, 6vw, 6rem) clamp(22px, 3.6vw, 58px); }
+.auto-s02-005 .eyebrow { margin: 0 0 1.1rem; color: var(--accent); font-size: 0.72rem; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; }
+.auto-s02-005 .eyebrow .sep { margin: 0 0.5rem; color: var(--muted); font-weight: 400; }
 
-/* Header, held inside the shell measure */
-.auto-s02-005 .head {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto clamp(30px, 3.6vw, 52px);
-  padding: 0 clamp(20px, 3.6vw, 52px);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, auto);
-  gap: clamp(14px, 3vw, 40px);
-  align-items: end;
-}
-.auto-s02-005 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.71rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.auto-s02-005 h1 {
-  margin: 0;
-  font-size: clamp(1.8rem, 3.4vw, 2.8rem);
-  line-height: 1.04;
-  letter-spacing: -0.03em;
-  font-weight: 600;
-  max-width: 16ch;
-}
-.auto-s02-005 .hint {
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  white-space: nowrap;
-}
+/* the serif display line; the emphasis device is one italic word in the accent */
+.auto-s02-005 h1, .auto-s02-005 h2.display { margin: 0; max-width: 20ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.3rem, 4.4vw, 4.2rem); line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); }
+.auto-s02-005 h1 .em, .auto-s02-005 h2.display .em { font-style: italic; color: var(--accent); }
+.auto-s02-005 .lead { margin: 1.2rem 0 0; max-width: 34rem; color: var(--muted); font-size: clamp(1.0rem, 1.35vw, 1.14rem); line-height: 1.55; }
+.auto-s02-005 .statement { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.3rem, 2.2vw, 1.9rem); line-height: 1.25; color: var(--ink); }
+.auto-s02-005 .statement .em { font-style: italic; color: var(--accent); }
 
-/* Rail */
-.auto-s02-005 .rail { width: 100%; }
-.auto-s02-005 .track {
-  list-style: none;
-  margin: 0;
-  padding: 0 clamp(20px, 3.6vw, 52px);
-  display: flex;
-  gap: clamp(16px, 1.9vw, 28px);
-  align-items: flex-start;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scroll-padding-inline: clamp(20px, 3.6vw, 52px);
-  scrollbar-width: thin;
-  scrollbar-color: #6b7078 transparent;
-}
-.auto-s02-005 .track::-webkit-scrollbar { height: 6px; }
-.auto-s02-005 .track::-webkit-scrollbar-track { background: transparent; }
-.auto-s02-005 .track::-webkit-scrollbar-thumb { background: #6b7078; border-radius: 3px; }
+.auto-s02-005 .media { position: relative; background: var(--media); border-radius: 6px; }
+.auto-s02-005 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.62rem; font-weight: 650; letter-spacing: 0.16em; text-transform: uppercase; }
 
-.auto-s02-005 .panel {
-  flex: 0 0 clamp(232px, 21vw, 330px);
-  min-width: 0;
-  scroll-snap-align: start;
-}
-/* Staggered baseline — the rail reads as a composition, not as a row of equal tiles */
-.auto-s02-005 .panel:nth-child(even) { margin-top: clamp(22px, 3.4vw, 56px); }
+.auto-s02-005 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.4rem; border: 1px solid var(--ink); border-radius: 2px; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1; }
+.auto-s02-005 .btn::after { content: " \2192"; margin-left: 0.6rem; color: var(--accent); }
+.auto-s02-005 .lnk { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.auto-s02-005 .lnk::after { content: " \2192"; color: var(--accent); }
+.auto-s02-005 .back { display: inline-block; min-height: 44px; padding-top: 0.6rem; color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+.auto-s02-005 .back::before { content: "\2190 "; margin-right: 0.4rem; color: var(--accent); }
 
-.auto-s02-005 .tile {
-  display: block;
-  position: relative;
-  color: inherit;
-  text-decoration: none;
-}
-.auto-s02-005 .media {
-  position: relative;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: 16px;
-  overflow: hidden;
-  transition: background-color 160ms ease;
-}
-.auto-s02-005 .tile:hover .media { background: var(--slot-hover); }
-/* Two alternating proportions */
-.auto-s02-005 .panel:nth-child(odd) .media { aspect-ratio: 3 / 4; }
-.auto-s02-005 .panel:nth-child(even) .media { aspect-ratio: 4 / 5; }
+.auto-s02-005 .num { display: inline-block; padding: 0.28rem 0.55rem; border: 1px solid var(--accent); border-radius: 2px; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
 
-.auto-s02-005 .slot-label {
-  font-size: 0.64rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-}
-.auto-s02-005 .index {
-  position: absolute;
-  top: clamp(10px, 1vw, 14px);
-  left: clamp(12px, 1.1vw, 16px);
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  color: var(--slot-ink);
-}
-.auto-s02-005 .mark {
-  position: absolute;
-  top: clamp(10px, 1vw, 14px);
-  right: clamp(12px, 1.1vw, 16px);
-  font-size: 0.95rem;
-  line-height: 1;
-  color: var(--slot-ink);
-  transition: color 160ms ease, transform 160ms ease;
-}
-.auto-s02-005 .tile:hover .mark { color: var(--ink); transform: translateX(3px); }
+/* 001 the bay lines */
+.auto-s02-005 .rule { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px solid var(--line); pointer-events: none; z-index: 0; }
+.auto-s02-005 .r1 { left: 18%; } .auto-s02-005 .r2 { left: 41%; } .auto-s02-005 .r3 { left: 64%; }
+/* 002 the plate edge */
+.auto-s02-005 .plateedge { position: absolute; left: 0; top: 0; width: 7rem; height: 5rem; border-top: 1px solid var(--accent); border-left: 1px solid var(--accent); pointer-events: none; z-index: 0; }
+/* 004 the torque mark, under the phrase the page turns on */
+.auto-s02-005 .u { position: relative; display: inline-block; padding-bottom: 0.14em; border-bottom: 3px solid var(--accent); color: var(--accent); }
+.auto-s02-005 .u::before, .auto-s02-005 .u::after { content: ""; position: absolute; bottom: -3px; height: 0.5rem; border-left: 3px solid var(--accent); }
+.auto-s02-005 .u::before { left: 0; } .auto-s02-005 .u::after { right: 0; }
+/* 005 the ramp frame */
+.auto-s02-005 .frame { padding: 1.3rem 0 0 1.5rem; border-top: 3px solid var(--accent); border-left: 3px solid var(--accent); }
 
-/* The category name is the navigation — set oversized across the foot of its crop */
-.auto-s02-005 .tile h2 {
-  position: absolute;
-  left: clamp(12px, 1.1vw, 16px);
-  right: clamp(12px, 1.1vw, 16px);
-  bottom: clamp(10px, 1vw, 14px);
-  margin: 0;
-  font-size: clamp(1.45rem, 2.1vw, 2.05rem);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink);
-}
-.auto-s02-005 .tile:hover h2 { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; }
+.auto-s02-005 .not { margin: 0; color: var(--no); line-height: 1.55; font-size: 0.94rem; }
+.auto-s02-005 .not b { color: var(--ink); font-weight: 600; }
+.auto-s02-005 .cats { margin: 0; padding: 0; list-style: none; }
+.auto-s02-005 .cats li { display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr) auto; gap: 0.6rem 1.4rem; align-items: baseline; padding: 0.95rem 0; border-top: 1px solid var(--line); }
+.auto-s02-005 .cats li:first-child { border-top: 0; padding-top: 0; }
+.auto-s02-005 .cn { font-size: 1.14rem; font-weight: 600; letter-spacing: -0.005em; }
+.auto-s02-005 .cd { color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
+.auto-s02-005 .cats .lnk { padding-top: 0; min-height: 0; font-size: 0.85rem; }
+.auto-s02-005 ol.cats li { grid-template-columns: auto minmax(0, 0.34fr) minmax(0, 1fr) auto; }
 
-/* Responsive ladder — the rail is kept, because a swipe run is the native narrow-width form
-   of this archetype. What changes is the measure: fewer panels in view, a wider peek so the
-   continuation is unmistakable, and the stagger and crop alternation dropped once they would
-   only cost height. */
-@media (max-width: 900px) {
-  .auto-s02-005 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .auto-s02-005 h1 { max-width: none; }
-  .auto-s02-005 .panel { flex-basis: clamp(220px, 34vw, 300px); }
-}
-
-@media (max-width: 560px) {
-  .auto-s02-005 .panel { flex-basis: 74vw; margin-top: 0; }
-  .auto-s02-005 .panel:nth-child(even) { margin-top: 0; }
-  .auto-s02-005 .panel:nth-child(even) .media { aspect-ratio: 3 / 4; }
-}
-
-@media (max-width: 360px) {
-  .auto-s02-005 .panel { flex-basis: 78vw; }
-  .auto-s02-005 .panel .media { aspect-ratio: 4 / 5; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .auto-s02-005 * { transition: none !important; }
-  .auto-s02-005 .track { scroll-behavior: auto; }
-}
+.auto-s02-005 .frame { padding: clamp(1.4rem, 3.2vw, 2.4rem) 0 0 clamp(1.4rem, 3.2vw, 2.4rem); }
+.auto-s02-005 .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.45fr); gap: clamp(1.8rem, 4.5vw, 3.6rem); align-items: start; margin-top: clamp(2rem, 4.5vw, 3.4rem); }
+.auto-s02-005 .two > div:first-child { margin-left: clamp(0rem, 5vw, 3.4rem); padding: clamp(1.3rem, 3vw, 2rem); background: var(--band); border-radius: 6px; }
+.auto-s02-005 .tail { margin-top: clamp(2rem, 4.5vw, 3.2rem); padding-top: 1.4rem; border-top: 3px solid var(--accent); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.4rem clamp(1.8rem, 5vw, 4rem); align-items: center; }
+@media (max-width: 860px) { .auto-s02-005 .two, .auto-s02-005 .tail { grid-template-columns: 1fr; } .auto-s02-005 .two > div:first-child { margin-left: 0; } .auto-s02-005 .cats li { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .auto-s02-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="auto-s02-005" data-study-id="AUTO-S02-005" data-direction="Art-directed / Distinctive">
-  <section class="stage" aria-labelledby="auto-s02-005-title">
-
-    <div class="head">
+  <section class="shell" aria-labelledby="auto-s02-005-title">
+    <div class="frame">
+      <p class="eyebrow">Browse by category</p>
+      <h2 class="display" id="auto-s02-005-title">Start with the kind of vehicle you <span class="em">need</span></h2>
+      <p class="lead">Four ways into the range. Pick the one that matches how you drive.</p>
+    </div>
+    <div class="two">
       <div>
-        <p class="eyebrow">The range</p>
-        <h1 id="auto-s02-005-title">Pick a lane</h1>
+        <ul class="cats">
+          <li><span class="cn">SUV</span><span class="cd">Space and versatility for everyday routes.</span><a class="lnk" href="../../S03-featured-vehicles/raw/AUTO-S03-005.html">Explore</a></li>
+          <li><span class="cn">Sedan</span><span class="cd">Comfort and balance for the daily drive.</span><a class="lnk" href="../../S03-featured-vehicles/raw/AUTO-S03-005.html">Explore</a></li>
+          <li><span class="cn">Electric</span><span class="cd">Quieter driving, with charging built into the routine.</span><a class="lnk" href="../../S03-featured-vehicles/raw/AUTO-S03-005.html">Explore</a></li>
+          <li><span class="cn">Performance</span><span class="cd">Sharper handling and a more focused drive.</span><a class="lnk" href="../../S03-featured-vehicles/raw/AUTO-S03-005.html">Explore</a></li>
+        </ul>
       </div>
-      <p class="hint">
-        <span>Scroll the range</span>
-        <span aria-hidden="true">&rarr;</span>
-      </p>
+      <div class="media" data-media="the-yard" role="img" aria-label="Reserved image area: the yard where cars wait to be seen" style="aspect-ratio: 3 / 2;"><span>THE YARD &middot; 3:2</span></div>
     </div>
-
-    <div class="rail" role="region" tabindex="0" aria-labelledby="auto-s02-005-title">
-      <ul class="track">
-        <li class="panel">
-          <a class="tile" href="#auto-s02-005-title">
-            <div class="media">
-              <span class="slot-label">Category media</span>
-              <span class="index">01</span>
-              <span class="mark" aria-hidden="true">&rarr;</span>
-              <h2>SUV</h2>
-            </div>
-          </a>
-        </li>
-        <li class="panel">
-          <a class="tile" href="#auto-s02-005-title">
-            <div class="media">
-              <span class="slot-label">Category media</span>
-              <span class="index">02</span>
-              <span class="mark" aria-hidden="true">&rarr;</span>
-              <h2>Electric</h2>
-            </div>
-          </a>
-        </li>
-        <li class="panel">
-          <a class="tile" href="#auto-s02-005-title">
-            <div class="media">
-              <span class="slot-label">Category media</span>
-              <span class="index">03</span>
-              <span class="mark" aria-hidden="true">&rarr;</span>
-              <h2>Performance</h2>
-            </div>
-          </a>
-        </li>
-        <li class="panel">
-          <a class="tile" href="#auto-s02-005-title">
-            <div class="media">
-              <span class="slot-label">Category media</span>
-              <span class="index">04</span>
-              <span class="mark" aria-hidden="true">&rarr;</span>
-              <h2>Touring</h2>
-            </div>
-          </a>
-        </li>
-        <li class="panel">
-          <a class="tile" href="#auto-s02-005-title">
-            <div class="media">
-              <span class="slot-label">Category media</span>
-              <span class="index">05</span>
-              <span class="mark" aria-hidden="true">&rarr;</span>
-              <h2>Commercial</h2>
-            </div>
-          </a>
-        </li>
-      </ul>
+    <div class="tail">
+      <p class="not"><b>What is not on this page:</b> a price, a payment, a figure or a badge. A category tells you the shape of a journey, not the cost of one &mdash; and if none of these is yours, the team will say so rather than sell you the nearest.</p>
+      <a class="btn" href="../../S03-featured-vehicles/raw/AUTO-S03-005.html">All categories</a>
     </div>
-
   </section>
 </div>
 

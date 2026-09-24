@@ -41,7 +41,7 @@ Hero only. No global header, logo, primary navigation, announcement bar or foote
 
 # Status
 
-AUTHORED — PENDING DESIGN LAB INGESTION
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in [BATCH-V2.md](BATCH-V2.md); original authoring record in [BATCH-V1.md](BATCH-V1.md).
 
 # Raw Path
 

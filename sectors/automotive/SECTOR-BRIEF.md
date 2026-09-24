@@ -8,7 +8,7 @@ AUTO
 
 # Purpose
 
-Structural container for future Automotive section studies.
+The Automotive sector catalog: 27 sections, 135 studies, authored and designed.
 
 # Planned Sections
 
@@ -20,11 +20,17 @@ Structural container for future Automotive section studies.
 
 # Authoring Status
 
-NOT_STARTED
+COMPLETE - all 27 sections, 135 studies.
+
+AUTHORED IN THE V2 DETAILING PASS, 24 September 2026. S01 and S02 were re-authored from their
+V1 content spine; S03-S27 had no V1 and were authored directly in the V2 register. The register,
+the five themes, the media rules and the claims limits are in AUTOMOTIVE-THEME-CONTRACT.md.
 
 # Notes
 
-Structure only. No sector research, design guidance, or design studies have been created.
+AUTOMOTIVE-THEME-CONTRACT.md establishes the register - "the job sheet" - the five fixed themes,
+the three honest media subjects, the claims limits, the anti-patterns and the page-rhythm rules
+for every AUTO study. It was written at the start of the V2 detailing pass on 24 September 2026.
 
 # Extended Site Architecture — S21–S27
 
