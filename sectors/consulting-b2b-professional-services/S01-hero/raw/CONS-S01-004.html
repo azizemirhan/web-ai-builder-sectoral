@@ -12,28 +12,20 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S01 — Hero
   Direction      : Conversion-led
-  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
-  Layout model   : Split head with a reserved portrait panel, then one saturated panel that states
-                   what the offered conversation actually is, carrying the single action
-  Density        : Low-medium (86 visible words)
-  Media mode     : One reserved portrait area, held to the head so it does not compete with the
-                   action panel.
-  Interaction    : None (static; no JavaScript)
-
-  What "conversion-led" means here :
-                   The generic version of this hero is a headline and a "Book a consultation"
-                   button, which converts badly in this sector because the buyer does not know what
-                   they are agreeing to and assumes it is a sales call. So the conversion device is
-                   not a bigger button — it is **saying what the meeting is**: who is in it, what it
-                   is about, and what does not happen afterwards. Those three lines are the panel.
-
-  Why no reserved figure row : 001, 002 and 003 all carry one. This study deliberately does not,
-                   because a counter competes with a single action, and the compositional argument
-                   of 004 is that one thing dominates.
-
-  Content note   : The three statements are policy commitments a firm can honour, not claims about
-                   past performance, so none is a fabricated metric. No response-time promise, no
-                   named client, logo, ranking or award. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 4: the
+                   split head with the portrait, then a band on the tinted paper that states what
+                   the first conversation is — three bordered cells sharing hairlines, each with a
+                   stroke mark (one person / a question in a circle / a struck document), and the
+                   one bordered action. The 004 pencil figure: an underline stroke in the accent
+                   beneath the display's key phrase, and a circled word on the band's eyebrow.
+                   The pencil rule on the band. V1 is kept whole.
+  Layout model   : Split head with a 4:5 portrait figure; band of three bordered cells + action
+  Density        : Low — V1's spine kept in full
+  Media mode     : One reserved portrait area, 4:5, held to the head.
+  Interaction    : One in-page route. No form.
+  Content note   : The three statements are policy commitments a firm can honour, not claims
+                   about outcomes. No placeholder data. Inline SVG, decorative. No header or
+                   navigation — the section-shell rule.
 -->
 
 <meta name="study-id" content="CONS-S01-004">
@@ -44,171 +36,67 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="theme" content="004 Signal">
-<meta name="layout-model" content="Split head with reserved portrait, saturated what-the-conversation-is panel carrying the single action">
-<meta name="density" content="low-medium">
-<meta name="media-mode" content="one-reserved-portrait-panel">
-<meta name="interaction" content="none">
+<meta name="theme" content="004 White &amp; Signal">
+<meta name="layout-model" content="Split head with underline stroke under the key phrase and a 4:5 portrait figure; band of three bordered iconed cells stating what the first conversation is, with the one bordered action">
+<meta name="density" content="low">
+<meta name="media-mode" content="one-reserved-portrait-area">
+<meta name="interaction" content="in-page-route">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S01-004 — Hero, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #ffffff; }
+body { margin: 0; background: #fcfcfb; }
 
-/* Scoped study styles — namespaced to .cons-s01-004 */
 .cons-s01-004 {
-  --paper: #ffffff;
-  --ink: #0a0b0d;
-  --ink-soft: #54585e;
-  --line: #e5e5e5;
-  --slot: #f0f0f0;
-  --slot-edge: #c3c3c3;
-  --slot-ink: #4e5157;
-  --accent: #e0402f;
-  --accent-ink: #ffffff;
-  --focus: #0a0b0d;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fcfcfb; --ink: #0b0c0e; --muted: #55595f; --line: #e4e4e2; --line-strong: #0b0c0e;
+  --media: #eeeeec; --band: #f3f3f0; --accent: #d63a2a; --no: #7a1a10;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s01-004 *,
-.cons-s01-004 *::before,
-.cons-s01-004 *::after { box-sizing: inherit; }
-.cons-s01-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 8px; }
-.cons-s01-004 .vh {
-  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
-  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
-}
+.cons-s01-004 *, .cons-s01-004 *::before, .cons-s01-004 *::after { box-sizing: inherit; }
+.cons-s01-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s01-004 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s01-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s01-004 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s01-004 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(26px, 3.8vw, 60px);
-  align-items: center;
-}
-.cons-s01-004 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 20px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s01-004 h1 {
-  margin: 0;
-  font-size: clamp(2.25rem, 4.5vw, 3.6rem);
-  line-height: 1.0;
-  letter-spacing: -0.038em;
-  font-weight: 800;
-  max-width: 16ch;
-}
-.cons-s01-004 .lead {
-  margin: clamp(16px, 2vw, 26px) 0 0;
-  max-width: 46ch;
-  color: var(--ink-soft);
-  font-size: clamp(1.04rem, 1.24vw, 1.18rem);
-}
-.cons-s01-004 .portrait {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 12px;
-  background: var(--slot);
-  aspect-ratio: 4 / 5;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-.cons-s01-004 .portrait span {
-  color: var(--slot-ink);
-  font-size: 0.79rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.8;
-}
+.cons-s01-004 .head { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(14rem, 0.55fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.cons-s01-004 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s01-004 h1 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.95; letter-spacing: -0.03em; }
+.cons-s01-004 h1 .u { position: relative; display: inline-block; }
+.cons-s01-004 h1 .u svg { position: absolute; left: -0.02em; right: -0.02em; bottom: -0.16em; width: 104%; height: 0.22em; overflow: visible; pointer-events: none; color: var(--accent); }
+.cons-s01-004 .lead { margin: 1.4rem 0 0; max-width: 32rem; color: var(--muted); font-size: 1rem; line-height: 1.6; }
+.cons-s01-004 .lead b { color: var(--ink); }
 
-/* --- The panel: what the conversation actually is --- */
-.cons-s01-004 .panel {
-  margin: clamp(30px, 3.6vw, 52px) 0 0;
-  padding: clamp(28px, 3.6vw, 48px) clamp(24px, 3.2vw, 44px);
-  border-radius: 12px;
-  background: var(--accent);
-  color: var(--accent-ink);
-}
-.cons-s01-004 .panel h2 {
-  margin: 0;
-  font-size: clamp(1.42rem, 2.3vw, 2rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-}
-.cons-s01-004 .terms {
-  margin: clamp(22px, 2.6vw, 32px) 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(16px, 2.4vw, 34px);
-}
-.cons-s01-004 .terms li {
-  padding-top: 16px;
-  border-top: 2px solid var(--accent-ink);
-  font-size: clamp(1.02rem, 1.2vw, 1.14rem);
-  font-weight: 600;
-  max-width: 30ch;
-}
-.cons-s01-004 .act { margin: clamp(24px, 3vw, 38px) 0 0; }
-.cons-s01-004 .go {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 58px;
-  padding: 0 34px;
-  border-radius: 999px;
-  background: var(--accent-ink);
-  color: var(--accent);
-  font-size: 1.08rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-}
-.cons-s01-004 .go:hover { background: var(--ink); color: var(--accent-ink); }
+.cons-s01-004 figure { margin: 0; padding: 0; }
+.cons-s01-004 .media { position: relative; aspect-ratio: 4 / 5; background: var(--media); border-radius: 2px; }
+.cons-s01-004 .slate { position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s01-004 .slate b { display: block; color: var(--ink); }
+.cons-s01-004 figcaption { display: flex; align-items: center; gap: 0.5rem; margin: 0.7rem 0 0; color: var(--muted); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.cons-s01-004 figcaption .mk { color: var(--accent); }
 
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .cons-s01-004 .head { grid-template-columns: minmax(0, 1fr); }
-  .cons-s01-004 h1, .cons-s01-004 .lead { max-width: none; }
-  .cons-s01-004 .portrait { aspect-ratio: 16 / 9; }
-  .cons-s01-004 .terms { grid-template-columns: minmax(0, 1fr); gap: 18px; }
-  .cons-s01-004 .terms li { max-width: none; }
-}
-@media (max-width: 560px) {
-  .cons-s01-004 .portrait { aspect-ratio: 3 / 2; }
-  .cons-s01-004 .go { width: 100%; justify-content: center; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s01-004 * { transition: none !important; }
-}
+.cons-s01-004 .band { margin-top: clamp(2.2rem, 4.5vw, 4rem); padding: clamp(1.4rem, 2.6vw, 2.2rem) clamp(1.2rem, 2.4vw, 2.2rem) clamp(1.5rem, 2.8vw, 2.4rem); background: var(--band); border-top: 3px solid var(--accent); }
+.cons-s01-004 .band h2 { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1rem; color: var(--ink); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s01-004 .band h2 .ring { position: relative; display: inline-block; padding: 0.15em 0.35em; }
+.cons-s01-004 .band h2 .ring svg { position: absolute; inset: -0.35em -0.3em; width: calc(100% + 0.6em); height: calc(100% + 0.7em); overflow: visible; pointer-events: none; color: var(--accent); }
+.cons-s01-004 .cells { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-strong); background: var(--paper); }
+.cons-s01-004 .cells li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.7rem; align-items: start; padding: 1rem 1.1rem 1.1rem; border-right: 1px solid var(--line-strong); font-size: 0.95rem; line-height: 1.5; color: var(--ink); }
+.cons-s01-004 .cells li:last-child { border-right: 0; }
+.cons-s01-004 .cells .mk { width: 1.4rem; height: 1.4rem; color: var(--accent); margin-top: 0.1rem; }
+.cons-s01-004 .cells .no { color: var(--no); }
+.cons-s01-004 .cells li b { display: block; }
+.cons-s01-004 .cells li span { color: var(--muted); font-size: 0.86rem; }
+.cons-s01-004 .act { display: flex; align-items: center; gap: 1.2rem; margin-top: 1.2rem; }
+.cons-s01-004 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3.1rem; padding: 0 1.4rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: var(--paper); }
+.cons-s01-004 .go:hover { background: var(--ink); color: var(--paper); }
+.cons-s01-004 .act p { margin: 0; color: var(--muted); font-size: 0.82rem; }
+
+@media (max-width: 860px) { .cons-s01-004 .head { grid-template-columns: minmax(0, 1fr); } .cons-s01-004 .media { aspect-ratio: 3 / 2; } .cons-s01-004 .cells { grid-template-columns: minmax(0, 1fr); } .cons-s01-004 .cells li { border-right: 0; border-bottom: 1px solid var(--line-strong); } .cons-s01-004 .cells li:last-child { border-bottom: 0; } }
+@media (prefers-reduced-motion: reduce) { .cons-s01-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -218,21 +106,26 @@ body { margin: 0; background: #ffffff; }
 
     <div class="head">
       <div>
-        <p class="eyebrow">Consulting</p>
-        <h1 id="cons-s01-004-title">Book the conversation before you write the brief.</h1>
-        <p class="lead">Most engagements are shaped wrong before anybody is appointed. The cheapest hour is the one that decides what the work actually is.</p>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Consulting</p>
+        <h1 id="cons-s01-004-title">Book the conversation <span class="u">before you write the brief.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></h1>
+        <p class="lead">Most engagements are shaped wrong before anybody is appointed. <b>The cheapest hour is the one that decides what the work actually is.</b></p>
       </div>
-      <div class="portrait"><span>Portrait area &mdash; the person who takes<br>the first call, who is also the person<br>who would run the work</span></div>
+      <figure>
+        <div class="media" role="img" aria-label="Portrait area — the person who takes the first call, who is also the person who would run the work"><p class="slate" aria-hidden="true"><b>Portrait area &middot; 4:5</b>the person who takes the first call, who is also the person who would run the work</p></div>
+        <figcaption><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Who takes the call</figcaption>
+      </figure>
     </div>
 
-    <div class="panel">
-      <h2>What the first conversation is</h2>
-      <ul class="terms">
-        <li>With the person who would run the work, not a salesperson.</li>
-        <li>About your decision, not our credentials.</li>
-        <li>No proposal afterwards unless you ask for one.</li>
+    <div class="band">
+      <h2>What the <span class="ring">first<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M8 50C6 28 30 10 54 10c26 0 42 14 40 36-2 26-30 46-58 44C14 88 4 72 8 50c2-10 12-18 14-16" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg></span> conversation is</h2>
+      <ul class="cells">
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"/></svg><div><b>With the person who would run the work,</b><span>not a salesperson.</span></div></li>
+        <li><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM9.5 9.5a2.5 2.5 0 0 1 5 0c0 1.8-2.5 2-2.5 4M12 17h.01"/></svg><div><b>About your decision,</b><span>not our credentials.</span></div></li>
+        <li><svg class="mk no" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14v17H5zM9 4V2h6v2M8 10h8M8 14h6M4 3l16 18"/></svg><div><b>No proposal afterwards</b><span>unless you ask for one.</span></div></li>
       </ul>
-      <p class="act"><a class="go" href="#cons-s01-004-title">Start a conversation</a></p>
+      <div class="act">
+        <a class="go" href="#cons-s01-004-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Start a conversation</a>
+      </div>
     </div>
 
   </section>

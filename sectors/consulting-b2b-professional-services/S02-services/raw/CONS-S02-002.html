@@ -12,32 +12,20 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S02 — Services
   Direction      : Premium / Editorial
-  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
-  Layout model   : Editorial statement with the slider controls set against it, then a horizontal
-                   rail of tall media cards that snap, with the next card peeking past the frame edge
-  Density        : Low (110 visible words)
-  Media mode     : Six reserved image areas at 3:4, one per card, at the largest per-card size in the
-                   batch. The rail exists so the media can be tall and the reader still sees that
-                   there is more.
-  Interaction    : Horizontal snap rail. Native scroll, touch and trackpad need no script; the two
-                   arrow buttons use ~10 lines of vanilla JavaScript to step the rail by one card.
-
-  V1 was rejected, and why :
-                   The first version of this study was a full-width ruled list — a numeral gutter on
-                   the left, the text in the middle, a right-aligned uppercase label column, a hairline
-                   between every row. That is a schedule. It is the same document idiom this workspace
-                   already ruled out for ARC under the names register, ledger and index, reproduced
-                   here under the name "editorial". Corners and colour were never the problem; rows,
-                   rules and a metadata column were.
-                   The editorial answer is not a better-set table. It is **photography at scale with
-                   type beside it**, which is what a design publication actually looks like, and what
-                   the supplied references do.
-
-  Governing idea : The situation is the card title; the discipline is a small label above it. Same six
-                   situations across the batch, so the five studies differ by composition.
-
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 2 with
+                   the rail: the head split — serif statement left, the second sentence as a
+                   serif italic right at the baseline — and the six situations as a CSS snap rail
+                   of tall 3:4 fields, the next one peeking past the frame edge; serif titles and
+                   one sentence each; the 002 pencil ellipse round the italic word; an underlined
+                   route in the ruled foot. V1's script for the arrow buttons is removed — the
+                   pass carries no JavaScript, and the rail scrolls natively. V1 is kept whole.
+  Layout model   : Head split at the baseline; snap rail of six 3:4 items; ruled foot
+  Density        : Standard — V1's spine kept in full
+  Media mode     : Six reserved fields, 3:4 — the team at work, by situation.
+  Interaction    : Native horizontal scroll; one in-page route. No script, no form.
   Content note   : Discipline names are generic vocabulary, not claims. No named client, logo,
-                   ranking, award, certification or invented metric. No header or navigation.
+                   ranking or figure. No placeholder data. Inline SVG, decorative. No header or
+                   navigation — the section-shell rule.
 -->
 
 <meta name="study-id" content="CONS-S02-002">
@@ -48,183 +36,54 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="theme" content="002 Sable">
-<meta name="layout-model" content="Editorial statement with slider controls, horizontal snap rail of tall media cards">
-<meta name="density" content="low">
-<meta name="media-mode" content="six-reserved-image-areas-tall-rail">
-<meta name="interaction" content="snap-rail-with-arrow-controls">
+<meta name="theme" content="002 Sable &amp; Bronze">
+<meta name="layout-model" content="Head split at the baseline with a pencil ellipse; CSS snap rail of six tall 3:4 fields with serif titles, the next card peeking; ruled foot with the underlined route">
+<meta name="density" content="standard">
+<meta name="media-mode" content="six-reserved-fields-3-4">
+<meta name="interaction" content="native-scroll-rail">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S02-002 — Services, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f2efe9; }
+body { margin: 0; background: #f2efe8; }
 
-/* Scoped study styles — namespaced to .cons-s02-002 */
 .cons-s02-002 {
-  --paper: #f2efe9;
-  --ink: #1a1714;
-  --ink-soft: #6b6459;
-  --line: #dcd6ca;
-  --slot: #e6e1d7;
-  --slot-edge: #c4bbab;
-  --slot-ink: #6e675c;
-  --accent: #9a5b2c;
-  --accent-ink: #ffffff;
-  --focus: #1a1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f2efe8; --ink: #1b1713; --muted: #6a635a; --line: #d9d2c6; --line-strong: #1b1713;
+  --media: #e5dfd4; --band: #eae5db; --accent: #9a5b2c; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  overflow: hidden;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s02-002 *,
-.cons-s02-002 *::before,
-.cons-s02-002 *::after { box-sizing: inherit; }
-.cons-s02-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+.cons-s02-002 *, .cons-s02-002 *::before, .cons-s02-002 *::after { box-sizing: inherit; }
+.cons-s02-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s02-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(52px, 6.2vw, 116px) 0 clamp(52px, 6.2vw, 116px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s02-002 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) 0 clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s02-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head: statement, with the controls set against it --- */
-.cons-s02-002 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(24px, 4vw, 60px);
-  align-items: end;
-  padding-right: clamp(22px, 3.6vw, 58px);
-  margin-bottom: clamp(34px, 4.4vw, 64px);
-}
-.cons-s02-002 .eyebrow {
-  margin: 0 0 clamp(18px, 2.4vw, 30px);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.cons-s02-002 h2 {
-  margin: 0;
-  font-size: clamp(2.3rem, 5.4vw, 4.2rem);
-  line-height: 0.99;
-  letter-spacing: -0.044em;
-  font-weight: 800;
-  max-width: 17ch;
-}
-.cons-s02-002 .lead {
-  margin: clamp(18px, 2vw, 26px) 0 0;
-  max-width: 44ch;
-  color: var(--ink-soft);
-  font-size: clamp(1.06rem, 1.28vw, 1.22rem);
-}
-.cons-s02-002 .ctrls { display: flex; gap: 12px; }
-.cons-s02-002 .ctrl {
-  width: 56px; height: 56px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--ink);
-  font-size: 1.15rem;
-  cursor: pointer;
-  font-family: inherit;
-}
-.cons-s02-002 .ctrl:hover { background: var(--ink); color: var(--paper); }
+.cons-s02-002 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s02-002 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 6rem); align-items: end; padding-right: clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s02-002 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 4.4vw, 4.8rem); line-height: 0.95; letter-spacing: -0.03em; }
+.cons-s02-002 h2 em { position: relative; display: inline-block; font-style: italic; color: var(--accent); }
+.cons-s02-002 h2 em svg { position: absolute; left: -8%; top: -16%; width: 116%; height: 132%; overflow: visible; pointer-events: none; color: var(--accent); }
+.cons-s02-002 .voice { margin: 0 0 0.3em; font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 1.7vw, 1.5rem); line-height: 1.3; }
 
-/* --- The rail --- */
-.cons-s02-002 .rail {
-  margin: 0;
-  padding: 0 clamp(22px, 3.6vw, 58px) 4px 0;
-  list-style: none;
-  display: flex;
-  gap: clamp(16px, 1.8vw, 26px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.cons-s02-002 .rail::-webkit-scrollbar { display: none; }
-.cons-s02-002 .rail > li {
-  flex: 0 0 clamp(250px, 27vw, 372px);
-  scroll-snap-align: start;
-}
-.cons-s02-002 .card { display: block; color: inherit; text-decoration: none; }
-.cons-s02-002 .shot {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 4px;
-  background: var(--slot);
-  aspect-ratio: 3 / 4;
-  display: grid;
-  place-items: center;
-  margin-bottom: clamp(16px, 1.8vw, 22px);
-  transition: opacity 160ms ease;
-}
-.cons-s02-002 .card:hover .shot { opacity: 0.82; }
-.cons-s02-002 .shot span {
-  color: var(--slot-ink);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-.cons-s02-002 .disc {
-  display: block;
-  font-size: 0.76rem;
-  font-weight: 750;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.cons-s02-002 .sit {
-  margin: 10px 0 0;
-  font-weight: 800;
-  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
-  line-height: 1.14;
-  letter-spacing: -0.028em;
-}
+.cons-s02-002 .rail { list-style: none; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0 clamp(1rem, 4.5vw, 4.5rem) 0.4rem 0; display: flex; gap: clamp(1rem, 1.8vw, 1.6rem); overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+.cons-s02-002 .card { flex: 0 0 clamp(15rem, 22vw, 20rem); scroll-snap-align: start; display: grid; gap: 0.5rem; }
+.cons-s02-002 .media { position: relative; aspect-ratio: 3 / 4; background: var(--media); border-radius: 2px; }
+.cons-s02-002 .slate { position: absolute; left: 0.8rem; right: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s02-002 .card h3 { margin: 0.4rem 0 0; font-family: var(--serif); font-weight: 400; font-size: 1.25rem; line-height: 1.15; letter-spacing: -0.015em; }
+.cons-s02-002 .card p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
 
-/* --- Foot --- */
-.cons-s02-002 .foot { margin: clamp(34px, 4vw, 58px) 0 0; padding-right: clamp(22px, 3.6vw, 58px); }
-.cons-s02-002 .go {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 12px;
-  color: var(--accent);
-  font-size: clamp(1.16rem, 1.6vw, 1.5rem);
-  font-weight: 750;
-  letter-spacing: -0.02em;
-  text-decoration: none;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 4px;
-}
-.cons-s02-002 .go:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.cons-s02-002 .foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin: clamp(1.6rem, 3vw, 2.6rem) clamp(1rem, 4.5vw, 4.5rem) 0 0; padding-top: 1.1rem; border-top: 1px solid var(--line-strong); }
+.cons-s02-002 .lnk { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ink); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s02-002 .lnk::after { content: "\2197"; color: var(--accent); font-weight: 400; }
 
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .cons-s02-002 h2, .cons-s02-002 .lead { max-width: none; }
-  .cons-s02-002 .head { grid-template-columns: minmax(0, 1fr); }
-  .cons-s02-002 .ctrls { justify-content: flex-start; }
-}
-@media (max-width: 560px) {
-  .cons-s02-002 .rail > li { flex-basis: 78%; }
-  .cons-s02-002 .ctrl { width: 50px; height: 50px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s02-002 * { transition: none !important; }
-  .cons-s02-002 .rail { scroll-behavior: auto; }
-}
+@media (max-width: 860px) { .cons-s02-002 .head { grid-template-columns: minmax(0, 1fr); } .cons-s02-002 .card { flex-basis: 16rem; } }
+@media (prefers-reduced-motion: reduce) { .cons-s02-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -232,76 +91,26 @@ body { margin: 0; background: #f2efe9; }
 <div class="cons-s02-002" data-study-id="CONS-S02-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="cons-s02-002-title">
 
+    <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Services</p>
     <div class="head">
-      <div>
-        <p class="eyebrow">Services</p>
-        <h2 id="cons-s02-002-title">A capability list tells you what we sell.</h2>
-        <p class="lead">This tells you whether we have already met the problem you are actually in.</p>
-      </div>
-      <div class="ctrls">
-        <button class="ctrl" type="button" data-dir="-1" aria-label="Previous services"><span aria-hidden="true">&larr;</span></button>
-        <button class="ctrl" type="button" data-dir="1" aria-label="Next services"><span aria-hidden="true">&rarr;</span></button>
-      </div>
+      <h2 id="cons-s02-002-title">A capability list tells you what we <em>sell.<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M8 52C6 30 30 12 56 12c24 0 40 12 38 34-2 24-30 42-56 40C16 84 4 70 8 52c2-10 10-16 12-14" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg></em></h2>
+      <p class="voice">This tells you whether we have already met the problem you are actually in.</p>
     </div>
 
     <ul class="rail">
-      <li><a class="card" href="#cons-s02-002-title">
-        <div class="shot"><span>Image area</span></div>
-        <span class="disc">Strategy and positioning</span>
-        <p class="sit">The market moved and the plan did not.</p>
-      </a></li>
-      <li><a class="card" href="#cons-s02-002-title">
-        <div class="shot"><span>Image area</span></div>
-        <span class="disc">Operating model</span>
-        <p class="sit">The strategy is agreed and nothing has changed.</p>
-      </a></li>
-      <li><a class="card" href="#cons-s02-002-title">
-        <div class="shot"><span>Image area</span></div>
-        <span class="disc">Performance and cost</span>
-        <p class="sit">It costs more to run than it should.</p>
-      </a></li>
-      <li><a class="card" href="#cons-s02-002-title">
-        <div class="shot"><span>Image area</span></div>
-        <span class="disc">Growth and commercial</span>
-        <p class="sit">Growth stalled and the reasons contradict each other.</p>
-      </a></li>
-      <li><a class="card" href="#cons-s02-002-title">
-        <div class="shot"><span>Image area</span></div>
-        <span class="disc">Transformation delivery</span>
-        <p class="sit">The programme is late and reporting says it is fine.</p>
-      </a></li>
-      <li><a class="card" href="#cons-s02-002-title">
-        <div class="shot"><span>Image area</span></div>
-        <span class="disc">Diligence and decision support</span>
-        <p class="sit">A decision is coming and the evidence is thin.</p>
-      </a></li>
+      <li class="card"><div class="media" role="img" aria-label="Image area — at work, strategy and positioning"><p class="slate" aria-hidden="true">At work &middot; 3:4</p></div><h3>Strategy and positioning</h3><p>The market moved and the plan did not.</p></li>
+      <li class="card"><div class="media" role="img" aria-label="Image area — at work, operating model"><p class="slate" aria-hidden="true">At work &middot; 3:4</p></div><h3>Operating model</h3><p>The strategy is agreed and nothing has changed.</p></li>
+      <li class="card"><div class="media" role="img" aria-label="Image area — at work, performance and cost"><p class="slate" aria-hidden="true">At work &middot; 3:4</p></div><h3>Performance and cost</h3><p>It costs more to run than it should.</p></li>
+      <li class="card"><div class="media" role="img" aria-label="Image area — at work, growth and commercial"><p class="slate" aria-hidden="true">At work &middot; 3:4</p></div><h3>Growth and commercial</h3><p>Growth stalled and the reasons contradict each other.</p></li>
+      <li class="card"><div class="media" role="img" aria-label="Image area — at work, transformation delivery"><p class="slate" aria-hidden="true">At work &middot; 3:4</p></div><h3>Transformation delivery</h3><p>The programme is late and reporting says it is fine.</p></li>
+      <li class="card"><div class="media" role="img" aria-label="Image area — at work, diligence and decision support"><p class="slate" aria-hidden="true">At work &middot; 3:4</p></div><h3>Diligence and decision support</h3><p>A decision is coming and the evidence is thin.</p></li>
     </ul>
 
     <div class="foot">
-      <a class="go" href="#cons-s02-002-title">Start a conversation <span aria-hidden="true">&rarr;</span></a>
-    </div>
+      <a class="lnk" href="#cons-s02-002-title">Start a conversation</a>    </div>
 
   </section>
 </div>
-
-<script>
-/* Steps the snap rail by one card. Native scroll already works without this;
-   the arrows exist because a rail with no visible control reads as a static row. */
-(function () {
-  var root = document.querySelector('.cons-s02-002');
-  if (!root) return;
-  var rail = root.querySelector('.rail');
-  var card = rail && rail.querySelector('li');
-  if (!rail || !card) return;
-  Array.prototype.forEach.call(root.querySelectorAll('[data-dir]'), function (btn) {
-    btn.addEventListener('click', function () {
-      var gap = parseFloat(getComputedStyle(rail).columnGap) || 20;
-      var step = card.getBoundingClientRect().width + gap;
-      rail.scrollBy({ left: step * Number(btn.getAttribute('data-dir')), behavior: 'smooth' });
-    });
-  });
-})();
-</script>
 
 </body>
 </html>

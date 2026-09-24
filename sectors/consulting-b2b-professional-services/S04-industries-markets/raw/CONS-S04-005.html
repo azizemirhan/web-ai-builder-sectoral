@@ -12,36 +12,21 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S04 — Industries & Markets
   Direction      : Art-directed / Distinctive
-  Theme          : 005 Midnight — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **B — Anchored.** One photograph at full width, the six markets as type beneath.
-                   See *Page Rhythm* in the theme contract.
-  Layout model   : Near-black field. An oversized line, one wide reserved image running the full
-                   frame, then the six markets set as a three-column typographic sequence
-  Density        : Low (115 visible words)
-  Media mode     : ONE reserved image area at 12:5, given the whole frame width. The most media space
-                   of any study in this batch, in the fewest slots.
-  Interaction    : None (static; no JavaScript). Block hover and focus are CSS only.
-
-  V2 rework note : The first version was six landscape media panels with the text over each one. It
-                   worked alone, but CONS-S02-005 and CONS-S03-005 are also media-filled card grids,
-                   and three of them stacked is a catalogue rather than a page. Rebuilt to shape B.
-                   **One photograph at full width carries more weight than six at a third of it**,
-                   which is the more art-directed answer anyway — the earlier version was six copies
-                   of a device rather than one composition.
-
-  Why the type is not a list :
-                   Three columns of two, no rules, no gutter column, no right-aligned labels. Each
-                   market is a block with a violet numeral, separated by space and by the numeral's
-                   colour. The schedule idiom this catalog corrected once is rows and lines; this is
-                   a typographic sequence.
-
-  Governing idea : Naming an industry is not knowing it. Each block names the binding constraint that
-                   makes work in that market different.
-
-  Content note   : Industry names are generic vocabulary. The constraints are general structural facts
-                   about how those industries operate, not claims about this firm's record. No named
-                   client, logo, ranking, award, certification, market-share figure or invented
-                   metric. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 5 with
+                   8: the oversized serif line, then one 12:5 field given the whole frame with
+                   the display's last word crossing its top edge; the six markets as two ruled
+                   rows of three beneath, each led by a serif italic word-numeral, with the 005
+                   bracket in the line tone grouping the set down its left; the bordered action
+                   in a ruled foot. V1's near-black ground becomes chalk. V1 is kept whole.
+  Layout model   : Oversized line; full-width 12:5 field with type crossing its edge; bracketed
+                   two-row set of six; ruled foot
+  Density        : Standard — V1's spine kept in full
+  Media mode     : One reserved field, 12:5, at the whole frame width — one photograph carries
+                   more than six thumbnails.
+  Interaction    : One in-page action. No form.
+  Content note   : Industry names are generic vocabulary. The constraints are general structural
+                   facts, not claims about any client. No placeholder data. Inline SVG,
+                   decorative. No header or navigation — the section-shell rule.
 -->
 
 <meta name="study-id" content="CONS-S04-005">
@@ -52,172 +37,61 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="theme" content="005 Midnight">
-<meta name="section-shape" content="B — anchored">
-<meta name="layout-model" content="Near-black field, oversized line, one full-frame image, three-column typographic sequence">
-<meta name="density" content="low">
-<meta name="media-mode" content="one-wide-reserved-image-area">
-<meta name="interaction" content="none">
+<meta name="theme" content="005 Chalk &amp; Violet">
+<meta name="layout-model" content="Oversized serif line crossing the top edge of a full-width 12:5 field; bracketed two-row set of six markets with serif word-numerals; ruled foot with one action">
+<meta name="density" content="standard">
+<meta name="media-mode" content="one-reserved-field-12-5">
+<meta name="interaction" content="in-page-action">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S04-005 — Industries &amp; Markets, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #0b0d12; }
+body { margin: 0; background: #f3f2f7; }
 
-/* Scoped study styles — namespaced to .cons-s04-005 */
 .cons-s04-005 {
-  --paper: #0b0d12;
-  --ink: #f2f3f5;
-  --ink-soft: #989ca6;
-  --line: #272b33;
-  --slot-edge: #474d58;
-  --slot-ink: #b6bbc3;
-  --accent: #7c6cf7;
-  --accent-ink: #0b0d12;
-  --focus: #7c6cf7;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f3f2f7; --ink: #121219; --muted: #5c5b69; --line: #d6d4e0; --line-strong: #121219;
+  --media: #e3e1ea; --band: #e9e7ef; --accent: #6b4fd8; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s04-005 *,
-.cons-s04-005 *::before,
-.cons-s04-005 *::after { box-sizing: inherit; }
-.cons-s04-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 6px; border-radius: 18px; }
+.cons-s04-005 *, .cons-s04-005 *::before, .cons-s04-005 *::after { box-sizing: inherit; }
+.cons-s04-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s04-005 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(48px, 5.8vw, 108px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s04-005 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s04-005 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s04-005 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  gap: clamp(24px, 4vw, 64px);
-  align-items: end;
-  margin-bottom: clamp(28px, 3.6vw, 50px);
-}
-.cons-s04-005 .eyebrow {
-  margin: 0 0 clamp(16px, 2vw, 26px);
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.cons-s04-005 h2 {
-  margin: 0;
-  font-size: clamp(2.3rem, 5vw, 4rem);
-  line-height: 0.99;
-  letter-spacing: -0.044em;
-  font-weight: 800;
-  max-width: 15ch;
-}
-.cons-s04-005 h2 em { font-style: normal; color: var(--accent); }
-.cons-s04-005 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.24vw, 1.18rem); }
+.cons-s04-005 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.cons-s04-005 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s04-005 h2 { position: relative; z-index: 1; margin: 0 0 -0.32em; max-width: 12ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.8rem, 6vw, 6.6rem); line-height: 0.92; letter-spacing: -0.04em; }
+.cons-s04-005 h2 em { font-style: italic; color: var(--accent); }
+.cons-s04-005 .head > p { margin: 0 0 1.2rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
-/* --- The one photograph --- */
-.cons-s04-005 .plate {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 26px;
-  background: linear-gradient(148deg, #1e222b 0%, #14171e 58%, #0f1218 100%);
-  aspect-ratio: 12 / 5;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  margin-bottom: clamp(38px, 4.8vw, 76px);
-}
-.cons-s04-005 .plate span {
-  color: var(--slot-ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.85;
-}
+.cons-s04-005 .media { position: relative; aspect-ratio: 12 / 5; background: var(--media); border-radius: 2px; }
+.cons-s04-005 .slate { position: absolute; left: 1.1rem; right: 1.1rem; bottom: 1rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s04-005 .slate b { display: block; color: var(--ink); }
 
-/* --- Typographic sequence --- */
-.cons-s04-005 .markets {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: clamp(24px, 3.4vw, 56px);
-  row-gap: clamp(32px, 4vw, 58px);
-}
-.cons-s04-005 .n {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-.cons-s04-005 .markets h3 {
-  margin: 0;
-  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
-  line-height: 1.13;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-}
-.cons-s04-005 .bind {
-  margin: 10px 0 0;
-  color: var(--ink-soft);
-  font-size: clamp(1rem, 1.16vw, 1.1rem);
-}
-.cons-s04-005 .bind b { color: var(--ink); font-weight: 750; }
+.cons-s04-005 .setwrap { position: relative; margin-top: clamp(2rem, 4vw, 3.4rem); padding-left: 1.8rem; }
+.cons-s04-005 .bracket { position: absolute; left: 0; top: 0; width: 1.1rem; height: 100%; color: var(--line); pointer-events: none; }
+.cons-s04-005 .set { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); border-top: 1px solid var(--line-strong); }
+.cons-s04-005 .set li { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 0.7rem; align-items: start; padding: 1.1rem 0 1.2rem; border-bottom: 1px solid var(--line); }
+.cons-s04-005 .set li p.ix { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.9rem; line-height: 1; letter-spacing: -0.02em; color: var(--accent); }
+.cons-s04-005 .set h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 1.25rem; line-height: 1.1; letter-spacing: -0.02em; }
+.cons-s04-005 .set li p.say { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.cons-s04-005 .set li p.say b { color: var(--ink); }
 
-/* --- Foot --- */
-.cons-s04-005 .foot {
-  margin: clamp(40px, 4.8vw, 72px) 0 0;
-  padding-top: clamp(26px, 3vw, 38px);
-  border-top: 1px solid var(--line);
-}
-.cons-s04-005 .go {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 56px;
-  padding: 0 32px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 1.04rem;
-  font-weight: 800;
-  text-decoration: none;
-}
-.cons-s04-005 .go:hover { background: var(--ink); }
+.cons-s04-005 .foot { margin-top: clamp(1.4rem, 2.6vw, 2.2rem); }
+.cons-s04-005 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; padding: 0 1.3rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s04-005 .go:hover { background: var(--ink); color: var(--paper); }
 
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s04-005 .markets { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 860px) {
-  .cons-s04-005 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s04-005 h2 { max-width: none; }
-  .cons-s04-005 .plate { aspect-ratio: 16 / 9; }
-}
-@media (max-width: 560px) {
-  .cons-s04-005 .markets { grid-template-columns: minmax(0, 1fr); }
-  .cons-s04-005 .plate { aspect-ratio: 4 / 3; }
-  .cons-s04-005 .go { width: 100%; justify-content: center; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s04-005 * { transition: none !important; }
-}
+@media (max-width: 1000px) { .cons-s04-005 .set { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .cons-s04-005 .head { grid-template-columns: minmax(0, 1fr); } .cons-s04-005 h2 { margin-bottom: 0; } .cons-s04-005 .head > p { margin: 1rem 0 1.4rem; } .cons-s04-005 .media { aspect-ratio: 16 / 9; } }
+@media (max-width: 560px) { .cons-s04-005 .set { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .cons-s04-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -227,49 +101,28 @@ body { margin: 0; background: #0b0d12; }
 
     <div class="head">
       <div>
-        <p class="eyebrow">Industries</p>
-        <h2 id="cons-s04-005-title">Naming an industry is <em>not</em> knowing it.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Industries</p>
+        <h2 id="cons-s04-005-title">Naming an industry is not <em>knowing</em> it.</h2>
       </div>
-      <p class="lead">Six markets, and the one thing in each that decides how the work has to be done.</p>
+      <p>Six markets, and the one thing in each that decides how the work has to be done.</p>
     </div>
 
-    <div class="plate"><span>Image area &mdash; one market at work, at full width.<br>One photograph carries more than six thumbnails.</span></div>
+    <div class="media" role="img" aria-label="Image area — one market at work, at full width. One photograph carries more than six thumbnails."><p class="slate" aria-hidden="true"><b>At work &middot; 12:5</b>one market at work, at full width. One photograph carries more than six thumbnails.</p></div>
 
-    <ul class="markets">
-      <li>
-        <span class="n">01</span>
-        <h3>Financial services</h3>
-        <p class="bind">The regulator is a <b>stakeholder in every decision</b>, including the ones about cost.</p>
-      </li>
-      <li>
-        <span class="n">02</span>
-        <h3>Healthcare and life sciences</h3>
-        <p class="bind">Clinical staff <b>cannot be reallocated by a spreadsheet</b>.</p>
-      </li>
-      <li>
-        <span class="n">03</span>
-        <h3>Energy and utilities</h3>
-        <p class="bind">The <b>price control cycle</b> sets your horizon, not your ambition.</p>
-      </li>
-      <li>
-        <span class="n">04</span>
-        <h3>Industrials and manufacturing</h3>
-        <p class="bind">The plant sets the pace. A <b>shorter changeover is a wish</b>, not a plan.</p>
-      </li>
-      <li>
-        <span class="n">05</span>
-        <h3>Retail and consumer</h3>
-        <p class="bind">Margin is decided <b>in the supply chain</b>, not in the deck.</p>
-      </li>
-      <li>
-        <span class="n">06</span>
-        <h3>Public and regulated sectors</h3>
-        <p class="bind"><b>Defensible or it does not happen.</b> Speed is the second virtue.</p>
-      </li>
-    </ul>
+    <div class="setwrap">
+      <svg class="bracket" viewBox="0 0 20 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M18 1H4v98h14" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
+      <ul class="set">
+        <li><p class="ix" aria-hidden="true">One</p><div><h3>Financial services</h3><p class="say"><b>The regulator is a stakeholder in every decision</b>, including the ones about cost.</p></div></li>
+        <li><p class="ix" aria-hidden="true">Two</p><div><h3>Healthcare and life sciences</h3><p class="say"><b>Clinical staff cannot be reallocated by a spreadsheet</b>.</p></div></li>
+        <li><p class="ix" aria-hidden="true">Three</p><div><h3>Energy and utilities</h3><p class="say"><b>The price control cycle sets your horizon</b>, not your ambition.</p></div></li>
+        <li><p class="ix" aria-hidden="true">Four</p><div><h3>Industrials and manufacturing</h3><p class="say">The plant sets the pace. <b>A shorter changeover is a wish</b>, not a plan.</p></div></li>
+        <li><p class="ix" aria-hidden="true">Five</p><div><h3>Retail and consumer</h3><p class="say"><b>Margin is decided in the supply chain</b>, not in the deck.</p></div></li>
+        <li><p class="ix" aria-hidden="true">Six</p><div><h3>Public and regulated sectors</h3><p class="say"><b>Defensible or it does not happen.</b> Speed is the second virtue.</p></div></li>
+      </ul>
+    </div>
 
     <div class="foot">
-      <a class="go" href="#cons-s04-005-title">Start a conversation</a>
+      <a class="go" href="#cons-s04-005-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Start a conversation</a>
     </div>
 
   </section>

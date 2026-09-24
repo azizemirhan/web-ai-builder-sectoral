@@ -12,21 +12,24 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S01 — Hero
   Direction      : Universal / Safe
-  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
-  Layout model   : Split hero — proposition column left, reserved portrait panel right, a hairline
-                   row of three reserved figures beneath
-  Density        : Low (62 visible words)
-  Media mode     : One reserved portrait area. The sector's only honest photographic subject is
-                   people, so the slot names what the photograph is — the person who would actually
-                   run the engagement — and never who is in it.
-  Interaction    : None (static; no JavaScript)
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 1 with 3:
+                   narrow proposition column beside the portrait; serif display with the one
+                   italic word; the pencil rule on the head; the 001 ghost glyph — a serif question
+                   mark in the line tone behind the head; the portrait as a bare 4:5 field inside a
+                   figure with a band-tone tab offset behind it; the three counters as a bordered
+                   cell row in the serif at counter scale with their placeholder demo values;
+                   one bordered action with a speech mark and one underlined route. V1 is kept whole.
+  Layout model   : Split hero — proposition column left, portrait figure right, bordered counter
+                   row beneath
+  Density        : Low — V1's spine kept in full
+  Media mode     : One reserved portrait area, 4:5. The slot names what the photograph is, never
+                   who is in it.
+  Interaction    : Two in-page routes. No form.
   Content note   : The counters carry PLACEHOLDER DEMO VALUES (founded 1998, 340+ engagements,
-                   6 offices), marked data-placeholder="true" in the markup and declared in the
-                   meta block, so ingestion can find and clear every one of them. They exist so the
-                   composition can be judged with content in it. They are not claims and must be
-                   replaced before any real use. Still excluded, demo or not: named clients, logos,
-                   rankings, awards, certifications, and any figure asserting a measurement nobody
-                   ran. No header or navigation — the section-shell rule.
+                   6 offices), marked data-placeholder="true" and declared in the meta block, so
+                   ingestion can find and clear every one of them. They are not claims. Still
+                   excluded: named clients, logos, rankings, awards, certifications, measured
+                   figures. Inline SVG, decorative. No header or navigation — the section-shell rule.
 -->
 
 <meta name="study-id" content="CONS-S01-001">
@@ -37,187 +40,66 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="theme" content="001 Paper">
-<meta name="layout-model" content="Split hero with reserved portrait panel and a reserved figure row">
+<meta name="theme" content="001 Paper &amp; Indigo">
+<meta name="layout-model" content="Split hero: serif display with one italic word and the pencil rule, ghost question mark behind the head, 4:5 portrait figure with an offset tab, bordered counter row with placeholder demo values">
 <meta name="density" content="low">
 <meta name="media-mode" content="one-reserved-portrait-area">
-<meta name="interaction" content="none">
+<meta name="interaction" content="in-page-routes">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="counters — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S01-001 — Hero, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f7f6f3; }
+body { margin: 0; background: #f6f5f1; }
 
-/* Scoped study styles — namespaced to .cons-s01-001 */
 .cons-s01-001 {
-  --paper: #f7f6f3;
-  --ink: #14161a;
-  --ink-soft: #585d66;
-  --line: #dedcd6;
-  --slot: #e8e6e0;
-  --slot-edge: #b7b4ac;
-  --slot-ink: #55585e;
-  --accent: #2f4fe0;
-  --accent-ink: #ffffff;
-  --focus: #14161a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f5f1; --ink: #15171b; --muted: #5b5f68; --line: #dad8d1; --line-strong: #15171b;
+  --media: #e6e4dd; --band: #edebe5; --accent: #2f4fe0; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s01-001 *,
-.cons-s01-001 *::before,
-.cons-s01-001 *::after { box-sizing: inherit; }
-.cons-s01-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 8px; }
-.cons-s01-001 .vh {
-  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
-  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
-}
+.cons-s01-001 *, .cons-s01-001 *::before, .cons-s01-001 *::after { box-sizing: inherit; }
+.cons-s01-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s01-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s01-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s01-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Split: proposition left, portrait right --- */
-.cons-s01-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-  gap: clamp(30px, 4.4vw, 72px);
-  align-items: center;
-}
-.cons-s01-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(16px, 2vw, 24px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s01-001 h1 {
-  margin: 0;
-  font-size: clamp(2.35rem, 4.9vw, 3.95rem);
-  line-height: 1.0;
-  letter-spacing: -0.038em;
-  font-weight: 800;
-  max-width: 15ch;
-}
-.cons-s01-001 .lead {
-  margin: clamp(18px, 2.2vw, 28px) 0 0;
-  max-width: 48ch;
-  color: var(--ink-soft);
-  font-size: clamp(1.06rem, 1.28vw, 1.22rem);
-}
+.cons-s01-001 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; border-top: 3px solid var(--accent); padding-top: clamp(1.6rem, 3vw, 2.8rem); }
+.cons-s01-001 .ghost { position: absolute; left: -0.06em; top: -0.05em; margin: 0; color: var(--line); font-family: var(--serif); font-size: clamp(12rem, 30vw, 28rem); font-weight: 400; line-height: 0.8; letter-spacing: -0.04em; pointer-events: none; user-select: none; }
+.cons-s01-001 .say { position: relative; }
+.cons-s01-001 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s01-001 h1 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.95; letter-spacing: -0.03em; }
+.cons-s01-001 h1 em { font-style: italic; color: var(--accent); }
+.cons-s01-001 .lead { margin: 1.4rem 0 0; max-width: 32rem; color: var(--muted); font-size: 1rem; line-height: 1.6; }
+.cons-s01-001 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; margin-top: 2rem; }
+.cons-s01-001 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; padding: 0 1.3rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s01-001 .go:hover { background: var(--ink); color: var(--paper); }
+.cons-s01-001 .lnk { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ink); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s01-001 .lnk::after { content: "\2197"; color: var(--accent); font-weight: 400; }
 
-/* --- Actions --- */
-.cons-s01-001 .actions {
-  margin: clamp(24px, 3vw, 38px) 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-.cons-s01-001 .go {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 54px;
-  padding: 0 28px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 1.02rem;
-  font-weight: 750;
-  text-decoration: none;
-}
-.cons-s01-001 .go:hover { background: var(--ink); }
-.cons-s01-001 .go--ghost {
-  background: transparent;
-  color: var(--ink);
-  border: 1px solid var(--ink);
-}
-.cons-s01-001 .go--ghost:hover { background: var(--ink); color: var(--paper); }
+.cons-s01-001 figure { position: relative; isolation: isolate; margin: 0 0 0 1.2rem; padding: 0; }
+.cons-s01-001 .media::before { content: ""; position: absolute; left: -1.2rem; top: 1.2rem; width: 100%; height: 100%; background: var(--band); z-index: -1; }
+.cons-s01-001 .media { position: relative; aspect-ratio: 4 / 5; background: var(--media); border-radius: 2px; }
+.cons-s01-001 .slate { position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s01-001 .slate b { display: block; color: var(--ink); font-weight: 700; }
+.cons-s01-001 figcaption { position: relative; display: flex; align-items: center; gap: 0.5rem; margin: 0.7rem 0 0; color: var(--muted); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.cons-s01-001 figcaption .mk { color: var(--accent); }
 
-/* --- Portrait --- */
-.cons-s01-001 .portrait {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 14px;
-  background: var(--slot);
-  aspect-ratio: 4 / 5;
-  display: grid;
-  place-items: center;
-  padding: 22px;
-}
-.cons-s01-001 .portrait span {
-  color: var(--slot-ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.8;
-}
+.cons-s01-001 .figures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(2.4rem, 5vw, 4.5rem); border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.cons-s01-001 .fig { margin: 0; padding: 1.1rem 1.2rem 1.2rem; border-right: 1px solid var(--line); display: grid; gap: 0.3rem; }
+.cons-s01-001 .fig:last-child { border-right: 0; }
+.cons-s01-001 .fig .n { font-family: var(--serif); font-size: clamp(2.2rem, 3.4vw, 3.2rem); line-height: 1; letter-spacing: -0.03em; color: var(--ink); }
+.cons-s01-001 .fig .fname { display: flex; align-items: center; gap: 0.45rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s01-001 .fig .mk { width: 1rem; height: 1rem; color: var(--accent); }
 
-/* --- Reserved figures --- */
-.cons-s01-001 .figures {
-  margin: clamp(34px, 4.2vw, 62px) 0 0;
-  padding-top: clamp(22px, 2.6vw, 32px);
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(18px, 3vw, 52px);
-}
-.cons-s01-001 .fig { display: flex; align-items: center; gap: 14px; }
-.cons-s01-001 .slot {
-  display: inline-block;
-  color: var(--ink);
-  font-size: clamp(1.78rem, 2.6vw, 2.4rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
-.cons-s01-001 .fname {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  max-width: 15ch;
-  line-height: 1.5;
-}
-
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .cons-s01-001 .head { grid-template-columns: minmax(0, 1fr); }
-  .cons-s01-001 h1, .cons-s01-001 .lead { max-width: none; }
-  .cons-s01-001 .portrait { aspect-ratio: 16 / 9; }
-  .cons-s01-001 .figures { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-  .cons-s01-001 .fig { flex-direction: column; align-items: flex-start; gap: 10px; }
-}
-@media (max-width: 560px) {
-  .cons-s01-001 .portrait { aspect-ratio: 3 / 2; }
-  .cons-s01-001 .go { width: 100%; justify-content: center; }
-  .cons-s01-001 .figures { grid-template-columns: minmax(0, 1fr); }
-  .cons-s01-001 .fig { flex-direction: row; align-items: center; }
-  .cons-s01-001 .fname { max-width: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s01-001 * { transition: none !important; }
-}
+@media (max-width: 860px) { .cons-s01-001 .head { grid-template-columns: minmax(0, 1fr); } .cons-s01-001 figure { margin-left: 0.8rem; } .cons-s01-001 .media::before { left: -0.8rem; top: 0.8rem; } .cons-s01-001 .media { aspect-ratio: 3 / 2; } }
+@media (max-width: 560px) { .cons-s01-001 .figures { grid-template-columns: minmax(0, 1fr); } .cons-s01-001 .fig { border-right: 0; border-bottom: 1px solid var(--line); } .cons-s01-001 .fig:last-child { border-bottom: 0; } .cons-s01-001 .ghost { font-size: 10rem; } }
+@media (prefers-reduced-motion: reduce) { .cons-s01-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -226,30 +108,34 @@ body { margin: 0; background: #f7f6f3; }
   <section class="shell" aria-labelledby="cons-s01-001-title">
 
     <div class="head">
+      <p class="ghost" aria-hidden="true">?</p>
       <div class="say">
-        <p class="eyebrow">Strategy &amp; advisory</p>
-        <h1 id="cons-s01-001-title">Hired when the decision is too expensive to get wrong.</h1>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Strategy &amp; advisory</p>
+        <h1 id="cons-s01-001-title">Hired when the decision is too expensive to get <em>wrong.</em></h1>
         <p class="lead">Strategy, operating models, and the awkward questions in between &mdash; for boards and executive teams who need an answer they can defend.</p>
         <div class="actions">
-          <a class="go" href="#cons-s01-001-title">Start a conversation</a>
-          <a class="go go--ghost" href="#cons-s01-001-title">How we work</a>
+          <a class="go" href="#cons-s01-001-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Start a conversation</a>
+          <a class="lnk" href="#cons-s01-001-title">How we work</a>
         </div>
       </div>
-      <div class="portrait"><span>Portrait area &mdash; the partner who would<br>run the engagement, not a stock boardroom</span></div>
+      <figure>
+        <div class="media" role="img" aria-label="Portrait area — the partner who would run the engagement, not a stock boardroom"><p class="slate" aria-hidden="true"><b>Portrait area &middot; 4:5</b>the partner who would run the engagement, not a stock boardroom</p></div>
+        <figcaption><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"/></svg>The person who would run it</figcaption>
+      </figure>
     </div>
 
     <div class="figures">
       <p class="fig">
-        <span class="slot" data-placeholder="true">1998</span>
-        <span class="fname">In practice since</span>
+        <span class="n" data-placeholder="true">1998</span>
+        <span class="fname"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>In practice since</span>
       </p>
       <p class="fig">
-        <span class="slot" data-placeholder="true">340+</span>
-        <span class="fname">Engagements</span>
+        <span class="n" data-placeholder="true">340+</span>
+        <span class="fname"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14v17H5zM9 4V2h6v2M8 10h8M8 14h6"/></svg>Engagements</span>
       </p>
       <p class="fig">
-        <span class="slot" data-placeholder="true">6</span>
-        <span class="fname">Offices</span>
+        <span class="n" data-placeholder="true">6</span>
+        <span class="fname"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V9l8-6 8 6v12zM10 21v-6h4v6"/></svg>Offices</span>
       </p>
     </div>
 

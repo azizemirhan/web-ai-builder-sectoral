@@ -12,41 +12,20 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S14 — Reports & Downloads
   Direction      : Structured / Visual Modular
-  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **B — Anchored.** One wide cover, then the four modules.
-  Layout model   : The sort order declared in a line, one wide reserved cover, then four report
-                   modules ordered **cheapest to the reader first**, then the address policy
-  Density        : Structured (185 visible words, structured band 170–230)
-  Media mode     : ONE reserved area — the cover of the first report, at band width.
-  Interaction    : None (static; no JavaScript). Module hover and focus are CSS only.
-
-  Governing idea : **A gate is a price. Here is what each one costs.**
-
-  What makes this the structured reading :
-                   Every reports section in this sector is ordered by date, or by what the firm most
-                   wants read. This one is **ordered by what it costs the reader**, cheapest first,
-                   and says so in a line above the row.
-                   That ordering is not a nicety. A list sorted by publication date tells the reader
-                   nothing they can act on; a list sorted by price puts the two that cost nothing at
-                   the front, where a reader deciding whether to bother will actually reach them.
-                   **Sorting by the reader's cost is the whole structured argument**, and it is the
-                   one sort order no firm in this sector uses, because it puts the ungated material
-                   first and the lead-generating material last.
-
-  Why the cover belongs to the first module :
-                   The single reserved area goes to the report at the front of the sort — the one
-                   that costs nothing. Giving the image to the cheapest rather than the most
-                   commercially valuable is the media plan agreeing with the sort.
-
-  Not a comparison grid : Four modules, one field each for what it is and what it costs. There is no
-                   tick matrix, no feature column and no *most popular* marker; the price is a pill
-                   on the module rather than a cell in a row.
-
-  Placeholder data : The four titles are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
-
-  Content note   : No *free* claim, no *exclusive* claim, no survey figure, no respondent count, no
-                   page count, no download count. No client name, logo, testimonial attribution,
-                   percentage, currency figure or ranking. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 3 with
+                   a band field: the sort order declared on a mast line; one 21:9 cover field of
+                   the first report; four reports as a bordered row of cells sharing hairlines,
+                   each led by its price as a marked chip, the placeholder title in the serif,
+                   its line and the terms; a band-tone foot cell with V1's address paragraph;
+                   the pencil rule on the head; the 003 pencil figure: the ruled margin behind.
+                   V1 is kept whole; "stage-03" → "stage-three".
+  Layout model   : Head; sort mast line; 21:9 cover; bordered row of four; foot cell
+  Density        : Structured — V1's spine kept in full
+  Media mode     : One reserved area, 21:9 — the cover of the first report, at band width.
+  Interaction    : None. No form.
+  Content note   : The four titles carry PLACEHOLDER DEMO VALUES marked data-placeholder="true"
+                   and declared in the meta block. No "free" or "exclusive" claim, no survey
+                   figure, no respondent count. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="CONS-S14-003">
@@ -57,247 +36,98 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="theme" content="003 Field">
-<meta name="section-shape" content="B — anchored">
-<meta name="layout-model" content="Sort order declared, one wide reserved cover, four modules ordered cheapest to the reader first">
+<meta name="theme" content="003 Field &amp; Emerald">
+<meta name="layout-model" content="Head with the pencil rule; sort order as a mast line; 21:9 cover field; bordered row of four reports led by marked price chips; band-tone foot cell with the address paragraph; ruled margin behind">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-cover-of-the-first-report">
+<meta name="media-mode" content="one-reserved-area-21-9">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="the four titles — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S14-003 — Reports &amp; Downloads, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #eff1f4; }
+body { margin: 0; background: #eff1f2; }
 
-/* Scoped study styles — namespaced to .cons-s14-003 */
 .cons-s14-003 {
-  --paper: #eff1f4;
-  --ink: #0e1216;
-  --ink-soft: #525c66;
-  --line: #d7dde2;
-  --card: #ffffff;
-  --slot: #e2e7eb;
-  --slot-edge: #b6c0c8;
-  --slot-ink: #5c666f;
-  --accent: #12856a;
-  --accent-ink: #ffffff;
-  --focus: #0e1216;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eff1f2; --ink: #0f1417; --muted: #535c63; --line: #d3d9dc; --line-strong: #0f1417;
+  --media: #e0e5e7; --band: #e6eaec; --accent: #12856a; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s14-003 *,
-.cons-s14-003 *::before,
-.cons-s14-003 *::after { box-sizing: inherit; }
-.cons-s14-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+.cons-s14-003 *, .cons-s14-003 *::before, .cons-s14-003 *::after { box-sizing: inherit; }
+.cons-s14-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s14-003 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s14-003 .draw { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: var(--line); }
+.cons-s14-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s14-003 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s14-003 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(18px, 2.4vw, 28px);
-}
-.cons-s14-003 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 20px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s14-003 h2 {
-  margin: 0;
-  font-size: clamp(2rem, 3.7vw, 3rem);
-  line-height: 1.02;
-  letter-spacing: -0.036em;
-  font-weight: 800;
-  max-width: 17ch;
-}
-.cons-s14-003 .lead { margin: 0; color: var(--ink-soft); }
+.cons-s14-003 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; border-top: 3px solid var(--accent); padding-top: clamp(1.4rem, 2.6vw, 2.2rem); }
+.cons-s14-003 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s14-003 h2 { margin: 0; max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s14-003 h2 em { font-style: italic; color: var(--accent); }
+.cons-s14-003 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
-/* --- The sort, declared --- */
-.cons-s14-003 .sorted {
-  margin: 0 0 clamp(16px, 2vw, 26px);
-  padding-left: 16px;
-  border-left: 4px solid var(--accent);
-  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
-  font-weight: 700;
-  max-width: 74ch;
-}
-.cons-s14-003 .sorted em { font-style: normal; color: var(--accent); }
+.cons-s14-003 .mast { display: flex; align-items: center; gap: 0.6rem; margin: clamp(1.8rem, 3.6vw, 3rem) 0 0; padding: 0.8rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+.cons-s14-003 .mast .mk { color: var(--accent); }
+.cons-s14-003 .mast b { color: var(--ink); }
 
-/* --- The anchor cover --- */
-.cons-s14-003 .band {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 20px;
-  background: var(--slot);
-  aspect-ratio: 24 / 7;
-  display: grid;
-  place-items: center;
-  padding: 22px;
-  margin-bottom: clamp(16px, 2vw, 26px);
-}
-.cons-s14-003 .band span {
-  color: var(--slot-ink);
-  font-size: 0.77rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.8;
-}
+.cons-s14-003 .media { position: relative; aspect-ratio: 21 / 9; margin-top: clamp(1.2rem, 2.4vw, 2rem); background: var(--media); border-radius: 2px; }
+.cons-s14-003 .slate { position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s14-003 .slate b { display: block; color: var(--ink); }
 
-/* --- The four modules, cheapest first --- */
-.cons-s14-003 .reports {
-  margin: 0 0 clamp(20px, 2.6vw, 32px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.4vw, 20px);
-}
-.cons-s14-003 .report {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: clamp(19px, 2.2vw, 28px);
-  border-radius: 20px;
-  background: var(--card);
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-.cons-s14-003 .report:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(14, 18, 22, 0.10); }
-.cons-s14-003 .price {
-  align-self: flex-start;
-  margin: 0 0 clamp(12px, 1.5vw, 16px);
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.73rem;
-  font-weight: 800;
-}
-.cons-s14-003 .price.gated { background: rgba(14, 18, 22, 0.09); color: var(--ink-soft); }
-.cons-s14-003 .report h3 {
-  margin: 0;
-  font-size: clamp(1.04rem, 1.45vw, 1.24rem);
-  line-height: 1.18;
-  letter-spacing: -0.028em;
-  font-weight: 800;
-}
-.cons-s14-003 .what { margin: 9px 0 0; color: var(--ink-soft); font-size: 0.93rem; flex: 1 1 auto; }
-.cons-s14-003 .cost { margin: clamp(12px, 1.5vw, 16px) 0 0; font-size: 0.88rem; font-weight: 700; color: var(--accent); }
+.cons-s14-003 .row { list-style: none; margin: clamp(1.2rem, 2.4vw, 2rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line-strong); background: var(--paper); }
+.cons-s14-003 .rep { display: grid; gap: 0.5rem; align-content: start; padding: 1.2rem 1.2rem 1.3rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.cons-s14-003 .rep.end { border-right: 0; }
+.cons-s14-003 .price { display: inline-flex; align-items: center; gap: 0.4rem; width: max-content; padding: 0.35rem 0.6rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+.cons-s14-003 .price .mk { width: 0.9rem; height: 0.9rem; color: var(--accent); }
+.cons-s14-003 .rep h3 { margin: 0.4rem 0 0; font-family: var(--serif); font-weight: 400; font-size: 1.3rem; line-height: 1.15; letter-spacing: -0.02em; }
+.cons-s14-003 .rep p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+.cons-s14-003 .rep p.terms { padding-top: 0.5rem; border-top: 1px solid var(--line); color: var(--ink); font-size: 0.82rem; }
+.cons-s14-003 .foot { grid-column: 1 / -1; padding: 1.1rem 1.3rem 1.2rem; background: var(--band); }
+.cons-s14-003 .foot h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.2rem, 1.8vw, 1.5rem); line-height: 1.2; }
+.cons-s14-003 .foot p { margin: 0.4rem 0 0; max-width: 52rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
 
-/* --- The policy --- */
-.cons-s14-003 .policy {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(20px, 3.4vw, 52px);
-  align-items: center;
-  padding: clamp(24px, 2.8vw, 38px) clamp(24px, 3vw, 40px);
-  border-radius: 20px;
-  background: var(--ink);
-  color: var(--paper);
-}
-.cons-s14-003 .policy h3 { margin: 0; font-size: clamp(1.2rem, 1.8vw, 1.62rem); line-height: 1.14; letter-spacing: -0.03em; font-weight: 800; }
-.cons-s14-003 .policy p { margin: 0; font-size: 1rem; opacity: 0.84; }
-
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s14-003 .reports { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 860px) {
-  .cons-s14-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s14-003 h2, .cons-s14-003 .sorted { max-width: none; }
-  .cons-s14-003 .band { aspect-ratio: 16 / 9; }
-  .cons-s14-003 .policy { grid-template-columns: minmax(0, 1fr); }
-}
-@media (max-width: 560px) {
-  .cons-s14-003 .reports { grid-template-columns: minmax(0, 1fr); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s14-003 * { transition: none !important; }
-  .cons-s14-003 .report:hover { transform: none; }
-}
+@media (max-width: 1000px) { .cons-s14-003 .row { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cons-s14-003 .rep.end { border-right: 1px solid var(--line-strong); } .cons-s14-003 .rep:nth-child(2n) { border-right: 0; } }
+@media (max-width: 860px) { .cons-s14-003 .head { grid-template-columns: minmax(0, 1fr); } .cons-s14-003 .media { aspect-ratio: 16 / 9; } }
+@media (max-width: 560px) { .cons-s14-003 .row { grid-template-columns: minmax(0, 1fr); } .cons-s14-003 .rep { border-right: 0 !important; } }
+@media (prefers-reduced-motion: reduce) { .cons-s14-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="cons-s14-003" data-study-id="CONS-S14-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g stroke="currentColor" stroke-width="1" fill="none">
+      <path d="M2.4 0v100" vector-effect="non-scaling-stroke"/>
+      <path d="M0 8h100M0 16h100M0 24h100M0 32h100M0 40h100M0 48h100M0 56h100M0 64h100M0 72h100M0 80h100M0 88h100M0 96h100" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
   <section class="shell" aria-labelledby="cons-s14-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">Reports</p>
-        <h2 id="cons-s14-003-title">A gate is a price. These are sorted by it.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Reports</p>
+        <h2 id="cons-s14-003-title">A gate is a price. These are <em>sorted</em> by it.</h2>
       </div>
-      <p class="lead">Not by date, and not by what we most want read.</p>
+      <p>Not by date, and not by what we most want read.</p>
     </div>
 
-    <p class="sorted">Ordered <em>cheapest to you first</em>, which puts the two that cost nothing at the front and the lead-generating one last.</p>
+    <p class="mast"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg><span>Ordered <b>cheapest to you first</b>, which puts the two that cost nothing at the front and the lead-generating one last.</span></p>
 
-    <div class="band"><span>Image area &mdash; the cover of the first report, the one that costs nothing</span></div>
+    <div class="media" role="img" aria-label="Image area — the cover of the first report, the one that costs nothing"><p class="slate" aria-hidden="true"><b>Cover &middot; 21:9</b>the cover of the first report, the one that costs nothing</p></div>
 
-    <ul class="reports">
-      <li>
-        <div class="report">
-          <span class="price">No gate</span>
-          <h3 data-placeholder="true">The decision-rights audit</h3>
-          <p class="what">A method for finding who actually decides.</p>
-          <p class="cost">The file is a link. Nothing is collected.</p>
-        </div>
-      </li>
-      <li>
-        <div class="report">
-          <span class="price">No gate</span>
-          <h3 data-placeholder="true">What cost programmes cost</h3>
-          <p class="what">Six patterns of savings that came back.</p>
-          <p class="cost">The file is a link. Nothing is collected.</p>
-        </div>
-      </li>
-      <li>
-        <div class="report">
-          <span class="price gated">One email address</span>
-          <h3 data-placeholder="true">The stage-03 exits</h3>
-          <p class="what">What we found in engagements the client stopped.</p>
-          <p class="cost">The file, and one message when the next one is published.</p>
-        </div>
-      </li>
-      <li>
-        <div class="report">
-          <span class="price gated">A conversation</span>
-          <h3 data-placeholder="true">The counterfactual problem</h3>
-          <p class="what">Why nobody can price consulting by outcome.</p>
-          <p class="cost">We do not send this one. It is useless without the context.</p>
-        </div>
-      </li>
+    <ul class="row">
+      <li class="rep"><span class="price"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>No gate</span><h3 data-placeholder="true">The decision-rights audit</h3><p>A method for finding who actually decides.</p><p class="terms">The file is a link. Nothing is collected.</p></li>
+      <li class="rep"><span class="price"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>No gate</span><h3 data-placeholder="true">What cost programmes cost</h3><p>Six patterns of savings that came back.</p><p class="terms">The file is a link. Nothing is collected.</p></li>
+      <li class="rep"><span class="price"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18v14H3zM3 5l9 7 9-7"/></svg>One email address</span><h3 data-placeholder="true">The stage-three exits</h3><p>What we found in engagements the client stopped.</p><p class="terms">The file, and one message when the next one is published.</p></li>
+      <li class="rep end"><span class="price"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>A conversation</span><h3 data-placeholder="true">The counterfactual problem</h3><p>Why nobody can price consulting by outcome.</p><p class="terms">We do not send this one. It is useless without the context.</p></li>
+      <li class="foot"><h3>What happens to an address, in full.</h3><p>One list. Not sold, not enriched, not scored. Unsubscribing removes it rather than pausing it. We never ask for a phone number, a job title, a company size, a budget or a timeline.</p></li>
     </ul>
-
-    <div class="policy">
-      <h3>What happens to an address, in full.</h3>
-      <p>One list. Not sold, not enriched, not scored. Unsubscribing removes it rather than pausing it. We never ask for a phone number, a job title, a company size, a budget or a timeline.</p>
-    </div>
 
   </section>
 </div>

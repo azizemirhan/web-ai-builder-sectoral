@@ -12,45 +12,21 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S13 — Insights
   Direction      : Conversion-led
-  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **C — Type and colour. No reserved media at all.**
-  Layout model   : Five claims as a single scanning row, the withdrawn one filled, then the panel
-                   that asks the reader to argue back
-  Density        : Structured (178 visible words, structured band 170–230)
-  Media mode     : **NONE.** A cover would slow the scan this study is built for.
-  Interaction    : None (static; no JavaScript). Block hover and focus are CSS only.
-
-  Governing idea : **A piece that could not have been wrong was not worth writing.**
-
-  What "conversion-led" means in this role :
-                   The default action for an insights section is *subscribe*, which asks the reader
-                   for an address and offers them more of the same. This study asks for something
-                   else entirely.
-                   **It asks the reader to argue.** Five claims are laid out to be scanned rather
-                   than read, precisely so a reader can find the one they think is wrong — and the
-                   panel invites exactly that, with a precedent that makes it credible: a piece has
-                   already been revised on a reader's argument, and **the note at the top of it
-                   carries their name.**
-                   That is a real offer rather than a mailing list. It converts the disagreeing
-                   reader, who is the most valuable one on the page and the one every other insights
-                   section quietly filters out.
-
-  Six sections, six conversion bases :
-                   `S08-004` audit, `S09-004` verification, `S10-004` relevance, `S11-004` giving
-                   the method away, `S12-004` declining the sale, and this one **inviting
-                   contradiction.** None repeats another.
-
-  Why the claims are set to be scanned :
-                   Each block is a claim first and a title second, at the same size across all five,
-                   with the status as the only differentiating mark. A reader disagreeing with a
-                   claim needs to reach it in one pass, so nothing here is featured, ranked or held
-                   larger than its neighbours except the one that was withdrawn.
-
-  Placeholder data : The five titles are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
-
-  Content note   : No author name, byline, publication date, reading time, category pill, view count,
-                   share count or response-time promise. No client name, logo, testimonial
-                   attribution, percentage, currency figure or ranking. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 4 with
+                   3: the head with the 004 underline stroke under "wrong"; five claims as one
+                   scanning row of bordered cells sharing hairlines — the claim in the serif at
+                   reading-display size, the placeholder title as its small line, the status as
+                   a marked chip — the withdrawn cell on the band tone behind a deep-red rule
+                   (V1's fill); a band on the tinted paper with V1's ask and the one bordered
+                   action ARGUE WITH ONE. Shape C — no media. V1 is kept whole.
+  Layout model   : Head; bordered scanning row of five claims; band + action
+  Density        : Structured — V1's spine kept in full
+  Media mode     : NONE — a cover would slow the scan this study is built for.
+  Interaction    : One in-page action. No form.
+  Content note   : The five titles carry PLACEHOLDER DEMO VALUES marked data-placeholder="true"
+                   and declared in the meta block. No author, byline, date, reading time,
+                   category pill, view count, share row or mailing list. Inline SVG, decorative.
+                   No header or navigation.
 -->
 
 <meta name="study-id" content="CONS-S13-004">
@@ -61,188 +37,66 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="theme" content="004 Signal">
-<meta name="section-shape" content="C — type and colour">
-<meta name="layout-model" content="Five claims as one scanning row with the withdrawn one filled, panel inviting the reader to argue back">
+<meta name="theme" content="004 White &amp; Signal">
+<meta name="layout-model" content="Head with the underline stroke; five claims as one bordered scanning row with the claim in the serif, the placeholder title small and marked statuses, the withdrawn cell on the band tone behind a red rule; band with the ask and one action">
 <meta name="density" content="structured">
-<meta name="media-mode" content="none-deliberate-a-cover-would-slow-the-scan">
-<meta name="interaction" content="none">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="in-page-action">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="the five titles — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S13-004 — Insights, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #ffffff; }
+body { margin: 0; background: #fcfcfb; }
 
-/* Scoped study styles — namespaced to .cons-s13-004 */
 .cons-s13-004 {
-  --paper: #ffffff;
-  --ink: #0a0b0d;
-  --ink-soft: #54585e;
-  --line: #e5e5e5;
-  --card: #f6f6f6;
-  --accent: #e0402f;
-  --accent-ink: #ffffff;
-  --focus: #0a0b0d;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fcfcfb; --ink: #0b0c0e; --muted: #55595f; --line: #e4e4e2; --line-strong: #0b0c0e;
+  --media: #eeeeec; --band: #f3f3f0; --accent: #d63a2a; --no: #7a1a10;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s13-004 *,
-.cons-s13-004 *::before,
-.cons-s13-004 *::after { box-sizing: inherit; }
-.cons-s13-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 24px; }
+.cons-s13-004 *, .cons-s13-004 *::before, .cons-s13-004 *::after { box-sizing: inherit; }
+.cons-s13-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s13-004 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s13-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s13-004 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s13-004 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(22px, 3vw, 38px);
-}
-.cons-s13-004 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 20px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s13-004 h2 {
-  margin: 0;
-  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
-  line-height: 1.02;
-  letter-spacing: -0.036em;
-  font-weight: 800;
-  max-width: 20ch;
-}
-.cons-s13-004 .lead { margin: 0; color: var(--ink-soft); }
+.cons-s13-004 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.cons-s13-004 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s13-004 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s13-004 .u { position: relative; display: inline-block; }
+.cons-s13-004 .u svg { position: absolute; left: 0; bottom: -0.16em; width: 100%; height: 0.22em; overflow: visible; pointer-events: none; color: var(--accent); }
+.cons-s13-004 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
-/* --- Five claims, set to be scanned --- */
-.cons-s13-004 .cards {
-  margin: 0 0 clamp(20px, 2.6vw, 32px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(12px, 1.4vw, 18px);
-}
-.cons-s13-004 .claim {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: clamp(18px, 2.1vw, 26px);
-  border-radius: 24px;
-  background: var(--card);
-  transition: transform 160ms ease;
-}
-.cons-s13-004 .claim:hover { transform: translateY(-4px); }
-/* Only the withdrawn one is held. Nothing else is featured or ranked. */
-.cons-s13-004 .cards > li:last-child .claim { background: var(--accent); color: var(--accent-ink); }
+.cons-s13-004 .row { list-style: none; margin: clamp(1.8rem, 3.6vw, 3rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--line-strong); }
+.cons-s13-004 .claim { display: grid; gap: 0.5rem; align-content: space-between; padding: 1.2rem 1.1rem 1.3rem; border-right: 1px solid var(--line-strong); min-width: 0; }
+.cons-s13-004 .claim:last-child { border-right: 0; }
+.cons-s13-004 .claim.no { background: var(--band); border-top: 3px solid var(--no); margin-top: -1px; }
+.cons-s13-004 .claim p.big { margin: 0; font-family: var(--serif); font-size: clamp(1.1rem, 1.5vw, 1.35rem); line-height: 1.25; letter-spacing: -0.01em; }
+.cons-s13-004 .claim p.ttl { margin: 0.4rem 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
+.cons-s13-004 .claim p.more { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.4; font-style: italic; }
+.cons-s13-004 .st { display: inline-flex; align-items: center; gap: 0.4rem; width: max-content; margin-top: 0.4rem; padding: 0.32rem 0.55rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+.cons-s13-004 .st .mk { width: 0.85rem; height: 0.85rem; color: var(--accent); }
+.cons-s13-004 .st.part { color: var(--muted); }
+.cons-s13-004 .st.part .mk { color: var(--muted); }
+.cons-s13-004 .st.no { border-color: var(--no); color: var(--no); }
+.cons-s13-004 .st.no .mk { color: var(--no); }
 
-.cons-s13-004 .claim p.says {
-  margin: 0;
-  font-size: clamp(1.02rem, 1.35vw, 1.18rem);
-  line-height: 1.24;
-  letter-spacing: -0.024em;
-  font-weight: 800;
-  flex: 1 1 auto;
-}
-.cons-s13-004 .claim h3 {
-  margin: clamp(12px, 1.5vw, 16px) 0 0;
-  font-size: 0.84rem;
-  line-height: 1.3;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.cons-s13-004 .cards > li:last-child h3 { color: rgba(255, 255, 255, 0.84); }
-.cons-s13-004 .status {
-  align-self: flex-start;
-  margin: clamp(13px, 1.6vw, 17px) 0 0;
-  padding: 6px 13px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  background: rgba(10, 11, 13, 0.08);
-  color: var(--ink-soft);
-}
-.cons-s13-004 .status.revised { background: rgba(224, 64, 47, 0.14); color: var(--accent); }
-.cons-s13-004 .note { margin: 9px 0 0; font-size: 0.82rem; line-height: 1.34; color: var(--accent); font-weight: 700; }
-.cons-s13-004 .cards > li:last-child .status { background: var(--accent-ink); color: var(--accent); }
+.cons-s13-004 .band { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 2.5rem; align-items: center; margin-top: clamp(1.6rem, 3vw, 2.6rem); padding: 1.3rem 1.5rem 1.4rem; background: var(--band); border-top: 3px solid var(--accent); }
+.cons-s13-004 .band h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.2; letter-spacing: -0.02em; }
+.cons-s13-004 .band p { margin: 0.4rem 0 0; max-width: 46rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.cons-s13-004 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3.1rem; padding: 0 1.4rem; border: 1px solid var(--line-strong); border-radius: 0; background: var(--paper); color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s13-004 .go:hover { background: var(--ink); color: var(--paper); }
 
-/* --- The invitation --- */
-.cons-s13-004 .argue {
-  padding: clamp(28px, 3.4vw, 46px) clamp(24px, 3.2vw, 44px);
-  border-radius: 24px;
-  background: var(--ink);
-  color: var(--paper);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: center;
-}
-.cons-s13-004 .argue h3 {
-  margin: 0;
-  font-size: clamp(1.4rem, 2.3vw, 2.1rem);
-  line-height: 1.1;
-  letter-spacing: -0.034em;
-  font-weight: 800;
-  max-width: 26ch;
-}
-.cons-s13-004 .argue p { margin: 13px 0 0; font-size: 1.04rem; opacity: 0.84; max-width: 52ch; }
-.cons-s13-004 .go {
-  display: inline-flex;
-  align-items: center;
-  min-height: 58px;
-  padding: 0 34px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 1.06rem;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.cons-s13-004 .go:hover { background: var(--paper); color: var(--ink); }
-
-/* --- Responsive ladder --- */
-@media (max-width: 1100px) {
-  .cons-s13-004 .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-@media (max-width: 860px) {
-  .cons-s13-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s13-004 h2 { max-width: none; }
-  .cons-s13-004 .argue { grid-template-columns: minmax(0, 1fr); }
-  .cons-s13-004 .argue h3, .cons-s13-004 .argue p { max-width: none; }
-}
-@media (max-width: 560px) {
-  .cons-s13-004 .cards { grid-template-columns: minmax(0, 1fr); }
-  .cons-s13-004 .go { width: 100%; justify-content: center; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s13-004 * { transition: none !important; }
-  .cons-s13-004 .claim:hover { transform: none; }
-}
+@media (max-width: 1000px) { .cons-s13-004 .row { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cons-s13-004 .claim { border-bottom: 1px solid var(--line-strong); } .cons-s13-004 .claim:nth-child(2n) { border-right: 0; } .cons-s13-004 .claim:last-child { grid-column: 1 / -1; border-bottom: 0; } }
+@media (max-width: 860px) { .cons-s13-004 .head, .cons-s13-004 .band { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .cons-s13-004 .row { grid-template-columns: minmax(0, 1fr); } .cons-s13-004 .claim { border-right: 0; } }
+@media (prefers-reduced-motion: reduce) { .cons-s13-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -252,57 +106,26 @@ body { margin: 0; background: #ffffff; }
 
     <div class="head">
       <div>
-        <p class="eyebrow">What we have published</p>
-        <h2 id="cons-s13-004-title">Find the one you think is wrong.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>What we have published</p>
+        <h2 id="cons-s13-004-title">Find the one you think is <span class="u">wrong.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></h2>
       </div>
-      <p class="lead">A piece that could not have been wrong was not worth writing. Here is what each one claims.</p>
+      <p>A piece that could not have been wrong was not worth writing. Here is what each one claims.</p>
     </div>
 
-    <ul class="cards">
-      <li>
-        <div class="claim">
-          <p class="says">Authority follows budget, not reporting lines.</p>
-          <h3 data-placeholder="true">The reorganisation will not move the decision rights</h3>
-          <span class="status">Still holds</span>
-        </div>
-      </li>
-      <li>
-        <div class="claim">
-          <p class="says">Removing cost without removing the work buys a delay.</p>
-          <h3 data-placeholder="true">Cost programmes rebuild the cost they removed</h3>
-          <span class="status">Still holds</span>
-        </div>
-      </li>
-      <li>
-        <div class="claim">
-          <p class="says">You cannot specify what you have never run.</p>
-          <h3 data-placeholder="true">Outsourcing a capability you do not understand transfers the confusion</h3>
-          <span class="status">Still holds</span>
-        </div>
-      </li>
-      <li>
-        <div class="claim">
-          <p class="says">A tool cannot decide who owns a definition.</p>
-          <h3 data-placeholder="true">Data quality is a governance problem, not a tooling one</h3>
-          <span class="status revised">Partly wrong</span>
-          <p class="note">We underrated how much the tool shapes the governance.</p>
-        </div>
-      </li>
-      <li>
-        <div class="claim">
-          <p class="says">Central delivery becomes a queue. Two engagements since then went badly for exactly this reason.</p>
-          <h3 data-placeholder="true">A central function should own the standard, not the delivery</h3>
-          <span class="status">We were wrong</span>
-        </div>
-      </li>
+    <ul class="row">
+      <li class="claim"><div><p class="big">Authority follows budget, not reporting lines.</p><p class="ttl" data-placeholder="true">The reorganisation will not move the decision rights</p></div><span class="st"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>Still holds</span></li>
+      <li class="claim"><div><p class="big">Removing cost without removing the work buys a delay.</p><p class="ttl" data-placeholder="true">Cost programmes rebuild the cost they removed</p></div><span class="st"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>Still holds</span></li>
+      <li class="claim"><div><p class="big">You cannot specify what you have never run.</p><p class="ttl" data-placeholder="true">Outsourcing a capability you do not understand transfers the confusion</p></div><span class="st"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>Still holds</span></li>
+      <li class="claim"><div><p class="big">A tool cannot decide who owns a definition.</p><p class="ttl" data-placeholder="true">Data quality is a governance problem, not a tooling one</p><p class="more">We underrated how much the tool shapes the governance.</p></div><span class="st part"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 3v18"/></svg>Partly wrong</span></li>
+      <li class="claim no"><div><p class="big">Central delivery becomes a queue. Two engagements since then went badly for exactly this reason.</p><p class="ttl" data-placeholder="true">A central function should own the standard, not the delivery</p></div><span class="st no"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>We were wrong</span></li>
     </ul>
 
-    <div class="argue">
+    <div class="band">
       <div>
         <h3>Tell us which one is wrong, and why.</h3>
         <p>We have already revised a piece on a reader&rsquo;s argument, and the note at the top of it carries their name. This is not a mailing list.</p>
       </div>
-      <a class="go" href="#cons-s13-004-title">Argue with one</a>
+      <a class="go" href="#cons-s13-004-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Argue with one</a>
     </div>
 
   </section>

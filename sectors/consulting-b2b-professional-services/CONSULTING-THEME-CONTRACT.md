@@ -336,3 +336,106 @@ The test is not the word count. It is:
 A structured section at 220 words made of short labelled fields is correct. A standard section at
 150 words made of three paragraphs is not. **Cutting a required field to hit a number is the wrong
 correction** — it produces a section that looks tidy and cannot be used.
+
+# Detailing Pass — the reference register applied to CONS
+
+Status: ACTIVE from 17 September 2026. This pass **supersedes the Composition Devices table, the
+Shared-Across-All-Five rules and the five theme tables above for the design layer of every `CONS`
+study.** The register, the four buyer questions, the anti-patterns, What May Not Be Invented, the
+placeholder-demo-value rules, the page-rhythm shapes and the text budget all stand; the pills, the
+14–26px radii, the dashed slot edges, the badge-over-media and the dark 005 ground go. The register
+is `../../standards/08-VISUAL-REFERENCE-STYLE.md`, read after `WELL` (the light reading) and `CON`
+(the heavy reading). `CONS` is the register's **editorial** reading: the sector has no honest
+photograph but people, so it is carried by type — and this pass gives the type a hand.
+
+## The CONS reading in one sentence
+
+    A firm's own publication: a serif display voice with one italic word, a partner's pencil in
+    the margin — circled words, underline strokes, margin notes, brackets — serif word-numerals
+    at display scale, ghost glyphs behind the composition, hairlines and one accent, and the
+    portrait as the only photograph.
+
+## What CONS translates
+
+| Register element | CONS reading |
+| --- | --- |
+| Display voice | The register's serif (Georgia stack), weight 400, `clamp(2.4rem, 4.6vw, 5.2rem)`, `line-height: 0.95`, `letter-spacing: -0.03em`, **one italic word** in the accent. Item titles in the sans at 700. No uppercase display — that is `CON`'s voice. |
+| Statement | Serif italic at `clamp(1.3rem, 2.2vw, 2rem)` for the pull-sentence, the margin note and the client quote. |
+| Eyebrows and labels | `0.6–0.7rem`, 700, tracking `0.16–0.2em`, uppercase, with a small stroke mark where it helps. |
+| **Word-numerals** | Indices are serif italic words — *One, Two, Three* — in the accent at `2.4–4rem`, never a digit. The giant ghost index of register device 6 is the same word at `clamp(5rem, 12vw, 11rem)` in the line tone. |
+| Rules | 1px hairlines for structure; **one 3px accent bar** per composition — the *pencil rule* — on the head, the live cell or the promoted row. Never two. |
+| Paper | Paper, sable, field, white, chalk — see the theme table. Bands are the paper darkened 4–6%. **No dark ground, no dark panel**: theme 005 loses its midnight and keeps its violet. |
+| Radius | `0–2px` on everything. Actions 0. No pills: category and discipline names are bordered chips at 2px, `0.6rem` tracked. |
+| Media fields | Bare, flat, **people only**: 4:5 and 1:1 portraits, a 3:2 or 16:10 *at-work* field (a team in a room, by role), never a skyline, never a desk. Slate labels bottom-left: `PORTRAIT AREA · 4:5`, `AT WORK · 3:2`, `THE ROOM · 16:10`. Sections with no honest subject stay shape C and carry no field. |
+| Reserved and placeholder figures | The firm's own counts keep their **placeholder demo values** from V1, marked `data-placeholder="true"`, drawn in the serif at counter scale (`2.2–3.4rem`) with the tracked label beneath — no box. Reserved values (a client, a title not yet written, a date) are bordered slots at 2px holding the word *Reserved*. Reserved prose is drawn as flat media-tone measures. |
+| Actions | 1px bordered rectangle, radius 0, uppercase tracked, with a leading stroke mark where it helps; the second route an underlined link with `↗`. Hover inverts to ink. |
+| **The pencil layer** | Behind or across a composition, one figure per study in the line tone or the accent, inline SVG, `aria-hidden`, `pointer-events: none`, `vector-effect: non-scaling-stroke`: `001` a **ghost glyph** — a serif question mark, ampersand or section sign at `clamp(12rem, 30vw, 28rem)` in the line tone behind the head; `002` a **pencil ellipse** circling the italic word (a slightly irregular closed path in the accent, 1.5px); `003` **ruled margin** — a left margin line and faint horizontal rules behind the grid, like a notebook page; `004` an **underline stroke** beneath the display's key phrase (a long wavering path in the accent, 3px) and a circled word-numeral on the live row; `005` a **bracket** — a tall curly brace or square bracket in the line tone grouping a column, with the ghost word-numeral. No study in a section repeats another's figure; nothing sits over body text; nothing above 12% visual weight. |
+| **The margin note** | Once per study where V1 has a sentence that reads as an aside: a serif italic line in the accent, `0.95–1.05rem`, set in the outer margin with a 1px leader and a small pencil mark, `<aside>` in the markup. It carries V1 copy, never new copy. |
+| **The marks** | A 24×24 stroke set at `stroke-width: 1.6`, `currentColor`, round joins, used small (1.1–1.5rem) beside labels and on actions: pencil, speech line, question mark in a circle, two people, one person, clock, calendar, document, folder, compass, balance, chair, door, telephone, envelope, pin, arrow-out, tick in a circle, struck circle (*not this*), bracket. No icon grid, no icon as ornament. |
+| Density | Fuller than `WELL`, quieter than `CON`: a composition carries its head, one pencil figure, a chip row or ruled ledger, a portrait or a word-numeral column, and one action or foot line. Text budget unchanged. |
+
+## CONS themes for the detailing pass
+
+| Variant | Name | paper | ink | muted | line | media | band | accent |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 001 | Paper & Indigo | `#f6f5f1` | `#15171b` | `#5b5f68` | `#dad8d1` | `#e6e4dd` | `#edebe5` | `#2f4fe0` |
+| 002 | Sable & Bronze | `#f2efe8` | `#1b1713` | `#6a635a` | `#d9d2c6` | `#e5dfd4` | `#eae5db` | `#9a5b2c` |
+| 003 | Field & Emerald | `#eff1f2` | `#0f1417` | `#535c63` | `#d3d9dc` | `#e0e5e7` | `#e6eaec` | `#12856a` |
+| 004 | White & Signal | `#fcfcfb` | `#0b0c0e` | `#55595f` | `#e4e4e2` | `#eeeeec` | `#f3f3f0` | `#d63a2a` |
+| 005 | Chalk & Violet | `#f3f2f7` | `#121219` | `#5c5b69` | `#d6d4e0` | `#e3e1ea` | `#e9e7ef` | `#6b4fd8` |
+
+A second token, `--no` (`#8f1f14`, deep red; on 004 `#7a1a10` so it reads apart from the accent),
+carries refusal only — *what we will not claim*, *not our client*, *what this page will not do* — as
+an edge, a top rule or an icon stroke. Never a surface behind body text. No study introduces a
+second accent.
+
+## Sector rules that remain in force
+
+The four questions, the anti-patterns (no 2×2 as ornament, no network, no arrows-up, no
+handshake, no skyline), What May Not Be Invented, the placeholder rules (own counts, own people,
+unattributed quotes — marked and declared), the shape A/B/C rule per variant, the text budget and
+the section-shell rule are unchanged. The checker for this pass is `cslcheck.ps1`: it enforces the
+theme tokens, the namespace, the flat register (no pill, dashed edge, shadow or gradient, radius
+over 8px), inline-SVG-only graphics (`aria-hidden`, no `image`, `use` or `script` inside), the
+shell rule, the claims vocabulary (retention, satisfaction, NPS, ROI, award, ranked, tier, trusted
+by, %), the digit rule (no digit in visible copy outside a `data-placeholder` element), field
+parity across the five studies, and the h1 rule.
+
+## Completion record — 18 September 2026
+
+The detailing pass is applied to all one hundred and thirty-five `CONS` studies, S01 through S27.
+Every section carries a `BATCH-V2.md` design record beside its `BATCH-V1.md`; every study passes
+`cslcheck.ps1` (tokens, namespace, flat register, inline-SVG-only, reduced-motion rule, shell rule,
+h1 rule, digit and claims vocabulary, placeholder declaration, field parity) and was rendered and
+read at 1440. The only parity gaps recorded are V1's own wordings, listed per section.
+
+What the pass settled beyond the tables above, and what the next sector should inherit:
+
+- **The pencil layer is assigned by variant, not by section**: `001` a ghost glyph or ghost
+  word-numeral in the line tone behind the head (`@`, `¶`, `×`, `§`, `&`, `?`, `‡`, `∴`, `Two`),
+  `002` the pencil ellipse round the one italic word, `003` the ruled margin drawn behind the
+  whole composition, `004` the underline stroke under the phrase that carries the ask, `005` the
+  bracket grouping the display column. Sections with no head (S22) put the ghost behind the row
+  and the ellipse round the current page.
+- **Word-numerals, never digits, outside a placeholder.** Every `01 / 02` index in V1 became
+  *One … Six* in the serif italic accent (or STAGE ONE / STEP ONE chips in `004`, roman numerals
+  on a stage strip); counts that are demo values stay digits inside `data-placeholder` elements
+  and nowhere else. V1 copy that carried `stage 03` or `Case 01` was reworded to the same.
+- **`--no` (deep red, `#8f1f14`; `#7a1a10` on 004)** carries refusal across the sector: the
+  route that is you leaving (S18), the cost that can end in a no (S19), the three verdicts the firm
+  agrees with (S20), the way out (S21), *what we got wrong* (S24), the retraction note (S25, S26),
+  *what is not here* (S27). It is an edge, a chip border, a struck-seal stroke — never a surface
+  behind body text, never a second accent.
+- **Fields are bare and labelled by what they are**, never by who is in them: PORTRAIT AREA,
+  AT WORK, THE ROOM, THE DESK, THE PROPOSAL, THE DOOR, MAP AREA · RESERVED SLOT. Ratios are
+  stated in the label and chosen so a field never outruns its caption column (3:1 and 2:1 plates,
+  4:5 portraits, 21:9 strips); a map area is a slot that names itself a slot.
+- **The one ask is a statement or a bordered rectangle, never a form.** S18 carries no form by
+  argument; S19 and S23 carry the hour as an underlined link or a bordered action with a clock
+  mark; S20's ask is a statement with no link at all; S25's *tell us* is a band, not a box.
+- **Detail pages S23–S27 keep V1's plain `data-region="page-context"` block with the one
+  `<h1>`**, as the assembly stand-in for S21 and S22; the checker's hero list was extended to
+  S23–S27 for that reason. Variant N of S21–S27 names the same person, service, engagement and
+  office, so the six pages assemble into one site.
+- **Two claims terms are allowed by exception and recorded**: `satisfaction` and ` roi ` in S08
+  where V1 refuses them by name, and ` award` in S26 where V1 says none are listed.

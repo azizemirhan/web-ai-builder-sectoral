@@ -12,41 +12,19 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S04 — Industries & Markets
   Direction      : Premium / Editorial
-  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **C — Type and colour. No reserved media at all.**
-  Layout model   : A display statement, the six markets as blocks on two columns with air and a
-                   bronze numeral instead of rules, and one saturated pull block interrupting them
-  Density        : Low (113 visible words) — the lowest of the five, as the theme contract requires
-                   of 002
-  Media mode     : **NONE.** A saturated pull block sits where the plates were.
-
-  V3 note, why the plates came out :
-                   Reviewed against the assembled page: twenty-four of the catalog's twenty-five
-                   studies carried an image area, so shape C existed as a rule and almost never in
-                   practice. The *Page Rhythm* test settles it — asked what a photograph of "financial
-                   services" would be **of**, the honest answer is a stock office, which is the first
-                   thing the sector anti-patterns rule out. An editorial spread can open on a colour
-                   field and a sentence just as well as on a photograph, and this one now does.
-  Interaction    : None (static; no JavaScript).
-
-  V2 rework note : The first version was a three-column masonry with six reserved images. It worked
-                   alone, but CONS-S02 and CONS-S03 at this variant are also image grids, and three
-                   consecutive grids is a catalogue rather than a page. Rebuilt to shape B under the
-                   *Page Rhythm* rule now in the theme contract.
-
-  Why the blocks are not a list :
-                   No hairlines, no gutter column, no right-aligned labels. Each market is a block
-                   with a bronze numeral, separated by space. The document idiom this catalog already
-                   corrected once is a table of rows; this is a page of paragraphs, which is what an
-                   editorial spread actually is.
-
-  Governing idea : Naming an industry is not knowing it. Each block names the binding constraint that
-                   makes work in that market different.
-
-  Content note   : Industry names are generic vocabulary. The constraints are general structural facts
-                   about how those industries operate, not claims about this firm's record. No named
-                   client, logo, ranking, award, certification, market-share figure or invented
-                   metric. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 2 with
+                   6: the head split with the 002 pencil ellipse round the italic word; the six
+                   markets as blocks on two columns with air, each led by a serif italic
+                   word-numeral; V1's saturated pull block becomes a band-tone plate with the
+                   pencil rule, set between the second and third block; the underlined route in
+                   the ruled foot. Shape C — no media. V1 is kept whole.
+  Layout model   : Head split at the baseline; six blocks on two columns with a pull plate; foot
+  Density        : Standard — V1's spine kept in full
+  Media mode     : NONE — V1's reasoning stands: type and one pull plate.
+  Interaction    : One in-page route. No form.
+  Content note   : Industry names are generic vocabulary. The constraints are general structural
+                   facts, not claims about any client. No placeholder data. Inline SVG,
+                   decorative. No header or navigation — the section-shell rule.
 -->
 
 <meta name="study-id" content="CONS-S04-002">
@@ -57,162 +35,56 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="theme" content="002 Sable">
-<meta name="section-shape" content="C — type and colour">
-<meta name="layout-model" content="Statement, six market blocks on two columns, one saturated pull block">
-<meta name="density" content="low">
-<meta name="media-mode" content="none-deliberate-page-rhythm-see-comment">
-<meta name="interaction" content="none">
+<meta name="theme" content="002 Sable &amp; Bronze">
+<meta name="layout-model" content="Head split at the baseline with a pencil ellipse; six blocks on two columns with serif word-numerals and a band-tone pull plate; ruled foot with the underlined route">
+<meta name="density" content="standard">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="in-page-route">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S04-002 — Industries &amp; Markets, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f2efe9; }
+body { margin: 0; background: #f2efe8; }
 
-/* Scoped study styles — namespaced to .cons-s04-002 */
 .cons-s04-002 {
-  --paper: #f2efe9;
-  --ink: #1a1714;
-  --ink-soft: #6b6459;
-  --line: #dcd6ca;
-  --slot: #e6e1d7;
-  --slot-edge: #c4bbab;
-  --slot-ink: #6e675c;
-  --accent: #9a5b2c;
-  --accent-ink: #ffffff;
-  --focus: #1a1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f2efe8; --ink: #1b1713; --muted: #6a635a; --line: #d9d2c6; --line-strong: #1b1713;
+  --media: #e5dfd4; --band: #eae5db; --accent: #9a5b2c; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s04-002 *,
-.cons-s04-002 *::before,
-.cons-s04-002 *::after { box-sizing: inherit; }
-.cons-s04-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+.cons-s04-002 *, .cons-s04-002 *::before, .cons-s04-002 *::after { box-sizing: inherit; }
+.cons-s04-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s04-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(52px, 6.2vw, 116px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s04-002 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6.5rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s04-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Statement --- */
-.cons-s04-002 .eyebrow {
-  margin: 0 0 clamp(20px, 2.6vw, 36px);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.cons-s04-002 h2 {
-  margin: 0;
-  font-size: clamp(2.35rem, 5.4vw, 4.3rem);
-  line-height: 0.99;
-  letter-spacing: -0.044em;
-  font-weight: 800;
-  max-width: 16ch;
-}
-.cons-s04-002 .second {
-  margin: clamp(22px, 2.8vw, 42px) 0 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(24px, 4vw, 72px);
-}
-.cons-s04-002 .second p {
-  grid-column: 2;
-  margin: 0;
-  max-width: 38ch;
-  color: var(--ink-soft);
-  font-size: clamp(1.08rem, 1.34vw, 1.26rem);
-}
+.cons-s04-002 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s04-002 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 6rem); align-items: end; }
+.cons-s04-002 h2 { margin: 0; max-width: 12ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5vw, 5.4rem); line-height: 0.93; letter-spacing: -0.035em; }
+.cons-s04-002 h2 em { position: relative; display: inline-block; font-style: italic; color: var(--accent); }
+.cons-s04-002 h2 em svg { position: absolute; left: -8%; top: -16%; width: 116%; height: 132%; overflow: visible; pointer-events: none; color: var(--accent); }
+.cons-s04-002 .voice { margin: 0 0 0.3em; font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 1.7vw, 1.5rem); line-height: 1.3; }
 
-/* --- The pull block: a colour field where a plate used to be --- */
-.cons-s04-002 .pull { grid-column: 1 / -1; }
-.cons-s04-002 .pull p {
-  margin: 0;
-  padding: clamp(28px, 3.4vw, 48px) clamp(26px, 3.4vw, 52px);
-  border-radius: 4px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: clamp(1.34rem, 2.3vw, 2.05rem);
-  line-height: 1.14;
-  letter-spacing: -0.032em;
-  font-weight: 800;
-  max-width: 30ch;
-}
+.cons-s04-002 .blocks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 4vw, 3.6rem) clamp(2.5rem, 5vw, 6rem); margin-top: clamp(2.4rem, 5vw, 4.5rem); }
+.cons-s04-002 .blk { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 0.8rem; align-items: start; }
+.cons-s04-002 .blk p.ix { margin: 0; font-family: var(--serif); font-style: italic; font-size: 2rem; line-height: 1; letter-spacing: -0.02em; color: var(--accent); }
+.cons-s04-002 .blk h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; }
+.cons-s04-002 .blk p.say { margin: 0.45rem 0 0; max-width: 26rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.cons-s04-002 .blk p.say b { color: var(--ink); }
+.cons-s04-002 .pull { grid-column: 1 / -1; padding: 1.3rem 1.5rem 1.4rem; background: var(--band); border-top: 3px solid var(--accent); }
+.cons-s04-002 .pull p { margin: 0; max-width: 40rem; font-family: var(--serif); font-size: clamp(1.2rem, 1.9vw, 1.7rem); line-height: 1.3; }
 
-/* --- Market blocks --- */
-.cons-s04-002 .markets {
-  margin: clamp(38px, 4.8vw, 76px) 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: clamp(30px, 5vw, 88px);
-  row-gap: clamp(28px, 3.6vw, 52px);
-}
-.cons-s04-002 .n {
-  display: block;
-  margin-bottom: 9px;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-.cons-s04-002 .markets h3 {
-  margin: 0;
-  font-size: clamp(1.24rem, 1.7vw, 1.62rem);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-}
-.cons-s04-002 .bind {
-  margin: 9px 0 0;
-  color: var(--ink-soft);
-  font-size: clamp(1.02rem, 1.2vw, 1.14rem);
-  max-width: 36ch;
-}
-.cons-s04-002 .bind b { color: var(--accent); font-weight: 750; }
+.cons-s04-002 .foot { margin-top: clamp(2rem, 4vw, 3.4rem); padding-top: 1.1rem; border-top: 1px solid var(--line-strong); }
+.cons-s04-002 .lnk { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ink); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s04-002 .lnk::after { content: "\2197"; color: var(--accent); font-weight: 400; }
 
-/* --- Coda --- */
-.cons-s04-002 .coda { margin: clamp(38px, 4.6vw, 70px) 0 0; }
-.cons-s04-002 .go {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 12px;
-  color: var(--accent);
-  font-size: clamp(1.16rem, 1.6vw, 1.5rem);
-  font-weight: 750;
-  letter-spacing: -0.02em;
-  text-decoration: none;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 4px;
-}
-.cons-s04-002 .go:hover { color: var(--ink); border-bottom-color: var(--ink); }
-
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .cons-s04-002 h2 { max-width: none; }
-  .cons-s04-002 .second { grid-template-columns: minmax(0, 1fr); }
-  .cons-s04-002 .second p { grid-column: 1; max-width: none; }
-  .cons-s04-002 .pull p { max-width: none; }
-  .cons-s04-002 .markets { grid-template-columns: minmax(0, 1fr); }
-  .cons-s04-002 .bind { max-width: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s04-002 * { transition: none !important; }
-}
+@media (max-width: 860px) { .cons-s04-002 .head, .cons-s04-002 .blocks { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .cons-s04-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -220,50 +92,25 @@ body { margin: 0; background: #f2efe9; }
 <div class="cons-s04-002" data-study-id="CONS-S04-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="cons-s04-002-title">
 
-    <p class="eyebrow">Industries</p>
-    <h2 id="cons-s04-002-title">Naming an industry is not knowing it.</h2>
-
-    <div class="second">
-      <p>So what follows is not a list of sectors. It is what each one constrains.</p>
+    <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Industries</p>
+    <div class="head">
+      <h2 id="cons-s04-002-title">Naming an industry is not <em>knowing<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M8 52C6 30 30 12 56 12c24 0 40 12 38 34-2 24-30 42-56 40C16 84 4 70 8 52c2-10 10-16 12-14" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg></em> it.</h2>
+      <p class="voice">So what follows is not a list of sectors. It is what each one constrains.</p>
     </div>
 
-    <ul class="markets">
-      <li>
-        <span class="n">01</span>
-        <h3>Financial services</h3>
-        <p class="bind">The regulator is a <b>stakeholder in every decision</b>, including the ones about cost.</p>
-      </li>
-      <li>
-        <span class="n">02</span>
-        <h3>Healthcare and life sciences</h3>
-        <p class="bind">Clinical staff <b>cannot be reallocated by a spreadsheet</b>.</p>
-      </li>
-      <li class="pull">
-        <p>If yours is not one of these six, the constraint is the first thing we would ask you about.</p>
-      </li>
-      <li>
-        <span class="n">03</span>
-        <h3>Energy and utilities</h3>
-        <p class="bind">The <b>price control cycle</b> sets your horizon, not your ambition.</p>
-      </li>
-      <li>
-        <span class="n">04</span>
-        <h3>Industrials and manufacturing</h3>
-        <p class="bind">The plant sets the pace. A <b>shorter changeover is a wish</b>, not a plan.</p>
-      </li>
-      <li>
-        <span class="n">05</span>
-        <h3>Retail and consumer</h3>
-        <p class="bind">Margin is decided <b>in the supply chain</b>, not in the deck.</p>
-      </li>
-      <li>
-        <span class="n">06</span>
-        <h3>Public and regulated sectors</h3>
-        <p class="bind"><b>Defensible or it does not happen.</b> Speed is the second virtue.</p>
-      </li>
-    </ul>
+    <div class="blocks">
+      <div class="blk"><p class="ix" aria-hidden="true">One</p><div><h3>Financial services</h3><p class="say"><b>The regulator is a stakeholder in every decision</b>, including the ones about cost.</p></div></div>
+      <div class="blk"><p class="ix" aria-hidden="true">Two</p><div><h3>Healthcare and life sciences</h3><p class="say"><b>Clinical staff cannot be reallocated by a spreadsheet</b>.</p></div></div>
+      <div class="pull"><p>If yours is not one of these six, the constraint is the first thing we would ask you about.</p></div>
+      <div class="blk"><p class="ix" aria-hidden="true">Three</p><div><h3>Energy and utilities</h3><p class="say"><b>The price control cycle sets your horizon</b>, not your ambition.</p></div></div>
+      <div class="blk"><p class="ix" aria-hidden="true">Four</p><div><h3>Industrials and manufacturing</h3><p class="say">The plant sets the pace. <b>A shorter changeover is a wish</b>, not a plan.</p></div></div>
+      <div class="blk"><p class="ix" aria-hidden="true">Five</p><div><h3>Retail and consumer</h3><p class="say"><b>Margin is decided in the supply chain</b>, not in the deck.</p></div></div>
+      <div class="blk"><p class="ix" aria-hidden="true">Six</p><div><h3>Public and regulated sectors</h3><p class="say"><b>Defensible or it does not happen.</b> Speed is the second virtue.</p></div></div>
+    </div>
 
-    <p class="coda"><a class="go" href="#cons-s04-002-title">Start a conversation <span aria-hidden="true">&rarr;</span></a></p>
+    <div class="foot">
+      <a class="lnk" href="#cons-s04-002-title">Start a conversation</a>
+    </div>
 
   </section>
 </div>

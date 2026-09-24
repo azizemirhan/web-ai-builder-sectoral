@@ -12,39 +12,23 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S10 — Client Logos
   Direction      : Universal / Safe
-  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **A — Item grid.** Twelve cells, every one a reserved area.
-  Layout model   : A three-figure count row, then a twelve-cell wall on six tracks in which eight
-                   cells are reserved logo areas and four are reasoned gaps, then the action panel
-  Density        : Structured (189 visible words, structured band 170–230)
-  Media mode     : EIGHT reserved logo areas. **No logo is drawn, filled, approximated or placeheld.**
-  Interaction    : None (static; no JavaScript). Cell hover and focus are CSS only.
-
-  Governing idea : **A logo wall shows you the clients who did not mind.**
-                   The engagement a client is least willing to have named is almost always the one
-                   that mattered most to them — the restructuring, the regulatory response, the deal
-                   that had not been announced. So a wall of logos is not a sample of the firm's
-                   work. **It is a map of its least sensitive work**, and every firm that prints one
-                   is quietly presenting its most forgettable engagements as its best.
-                   This section prints the wall anyway, because a buyer wants it — and then says the
-                   above out loud, which is the only thing that makes the wall worth trusting.
-
-  The gaps, which are the design :
-                   Four of the twelve cells carry no logo area at all. They carry the **reason** that
-                   client cannot be shown: a live transaction, a regulated process, a contract that
-                   prohibits the mark, and one that simply says *they said no*.
-                   The gaps are not missing content awaiting ingestion. They are content. A wall with
-                   no gaps claims a permission rate no professional-services firm has.
-
-  Why every logo is a reserved area :
-                   ../../CONSULTING-THEME-CONTRACT.md forbids named clients and client logos in every
-                   section, and a placeholder logo would be a claim about a real company — the same
-                   line that forbids a placeholder testimonial attribution. So the cells are labelled
-                   empty areas and stay that way. **A count may be placeheld; a mark may not.**
-
-  Content note   : No client name, logo, wordmark, monogram, initial, sector name, testimonial
-                   attribution, percentage, currency figure, ROI multiple, ranking, award or
-                   certification. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the bordered cell grid: three counts as serif figures at counter scale
+                   (placeholder demo values) on a ruled row; a twelve-cell wall on six tracks
+                   sharing hairlines, eight cells bare flat logo fields with a slate, four cells
+                   the withheld reasons on the band tone with a deep-red (--no) edge and a
+                   struck-seal mark; the permissions note on a hairline; the foot with V1's
+                   statement and the one bordered action; the 001 ghost glyph — a serif double
+                   dagger in the line tone behind the head. No logo is drawn, filled,
+                   approximated or placeheld. V1 is kept whole.
+  Layout model   : Head; ruled count row; bordered twelve-cell wall; permissions note; foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : Eight reserved logo areas, 3:2, flat. Nothing is drawn in them.
+  Interaction    : One in-page action. No form.
+  Content note   : The three client counts carry PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true" and declared in the meta block. No client name,
+                   logo, wordmark, monogram, initial, sector name or attribution. Inline SVG,
+                   decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="CONS-S10-001">
@@ -55,201 +39,77 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="theme" content="001 Paper">
-<meta name="section-shape" content="A — item grid">
-<meta name="layout-model" content="Count row, twelve-cell wall of eight reserved logo areas and four reasoned gaps, action panel">
+<meta name="theme" content="001 Paper &amp; Indigo">
+<meta name="layout-model" content="Head with a ghost double dagger; ruled row of three serif counts; bordered twelve-cell wall on six tracks with eight flat logo fields and four red-edged withheld cells; permissions note; foot with the statement and one action">
 <meta name="density" content="structured">
 <meta name="media-mode" content="eight-reserved-logo-areas">
-<meta name="interaction" content="none">
+<meta name="interaction" content="in-page-action">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="the three client counts — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S10-001 — Client Logos, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f7f6f3; }
+body { margin: 0; background: #f6f5f1; }
 
-/* Scoped study styles — namespaced to .cons-s10-001 */
 .cons-s10-001 {
-  --paper: #f7f6f3;
-  --ink: #14161a;
-  --ink-soft: #585d66;
-  --line: #dedcd6;
-  --card: #ffffff;
-  --slot: #eceae5;
-  --slot-edge: #c7c4bc;
-  --slot-ink: #5f6169;
-  --accent: #2f4fe0;
-  --accent-ink: #ffffff;
-  --focus: #14161a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f5f1; --ink: #15171b; --muted: #5b5f68; --line: #dad8d1; --line-strong: #15171b;
+  --media: #e6e4dd; --band: #edebe5; --accent: #2f4fe0; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s10-001 *,
-.cons-s10-001 *::before,
-.cons-s10-001 *::after { box-sizing: inherit; }
-.cons-s10-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 16px; }
+.cons-s10-001 *, .cons-s10-001 *::before, .cons-s10-001 *::after { box-sizing: inherit; }
+.cons-s10-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s10-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s10-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s10-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s10-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(24px, 4vw, 64px);
-  align-items: end;
-  margin-bottom: clamp(24px, 3.2vw, 42px);
-}
-.cons-s10-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s10-001 h2 {
-  margin: 0;
-  font-size: clamp(2.1rem, 4vw, 3.25rem);
-  line-height: 1.02;
-  letter-spacing: -0.038em;
-  font-weight: 800;
-  max-width: 18ch;
-}
-.cons-s10-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.22vw, 1.16rem); }
+.cons-s10-001 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; border-top: 3px solid var(--accent); padding-top: clamp(1.4rem, 2.6vw, 2.2rem); }
+.cons-s10-001 .head > p.ghost { position: absolute; right: 0; top: -0.1em; margin: 0; color: var(--line); font-family: var(--serif); font-size: clamp(10rem, 22vw, 20rem); line-height: 0.8; pointer-events: none; user-select: none; }
+.cons-s10-001 .head > div, .cons-s10-001 .head > p.lead { position: relative; }
+.cons-s10-001 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s10-001 h2 { margin: 0; max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s10-001 h2 em { font-style: italic; color: var(--accent); }
+.cons-s10-001 .head > p.lead { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.cons-s10-001 .head > p.lead b { color: var(--ink); }
 
-/* --- The counts --- */
-.cons-s10-001 .counts {
-  margin: 0 0 clamp(18px, 2.2vw, 30px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.5vw, 20px);
-}
-.cons-s10-001 .counts li { padding: clamp(16px, 1.9vw, 24px) clamp(18px, 2vw, 26px); background: var(--card); border-radius: 16px; }
-.cons-s10-001 .fig {
-  display: block;
-  font-size: clamp(1.9rem, 3vw, 2.7rem);
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  line-height: 0.94;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-.cons-s10-001 .counts h3 { margin: 10px 0 0; font-size: 0.98rem; font-weight: 800; letter-spacing: -0.018em; }
-.cons-s10-001 .counts p { margin: 5px 0 0; color: var(--ink-soft); font-size: 0.89rem; }
+.cons-s10-001 .counts { list-style: none; margin: clamp(1.8rem, 3.6vw, 3rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); }
+.cons-s10-001 .counts li { display: grid; gap: 0.2rem; padding: 1rem 1.2rem 1.1rem 0; border-right: 1px solid var(--line); }
+.cons-s10-001 .counts li + li { padding-left: 1.2rem; }
+.cons-s10-001 .counts li:last-child { border-right: 0; }
+.cons-s10-001 .counts .n { font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1; letter-spacing: -0.03em; }
+.cons-s10-001 .counts h3 { margin: 0.2rem 0 0; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s10-001 .counts p { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.45; }
 
-/* --- The wall --- */
-.cons-s10-001 .wall {
-  margin: 0 0 clamp(18px, 2.2vw, 30px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(10px, 1.2vw, 16px);
-}
-.cons-s10-001 .cell {
-  aspect-ratio: 8 / 5;
-  display: grid;
-  place-items: center;
-  padding: 12px;
-  border-radius: 16px;
-  text-align: center;
-}
-/* A reserved logo area. Never a drawn, filled or approximated mark. */
-.cons-s10-001 .cell.mark {
-  border: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  color: var(--slot-ink);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: transform 160ms ease;
-}
-.cons-s10-001 .cell.mark:hover { transform: translateY(-3px); }
-/* A gap. Not missing content — content. */
-.cons-s10-001 .cell.gap {
-  background: rgba(47, 79, 224, 0.09);
-  color: var(--accent);
-  padding: 14px;
-}
-.cons-s10-001 .cell.gap b { display: block; font-size: 0.92rem; font-weight: 800; letter-spacing: -0.016em; line-height: 1.2; }
-.cons-s10-001 .caption { margin: 0 0 clamp(18px, 2.2vw, 30px); color: var(--ink-soft); font-size: 0.93rem; max-width: 78ch; }
-.cons-s10-001 .cell.gap span { display: block; margin-top: 5px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.72; }
+.cons-s10-001 .wall { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border: 1px solid var(--line-strong); }
+.cons-s10-001 .wall li { border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.cons-s10-001 .wall li:nth-child(6n) { border-right: 0; }
+.cons-s10-001 .wall li:nth-last-child(-n+6) { border-bottom: 0; }
+.cons-s10-001 .mark { position: relative; aspect-ratio: 3 / 2; margin: 0.6rem; background: var(--media); border-radius: 2px; }
+.cons-s10-001 .slate { position: absolute; left: 0.5rem; right: 0.5rem; bottom: 0.45rem; margin: 0; color: var(--muted); font-size: 0.46rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.4; text-transform: uppercase; }
+.cons-s10-001 .held { display: grid; gap: 0.3rem; align-content: end; height: 100%; padding: 0.8rem 0.9rem 0.9rem; background: var(--band); border-left: 3px solid var(--no); }
+.cons-s10-001 .held p { margin: 0; font-size: 0.82rem; line-height: 1.35; color: var(--ink); }
+.cons-s10-001 .held .tag { display: inline-flex; align-items: center; gap: 0.35rem; width: max-content; padding: 0.28rem 0.5rem; border: 1px solid var(--no); border-radius: 2px; color: var(--no); font-size: 0.48rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+.cons-s10-001 .held .tag .mk { width: 0.8rem; height: 0.8rem; }
 
-/* --- The action --- */
-.cons-s10-001 .offer {
-  padding: clamp(26px, 3.2vw, 42px) clamp(24px, 3.2vw, 44px);
-  border-radius: 16px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: center;
-}
-.cons-s10-001 .offer h3 {
-  margin: 0;
-  font-size: clamp(1.28rem, 2vw, 1.86rem);
-  line-height: 1.13;
-  letter-spacing: -0.032em;
-  font-weight: 800;
-  max-width: 28ch;
-}
-.cons-s10-001 .offer p { margin: 11px 0 0; font-size: 1.02rem; font-weight: 600; opacity: 0.92; max-width: 48ch; }
-.cons-s10-001 .go {
-  display: inline-flex;
-  align-items: center;
-  min-height: 56px;
-  padding: 0 32px;
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--ink);
-  font-size: 1.04rem;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-}
+.cons-s10-001 .note { display: flex; gap: 0.6rem; align-items: flex-start; margin: 0; padding: 0.9rem 0; border-bottom: 1px solid var(--line-strong); color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+.cons-s10-001 .note .mk { color: var(--accent); margin-top: 0.15rem; }
+.cons-s10-001 .note span[data-placeholder] { color: var(--ink); font-weight: 700; }
+
+.cons-s10-001 .foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 2.5rem; align-items: center; margin-top: clamp(1.4rem, 2.6vw, 2.2rem); }
+.cons-s10-001 .foot h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.2; letter-spacing: -0.02em; }
+.cons-s10-001 .foot p { margin: 0.4rem 0 0; max-width: 40rem; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.cons-s10-001 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; padding: 0 1.3rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 .cons-s10-001 .go:hover { background: var(--ink); color: var(--paper); }
 
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s10-001 .wall { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-@media (max-width: 860px) {
-  .cons-s10-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s10-001 h2 { max-width: none; }
-  .cons-s10-001 .offer { grid-template-columns: minmax(0, 1fr); }
-  .cons-s10-001 .offer h3, .cons-s10-001 .offer p { max-width: none; }
-}
-@media (max-width: 560px) {
-  .cons-s10-001 .counts { grid-template-columns: minmax(0, 1fr); }
-  .cons-s10-001 .wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cons-s10-001 .go { width: 100%; justify-content: center; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s10-001 * { transition: none !important; }
-  .cons-s10-001 .cell.mark:hover { transform: none; }
-}
+@media (max-width: 1000px) { .cons-s10-001 .wall { grid-template-columns: repeat(3, minmax(0, 1fr)); } .cons-s10-001 .wall li:nth-child(6n) { border-right: 1px solid var(--line-strong); } .cons-s10-001 .wall li:nth-child(3n) { border-right: 0; } .cons-s10-001 .wall li:nth-last-child(-n+6) { border-bottom: 1px solid var(--line-strong); } .cons-s10-001 .wall li:nth-last-child(-n+3) { border-bottom: 0; } }
+@media (max-width: 860px) { .cons-s10-001 .head, .cons-s10-001 .foot { grid-template-columns: minmax(0, 1fr); } .cons-s10-001 .head > p.ghost { font-size: 8rem; } }
+@media (max-width: 560px) { .cons-s10-001 .counts, .cons-s10-001 .wall { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cons-s10-001 .wall li:nth-child(3n) { border-right: 1px solid var(--line-strong); } .cons-s10-001 .wall li:nth-child(2n) { border-right: 0; } }
+@media (prefers-reduced-motion: reduce) { .cons-s10-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -258,54 +118,43 @@ body { margin: 0; background: #f7f6f3; }
   <section class="shell" aria-labelledby="cons-s10-001-title">
 
     <div class="head">
+      <p class="ghost" aria-hidden="true">&Dagger;</p>
       <div>
-        <p class="eyebrow">Who we have worked for</p>
-        <h2 id="cons-s10-001-title">A logo wall shows you the clients who did not mind.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Who we have worked for</p>
+        <h2 id="cons-s10-001-title">A logo wall shows you the clients who did not <em>mind.</em></h2>
       </div>
-      <p class="lead">The work a client will not let us name is usually the work that mattered most to them. So read this wall as our least sensitive engagements, not our best ones.</p>
+      <p class="lead"><b>The work a client will not let us name is usually the work that mattered most to them.</b> So read this wall as our least sensitive engagements, not our best ones.</p>
     </div>
 
     <ul class="counts">
-      <li>
-        <span class="fig" data-placeholder="true">186</span>
-        <h3>Clients</h3>
-        <p>Every organisation we have invoiced.</p>
-      </li>
-      <li>
-        <span class="fig" data-placeholder="true">41</span>
-        <h3>We may name</h3>
-        <p>In writing, to one buyer at a time.</p>
-      </li>
-      <li>
-        <span class="fig" data-placeholder="true">12</span>
-        <h3>May show a mark</h3>
-        <p>Eight of them sit on this wall.</p>
-      </li>
+      <li><span class="n" data-placeholder="true">186</span><h3>Clients</h3><p>Every organisation we have invoiced.</p></li>
+      <li><span class="n" data-placeholder="true">41</span><h3>We may name</h3><p>In writing, to one buyer at a time.</p></li>
+      <li><span class="n" data-placeholder="true">12</span><h3>May show a mark</h3><p>Eight of them sit on this wall.</p></li>
     </ul>
 
     <ul class="wall">
-      <li><div class="cell mark">Client logo area</div></li>
-      <li><div class="cell mark">Client logo area</div></li>
-      <li><div class="cell gap"><b>Live transaction</b><span>Withheld</span></div></li>
-      <li><div class="cell mark">Client logo area</div></li>
-      <li><div class="cell mark">Client logo area</div></li>
-      <li><div class="cell gap"><b>Regulated process</b><span>Withheld</span></div></li>
-      <li><div class="cell mark">Client logo area</div></li>
-      <li><div class="cell gap"><b>The contract forbids the mark</b><span>Withheld</span></div></li>
-      <li><div class="cell mark">Client logo area</div></li>
-      <li><div class="cell mark">Client logo area</div></li>
-      <li><div class="cell gap"><b>They said no</b><span>Withheld</span></div></li>
-      <li><div class="cell mark">Client logo area</div></li>
+      <li><div class="mark" role="img" aria-label="Client logo area"><p class="slate" aria-hidden="true">Client logo area</p></div></li>
+      <li><div class="mark" role="img" aria-label="Client logo area"><p class="slate" aria-hidden="true">Client logo area</p></div></li>
+      <li><div class="held"><p>Live transaction</p><span class="tag"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>Withheld</span></div></li>
+      <li><div class="mark" role="img" aria-label="Client logo area"><p class="slate" aria-hidden="true">Client logo area</p></div></li>
+      <li><div class="mark" role="img" aria-label="Client logo area"><p class="slate" aria-hidden="true">Client logo area</p></div></li>
+      <li><div class="held"><p>Regulated process</p><span class="tag"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>Withheld</span></div></li>
+      <li><div class="mark" role="img" aria-label="Client logo area"><p class="slate" aria-hidden="true">Client logo area</p></div></li>
+      <li><div class="held"><p>The contract forbids the mark</p><span class="tag"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>Withheld</span></div></li>
+      <li><div class="mark" role="img" aria-label="Client logo area"><p class="slate" aria-hidden="true">Client logo area</p></div></li>
+      <li><div class="mark" role="img" aria-label="Client logo area"><p class="slate" aria-hidden="true">Client logo area</p></div></li>
+      <li><div class="held"><p>They said no</p><span class="tag"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>Withheld</span></div></li>
+      <li><div class="mark" role="img" aria-label="Client logo area"><p class="slate" aria-hidden="true">Client logo area</p></div></li>
     </ul>
 
-    <p class="caption">Each mark is used with written permission for this page, and appears in no pitch deck. Permissions are confirmed every twelve months; <span data-placeholder="true">two</span> came off this page at the last review and did not go back on.</p>
+    <p class="note"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg><span>Each mark is used with written permission for this page, and appears in no pitch deck. Permissions are confirmed every twelve months; <span data-placeholder="true">two</span> came off this page at the last review and did not go back on.</span></p>
 
-    <div class="offer">
+    <div class="foot">
       <div>
         <h3>The wall cannot tell you whether we have met your problem.</h3>
         <p>Tell us the situation you are in and we will name the closest client we are allowed to.</p>
       </div>
-      <a class="go" href="#cons-s10-001-title">Ask for the closest one</a>
+      <a class="go" href="#cons-s10-001-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Ask for the closest one</a>
     </div>
 
   </section>

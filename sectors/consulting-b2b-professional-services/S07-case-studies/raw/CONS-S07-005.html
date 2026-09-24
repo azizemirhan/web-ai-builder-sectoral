@@ -12,43 +12,21 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S07 — Case Studies
   Direction      : Art-directed / Distinctive
-  Theme          : 005 Midnight — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **A — Item grid**, a reserved artefact image in every case.
-  Layout model   : Near-black field. One case given the full width as a banner with the number at
-                   display size, then three compact cases across a three-column row
-  Density        : Structured (225 visible words, structured band 170–230)
-  Media mode     : Four reserved image areas at 4:3 — the firm's own artefacts, never the client.
-  Interaction    : None (static; no JavaScript). Row hover and focus are CSS only.
-
-  V2 note, why the row layout changed :
-                   Drafted as four full-width rows. review/check-composition-collisions.js reported a
-                   100% structural match with CONS-S06-005, which is the section directly above it
-                   and is also a column of full-width rows. Two adjacent sections sharing a skeleton
-                   is the worst case of that defect, because the reader meets them back to back.
-                   Rebuilt as one banner case and three compact ones.
-
-  Why the numeral leads :
-                   In every other study of this batch the case number is a small pill. Here it is the
-                   first and largest thing in the row, at the size a title would normally be, because
-                   **the number is all the identification a confidential case is allowed to have.**
-                   It is the only name these cases get, so it is set like one. That is the
-                   distinction this direction is claiming, and it comes from the constraint rather
-                   than from an effect applied over it.
-
-  Governing idea : **Anonymity removes the client, not the problem.** The situation is stated in full
-                   because it is the reader's situation rather than the client's identity, and every
-                   row ends on a *withheld* line naming what cannot be said and why.
-
-  Not a document : No censor bar, no stamp, no classified-memo metaphor —
-                   ../../CONSULTING-THEME-CONTRACT.md rules the document idiom out. The withheld line
-                   is a violet field with a plain sentence in it.
-
-  Placeholder data : The outcome line in each case is a PLACEHOLDER DEMO VALUE marked
-                   data-placeholder="true".
-
-  Content note   : Situations are generic vocabulary, shared with CONS-S02. No client name, sector
-                   name, logo, testimonial attribution, value figure, percentage, ROI multiple,
-                   ranking, award or certification. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 6 as
+                   rows: the first case given the full width as a banner — the word-numeral ONE
+                   at display scale in the serif italic ghosted in the line tone behind its 4:3
+                   field — then three rows on hairlines, each a 4:3 field, the word-numeral, the
+                   situation, WHAT WE DID / WHAT CHANGED and WITHHELD on a deep-red edge; the
+                   head in a column with the 005 bracket; the bordered action in a ruled foot.
+                   V1's near-black ground becomes chalk. V1 is kept whole; "01" → "One".
+  Layout model   : Bracketed head; one banner row with a ghost numeral; three rows; ruled foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : Four reserved fields, 4:3 — the firm's own artefacts, never the client.
+  Interaction    : One in-page action. No form.
+  Content note   : Situations are generic vocabulary shared with CONS-S02. Outcomes carry
+                   PLACEHOLDER DEMO VALUES marked data-placeholder="true" and declared in the
+                   meta block. No client name, sector, logo, date or figure that identifies
+                   anyone. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="CONS-S07-005">
@@ -59,226 +37,72 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="theme" content="005 Midnight">
-<meta name="section-shape" content="A — item grid">
-<meta name="layout-model" content="Near-black field, one banner case and three compact cases on a three-column grid">
+<meta name="theme" content="005 Chalk &amp; Violet">
+<meta name="layout-model" content="Bracketed head column; a banner row with the ghost word-numeral behind a 4:3 field; three rows on hairlines with 4:3 fields, word-numerals, labelled fields and the withheld line red-edged; ruled foot with one action">
 <meta name="density" content="structured">
-<meta name="media-mode" content="four-reserved-artefact-images">
-<meta name="interaction" content="none">
+<meta name="media-mode" content="four-reserved-fields-4-3">
+<meta name="interaction" content="in-page-action">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="case outcomes — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S07-005 — Case Studies, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #0b0d12; }
+body { margin: 0; background: #f3f2f7; }
 
-/* Scoped study styles — namespaced to .cons-s07-005 */
 .cons-s07-005 {
-  --paper: #0b0d12;
-  --ink: #f2f3f5;
-  --ink-soft: #989ca6;
-  --line: #272b33;
-  --slot-edge: #474d58;
-  --slot-ink: #b6bbc3;
-  --accent: #7c6cf7;
-  --accent-ink: #0b0d12;
-  --focus: #7c6cf7;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f3f2f7; --ink: #121219; --muted: #5c5b69; --line: #d6d4e0; --line-strong: #121219;
+  --media: #e3e1ea; --band: #e9e7ef; --accent: #6b4fd8; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s07-005 *,
-.cons-s07-005 *::before,
-.cons-s07-005 *::after { box-sizing: inherit; }
-.cons-s07-005 :focus-visible { outline: 2px solid var(--focus); outline-offset: 6px; border-radius: 22px; }
+.cons-s07-005 *, .cons-s07-005 *::before, .cons-s07-005 *::after { box-sizing: inherit; }
+.cons-s07-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s07-005 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(48px, 5.8vw, 108px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s07-005 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s07-005 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s07-005 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  gap: clamp(24px, 4vw, 64px);
-  align-items: end;
-  margin-bottom: clamp(32px, 4.2vw, 60px);
-}
-.cons-s07-005 .eyebrow {
-  margin: 0 0 clamp(16px, 2vw, 26px);
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.cons-s07-005 h2 {
-  margin: 0;
-  font-size: clamp(2.2rem, 4.6vw, 3.7rem);
-  line-height: 1.0;
-  letter-spacing: -0.042em;
-  font-weight: 800;
-  max-width: 17ch;
-}
-.cons-s07-005 h2 em { font-style: normal; color: var(--accent); }
-.cons-s07-005 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.24vw, 1.18rem); }
+.cons-s07-005 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; padding-left: 1.6rem; }
+.cons-s07-005 .bracket { position: absolute; left: 0; top: 0; width: 1.1rem; height: 100%; color: var(--line); pointer-events: none; }
+.cons-s07-005 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s07-005 h2 { margin: 0; max-width: 12ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 4.4vw, 4.8rem); line-height: 0.95; letter-spacing: -0.03em; }
+.cons-s07-005 h2 em { font-style: italic; color: var(--accent); }
+.cons-s07-005 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
-/* --- Case rows: the numeral is the only name they get --- */
-/* One case given the full width as a banner, three compact beneath it. Deliberately not a column
-   of full-width rows: CONS-S06-005 directly above is exactly that, and the two sections stack. */
-.cons-s07-005 .cases {
-  margin: 0; padding: 0; list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 1.8vw, 26px);
-}
-.cons-s07-005 .cases > li:first-child { grid-column: 1 / -1; }
-/* the compact three stack their parts instead of running across */
-.cons-s07-005 .cases > li:not(:first-child) .case {
-  grid-template-columns: minmax(0, 1fr);
-  align-items: start;
-  gap: clamp(12px, 1.6vw, 18px);
-  background: #11141a;
-}
-.cons-s07-005 .cases > li:not(:first-child) .num { font-size: clamp(2.2rem, 3vw, 2.9rem); }
-.cons-s07-005 .case {
-  display: grid;
-  grid-template-columns: auto minmax(0, 0.9fr) minmax(0, 1.35fr);
-  gap: clamp(20px, 2.8vw, 44px);
-  align-items: center;
-  padding: clamp(18px, 2.2vw, 30px);
-  border-radius: 24px;
-  color: inherit;
-  text-decoration: none;
-  transition: background 170ms ease;
-}
-.cons-s07-005 .case:hover { background: #13161d; }
+.cons-s07-005 .rows { list-style: none; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.cons-s07-005 .row { position: relative; display: grid; grid-template-columns: 5.5rem minmax(10rem, 0.26fr) minmax(0, 0.74fr); gap: 1rem clamp(1.2rem, 2.6vw, 2.6rem); align-items: start; padding: 1.2rem 0 1.3rem; border-bottom: 1px solid var(--line); }
+.cons-s07-005 .row:last-child { border-bottom: 1px solid var(--line-strong); }
+.cons-s07-005 .row.banner { grid-template-columns: 5.5rem minmax(0, 0.45fr) minmax(0, 0.55fr); padding: clamp(1.6rem, 3vw, 2.6rem) 0; }
+.cons-s07-005 .row.banner .ghost { position: absolute; right: 0; top: 0.2rem; z-index: 0; margin: 0; color: var(--line); font-family: var(--serif); font-style: italic; font-size: clamp(7rem, 16vw, 15rem); line-height: 0.8; letter-spacing: -0.03em; pointer-events: none; user-select: none; }
+.cons-s07-005 .row > * { position: relative; z-index: 1; }
+.cons-s07-005 .row.banner .media { aspect-ratio: 4 / 3; }
+.cons-s07-005 p.ix { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.6rem; line-height: 1; letter-spacing: -0.02em; color: var(--accent); }
+.cons-s07-005 .media { position: relative; aspect-ratio: 3 / 2; background: var(--media); border-radius: 2px; }
+.cons-s07-005 .slate { position: absolute; left: 0.8rem; right: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s07-005 .slate b { display: block; color: var(--ink); }
+.cons-s07-005 h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 1.4rem; line-height: 1.15; letter-spacing: -0.02em; }
+.cons-s07-005 .row.banner h3 { font-size: clamp(1.7rem, 2.6vw, 2.4rem); }
+.cons-s07-005 dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 0.7rem 0 0; }
+.cons-s07-005 dl div { padding-left: 0.7rem; border-left: 3px solid var(--line-strong); }
+.cons-s07-005 dl div.out { border-left-color: var(--accent); }
+.cons-s07-005 dt { margin: 0; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s07-005 dd { margin: 0.2rem 0 0; font-size: 0.86rem; line-height: 1.45; }
+.cons-s07-005 .held { margin: 0.7rem 0 0; padding: 0.5rem 0 0.1rem 0.7rem; border-left: 3px solid var(--no); }
+.cons-s07-005 .held dl { display: block; margin: 0; }
+.cons-s07-005 .held dt { color: var(--no); }
 
-.cons-s07-005 .num {
-  font-size: clamp(3.2rem, 6vw, 5.6rem);
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  line-height: 0.86;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-.cons-s07-005 .shot {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 18px;
-  background: linear-gradient(158deg, #1e222b 0%, #14171e 62%, #101319 100%);
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: center;
-  padding: 16px;
-}
-.cons-s07-005 .case:hover .shot { border-color: var(--accent); }
-.cons-s07-005 .shot span {
-  color: var(--slot-ink);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.7;
-}
-.cons-s07-005 .case h3 {
-  margin: 0;
-  font-size: clamp(1.28rem, 1.95vw, 1.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.032em;
-  font-weight: 800;
-}
-.cons-s07-005 .fact { margin: 11px 0 0; color: var(--ink-soft); font-size: 0.97rem; }
-.cons-s07-005 .fact b {
-  display: block;
-  margin-bottom: 2px;
-  font-size: 0.69rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.cons-s07-005 .withheld {
-  display: inline-block;
-  margin: 14px 0 0;
-  padding: 10px 17px;
-  border-radius: 999px;
-  background: rgba(124, 108, 247, 0.15);
-  color: var(--accent);
-  font-size: 0.93rem;
-  font-weight: 750;
-}
-.cons-s07-005 .withheld b {
-  font-size: 0.69rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  opacity: 0.85;
-  margin-right: 9px;
-}
-.cons-s07-005 .case:hover .withheld { background: var(--accent); color: var(--accent-ink); }
+.cons-s07-005 .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin-top: clamp(1.4rem, 2.6vw, 2.2rem); }
+.cons-s07-005 .foot p { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.3; }
+.cons-s07-005 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; padding: 0 1.3rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s07-005 .go:hover { background: var(--ink); color: var(--paper); }
 
-/* --- Foot --- */
-.cons-s07-005 .foot {
-  margin: clamp(34px, 4.2vw, 60px) 0 0;
-  padding-top: clamp(26px, 3vw, 38px);
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: clamp(18px, 3vw, 40px);
-}
-.cons-s07-005 .foot p {
-  margin: 0;
-  font-weight: 800;
-  font-size: clamp(1.14rem, 1.55vw, 1.42rem);
-  letter-spacing: -0.026em;
-  max-width: 36ch;
-}
-.cons-s07-005 .go {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 56px;
-  padding: 0 32px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 1.04rem;
-  font-weight: 800;
-  text-decoration: none;
-}
-.cons-s07-005 .go:hover { background: var(--ink); }
-
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s07-005 .case { grid-template-columns: auto minmax(0, 1fr); }
-  .cons-s07-005 .case .shot { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
-}
-@media (max-width: 860px) {
-  .cons-s07-005 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s07-005 h2 { max-width: none; }
-}
-@media (max-width: 560px) {
-  .cons-s07-005 .case { grid-template-columns: minmax(0, 1fr); gap: 16px; }
-  .cons-s07-005 .case .shot { aspect-ratio: 4 / 3; }
-  .cons-s07-005 .go { width: 100%; justify-content: center; }
-  .cons-s07-005 .foot p { max-width: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s07-005 * { transition: none !important; }
-}
+@media (max-width: 860px) { .cons-s07-005 .head { grid-template-columns: minmax(0, 1fr); } .cons-s07-005 .row, .cons-s07-005 .row.banner { grid-template-columns: 5rem minmax(0, 1fr); } .cons-s07-005 .row > div:last-child { grid-column: 2; } }
+@media (max-width: 560px) { .cons-s07-005 dl { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .cons-s07-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -287,64 +111,41 @@ body { margin: 0; background: #0b0d12; }
   <section class="shell" aria-labelledby="cons-s07-005-title">
 
     <div class="head">
+      <svg class="bracket" viewBox="0 0 20 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M18 1H4v98h14" fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
       <div>
-        <p class="eyebrow">Selected work</p>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Selected work</p>
         <h2 id="cons-s07-005-title">A number is the only <em>name</em> these get.</h2>
       </div>
-      <p class="lead">Anonymity removes the client, not the problem. Each row ends on what we cannot say.</p>
+      <p>Anonymity removes the client, not the problem. Each row ends on what we cannot say.</p>
     </div>
 
-    <ul class="cases">
-
-      <li><a class="case" href="#cons-s07-005-title">
-        <span class="num">01</span>
-        <div class="shot"><span>Image area &mdash; our own artefact,<br>never the client&rsquo;s premises</span></div>
-        <div>
-          <h3>The strategy was agreed and nothing had changed.</h3>
-          <p class="fact"><b>What we did</b>Redrew decision rights across the top three layers.</p>
-          <p class="fact" data-placeholder="true"><b>What changed</b>The next capital decision took one board meeting, not four.</p>
-          <span class="withheld"><b>Withheld</b>The sector. Naming it identifies them.</span>
-        </div>
-      </a></li>
-
-      <li><a class="case" href="#cons-s07-005-title">
-        <span class="num">02</span>
-        <div class="shot"><span>Image area &mdash; the cost model</span></div>
-        <div>
-          <h3>It cost more to run than it should.</h3>
-          <p class="fact"><b>What we did</b>Rebuilt the model from the contracts up, not the budgets down.</p>
-          <p class="fact" data-placeholder="true"><b>What changed</b>Two assumptions everyone relied on were wrong.</p>
-          <span class="withheld"><b>Withheld</b>The site count. It is public.</span>
-        </div>
-      </a></li>
-
-      <li><a class="case" href="#cons-s07-005-title">
-        <span class="num">03</span>
-        <div class="shot"><span>Image area &mdash; the re-baselined plan</span></div>
-        <div>
-          <h3>The programme was late and reporting said it was fine.</h3>
-          <p class="fact"><b>What we did</b>Re-baselined against what had actually been delivered.</p>
-          <p class="fact" data-placeholder="true"><b>What changed</b>The board learned the real date eleven months earlier.</p>
-          <span class="withheld"><b>Withheld</b>Every date. It is still running.</span>
-        </div>
-      </a></li>
-
-      <li><a class="case" href="#cons-s07-005-title">
-        <span class="num">04</span>
-        <div class="shot"><span>Image area &mdash; the wall of interview notes</span></div>
-        <div>
-          <h3>A decision was coming and the evidence was thin.</h3>
-          <p class="fact"><b>What we did</b>Interviews across the market, with assumptions exposed.</p>
-          <p class="fact" data-placeholder="true"><b>What changed</b>They chose the option nobody had arrived wanting.</p>
-          <span class="withheld"><b>Withheld</b>The decision. Not yet announced.</span>
-        </div>
-      </a></li>
-
-    </ul>
+    <ol class="rows">
+      <li class="row banner">
+        <p class="ghost" aria-hidden="true">One</p>
+        <p class="ix" aria-hidden="true">One</p>
+        <div class="media" role="img" aria-label="Image area — our own artefact, never the client's premises"><p class="slate" aria-hidden="true"><b>Artefact &middot; 4:3</b>our own artefact, never the client&rsquo;s premises</p></div>
+        <div><h3>The strategy was agreed and nothing had changed.</h3><dl><div><dt>What we did</dt><dd>Redrew decision rights across the top three layers.</dd></div><div class="out"><dt>What changed</dt><dd data-placeholder="true">The next capital decision took one board meeting, not four.</dd></div></dl><div class="held"><dl><dt>Withheld</dt><dd>The sector. Naming it identifies them.</dd></dl></div></div>
+      </li>
+      <li class="row">
+        <p class="ix" aria-hidden="true">Two</p>
+        <div class="media" role="img" aria-label="Image area — the cost model"><p class="slate" aria-hidden="true"><b>Artefact &middot; 3:2</b>the cost model</p></div>
+        <div><h3>It cost more to run than it should.</h3><dl><div><dt>What we did</dt><dd>Rebuilt the model from the contracts up, not the budgets down.</dd></div><div class="out"><dt>What changed</dt><dd data-placeholder="true">Two assumptions everyone relied on were wrong.</dd></div></dl><div class="held"><dl><dt>Withheld</dt><dd>The site count. It is public.</dd></dl></div></div>
+      </li>
+      <li class="row">
+        <p class="ix" aria-hidden="true">Three</p>
+        <div class="media" role="img" aria-label="Image area — the re-baselined plan"><p class="slate" aria-hidden="true"><b>Artefact &middot; 3:2</b>the re-baselined plan</p></div>
+        <div><h3>The programme was late and reporting said it was fine.</h3><dl><div><dt>What we did</dt><dd>Re-baselined against what had actually been delivered.</dd></div><div class="out"><dt>What changed</dt><dd data-placeholder="true">The board learned the real date eleven months earlier.</dd></div></dl><div class="held"><dl><dt>Withheld</dt><dd>Every date. It is still running.</dd></dl></div></div>
+      </li>
+      <li class="row">
+        <p class="ix" aria-hidden="true">Four</p>
+        <div class="media" role="img" aria-label="Image area — the wall of interview notes"><p class="slate" aria-hidden="true"><b>Artefact &middot; 3:2</b>the wall of interview notes</p></div>
+        <div><h3>A decision was coming and the evidence was thin.</h3><dl><div><dt>What we did</dt><dd>Interviews across the market, with assumptions exposed.</dd></div><div class="out"><dt>What changed</dt><dd data-placeholder="true">They chose the option nobody had arrived wanting.</dd></div></dl><div class="held"><dl><dt>Withheld</dt><dd>The decision. Not yet announced.</dd></dl></div></div>
+      </li>
+    </ol>
 
     <div class="foot">
       <p>Ask for a reference and you will get one. Ask for a logo and you will not.</p>
-      <a class="go" href="#cons-s07-005-title">Start a conversation</a>
+      <a class="go" href="#cons-s07-005-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Start a conversation</a>
     </div>
 
   </section>

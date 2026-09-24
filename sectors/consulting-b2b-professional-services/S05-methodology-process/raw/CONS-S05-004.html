@@ -12,37 +12,23 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S05 — Methodology & Process
   Direction      : Conversion-led
-  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **B — Anchored.** One image anchors five text-led stage cards.
-  Layout model   : A wide anchor image, five stage cards on a three-then-two grid where the exit is
-                   the largest thing in each card, and a saturated panel closing the section
-  Density        : Structured (226 visible words, structured band 170–230)
-  Media mode     : ONE reserved image area at 21:9. The cards themselves carry no photography, which
-                   is what keeps this section shape B under the *Page Rhythm* rule.
-  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
-
-  What "conversion-led" means in this role :
-                   The generic process section converts badly because it reads as a commitment
-                   ladder: five boxes, and buying box one appears to commit you to box five. So the
-                   conversion device is **the exit**, and it is given the largest type in every card
-                   rather than a footnote. A buyer who can see where they are allowed to stop is a
-                   buyer who can start.
-                   The closing panel says the quiet part: most engagements end at 03, and that is a
-                   result rather than a failure. A firm willing to print that is a firm you can
-                   begin with.
-
-  Full capacity  : Every stage still carries what happens, what you get, the exit and the duration.
-                   Making the exit dominant reorders the card; it does not remove a field.
-
-  Governing idea : Every consultancy has a five-box process and they are interchangeable. What makes
-                   one credible is where the client is allowed to get off.
-
-  Placeholder data : Stage durations are PLACEHOLDER DEMO VALUES marked data-placeholder="true".
-
-  Content note   : Stage names are generic vocabulary. The exits are policy commitments a firm can
-                   honour, not claims about past performance. No named client, logo, ranking, award,
-                   certification or invented metric. No response-time promise. No header or
-                   navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 4 with
+                   3: the head with the 004 underline stroke; one 21:9 anchor field; five stage
+                   cells in a bordered three-then-two grid sharing hairlines, where the exit is
+                   the biggest thing in every cell — set in the serif at reading-display size on
+                   a red (--no) edge — with the word-numeral, the placeholder duration, the title,
+                   the line and YOU GET beneath; the first cell on the band tone with the pencil
+                   rule as the one to start at; a ruled foot with V1's closing line and the one
+                   bordered action. V1 is kept whole; "stop at 03" → "stop at stage three" and
+                   "Start at 01" → "Start at stage one", recorded in the batch.
+  Layout model   : Head; 21:9 anchor field; bordered 3+2 grid of stage cells; ruled foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : One reserved field, 21:9. The cells carry no photography — the exit does the
+                   work.
+  Interaction    : One in-page action. No form.
+  Content note   : Stage names are generic vocabulary. The durations carry PLACEHOLDER DEMO
+                   VALUES marked data-placeholder="true" and declared in the meta block. The
+                   exits are policy commitments. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="CONS-S05-004">
@@ -53,248 +39,72 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="theme" content="004 Signal">
-<meta name="section-shape" content="B — anchored">
-<meta name="layout-model" content="Wide anchor image, five stage cards with the exit dominant, closing panel">
+<meta name="theme" content="004 White &amp; Signal">
+<meta name="layout-model" content="Head with the underline stroke; 21:9 anchor field; bordered three-then-two grid of stage cells with the exit largest on a red edge, word-numerals and placeholder durations, the first cell on the band tone; ruled foot with the closing line and one action">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-wide-reserved-image-area">
-<meta name="interaction" content="none">
+<meta name="media-mode" content="one-reserved-field-21-9">
+<meta name="interaction" content="in-page-action">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="stage durations — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S05-004 — Methodology &amp; Process, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #ffffff; }
+body { margin: 0; background: #fcfcfb; }
 
-/* Scoped study styles — namespaced to .cons-s05-004 */
 .cons-s05-004 {
-  --paper: #ffffff;
-  --ink: #0a0b0d;
-  --ink-soft: #54585e;
-  --line: #e5e5e5;
-  --card: #f6f6f6;
-  --slot: #ececec;
-  --slot-edge: #c9c9c9;
-  --slot-ink: #5e6167;
-  --accent: #e0402f;
-  --accent-ink: #ffffff;
-  --focus: #0a0b0d;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fcfcfb; --ink: #0b0c0e; --muted: #55595f; --line: #e4e4e2; --line-strong: #0b0c0e;
+  --media: #eeeeec; --band: #f3f3f0; --accent: #d63a2a; --no: #7a1a10;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s05-004 *,
-.cons-s05-004 *::before,
-.cons-s05-004 *::after { box-sizing: inherit; }
-.cons-s05-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+.cons-s05-004 *, .cons-s05-004 *::before, .cons-s05-004 *::after { box-sizing: inherit; }
+.cons-s05-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s05-004 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s05-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s05-004 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s05-004 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(24px, 3.2vw, 40px);
-}
-.cons-s05-004 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 20px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s05-004 h2 {
-  margin: 0;
-  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
-  line-height: 1.02;
-  letter-spacing: -0.036em;
-  font-weight: 800;
-  max-width: 18ch;
-}
-.cons-s05-004 .lead { margin: 0; color: var(--ink-soft); }
+.cons-s05-004 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.cons-s05-004 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s05-004 h2 { margin: 0; max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s05-004 .u { position: relative; display: inline-block; }
+.cons-s05-004 .u svg { position: absolute; left: 0; bottom: -0.16em; width: 100%; height: 0.22em; overflow: visible; pointer-events: none; color: var(--accent); }
+.cons-s05-004 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.cons-s05-004 .head > p b { color: var(--ink); }
 
-/* --- Anchor image --- */
-.cons-s05-004 .anchor {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 20px;
-  background: var(--slot);
-  aspect-ratio: 21 / 9;
-  display: grid;
-  place-items: center;
-  margin-bottom: clamp(22px, 2.8vw, 36px);
-}
-.cons-s05-004 .anchor span {
-  color: var(--slot-ink);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
+.cons-s05-004 .media { position: relative; aspect-ratio: 21 / 9; margin-top: clamp(1.8rem, 3.6vw, 3rem); background: var(--media); border-radius: 2px; }
+.cons-s05-004 .slate { position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
 
-/* --- Stage cards, exit dominant --- */
-.cons-s05-004 .stages {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: clamp(14px, 1.7vw, 24px);
-}
-.cons-s05-004 .stages > li { grid-column: span 2; }
-.cons-s05-004 .stages > li:nth-child(4),
-.cons-s05-004 .stages > li:nth-child(5) { grid-column: span 3; }
+.cons-s05-004 .grid { list-style: none; margin: clamp(1.4rem, 2.6vw, 2.2rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border: 1px solid var(--line-strong); }
+.cons-s05-004 .cell { grid-column: span 2; display: grid; gap: 0.5rem; align-content: start; padding: 1.2rem 1.3rem 1.3rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.cons-s05-004 .cell.end { border-right: 0; }
+.cons-s05-004 .cell.last { border-bottom: 0; grid-column: span 3; }
+.cons-s05-004 .cell.first { background: var(--band); border-top: 3px solid var(--accent); margin-top: -1px; }
+.cons-s05-004 .top { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; }
+.cons-s05-004 .top p.ix { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.8rem; line-height: 1; color: var(--accent); }
+.cons-s05-004 .top p.dur { margin: 0; font-family: var(--serif); font-size: 1rem; color: var(--muted); white-space: nowrap; }
+.cons-s05-004 .cell h3 { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.2; }
+.cons-s05-004 .cell p.say { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+.cons-s05-004 .cell dl { margin: 0.4rem 0 0; display: grid; gap: 0.7rem; }
+.cons-s05-004 .cell dt { margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s05-004 .cell dd { margin: 0.2rem 0 0; font-size: 0.86rem; line-height: 1.45; }
+.cons-s05-004 .cell .exit { order: -1; padding: 0.6rem 0 0.2rem 0.8rem; border-left: 3px solid var(--no); }
+.cons-s05-004 .cell .exit dt { color: var(--no); }
+.cons-s05-004 .cell .exit dd { font-family: var(--serif); font-size: clamp(1.15rem, 1.6vw, 1.4rem); line-height: 1.25; letter-spacing: -0.01em; color: var(--ink); }
 
-.cons-s05-004 .stage {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-  background: var(--card);
-  border-radius: 18px;
-  color: inherit;
-  text-decoration: none;
-  transition: transform 160ms ease;
-}
-.cons-s05-004 a.stage:hover { transform: translateY(-4px); }
-.cons-s05-004 .inner { padding: clamp(20px, 2.2vw, 28px); flex: 1 1 auto; }
-.cons-s05-004 .top { display: flex; align-items: center; gap: 11px; margin-bottom: clamp(11px, 1.3vw, 15px); }
-.cons-s05-004 .n {
-  display: grid;
-  place-items: center;
-  width: 34px; height: 34px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.79rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-}
-.cons-s05-004 .weeks {
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--ink-soft);
-  font-size: 0.73rem;
-  font-weight: 750;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.cons-s05-004 .stage h3 {
-  margin: 0;
-  font-size: clamp(1.16rem, 1.44vw, 1.34rem);
-  line-height: 1.14;
-  letter-spacing: -0.026em;
-  font-weight: 800;
-}
-.cons-s05-004 .what { margin: 7px 0 0; color: var(--ink-soft); font-size: 0.96rem; }
-.cons-s05-004 .get { margin: 11px 0 0; font-size: 0.95rem; font-weight: 650; }
-.cons-s05-004 .get b {
-  display: block;
-  margin-bottom: 2px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-/* The exit is the largest thing in the card */
-.cons-s05-004 .exit {
-  margin: 0;
-  padding: clamp(18px, 2vw, 24px) clamp(20px, 2.2vw, 28px);
-  background: rgba(224, 64, 47, 0.10);
-  color: var(--accent);
-  font-size: clamp(1.06rem, 1.32vw, 1.24rem);
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: -0.022em;
-}
-.cons-s05-004 .exit b {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  opacity: 0.75;
-}
-.cons-s05-004 a.stage:hover .exit { background: var(--accent); color: var(--accent-ink); }
+.cons-s05-004 .foot { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 2rem; align-items: center; margin-top: clamp(1.6rem, 3vw, 2.6rem); padding-top: 1.1rem; border-top: 1px solid var(--line-strong); }
+.cons-s05-004 .foot p { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.3; }
+.cons-s05-004 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; padding: 0 1.3rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s05-004 .go:hover { background: var(--ink); color: var(--paper); }
 
-/* --- Closing panel --- */
-.cons-s05-004 .close {
-  margin: clamp(20px, 2.6vw, 34px) 0 0;
-  padding: clamp(24px, 2.8vw, 38px) clamp(24px, 3vw, 40px);
-  border-radius: 18px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(18px, 3vw, 44px);
-  align-items: center;
-}
-.cons-s05-004 .close p {
-  margin: 0;
-  font-size: clamp(1.2rem, 1.85vw, 1.68rem);
-  line-height: 1.16;
-  letter-spacing: -0.028em;
-  font-weight: 800;
-  max-width: 34ch;
-}
-.cons-s05-004 .go {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 54px;
-  padding: 0 30px;
-  border-radius: 999px;
-  background: var(--accent-ink);
-  color: var(--accent);
-  font-size: 1.02rem;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.cons-s05-004 .go:hover { background: var(--ink); color: var(--accent-ink); }
-
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s05-004 .stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cons-s05-004 .stages > li:nth-child(n) { grid-column: span 1; }
-}
-@media (max-width: 860px) {
-  .cons-s05-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s05-004 h2 { max-width: none; }
-  .cons-s05-004 .anchor { aspect-ratio: 16 / 9; }
-  .cons-s05-004 .close { grid-template-columns: minmax(0, 1fr); }
-  .cons-s05-004 .close p { max-width: none; }
-}
-@media (max-width: 560px) {
-  .cons-s05-004 .stages { grid-template-columns: minmax(0, 1fr); }
-  .cons-s05-004 .go { width: 100%; justify-content: center; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s05-004 * { transition: none !important; }
-  .cons-s05-004 a.stage:hover { transform: none; }
-}
+@media (max-width: 1000px) { .cons-s05-004 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cons-s05-004 .cell, .cons-s05-004 .cell.last { grid-column: span 1; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); } .cons-s05-004 .cell.even { border-right: 0; } .cons-s05-004 .cell.five { grid-column: 1 / -1; border-right: 0; border-bottom: 0; } }
+@media (max-width: 860px) { .cons-s05-004 .head, .cons-s05-004 .foot { grid-template-columns: minmax(0, 1fr); } .cons-s05-004 .media { aspect-ratio: 16 / 9; } }
+@media (max-width: 560px) { .cons-s05-004 .grid { grid-template-columns: minmax(0, 1fr); } .cons-s05-004 .cell { border-right: 0 !important; } }
+@media (prefers-reduced-motion: reduce) { .cons-s05-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -304,71 +114,50 @@ body { margin: 0; background: #ffffff; }
 
     <div class="head">
       <div>
-        <p class="eyebrow">How we work</p>
-        <h2 id="cons-s05-004-title">Buying stage one does not commit you to stage five.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>How we work</p>
+        <h2 id="cons-s05-004-title">Buying stage one <span class="u">does not commit you<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> to stage five.</h2>
       </div>
-      <p class="lead">So the exit is the biggest thing on every card. Read those first.</p>
+      <p><b>So the exit is the biggest thing on every card.</b> Read those first.</p>
     </div>
 
-    <div class="anchor"><span>Image area</span></div>
+    <div class="media" role="img" aria-label="Image area — the work in the room, wide"><p class="slate" aria-hidden="true">At work &middot; 21:9</p></div>
 
-    <ul class="stages">
+    <ol class="grid">
+      <li class="cell first">
+        <div class="top"><p class="ix" aria-hidden="true">One</p><p class="dur" data-placeholder="true">2 weeks</p></div>
+        <h3>Frame</h3>
+        <p class="say">What is actually being decided, and by whom.</p>
+        <dl><div><dt>You get</dt><dd>A one-page decision statement.</dd></div><div class="exit"><dt>Stop here and</dt><dd>You keep the decision written down. Often that was the problem.</dd></div></dl>
+      </li>
+      <li class="cell even">
+        <div class="top"><p class="ix" aria-hidden="true">Two</p><p class="dur" data-placeholder="true">4 weeks</p></div>
+        <h3>Evidence</h3>
+        <p class="say">The work that makes an answer arguable rather than asserted.</p>
+        <dl><div><dt>You get</dt><dd>The model and the interviews, assumptions visible.</dd></div><div class="exit"><dt>Stop here and</dt><dd>You keep the evidence base, and can re-run it without us.</dd></div></dl>
+      </li>
+      <li class="cell end">
+        <div class="top"><p class="ix" aria-hidden="true">Three</p><p class="dur" data-placeholder="true">3 weeks</p></div>
+        <h3>Options</h3>
+        <p class="say">Two or three real choices, costed against each other.</p>
+        <dl><div><dt>You get</dt><dd>Options, with what each one forecloses.</dd></div><div class="exit"><dt>Stop here and</dt><dd>You keep the options, and the right to pick none.</dd></div></dl>
+      </li>
+      <li class="cell last even">
+        <div class="top"><p class="ix" aria-hidden="true">Four</p><p class="dur" data-placeholder="true">2 weeks</p></div>
+        <h3>Decision</h3>
+        <p class="say">The room where somebody chooses, and the paper that survives it.</p>
+        <dl><div><dt>You get</dt><dd>The recommendation, with the dissent recorded.</dd></div><div class="exit"><dt>Stop here and</dt><dd>You keep a paper your board can defend without us there.</dd></div></dl>
+      </li>
+      <li class="cell last end five">
+        <div class="top"><p class="ix" aria-hidden="true">Five</p><p class="dur" data-placeholder="true">12 weeks</p></div>
+        <h3>Delivery</h3>
+        <p class="say">Standing it up, or handing it to whoever will.</p>
+        <dl><div><dt>You get</dt><dd>Named owners and the first ninety days.</dd></div><div class="exit"><dt>This is the end</dt><dd>There is no sixth stage to buy afterwards.</dd></div></dl>
+      </li>
+    </ol>
 
-      <li><a class="stage" href="#cons-s05-004-title">
-        <div class="inner">
-          <div class="top"><span class="n">01</span><span class="weeks" data-placeholder="true">2 weeks</span></div>
-          <h3>Frame</h3>
-          <p class="what">What is actually being decided, and by whom.</p>
-          <p class="get"><b>You get</b>A one-page decision statement.</p>
-        </div>
-        <p class="exit"><b>Stop here and</b>You keep the decision written down. Often that was the problem.</p>
-      </a></li>
-
-      <li><a class="stage" href="#cons-s05-004-title">
-        <div class="inner">
-          <div class="top"><span class="n">02</span><span class="weeks" data-placeholder="true">4 weeks</span></div>
-          <h3>Evidence</h3>
-          <p class="what">The work that makes an answer arguable rather than asserted.</p>
-          <p class="get"><b>You get</b>The model and the interviews, assumptions visible.</p>
-        </div>
-        <p class="exit"><b>Stop here and</b>You keep the evidence base, and can re-run it without us.</p>
-      </a></li>
-
-      <li><a class="stage" href="#cons-s05-004-title">
-        <div class="inner">
-          <div class="top"><span class="n">03</span><span class="weeks" data-placeholder="true">3 weeks</span></div>
-          <h3>Options</h3>
-          <p class="what">Two or three real choices, costed against each other.</p>
-          <p class="get"><b>You get</b>Options, with what each one forecloses.</p>
-        </div>
-        <p class="exit"><b>Stop here and</b>You keep the options, and the right to pick none.</p>
-      </a></li>
-
-      <li><a class="stage" href="#cons-s05-004-title">
-        <div class="inner">
-          <div class="top"><span class="n">04</span><span class="weeks" data-placeholder="true">2 weeks</span></div>
-          <h3>Decision</h3>
-          <p class="what">The room where somebody chooses, and the paper that survives it.</p>
-          <p class="get"><b>You get</b>The recommendation, with the dissent recorded.</p>
-        </div>
-        <p class="exit"><b>Stop here and</b>You keep a paper your board can defend without us there.</p>
-      </a></li>
-
-      <li><a class="stage" href="#cons-s05-004-title">
-        <div class="inner">
-          <div class="top"><span class="n">05</span><span class="weeks" data-placeholder="true">12 weeks</span></div>
-          <h3>Delivery</h3>
-          <p class="what">Standing it up, or handing it to whoever will.</p>
-          <p class="get"><b>You get</b>Named owners and the first ninety days.</p>
-        </div>
-        <p class="exit"><b>This is the end</b>There is no sixth stage to buy afterwards.</p>
-      </a></li>
-
-    </ul>
-
-    <div class="close">
-      <p>Most engagements stop at 03. That is a result, not a failure, and we would rather you knew before you started.</p>
-      <a class="go" href="#cons-s05-004-title">Start at 01</a>
+    <div class="foot">
+      <p>Most engagements stop at stage three. That is a result, not a failure, and we would rather you knew before you started.</p>
+      <a class="go" href="#cons-s05-004-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Start at stage one</a>
     </div>
 
   </section>

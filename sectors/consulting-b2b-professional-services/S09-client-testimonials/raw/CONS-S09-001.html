@@ -12,56 +12,25 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S09 — Client Testimonials
   Direction      : Universal / Safe
-  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **B — Anchored.** One artefact image beneath the quotes.
-  Layout model   : One quote at feature size spanning the row, four compact quotes beneath it, a
-                   reserved artefact band, then the panel carrying the action
-  Density        : Structured (222 visible words, structured band 170–230)
-  Media mode     : ONE reserved artefact area.
-  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
-
-  Governing idea : **A quote you cannot check is an advertisement.**
-                   Testimonials are the least trusted element on any professional-services site,
-                   and the reason is structural rather than aesthetic: the reader has no way to
-                   verify a sentence in quotation marks, and knows the firm chose which ones to
-                   print. Adding a name would not fix that — the sector brief forbids naming
-                   clients anyway. So this section does not try to make the quote more convincing.
-                   **It attaches to every quote the thing the reader can actually act on: what they
-                   are permitted to do to check it.**
-
-  The check states, which are the section's real content :
-                   Every quote carries one of three, and they are statements about the firm's own
-                   disclosure policy rather than claims about anybody else:
-                     - Will take a reference call — that client agreed to speak to a prospective one
-                     - Named privately          — the name is given in the room, not on a website
-                     - Words only               — permission covers the sentence and nothing else
-                   Two of the five sit at the weakest state. **A ladder where every rung is the top
-                   rung is not a ladder**, and printing the weak ones is what makes the strong ones
-                   worth reading.
-
-  Why the quotes open on a reservation :
-                   Every quote here begins with something unflattering — four weeks that felt slow,
-                   advice nobody wanted, a client who did not renew. A testimonial that opens on
-                   praise is indistinguishable from copy the firm wrote about itself. One that opens
-                   on a complaint and continues anyway is the only kind a buyer reads to the end.
-
-  Not the same device as S07 or S08 :
-                   `S07` says *we cannot tell you* — a confidentiality limit. `S08` says *it cannot
-                   be known* — an epistemic one. Both are refusals. **This section is the opposite
-                   move**: it is where the firm stops asserting and hands over the means of checking.
-                   It is the payoff of the line `S08` closes on, *ask the references we will give
-                   you*.
-
-  Placeholder data : The five quote sentences and the count in the closing panel are PLACEHOLDER
-                   DEMO VALUES marked data-placeholder="true". **No name, role, job title, company
-                   or sector is attached to any quote**, here or in any study in this batch —
-                   ../../CONSULTING-THEME-CONTRACT.md forbids inventing a third party, and a
-                   placeholder attribution would be exactly that. The situation and stage beside
-                   each quote are the firm's own vocabulary from `S02` and `S05`.
-
-  Content note   : No client name, logo, person, role, testimonial attribution, percentage, currency
-                   figure, ROI multiple, ranking, award, certification or satisfaction score. No
-                   header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 7 —
+                   the quotation panel: one quote at feature size in the serif italic on the band
+                   tone with the pencil rule and the register's giant quote mark, four compact
+                   quotes in a bordered row of cells sharing hairlines; every quote unattributed
+                   and a placeholder demo sentence, carrying the situation it came out of, the
+                   stage it was said at and the check state as a marked chip (telephone / person /
+                   speech line); the 4:3 artefact field beside the reference band with the
+                   placeholder count and the one bordered action; the 001 ghost glyph — a serif
+                   opening quote in the line tone behind the head. V1 is kept whole; stage
+                   numerals are written as words.
+  Layout model   : Head; feature quote panel; bordered row of four quotes; field + reference band
+  Density        : Structured — V1's spine kept in full
+  Media mode     : One reserved artefact area, 4:3 — the room a reference call is taken in.
+  Interaction    : One in-page action. No form.
+  Content note   : The five quote sentences and the reference-call count carry PLACEHOLDER DEMO
+                   VALUES marked data-placeholder="true" and declared in the meta block. No
+                   client name, logo, person, role, headshot or attribution of any kind — the
+                   attached material is the firm's own: situation, stage, permission. Inline
+                   SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="CONS-S09-001">
@@ -72,228 +41,73 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="theme" content="001 Paper">
-<meta name="section-shape" content="B — anchored">
-<meta name="layout-model" content="One feature quote spanning the row, four compact quotes, reserved artefact band, action panel">
+<meta name="theme" content="001 Paper &amp; Indigo">
+<meta name="layout-model" content="Head with a ghost quote mark; feature quote panel on the band tone with the pencil rule and a giant quote mark; bordered row of four compact quotes with situation, stage and check-state chips; 4:3 artefact field beside the reference band and one action">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-artefact-band">
-<meta name="interaction" content="none">
+<meta name="media-mode" content="one-reserved-artefact-area-4-3">
+<meta name="interaction" content="in-page-action">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="the five quote sentences and the reference-call count — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S09-001 — Client Testimonials, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f7f6f3; }
+body { margin: 0; background: #f6f5f1; }
 
-/* Scoped study styles — namespaced to .cons-s09-001 */
 .cons-s09-001 {
-  --paper: #f7f6f3;
-  --ink: #14161a;
-  --ink-soft: #585d66;
-  --line: #dedcd6;
-  --card: #ffffff;
-  --slot: #ebe9e4;
-  --slot-edge: #c7c4bc;
-  --slot-ink: #5f6169;
-  --accent: #2f4fe0;
-  --accent-ink: #ffffff;
-  --focus: #14161a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f5f1; --ink: #15171b; --muted: #5b5f68; --line: #dad8d1; --line-strong: #15171b;
+  --media: #e6e4dd; --band: #edebe5; --accent: #2f4fe0; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s09-001 *,
-.cons-s09-001 *::before,
-.cons-s09-001 *::after { box-sizing: inherit; }
-.cons-s09-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+.cons-s09-001 *, .cons-s09-001 *::before, .cons-s09-001 *::after { box-sizing: inherit; }
+.cons-s09-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s09-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s09-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s09-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s09-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(24px, 4vw, 64px);
-  align-items: end;
-  margin-bottom: clamp(26px, 3.4vw, 46px);
-}
-.cons-s09-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s09-001 h2 {
-  margin: 0;
-  font-size: clamp(2.1rem, 4vw, 3.25rem);
-  line-height: 1.02;
-  letter-spacing: -0.038em;
-  font-weight: 800;
-  max-width: 19ch;
-}
-.cons-s09-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.22vw, 1.16rem); }
+.cons-s09-001 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.cons-s09-001 .head > p.ghost { position: absolute; right: 0; top: -0.15em; margin: 0; color: var(--line); font-family: var(--serif); font-size: clamp(12rem, 28vw, 26rem); line-height: 0.8; pointer-events: none; user-select: none; }
+.cons-s09-001 .head > div, .cons-s09-001 .head > p.lead { position: relative; }
+.cons-s09-001 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s09-001 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s09-001 h2 em { font-style: italic; color: var(--accent); }
+.cons-s09-001 .head > p.lead { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
-/* --- The quotes: one feature across the row, four compact beneath --- */
-.cons-s09-001 .voices {
-  margin: 0 0 clamp(16px, 1.9vw, 26px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.5vw, 20px);
-}
-.cons-s09-001 .voices > li:first-child { grid-column: 1 / -1; }
+.cons-s09-001 .feature { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.2rem 3rem; align-items: end; margin-top: clamp(2rem, 4vw, 3.4rem); padding: clamp(1.6rem, 3vw, 2.6rem) clamp(1.4rem, 3vw, 2.6rem) clamp(1.4rem, 2.6vw, 2.2rem) clamp(4rem, 8vw, 7rem); background: var(--band); border-top: 3px solid var(--accent); overflow: hidden; }
+.cons-s09-001 .feature::before { content: "\201C"; position: absolute; left: clamp(0.6rem, 2vw, 1.6rem); top: -0.05em; color: var(--accent); font-family: var(--serif); font-size: clamp(5rem, 9vw, 8rem); line-height: 1; }
+.cons-s09-001 blockquote { margin: 0; }
+.cons-s09-001 .feature blockquote p { margin: 0; max-width: 32ch; font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 2.8vw, 2.6rem); line-height: 1.2; letter-spacing: -0.015em; }
+.cons-s09-001 .meta { display: grid; gap: 0.35rem; margin: 0; }
+.cons-s09-001 .meta p { margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.4; }
+.cons-s09-001 .meta p.stage { color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s09-001 .chip { display: inline-flex; align-items: center; gap: 0.4rem; width: max-content; margin-top: 0.2rem; padding: 0.35rem 0.6rem; border: 1px solid var(--line-strong); border-radius: 2px; background: var(--paper); color: var(--ink); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+.cons-s09-001 .chip .mk { width: 0.9rem; height: 0.9rem; color: var(--accent); }
+.cons-s09-001 .chip.words { border-color: var(--no); color: var(--no); }
+.cons-s09-001 .chip.words .mk { color: var(--no); }
 
-.cons-s09-001 .voice {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: clamp(20px, 2.3vw, 30px);
-  background: var(--card);
-  border-radius: 18px;
-  transition: transform 160ms ease;
-}
-.cons-s09-001 .voice:hover { transform: translateY(-4px); }
+.cons-s09-001 .row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line-strong); border-top: 0; }
+.cons-s09-001 .row li { display: grid; gap: 0.6rem; align-content: space-between; padding: 1.2rem 1.2rem 1.3rem; border-right: 1px solid var(--line-strong); min-width: 0; }
+.cons-s09-001 .row li:last-child { border-right: 0; }
+.cons-s09-001 .row blockquote p { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.15rem; line-height: 1.35; }
 
-.cons-s09-001 blockquote {
-  margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.42;
-  letter-spacing: -0.014em;
-  font-weight: 700;
-  flex: 1 1 auto;
-}
-.cons-s09-001 .voices > li:first-child blockquote {
-  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
-  line-height: 1.16;
-  letter-spacing: -0.032em;
-  max-width: 42ch;
-}
-
-.cons-s09-001 .from {
-  margin: clamp(14px, 1.7vw, 20px) 0 0;
-  padding-top: clamp(13px, 1.5vw, 17px);
-  border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-}
-.cons-s09-001 .stage {
-  margin: 6px 0 0;
-  color: var(--accent);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-/* The check state — the part of a testimonial a reader can act on */
-.cons-s09-001 .check {
-  align-self: flex-start;
-  margin: clamp(14px, 1.6vw, 18px) 0 0;
-  padding: 8px 15px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-.cons-s09-001 .check.call { background: var(--accent); color: var(--accent-ink); }
-.cons-s09-001 .check.priv { border: 2px solid var(--accent); color: var(--accent); padding: 6px 13px; }
-.cons-s09-001 .check.words { background: rgba(20, 22, 26, 0.07); color: var(--ink-soft); }
-
-/* --- The band --- */
-.cons-s09-001 .band {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 18px;
-  background: var(--slot);
-  aspect-ratio: 24 / 7;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  margin-bottom: clamp(16px, 1.9vw, 26px);
-}
-.cons-s09-001 .band span {
-  color: var(--slot-ink);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-/* --- The action --- */
-.cons-s09-001 .offer {
-  padding: clamp(26px, 3.2vw, 42px) clamp(24px, 3.2vw, 44px);
-  border-radius: 18px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: center;
-}
-.cons-s09-001 .offer h3 {
-  margin: 0;
-  font-size: clamp(1.3rem, 2vw, 1.9rem);
-  line-height: 1.13;
-  letter-spacing: -0.032em;
-  font-weight: 800;
-  max-width: 24ch;
-}
-.cons-s09-001 .offer p { margin: 11px 0 0; font-size: 1.04rem; font-weight: 600; opacity: 0.92; max-width: 46ch; }
-.cons-s09-001 .go {
-  display: inline-flex;
-  align-items: center;
-  min-height: 56px;
-  padding: 0 32px;
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--ink);
-  font-size: 1.04rem;
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
-}
+.cons-s09-001 .refs { display: grid; grid-template-columns: minmax(14rem, 0.5fr) minmax(0, 1fr); gap: clamp(1.4rem, 3vw, 3rem); align-items: center; margin-top: clamp(1.6rem, 3vw, 2.6rem); }
+.cons-s09-001 .media { position: relative; aspect-ratio: 4 / 3; background: var(--media); border-radius: 2px; }
+.cons-s09-001 .slate { position: absolute; left: 0.8rem; right: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s09-001 .slate b { display: block; color: var(--ink); }
+.cons-s09-001 .refs h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; }
+.cons-s09-001 .refs p { margin: 0.6rem 0 0; max-width: 40rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.cons-s09-001 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; margin-top: 1.2rem; padding: 0 1.3rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 .cons-s09-001 .go:hover { background: var(--ink); color: var(--paper); }
 
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s09-001 .voices { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 860px) {
-  .cons-s09-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s09-001 h2 { max-width: none; }
-  .cons-s09-001 .voices > li:first-child blockquote { max-width: none; }
-  .cons-s09-001 .band { aspect-ratio: 16 / 9; }
-  .cons-s09-001 .offer { grid-template-columns: minmax(0, 1fr); }
-  .cons-s09-001 .offer h3, .cons-s09-001 .offer p { max-width: none; }
-}
-@media (max-width: 560px) {
-  .cons-s09-001 .voices { grid-template-columns: minmax(0, 1fr); }
-  .cons-s09-001 .go { width: 100%; justify-content: center; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s09-001 * { transition: none !important; }
-  .cons-s09-001 .voice:hover { transform: none; }
-}
+@media (max-width: 1000px) { .cons-s09-001 .row { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cons-s09-001 .row li { border-bottom: 1px solid var(--line-strong); } .cons-s09-001 .row li:nth-child(2n) { border-right: 0; } .cons-s09-001 .row li:nth-last-child(-n+2) { border-bottom: 0; } }
+@media (max-width: 860px) { .cons-s09-001 .head, .cons-s09-001 .feature, .cons-s09-001 .refs { grid-template-columns: minmax(0, 1fr); } .cons-s09-001 .head > p.ghost { font-size: 9rem; } }
+@media (max-width: 560px) { .cons-s09-001 .row { grid-template-columns: minmax(0, 1fr); } .cons-s09-001 .row li { border-right: 0; } }
+@media (prefers-reduced-motion: reduce) { .cons-s09-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -302,70 +116,33 @@ body { margin: 0; background: #f7f6f3; }
   <section class="shell" aria-labelledby="cons-s09-001-title">
 
     <div class="head">
+      <p class="ghost" aria-hidden="true">&ldquo;</p>
       <div>
-        <p class="eyebrow">What clients said</p>
-        <h2 id="cons-s09-001-title">A quote you cannot check is an advertisement.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>What clients said</p>
+        <h2 id="cons-s09-001-title">A quote you cannot check is an <em>advertisement.</em></h2>
       </div>
       <p class="lead">So each one below carries what you are allowed to do about it.</p>
     </div>
 
-    <ul class="voices">
+    <div class="feature">
+      <blockquote data-placeholder="true"><p>The first four weeks felt slow. The model that came out of them is the one we still plan with.</p></blockquote>
+      <div class="meta"><p>The strategy is agreed and nothing has changed.</p><p class="stage">Said at stage two &middot; Evidence</p><span class="chip"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Will take a reference call</span></div>
+    </div>
 
-      <li>
-        <div class="voice">
-          <blockquote data-placeholder="true">The first four weeks felt slow. The model that came out of them is the one we still plan with.</blockquote>
-          <p class="from">The strategy is agreed and nothing has changed.</p>
-          <p class="stage">Said at stage 02 &middot; Evidence</p>
-          <span class="check call">Will take a reference call</span>
-        </div>
-      </li>
-
-      <li>
-        <div class="voice">
-          <blockquote data-placeholder="true">They told us to stop at stage 03. Nobody wanted to hear it.</blockquote>
-          <p class="from">The programme is late and reporting says it is fine.</p>
-          <p class="stage">Stage 03 &middot; Options</p>
-          <span class="check call">Will take a reference call</span>
-        </div>
-      </li>
-
-      <li>
-        <div class="voice">
-          <blockquote data-placeholder="true">I have used four firms on this. This is the first that wrote down what it would not do.</blockquote>
-          <p class="from">A decision is coming and the evidence is thin.</p>
-          <p class="stage">Stage 01 &middot; Frame</p>
-          <span class="check priv">Named privately</span>
-        </div>
-      </li>
-
-      <li>
-        <div class="voice">
-          <blockquote data-placeholder="true">Two of the people who pitched were in the room for the whole engagement. I checked.</blockquote>
-          <p class="from">It costs more to run than it should.</p>
-          <p class="stage">Stage 04 &middot; Decision</p>
-          <span class="check priv">Named privately</span>
-        </div>
-      </li>
-
-      <li>
-        <div class="voice">
-          <blockquote data-placeholder="true">We did not renew. The work still holds.</blockquote>
-          <p class="from">The market moved and the plan did not.</p>
-          <p class="stage">Stage 05 &middot; Delivery</p>
-          <span class="check words">Words only</span>
-        </div>
-      </li>
-
+    <ul class="row">
+      <li><blockquote data-placeholder="true"><p>They told us to stop at stage three. Nobody wanted to hear it.</p></blockquote><div class="meta"><p>The programme is late and reporting says it is fine.</p><p class="stage">Stage three &middot; Options</p><span class="chip"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Will take a reference call</span></div></li>
+      <li><blockquote data-placeholder="true"><p>I have used four firms on this. This is the first that wrote down what it would not do.</p></blockquote><div class="meta"><p>A decision is coming and the evidence is thin.</p><p class="stage">Stage one &middot; Frame</p><span class="chip"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"/></svg>Named privately</span></div></li>
+      <li><blockquote data-placeholder="true"><p>Two of the people who pitched were in the room for the whole engagement. I checked.</p></blockquote><div class="meta"><p>It costs more to run than it should.</p><p class="stage">Stage four &middot; Decision</p><span class="chip"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"/></svg>Named privately</span></div></li>
+      <li><blockquote data-placeholder="true"><p>We did not renew. The work still holds.</p></blockquote><div class="meta"><p>The market moved and the plan did not.</p><p class="stage">Stage five &middot; Delivery</p><span class="chip words"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Words only</span></div></li>
     </ul>
 
-    <div class="band"><span>Image area &mdash; the room a reference call is taken in</span></div>
-
-    <div class="offer">
+    <div class="refs">
+      <div class="media" role="img" aria-label="Image area — the room a reference call is taken in"><p class="slate" aria-hidden="true"><b>The room &middot; 4:3</b>the room a reference call is taken in</p></div>
       <div>
         <h3><span data-placeholder="true">Nine</span> clients have agreed to speak to someone considering us.</h3>
         <p>We introduce you to the one whose situation is closest to yours. No name leaves this office before they agree to it.</p>
+        <a class="go" href="#cons-s09-001-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Ask for a reference</a>
       </div>
-      <a class="go" href="#cons-s09-001-title">Ask for a reference</a>
     </div>
 
   </section>

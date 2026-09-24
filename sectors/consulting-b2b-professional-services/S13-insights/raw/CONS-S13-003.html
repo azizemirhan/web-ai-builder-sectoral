@@ -12,43 +12,22 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S13 — Insights
   Direction      : Structured / Visual Modular
-  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **A — Item grid.** Five pieces, each carrying its own cover area.
-  Layout model   : A one-line tally of the statuses, then five cards on three tracks with the lead
-                   piece at double width, each card a cover area above the title and the claim
-  Density        : Structured (197 visible words, structured band 170–230)
-  Media mode     : FIVE reserved areas — **the opening spread of each piece.** The firm's own
-                   artefact, never a stock photograph.
-  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
-
-  Governing idea : **A piece that could not have been wrong was not worth writing.**
-                   So every piece carries the claim it makes and whether the firm still believes it.
-
-  Why this is the one place a card grid is the right answer :
-                   ../../CONSULTING-THEME-CONTRACT.md lists the card grid as a device to build with —
-                   *each card carrying its own image area above a short label and a title* — and it
-                   also warns that **a card without media is a table cell with rounded corners.**
-                   Most sections in this sector cannot fill that image area honestly, which is why
-                   `S11` used a rail and `S12` used none.
-                   This section can. **A published piece has a cover**, and it is the firm's own
-                   artefact rather than a photograph bought to fill a slot. So the card grid is
-                   used here as intended, for the first time since `S02`.
-
-  The tally, declared rather than implied : Five pieces, three that still hold, one partly wrong and
-                   one withdrawn. The arithmetic is stated in a line rather than left to be counted
-                   off the badges — the same discipline `S10-003` and `S12-003` apply to their own
-                   blocks.
-
-  Not a content farm : No category pill, no reading-time badge, no view count, no author byline, no
-                   *most read* marker. Each of those is a volume or retention signal, and volume is
-                   the claim this section is arguing against.
-
-  Placeholder data : The five titles are PLACEHOLDER DEMO VALUES marked data-placeholder="true" —
-                   the firm's own published output.
-
-  Content note   : No author name, byline, publication date, reading time, category pill, view count
-                   or share count. No client name, logo, testimonial attribution, percentage,
-                   currency figure or ranking. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 3 with
+                   8: V1's one-line tally as a mast line on hairlines; five pieces in a bordered
+                   grid on three tracks sharing hairlines — the lead across two with a 3:2 field,
+                   the other four with 4:3 fields — each field the piece's own opening spread,
+                   the placeholder title in the serif, the claim and the status as a marked chip;
+                   the pencil rule on the head; the 003 pencil figure: the ruled margin behind;
+                   V1's nothing-is-taken-down line as a band-tone foot cell. V1 is kept whole.
+  Layout model   : Head; tally mast line; bordered three-track grid of five pieces; foot cell
+  Density        : Structured — V1's spine kept in full
+  Media mode     : Five reserved areas — the opening spread of each piece. The firm's own
+                   artefact, never a bought photograph.
+  Interaction    : None. No form.
+  Content note   : The five titles carry PLACEHOLDER DEMO VALUES marked data-placeholder="true"
+                   and declared in the meta block. No author, byline, date, reading time,
+                   category pill, view count or share row. Inline SVG, decorative. No header or
+                   navigation.
 -->
 
 <meta name="study-id" content="CONS-S13-003">
@@ -59,264 +38,102 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="theme" content="003 Field">
-<meta name="section-shape" content="A — item grid">
-<meta name="layout-model" content="Status tally, five cards on three tracks with the lead at double width, each carrying its own cover area">
+<meta name="theme" content="003 Field &amp; Emerald">
+<meta name="layout-model" content="Head with the pencil rule; tally mast line; bordered three-track grid of five pieces with opening-spread fields, serif placeholder titles, claims and marked statuses; band-tone foot cell; ruled margin behind">
 <meta name="density" content="structured">
-<meta name="media-mode" content="five-reserved-areas-the-cover-of-each-piece">
+<meta name="media-mode" content="five-reserved-areas">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="the five titles — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S13-003 — Insights, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #eff1f4; }
+body { margin: 0; background: #eff1f2; }
 
-/* Scoped study styles — namespaced to .cons-s13-003 */
 .cons-s13-003 {
-  --paper: #eff1f4;
-  --ink: #0e1216;
-  --ink-soft: #525c66;
-  --line: #d7dde2;
-  --card: #ffffff;
-  --slot: #e2e7eb;
-  --slot-edge: #b6c0c8;
-  --slot-ink: #5c666f;
-  --accent: #12856a;
-  --accent-ink: #ffffff;
-  --focus: #0e1216;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eff1f2; --ink: #0f1417; --muted: #535c63; --line: #d3d9dc; --line-strong: #0f1417;
+  --media: #e0e5e7; --band: #e6eaec; --accent: #12856a; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s13-003 *,
-.cons-s13-003 *::before,
-.cons-s13-003 *::after { box-sizing: inherit; }
-.cons-s13-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+.cons-s13-003 *, .cons-s13-003 *::before, .cons-s13-003 *::after { box-sizing: inherit; }
+.cons-s13-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s13-003 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s13-003 .draw { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: var(--line); }
+.cons-s13-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s13-003 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s13-003 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(18px, 2.4vw, 28px);
-}
-.cons-s13-003 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 20px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s13-003 h2 {
-  margin: 0;
-  font-size: clamp(2rem, 3.7vw, 3rem);
-  line-height: 1.02;
-  letter-spacing: -0.036em;
-  font-weight: 800;
-  max-width: 19ch;
-}
-.cons-s13-003 .lead { margin: 0; color: var(--ink-soft); }
+.cons-s13-003 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; border-top: 3px solid var(--accent); padding-top: clamp(1.4rem, 2.6vw, 2.2rem); }
+.cons-s13-003 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s13-003 h2 { margin: 0; max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s13-003 h2 em { font-style: italic; color: var(--accent); }
+.cons-s13-003 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
-/* --- The tally, stated in a line --- */
-.cons-s13-003 .tally {
-  margin: 0 0 clamp(16px, 2vw, 26px);
-  padding-left: 16px;
-  border-left: 4px solid var(--accent);
-  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
-  font-weight: 700;
-  max-width: 72ch;
-}
-.cons-s13-003 .tally em { font-style: normal; color: var(--accent); }
+.cons-s13-003 .tally { display: flex; align-items: center; gap: 0.6rem; margin: clamp(1.8rem, 3.6vw, 3rem) 0 0; padding: 0.8rem 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--ink); }
+.cons-s13-003 .tally .mk { color: var(--accent); }
 
-/* --- The card grid, used as intended --- */
-.cons-s13-003 .pieces {
-  margin: 0 0 clamp(22px, 2.8vw, 36px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.5vw, 20px);
-}
-.cons-s13-003 .pieces > li:first-child { grid-column: span 2; }
+.cons-s13-003 .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-strong); border-top: 0; background: var(--paper); }
+.cons-s13-003 .piece { display: grid; gap: 0.5rem; align-content: start; padding: 1.1rem 1.2rem 1.3rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.cons-s13-003 .piece.lead { grid-column: span 2; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 1.2rem; align-items: start; }
+.cons-s13-003 .piece.end { border-right: 0; }
+.cons-s13-003 .media { position: relative; aspect-ratio: 4 / 3; background: var(--media); border-radius: 2px; }
+.cons-s13-003 .piece.lead .media { aspect-ratio: 3 / 2; }
+.cons-s13-003 .slate { position: absolute; left: 0.8rem; right: 0.8rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s13-003 .slate b { display: block; color: var(--ink); }
+.cons-s13-003 .txt { display: grid; gap: 0.4rem; align-content: start; }
+.cons-s13-003 h3 { margin: 0.2rem 0 0; font-family: var(--serif); font-weight: 400; font-size: 1.25rem; line-height: 1.15; letter-spacing: -0.02em; }
+.cons-s13-003 .piece.lead h3 { font-size: clamp(1.5rem, 2.2vw, 2rem); margin: 0; }
+.cons-s13-003 .piece p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+.cons-s13-003 .st { display: inline-flex; align-items: center; gap: 0.4rem; width: max-content; margin-top: 0.3rem; padding: 0.32rem 0.55rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1; }
+.cons-s13-003 .st .mk { width: 0.85rem; height: 0.85rem; color: var(--accent); }
+.cons-s13-003 .st.part { color: var(--muted); }
+.cons-s13-003 .st.part .mk { color: var(--muted); }
+.cons-s13-003 .st.no { border-color: var(--no); color: var(--no); }
+.cons-s13-003 .st.no .mk { color: var(--no); }
+.cons-s13-003 .foot { grid-column: 1 / -1; padding: 1rem 1.3rem; background: var(--band); }
+.cons-s13-003 .foot p { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.05rem; line-height: 1.4; color: var(--muted); }
+.cons-s13-003 .foot p b { font-weight: 400; color: var(--ink); }
 
-.cons-s13-003 .piece {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: var(--card);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-.cons-s13-003 .piece:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(14, 18, 22, 0.10); }
-
-/* Each card carries its own cover area above the title */
-.cons-s13-003 .cover {
-  border-bottom: 2px dashed var(--slot-edge);
-  background: var(--slot);
-  aspect-ratio: 16 / 9;
-  display: grid;
-  place-items: center;
-  padding: 14px;
-}
-.cons-s13-003 .pieces > li:first-child .cover { aspect-ratio: 24 / 9; }
-.cons-s13-003 .cover span {
-  color: var(--slot-ink);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-}
-.cons-s13-003 .body { padding: clamp(18px, 2.1vw, 26px); display: flex; flex-direction: column; flex: 1 1 auto; }
-.cons-s13-003 .piece h3 {
-  margin: 0;
-  font-size: clamp(1.04rem, 1.45vw, 1.24rem);
-  line-height: 1.18;
-  letter-spacing: -0.028em;
-  font-weight: 800;
-}
-.cons-s13-003 .pieces > li:first-child h3 { font-size: clamp(1.3rem, 2vw, 1.68rem); }
-.cons-s13-003 .claim { margin: 10px 0 0; color: var(--ink-soft); font-size: 0.94rem; flex: 1 1 auto; }
-.cons-s13-003 .pieces > li:first-child .claim { font-size: 1.04rem; }
-.cons-s13-003 .status {
-  align-self: flex-start;
-  margin: clamp(13px, 1.6vw, 18px) 0 0;
-  padding: 6px 13px;
-  border-radius: 999px;
-  font-size: 0.73rem;
-  font-weight: 800;
-  background: rgba(14, 18, 22, 0.08);
-  color: var(--ink-soft);
-}
-.cons-s13-003 .status.revised { background: rgba(18, 133, 106, 0.14); color: var(--accent); }
-.cons-s13-003 .status.wrong { background: var(--accent); color: var(--accent-ink); }
-
-/* --- The policy --- */
-.cons-s13-003 .policy {
-  margin: 0;
-  padding: clamp(22px, 2.6vw, 34px) clamp(24px, 3vw, 40px);
-  border-radius: 20px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: clamp(1.1rem, 1.5vw, 1.34rem);
-  font-weight: 700;
-  line-height: 1.3;
-}
-.cons-s13-003 .policy em { font-style: normal; color: #6fd3b6; }
-
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s13-003 .pieces { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cons-s13-003 .pieces > li:first-child { grid-column: span 2; }
-}
-@media (max-width: 860px) {
-  .cons-s13-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s13-003 h2 { max-width: none; }
-  .cons-s13-003 .tally { max-width: none; }
-}
-@media (max-width: 560px) {
-  .cons-s13-003 .pieces { grid-template-columns: minmax(0, 1fr); }
-  .cons-s13-003 .pieces > li:first-child { grid-column: span 1; }
-  .cons-s13-003 .pieces > li:first-child .cover { aspect-ratio: 16 / 9; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s13-003 * { transition: none !important; }
-  .cons-s13-003 .piece:hover { transform: none; }
-}
+@media (max-width: 1000px) { .cons-s13-003 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cons-s13-003 .piece.end { border-right: 1px solid var(--line-strong); } .cons-s13-003 .piece:nth-child(2n+1):not(.lead) { border-right: 0; } }
+@media (max-width: 860px) { .cons-s13-003 .head, .cons-s13-003 .piece.lead { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .cons-s13-003 .grid { grid-template-columns: minmax(0, 1fr); } .cons-s13-003 .piece { border-right: 0 !important; grid-column: auto; } }
+@media (prefers-reduced-motion: reduce) { .cons-s13-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="cons-s13-003" data-study-id="CONS-S13-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g stroke="currentColor" stroke-width="1" fill="none">
+      <path d="M2.4 0v100" vector-effect="non-scaling-stroke"/>
+      <path d="M0 8h100M0 16h100M0 24h100M0 32h100M0 40h100M0 48h100M0 56h100M0 64h100M0 72h100M0 80h100M0 88h100M0 96h100" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
   <section class="shell" aria-labelledby="cons-s13-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">What we have published</p>
-        <h2 id="cons-s13-003-title">A piece that could not have been wrong was not worth writing.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>What we have published</p>
+        <h2 id="cons-s13-003-title">A piece that could not have been wrong was not worth <em>writing.</em></h2>
       </div>
-      <p class="lead">Each carries the claim it makes and whether we still believe it.</p>
+      <p>Each carries the claim it makes and whether we still believe it.</p>
     </div>
 
-    <p class="tally">Five pieces. <em>Three still hold, one is partly wrong, one we now think was wrong outright.</em></p>
+    <p class="tally"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Five pieces. Three still hold, one is partly wrong, one we now think was wrong outright.</p>
 
-    <ul class="pieces">
-      <li>
-        <div class="piece">
-          <div class="cover"><span>Image area &mdash; the opening spread of the piece</span></div>
-          <div class="body">
-            <h3 data-placeholder="true">The reorganisation will not move the decision rights</h3>
-            <p class="claim">Authority follows budget, not reporting lines. Moving boxes moves nothing.</p>
-            <span class="status">Still holds</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="piece">
-          <div class="cover"><span>Image area &mdash; opening spread</span></div>
-          <div class="body">
-            <h3 data-placeholder="true">Cost programmes rebuild the cost they removed</h3>
-            <p class="claim">Removing cost without removing the work that generates it buys a delay.</p>
-            <span class="status">Still holds</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="piece">
-          <div class="cover"><span>Image area &mdash; opening spread</span></div>
-          <div class="body">
-            <h3 data-placeholder="true">Outsourcing a capability you do not understand transfers the confusion</h3>
-            <p class="claim">You cannot specify what you have never run.</p>
-            <span class="status">Still holds</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="piece">
-          <div class="cover"><span>Image area &mdash; opening spread</span></div>
-          <div class="body">
-            <h3 data-placeholder="true">Data quality is a governance problem, not a tooling one</h3>
-            <p class="claim">A tool cannot decide who owns a definition.</p>
-            <span class="status revised">Partly wrong</span>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="piece">
-          <div class="cover"><span>Image area &mdash; opening spread</span></div>
-          <div class="body">
-            <h3 data-placeholder="true">A central function should own the standard, not the delivery</h3>
-            <p class="claim">Central delivery becomes a queue. Two engagements since went badly for this reason.</p>
-            <span class="status wrong">We were wrong</span>
-          </div>
-        </div>
-      </li>
+    <ul class="grid">
+      <li class="piece lead"><div class="media" role="img" aria-label="Image area — the opening spread of the piece"><p class="slate" aria-hidden="true"><b>Opening spread &middot; 3:2</b>the opening spread of the piece</p></div><div class="txt"><h3 data-placeholder="true">The reorganisation will not move the decision rights</h3><p>Authority follows budget, not reporting lines. Moving boxes moves nothing.</p><span class="st"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>Still holds</span></div></li>
+      <li class="piece end"><div class="media" role="img" aria-label="Image area — opening spread"><p class="slate" aria-hidden="true"><b>Opening spread &middot; 4:3</b></p></div><h3 data-placeholder="true">Cost programmes rebuild the cost they removed</h3><p>Removing cost without removing the work that generates it buys a delay.</p><span class="st"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>Still holds</span></li>
+      <li class="piece"><div class="media" role="img" aria-label="Image area — opening spread"><p class="slate" aria-hidden="true"><b>Opening spread &middot; 4:3</b></p></div><h3 data-placeholder="true">Outsourcing a capability you do not understand transfers the confusion</h3><p>You cannot specify what you have never run.</p><span class="st"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 12l3 3 5-6"/></svg>Still holds</span></li>
+      <li class="piece"><div class="media" role="img" aria-label="Image area — opening spread"><p class="slate" aria-hidden="true"><b>Opening spread &middot; 4:3</b></p></div><h3 data-placeholder="true">Data quality is a governance problem, not a tooling one</h3><p>A tool cannot decide who owns a definition.</p><span class="st part"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 3v18"/></svg>Partly wrong</span></li>
+      <li class="piece end"><div class="media" role="img" aria-label="Image area — opening spread"><p class="slate" aria-hidden="true"><b>Opening spread &middot; 4:3</b></p></div><h3 data-placeholder="true">A central function should own the standard, not the delivery</h3><p>Central delivery becomes a queue. Two engagements since went badly for this reason.</p><span class="st no"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>We were wrong</span></li>
+      <li class="foot"><p>Nothing is taken down. A piece we no longer believe keeps its address and gets <b>a note at the top saying so</b>.</p></li>
     </ul>
-
-    <p class="policy">Nothing is taken down. A piece we no longer believe keeps its address and gets <em>a note at the top saying so</em>.</p>
 
   </section>
 </div>

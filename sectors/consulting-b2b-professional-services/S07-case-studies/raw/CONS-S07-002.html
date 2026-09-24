@@ -12,41 +12,21 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S07 — Case Studies
   Direction      : Premium / Editorial
-  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **B — Anchored.** One artefact plate, held in the standing column.
-  Layout model   : A two-column editorial spread — the statement and the plate held in a sticky left
-                   column, the four cases running past it on the right
-  Density        : Structured (224 visible words, structured band 170–230)
-  Media mode     : ONE reserved artefact area, at the foot of the standing column.
-  Interaction    : None (static; no JavaScript). The left column uses CSS `position: sticky`.
-
-  V2 rework note, and the check it produced :
-                   The first version of this study was **a near-copy of CONS-S05-002** — statement,
-                   offset second voice, wide plate, one column of numbered blocks, a second plate,
-                   an underlined link. Its own comment header claimed it varied the device and then
-                   did not: the only change was moving the second plate from the middle to the end.
-                   The theme contract already said two studies at the same variant that share a
-                   layout fail as surely as two that share no palette. That rule was being checked
-                   by eye across thirty-five studies, and eyes do not scale.
-                   `review/check-composition-collisions.js` now builds a structural fingerprint per
-                   study and reports same-variant matches. This study was rebuilt against it.
-
-  The composition : Nothing else at variant 002 uses a standing column. `S02` is a rail, `S03` is
-                   horizontal cards, `S04` is blocks with a pull panel, `S05` is a single flowing
-                   column, `S06` is an argument panel over blocks. A magazine sidebar that holds
-                   still while the stories move past it is both new here and the right editorial form
-                   for four cases that share one argument.
-
-  Governing idea : **Anonymity removes the client, not the problem.** The situation is stated in full
-                   because it is the reader's situation rather than the client's identity, and every
-                   case ends on a *withheld* line naming what cannot be said and why.
-
-  Placeholder data : The outcome line in each case is a PLACEHOLDER DEMO VALUE marked
-                   data-placeholder="true".
-
-  Content note   : Situations are generic vocabulary, shared with CONS-S02. No client name, sector
-                   name, logo, testimonial attribution, value figure, percentage, ROI multiple,
-                   ranking, award or certification. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 1 as a
+                   spread: a narrow standing column held left and sticky — the serif display with
+                   the 002 pencil ellipse, the standfirst, the 4:5 artefact field and the
+                   underlined route — beside four cases as ruled blocks, each a serif italic
+                   word-numeral, the situation as a serif title, WHAT WE DID and WHAT CHANGED as
+                   labelled fields (the outcome a placeholder) and WITHHELD in the accent's
+                   italic on a deep-red edge. V1 is kept whole; "Case 01" is written "Case One".
+  Layout model   : Sticky standing column with the field; four ruled cases right
+  Density        : Structured — V1's spine kept in full
+  Media mode     : One reserved artefact area, 4:5, at the foot of the standing column.
+  Interaction    : One in-page route. No form.
+  Content note   : Situations are generic vocabulary shared with CONS-S02. Outcomes carry
+                   PLACEHOLDER DEMO VALUES marked data-placeholder="true" and declared in the
+                   meta block. No client name, sector, logo, date or figure that identifies
+                   anyone. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="CONS-S07-002">
@@ -57,184 +37,64 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="theme" content="002 Sable">
-<meta name="section-shape" content="B — anchored">
-<meta name="layout-model" content="Two-column editorial spread, sticky statement column left, four cases running past on the right">
+<meta name="theme" content="002 Sable &amp; Bronze">
+<meta name="layout-model" content="Sticky standing column with the serif display, a pencil ellipse, the 4:5 artefact field and the underlined route; four ruled cases with serif word-numerals, labelled fields and the withheld line red-edged">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-artefact-image-in-standing-column">
-<meta name="interaction" content="none">
+<meta name="media-mode" content="one-reserved-artefact-area-4-5">
+<meta name="interaction" content="in-page-route">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="case outcomes — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S07-002 — Case Studies, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f2efe9; }
+body { margin: 0; background: #f2efe8; }
 
-/* Scoped study styles — namespaced to .cons-s07-002 */
 .cons-s07-002 {
-  --paper: #f2efe9;
-  --ink: #1a1714;
-  --ink-soft: #6b6459;
-  --line: #dcd6ca;
-  --card: #f8f6f1;
-  --slot: #e6e1d7;
-  --slot-edge: #c4bbab;
-  --slot-ink: #6e675c;
-  --accent: #9a5b2c;
-  --accent-ink: #ffffff;
-  --focus: #1a1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f2efe8; --ink: #1b1713; --muted: #6a635a; --line: #d9d2c6; --line-strong: #1b1713;
+  --media: #e5dfd4; --band: #eae5db; --accent: #9a5b2c; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s07-002 *,
-.cons-s07-002 *::before,
-.cons-s07-002 *::after { box-sizing: inherit; }
-.cons-s07-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+.cons-s07-002 *, .cons-s07-002 *::before, .cons-s07-002 *::after { box-sizing: inherit; }
+.cons-s07-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s07-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(52px, 6.2vw, 116px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s07-002 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6.5rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s07-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- The spread: a column that stands still, and stories that move --- */
-.cons-s07-002 .spread {
-  display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-  gap: clamp(32px, 5.4vw, 96px);
-  align-items: start;
-}
-.cons-s07-002 .standing { position: sticky; top: clamp(20px, 3vw, 44px); }
+.cons-s07-002 .lay { display: grid; grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr); gap: clamp(2.5rem, 6vw, 7rem); align-items: start; }
+.cons-s07-002 .stand { position: sticky; top: 1.5rem; }
+.cons-s07-002 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s07-002 h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s07-002 h2 em { position: relative; display: inline-block; font-style: italic; color: var(--accent); }
+.cons-s07-002 h2 em svg { position: absolute; left: -6%; top: -14%; width: 112%; height: 128%; overflow: visible; pointer-events: none; color: var(--accent); }
+.cons-s07-002 .voice { margin: 1.2rem 0 0; font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 1.5vw, 1.35rem); line-height: 1.3; }
+.cons-s07-002 .media { position: relative; aspect-ratio: 4 / 5; margin-top: 1.8rem; background: var(--media); border-radius: 2px; }
+.cons-s07-002 .slate { position: absolute; left: 0.9rem; right: 0.9rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s07-002 .slate b { display: block; color: var(--ink); }
+.cons-s07-002 .lnk { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.4rem; color: var(--ink); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-thickness: 1px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s07-002 .lnk::after { content: "\2197"; color: var(--accent); font-weight: 400; }
 
-.cons-s07-002 .eyebrow {
-  margin: 0 0 clamp(18px, 2.4vw, 30px);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.cons-s07-002 h2 {
-  margin: 0;
-  font-size: clamp(2.15rem, 3.9vw, 3.15rem);
-  line-height: 1.0;
-  letter-spacing: -0.042em;
-  font-weight: 800;
-}
-.cons-s07-002 .lead {
-  margin: clamp(16px, 2vw, 24px) 0 0;
-  color: var(--ink-soft);
-  font-size: clamp(1.06rem, 1.28vw, 1.2rem);
-}
-.cons-s07-002 .plate {
-  margin: clamp(24px, 3vw, 40px) 0 0;
-  border: 1px dashed var(--slot-edge);
-  border-radius: 4px;
-  background: var(--slot);
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-.cons-s07-002 .plate span {
-  color: var(--slot-ink);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.8;
-}
-.cons-s07-002 .go {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 12px;
-  margin-top: clamp(22px, 2.8vw, 34px);
-  color: var(--accent);
-  font-size: clamp(1.1rem, 1.42vw, 1.34rem);
-  font-weight: 750;
-  letter-spacing: -0.02em;
-  text-decoration: none;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 4px;
-}
-.cons-s07-002 .go:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.cons-s07-002 .cases { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.cons-s07-002 .case { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 0.8rem 1.2rem; padding: 1.4rem 0 1.5rem; border-bottom: 1px solid var(--line); }
+.cons-s07-002 .case:last-child { border-bottom: 1px solid var(--line-strong); }
+.cons-s07-002 .case p.ix { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.3rem; line-height: 1.15; letter-spacing: -0.01em; color: var(--accent); }
+.cons-s07-002 .case h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; }
+.cons-s07-002 dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 0.8rem 0 0; }
+.cons-s07-002 dt { margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s07-002 dd { margin: 0.2rem 0 0; font-size: 0.9rem; line-height: 1.45; }
+.cons-s07-002 .held { margin: 0.8rem 0 0; padding: 0.5rem 0 0.1rem 0.8rem; border-left: 3px solid var(--no); }
+.cons-s07-002 .held dl { display: block; margin: 0; }
+.cons-s07-002 .held dt { color: var(--no); }
+.cons-s07-002 .held dd { font-family: var(--serif); font-style: italic; font-size: 1rem; }
 
-/* --- The stories --- */
-.cons-s07-002 .cases { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(30px, 3.8vw, 56px); }
-.cons-s07-002 .n {
-  display: block;
-  margin-bottom: 9px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-.cons-s07-002 .cases h3 {
-  margin: 0;
-  font-size: clamp(1.34rem, 2vw, 1.8rem);
-  line-height: 1.1;
-  letter-spacing: -0.034em;
-  font-weight: 800;
-}
-.cons-s07-002 .facts {
-  margin: clamp(13px, 1.6vw, 18px) 0 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(16px, 2.4vw, 34px);
-}
-.cons-s07-002 .fact { margin: 0; font-size: 0.98rem; color: var(--ink-soft); }
-.cons-s07-002 .fact b {
-  display: block;
-  margin-bottom: 3px;
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.cons-s07-002 .withheld {
-  display: inline-block;
-  margin: clamp(14px, 1.8vw, 20px) 0 0;
-  padding: 10px 17px;
-  border-radius: 4px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.95rem;
-  font-weight: 700;
-}
-.cons-s07-002 .withheld b {
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  opacity: 0.82;
-  margin-right: 9px;
-}
-
-/* --- Responsive ladder: the column stops standing first --- */
-@media (max-width: 980px) {
-  .cons-s07-002 .spread { grid-template-columns: minmax(0, 1fr); gap: clamp(30px, 4vw, 48px); }
-  .cons-s07-002 .standing { position: static; }
-  .cons-s07-002 .plate { aspect-ratio: 16 / 9; }
-}
-@media (max-width: 560px) {
-  .cons-s07-002 .facts { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s07-002 * { transition: none !important; }
-}
+@media (max-width: 860px) { .cons-s07-002 .lay { grid-template-columns: minmax(0, 1fr); } .cons-s07-002 .stand { position: static; } .cons-s07-002 .media { aspect-ratio: 16 / 9; } }
+@media (max-width: 560px) { .cons-s07-002 .case { grid-template-columns: minmax(0, 1fr); } .cons-s07-002 dl { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .cons-s07-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -242,60 +102,21 @@ body { margin: 0; background: #f2efe9; }
 <div class="cons-s07-002" data-study-id="CONS-S07-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="cons-s07-002-title">
 
-    <div class="spread">
-
-      <div class="standing">
-        <p class="eyebrow">Selected work</p>
-        <h2 id="cons-s07-002-title">We cannot name them. We can name what we cannot say.</h2>
-        <p class="lead">Anonymity removes the client, not the problem.</p>
-        <div class="plate"><span>Image area &mdash; our own artefact</span></div>
-        <a class="go" href="#cons-s07-002-title">Start a conversation <span aria-hidden="true">&rarr;</span></a>
+    <div class="lay">
+      <div class="stand">
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Selected work</p>
+        <h2 id="cons-s07-002-title">We cannot name them. We can name what we cannot <em>say.<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M8 52C6 30 30 12 56 12c24 0 40 12 38 34-2 24-30 42-56 40C16 84 4 70 8 52c2-10 10-16 12-14" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg></em></h2>
+        <p class="voice">Anonymity removes the client, not the problem.</p>
+        <div class="media" role="img" aria-label="Image area — our own artefact"><p class="slate" aria-hidden="true"><b>Artefact &middot; 4:5</b>our own artefact</p></div>
+        <a class="lnk" href="#cons-s07-002-title">Start a conversation</a>
       </div>
 
-      <ul class="cases">
-
-        <li>
-          <span class="n">Case 01</span>
-          <h3>The strategy was agreed and nothing had changed.</h3>
-          <div class="facts">
-            <p class="fact"><b>What we did</b>Redrew decision rights across the top three layers.</p>
-            <p class="fact" data-placeholder="true"><b>What changed</b>The next capital decision took one board meeting, not four.</p>
-          </div>
-          <span class="withheld"><b>Withheld</b>The sector. Two firms operate in it; naming one identifies the other.</span>
-        </li>
-
-        <li>
-          <span class="n">Case 02</span>
-          <h3>It cost more to run than it should.</h3>
-          <div class="facts">
-            <p class="fact"><b>What we did</b>Rebuilt the cost model from the contracts up, not budgets down.</p>
-            <p class="fact" data-placeholder="true"><b>What changed</b>Two assumptions everyone had relied on turned out to be wrong.</p>
-          </div>
-          <span class="withheld"><b>Withheld</b>The site count. It is public, and it would name them.</span>
-        </li>
-
-        <li>
-          <span class="n">Case 03</span>
-          <h3>The programme was late and the reporting said it was fine.</h3>
-          <div class="facts">
-            <p class="fact"><b>What we did</b>Re-baselined against what had actually been delivered.</p>
-            <p class="fact" data-placeholder="true"><b>What changed</b>The board learned the real date eleven months earlier.</p>
-          </div>
-          <span class="withheld"><b>Withheld</b>Every date. The programme is still running.</span>
-        </li>
-
-        <li>
-          <span class="n">Case 04</span>
-          <h3>A decision was coming and the evidence was thin.</h3>
-          <div class="facts">
-            <p class="fact"><b>What we did</b>Interviews across the market, with assumptions exposed.</p>
-            <p class="fact" data-placeholder="true"><b>What changed</b>They chose the option nobody had arrived wanting.</p>
-          </div>
-          <span class="withheld"><b>Withheld</b>The decision. It has not been announced yet.</span>
-        </li>
-
-      </ul>
-
+      <ol class="cases">
+        <li class="case"><p class="ix" aria-hidden="true">Case One</p><div><h3>The strategy was agreed and nothing had changed.</h3><dl><div><dt>What we did</dt><dd>Redrew decision rights across the top three layers.</dd></div><div><dt>What changed</dt><dd data-placeholder="true">The next capital decision took one board meeting, not four.</dd></div></dl><div class="held"><dl><dt>Withheld</dt><dd>The sector. Two firms operate in it; naming one identifies the other.</dd></dl></div></div></li>
+        <li class="case"><p class="ix" aria-hidden="true">Case Two</p><div><h3>It cost more to run than it should.</h3><dl><div><dt>What we did</dt><dd>Rebuilt the cost model from the contracts up, not budgets down.</dd></div><div><dt>What changed</dt><dd data-placeholder="true">Two assumptions everyone had relied on turned out to be wrong.</dd></div></dl><div class="held"><dl><dt>Withheld</dt><dd>The site count. It is public, and it would name them.</dd></dl></div></div></li>
+        <li class="case"><p class="ix" aria-hidden="true">Case Three</p><div><h3>The programme was late and the reporting said it was fine.</h3><dl><div><dt>What we did</dt><dd>Re-baselined against what had actually been delivered.</dd></div><div><dt>What changed</dt><dd data-placeholder="true">The board learned the real date eleven months earlier.</dd></div></dl><div class="held"><dl><dt>Withheld</dt><dd>Every date. The programme is still running.</dd></dl></div></div></li>
+        <li class="case"><p class="ix" aria-hidden="true">Case Four</p><div><h3>A decision was coming and the evidence was thin.</h3><dl><div><dt>What we did</dt><dd>Interviews across the market, with assumptions exposed.</dd></div><div><dt>What changed</dt><dd data-placeholder="true">They chose the option nobody had arrived wanting.</dd></div></dl><div class="held"><dl><dt>Withheld</dt><dd>The decision. It has not been announced yet.</dd></dl></div></div></li>
+      </ol>
     </div>
 
   </section>

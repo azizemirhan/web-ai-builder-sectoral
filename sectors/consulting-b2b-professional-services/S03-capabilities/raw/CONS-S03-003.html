@@ -12,31 +12,21 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S03 — Capabilities
   Direction      : Structured / Visual Modular
-  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
-  Layout model   : A full-height reserved media column held left, a two-by-three grid of capability
-                   cards beside it, and one saturated band closing the composition
-  Density        : Medium (148 visible words)
-  Media mode     : One reserved image area, but at column scale — it runs the full height of the card
-                   grid rather than sitting inside a card. Media as a structural element rather than
-                   as card furniture is what makes this study modular rather than a grid of six.
-  Interaction    : None (static; no JavaScript).
-
-  Governing idea : Every consulting firm lists the same capabilities, so a list proves nothing. What
-                   makes one credible is its limit, so every card carries three parts: the name, what
-                   it is, and where it stops. The limits are policy statements a firm can honour, not
-                   claims about past performance, so none is a fabricated metric.
-
-  Still no matrix : The obvious modular answer for capabilities is a grid with axes — coverage
-                   against depth, or a maturity scale. ../../CONSULTING-THEME-CONTRACT.md rules that
-                   out. Here the grid is a layout only: a card's row and column assert nothing about
-                   it, and the cards could be reordered without changing a single claim.
-
-  Boundary       : S02 Services is the map — which situation the reader is in. S03 is what has to be
-                   true inside the firm for any of those services to be deliverable.
-
-  Content note   : Capability names are generic vocabulary, not claims. No named client, logo,
-                   ranking, award, certification, tool vendor or invented metric. No header or
-                   navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 3: one
+                   full-height field held left as a column of the bordered grid, and the six
+                   capabilities as a two-by-three set of cells sharing hairlines — a stroke mark
+                   each (calculator / speech / people / balance / compass / two people) in place
+                   of any numbering, because V1 says none of them claims anything by where it
+                   sits; the limit red-edged; a band-tone foot cell with V1's question and the
+                   bordered action; the pencil rule on the head. The 003 pencil figure: the ruled
+                   margin behind the grid. V1 is kept whole.
+  Layout model   : Head; bordered grid — full-height field column + 2×3 cells; foot cell
+  Density        : Standard — V1's spine kept in full
+  Media mode     : One reserved field at column scale — the capability in use, not illustrated.
+  Interaction    : One in-page route. No form.
+  Content note   : Capability names are generic vocabulary, not claims. The limits are policy
+                   commitments. No placeholder data. Inline SVG, decorative. No header or
+                   navigation — the section-shell rule.
 -->
 
 <meta name="study-id" content="CONS-S03-003">
@@ -47,263 +37,124 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="theme" content="003 Field">
-<meta name="layout-model" content="Full-height media column with a two-by-three capability card grid and a closing accent band">
-<meta name="density" content="medium">
-<meta name="media-mode" content="one-reserved-image-column">
-<meta name="interaction" content="none">
+<meta name="theme" content="003 Field &amp; Emerald">
+<meta name="layout-model" content="Head with the pencil rule; bordered grid with a full-height field column and six marked cells with red-edged limits; band-tone foot cell with the question and one action; ruled margin behind">
+<meta name="density" content="standard">
+<meta name="media-mode" content="one-reserved-field-column">
+<meta name="interaction" content="in-page-route">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S03-003 — Capabilities, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #eff1f4; }
+body { margin: 0; background: #eff1f2; }
 
-/* Scoped study styles — namespaced to .cons-s03-003 */
 .cons-s03-003 {
-  --paper: #eff1f4;
-  --ink: #0e1216;
-  --ink-soft: #525c66;
-  --line: #d7dde2;
-  --card: #ffffff;
-  --slot: #e2e7eb;
-  --slot-edge: #b6c0c8;
-  --slot-ink: #5c666f;
-  --accent: #12856a;
-  --accent-ink: #ffffff;
-  --focus: #0e1216;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eff1f2; --ink: #0f1417; --muted: #535c63; --line: #d3d9dc; --line-strong: #0f1417;
+  --media: #e0e5e7; --band: #e6eaec; --accent: #12856a; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s03-003 *,
-.cons-s03-003 *::before,
-.cons-s03-003 *::after { box-sizing: inherit; }
-.cons-s03-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+.cons-s03-003 *, .cons-s03-003 *::before, .cons-s03-003 *::after { box-sizing: inherit; }
+.cons-s03-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s03-003 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s03-003 .draw { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: var(--line); }
+.cons-s03-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s03-003 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s03-003 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(24px, 3.2vw, 42px);
-}
-.cons-s03-003 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 20px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s03-003 h2 {
-  margin: 0;
-  font-size: clamp(2rem, 3.7vw, 3rem);
-  line-height: 1.02;
-  letter-spacing: -0.036em;
-  font-weight: 800;
-  max-width: 18ch;
-}
-.cons-s03-003 .lead { margin: 0; color: var(--ink-soft); }
+.cons-s03-003 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; border-top: 3px solid var(--accent); padding-top: clamp(1.4rem, 2.6vw, 2.2rem); }
+.cons-s03-003 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s03-003 h2 { margin: 0; max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s03-003 h2 em { font-style: italic; color: var(--accent); }
+.cons-s03-003 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.cons-s03-003 .head > p b { color: var(--ink); }
 
-/* --- Body: media column and card grid --- */
-.cons-s03-003 .body {
-  display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 2.12fr);
-  gap: clamp(14px, 1.6vw, 22px);
-  align-items: stretch;
-}
-.cons-s03-003 .column {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 20px;
-  background: var(--slot);
-  display: grid;
-  place-items: center;
-  padding: 22px;
-  min-height: clamp(300px, 34vw, 480px);
-}
-.cons-s03-003 .column span {
-  color: var(--slot-ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.8;
-}
-.cons-s03-003 .capgrid {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(14px, 1.6vw, 22px);
-}
-.cons-s03-003 .cap {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: clamp(20px, 2.3vw, 28px);
-  background: var(--card);
-  border-radius: 20px;
-  color: inherit;
-  text-decoration: none;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-.cons-s03-003 a.cap:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(14, 18, 22, 0.10);
-}
-.cons-s03-003 .cap h3 {
-  margin: 0;
-  font-size: clamp(1.1rem, 1.4vw, 1.32rem);
-  line-height: 1.16;
-  letter-spacing: -0.024em;
-  font-weight: 800;
-}
-.cons-s03-003 .what { margin: 8px 0 0; color: var(--ink-soft); font-size: 0.98rem; flex: 1 1 auto; }
-.cons-s03-003 .limit {
-  align-self: flex-start;
-  margin: 14px 0 0;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: rgba(18, 133, 106, 0.11);
-  color: var(--accent);
-  font-size: 0.9rem;
-  font-weight: 700;
-}
+.cons-s03-003 .grid { display: grid; grid-template-columns: minmax(14rem, 0.7fr) repeat(2, minmax(0, 1fr)); margin-top: clamp(2rem, 4vw, 3.4rem); border: 1px solid var(--line-strong); background: var(--paper); }
+.cons-s03-003 .media { position: relative; grid-row: 1 / span 3; min-height: 100%; background: var(--media); border-right: 1px solid var(--line-strong); }
+.cons-s03-003 .slate { position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s03-003 .slate b { display: block; color: var(--ink); }
+.cons-s03-003 .cell { display: grid; gap: 0.4rem; align-content: start; padding: 1.2rem 1.3rem 1.3rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.cons-s03-003 .cell.end { border-right: 0; }
+.cons-s03-003 .cell .mk { width: 1.5rem; height: 1.5rem; color: var(--accent); margin-bottom: 0.3rem; }
+.cons-s03-003 .cell h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 1.35rem; line-height: 1.1; letter-spacing: -0.02em; }
+.cons-s03-003 .cell .what { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.cons-s03-003 .cell .limit { margin: 0.4rem 0 0; padding-left: 0.7rem; border-left: 3px solid var(--no); color: var(--ink); font-size: 0.86rem; line-height: 1.45; }
+.cons-s03-003 .foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; padding: 1.1rem 1.3rem; background: var(--band); }
+.cons-s03-003 .foot p { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1.3; }
+.cons-s03-003 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; padding: 0 1.3rem; border: 1px solid var(--line-strong); border-radius: 0; background: var(--paper); color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s03-003 .go:hover { background: var(--ink); color: var(--paper); }
 
-/* --- Closing band --- */
-.cons-s03-003 .band {
-  margin: clamp(14px, 1.6vw, 22px) 0 0;
-  padding: clamp(24px, 2.8vw, 38px) clamp(24px, 3vw, 40px);
-  border-radius: 20px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(18px, 3vw, 44px);
-  align-items: center;
-}
-.cons-s03-003 .band h3 {
-  margin: 0;
-  font-size: clamp(1.3rem, 1.9vw, 1.72rem);
-  line-height: 1.14;
-  letter-spacing: -0.028em;
-  font-weight: 800;
-  max-width: 30ch;
-}
-.cons-s03-003 .go {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 54px;
-  padding: 0 30px;
-  border-radius: 999px;
-  background: var(--accent-ink);
-  color: var(--accent);
-  font-size: 1.02rem;
-  font-weight: 750;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.cons-s03-003 .go:hover { background: var(--ink); color: var(--accent-ink); }
-
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s03-003 .body { grid-template-columns: minmax(0, 1fr); }
-  .cons-s03-003 .column { min-height: clamp(200px, 30vw, 300px); }
-}
-@media (max-width: 860px) {
-  .cons-s03-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s03-003 h2 { max-width: none; }
-  .cons-s03-003 .band { grid-template-columns: minmax(0, 1fr); }
-  .cons-s03-003 .band h3 { max-width: none; }
-}
-@media (max-width: 560px) {
-  .cons-s03-003 .capgrid { grid-template-columns: minmax(0, 1fr); }
-  .cons-s03-003 .go { width: 100%; justify-content: center; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s03-003 * { transition: none !important; }
-  .cons-s03-003 a.cap:hover { transform: none; }
-}
+@media (max-width: 1000px) { .cons-s03-003 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cons-s03-003 .media { grid-row: auto; grid-column: 1 / -1; aspect-ratio: 21 / 9; border-right: 0; border-bottom: 1px solid var(--line-strong); } }
+@media (max-width: 860px) { .cons-s03-003 .head { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .cons-s03-003 .grid { grid-template-columns: minmax(0, 1fr); } .cons-s03-003 .cell { border-right: 0; } }
+@media (prefers-reduced-motion: reduce) { .cons-s03-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="cons-s03-003" data-study-id="CONS-S03-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g stroke="currentColor" stroke-width="1" fill="none">
+      <path d="M2.4 0v100" vector-effect="non-scaling-stroke"/>
+      <path d="M0 8h100M0 16h100M0 24h100M0 32h100M0 40h100M0 48h100M0 56h100M0 64h100M0 72h100M0 80h100M0 88h100M0 96h100" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
   <section class="shell" aria-labelledby="cons-s03-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">Capabilities</p>
-        <h2 id="cons-s03-003-title">Six capabilities, each with the edge it stops at.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Capabilities</p>
+        <h2 id="cons-s03-003-title">Six capabilities, each with the <em>edge</em> it stops at.</h2>
       </div>
-      <p class="lead">Order them how you like. None of them claims anything by sitting where it does.</p>
+      <p><b>Order them how you like.</b> None of them claims anything by sitting where it does.</p>
     </div>
 
-    <div class="body">
-
-      <div class="column"><span>Image area &mdash; the capability<br>in use, not illustrated</span></div>
-
-      <ul class="capgrid">
-        <li><a class="cap" href="#cons-s03-003-title">
-          <h3>Quantitative modelling</h3>
-          <p class="what">The numbers the decision actually rests on.</p>
-          <span class="limit">Not a model you cannot maintain.</span>
-        </a></li>
-        <li><a class="cap" href="#cons-s03-003-title">
-          <h3>Primary research</h3>
-          <p class="what">Talking to your market rather than reading about it.</p>
-          <span class="limit">Named interviews, not a panel.</span>
-        </a></li>
-        <li><a class="cap" href="#cons-s03-003-title">
-          <h3>Organisation design</h3>
-          <p class="what">Structure, roles, and who decides what.</p>
-          <span class="limit">We will not name individuals.</span>
-        </a></li>
-        <li><a class="cap" href="#cons-s03-003-title">
-          <h3>Commercial analysis</h3>
-          <p class="what">Margin, mix, and what your contracts cost.</p>
-          <span class="limit">We do not set your prices.</span>
-        </a></li>
-        <li><a class="cap" href="#cons-s03-003-title">
-          <h3>Programme direction</h3>
-          <p class="what">Running it after the decision is made.</p>
-          <span class="limit">We advise it or we run it.</span>
-        </a></li>
-        <li><a class="cap" href="#cons-s03-003-title">
-          <h3>Facilitation</h3>
-          <p class="what">Getting a divided board to one answer.</p>
-          <span class="limit">We will not manufacture agreement.</span>
-        </a></li>
-      </ul>
-
-    </div>
-
-    <div class="band">
-      <h3>Need two of these at once? That is the usual answer.</h3>
-      <a class="go" href="#cons-s03-003-title">Start a conversation</a>
+    <div class="grid">
+      <div class="media" role="img" aria-label="Image area — the capability in use, not illustrated"><p class="slate" aria-hidden="true"><b>In use &middot; column</b>the capability in use, not illustrated</p></div>
+      <div class="cell">
+        <svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h12v18H6zM9 7h6M9 11h2M13 11h2M9 15h2M13 15h2"/></svg>
+        <h3>Quantitative modelling</h3>
+        <p class="what">The numbers the decision actually rests on.</p>
+        <p class="limit">Not a model you cannot maintain.</p>
+      </div>
+      <div class="cell end">
+        <svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>
+        <h3>Primary research</h3>
+        <p class="what">Talking to your market rather than reading about it.</p>
+        <p class="limit">Named interviews, not a panel.</p>
+      </div>
+      <div class="cell">
+        <svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM12 8v5M5 21v-3a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3M7 13l5-0M17 13l-5 0"/></svg>
+        <h3>Organisation design</h3>
+        <p class="what">Structure, roles, and who decides what.</p>
+        <p class="limit">We will not name individuals.</p>
+      </div>
+      <div class="cell end">
+        <svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v18M4 7h16M4 7l-2 7h4zM20 7l-2 7h4zM2 14a2 2 0 0 0 4 0M18 14a2 2 0 0 0 4 0M8 21h8"/></svg>
+        <h3>Commercial analysis</h3>
+        <p class="what">Margin, mix, and what your contracts cost.</p>
+        <p class="limit">We do not set your prices.</p>
+      </div>
+      <div class="cell">
+        <svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM15.5 8.5l-2 5-5 2 2-5z"/></svg>
+        <h3>Programme direction</h3>
+        <p class="what">Running it after the decision is made.</p>
+        <p class="limit">We advise it or we run it.</p>
+      </div>
+      <div class="cell end">
+        <svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM2 21a7 7 0 0 1 14 0M16 4a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 4 7"/></svg>
+        <h3>Facilitation</h3>
+        <p class="what">Getting a divided board to one answer.</p>
+        <p class="limit">We will not manufacture agreement.</p>
+      </div>
+      <div class="foot">
+        <p>Need two of these at once? That is the usual answer.</p>
+        <a class="go" href="#cons-s03-003-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Start a conversation</a>
+      </div>
     </div>
 
   </section>

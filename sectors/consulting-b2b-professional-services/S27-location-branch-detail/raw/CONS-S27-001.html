@@ -10,218 +10,125 @@
 
   Study ID       : CONS-S27-001
   Sector         : Consulting & B2B Professional Services (CONS)
-  Section        : CONS-S27 — Office Detail
+  Section        : CONS-S27 — Location / Branch Detail
   Direction      : Universal / Safe
-  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **B — Anchored. Two reserved areas: the door, and a map slot.**
-  Layout model   : Identity and what is actually here, the address first, **how to get in** as four
-                   steps beside the door, then what is not here, who is here, and the other three
-  Density        : Detail page (189 visible words, detail band 150–230)
-  Media mode     : Two reserved areas. **The door, photographed from the street** — the one image on
-                   this page that does any work, sized to the instructions beside it rather than to a
-                   fixed ratio — and a **map slot that is a slot, never a service.**
-  Interaction    : None (static; no JavaScript). Links only, no form.
-
-  Governing idea : **Every office page tells you where the building is. Nobody tells you how to get
-                   in.**
-                   The address is the easy part and the part a search engine already has. What is
-                   missing everywhere is the last hundred metres: which door, which floor, what to
-                   press, who to ask for. A visitor standing on the street with the right postcode and
-                   the wrong door is the ordinary outcome of every location page in this sector.
-                   So **How to get in** is a first-class section here, at the same weight as the
-                   address, and it names the thing that actually catches people: there is a glass door
-                   on the corner and it is not us.
-
-  Carried from `S17` :
-                   **An address is not an office.** This page is the one entry of the four that is an
-                   office — a floor with desks, and the room `S15`s twelve-person session sits in. The
-                   other three are named at the foot with what they actually are, so the detail page
-                   cannot be read as implying four of these.
-
-  What the README ruled out :
-                   No embedded third-party map and no remote dependency of any kind — **the map is a
-                   reserved slot.** No fabricated address, coordinate, phone number or opening hours:
-                   every one here is an obvious placeholder (`00 Example Street`, `EC0A 0AA`,
-                   `0000 0000`, an `example.com` address) marked data-placeholder="true", because
-                   fabricating a plausible address is the failure mode this role invites. No review,
-                   rating or claim attributed to the location.
-
-  Responsive     : The README requires address and contact details to be first-class on a phone and
-                   never pushed below decorative media. The address block is the second thing in the
-                   source order and stays above both reserved areas at every width.
-
-  Content note   : No list of all locations — that is `S17`. No skyline, no glass tower, no world map
-                   with pins. No form. No global header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   the place as bordered rows: the plain page-context region kept as V1 has
+                   it; THE OFFICE as the eyebrow with a house mark, the city as the h1 with a
+                   ghost pin mark in the line tone behind it, what is actually here; the
+                   address, phone and email as a ruled row of obvious placeholders; HOW TO GET
+                   IN as a bordered row of four steps led by word-numerals, with the door as a
+                   3:2 field beside it; GETTING HERE, WHO IS BASED HERE and WHAT IS NOT HERE as
+                   three labelled fields, the last on the deep-red edge; the map slot as a bare
+                   field that says it is a slot; the other three as the foot. Shape C. V1 is
+                   kept whole.
+  Layout model   : Page-context; identity; address row; bordered steps beside a 3:2 door field; three fields; map slot; foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : TWO reserved areas — the door, photographed from the street (3:2), and a map
+                   slot that is a slot: no embedded service, no remote dependency. Empty flat
+                   fields, labelled.
+  Interaction    : None. Links only, no form.
+  Content note   : Address, postcode, phone, email, desk counts, station and days are OBVIOUS
+                   PLACEHOLDERS marked data-placeholder="true" and declared in the meta block —
+                   00 Example Street, EC0A 0AA, +44 (0)20 0000 0000, example.com. No skyline, no
+                   glass tower, no world map, no embedded map, no opening hours, no list of all
+                   locations. Step numbers are word-numerals. The page-context region is
+                   supplied by S21 and S22 in an assembly. Inline SVG, decorative. No header or
+                   navigation element.
 -->
 
 <meta name="study-id" content="CONS-S27-001">
 <meta name="sector" content="Consulting &amp; B2B Professional Services">
 <meta name="sector-prefix" content="CONS">
 <meta name="section-id" content="CONS-S27">
-<meta name="section-name" content="Office Detail">
+<meta name="section-name" content="Location / Branch Detail">
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="theme" content="001 Paper">
-<meta name="section-shape" content="B — anchored, two reserved areas">
-<meta name="layout-model" content="Identity and what is here, address first, how to get in as four steps beside the door, then limits, people and the other three">
-<meta name="density" content="detail-page">
-<meta name="media-mode" content="two-reserved-areas-the-door-and-a-map-slot-never-a-service">
-<meta name="interaction" content="none-links-only-no-form">
+<meta name="theme" content="001 Paper &amp; Indigo">
+<meta name="layout-model" content="Plain page-context; the office as eyebrow and the city as h1 with a ghost glyph behind; address row of obvious placeholders; how to get in as a bordered row of four with word-numerals beside a 3:2 door field; three labelled fields; map slot; the other three as the foot">
+<meta name="density" content="structured">
+<meta name="media-mode" content="two-reserved-areas">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="address, postcode, phone, email, desk counts, station, days — obvious placeholders, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CONS-S27-001 — Office Detail, Universal / Safe</title>
+<title>CONS-S27-001 — Location / Branch Detail, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f7f6f3; }
+body { margin: 0; background: #f6f5f1; }
 
-/* Scoped study styles — namespaced to .cons-s27-001 */
 .cons-s27-001 {
-  --paper: #f7f6f3;
-  --ink: #14161a;
-  --ink-soft: #585d66;
-  --line: #dedcd6;
-  --card: #ffffff;
-  --accent: #2f4fe0;
-  --accent-ink: #ffffff;
-  --slot: #eceae5;
-  --slot-edge: #c7c4bc;
-  --slot-ink: #5f6169;
-  --focus: #14161a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f5f1; --ink: #15171b; --muted: #5b5f68; --line: #dad8d1; --line-strong: #15171b;
+  --media: #e6e4dd; --band: #edebe5; --accent: #2f4fe0; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s27-001 *,
-.cons-s27-001 *::before,
-.cons-s27-001 *::after { box-sizing: inherit; }
-.cons-s27-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+.cons-s27-001 *, .cons-s27-001 *::before, .cons-s27-001 *::after { box-sizing: inherit; }
+.cons-s27-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s27-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(28px, 3.4vw, 56px) clamp(22px, 3.6vw, 58px) clamp(40px, 5vw, 88px);
-}
+.cons-s27-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(1.6rem, 3.5vw, 3rem) clamp(1rem, 4.5vw, 4.5rem) clamp(2.5rem, 5vw, 5rem); }
+.cons-s27-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.cons-s27-001 a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
 
-/* --- Page context --- */
-.cons-s27-001 .ctx ol {
-  margin: 0 0 clamp(14px, 1.8vw, 20px);
-  padding: 0; list-style: none;
-  display: flex; flex-wrap: wrap; gap: 8px;
-  font-size: 0.84rem; color: var(--ink-soft);
-}
-.cons-s27-001 .ctx li + li::before { content: "\203A"; margin-right: 8px; opacity: 0.5; }
-.cons-s27-001 .ctx a { color: var(--ink-soft); font-weight: 700; text-underline-offset: 3px; }
+.cons-s27-001 .ctx ol { list-style: none; margin: 0 0 1.2rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.3rem 0.5rem; color: var(--muted); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s27-001 .ctx ol li + li::before { content: "/"; color: var(--line); margin-right: 0.5rem; }
+.cons-s27-001 .ctx ol a { color: var(--muted); text-decoration: none; }
 
-.cons-s27-001 .kind {
-  display: inline-block;
-  margin: 0 0 clamp(11px, 1.4vw, 15px);
-  padding: 6px 14px; border-radius: 999px;
-  background: var(--ink); color: var(--paper);
-  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em; text-transform: uppercase;
-}
-.cons-s27-001 h1 {
-  margin: 0 0 clamp(12px, 1.6vw, 17px);
-  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
-  line-height: 1.02; letter-spacing: -0.038em; font-weight: 800;
-}
-.cons-s27-001 .here { margin: 0 0 clamp(22px, 2.8vw, 34px); max-width: 46ch; font-size: clamp(1.1rem, 1.5vw, 1.32rem); line-height: 1.3; letter-spacing: -0.02em; font-weight: 600; }
+.cons-s27-001 .id { position: relative; }
+.cons-s27-001 .id > p.ghost { position: absolute; right: 0; top: -0.3em; margin: 0; z-index: 0; font-family: var(--serif); font-size: clamp(12rem, 24vw, 22rem); line-height: 1; color: var(--line); pointer-events: none; user-select: none; }
+.cons-s27-001 .kind { position: relative; z-index: 1; display: flex; align-items: center; gap: 0.55rem; margin: 0 0 0.7rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s27-001 h1 { position: relative; z-index: 1; margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 5.4vw, 6rem); line-height: 0.95; letter-spacing: -0.035em; }
+.cons-s27-001 .id > p.what { position: relative; z-index: 1; margin: 0.9rem 0 0; max-width: 34rem; font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 1.7vw, 1.5rem); line-height: 1.3; }
+.cons-s27-001 .what span[data-placeholder] { font-style: normal; color: var(--accent); }
 
-/* --- The address, first-class and above the media --- */
-.cons-s27-001 .addr {
-  margin: 0 0 clamp(28px, 3.4vw, 46px);
-  padding: 0 0 clamp(20px, 2.6vw, 30px);
-  border-bottom: 1px solid var(--line);
-  list-style: none;
-  display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 48px);
-}
-.cons-s27-001 .addr b { color: var(--accent); font-weight: 800; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.cons-s27-001 .addr span { display: block; margin-top: 4px; font-size: 0.99rem; font-weight: 700; }
+.cons-s27-001 .addr { margin: clamp(1.4rem, 2.5vw, 2rem) 0 0; display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)); gap: 0 1.5rem; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); }
+.cons-s27-001 .addr > div { padding: 0.7rem 0 0.8rem; }
+.cons-s27-001 .addr dt { margin: 0 0 0.15rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s27-001 .addr dd { margin: 0; font-family: var(--serif); font-size: 1rem; }
 
-.cons-s27-001 h2 {
-  margin: 0 0 clamp(14px, 1.8vw, 20px);
-  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-soft);
-}
+.cons-s27-001 .sub { display: flex; align-items: baseline; gap: 0.7rem; margin: clamp(1.8rem, 3.5vw, 3rem) 0 0; color: var(--ink); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s27-001 .sub .mk { color: var(--accent); transform: translateY(0.15rem); }
+.cons-s27-001 .in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.45fr); gap: clamp(1.2rem, 2.5vw, 2.4rem); align-items: start; margin: 0.8rem 0 0; }
+.cons-s27-001 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.cons-s27-001 .steps > li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.2rem 0.8rem; align-content: start; padding: 1rem 1.1rem 1.2rem; min-width: 0; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.cons-s27-001 .steps p.ix { grid-row: 1 / 3; margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 2vw, 1.9rem); line-height: 1; color: var(--accent); letter-spacing: -0.02em; min-width: 3.2ch; }
+.cons-s27-001 .steps h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.15rem, 1.6vw, 1.45rem); line-height: 1.1; letter-spacing: -0.02em; }
+.cons-s27-001 .steps p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.cons-s27-001 .steps p span[data-placeholder] { color: var(--ink); font-weight: 700; }
+.cons-s27-001 figure { margin: 0; }
+.cons-s27-001 .media { position: relative; background: var(--media); border-top: 1px solid var(--line-strong); }
+.cons-s27-001 .media.door { aspect-ratio: 3 / 2; }
+.cons-s27-001 .media.map { aspect-ratio: 6 / 1; }
+.cons-s27-001 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s27-001 figcaption { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; }
 
-/* --- How to get in, beside the door --- */
-.cons-s27-001 .arrive {
-  display: grid;
-  grid-template-columns: minmax(0, 1.42fr) minmax(0, 0.58fr);
-  gap: clamp(24px, 3.4vw, 56px);
-  align-items: stretch;
-}
-.cons-s27-001 .steps { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(16px, 2vw, 24px); }
-.cons-s27-001 .steps li { display: grid; grid-template-columns: 2.2em minmax(0, 1fr); gap: clamp(10px, 1.4vw, 16px); align-items: baseline; }
-.cons-s27-001 .steps .fig { font-size: 0.78rem; font-weight: 800; color: var(--accent); }
-.cons-s27-001 .steps h3 { margin: 0 0 3px; font-size: 1.02rem; letter-spacing: -0.022em; font-weight: 800; }
-.cons-s27-001 .steps p { margin: 0; font-size: 0.97rem; color: var(--ink-soft); }
+.cons-s27-001 .facts { margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.5rem, 3vw, 3rem); }
+.cons-s27-001 .facts dl { margin: 0; padding-left: 0.9rem; border-left: 1px solid var(--line-strong); }
+.cons-s27-001 .facts dl.no { border-left: 2px solid var(--no); padding-left: calc(0.9rem - 1px); }
+.cons-s27-001 .facts dt { margin: 0 0 0.2rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s27-001 .facts dl.no dt { color: var(--no); }
+.cons-s27-001 .facts dd { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.cons-s27-001 .facts dd span[data-placeholder] { color: var(--ink); font-weight: 700; }
 
-.cons-s27-001 .shot {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 18px;
-  background: var(--slot);
-  min-height: 240px;
-  display: grid; place-items: center;
-  padding: 16px;
-}
-.cons-s27-001 .shot span { color: var(--slot-ink); font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 1.45; }
+.cons-s27-001 figure.slot { margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; }
+.cons-s27-001 .foot { margin: clamp(1.4rem, 2.5vw, 2rem) 0 0; padding-top: 0.9rem; border-top: 3px solid var(--accent); width: min(100%, 56rem); color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.cons-s27-001 .foot b { color: var(--ink); font-weight: 700; }
+.cons-s27-001 .foot a::after { content: " \2197"; color: var(--accent); }
 
-/* --- Limits, who is here, and the map slot --- */
-.cons-s27-001 .facts {
-  margin: clamp(28px, 3.4vw, 46px) 0 0;
-  padding: 0; list-style: none;
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 2.4vw, 36px);
-}
-.cons-s27-001 .facts b { display: block; margin-bottom: 5px; font-size: 0.96rem; font-weight: 800; }
-.cons-s27-001 .facts p { margin: 0; font-size: 0.95rem; color: var(--ink-soft); }
-
-.cons-s27-001 .map {
-  margin: clamp(24px, 3vw, 40px) 0 0;
-  border: 1px dashed var(--slot-edge);
-  border-radius: 18px;
-  background: var(--slot);
-  aspect-ratio: 24 / 7;
-  display: grid; place-items: center;
-  padding: clamp(16px, 2.2vw, 28px);
-}
-.cons-s27-001 .map span { color: var(--slot-ink); font-size: 0.77rem; font-weight: 700; text-align: center; }
-
-/* --- The other three --- */
-.cons-s27-001 .others {
-  margin: clamp(26px, 3.2vw, 42px) 0 0;
-  padding-top: clamp(18px, 2.4vw, 28px);
-  border-top: 1px solid var(--line);
-  font-size: 0.97rem; color: var(--ink-soft); max-width: 78ch;
-}
-.cons-s27-001 .others b { color: var(--ink); font-weight: 800; }
-.cons-s27-001 .others a { color: var(--accent); font-weight: 700; text-underline-offset: 3px; }
-
-/* --- Responsive ladder. The address never falls below the media --- */
-@media (max-width: 860px) {
-  .cons-s27-001 .here, .cons-s27-001 .others { max-width: none; }
-  .cons-s27-001 .arrive { grid-template-columns: minmax(0, 1fr); }
-  .cons-s27-001 .shot { aspect-ratio: 16 / 9; }
-  .cons-s27-001 .facts { grid-template-columns: minmax(0, 1fr); }
-  .cons-s27-001 .map { aspect-ratio: 16 / 9; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s27-001 * { transition: none !important; }
-}
+@media (max-width: 900px) { .cons-s27-001 .in { grid-template-columns: minmax(0, 1fr); } .cons-s27-001 .facts { grid-template-columns: minmax(0, 1fr); gap: 1rem; } }
+@media (max-width: 640px) { .cons-s27-001 .addr, .cons-s27-001 .steps { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .cons-s27-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="cons-s27-001" data-study-id="CONS-S27-001" data-direction="Universal / Safe">
-  <article class="shell">
+  <article class="shell" aria-labelledby="cons-s27-001-title">
 
     <div class="ctx" data-region="page-context">
       <ol>
@@ -230,57 +137,45 @@ body { margin: 0; background: #f7f6f3; }
       </ol>
     </div>
 
-    <p class="kind">The office</p>
-    <h1>London</h1>
-    <p class="here">A floor with <span data-placeholder="true">18</span> desks. The room of twelve is this room.</p>
-
-    <ul class="addr">
-      <li><b>Address</b><span data-placeholder="true">Floor 4, 00 Example Street, London EC0A 0AA</span></li>
-      <li><b>Phone</b><span data-placeholder="true">+44 (0)20 0000 0000</span></li>
-      <li><b>Email</b><span data-placeholder="true">london@example.com</span></li>
-    </ul>
-
-    <h2>How to get in</h2>
-    <div class="arrive">
-      <ol class="steps">
-        <li>
-          <span class="fig" aria-hidden="true">01</span>
-          <div><h3>The door</h3><p>The one beside the sandwich shop, not the glass one on the corner.</p></div>
-        </li>
-        <li>
-          <span class="fig" aria-hidden="true">02</span>
-          <div><h3>The bell</h3><p>There is no reception. Ring the one marked <span data-placeholder="true">four</span>.</p></div>
-        </li>
-        <li>
-          <span class="fig" aria-hidden="true">03</span>
-          <div><h3>The lift</h3><p>It needs a fob, so somebody comes down for you.</p></div>
-        </li>
-        <li>
-          <span class="fig" aria-hidden="true">04</span>
-          <div><h3>Who to ask for</h3><p>The person you are meeting, by name. We have no front desk.</p></div>
-        </li>
-      </ol>
-      <div class="shot"><span>Image area &mdash; the door, from the street</span></div>
+    <div class="id">
+      <p class="ghost" aria-hidden="true">&there4;</p>
+      <p class="kind"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V9l8-6 8 6v12zM10 21v-6h4v6"/></svg>The office</p>
+      <h1 id="cons-s27-001-title">London</h1>
+      <p class="what">A floor with <span data-placeholder="true">18</span> desks. The room of twelve is this room.</p>
     </div>
 
-    <ul class="facts">
-      <li>
-        <b>Getting here</b>
-        <p><span data-placeholder="true">Six</span> minutes from <span data-placeholder="true">Farringdon</span>, badly signposted.</p>
-      </li>
-      <li>
-        <b>Who is based here</b>
-        <p><span data-placeholder="true">Fourteen</span> of eighteen desks. <span data-placeholder="true">A. Whitfield</span> is in <span data-placeholder="true">three</span> days a week.</p>
-      </li>
-      <li>
-        <b>What is not here</b>
-        <p>No parking. No visitor wifi worth using. No room bigger than twelve.</p>
-      </li>
-    </ul>
+    <dl class="addr">
+      <div><dt>Address</dt><dd><span data-placeholder="true">Floor 4, 00 Example Street, London EC0A 0AA</span></dd></div>
+      <div><dt>Phone</dt><dd><span data-placeholder="true">+44 (0)20 0000 0000</span></dd></div>
+      <div><dt>Email</dt><dd><span data-placeholder="true">london@example.com</span></dd></div>
+    </dl>
 
-    <div class="map"><span>Map area &mdash; reserved slot. No embedded service, no remote dependency.</span></div>
+    <p class="sub"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 3h6v18h-6M9 8l-4 4 4 4M5 12h10"/></svg>How to get in</p>
+    <div class="in">
+      <ol class="steps">
+        <li><p class="ix">One</p><h2>The door</h2><p>The one beside the sandwich shop, not the glass one on the corner.</p></li>
+        <li><p class="ix">Two</p><h2>The bell</h2><p>There is no reception. Ring the one marked <span data-placeholder="true">four</span>.</p></li>
+        <li><p class="ix">Three</p><h2>The lift</h2><p>It needs a fob, so somebody comes down for you.</p></li>
+        <li><p class="ix">Four</p><h2>Who to ask for</h2><p>The person you are meeting, by name. We have no front desk.</p></li>
+      </ol>
+      <figure>
+        <div class="media door" role="img" aria-label="Reserved image area: the door, from the street"><span>The door &middot; 3:2</span></div>
+        <figcaption>Image area &mdash; the door, from the street</figcaption>
+      </figure>
+    </div>
 
-    <p class="others"><b>The other three are not offices.</b> <a href="#" data-placeholder="true">Manchester</a> is three of us working from home, <a href="#" data-placeholder="true">Frankfurt</a> is a registered address nobody sits at, and <a href="#" data-placeholder="true">Singapore</a> is a borrowed desk that comes off the site when the engagement ends.</p>
+    <div class="facts">
+      <dl><dt>Getting here</dt><dd><span data-placeholder="true">Six</span> minutes from <span data-placeholder="true">Farringdon</span>, badly signposted.</dd></dl>
+      <dl><dt>Who is based here</dt><dd><span data-placeholder="true">Fourteen</span> of eighteen desks. <span data-placeholder="true">A. Whitfield</span> is in <span data-placeholder="true">three</span> days a week.</dd></dl>
+      <dl class="no"><dt>What is not here</dt><dd>No parking. No visitor wifi worth using. No room bigger than twelve.</dd></dl>
+    </div>
+
+    <figure class="slot">
+      <div class="media map" role="img" aria-label="Reserved map area: a slot, not a service"><span>Map area &middot; reserved slot</span></div>
+      <figcaption>Map area &mdash; reserved slot. No embedded service, no remote dependency.</figcaption>
+    </figure>
+
+    <p class="foot"><b>The other three are not offices.</b> <a href="#" data-placeholder="true">Manchester</a> is three of us working from home, <a href="#" data-placeholder="true">Frankfurt</a> is a registered address nobody sits at, and <a href="#" data-placeholder="true">Singapore</a> is a borrowed desk that comes off the site when the engagement ends.</p>
 
   </article>
 </div>

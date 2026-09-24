@@ -12,41 +12,20 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S11 — Frameworks & Approach
   Direction      : Structured / Visual Modular
-  Theme          : 003 Field — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **B — Anchored.** One wide band, then the questions on a rail.
-  Layout model   : A wide reserved band of the blank wall, then the five questions as a horizontal
-                   snap rail of tall panels, one held in the accent
-  Density        : Structured (188 visible words, structured band 170–230)
-  Media mode     : ONE reserved area — the wall before anything is on it.
-  Interaction    : Snap rail. Native scroll works without JavaScript; two arrow buttons step it by
-                   one panel (about ten lines, no dependency).
-
-  Governing idea : **Every firm arrives with a framework. A framework is a claim to already know the
-                   shape of your problem.**
-
-  Why a rail and not a grid :
-                   The obvious structured answer was a grid of five modules. It was rejected twice
-                   over. First, five text-only boxes are five cards without media, and
-                   ../../CONSULTING-THEME-CONTRACT.md is explicit: *a card without media is a table
-                   cell with rounded corners.* Second, `S09-003` and `S10-003` already sit on this
-                   variant as uneven coloured blocks, and a third would have made the assembled
-                   variant-003 page one texture for three sections running.
-                   A rail is a different structure, not a restyled grid. **It also matches what the
-                   content is** — five questions asked in sequence, one at a time, with the next one
-                   visibly waiting past the frame edge.
-
-  This is a choice, not a constraint :
-                   ../../CONSULTING-THEME-CONTRACT.md bans the 2x2 matrix as ornament and makes one
-                   explicit exception: *a framework diagram is legitimate only where the section role
-                   is the framework itself.* **That is this section.** The diagram was available and
-                   is declined.
-
-  Not a dashboard : The accent panel marks the live module, not a rating. Nothing here is scored,
-                   staged or laddered, and the numerals are graphic elements rather than a column.
-
-  Content note   : No named or trademarked model, no matrix, pyramid, funnel, wheel or maturity
-                   ladder. No client name, logo, testimonial attribution, percentage, currency
-                   figure, ROI multiple, ranking, award or certification. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 3 on a
+                   rail: the head with the pencil rule; one 21:9 field of the blank wall; the
+                   five questions as a CSS snap rail of bordered sheets in the order they are
+                   asked, the next peeking past the frame edge — each a serif italic word-numeral
+                   at display scale on the band tone, the question in the serif and its note;
+                   V1's arrow buttons go with the script (the rail scrolls natively); the 003
+                   pencil figure: the ruled margin behind; the closing line on a ruled foot.
+                   V1 is kept whole; "01" → "One".
+  Layout model   : Head; 21:9 field; snap rail of five bordered sheets; ruled foot
+  Density        : Structured — V1's spine kept in full
+  Media mode     : One reserved area, 21:9 — the wall before anything is on it.
+  Interaction    : Native horizontal scroll. No script, no form.
+  Content note   : No named or trademarked model. No placeholder data. Inline SVG, decorative.
+                   No header or navigation.
 -->
 
 <meta name="study-id" content="CONS-S11-003">
@@ -57,295 +36,100 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="theme" content="003 Field">
-<meta name="section-shape" content="B — anchored">
-<meta name="layout-model" content="Wide reserved band, five questions as a horizontal snap rail with one panel held in the accent">
+<meta name="theme" content="003 Field &amp; Emerald">
+<meta name="layout-model" content="Head with the pencil rule; 21:9 field of the blank wall; CSS snap rail of five bordered sheets with display-scale serif word-numerals on the band tone; ruled foot with the closing line; ruled margin behind">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-blank-wall">
-<meta name="interaction" content="snap-rail-with-arrow-buttons">
+<meta name="media-mode" content="one-reserved-area-21-9">
+<meta name="interaction" content="native-scroll-rail">
 <meta name="dependencies" content="none">
-<meta name="placeholder-data" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S11-003 — Frameworks &amp; Approach, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #eff1f4; }
+body { margin: 0; background: #eff1f2; }
 
-/* Scoped study styles — namespaced to .cons-s11-003 */
 .cons-s11-003 {
-  --paper: #eff1f4;
-  --ink: #0e1216;
-  --ink-soft: #525c66;
-  --line: #d7dde2;
-  --card: #ffffff;
-  --slot: #e2e7eb;
-  --slot-edge: #b6c0c8;
-  --slot-ink: #5c666f;
-  --accent: #12856a;
-  --accent-ink: #ffffff;
-  --focus: #0e1216;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #eff1f2; --ink: #0f1417; --muted: #535c63; --line: #d3d9dc; --line-strong: #0f1417;
+  --media: #e0e5e7; --band: #e6eaec; --accent: #12856a; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s11-003 *,
-.cons-s11-003 *::before,
-.cons-s11-003 *::after { box-sizing: inherit; }
-.cons-s11-003 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 20px; }
+.cons-s11-003 *, .cons-s11-003 *::before, .cons-s11-003 *::after { box-sizing: inherit; }
+.cons-s11-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s11-003 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s11-003 .draw { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: var(--line); }
+.cons-s11-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) 0 clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s11-003 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s11-003 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(22px, 3vw, 38px);
-}
-.cons-s11-003 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 20px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s11-003 h2 {
-  margin: 0;
-  font-size: clamp(2rem, 3.7vw, 3rem);
-  line-height: 1.02;
-  letter-spacing: -0.036em;
-  font-weight: 800;
-  max-width: 19ch;
-}
-.cons-s11-003 .lead { margin: 0; color: var(--ink-soft); }
+.cons-s11-003 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; margin-right: clamp(1rem, 4.5vw, 4.5rem); border-top: 3px solid var(--accent); padding-top: clamp(1.4rem, 2.6vw, 2.2rem); }
+.cons-s11-003 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s11-003 h2 { margin: 0; max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s11-003 h2 em { font-style: italic; color: var(--accent); }
+.cons-s11-003 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 
-/* --- The blank wall --- */
-.cons-s11-003 .band {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 20px;
-  background: var(--slot);
-  aspect-ratio: 24 / 7;
-  display: grid;
-  place-items: center;
-  padding: 22px;
-  margin-bottom: clamp(20px, 2.6vw, 34px);
-}
-.cons-s11-003 .band span {
-  color: var(--slot-ink);
-  font-size: 0.77rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.8;
-}
+.cons-s11-003 .media { position: relative; aspect-ratio: 21 / 9; margin: clamp(1.8rem, 3.6vw, 3rem) clamp(1rem, 4.5vw, 4.5rem) 0 0; background: var(--media); border-radius: 2px; }
+.cons-s11-003 .slate { position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s11-003 .slate b { display: block; color: var(--ink); }
 
-/* --- Rail head with the controls --- */
-.cons-s11-003 .rail-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  margin-bottom: clamp(13px, 1.6vw, 18px);
-}
-.cons-s11-003 .rail-head h3 { margin: 0; font-size: clamp(1.16rem, 1.6vw, 1.44rem); font-weight: 800; letter-spacing: -0.028em; }
-.cons-s11-003 .arrows { display: flex; gap: 8px; }
-.cons-s11-003 .arrows button {
-  width: 46px;
-  height: 46px;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  background: transparent;
-  color: var(--ink);
-  font-size: 1.1rem;
-  font-weight: 800;
-  line-height: 1;
-  cursor: pointer;
-  transition: background 160ms ease, color 160ms ease;
-}
-.cons-s11-003 .arrows button:hover { background: var(--ink); color: var(--paper); }
+.cons-s11-003 .order { display: flex; align-items: center; gap: 0.5rem; margin: clamp(1.6rem, 3vw, 2.6rem) 0 0.8rem; color: var(--ink); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s11-003 .order .mk { color: var(--accent); }
+.cons-s11-003 .rail { list-style: none; margin: 0; padding: 0 clamp(1rem, 4.5vw, 4.5rem) 0.4rem 0; display: flex; gap: clamp(0.8rem, 1.6vw, 1.4rem); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+.cons-s11-003 .sheet { flex: 0 0 clamp(16rem, 23vw, 21rem); scroll-snap-align: start; display: grid; grid-template-rows: auto 1fr; border: 1px solid var(--line-strong); background: var(--paper); }
+.cons-s11-003 .open { padding: 1.2rem 1.2rem 1rem; background: var(--band); border-bottom: 1px solid var(--line-strong); }
+.cons-s11-003 .open p { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(2.6rem, 4vw, 3.6rem); line-height: 0.9; letter-spacing: -0.03em; color: var(--accent); }
+.cons-s11-003 .body { padding: 1.1rem 1.2rem 1.3rem; }
+.cons-s11-003 .body h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 1.35rem; line-height: 1.15; letter-spacing: -0.02em; }
+.cons-s11-003 .body p { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
 
-/* --- The rail --- */
-.cons-s11-003 .rail {
-  margin: 0 0 clamp(22px, 2.8vw, 36px);
-  padding: 0 0 6px;
-  list-style: none;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(268px, 30%);
-  gap: clamp(12px, 1.5vw, 20px);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  overscroll-behavior-x: contain;
-}
-.cons-s11-003 .rail > li { scroll-snap-align: start; }
-.cons-s11-003 .panel {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: clamp(240px, 26vw, 320px);
-  padding: clamp(22px, 2.5vw, 30px);
-  border-radius: 20px;
-  background: var(--card);
-}
-/* One panel held in the accent as the live module. Not a rating. */
-.cons-s11-003 .rail > li:nth-child(3) .panel { background: var(--accent); color: var(--accent-ink); }
+.cons-s11-003 .foot { margin: clamp(1.6rem, 3vw, 2.6rem) clamp(1rem, 4.5vw, 4.5rem) 0 0; padding-top: 1.1rem; border-top: 1px solid var(--line-strong); }
+.cons-s11-003 .foot h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2.2vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; }
+.cons-s11-003 .foot p { margin: 0.4rem 0 0; max-width: 44rem; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
 
-.cons-s11-003 .n {
-  display: block;
-  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-}
-.cons-s11-003 .rail > li:nth-child(3) .n { color: var(--accent-ink); }
-.cons-s11-003 .panel h4 {
-  margin: clamp(14px, 1.7vw, 20px) 0 0;
-  font-size: clamp(1.14rem, 1.6vw, 1.4rem);
-  line-height: 1.16;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-}
-.cons-s11-003 .why { margin: 11px 0 0; color: var(--ink-soft); font-size: 0.95rem; flex: 1 1 auto; }
-.cons-s11-003 .rail > li:nth-child(3) .why { color: rgba(255, 255, 255, 0.88); }
-
-/* --- The close --- */
-.cons-s11-003 .after {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(20px, 3.4vw, 52px);
-  align-items: center;
-  padding: clamp(24px, 2.8vw, 38px) clamp(24px, 3vw, 40px);
-  border-radius: 20px;
-  background: var(--ink);
-  color: var(--paper);
-}
-.cons-s11-003 .after h3 { margin: 0; font-size: clamp(1.24rem, 1.9vw, 1.7rem); line-height: 1.14; letter-spacing: -0.03em; font-weight: 800; }
-.cons-s11-003 .after p { margin: 0; font-size: 1rem; opacity: 0.84; }
-
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .cons-s11-003 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s11-003 h2 { max-width: none; }
-  .cons-s11-003 .band { aspect-ratio: 16 / 9; }
-  .cons-s11-003 .rail { grid-auto-columns: minmax(240px, 78%); }
-  .cons-s11-003 .after { grid-template-columns: minmax(0, 1fr); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s11-003 * { transition: none !important; }
-  .cons-s11-003 .rail { scroll-behavior: auto; }
-}
+@media (max-width: 860px) { .cons-s11-003 .head { grid-template-columns: minmax(0, 1fr); } .cons-s11-003 .media { aspect-ratio: 16 / 9; } .cons-s11-003 .sheet { flex-basis: 16rem; } }
+@media (prefers-reduced-motion: reduce) { .cons-s11-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="cons-s11-003" data-study-id="CONS-S11-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g stroke="currentColor" stroke-width="1" fill="none">
+      <path d="M2.4 0v100" vector-effect="non-scaling-stroke"/>
+      <path d="M0 8h100M0 16h100M0 24h100M0 32h100M0 40h100M0 48h100M0 56h100M0 64h100M0 72h100M0 80h100M0 88h100M0 96h100" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
   <section class="shell" aria-labelledby="cons-s11-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">How we approach it</p>
-        <h2 id="cons-s11-003-title">A framework is a claim to already know the shape of your problem.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>How we approach it</p>
+        <h2 id="cons-s11-003-title">A framework is a claim to already know the <em>shape</em> of your problem.</h2>
       </div>
-      <p class="lead">No named model, no trademark, no pyramid. Five questions instead, asked before anything gets drawn.</p>
+      <p>No named model, no trademark, no pyramid. Five questions instead, asked before anything gets drawn.</p>
     </div>
 
-    <div class="band"><span>Image area &mdash; the wall at the start of an engagement, before anything is on it</span></div>
+    <div class="media" role="img" aria-label="Image area — the wall at the start of an engagement, before anything is on it"><p class="slate" aria-hidden="true"><b>The wall &middot; 21:9</b>the wall at the start of an engagement, before anything is on it</p></div>
 
-    <div class="rail-head">
-      <h3>The five, in the order we ask them</h3>
-      <div class="arrows">
-        <button type="button" data-dir="-1" aria-label="Previous question">&larr;</button>
-        <button type="button" data-dir="1" aria-label="Next question">&rarr;</button>
-      </div>
-    </div>
+    <p class="order"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h16M14 6l6 6-6 6"/></svg>The five, in the order we ask them</p>
+    <ol class="rail">
+      <li class="sheet"><div class="open"><p aria-hidden="true">One</p></div><div class="body"><h3>What decision is this actually for?</h3><p>Most engagements are commissioned without one. If no decision is waiting, there is no engagement.</p></div></li>
+      <li class="sheet"><div class="open"><p aria-hidden="true">Two</p></div><div class="body"><h3>Who has already made it?</h3><p>Sometimes it is made and the work is meant to support it. Better said in week one than discovered in week six.</p></div></li>
+      <li class="sheet"><div class="open"><p aria-hidden="true">Three</p></div><div class="body"><h3>What would change your mind?</h3><p>If nothing would, the evidence stage is theatre and we will say so.</p></div></li>
+      <li class="sheet"><div class="open"><p aria-hidden="true">Four</p></div><div class="body"><h3>What happens if you do nothing?</h3><p>The most common alternative, and the one nobody costs.</p></div></li>
+      <li class="sheet"><div class="open"><p aria-hidden="true">Five</p></div><div class="body"><h3>Who has to live with it afterwards?</h3><p>The people in the room are rarely the people who operate the result.</p></div></li>
+    </ol>
 
-    <ul class="rail">
-      <li>
-        <div class="panel">
-          <span class="n">01</span>
-          <h4>What decision is this actually for?</h4>
-          <p class="why">Most engagements are commissioned without one. If no decision is waiting, there is no engagement.</p>
-        </div>
-      </li>
-      <li>
-        <div class="panel">
-          <span class="n">02</span>
-          <h4>Who has already made it?</h4>
-          <p class="why">Sometimes it is made and the work is meant to support it. Better said in week one than discovered in week six.</p>
-        </div>
-      </li>
-      <li>
-        <div class="panel">
-          <span class="n">03</span>
-          <h4>What would change your mind?</h4>
-          <p class="why">If nothing would, the evidence stage is theatre and we will say so.</p>
-        </div>
-      </li>
-      <li>
-        <div class="panel">
-          <span class="n">04</span>
-          <h4>What happens if you do nothing?</h4>
-          <p class="why">The most common alternative, and the one nobody costs.</p>
-        </div>
-      </li>
-      <li>
-        <div class="panel">
-          <span class="n">05</span>
-          <h4>Who has to live with it afterwards?</h4>
-          <p class="why">The people in the room are rarely the people who operate the result.</p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="after">
+    <div class="foot">
       <h3>We will draw you a diagram.</h3>
       <p>After these, not before &mdash; and it will be a picture of your problem rather than a model we brought with us.</p>
     </div>
 
   </section>
 </div>
-
-<script>
-/* Steps the snap rail by one panel. Native scroll already works without this;
-   the arrows exist because a rail with no visible control reads as a static row. */
-(function () {
-  var root = document.querySelector('.cons-s11-003');
-  if (!root) return;
-  var rail = root.querySelector('.rail');
-  var card = rail && rail.querySelector('li');
-  if (!rail || !card) return;
-  Array.prototype.forEach.call(root.querySelectorAll('[data-dir]'), function (btn) {
-    btn.addEventListener('click', function () {
-      var gap = parseFloat(getComputedStyle(rail).columnGap) || 20;
-      var step = card.getBoundingClientRect().width + gap;
-      rail.scrollBy({ left: step * Number(btn.getAttribute('data-dir')), behavior: 'smooth' });
-    });
-  });
-})();
-</script>
 
 </body>
 </html>

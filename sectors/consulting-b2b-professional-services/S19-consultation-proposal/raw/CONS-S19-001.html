@@ -12,51 +12,22 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S19 — Consultation & Proposal
   Direction      : Universal / Safe
-  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **B — Anchored.** One reserved area, of the document itself.
-  Layout model   : One image of the proposal open at its first page, then its six sections on three
-                   tracks, then what the conversation costs
-  Density        : Structured (223 visible words, structured band 170–230)
-  Media mode     : ONE reserved area — **the proposal, open at the page that names the decision.**
-  Interaction    : None (static; no JavaScript). **No form, no wizard.**
-
-  Governing idea : **A proposal is the only document you will be asked to sign, and nobody tells you
-                   what is in it first.**
-                   So this section prints its contents page **before the proposal exists.** Six named
-                   sections, each with the line it carries — including two that almost no proposal
-                   in this sector contains: what the firm would *not* do, and what would make the
-                   whole thing wrong.
-
-  Not a free consultation :
-                   *Free consultation, no obligation* is the reflex, and `S14` already established
-                   why it is untrue: a gate is a price. **An hour of somebody who can sign is the
-                   most expensive thing in this process**, and calling it free misprices the only
-                   scarce resource in the room. So the hour is named as a cost, and what it buys is
-                   named beside it.
-
-  The section nobody writes :
-                   *What would make us wrong* is the assumption the proposal rests on, written down
-                   so the client can test it. `S13` applies the same standard to what the firm
-                   publishes; this applies it to what the firm is about to be paid for, which is the
-                   harder half.
-
-  The conversation can end in a no :
-                   Roughly one in four first conversations ends with the firm saying it is not the
-                   right one. That is not a disclaimer — it is what makes the other three worth
-                   having, and it is the same position `S12` takes on the models it will not sell.
-
-  Why the document may be photographed :
-                   `S13` established that the firm's own published output is a legitimate reserved
-                   area — the opening spread of a piece. A proposal is the firm's own output too.
-                   This is **a photograph of a real artefact, not a document metaphor**: no memo
-                   styling, no letterhead, no signature block anywhere in the composition.
-
-  Placeholder data : The page count and the decline ratio are PLACEHOLDER DEMO VALUES marked
-                   data-placeholder="true" — the firm's own countable facts.
-
-  Content note   : No *free* claim, no *no obligation*, no turnaround promise, no form or wizard, no
-                   discovery-call booking widget. No client name, logo, testimonial attribution,
-                   percentage, currency figure or ranking. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 3 —
+                   a bordered grid: the head split with a ghost pilcrow in the line tone behind
+                   it; one 21:9 field of the proposal open at the page that names the decision,
+                   with the placeholder page count as its caption; the six sections as bordered
+                   cells on three columns, each led by its word-numeral in the accent italic;
+                   V1's WHAT THE CONVERSATION COSTS as a band of three labelled fields, the
+                   third on a `--no` edge because it can end in a no. Shape C. V1 is kept whole.
+  Layout model   : Head split with a ghost glyph; one 21:9 field; six bordered cells on three columns; band
+  Density        : Structured — V1's spine kept in full
+  Media mode     : ONE reserved area — the proposal, open at the page that names the decision.
+                   Empty flat field, labelled.
+  Interaction    : None. No form, no wizard.
+  Content note   : The page count and the decline ratio are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true" and declared in the meta block. No free claim, no
+                   no-obligation, no turnaround promise, no form or wizard. Section numbers are
+                   word-numerals. Inline SVG, decorative. No header or navigation.
 -->
 
 <meta name="study-id" content="CONS-S19-001">
@@ -67,170 +38,69 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="theme" content="001 Paper">
-<meta name="section-shape" content="B — anchored">
-<meta name="layout-model" content="One image of the proposal, its six sections on three tracks, then what the conversation costs">
+<meta name="theme" content="001 Paper &amp; Indigo">
+<meta name="layout-model" content="Head split with a ghost glyph behind; one 21:9 field of the proposal with the page count as caption; six sections as bordered cells on three columns with word-numerals; band of what the conversation costs">
 <meta name="density" content="structured">
-<meta name="media-mode" content="one-reserved-area-the-proposal-open-at-its-first-page">
-<meta name="interaction" content="none-deliberate-no-form-no-wizard">
+<meta name="media-mode" content="one-reserved-area">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="the page count and the decline ratio — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S19-001 — Consultation &amp; Proposal, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f7f6f3; }
+body { margin: 0; background: #f6f5f1; }
 
-/* Scoped study styles — namespaced to .cons-s19-001 */
 .cons-s19-001 {
-  --paper: #f7f6f3;
-  --ink: #14161a;
-  --ink-soft: #585d66;
-  --line: #dedcd6;
-  --card: #ffffff;
-  --slot: #eceae5;
-  --slot-edge: #c7c4bc;
-  --slot-ink: #5f6169;
-  --accent: #2f4fe0;
-  --accent-ink: #ffffff;
-  --focus: #14161a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f5f1; --ink: #15171b; --muted: #5b5f68; --line: #dad8d1; --line-strong: #15171b;
+  --media: #e6e4dd; --band: #edebe5; --accent: #2f4fe0; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s19-001 *,
-.cons-s19-001 *::before,
-.cons-s19-001 *::after { box-sizing: inherit; }
-.cons-s19-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+.cons-s19-001 *, .cons-s19-001 *::before, .cons-s19-001 *::after { box-sizing: inherit; }
+.cons-s19-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s19-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s19-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6.5rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s19-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s19-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(24px, 4vw, 64px);
-  align-items: end;
-  margin-bottom: clamp(22px, 3vw, 38px);
-}
-.cons-s19-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s19-001 h2 {
-  margin: 0;
-  font-size: clamp(2.1rem, 4vw, 3.25rem);
-  line-height: 1.02;
-  letter-spacing: -0.038em;
-  font-weight: 800;
-  max-width: 17ch;
-}
-.cons-s19-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.22vw, 1.16rem); }
+.cons-s19-001 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s19-001 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr); gap: clamp(2rem, 5vw, 6rem); align-items: end; }
+.cons-s19-001 .head > p.ghost { position: absolute; right: 0; top: 50%; transform: translateY(-44%); margin: 0; z-index: 0; font-family: var(--serif); font-size: clamp(10rem, 22vw, 20rem); line-height: 1; color: var(--line); pointer-events: none; user-select: none; }
+.cons-s19-001 h2 { position: relative; z-index: 1; margin: 0; max-width: 13ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 4.6vw, 5.2rem); line-height: 0.95; letter-spacing: -0.03em; }
+.cons-s19-001 h2 em { font-style: italic; color: var(--accent); }
+.cons-s19-001 .head > p.voice { position: relative; z-index: 1; margin: 0 0 0.3em; max-width: 30rem; font-family: var(--serif); font-style: italic; font-size: clamp(1.05rem, 1.5vw, 1.35rem); line-height: 1.35; }
 
-/* --- The document --- */
-.cons-s19-001 .band {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 18px;
-  background: var(--slot);
-  aspect-ratio: 24 / 7;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  margin-bottom: clamp(10px, 1.4vw, 15px);
-}
-.cons-s19-001 .band span {
-  color: var(--slot-ink);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-}
-.cons-s19-001 .len { margin: 0 0 clamp(18px, 2.2vw, 30px); color: var(--ink-soft); font-size: 0.95rem; max-width: 72ch; }
-.cons-s19-001 .len em { font-style: normal; color: var(--accent); font-weight: 700; }
+.cons-s19-001 .plate { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: end; margin: clamp(2.2rem, 4.5vw, 4rem) 0 0; }
+.cons-s19-001 figure { margin: 0; }
+.cons-s19-001 .media { position: relative; aspect-ratio: 21 / 9; background: var(--media); border-top: 1px solid var(--line-strong); }
+.cons-s19-001 .media span { position: absolute; left: 1rem; bottom: 0.85rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s19-001 figcaption { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.8rem; }
+.cons-s19-001 .count { margin: 0; padding-top: 0.9rem; border-top: 1px solid var(--line-strong); font-family: var(--serif); font-size: clamp(1.2rem, 1.8vw, 1.6rem); line-height: 1.3; letter-spacing: -0.015em; }
+.cons-s19-001 .count strong { font-weight: 400; font-style: italic; color: var(--accent); }
+.cons-s19-001 .count small { display: block; margin-top: 0.5rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 0.86rem; color: var(--muted); line-height: 1.5; }
 
-/* --- The six sections --- */
-.cons-s19-001 .toc {
-  margin: 0 0 clamp(18px, 2.2vw, 30px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.5vw, 20px);
-}
-.cons-s19-001 .sec {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: clamp(19px, 2.2vw, 28px);
-  background: var(--card);
-  border-radius: 18px;
-}
-/* The two that almost no proposal contains */
-.cons-s19-001 .toc > li:nth-child(5) .sec,
-.cons-s19-001 .toc > li:nth-child(6) .sec { background: var(--accent); color: var(--accent-ink); }
+.cons-s19-001 .grid { list-style: none; margin: clamp(2rem, 4vw, 3.4rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.cons-s19-001 .grid > li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.2rem 0.9rem; align-content: start; padding: 1.3rem 1.4rem 1.5rem; min-width: 0; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.cons-s19-001 .grid p.ix { grid-row: 1 / 3; margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(1.6rem, 2.4vw, 2.2rem); line-height: 1; color: var(--accent); letter-spacing: -0.02em; min-width: 3.2ch; }
+.cons-s19-001 .grid h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 2vw, 1.85rem); line-height: 1.1; letter-spacing: -0.02em; }
+.cons-s19-001 .grid p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
 
-.cons-s19-001 .n { display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; color: var(--accent); }
-.cons-s19-001 .toc > li:nth-child(5) .n,
-.cons-s19-001 .toc > li:nth-child(6) .n { color: var(--accent-ink); opacity: 0.82; }
-.cons-s19-001 .sec h3 {
-  margin: 8px 0 0;
-  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-  line-height: 1.16;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-}
-.cons-s19-001 .says { margin: 9px 0 0; color: var(--ink-soft); font-size: 0.94rem; flex: 1 1 auto; }
-.cons-s19-001 .toc > li:nth-child(5) .says,
-.cons-s19-001 .toc > li:nth-child(6) .says { color: rgba(255, 255, 255, 0.9); }
+.cons-s19-001 .band { margin-top: clamp(1.6rem, 3vw, 2.6rem); padding: 1.3rem 1.5rem 1.4rem; background: var(--band); border-top: 3px solid var(--accent); display: grid; grid-template-columns: minmax(0, 0.7fr) repeat(3, minmax(0, 1fr)); gap: 1rem clamp(1.5rem, 3vw, 3rem); align-items: start; }
+.cons-s19-001 .band h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1.2; letter-spacing: -0.02em; }
+.cons-s19-001 .band dl { margin: 0; padding-left: 0.9rem; border-left: 1px solid var(--line-strong); }
+.cons-s19-001 .band dl.no { border-left: 2px solid var(--no); padding-left: calc(0.9rem - 1px); }
+.cons-s19-001 .band dt { margin: 0 0 0.2rem; font-family: var(--serif); font-size: 1.05rem; line-height: 1.3; }
+.cons-s19-001 .band dd { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.cons-s19-001 .band dd span[data-placeholder] { color: var(--ink); font-weight: 700; }
 
-/* --- What the hour costs --- */
-.cons-s19-001 .hour {
-  padding: clamp(24px, 3vw, 40px) clamp(24px, 3.2vw, 44px);
-  border-radius: 18px;
-  border: 2px dashed var(--line);
-}
-.cons-s19-001 .hour h3 { margin: 0 0 clamp(14px, 1.7vw, 19px); font-size: clamp(1.2rem, 1.7vw, 1.5rem); font-weight: 800; letter-spacing: -0.03em; }
-.cons-s19-001 .hour ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); }
-.cons-s19-001 .hour li { font-size: 0.97rem; padding-left: 14px; border-left: 3px solid var(--accent); }
-.cons-s19-001 .hour b { display: block; font-weight: 800; margin-bottom: 4px; }
-
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s19-001 .toc { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 860px) {
-  .cons-s19-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s19-001 h2, .cons-s19-001 .len { max-width: none; }
-  .cons-s19-001 .band { aspect-ratio: 16 / 9; }
-  .cons-s19-001 .hour ul { grid-template-columns: minmax(0, 1fr); }
-}
-@media (max-width: 560px) {
-  .cons-s19-001 .toc { grid-template-columns: minmax(0, 1fr); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s19-001 * { transition: none !important; }
-}
+@media (max-width: 1000px) { .cons-s19-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cons-s19-001 .band { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 860px) { .cons-s19-001 .head, .cons-s19-001 .plate { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .cons-s19-001 .grid, .cons-s19-001 .band { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .cons-s19-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -238,69 +108,35 @@ body { margin: 0; background: #f7f6f3; }
 <div class="cons-s19-001" data-study-id="CONS-S19-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="cons-s19-001-title">
 
+    <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Consultation &amp; proposal</p>
     <div class="head">
-      <div>
-        <p class="eyebrow">Consultation &amp; proposal</p>
-        <h2 id="cons-s19-001-title">The contents page, before the proposal exists.</h2>
-      </div>
-      <p class="lead">A proposal is the only document you will be asked to sign, and nobody tells you what is in it first.</p>
+      <p class="ghost" aria-hidden="true">&para;</p>
+      <h2 id="cons-s19-001-title">The contents page, <em>before</em> the proposal exists.</h2>
+      <p class="voice">A proposal is the only document you will be asked to sign, and nobody tells you what is in it first.</p>
     </div>
 
-    <div class="band"><span>Image area &mdash; the proposal, open at the page that names the decision</span></div>
-    <p class="len"><em><span data-placeholder="true">Nine</span> pages</em>, and it has been nine for years. A proposal that needs thirty is describing work nobody has framed.</p>
+    <div class="plate">
+      <figure>
+        <div class="media" role="img" aria-label="Reserved image area: the proposal, open at the page that names the decision"><span>The proposal &middot; 21:9</span></div>
+        <figcaption>Image area &mdash; the proposal, open at the page that names the decision</figcaption>
+      </figure>
+      <p class="count"><strong><span data-placeholder="true">Nine</span> pages</strong>, and it has been nine for years.<small>A proposal that needs thirty is describing work nobody has framed.</small></p>
+    </div>
 
-    <ul class="toc">
-      <li>
-        <div class="sec">
-          <span class="n">01</span>
-          <h3>The decision</h3>
-          <p class="says">The one it exists to serve, in your words. If we cannot write this line, there is no proposal.</p>
-        </div>
-      </li>
-      <li>
-        <div class="sec">
-          <span class="n">02</span>
-          <h3>The stages</h3>
-          <p class="says">What happens in each, and where you may stop.</p>
-        </div>
-      </li>
-      <li>
-        <div class="sec">
-          <span class="n">03</span>
-          <h3>The people</h3>
-          <p class="says">Named, with the stages they are not on.</p>
-        </div>
-      </li>
-      <li>
-        <div class="sec">
-          <span class="n">04</span>
-          <h3>The fee model</h3>
-          <p class="says">Which of the four, and what it pays us to do.</p>
-        </div>
-      </li>
-      <li>
-        <div class="sec">
-          <span class="n">05</span>
-          <h3>What we would not do</h3>
-          <p class="says">The boundary, so the scope argument happens now rather than in week six.</p>
-        </div>
-      </li>
-      <li>
-        <div class="sec">
-          <span class="n">06</span>
-          <h3>What would make us wrong</h3>
-          <p class="says">The assumption it rests on, written down so you can test it.</p>
-        </div>
-      </li>
+    <ul class="grid">
+      <li><p class="ix">One</p><h3>The decision</h3><p>The one it exists to serve, in your words. If we cannot write this line, there is no proposal.</p></li>
+      <li><p class="ix">Two</p><h3>The stages</h3><p>What happens in each, and where you may stop.</p></li>
+      <li><p class="ix">Three</p><h3>The people</h3><p>Named, with the stages they are not on.</p></li>
+      <li><p class="ix">Four</p><h3>The fee model</h3><p>Which of the four, and what it pays us to do.</p></li>
+      <li><p class="ix">Five</p><h3>What we would not do</h3><p>The boundary, so the scope argument happens now rather than in week six.</p></li>
+      <li><p class="ix">Six</p><h3>What would make us wrong</h3><p>The assumption it rests on, written down so you can test it.</p></li>
     </ul>
 
-    <div class="hour">
+    <div class="band">
       <h3>What the conversation costs</h3>
-      <ul>
-        <li><b>One hour of yours</b>We do not call it free. An hour of somebody who can sign is the most expensive thing here.</li>
-        <li><b>Nothing else</b>The five questions and whatever we draw stay with you either way.</li>
-        <li><b>It can end in a no from us</b>Roughly one in <span data-placeholder="true">four</span> ends with us saying we are not the right firm.</li>
-      </ul>
+      <dl><dt>One hour of yours</dt><dd>We do not call it free. An hour of somebody who can sign is the most expensive thing here.</dd></dl>
+      <dl><dt>Nothing else</dt><dd>The five questions and whatever we draw stay with you either way.</dd></dl>
+      <dl class="no"><dt>It can end in a no from us</dt><dd>Roughly one in <span data-placeholder="true">four</span> ends with us saying we are not the right firm.</dd></dl>
     </div>
 
   </section>

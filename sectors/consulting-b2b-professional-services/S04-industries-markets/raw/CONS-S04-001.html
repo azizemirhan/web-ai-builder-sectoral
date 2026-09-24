@@ -12,38 +12,21 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S04 — Industries & Markets
   Direction      : Universal / Safe
-  Theme          : 001 Paper — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **B — Anchored.** One large image on the left, the six markets as blocks on the
-                   right. See *Page Rhythm* in the theme contract.
-  Layout model   : Two columns — a single tall reserved image held left and sticky against the
-                   scroll, six numbered market blocks stacked in the right column
-  Density        : Medium (128 visible words)
-  Media mode     : ONE reserved image area at 3:4, given real size. Not six thumbnails.
-  Interaction    : None (static; no JavaScript). The left column uses CSS `position: sticky`; block
-                   hover and focus are CSS only.
-
-  V2 rework note, and it is the important one :
-                   The first version of this study was a six-card grid with a reserved image in every
-                   card. So were CONS-S02 and CONS-S03. Each worked alone; stacked at the same
-                   variant they gave the page four consecutive bands of identical image tiles, which
-                   no real website looks like. The theme contract now carries a *Page Rhythm* rule
-                   above the section, and this study is its first application: **one photograph with
-                   room to be a photograph, and copy that is allowed to be read.**
-
-  Why the blocks are not a list :
-                   Six items in a column is one hairline away from the schedule idiom this catalog
-                   already corrected once. There are no rules here. Each market is a block with an
-                   accent numeral, generous vertical space and its own hover surface — separated by
-                   air and colour rather than by lines.
-
-  Governing idea : Naming an industry is not knowing it. Each block names the binding constraint that
-                   makes work in that market different, which demonstrates knowledge instead of
-                   claiming it.
-
-  Content note   : Industry names are generic vocabulary. The constraints are general structural facts
-                   about how those industries operate, not claims about this firm's record. No named
-                   client, logo, ranking, award, certification, market-share figure or invented
-                   metric. No header or navigation.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 1 with
+                   a ruled list: one tall 3:4 field held left and sticky, the six markets as a
+                   ruled column right, each led by a serif italic word-numeral in the accent,
+                   the market as a serif title and the constraint with its phrase in ink; the
+                   pencil rule on the head; the 001 ghost glyph — a serif pilcrow in the line
+                   tone behind the head; ruled foot with V1's question and the bordered action.
+                   V1 is kept whole.
+  Layout model   : Head; tall field left + ruled list of six right; ruled foot
+  Density        : Standard — V1's spine kept in full
+  Media mode     : One reserved field, 3:4 — one market at work, given the room to be a
+                   photograph. Not six thumbnails.
+  Interaction    : One in-page route. No form.
+  Content note   : Industry names are generic vocabulary. The constraints are general structural
+                   facts, not claims about any client. No placeholder data. Inline SVG,
+                   decorative. No header or navigation — the section-shell rule.
 -->
 
 <meta name="study-id" content="CONS-S04-001">
@@ -54,197 +37,66 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="theme" content="001 Paper">
-<meta name="section-shape" content="B — anchored">
-<meta name="layout-model" content="Sticky tall image left, six numbered market blocks right">
-<meta name="density" content="medium">
-<meta name="media-mode" content="one-reserved-image-area">
-<meta name="interaction" content="none">
+<meta name="theme" content="001 Paper &amp; Indigo">
+<meta name="layout-model" content="Head with the pencil rule and a ghost pilcrow; tall 3:4 field held left; ruled list of six markets with serif word-numerals and constraints; ruled foot with the question and one action">
+<meta name="density" content="standard">
+<meta name="media-mode" content="one-reserved-field-3-4">
+<meta name="interaction" content="in-page-route">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S04-001 — Industries &amp; Markets, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f7f6f3; }
+body { margin: 0; background: #f6f5f1; }
 
-/* Scoped study styles — namespaced to .cons-s04-001 */
 .cons-s04-001 {
-  --paper: #f7f6f3;
-  --ink: #14161a;
-  --ink-soft: #585d66;
-  --line: #dedcd6;
-  --card: #ffffff;
-  --slot: #e8e6e0;
-  --slot-edge: #c6c3bb;
-  --slot-ink: #6c6f75;
-  --accent: #2f4fe0;
-  --accent-ink: #ffffff;
-  --focus: #14161a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f6f5f1; --ink: #15171b; --muted: #5b5f68; --line: #dad8d1; --line-strong: #15171b;
+  --media: #e6e4dd; --band: #edebe5; --accent: #2f4fe0; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s04-001 *,
-.cons-s04-001 *::before,
-.cons-s04-001 *::after { box-sizing: inherit; }
-.cons-s04-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 16px; }
+.cons-s04-001 *, .cons-s04-001 *::before, .cons-s04-001 *::after { box-sizing: inherit; }
+.cons-s04-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s04-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(44px, 5.4vw, 100px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s04-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s04-001 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s04-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-  gap: clamp(24px, 4vw, 64px);
-  align-items: end;
-  margin-bottom: clamp(30px, 4vw, 58px);
-}
-.cons-s04-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s04-001 h2 {
-  margin: 0;
-  font-size: clamp(2.15rem, 4.2vw, 3.4rem);
-  line-height: 1.01;
-  letter-spacing: -0.038em;
-  font-weight: 800;
-  max-width: 16ch;
-}
-.cons-s04-001 .lead { margin: 0; color: var(--ink-soft); font-size: clamp(1.04rem, 1.22vw, 1.16rem); }
+.cons-s04-001 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; border-top: 3px solid var(--accent); padding-top: clamp(1.4rem, 2.6vw, 2.2rem); }
+.cons-s04-001 .head > p.ghost { position: absolute; right: 0; top: -0.05em; margin: 0; color: var(--line); font-family: var(--serif); font-size: clamp(10rem, 22vw, 20rem); line-height: 0.8; pointer-events: none; user-select: none; }
+.cons-s04-001 .head > div, .cons-s04-001 .head > p.lead { position: relative; }
+.cons-s04-001 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s04-001 h2 { margin: 0; max-width: 14ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s04-001 h2 em { font-style: italic; color: var(--accent); }
+.cons-s04-001 .head > p.lead { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.cons-s04-001 .head > p.lead b { color: var(--ink); }
 
-/* --- Split: the one photograph, and the markets --- */
-.cons-s04-001 .body {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: clamp(26px, 4vw, 68px);
-  align-items: start;
-}
-.cons-s04-001 .shot {
-  position: sticky;
-  top: clamp(16px, 2vw, 28px);
-  border: 1px dashed var(--slot-edge);
-  border-radius: 20px;
-  background: var(--slot);
-  aspect-ratio: 3 / 4;
-  display: grid;
-  place-items: center;
-  padding: 22px;
-}
-.cons-s04-001 .shot span {
-  color: var(--slot-ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.8;
-}
+.cons-s04-001 .lay { display: grid; grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr); gap: clamp(2rem, 4vw, 4rem); margin-top: clamp(2rem, 4vw, 3.4rem); align-items: start; }
+.cons-s04-001 figure { margin: 0; position: sticky; top: 1.5rem; }
+.cons-s04-001 .media { position: relative; aspect-ratio: 3 / 4; background: var(--media); border-radius: 2px; }
+.cons-s04-001 .slate { position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s04-001 .slate b { display: block; color: var(--ink); }
+.cons-s04-001 figcaption { display: flex; align-items: center; gap: 0.5rem; margin: 0.7rem 0 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.cons-s04-001 figcaption .mk { color: var(--accent); }
 
-/* Market blocks — air and colour, never rules */
-.cons-s04-001 .markets { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(6px, 0.8vw, 10px); }
-.cons-s04-001 .market {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(14px, 1.8vw, 22px);
-  align-items: start;
-  padding: clamp(16px, 1.9vw, 24px);
-  border-radius: 16px;
-  color: inherit;
-  text-decoration: none;
-  transition: background 160ms ease;
-}
-.cons-s04-001 .market:hover { background: var(--card); }
-.cons-s04-001 .n {
-  display: grid;
-  place-items: center;
-  width: 38px; height: 38px;
-  border-radius: 999px;
-  background: rgba(47, 79, 224, 0.10);
-  color: var(--accent);
-  font-size: 0.84rem;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-}
-.cons-s04-001 .market h3 {
-  margin: 0;
-  font-size: clamp(1.16rem, 1.5vw, 1.42rem);
-  line-height: 1.16;
-  letter-spacing: -0.026em;
-  font-weight: 800;
-}
-.cons-s04-001 .bind {
-  margin: 7px 0 0;
-  color: var(--ink-soft);
-  font-size: clamp(1rem, 1.16vw, 1.1rem);
-}
-.cons-s04-001 .bind b { color: var(--accent); font-weight: 750; }
+.cons-s04-001 .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.cons-s04-001 .row { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 1rem; align-items: start; padding: 1rem 0 1.1rem; border-bottom: 1px solid var(--line); }
+.cons-s04-001 .row:last-child { border-bottom: 1px solid var(--line-strong); }
+.cons-s04-001 .row p.ix { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.9rem; line-height: 1; letter-spacing: -0.02em; color: var(--accent); }
+.cons-s04-001 .row h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 1.35rem; line-height: 1.1; letter-spacing: -0.02em; }
+.cons-s04-001 .row p.say { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.cons-s04-001 .row p.say b { color: var(--ink); }
 
-/* --- Foot --- */
-.cons-s04-001 .foot {
-  margin: clamp(30px, 3.6vw, 50px) 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: clamp(16px, 2.6vw, 34px);
-}
-.cons-s04-001 .foot p {
-  margin: 0;
-  font-weight: 750;
-  font-size: clamp(1.14rem, 1.55vw, 1.4rem);
-  letter-spacing: -0.024em;
-  max-width: 34ch;
-}
-.cons-s04-001 .go {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 54px;
-  padding: 0 30px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 1.02rem;
-  font-weight: 750;
-  text-decoration: none;
-}
-.cons-s04-001 .go:hover { background: var(--ink); }
+.cons-s04-001 .foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin-top: clamp(1.6rem, 3vw, 2.6rem); padding-top: 1.1rem; border-top: 1px solid var(--line-strong); }
+.cons-s04-001 .foot p { margin: 0; font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 1.7vw, 1.45rem); line-height: 1.3; }
+.cons-s04-001 .go { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 3rem; padding: 0 1.3rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s04-001 .go:hover { background: var(--ink); color: var(--paper); }
 
-/* --- Responsive ladder --- */
-@media (max-width: 860px) {
-  .cons-s04-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s04-001 h2 { max-width: none; }
-  .cons-s04-001 .body { grid-template-columns: minmax(0, 1fr); }
-  .cons-s04-001 .shot { position: static; aspect-ratio: 16 / 9; }
-}
-@media (max-width: 560px) {
-  .cons-s04-001 .market { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-  .cons-s04-001 .go { width: 100%; justify-content: center; }
-  .cons-s04-001 .foot p { max-width: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s04-001 * { transition: none !important; }
-}
+@media (max-width: 860px) { .cons-s04-001 .head, .cons-s04-001 .lay { grid-template-columns: minmax(0, 1fr); } .cons-s04-001 figure { position: static; } .cons-s04-001 .media { aspect-ratio: 16 / 10; } .cons-s04-001 .head > p.ghost { font-size: 8rem; } }
+@media (prefers-reduced-motion: reduce) { .cons-s04-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -253,67 +105,33 @@ body { margin: 0; background: #f7f6f3; }
   <section class="shell" aria-labelledby="cons-s04-001-title">
 
     <div class="head">
+      <p class="ghost" aria-hidden="true">&para;</p>
       <div>
-        <p class="eyebrow">Industries</p>
-        <h2 id="cons-s04-001-title">Naming an industry is not knowing it.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Industries</p>
+        <h2 id="cons-s04-001-title">Naming an industry is not <em>knowing</em> it.</h2>
       </div>
-      <p class="lead">So here is what each one actually constrains. If we have yours wrong, we have not worked in it.</p>
+      <p class="lead"><b>So here is what each one actually constrains.</b> If we have yours wrong, we have not worked in it.</p>
     </div>
 
-    <div class="body">
+    <div class="lay">
+      <figure>
+        <div class="media" role="img" aria-label="Image area — one market at work, given the room to be a photograph"><p class="slate" aria-hidden="true"><b>At work &middot; 3:4</b>one market at work, given the room to be a photograph</p></div>
+        <figcaption><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V9l8-6 8 6v12zM10 21v-6h4v6"/></svg>One market, not six thumbnails</figcaption>
+      </figure>
 
-      <div class="shot"><span>Image area &mdash; one market at work,<br>given the room to be a photograph</span></div>
-
-      <ul class="markets">
-        <li><a class="market" href="#cons-s04-001-title">
-          <span class="n">01</span>
-          <span>
-            <h3>Financial services</h3>
-            <p class="bind">The regulator is a <b>stakeholder in every decision</b>, including the ones about cost.</p>
-          </span>
-        </a></li>
-        <li><a class="market" href="#cons-s04-001-title">
-          <span class="n">02</span>
-          <span>
-            <h3>Healthcare and life sciences</h3>
-            <p class="bind">Clinical staff <b>cannot be reallocated by a spreadsheet</b>.</p>
-          </span>
-        </a></li>
-        <li><a class="market" href="#cons-s04-001-title">
-          <span class="n">03</span>
-          <span>
-            <h3>Energy and utilities</h3>
-            <p class="bind">The <b>price control cycle</b> sets your horizon, not your ambition.</p>
-          </span>
-        </a></li>
-        <li><a class="market" href="#cons-s04-001-title">
-          <span class="n">04</span>
-          <span>
-            <h3>Industrials and manufacturing</h3>
-            <p class="bind">The plant sets the pace. A <b>shorter changeover is a wish</b>, not a plan.</p>
-          </span>
-        </a></li>
-        <li><a class="market" href="#cons-s04-001-title">
-          <span class="n">05</span>
-          <span>
-            <h3>Retail and consumer</h3>
-            <p class="bind">Margin is decided <b>in the supply chain</b>, not in the deck.</p>
-          </span>
-        </a></li>
-        <li><a class="market" href="#cons-s04-001-title">
-          <span class="n">06</span>
-          <span>
-            <h3>Public and regulated sectors</h3>
-            <p class="bind"><b>Defensible or it does not happen.</b> Speed is the second virtue.</p>
-          </span>
-        </a></li>
+      <ul class="list">
+        <li class="row"><p class="ix" aria-hidden="true">One</p><div><h3>Financial services</h3><p class="say"><b>The regulator is a stakeholder in every decision</b>, including the ones about cost.</p></div></li>
+        <li class="row"><p class="ix" aria-hidden="true">Two</p><div><h3>Healthcare and life sciences</h3><p class="say"><b>Clinical staff cannot be reallocated by a spreadsheet</b>.</p></div></li>
+        <li class="row"><p class="ix" aria-hidden="true">Three</p><div><h3>Energy and utilities</h3><p class="say"><b>The price control cycle sets your horizon</b>, not your ambition.</p></div></li>
+        <li class="row"><p class="ix" aria-hidden="true">Four</p><div><h3>Industrials and manufacturing</h3><p class="say">The plant sets the pace. <b>A shorter changeover is a wish</b>, not a plan.</p></div></li>
+        <li class="row"><p class="ix" aria-hidden="true">Five</p><div><h3>Retail and consumer</h3><p class="say"><b>Margin is decided in the supply chain</b>, not in the deck.</p></div></li>
+        <li class="row"><p class="ix" aria-hidden="true">Six</p><div><h3>Public and regulated sectors</h3><p class="say"><b>Defensible or it does not happen.</b> Speed is the second virtue.</p></div></li>
       </ul>
-
     </div>
 
     <div class="foot">
       <p>Work somewhere not on this list? Say what constrains it.</p>
-      <a class="go" href="#cons-s04-001-title">Start a conversation</a>
+      <a class="go" href="#cons-s04-001-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg>Start a conversation</a>
     </div>
 
   </section>

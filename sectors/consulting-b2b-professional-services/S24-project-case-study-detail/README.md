@@ -129,7 +129,7 @@ Nearest existing section in this sector: S07 Case Studies (`S07-case-studies/`).
 
 # Status
 
-AUTHORED — five studies. Batch record in `./BATCH-V1.md`.
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION. Design record in `./BATCH-V2.md`; original authoring record in `./BATCH-V1.md`.
 
 # Raw Path
 

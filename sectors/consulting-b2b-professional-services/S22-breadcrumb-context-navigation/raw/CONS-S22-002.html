@@ -12,41 +12,23 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S22 — Breadcrumb / Context Navigation
   Direction      : Premium / Editorial
-  Theme          : 002 Sable — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **C — Type and colour. No reserved media at all.** Mandated by the section README:
-                   *this role is navigation, not presentation.*
-  Layout model   : The trail set **vertically as a descending stack**, one level per line, each
-                   stepped in from the last, so depth is drawn as depth
-  Density        : Low (53 visible words, breadcrumb band 40–90)
-  Media mode     : **NONE**, and not optional — the role forbids it.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 2 as
+                   a descending stack: the YOU ARE HERE eyebrow; the trail set vertically, one
+                   level per ruled line, each stepping in by one indent so the hierarchy is
+                   drawn rather than implied, the level name in the serif, the count of what is
+                   up there as a tracked line in the accent, the current page in the accent
+                   italic with the 002 pencil ellipse round it; the legend beneath; THE OTHER
+                   TWO IN OPERATIONS as a second nav beside the stack; V1's no-invented-folder
+                   line as the foot. Shape A. V1 is kept whole.
+  Layout model   : Eyebrow; two columns — the trail as a stepped vertical stack, the across-nav beside; legend; foot line
+  Density        : Compact — V1's spine kept in full
+  Media mode     : NONE, and not optional — the role forbids it.
   Interaction    : Links only. No JavaScript.
-
-  Governing idea : **Nobody climbs a breadcrumb, because no level tells you what is up there.**
-                   So every level carries the count of what is up there, and the reader can tell
-                   before clicking whether going up is worth it.
-
-  The editorial cut — the trail runs down, not across :
-                   A horizontal trail compresses four levels into one line and makes them look
-                   equivalent; they are not. Set as a **descending stack, each level stepped in from
-                   the one above**, the trail draws the shape it is describing: the reader physically
-                   travels down into the page, and the indent at the bottom is how far in they are.
-                   It also solves the responsive problem by construction. A vertical trail has nothing
-                   to truncate — it is already one level per line at every width, which is what the
-                   horizontal ones collapse *into* on a phone.
-                   The cost is height, which is why every line here is short: an editorial header can
-                   afford four stacked lines only if none of them runs on.
-
-  Semantics      : A real `nav` landmark named by the visible heading, an ordered list because the
-                   order is the meaning, and **the current page as a `span` with aria-current="page"**,
-                   never a link. The step is drawn with padding, not with indent characters, so
-                   nothing decorative enters the accessible name.
-
-  Placeholder data : The two counts and the sibling page names are PLACEHOLDER DEMO VALUES marked
-                   data-placeholder="true".
-
-  Content note   : No primary site navigation, no footer or sitemap listing, no page title or
-                   introduction — that is `S21`. No decorative text shaped like a breadcrumb. No
-                   client name, logo, testimonial, percentage, currency figure or ranking.
+  Content note   : Level counts and sibling page names are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true" and declared in the meta block. No primary site
+                   navigation, no footer or sitemap listing, no page title or hero. The current
+                   page is a span with aria-current, never a link. Inline SVG, decorative. No
+                   header.
 -->
 
 <meta name="study-id" content="CONS-S22-002">
@@ -57,124 +39,61 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="theme" content="002 Sable">
-<meta name="section-shape" content="C — type and colour">
-<meta name="layout-model" content="The trail as a descending stack, one level per line, each stepped in from the last">
-<meta name="density" content="low">
-<meta name="media-mode" content="none-mandated-navigation-not-presentation">
-<meta name="interaction" content="links-only-no-javascript">
+<meta name="theme" content="002 Sable &amp; Bronze">
+<meta name="layout-model" content="Eyebrow; the trail as a stepped vertical stack of ruled lines with the count per level as a tracked line and the current page in the accent italic with a pencil ellipse; the other two pages as a second nav beside; legend; foot line">
+<meta name="density" content="compact">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="links-only">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="level counts and sibling page names — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S22-002 — Breadcrumb / Context Navigation, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f2efe9; }
+body { margin: 0; background: #f2efe8; }
 
-/* Scoped study styles — namespaced to .cons-s22-002 */
 .cons-s22-002 {
-  --paper: #f2efe9;
-  --ink: #1a1714;
-  --ink-soft: #6b6459;
-  --line: #dcd6ca;
-  --accent: #9a5b2c;
-  --focus: #1a1714;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f2efe8; --ink: #1b1713; --muted: #6a635a; --line: #d9d2c6; --line-strong: #1b1713;
+  --media: #e5dfd4; --band: #eae5db; --accent: #9a5b2c; --no: #8f1f14;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s22-002 *,
-.cons-s22-002 *::before,
-.cons-s22-002 *::after { box-sizing: inherit; }
-.cons-s22-002 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+.cons-s22-002 *, .cons-s22-002 *::before, .cons-s22-002 *::after { box-sizing: inherit; }
+.cons-s22-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s22-002 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(26px, 3.2vw, 50px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s22-002 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(1.4rem, 3vw, 2.6rem) clamp(1rem, 4.5vw, 4.5rem) clamp(1.6rem, 3vw, 2.6rem); }
+.cons-s22-002 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.cons-s22-002 .here {
-  margin: 0 0 clamp(14px, 1.8vw, 20px);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
+.cons-s22-002 .here { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 0.8rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s22-002 .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.5fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+.cons-s22-002 .trail ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.cons-s22-002 .trail li { display: flex; align-items: baseline; gap: 0.9rem; padding: 0.7rem 0 0.75rem; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: clamp(1.15rem, 1.7vw, 1.5rem); letter-spacing: -0.015em; }
+.cons-s22-002 .trail li.l2 { padding-left: 1.6rem; }
+.cons-s22-002 .trail li.l3 { padding-left: 3.2rem; }
+.cons-s22-002 .trail li.cur { padding-left: 4.8rem; border-bottom: 1px solid var(--line-strong); }
+.cons-s22-002 .trail li .mk { width: 0.95rem; height: 0.95rem; color: var(--line); transform: translateY(0.1rem); }
+.cons-s22-002 .trail li.cur .mk { color: var(--accent); }
+.cons-s22-002 .trail a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.cons-s22-002 .trail .n { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s22-002 .trail .cur span[aria-current] { position: relative; display: inline-block; font-style: italic; color: var(--accent); }
+.cons-s22-002 .trail .cur span[aria-current] svg { position: absolute; left: -7%; top: -24%; width: 114%; height: 148%; overflow: visible; pointer-events: none; color: var(--accent); }
+.cons-s22-002 .legend { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.82rem; }
 
-/* --- The trail, running down. Nothing to truncate --- */
-.cons-s22-002 .trail ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: clamp(5px, 0.7vw, 8px);
-}
-.cons-s22-002 .trail li:nth-child(2) { padding-left: clamp(16px, 2.4vw, 34px); }
-.cons-s22-002 .trail li:nth-child(3) { padding-left: clamp(32px, 4.8vw, 68px); }
-.cons-s22-002 .trail li:nth-child(4) { padding-left: clamp(48px, 7.2vw, 102px); }
-.cons-s22-002 .lv {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 11px;
-  color: var(--ink-soft);
-  font-size: clamp(1.02rem, 1.3vw, 1.2rem);
-  font-weight: 600;
-  text-decoration: none;
-}
-.cons-s22-002 a.lv:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
-.cons-s22-002 .lv .n { color: var(--accent); font-size: 0.8rem; font-weight: 800; }
-/* The current page: largest, darkest, and marked with aria-current. Never a link. */
-.cons-s22-002 .lv[aria-current="page"] {
-  color: var(--ink);
-  font-size: clamp(1.32rem, 2vw, 1.72rem);
-  font-weight: 800;
-  letter-spacing: -0.026em;
-}
+.cons-s22-002 .across { padding-top: 0.8rem; border-top: 3px solid var(--accent); }
+.cons-s22-002 .across h2 { margin: 0 0 0.5rem; font-family: var(--serif); font-weight: 400; font-size: 1.05rem; letter-spacing: -0.01em; }
+.cons-s22-002 .across ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+.cons-s22-002 .across a { color: var(--ink); font-size: 0.9rem; text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.cons-s22-002 .across a::after { content: " \2197"; color: var(--accent); }
 
-.cons-s22-002 .legend {
-  margin: clamp(16px, 2vw, 24px) 0 0;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-}
+.cons-s22-002 .real { margin: 1rem 0 0; max-width: 52rem; color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+.cons-s22-002 .real em { font-style: italic; color: var(--ink); }
 
-/* --- Across, not up --- */
-.cons-s22-002 .across {
-  margin: clamp(20px, 2.4vw, 30px) 0 0;
-  padding-top: clamp(16px, 2vw, 22px);
-  border-top: 1px solid var(--line);
-}
-.cons-s22-002 .across h2 { margin: 0 0 8px; font-size: 0.85rem; font-weight: 800; color: var(--ink-soft); }
-.cons-s22-002 .across ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: clamp(12px, 1.8vw, 24px); }
-.cons-s22-002 .across a { color: var(--accent); font-weight: 700; font-size: 1rem; text-underline-offset: 3px; }
-
-.cons-s22-002 .real {
-  margin: clamp(14px, 1.8vw, 20px) 0 0;
-  font-size: 0.93rem;
-  color: var(--ink-soft);
-  max-width: 60ch;
-}
-.cons-s22-002 .real em { font-style: normal; color: var(--ink); font-weight: 700; }
-
-/* --- Responsive ladder. A vertical trail has nothing to truncate --- */
-@media (max-width: 560px) {
-  .cons-s22-002 .trail li:nth-child(2) { padding-left: 14px; }
-  .cons-s22-002 .trail li:nth-child(3) { padding-left: 28px; }
-  .cons-s22-002 .trail li:nth-child(4) { padding-left: 42px; }
-  .cons-s22-002 .real { max-width: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s22-002 * { transition: none !important; }
-}
+@media (max-width: 760px) { .cons-s22-002 .cols { grid-template-columns: minmax(0, 1fr); } .cons-s22-002 .trail li.l2 { padding-left: 0.9rem; } .cons-s22-002 .trail li.l3 { padding-left: 1.8rem; } .cons-s22-002 .trail li.cur { padding-left: 2.7rem; } }
+@media (prefers-reduced-motion: reduce) { .cons-s22-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -182,27 +101,28 @@ body { margin: 0; background: #f2efe9; }
 <div class="cons-s22-002" data-study-id="CONS-S22-002" data-direction="Premium / Editorial">
   <section class="shell">
 
-    <p class="here" id="cons-s22-002-here">You are here</p>
-
-    <nav class="trail" aria-labelledby="cons-s22-002-here">
-      <ol>
-        <li><a class="lv" href="#">Home</a></li>
-        <li><a class="lv" href="#">Services <span class="n" data-placeholder="true">6 pages</span></a></li>
-        <li><a class="lv" href="#">Operations <span class="n" data-placeholder="true">3 pages</span></a></li>
-        <li><span class="lv" aria-current="page">Operating model redesign</span></li>
-      </ol>
-    </nav>
-
-    <p class="legend">The number on each level is how many pages are up there.</p>
-
-    <div class="across">
-      <h2 id="cons-s22-002-across">The other two in Operations</h2>
-      <nav aria-labelledby="cons-s22-002-across">
-        <ul>
-          <li><a href="#" data-placeholder="true">Cost structure</a></li>
-          <li><a href="#" data-placeholder="true">Post-merger integration</a></li>
-        </ul>
-      </nav>
+    <p class="here" id="cons-s22-002-here"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>You are here</p>
+    <div class="cols">
+      <div>
+        <nav class="trail" aria-labelledby="cons-s22-002-here">
+          <ol>
+            <li><a href="#">Home</a></li>
+            <li class="l2"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 4v10h12M14 10l4 4-4 4"/></svg><a href="#">Services</a> <span class="n" data-placeholder="true">6 pages</span></li>
+            <li class="l3"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 4v10h12M14 10l4 4-4 4"/></svg><a href="#">Operations</a> <span class="n" data-placeholder="true">3 pages</span></li>
+            <li class="cur"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 4v10h12M14 10l4 4-4 4"/></svg><span aria-current="page">Operating model redesign<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M8 52C6 30 30 12 56 12c24 0 40 12 38 34-2 24-30 42-56 40C16 84 4 70 8 52c2-10 10-16 12-14" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg></span></li>
+          </ol>
+        </nav>
+        <p class="legend">The number on each level is how many pages are up there.</p>
+      </div>
+      <div class="across">
+        <h2 id="cons-s22-002-across">The other two in Operations</h2>
+        <nav aria-labelledby="cons-s22-002-across">
+          <ul>
+            <li><a href="#" data-placeholder="true">Cost structure</a></li>
+            <li><a href="#" data-placeholder="true">Post-merger integration</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
     <p class="real">Every level is a page somebody maintains. <em>None is a folder we invented</em> to give the trail another rung.</p>

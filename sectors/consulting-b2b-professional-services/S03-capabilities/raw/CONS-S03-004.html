@@ -12,30 +12,21 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S03 — Capabilities
   Direction      : Conversion-led
-  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
-  Layout model   : A wide reserved media band with a saturated claim card overlapping its lower edge,
-                   then six capability cards on three columns, each closing in a tinted limit strip
-  Density        : Medium (152 visible words)
-  Media mode     : One wide reserved image area at 21:9 carrying the overlap, plus six small image
-                   areas at 16:9 inside the cards. Seven in total, the most in this batch.
-  Interaction    : None (static; no JavaScript). Card hover and focus are CSS only.
-
-  What "conversion-led" means in this role :
-                   A capabilities section is the emptiest page on most consulting sites, because every
-                   firm claims the same things and none of the claims cost anything to make. So the
-                   conversion device is **the limit**: the sentence that says what we will not do.
-                   A limit is the only part of a capability list a competitor cannot copy without
-                   also accepting it, and it is the part a serious buyer actually reads. That is why
-                   every card here ends in a tinted strip rather than a paragraph, and why the
-                   overlapping claim card says so in as many words.
-
-  Boundary       : S02 Services is the map — which situation the reader is in. S03 is what has to be
-                   true inside the firm for any of those services to be deliverable.
-
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 4 with
+                   5: a wide 21:9 field with a band-tone claim plate crossing its lower edge —
+                   the pencil rule, V1's claim sentence in the serif and the one bordered action
+                   (HOLD US TO ONE); six items in a bordered grid sharing hairlines, each a small
+                   1:1 field, a serif title, its line and the limit; the 004 pencil figure: the
+                   underline stroke — under "red line" in the display in the accent, and under
+                   every limit in --no, so the red line V1 names is literally drawn. V1 is kept
+                   whole.
+  Layout model   : Head; 21:9 field with an overlapping claim plate; bordered 3×2 grid of items
+  Density        : Standard — V1's spine kept in full
+  Media mode     : One wide reserved field, 21:9, and six small 1:1 fields.
+  Interaction    : One in-page action. No form.
   Content note   : Capability names are generic vocabulary, not claims. The limits are policy
-                   commitments a firm can honour, not statements about past performance, so none is a
-                   fabricated metric. No named client, logo, ranking, award, certification, tool
-                   vendor or invented figure. No response-time promise. No header or navigation.
+                   commitments a firm can be held to. No placeholder data. Inline SVG, decorative.
+                   No header or navigation — the section-shell rule.
 -->
 
 <meta name="study-id" content="CONS-S03-004">
@@ -46,207 +37,65 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="theme" content="004 Signal">
-<meta name="layout-model" content="Wide media band with overlapping claim card, six capability cards closing in tinted limit strips">
-<meta name="density" content="medium">
-<meta name="media-mode" content="one-wide-plus-six-card-image-areas">
-<meta name="interaction" content="none">
+<meta name="theme" content="004 White &amp; Signal">
+<meta name="layout-model" content="Head with the underline stroke; 21:9 field with a band-tone claim plate crossing its lower edge and the one action; bordered grid of six items with 1:1 fields and red-underlined limits">
+<meta name="density" content="standard">
+<meta name="media-mode" content="one-wide-field-and-six-small">
+<meta name="interaction" content="in-page-action">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S03-004 — Capabilities, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #ffffff; }
+body { margin: 0; background: #fcfcfb; }
 
-/* Scoped study styles — namespaced to .cons-s03-004 */
 .cons-s03-004 {
-  --paper: #ffffff;
-  --ink: #0a0b0d;
-  --ink-soft: #54585e;
-  --line: #e5e5e5;
-  --card: #f7f7f7;
-  --slot: #ececec;
-  --slot-edge: #c9c9c9;
-  --slot-ink: #5e6167;
-  --accent: #e0402f;
-  --accent-ink: #ffffff;
-  --focus: #0a0b0d;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fcfcfb; --ink: #0b0c0e; --muted: #55595f; --line: #e4e4e2; --line-strong: #0b0c0e;
+  --media: #eeeeec; --band: #f3f3f0; --accent: #d63a2a; --no: #7a1a10;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s03-004 *,
-.cons-s03-004 *::before,
-.cons-s03-004 *::after { box-sizing: inherit; }
-.cons-s03-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 18px; }
+.cons-s03-004 *, .cons-s03-004 *::before, .cons-s03-004 *::after { box-sizing: inherit; }
+.cons-s03-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s03-004 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s03-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.cons-s03-004 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* --- Head --- */
-.cons-s03-004 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  gap: clamp(22px, 3.6vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(26px, 3.4vw, 46px);
-}
-.cons-s03-004 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 20px);
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.cons-s03-004 h2 {
-  margin: 0;
-  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
-  line-height: 1.02;
-  letter-spacing: -0.036em;
-  font-weight: 800;
-  max-width: 17ch;
-}
-.cons-s03-004 .lead { margin: 0; color: var(--ink-soft); }
+.cons-s03-004 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
+.cons-s03-004 .eyebrow { display: flex; align-items: center; gap: 0.55rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s03-004 h2 { margin: 0; max-width: 16ch; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 3.8vw, 4rem); line-height: 0.97; letter-spacing: -0.03em; }
+.cons-s03-004 .u { position: relative; display: inline-block; }
+.cons-s03-004 .u svg { position: absolute; left: 0; bottom: -0.16em; width: 100%; height: 0.22em; overflow: visible; pointer-events: none; color: var(--accent); }
+.cons-s03-004 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.cons-s03-004 .head > p b { color: var(--ink); }
 
-/* --- Stage: media band with an overlapping claim card --- */
-.cons-s03-004 .stage { position: relative; }
-.cons-s03-004 .banner {
-  border: 1px dashed var(--slot-edge);
-  border-radius: 20px;
-  background: var(--slot);
-  aspect-ratio: 21 / 9;
-  display: grid;
-  place-items: center;
-}
-.cons-s03-004 .banner span {
-  color: var(--slot-ink);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-.cons-s03-004 .claim {
-  position: relative;
-  z-index: 2;
-  width: min(100%, 620px);
-  margin: -64px 0 0 clamp(0px, 3vw, 44px);
-  padding: clamp(22px, 2.6vw, 34px);
-  border-radius: 18px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  box-shadow: 0 22px 50px rgba(10, 11, 13, 0.18);
-}
-.cons-s03-004 .claim h3 {
-  margin: 0;
-  font-size: clamp(1.24rem, 1.9vw, 1.7rem);
-  line-height: 1.14;
-  letter-spacing: -0.028em;
-  font-weight: 800;
-}
-.cons-s03-004 .go {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 18px;
-  min-height: 52px;
-  padding: 0 28px;
-  border-radius: 999px;
-  background: var(--accent-ink);
-  color: var(--accent);
-  font-size: 1.01rem;
-  font-weight: 800;
-  text-decoration: none;
-}
-.cons-s03-004 .go:hover { background: var(--ink); color: var(--accent-ink); }
+.cons-s03-004 .wide { position: relative; margin-top: clamp(2rem, 4vw, 3.4rem); padding-bottom: 3rem; }
+.cons-s03-004 .media { position: relative; aspect-ratio: 21 / 9; background: var(--media); border-radius: 2px; }
+.cons-s03-004 .slate { position: absolute; left: 1rem; right: 1rem; top: 0.9rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.cons-s03-004 .plate { position: absolute; left: clamp(1rem, 3vw, 3rem); bottom: 0; width: min(100% - 2rem, 34rem); padding: 1.3rem 1.4rem 1.4rem; background: var(--band); border-top: 3px solid var(--accent); display: grid; gap: 0.9rem; }
+.cons-s03-004 .plate p { margin: 0; font-family: var(--serif); font-size: clamp(1.15rem, 1.7vw, 1.45rem); line-height: 1.3; }
+.cons-s03-004 .go { display: inline-flex; align-items: center; gap: 0.6rem; width: max-content; min-height: 3rem; padding: 0 1.3rem; border: 1px solid var(--line-strong); border-radius: 0; background: var(--paper); color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.cons-s03-004 .go:hover { background: var(--ink); color: var(--paper); }
 
-/* --- The cards --- */
-.cons-s03-004 .grid {
-  margin: clamp(28px, 3.4vw, 48px) 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 1.7vw, 24px);
-}
-.cons-s03-004 .cap {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
-  background: var(--card);
-  border-radius: 18px;
-  color: inherit;
-  text-decoration: none;
-  transition: transform 160ms ease;
-}
-.cons-s03-004 a.cap:hover { transform: translateY(-4px); }
-.cons-s03-004 .shot {
-  border-bottom: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  aspect-ratio: 16 / 9;
-  display: grid;
-  place-items: center;
-}
-.cons-s03-004 .shot span {
-  color: var(--slot-ink);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-.cons-s03-004 .body { padding: clamp(18px, 2vw, 24px); flex: 1 1 auto; }
-.cons-s03-004 .cap h3 {
-  margin: 0;
-  font-size: clamp(1.08rem, 1.34vw, 1.26rem);
-  line-height: 1.16;
-  letter-spacing: -0.024em;
-  font-weight: 800;
-}
-.cons-s03-004 .what { margin: 8px 0 0; color: var(--ink-soft); font-size: 0.97rem; }
-.cons-s03-004 .limit {
-  margin: 0;
-  padding: clamp(13px, 1.5vw, 17px) clamp(18px, 2vw, 24px);
-  background: rgba(224, 64, 47, 0.10);
-  color: var(--accent);
-  font-size: 0.93rem;
-  font-weight: 750;
-}
-.cons-s03-004 a.cap:hover .limit { background: var(--accent); color: var(--accent-ink); }
+.cons-s03-004 .grid { list-style: none; margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line-strong); }
+.cons-s03-004 .item { display: grid; grid-template-columns: 4.6rem minmax(0, 1fr); gap: 1rem; align-items: start; padding: 1rem 1.1rem 1.1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.cons-s03-004 .item.end { border-right: 0; }
+.cons-s03-004 .item.last { border-bottom: 0; }
+.cons-s03-004 .item .media { aspect-ratio: 1 / 1; }
+.cons-s03-004 .item .slate { left: 0.35rem; right: 0.35rem; top: auto; bottom: 0.3rem; font-size: 0.44rem; }
+.cons-s03-004 .item h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 1.15rem; line-height: 1.15; letter-spacing: -0.015em; }
+.cons-s03-004 .item .what { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.82rem; line-height: 1.45; }
+.cons-s03-004 .item .limit { position: relative; display: inline-block; margin: 0.45rem 0 0; font-size: 0.84rem; line-height: 1.4; color: var(--ink); }
+.cons-s03-004 .item .limit svg { position: absolute; left: 0; bottom: -0.3em; width: 100%; height: 0.35em; overflow: visible; pointer-events: none; color: var(--no); }
 
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .cons-s03-004 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 860px) {
-  .cons-s03-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .cons-s03-004 h2 { max-width: none; }
-  .cons-s03-004 .banner { aspect-ratio: 16 / 9; }
-  .cons-s03-004 .claim { width: 100%; margin: 16px 0 0; }
-}
-@media (max-width: 560px) {
-  .cons-s03-004 .grid { grid-template-columns: minmax(0, 1fr); }
-  .cons-s03-004 .go { width: 100%; justify-content: center; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s03-004 * { transition: none !important; }
-  .cons-s03-004 a.cap:hover { transform: none; }
-}
+@media (max-width: 1000px) { .cons-s03-004 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cons-s03-004 .item.end { border-right: 1px solid var(--line-strong); } .cons-s03-004 .item.mid { border-right: 0; } .cons-s03-004 .item.last { border-bottom: 1px solid var(--line-strong); } }
+@media (max-width: 860px) { .cons-s03-004 .head { grid-template-columns: minmax(0, 1fr); } .cons-s03-004 .wide { padding-bottom: 0; } .cons-s03-004 .plate { position: static; width: auto; margin-top: 1rem; } .cons-s03-004 .media { aspect-ratio: 16 / 9; } }
+@media (max-width: 560px) { .cons-s03-004 .grid { grid-template-columns: minmax(0, 1fr); } .cons-s03-004 .item { border-right: 0 !important; } }
+@media (prefers-reduced-motion: reduce) { .cons-s03-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -256,69 +105,27 @@ body { margin: 0; background: #ffffff; }
 
     <div class="head">
       <div>
-        <p class="eyebrow">Capabilities</p>
-        <h2 id="cons-s03-004-title">Anyone can claim these. Read the red line under each one.</h2>
+        <p class="eyebrow"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Capabilities</p>
+        <h2 id="cons-s03-004-title">Anyone can claim these. Read the <span class="u">red line<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span> under each one.</h2>
       </div>
-      <p class="lead">A capability costs nothing to claim. A limit costs something to keep.</p>
+      <p><b>A capability costs nothing to claim.</b> A limit costs something to keep.</p>
     </div>
 
-    <div class="stage">
-      <div class="banner"><span>Image area</span></div>
-      <div class="claim">
-        <h3>The limits are the only part a competitor cannot copy without also accepting them.</h3>
-        <a class="go" href="#cons-s03-004-title">Hold us to one</a>
+    <div class="wide">
+      <div class="media" role="img" aria-label="Image area — the team at work, wide"><p class="slate" aria-hidden="true">At work &middot; 21:9</p></div>
+      <div class="plate">
+        <p>The limits are the only part a competitor cannot copy without also accepting them.</p>
+        <a class="go" href="#cons-s03-004-title"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>Hold us to one</a>
       </div>
     </div>
 
     <ul class="grid">
-      <li><a class="cap" href="#cons-s03-004-title">
-        <div class="shot"><span>Image area</span></div>
-        <div class="body">
-          <h3>Quantitative modelling</h3>
-          <p class="what">The numbers the decision actually rests on.</p>
-        </div>
-        <p class="limit">Not a model you cannot maintain once we leave.</p>
-      </a></li>
-      <li><a class="cap" href="#cons-s03-004-title">
-        <div class="shot"><span>Image area</span></div>
-        <div class="body">
-          <h3>Primary research</h3>
-          <p class="what">Talking to your market rather than reading about it.</p>
-        </div>
-        <p class="limit">Named interviews, not a survey panel.</p>
-      </a></li>
-      <li><a class="cap" href="#cons-s03-004-title">
-        <div class="shot"><span>Image area</span></div>
-        <div class="body">
-          <h3>Organisation design</h3>
-          <p class="what">Structure, roles, and who decides what.</p>
-        </div>
-        <p class="limit">We will not name individuals for the roles.</p>
-      </a></li>
-      <li><a class="cap" href="#cons-s03-004-title">
-        <div class="shot"><span>Image area</span></div>
-        <div class="body">
-          <h3>Commercial analysis</h3>
-          <p class="what">Margin, mix, and what your contracts cost.</p>
-        </div>
-        <p class="limit">We do not set your prices.</p>
-      </a></li>
-      <li><a class="cap" href="#cons-s03-004-title">
-        <div class="shot"><span>Image area</span></div>
-        <div class="body">
-          <h3>Programme direction</h3>
-          <p class="what">Running it after the decision is made.</p>
-        </div>
-        <p class="limit">We advise it or we run it. Not both.</p>
-      </a></li>
-      <li><a class="cap" href="#cons-s03-004-title">
-        <div class="shot"><span>Image area</span></div>
-        <div class="body">
-          <h3>Facilitation</h3>
-          <p class="what">Getting a divided board to one answer.</p>
-        </div>
-        <p class="limit">We will not manufacture agreement you do not have.</p>
-      </a></li>
+      <li class="item"><div class="media" role="img" aria-label="Image area — quantitative modelling in use"><p class="slate" aria-hidden="true">In use</p></div><div><h3>Quantitative modelling</h3><p class="what">The numbers the decision actually rests on.</p><p class="limit">Not a model you cannot maintain once we leave.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></p></div></li>
+      <li class="item mid"><div class="media" role="img" aria-label="Image area — primary research in use"><p class="slate" aria-hidden="true">In use</p></div><div><h3>Primary research</h3><p class="what">Talking to your market rather than reading about it.</p><p class="limit">Named interviews, not a survey panel.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></p></div></li>
+      <li class="item end"><div class="media" role="img" aria-label="Image area — organisation design in use"><p class="slate" aria-hidden="true">In use</p></div><div><h3>Organisation design</h3><p class="what">Structure, roles, and who decides what.</p><p class="limit">We will not name individuals for the roles.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></p></div></li>
+      <li class="item last"><div class="media" role="img" aria-label="Image area — commercial analysis in use"><p class="slate" aria-hidden="true">In use</p></div><div><h3>Commercial analysis</h3><p class="what">Margin, mix, and what your contracts cost.</p><p class="limit">We do not set your prices.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></p></div></li>
+      <li class="item last mid"><div class="media" role="img" aria-label="Image area — programme direction in use"><p class="slate" aria-hidden="true">In use</p></div><div><h3>Programme direction</h3><p class="what">Running it after the decision is made.</p><p class="limit">We advise it or we run it. Not both.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></p></div></li>
+      <li class="item last end"><div class="media" role="img" aria-label="Image area — facilitation in use"><p class="slate" aria-hidden="true">In use</p></div><div><h3>Facilitation</h3><p class="what">Getting a divided board to one answer.</p><p class="limit">We will not manufacture agreement you do not have.<svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></p></div></li>
     </ul>
 
   </section>

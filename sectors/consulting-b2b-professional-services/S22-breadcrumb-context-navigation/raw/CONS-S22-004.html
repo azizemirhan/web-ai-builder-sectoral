@@ -12,42 +12,23 @@
   Sector         : Consulting & B2B Professional Services (CONS)
   Section        : CONS-S22 — Breadcrumb / Context Navigation
   Direction      : Conversion-led
-  Theme          : 004 Signal — see ../../CONSULTING-THEME-CONTRACT.md
-  Section shape  : **C — Type and colour. No reserved media at all.** Mandated by the section README:
-                   *this role is navigation, not presentation.*
-  Layout model   : The full trail small along the top, then **the way up promoted to the largest
-                   thing in the section**, with the two siblings named inside it
-  Density        : Low (48 visible words, breadcrumb band 40–90)
-  Media mode     : **NONE**, and not optional — the role forbids it.
+  Register       : Detailing pass — CONSULTING-THEME-CONTRACT.md → Detailing Pass. Device 4 —
+                   the way up promoted: the full trail small along the top as a tracked line
+                   with the counts as chips and the current page marked; then BACK UP TO
+                   OPERATIONS as the largest thing on the strip, a bordered link in the serif
+                   with a leading up-arrow mark and the 004 underline stroke under the level
+                   name, the placeholder count of what is up there and the other two pages as
+                   inline links in the line beneath; V1's legend as the foot. Shape A. V1 is
+                   kept whole.
+  Layout model   : Small trail line; the way up as one bordered link at the largest size with its line beneath; foot line
+  Density        : Compact — V1's spine kept in full
+  Media mode     : NONE, and not optional — the role forbids it.
   Interaction    : Links only. No JavaScript.
-
-  Governing idea : **Nobody climbs a breadcrumb, because no level tells you what is up there.**
-
-  What "conversion-led" means in this role — converting by sending them up :
-                   There is nothing to sell in a breadcrumb, and a section that tries becomes the
-                   thing the README calls *decorative text that only looks like a breadcrumb*. What
-                   this component can convert is **a visitor about to leave into a visitor one level
-                   up**, and that is worth more than it sounds: the reader who came in on a deep page
-                   and did not want it will otherwise close the tab, because the trail gave them no
-                   reason to believe the parent is better.
-                   So the parent is the largest thing here and it **says what is up there** —
-                   `three` pages, and the other two are named. The trail stays complete above it, small,
-                   because the hierarchy is still owed to the reader; it is just not the offer.
-                   The trade: this section spends its whole surface on the one link that leads away
-                   from the current page. **A page that cannot survive naming its own alternatives was
-                   not going to hold that reader anyway.**
-
-  Semantics      : A real `nav` landmark named by the visible heading, an ordered list for the trail,
-                   and **the current page as a `span` with aria-current="page"**, never a link. The
-                   promoted parent is a second labelled landmark, so *up* and *the trail* are
-                   distinguishable without sight. Separators are drawn in CSS.
-
-  Placeholder data : The counts and the sibling page names are PLACEHOLDER DEMO VALUES marked
-                   data-placeholder="true".
-
-  Content note   : No primary site navigation, no footer or sitemap listing, no page title or
-                   introduction — that is `S21`. No client name, logo, testimonial, percentage,
-                   currency figure or ranking.
+  Content note   : Level counts and sibling page names are PLACEHOLDER DEMO VALUES marked
+                   data-placeholder="true" and declared in the meta block. No primary site
+                   navigation, no footer or sitemap listing, no page title or hero. The current
+                   page is a span with aria-current, never a link. Inline SVG, decorative. No
+                   header.
 -->
 
 <meta name="study-id" content="CONS-S22-004">
@@ -58,128 +39,59 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="theme" content="004 Signal">
-<meta name="section-shape" content="C — type and colour">
-<meta name="layout-model" content="Full trail small along the top, the way up promoted to the largest thing, siblings named inside it">
-<meta name="density" content="low">
-<meta name="media-mode" content="none-mandated-navigation-not-presentation">
-<meta name="interaction" content="links-only-no-javascript">
+<meta name="theme" content="004 White &amp; Signal">
+<meta name="layout-model" content="The full trail small along the top with chips; the way up to Operations promoted as one bordered link at the largest size with an underline stroke, the count and the other two pages in the line beneath; foot line">
+<meta name="density" content="compact">
+<meta name="media-mode" content="none">
+<meta name="interaction" content="links-only">
 <meta name="dependencies" content="none">
 <meta name="placeholder-data" content="level counts and sibling page names — demo values, clear before real use">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CONS-S22-004 — Breadcrumb / Context Navigation, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #ffffff; }
+body { margin: 0; background: #fcfcfb; }
 
-/* Scoped study styles — namespaced to .cons-s22-004 */
 .cons-s22-004 {
-  --paper: #ffffff;
-  --ink: #0a0b0d;
-  --ink-soft: #54585e;
-  --line: #e5e5e5;
-  --accent: #e0402f;
-  --accent-ink: #ffffff;
-  --focus: #0a0b0d;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fcfcfb; --ink: #0b0c0e; --muted: #55595f; --line: #e4e4e2; --line-strong: #0b0c0e;
+  --media: #eeeeec; --band: #f3f3f0; --accent: #d63a2a; --no: #7a1a10;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", Times, serif;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.cons-s22-004 *,
-.cons-s22-004 *::before,
-.cons-s22-004 *::after { box-sizing: inherit; }
-.cons-s22-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 24px; }
+.cons-s22-004 *, .cons-s22-004 *::before, .cons-s22-004 *::after { box-sizing: inherit; }
+.cons-s22-004 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.cons-s22-004 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(22px, 2.6vw, 40px) clamp(22px, 3.6vw, 58px);
-}
+.cons-s22-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(1.4rem, 3vw, 2.6rem) clamp(1rem, 4.5vw, 4.5rem) clamp(1.6rem, 3vw, 2.6rem); }
+.cons-s22-004 .mk { width: 1.2rem; height: 1.2rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-.cons-s22-004 .here {
-  margin: 0 0 clamp(9px, 1.1vw, 12px);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
+.cons-s22-004 .top { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.4rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--line-strong); }
+.cons-s22-004 .here { display: flex; align-items: center; gap: 0.55rem; margin: 0; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.cons-s22-004 .trail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; font-size: 0.86rem; }
+.cons-s22-004 .trail li { display: flex; align-items: center; gap: 0.5rem; }
+.cons-s22-004 .trail li + li::before { content: "/"; color: var(--line); margin-right: 0.2rem; }
+.cons-s22-004 .trail a { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.cons-s22-004 .trail .n { display: inline-block; padding: 0.1rem 0.4rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.2; }
+.cons-s22-004 .trail span[aria-current] { font-family: var(--serif); font-size: 1rem; }
+.cons-s22-004 .trail .cur .mk { color: var(--accent); width: 0.95rem; height: 0.95rem; }
 
-/* --- The trail: complete, and small. Still owed, just not the offer --- */
-.cons-s22-004 .trail ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 7px;
-}
-.cons-s22-004 .trail li { display: flex; align-items: center; gap: 7px; }
-.cons-s22-004 .trail li + li::before { content: "\203A"; color: var(--line); font-size: 1.05rem; line-height: 1; }
-.cons-s22-004 .lv {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
-  padding: 6px 2px;
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-.cons-s22-004 a.lv:hover { color: var(--accent); }
-.cons-s22-004 .lv .n { font-size: 0.76rem; font-weight: 700; opacity: 0.75; }
-/* The current page: darkest, and marked with aria-current. Never a link. */
-.cons-s22-004 .lv[aria-current="page"] { color: var(--ink); font-weight: 800; }
+.cons-s22-004 .up { margin: clamp(1rem, 2vw, 1.6rem) 0 0; display: grid; gap: 0.7rem; justify-items: start; }
+.cons-s22-004 .up a.big { display: inline-flex; align-items: center; gap: 0.9rem; padding: 0.9rem 1.4rem 0.9rem 1.1rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-family: var(--serif); font-size: clamp(1.5rem, 2.6vw, 2.4rem); line-height: 1.05; letter-spacing: -0.025em; }
+.cons-s22-004 .up a.big .mk { width: 1.5rem; height: 1.5rem; color: var(--accent); }
+.cons-s22-004 .u { position: relative; display: inline-block; }
+.cons-s22-004 .u svg { position: absolute; left: 0; right: 0; bottom: -0.1em; width: 100%; height: 0.2em; overflow: visible; color: var(--accent); pointer-events: none; }
+.cons-s22-004 .up p { margin: 0; max-width: 52rem; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.cons-s22-004 .up p span[data-placeholder] { color: var(--ink); font-weight: 700; }
+.cons-s22-004 .up p a { color: var(--ink); text-decoration: underline; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+.cons-s22-004 .up p a::after { content: " \2197"; color: var(--accent); }
 
-/* --- The way up, promoted --- */
-.cons-s22-004 .up {
-  margin: clamp(14px, 1.8vw, 22px) 0 0;
-  padding: clamp(22px, 2.8vw, 38px) clamp(22px, 2.8vw, 38px);
-  border-radius: 24px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(16px, 2.6vw, 44px);
-  align-items: center;
-}
-.cons-s22-004 .up h2 { margin: 0; }
-.cons-s22-004 .up h2 a {
-  color: var(--accent-ink);
-  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
-  line-height: 1.06;
-  letter-spacing: -0.034em;
-  font-weight: 800;
-  text-underline-offset: 5px;
-}
-.cons-s22-004 .up p { margin: 0; font-size: 1rem; font-weight: 600; opacity: 0.95; }
-.cons-s22-004 .up p a { color: var(--accent-ink); font-weight: 800; text-underline-offset: 3px; }
+.cons-s22-004 .real { margin: 1rem 0 0; padding-top: 0.7rem; border-top: 3px solid var(--accent); width: min(100%, 44rem); color: var(--muted); font-size: 0.85rem; line-height: 1.5; }
+.cons-s22-004 .real em { font-style: italic; color: var(--ink); }
 
-.cons-s22-004 .real {
-  margin: clamp(13px, 1.6vw, 18px) 0 0;
-  font-size: 0.91rem;
-  color: var(--ink-soft);
-  max-width: 66ch;
-}
-.cons-s22-004 .real em { font-style: normal; color: var(--ink); font-weight: 700; }
-
-/* --- Responsive ladder. The trail wraps; no level is ever removed --- */
-@media (max-width: 860px) {
-  .cons-s22-004 .up { grid-template-columns: minmax(0, 1fr); }
-  .cons-s22-004 .real { max-width: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cons-s22-004 * { transition: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .cons-s22-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -187,21 +99,22 @@ body { margin: 0; background: #ffffff; }
 <div class="cons-s22-004" data-study-id="CONS-S22-004" data-direction="Conversion-led">
   <section class="shell">
 
-    <p class="here" id="cons-s22-004-here">You are here</p>
+    <div class="top">
+      <p class="here" id="cons-s22-004-here"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4-1L19 8l-3-3L5 16zM14 7l3 3"/></svg>You are here</p>
+      <nav class="trail" aria-labelledby="cons-s22-004-here">
+        <ol>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services <span class="n" data-placeholder="true">6</span></a></li>
+          <li><a href="#">Operations <span class="n" data-placeholder="true">3</span></a></li>
+          <li class="cur"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg><span aria-current="page">Operating model redesign</span></li>
+        </ol>
+      </nav>
+    </div>
 
-    <nav class="trail" aria-labelledby="cons-s22-004-here">
-      <ol>
-        <li><a class="lv" href="#">Home</a></li>
-        <li><a class="lv" href="#">Services <span class="n" data-placeholder="true">6</span></a></li>
-        <li><a class="lv" href="#">Operations <span class="n" data-placeholder="true">3</span></a></li>
-        <li><span class="lv" aria-current="page">Operating model redesign</span></li>
-      </ol>
-    </nav>
-
-    <nav class="up" aria-labelledby="cons-s22-004-up">
-      <h2 id="cons-s22-004-up"><a href="#">Back up to Operations</a></h2>
+    <div class="up">
+      <a class="big" href="#"><svg class="mk" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Back up to <span class="u">Operations<svg viewBox="0 0 100 8" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M1 6c14-3 28-2 42-1s30 0 56-3" fill="none" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linecap="round"/></svg></span></a>
       <p><span data-placeholder="true">Three</span> pages including this one. The other two are <a href="#" data-placeholder="true">Cost structure</a> and <a href="#" data-placeholder="true">Post-merger integration</a>.</p>
-    </nav>
+    </div>
 
     <p class="real">The number on each level is how many pages are up there. <em>Every level is a page somebody maintains.</em></p>
 
