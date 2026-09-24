@@ -12,24 +12,21 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S03 — Projects
   Direction      : Universal / Safe
-  Reference      : None supplied for this section.
-  Layout model   : The dependable project grid — six large image tiles, each with a reserved name
-                   bar under it and a metadata line carrying the sector, the scope and the status
-  Density        : Low copy, high visual
-  Media mode     : Six large reserved project areas, 4:3. **The section is not legible with the
-                   images removed, and it is not supposed to be** — this is the most image-led
-                   section in the sector.
-  Interaction    : None (static; no JavaScript)
-  The governing constraint : The sector direction rules out client and project names, which removes
-                   the caption from every tile. What is left is what was always doing the work: the
-                   picture. The name is a reserved bar, and the real attributes underneath it —
-                   sector, scope, status — tell a client more than a building's name ever would.
-                   See ../README.md.
-  What is omitted : Contract value, duration, floor area, unit count. Each would be an invented
-                   figure repeated once per tile.
-  Content note   : Sector and scope are generic vocabulary; the delivery marker is carried through
-                   from S02 unchanged. No invented figure, client or project name, value, duration,
-                   area, certification, award or rating; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 1,
+                   a column and a grid: head split, then six 3:2 project fields in a hairline
+                   grid. Each field carries a status chip (COMPLETED / ON SITE, a filled square
+                   for on site) on a paper plate; under it a ruled record — sector in tracked
+                   uppercase with the marker as a stroke icon, the constraint line, and the
+                   PROJECT name as a reserved bordered slot. Drawing layer: a north point behind
+                   the head. V1 is kept: six projects, sector / marker / constraint real, name
+                   reserved, the no-values line at the foot.
+  Layout model   : Head split. 3 × 2 grid of 3:2 fields with status chips and ruled records.
+                   Foot rule with the no-values line and a tape-measure icon.
+  Density        : Standard (90–170)
+  Media mode     : Six reserved project fields, 3:2. Six reserved name slots.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No client, project name, location, value, area, duration, date, award or
+                   rating. Graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S03-001">
@@ -40,328 +37,113 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Six-tile project grid with reserved name bars and a real metadata line">
-<meta name="density" content="medium">
-<meta name="media-mode" content="six-large-reserved-project-areas">
+<meta name="theme" content="001 Site White &amp; Safety Orange">
+<meta name="layout-model" content="Head split; six 3:2 project fields in a hairline grid with status chips and ruled records (sector + marker icon, constraint, reserved name slot); no-values line on the foot rule; north point behind">
+<meta name="density" content="standard">
+<meta name="media-mode" content="six-reserved-project-fields-six-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S03-001 — Projects, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e8e8e8; }
+body { margin: 0; background: #f4f4f1; }
 
-/* Scoped study styles — namespaced to .con-s03-001 */
 .con-s03-001 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --paper: #e8e8e8;
-  --card: #ffffff;
-  --slot-a: #b4b4b4;
-  --slot-b: #969696;
-  --slot-deep-a: #444444;
-  --slot-deep-b: #2b2b2b;
-  --on-slot: #ffffff;
-  --res: #ececec;
-  --res-edge: #b4b4b4;
-  --res-ink: #969696;
-  --line: #d2d2d2;
-  --self: #2b2b2b;
-  --self-bg: #ececec;
-  --managed: #5e5e5e;
-  --managed-bg: #ececec;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f4f4f1; --ink: #121314; --muted: #5b5e62; --line: #d8d8d3; --line-strong: #121314;
+  --media: #e3e3de; --band: #ebebe6; --accent: #d9481a;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s03-001 *,
-.con-s03-001 *::before,
-.con-s03-001 *::after { box-sizing: inherit; }
-.con-s03-001 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 22px;
-}
-.con-s03-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s03-001 *, .con-s03-001 *::before, .con-s03-001 *::after { box-sizing: inherit; }
+.con-s03-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s03-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s03-001 .draw { position: absolute; right: 4rem; top: 1rem; width: 18rem; height: 18rem; pointer-events: none; color: var(--line); }
+.con-s03-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s03-001 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s03-001 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s03-001 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s03-001 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s03-001 h2 em { font-style: normal; color: var(--accent); }
+.con-s03-001 .lead { margin: 0 0 0.3rem; max-width: 26rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
 
-.con-s03-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
-  gap: clamp(20px, 3vw, 60px);
-  align-items: end;
-  margin-bottom: clamp(22px, 2.8vw, 40px);
-}
-.con-s03-001 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s03-001 h2 {
-  margin: 0;
-  font-size: clamp(2.44rem, 5.292vw, 4.41rem);
-  line-height: 1.02;
-  letter-spacing: -0.034em;
-  font-weight: 700;
-  max-width: 15ch;
-}
-.con-s03-001 .head p { margin: 0; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
-.con-s03-001 .head b { color: var(--ink); }
+.con-s03-001 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.2rem, 2vw, 2rem); margin-top: clamp(1.6rem, 3vw, 3rem); padding-top: 1.2rem; border-top: 3px solid var(--accent); }
+.con-s03-001 .cell { display: flex; flex-direction: column; min-width: 0; padding-bottom: 1.6rem; }
+.con-s03-001 .media { position: relative; aspect-ratio: 3 / 2; background: var(--media); border-radius: 2px; }
+.con-s03-001 .slate { position: absolute; right: 0.9rem; bottom: 0.7rem; margin: 0; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s03-001 .st { position: absolute; left: 0; top: 0; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.8rem; background: var(--paper); color: var(--ink); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s03-001 .st i { width: 0.6rem; height: 0.6rem; border: 1px solid var(--accent); }
+.con-s03-001 .st.on i { background: var(--accent); }
+.con-s03-001 .rec { display: flex; flex-direction: column; margin-top: 0.8rem; padding-top: 0.7rem; border-top: 1px solid var(--line); }
+.con-s03-001 .sec { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin: 0; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.con-s03-001 .mk { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s03-001 .mk .ico { width: 1rem; height: 1rem; color: var(--accent); }
+.con-s03-001 .rec p.c { margin: 0.3rem 0 0.7rem; color: var(--muted); font-size: 0.84rem; line-height: 1.45; }
+.con-s03-001 .nm { display: flex; align-items: center; gap: 0.7rem; margin: auto 0 0; }
+.con-s03-001 .nm dt { margin: 0; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s03-001 .nm dd { margin: 0; flex: 1 1 auto; }
+.con-s03-001 .slot { display: inline-flex; align-items: center; width: 100%; height: 1.9rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.9rem; }
+.con-s03-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Grid */
-.con-s03-001 .grid {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 1.8vw, 26px);
-}
-.con-s03-001 .grid li { min-width: 0; }
-.con-s03-001 .shot {
-  position: relative;
-  border-radius: 22px;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(155deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(12px, 1.5vw, 18px);
-}
-.con-s03-001 .deep .shot { background: linear-gradient(155deg, var(--slot-deep-a) 0%, var(--slot-deep-b) 100%); }
-.con-s03-001 .shot .tag {
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.8;
-}
-.con-s03-001 .status {
-  position: absolute;
-  top: clamp(12px, 1.5vw, 18px);
-  right: clamp(12px, 1.5vw, 18px);
-  padding: 4px 11px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
+.con-s03-001 .foot { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1.2rem; align-items: start; padding-top: 1rem; border-top: 1px solid var(--line-strong); }
+.con-s03-001 .foot .ico { width: 1.4rem; height: 1.4rem; color: var(--accent); margin-top: 0.1rem; }
+.con-s03-001 .foot p { margin: 0; max-width: 50rem; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s03-001 .foot strong { color: var(--ink); }
 
-.con-s03-001 .name {
-  display: block;
-  margin: clamp(12px, 1.4vw, 16px) 0 clamp(10px, 1.2vw, 13px);
-  padding: 11px 14px;
-  border: 1px dashed var(--res-edge);
-  border-radius: 16px;
-  background: #3a3a3a;
-  color: var(--res-ink);
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.con-s03-001 .meta {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 8px 12px;
-}
-.con-s03-001 .sector { font-size: 1.1rem; font-weight: 650; }
-.con-s03-001 .scope { color: var(--ink-soft); font-size: 1rem; }
-.con-s03-001 .chip {
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-.con-s03-001 .c-self { background: var(--self-bg); color: var(--self); }
-.con-s03-001 .c-managed { background: var(--managed-bg); color: var(--managed); }
-
-.con-s03-001 .close {
-  margin: clamp(20px, 2.6vw, 34px) 0 0;
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 1px solid var(--line);
-  max-width: 70ch;
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.con-s03-001 .close b { color: var(--ink); }
-
-/* Responsive ladder */
-@media (max-width: 1000px) {
-  .con-s03-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 680px) {
-  .con-s03-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; gap: clamp(14px, 2vw, 20px); }
-  .con-s03-001 h2 { max-width: none; }
-  .con-s03-001 .grid { grid-template-columns: minmax(0, 1fr); }
-  .con-s03-001 .close { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s03-001 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s03-001 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
-  font-size: 1.06rem;
-}
-.con-s03-001 h2 { font-weight: 800; }
-.con-s03-001 h3, .con-s03-001 h4 { font-weight: 750; }
-.con-s03-001 .eyebrow, .con-s03-001 .tag {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s03-001 .name {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s03-001 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s03-001.con-s03-001 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s03-001.con-s03-001 .head h2, .con-s03-001.con-s03-001 .head h3, .con-s03-001.con-s03-001 .head h4, .con-s03-001.con-s03-001 .head b, .con-s03-001.con-s03-001 .head strong, .con-s03-001.con-s03-001 .head p b, .con-s03-001.con-s03-001 .head li b, .con-s03-001.con-s03-001 .head span b, .con-s03-001.con-s03-001 .head dt, .con-s03-001.con-s03-001 .head div b {
-  color: #ffffff;
-}
-.con-s03-001.con-s03-001 .head p, .con-s03-001.con-s03-001 .head li, .con-s03-001.con-s03-001 .head span, .con-s03-001.con-s03-001 .head dd, .con-s03-001.con-s03-001 .head div p, .con-s03-001.con-s03-001 .head div li, .con-s03-001.con-s03-001 .head p span, .con-s03-001.con-s03-001 .head .said, .con-s03-001.con-s03-001 .head .note {
-  color: #d2d2d2;
-}
-.con-s03-001.con-s03-001 .head .eyebrow, .con-s03-001.con-s03-001 .head .kicker, .con-s03-001.con-s03-001 .head .slot, .con-s03-001.con-s03-001 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s03-001.con-s03-001 .head i, .con-s03-001.con-s03-001 .head .bars i, .con-s03-001.con-s03-001 .head .lines i, .con-s03-001.con-s03-001 .head .measures i, .con-s03-001.con-s03-001 .head .bar, .con-s03-001.con-s03-001 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s03-001.con-s03-001 .head .plate, .con-s03-001.con-s03-001 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s03-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s03-001 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s03-001 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s03-001 .lead { text-align: left; } .con-s03-001 h2 { max-width: none; } .con-s03-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .con-s03-001 .draw { display: none; } }
+@media (max-width: 560px) { .con-s03-001 .grid { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s03-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s03-001" data-study-id="CON-S03-001" data-direction="Universal / Safe">
+  <svg class="draw" viewBox="0 0 200 200" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="100" cy="100" r="90"/><circle cx="100" cy="100" r="60"/><path d="M100 10v180M10 100h180M100 40l-14 60h28z"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s03-001-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">The work</p>
-        <h2 id="con-s03-001-title">Buildings, not case studies</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M7 21V3h13M20 3v6M7 7l6-4M16 3v4"/></svg>The work</p>
+        <h2 id="con-s03-001-title">Buildings, not <em>case studies.</em></h2>
       </div>
-      <p><b>What the job was, and what made it difficult.</b> The sector matters more than the name &mdash; it tells you whether we have worked under your constraints.</p>
+      <p class="lead">What the job was, and what made it difficult. The sector matters more than the name &mdash; it tells you whether we have worked under your constraints.</p>
     </div>
 
-    <ul class="grid">
-      <li>
-        <div class="shot deep"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
-        <span class="name">Project name &mdash; reserved</span>
-        <p class="meta">
-          <span class="sector">Healthcare</span>
-          <span class="chip c-self">Self-delivered</span>
-          <span class="scope">Refurbishment, occupied throughout</span>
-        </p>
-      </li>
-      <li>
-        <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
-        <span class="name">Project name &mdash; reserved</span>
-        <p class="meta">
-          <span class="sector">Education</span>
-          <span class="chip c-managed">Managed</span>
-          <span class="scope">Structural frame and envelope</span>
-        </p>
-      </li>
-      <li>
-        <div class="shot"><span class="tag">Project media &mdash; on site</span><span class="status">On site</span></div>
-        <span class="name">Project name &mdash; reserved</span>
-        <p class="meta">
-          <span class="sector">Industrial</span>
-          <span class="chip c-self">Self-delivered</span>
-          <span class="scope">Groundworks and civils</span>
-        </p>
-      </li>
-      <li>
-        <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
-        <span class="name">Project name &mdash; reserved</span>
-        <p class="meta">
-          <span class="sector">Retail</span>
-          <span class="chip c-self">Self-delivered</span>
-          <span class="scope">Commercial fit-out, phased handover</span>
-        </p>
-      </li>
-      <li>
-        <div class="shot deep"><span class="tag">Project media &mdash; on site</span><span class="status">On site</span></div>
-        <span class="name">Project name &mdash; reserved</span>
-        <p class="meta">
-          <span class="sector">Civic</span>
-          <span class="chip c-managed">Managed</span>
-          <span class="scope">Demolition and enabling, live traffic alongside</span>
-        </p>
-      </li>
-      <li>
-        <div class="shot"><span class="tag">Project media &mdash; completed</span><span class="status">Completed</span></div>
-        <span class="name">Project name &mdash; reserved</span>
-        <p class="meta">
-          <span class="sector">Residential</span>
-          <span class="chip c-managed">Managed</span>
-          <span class="scope">New build, frame to handover</span>
-        </p>
-      </li>
-    </ul>
+    <div class="grid">
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: completed healthcare refurbishment"><span class="st"><i aria-hidden="true"></i>Completed</span><p class="slate" aria-hidden="true">3:2</p></div>
+        <div class="rec"><p class="sec">Healthcare<span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self-delivered</span></p><p class="c">Refurbishment, occupied throughout.</p><dl class="nm"><dt>Project</dt><dd><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+      </div>
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: completed education frame and envelope"><span class="st"><i aria-hidden="true"></i>Completed</span><p class="slate" aria-hidden="true">3:2</p></div>
+        <div class="rec"><p class="sec">Education<span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Managed</span></p><p class="c">Structural frame and envelope.</p><dl class="nm"><dt>Project</dt><dd><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+      </div>
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: industrial groundworks on site"><span class="st on"><i aria-hidden="true"></i>On site</span><p class="slate" aria-hidden="true">3:2</p></div>
+        <div class="rec"><p class="sec">Industrial<span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self-delivered</span></p><p class="c">Groundworks and civils.</p><dl class="nm"><dt>Project</dt><dd><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+      </div>
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: completed retail fit-out"><span class="st"><i aria-hidden="true"></i>Completed</span><p class="slate" aria-hidden="true">3:2</p></div>
+        <div class="rec"><p class="sec">Retail<span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self-delivered</span></p><p class="c">Commercial fit-out, phased handover.</p><dl class="nm"><dt>Project</dt><dd><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+      </div>
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: civic enabling works on site"><span class="st on"><i aria-hidden="true"></i>On site</span><p class="slate" aria-hidden="true">3:2</p></div>
+        <div class="rec"><p class="sec">Civic<span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Managed</span></p><p class="c">Demolition and enabling, live traffic alongside.</p><dl class="nm"><dt>Project</dt><dd><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+      </div>
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: completed residential new build"><span class="st"><i aria-hidden="true"></i>Completed</span><p class="slate" aria-hidden="true">3:2</p></div>
+        <div class="rec"><p class="sec">Residential<span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Managed</span></p><p class="c">New build, frame to handover.</p><dl class="nm"><dt>Project</dt><dd><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+      </div>
+    </div>
 
-    <p class="close"><b>No values, no floor areas, no programme lengths.</b> A number under a photograph is either commercially confidential or invented, and neither helps you judge whether we can build yours.</p>
+    <div class="foot">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="9" cy="12" r="1.5"/><path d="M15 12h7v4h-7"/></svg>
+      <p><strong>No values, no floor areas, no programme lengths.</strong> A number under a photograph is either commercially confidential or invented, and neither helps you judge whether we can build yours.</p>
+    </div>
 
   </section>
 </div>

@@ -12,28 +12,20 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S21 — Subpage Hero
   Direction      : Premium / Editorial
-  Reference      : None supplied for this section.
-  Layout model   : A standfirst — parent label, reserved title, and a deck set at reading size
-                   directly beneath it, with the metadata run as one quiet line under a rule
-  Density        : Low
-  Media mode     : None. An editorial interior hero does not need a picture to say which page you
-                   are on, and the space it would take is space the deck is using better.
-  Interaction    : None. The batch's single action belongs to `004`.
-  The register   : **The standfirst** &mdash; the newspaper deck, the one editorial form built
-                   specifically to sit under a title and tell you what the piece contains. It is the
-                   register this section was always going to want, and it has not been used
-                   elsewhere in this sector.
-  The test       : *A study that would work unchanged as `S01` has not answered this role.* There is
-                   no counter on this page, no proposition about the firm, and nothing that would
-                   survive being moved to a landing page &mdash; a deck about one project is
-                   meaningless anywhere except above that project.
-  The title      : Reserved, drawn as a labelled fill rather than an em-dash &mdash; at this scale a
-                   dash reads as a redaction.
-  Deliberately not : No counter, figure, percentage or date. No viewport-height unit. No second
-                   action. No serif drift into the property-developer register: the face is doing
-                   editorial work, not atmosphere.
-  Content note   : Project name, sector, status, contract form and reference are reserved. No digit
-                   in visible copy; no header; no refusal region.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 7
+                   at interior scale: a reading column — the iconed parent label, the reserved
+                   title drawn as a labelled fill of three flat bars at the measure of a longer
+                   display title, and the page description in two paragraphs — beside a bordered
+                   margin ledger of the four metadata slots with a stroke icon each, tape-topped.
+                   No media, no counter, no viewport height, no refusal region. Drawing layer: a
+                   small levelling circle behind the head. V1 is kept whole; the title element
+                   is the page's h1.
+  Layout model   : Reading column (parent / title fill / description) | bordered margin ledger.
+  Density        : Compact — V1's spine kept in full
+  Media mode     : No media. Five reserved fields.
+  Interaction    : None (static; no JavaScript).
+  Content note   : Project name, sector, status, contract form and reference reserved. No
+                   counter, digit, claim about the firm or action. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S21-002">
@@ -44,174 +36,61 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="A standfirst — reserved title with a deck beneath it and the metadata as one line">
-<meta name="density" content="low">
-<meta name="media-mode" content="none">
+<meta name="theme" content="002 Bone &amp; Burnt Amber">
+<meta name="layout-model" content="Reading column with the reserved title as a labelled fill of three flat bars and the page description in two paragraphs, beside a tape-topped bordered margin ledger of iconed metadata slots; no media; levelling circle behind the head; no viewport height">
+<meta name="density" content="compact">
+<meta name="media-mode" content="no-media-five-reserved-fields">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S21-002 — Subpage Hero, Editorial</title>
+<title>CON-S21-002 — Subpage Hero, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #efece5; }
 
-/* Scoped study styles — namespaced to .con-s21-002 */
 .con-s21-002 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --ink-faint: #969696;
-  --paper: #fafafa;
-  --fill: #ffffff;
-  --line: #d2d2d2;
-  --rule: #111111;
-  --mark: #7a7a7a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #efece5; --ink: #171410; --muted: #6a655c; --line: #d9d3c8; --line-strong: #171410;
+  --media: #e3ded4; --band: #e8e3d9; --accent: #b4531d;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s21-002 *,
-.con-s21-002 *::before,
-.con-s21-002 *::after { box-sizing: inherit; }
-.con-s21-002 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-}
-.con-s21-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s21-002 *, .con-s21-002 *::before, .con-s21-002 *::after { box-sizing: inherit; }
+.con-s21-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s21-002 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s21-002 .draw { position: absolute; right: 30%; top: 1.4rem; width: 12rem; height: 12rem; pointer-events: none; color: var(--line); }
+.con-s21-002 .shell { position: relative; width: min(100%, 88rem); margin: 0 auto; padding: clamp(2rem, 4.5vw, 4rem) clamp(1rem, 4.5vw, 4.5rem) clamp(1.6rem, 3vw, 2.6rem); display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2rem clamp(2rem, 5vw, 5rem); align-items: end; }
+.con-s21-002 .parent { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.1rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s21-002 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s21-002 h1 { margin: 0; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s21-002 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s21-002 .field { display: block; margin: 0 0 0.5rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.4; }
+.con-s21-002 .bars { display: block; max-width: 40rem; }
+.con-s21-002 .bars i { display: block; height: 0.78em; background: var(--media); border-radius: 2px; }
+.con-s21-002 .bars i + i { margin-top: 0.14em; }
+.con-s21-002 .bars i:nth-child(1) { width: 92%; }
+.con-s21-002 .bars i:nth-child(2) { width: 78%; }
+.con-s21-002 .bars i:nth-child(3) { width: 44%; }
+.con-s21-002 .about { margin: 1.4rem 0 0; max-width: 40rem; color: var(--muted); font-size: 0.98rem; line-height: 1.55; }
+.con-s21-002 .about + .about { margin-top: 0.7rem; font-size: 0.9rem; }
+.con-s21-002 .about b { color: var(--ink); }
 
-.con-s21-002 .parent {
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--mark);
-  font-weight: 700;
-}
+.con-s21-002 .ledger { border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); }
+.con-s21-002 .ledger dl { margin: 0; }
+.con-s21-002 .ledger div { padding: 0.6rem 0.9rem 0.7rem; border-bottom: 1px solid var(--line); }
+.con-s21-002 .ledger div:last-child { border-bottom: 0; }
+.con-s21-002 .ledger dt { display: flex; align-items: center; gap: 0.4rem; margin: 0 0 0.3rem; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s21-002 .ledger dt .ico { width: 0.95rem; height: 0.95rem; color: var(--accent); }
+.con-s21-002 .ledger dd { margin: 0; }
+.con-s21-002 .slot { display: inline-flex; align-items: center; width: 100%; height: 1.9rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1; }
 
-/* The reserved title */
-.con-s21-002 h2 { margin: 0 0 clamp(16px, 2vw, 26px); }
-.con-s21-002 .field {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
+@media (max-width: 800px) {
+  .con-s21-002 .shell { grid-template-columns: minmax(0, 1fr); }
+  .con-s21-002 .draw { display: none; }
 }
-.con-s21-002 .bars { display: grid; gap: clamp(10px, 1.2vw, 14px); max-width: 22ch; }
-.con-s21-002 .bars i {
-  display: block;
-  height: clamp(30px, 3.8vw, 56px);
-  border-radius: 10px;
-  background: var(--fill);
-}
-.con-s21-002 .bars i:first-child { width: 100%; }
-.con-s21-002 .bars i:last-child { width: 47%; }
-
-/* The deck */
-.con-s21-002 .deck {
-  margin: 0;
-  max-width: 54ch;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(1.392rem, 2.318vw, 1.976rem);
-  line-height: 1.42;
-  letter-spacing: -0.012em;
-  color: var(--ink);
-}
-.con-s21-002 .deck em { font-style: italic; }
-.con-s21-002 .sub { margin: clamp(12px, 1.5vw, 17px) 0 0; max-width: 60ch; font-size: 1.1rem; line-height: 1.68; color: var(--ink-soft); }
-.con-s21-002 .sub b { color: var(--ink); font-weight: 650; }
-
-/* Metadata, as one line */
-.con-s21-002 .meta {
-  margin: clamp(20px, 2.5vw, 32px) 0 0;
-  padding-top: clamp(12px, 1.5vw, 17px);
-  border-top: 2px solid var(--rule);
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(14px, 2.4vw, 40px);
-  list-style: none;
-}
-.con-s21-002 .meta li { display: flex; align-items: baseline; gap: 9px; }
-.con-s21-002 .meta .k {
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s21-002 .slot {
-  display: inline-block;
-  min-width: 88px;
-  padding: 2px 12px;
-  background: var(--fill);
-  color: var(--ink-faint);
-  font-size: 1rem;
-  text-align: center;
-}
-
-/* Responsive ladder */
-@media (max-width: 620px) {
-  .con-s21-002 .deck, .con-s21-002 .sub, .con-s21-002 .bars { max-width: none; }
-  .con-s21-002 .bars i { height: clamp(26px, 7.5vw, 36px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s21-002 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s21-002 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 30%);
-  font-size: 1.06rem;
-}
-.con-s21-002 h2 { font-weight: 800; }
-.con-s21-002 h3, .con-s21-002 h4 { font-weight: 750; }
-.con-s21-002 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #ececec;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s21-002.con-s21-002 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  max-width: none;
-}
-.con-s21-002.con-s21-002 .shell > h2 span, .con-s21-002.con-s21-002 .shell > h2 b, .con-s21-002.con-s21-002 .shell > h2 em, .con-s21-002.con-s21-002 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s21-002 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s21-002 .shell > *:last-child { margin-bottom: 0; }
+@media (prefers-reduced-motion: reduce) { .con-s21-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -219,23 +98,31 @@ body { margin: 0; background: #fafafa; }
 <div class="con-s21-002" data-study-id="CON-S21-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="con-s21-002-title">
 
-    <p class="parent">Projects</p>
+    <svg class="draw" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <g stroke="currentColor" stroke-width="1" fill="none">
+        <circle cx="50" cy="50" r="44" vector-effect="non-scaling-stroke"/>
+        <circle cx="50" cy="50" r="3" vector-effect="non-scaling-stroke"/>
+        <path d="M50 0V38M50 62V100M0 50H38M62 50H100" vector-effect="non-scaling-stroke"/>
+      </g>
+    </svg>
 
-    <h2 id="con-s21-002-title">
-      <span class="vh">Project name</span>
-      <span class="field">Project name</span>
-      <span class="bars" role="img" aria-label="Reserved area: the project name goes here"><i></i><i></i></span>
-    </h2>
+    <div>
+      <p class="parent"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21h16M6 21V9l6-4 6 4v12M10 21v-5h4v5"/></svg>Projects</p>
+      <h1 id="con-s21-002-title">
+        <span class="vh">Project name</span>
+        <span class="field" aria-hidden="true">Project name &mdash; reserved</span>
+        <span class="bars" role="img" aria-label="Reserved area: the project name goes here"><i></i><i></i><i></i></span>
+      </h1>
+      <p class="about">What was on the site before we started, what we chose, and <b>the decision this one got wrong.</b></p>
+      <p class="about">The page runs in that order and the last part is the longest, because it is the part that would be useful to somebody with a similar building and the same problem. <b>Nothing on this page is a claim about the firm</b> &mdash; that argument is made elsewhere, and it is not what you came here for.</p>
+    </div>
 
-    <p class="deck">What was on the site before we started, what we chose, <em>and the decision this one got wrong.</em></p>
-    <p class="sub">The page runs in that order and the last part is the longest, because it is the part that would be useful to somebody with a similar building and the same problem. <b>Nothing on this page is a claim about the firm</b> &mdash; that argument is made elsewhere, and it is not what you came here for.</p>
-
-    <ul class="meta">
-      <li><span class="k">Sector</span><span class="slot"><span class="vh">Sector this project sits in</span><span aria-hidden="true">Reserved</span></span></li>
-      <li><span class="k">Status</span><span class="slot"><span class="vh">On site or complete</span><span aria-hidden="true">Reserved</span></span></li>
-      <li><span class="k">Contract</span><span class="slot"><span class="vh">Form of contract</span><span aria-hidden="true">Reserved</span></span></li>
-      <li><span class="k">Reference</span><span class="slot"><span class="vh">Job reference</span><span aria-hidden="true">Reserved</span></span></li>
-    </ul>
+    <div class="ledger"><dl>
+      <div><dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>Sector</dt><dd><span class="slot"><span class="vh">Sector this project sits in</span><span aria-hidden="true">Reserved</span></span></dd></div>
+      <div><dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15a8 8 0 0 1 16 0M2 15h20v3H2zM10 7h4v5h-4z"/></svg>Status</dt><dd><span class="slot"><span class="vh">On site or complete</span><span aria-hidden="true">Reserved</span></span></dd></div>
+      <div><dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6"/></svg>Contract</dt><dd><span class="slot"><span class="vh">Form of contract</span><span aria-hidden="true">Reserved</span></span></dd></div>
+      <div><dt><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14v17H5zM9 4V2h6v2M8 10h8M8 14h6"/></svg>Reference</dt><dd><span class="slot"><span class="vh">Job reference</span><span aria-hidden="true">Reserved</span></span></dd></div>
+    </dl></div>
 
   </section>
 </div>

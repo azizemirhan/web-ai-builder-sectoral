@@ -11,31 +11,23 @@
   Study ID       : CON-S01-003
   Sector         : Construction & Contractors (CON)
   Section        : CON-S01 — Hero
-  Direction      : Structured / Visual Modular
-  Reference      : Supplied — the oversized outlined display type over a render, with a note block
-                   at the left, a statistics column at the right and a caption at the foot. Placed
-                   here because it is a zoned grid: four distinct blocks, each doing one job.
-  Layout model   : A twelve-column grid with four named zones — a note, an oversized two-line
-                   display, a wide reserved project area, and a column of three reserved figures —
-                   closed by a caption on the media
-  Density        : Medium-high
-  Media mode     : One reserved project media area, sitting under the display type as the
-                   reference's render does.
-  Interaction    : None (static; no JavaScript)
-  The outlined line, and how it is made safe : The second line is drawn with `-webkit-text-stroke`
-                   inside an `@supports` guard. Without the guard, a browser that does not support
-                   the property would render `color: transparent` and **the line would disappear**.
-                   With it, unsupported browsers get the solid weight instead, which is the correct
-                   fallback rather than an empty space.
-  Not a specification table : The sector direction warns that the 003 trap here is a table of
-                   trades. These are four zones with different internal shapes, not rows of one
-                   matrix.
-  The figures    : Three reserved fields in a column, exactly where the reference puts *10K happy
-                   clients · 5K properties sold · 15+ years*. **Two of those three are omitted
-                   rather than reserved:** *happy clients* asserts a satisfaction survey and
-                   *properties sold* is a different trade. What is left is countable and checkable.
-  Content note   : No invented figure, client or project name, certification, safety record, award,
-                   rating or price; no header; no urgency device.
+  Direction      : Dense / Information-heavy
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3,
+                   bordered cells sharing hairlines, in the heavy reading: the hero is a zoned
+                   sheet — a head cell with the tracked-uppercase display, a WHAT WE BUILD cell
+                   with a stroke icon per line, a 16:9 project field spanning two columns, and
+                   three counter cells with figures at counter scale. One 3px tape bar on the
+                   sheet's top edge. Drawing layer: a setting-out grid behind the whole sheet.
+                   V1 is kept: frame, envelope, fit-out and the groundworks under all of it;
+                   built by the people who priced it; the counter reserved.
+  Layout model   : A 3-column bordered sheet. Row 1: head cell (2 cols) + WHAT WE BUILD list
+                   cell. Row 2: 16:9 project field (2 cols) + a cell with the position line and
+                   the two actions stacked. Row 3: three counter cells.
+  Density        : Hero (40–90)
+  Media mode     : One reserved project field, 16:9. Three reserved counters.
+  Interaction    : None (static; no JavaScript). Actions are relative links.
+  Content note   : No figure, client, project name, certification, safety record, award,
+                   rating, price or urgency device. All graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S01-003">
@@ -44,299 +36,126 @@
 <meta name="section-id" content="CON-S01">
 <meta name="section-name" content="Hero">
 <meta name="variant" content="003">
-<meta name="territory" content="Structured / Visual Modular">
-<meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Twelve-column zoned grid: note, oversized display, reserved media, reserved figure column">
-<meta name="density" content="medium-high">
-<meta name="media-mode" content="one-wide-reserved-project-area">
+<meta name="territory" content="Dense / Information-heavy">
+<meta name="direction" content="Dense / Information-heavy">
+<meta name="theme" content="003 Steel &amp; Structural Blue">
+<meta name="layout-model" content="Zoned bordered sheet: head cell, iconed WHAT WE BUILD cell, 16:9 project field, actions cell, three counter cells; setting-out grid behind">
+<meta name="density" content="hero">
+<meta name="media-mode" content="one-reserved-project-field-three-reserved-counters">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S01-003 — Hero, Structured / Visual Modular</title>
+<title>CON-S01-003 — Hero, Dense / Information-heavy</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #dfdfdf; }
+body { margin: 0; background: #edf0f2; }
 
-/* Scoped study styles — namespaced to .con-s01-003 */
 .con-s01-003 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --paper: #dfdfdf;
-  --slot: #ececec;
-  --slot-ink: #2b2b2b;
-  --slot-edge: #7a7a7a;
-  --field: #ffffff;
-  --field-edge: #969696;
-  --rule: #b4b4b4;
-  --focus: #111111;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #edf0f2; --ink: #0f1316; --muted: #57616a; --line: #d2d9de; --line-strong: #0f1316;
+  --media: #dfe4e8; --band: #e4e8eb; --accent: #1f5fd0;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s01-003 *,
-.con-s01-003 *::before,
-.con-s01-003 *::after { box-sizing: inherit; }
-.con-s01-003 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 10px;
-}
-.con-s01-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s01-003 *, .con-s01-003 *::before, .con-s01-003 *::after { box-sizing: inherit; }
+.con-s01-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s01-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 28px);
-  align-items: start;
-}
+.con-s01-003 .draw { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: var(--line); }
+.con-s01-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
 
-/* Zone: the note */
-.con-s01-003 .note { grid-column: span 3; }
-.con-s01-003 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 14px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.con-s01-003 .note p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.62;
-}
-.con-s01-003 .note b { color: var(--ink); }
+.con-s01-003 .sheet { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 3px solid var(--accent); border-left: 1px solid var(--line-strong); background: var(--paper); }
+.con-s01-003 .cell { display: flex; flex-direction: column; min-width: 0; padding: 1.4rem 1.5rem 1.5rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s01-003 .head { grid-column: span 2; }
+.con-s01-003 .field { grid-column: span 2; padding: 0; }
+.con-s01-003 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s01-003 .lab { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 1rem; color: var(--muted); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s01-003 .lab .ico { width: 1.1rem; height: 1.1rem; color: var(--accent); }
+.con-s01-003 h1 { margin: 0; max-width: 20ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s01-003 h1 em { font-style: normal; color: var(--accent); }
+.con-s01-003 .sub { margin: 1.2rem 0 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.con-s01-003 .sub span { display: block; max-width: 34rem; }
 
-/* Zone: the display */
-.con-s01-003 .display { grid-column: span 9; }
-.con-s01-003 h1 {
-  margin: 0;
-  font-size: clamp(3.276rem, 10.584vw, 9.324rem);
-  line-height: 0.9;
-  letter-spacing: -0.045em;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-.con-s01-003 h1 span { display: block; }
-.con-s01-003 .outline { color: var(--ink); }
-@supports (-webkit-text-stroke: 1px black) {
-  .con-s01-003 .outline {
-    color: transparent;
-    -webkit-text-stroke: clamp(1px, 0.16vw, 2px) var(--ink);
-  }
-}
+.con-s01-003 .build { margin: 0; padding: 0; list-style: none; }
+.con-s01-003 .build li { display: flex; align-items: center; gap: 0.8rem; padding: 0.65rem 0; border-top: 1px solid var(--line); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s01-003 .build li:last-child { border-bottom: 1px solid var(--line); }
+.con-s01-003 .build .ico { color: var(--accent); }
 
-/* Zone: the media */
-.con-s01-003 .frame { grid-column: span 9; }
-.con-s01-003 .media {
-  background: var(--slot);
-  border: 1px dashed var(--slot-edge);
-  aspect-ratio: 16 / 9;
-  display: grid;
-  place-items: center;
-  padding: 16px;
-}
-.con-s01-003 .media span {
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-  line-height: 1.7;
-}
-.con-s01-003 .caption {
-  margin: clamp(10px, 1.2vw, 14px) 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: clamp(10px, 1.2vw, 14px);
-  border-top: 1px solid var(--rule);
-  font-size: 1rem;
-  color: var(--ink-soft);
-}
-.con-s01-003 .caption b {
-  color: var(--ink);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
+.con-s01-003 .media { position: relative; aspect-ratio: 16 / 9; width: 100%; background: var(--media); }
+.con-s01-003 .slate { position: absolute; left: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s01-003 .slate span { display: block; margin-top: 0.2rem; font-weight: 400; letter-spacing: 0.08em; text-transform: none; font-size: 0.7rem; }
 
-/* Zone: the figures */
-.con-s01-003 .figures {
-  grid-column: span 3;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.con-s01-003 .figures li { padding: clamp(12px, 1.5vw, 18px) 0; border-top: 1px solid var(--rule); }
-.con-s01-003 .figures li:first-child { border-top: 0; padding-top: 0; }
-.con-s01-003 .fname {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.con-s01-003 .slot {
-  display: block;
-  border: 1px dashed var(--field-edge);
-  background: var(--field);
-  padding: 8px 12px;
-  min-height: 52px;
-  color: #2b2b2b;
-  font-size: 1.652rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.con-s01-003 .figures p { margin: 7px 0 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
+.con-s01-003 .pos { margin: 0; font-weight: 800; font-size: clamp(1.2rem, 1.8vw, 1.6rem); line-height: 1.1; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s01-003 .pos em { font-style: normal; color: var(--accent); }
+.con-s01-003 .note { margin: 0.8rem 0 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s01-003 .send { margin: 1.4rem 0 0; padding: 0; list-style: none; }
+.con-s01-003 .send li { display: flex; align-items: center; gap: 0.7rem; padding: 0.6rem 0; border-top: 1px solid var(--line); color: var(--ink); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.con-s01-003 .send li:last-child { border-bottom: 1px solid var(--line); }
+.con-s01-003 .send .ico { width: 1.15rem; height: 1.15rem; color: var(--accent); }
+.con-s01-003 .act { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; margin-top: auto; padding-top: 1.6rem; }
+.con-s01-003 .btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 0.9rem 1.5rem; border: 1px solid var(--ink); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+.con-s01-003 .btn .ico { width: 1.2rem; height: 1.2rem; color: var(--accent); }
+.con-s01-003 .btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.con-s01-003 .btn:hover .ico { color: #fff; }
+.con-s01-003 .alt { color: var(--ink); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: var(--accent); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s01-003 .alt span { color: var(--accent); margin-left: 0.3rem; }
 
-.con-s01-003 .go {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: clamp(14px, 1.8vw, 20px);
-  min-height: 50px;
-  padding: 0 26px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 1.1rem;
-  font-weight: 650;
-  text-decoration: none;
-}
-.con-s01-003 .go:hover { background: #7a7a7a; }
+.con-s01-003 .slot { display: inline-flex; align-items: center; align-self: flex-start; min-width: 8rem; height: 3.4rem; padding: 0 1rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 2.2rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.con-s01-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s01-003 .cnt p.d { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
 
-/* Responsive ladder — zones stack, the display stays first after the note */
-@media (max-width: 1000px) {
-  .con-s01-003 .note,
-  .con-s01-003 .display,
-  .con-s01-003 .frame,
-  .con-s01-003 .figures { grid-column: span 12; }
-  .con-s01-003 h1 { font-size: clamp(3.024rem, 11.34vw, 5.796rem); }
-}
-
-@media (max-width: 560px) {
-  .con-s01-003 .go { width: 100%; }
-  .con-s01-003 .media { aspect-ratio: 4 / 3; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s01-003 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s01-003 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
-  font-size: 1.06rem;
-}
-.con-s01-003 h2 { font-weight: 800; }
-.con-s01-003 h3, .con-s01-003 h4 { font-weight: 750; }
-.con-s01-003 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s01-003 .media, .con-s01-003 .slot {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s01-003 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s01-003.con-s01-003 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  max-width: none;
-}
-.con-s01-003.con-s01-003 .shell > h2 span, .con-s01-003.con-s01-003 .shell > h2 b, .con-s01-003.con-s01-003 .shell > h2 em, .con-s01-003.con-s01-003 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s01-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s01-003 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s01-003 .sheet { grid-template-columns: repeat(2, minmax(0, 1fr)); } .con-s01-003 .head, .con-s01-003 .field { grid-column: span 2; } .con-s01-003 .cnt:last-child { grid-column: span 2; } }
+@media (max-width: 640px) { .con-s01-003 .sheet { grid-template-columns: minmax(0, 1fr); } .con-s01-003 .head, .con-s01-003 .field, .con-s01-003 .cnt:last-child { grid-column: span 1; } .con-s01-003 .media { aspect-ratio: 4 / 3; } .con-s01-003 h1 { max-width: none; } .con-s01-003 .btn { width: 100%; justify-content: center; } }
+@media (prefers-reduced-motion: reduce) { .con-s01-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
-<div class="con-s01-003" data-study-id="CON-S01-003" data-direction="Structured / Visual Modular">
+<div class="con-s01-003" data-study-id="CON-S01-003" data-direction="Dense / Information-heavy">
+  <svg class="draw" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 60H1440M0 180H1440M0 300H1440M0 420H1440M0 540H1440M0 660H1440M0 780H1440M120 0V900M240 0V900M360 0V900M480 0V900M600 0V900M720 0V900M840 0V900M960 0V900M1080 0V900M1200 0V900M1320 0V900"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s01-003-title">
+    <div class="sheet">
 
-    <div class="note">
-      <p class="eyebrow">Main contractor</p>
-      <p><b>Frame, envelope, fit-out and the groundworks under all of it.</b> Commercial and civil work, self-delivered where we are good at it and subcontracted where somebody else is better &mdash; and we will tell you which is which before you sign anything.</p>
+      <div class="cell head">
+        <p class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Main contractor &middot; Commercial, industrial, civils</p>
+        <h1 id="con-s01-003-title">Frame, envelope, fit-out and the <em>groundworks</em> under all of it.</h1>
+        <p class="sub"><span>Built by the people who priced it. The estimator who walks your site is the manager who runs it, so the number and the programme come from the same head.</span></p>
+      </div>
+
+      <div class="cell">
+        <p class="lab">What we build</p>
+        <ul class="build">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18M8 6v6M16 6v6M12 12v6M3 6v12M21 6v12"/></svg>Commercial fit-out</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 19h16M8 5v14M16 5v14"/></svg>Structural frame</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M9 11h6l-1 8h-4zM12 3l3 2"/></svg>Groundworks</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M7 21V3h13M20 3v6M7 7l6-4M16 3v4"/></svg>Civils</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="9" width="20" height="6"/><circle cx="12" cy="12" r="1.8"/><path d="M10 9v6M14 9v6"/></svg>Refurbishment</li>
+        </ul>
+      </div>
+
+      <div class="cell field"><div class="media" role="img" aria-label="Reserved project field: a completed project in use; no stock blueprint, no render"><p class="slate" aria-hidden="true">Project area &middot; 16:9<span>A completed project in use. No stock blueprint, no render.</span></p></div></div>
+
+      <div class="cell">
+        <p class="pos">We will not price a job we have <em>not walked.</em></p>
+        <p class="note">Send what you have and somebody who will actually run the site rings you back.</p>
+        <ul class="send" aria-label="What to send">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Drawings, if they exist</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Where the site is</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="9" cy="12" r="1.5"/><path d="M15 12h7v4h-7"/></svg>How far along it is</li>
+        </ul>
+        <div class="act">
+          <a class="btn" href="#enquire"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Put a project to us</a>
+          <a class="alt" href="#projects">See what we have built<span aria-hidden="true">&#8599;</span></a>
+        </div>
+      </div>
+
+      <div class="cell cnt"><p class="lab">Founded</p><span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span><p class="d">On the company record.</p></div>
+      <div class="cell cnt"><p class="lab">Projects completed</p><span class="slot"><span class="vh">Number of completed projects</span><span aria-hidden="true">&mdash;</span></span><p class="d">Counted from handover certificates.</p></div>
+      <div class="cell cnt"><p class="lab">People employed</p><span class="slot"><span class="vh">Number of people employed</span><span aria-hidden="true">&mdash;</span></span><p class="d">Directly, not counting the supply chain.</p></div>
+
     </div>
-
-    <div class="display">
-      <h1 id="con-s01-003-title">
-        <span>Built by the</span>
-        <span class="outline">people who</span>
-        <span>priced it</span>
-      </h1>
-    </div>
-
-    <div class="frame">
-      <div class="media"><span>Project media &mdash; completed work, wide<br>a real project, not a render</span></div>
-      <p class="caption">
-        <b>What we build</b>
-        <span>Commercial fit-out &middot; Structural frame &middot; Groundworks &middot; Civils &middot; Refurbishment</span>
-      </p>
-    </div>
-
-    <ul class="figures">
-      <li>
-        <span class="fname">Founded</span>
-        <span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span>
-        <p>On the company record either way.</p>
-      </li>
-      <li>
-        <span class="fname">Projects completed</span>
-        <span class="slot"><span class="vh">Number of completed projects</span><span aria-hidden="true">&mdash;</span></span>
-        <p>Counted from handover certificates.</p>
-      </li>
-      <li>
-        <span class="fname">People employed</span>
-        <span class="slot"><span class="vh">Number of people directly employed</span><span aria-hidden="true">&mdash;</span></span>
-        <p>Directly employed, supply chain counted separately.</p>
-        <a class="go" href="#con-s01-003-title">Put a project to us</a>
-      </li>
-    </ul>
-
   </section>
 </div>
 

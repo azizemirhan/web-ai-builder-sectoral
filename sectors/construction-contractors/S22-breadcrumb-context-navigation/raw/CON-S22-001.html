@@ -12,27 +12,22 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S22 — Breadcrumb / Context Navigation
   Direction      : Universal / Safe
-  Reference      : None supplied for this section.
-  Layout model   : The trail with its axis named, the memberships the trail hides, and a next link
-                   whose ordering is declared
-  Density        : Low
-  Media mode     : None.
-  Interaction    : In-page anchors only. Links are the content of this section, so the usual
-                   one-mechanism rule does not apply &mdash; but every anchor routes in-page and no
-                   study carries a button.
-  The constraint : **A breadcrumb shows one path and hides the others.** A project sits under a
-                   sector, under a service and under the year it finished; the chrome picks one and
-                   the reader never learns the other two exist.
-  The device     : Three parts &mdash; the trail with its axis stated, *also in* naming the hidden
-                   memberships, and a next link that says **what it is next by.** Every site in this
-                   trade has a next arrow and none of them says what it is ordered on.
-  Not a link     : The current page ends the trail and is not a link to itself, and any level with
-                   no page behind it is drawn as a label rather than styled to look like the rest.
-  Placeholder    : The architecture run's convention, from `S21` &mdash; **no em-dash.** In
-                   navigation a dash reads as a broken link, so a reserved value reads as the word.
-  Deliberately not : No count or position. No arrow diagram of the site. No call to action.
-  Content note   : Project name, sector, service, year, office and sibling names are reserved. No
-                   digit in visible copy; no header; no refusal region.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. The trail
+                   as a run of bordered crumb rectangles at radius 0 joined by hairline
+                   connectors, the current page as a band-tone chip with a filled square marker
+                   and no link; the axis statement beside; ALSO IN as a bordered ledger of three
+                   iconed rows (crane / calendar / office) whose reserved values are underlined
+                   links carrying the register's arrow; NEXT, BY THE SAME SECTOR as a tape-topped
+                   cell with the reserved name as an underlined arrow link. Drawing layer:
+                   setting-out grid behind the head. All anchors in-page; no button, no form.
+                   V1 is kept whole.
+  Layout model   : Trail run + axis note. Two-cell row (bordered also-in ledger | tape-topped
+                   next cell).
+  Density        : Compact — V1's spine kept in full
+  Media mode     : No media. Six reserved fields.
+  Interaction    : In-page anchors only.
+  Content note   : Project name, sector, service, year, office and next project reserved. No
+                   count, position or invented level. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S22-001">
@@ -43,181 +38,68 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Trail with its axis named, the hidden memberships, and a next link with declared ordering">
-<meta name="density" content="low">
-<meta name="media-mode" content="none">
+<meta name="theme" content="001 Site White &amp; Safety Orange">
+<meta name="layout-model" content="Trail as bordered crumb rectangles joined by hairline connectors with the current page as a band-tone marked chip; axis note beside; bordered also-in ledger with icons and underlined arrow links; tape-topped next cell with the ordering declared; setting-out grid behind the head">
+<meta name="density" content="compact">
+<meta name="media-mode" content="no-media-six-reserved-fields">
 <meta name="interaction" content="in-page-anchors">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S22-001 — Breadcrumb, Universal</title>
+<title>CON-S22-001 — Breadcrumb / Context Navigation, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #f4f4f1; }
 
-/* Scoped study styles — namespaced to .con-s22-001 */
 .con-s22-001 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --ink-faint: #b4b4b4;
-  --paper: #f1f1f1;
-  --fill: #ffffff;
-  --line: #ececec;
-  --rule: #111111;
-  --link: #444444;
-  --note: #969696;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f4f4f1; --ink: #121314; --muted: #5b5e62; --line: #d8d8d3; --line-strong: #121314;
+  --media: #e3e3de; --band: #ebebe6; --accent: #d9481a;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s22-001 *,
-.con-s22-001 *::before,
-.con-s22-001 *::after { box-sizing: inherit; }
-.con-s22-001 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-}
-.con-s22-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s22-001 *, .con-s22-001 *::before, .con-s22-001 *::after { box-sizing: inherit; }
+.con-s22-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s22-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s22-001 .draw { position: absolute; right: 0; top: 0; width: 40%; height: 12rem; pointer-events: none; color: var(--line); }
+.con-s22-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(1.6rem, 3.5vw, 3rem) clamp(1rem, 4.5vw, 4.5rem) clamp(1.6rem, 3vw, 2.6rem); }
+.con-s22-001 h2 { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s22-001 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s22-001 .top { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: 1.2rem 3rem; align-items: center; }
+.con-s22-001 .trail { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; }
+.con-s22-001 .trail li { display: flex; align-items: center; }
+.con-s22-001 .trail li + li::before { content: ""; display: block; width: 1.4rem; height: 1px; background: var(--line-strong); }
+.con-s22-001 .trail a { display: inline-flex; align-items: center; padding: 0.55rem 0.9rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s22-001 .trail a:hover { background: var(--ink); color: var(--paper); }
+.con-s22-001 .here { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.9rem; border: 1px solid var(--line-strong); background: var(--band); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.con-s22-001 .here::before { content: ""; width: 0.55rem; height: 0.55rem; background: var(--accent); }
+.con-s22-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s22-001 .axis { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s22-001 .axis b { color: var(--ink); }
 
-.con-s22-001 h2 {
-  margin: 0 0 clamp(12px, 1.5vw, 18px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
+.con-s22-001 .cols { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); margin-top: 1.4rem; border-left: 1px solid var(--line-strong); }
+.con-s22-001 .cols > div { padding: 1.1rem 1.2rem 1.2rem; border: 1px solid var(--line-strong); border-left: 0; min-width: 0; }
+.con-s22-001 h3 { margin: 0 0 0.7rem; font-weight: 800; font-size: 1.1rem; line-height: 1.05; letter-spacing: -0.015em; text-transform: uppercase; }
+.con-s22-001 .also { list-style: none; margin: 0 0 0.9rem; padding: 0; border-top: 1px solid var(--line-strong); }
+.con-s22-001 .also li { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 0.8rem; align-items: center; padding: 0.55rem 0; border-bottom: 1px solid var(--line); }
+.con-s22-001 .k { display: flex; align-items: center; gap: 0.4rem; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s22-001 .k .ico { width: 1rem; height: 1rem; color: var(--accent); }
+.con-s22-001 .lnk { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.con-s22-001 .lnk::after { content: "\2197"; color: var(--accent); }
+.con-s22-001 .why, .con-s22-001 .next p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s22-001 .why b, .con-s22-001 .next p b { color: var(--ink); }
+.con-s22-001 .next { border-top: 3px solid var(--accent) !important; background: var(--band); }
+.con-s22-001 .by { display: flex; align-items: center; gap: 0.4rem; margin: 0 0 0.6rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s22-001 .by .ico { width: 1rem; height: 1rem; }
+.con-s22-001 .next .lnk { font-size: 1.2rem; letter-spacing: 0.04em; margin-bottom: 0.8rem; }
 
-/* The trail */
-.con-s22-001 .trail { margin: 0 0 clamp(10px, 1.3vw, 14px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 10px; }
-.con-s22-001 .trail li { display: flex; align-items: baseline; gap: 10px; }
-.con-s22-001 .trail li::after { content: "/"; color: var(--line); }
-.con-s22-001 .trail li:last-child::after { content: ""; }
-.con-s22-001 .trail a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; font-size: 1.1rem; }
-.con-s22-001 .trail a:hover { color: var(--ink); }
-.con-s22-001 .here {
-  font-size: 1.1rem;
-  color: var(--ink);
-  font-weight: 650;
-}
-.con-s22-001 .slot {
-  display: inline-block;
-  min-width: 86px;
-  padding: 2px 12px;
-  border-radius: 10px;
-  background: #3a3a3a;
-  color: var(--ink-faint);
-  font-size: 1rem;
-  text-align: center;
-}
-.con-s22-001 .axis { margin: 0 0 clamp(18px, 2.3vw, 28px); padding-bottom: clamp(14px, 1.8vw, 22px); border-bottom: 2px solid var(--rule); max-width: 76ch; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
-.con-s22-001 .axis b { color: var(--ink); font-weight: 650; }
-
-/* Also in, and next */
-.con-s22-001 .cols {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(16px, 2.8vw, 48px);
-  align-items: start;
-}
-.con-s22-001 h3 {
-  margin: 0 0 clamp(10px, 1.3vw, 14px);
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s22-001 .also { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: grid; gap: 9px; }
-.con-s22-001 .also li { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; padding-bottom: 9px; border-bottom: 1px solid var(--line); }
-.con-s22-001 .also .k { font-size: 0.74rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; color: var(--ink-faint); min-width: 96px; }
-.con-s22-001 .also a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; font-size: 1.1rem; }
-.con-s22-001 .also a:hover { color: var(--ink); }
-.con-s22-001 .why { margin: 0; max-width: 56ch; font-size: 1rem; line-height: 1.58; color: var(--ink-faint); }
-.con-s22-001 .why b { color: var(--ink-soft); font-weight: 650; }
-
-.con-s22-001 .next { padding-left: clamp(13px, 1.6vw, 18px); border-left: 4px solid var(--note); }
-.con-s22-001 .next .by {
-  display: block;
-  margin-bottom: 7px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--note);
-}
-.con-s22-001 .next a { display: inline-block; margin-bottom: 9px; color: var(--link); text-decoration: underline; text-underline-offset: 3px; font-size: 1.1rem; font-weight: 650; }
-.con-s22-001 .next a:hover { color: var(--ink); }
-.con-s22-001 .next p { margin: 0; max-width: 44ch; font-size: 1rem; line-height: 1.56; color: var(--ink-faint); }
-.con-s22-001 .next p b { color: var(--ink-soft); font-weight: 650; }
-
-.con-s22-001 a .slot { border-bottom: 2px solid var(--link); }
-
-/* Responsive ladder */
 @media (max-width: 820px) {
-  .con-s22-001 .cols { grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 24px); }
+  .con-s22-001 .top, .con-s22-001 .cols { grid-template-columns: minmax(0, 1fr); }
+  .con-s22-001 .draw { display: none; }
 }
-
-@media (max-width: 560px) {
-  .con-s22-001 .axis, .con-s22-001 .why, .con-s22-001 .next p { max-width: none; }
-  .con-s22-001 .also .k { min-width: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s22-001 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s22-001 {
-  --v2-accent: #7a7a7a;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
-  font-size: 1.06rem;
-}
-.con-s22-001 h2 { font-weight: 800; }
-.con-s22-001 h3, .con-s22-001 h4 { font-weight: 750; }
-.con-s22-001 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s22-001.con-s22-001 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  max-width: none;
-}
-.con-s22-001.con-s22-001 .shell > h2 span, .con-s22-001.con-s22-001 .shell > h2 b, .con-s22-001.con-s22-001 .shell > h2 em, .con-s22-001.con-s22-001 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s22-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s22-001 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 480px) { .con-s22-001 .also li { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; } }
+@media (prefers-reduced-motion: reduce) { .con-s22-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -225,30 +107,39 @@ body { margin: 0; background: #f1f1f1; }
 <div class="con-s22-001" data-study-id="CON-S22-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="con-s22-001-title">
 
-    <h2 id="con-s22-001-title">Where this page sits</h2>
+    <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <g stroke="currentColor" stroke-width="1" fill="none">
+        <path d="M0 25H100M0 50H100M0 75H100M25 0V100M50 0V100M75 0V100" vector-effect="non-scaling-stroke"/>
+      </g>
+    </svg>
 
-    <ul class="trail">
-      <li><a href="#con-s22-001-title">Home</a></li>
-      <li><a href="#con-s22-001-title">Projects</a></li>
-      <li><a href="#con-s22-001-title"><span class="vh">Sector this project sits in</span>Sector</a></li>
-      <li><span class="here"><span class="vh">Project name</span><span class="slot">Reserved</span></span></li>
-    </ul>
-    <p class="axis"><b>This trail runs by sector.</b> The same page also sits under a service and under the year it finished, and those are below rather than in the trail &mdash; because a trail can only show one path, and the two it leaves out are usually the ones somebody is looking for.</p>
+    <h2 id="con-s22-001-title"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>Where this page sits</h2>
+
+    <div class="top">
+      <nav aria-label="Trail, by sector">
+        <ul class="trail">
+          <li><a href="#con-s22-001-title">Home</a></li>
+          <li><a href="#con-s22-001-title">Projects</a></li>
+          <li><a href="#con-s22-001-title"><span class="vh">Sector this project sits in</span>Sector</a></li>
+          <li><span class="here" aria-current="page"><span class="vh">Project name</span>Reserved</span></li>
+        </ul>
+      </nav>
+      <p class="axis"><b>This trail runs by sector.</b> The same page also sits under a service and under the year it finished, and those are below rather than in the trail &mdash; because a trail can only show one path, and the two it leaves out are usually the ones somebody is looking for.</p>
+    </div>
 
     <div class="cols">
       <div>
         <h3>Also in</h3>
         <ul class="also">
-          <li><span class="k">Service</span><a href="#con-s22-001-title"><span class="vh">The service this project sits under</span><span class="slot">Reserved</span></a></li>
-          <li><span class="k">Year finished</span><a href="#con-s22-001-title"><span class="vh">The year this project finished</span><span class="slot">Reserved</span></a></li>
-          <li><span class="k">Run from</span><a href="#con-s22-001-title"><span class="vh">The office that ran this project</span><span class="slot">Reserved</span></a></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M7 21V3h13M20 3v6M7 7l6-4M16 3v4"/></svg>Service</span><a class="lnk" href="#con-s22-001-title"><span class="vh">The service this project sits under</span>Reserved</a></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v16H4zM4 10h16M8 3v4M16 3v4"/></svg>Year finished</span><a class="lnk" href="#con-s22-001-title"><span class="vh">The year this project finished</span>Reserved</a></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V4h14v17M9 8h2M13 8h2M9 12h2M13 12h2M10 21v-4h4v4"/></svg>Run from</span><a class="lnk" href="#con-s22-001-title"><span class="vh">The office that ran this project</span>Reserved</a></li>
         </ul>
         <p class="why"><b>Each of those is a page that exists.</b> Nothing in the trail above or the list here is a level invented to make the path look deeper &mdash; if it cannot be visited it is not drawn as a link, and <b>the last step is not a link to the page you are already reading.</b></p>
       </div>
-
       <div class="next">
-        <span class="by">Next, by the same sector</span>
-        <a href="#con-s22-001-title"><span class="vh">Name of the next project in this sector</span><span class="slot">Reserved</span></a>
+        <p class="by"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12h18M14 6l6 6-6 6"/></svg>Next, by the same sector</p>
+        <a class="lnk" href="#con-s22-001-title"><span class="vh">Name of the next project in this sector</span>Reserved</a>
         <p>Ordered by sector rather than by when it was published, <b>because the order things went onto the website is not an order anybody reading has an interest in.</b></p>
       </div>
     </div>

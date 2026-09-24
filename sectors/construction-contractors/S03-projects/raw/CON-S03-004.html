@@ -12,23 +12,21 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S03 — Projects
   Direction      : Conversion-led
-  Reference      : None supplied for this section.
-  Layout model   : One large reserved project area with a panel over its lower half — the sector
-                   this project was, what made it difficult, and one action — above a row of the
-                   other sectors as plain links
-  Density        : Low copy, high visual
-  Media mode     : One very large reserved project area plus four small ones in the sector row.
-  Interaction    : Plain links only (static; no JavaScript).
-  Conversion device : **The nearest thing we have built to yours.** A project index converts when a
-                   visitor recognises their own constraints in somebody else's job — so the panel
-                   leads with the constraint, not the building: *occupied throughout, deliveries
-                   through a live entrance*. The sector row underneath is the same offer for
-                   everybody else.
-  What it refuses : No *"view all projects"* count, no value, no *trusted by* logo row, no
-                   testimonial. The action asks for the visitor's job rather than offering more
-                   browsing, because a contractor's index converts in a conversation.
-  Content note   : Sectors and scope are generic vocabulary. No invented figure, client or project
-                   name, value, duration, area, count, certification, award or rating; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 5,
+                   a panel crossing the media edge: a 21:9 project field with hi-vis tape on its
+                   top edge, and a bordered constraint panel on paper pulled up over the field's
+                   lower-right corner — status, sector, marker, the constraint paragraph, the
+                   reserved name and one bordered action. Under it a ruled row of four 3:2
+                   sector fields, each an underlined ↗ route. Drawing layer: a chevron run
+                   behind the foot row. V1 is kept: the nearest thing we have built to yours,
+                   the action, the four sector routes, the no-values line.
+  Layout model   : Eyebrow, display. 21:9 field with the panel crossing its bottom-right edge.
+                   Ruled four-up of 3:2 fields with ↗ routes. Foot line.
+  Density        : Standard (90–170)
+  Media mode     : Five reserved project fields — one 21:9, four 3:2. One reserved name slot.
+  Interaction    : None (static; no JavaScript). Actions are relative links.
+  Content note   : No client, project name, location, value, area, duration, date, award,
+                   rating or urgency device. Graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S03-004">
@@ -39,363 +37,99 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="layout-model" content="Large reserved project area with an overlapping constraint panel above a sector link row">
-<meta name="density" content="medium">
-<meta name="media-mode" content="one-very-large-and-four-small-reserved-areas">
-<meta name="interaction" content="links-only">
+<meta name="theme" content="004 White &amp; Hi-Vis">
+<meta name="layout-model" content="Display; 21:9 field with hi-vis tape and a bordered constraint panel crossing its lower-right edge with one action; ruled four-up of 3:2 sector fields with underlined routes; chevron run behind the foot">
+<meta name="density" content="standard">
+<meta name="media-mode" content="five-reserved-project-fields-one-reserved-slot">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S03-004 — Projects, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #fbfbfa; }
 
-/* Scoped study styles — namespaced to .con-s03-004 */
 .con-s03-004 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --paper: #fafafa;
-  --card: #ffffff;
-  --slot-a: #969696;
-  --slot-b: #2b2b2b;
-  --tile-a: #969696;
-  --tile-b: #7a7a7a;
-  --on-slot: #ffffff;
-  --res: #ececec;
-  --res-edge: #b4b4b4;
-  --res-ink: #5e5e5e;
-  --line: #d2d2d2;
-  --self: #444444;
-  --self-bg: #ececec;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fbfbfa; --ink: #0b0b0b; --muted: #55585c; --line: #e2e2e0; --line-strong: #0b0b0b;
+  --media: #ececea; --band: #f2f2ef; --accent: #c99e00; --tape: #ffd400;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s03-004 *,
-.con-s03-004 *::before,
-.con-s03-004 *::after { box-sizing: inherit; }
-.con-s03-004 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 22px;
-}
-.con-s03-004 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s03-004 *, .con-s03-004 *::before, .con-s03-004 *::after { box-sizing: inherit; }
+.con-s03-004 :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
-.con-s03-004 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s03-004 .draw { position: absolute; left: 0; right: 0; bottom: 0; height: 18rem; pointer-events: none; color: var(--line); }
+.con-s03-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s03-004 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s03-004 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s03-004 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s03-004 h2 mark { background: transparent; color: var(--ink); text-decoration: underline; text-decoration-color: var(--tape); text-decoration-thickness: 0.16em; text-underline-offset: 0.04em; text-decoration-skip-ink: none; }
 
-.con-s03-004 .head { margin-bottom: clamp(20px, 2.6vw, 34px); }
-.con-s03-004 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s03-004 h2 {
-  margin: 0;
-  font-size: clamp(2.379rem, 4.788vw, 4.032rem);
-  line-height: 1.03;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 20ch;
-}
+.con-s03-004 .stage { position: relative; margin-top: clamp(1.6rem, 3vw, 3rem); padding-bottom: clamp(4rem, 9vw, 9rem); }
+.con-s03-004 .media { position: relative; background: var(--media); border-radius: 2px; }
+.con-s03-004 .big { aspect-ratio: 21 / 9; border-top: 3px solid var(--tape); border-radius: 0; }
+.con-s03-004 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s03-004 .st { position: absolute; left: 0; top: 0; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.8rem; background: var(--paper); color: var(--ink); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s03-004 .st i { width: 0.6rem; height: 0.6rem; border: 1px solid var(--accent); }
+.con-s03-004 .panel { position: absolute; right: 0; bottom: 0; width: min(100%, 34rem); padding: 1.4rem 1.6rem 1.6rem; border: 1px solid var(--line-strong); background: var(--paper); }
+.con-s03-004 .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.2rem; margin: 0 0 0.9rem; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.con-s03-004 .meta span { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--muted); font-weight: 700; font-size: 0.56rem; letter-spacing: 0.16em; }
+.con-s03-004 .meta .ico { width: 1rem; height: 1rem; color: var(--accent); }
+.con-s03-004 .panel p.t { margin: 0; font-weight: 700; font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.3; letter-spacing: -0.015em; }
+.con-s03-004 .panel p.t span { color: var(--muted); font-weight: 400; font-size: 0.9rem; }
+.con-s03-004 .nm { display: flex; align-items: center; gap: 0.7rem; margin: 1rem 0 0; }
+.con-s03-004 .nm dt { margin: 0; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s03-004 .nm dd { margin: 0; flex: 1 1 auto; }
+.con-s03-004 .slot { display: flex; align-items: center; width: 100%; height: 1.8rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.86rem; }
+.con-s03-004 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s03-004 .btn { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 1.2rem; padding: 0.9rem 1.4rem; border: 1px solid var(--ink); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease; }
+.con-s03-004 .btn:hover { background: var(--ink); color: var(--tape); }
+.con-s03-004 .btn .ico { width: 1.1rem; height: 1.1rem; }
 
-/* Lead */
-.con-s03-004 .shot {
-  position: relative;
-  border-radius: 26px;
-  overflow: hidden;
-  aspect-ratio: 2 / 1;
-  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(16px, 2.2vw, 30px);
-}
-.con-s03-004 .shot .tag {
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.82;
-}
-.con-s03-004 .status {
-  position: absolute;
-  top: clamp(16px, 2.2vw, 30px);
-  right: clamp(16px, 2.2vw, 30px);
-  padding: 5px 13px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.93);
-  color: var(--ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
+.con-s03-004 .four { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 clamp(1rem, 2vw, 2rem); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.con-s03-004 .four .media { aspect-ratio: 3 / 2; }
+.con-s03-004 .four .slate { left: auto; right: 0.9rem; bottom: 0.7rem; }
+.con-s03-004 .four a { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin-top: 0.7rem; padding-top: 0.6rem; border-top: 1px solid var(--line); color: var(--ink); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: var(--tape); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s03-004 .four a span { color: var(--accent); }
+.con-s03-004 .foot { position: relative; margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 0; max-width: 50rem; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s03-004 .foot strong { color: var(--ink); }
 
-.con-s03-004 .panel {
-  position: relative;
-  z-index: 1;
-  margin: clamp(-130px, -10vw, -66px) clamp(0px, 4vw, 60px) 0;
-  background: var(--card);
-  border-radius: 26px;
-  padding: clamp(20px, 2.6vw, 36px);
-  box-shadow: 0 2px 4px rgba(22, 22, 22, 0.05), 0 22px 50px rgba(22, 22, 22, 0.13);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(18px, 2.8vw, 44px);
-  align-items: center;
-}
-.con-s03-004 .facts { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; margin: 0 0 clamp(10px, 1.2vw, 14px); }
-.con-s03-004 .sector { font-size: clamp(1.369rem, 1.952vw, 1.83rem); font-weight: 700; letter-spacing: -0.015em; }
-.con-s03-004 .chip {
-  padding: 4px 11px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  background: var(--self-bg);
-  color: var(--self);
-}
-.con-s03-004 .name {
-  padding: 5px 11px;
-  border: 1px dashed var(--res-edge);
-  border-radius: 16px;
-  background: var(--res);
-  color: var(--res-ink);
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.con-s03-004 .hard { margin: 0; max-width: 54ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.298vw, 1.274rem); line-height: 1.6; }
-.con-s03-004 .hard b { color: var(--ink); }
-.con-s03-004 .go {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  padding: 0 32px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 1.1rem;
-  font-weight: 650;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.con-s03-004 .go:hover { background: #111111; }
-
-/* Sector row */
-.con-s03-004 .others {
-  margin: clamp(22px, 2.8vw, 38px) 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.8vw, 22px);
-}
-.con-s03-004 .others li { min-width: 0; }
-.con-s03-004 .others a { display: block; color: inherit; text-decoration: none; }
-.con-s03-004 .others .tile {
-  border-radius: 22px;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(155deg, var(--tile-a) 0%, var(--tile-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(10px, 1.3vw, 14px);
-}
-.con-s03-004 .others .tag {
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.8;
-}
-.con-s03-004 .others .lab {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 10px;
-  font-size: 1.1rem;
-  font-weight: 650;
-}
-.con-s03-004 .others a:hover .lab { text-decoration: underline; text-underline-offset: 4px; }
-.con-s03-004 .others .arrow { color: var(--ink-soft); font-size: 1rem; }
-
-.con-s03-004 .note {
-  margin: clamp(18px, 2.2vw, 28px) 0 0;
-  padding-top: clamp(14px, 1.8vw, 22px);
-  border-top: 1px solid var(--line);
-  max-width: 72ch;
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.con-s03-004 .note b { color: var(--ink); }
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .con-s03-004 h2 { max-width: none; }
-  .con-s03-004 .shot { aspect-ratio: 16 / 10; }
-  .con-s03-004 .panel {
-    margin: clamp(-52px, -6vw, -32px) 0 0;
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(16px, 2.4vw, 22px);
-  }
-  .con-s03-004 .go { width: 100%; }
-  .con-s03-004 .others { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .con-s03-004 .hard, .con-s03-004 .note { max-width: none; }
-}
-
-@media (max-width: 520px) {
-  .con-s03-004 .others { grid-template-columns: minmax(0, 1fr); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s03-004 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s03-004 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 30%);
-  font-size: 1.06rem;
-}
-.con-s03-004 h2 { font-weight: 800; }
-.con-s03-004 h3, .con-s03-004 h4 { font-weight: 750; }
-.con-s03-004 .eyebrow, .con-s03-004 .tag {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #ececec;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s03-004 .panel {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #ececec;
-}
-.con-s03-004 .name {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s03-004 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #ececec;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s03-004.con-s03-004 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s03-004.con-s03-004 .head h2, .con-s03-004.con-s03-004 .head h3, .con-s03-004.con-s03-004 .head h4, .con-s03-004.con-s03-004 .head b, .con-s03-004.con-s03-004 .head strong, .con-s03-004.con-s03-004 .head p b, .con-s03-004.con-s03-004 .head li b, .con-s03-004.con-s03-004 .head span b, .con-s03-004.con-s03-004 .head dt, .con-s03-004.con-s03-004 .head div b {
-  color: #ffffff;
-}
-.con-s03-004.con-s03-004 .head p, .con-s03-004.con-s03-004 .head li, .con-s03-004.con-s03-004 .head span, .con-s03-004.con-s03-004 .head dd, .con-s03-004.con-s03-004 .head div p, .con-s03-004.con-s03-004 .head div li, .con-s03-004.con-s03-004 .head p span, .con-s03-004.con-s03-004 .head .said, .con-s03-004.con-s03-004 .head .note {
-  color: #d2d2d2;
-}
-.con-s03-004.con-s03-004 .head .eyebrow, .con-s03-004.con-s03-004 .head .kicker, .con-s03-004.con-s03-004 .head .slot, .con-s03-004.con-s03-004 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s03-004.con-s03-004 .head i, .con-s03-004.con-s03-004 .head .bars i, .con-s03-004.con-s03-004 .head .lines i, .con-s03-004.con-s03-004 .head .measures i, .con-s03-004.con-s03-004 .head .bar, .con-s03-004.con-s03-004 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s03-004.con-s03-004 .head .plate, .con-s03-004.con-s03-004 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s03-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s03-004 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 900px) { .con-s03-004 .stage { padding-bottom: 0; } .con-s03-004 .panel { position: static; width: 100%; margin-top: 1.2rem; } .con-s03-004 .four { grid-template-columns: repeat(2, minmax(0, 1fr)); } .con-s03-004 .four > div { padding-bottom: 1.2rem; } .con-s03-004 h2 { max-width: none; } .con-s03-004 .big { aspect-ratio: 16 / 10; } .con-s03-004 .draw { display: none; } }
+@media (max-width: 480px) { .con-s03-004 .four { grid-template-columns: minmax(0, 1fr); } .con-s03-004 .big { aspect-ratio: 4 / 3; } .con-s03-004 .btn { width: 100%; justify-content: center; } }
+@media (prefers-reduced-motion: reduce) { .con-s03-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s03-004" data-study-id="CON-S03-004" data-direction="Conversion-led">
+  <svg class="draw" viewBox="0 0 1440 288" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 288L200 88M120 288L320 88M240 288L440 88M360 288L560 88M480 288L680 88M600 288L800 88M720 288L920 88M840 288L1040 88M960 288L1160 88M1080 288L1280 88M1200 288L1400 88M1320 288L1440 168"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s03-004-title">
 
-    <div class="head">
-      <p class="eyebrow">The work</p>
-      <h2 id="con-s03-004-title">The nearest thing we have built to yours</h2>
-    </div>
+    <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M7 21V3h13M20 3v6M7 7l6-4M16 3v4"/></svg>The work</p>
+    <h2 id="con-s03-004-title">The nearest thing we have built <mark>to yours.</mark></h2>
 
-    <div class="shot">
-      <span class="tag">Project media &mdash; completed, wide</span>
-      <span class="status">Completed</span>
-    </div>
-
-    <div class="panel">
-      <div>
-        <p class="facts">
-          <span class="sector">Healthcare</span>
-          <span class="chip">Self-delivered</span>
-          <span class="name">Project name &mdash; reserved</span>
-        </p>
-        <p class="hard"><b>Occupied throughout.</b> Wards in use on the floor below, deliveries through a live entrance, every noisy hour agreed in advance. If that sounds like your building, we have done it before.</p>
+    <div class="stage">
+      <div class="media big" role="img" aria-label="Reserved project field: completed healthcare refurbishment, wide"><span class="st"><i aria-hidden="true"></i>Completed</span><p class="slate" aria-hidden="true">Project area &middot; 21:9 &middot; completed, wide</p></div>
+      <div class="panel">
+        <p class="meta">Healthcare<span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self-delivered</span></p>
+        <p class="t">Occupied throughout. <span>Wards in use on the floor below, deliveries through a live entrance, every noisy hour agreed in advance. If that sounds like your building, we have done it before.</span></p>
+        <dl class="nm"><dt>Project</dt><dd><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></dd></dl>
+        <a class="btn" href="#enquire"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Put your project to us</a>
       </div>
-      <a class="go" href="#con-s03-004-title">Put your project to us</a>
     </div>
 
-    <ul class="others">
-      <li>
-        <a href="#con-s03-004-title">
-          <div class="tile"><span class="tag">Project media</span></div>
-          <span class="lab">Education <span class="arrow" aria-hidden="true">&rarr;</span></span>
-        </a>
-      </li>
-      <li>
-        <a href="#con-s03-004-title">
-          <div class="tile"><span class="tag">Project media</span></div>
-          <span class="lab">Industrial <span class="arrow" aria-hidden="true">&rarr;</span></span>
-        </a>
-      </li>
-      <li>
-        <a href="#con-s03-004-title">
-          <div class="tile"><span class="tag">Project media</span></div>
-          <span class="lab">Retail <span class="arrow" aria-hidden="true">&rarr;</span></span>
-        </a>
-      </li>
-      <li>
-        <a href="#con-s03-004-title">
-          <div class="tile"><span class="tag">Project media</span></div>
-          <span class="lab">Civic <span class="arrow" aria-hidden="true">&rarr;</span></span>
-        </a>
-      </li>
-    </ul>
+    <div class="four">
+      <div><div class="media" role="img" aria-label="Reserved project field: education"><p class="slate" aria-hidden="true">3:2</p></div><a href="#education">Education<span aria-hidden="true">&#8599;</span></a></div>
+      <div><div class="media" role="img" aria-label="Reserved project field: industrial"><p class="slate" aria-hidden="true">3:2</p></div><a href="#industrial">Industrial<span aria-hidden="true">&#8599;</span></a></div>
+      <div><div class="media" role="img" aria-label="Reserved project field: retail"><p class="slate" aria-hidden="true">3:2</p></div><a href="#retail">Retail<span aria-hidden="true">&#8599;</span></a></div>
+      <div><div class="media" role="img" aria-label="Reserved project field: civic"><p class="slate" aria-hidden="true">3:2</p></div><a href="#civic">Civic<span aria-hidden="true">&#8599;</span></a></div>
+    </div>
 
-    <p class="note"><b>No values and no project names on any of these.</b> What is worth matching is the constraint, not the building &mdash; and if your sector is not here, that is worth a conversation rather than a browse.</p>
+    <p class="foot"><strong>No values and no project names on any of these.</strong> What is worth matching is the constraint, not the building &mdash; and if your sector is not here, that is worth a conversation rather than a browse.</p>
 
   </section>
 </div>

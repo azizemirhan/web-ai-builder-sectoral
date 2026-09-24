@@ -12,26 +12,19 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S27 — Office / Regional Branch Detail
   Direction      : Premium / Editorial
-  Reference      : None supplied for this section.
-  Layout model   : The page set as **the notice at the gate** &mdash; contact at the head, then
-                   numbered clauses in the order somebody arrives, then the lines at the foot
-  Density        : Medium
-  Media mode     : **None. No map and no view of the place**, which the batch treats as a legitimate
-                   answer rather than an omission: a photograph of a gate is not a gate, and a map
-                   would give the one fact on this page that does not help.
-  Interaction    : None. The batch's anchors belong to `004`.
-  The register   : **The gate notice.** Distinct from the colophon of `S16-002`, the standfirst of
-                   `S21-002`, the errata of `S24-002`, the head-note of `S25-002` and the handover
-                   note of `S26-002`. It is the only document in this trade addressed to whoever
-                   happens to arrive, written in the order they arrive &mdash; which is precisely
-                   what a location page is.
-  The constraint : **A contractor's office is not a shop.** Almost nobody who reads this page is
-                   coming here, so the notice says who it is for in its first clause, and says in
-                   the same breath that a client is not one of them.
-  Deliberately not : No address, postcode, telephone number, hours table, travel time, distance,
-                   drawn map or pin. No *nationwide* claim.
-  Content note   : Branch, address, both lines and the region are reserved. No digit in visible
-                   copy; no header; no refusal region.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 7:
+                   the page as the notice at the gate — one bordered sheet under a 3px tape with
+                   a gate icon, the contact ledger as its header row (first in source), then six
+                   clauses as ruled chapters with word ordinals and icons, the client line
+                   behind a deep-red edge, the region as a reserved slot in clause five, and a
+                   signature strip (POSTED BY) at the foot. No map, no photograph, by design.
+                   Drawing layer: levelling circle behind the head. V1 is kept whole.
+  Layout model   : Head. Bordered notice sheet (contact header / six ruled clauses / signature).
+  Density        : Editorial, long-form — V1's spine kept in full
+  Media mode     : No media. Five reserved fields.
+  Interaction    : None (static; no JavaScript). No form.
+  Content note   : Branch, address, telephones and region reserved. No hours, directions,
+                   travel time, digit, map or coverage claim. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S27-002">
@@ -42,355 +35,172 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="The notice at the gate: contact at the head, numbered clauses in arrival order, lines at the foot">
-<meta name="density" content="medium">
-<meta name="media-mode" content="none">
+<meta name="theme" content="002 Bone &amp; Burnt Amber">
+<meta name="layout-model" content="Head; the notice at the gate as one tape-topped bordered sheet — contact ledger header first, six ruled clauses with word ordinals and icons, the client line red-edged, the region slot in clause five, a posted-by signature strip; no map or photograph; levelling circle behind the head">
+<meta name="density" content="editorial">
+<meta name="media-mode" content="no-media-five-reserved-fields">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S27-002 — Branch Detail, Editorial</title>
+<title>CON-S27-002 — Office / Regional Branch Detail, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #efece5; }
 
-/* Scoped study styles — namespaced to .con-s27-002 */
 .con-s27-002 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --ink-faint: #969696;
-  --paper: #fafafa;
-  --fill: #ffffff;
-  --line: #d2d2d2;
-  --rule: #111111;
-  --mark: #7a7a7a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #efece5; --ink: #171410; --muted: #6a655c; --line: #d9d3c8; --line-strong: #171410;
+  --media: #e3ded4; --band: #e8e3d9; --accent: #b4531d; --no: #8a1f14;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s27-002 *,
-.con-s27-002 *::before,
-.con-s27-002 *::after { box-sizing: inherit; }
-.con-s27-002 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-}
-.con-s27-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s27-002 *, .con-s27-002 *::before, .con-s27-002 *::after { box-sizing: inherit; }
+.con-s27-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s27-002 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s27-002 .draw { position: absolute; right: 4%; top: 2rem; width: 18rem; height: 18rem; pointer-events: none; color: var(--line); }
+.con-s27-002 .shell { position: relative; width: min(100%, 84rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s27-002 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s27-002 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s27-002 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.3rem, 4.6vw, 5rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s27-002 h2 em { font-style: normal; color: var(--accent); }
 
-.con-s27-002 .board {
-  border: 3px solid var(--rule);
-  padding: clamp(18px, 2.6vw, 40px);
-}
+.con-s27-002 .notice { margin-top: clamp(2rem, 4vw, 3.6rem); border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); }
+.con-s27-002 .hdr { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid var(--line-strong); }
+.con-s27-002 .hdr div { display: grid; gap: 0.3rem; padding: 0.8rem 1rem 0.9rem; border-right: 1px solid var(--line); color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; min-width: 0; }
+.con-s27-002 .hdr div:last-child { border-right: 0; }
+.con-s27-002 .hdr dt, .con-s27-002 .hdr dd { margin: 0; }
+.con-s27-002 .slot { display: inline-flex; align-items: center; width: 100%; height: 2.2rem; padding: 0 0.5rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--muted); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1; }
+.con-s27-002 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s27-002 .body { padding: 0 clamp(1.2rem, 3vw, 2.6rem); }
+.con-s27-002 .cl { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 0 clamp(1.2rem, 3vw, 2.6rem); padding: 1.3rem 0 1.5rem; border-bottom: 1px solid var(--line-strong); }
+.con-s27-002 .cl:last-of-type { border-bottom: 0; }
+.con-s27-002 .ord .ico { width: 1.8rem; height: 1.8rem; color: var(--accent); stroke-width: 1.4; margin-bottom: 0.4rem; }
+.con-s27-002 .ord p { margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s27-002 h3 { margin: 0 0 0.7rem; max-width: 26ch; font-weight: 800; font-size: clamp(1.3rem, 2vw, 1.8rem); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s27-002 .cl p { margin: 0; max-width: 44rem; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.con-s27-002 .cl p + p { margin-top: 0.7rem; }
+.con-s27-002 .cl p b { color: var(--ink); }
+.con-s27-002 .cl ul { list-style: none; margin: 0 0 0.9rem; padding: 0; width: min(100%, 44rem); border-top: 1px solid var(--line-strong); }
+.con-s27-002 .cl li { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.5rem 0 0.6rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.con-s27-002 .cl li .ico { width: 1.2rem; height: 1.2rem; margin-top: 0.1rem; color: var(--accent); }
+.con-s27-002 .cl li b { color: var(--ink); }
+.con-s27-002 .client { margin-top: 0.9rem; padding: 0.8rem 1rem 0.9rem; border-left: 3px solid var(--no); background: var(--band); width: min(100%, 44rem); }
+.con-s27-002 .region { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.8rem; margin: 0.9rem 0 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s27-002 .region .slot { width: auto; min-width: 14rem; }
+.con-s27-002 .sig { display: grid; grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr); gap: 1rem 2rem; padding: 1rem clamp(1.2rem, 3vw, 2.6rem) 1.1rem; border-top: 1px solid var(--line-strong); background: var(--band); }
+.con-s27-002 .sig h4 { display: flex; align-items: center; gap: 0.5rem; margin: 0; font-weight: 800; font-size: 0.95rem; line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; }
+.con-s27-002 .sig h4 .ico { width: 1.2rem; height: 1.2rem; color: var(--accent); }
+.con-s27-002 .sig p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s27-002 .sig p b { color: var(--ink); }
 
-.con-s27-002 .slot {
-  display: inline-block;
-  min-width: 100px;
-  padding: 2px 12px;
-  background: var(--fill);
-  color: var(--ink-faint);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0;
-  text-transform: none;
-  text-align: center;
+@media (max-width: 900px) { .con-s27-002 .hdr { grid-template-columns: repeat(2, minmax(0, 1fr)); } .con-s27-002 .hdr div { border-bottom: 1px solid var(--line); } }
+@media (max-width: 760px) {
+  .con-s27-002 .cl, .con-s27-002 .sig { grid-template-columns: minmax(0, 1fr); }
+  .con-s27-002 .ord { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.6rem; }
+  .con-s27-002 .ord .ico { margin: 0; }
+  .con-s27-002 .draw { width: 12rem; height: 12rem; }
 }
-
-/* Head of the notice */
-.con-s27-002 .top {
-  padding-bottom: clamp(14px, 1.8vw, 20px);
-  border-bottom: 6px solid var(--rule);
-  margin-bottom: clamp(16px, 2vw, 24px);
-}
-.con-s27-002 .kicker {
-  margin: 0 0 clamp(9px, 1.1vw, 13px);
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--mark);
-}
-.con-s27-002 h2 {
-  margin: 0 0 clamp(12px, 1.6vw, 18px);
-  font-size: clamp(2.318rem, 5.544vw, 4.284rem);
-  line-height: 0.98;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  font-weight: 800;
-  max-width: 18ch;
-}
-.con-s27-002 .lines {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: clamp(10px, 1.4vw, 18px);
-}
-.con-s27-002 .lines > div { min-width: 0; padding-top: 8px; border-top: 1px solid var(--line); }
-.con-s27-002 .lines dt {
-  margin-bottom: 5px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s27-002 .lines dd { margin: 0; }
-
-/* Clauses */
-.con-s27-002 .clauses { margin: 0; padding: 0; list-style: none; counter-reset: clause; }
-.con-s27-002 .clauses > li {
-  display: grid;
-  grid-template-columns: minmax(0, 54px) minmax(0, 1fr);
-  gap: clamp(12px, 1.8vw, 26px);
-  padding: clamp(14px, 1.8vw, 22px) 0;
-  border-bottom: 1px solid var(--line);
-}
-.con-s27-002 .clauses > li:first-child { padding-top: 0; }
-.con-s27-002 .num {
-  counter-increment: clause;
-  font-size: clamp(1.83rem, 2.928vw, 2.562rem);
-  line-height: 0.9;
-  font-weight: 800;
-  color: var(--mark);
-}
-.con-s27-002 .num::before { content: counter(clause, upper-roman); }
-.con-s27-002 .clauses h3 {
-  margin: 0 0 clamp(8px, 1vw, 11px);
-  font-size: clamp(1rem, 1.337vw, 1.1rem);
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 800;
-}
-.con-s27-002 .clauses p {
-  margin: 0 0 9px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(1.1rem, 1.369vw, 1.274rem);
-  line-height: 1.58;
-  color: var(--ink-soft);
-  max-width: 68ch;
-}
-.con-s27-002 .clauses p:last-child { margin-bottom: 0; }
-.con-s27-002 .clauses p b { color: var(--ink); font-weight: 700; }
-.con-s27-002 .clauses .flat { margin: 0 0 9px; padding: 0; list-style: none; display: grid; gap: 7px; max-width: 66ch; }
-.con-s27-002 .clauses .flat li {
-  padding-left: clamp(12px, 1.4vw, 15px);
-  border-left: 3px solid var(--line);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1.1rem;
-  line-height: 1.54;
-  color: var(--ink-soft);
-}
-.con-s27-002 .clauses .flat li b { color: var(--ink); font-weight: 700; }
-
-/* Foot */
-.con-s27-002 .foot {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(13px, 1.8vw, 28px);
-  padding-top: clamp(15px, 1.9vw, 22px);
-  margin-top: clamp(15px, 1.9vw, 22px);
-  border-top: 6px solid var(--rule);
-}
-.con-s27-002 .foot > div { min-width: 0; }
-.con-s27-002 .foot h4 {
-  margin: 0 0 7px;
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s27-002 .foot p { margin: 0 0 8px; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
-.con-s27-002 .foot p:last-child { margin-bottom: 0; }
-.con-s27-002 .foot p b { color: var(--ink); font-weight: 700; }
-.con-s27-002 .sign {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
-  color: var(--ink);
-}
-
-/* Responsive ladder */
-@media (max-width: 700px) {
-  .con-s27-002 .clauses > li { grid-template-columns: minmax(0, 1fr); gap: 8px; }
-  .con-s27-002 h2 { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s27-002 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s27-002 {
-  --v2-accent: #969696;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 30%);
-  font-size: 1.06rem;
-}
-.con-s27-002 h2 { font-weight: 800; }
-.con-s27-002 h3, .con-s27-002 h4 { font-weight: 750; }
-.con-s27-002 .kicker {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #ececec;
-  color: #7a7a7a;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s27-002 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #ececec;
-  color: #7a7a7a;
-  font-weight: 600;
-}
-.con-s27-002.con-s27-002 .top {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s27-002.con-s27-002 .top h2, .con-s27-002.con-s27-002 .top h3, .con-s27-002.con-s27-002 .top h4, .con-s27-002.con-s27-002 .top b, .con-s27-002.con-s27-002 .top strong, .con-s27-002.con-s27-002 .top p b, .con-s27-002.con-s27-002 .top li b, .con-s27-002.con-s27-002 .top span b, .con-s27-002.con-s27-002 .top dt, .con-s27-002.con-s27-002 .top div b {
-  color: #ffffff;
-}
-.con-s27-002.con-s27-002 .top p, .con-s27-002.con-s27-002 .top li, .con-s27-002.con-s27-002 .top span, .con-s27-002.con-s27-002 .top dd, .con-s27-002.con-s27-002 .top div p, .con-s27-002.con-s27-002 .top div li, .con-s27-002.con-s27-002 .top p span, .con-s27-002.con-s27-002 .top .said, .con-s27-002.con-s27-002 .top .note {
-  color: #d2d2d2;
-}
-.con-s27-002.con-s27-002 .top .eyebrow, .con-s27-002.con-s27-002 .top .kicker, .con-s27-002.con-s27-002 .top .slot, .con-s27-002.con-s27-002 .top .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s27-002.con-s27-002 .top i, .con-s27-002.con-s27-002 .top .bars i, .con-s27-002.con-s27-002 .top .lines i, .con-s27-002.con-s27-002 .top .measures i, .con-s27-002.con-s27-002 .top .bar, .con-s27-002.con-s27-002 .top .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s27-002.con-s27-002 .top .plate, .con-s27-002.con-s27-002 .top .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s27-002 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s27-002 .shell > *:last-child { margin-bottom: 0; }
-.con-s27-002 .board {
-  border: none;
-  border-radius: 30px;
-  padding: clamp(22px, 2.8vw, 44px);
-  background: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-}
+@media (max-width: 480px) { .con-s27-002 .hdr { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s27-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s27-002" data-study-id="CON-S27-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="con-s27-002-title">
-    <div class="board">
 
-      <div class="top">
-        <p class="kicker">Notice at the gate</p>
-        <h2 id="con-s27-002-title">Read this before you drive in</h2>
-        <dl class="lines">
-          <div><dt>Branch</dt><dd><span class="slot"><span class="vh">Name of this branch</span>Reserved</span></dd></div>
-          <div><dt>Address</dt><dd><span class="slot"><span class="vh">Street address of this office</span>Reserved</span></dd></div>
-          <div><dt>Office line</dt><dd><span class="slot"><span class="vh">Telephone number for the office</span>Reserved</span></dd></div>
-          <div><dt>The yard</dt><dd><span class="slot"><span class="vh">Telephone number for the yard</span>Reserved</span></dd></div>
-        </dl>
-      </div>
+    <svg class="draw" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+      <g stroke="currentColor" stroke-width="1" fill="none">
+        <circle cx="50" cy="50" r="44" vector-effect="non-scaling-stroke"/>
+        <circle cx="50" cy="50" r="3" vector-effect="non-scaling-stroke"/>
+        <path d="M50 0V38M50 62V100M0 50H38M62 50H100" vector-effect="non-scaling-stroke"/>
+      </g>
+    </svg>
 
-      <ol class="clauses">
-        <li>
-          <span class="num" aria-hidden="true"></span>
+    <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V6M20 21V6M4 9h16M4 13h16M4 17h16"/></svg>Notice at the gate</p>
+    <h2 id="con-s27-002-title">Read this <em>before you drive in</em></h2>
+
+    <div class="notice">
+      <dl class="hdr">
+        <div><dt>Branch</dt><dd><span class="slot"><span class="vh">Name of this branch</span><span aria-hidden="true">Reserved</span></span></dd></div>
+        <div><dt>Address</dt><dd><span class="slot"><span class="vh">Street address of this office</span><span aria-hidden="true">Reserved</span></span></dd></div>
+        <div><dt>Office line</dt><dd><span class="slot"><span class="vh">Telephone number for the office</span><span aria-hidden="true">Reserved</span></span></dd></div>
+        <div><dt>The yard</dt><dd><span class="slot"><span class="vh">Telephone number for the yard</span><span aria-hidden="true">Reserved</span></span></dd></div>
+      </dl>
+
+      <div class="body">
+        <div class="cl">
+          <div class="ord"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg><p>Clause one</p></div>
           <div>
             <h3>Who this notice is for</h3>
-            <ul class="flat">
-              <li><b>A delivery.</b> The wagon comes to the yard gate rather than the office door, and somebody in the yard signs for it.</li>
-              <li><b>A supplier or a subcontractor.</b> Turning up unannounced is not how anybody gets on a list.</li>
-              <li><b>Somebody looking for work.</b> Early, before the gangs go out, and ask for the yard foreman.</li>
+            <ul>
+              <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7M5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg><span><b>A delivery.</b> The wagon comes to the yard gate rather than the office door, and somebody in the yard signs for it.</span></li>
+              <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18v14H3zM3 5l9 7 9-7"/></svg><span><b>A supplier or a subcontractor.</b> Turning up unannounced is not how anybody gets on a list.</span></li>
+              <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15a8 8 0 0 1 16 0M2 15h20v3H2zM10 7h4v5h-4z"/></svg><span><b>Somebody looking for work.</b> Early, before the gangs go out, and ask for the yard foreman.</span></li>
             </ul>
-            <p><b>A client is not on that list.</b> A contractor's office is not a shop, and almost nobody who reads this page is coming here &mdash; the client least of all, because their meetings happen on their own site. <b>If you have a live job, the number you want is your site's rather than this one.</b></p>
+            <div class="client"><p><b>A client is not on that list.</b> A contractor&rsquo;s office is not a shop, and almost nobody who reads this page is coming here &mdash; the client least of all, because their meetings happen on their own site. If you have a live job, the number you want is your site&rsquo;s rather than this one.</p></div>
           </div>
-        </li>
-        <li>
-          <span class="num" aria-hidden="true"></span>
+        </div>
+
+        <div class="cl">
+          <div class="ord"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><p>Clause two</p></div>
           <div>
             <h3>Ring before you come</h3>
             <p>The person you are coming to see is very often not here. <b>The drive is longer than the call</b>, and the call is answered while the sites are working.</p>
             <p>There are no opening hours printed on this notice. <b>An empty hours table asserts a weekly schedule</b>, and the honest version is a sentence: the yard is emptiest by the time the sites start, and the middle of the morning is when somebody can stop and talk to you.</p>
           </div>
-        </li>
-        <li>
-          <span class="num" aria-hidden="true"></span>
+        </div>
+
+        <div class="cl">
+          <div class="ord"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3l3 2h4l3-2 3 3-3 3v12H7V9L4 6zM7 14h10"/></svg><p>Clause three</p></div>
           <div>
             <h3>At the gate</h3>
-            <p><b>You cannot cross the yard in what you drove in. Boots and a hi-vis, or you will be met in the office instead</b> &mdash; which is fine, and is what most people should do anyway.</p>
+            <p><b>You cannot cross the yard in what you drove in.</b> Boots and a hi-vis, or you will be met in the office instead &mdash; which is fine, and is what most people should do anyway.</p>
             <p>Nobody is going to be pleased about a visitor walking through a load-out in trainers, and being turned back at the gate is a longer conversation than being met at the door.</p>
           </div>
-        </li>
-        <li>
-          <span class="num" aria-hidden="true"></span>
+        </div>
+
+        <div class="cl">
+          <div class="ord"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V6M20 21V6M4 9h16M4 13h16M4 17h16"/></svg><p>Clause four</p></div>
           <div>
             <h3>Getting from the gate to the office</h3>
             <p><b>Tell us before you come and we will say honestly what the route is like</b>, including when the answer is that it is not passable that week.</p>
             <p>There is no row of tick icons on this notice. <b>A yard is not a level floor</b>, it is not the same place two months running, and a tick would be a promise about somewhere nobody has measured.</p>
           </div>
-        </li>
-        <li>
-          <span class="num" aria-hidden="true"></span>
+        </div>
+
+        <div class="cl">
+          <div class="ord"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7M5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg><p>Clause five</p></div>
           <div>
             <h3>What leaves here, and what does not</h3>
-            <ul class="flat">
-              <li><b>Plant off our own yard</b>, loaded and gone the same day it is asked for.</li>
-              <li><b>The fitter, in a van</b>, so a breakdown is a drive rather than a call to a hire desk.</li>
-              <li><b>The manager, before the gangs</b>, which is what makes a morning visit on your site possible at all.</li>
+            <ul>
+              <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7M5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg><span><b>Plant off our own yard</b>, loaded and gone the same day it is asked for.</span></li>
+              <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.7 2.7-2.1-2.1z"/></svg><span><b>The fitter, in a van</b>, so a breakdown is a drive rather than a call to a hire desk.</span></li>
+              <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg><span><b>The manager, before the gangs</b>, which is what makes a morning visit on your site possible at all.</span></li>
             </ul>
-            <p>Jobs further out than the region this office runs are <b>run from another office</b>, and their plant is hired locally rather than loaded here. <b>There is no such thing as national coverage from one yard.</b> We will name the office rather than let a job be managed from the wrong end of a motorway.</p>
+            <p><b>Jobs further out than the region this office runs are run from another office</b>, and their plant is hired locally rather than loaded here. There is no such thing as national coverage from one yard. We will name the office rather than let a job be managed from the wrong end of a motorway.</p>
+            <div class="region">Jobs run from here<span class="slot"><span class="vh">Region this office runs jobs in</span><span aria-hidden="true">Reserved</span></span><span>Anything past it is another office&rsquo;s, named when you ask.</span></div>
           </div>
-        </li>
-      </ol>
+        </div>
 
-      <div class="foot">
-        <div>
-          <h4>Jobs run from here</h4>
-          <p><span class="slot"><span class="vh">Region this office runs jobs in</span>Reserved</span></p>
-          <p>Anything past it is another office's, named when you ask.</p>
-        </div>
-        <div>
-          <h4>Why there is no map on this notice</h4>
-          <p><b>A map tells you where this office is, which is the one fact on this page that will not help you.</b> What matters is which sites it runs, and that is clause five.</p>
-          <p>There is no photograph either. <b>A photograph of a gate is not a gate</b>, and this notice is for people already standing at one.</p>
-        </div>
-        <div>
-          <h4>Posted by</h4>
-          <p class="sign">The yard foreman, who will also be the one to turn you back.</p>
-          <p>No name is printed here for the same reason none is printed anywhere else in this catalog: <b>we have not been told it, and a made-up one is worse than an empty field.</b></p>
+        <div class="cl">
+          <div class="ord"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM4 4l16 16"/></svg><p>Clause six</p></div>
+          <div>
+            <h3>Why there is no map on this notice</h3>
+            <p><b>A map tells you where this office is, which is the one fact on this page that will not help you.</b> What matters is which sites it runs, and that is clause five.</p>
+            <p>There is no photograph either. <b>A photograph of a gate is not a gate</b>, and this notice is for people already standing at one.</p>
+          </div>
         </div>
       </div>
 
+      <div class="sig">
+        <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21l4-1 11-11-3-3L4 17zM14 6l3 3M3 21h18"/></svg>Posted by</h4>
+        <p><b>The yard foreman, who will also be the one to turn you back.</b> No name is printed here for the same reason none is printed anywhere else in this catalog: we have not been told it, and a made-up one is worse than an empty field.</p>
+      </div>
     </div>
+
   </section>
 </div>
 

@@ -12,29 +12,22 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S01 — Hero
   Direction      : Conversion-led
-  Reference      : Supplied — the clean white hero with a photograph and a search card overlapping
-                   its lower edge, above a row of statistic cards. Placed here because a card that
-                   starts something is the conversion register.
-  Layout model   : Proposition, a wide reserved project area, and a three-field enquiry card
-                   overlapping its lower edge, above three reserved figure cards
-  Density        : Medium
-  Media mode     : One reserved project media area, 16:9.
-  Interaction    : Native form controls only. No JavaScript, no validation script, no success state.
-  What the card became : The reference searches a property database — *Buy / Rent, Location,
-                   Property Type, Price Range*. A contractor has no database to search, so the same
-                   card shape is used to **start an enquiry with a real scope instead**: what is
-                   being built, where, and how far along it is. Three facts an estimator needs
-                   before they can say anything useful, and none of them invented — every option is
-                   generic sector vocabulary.
-  What it refuses : **No price range field.** The reference's fourth control is the one that cannot
-                   survive here: a price band on a construction hero is either a fabricated rate or
-                   an invitation to quote a job nobody has walked. The sector direction rules it
-                   out, and the card says why in one line rather than silently omitting it.
-  The boundary   : This is the start of an enquiry, not the enquiry. The full bid and RFQ flow is
-                   `S15`; the hero collects three facts and hands over.
-  Content note   : No invented figure, client or project name, certification, safety record, award,
-                   rating, price or rate; no header; no urgency device; no placeholder text inside
-                   any field.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 4,
+                   a tinted band, in the heavy reading: the hero's head over a 3:1 project
+                   field, then the three-question enquiry as a band with hi-vis tape on its
+                   top edge — three underlined native fields, each with a stroke icon, and one
+                   bordered action — and the counter ledger under the band with LARGEST PROJECT
+                   BY VALUE reserved. Drawing layer: a chevron run (hazard-marking rhythm)
+                   behind the band's right side. V1 is kept: tell us three things and an
+                   estimator rings you back; there is no budget field, deliberately.
+  Layout model   : Head split (eyebrow, display, lead). A 3:1 project field. Tinted band with
+                   a form of three fields (What is being built / Where it is / How far along it
+                   is) and one action. A four-cell counter ledger. The no-budget line.
+  Density        : Hero (40–90)
+  Media mode     : One reserved project field, 3:1. Four reserved counters.
+  Interaction    : Native form fields, no JavaScript; action posts nowhere (relative).
+  Content note   : No figure, client, project name, certification, safety record, award,
+                   rating, price, budget field or urgency device. Graphics are inline SVG.
 -->
 
 <meta name="study-id" content="CON-S01-004">
@@ -45,270 +38,68 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="layout-model" content="Proposition and reserved media with an overlapping three-field enquiry card above reserved figure cards">
-<meta name="density" content="medium">
-<meta name="media-mode" content="one-wide-reserved-project-area">
-<meta name="interaction" content="native-form-controls">
+<meta name="theme" content="004 White &amp; Hi-Vis">
+<meta name="layout-model" content="Head split over a 3:1 project field; the three-question enquiry as a tinted band with hi-vis tape, iconed underlined fields and one bordered action; a four-cell counter ledger; the no-budget line">
+<meta name="density" content="hero">
+<meta name="media-mode" content="one-reserved-project-field-four-reserved-counters">
+<meta name="interaction" content="native-form-no-js">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S01-004 — Hero, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #fbfbfa; }
 
-/* Scoped study styles — namespaced to .con-s01-004 */
 .con-s01-004 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --paper: #fafafa;
-  --card: #ffffff;
-  --slot: #d2d2d2;
-  --slot-ink: #2b2b2b;
-  --slot-edge: #969696;
-  --field-edge: #b4b4b4;
-  --line: #ececec;
-  --accent: #5e5e5e;
-  --focus: #111111;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fbfbfa; --ink: #0b0b0b; --muted: #55585c; --line: #e2e2e0; --line-strong: #0b0b0b;
+  --media: #ececea; --band: #f2f2ef; --accent: #c99e00; --tape: #ffd400;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s01-004 *,
-.con-s01-004 *::before,
-.con-s01-004 *::after { box-sizing: inherit; }
-.con-s01-004 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s01-004 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s01-004 *, .con-s01-004 *::before, .con-s01-004 *::after { box-sizing: inherit; }
+.con-s01-004 :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
-.con-s01-004 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s01-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s01-004 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s01-004 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.4rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s01-004 .ico { width: 1.4rem; height: 1.4rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s01-004 h1 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.4rem, 5vw, 5.6rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s01-004 h1 mark { background: transparent; color: var(--ink); text-decoration: underline; text-decoration-color: var(--tape); text-decoration-thickness: 0.16em; text-underline-offset: 0.04em; text-decoration-skip-ink: none; }
+.con-s01-004 .lead { margin: 0 0 0.4rem; max-width: 24rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
 
-.con-s01-004 .head { max-width: 30ch; margin-bottom: clamp(20px, 2.6vw, 34px); }
-.con-s01-004 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s01-004 h1 {
-  margin: 0 0 clamp(12px, 1.5vw, 18px);
-  font-size: clamp(2.318rem, 4.536vw, 3.78rem);
-  line-height: 1.06;
-  letter-spacing: -0.028em;
-  font-weight: 700;
-}
-.con-s01-004 .head p { margin: 0; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.62; }
+.con-s01-004 .media { position: relative; aspect-ratio: 3 / 1; margin-top: clamp(1.6rem, 3vw, 3rem); background: var(--media); border-radius: 2px; }
+.con-s01-004 .slate { position: absolute; left: 1rem; bottom: 0.9rem; margin: 0; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Media */
-.con-s01-004 .media {
-  background: var(--slot);
-  border-radius: 26px;
-  aspect-ratio: 16 / 9;
-  display: grid;
-  place-items: center;
-  padding: 16px;
-}
-.con-s01-004 .media span {
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-  line-height: 1.7;
-}
+.con-s01-004 .band { position: relative; overflow: hidden; margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding: clamp(1.4rem, 2.6vw, 2.4rem) clamp(1.2rem, 2.4vw, 2.4rem); background: var(--band); border-top: 3px solid var(--tape); }
+.con-s01-004 .draw { position: absolute; right: -2rem; top: 0; height: 100%; width: 22rem; pointer-events: none; color: var(--line); }
+.con-s01-004 form { position: relative; margin: 0; }
+.con-s01-004 .bt { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--ink); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s01-004 .bt .ico { color: var(--accent); }
+.con-s01-004 .row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 1.6rem 2rem; align-items: end; }
+.con-s01-004 label { display: block; min-width: 0; }
+.con-s01-004 .lab { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.5rem; color: var(--muted); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s01-004 .lab .ico { width: 1.1rem; height: 1.1rem; color: var(--accent); }
+.con-s01-004 select, .con-s01-004 input { display: block; width: 100%; padding: 0.55rem 0; border: 0; border-bottom: 1px solid var(--line-strong); border-radius: 0; background: transparent; color: var(--ink); font: inherit; font-size: 0.95rem; -webkit-appearance: none; appearance: none; }
+.con-s01-004 .btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 0.95rem 1.5rem; border: 1px solid var(--ink); border-radius: 0; background: transparent; color: var(--ink); cursor: pointer; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; transition: background-color 160ms ease, color 160ms ease; }
+.con-s01-004 .btn:hover { background: var(--ink); color: var(--tape); }
+.con-s01-004 .btn .ico { width: 1.2rem; height: 1.2rem; }
+.con-s01-004 .no { margin: 1.2rem 0 0; max-width: 46rem; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s01-004 .no strong { color: var(--ink); }
 
-/* The card, overlapping the media */
-.con-s01-004 .card {
-  position: relative;
-  z-index: 1;
-  margin: clamp(-96px, -7vw, -48px) clamp(0px, 3vw, 48px) 0;
-  background: var(--card);
-  border-radius: 26px;
-  padding: clamp(18px, 2.4vw, 30px);
-}
-.con-s01-004 .form {
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
-  gap: clamp(12px, 1.6vw, 20px);
-  align-items: end;
-}
-.con-s01-004 label {
-  display: block;
-  margin-bottom: 7px;
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.con-s01-004 select,
-.con-s01-004 input {
-  display: block;
-  width: 100%;
-  min-height: 50px;
-  padding: 10px 14px;
-  border: 1px solid var(--field-edge);
-  border-radius: 16px;
-  background: var(--card);
-  color: var(--ink);
-  font-family: inherit;
-  font-size: 1.1rem;
-}
-.con-s01-004 .send {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-  padding: 0 28px;
-  border: 0;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: inherit;
-  font-size: 1.1rem;
-  font-weight: 650;
-  cursor: pointer;
-}
-.con-s01-004 .send:hover { background: var(--accent); }
-.con-s01-004 .no-price {
-  margin: clamp(14px, 1.8vw, 20px) 0 0;
-  padding-top: clamp(12px, 1.4vw, 16px);
-  border-top: 1px solid var(--line);
-  max-width: 76ch;
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.6;
-}
-.con-s01-004 .no-price b { color: var(--ink); }
+.con-s01-004 .ledger { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); }
+.con-s01-004 .ledger li { display: flex; flex-direction: column; min-width: 0; padding: 1.1rem 1.2rem 1.1rem 0; }
+.con-s01-004 .ledger li + li { padding-left: 1.2rem; border-left: 1px solid var(--line); }
+.con-s01-004 .ledger .lab { margin-bottom: 0.6rem; }
+.con-s01-004 .slot { display: inline-flex; align-items: center; align-self: flex-start; min-width: 8rem; height: 3.2rem; padding: 0 0.9rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 2.2rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.con-s01-004 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Figure cards */
-.con-s01-004 .stats {
-  margin: clamp(18px, 2.2vw, 28px) 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.6vw, 20px);
-}
-.con-s01-004 .stats li {
-  min-width: 0;
-  background: var(--card);
-  border-radius: 22px;
-  padding: clamp(16px, 2vw, 24px);
-}
-.con-s01-004 .fname {
-  display: block;
-  margin-bottom: 9px;
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.con-s01-004 .slot {
-  display: block;
-  border: 1px dashed var(--slot-edge);
-  border-radius: 16px;
-  background: #ececec;
-  padding: 10px 14px;
-  min-height: 58px;
-  color: var(--slot-ink);
-  font-size: 1.593rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.con-s01-004 .stats p { margin: 8px 0 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .con-s01-004 .head { max-width: none; }
-  .con-s01-004 .form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .con-s01-004 .send { grid-column: 1 / -1; width: 100%; }
-  .con-s01-004 .card { margin: clamp(-48px, -5vw, -28px) 0 0; }
-  .con-s01-004 .stats { grid-template-columns: minmax(0, 1fr); }
-  .con-s01-004 .media { aspect-ratio: 4 / 3; }
-}
-
-@media (max-width: 560px) {
-  .con-s01-004 .form { grid-template-columns: minmax(0, 1fr); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s01-004 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s01-004 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 30%);
-  font-size: 1.06rem;
-}
-.con-s01-004 h2 { font-weight: 800; }
-.con-s01-004 h3, .con-s01-004 h4 { font-weight: 750; }
-.con-s01-004 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #ececec;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s01-004 select, .con-s01-004 input, .con-s01-004 .stats li {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #ececec;
-}
-.con-s01-004 .slot {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s01-004 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #ececec;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s01-004.con-s01-004 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  max-width: none;
-}
-.con-s01-004.con-s01-004 .shell > h2 span, .con-s01-004.con-s01-004 .shell > h2 b, .con-s01-004.con-s01-004 .shell > h2 em, .con-s01-004.con-s01-004 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s01-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s01-004 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s01-004 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s01-004 h1 { max-width: none; } .con-s01-004 .row { grid-template-columns: repeat(3, minmax(0, 1fr)); } .con-s01-004 .btn { grid-column: span 3; justify-self: start; } .con-s01-004 .draw { display: none; } }
+@media (max-width: 768px) { .con-s01-004 .row { grid-template-columns: minmax(0, 1fr); } .con-s01-004 .btn { grid-column: span 1; width: 100%; justify-content: center; } .con-s01-004 .ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); } .con-s01-004 .ledger li { padding-inline: 0; } .con-s01-004 .ledger li + li { border-left: 0; } .con-s01-004 .ledger li:nth-child(n+3) { border-top: 1px solid var(--line); } .con-s01-004 .media { aspect-ratio: 16 / 10; } }
+@media (max-width: 480px) { .con-s01-004 .ledger { grid-template-columns: minmax(0, 1fr); } .con-s01-004 .ledger li + li { border-top: 1px solid var(--line); } .con-s01-004 .media { aspect-ratio: 4 / 3; } }
+@media (prefers-reduced-motion: reduce) { .con-s01-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -317,63 +108,34 @@ body { margin: 0; background: #fafafa; }
   <section class="shell" aria-labelledby="con-s01-004-title">
 
     <div class="head">
-      <p class="eyebrow">Main contractor</p>
-      <h1 id="con-s01-004-title">Tell us three things and an estimator will ring you back.</h1>
-      <p>Not a form that lands in a shared inbox. Three facts is enough for somebody to know whether we are the right firm for it, and to say so.</p>
+      <div>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Main contractor &middot; Start here</p>
+        <h1 id="con-s01-004-title">Tell us <mark>three things</mark> and an estimator will ring you back.</h1>
+      </div>
+      <p class="lead">Not a sales call. The person who rings is the one who would walk your site and write the number.</p>
     </div>
 
-    <div class="media"><span>Project media &mdash; completed work, wide<br>a real project, not a render</span></div>
+    <div class="media" role="img" aria-label="Reserved project field: a site in progress, wide; no stock hard-hat handshake"><p class="slate" aria-hidden="true">Project area &middot; 3:1 &middot; a site in progress, not a handshake</p></div>
 
-    <div class="card">
-      <form class="form">
-        <div>
-          <label for="con-s01-004-what">What is being built</label>
-          <select id="con-s01-004-what" name="what">
-            <option>New build</option>
-            <option>Refurbishment</option>
-            <option>Commercial fit-out</option>
-            <option>Structural frame</option>
-            <option>Groundworks</option>
-            <option>Civils</option>
-            <option>Something else</option>
-          </select>
+    <div class="band">
+      <svg class="draw" viewBox="0 0 352 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 240L120 0M40 240L160 0M80 240L200 0M120 240L240 0M160 240L280 0M200 240L320 0M240 240L360 0M280 240L400 0"/></g></svg>
+      <form action="#enquire" method="post">
+        <p class="bt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Three things, then we ring</p>
+        <div class="row">
+          <label><span class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 19h16M8 5v14M16 5v14"/></svg>What is being built</span><select name="what"><option>Choose one</option><option>Commercial fit-out</option><option>Structural frame</option><option>Groundworks or civils</option><option>Refurbishment</option><option>Not sure yet</option></select></label>
+          <label><span class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>Where it is</span><input type="text" name="where" placeholder="Town or postcode"></label>
+          <label><span class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="9" width="20" height="6"/><circle cx="12" cy="12" r="1.8"/><path d="M10 9v6M14 9v6"/></svg>How far along it is</span><select name="stage"><option>Choose one</option><option>An idea</option><option>Drawings exist</option><option>Planning granted</option><option>Tender stage</option><option>On site with someone else</option></select></label>
+          <button class="btn" type="submit"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Ring me back</button>
         </div>
-        <div>
-          <label for="con-s01-004-where">Where it is</label>
-          <input id="con-s01-004-where" name="where" type="text" autocomplete="address-level2">
-        </div>
-        <div>
-          <label for="con-s01-004-stage">How far along it is</label>
-          <select id="con-s01-004-stage" name="stage">
-            <option>An idea</option>
-            <option>Sketches or a brief</option>
-            <option>Drawings issued</option>
-            <option>Out to tender</option>
-            <option>Ready to start</option>
-          </select>
-        </div>
-        <button class="send" type="submit">Start it</button>
       </form>
-
-      <p class="no-price"><b>There is no budget field, deliberately.</b> A number typed into a hero is either a guess you will be held to or a rate we invented, and neither helps you. What it costs comes after somebody has walked the job.</p>
+      <p class="no"><strong>There is no budget field, deliberately.</strong> The number comes from the site, not from what you were hoping to spend.</p>
     </div>
 
-    <ul class="stats">
-      <li>
-        <span class="fname">Founded</span>
-        <span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span>
-        <p>On the company record either way.</p>
-      </li>
-      <li>
-        <span class="fname">Projects completed</span>
-        <span class="slot"><span class="vh">Number of completed projects</span><span aria-hidden="true">&mdash;</span></span>
-        <p>Counted from handover certificates, so it can be checked.</p>
-      </li>
-      <li>
-        <span class="fname">Largest project by value</span>
-        <span class="slot"><span class="vh">Value of the largest project completed</span><span aria-hidden="true">&mdash;</span></span>
-        <p>The ceiling we have actually worked to, rather than the one we would like to.</p>
-      </li>
+    <ul class="ledger">
+      <li><p class="lab">Founded</p><span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><p class="lab">Projects completed</p><span class="slot"><span class="vh">Number of completed projects</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><p class="lab">People employed</p><span class="slot"><span class="vh">Number of people employed</span><span aria-hidden="true">&mdash;</span></span></li>
+      <li><p class="lab">Largest project by value</p><span class="slot"><span class="vh">Contract value of the largest project completed</span><span aria-hidden="true">&mdash;</span></span></li>
     </ul>
 
   </section>

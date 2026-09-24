@@ -12,29 +12,22 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S22 — Breadcrumb / Context Navigation
   Direction      : Structured / Visual Modular
-  Reference      : None supplied for this section.
-  Layout model   : The same page drawn sitting in three trails at once — one marked as the trail the
-                   chrome shows, one available, and one whose middle level has no page behind it
-  Density        : Medium
-  Media mode     : None.
-  Interaction    : In-page anchors only. No button.
-  The device     : **Three trails, one page.** The section's whole argument is that a breadcrumb
-                   asserts one hierarchy over two others without saying so, and the only way to draw
-                   that is to draw all three and mark which one is in use.
-  The third one  : Deliberately broken, and drawn as broken. **The trail by year has no index page
-                   behind its middle level**, so that level is a label rather than a link &mdash;
-                   which is what the commonest lie in this component looks like when it is told
-                   honestly. A crumb that cannot be visited is not styled to look like one that can.
-  The trap       : The sector direction names it for this variant &mdash; *becoming a specification
-                   table.* These three rows are not comparable: one is live, one is available, and
-                   one is partly unavailable, and the drawing says which is which before the copy
-                   does.
-  Placeholder    : The architecture run's convention, from `S21` &mdash; no em-dash. In navigation a
-                   dash reads as a broken link, which is exactly the thing this study needs to be
-                   able to draw on purpose.
-  Deliberately not : No count or position. No arrow diagram of the site. No call to action.
-  Content note   : All values reserved; level names and the arrangement notes are real. No digit in
-                   visible copy; no header; no refusal region.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3:
+                   three trails as bordered rows sharing hairlines — a status column with a
+                   square chip (IN USE filled / AVAILABLE open / INCOMPLETE deep-red) and the
+                   axis in tracked uppercase, then the run of bordered crumbs; the year level
+                   with no page behind it drawn as a plain muted label with a NO PAGE chip and
+                   no border, visibly not a link; the current page a band-tone marked chip in
+                   every trail. NEXT as a tape-topped foot cell with the ordering declared.
+                   Drawing layer: dimension line with three ticks above the sheet, one per
+                   trail. All anchors in-page; no button, no form. V1 is kept whole.
+  Layout model   : Head. Three bordered trail rows (status | trail | note). Tape-topped next
+                   foot.
+  Density        : Structured — V1's spine kept in full
+  Media mode     : No media. Seven reserved fields.
+  Interaction    : In-page anchors only.
+  Content note   : Project name, sector, service, year and next project reserved. No count,
+                   position or invented level drawn as a link. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S22-003">
@@ -45,225 +38,83 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Three trails for one page — in use, available, and one with a level that has no page">
-<meta name="density" content="medium">
-<meta name="media-mode" content="none">
+<meta name="theme" content="003 Steel &amp; Structural Blue">
+<meta name="layout-model" content="Head; three bordered trail rows with a status chip and axis, the run of bordered crumbs, and a note — the year level drawn as a plain label with a no-page chip, visibly not a link; tape-topped next foot with the ordering declared; dimension line with three ticks above the sheet">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media-seven-reserved-fields">
 <meta name="interaction" content="in-page-anchors">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S22-003 — Breadcrumb, Structured</title>
+<title>CON-S22-003 — Breadcrumb / Context Navigation, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e8e8e8; }
+body { margin: 0; background: #edf0f2; }
 
-/* Scoped study styles — namespaced to .con-s22-003 */
 .con-s22-003 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --ink-faint: #7a7a7a;
-  --paper: #e8e8e8;
-  --card: #ffffff;
-  --fill: #d2d2d2;
-  --line: #b4b4b4;
-  --soft-line: #ececec;
-  --rule: #111111;
-  --live: #2b2b2b;
-  --open: #969696;
-  --dead: #5e5e5e;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #edf0f2; --ink: #0f1316; --muted: #57616a; --line: #d2d9de; --line-strong: #0f1316;
+  --media: #dfe4e8; --band: #e4e8eb; --accent: #1f5fd0; --no: #8f1f14;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s22-003 *,
-.con-s22-003 *::before,
-.con-s22-003 *::after { box-sizing: inherit; }
-.con-s22-003 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s22-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s22-003 *, .con-s22-003 *::before, .con-s22-003 *::after { box-sizing: inherit; }
+.con-s22-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s22-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s22-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(1.6rem, 3.5vw, 3rem) clamp(1rem, 4.5vw, 4.5rem) clamp(1.6rem, 3vw, 2.6rem); }
+.con-s22-003 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: 1rem 3rem; align-items: end; }
+.con-s22-003 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 0.8rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s22-003 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s22-003 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(1.6rem, 2.8vw, 2.6rem); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s22-003 h2 em { font-style: normal; color: var(--accent); }
+.con-s22-003 .head > p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.con-s22-003 .head > p b { color: var(--ink); }
 
-.con-s22-003 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(14px, 2.6vw, 44px);
-  align-items: baseline;
-  padding-bottom: clamp(14px, 1.8vw, 22px);
-  border-bottom: 3px solid var(--rule);
-  margin-bottom: clamp(14px, 1.8vw, 20px);
-}
-.con-s22-003 h2 { margin: 0; font-size: clamp(1.369rem, 2.318vw, 1.854rem); line-height: 1.14; letter-spacing: -0.024em; font-weight: 700; max-width: 22ch; }
-.con-s22-003 .head p { margin: 0; max-width: 64ch; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
-.con-s22-003 .head p b { color: var(--ink); font-weight: 650; }
+.con-s22-003 .dim { position: relative; height: 1.6rem; margin-top: 1.4rem; color: var(--line-strong); }
+.con-s22-003 .dim svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.con-s22-003 .sheet { border-top: 3px solid var(--accent); border-left: 1px solid var(--line-strong); border-right: 1px solid var(--line-strong); }
+.con-s22-003 .row { display: grid; grid-template-columns: 11rem minmax(0, 1.4fr) minmax(0, 1fr); border-bottom: 1px solid var(--line-strong); }
+.con-s22-003 .row > * { padding: 1rem 1.1rem 1.1rem; min-width: 0; }
+.con-s22-003 .st { border-right: 1px solid var(--line-strong); }
+.con-s22-003 .chip { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0 0 0.5rem; padding: 0.2rem 0.5rem; border: 1px solid var(--line-strong); border-radius: 2px; font-size: 0.5rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s22-003 .chip::before { content: ""; width: 0.45rem; height: 0.45rem; border: 1px solid currentColor; }
+.con-s22-003 .chip.use { background: var(--ink); color: var(--paper); }
+.con-s22-003 .chip.use::before { background: var(--paper); border-color: var(--paper); }
+.con-s22-003 .chip.inc { border-color: var(--no); color: var(--no); }
+.con-s22-003 .st h3 { margin: 0; font-weight: 800; font-size: 1rem; line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase; }
+.con-s22-003 .trail { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; row-gap: 0.4rem; }
+.con-s22-003 .trail li { display: flex; align-items: center; }
+.con-s22-003 .trail li + li::before { content: ""; display: block; width: 1.2rem; height: 1px; background: var(--line-strong); }
+.con-s22-003 .trail a { display: inline-flex; align-items: center; padding: 0.5rem 0.8rem; border: 1px solid var(--line-strong); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s22-003 .trail a:hover { background: var(--ink); color: var(--paper); }
+.con-s22-003 .here { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.8rem; border: 1px solid var(--line-strong); background: var(--band); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.con-s22-003 .here::before { content: ""; width: 0.5rem; height: 0.5rem; background: var(--accent); }
+.con-s22-003 .nolink { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.2rem; color: var(--muted); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s22-003 .nolink small { padding: 0.15rem 0.4rem; border: 1px solid var(--no); border-radius: 2px; color: var(--no); font-size: 0.5rem; font-weight: 800; letter-spacing: 0.14em; }
+.con-s22-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s22-003 .note { border-left: 1px solid var(--line); }
+.con-s22-003 .note p { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s22-003 .note p b { color: var(--ink); }
+.con-s22-003 .row.inc-row .note { border-left: 3px solid var(--no); background: var(--band); }
 
-/* The three trails */
-.con-s22-003 .trails { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 16px); }
-.con-s22-003 .trails > li {
-  background: var(--card);
-  border-radius: 22px;
-  border-left: 6px solid var(--tone, var(--line));
-  padding: clamp(14px, 1.8vw, 21px) clamp(15px, 1.9vw, 22px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.34fr) minmax(0, 1.66fr);
-  gap: clamp(12px, 2vw, 30px);
-  align-items: start;
-}
-.con-s22-003 .t-live { --tone: var(--live); }
-.con-s22-003 .t-open { --tone: var(--open); }
-.con-s22-003 .t-dead { --tone: var(--dead); }
+.con-s22-003 .next { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 1rem 2rem; align-items: center; padding: 1.1rem 1.2rem 1.2rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); background: var(--band); }
+.con-s22-003 .by { display: flex; align-items: center; gap: 0.4rem; margin: 0 0 0.5rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s22-003 .by .ico { width: 1rem; height: 1rem; }
+.con-s22-003 .lnk { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.con-s22-003 .lnk::after { content: "\2197"; color: var(--accent); }
+.con-s22-003 .next p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s22-003 .next p b { color: var(--ink); }
 
-.con-s22-003 .state {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
+@media (max-width: 960px) {
+  .con-s22-003 .row { grid-template-columns: 10rem minmax(0, 1fr); }
+  .con-s22-003 .note { grid-column: 2; border-left: 0; border-top: 1px solid var(--line); }
+  .con-s22-003 .row.inc-row .note { border-left: 0; border-top: 3px solid var(--no); }
+  .con-s22-003 .dim { display: none; }
 }
-.con-s22-003 h3 { margin: 0; font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.016em; font-weight: 700; }
-
-.con-s22-003 .path { margin: 0 0 clamp(9px, 1.1vw, 12px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px 10px; }
-.con-s22-003 .path li { display: flex; align-items: baseline; gap: 10px; }
-.con-s22-003 .path li::after { content: "/"; color: var(--line); }
-.con-s22-003 .path li:last-child::after { content: ""; }
-.con-s22-003 .path a { color: var(--live); text-decoration: underline; text-underline-offset: 3px; font-size: 1.1rem; }
-.con-s22-003 .path a:hover { color: var(--ink); }
-.con-s22-003 .here { font-size: 1.1rem; color: var(--ink); font-weight: 650; }
-.con-s22-003 .slot {
-  display: inline-block;
-  min-width: 84px;
-  padding: 2px 11px;
-  border-radius: 10px;
-  background: #f2f2f2;
-  color: var(--ink-faint);
-  font-size: 1rem;
-  text-align: center;
-}
-.con-s22-003 .nolink {
-  display: inline-block;
-  padding: 2px 11px;
-  border: 1px dashed var(--dead);
-  border-radius: 10px;
-  color: var(--dead);
-  font-size: 1rem;
-}
-.con-s22-003 .trails p { margin: 0; max-width: 74ch; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
-.con-s22-003 .trails p b { color: var(--ink); font-weight: 650; }
-
-.con-s22-003 a .slot { border-bottom: 2px solid var(--live); }
-
-/* Foot */
-.con-s22-003 .foot {
-  margin-top: clamp(16px, 2vw, 24px);
-  padding-top: clamp(14px, 1.8vw, 22px);
-  border-top: 3px solid var(--rule);
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(14px, 2.6vw, 44px);
-  align-items: start;
-}
-.con-s22-003 .foot h3 { margin: 0 0 8px; }
-.con-s22-003 .foot p { margin: 0; max-width: 66ch; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
-.con-s22-003 .foot p b { color: var(--ink); font-weight: 650; }
-.con-s22-003 .next { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
-.con-s22-003 .next .by { font-size: 0.74rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; color: var(--dead); }
-.con-s22-003 .next a { color: var(--live); text-decoration: underline; text-underline-offset: 3px; font-size: 1.1rem; font-weight: 650; }
-.con-s22-003 .next a:hover { color: var(--ink); }
-
-/* Responsive ladder */
-@media (max-width: 880px) {
-  .con-s22-003 .head,
-  .con-s22-003 .trails > li,
-  .con-s22-003 .foot { grid-template-columns: minmax(0, 1fr); gap: clamp(10px, 1.8vw, 16px); }
-}
-
-@media (max-width: 560px) {
-  .con-s22-003 h2, .con-s22-003 .head p, .con-s22-003 .trails p, .con-s22-003 .foot p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s22-003 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s22-003 {
-  --v2-accent: #7a7a7a;
-  --v2-soft: #b4b4b4;
-  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
-  font-size: 1.06rem;
-}
-.con-s22-003 h2 { font-weight: 800; }
-.con-s22-003 h3, .con-s22-003 h4 { font-weight: 750; }
-.con-s22-003 .trails > li {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #d2d2d2;
-}
-.con-s22-003 .nolink {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s22-003 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #f2f2f2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s22-003.con-s22-003 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s22-003.con-s22-003 .head h2, .con-s22-003.con-s22-003 .head h3, .con-s22-003.con-s22-003 .head h4, .con-s22-003.con-s22-003 .head b, .con-s22-003.con-s22-003 .head strong, .con-s22-003.con-s22-003 .head p b, .con-s22-003.con-s22-003 .head li b, .con-s22-003.con-s22-003 .head span b, .con-s22-003.con-s22-003 .head dt, .con-s22-003.con-s22-003 .head div b {
-  color: #ffffff;
-}
-.con-s22-003.con-s22-003 .head p, .con-s22-003.con-s22-003 .head li, .con-s22-003.con-s22-003 .head span, .con-s22-003.con-s22-003 .head dd, .con-s22-003.con-s22-003 .head div p, .con-s22-003.con-s22-003 .head div li, .con-s22-003.con-s22-003 .head p span, .con-s22-003.con-s22-003 .head .said, .con-s22-003.con-s22-003 .head .note {
-  color: #d2d2d2;
-}
-.con-s22-003.con-s22-003 .head .eyebrow, .con-s22-003.con-s22-003 .head .kicker, .con-s22-003.con-s22-003 .head .slot, .con-s22-003.con-s22-003 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s22-003.con-s22-003 .head i, .con-s22-003.con-s22-003 .head .bars i, .con-s22-003.con-s22-003 .head .lines i, .con-s22-003.con-s22-003 .head .measures i, .con-s22-003.con-s22-003 .head .bar, .con-s22-003.con-s22-003 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s22-003.con-s22-003 .head .plate, .con-s22-003.con-s22-003 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s22-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s22-003 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 760px) { .con-s22-003 .head, .con-s22-003 .next { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 560px) { .con-s22-003 .row { grid-template-columns: minmax(0, 1fr); } .con-s22-003 .st { border-right: 0; border-bottom: 1px solid var(--line); } .con-s22-003 .note { grid-column: 1; } }
+@media (prefers-reduced-motion: reduce) { .con-s22-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -272,69 +123,60 @@ body { margin: 0; background: #e8e8e8; }
   <section class="shell" aria-labelledby="con-s22-003-title">
 
     <div class="head">
-      <h2 id="con-s22-003-title">One page, three trails. The chrome shows one.</h2>
+      <div>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>Where this page sits</p>
+        <h2 id="con-s22-003-title">One page, three trails. <em>The chrome shows one.</em></h2>
+      </div>
       <p>This project sits under a sector, under a service and under the year it finished. <b>A breadcrumb asserts one of those over the other two without saying so</b>, so all three are drawn here and the one in use is marked.</p>
     </div>
 
-    <ul class="trails">
+    <div class="dim" aria-hidden="true"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g stroke="currentColor" stroke-width="1" fill="none"><path d="M0 50H100M0 20V80M33.3 20V80M66.6 20V80M100 20V80" vector-effect="non-scaling-stroke"/></g></svg></div>
 
-      <li class="t-live">
-        <div>
-          <span class="state">In use</span>
-          <h3>By sector</h3>
-        </div>
-        <div>
-          <ul class="path">
+    <div class="sheet">
+      <div class="row">
+        <div class="st"><span class="chip use">In use</span><h3>By sector</h3></div>
+        <nav aria-label="Trail, by sector">
+          <ul class="trail">
             <li><a href="#con-s22-003-title">Home</a></li>
             <li><a href="#con-s22-003-title">Projects</a></li>
             <li><a href="#con-s22-003-title"><span class="vh">Sector this project sits in</span>Sector</a></li>
-            <li><span class="here"><span class="vh">Project name</span><span class="slot">Reserved</span></span></li>
+            <li><span class="here" aria-current="page"><span class="vh">Project name</span>Reserved</span></li>
           </ul>
-          <p>Every step is a page somebody can visit, and <b>the last step is not a link to the page you are already on.</b></p>
-        </div>
-      </li>
+        </nav>
+        <div class="note"><p><b>Every step is a page somebody can visit</b>, and the last step is not a link to the page you are already on.</p></div>
+      </div>
 
-      <li class="t-open">
-        <div>
-          <span class="state">Available, not shown</span>
-          <h3>By service</h3>
-        </div>
-        <div>
-          <ul class="path">
+      <div class="row">
+        <div class="st"><span class="chip">Available, not shown</span><h3>By service</h3></div>
+        <nav aria-label="Trail, by service">
+          <ul class="trail">
             <li><a href="#con-s22-003-title">Home</a></li>
             <li><a href="#con-s22-003-title">Services</a></li>
-            <li><a href="#con-s22-003-title"><span class="vh">The service this project sits under</span><span class="slot">Reserved</span></a></li>
-            <li><span class="here"><span class="vh">Project name</span><span class="slot">Reserved</span></span></li>
+            <li><a href="#con-s22-003-title"><span class="vh">The service this project sits under</span>Reserved</a></li>
+            <li><span class="here"><span class="vh">Project name</span>Reserved</span></li>
           </ul>
-          <p>A complete path with a page behind every level. <b>It is not in the chrome, so it is offered here as a cross-link</b> rather than left for a reader to guess at.</p>
-        </div>
-      </li>
+        </nav>
+        <div class="note"><p>A complete path with a page behind every level. <b>It is not in the chrome</b>, so it is offered here as a cross-link rather than left for a reader to guess at.</p></div>
+      </div>
 
-      <li class="t-dead">
-        <div>
-          <span class="state">Incomplete, and drawn that way</span>
-          <h3>By year</h3>
-        </div>
-        <div>
-          <ul class="path">
+      <div class="row inc-row">
+        <div class="st"><span class="chip inc">Incomplete, and drawn that way</span><h3>By year</h3></div>
+        <nav aria-label="Trail, by year">
+          <ul class="trail">
             <li><a href="#con-s22-003-title">Home</a></li>
             <li><a href="#con-s22-003-title">Projects</a></li>
-            <li><span class="nolink"><span class="vh">The year this project finished, which has no index page</span>Year &mdash; no page behind it</span></li>
-            <li><span class="here"><span class="vh">Project name</span><span class="slot">Reserved</span></span></li>
+            <li><span class="nolink"><span class="vh">The year this project finished, which has no index page</span>Year <small>No page behind it</small></span></li>
+            <li><span class="here"><span class="vh">Project name</span>Reserved</span></li>
           </ul>
-          <p><b>This is the commonest lie in the component, told honestly.</b> There is no page listing the work that finished in a given year, so that level is a label and not a link &mdash; rather than being styled to look like the two above it and doing nothing when a reader presses it.</p>
-        </div>
-      </li>
+        </nav>
+        <div class="note"><p><b>This is the commonest lie in the component, told honestly.</b> There is no page listing the work that finished in a given year, so that level is a label and not a link &mdash; rather than being styled to look like the two above it and doing nothing when a reader presses it.</p></div>
+      </div>
+    </div>
 
-    </ul>
-
-    <div class="foot">
+    <div class="next">
       <div>
-        <h3>And what next is ordered by</h3>
-        <div class="next">
-          <span class="by">Next, by the same sector</span>
-          <a href="#con-s22-003-title"><span class="vh">Name of the next project in this sector</span><span class="slot">Reserved</span></a>
-        </div>
+        <p class="by"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12h18M14 6l6 6-6 6"/></svg>And what next is ordered by</p>
+        <a class="lnk" href="#con-s22-003-title"><span class="vh">Name of the next project in this sector</span>Next, by the same sector: Reserved</a>
       </div>
       <p>Because a next arrow that does not say what it is next by is almost always ordered on when the page was published, <b>which is an order that serves the website rather than the person reading it.</b> Where the trail changes, this changes with it.</p>
     </div>

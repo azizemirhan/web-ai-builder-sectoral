@@ -12,27 +12,22 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S14 — Service Areas
   Direction      : Structured / Visual Modular
-  Reference      : None supplied for this section.
-  Layout model   : A degradation ladder — four bands stepped outward, each with its attendance,
-                   plant and fitter as modules, and a loss block that grows physically band by band
-                   until it fills the row
-  Density        : High
-  Media mode     : One reserved map area, small and deliberately subordinate.
-  Interaction    : None (static; no JavaScript)
-  The device     : **The loss block grows.** Band one's *what you lose* is a thin line saying
-                   nothing; band four's fills the whole row. A reader who takes nothing else from
-                   the page takes the shape of it, which is the argument: **a service area does not
-                   end at a line, it degrades.**
-  The step       : Each band is indented one step further than the last, so distance from the yard
-                   is drawn as distance across the page &mdash; and the modules get fewer as the
-                   attendance gets worse, because there is less to promise.
-  Not a table    : The direction's trap, and a coverage table is the obvious wrong answer. The rows
-                   are unequal by construction: different indents, different numbers of modules, and
-                   a loss block that changes size rather than a cell that changes value.
-  Deliberately not : No pins, no radius, no mileage, no drive time, no *nationwide* claim. The map
-                   is present, reserved, and smaller than anything else on the page.
-  Content note   : Region names and the yard location are reserved fields. The bands and what is
-                   lost at each are real. No digit in visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3:
+                   a twelve-column bordered sheet in which the band cells widen as attendance
+                   degrades — three, four and five columns across the first row, the refusal
+                   band at nine columns under a 3px tape on the second, and the reserved map
+                   as the smallest cell beside it. Every band cell carries a giant index, an
+                   attendance meter of filled and open squares, reserved region slots, three
+                   iconed facts on hairlines and WHAT YOU LOSE on the band tone. Drawing
+                   layer: dimension line with running ticks behind the head, and the same
+                   line drawn under the sheet as its width scale. V1 is kept whole.
+  Layout model   : Head. Twelve-column bordered sheet: 3 / 4 / 5 band cells, then 9-column
+                   refusal cell + 3-column reserved map cell with the no-pins note.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : One reserved map area, 1:1, small. Six reserved fields.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No region, town, yard location, distance, drive time, radius, pin, count or
+                   nationwide claim. Attendance meter is decorative. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S14-003">
@@ -43,312 +38,116 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="A degradation ladder — bands stepped outward with a loss block that grows">
-<meta name="density" content="high">
-<meta name="media-mode" content="one-small-reserved-map-area">
+<meta name="theme" content="003 Steel &amp; Structural Blue">
+<meta name="layout-model" content="Head; twelve-column bordered sheet whose band cells widen as attendance degrades (3 / 4 / 5 columns), the refusal band at nine columns under a tape rule and the reserved map as the smallest cell beside it; giant indices, attendance meters, reserved region slots, iconed facts and what-you-lose rows on the band tone; dimension line behind the head and under the sheet">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-map-area-six-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S14-003 — Service Areas, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #dfdfdf; }
+body { margin: 0; background: #edf0f2; }
 
-/* Scoped study styles — namespaced to .con-s14-003 */
 .con-s14-003 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --ink-faint: #969696;
-  --paper: #dfdfdf;
-  --card: #ffffff;
-  --line: #ececec;
-  --rule: #d2d2d2;
-  --field: #ececec;
-  --near: #444444;
-  --mid: #444444;
-  --far: #7a7a7a;
-  --no: #2b2b2b;
-  --slot-a: #b4b4b4;
-  --slot-b: #969696;
-  --on-slot: #ffffff;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #edf0f2; --ink: #0f1316; --muted: #57616a; --line: #d2d9de; --line-strong: #0f1316;
+  --media: #dfe4e8; --band: #e4e8eb; --accent: #1f5fd0;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s14-003 *,
-.con-s14-003 *::before,
-.con-s14-003 *::after { box-sizing: inherit; }
-.con-s14-003 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s14-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s14-003 *, .con-s14-003 *::before, .con-s14-003 *::after { box-sizing: inherit; }
+.con-s14-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s14-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s14-003 .shell { position: relative; width: min(100%, 100rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s14-003 .draw { position: absolute; left: 0; right: 0; top: 0; width: 100%; height: 100%; pointer-events: none; color: var(--line); }
+.con-s14-003 .head { position: relative; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; padding-bottom: 3.4rem; }
+.con-s14-003 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s14-003 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s14-003 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.3rem, 4.6vw, 5rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s14-003 h2 em { font-style: normal; color: var(--accent); }
+.con-s14-003 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s14-003 .head > p b { color: var(--ink); }
 
-/* Head */
-.con-s14-003 .head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: clamp(14px, 2.4vw, 40px);
-  margin-bottom: clamp(16px, 2.2vw, 26px);
-}
-.con-s14-003 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s14-003 h2 {
-  margin: 0;
-  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
-  line-height: 1.04;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 22ch;
-}
-.con-s14-003 .head p { margin: 0; max-width: 42ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
-.con-s14-003 .head p b { color: var(--ink); font-weight: 650; }
+.con-s14-003 .sheet { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s14-003 .cell { position: relative; padding: 1.2rem 1.2rem 1.4rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; display: flex; flex-direction: column; }
+.con-s14-003 .c3 { grid-column: span 3; }
+.con-s14-003 .c4 { grid-column: span 4; }
+.con-s14-003 .c5 { grid-column: span 5; }
+.con-s14-003 .c9 { grid-column: span 9; }
+.con-s14-003 .ring { margin: 0 0 0.5rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s14-003 .top { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 0.9rem; }
+.con-s14-003 .ix { display: block; margin: 0; font-weight: 800; font-size: 3.6rem; line-height: 0.85; letter-spacing: -0.04em; text-transform: uppercase; }
+.con-s14-003 .meter { display: flex; gap: 0.25rem; margin-bottom: 0.4rem; }
+.con-s14-003 .meter i { display: block; width: 0.7rem; height: 0.7rem; border: 1px solid var(--ink); background: var(--ink); }
+.con-s14-003 .meter i.o { background: transparent; }
+.con-s14-003 h3 { margin: 0 0 0.9rem; font-weight: 800; font-size: 1.4rem; line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s14-003 .regions { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: 0.5rem; }
+.con-s14-003 .regions li { display: grid; gap: 0.2rem; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s14-003 .slot { display: inline-flex; align-items: center; width: 100%; height: 1.8rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-weight: 400; letter-spacing: 0; font-size: 0.95rem; line-height: 1; }
+.con-s14-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s14-003 .facts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.con-s14-003 .facts li { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 0.6rem; padding: 0.55rem 0; border-bottom: 1px solid var(--line); }
+.con-s14-003 .k { display: flex; align-items: center; gap: 0.4rem; margin: 0.15rem 0 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s14-003 .k .ico { width: 0.95rem; height: 0.95rem; color: var(--accent); }
+.con-s14-003 .facts p { margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.45; }
+.con-s14-003 .facts p b { color: var(--ink); }
+.con-s14-003 .lose { margin: auto -1.2rem -1.4rem; padding: 0.9rem 1.2rem 1rem; background: var(--band); border-top: 1px solid var(--line); color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s14-003 .lose .k { margin: 0 0 0.3rem; color: var(--accent); }
+.con-s14-003 .lose p { margin: 0; }
+.con-s14-003 .lose b { color: var(--ink); }
+.con-s14-003 .c5 .lose { padding-top: 1rem; }
 
-/* The ladder */
-.con-s14-003 .ladder { margin: 0 0 clamp(12px, 1.6vw, 18px); padding: 0; list-style: none; }
-.con-s14-003 .ladder > li { margin-bottom: clamp(11px, 1.4vw, 16px); }
-.con-s14-003 .step {
-  margin-left: calc(var(--i, 0) * clamp(0px, 2.6vw, 54px));
-  border-radius: 22px;
-  background: var(--card);
-  border-left: 8px solid var(--tone, var(--rule));
-  padding: clamp(15px, 1.9vw, 24px);
-}
-.con-s14-003 .s1 { --i: 0; --tone: var(--near); }
-.con-s14-003 .s2 { --i: 1; --tone: var(--mid); }
-.con-s14-003 .s3 { --i: 2; --tone: var(--far); }
-.con-s14-003 .s4 { --i: 3; --tone: var(--no); background: transparent; border: 2px dashed var(--rule); border-left: 8px solid var(--no); }
+.con-s14-003 .no { border-top: 3px solid var(--accent); margin-top: -1px; display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 1.5rem; align-content: start; }
+.con-s14-003 .no .ix { font-size: 3.2rem; color: var(--accent); }
+.con-s14-003 .no .ix .ico { width: 3rem; height: 3rem; stroke-width: 1.4; }
+.con-s14-003 .no .meter i { border-color: var(--accent); background: transparent; }
+.con-s14-003 .no h3 { font-size: clamp(1.6rem, 2.6vw, 2.4rem); }
+.con-s14-003 .no .regions { max-width: 24rem; }
+.con-s14-003 .no .facts li { grid-template-columns: 9rem minmax(0, 1fr); }
+.con-s14-003 .big { margin: 1.2rem 0 0; padding: 1rem 1.2rem 1.1rem; border-left: 3px solid var(--accent); background: var(--band); }
+.con-s14-003 .big .k { margin: 0 0 0.5rem; color: var(--accent); }
+.con-s14-003 .big p { margin: 0; max-width: 40ch; font-weight: 800; font-size: clamp(1.15rem, 1.8vw, 1.6rem); line-height: 1.1; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s14-003 .big p b { color: var(--accent); }
+.con-s14-003 .big p em { font-style: normal; }
 
-.con-s14-003 .top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px clamp(14px, 2.4vw, 36px);
-  margin-bottom: clamp(12px, 1.5vw, 17px);
-}
-.con-s14-003 .ring {
-  margin: 0;
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s14-003 h3 {
-  margin: 0;
-  font-size: clamp(1.274rem, 1.699vw, 1.558rem);
-  line-height: 1.14;
-  letter-spacing: -0.022em;
-  font-weight: 700;
-}
-.con-s14-003 .regions { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; }
-.con-s14-003 .regions li { font-size: 0.74rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-faint); }
-.con-s14-003 .regions .slot {
-  display: inline-block;
-  min-width: 48px;
-  margin-left: 6px;
-  padding: 1px 9px;
-  border-radius: 16px;
-  background: var(--field);
-  text-align: center;
-  letter-spacing: 0;
-}
+.con-s14-003 .mapcell { border-top: 3px solid var(--accent); margin-top: -1px; }
+.con-s14-003 .media { position: relative; width: 100%; max-width: 12rem; aspect-ratio: 1 / 1; background: var(--media); border-radius: 2px; margin-bottom: 1rem; }
+.con-s14-003 .slate { position: absolute; left: 0.7rem; bottom: 0.6rem; right: 0.7rem; margin: 0; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.45; text-transform: uppercase; }
+.con-s14-003 .mapcell h3 { display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; }
+.con-s14-003 .mapcell h3 .ico { width: 1.1rem; height: 1.1rem; color: var(--accent); }
+.con-s14-003 .none { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0 0 0.9rem; padding: 0; }
+.con-s14-003 .none li { padding: 0.2rem 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s14-003 .mapcell p { margin: 0; color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+.con-s14-003 .mapcell p + p { margin-top: 0.6rem; }
+.con-s14-003 .mapcell p b { color: var(--ink); }
+.con-s14-003 .mapcell em { font-style: normal; color: var(--accent); }
 
-/* Modules — fewer as the attendance gets worse */
-.con-s14-003 .mods { margin: 0 0 clamp(12px, 1.5vw, 17px); padding: 0; list-style: none; display: grid; gap: clamp(10px, 1.3vw, 15px); }
-.con-s14-003 .m3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.con-s14-003 .m2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.con-s14-003 .m1 { grid-template-columns: minmax(0, 1fr); }
-.con-s14-003 .mods li { min-width: 0; }
-.con-s14-003 .mod { height: 100%; border-radius: 22px; background: var(--field); padding: clamp(12px, 1.5vw, 18px); }
-.con-s14-003 .s4 .mod { background: transparent; border: 1px dashed var(--rule); }
-.con-s14-003 .mod .k {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s14-003 .mod p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
-.con-s14-003 .mod p b { color: var(--ink); font-weight: 650; }
+.con-s14-003 .scale { position: relative; height: 2.2rem; margin-top: 0.4rem; color: var(--line-strong); }
+.con-s14-003 .scale svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.con-s14-003 .scale p { position: absolute; right: 0; top: 0.7rem; margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; background: var(--paper); padding-left: 0.6rem; }
 
-/* The loss block, which grows */
-.con-s14-003 .loss {
-  border-radius: 22px;
-  border: 2px solid var(--tone, var(--rule));
-  padding: var(--pad, clamp(11px, 1.4vw, 15px)) clamp(13px, 1.7vw, 19px);
+@media (max-width: 1100px) {
+  .con-s14-003 .sheet { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .con-s14-003 .c3 { grid-column: span 3; }
+  .con-s14-003 .c4 { grid-column: span 3; }
+  .con-s14-003 .c5 { grid-column: span 6; }
+  .con-s14-003 .c9 { grid-column: span 6; }
+  .con-s14-003 .mapcell { grid-column: span 6; }
 }
-.con-s14-003 .loss .k {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
+@media (max-width: 860px) {
+  .con-s14-003 .head { grid-template-columns: minmax(0, 1fr); }
 }
-.con-s14-003 .loss p { margin: 0; max-width: 84ch; color: var(--ink-soft); line-height: 1.56; font-size: var(--fs, 0.88rem); }
-.con-s14-003 .loss p b { color: var(--ink); font-weight: 650; }
-.con-s14-003 .s1 .loss { --pad: clamp(9px, 1.1vw, 12px); --fs: 0.86rem; }
-.con-s14-003 .s2 .loss { --pad: clamp(13px, 1.7vw, 19px); --fs: 0.93rem; }
-.con-s14-003 .s3 .loss { --pad: clamp(18px, 2.3vw, 28px); --fs: 1.02rem; }
-.con-s14-003 .s4 .loss { --pad: clamp(22px, 2.9vw, 38px); --fs: clamp(1.06rem, 1.35vw, 1.24rem); }
-
-/* Foot */
-.con-s14-003 .foot {
-  display: grid;
-  grid-template-columns: minmax(0, 0.4fr) minmax(0, 1.6fr);
-  gap: clamp(12px, 1.6vw, 18px);
-  align-items: stretch;
+@media (max-width: 640px) {
+  .con-s14-003 .sheet { grid-template-columns: minmax(0, 1fr); }
+  .con-s14-003 .cell { grid-column: auto; }
+  .con-s14-003 .no { grid-template-columns: minmax(0, 1fr); }
+  .con-s14-003 .facts li, .con-s14-003 .no .facts li { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; }
 }
-.con-s14-003 .map {
-  border-radius: 22px;
-  overflow: hidden;
-  min-height: clamp(140px, 15vw, 200px);
-  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(13px, 1.6vw, 19px);
-}
-.con-s14-003 .map span {
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.86;
-  max-width: 26ch;
-  line-height: 1.5;
-}
-.con-s14-003 .refuse { border-radius: 22px; border: 2px dashed var(--rule); padding: clamp(16px, 2.1vw, 28px); }
-.con-s14-003 .refuse h3 { margin-bottom: clamp(11px, 1.4vw, 15px); max-width: 26ch; }
-.con-s14-003 .none { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
-.con-s14-003 .none li {
-  padding: 5px 12px;
-  border-radius: 999px;
-  border: 1px dashed var(--rule);
-  color: var(--ink-soft);
-  font-size: 1rem;
-  font-weight: 600;
-}
-.con-s14-003 .refuse p { margin: 0 0 10px; max-width: 78ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
-.con-s14-003 .refuse p:last-child { margin-bottom: 0; }
-.con-s14-003 .refuse p b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 1000px) {
-  .con-s14-003 .m3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 720px) {
-  /* The step is the argument's decoration, not its structure — it unwinds first. */
-  .con-s14-003 .step { margin-left: 0; }
-  .con-s14-003 .m3, .con-s14-003 .m2 { grid-template-columns: minmax(0, 1fr); }
-  .con-s14-003 .foot { grid-template-columns: minmax(0, 1fr); }
-  .con-s14-003 h2, .con-s14-003 .head p, .con-s14-003 .refuse h3,
-  .con-s14-003 .refuse p, .con-s14-003 .loss p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s14-003 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s14-003 {
-  --v2-accent: #969696;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
-  font-size: 1.06rem;
-}
-.con-s14-003 h2 { font-weight: 800; }
-.con-s14-003 h3, .con-s14-003 h4 { font-weight: 750; }
-.con-s14-003 .eyebrow, .con-s14-003 .step {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s14-003 .step {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #d2d2d2;
-}
-.con-s14-003 .s4 .mod, .con-s14-003 .none li {
-  border: 1px dashed #b4b4b4;
-  border-radius: 14px;
-}
-.con-s14-003 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 600;
-}
-.con-s14-003.con-s14-003 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s14-003.con-s14-003 .head h2, .con-s14-003.con-s14-003 .head h3, .con-s14-003.con-s14-003 .head h4, .con-s14-003.con-s14-003 .head b, .con-s14-003.con-s14-003 .head strong, .con-s14-003.con-s14-003 .head p b, .con-s14-003.con-s14-003 .head li b, .con-s14-003.con-s14-003 .head span b, .con-s14-003.con-s14-003 .head dt, .con-s14-003.con-s14-003 .head div b {
-  color: #ffffff;
-}
-.con-s14-003.con-s14-003 .head p, .con-s14-003.con-s14-003 .head li, .con-s14-003.con-s14-003 .head span, .con-s14-003.con-s14-003 .head dd, .con-s14-003.con-s14-003 .head div p, .con-s14-003.con-s14-003 .head div li, .con-s14-003.con-s14-003 .head p span, .con-s14-003.con-s14-003 .head .said, .con-s14-003.con-s14-003 .head .note {
-  color: #d2d2d2;
-}
-.con-s14-003.con-s14-003 .head .eyebrow, .con-s14-003.con-s14-003 .head .kicker, .con-s14-003.con-s14-003 .head .slot, .con-s14-003.con-s14-003 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s14-003.con-s14-003 .head i, .con-s14-003.con-s14-003 .head .bars i, .con-s14-003.con-s14-003 .head .lines i, .con-s14-003.con-s14-003 .head .measures i, .con-s14-003.con-s14-003 .head .bar, .con-s14-003.con-s14-003 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s14-003.con-s14-003 .head .plate, .con-s14-003.con-s14-003 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s14-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s14-003 .shell > *:last-child { margin-bottom: 0; }
+@media (prefers-reduced-motion: reduce) { .con-s14-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -357,118 +156,115 @@ body { margin: 0; background: #dfdfdf; }
   <section class="shell" aria-labelledby="con-s14-003-title">
 
     <div class="head">
+      <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g stroke="currentColor" stroke-width="1" fill="none">
+          <path d="M0 94H100M8 88V100M30 88V100M58 88V100M100 88V100" vector-effect="non-scaling-stroke"/>
+        </g>
+      </svg>
       <div>
-        <p class="eyebrow">Where we work</p>
-        <h2 id="con-s14-003-title">A service area does not end at a line. It degrades.</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h12l-3 4 3 4H5"/></svg>Where we work</p>
+        <h2 id="con-s14-003-title">A service area does not end at a line. <em>It degrades.</em></h2>
       </div>
-      <p>So the further out each band sits, <b>the less we can promise and the more space it takes to say so.</b> The shape of this page is the argument.</p>
+      <p><b>So the further out each band sits, the less we can promise and the more space it takes to say so.</b> The shape of this page is the argument.</p>
     </div>
 
-    <ul class="ladder">
+    <div class="sheet">
 
-      <li>
-        <div class="step s1">
-          <div class="top">
-            <div>
-              <p class="ring">Band one</p>
-              <h3>Around the yard</h3>
-            </div>
-            <ul class="regions">
-              <li>Regions<span class="slot"><span class="vh">Regions in band one</span><span aria-hidden="true">&mdash;</span></span></li>
-              <li>Yard<span class="slot"><span class="vh">Location of the yard</span><span aria-hidden="true">&mdash;</span></span></li>
-            </ul>
-          </div>
-          <ul class="mods m3">
-            <li><div class="mod"><span class="k">The mornings</span><p><b>Every morning, and the manager goes home at night.</b></p></div></li>
-            <li><div class="mod"><span class="k">The plant</span><p>Off our own yard, on our own low-loader.</p></div></li>
-            <li><div class="mod"><span class="k">When it breaks</span><p>Our fitter, the same day.</p></div></li>
-          </ul>
-          <div class="loss">
-            <span class="k">What you lose</span>
-            <p><b>Nothing.</b> Travel is not a line on your price; this is where we work.</p>
-          </div>
+      <div class="cell c3">
+        <p class="ring">Band one</p>
+        <div class="top">
+          <span class="ix" aria-hidden="true">One</span>
+          <span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         </div>
-      </li>
+        <h3>Around the yard</h3>
+        <ul class="regions">
+          <li><span>Regions</span><span class="slot"><span class="vh">Regions in band one</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Yard</span><span class="slot"><span class="vh">Location of the yard</span><span aria-hidden="true">&mdash;</span></span></li>
+        </ul>
+        <ul class="facts">
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17h16M6 17a6 6 0 0 1 12 0M12 5v2M4.9 9.9l1.4 1.4M19.1 9.9l-1.4 1.4"/></svg>The mornings</span><p>Every morning, and the manager goes home at night.</p></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7M5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>The plant</span><p>Off our own yard, on our own low-loader.</p></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.7 2.7-2.1-2.1z"/></svg>When it breaks</span><p>Our fitter, the same day.</p></li>
+        </ul>
+        <div class="lose"><span class="k">What you lose</span><p><b>Nothing.</b> Travel is not a line on your price; this is where we work.</p></div>
+      </div>
 
-      <li>
-        <div class="step s2">
-          <div class="top">
-            <div>
-              <p class="ring">Band two</p>
-              <h3>The next ring out</h3>
-            </div>
-            <ul class="regions">
-              <li>Regions<span class="slot"><span class="vh">Regions in band two</span><span aria-hidden="true">&mdash;</span></span></li>
-            </ul>
-          </div>
-          <ul class="mods m3">
-            <li><div class="mod"><span class="k">The mornings</span><p><b>Still every morning</b>, and somebody&rsquo;s day is longer for it.</p></div></li>
-            <li><div class="mod"><span class="k">The plant</span><p>Ours where it travels sensibly, hired locally where it does not.</p></div></li>
-            <li><div class="mod"><span class="k">When it breaks</span><p>Our fitter, but <b>a drive rather than a visit.</b></p></div></li>
-          </ul>
-          <div class="loss">
-            <span class="k">What you lose</span>
-            <p>A little of the day, and some certainty about which machine turns up. <b>Travel is priced here and shown as its own line</b> rather than folded into a rate, so you can see what it costs you.</p>
-          </div>
+      <div class="cell c4">
+        <p class="ring">Band two</p>
+        <div class="top">
+          <span class="ix" aria-hidden="true">Two</span>
+          <span class="meter" aria-hidden="true"><i></i><i></i><i></i><i class="o"></i></span>
         </div>
-      </li>
+        <h3>The next ring out</h3>
+        <ul class="regions">
+          <li><span>Regions</span><span class="slot"><span class="vh">Regions in band two</span><span aria-hidden="true">&mdash;</span></span></li>
+        </ul>
+        <ul class="facts">
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17h16M6 17a6 6 0 0 1 12 0M12 5v2M4.9 9.9l1.4 1.4M19.1 9.9l-1.4 1.4"/></svg>The mornings</span><p><b>Still every morning</b>, and somebody&rsquo;s day is longer for it.</p></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7M5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>The plant</span><p>Ours where it travels sensibly, hired locally where it does not.</p></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.7 2.7-2.1-2.1z"/></svg>When it breaks</span><p>Our fitter, but a drive rather than a visit.</p></li>
+        </ul>
+        <div class="lose"><span class="k">What you lose</span><p>A little of the day, and some certainty about which machine turns up. <b>Travel is priced here and shown as its own line</b> rather than folded into a rate, so you can see what it costs you.</p></div>
+      </div>
 
-      <li>
-        <div class="step s3">
-          <div class="top">
-            <div>
-              <p class="ring">Band three</p>
-              <h3>Further than that</h3>
-            </div>
-            <ul class="regions">
-              <li>Regions<span class="slot"><span class="vh">Regions in band three</span><span aria-hidden="true">&mdash;</span></span></li>
-              <li>Conditions<span class="slot"><span class="vh">Conditions we would attach</span><span aria-hidden="true">&mdash;</span></span></li>
-            </ul>
-          </div>
-          <ul class="mods m2">
-            <li><div class="mod"><span class="k">The mornings</span><p><b>Most mornings, not every morning.</b></p></div></li>
-            <li><div class="mod"><span class="k">The plant</span><p>Hired locally. A hire desk rather than our fitter, on their timescale.</p></div></li>
-          </ul>
-          <div class="loss">
-            <span class="k">What you lose</span>
-            <p><b>Daily attendance, which is the thing you were buying.</b> We will travel this far for the right job and we are worse at it than a firm based there. If yours is only worth doing with somebody on it every day, say so and we will not bid &mdash; a better outcome for you than a competitive price and a manager who is somewhere else on Tuesday.</p>
-          </div>
+      <div class="cell c5">
+        <p class="ring">Band three</p>
+        <div class="top">
+          <span class="ix" aria-hidden="true">Three</span>
+          <span class="meter" aria-hidden="true"><i></i><i></i><i class="o"></i><i class="o"></i></span>
         </div>
-      </li>
+        <h3>Further than that</h3>
+        <ul class="regions">
+          <li><span>Regions</span><span class="slot"><span class="vh">Regions in band three</span><span aria-hidden="true">&mdash;</span></span></li>
+          <li><span>Conditions</span><span class="slot"><span class="vh">Conditions we would attach</span><span aria-hidden="true">&mdash;</span></span></li>
+        </ul>
+        <ul class="facts">
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 17h16M6 17a6 6 0 0 1 12 0M12 5v2M4.9 9.9l1.4 1.4M19.1 9.9l-1.4 1.4"/></svg>The mornings</span><p><b>Most mornings, not every morning.</b></p></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7M5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>The plant</span><p>Hired locally. A hire desk rather than our fitter, on their timescale.</p></li>
+        </ul>
+        <div class="lose"><span class="k">What you lose</span><p><b>Daily attendance, which is the thing you were buying.</b> We will travel this far for the right job and we are worse at it than a firm based there. If yours is only worth doing with somebody on it every day, say so and we will not bid &mdash; a better outcome for you than a competitive price and a manager who is somewhere else on Tuesday.</p></div>
+      </div>
 
-      <li>
-        <div class="step s4">
-          <div class="top">
-            <div>
-              <p class="ring">Beyond that</p>
-              <h3>We do not bid</h3>
-            </div>
-            <ul class="regions">
-              <li>Not covered<span class="slot"><span class="vh">Regions we do not cover</span><span aria-hidden="true">&mdash;</span></span></li>
-            </ul>
-          </div>
-          <ul class="mods m1">
-            <li><div class="mod"><span class="k">What we do instead</span><p><b>Name a firm nearer to you, where we know one.</b></p></div></li>
+      <div class="cell c9 no">
+        <div>
+          <p class="ring">Beyond that</p>
+          <span class="ix" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8zM9 12h6"/></svg></span>
+          <span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        </div>
+        <div>
+          <h3>We do not bid</h3>
+          <ul class="regions">
+            <li><span>Not covered</span><span class="slot"><span class="vh">Regions we do not cover</span><span aria-hidden="true">&mdash;</span></span></li>
           </ul>
-          <div class="loss">
+          <ul class="facts">
+            <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14M8 20h8M7 4c0 4 5 5 5 8s-5 4-5 8M17 4c0 4-5 5-5 8s5 4 5 8"/></svg>What we do instead</span><p>Name a firm nearer to you, where we know one.</p></li>
+          </ul>
+          <div class="big">
             <span class="k">And this is the biggest block on the page for a reason</span>
             <p><b>A contractor claiming to cover a whole country is either very large or not telling the truth</b>, and the ones in the middle simply cost a client more in travel and less in attendance. Everything above degrades gradually; this is where it stops, and a page that does not draw the stopping point is asking you to assume there isn&rsquo;t one.</p>
           </div>
         </div>
-      </li>
+      </div>
 
-    </ul>
-
-    <div class="foot">
-      <div class="map"><span>Reserved area &mdash; a map, if the finished page carries one. No pins</span></div>
-      <div class="refuse" data-refusal>
-        <h3>Deliberately the smallest thing on this page</h3>
+      <div class="cell c3 mapcell">
+        <div class="media" role="img" aria-label="Reserved area — a map, if the finished page carries one. No pins"><p class="slate" aria-hidden="true">Reserved area &mdash; a map, if the finished page carries one. No pins</p></div>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM4 4l16 16"/></svg>Deliberately the smallest thing on this page</h3>
         <ul class="none">
           <li>No pins</li><li>No radius</li><li>No mileage</li><li>No drive times</li><li>No nationwide claim</li>
         </ul>
         <p><b>A row of pins says <em>we work here</em> at a glance and supports none of it</b> &mdash; it does not say whether anybody from this firm has been to most of those places this year, which is exactly what the pins are being used to imply.</p>
         <p>No distances either. <b>A mile of motorway and a mile across a city are different jobs</b>, and neither tells you whether somebody will be standing on your site at seven in the morning.</p>
       </div>
+
+    </div>
+
+    <div class="scale" aria-hidden="true">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g stroke="currentColor" stroke-width="1" fill="none">
+          <path d="M0 50H100M0 30V70M25 30V70M58.3 30V70M100 30V70" vector-effect="non-scaling-stroke"/>
+        </g>
+      </svg>
+      <p>Width is what it takes to say what you lose</p>
     </div>
 
   </section>

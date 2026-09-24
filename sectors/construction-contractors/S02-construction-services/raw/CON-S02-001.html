@@ -12,21 +12,23 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S02 — Construction Services
   Direction      : Universal / Safe
-  Revision       : V1 rev 2. The first pass was text-led — three of the five studies in the batch
-                   carried no media at all, and the section read as documentation rather than as
-                   design. Rewritten image-first: large reserved project areas, one line of copy per
-                   service, and the delivery fact carried as a chip rather than a paragraph.
-  Layout model   : A featured service across the full width, then a five-card grid — every card led
-                   by a large reserved image with its label and delivery chip sitting on the image
-  Density        : Low-medium copy, high visual
-  Media mode     : Six reserved project areas, all large. Project photography is this sector's only
-                   genuine asset and the layout is built around that rather than around text.
-  Interaction    : None (static; no JavaScript)
-  The content rule, unchanged : Every service still carries the delivery marker — self-delivered,
-                   managed or joint. It is the only line in a services list a competitor cannot copy
-                   without also being honest. See ../README.md.
-  Content note   : Service names are generic trade vocabulary. No invented figure, price, lead time,
-                   certification, client or project name, safety record, award or rating; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 8,
+                   a mixed-ratio gallery: one featured 21:9 service field, then five 3:2 fields
+                   in a hairline grid. Every field carries the service name and the delivery
+                   marker as a bordered chip with a stroke icon (hard hat = self-delivered,
+                   clipboard = managed) sitting on a paper plate at the field's top-left; the
+                   one-line description sits under the field on a hairline. Drawing layer: a
+                   cutting-plane line with arrowheads behind the head. V1 is kept: six services,
+                   the marker on every one, and the turn-down line.
+  Layout model   : Head split (eyebrow with hard-hat icon, display, lead). Featured field 21:9
+                   with chip and name; a 3-column grid of five 3:2 fields with chips and names,
+                   the sixth cell carrying WHAT WE TURN DOWN as a bordered note with a cone icon.
+                   One 3px tape bar on the featured field's top edge.
+  Density        : Standard (90–170)
+  Media mode     : Six reserved project fields — one 21:9, five 3:2.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No figure, price, lead time, certification, client, project name, safety
+                   record or urgency device. Graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S02-001">
@@ -37,339 +39,120 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Featured service across the width above a five-card image-led grid">
-<meta name="density" content="medium">
-<meta name="media-mode" content="six-large-reserved-project-areas">
+<meta name="theme" content="001 Site White &amp; Safety Orange">
+<meta name="layout-model" content="Head split; featured 21:9 service field with chip; five 3:2 fields in a hairline grid with chips and one-line descriptions; the sixth cell a bordered turn-down note; cutting-plane line behind">
+<meta name="density" content="standard">
+<meta name="media-mode" content="six-reserved-project-fields">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S02-001 — Construction Services, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e8e8e8; }
+body { margin: 0; background: #f4f4f1; }
 
-/* Scoped study styles — namespaced to .con-s02-001 */
 .con-s02-001 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --paper: #e8e8e8;
-  --card: #ffffff;
-  --slot-a: #b4b4b4;
-  --slot-b: #969696;
-  --slot-ink: #ffffff;
-  --line: #d2d2d2;
-  --accent: #7a7a7a;
-  --self: #2b2b2b;
-  --self-bg: #ececec;
-  --managed: #444444;
-  --managed-bg: #ececec;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f4f4f1; --ink: #121314; --muted: #5b5e62; --line: #d8d8d3; --line-strong: #121314;
+  --media: #e3e3de; --band: #ebebe6; --accent: #d9481a;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s02-001 *,
-.con-s02-001 *::before,
-.con-s02-001 *::after { box-sizing: inherit; }
-.con-s02-001 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s02-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s02-001 *, .con-s02-001 *::before, .con-s02-001 *::after { box-sizing: inherit; }
+.con-s02-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s02-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s02-001 .draw { position: absolute; left: 0; right: 0; top: 0; height: 20rem; pointer-events: none; color: var(--line); }
+.con-s02-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
 
-/* Head */
-.con-s02-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
-  gap: clamp(20px, 3vw, 60px);
-  align-items: end;
-  margin-bottom: clamp(24px, 3vw, 44px);
-}
-.con-s02-001 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s02-001 h2 {
-  margin: 0;
-  font-size: clamp(2.44rem, 5.292vw, 4.536rem);
-  line-height: 1.02;
-  letter-spacing: -0.034em;
-  font-weight: 700;
-  max-width: 16ch;
-}
-.con-s02-001 .head p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: clamp(1.1rem, 1.111vw, 1.1rem);
-  line-height: 1.6;
-}
-.con-s02-001 .head b { color: var(--ink); }
+.con-s02-001 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s02-001 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s02-001 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s02-001 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s02-001 h2 em { font-style: normal; color: var(--accent); }
+.con-s02-001 .lead { margin: 0 0 0.3rem; max-width: 24rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
 
-/* Shared card shape */
-.con-s02-001 .card {
-  position: relative;
-  display: block;
-  border-radius: 26px;
-  overflow: hidden;
-  background: var(--card);
-  box-shadow: 0 1px 2px rgba(24, 24, 24, 0.06), 0 12px 30px rgba(24, 24, 24, 0.07);
-}
-.con-s02-001 .shot {
-  position: relative;
-  background: linear-gradient(155deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: end start;
-  padding: clamp(16px, 2vw, 26px);
-}
-.con-s02-001 .shot .tag {
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  opacity: 0.82;
-}
-.con-s02-001 .meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 10px clamp(12px, 1.4vw, 18px);
-  padding: clamp(16px, 1.9vw, 24px) clamp(16px, 2vw, 26px);
-}
-.con-s02-001 h3 {
-  margin: 0;
-  font-size: clamp(1.251rem, 1.593vw, 1.534rem);
-  font-weight: 700;
-  letter-spacing: -0.015em;
-}
-.con-s02-001 .meta p { margin: 0; flex: 1 1 200px; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
-.con-s02-001 .chip {
-  flex: none;
-  padding: 5px 13px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-.con-s02-001 .c-self { background: var(--self-bg); color: var(--self); }
-.con-s02-001 .c-managed { background: var(--managed-bg); color: var(--managed); }
+.con-s02-001 .media { position: relative; background: var(--media); border-radius: 2px; }
+.con-s02-001 .feat { aspect-ratio: 21 / 9; margin-top: clamp(1.6rem, 3vw, 3rem); border-top: 3px solid var(--accent); border-radius: 0 0 2px 2px; }
+.con-s02-001 .slate { position: absolute; right: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-align: right; }
+.con-s02-001 .tag { position: absolute; left: 0; top: 0; display: flex; align-items: stretch; }
+.con-s02-001 .tag .name { display: flex; align-items: center; padding: 0.55rem 0.9rem; background: var(--paper); color: var(--ink); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s02-001 .feat .tag .name { font-size: 0.9rem; padding: 0.7rem 1.1rem; }
+.con-s02-001 .mk { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.55rem 0.7rem; border-left: 1px solid var(--line); background: var(--paper); color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; }
+.con-s02-001 .mk .ico { width: 1rem; height: 1rem; }
 
-/* Featured */
-.con-s02-001 .feature { margin-bottom: clamp(14px, 1.8vw, 24px); }
-.con-s02-001 .feature .shot { aspect-ratio: 32 / 9; }
-.con-s02-001 .feature h3 { font-size: clamp(1.534rem, 2.44vw, 2.257rem); }
+.con-s02-001 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.2rem, 2vw, 2rem); margin-top: clamp(1.2rem, 2vw, 2rem); }
+.con-s02-001 .cell { display: flex; flex-direction: column; min-width: 0; padding: 0 0 1.2rem; }
+.con-s02-001 .cell .media { aspect-ratio: 3 / 2; }
+.con-s02-001 .cell p { margin: 0.8rem 0 0; padding-top: 0.7rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s02-001 .feat + .desc { margin: 0.8rem 0 0; padding-top: 0.7rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.con-s02-001 .desc span { display: block; max-width: 44rem; }
 
-/* Grid */
-.con-s02-001 .grid {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 1.8vw, 24px);
-}
-.con-s02-001 .grid li { min-width: 0; display: flex; }
-.con-s02-001 .grid .card { width: 100%; display: flex; flex-direction: column; }
-.con-s02-001 .grid .shot { aspect-ratio: 4 / 3; }
-.con-s02-001 .grid .meta { flex: 1 1 auto; align-content: flex-start; }
+.con-s02-001 .down { display: flex; flex-direction: column; justify-content: flex-end; min-height: 100%; padding: 1.2rem 1.3rem 1.3rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); }
+.con-s02-001 .down p { border-top: 0; padding-top: 0; }
+.con-s02-001 .down .lab { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 auto; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s02-001 .down .lab .ico { width: 1.2rem; height: 1.2rem; }
+.con-s02-001 .down .big { margin: 1.4rem 0 0.6rem; font-weight: 800; font-size: clamp(1.2rem, 1.8vw, 1.6rem); line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s02-001 .down p.d { margin: 0; padding: 0; border: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s02-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Turn-down strip */
-.con-s02-001 .not {
-  margin: clamp(18px, 2.2vw, 28px) 0 0;
-  padding: clamp(16px, 2vw, 24px) clamp(18px, 2.2vw, 28px);
-  border-radius: 26px;
-  background: var(--ink);
-  color: #ececec;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 10px clamp(16px, 2.4vw, 32px);
-}
-.con-s02-001 .not b {
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.con-s02-001 .not span { flex: 1 1 320px; font-size: 1.1rem; line-height: 1.55; opacity: 0.86; }
-
-/* Responsive ladder */
-@media (max-width: 1024px) {
-  .con-s02-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .con-s02-001 .feature .shot { aspect-ratio: 21 / 9; }
-}
-
-@media (max-width: 700px) {
-  .con-s02-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; gap: clamp(14px, 2vw, 20px); }
-  .con-s02-001 h2 { max-width: none; }
-  .con-s02-001 .grid { grid-template-columns: minmax(0, 1fr); }
-  .con-s02-001 .feature .shot { aspect-ratio: 16 / 9; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s02-001 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s02-001 {
-  --v2-accent: #969696;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
-  font-size: 1.06rem;
-}
-.con-s02-001 h2 { font-weight: 800; }
-.con-s02-001 h3, .con-s02-001 h4 { font-weight: 750; }
-.con-s02-001 .eyebrow, .con-s02-001 .tag {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #ececec;
-  color: #7a7a7a;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s02-001 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #ececec;
-  color: #7a7a7a;
-  font-weight: 600;
-}
-.con-s02-001.con-s02-001 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s02-001.con-s02-001 .head h2, .con-s02-001.con-s02-001 .head h3, .con-s02-001.con-s02-001 .head h4, .con-s02-001.con-s02-001 .head b, .con-s02-001.con-s02-001 .head strong, .con-s02-001.con-s02-001 .head p b, .con-s02-001.con-s02-001 .head li b, .con-s02-001.con-s02-001 .head span b, .con-s02-001.con-s02-001 .head dt, .con-s02-001.con-s02-001 .head div b {
-  color: #ffffff;
-}
-.con-s02-001.con-s02-001 .head p, .con-s02-001.con-s02-001 .head li, .con-s02-001.con-s02-001 .head span, .con-s02-001.con-s02-001 .head dd, .con-s02-001.con-s02-001 .head div p, .con-s02-001.con-s02-001 .head div li, .con-s02-001.con-s02-001 .head p span, .con-s02-001.con-s02-001 .head .said, .con-s02-001.con-s02-001 .head .note {
-  color: #d2d2d2;
-}
-.con-s02-001.con-s02-001 .head .eyebrow, .con-s02-001.con-s02-001 .head .kicker, .con-s02-001.con-s02-001 .head .slot, .con-s02-001.con-s02-001 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s02-001.con-s02-001 .head i, .con-s02-001.con-s02-001 .head .bars i, .con-s02-001.con-s02-001 .head .lines i, .con-s02-001.con-s02-001 .head .measures i, .con-s02-001.con-s02-001 .head .bar, .con-s02-001.con-s02-001 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s02-001.con-s02-001 .head .plate, .con-s02-001.con-s02-001 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s02-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s02-001 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s02-001 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s02-001 .lead { text-align: left; } .con-s02-001 h2 { max-width: none; } .con-s02-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 768px) { .con-s02-001 .feat { aspect-ratio: 16 / 10; } }
+@media (max-width: 560px) { .con-s02-001 .grid { grid-template-columns: minmax(0, 1fr); } .con-s02-001 .feat { aspect-ratio: 4 / 3; } .con-s02-001 .tag { flex-wrap: wrap; } }
+@media (prefers-reduced-motion: reduce) { .con-s02-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s02-001" data-study-id="CON-S02-001" data-direction="Universal / Safe">
+  <svg class="draw" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><line x1="0" y1="250" x2="1440" y2="250"/><path d="M96 250V190M96 190l-14 8M96 190l14 8M1344 250V190M1344 190l-14 8M1344 190l14 8"/><line x1="0" y1="60" x2="1440" y2="60"/><line x1="0" y1="120" x2="1440" y2="120"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s02-001-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">What we are hired to do</p>
-        <h2 id="con-s02-001-title">Six things, and whose hands are on each one</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>What we are hired to do</p>
+        <h2 id="con-s02-001-title">Six things, and <em>whose hands</em> are on each one.</h2>
       </div>
-      <p>Every contractor lists the same six. <b>The chip on each card is the part that is usually left out.</b></p>
+      <p class="lead">Every contractor lists the same six. The chip on each field is the part that is usually left out.</p>
     </div>
 
-    <div class="card feature">
-      <div class="shot"><span class="tag">Project media &mdash; groundworks, wide</span></div>
-      <div class="meta">
-        <h3>Groundworks &amp; civils</h3>
-        <span class="chip c-self">Self-delivered</span>
-        <p>Muck away, piling, drainage, slabs and the site roads everyone else arrives on. Our gangs, our plant.</p>
+    <div class="media feat" role="img" aria-label="Reserved project field: groundworks, wide">
+      <div class="tag"><span class="name">Groundworks &amp; civils</span><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self-delivered</span></div>
+      <p class="slate" aria-hidden="true">Project area &middot; 21:9 &middot; groundworks, wide</p>
+    </div>
+    <p class="desc"><span>Muck away, piling, drainage, slabs and the site roads everyone else arrives on. Our gangs, our plant.</span></p>
+
+    <div class="grid">
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: a frame going up"><div class="tag"><span class="name">Structural frame</span><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Managed</span></div><p class="slate" aria-hidden="true">3:2</p></div>
+        <p>Steel and concrete frames, cores and decks, sequenced around what follows.</p>
+      </div>
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: envelope and cladding"><div class="tag"><span class="name">Envelope &amp; cladding</span><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Managed</span></div><p class="slate" aria-hidden="true">3:2</p></div>
+        <p>Roofing, cladding and curtain walling &mdash; and the junctions between them.</p>
+      </div>
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: a fit-out under way"><div class="tag"><span class="name">Commercial fit-out</span><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self-delivered</span></div><p class="slate" aria-hidden="true">3:2</p></div>
+        <p>Partitions, ceilings, joinery, finishes. Our own joiners on the tools.</p>
+      </div>
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: occupied refurbishment"><div class="tag"><span class="name">Refurbishment</span><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self-delivered</span></div><p class="slate" aria-hidden="true">3:2</p></div>
+        <p>Phased work in a building somebody is still using, run by whoever priced it.</p>
+      </div>
+      <div class="cell">
+        <div class="media" role="img" aria-label="Reserved project field: demolition and enabling"><div class="tag"><span class="name">Demolition &amp; enabling</span><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Managed</span></div><p class="slate" aria-hidden="true">3:2</p></div>
+        <p>Clearing, temporary works and everything that happens before a programme starts.</p>
+      </div>
+      <div class="cell">
+        <div class="down">
+          <p class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>What we turn down</p>
+          <p class="big">Single-trade packages.</p>
+          <p class="d">A specialist will be better and cheaper, and we would only be marking them up.</p>
+        </div>
       </div>
     </div>
-
-    <ul class="grid">
-      <li>
-        <div class="card">
-          <div class="shot"><span class="tag">Project media &mdash; a frame going up</span></div>
-          <div class="meta">
-            <h3>Structural frame</h3>
-            <span class="chip c-managed">Managed</span>
-            <p>Steel and concrete frames, cores and decks, sequenced around what follows.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <div class="shot"><span class="tag">Project media &mdash; envelope and cladding</span></div>
-          <div class="meta">
-            <h3>Envelope &amp; cladding</h3>
-            <span class="chip c-managed">Managed</span>
-            <p>Roofing, cladding and curtain walling &mdash; and the junctions between them.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <div class="shot"><span class="tag">Project media &mdash; a fit-out under way</span></div>
-          <div class="meta">
-            <h3>Commercial fit-out</h3>
-            <span class="chip c-self">Self-delivered</span>
-            <p>Partitions, ceilings, joinery, finishes. Our own joiners on the tools.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <div class="shot"><span class="tag">Project media &mdash; occupied refurbishment</span></div>
-          <div class="meta">
-            <h3>Refurbishment</h3>
-            <span class="chip c-self">Self-delivered</span>
-            <p>Phased work in a building somebody is still using, run by whoever priced it.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <div class="shot"><span class="tag">Project media &mdash; demolition and enabling</span></div>
-          <div class="meta">
-            <h3>Demolition &amp; enabling</h3>
-            <span class="chip c-managed">Managed</span>
-            <p>Clearing, temporary works and everything that happens before a programme starts.</p>
-          </div>
-        </div>
-      </li>
-    </ul>
-
-    <p class="not">
-      <b>What we turn down</b>
-      <span>Single-trade packages &mdash; a specialist will be better and cheaper, and we would only be marking them up.</span>
-    </p>
 
   </section>
 </div>

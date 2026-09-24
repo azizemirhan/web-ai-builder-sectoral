@@ -12,23 +12,23 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S02 — Construction Services
   Direction      : Conversion-led
-  Revision       : V1 rev 2. The first pass was two columns of paragraphs — the argument was right
-                   and it looked like a policy document. Rewritten around a large reserved project
-                   image with the decision card floating over it, and every bullet cut to one line.
-  Layout model   : A wide reserved project area with a white decision card overlapping its lower
-                   half — right-for against not-right-for — above a single row of service chips and
-                   one action
-  Density        : Low copy, high visual
-  Media mode     : One large reserved project area, 21:9, carrying the composition.
-  Interaction    : None (static; no JavaScript)
-  Conversion device, unchanged : **The steer-away column keeps equal weight.** A visitor who leaves
-                   because the right-hand column described their job has been served better than one
-                   who enquires about work the firm would decline. What changed in this revision is
-                   the density, not the argument — eight one-line conditions instead of eight
-                   paragraphs.
-  Content note   : Service names are generic trade vocabulary. No invented figure, price, lead time,
-                   certification, client or project name, safety record, award or rating; no header;
-                   no urgency device.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 6,
+                   a ruled sheet whose statement is the subject: the conversion device is the
+                   decision before the list. A 16:10 project field on the left; on the right a
+                   ruled sheet in two halves — WE ARE RIGHT FOR THIS and ASK SOMEBODY ELSE —
+                   each four ruled rows with a stroke icon, hi-vis tape on the first half's
+                   rule only. Under it the six services as a bordered ledger with marker chips,
+                   and one bordered action. Drawing layer: a dimension line with running
+                   offsets behind the sheet. V1 is kept: eight one-line conditions, six
+                   services with markers, the action.
+  Layout model   : Eyebrow and display. Two columns: 16:10 field; the decision sheet. A
+                   six-cell bordered ledger of services with marker chips. One action with a
+                   phone icon and a line.
+  Density        : Standard (90–170)
+  Media mode     : One reserved project field, 16:10.
+  Interaction    : None (static; no JavaScript). The action is a relative link.
+  Content note   : No figure, price, lead time, certification, client, project name, safety
+                   record or urgency device. Graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S02-004">
@@ -39,304 +39,115 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="layout-model" content="Reserved project area with an overlapping decision card above a service chip row">
-<meta name="density" content="medium">
-<meta name="media-mode" content="one-large-reserved-project-area">
+<meta name="theme" content="004 White &amp; Hi-Vis">
+<meta name="layout-model" content="Eyebrow and display; 16:10 field beside a two-half decision sheet of iconed ruled rows; six-cell bordered ledger of services with marker chips; one bordered action; dimension line with offsets behind">
+<meta name="density" content="standard">
+<meta name="media-mode" content="one-reserved-project-field">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S02-004 — Construction Services, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #fbfbfa; }
 
-/* Scoped study styles — namespaced to .con-s02-004 */
 .con-s02-004 {
-  --ink: #111111;
-  --ink-soft: #7a7a7a;
-  --paper: #fafafa;
-  --card: #ffffff;
-  --slot-a: #969696;
-  --slot-b: #2b2b2b;
-  --on-slot: #ffffff;
-  --line: #ececec;
-  --rule: #b4b4b4;
-  --yes: #444444;
-  --yes-bg: #d2d2d2;
-  --no: #444444;
-  --no-bg: #d2d2d2;
-  --self: #444444;
-  --self-bg: #d2d2d2;
-  --managed: #5e5e5e;
-  --managed-bg: #d2d2d2;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fbfbfa; --ink: #0b0b0b; --muted: #55585c; --line: #e2e2e0; --line-strong: #0b0b0b;
+  --media: #ececea; --band: #f2f2ef; --accent: #c99e00; --tape: #ffd400;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s02-004 *,
-.con-s02-004 *::before,
-.con-s02-004 *::after { box-sizing: inherit; }
-.con-s02-004 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 999px;
-}
-.con-s02-004 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s02-004 *, .con-s02-004 *::before, .con-s02-004 *::after { box-sizing: inherit; }
+.con-s02-004 :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
-.con-s02-004 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s02-004 .draw { position: absolute; left: 0; right: 0; top: 0; height: 100%; pointer-events: none; color: var(--line); }
+.con-s02-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s02-004 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s02-004 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s02-004 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s02-004 h2 mark { background: transparent; color: var(--ink); text-decoration: underline; text-decoration-color: var(--tape); text-decoration-thickness: 0.16em; text-underline-offset: 0.04em; text-decoration-skip-ink: none; }
 
-.con-s02-004 .head { margin-bottom: clamp(20px, 2.6vw, 34px); }
-.con-s02-004 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s02-004 h2 {
-  margin: 0;
-  font-size: clamp(2.379rem, 4.788vw, 4.032rem);
-  line-height: 1.03;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 19ch;
-}
+.con-s02-004 .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.6rem, 3vw, 3.4rem); align-items: start; margin-top: clamp(1.6rem, 3vw, 3rem); }
+.con-s02-004 .media { position: relative; aspect-ratio: 16 / 10; background: var(--media); border-radius: 2px; }
+.con-s02-004 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s02-004 .sheet { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.4rem; }
+.con-s02-004 .half { border-top: 1px solid var(--line-strong); padding-top: 0.9rem; }
+.con-s02-004 .half.yes { border-top: 3px solid var(--tape); }
+.con-s02-004 .half h3 { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.4rem; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s02-004 .half h3 .ico { width: 1.2rem; height: 1.2rem; color: var(--accent); }
+.con-s02-004 .half ul { margin: 0; padding: 0; list-style: none; }
+.con-s02-004 .half li { display: grid; grid-template-columns: 1.4rem minmax(0, 1fr); gap: 0.6rem; align-items: baseline; padding: 0.55rem 0; border-top: 1px solid var(--line); font-size: 0.9rem; line-height: 1.4; }
+.con-s02-004 .half li .ico { width: 1rem; height: 1rem; align-self: center; color: var(--muted); }
+.con-s02-004 .half.no li { color: var(--muted); }
 
-/* Media */
-.con-s02-004 .shot {
-  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  border-radius: 26px;
-  aspect-ratio: 21 / 9;
-  display: grid;
-  place-items: start start;
-  padding: clamp(18px, 2.2vw, 30px);
-}
-.con-s02-004 .shot span {
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.85;
-}
+.con-s02-004 .ledger { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: clamp(1.6rem, 3vw, 3rem); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s02-004 .ledger div { display: flex; flex-direction: column; gap: 0.6rem; min-width: 0; padding: 1rem 1rem 1.1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s02-004 .ledger strong { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.2; }
+.con-s02-004 .mk { display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start; margin-top: auto; padding: 0.35rem 0.55rem; border: 1px solid var(--line-strong); color: var(--ink); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; }
+.con-s02-004 .mk .ico { width: 0.95rem; height: 0.95rem; color: var(--accent); }
 
-/* The floating decision card */
-.con-s02-004 .card {
-  position: relative;
-  z-index: 1;
-  margin: clamp(-140px, -11vw, -70px) clamp(0px, 4vw, 64px) 0;
-  background: var(--card);
-  border-radius: 26px;
-  padding: clamp(20px, 2.6vw, 36px);
-  box-shadow: 0 2px 4px rgba(22, 22, 22, 0.05), 0 22px 50px rgba(22, 22, 22, 0.13);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 3vw, 52px);
-}
-.con-s02-004 .tag {
-  display: inline-block;
-  margin-bottom: clamp(12px, 1.5vw, 16px);
-  padding: 5px 13px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.con-s02-004 .t-yes { background: var(--yes-bg); color: var(--yes); }
-.con-s02-004 .t-no { background: var(--no-bg); color: var(--no); }
-.con-s02-004 ul { margin: 0; padding: 0; list-style: none; }
-.con-s02-004 .col li {
-  padding: clamp(9px, 1.1vw, 12px) 0;
-  border-top: 1px solid var(--line);
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-.con-s02-004 .col li:first-of-type { border-top: 0; padding-top: 0; }
-.con-s02-004 .col li span { color: var(--ink-soft); font-size: 1rem; }
+.con-s02-004 .act { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; margin-top: clamp(1.4rem, 2.6vw, 2.6rem); }
+.con-s02-004 .btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 0.95rem 1.5rem; border: 1px solid var(--ink); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease; }
+.con-s02-004 .btn:hover { background: var(--ink); color: var(--tape); }
+.con-s02-004 .btn .ico { width: 1.2rem; height: 1.2rem; }
+.con-s02-004 .act p { margin: 0; max-width: 34rem; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
 
-/* Chip row and action */
-.con-s02-004 .foot {
-  margin: clamp(22px, 2.8vw, 38px) 0 0;
-  padding-top: clamp(18px, 2.2vw, 26px);
-  border-top: 1px solid var(--rule);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(18px, 2.6vw, 40px);
-  align-items: center;
-}
-.con-s02-004 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.con-s02-004 .chips li {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: #ececec;
-  font-size: 1rem;
-  font-weight: 600;
-}
-.con-s02-004 .chips b {
-  font-size: 0.804rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 2px 8px;
-  border-radius: 999px;
-}
-.con-s02-004 .b-self { background: var(--self-bg); color: var(--self); }
-.con-s02-004 .b-managed { background: var(--managed-bg); color: var(--managed); }
-.con-s02-004 .go {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  padding: 0 34px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 1.1rem;
-  font-weight: 650;
-  text-decoration: none;
-  white-space: nowrap;
-}
-.con-s02-004 .go:hover { background: #111111; }
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .con-s02-004 h2 { max-width: none; }
-  .con-s02-004 .shot { aspect-ratio: 16 / 9; }
-  .con-s02-004 .card {
-    margin: clamp(-56px, -6vw, -34px) 0 0;
-    grid-template-columns: minmax(0, 1fr);
-    gap: clamp(18px, 2.4vw, 26px);
-  }
-  .con-s02-004 .foot { grid-template-columns: minmax(0, 1fr); }
-  .con-s02-004 .go { width: 100%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s02-004 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s02-004 {
-  --v2-accent: #969696;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 30%);
-  font-size: 1.06rem;
-}
-.con-s02-004 h2 { font-weight: 800; }
-.con-s02-004 h3, .con-s02-004 h4 { font-weight: 750; }
-.con-s02-004 .eyebrow, .con-s02-004 .tag {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #ececec;
-  color: #7a7a7a;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s02-004 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #ececec;
-  color: #7a7a7a;
-  font-weight: 600;
-}
-.con-s02-004.con-s02-004 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s02-004.con-s02-004 .head h2, .con-s02-004.con-s02-004 .head h3, .con-s02-004.con-s02-004 .head h4, .con-s02-004.con-s02-004 .head b, .con-s02-004.con-s02-004 .head strong, .con-s02-004.con-s02-004 .head p b, .con-s02-004.con-s02-004 .head li b, .con-s02-004.con-s02-004 .head span b, .con-s02-004.con-s02-004 .head dt, .con-s02-004.con-s02-004 .head div b {
-  color: #ffffff;
-}
-.con-s02-004.con-s02-004 .head p, .con-s02-004.con-s02-004 .head li, .con-s02-004.con-s02-004 .head span, .con-s02-004.con-s02-004 .head dd, .con-s02-004.con-s02-004 .head div p, .con-s02-004.con-s02-004 .head div li, .con-s02-004.con-s02-004 .head p span, .con-s02-004.con-s02-004 .head .said, .con-s02-004.con-s02-004 .head .note {
-  color: #d2d2d2;
-}
-.con-s02-004.con-s02-004 .head .eyebrow, .con-s02-004.con-s02-004 .head .kicker, .con-s02-004.con-s02-004 .head .slot, .con-s02-004.con-s02-004 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s02-004.con-s02-004 .head i, .con-s02-004.con-s02-004 .head .bars i, .con-s02-004.con-s02-004 .head .lines i, .con-s02-004.con-s02-004 .head .measures i, .con-s02-004.con-s02-004 .head .bar, .con-s02-004.con-s02-004 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s02-004.con-s02-004 .head .plate, .con-s02-004.con-s02-004 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s02-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s02-004 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s02-004 .ledger { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .con-s02-004 .grid { grid-template-columns: minmax(0, 1fr); } .con-s02-004 h2 { max-width: none; } .con-s02-004 .draw { display: none; } }
+@media (max-width: 560px) { .con-s02-004 .ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); } .con-s02-004 .media { aspect-ratio: 4 / 3; } .con-s02-004 .btn { width: 100%; justify-content: center; } }
+@media (prefers-reduced-motion: reduce) { .con-s02-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s02-004" data-study-id="CON-S02-004" data-direction="Conversion-led">
+  <svg class="draw" viewBox="0 0 1440 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><line x1="0" y1="52" x2="1440" y2="52"/><path d="M200 40v24M420 40v24M640 40v24M860 40v24M1080 40v24M1300 40v24"/><line x1="1396" y1="0" x2="1396" y2="1000"/><path d="M1384 160h24M1384 320h24M1384 480h24M1384 640h24M1384 800h24"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s02-004-title">
 
-    <div class="head">
-      <p class="eyebrow">What we are hired to do</p>
-      <h2 id="con-s02-004-title">Before the list &mdash; is this even your job?</h2>
+    <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>What we are hired to do</p>
+    <h2 id="con-s02-004-title">Before the list &mdash; is this <mark>even your job?</mark></h2>
+
+    <div class="grid">
+      <div class="media" role="img" aria-label="Reserved project field: completed work, wide"><p class="slate" aria-hidden="true">Project area &middot; 16:10 &middot; completed work</p></div>
+
+      <div class="sheet">
+        <div class="half yes">
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>We are right for this</h3>
+          <ul>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="12" height="12"/><rect x="9" y="9" width="12" height="12"/></svg><span>More than one trade, working over each other</span></li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg><span>A real programme, with a handover at the end</span></li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18M8 6v6M16 6v6M12 12v6M3 6v12M21 6v12"/></svg><span>A building somebody is still using &mdash; phasing is what we are best at</span></li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M9 11h6l-1 8h-4zM12 3l3 2"/></svg><span>Ground nobody has properly investigated</span></li>
+          </ul>
+        </div>
+        <div class="half no">
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>Ask somebody else</h3>
+          <ul>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>A single trade &mdash; a specialist will be quicker and cheaper</span></li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Work we would buy in entirely</span></li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>A programme we cannot resource</span></li>
+            <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>A price before anybody has walked the job</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <div class="shot"><span>Project media &mdash; completed work, wide</span></div>
-
-    <div class="card">
-      <div class="col">
-        <span class="tag t-yes">We are right for this</span>
-        <ul>
-          <li>More than one trade, working over each other</li>
-          <li>A real programme, with a handover at the end</li>
-          <li>A building somebody is still using <span>&mdash; phasing is what we are best at</span></li>
-          <li>Ground nobody has properly investigated</li>
-        </ul>
-      </div>
-      <div class="col">
-        <span class="tag t-no">Ask somebody else</span>
-        <ul>
-          <li>A single trade <span>&mdash; a specialist will be quicker and cheaper</span></li>
-          <li>Work we would buy in entirely</li>
-          <li>A programme we cannot resource</li>
-          <li>A price before anybody has walked the job</li>
-        </ul>
-      </div>
+    <div class="ledger" aria-label="Services and who delivers them">
+      <div><strong>Groundworks &amp; civils</strong><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self</span></div>
+      <div><strong>Structural frame</strong><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Managed</span></div>
+      <div><strong>Envelope &amp; cladding</strong><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Managed</span></div>
+      <div><strong>Commercial fit-out</strong><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self</span></div>
+      <div><strong>Refurbishment</strong><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self</span></div>
+      <div><strong>Demolition &amp; enabling</strong><span class="mk"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Managed</span></div>
     </div>
 
-    <div class="foot">
-      <ul class="chips">
-        <li>Groundworks &amp; civils <b class="b-self">Self</b></li>
-        <li>Structural frame <b class="b-managed">Managed</b></li>
-        <li>Envelope &amp; cladding <b class="b-managed">Managed</b></li>
-        <li>Commercial fit-out <b class="b-self">Self</b></li>
-        <li>Refurbishment <b class="b-self">Self</b></li>
-        <li>Demolition &amp; enabling <b class="b-managed">Managed</b></li>
-      </ul>
-      <a class="go" href="#con-s02-004-title">Put a project to us</a>
+    <div class="act">
+      <a class="btn" href="#enquire"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Put a project to us</a>
+      <p>If the left-hand list is yours, an estimator rings you back. If it is the right-hand one, we will say so and tell you who to ring instead.</p>
     </div>
 
   </section>

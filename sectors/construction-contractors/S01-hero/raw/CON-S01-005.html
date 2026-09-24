@@ -11,32 +11,24 @@
   Study ID       : CON-S01-005
   Sector         : Construction & Contractors (CON)
   Section        : CON-S01 — Hero
-  Direction      : Art-directed / Distinctive
-  Reference      : Supplied — the near-black hero with a red block, a machine cut out against it, an
-                   oversized line, a slide counter and a vertical side nav. Placed here because
-                   weight and plant is this direction's register in this sector.
-  Layout model   : A near-black field with a single saturated block held to the right, a large
-                   reserved plant media area sitting across it, and an oversized line to the left
-  Density        : Low
-  Media mode     : One reserved plant media area — machinery in use, on the site, not parked for a
-                   photograph. The sector direction's `005` trap is becoming a car advert; **the
-                   subject is the work, not the plant**, and the slot says so.
-  Interaction    : None (static; no JavaScript)
-  What was dropped from the reference, and why :
-                   • **The slide counter.** A counter asserts a carousel, and this study has no
-                     script and therefore no slides. A control that counts nothing is worse than no
-                     control — and it would also have put a digit on a page whose whole rule is that
-                     unearned figures do not appear.
-                   • **The vertical side navigation.** Site chrome, removed on the standing
-                     section-shell rule.
-                   • **The price line** (*from $8 per sq. m.*). A rate on a construction hero is
-                     either fabricated or a quote for a job nobody has walked. The sector direction
-                     rules it out.
-  What replaced them : One reserved figure at the foot — the largest project by value — which is the
-                   honest version of the thing a rate was trying to signal: the ceiling this firm has
-                   actually worked to.
-  Content note   : No invented figure, client or project name, certification, safety record, award,
-                   rating, price or rate; no header; no urgency device; no digit in visible copy.
+  Direction      : Sector-native / Distinctive
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 5,
+                   type crossing the media edge, in the heavy reading: a 21:9 plant field fills
+                   the top, and the tracked-uppercase display — GROUNDWORKS & CIVILS at the
+                   largest size in the section — starts on paper and its second line crosses
+                   up over the field's bottom edge. Under it a ruled row: the statement, the
+                   reserved LARGEST PROJECT BY VALUE at the largest counter scale, and the
+                   actions. Drawing layer: a hatched band (cut-earth hatching) along the left
+                   margin behind the display. V1 is kept: we move the ground before anybody
+                   builds on it; the figure is reserved; nothing about the plant is claimed.
+  Layout model   : 21:9 plant field with a 3px tape bar on its bottom edge. Display pulled up
+                   over the field's lower edge with an excavator icon in the eyebrow. A ruled
+                   three-column row: statement, counter tab, actions. A foot line.
+  Density        : Hero (40–90)
+  Media mode     : One reserved plant field, 21:9. One reserved counter.
+  Interaction    : None (static; no JavaScript). Actions are relative links.
+  Content note   : No figure, client, project name, plant model, certification, safety record,
+                   award, rating, price or urgency device. All graphics are inline SVG.
 -->
 
 <meta name="study-id" content="CON-S01-005">
@@ -45,282 +37,105 @@
 <meta name="section-id" content="CON-S01">
 <meta name="section-name" content="Hero">
 <meta name="variant" content="005">
-<meta name="territory" content="Art-directed / Distinctive">
-<meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Near-black field with a saturated block, a reserved plant area across it and an oversized line">
-<meta name="density" content="low">
-<meta name="media-mode" content="one-reserved-plant-area">
+<meta name="territory" content="Sector-native / Distinctive">
+<meta name="direction" content="Sector-native / Distinctive">
+<meta name="theme" content="005 Asphalt &amp; Signal">
+<meta name="layout-model" content="21:9 plant field with the tracked-uppercase display crossing its bottom edge; a ruled three-column row of statement, reserved counter at largest scale and iconed actions; hatched band behind">
+<meta name="density" content="hero">
+<meta name="media-mode" content="one-reserved-plant-field-one-reserved-counter">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S01-005 — Hero, Art-directed / Distinctive</title>
+<title>CON-S01-005 — Hero, Sector-native / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #0e0e0e; }
+body { margin: 0; background: #e6e6e3; }
 
-/* Scoped study styles — namespaced to .con-s01-005 */
 .con-s01-005 {
-  --ink: #ffffff;
-  --ink-soft: #b4b4b4;
-  --paper: #0e0e0e;
-  --block: #969696;
-  --slot: #111111;
-  --slot-ink: #ececec;
-  --slot-edge: #5e5e5e;
-  --line: #444444;
-  --focus: #ffffff;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #e6e6e3; --ink: #0e0f10; --muted: #52555a; --line: #cfcfcb; --line-strong: #0e0f10;
+  --media: #d9d9d5; --band: #deded9; --accent: #e2521a;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s01-005 *,
-.con-s01-005 *::before,
-.con-s01-005 *::after { box-sizing: inherit; }
-.con-s01-005 :focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-  border-radius: 10px;
-}
-.con-s01-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s01-005 *, .con-s01-005 *::before, .con-s01-005 *::after { box-sizing: inherit; }
+.con-s01-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s01-005 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s01-005 .draw { position: absolute; left: 0; bottom: 0; width: 100%; height: 15rem; pointer-events: none; color: var(--line); }
+.con-s01-005 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4.5vw, 4.5rem) clamp(2.5rem, 6vw, 6rem); }
 
-/* The stage: a block held right, media across it */
-.con-s01-005 .stage {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: center;
-  margin-bottom: clamp(24px, 3vw, 44px);
-}
-.con-s01-005 .block {
-  grid-column: 2;
-  grid-row: 1;
-  background: var(--block);
-  aspect-ratio: 4 / 5;
-  max-height: clamp(300px, 40vw, 520px);
-  justify-self: end;
-  width: 100%;
-}
-.con-s01-005 .plant {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  align-self: center;
-  margin-left: clamp(0px, 6vw, 96px);
-  margin-right: clamp(0px, 3vw, 48px);
-  border: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  aspect-ratio: 16 / 9;
-  max-height: clamp(230px, 30vw, 400px);
-  display: grid;
-  place-items: center;
-  padding: 16px;
-}
-.con-s01-005 .plant span {
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--slot-ink);
-  text-align: center;
-  line-height: 1.7;
-}
+.con-s01-005 .media { position: relative; aspect-ratio: 21 / 9; background: var(--media); border-bottom: 3px solid var(--accent); }
+.con-s01-005 .slate { position: absolute; right: 1rem; top: 0.9rem; margin: 0; display: flex; align-items: center; gap: 0.5rem; color: var(--muted); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-align: right; }
+.con-s01-005 .ico { width: 1.4rem; height: 1.4rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 
-/* The line */
-.con-s01-005 .say { max-width: none; }
-.con-s01-005 .eyebrow {
-  margin: 0 0 clamp(12px, 1.5vw, 18px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s01-005 h1 {
-  margin: 0;
-  font-size: clamp(2.44rem, 5.796vw, 4.914rem);
-  line-height: 0.98;
-  letter-spacing: -0.038em;
-  font-weight: 800;
-  text-transform: uppercase;
-  max-width: 17ch;
-}
-.con-s01-005 .said {
-  margin: clamp(16px, 2vw, 24px) 0 0;
-  max-width: 46ch;
-  color: var(--ink-soft);
-  font-size: clamp(1.1rem, 1.298vw, 1.274rem);
-  line-height: 1.64;
-}
+.con-s01-005 .cross { position: relative; margin-top: clamp(-3rem, -4vw, -1.4rem); padding-left: clamp(0rem, 2vw, 2rem); }
+.con-s01-005 h1 span { position: relative; display: inline-block; padding: 0 0.08em 0 0; background: var(--paper); }
+.con-s01-005 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s01-005 h1 { margin: 0; font-weight: 800; font-size: clamp(3rem, 8.4vw, 9rem); line-height: 0.86; letter-spacing: -0.04em; text-transform: uppercase; }
 
-.con-s01-005 .foot {
-  margin: clamp(26px, 3.2vw, 46px) 0 0;
-  padding-top: clamp(20px, 2.4vw, 30px);
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: clamp(18px, 3vw, 52px);
-}
-.con-s01-005 .go {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  padding: 0 32px;
-  background: var(--block);
-  color: var(--ink);
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-.con-s01-005 .go:hover { background: var(--ink); color: var(--paper); }
-.con-s01-005 .figure { display: flex; align-items: flex-end; gap: 14px; }
-.con-s01-005 .fname {
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-  max-width: 13ch;
-  line-height: 1.5;
-}
-.con-s01-005 .slot {
-  display: grid;
-  place-items: center;
-  min-width: clamp(100px, 11vw, 150px);
-  min-height: clamp(58px, 6vw, 78px);
-  padding: 8px 14px;
-  border: 1px dashed var(--slot-edge);
-  background: var(--slot);
-  color: var(--slot-ink);
-  font-size: clamp(1.534rem, 2.44vw, 2.196rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-}
+.con-s01-005 h1 em { font-style: normal; color: var(--accent); }
 
-/* Responsive ladder — the block releases before the line does */
-@media (max-width: 860px) {
-  .con-s01-005 .stage { grid-template-columns: minmax(0, 1fr); }
-  .con-s01-005 .block {
-    grid-column: 1;
-    aspect-ratio: 3 / 1;
-    max-height: 150px;
-  }
-  .con-s01-005 .plant {
-    grid-column: 1;
-    margin: 0 0 0 clamp(16px, 6vw, 48px);
-    max-height: none;
-  }
-  .con-s01-005 h1,
-  .con-s01-005 .said { max-width: none; }
-}
+.con-s01-005 .row { display: grid; grid-template-columns: minmax(0, 1.1fr) auto minmax(14rem, 0.7fr); gap: clamp(1.6rem, 3vw, 3.4rem); align-items: start; margin-top: clamp(1.6rem, 3vw, 3rem); padding-top: 1.4rem; border-top: 1px solid var(--line-strong); }
+.con-s01-005 .state { margin: 0; font-weight: 700; font-size: clamp(1.1rem, 1.7vw, 1.5rem); line-height: 1.25; letter-spacing: -0.015em; }
+.con-s01-005 .state span { display: block; max-width: 28rem; }
+.con-s01-005 .state small { display: block; margin-top: 0.8rem; max-width: 30rem; color: var(--muted); font-weight: 400; font-size: 0.86rem; line-height: 1.5; letter-spacing: 0; }
+.con-s01-005 .tab { display: flex; flex-direction: column; padding: 0.9rem 1.2rem 1rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); }
+.con-s01-005 .lab { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.6rem; color: var(--muted); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; white-space: nowrap; }
+.con-s01-005 .lab .ico { width: 1.1rem; height: 1.1rem; color: var(--accent); }
+.con-s01-005 .slot { display: inline-flex; align-items: center; min-width: 12rem; height: 4.6rem; color: var(--ink); font-size: 3.4rem; font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+.con-s01-005 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s01-005 .tab p.d { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+.con-s01-005 .tab p.d span { display: block; max-width: 14rem; }
+.con-s01-005 .act { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+.con-s01-005 .btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 0.9rem 1.5rem; border: 1px solid var(--ink); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+.con-s01-005 .btn .ico { width: 1.2rem; height: 1.2rem; color: var(--accent); }
+.con-s01-005 .btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.con-s01-005 .btn:hover .ico { color: #fff; }
+.con-s01-005 .alt { color: var(--ink); text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: var(--accent); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s01-005 .alt span { color: var(--accent); margin-left: 0.3rem; }
+.con-s01-005 .list { margin: 1.2rem 0 0; padding: 0; list-style: none; width: 100%; }
+.con-s01-005 .list li { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s01-005 .list .ico { width: 1.1rem; height: 1.1rem; color: var(--accent); }
 
-@media (max-width: 560px) {
-  .con-s01-005 .go { width: 100%; }
-  .con-s01-005 .plant { aspect-ratio: 4 / 3; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s01-005 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s01-005 {
-  --v2-accent: #b4b4b4;
-  --v2-soft: #444444;
-  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
-  font-size: 1.06rem;
-}
-.con-s01-005 h2 { font-weight: 800; }
-.con-s01-005 h3, .con-s01-005 h4 { font-weight: 750; }
-.con-s01-005 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #444444;
-  color: #b4b4b4;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s01-005 .plant {
-  height: auto;
-  min-height: clamp(200px, 21vw, 320px);
-  border-radius: 26px;
-  border: 2px dashed #5e5e5e;
-  background: linear-gradient(145deg, #444444 0%, #2b2b2b 100%);
-}
-.con-s01-005 .plant span {
-  color: #b4b4b4;
-  font-weight: 700;
-}
-.con-s01-005 .slot {
-  border: 1px dashed #5e5e5e;
-  border-radius: 14px;
-}
-.con-s01-005 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #444444;
-  color: #b4b4b4;
-  font-weight: 600;
-}
-.con-s01-005.con-s01-005 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
-  max-width: none;
-}
-.con-s01-005.con-s01-005 .shell > h2 span, .con-s01-005.con-s01-005 .shell > h2 b, .con-s01-005.con-s01-005 .shell > h2 em, .con-s01-005.con-s01-005 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s01-005 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s01-005 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s01-005 .row { grid-template-columns: minmax(0, 1fr) auto; } .con-s01-005 .act { grid-column: span 2; flex-direction: row; flex-wrap: wrap; align-items: center; } .con-s01-005 .list { width: 100%; } }
+@media (max-width: 768px) { .con-s01-005 .media { aspect-ratio: 16 / 10; } .con-s01-005 .cross { margin-top: 1.4rem; padding-left: 0; } .con-s01-005 h1 span { background: transparent; } .con-s01-005 .row { grid-template-columns: minmax(0, 1fr); } .con-s01-005 .act { grid-column: span 1; } .con-s01-005 .tab { align-self: flex-start; } }
+@media (max-width: 480px) { .con-s01-005 .media { aspect-ratio: 4 / 3; } .con-s01-005 .btn { width: 100%; justify-content: center; } .con-s01-005 .slot { min-width: 0; } }
+@media (prefers-reduced-motion: reduce) { .con-s01-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
-<div class="con-s01-005" data-study-id="CON-S01-005" data-direction="Art-directed / Distinctive">
+<div class="con-s01-005" data-study-id="CON-S01-005" data-direction="Sector-native / Distinctive">
+  <svg class="draw" viewBox="0 0 1440 416" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 416L64 352M0 352L128 224M0 288L192 96M0 224L224 0M64 224L288 0M128 224L352 0M64 416L192 288M128 416L256 288M192 416L320 288M256 416L384 288M320 416L448 288M384 416L512 288M448 416L576 288M512 416L640 288M576 416L704 288M640 416L768 288M704 416L832 288M768 416L896 288M832 416L960 288M896 416L1024 288M960 416L1088 288M1024 416L1152 288M1088 416L1216 288M1152 416L1280 288M1216 416L1344 288M1280 416L1408 288M1344 416L1440 320"/><line x1="0" y1="288" x2="1440" y2="288"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s01-005-title">
 
-    <div class="stage">
-      <div class="block" aria-hidden="true"></div>
-      <div class="plant"><span>Plant media &mdash; machinery in use, on the job<br>working, not parked for a photograph</span></div>
+    <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Main contractor &middot; Own plant, own crews</p>
+    <div class="media" role="img" aria-label="Reserved plant field: our own plant at work on our own site, wide; no showroom shot"><p class="slate" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M9 11h6l-1 8h-4zM12 3l3 2"/></svg>Plant area &middot; 21:9 &middot; our plant, our site, not a showroom</p></div>
+
+    <div class="cross">
+      <h1 id="con-s01-005-title"><span>Groundworks</span><br><span>&amp; <em>civils.</em></span></h1>
     </div>
 
-    <div class="say">
-      <p class="eyebrow">Groundworks &amp; civils</p>
-      <h1 id="con-s01-005-title">We move the ground before anybody builds on it.</h1>
-    </div>
-    <p class="said">Muck away, piling, drainage, slabs and the roads that get everyone else on site. Unglamorous, on the critical path, and the reason the trades behind us either start on time or do not.</p>
+    <div class="row">
+      <p class="state"><span>We move the ground before anybody builds on it &mdash; and then, usually, we build on it too.</span><small>Cut, fill, drainage, foundations and slab, with our own plant and our own people, then frame and fit-out by the same firm if you want one number and one site manager.</small></p>
 
-    <div class="foot">
-      <a class="go" href="#con-s01-005-title">Put a project to us</a>
-      <p class="figure">
-        <span class="slot"><span class="vh">Value of the largest project completed</span><span aria-hidden="true">&mdash;</span></span>
-        <span class="fname">Largest project by value, reserved</span>
-      </p>
+      <div class="tab">
+        <p class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M7 21V3h13M20 3v6M7 7l6-4M16 3v4"/></svg>Largest project by value</p>
+        <span class="slot"><span class="vh">Contract value of the largest project completed</span><span aria-hidden="true">&mdash;</span></span>
+        <p class="d"><span>The one figure worth asking about, and the one we do not round up.</span></p>
+      </div>
+
+      <div class="act">
+        <a class="btn" href="#enquire"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Put a site to us</a>
+        <a class="alt" href="#projects">Ground we have moved<span aria-hidden="true">&#8599;</span></a>
+        <ul class="list" aria-label="Also">
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 19h16M8 5v14M16 5v14"/></svg>Structural frame</li>
+          <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18M8 6v6M16 6v6M12 12v6M3 6v12M21 6v12"/></svg>Fit-out</li>
+        </ul>
+      </div>
     </div>
 
   </section>

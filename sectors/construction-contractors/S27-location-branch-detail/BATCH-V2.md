@@ -1,0 +1,26 @@
+# BATCH V2 — Detailing Pass
+
+## Batch Identity
+
+- Sector: `Construction & Contractors` · Prefix: `CON` · Section: `CON-S27` — Office / Regional Branch Detail · Raw Path: `./raw/`
+- Register: `../../../standards/08-VISUAL-REFERENCE-STYLE.md`, CON translation in `../CONSTRUCTION-DESIGN-DIRECTION.md` → *Detailing Pass*. Supersedes `./BATCH-V1.md` for the design layer; the V1 rules — contact before any picture at every width, in source and on screen; what leaves the yard and what does not; the three people who actually arrive and the client who does not; ring first, boots and a hi-vis, the honest route from the gate; branch, address, both lines, the region and the further-out office reserved; no opening hours, directions, travel time, facility ticks, coverage claim, names, digit or map embed; `002` with no media — are kept exactly.
+- Batch Status: `RE-AUTHORED — V2 DETAILING — PENDING DESIGN LAB INGESTION`
+
+## Studies
+
+| Study ID | Direction | Theme | Register device | Drawing layer | Composition | Reserved | Words |
+| --- | --- | --- | --- | --- | --- | --- | ---: |
+| `CON-S27-001` | Universal / Safe | 001 Site White & Safety Orange | 3 with 7 — ledger, cells and columns | setting-out grid behind the head | THIS OFFICE as a tape-topped bordered ledger of five slots with its note beside on the band tone, first in source; what leaves as three iconed cells (dumper / wrench / hard hat) with the further-out note; who is based here as role tags; the three arrivals as three cells with the client line red-edged beneath; two coming-anyway cells; the map and the yard as two bare 3:2 fields, last; red-topped refusal | 2 media, 5 slots | 936 |
+| `CON-S27-002` | Premium / Editorial | 002 Bone & Burnt Amber | 7 — the notice at the gate | levelling circle behind the head | A tape-topped bordered sheet: contact ledger of four slots as its header; six ruled clauses with iconed CLAUSE ONE … SIX ordinals — who it is for, ring before you come, at the gate, gate to office, what leaves and what does not (with the region slot inline), why there is no map; the client line as a red-edged panel; POSTED BY as a signature ledger. No media, by design | 5 slots | 637 |
+| `CON-S27-003` | Structured / Visual Modular | 003 Steel & Structural Blue | 3 — modules in the order of who the page is for | dimension line beneath the head | Six-slot contact ledger first (including the further-out office); LEAVES / DOES NOT as two columns, the honest half red-edged; the three arrivals as a three-column bordered table with the client row red-edged; the route in as three iconed step cells; role tags; the map and the yard as 3:2 fields, last, with the hours refusal as the caption | 2 media, 6 slots | 921 |
+| `CON-S27-004` | Conversion-led | 004 White & Hi-Vis | 4 + 3 — the honest routing | chevron run behind the routing band | Display with the tape underline; tape-topped contact ledger first with the hours line; THE HONEST ROUTING as a hi-vis band of four bordered iconed rows, three of them routing away with a reserved slot each and the fourth accent-edged, the delivery line and the only action (ring before you come, in-page); two bordered cells; the map as a bare 3:1 field beneath the contact block with its argument; red-topped refusal list | 1 media, 5 slots (8 slot instances) | 832 |
+| `CON-S27-005` | Art-directed / Distinctive | 005 Asphalt & Signal | 9 — the location page inverted | cut-earth hatching down the left margin | Contact as a one-row accent-edged ledger first; PLANT / THE FITTER / THE MANAGER at display scale with stroke icons, word indices and a dimension line each; three bordered cells (does not leave red-edged, based here, no national coverage red-topped); the three arrivals as iconed rows with AND NOT A CLIENT as a deep-red plate; the arrival rule as an accent-edged paragraph; the smallest map on the batch, a 4:1 field, with two notes | 1 media, 5 slots | 705 |
+
+## What changed from V1
+
+Contact stays first in source and on screen in every study and is drawn as a bordered slot ledger; what leaves the yard is iconed (dumper / wrench / hard hat) across the batch; the refusals and the client-is-not-on-that-list line carry the deep-red (`--no`) edge; the map is a bare flat field with a struck-pin slate, never an embed, and sits after the contact block everywhere it appears. `005` inverts the page at display scale with word indices and dimension lines. Every reserved value reads *Reserved*. Copy is V1's throughout; word counts equal V1's. The section name in file headers is V1's, *Office / Regional Branch Detail*.
+
+## Verification
+
+- `concheck.ps1 -Sec S27 -Fields 'Name of this branch|Street address of this office|Telephone number for the yard'` — ALL CHECKS PASS; parity 15/15; contact precedes media in source in every study that carries media. No `<h1>`; no header/nav/footer; no form; no script, remote dependency, gradient, shadow, dashed border or radius above 2px; inline SVG only, all `aria-hidden`; no digit, hours, directions, name, tick or coverage claim; the only action is `004`'s in-page anchor.
+- Rendered and read at 1440. Corrections: `002` clause list and client panel widths moved to `width: min()` (checker rule); `005` plate paragraph colour set explicitly against the arrivals rule.

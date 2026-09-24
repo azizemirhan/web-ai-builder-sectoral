@@ -12,30 +12,22 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S14 — Service Areas
   Direction      : Art-directed / Distinctive
-  Reference      : None supplied for this section.
-  Layout model   : Four full-width bands stacked outward, each darker than the one above it, with
-                   the sentence about what is lost growing band by band until it is the largest type
-                   on the page — the page literally darkens as the attendance falls
-  Density        : Low
-  Media mode     : None. A map is the one image this section could carry and the one it argues
-                   against, so this study does not reserve one at all.
-  Interaction    : None (static; no JavaScript)
-  The device     : **The page darkens as the attendance falls.** Distance from the yard is drawn as
-                   descent and as light: band one is nearly the paper colour, band four is nearly
-                   black, and the loss sentence grows through the four until it is the biggest thing
-                   here. Nothing on the page is a map, a pin or a radius, and the argument still
-                   arrives before the reading does.
-  No map at all  : The other four studies reserve a map area and argue with it. This one declines to
-                   reserve one, because at this scale even an empty map would become the subject.
-                   The section's honest artefact is a gradient of attendance, not an outline of
-                   territory.
-  Against the trap : The direction's trap for this variant is the car advert; its equivalent here is
-                   the sweeping coverage graphic. The defence is that every band's largest sentence
-                   is a subtraction, and the last one is a refusal to bid.
-  Deliberately not : No pins, no radius, no mileage, no drive time, no *nationwide* claim, and no
-                   reserved map.
-  Content note   : Region names and the yard location are reserved fields. The bands and what is
-                   lost at each are real. No digit in visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 9:
+                   four full-bleed bands that step darker as attendance gets worse — paper,
+                   two flat grey steps, then ink with paper type — no CSS gradient, four
+                   discrete tones under a 3px signal tape. In each band the YOU LOSE sentence
+                   is set one size larger than the last, from headline to display, with a
+                   giant index and an emptying attendance meter in the margin and the reserved
+                   regions as a bordered ledger. No map anywhere; the refusal note is a
+                   bordered cell on the paper foot with muted tags. Drawing layer: cut-earth
+                   hatching down the left margin, kept through every tone. V1 is kept whole.
+  Layout model   : Head. Four stepped full-width bands (index / sentence + prose / ledger).
+                   Bordered refusal note on the foot.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : No media. Six reserved fields.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No region, town, yard location, distance, drive time, radius, pin, map,
+                   count or nationwide claim. Attendance meter is decorative. Inline SVG.
 -->
 
 <meta name="study-id" content="CON-S14-005">
@@ -46,345 +38,221 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Four bands darkening outward, the loss sentence growing to the largest type on the page">
-<meta name="density" content="low">
-<meta name="media-mode" content="none">
+<meta name="theme" content="005 Asphalt &amp; Signal">
+<meta name="layout-model" content="Head; four full-width bands stepping from paper through two flat greys to ink, each with a giant margin index and emptying attendance meter, the you-lose sentence one size larger than the last up to display, prose and a bordered ledger of reserved regions; no map; bordered refusal note with tags on the foot; cut-earth hatching down the left margin">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media-six-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S14-005 — Service Areas, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #e6e6e3; }
 
-/* Scoped study styles — namespaced to .con-s14-005 */
 .con-s14-005 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --ink-faint: #969696;
-  --paper: #f1f1f1;
-  --rule: #111111;
-  --hair: #b4b4b4;
-
-  /* One ramp, four steps. The ground darkens as the attendance falls. */
-  --b1: #ffffff;
-  --b2: #ececec;
-  --b3: #7a7a7a;
-  --b4: #2b2b2b;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #e6e6e3; --ink: #0e0f10; --muted: #52555a; --line: #cfcfcb; --line-strong: #0e0f10;
+  --media: #d9d9d5; --band: #deded9; --accent: #e2521a;
+  --s2: #d3d3cf; --s3: #b8b8b3; --s3-line: #9d9d98;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s14-005 *,
-.con-s14-005 *::before,
-.con-s14-005 *::after { box-sizing: inherit; }
-.con-s14-005 :focus-visible {
-  outline: 3px solid var(--rule);
-  outline-offset: 4px;
-}
-.con-s14-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s14-005 *, .con-s14-005 *::before, .con-s14-005 *::after { box-sizing: inherit; }
+.con-s14-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s14-005 .shell { width: 100%; }
-.con-s14-005 .inner {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 clamp(22px, 3.6vw, 58px);
-}
+.con-s14-005 .draw { position: absolute; left: 0; top: 0; width: 3rem; height: 100%; pointer-events: none; color: var(--line); z-index: 1; }
+.con-s14-005 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem) 0; }
+.con-s14-005 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s14-005 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s14-005 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; padding-bottom: clamp(2rem, 4vw, 3.6rem); }
+.con-s14-005 h2 { margin: 0; max-width: 14ch; font-weight: 800; font-size: clamp(2.4rem, 5vw, 5.6rem); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s14-005 h2 em { font-style: normal; color: var(--accent); }
+.con-s14-005 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s14-005 .head > p em { font-style: normal; color: var(--ink); font-weight: 700; }
 
-/* Head */
-.con-s14-005 .head { padding: clamp(32px, 4.2vw, 76px) 0 clamp(22px, 3vw, 40px); }
-.con-s14-005 .eyebrow {
-  margin: 0 0 clamp(13px, 1.7vw, 20px);
-  padding-bottom: clamp(11px, 1.4vw, 16px);
-  border-bottom: 3px solid var(--rule);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.con-s14-005 .open {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(20px, 3.2vw, 56px);
-  align-items: end;
-}
-.con-s14-005 h2 {
-  margin: 0;
-  font-size: clamp(2.379rem, 5.292vw, 4.41rem);
-  line-height: 1.0;
-  letter-spacing: -0.038em;
-  font-weight: 700;
-  max-width: 19ch;
-}
-.con-s14-005 .open p { margin: 0; max-width: 40ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
-.con-s14-005 .open p b { color: var(--ink); font-weight: 650; }
+.con-s14-005 .steps { list-style: none; margin: 0; padding: 0; border-top: 3px solid var(--accent); }
+.con-s14-005 .step { position: relative; }
+.con-s14-005 .step::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: var(--bg); z-index: 0; }
+.con-s14-005 .step > div { position: relative; z-index: 1; display: grid; grid-template-columns: 9rem minmax(0, 1fr) 15rem; gap: 0 clamp(1.4rem, 3vw, 3rem); padding: clamp(1.6rem, 3vw, 2.8rem) 0 clamp(1.8rem, 3.2vw, 3rem); border-bottom: 1px solid var(--rule); }
+.con-s14-005 .s1 { --bg: var(--paper); --rule: var(--line-strong); --fg: var(--ink); --mu: var(--muted); --ln: var(--line); }
+.con-s14-005 .s2 { --bg: var(--s2); --rule: var(--line-strong); --fg: var(--ink); --mu: #45484c; --ln: #b7b7b2; }
+.con-s14-005 .s3 { --bg: var(--s3); --rule: var(--line-strong); --fg: var(--ink); --mu: #35383b; --ln: var(--s3-line); }
+.con-s14-005 .s4 { --bg: var(--ink); --rule: var(--ink); --fg: var(--paper); --mu: #b3b4b6; --ln: #3a3c3f; }
+.con-s14-005 .step { color: var(--fg); }
+.con-s14-005 .ring { margin: 0 0 0.5rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s14-005 .ix { display: block; margin: 0; font-weight: 800; font-size: 3rem; line-height: 0.85; letter-spacing: -0.04em; text-transform: uppercase; }
+.con-s14-005 .ix .ico { width: 3.6rem; height: 3.6rem; stroke-width: 1.4; color: var(--accent); }
+.con-s14-005 .meter { display: flex; gap: 0.25rem; margin-top: 0.9rem; }
+.con-s14-005 .meter i { display: block; width: 0.7rem; height: 0.7rem; border: 1px solid var(--fg); background: var(--fg); }
+.con-s14-005 .meter i.o { background: transparent; }
+.con-s14-005 .s4 .meter i { border-color: var(--accent); background: transparent; }
+.con-s14-005 h3 { margin: 0 0 0.8rem; font-weight: 800; font-size: 1.1rem; line-height: 1; letter-spacing: 0.02em; text-transform: uppercase; color: var(--mu); }
+.con-s14-005 .lose { margin: 0 0 1rem; max-width: 22ch; font-weight: 800; line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s14-005 .s1 .lose { font-size: clamp(1.4rem, 2.2vw, 2rem); }
+.con-s14-005 .s2 .lose { font-size: clamp(1.8rem, 3vw, 2.8rem); }
+.con-s14-005 .s3 .lose { font-size: clamp(2.2rem, 4vw, 3.8rem); }
+.con-s14-005 .s4 .lose { font-size: clamp(2.6rem, 5vw, 5.2rem); max-width: 18ch; }
+.con-s14-005 .lose em { font-style: normal; color: var(--accent); }
+.con-s14-005 .step p.t { margin: 0; max-width: 40rem; color: var(--mu); font-size: 0.92rem; line-height: 1.55; }
+.con-s14-005 .step p.t + p.t { margin-top: 0.7rem; }
+.con-s14-005 .step p.t b { color: var(--fg); }
+.con-s14-005 .ledger { align-self: start; border: 1px solid var(--ln); border-radius: 0; }
+.con-s14-005 .ledger div { padding: 0.6rem 0.8rem 0.7rem; border-bottom: 1px solid var(--ln); }
+.con-s14-005 .ledger div:last-child { border-bottom: 0; }
+.con-s14-005 .ledger dl { margin: 0; }
+.con-s14-005 .ledger dt { margin: 0 0 0.25rem; color: var(--mu); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s14-005 .ledger dd { margin: 0; }
+.con-s14-005 .slot { display: inline-flex; align-items: center; width: 100%; height: 1.9rem; padding: 0 0.5rem; border: 1px solid var(--ln); border-radius: 2px; color: var(--mu); font-size: 1rem; line-height: 1; }
+.con-s14-005 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s14-005 .s4 > div { border-bottom: 0; }
 
-/* The darkening bands */
-.con-s14-005 .bands { margin: 0; padding: 0; list-style: none; }
-.con-s14-005 .band { background: var(--bg, var(--paper)); color: var(--fg, var(--ink)); }
-.con-s14-005 .band .inner { padding: clamp(28px, 3.8vw, 62px) clamp(18px, 3.2vw, 48px); }
-.con-s14-005 .w1 { --bg: var(--b1); --fg: #111111; --soft: #5e5e5e; --faint: #969696; --line: #b4b4b4; }
-.con-s14-005 .w2 { --bg: var(--b2); --fg: #111111; --soft: #444444; --faint: #7a7a7a; --line: #b4b4b4; }
-.con-s14-005 .w3 { --bg: var(--b3); --fg: #ffffff; --soft: #ececec; --faint: #d2d2d2; --line: #969696; }
-.con-s14-005 .w4 { --bg: var(--b4); --fg: #ececec; --soft: #b4b4b4; --faint: #7a7a7a; --line: #444444; }
+.con-s14-005 .foot { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(1.6rem, 3vw, 3rem); padding: clamp(2rem, 4vw, 3.6rem) 0 clamp(2.5rem, 6vw, 6rem); }
+.con-s14-005 .foot h3 { align-self: start; display: flex; align-items: center; gap: 0.6rem; max-width: 18ch; color: var(--ink); font-size: clamp(1.4rem, 2.2vw, 2rem); letter-spacing: -0.02em; line-height: 1; }
+.con-s14-005 .foot h3 .ico { color: var(--accent); }
+.con-s14-005 .refuse { padding: 1.2rem 1.3rem 1.3rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); }
+.con-s14-005 .foot p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.con-s14-005 .foot p + p { margin-top: 0.7rem; }
+.con-s14-005 .foot p b { color: var(--ink); }
+.con-s14-005 .foot em { font-style: normal; color: var(--accent); }
+.con-s14-005 .none { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.9rem 0 1rem; padding: 0; }
+.con-s14-005 .none li { padding: 0.25rem 0.55rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
 
-.con-s14-005 .row {
-  display: grid;
-  grid-template-columns: minmax(0, 0.38fr) minmax(0, 1.62fr);
-  gap: clamp(18px, 3vw, 52px);
-  align-items: start;
+@media (max-width: 1000px) {
+  .con-s14-005 .step > div { grid-template-columns: 6.5rem minmax(0, 1fr); }
+  .con-s14-005 .ledger { grid-column: 2; margin-top: 1rem; max-width: 22rem; }
 }
-.con-s14-005 .ring {
-  margin: 0 0 8px;
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--faint, var(--ink-faint));
+@media (max-width: 800px) {
+  .con-s14-005 .head, .con-s14-005 .foot { grid-template-columns: minmax(0, 1fr); }
 }
-.con-s14-005 h3 {
-  margin: 0 0 clamp(12px, 1.5vw, 17px);
-  font-size: clamp(1.369rem, 2.074vw, 1.879rem);
-  line-height: 1.12;
-  letter-spacing: -0.024em;
-  font-weight: 700;
-  max-width: 18ch;
+@media (max-width: 560px) {
+  .con-s14-005 .step > div { grid-template-columns: minmax(0, 1fr); }
+  .con-s14-005 .ledger { grid-column: 1; }
+  .con-s14-005 .ix { font-size: 3rem; }
+  .con-s14-005 .meter { margin: 0.5rem 0 1rem; }
 }
-.con-s14-005 .regions { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
-.con-s14-005 .regions li { font-size: 0.74rem; letter-spacing: 0.085em; text-transform: uppercase; color: var(--faint, var(--ink-faint)); }
-.con-s14-005 .regions .slot {
-  display: inline-block;
-  min-width: 52px;
-  margin-left: 7px;
-  padding: 1px 10px;
-  border: 1px solid var(--line, var(--hair));
-  text-align: center;
-  letter-spacing: 0;
-}
-
-/* The loss sentence, growing band by band */
-.con-s14-005 .lose {
-  margin: 0 0 clamp(12px, 1.6vw, 18px);
-  max-width: 40ch;
-  line-height: 1.1;
-  letter-spacing: -0.028em;
-  font-weight: 700;
-  font-size: var(--fs, 1.2rem);
-}
-.con-s14-005 .w1 .lose { --fs: clamp(1.1rem, 1.5vw, 1.34rem); }
-.con-s14-005 .w2 .lose { --fs: clamp(1.34rem, 2.1vw, 1.86rem); }
-.con-s14-005 .w3 .lose { --fs: clamp(1.7rem, 3vw, 2.5rem); }
-.con-s14-005 .w4 .lose { --fs: clamp(2.1rem, 4.4vw, 3.6rem); max-width: 22ch; }
-
-.con-s14-005 .detail { margin: 0; max-width: 62ch; font-size: clamp(1.1rem, 1.132vw, 1.1rem); line-height: 1.62; color: var(--soft, var(--ink-soft)); }
-.con-s14-005 .detail + .detail { margin-top: clamp(9px, 1.2vw, 13px); }
-.con-s14-005 .detail b { color: var(--fg, var(--ink)); font-weight: 650; }
-.con-s14-005 .w4 .detail { max-width: 58ch; font-size: clamp(1.1rem, 1.322vw, 1.274rem); }
-
-/* Close */
-.con-s14-005 .close { padding: clamp(26px, 3.4vw, 54px) 0 clamp(32px, 4.2vw, 76px); }
-.con-s14-005 .close .grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 3.2vw, 52px);
-  padding-top: clamp(20px, 2.6vw, 34px);
-  border-top: 3px solid var(--rule);
-}
-.con-s14-005 .close h3 { margin-bottom: clamp(10px, 1.3vw, 14px); max-width: 22ch; }
-.con-s14-005 .close p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 54ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.62; }
-.con-s14-005 .close p:last-child { margin-bottom: 0; }
-.con-s14-005 .close p b { color: var(--ink); font-weight: 650; }
-.con-s14-005 .none { margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
-.con-s14-005 .none li {
-  padding: 5px 13px;
-  border: 1px dashed var(--hair);
-  color: var(--ink-faint);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .con-s14-005 .open { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .con-s14-005 .row { grid-template-columns: minmax(0, 1fr); gap: clamp(14px, 2.2vw, 20px); }
-  .con-s14-005 .close .grid { grid-template-columns: minmax(0, 1fr); }
-  .con-s14-005 h2, .con-s14-005 h3, .con-s14-005 .open p, .con-s14-005 .lose,
-  .con-s14-005 .detail, .con-s14-005 .close p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s14-005 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s14-005 {
-  --v2-accent: #969696;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
-  font-size: 1.06rem;
-}
-.con-s14-005 h2 { font-weight: 800; }
-.con-s14-005 h3, .con-s14-005 h4 { font-weight: 750; }
-.con-s14-005 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s14-005 .none li {
-  border: 1px dashed #b4b4b4;
-  border-radius: 14px;
-}
-.con-s14-005 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 600;
-}
-.con-s14-005.con-s14-005 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  max-width: none;
-}
-.con-s14-005.con-s14-005 .shell > h2 span, .con-s14-005.con-s14-005 .shell > h2 b, .con-s14-005.con-s14-005 .shell > h2 em, .con-s14-005.con-s14-005 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s14-005 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s14-005 .shell > *:last-child { margin-bottom: 0; }
+@media (prefers-reduced-motion: reduce) { .con-s14-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s14-005" data-study-id="CON-S14-005" data-direction="Art-directed / Distinctive">
+  <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g stroke="currentColor" stroke-width="1" fill="none">
+      <path d="M100 0L0 6M100 6L0 12M100 12L0 18M100 18L0 24M100 24L0 30M100 30L0 36M100 36L0 42M100 42L0 48M100 48L0 54M100 54L0 60M100 60L0 66M100 66L0 72M100 72L0 78M100 78L0 84M100 84L0 90M100 90L0 96M100 96L0 102" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
   <section class="shell" aria-labelledby="con-s14-005-title">
 
-    <div class="head inner">
-      <p class="eyebrow">Where we work</p>
-      <div class="open">
-        <h2 id="con-s14-005-title">The page gets darker as the attendance gets worse.</h2>
-        <p>There is no map on this page and no pins. <b>The only honest picture of a service area is a gradient</b>, and the sentence about what you lose grows the further down you read.</p>
+    <div class="head">
+      <div>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 21V4M5 4h12l-3 4 3 4H5"/></svg>Where we work</p>
+        <h2 id="con-s14-005-title">The page gets darker as the <em>attendance gets worse.</em></h2>
       </div>
+      <p>There is no map on this page and no pins. The only honest picture of a service area is a <em>gradient</em>, and the sentence about what you lose grows the further down you read.</p>
     </div>
 
-    <ul class="bands">
+    <ol class="steps">
 
-      <li class="band w1">
-        <div class="inner">
-          <div class="row">
-            <div>
-              <p class="ring">Band one</p>
-              <h3>Around the yard</h3>
-              <ul class="regions">
-                <li>Regions<span class="slot"><span class="vh">Regions in band one</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li>Yard<span class="slot"><span class="vh">Location of the yard</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-            </div>
-            <div>
-              <p class="lose">You lose nothing.</p>
-              <p class="detail"><b>The site manager is on your site every morning and goes home at night.</b> Plant comes off our own yard on our own low-loader, and when a machine stops it is our fitter who attends the same day.</p>
-              <p class="detail">Travel is not a line on your price out here. It is where we work, and it is already in the overhead.</p>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li class="band w2">
-        <div class="inner">
-          <div class="row">
-            <div>
-              <p class="ring">Band two</p>
-              <h3>The next ring out</h3>
-              <ul class="regions">
-                <li>Regions<span class="slot"><span class="vh">Regions in band two</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-            </div>
-            <div>
-              <p class="lose">You lose some of the day, and some certainty about the plant.</p>
-              <p class="detail">Still every morning &mdash; what changes is whose day is longer. Plant is ours where it travels sensibly and hired locally where it does not, so you are no longer guaranteed the machine we would have picked.</p>
-              <p class="detail"><b>Our fitter still comes, but it is a drive rather than a visit.</b> Travel is priced here and shown as its own line rather than folded into a rate.</p>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li class="band w3">
-        <div class="inner">
-          <div class="row">
-            <div>
-              <p class="ring">Band three</p>
-              <h3>Further than that</h3>
-              <ul class="regions">
-                <li>Regions<span class="slot"><span class="vh">Regions in band three</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li>Conditions<span class="slot"><span class="vh">Conditions we would attach</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-            </div>
-            <div>
-              <p class="lose">You lose daily attendance, which is the thing you were buying.</p>
-              <p class="detail"><b>Most mornings, not every morning.</b> Plant is hired locally and we are not the ones choosing it; when it stops, a hire desk attends on its timescale rather than ours.</p>
-              <p class="detail">We will travel this far for the right job, <b>and we are worse at it than a firm based there.</b> If your job is only worth doing with somebody on it daily, say so and we will not bid.</p>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li class="band w4">
-        <div class="inner">
-          <div class="row">
-            <div>
-              <p class="ring">Beyond that</p>
-              <h3>We do not bid</h3>
-              <ul class="regions">
-                <li>Not covered<span class="slot"><span class="vh">Regions we do not cover</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-            </div>
-            <div>
-              <p class="lose">And here it stops, which is the part no coverage page draws.</p>
-              <p class="detail"><b>A contractor claiming to cover a whole country is either very large or not telling the truth</b>, and the ones in the middle simply cost a client more in travel and less in attendance.</p>
-              <p class="detail">We would rather lose the enquiry than be the second of those. <b>Beyond this band we decline, and name a firm nearer you where we know one.</b></p>
-            </div>
-          </div>
-        </div>
-      </li>
-
-    </ul>
-
-    <div class="close inner">
-      <div class="grid" data-refusal>
+      <li class="step s1">
         <div>
-          <h3>Why there is no map here at all</h3>
-          <p>The other honest version of this page reserves one and argues with it. <b>At this size even an empty map would become the subject</b>, and the subject is attendance rather than territory.</p>
-          <p>A row of pins says <em>we work here</em> at a glance and supports none of it &mdash; it does not say whether anybody from this firm has been to most of those places this year.</p>
+          <div>
+            <p class="ring">Band one</p>
+            <span class="ix" aria-hidden="true">One</span>
+            <span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          </div>
+          <div>
+            <h3>Around the yard</h3>
+            <p class="lose">You lose nothing.</p>
+            <p class="t">The site manager is on your site every morning and goes home at night. Plant comes off our own yard on our own low-loader, and when a machine stops it is our fitter who attends the same day.</p>
+            <p class="t"><b>Travel is not a line on your price out here.</b> It is where we work, and it is already in the overhead.</p>
+          </div>
+          <div class="ledger">
+            <dl>
+              <div><dt>Regions</dt><dd><span class="slot"><span class="vh">Regions in band one</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+              <div><dt>Yard</dt><dd><span class="slot"><span class="vh">Location of the yard</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+            </dl>
+          </div>
         </div>
+      </li>
+
+      <li class="step s2">
         <div>
-          <ul class="none">
-            <li>No pins</li><li>No map</li><li>No radius</li><li>No mileage</li><li>No drive times</li><li>No nationwide claim</li>
-          </ul>
-          <p>And no distances. <b>A mile of motorway and a mile across a city are different jobs</b>, and neither tells you whether somebody will be standing on your site at seven in the morning. The gradient above does.</p>
+          <div>
+            <p class="ring">Band two</p>
+            <span class="ix" aria-hidden="true">Two</span>
+            <span class="meter" aria-hidden="true"><i></i><i></i><i></i><i class="o"></i></span>
+          </div>
+          <div>
+            <h3>The next ring out</h3>
+            <p class="lose">You lose some of the day, and some certainty about the plant.</p>
+            <p class="t"><b>Still every morning</b> &mdash; what changes is whose day is longer. Plant is ours where it travels sensibly and hired locally where it does not, so you are no longer guaranteed the machine we would have picked.</p>
+            <p class="t">Our fitter still comes, but it is a drive rather than a visit. Travel is priced here and shown as its own line rather than folded into a rate.</p>
+          </div>
+          <div class="ledger">
+            <dl>
+              <div><dt>Regions</dt><dd><span class="slot"><span class="vh">Regions in band two</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+            </dl>
+          </div>
         </div>
+      </li>
+
+      <li class="step s3">
+        <div>
+          <div>
+            <p class="ring">Band three</p>
+            <span class="ix" aria-hidden="true">Three</span>
+            <span class="meter" aria-hidden="true"><i></i><i></i><i class="o"></i><i class="o"></i></span>
+          </div>
+          <div>
+            <h3>Further than that</h3>
+            <p class="lose">You lose daily attendance, <em>which is the thing you were buying.</em></p>
+            <p class="t"><b>Most mornings, not every morning.</b> Plant is hired locally and we are not the ones choosing it; when it stops, a hire desk attends on its timescale rather than ours.</p>
+            <p class="t">We will travel this far for the right job, and we are worse at it than a firm based there. If your job is only worth doing with somebody on it daily, say so and we will not bid.</p>
+          </div>
+          <div class="ledger">
+            <dl>
+              <div><dt>Regions</dt><dd><span class="slot"><span class="vh">Regions in band three</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+              <div><dt>Conditions</dt><dd><span class="slot"><span class="vh">Conditions we would attach</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+            </dl>
+          </div>
+        </div>
+      </li>
+
+      <li class="step s4">
+        <div>
+          <div>
+            <p class="ring">Beyond that</p>
+            <span class="ix" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8zM9 12h6"/></svg></span>
+            <span class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          </div>
+          <div>
+            <h3>We do not bid</h3>
+            <p class="lose">And here it stops, <em>which is the part no coverage page draws.</em></p>
+            <p class="t"><b>A contractor claiming to cover a whole country is either very large or not telling the truth</b>, and the ones in the middle simply cost a client more in travel and less in attendance.</p>
+            <p class="t">We would rather lose the enquiry than be the second of those. Beyond this band we decline, and name a firm nearer you where we know one.</p>
+          </div>
+          <div class="ledger">
+            <dl>
+              <div><dt>Not covered</dt><dd><span class="slot"><span class="vh">Regions we do not cover</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+            </dl>
+          </div>
+        </div>
+      </li>
+
+    </ol>
+
+    <div class="foot">
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM4 4l16 16"/></svg>Why there is no map here at all</h3>
+      <div class="refuse" data-refusal>
+        <p>The other honest version of this page reserves one and argues with it. <b>At this size even an empty map would become the subject</b>, and the subject is attendance rather than territory.</p>
+        <p>A row of pins says <em>we work here</em> at a glance and supports none of it &mdash; it does not say whether anybody from this firm has been to most of those places this year.</p>
+        <ul class="none">
+          <li>No pins</li><li>No map</li><li>No radius</li><li>No mileage</li><li>No drive times</li><li>No nationwide claim</li>
+        </ul>
+        <p>And no distances. <b>A mile of motorway and a mile across a city are different jobs</b>, and neither tells you whether somebody will be standing on your site at seven in the morning. The gradient above does.</p>
       </div>
     </div>
 

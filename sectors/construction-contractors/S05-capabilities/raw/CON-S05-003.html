@@ -12,30 +12,23 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S05 — Capabilities
   Direction      : Structured / Visual Modular
-  Reference      : None supplied for this section.
-  Layout model   : The axis inverted — four saturated colour columns, one per holding marker, each
-                   carrying the capabilities that sit under it with the family as a chip, and a
-                   fifth dashed column-strip below for what is not held at all
-  Density        : High
-  Media mode     : One reserved site area under the head, a wide band rather than a slab.
-  Interaction    : None (static; no JavaScript)
-  The device     : **Grouped by how it is held, not by what it is.** `001` groups by family and
-                   carries the marker as a chip; this study does the exact opposite, and the
-                   inversion is the whole point — you can see at a glance how much of the page is
-                   at a glance before reading a single line. A capability list grouped by trade hides
-                   own answer; grouped by marker it cannot.
-  Not a table    : The sector direction's trap for this direction is the specification table, and a
-                   table of trades is what this section becomes by default. The defence is that the
-                   columns are unequal by construction — different lengths, different weights, one
-                   of them deliberately short — so the layout states a proportion rather than
-                   ruling a grid.
-  The fifth strip : What is not held at all, dashed rather than filled. It completes the system
-                   instead of sitting under it as a footnote, which is the structural way to make a
-                   steer-away unignorable.
-  Content note   : Trade, plant and technical function names are generic vocabulary. Depth figures
-                   are reserved fields, inline and smallest in each card. No client or project name,
-                   no certification or scheme, no safety record, no award or rating, no price or
-                   rate; no digit in visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3,
+                   bordered cells sharing hairlines, as four marker columns — DIRECTLY EMPLOYED,
+                   OWNED OUTRIGHT, LONG-TERM HIRE, RETAINED SPECIALIST — each headed by its
+                   stroke icon at 2.4rem, its definition, and a ruled register of capabilities
+                   with a family tag (TRADES / PLANT / TECHNICAL), one sentence and the
+                   reserved depth slot. The proportion is read from the column lengths before
+                   a line is read. NOT HELD AT ALL as a fifth, full-width bordered strip with
+                   a cone icon (V1 drew it dashed; the register has no dashed rule, so it is
+                   the same hairline with the only accent-coloured head). Drawing layer: a
+                   setting-out grid behind the head. V1 is kept whole.
+  Layout model   : Head split. 3:1 site field. Four bordered columns. Full-width bordered
+                   not-held strip.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : One reserved site field, 3:1. Fourteen reserved depth slots.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No figure, percentage, price, rate, certification, operator card, client,
+                   project name, safety record, award or urgency device. Graphics inline SVG.
 -->
 
 <meta name="study-id" content="CON-S05-003">
@@ -46,455 +39,131 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Four saturated marker columns with family chips, plus a dashed not-held strip">
-<meta name="density" content="high">
-<meta name="media-mode" content="one-reserved-area">
+<meta name="theme" content="003 Steel &amp; Structural Blue">
+<meta name="layout-model" content="Head split; 3:1 site field; four bordered marker columns each with icon, definition and a ruled register of capabilities with family tags and reserved depth slots; full-width bordered not-held strip; setting-out grid behind">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-site-field-fourteen-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S05-003 — Capabilities, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e8e8e8; }
+body { margin: 0; background: #edf0f2; }
 
-/* Scoped study styles — namespaced to .con-s05-003 */
 .con-s05-003 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --ink-faint: #969696;
-  --paper: #e8e8e8;
-  --card: #ffffff;
-  --line: #ececec;
-  --rule: #d2d2d2;
-  --chip: #ececec;
-  --slot-a: #b4b4b4;
-  --slot-b: #7a7a7a;
-  --on-slot: #ffffff;
-
-  --employed: #444444;
-  --owned: #2b2b2b;
-  --hire: #5e5e5e;
-  --retained: #111111;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #edf0f2; --ink: #0f1316; --muted: #57616a; --line: #d2d9de; --line-strong: #0f1316;
+  --media: #dfe4e8; --band: #e4e8eb; --accent: #1f5fd0;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s05-003 *,
-.con-s05-003 *::before,
-.con-s05-003 *::after { box-sizing: inherit; }
-.con-s05-003 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s05-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s05-003 *, .con-s05-003 *::before, .con-s05-003 *::after { box-sizing: inherit; }
+.con-s05-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s05-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s05-003 .draw { position: absolute; left: 0; right: 0; top: 0; height: 24rem; pointer-events: none; color: var(--line); }
+.con-s05-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s05-003 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s05-003 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s05-003 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s05-003 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s05-003 h2 em { font-style: normal; color: var(--accent); }
+.con-s05-003 .lead { margin: 0 0 0.3rem; max-width: 24rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
+.con-s05-003 .media { position: relative; aspect-ratio: 3 / 1; margin-top: clamp(1.6rem, 3vw, 3rem); background: var(--media); border-top: 3px solid var(--accent); }
+.con-s05-003 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Head */
-.con-s05-003 .head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: clamp(14px, 2.4vw, 40px);
-  margin-bottom: clamp(16px, 2.2vw, 28px);
-}
-.con-s05-003 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s05-003 h2 {
-  margin: 0;
-  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
-  line-height: 1.04;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 21ch;
-}
-.con-s05-003 .head p { margin: 0; max-width: 38ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s05-003 .cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s05-003 .col { display: flex; flex-direction: column; min-width: 0; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s05-003 .ch { padding: 1.1rem 1.1rem 1rem; border-bottom: 1px solid var(--line-strong); }
+.con-s05-003 .ch .ico { width: 2.4rem; height: 2.4rem; color: var(--accent); stroke-width: 1.3; }
+.con-s05-003 .ch h3 { margin: 0.6rem 0 0.3rem; font-weight: 800; font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s05-003 .ch p { margin: 0; color: var(--muted); font-size: 0.8rem; line-height: 1.45; }
+.con-s05-003 .reg { margin: 0; padding: 0 1.1rem; list-style: none; }
+.con-s05-003 .reg li { display: flex; flex-direction: column; padding: 0.8rem 0; border-top: 1px solid var(--line); }
+.con-s05-003 .reg li:first-child { border-top: 0; }
+.con-s05-003 .fam { margin: 0 0 0.25rem; color: var(--accent); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s05-003 .reg h4 { margin: 0 0 0.3rem; font-weight: 800; font-size: 0.86rem; line-height: 1.15; letter-spacing: 0.04em; text-transform: uppercase; }
+.con-s05-003 .reg p { margin: 0; color: var(--muted); font-size: 0.8rem; line-height: 1.45; }
+.con-s05-003 .dep { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin: 0.6rem 0 0; }
+.con-s05-003 .dep dt { margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s05-003 .dep dd { margin: 0; }
+.con-s05-003 .slot { display: inline-flex; align-items: center; justify-content: center; min-width: 3.8rem; height: 2.1rem; padding: 0 0.6rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 1.3rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.con-s05-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.con-s05-003 .shot {
-  border-radius: 22px;
-  overflow: hidden;
-  height: clamp(150px, 17vw, 260px);
-  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(13px, 1.6vw, 20px);
-  margin-bottom: clamp(16px, 2.2vw, 28px);
-}
-.con-s05-003 .shot span {
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.84;
-}
+.con-s05-003 .not { display: grid; grid-template-columns: minmax(12rem, 0.5fr) minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 0 clamp(1.2rem, 2.4vw, 2.6rem); padding: 1.2rem 1.3rem 1.3rem; border: 1px solid var(--line-strong); border-top: 0; }
+.con-s05-003 .not h3 { display: flex; align-items: center; gap: 0.6rem; margin: 0; color: var(--accent); font-weight: 800; font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s05-003 .not h3 .ico { width: 1.6rem; height: 1.6rem; }
+.con-s05-003 .not ul { margin: 0; padding: 0; list-style: none; }
+.con-s05-003 .not li { padding: 0.3rem 0; border-top: 1px solid var(--line); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.con-s05-003 .not li:first-child { border-top: 0; padding-top: 0; }
+.con-s05-003 .not p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
 
-/* Marker columns */
-.con-s05-003 .cols {
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.4vw, 18px);
-  align-items: start;
-}
-.con-s05-003 .cols > li { min-width: 0; }
-.con-s05-003 .col { border-radius: 26px; overflow: hidden; }
-.con-s05-003 .colhead {
-  background: var(--tone, #5e5e5e);
-  color: #ffffff;
-  padding: clamp(15px, 1.8vw, 22px);
-}
-.con-s05-003 h3 {
-  margin: 0 0 6px;
-  font-size: clamp(1.251rem, 1.593vw, 1.463rem);
-  line-height: 1.16;
-  letter-spacing: -0.018em;
-  font-weight: 700;
-}
-.con-s05-003 .colhead p { margin: 0; font-size: 1rem; line-height: 1.48; opacity: 0.88; }
-.con-s05-003 .t-employed { --tone: var(--employed); }
-.con-s05-003 .t-owned { --tone: var(--owned); }
-.con-s05-003 .t-hire { --tone: var(--hire); }
-.con-s05-003 .t-retained { --tone: var(--retained); }
-
-.con-s05-003 .items { margin: 0; padding: clamp(9px, 1.1vw, 13px); list-style: none; background: var(--card); display: grid; gap: clamp(9px, 1.1vw, 13px); }
-.con-s05-003 .item { border-radius: 22px; background: var(--chip); padding: clamp(12px, 1.4vw, 16px); }
-.con-s05-003 h4 {
-  margin: 0 0 7px;
-  font-size: 1.1rem;
-  line-height: 1.24;
-  letter-spacing: -0.012em;
-  font-weight: 700;
-}
-.con-s05-003 .fam {
-  display: inline-block;
-  margin: 0 0 8px;
-  padding: 2px 9px;
-  border-radius: 999px;
-  border: 1px solid var(--rule);
-  font-size: 0.8rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s05-003 .lim { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
-.con-s05-003 .depth {
-  margin: 9px 0 0;
-  padding-top: 8px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
-  font-size: 0.8rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s05-003 .slot {
-  min-width: 36px;
-  padding: 1px 8px;
-  border-radius: 16px;
-  background: var(--card);
-  text-align: center;
-  letter-spacing: 0;
-}
-
-/* Not-held strip */
-.con-s05-003 .strip {
-  border-radius: 26px;
-  border: 2px dashed var(--rule);
-  padding: clamp(16px, 2vw, 26px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
-  gap: clamp(16px, 2.6vw, 40px);
-  align-items: center;
-}
-.con-s05-003 .strip h3 { max-width: 15ch; }
-.con-s05-003 .strip > div > p { margin: 8px 0 0; max-width: 74ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.58; }
-.con-s05-003 .strip b { color: var(--ink); font-weight: 650; }
-.con-s05-003 .not { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-.con-s05-003 .not li {
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px dashed var(--rule);
-  color: var(--ink-soft);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* Responsive ladder */
-@media (max-width: 1180px) {
-  .con-s05-003 .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 720px) {
-  .con-s05-003 .cols { grid-template-columns: minmax(0, 1fr); }
-  .con-s05-003 .strip { grid-template-columns: minmax(0, 1fr); }
-  .con-s05-003 h2,
-  .con-s05-003 .head p,
-  .con-s05-003 .strip h3,
-  .con-s05-003 .strip > div > p { max-width: none; }
-  .con-s05-003 .shot { height: clamp(120px, 34vw, 190px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s05-003 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s05-003 {
-  --v2-accent: #969696;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
-  font-size: 1.06rem;
-}
-.con-s05-003 h2 { font-weight: 800; }
-.con-s05-003 h3, .con-s05-003 h4 { font-weight: 750; }
-.con-s05-003 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s05-003 .items, .con-s05-003 .slot {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #d2d2d2;
-}
-.con-s05-003 .not li {
-  border: 1px dashed #b4b4b4;
-  border-radius: 14px;
-}
-.con-s05-003 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 600;
-}
-.con-s05-003.con-s05-003 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s05-003.con-s05-003 .head h2, .con-s05-003.con-s05-003 .head h3, .con-s05-003.con-s05-003 .head h4, .con-s05-003.con-s05-003 .head b, .con-s05-003.con-s05-003 .head strong, .con-s05-003.con-s05-003 .head p b, .con-s05-003.con-s05-003 .head li b, .con-s05-003.con-s05-003 .head span b, .con-s05-003.con-s05-003 .head dt, .con-s05-003.con-s05-003 .head div b {
-  color: #ffffff;
-}
-.con-s05-003.con-s05-003 .head p, .con-s05-003.con-s05-003 .head li, .con-s05-003.con-s05-003 .head span, .con-s05-003.con-s05-003 .head dd, .con-s05-003.con-s05-003 .head div p, .con-s05-003.con-s05-003 .head div li, .con-s05-003.con-s05-003 .head p span, .con-s05-003.con-s05-003 .head .said, .con-s05-003.con-s05-003 .head .note {
-  color: #d2d2d2;
-}
-.con-s05-003.con-s05-003 .head .eyebrow, .con-s05-003.con-s05-003 .head .kicker, .con-s05-003.con-s05-003 .head .slot, .con-s05-003.con-s05-003 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s05-003.con-s05-003 .head i, .con-s05-003.con-s05-003 .head .bars i, .con-s05-003.con-s05-003 .head .lines i, .con-s05-003.con-s05-003 .head .measures i, .con-s05-003.con-s05-003 .head .bar, .con-s05-003.con-s05-003 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s05-003.con-s05-003 .head .plate, .con-s05-003.con-s05-003 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s05-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s05-003 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1100px) { .con-s05-003 .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 1024px) { .con-s05-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s05-003 .lead { text-align: left; } .con-s05-003 h2 { max-width: none; } .con-s05-003 .draw { display: none; } .con-s05-003 .not { grid-template-columns: minmax(0, 1fr); gap: 0.8rem; } }
+@media (max-width: 640px) { .con-s05-003 .cols { grid-template-columns: minmax(0, 1fr); } .con-s05-003 .media { aspect-ratio: 16 / 10; } }
+@media (prefers-reduced-motion: reduce) { .con-s05-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s05-003" data-study-id="CON-S05-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" viewBox="0 0 1440 384" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 64H1440M0 192H1440M0 320H1440M160 0V384M320 0V384M480 0V384M640 0V384M800 0V384M960 0V384M1120 0V384M1280 0V384"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s05-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">What we hold</p>
-        <h2 id="con-s05-003-title">Sorted by how it is held, not by what it is called</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>What we hold</p>
+        <h2 id="con-s05-003-title">Sorted by <em>how it is held,</em> not by what it is called.</h2>
       </div>
-      <p>A capability list grouped by trade hides its own answer. Grouped this way it cannot &mdash; you can see the proportion before you read a line of it.</p>
+      <p class="lead">A capability list grouped by trade hides its own answer. Grouped this way it cannot &mdash; you can see the proportion before you read a line of it.</p>
     </div>
 
-    <div class="shot"><span>Site media &mdash; our own people and plant working, wide</span></div>
+    <div class="media" role="img" aria-label="Reserved site field: our own people and plant working, wide"><p class="slate" aria-hidden="true">Site area &middot; 3:1 &middot; our own people and plant working</p></div>
 
-    <ul class="cols">
-
-      <li>
-        <div class="col t-employed">
-          <div class="colhead">
-            <h3>Directly employed</h3>
-            <p>Our books, our insurance, our supervision.</p>
-          </div>
-          <ul class="items">
-            <li class="item">
-              <p class="fam">Trades</p>
-              <h4>Groundworks &amp; drainage</h4>
-              <p class="lim">Beyond what we hold we phase the sequence rather than bring in a gang we do not know.</p>
-              <p class="depth"><span>Gangs</span><span class="slot"><span class="vh">Number of groundworks gangs</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Trades</p>
-              <h4>Concrete frame &amp; formwork</h4>
-              <p class="lim">Two frames at once share the same teams, so one starts later. Said at tender.</p>
-              <p class="depth"><span>Teams</span><span class="slot"><span class="vh">Number of frame teams</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Trades</p>
-              <h4>Carpentry &amp; joinery</h4>
-              <p class="lim">First fix ours throughout; a heavy second fix pulls in known labour under our foreman.</p>
-              <p class="depth"><span>Carpenters</span><span class="slot"><span class="vh">Number of carpenters</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Technical</p>
-              <h4>Planning &amp; programming</h4>
-              <p class="lim">The planner who writes your programme walks the site. Otherwise it is a spreadsheet.</p>
-              <p class="depth"><span>Planners</span><span class="slot"><span class="vh">Number of planners</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Technical</p>
-              <h4>Commercial &amp; quantity surveying</h4>
-              <p class="lim">The surveyor who priced it stays on it. Handovers are where variations come from.</p>
-              <p class="depth"><span>Surveyors</span><span class="slot"><span class="vh">Number of quantity surveyors</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Technical</p>
-              <h4>Site management</h4>
-              <p class="lim">A manager per site, not one split across three. If we cannot resource that, we decline.</p>
-              <p class="depth"><span>Managers</span><span class="slot"><span class="vh">Number of site managers</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-      <li>
-        <div class="col t-owned">
-          <div class="colhead">
-            <h3>Owned outright</h3>
-            <p>In our yard, maintained by us, and a breakdown is our cost.</p>
-          </div>
-          <ul class="items">
-            <li class="item">
-              <p class="fam">Plant</p>
-              <h4>Excavation &amp; earthmoving</h4>
-              <p class="lim">Our fitter attends, rather than your programme joining a hire-yard queue.</p>
-              <p class="depth"><span>Machines</span><span class="slot"><span class="vh">Number of excavation machines</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Plant</p>
-              <h4>Formwork &amp; falsework</h4>
-              <p class="lim">Ours, so a pour never waits on a delivery date somebody else controls.</p>
-              <p class="depth"><span>Sets</span><span class="slot"><span class="vh">Number of formwork sets</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Technical</p>
-              <h4>Survey instruments</h4>
-              <p class="lim">Ours and calibrated by us, so setting out is not booked in as somebody&rsquo;s visit.</p>
-              <p class="depth"><span>Instruments</span><span class="slot"><span class="vh">Number of survey instruments</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-      <li>
-        <div class="col t-hire">
-          <div class="colhead">
-            <h3>Long-term hire</h3>
-            <p>Not ours &mdash; but the same units and the same people each time.</p>
-          </div>
-          <ul class="items">
-            <li class="item">
-              <p class="fam">Trades</p>
-              <h4>Brickwork</h4>
-              <p class="lim">Labour-only, the same gangs year after year. We will not call them ours.</p>
-              <p class="depth"><span>Gangs</span><span class="slot"><span class="vh">Number of regular brickwork gangs</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Plant</p>
-              <h4>Access &amp; handling</h4>
-              <p class="lim">Deliberately hired. Plant standing idle half the year ends up in your preliminaries.</p>
-              <p class="depth"><span>Units</span><span class="slot"><span class="vh">Number of access units</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-      <li>
-        <div class="col t-retained">
-          <div class="colhead">
-            <h3>Retained specialist</h3>
-            <p>Not ours at all, and the same firm every job rather than the cheapest that month.</p>
-          </div>
-          <ul class="items">
-            <li class="item">
-              <p class="fam">Trades</p>
-              <h4>Structural steel</h4>
-              <p class="lim">One firm, every job. Erection theirs; the programme and the interfaces stay ours.</p>
-              <p class="depth"><span>Firms</span><span class="slot"><span class="vh">Number of retained steel firms</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Trades</p>
-              <h4>Mechanical &amp; electrical</h4>
-              <p class="lim">Never ours. The coordination and the commissioning window are, and that is where these jobs turn.</p>
-              <p class="depth"><span>Firms</span><span class="slot"><span class="vh">Number of retained M and E firms</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-            <li class="item">
-              <p class="fam">Technical</p>
-              <h4>Temporary works design</h4>
-              <p class="lim">Designed by an engineer who carries it, never by the person who wants the prop moved.</p>
-              <p class="depth"><span>Engineers</span><span class="slot"><span class="vh">Number of retained temporary works engineers</span><span aria-hidden="true">&mdash;</span></span></p>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-    </ul>
-
-    <div class="strip">
-      <h3>Not held at all</h3>
-      <div>
-        <ul class="not">
-          <li>Specialist fa&ccedil;ade and curtain walling</li>
-          <li>Asbestos removal</li>
-          <li>Lift installation and commissioning</li>
-          <li>Live process environments</li>
+    <div class="cols">
+      <div class="col">
+        <div class="ch"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg><h3>Directly employed</h3><p>Our books, our insurance, our supervision.</p></div>
+        <ul class="reg">
+          <li><p class="fam">Trades</p><h4>Groundworks &amp; drainage</h4><p>Beyond what we hold we phase the sequence rather than bring in a gang we do not know.</p><dl class="dep"><dt>Gangs</dt><dd><span class="slot"><span class="vh">Number of groundworks gangs</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Trades</p><h4>Concrete frame &amp; formwork</h4><p>Two frames at once share the same teams, so one starts later. Said at tender.</p><dl class="dep"><dt>Teams</dt><dd><span class="slot"><span class="vh">Number of frame teams</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Trades</p><h4>Carpentry &amp; joinery</h4><p>First fix ours throughout; a heavy second fix pulls in known labour under our foreman.</p><dl class="dep"><dt>Carpenters</dt><dd><span class="slot"><span class="vh">Number of carpenters</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Technical</p><h4>Planning &amp; programming</h4><p>The planner who writes your programme walks the site. Otherwise it is a spreadsheet.</p><dl class="dep"><dt>Planners</dt><dd><span class="slot"><span class="vh">Number of planners</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Technical</p><h4>Commercial &amp; quantity surveying</h4><p>The surveyor who priced it stays on it. Handovers are where variations come from.</p><dl class="dep"><dt>Surveyors</dt><dd><span class="slot"><span class="vh">Number of quantity surveyors</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Technical</p><h4>Site management</h4><p>A manager per site, not one split across three. If we cannot resource that, we decline.</p><dl class="dep"><dt>Managers</dt><dd><span class="slot"><span class="vh">Number of site managers</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
         </ul>
-        <p><b>Drawn dashed because it belongs to the same system, not underneath it.</b> Buying these in to call them ours would put a margin between you and the firm doing the work, and where a job is mostly one of them a specialist will be better and cheaper. The columns above are only worth reading because this one exists.</p>
       </div>
+      <div class="col">
+        <div class="ch"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M9 11h6l-1 8h-4zM12 3l3 2"/></svg><h3>Owned outright</h3><p>In our yard, maintained by us, and a breakdown is our cost.</p></div>
+        <ul class="reg">
+          <li><p class="fam">Plant</p><h4>Excavation &amp; earthmoving</h4><p>Our fitter attends, rather than your programme joining a hire-yard queue.</p><dl class="dep"><dt>Machines</dt><dd><span class="slot"><span class="vh">Number of excavation machines</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Plant</p><h4>Formwork &amp; falsework</h4><p>Ours, so a pour never waits on a delivery date somebody else controls.</p><dl class="dep"><dt>Sets</dt><dd><span class="slot"><span class="vh">Number of formwork sets</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Technical</p><h4>Survey instruments</h4><p>Ours and checked by us, so setting out is not booked in as somebody&rsquo;s visit.</p><dl class="dep"><dt>Instruments</dt><dd><span class="slot"><span class="vh">Number of survey instruments</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="ch"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><h3>Long-term hire</h3><p>Not ours &mdash; but the same units and the same people each time.</p></div>
+        <ul class="reg">
+          <li><p class="fam">Trades</p><h4>Brickwork</h4><p>Labour-only, the same gangs year after year. We will not call them ours.</p><dl class="dep"><dt>Gangs</dt><dd><span class="slot"><span class="vh">Number of regular brickwork gangs</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Plant</p><h4>Access &amp; handling</h4><p>Deliberately hired. Plant standing idle half the year ends up in your preliminaries.</p><dl class="dep"><dt>Units</dt><dd><span class="slot"><span class="vh">Number of access units</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="ch"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg><h3>Retained specialist</h3><p>Not ours at all, and the same firm every job rather than the cheapest that month.</p></div>
+        <ul class="reg">
+          <li><p class="fam">Trades</p><h4>Structural steel</h4><p>One firm, every job. Erection theirs; the programme and the interfaces stay ours.</p><dl class="dep"><dt>Firms</dt><dd><span class="slot"><span class="vh">Number of retained steel firms</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Trades</p><h4>Mechanical &amp; electrical</h4><p>Never ours. The coordination and the commissioning window are, and that is where these jobs turn.</p><dl class="dep"><dt>Firms</dt><dd><span class="slot"><span class="vh">Number of retained M and E firms</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+          <li><p class="fam">Technical</p><h4>Temporary works design</h4><p>Designed by an engineer who carries it, never by the person who wants the prop moved.</p><dl class="dep"><dt>Engineers</dt><dd><span class="slot"><span class="vh">Number of retained temporary works engineers</span><span aria-hidden="true">&mdash;</span></span></dd></dl></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="not">
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>Not held at all</h3>
+      <ul><li>Specialist fa&ccedil;ade and curtain walling</li><li>Asbestos removal</li><li>Lift installation and commissioning</li><li>Live process environments</li></ul>
+      <p>Drawn in the same frame because it belongs to the same system, not underneath it. Buying these in to call them ours would put a margin between you and the firm doing the work, and where a job is mostly one of them a specialist will be better and cheaper. The columns above are only worth reading because this one exists.</p>
     </div>
 
   </section>

@@ -12,28 +12,22 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S09 — Company Stats
   Direction      : Structured / Visual Modular
-  Reference      : None supplied for this section.
-  Layout model   : A deliberately unequal grid — the date as a wide shallow band across the top,
-                   then the running total, the snapshot and the single extreme at three different
-                   widths beneath it — under a legend explaining the four kinds
-  Density        : High
-  Media mode     : None. A counter has nothing to photograph.
-  Interaction    : None (static; no JavaScript)
-  The device     : **The grid is unequal on purpose.** This direction's usual answer to four figures
-                   is four equal cells, and four equal cells is the exact thing this section exists
-                   to argue against. So the modules are sized by what kind of quantity each holds,
-                   and no two of them are the same width.
-  The legend     : Four kinds, four marker shapes, explained once at the top. A reader who takes
-                   nothing else from the page should take the distinction, because it is the part
-                   that transfers to every other contractor's stats band they will look at today.
-  Not a table    : The direction's trap, and here it is the subject rather than a hazard. A table
-                   would give every figure the same cell and thereby make the section's own
-                   argument impossible to state.
-  Deliberately not : No fifth figure, no percentage, no growth arrow or trend line, no client logo,
-                   award or rating.
-  Content note   : Sectors and trades are generic vocabulary and are the only real content. All four
-                   figures and their bases are reserved fields. No safety figure of any kind; no
-                   digit in visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3
+                   as an unequal modular grid: a four-cell legend of the kinds under the tape
+                   rule, then four bordered modules sized by kind — the fixed point wide and
+                   shallow (12 columns, the slot on a drawn datum line), the running total
+                   seven columns with its record as stacked ruled rows, the snapshot five
+                   columns on the band tone (provisional, the register's tint standing in for
+                   V1's dashed rule), and the single extreme four columns with a drawn spike
+                   beside the tallest slot. Then the tags and the refusal strip. Drawing layer:
+                   a setting-out grid behind the head. V1 is kept whole.
+  Layout model   : Head split. Legend row. Unequal bordered modules (12 / 7+5 / 4+8 tags).
+                   Bordered refusal strip.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : None. Ten reserved fields.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No figure, date, percentage, rating, award, client, project name, price or
+                   safety figure. Every quantity is a reserved slot. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S09-003">
@@ -44,472 +38,130 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Unequal modular grid sized by kind of quantity, under a legend of the four kinds">
-<meta name="density" content="high">
-<meta name="media-mode" content="none">
+<meta name="theme" content="003 Steel &amp; Structural Blue">
+<meta name="layout-model" content="Head split; four-cell legend of the kinds; unequal bordered modules sized by kind — wide fixed point on a datum line, running total with stacked record, snapshot on the band tone, narrow extreme with a drawn spike; tags; bordered refusal strip; setting-out grid behind">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media-ten-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S09-003 — Company Stats, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #dfdfdf; }
+body { margin: 0; background: #edf0f2; }
 
-/* Scoped study styles — namespaced to .con-s09-003 */
 .con-s09-003 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --ink-faint: #969696;
-  --paper: #dfdfdf;
-  --card: #ffffff;
-  --line: #d2d2d2;
-  --rule: #b4b4b4;
-  --field: #ececec;
-
-  --point: #2b2b2b;
-  --total: #111111;
-  --snap: #969696;
-  --extreme: #7a7a7a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #edf0f2; --ink: #0f1316; --muted: #57616a; --line: #d2d9de; --line-strong: #0f1316;
+  --media: #dfe4e8; --band: #e4e8eb; --accent: #1f5fd0;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s09-003 *,
-.con-s09-003 *::before,
-.con-s09-003 *::after { box-sizing: inherit; }
-.con-s09-003 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s09-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s09-003 *, .con-s09-003 *::before, .con-s09-003 *::after { box-sizing: inherit; }
+.con-s09-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s09-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s09-003 .draw { position: absolute; left: 0; right: 0; top: 0; height: 24rem; pointer-events: none; color: var(--line); }
+.con-s09-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s09-003 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s09-003 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s09-003 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s09-003 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s09-003 h2 em { font-style: normal; color: var(--accent); }
+.con-s09-003 .lead { margin: 0 0 0.3rem; max-width: 24rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
 
-/* Head */
-.con-s09-003 .head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: clamp(14px, 2.4vw, 40px);
-  margin-bottom: clamp(14px, 2vw, 24px);
-}
-.con-s09-003 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s09-003 h2 {
-  margin: 0;
-  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
-  line-height: 1.04;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 22ch;
-}
-.con-s09-003 .head p { margin: 0; max-width: 40ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
-.con-s09-003 .head p b { color: var(--ink); font-weight: 650; }
+.con-s09-003 .legend { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(1.6rem, 3vw, 3rem); border-top: 3px solid var(--accent); border-left: 1px solid var(--line-strong); }
+.con-s09-003 .legend div { padding: 0.9rem 1.1rem 1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s09-003 .legend strong { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.2rem; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s09-003 .legend .ico { width: 1.2rem; height: 1.2rem; color: var(--accent); }
+.con-s09-003 .legend p { margin: 0; color: var(--muted); font-size: 0.8rem; line-height: 1.45; }
 
-/* Legend */
-.con-s09-003 .legend {
-  margin: 0 0 clamp(12px, 1.6vw, 18px);
-  padding: clamp(14px, 1.8vw, 22px);
-  border-radius: 22px;
-  background: var(--card);
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 30px);
-}
-.con-s09-003 .legend li { min-width: 0; }
-.con-s09-003 .legend .name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0 0 4px;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  font-weight: 700;
-  color: var(--tone, var(--ink));
-}
-.con-s09-003 .legend .name::before {
-  content: "";
-  width: 11px;
-  height: 11px;
-  flex: none;
-  background: var(--tone, var(--ink));
-}
-.con-s09-003 .legend p { margin: 0; font-size: 1rem; line-height: 1.46; color: var(--ink-soft); }
-.con-s09-003 .k-point { --tone: var(--point); }
-.con-s09-003 .k-total { --tone: var(--total); }
-.con-s09-003 .k-snap { --tone: var(--snap); }
-.con-s09-003 .k-extreme { --tone: var(--extreme); }
-.con-s09-003 .k-point .name::before { border-radius: 50%; }
-.con-s09-003 .k-snap .name::before { border-radius: 10px; transform: rotate(45deg); }
-.con-s09-003 .k-extreme .name::before { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.con-s09-003 .mods { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s09-003 .mod { display: flex; flex-direction: column; min-width: 0; padding: 1.2rem 1.3rem 1.3rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s09-003 .m12 { grid-column: span 12; } .con-s09-003 .m7 { grid-column: span 7; } .con-s09-003 .m5 { grid-column: span 5; } .con-s09-003 .m4 { grid-column: span 4; } .con-s09-003 .m8 { grid-column: span 8; }
+.con-s09-003 .kind { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.5rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s09-003 .kind .ico { width: 1.2rem; height: 1.2rem; }
+.con-s09-003 h3 { margin: 0 0 0.6rem; font-weight: 800; font-size: clamp(1.1rem, 1.7vw, 1.5rem); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s09-003 .slot { display: flex; align-items: center; width: 100%; height: 3.8rem; padding: 0 1rem; border: 1px solid var(--line-strong); border-radius: 2px; background: var(--paper); color: var(--ink); font-size: 2.4rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.con-s09-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s09-003 .rec div { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; padding: 0.4rem 0; border-top: 1px solid var(--line); }
+.con-s09-003 .rec { margin: 0.7rem 0 0; }
+.con-s09-003 .rec dt { margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s09-003 .rec dd { margin: 0; }
+.con-s09-003 .rec .s { display: inline-flex; align-items: center; min-width: 6rem; height: 1.5rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.8rem; }
+.con-s09-003 .mod p.n { margin: auto 0 0; padding-top: 0.8rem; max-width: 40rem; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s09-003 .fix .row { display: grid; grid-template-columns: minmax(12rem, 0.5fr) minmax(0, 1fr) minmax(12rem, 0.6fr); gap: 1.2rem; align-items: center; }
+.con-s09-003 .fix .row .slot { max-width: 16rem; }
+.con-s09-003 .datum { width: 100%; height: 2.4rem; color: var(--line-strong); }
+.con-s09-003 .fix .rec { margin: 0; }
+.con-s09-003 .fix .rec div { border-top: 0; padding: 0; }
+.con-s09-003 .snap { background: var(--band); }
+.con-s09-003 .ext .row { display: grid; grid-template-columns: minmax(0, 1fr) 4.4rem; gap: 0.8rem; align-items: end; }
+.con-s09-003 .ext .slot { height: 5rem; font-size: 3rem; }
+.con-s09-003 .spike { width: 4.4rem; height: 5rem; color: var(--line-strong); }
 
-/* The unequal grid */
-.con-s09-003 .grid {
-  margin: 0 0 clamp(12px, 1.6vw, 18px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(11px, 1.4vw, 16px);
-  align-items: stretch;
-}
-.con-s09-003 .grid > li { min-width: 0; }
-.con-s09-003 .w-date { grid-column: span 12; }
-.con-s09-003 .w-total { grid-column: span 5; }
-.con-s09-003 .w-snap { grid-column: span 4; }
-.con-s09-003 .w-extreme { grid-column: span 3; }
+.con-s09-003 .tags h3 { font-size: clamp(1rem, 1.5vw, 1.3rem); }
+.con-s09-003 .tags p { margin: 0 0 0.8rem; max-width: 40rem; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s09-003 .tags ul { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+.con-s09-003 .tags li { padding: 0.35rem 0.6rem; border: 1px solid var(--line-strong); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s09-003 .tags li.t { border-color: var(--line); color: var(--muted); }
 
-.con-s09-003 .mod {
-  height: 100%;
-  border-radius: 22px;
-  background: var(--card);
-  padding: clamp(15px, 1.9vw, 24px);
-}
-.con-s09-003 .tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin: 0 0 clamp(9px, 1.2vw, 13px);
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s09-003 .tag::before {
-  content: "";
-  width: 9px;
-  height: 9px;
-  flex: none;
-  background: var(--tone, var(--ink-faint));
-}
-.con-s09-003 .w-date .tag::before { border-radius: 50%; }
-.con-s09-003 .w-snap .tag::before { border-radius: 10px; transform: rotate(45deg); }
-.con-s09-003 .w-extreme .tag::before { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.con-s09-003 .not { display: grid; grid-template-columns: minmax(14rem, 0.5fr) minmax(0, 1.5fr); gap: clamp(1.2rem, 2.4vw, 2.6rem); padding: 1.2rem 1.5rem 1.4rem; border: 1px solid var(--line-strong); border-top: 0; }
+.con-s09-003 .not .lab { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.6rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s09-003 .not .lab .ico { width: 1.2rem; height: 1.2rem; }
+.con-s09-003 .not ul { margin: 0; padding: 0; list-style: none; }
+.con-s09-003 .not li { padding: 0.3rem 0; border-top: 1px solid var(--line); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.con-s09-003 .not p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s09-003 .not p + p { margin-top: 0.6rem; }
 
-.con-s09-003 h3 {
-  margin: 0 0 clamp(10px, 1.3vw, 14px);
-  font-size: clamp(1.1rem, 1.463vw, 1.369rem);
-  line-height: 1.18;
-  letter-spacing: -0.018em;
-  font-weight: 700;
-}
-
-/* The date band, wide and shallow */
-.con-s09-003 .w-date .mod {
-  display: grid;
-  grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.28fr) minmax(0, 1fr);
-  gap: clamp(14px, 2.4vw, 40px);
-  align-items: center;
-}
-.con-s09-003 .timeline {
-  position: relative;
-  padding-bottom: clamp(14px, 1.8vw, 20px);
-  border-bottom: 3px solid var(--point);
-}
-.con-s09-003 .timeline .slot {
-  display: inline-block;
-  padding: 2px 14px;
-  border-radius: 16px;
-  background: #3a3a3a;
-  font-size: clamp(2.074rem, 3.276vw, 3.024rem);
-  line-height: 1.08;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s09-003 .timeline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--point);
-}
-
-/* The running total, with a stack that reads as accumulation */
-.con-s09-003 .stack { display: flex; align-items: flex-end; gap: 4px; margin-bottom: clamp(10px, 1.3vw, 14px); }
-.con-s09-003 .stack i { display: block; width: 8px; background: var(--total); opacity: 0.28; border-radius: 10px 2px 0 0; }
-.con-s09-003 .stack i:nth-child(1) { height: 12px; }
-.con-s09-003 .stack i:nth-child(2) { height: 18px; opacity: 0.42; }
-.con-s09-003 .stack i:nth-child(3) { height: 24px; opacity: 0.56; }
-.con-s09-003 .stack i:nth-child(4) { height: 30px; opacity: 0.7; }
-.con-s09-003 .stack i:nth-child(5) { height: 36px; opacity: 0.84; }
-.con-s09-003 .stack i:nth-child(6) { height: 42px; opacity: 1; }
-.con-s09-003 .big {
-  display: block;
-  margin-bottom: clamp(9px, 1.2vw, 12px);
-  padding-left: clamp(11px, 1.4vw, 15px);
-  border-left: 6px solid var(--tone, var(--ink-faint));
-  font-size: clamp(2.318rem, 3.78vw, 3.402rem);
-  line-height: 1.04;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-
-/* The snapshot, drawn provisional */
-.con-s09-003 .prov {
-  margin-bottom: clamp(9px, 1.2vw, 12px);
-  padding: clamp(11px, 1.4vw, 15px) clamp(12px, 1.5vw, 16px);
-  border: 2px dashed var(--snap);
-  border-radius: 16px;
-}
-.con-s09-003 .prov .slot {
-  display: block;
-  font-size: clamp(2.074rem, 3.276vw, 2.898rem);
-  line-height: 1.06;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-
-/* The extreme, one spike against ordinary ones */
-.con-s09-003 .outlier { display: flex; align-items: flex-end; gap: 4px; margin-bottom: clamp(9px, 1.2vw, 12px); }
-.con-s09-003 .outlier i { display: block; width: 7px; background: var(--rule); border-radius: 10px 2px 0 0; }
-.con-s09-003 .outlier i:nth-child(1) { height: 14px; }
-.con-s09-003 .outlier i:nth-child(2) { height: 20px; }
-.con-s09-003 .outlier i:nth-child(3) { height: 17px; }
-.con-s09-003 .outlier i.tall { height: 56px; background: var(--extreme); }
-
-.con-s09-003 .basis {
-  margin: 0 0 clamp(9px, 1.2vw, 12px);
-  padding-top: clamp(9px, 1.2vw, 12px);
-  border-top: 1px solid var(--line);
-  font-size: 0.804rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  line-height: 1.9;
-  color: var(--ink-faint);
-}
-.con-s09-003 .basis .slot {
-  display: inline-block;
-  min-width: 40px;
-  margin-left: 6px;
-  padding: 0 8px;
-  border-radius: 10px;
-  background: var(--field);
-  letter-spacing: 0;
-}
-.con-s09-003 .reads { margin: 0; font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
-.con-s09-003 .reads b { color: var(--ink); font-weight: 650; }
-
-/* Foot */
-.con-s09-003 .foot {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(11px, 1.4vw, 16px);
-}
-.con-s09-003 .foot > div { border-radius: 22px; padding: clamp(15px, 1.9vw, 26px); }
-.con-s09-003 .foot .real { background: var(--card); }
-.con-s09-003 .foot .refuse { border: 2px dashed var(--rule); }
-.con-s09-003 .foot p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 62ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
-.con-s09-003 .foot p:last-child { margin-bottom: 0; }
-.con-s09-003 .foot p b { color: var(--ink); font-weight: 650; }
-.con-s09-003 .chips { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
-.con-s09-003 .chips li { padding: 5px 12px; border-radius: 999px; background: var(--field); color: var(--ink-soft); font-size: 1rem; font-weight: 600; }
-.con-s09-003 .none { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
-.con-s09-003 .none li { padding: 5px 12px; border-radius: 999px; border: 1px dashed var(--rule); color: var(--ink-soft); font-size: 1rem; font-weight: 600; }
-
-/* Responsive ladder */
-@media (max-width: 1080px) {
-  .con-s09-003 .legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .con-s09-003 .w-total { grid-column: span 12; }
-  .con-s09-003 .w-snap { grid-column: span 7; }
-  .con-s09-003 .w-extreme { grid-column: span 5; }
-}
-
-@media (max-width: 720px) {
-  .con-s09-003 .legend { grid-template-columns: minmax(0, 1fr); }
-  .con-s09-003 .w-date .mod { grid-template-columns: minmax(0, 1fr); }
-  .con-s09-003 .w-snap, .con-s09-003 .w-extreme { grid-column: span 12; }
-  .con-s09-003 .foot { grid-template-columns: minmax(0, 1fr); }
-  .con-s09-003 h2, .con-s09-003 .head p, .con-s09-003 .foot p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s09-003 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s09-003 {
-  --v2-accent: #969696;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
-  font-size: 1.06rem;
-}
-.con-s09-003 h2 { font-weight: 800; }
-.con-s09-003 h3, .con-s09-003 h4 { font-weight: 750; }
-.con-s09-003 .eyebrow, .con-s09-003 .tag {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s09-003 .mod, .con-s09-003 .foot .real {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #d2d2d2;
-}
-.con-s09-003 .none li {
-  border: 1px dashed #b4b4b4;
-  border-radius: 14px;
-}
-.con-s09-003 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 600;
-}
-.con-s09-003.con-s09-003 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s09-003.con-s09-003 .head h2, .con-s09-003.con-s09-003 .head h3, .con-s09-003.con-s09-003 .head h4, .con-s09-003.con-s09-003 .head b, .con-s09-003.con-s09-003 .head strong, .con-s09-003.con-s09-003 .head p b, .con-s09-003.con-s09-003 .head li b, .con-s09-003.con-s09-003 .head span b, .con-s09-003.con-s09-003 .head dt, .con-s09-003.con-s09-003 .head div b {
-  color: #ffffff;
-}
-.con-s09-003.con-s09-003 .head p, .con-s09-003.con-s09-003 .head li, .con-s09-003.con-s09-003 .head span, .con-s09-003.con-s09-003 .head dd, .con-s09-003.con-s09-003 .head div p, .con-s09-003.con-s09-003 .head div li, .con-s09-003.con-s09-003 .head p span, .con-s09-003.con-s09-003 .head .said, .con-s09-003.con-s09-003 .head .note {
-  color: #d2d2d2;
-}
-.con-s09-003.con-s09-003 .head .eyebrow, .con-s09-003.con-s09-003 .head .kicker, .con-s09-003.con-s09-003 .head .slot, .con-s09-003.con-s09-003 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s09-003.con-s09-003 .head i, .con-s09-003.con-s09-003 .head .bars i, .con-s09-003.con-s09-003 .head .lines i, .con-s09-003.con-s09-003 .head .measures i, .con-s09-003.con-s09-003 .head .bar, .con-s09-003.con-s09-003 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s09-003.con-s09-003 .head .plate, .con-s09-003.con-s09-003 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s09-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s09-003 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s09-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s09-003 .lead { text-align: left; } .con-s09-003 h2 { max-width: none; } .con-s09-003 .draw { display: none; } .con-s09-003 .legend { grid-template-columns: repeat(2, minmax(0, 1fr)); } .con-s09-003 .m7, .con-s09-003 .m5, .con-s09-003 .m4, .con-s09-003 .m8 { grid-column: span 6; } .con-s09-003 .fix .row { grid-template-columns: minmax(0, 1fr); } .con-s09-003 .datum { display: none; } }
+@media (max-width: 640px) { .con-s09-003 .legend { grid-template-columns: minmax(0, 1fr); } .con-s09-003 .m7, .con-s09-003 .m5, .con-s09-003 .m4, .con-s09-003 .m8 { grid-column: span 12; } .con-s09-003 .not { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s09-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s09-003" data-study-id="CON-S09-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" viewBox="0 0 1440 384" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 64H1440M0 192H1440M0 320H1440M160 0V384M320 0V384M480 0V384M640 0V384M800 0V384M960 0V384M1120 0V384M1280 0V384"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s09-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">The firm, in figures</p>
-        <h2 id="con-s09-003-title">An unequal grid, because these are unequal quantities</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="9" cy="12" r="1.5"/><path d="M15 12h7v4h-7"/></svg>The firm, in figures</p>
+        <h2 id="con-s09-003-title">An unequal grid, because these are <em>unequal quantities.</em></h2>
       </div>
-      <p><b>Four identical boxes would assert that these are four of the same thing.</b> They are not, so no two modules below are the same width.</p>
+      <p class="lead">Four identical boxes would assert that these are four of the same thing. They are not, so no two modules below are the same width.</p>
     </div>
 
-    <ul class="legend">
-      <li class="k-point"><p class="name">A fixed point</p><p>Sits in the past. Does not grow because we are any good.</p></li>
-      <li class="k-total"><p class="name">A running total</p><p>Accumulates. Meaningless without a start date and a definition.</p></li>
-      <li class="k-snap"><p class="name">A snapshot</p><p>True on the day it was taken. Different next month.</p></li>
-      <li class="k-extreme"><p class="name">A single extreme</p><p>One job. Not an average, not a floor, not typical.</p></li>
-    </ul>
+    <div class="legend">
+      <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20"/><circle cx="8" cy="12" r="2.5"/></svg>A fixed point</strong><p>Sits in the past. Does not grow because we are any good.</p></div>
+      <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-6H4zM10 20h4V9h-4zM16 20h4V4h-4z"/></svg>A running total</strong><p>Accumulates. Meaningless without a start date and a definition.</p></div>
+      <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6v12M20 6v12M4 12h16"/></svg>A snapshot</strong><p>True on the day it was taken. Different next month.</p></div>
+      <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20v-3M8 20v-4M11 20v-14M14 20v-3M17 20v-4M20 20v-3"/></svg>A single extreme</strong><p>One job. Not an average, not a floor, not typical.</p></div>
+    </div>
 
-    <ul class="grid">
+    <div class="mods">
+      <div class="mod m12 fix"><p class="kind"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20"/><circle cx="8" cy="12" r="2.5"/></svg>A fixed point</p><div class="row"><div><h3>Year founded</h3><span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span></div><svg class="datum" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><line x1="0" y1="20" x2="600" y2="20"/><path d="M60 12v16M180 12v16M300 12v16M420 12v16M540 12v16"/><path d="M60 20l-6-6M60 20l-6 6"/></g></svg><dl class="rec"><div><dt>Under this name since</dt><dd><span class="s"><span class="vh">Year the current trading name was adopted</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl></div><p class="n">Drawn wide and shallow because that is what a date is &mdash; a mark on a line rather than a quantity that went up. A long history under a recently adopted name is a combination worth asking us about, so both are printed.</p></div>
 
-      <li class="w-date k-point">
-        <div class="mod">
-          <div>
-            <p class="tag">A fixed point</p>
-            <h3>Year founded</h3>
-          </div>
-          <div>
-            <div class="timeline"><span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span></div>
-            <p class="basis">Under this name since<span class="slot"><span class="vh">Year the current trading name was adopted</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-          <p class="reads"><b>Drawn wide and shallow because that is what a date is</b> &mdash; a mark on a line rather than a quantity that went up. A long history under a recently adopted name is a combination worth asking us about, so both are printed.</p>
-        </div>
-      </li>
+      <div class="mod m7 run"><p class="kind"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-6H4zM10 20h4V9h-4zM16 20h4V4h-4z"/></svg>A running total</p><h3>Projects completed</h3><span class="slot"><span class="vh">Number of projects completed</span><span aria-hidden="true">&mdash;</span></span><dl class="rec"><div><dt>Counted since</dt><dd><span class="s"><span class="vh">Year the count starts from</span><span aria-hidden="true">&mdash;</span></span></dd></div><div><dt>A project means</dt><dd><span class="s"><span class="vh">Definition of a counted project</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl><p class="n">A total with no start date can be any number you like. A firm counting call-outs will always beat one counting contracts, so the definition is printed with the figure rather than left to you.</p></div>
 
-      <li class="w-total k-total">
-        <div class="mod">
-          <p class="tag">A running total</p>
-          <h3>Projects completed</h3>
-          <div class="stack" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <span class="big"><span class="slot"><span class="vh">Number of projects completed</span><span aria-hidden="true">&mdash;</span></span></span>
-          <p class="basis">Counted since<span class="slot"><span class="vh">Year the count starts from</span><span aria-hidden="true">&mdash;</span></span><br>A project means<span class="slot"><span class="vh">Definition of a counted project</span><span aria-hidden="true">&mdash;</span></span></p>
-          <p class="reads"><b>A total with no start date can be any number you like.</b> A firm counting call-outs will always beat one counting contracts, so the definition is printed with the figure rather than left to you.</p>
-        </div>
-      </li>
+      <div class="mod m5 snap"><p class="kind"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6v12M20 6v12M4 12h16"/></svg>A snapshot</p><h3>People employed</h3><span class="slot"><span class="vh">Number of people employed</span><span aria-hidden="true">&mdash;</span></span><dl class="rec"><div><dt>As at</dt><dd><span class="s"><span class="vh">Date the headcount was taken</span><span aria-hidden="true">&mdash;</span></span></dd></div><div><dt>On our own books</dt><dd><span class="s"><span class="vh">Number directly employed</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl><p class="n">Drawn on the tint because it is provisional. Headcount moves with the order book, and the split between our books and somebody else&rsquo;s is the line worth reading.</p></div>
 
-      <li class="w-snap k-snap">
-        <div class="mod">
-          <p class="tag">A snapshot</p>
-          <h3>People employed</h3>
-          <div class="prov"><span class="slot"><span class="vh">Number of people employed</span><span aria-hidden="true">&mdash;</span></span></div>
-          <p class="basis">As at<span class="slot"><span class="vh">Date the headcount was taken</span><span aria-hidden="true">&mdash;</span></span><br>On our own books<span class="slot"><span class="vh">Number directly employed</span><span aria-hidden="true">&mdash;</span></span></p>
-          <p class="reads"><b>Drawn dashed because it is provisional.</b> Headcount moves with the order book, and the split between our books and somebody else's is the line worth reading.</p>
-        </div>
-      </li>
+      <div class="mod m4 ext"><p class="kind"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20v-3M8 20v-4M11 20v-14M14 20v-3M17 20v-4M20 20v-3"/></svg>A single extreme</p><h3>Largest project</h3><div class="row"><span class="slot"><span class="vh">Value of the largest project</span><span aria-hidden="true">&mdash;</span></span><svg class="spike" viewBox="0 0 70 80" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 79h70"/><rect x="4" y="66" width="8" height="13"/><rect x="18" y="62" width="8" height="17"/><rect x="32" y="2" width="8" height="77"/><rect x="46" y="68" width="8" height="11"/><rect x="60" y="64" width="8" height="15"/></g></svg></div><dl class="rec"><div><dt>Completed</dt><dd><span class="s"><span class="vh">Year the largest project completed</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl><p class="n">Not the size of project we usually do. Drawn narrow and spiked, against the ordinary ones, because that is what it is.</p></div>
 
-      <li class="w-extreme k-extreme">
-        <div class="mod">
-          <p class="tag">A single extreme</p>
-          <h3>Largest project</h3>
-          <div class="outlier" aria-hidden="true"><i></i><i></i><i></i><i class="tall"></i></div>
-          <span class="big"><span class="slot"><span class="vh">Value of the largest project</span><span aria-hidden="true">&mdash;</span></span></span>
-          <p class="basis">Completed<span class="slot"><span class="vh">Year the largest project completed</span><span aria-hidden="true">&mdash;</span></span></p>
-          <p class="reads"><b>Not the size of project we usually do.</b> Drawn narrow and spiked, against the ordinary ones, because that is what it is.</p>
-        </div>
-      </li>
+      <div class="mod m8 tags"><h3>The only thing here without a number attached</h3><p>Every figure above is a reserved field. These are not, because they are not quantities &mdash; and you can check them against any job we have run.</p><ul><li>Healthcare</li><li>Education</li><li>Industrial</li><li>Retail</li><li>Civic</li><li>Residential</li><li class="t">Groundworks</li><li class="t">Concrete frame</li><li class="t">Fit-out</li><li class="t">Refurbishment</li><li class="t">Civils</li></ul></div>
+    </div>
 
-    </ul>
-
-    <div class="foot">
-      <div class="real">
-        <h3>The only thing here without a number attached</h3>
-        <p><b>Every figure above is a reserved field.</b> These are not, because they are not quantities &mdash; and you can check them against any job we have run.</p>
-        <ul class="chips">
-          <li>Healthcare</li><li>Education</li><li>Industrial</li><li>Retail</li><li>Civic</li><li>Residential</li>
-          <li>Groundworks</li><li>Concrete frame</li><li>Fit-out</li><li>Refurbishment</li><li>Civils</li>
-        </ul>
+    <div class="not">
+      <div>
+        <p class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>The numbers that are not here</p>
+        <ul><li>Happy clients</li><li>Satisfaction rating</li><li>On-time completion</li><li>Awards won</li><li>Any safety figure</li></ul>
       </div>
-      <div class="refuse" data-refusal>
-        <h3>The numbers that are not here</h3>
-        <ul class="none">
-          <li>Happy clients</li><li>Satisfaction rating</li><li>On-time completion</li><li>Awards won</li><li>Any safety figure</li>
-        </ul>
-        <p><b>Happy clients is a client list with a compliment attached.</b> A satisfaction or on-time percentage asserts a measurement system, and the definition of on time belongs to whoever reports it. An award is a body we chose making a judgement we paid to enter.</p>
-        <p>Safety figures are absent for a harder reason, set out on the safety page. <b>If a figure is countable and not one of the four above, it is a claim rather than a count.</b></p>
+      <div>
+        <p>Happy clients is a client list with a compliment attached. A satisfaction or on-time percentage asserts a measurement system, and the definition of on time belongs to whoever reports it. An award is a body we chose making a judgement we paid to enter.</p>
+        <p>Safety figures are absent for a harder reason, set out on the safety page. If a figure is countable and not one of the four above, it is a claim rather than a count.</p>
       </div>
     </div>
 

@@ -12,31 +12,23 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S21 — Subpage Hero
   Direction      : Structured / Visual Modular
-  Reference      : None supplied for this section.
-  Layout model   : The hero drawn once as a project page, then the same four slots shown re-labelled
-                   for the other four interior parents — so that a reviewer sees the component
-                   rather than one instance of it
-  Density        : Medium
-  Media mode     : One reserved area at interior scale, and the strip records which parents use it
-                   and which do not.
-  Interaction    : None. The batch's single action belongs to `004`.
-  The device     : **A hero is a component, not a picture.** The worked example is a project page,
-                   and beneath it the same slots are re-labelled for a service, a person, an office
-                   and a journal entry &mdash; because the interesting question about an interior
-                   hero is whether it survives the other four pages, and no single instance answers
-                   that.
-  The trap       : The sector direction names it for this variant &mdash; *becoming a specification
-                   table.* The strip below is deliberately not a matrix: the parents carry different
-                   numbers of slots, two of them drop the media entirely, and one drops the fourth
-                   slot rather than filling it with something.
-  The test       : *A study that would work unchanged as `S01` has not answered this role.* No
-                   counter, no proposition, and a component that only makes sense above a page that
-                   already exists.
-  The title      : Reserved, drawn as a labelled fill rather than an em-dash.
-  Deliberately not : No counter, figure, percentage or date. No viewport-height unit. No second
-                   action.
-  Content note   : All values are reserved; the labels and the parent names are real. No digit in
-                   visible copy; no header; no refusal region.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3
+                   at interior scale: a bordered sheet — the iconed parent label, the reserved
+                   title as a labelled fill of two flat bars, the description and a four-cell
+                   metadata row sharing hairlines on the left; one reserved photograph at 4:3
+                   on the right. Beneath, THE SAME SLOTS ON THE OTHER FOUR INTERIOR PAGES as
+                   four bordered cells with a page icon each (service / person / office /
+                   journal), the slot labels as a ruled ledger and MEDIA KEPT / DROPPED as a
+                   chip, the dropped fourth slot marked as dropped rather than filled. Drawing
+                   layer: dimension line with ticks behind the head. No counter, no viewport
+                   height, no refusal region. V1 is kept whole; the title element is the h1.
+  Layout model   : Bordered hero sheet (title fill + description + metadata row | 4:3 field).
+                   Four bordered re-labelled cells.
+  Density        : Structured — V1's spine kept in full
+  Media mode     : One reserved photograph, 4:3. Five reserved fields.
+  Interaction    : None (static; no JavaScript).
+  Content note   : Project name, sector, status, contract form and reference reserved. No
+                   counter, digit, claim about the firm or action. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S21-003">
@@ -47,272 +39,82 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="The hero once as a project page, then the same slots re-labelled for four other parents">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-interior-band">
+<meta name="theme" content="003 Steel &amp; Structural Blue">
+<meta name="layout-model" content="Bordered hero sheet with the reserved title as a labelled fill, description and four-cell metadata row beside a 4:3 reserved photograph; four bordered cells re-labelling the same slots for the other interior pages with page icons, ruled ledgers and media kept / dropped chips; dimension line behind the head; no viewport height">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-photograph-five-reserved-fields">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S21-003 — Subpage Hero, Structured</title>
+<title>CON-S21-003 — Subpage Hero, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e8e8e8; }
+body { margin: 0; background: #edf0f2; }
 
-/* Scoped study styles — namespaced to .con-s21-003 */
 .con-s21-003 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --ink-faint: #969696;
-  --paper: #e8e8e8;
-  --card: #ffffff;
-  --fill: #d2d2d2;
-  --line: #b4b4b4;
-  --soft-line: #ececec;
-  --rule: #111111;
-  --mark: #2b2b2b;
-  --none: #5e5e5e;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #edf0f2; --ink: #0f1316; --muted: #57616a; --line: #d2d9de; --line-strong: #0f1316;
+  --media: #dfe4e8; --band: #e4e8eb; --accent: #1f5fd0;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s21-003 *,
-.con-s21-003 *::before,
-.con-s21-003 *::after { box-sizing: inherit; }
-.con-s21-003 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s21-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s21-003 *, .con-s21-003 *::before, .con-s21-003 *::after { box-sizing: inherit; }
+.con-s21-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s21-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s21-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2rem, 4.5vw, 4rem) clamp(1rem, 4.5vw, 4.5rem) clamp(1.6rem, 3vw, 2.6rem); }
+.con-s21-003 .sheet { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); }
+.con-s21-003 .draw { position: absolute; left: 0; top: 0; width: 60%; height: 100%; pointer-events: none; color: var(--line); }
+.con-s21-003 .main { position: relative; display: flex; flex-direction: column; padding: 1.4rem 1.4rem 0; border-right: 1px solid var(--line-strong); min-width: 0; }
+.con-s21-003 .parent { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s21-003 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s21-003 h1 { margin: 0; font-size: clamp(2rem, 4vw, 4.2rem); line-height: 0.9; font-weight: 800; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s21-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s21-003 .field { display: block; margin: 0 0 0.5rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.4; }
+.con-s21-003 .bars { display: block; }
+.con-s21-003 .bars i { display: block; height: 0.78em; background: var(--media); border-radius: 2px; }
+.con-s21-003 .bars i + i { margin-top: 0.14em; }
+.con-s21-003 .bars i:first-child { width: 86%; }
+.con-s21-003 .bars i:last-child { width: 52%; }
+.con-s21-003 .about { margin: 1.2rem 0 1.4rem; max-width: 36rem; color: var(--muted); font-size: 0.95rem; line-height: 1.55; }
+.con-s21-003 .about b { color: var(--ink); }
+.con-s21-003 .rail { list-style: none; margin: auto -1.4rem 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); }
+.con-s21-003 .rail li { padding: 0.7rem 0.9rem 0.8rem; border-right: 1px solid var(--line); min-width: 0; }
+.con-s21-003 .rail li:last-child { border-right: 0; }
+.con-s21-003 .k { display: flex; align-items: center; gap: 0.35rem; margin: 0 0 0.3rem; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s21-003 .k .ico { width: 0.9rem; height: 0.9rem; color: var(--accent); }
+.con-s21-003 .slot { display: inline-flex; align-items: center; width: 100%; height: 1.8rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1; }
+.con-s21-003 .media { position: relative; aspect-ratio: 4 / 3; background: var(--media); }
+.con-s21-003 .slate { position: absolute; left: 1rem; bottom: 0.8rem; right: 1rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; line-height: 1.5; text-transform: uppercase; }
 
-/* The worked instance */
-.con-s21-003 .instance {
-  background: var(--card);
-  border-radius: 22px;
-  border-left: 6px solid var(--mark);
-  padding: clamp(18px, 2.4vw, 32px);
-  margin-bottom: clamp(18px, 2.3vw, 28px);
-}
-.con-s21-003 .parent {
-  margin: 0 0 clamp(12px, 1.5vw, 18px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--mark);
-  font-weight: 700;
-}
-.con-s21-003 .band {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(16px, 2.8vw, 48px);
-  align-items: end;
-}
-.con-s21-003 h2 { margin: 0; }
-.con-s21-003 .field {
-  display: block;
-  margin-bottom: 9px;
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s21-003 .bars { display: grid; gap: clamp(9px, 1.1vw, 13px); }
-.con-s21-003 .bars i {
-  display: block;
-  height: clamp(26px, 3.3vw, 46px);
-  border-radius: 10px;
-  background: var(--fill);
-}
-.con-s21-003 .bars i:first-child { width: 100%; }
-.con-s21-003 .bars i:last-child { width: 54%; }
-.con-s21-003 .about { margin: 0; max-width: 44ch; font-size: clamp(1.1rem, 1.298vw, 1.274rem); line-height: 1.62; color: var(--ink-soft); }
-.con-s21-003 .about b { color: var(--ink); font-weight: 650; }
+.con-s21-003 .others { margin-top: clamp(1.6rem, 3vw, 2.6rem); }
+.con-s21-003 .others h2 { margin: 0 0 0.5rem; font-weight: 800; font-size: clamp(1.2rem, 1.9vw, 1.7rem); line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s21-003 .others > p { margin: 0 0 1rem; max-width: 50rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.con-s21-003 .others > p b { color: var(--ink); }
+.con-s21-003 .cells { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s21-003 .cells li { display: flex; flex-direction: column; padding: 0.9rem 1rem 1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s21-003 .cells h3 { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.6rem; font-weight: 800; font-size: 1rem; line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase; }
+.con-s21-003 .cells h3 .ico { width: 1.3rem; height: 1.3rem; color: var(--accent); }
+.con-s21-003 .cells dl { margin: 0 0 0.8rem; border-top: 1px solid var(--line); }
+.con-s21-003 .cells dl div { padding: 0.35rem 0; border-bottom: 1px solid var(--line); }
+.con-s21-003 .cells dt { margin: 0; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s21-003 .cells dd { margin: 0; color: var(--ink); font-size: 0.82rem; line-height: 1.4; }
+.con-s21-003 .cells dd.drop { color: var(--muted); font-style: italic; }
+.con-s21-003 .chip { margin-top: auto; display: inline-flex; align-items: center; gap: 0.35rem; align-self: flex-start; padding: 0.2rem 0.5rem; border: 1px solid var(--line-strong); border-radius: 2px; font-size: 0.5rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s21-003 .chip.kept { background: var(--ink); color: var(--paper); }
+.con-s21-003 .chip .ico { width: 0.8rem; height: 0.8rem; }
+.con-s21-003 .cells p { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
 
-.con-s21-003 .rail { margin: clamp(16px, 2vw, 24px) 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: clamp(11px, 1.6vw, 22px); }
-.con-s21-003 .rail li { min-width: 0; padding-top: clamp(9px, 1.1vw, 12px); border-top: 2px solid var(--soft-line); }
-.con-s21-003 .k {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
+@media (max-width: 960px) { .con-s21-003 .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .con-s21-003 .sheet { grid-template-columns: minmax(0, 1fr); }
+  .con-s21-003 .main { border-right: 0; border-bottom: 1px solid var(--line-strong); }
+  .con-s21-003 .rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .con-s21-003 .media { aspect-ratio: 16 / 9; }
 }
-.con-s21-003 .slot {
-  display: inline-block;
-  min-width: 90px;
-  padding: 3px 12px;
-  border-radius: 10px;
-  background: #3a3a3a;
-  color: var(--ink-faint);
-  font-size: 1rem;
-  text-align: center;
-}
-.con-s21-003 .media {
-  margin-top: clamp(14px, 1.8vw, 22px);
-  height: clamp(110px, 11vw, 170px);
-  border-radius: 22px;
-  border: 1px dashed var(--line);
-  background: var(--fill);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-}
-.con-s21-003 .media span {
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-  text-align: center;
-}
-
-/* The strip */
-.con-s21-003 .strip { padding-top: clamp(16px, 2vw, 24px); border-top: 3px solid var(--rule); }
-.con-s21-003 .sh {
-  display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
-  gap: clamp(14px, 2.6vw, 44px);
-  align-items: baseline;
-  margin-bottom: clamp(13px, 1.7vw, 20px);
-}
-.con-s21-003 .sh h3 { margin: 0; font-size: clamp(1.345rem, 2.196vw, 1.781rem); line-height: 1.14; letter-spacing: -0.024em; font-weight: 700; max-width: 24ch; }
-.con-s21-003 .sh p { margin: 0; max-width: 62ch; font-size: 1rem; line-height: 1.6; color: var(--ink-soft); }
-.con-s21-003 .sh p b { color: var(--ink); font-weight: 650; }
-
-.con-s21-003 .parents { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(11px, 1.4vw, 16px); }
-.con-s21-003 .parents > li {
-  min-width: 0;
-  background: var(--card);
-  border-radius: 22px;
-  padding: clamp(14px, 1.8vw, 20px);
-  display: flex;
-  flex-direction: column;
-}
-.con-s21-003 .parents h4 {
-  margin: 0 0 clamp(10px, 1.3vw, 14px);
-  padding-bottom: clamp(8px, 1vw, 11px);
-  border-bottom: 2px solid var(--mark);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--mark);
-}
-.con-s21-003 .parents dl { margin: 0; display: grid; gap: 8px; }
-.con-s21-003 .parents .row { display: grid; gap: 3px; }
-.con-s21-003 .parents dt {
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s21-003 .parents dd { margin: 0; font-size: 1rem; line-height: 1.42; color: var(--ink); }
-.con-s21-003 .drops {
-  margin: auto 0 0;
-  padding-top: clamp(10px, 1.3vw, 13px);
-  border-top: 1px dashed var(--none);
-  font-size: 1rem;
-  line-height: 1.48;
-  color: var(--none);
-}
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .con-s21-003 .band,
-  .con-s21-003 .sh { grid-template-columns: minmax(0, 1fr); align-items: start; gap: clamp(14px, 2.4vw, 20px); }
-}
-
-@media (max-width: 600px) {
-  .con-s21-003 .about, .con-s21-003 .sh h3, .con-s21-003 .sh p { max-width: none; }
-  .con-s21-003 .bars i { height: clamp(24px, 7vw, 32px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s21-003 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s21-003 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
-  font-size: 1.06rem;
-}
-.con-s21-003 h2 { font-weight: 800; }
-.con-s21-003 h3, .con-s21-003 h4 { font-weight: 750; }
-.con-s21-003 .parents > li {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #d2d2d2;
-}
-.con-s21-003 .media {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s21-003 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s21-003.con-s21-003 .shell > div:nth-of-type(1) {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s21-003.con-s21-003 .shell > div:nth-of-type(1) h2, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) h3, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) h4, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) b, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) strong, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) p b, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) li b, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) span b, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) dt, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) div b {
-  color: #ffffff;
-}
-.con-s21-003.con-s21-003 .shell > div:nth-of-type(1) p, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) li, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) span, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) dd, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) div p, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) div li, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) p span, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .said, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .note {
-  color: #d2d2d2;
-}
-.con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .eyebrow, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .kicker, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .slot, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s21-003.con-s21-003 .shell > div:nth-of-type(1) i, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .bars i, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .lines i, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .measures i, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .bar, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .plate, .con-s21-003.con-s21-003 .shell > div:nth-of-type(1) .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s21-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s21-003 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 480px) { .con-s21-003 .cells, .con-s21-003 .rail { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s21-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -320,77 +122,78 @@ body { margin: 0; background: #e8e8e8; }
 <div class="con-s21-003" data-study-id="CON-S21-003" data-direction="Structured / Visual Modular">
   <section class="shell" aria-labelledby="con-s21-003-title">
 
-    <div class="instance">
-      <p class="parent">Projects</p>
-      <div class="band">
-        <h2 id="con-s21-003-title">
+    <div class="sheet">
+      <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g stroke="currentColor" stroke-width="1" fill="none">
+          <path d="M0 8H100M12 3V13M45 3V13M78 3V13" vector-effect="non-scaling-stroke"/>
+        </g>
+      </svg>
+      <div class="main">
+        <p class="parent"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21h16M6 21V9l6-4 6 4v12M10 21v-5h4v5"/></svg>Projects</p>
+        <h1 id="con-s21-003-title">
           <span class="vh">Project name</span>
-          <span class="field">Project name</span>
+          <span class="field" aria-hidden="true">Project name &mdash; reserved</span>
           <span class="bars" role="img" aria-label="Reserved area: the project name goes here"><i></i><i></i></span>
-        </h2>
+        </h1>
         <p class="about">What was on the site before we started, what we chose, and <b>the decision this one got wrong.</b> The page runs in that order.</p>
+        <ul class="rail">
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>Sector</span><span class="slot"><span class="vh">Sector this project sits in</span><span aria-hidden="true">Reserved</span></span></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15a8 8 0 0 1 16 0M2 15h20v3H2zM10 7h4v5h-4z"/></svg>Status</span><span class="slot"><span class="vh">On site or complete</span><span aria-hidden="true">Reserved</span></span></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6"/></svg>Form of contract</span><span class="slot"><span class="vh">Form of contract</span><span aria-hidden="true">Reserved</span></span></li>
+          <li><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14v17H5zM9 4V2h6v2M8 10h8M8 14h6"/></svg>Reference</span><span class="slot"><span class="vh">Job reference</span><span aria-hidden="true">Reserved</span></span></li>
+        </ul>
       </div>
-      <ul class="rail">
-        <li><span class="k">Sector</span><span class="slot"><span class="vh">Sector this project sits in</span><span aria-hidden="true">Reserved</span></span></li>
-        <li><span class="k">Status</span><span class="slot"><span class="vh">On site or complete</span><span aria-hidden="true">Reserved</span></span></li>
-        <li><span class="k">Form of contract</span><span class="slot"><span class="vh">Form of contract</span><span aria-hidden="true">Reserved</span></span></li>
-        <li><span class="k">Reference</span><span class="slot"><span class="vh">Job reference</span><span aria-hidden="true">Reserved</span></span></li>
-      </ul>
-      <div class="media">
-        <span>Reserved area &mdash; one photograph of the work, at interior scale</span>
-      </div>
+      <div class="media" role="img" aria-label="Reserved area — one photograph of the work, at interior scale"><p class="slate" aria-hidden="true">Reserved area &mdash; one photograph of the work, at interior scale</p></div>
     </div>
 
-    <div class="strip">
-      <div class="sh">
-        <h3>The same slots, on the other four interior pages</h3>
-        <p>Because the interesting question about a hero is whether it survives the pages nobody designed it for. <b>Two of these drop the media and one drops a slot rather than filling it</b>, which is the part a matrix would have hidden.</p>
-      </div>
-      <ul class="parents">
-
+    <div class="others">
+      <h2>The same slots, on the other four interior pages</h2>
+      <p>Because the interesting question about a hero is whether it survives the pages nobody designed it for. <b>Two of these drop the media and one drops a slot rather than filling it</b>, which is the part a matrix would have hidden.</p>
+      <ul class="cells">
         <li>
-          <h4>A service page</h4>
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M7 21V3h13M20 3v6M7 7l6-4M16 3v4"/></svg>A service page</h3>
           <dl>
-            <div class="row"><dt>Title</dt><dd>The name of the work</dd></div>
-            <div class="row"><dt>Description</dt><dd>What it covers, and what it does not</dd></div>
-            <div class="row"><dt>First slot</dt><dd>Where we hold it &mdash; our people, or hired</dd></div>
-            <div class="row"><dt>Second slot</dt><dd>The limit, stated</dd></div>
+            <div><dt>Title</dt><dd>The name of the work</dd></div>
+            <div><dt>Description</dt><dd>What it covers, and what it does not</dd></div>
+            <div><dt>First slot</dt><dd>Where we hold it &mdash; our people, or hired</dd></div>
+            <div><dt>Second slot</dt><dd>The limit, stated</dd></div>
           </dl>
-          <p class="drops">Media: kept. A service page needs one photograph of the work being done.</p>
+          <span class="chip kept"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v14H4zM4 15l5-5 4 4 3-3 4 4"/></svg>Media: kept</span>
+          <p>A service page needs one photograph of the work being done.</p>
         </li>
-
         <li>
-          <h4>A person</h4>
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>A person</h3>
           <dl>
-            <div class="row"><dt>Title</dt><dd>The role, with the name beneath it</dd></div>
-            <div class="row"><dt>Description</dt><dd>What this person decides without asking</dd></div>
-            <div class="row"><dt>First slot</dt><dd>How often you would see them on your site</dd></div>
-            <div class="row"><dt>Second slot</dt><dd>What they held before this</dd></div>
+            <div><dt>Title</dt><dd>The role, with the name beneath it</dd></div>
+            <div><dt>Description</dt><dd>What this person decides without asking</dd></div>
+            <div><dt>First slot</dt><dd>How often you would see them on your site</dd></div>
+            <div><dt>Second slot</dt><dd>What they held before this</dd></div>
           </dl>
-          <p class="drops">Media: kept, as a portrait, and the name stays reserved beside it.</p>
+          <span class="chip kept"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v14H4zM4 15l5-5 4 4 3-3 4 4"/></svg>Media: kept</span>
+          <p>As a portrait, and the name stays reserved beside it.</p>
         </li>
-
         <li>
-          <h4>An office</h4>
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21h18M5 21V4h14v17M9 8h2M13 8h2M9 12h2M13 12h2M10 21v-4h4v4"/></svg>An office</h3>
           <dl>
-            <div class="row"><dt>Title</dt><dd>The place</dd></div>
-            <div class="row"><dt>Description</dt><dd>Which band of work runs from here</dd></div>
-            <div class="row"><dt>First slot</dt><dd>What is held here rather than hired</dd></div>
-            <div class="row"><dt>Second slot</dt><dd>Who runs it</dd></div>
+            <div><dt>Title</dt><dd>The place</dd></div>
+            <div><dt>Description</dt><dd>Which band of work runs from here</dd></div>
+            <div><dt>First slot</dt><dd>What is held here rather than hired</dd></div>
+            <div><dt>Second slot</dt><dd>Who runs it</dd></div>
           </dl>
-          <p class="drops">Media: dropped. A photograph of an office building says nothing a reader needs.</p>
+          <span class="chip"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v14H4zM3 3l18 18"/></svg>Media: dropped</span>
+          <p>A photograph of an office building says nothing a reader needs.</p>
         </li>
-
         <li>
-          <h4>A journal entry</h4>
+          <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6"/></svg>A journal entry</h3>
           <dl>
-            <div class="row"><dt>Title</dt><dd>What the piece is about</dd></div>
-            <div class="row"><dt>Description</dt><dd>Who it was written for</dd></div>
-            <div class="row"><dt>First slot</dt><dd>Who wrote it, and what they run</dd></div>
+            <div><dt>Title</dt><dd>What the piece is about</dd></div>
+            <div><dt>Description</dt><dd>Who it was written for</dd></div>
+            <div><dt>First slot</dt><dd>Who wrote it, and what they run</dd></div>
+            <div><dt>Second slot</dt><dd class="drop">Dropped rather than filled</dd></div>
           </dl>
-          <p class="drops">Media: dropped. And the fourth slot is dropped rather than filled &mdash; there is no fourth fact worth carrying here.</p>
+          <span class="chip"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v14H4zM3 3l18 18"/></svg>Media: dropped</span>
+          <p>And the fourth slot is dropped rather than filled &mdash; there is no fourth fact worth carrying here.</p>
         </li>
-
       </ul>
     </div>
 

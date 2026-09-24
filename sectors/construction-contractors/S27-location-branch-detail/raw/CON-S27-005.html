@@ -12,23 +12,24 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S27 — Office / Regional Branch Detail
   Direction      : Art-directed / Distinctive
-  Reference      : None supplied for this section.
-  Layout model   : The location page inverted &mdash; **a yard is a place things leave from**, so
-                   what goes out is set at display scale and the place itself is small
-  Density        : Low
-  Media mode     : One reserved map, **a thin strip at the foot and after the contact block in
-                   source order**. Its size is the argument: it is the least useful thing here.
-  Interaction    : None. The batch's anchors belong to `004`.
-  The constraint : **A contractor's office is not a shop**, and almost nobody who reads this page is
-                   coming here. So the page refuses the form of a location page: the address is
-                   small and complete, and **what leaves the yard is the largest thing on it.**
-  The trap       : This variant's trap in the sector direction is **the car advert.** So there is no
-                   photograph of the yard at dusk, no machine at an angle and no sky. The only
-                   display type is a list of three things that go out in the morning.
-  Deliberately not : No address, postcode, telephone number, hours table, travel time, distance,
-                   drawn map or pin. No *nationwide* claim.
-  Content note   : Branch, address, both lines, the region and the further-out office are reserved.
-                   No digit in visible copy; no header; no refusal region.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 9:
+                   the location page inverted. The contact line first in source as a one-row
+                   bordered ledger of five reserved slots; WHAT LEAVES THE YARD at display
+                   scale — three bordered statements (plant / the fitter / the manager) with
+                   dumper, wrench and hard-hat icons, a stroke-only word index and a dimension
+                   line under each; three bordered cells beneath (what does not leave, red-
+                   edged; who is based here; no national coverage, red-topped); WHO ARRIVES as
+                   three iconed arrival rows with AND NOT A CLIENT as a deep-red plate; the
+                   arrival rule as a bordered paragraph; the map as the smallest thing on the
+                   page, a bare 4:1 field with its argument beside it. Cut-earth hatching down
+                   the left margin. V1 is kept whole.
+  Layout model   : Contact ledger. Three display statements. Three cells. Arrival rows + plate.
+                   Rule paragraph. Small 4:1 map field + two notes.
+  Density        : Low — V1's spine kept in full
+  Media mode     : One reserved map strip, 4:1, last on the page. Five reserved fields.
+  Interaction    : None.
+  Content note   : Branch, address, both lines and the region are reserved. No hours, directions,
+                   names, digit, map embed or coverage claim. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S27-005">
@@ -39,425 +40,222 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="The location page inverted: what leaves the yard at display scale, the place itself small">
+<meta name="theme" content="005 Asphalt &amp; Signal">
+<meta name="layout-model" content="Contact ledger first; three display statements with icons, word indices and dimension lines; three bordered cells with red edges; iconed arrival rows and a deep-red not-a-client plate; bordered rule paragraph; smallest 4:1 reserved map with two notes; cut-earth hatching down the left margin">
 <meta name="density" content="low">
-<meta name="media-mode" content="reserved-map-strip">
+<meta name="media-mode" content="reserved-map-strip-five-reserved-fields">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S27-005 — Branch Detail, Art-directed</title>
+<title>CON-S27-005 — Office / Regional Branch Detail, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #dfdfdf; }
+body { margin: 0; background: #e6e6e3; }
 
-/* Scoped study styles — namespaced to .con-s27-005 */
 .con-s27-005 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --ink-faint: #d2d2d2;
-  --paper: #dfdfdf;
-  --pale: #ffffff;
-  --line: #d2d2d2;
-  --rule: #111111;
-  --go: #7a7a7a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #e6e6e3; --ink: #0e0f10; --muted: #52555a; --line: #cfcfcb; --line-strong: #0e0f10;
+  --media: #d9d9d5; --band: #deded9; --accent: #e2521a; --no: #8a1f14;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.56;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s27-005 *,
-.con-s27-005 *::before,
-.con-s27-005 *::after { box-sizing: inherit; }
-.con-s27-005 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-}
-.con-s27-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s27-005 *, .con-s27-005 *::before, .con-s27-005 *::after { box-sizing: inherit; }
+.con-s27-005 :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
-.con-s27-005 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s27-005 .draw { position: absolute; left: 0; top: 0; width: clamp(2.5rem, 5vw, 5rem); height: 100%; pointer-events: none; color: var(--line); }
+.con-s27-005 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem) clamp(2.5rem, 6vw, 6rem) clamp(3.5rem, 7vw, 7.5rem); }
+.con-s27-005 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s27-005 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s27-005 .head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr); gap: 3rem; align-items: end; }
+.con-s27-005 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.2rem, 4.6vw, 5rem); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s27-005 h2 span { display: block; color: var(--accent); }
+.con-s27-005 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s27-005 .head > p b { color: var(--ink); }
 
-.con-s27-005 .slot {
-  display: inline-block;
-  min-width: 92px;
-  padding: 2px 11px;
-  background: #3a3a3a;
-  color: var(--ink-faint);
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-  text-align: center;
-}
+.con-s27-005 .contact { margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--line-strong); border-left: 3px solid var(--accent); }
+.con-s27-005 .contact div { display: grid; gap: 0.25rem; padding: 0.6rem 0.9rem 0.7rem; border-right: 1px solid var(--line); color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; min-width: 0; }
+.con-s27-005 .contact div:last-child { border-right: 0; }
+.con-s27-005 .contact dt, .con-s27-005 .contact dd { margin: 0; }
+.con-s27-005 .slot { display: inline-flex; align-items: center; width: 100%; height: 2.1rem; padding: 0 0.6rem; border: 1px solid var(--line-strong); border-radius: 2px; background: var(--paper); color: var(--muted); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1; }
+.con-s27-005 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Mast */
-.con-s27-005 .mast {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  gap: clamp(16px, 2.8vw, 48px);
-  align-items: end;
-  padding-bottom: clamp(14px, 1.8vw, 22px);
-  border-bottom: 3px solid var(--rule);
-  margin-bottom: clamp(16px, 2vw, 24px);
-}
-.con-s27-005 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 15px);
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s27-005 h2 {
-  margin: 0;
-  font-size: clamp(2.074rem, 4.032vw, 3.402rem);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  font-weight: 700;
-  max-width: 24ch;
-}
-.con-s27-005 .mast > p { margin: 0; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
-.con-s27-005 .mast > p b { color: var(--ink); font-weight: 700; }
+.con-s27-005 .leaves { list-style: none; margin: clamp(2rem, 4vw, 3.6rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s27-005 .leaves li { position: relative; padding: 1.2rem 1.2rem 1.3rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s27-005 .leaves li::before { content: attr(data-ix); position: absolute; right: 0.9rem; top: 0.7rem; color: var(--line); font-size: 3rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.con-s27-005 .leaves .ico { width: 2rem; height: 2rem; color: var(--accent); margin-bottom: 0.8rem; }
+.con-s27-005 .leaves h3 { margin: 0; font-weight: 800; font-size: clamp(2rem, 3.4vw, 3.4rem); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s27-005 .leaves .dim { display: flex; align-items: center; gap: 0; margin: 0.6rem 0 0.5rem; height: 0.7rem; }
+.con-s27-005 .leaves .dim::before, .con-s27-005 .leaves .dim::after { content: ""; width: 1px; height: 0.7rem; background: var(--ink); }
+.con-s27-005 .leaves .dim i { flex: 1 1 auto; height: 1px; background: var(--ink); }
+.con-s27-005 .leaves .when { margin: 0 0 0.6rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s27-005 .leaves p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s27-005 .leaves p b { color: var(--ink); }
 
-/* Contact, small, complete, and first */
-.con-s27-005 .contact {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
-  gap: clamp(9px, 1.2vw, 16px);
-  padding-bottom: clamp(14px, 1.8vw, 20px);
-  border-bottom: 1px solid var(--line);
-  margin-bottom: clamp(20px, 2.8vw, 42px);
-}
-.con-s27-005 .contact > div { min-width: 0; }
-.con-s27-005 .contact dt {
-  margin-bottom: 5px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s27-005 .contact dd { margin: 0; }
+.con-s27-005 .cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-left: 1px solid var(--line-strong); }
+.con-s27-005 .cells > div { padding: 1.1rem 1.2rem 1.2rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s27-005 .cells > div.not { background: var(--band); border-left: 3px solid var(--no); margin-left: -1px; }
+.con-s27-005 .cells > div.nat { border-top: 3px solid var(--no); margin-top: -1px; }
+.con-s27-005 .cells h3 { display: flex; align-items: flex-start; gap: 0.5rem; margin: 0 0 0.6rem; font-weight: 800; font-size: 1.1rem; line-height: 1.1; letter-spacing: -0.015em; text-transform: uppercase; }
+.con-s27-005 .cells h3 .ico { width: 1.2rem; height: 1.2rem; margin-top: 0.05rem; color: var(--accent); }
+.con-s27-005 .cells .not h3 .ico, .con-s27-005 .cells .nat h3 .ico { color: var(--no); }
+.con-s27-005 .cells p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s27-005 .cells p + p { margin-top: 0.5rem; }
+.con-s27-005 .cells p b { color: var(--ink); }
 
-/* What leaves */
-.con-s27-005 .leaves { margin: 0 0 clamp(18px, 2.4vw, 32px); padding: 0; list-style: none; }
-.con-s27-005 .leaves > li {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(14px, 2.4vw, 40px);
-  align-items: baseline;
-  padding: clamp(13px, 1.8vw, 22px) 0;
-  border-top: 8px solid var(--rule);
-}
-.con-s27-005 .leaves > li:last-child { border-bottom: 8px solid var(--rule); }
-.con-s27-005 .big {
-  display: block;
-  font-size: clamp(2.44rem, 6.3vw, 5.04rem);
-  line-height: 0.94;
-  letter-spacing: -0.05em;
-  font-weight: 800;
-  color: var(--ink);
-}
-.con-s27-005 .to {
-  display: block;
-  margin-top: 7px;
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--go);
-}
-.con-s27-005 .leaves p { margin: 0 0 8px; font-size: 1.1rem; line-height: 1.56; color: var(--ink-soft); max-width: 44ch; }
-.con-s27-005 .leaves p:last-child { margin-bottom: 0; }
-.con-s27-005 .leaves p b { color: var(--ink); font-weight: 700; }
+.con-s27-005 .arrive { display: grid; grid-template-columns: minmax(0, 1fr) 22rem; margin-top: clamp(2rem, 4vw, 3.6rem); border: 1px solid var(--line-strong); }
+.con-s27-005 .arrive ul { list-style: none; margin: 0; padding: 0; }
+.con-s27-005 .arrive li { display: grid; grid-template-columns: 2.6rem 15rem minmax(0, 1fr); gap: 0 1rem; align-items: start; padding: 0.85rem 1.1rem 0.95rem; border-bottom: 1px solid var(--line); }
+.con-s27-005 .arrive li:last-child { border-bottom: 0; }
+.con-s27-005 .arrive li .ico { width: 1.5rem; height: 1.5rem; color: var(--accent); }
+.con-s27-005 .arrive h3 { margin: 0; font-weight: 800; font-size: 1rem; line-height: 1.15; letter-spacing: -0.01em; text-transform: uppercase; }
+.con-s27-005 .arrive p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s27-005 .arrive p b { color: var(--ink); }
+.con-s27-005 .plate { padding: 1.1rem 1.2rem 1.2rem; background: var(--no); color: #f3e9e6; border-left: 1px solid var(--line-strong); }
+.con-s27-005 .plate h3 { display: flex; align-items: flex-start; gap: 0.5rem; margin: 0 0 0.5rem; color: #fff; font-weight: 800; font-size: 1.5rem; line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s27-005 .plate h3 .ico { width: 1.4rem; height: 1.4rem; margin-top: 0.1rem; }
+.con-s27-005 .plate p { margin: 0; color: #f3e9e6; font-size: 0.86rem; line-height: 1.5; }
+.con-s27-005 .plate p b { color: #fff; }
 
-/* What does not leave */
-.con-s27-005 .stays {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(14px, 2vw, 32px);
-  margin-bottom: clamp(18px, 2.4vw, 30px);
-}
-.con-s27-005 .stays > div { min-width: 0; }
-.con-s27-005 h3 {
-  margin: 0 0 8px;
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s27-005 .stays p { margin: 0 0 8px; font-size: 1rem; line-height: 1.55; color: var(--ink-soft); }
-.con-s27-005 .stays p:last-child { margin-bottom: 0; }
-.con-s27-005 .stays p b { color: var(--ink); font-weight: 700; }
+.con-s27-005 .rule { margin-top: 1.2rem; padding: 1.1rem 1.3rem 1.2rem; border: 1px solid var(--line-strong); border-left: 3px solid var(--accent); display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 1rem; }
+.con-s27-005 .rule .ico { width: 1.8rem; height: 1.8rem; color: var(--accent); }
+.con-s27-005 .rule p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s27-005 .rule p + p { margin-top: 0.5rem; }
+.con-s27-005 .rule p b { color: var(--ink); }
 
-/* Who arrives */
-.con-s27-005 .arrive {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: clamp(13px, 1.8vw, 28px);
-  padding-top: clamp(15px, 1.9vw, 22px);
-  border-top: 3px solid var(--rule);
-  margin-bottom: clamp(16px, 2.2vw, 26px);
-}
-.con-s27-005 .arrive > div { min-width: 0; }
-.con-s27-005 .arrive h4 {
-  margin: 0 0 6px;
-  font-size: clamp(1.1rem, 1.51vw, 1.274rem);
-  line-height: 1.2;
-  letter-spacing: -0.015em;
-  font-weight: 700;
-}
-.con-s27-005 .arrive p { margin: 0; font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
-.con-s27-005 .arrive p b { color: var(--ink); font-weight: 700; }
+.con-s27-005 .mapf { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.55fr) minmax(0, 0.55fr); gap: clamp(1.4rem, 3vw, 2.6rem); margin-top: clamp(2rem, 4vw, 3.6rem); align-items: start; }
+.con-s27-005 .media { position: relative; aspect-ratio: 4 / 1; background: var(--media); border-radius: 2px; }
+.con-s27-005 .slate { position: absolute; left: 0.9rem; bottom: 0.7rem; right: 0.9rem; margin: 0; display: flex; gap: 0.5rem; align-items: flex-start; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; }
+.con-s27-005 .slate .ico { width: 1.1rem; height: 1.1rem; }
+.con-s27-005 .cap { margin: 0.6rem 0 0; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s27-005 .mapf h3 { display: flex; align-items: flex-start; gap: 0.5rem; margin: 0 0 0.5rem; font-weight: 800; font-size: 1rem; line-height: 1.1; letter-spacing: -0.01em; text-transform: uppercase; }
+.con-s27-005 .mapf h3 .ico { width: 1.1rem; height: 1.1rem; margin-top: 0.05rem; color: var(--accent); }
+.con-s27-005 .mapf .no h3 .ico { color: var(--no); }
+.con-s27-005 .mapf .no { border-top: 3px solid var(--no); padding-top: 0.7rem; }
+.con-s27-005 .mapf .yes { border-top: 1px solid var(--line-strong); padding-top: 0.7rem; }
+.con-s27-005 .mapf p { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s27-005 .mapf p b { color: var(--ink); }
 
-/* The gate rule */
-.con-s27-005 .gate {
-  padding: clamp(15px, 2vw, 26px);
-  background: var(--pale);
-  border-left: 8px solid var(--go);
-  margin-bottom: clamp(16px, 2.2vw, 26px);
-}
-.con-s27-005 .gate {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(13px, 1.8vw, 30px);
-}
-.con-s27-005 .gate p { margin: 0; font-size: 1.1rem; line-height: 1.56; color: var(--ink-soft); }
-.con-s27-005 .gate p b { color: var(--ink); font-weight: 700; }
-
-/* Foot: the map, small on purpose */
-.con-s27-005 .foot {
-  display: grid;
-  grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(14px, 2vw, 32px);
-  align-items: start;
-  padding-top: clamp(15px, 1.9vw, 22px);
-  border-top: 1px solid var(--line);
-}
-.con-s27-005 .foot > div { min-width: 0; }
-.con-s27-005 .strip {
-  height: 54px;
-  border: 1px dashed var(--line);
-  background: var(--pale);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  margin-bottom: 9px;
-}
-.con-s27-005 .strip span {
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-  text-align: center;
-  line-height: 1.44;
-}
-.con-s27-005 .foot p { margin: 0 0 8px; font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
-.con-s27-005 .foot p:last-child { margin-bottom: 0; }
-.con-s27-005 .foot p b { color: var(--ink); font-weight: 700; }
-
-/* Responsive ladder */
-@media (max-width: 980px) {
-  .con-s27-005 .mast { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .con-s27-005 .leaves > li { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-  .con-s27-005 .foot { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-}
-
-@media (max-width: 620px) {
-  .con-s27-005 h2, .con-s27-005 .leaves p, .con-s27-005 .gate p { max-width: none; }
-  .con-s27-005 .big { font-size: clamp(2.318rem, 11.34vw, 3.654rem); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s27-005 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s27-005 {
-  --v2-accent: #969696;
-  --v2-soft: #b4b4b4;
-  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
-  font-size: 1.06rem;
-}
-.con-s27-005 h2 { font-weight: 800; }
-.con-s27-005 h3, .con-s27-005 h4 { font-weight: 750; }
-.con-s27-005 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #f2f2f2;
-  color: #7a7a7a;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s27-005 .strip {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s27-005 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #f2f2f2;
-  color: #7a7a7a;
-  font-weight: 600;
-}
-.con-s27-005.con-s27-005 .mast {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s27-005.con-s27-005 .mast h2, .con-s27-005.con-s27-005 .mast h3, .con-s27-005.con-s27-005 .mast h4, .con-s27-005.con-s27-005 .mast b, .con-s27-005.con-s27-005 .mast strong, .con-s27-005.con-s27-005 .mast p b, .con-s27-005.con-s27-005 .mast li b, .con-s27-005.con-s27-005 .mast span b, .con-s27-005.con-s27-005 .mast dt, .con-s27-005.con-s27-005 .mast div b {
-  color: #ffffff;
-}
-.con-s27-005.con-s27-005 .mast p, .con-s27-005.con-s27-005 .mast li, .con-s27-005.con-s27-005 .mast span, .con-s27-005.con-s27-005 .mast dd, .con-s27-005.con-s27-005 .mast div p, .con-s27-005.con-s27-005 .mast div li, .con-s27-005.con-s27-005 .mast p span, .con-s27-005.con-s27-005 .mast .said, .con-s27-005.con-s27-005 .mast .note {
-  color: #d2d2d2;
-}
-.con-s27-005.con-s27-005 .mast .eyebrow, .con-s27-005.con-s27-005 .mast .kicker, .con-s27-005.con-s27-005 .mast .slot, .con-s27-005.con-s27-005 .mast .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s27-005.con-s27-005 .mast i, .con-s27-005.con-s27-005 .mast .bars i, .con-s27-005.con-s27-005 .mast .lines i, .con-s27-005.con-s27-005 .mast .measures i, .con-s27-005.con-s27-005 .mast .bar, .con-s27-005.con-s27-005 .mast .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s27-005.con-s27-005 .mast .plate, .con-s27-005.con-s27-005 .mast .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s27-005 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s27-005 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1000px) { .con-s27-005 .contact { grid-template-columns: repeat(2, minmax(0, 1fr)); } .con-s27-005 .contact div { border-bottom: 1px solid var(--line); } .con-s27-005 .arrive { grid-template-columns: minmax(0, 1fr); } .con-s27-005 .plate { border-left: 0; border-top: 1px solid var(--line-strong); } .con-s27-005 .mapf { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .con-s27-005 .mapf > div:first-child { grid-column: 1 / -1; } }
+@media (max-width: 860px) { .con-s27-005 .head, .con-s27-005 .leaves, .con-s27-005 .cells { grid-template-columns: minmax(0, 1fr); } .con-s27-005 .arrive li { grid-template-columns: 2.6rem minmax(0, 1fr); } .con-s27-005 .arrive li p { grid-column: 2; } }
+@media (max-width: 560px) { .con-s27-005 .contact, .con-s27-005 .mapf { grid-template-columns: minmax(0, 1fr); } .con-s27-005 .media { aspect-ratio: 16 / 9; } }
+@media (prefers-reduced-motion: reduce) { .con-s27-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s27-005" data-study-id="CON-S27-005" data-direction="Art-directed / Distinctive">
+  <svg class="draw" viewBox="0 0 100 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g stroke="currentColor" stroke-width="1" fill="none">
+      <path d="M100 0v1000" vector-effect="non-scaling-stroke"/>
+      <path d="M100 20L0 60M100 60L0 100M100 100L0 140M100 140L0 180M100 180L0 220M100 220L0 260M100 260L0 300M100 300L0 340M100 340L0 380M100 380L0 420M100 420L0 460M100 460L0 500M100 500L0 540M100 540L0 580M100 580L0 620M100 620L0 660M100 660L0 700M100 700L0 740M100 740L0 780M100 780L0 820M100 820L0 860M100 860L0 900M100 900L0 940M100 940L0 980" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
   <section class="shell" aria-labelledby="con-s27-005-title">
 
-    <div class="mast">
+    <div class="head">
       <div>
-        <p class="eyebrow">One office, and the yard behind it</p>
-        <h2 id="con-s27-005-title">Nothing here is for you. Everything here is for your site.</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V6M20 21V6M4 9h16M4 13h16M4 17h16"/></svg>One office, and the yard behind it</p>
+        <h2 id="con-s27-005-title">Nothing here is for you. <span>Everything here is for your site.</span></h2>
       </div>
-      <p><b>A contractor's office is not a shop</b>, and almost nobody who reads this page is coming here. So the address is small and complete, and the largest thing on the page is what leaves the yard before the sites start.</p>
+      <p><b>A contractor&rsquo;s office is not a shop</b>, and almost nobody who reads this page is coming here. So the address is small and complete, and the largest thing on the page is what leaves the yard before the sites start.</p>
     </div>
 
     <dl class="contact">
-      <div><dt>Branch</dt><dd><span class="slot"><span class="vh">Name of this branch</span>Reserved</span></dd></div>
-      <div><dt>Address</dt><dd><span class="slot"><span class="vh">Street address of this office</span>Reserved</span></dd></div>
-      <div><dt>Office line</dt><dd><span class="slot"><span class="vh">Telephone number for the office</span>Reserved</span></dd></div>
-      <div><dt>The yard</dt><dd><span class="slot"><span class="vh">Telephone number for the yard</span>Reserved</span></dd></div>
-      <div><dt>Jobs run from here</dt><dd><span class="slot"><span class="vh">Region this office runs jobs in</span>Reserved</span></dd></div>
+      <div><dt>Branch</dt><dd><span class="slot"><span class="vh">Name of this branch</span><span aria-hidden="true">Reserved</span></span></dd></div>
+      <div><dt>Address</dt><dd><span class="slot"><span class="vh">Street address of this office</span><span aria-hidden="true">Reserved</span></span></dd></div>
+      <div><dt>Office line</dt><dd><span class="slot"><span class="vh">Telephone number for the office</span><span aria-hidden="true">Reserved</span></span></dd></div>
+      <div><dt>The yard</dt><dd><span class="slot"><span class="vh">Telephone number for the yard</span><span aria-hidden="true">Reserved</span></span></dd></div>
+      <div><dt>Jobs run from here</dt><dd><span class="slot"><span class="vh">Region this office runs jobs in</span><span aria-hidden="true">Reserved</span></span></dd></div>
     </dl>
 
     <ul class="leaves">
-      <li>
-        <div>
-          <span class="big">Plant</span>
-          <span class="to">To your site, the same day</span>
-        </div>
-        <div>
-          <p>Off our own yard, loaded and gone the same day it is asked for. <b>That is the only reason a yard is worth what it costs to keep.</b></p>
-        </div>
+      <li data-ix="ONE">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7M5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <h3>Plant</h3>
+        <div class="dim" aria-hidden="true"><i></i></div>
+        <p class="when">To your site, the same day</p>
+        <p>Off our own yard, loaded and gone the same day it is asked for. <b>That is the only reason a yard is worth what it costs to keep.</b></p>
       </li>
-      <li>
-        <div>
-          <span class="big">The fitter</span>
-          <span class="to">In a van, not on a telephone</span>
-        </div>
-        <div>
-          <p>A breakdown on a job this office runs is a drive rather than a call to a hire desk. <b>It is the difference between an afternoon and a week.</b></p>
-        </div>
+      <li data-ix="TWO">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.7 2.7-2.1-2.1z"/></svg>
+        <h3>The fitter</h3>
+        <div class="dim" aria-hidden="true"><i></i></div>
+        <p class="when">In a van, not on a telephone</p>
+        <p>A breakdown on a job this office runs is <b>a drive rather than a call to a hire desk</b>. It is the difference between an afternoon and a week.</p>
       </li>
-      <li>
-        <div>
-          <span class="big">The manager</span>
-          <span class="to">Before the gangs go out</span>
-        </div>
-        <div>
-          <p>Out first thing, which is what makes the morning visit on your site possible at all. <b>The yard is emptiest by the time the sites start.</b></p>
-        </div>
+      <li data-ix="THREE">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15a8 8 0 0 1 16 0M2 15h20v3H2zM10 7h4v5h-4z"/></svg>
+        <h3>The manager</h3>
+        <div class="dim" aria-hidden="true"><i></i></div>
+        <p class="when">Before the gangs go out</p>
+        <p>Out first thing, which is what makes the morning visit on your site possible at all. <b>The yard is emptiest by the time the sites start.</b></p>
       </li>
     </ul>
 
-    <div class="stays">
-      <div>
-        <h3>What does not leave here</h3>
-        <p>Anything for a site past the region above. <b>That plant is hired locally</b>, from somebody else's yard and on somebody else's schedule, and the fitter becomes a telephone call.</p>
+    <div class="cells">
+      <div class="not">
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>What does not leave here</h3>
+        <p>Anything for a site past the region above. <b>That plant is hired locally</b>, from somebody else&rsquo;s yard and on somebody else&rsquo;s schedule, and the fitter becomes a telephone call.</p>
         <p><b>A job further out is run from another office</b>, and we will name it rather than manage one from the wrong end of a motorway.</p>
       </div>
       <div>
-        <h3>Who is based here</h3>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>Who is based here</h3>
         <p>Contracts managers, a buyer, the plant fitter, the yard foreman, estimating and accounts.</p>
-        <p><b>The site managers are not.</b> They are on sites, which is the whole point of them. No names are printed: we have not been told them, <b>and a made-up one is worse than an empty field.</b></p>
+        <p><b>The site managers are not.</b> They are on sites, which is the whole point of them. No names are printed: we have not been told them, and a made-up one is worse than an empty field.</p>
       </div>
-      <div>
-        <h3>There is no such thing as national coverage from one yard</h3>
+      <div class="nat">
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM4 4l16 16"/></svg>There is no such thing as national coverage from one yard</h3>
         <p>A firm claiming it is either very large or not telling the truth. <b>Saying so costs less than being found out on the second job.</b></p>
       </div>
     </div>
 
     <div class="arrive">
-      <div>
-        <h4>A delivery</h4>
-        <p><b>The yard gate, not the office door.</b> Somebody in the yard signs for it, and the middle of the morning is easiest once the gangs have gone.</p>
-      </div>
-      <div>
-        <h4>A supplier or a subcontractor</h4>
-        <p>Send what you do, where you work and your insurances. <b>Turning up unannounced is not how anybody gets on a list.</b></p>
-      </div>
-      <div>
-        <h4>Somebody looking for work</h4>
-        <p><b>Early, before the gangs go out, and ask for the yard foreman.</b> There is no form for it, because a form would be slower than the walk.</p>
-      </div>
-      <div>
-        <h4>And not a client</h4>
-        <p><b>That is the most useful line on this page.</b> If you have a live job the person you want is on it, and the number you want is your site's rather than this one.</p>
+      <ul>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7M5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+          <h3>A delivery</h3>
+          <p><b>The yard gate, not the office door.</b> Somebody in the yard signs for it, and the middle of the morning is easiest once the gangs have gone.</p>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18v14H3zM3 5l9 7 9-7"/></svg>
+          <h3>A supplier or a subcontractor</h3>
+          <p>Send what you do, where you work and your insurances. <b>Turning up unannounced is not how anybody gets on a list.</b></p>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V6M20 21V6M4 9h16M4 13h16M4 17h16"/></svg>
+          <h3>Somebody looking for work</h3>
+          <p>Early, before the gangs go out, and ask for the yard foreman. <b>There is no form for it</b>, because a form would be slower than the walk.</p>
+        </li>
+      </ul>
+      <div class="plate">
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>And not a client</h3>
+        <p><b>That is the most useful line on this page.</b> If you have a live job the person you want is on it, and the number you want is your site&rsquo;s rather than this one.</p>
       </div>
     </div>
 
-    <div class="gate">
-      <p><b>You cannot cross the yard in what you drove in. Boots and a hi-vis, or you will be met in the office instead</b> &mdash; which is fine, and is what most people should do anyway.</p>
-      <p><b>Ring first</b>, because the person you came to see is very often not here and the drive is longer than the call. <b>Tell us before you come and we will say honestly what the route from the gate is like</b>, including when the answer is that it is not passable that week.</p>
-      <p>There are no facility ticks anywhere on this page. <b>A yard is not a level floor</b>, it is not the same place two months running, and a tick would be a promise about somewhere nobody has measured.</p>
+    <div class="rule">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 3l3 2h4l3-2 3 3-3 3v12H7V9L4 6zM7 14h10"/></svg>
+      <div>
+        <p><b>You cannot cross the yard in what you drove in.</b> Boots and a hi-vis, or you will be met in the office instead &mdash; which is fine, and is what most people should do anyway.</p>
+        <p><b>Ring first</b>, because the person you came to see is very often not here and the drive is longer than the call. <b>Tell us before you come and we will say honestly what the route from the gate is like</b>, including when the answer is that it is not passable that week.</p>
+        <p>There are no facility ticks anywhere on this page. <b>A yard is not a level floor</b>, it is not the same place two months running, and a tick would be a promise about somewhere nobody has measured.</p>
+      </div>
     </div>
 
-    <div class="foot">
+    <div class="mapf">
       <div>
-        <div class="strip"><span>Reserved &mdash; map, never an embedded service</span></div>
-        <p><b>It is this size on purpose.</b></p>
+        <div class="media" role="img" aria-label="Reserved — map, never an embedded service"><p class="slate" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM4 4l16 16"/></svg><span>Reserved &mdash; map, never an embedded service</span></p></div>
+        <p class="cap">It is this size on purpose.</p>
       </div>
-      <div>
-        <h3>What the map would be worth</h3>
-        <p><b>A map tells you where this office is, which is the one fact on this page that will not help you.</b> What matters is which sites it runs, and that is in the contact line at the top.</p>
+      <div class="yes">
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg>What the map would be worth</h3>
+        <p>A map tells you where this office is, which is the one fact on this page that will not help you. <b>What matters is which sites it runs</b>, and that is in the contact line at the top.</p>
       </div>
-      <div>
-        <h3>And what is not printed at all</h3>
-        <p>No opening hours &mdash; <b>an empty hours table asserts a weekly schedule.</b> No directions, travel time or nearest station: nobody here has measured your journey, and a route written by somebody who has not driven it is worse than none.</p>
+      <div class="no">
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>And what is not printed at all</h3>
+        <p><b>No opening hours</b> &mdash; an empty hours table asserts a weekly schedule. <b>No directions, travel time or nearest station</b>: nobody here has measured your journey, and a route written by somebody who has not driven it is worse than none.</p>
       </div>
     </div>
 

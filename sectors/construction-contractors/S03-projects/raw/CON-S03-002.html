@@ -12,23 +12,21 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S03 — Projects
   Direction      : Premium / Editorial
-  Reference      : None supplied for this section.
-  Layout model   : One project given the whole width as a lead plate, with its detail set beside it
-                   in the margin, above a quiet three-up of smaller work
-  Density        : Low
-  Media mode     : Four reserved project areas — one very large, three small. **The scale difference
-                   is the edit**: an editorial index shows one thing properly rather than six things
-                   equally.
-  Interaction    : None (static; no JavaScript)
-  The editorial argument : A grid treats every project as equally important, which is never true. A
-                   firm has one job it would show first if somebody walked into the office, and this
-                   study is built the way that conversation actually goes — here is the one, and here
-                   are three others if you want them.
-  The constraint line : Under the lead project sits the thing that made it difficult, which is the
-                   most informative sentence available when the name and the value are both
-                   unavailable. *Occupied throughout* tells a client more than any figure would.
-  Content note   : Sector and scope are generic vocabulary. No invented figure, client or project
-                   name, value, duration, area, certification, award or rating; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 2
+                   (head split) over a 21:9 lead field with a 3px tape bar, then device 10's
+                   offset tab: the lead's record — sector, marker, status, reserved name — as a
+                   bordered tab hanging from the field's bottom rule on the right, with the
+                   constraint paragraph beside it. Then a ruled three-up of 4:3 fields with
+                   one-line records. Drawing layer: a dimension line with running ticks under
+                   the lead. V1 is kept: the one we would show you first, occupied throughout,
+                   three quiet others.
+  Layout model   : Eyebrow, display, lead. 21:9 field. Record tab + constraint paragraph on the
+                   field's bottom rule. Ruled three-up of 4:3 fields.
+  Density        : Standard (90–170)
+  Media mode     : Four reserved project fields — one 21:9, three 4:3. Four reserved name slots.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No client, project name, location, value, area, duration, date, award or
+                   rating. Graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S03-002">
@@ -39,220 +37,68 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="One lead project at full width with marginal detail, above a quiet three-up">
-<meta name="density" content="low">
-<meta name="media-mode" content="one-very-large-and-three-small-reserved-areas">
+<meta name="theme" content="002 Bone &amp; Burnt Amber">
+<meta name="layout-model" content="Head split over a 21:9 lead field; the lead's record as a bordered offset tab on the field's bottom rule beside the constraint paragraph; ruled three-up of 4:3 fields; dimension line behind">
+<meta name="density" content="standard">
+<meta name="media-mode" content="four-reserved-project-fields-four-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S03-002 — Projects, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #efece5; }
 
-/* Scoped study styles — namespaced to .con-s03-002 */
 .con-s03-002 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --paper: #f1f1f1;
-  --slot-a: #b4b4b4;
-  --slot-b: #969696;
-  --slot-deep-a: #444444;
-  --slot-deep-b: #2b2b2b;
-  --on-slot: #ffffff;
-  --res: #ececec;
-  --res-edge: #d2d2d2;
-  --res-ink: #5e5e5e;
-  --rule: #d2d2d2;
-  --accent: #7a7a7a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #efece5; --ink: #171410; --muted: #6a655c; --line: #d9d3c8; --line-strong: #171410;
+  --media: #e3ded4; --band: #e8e3d9; --accent: #b4531d;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s03-002 *,
-.con-s03-002 *::before,
-.con-s03-002 *::after { box-sizing: inherit; }
-.con-s03-002 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 4px;
-  border-radius: 16px;
-}
-.con-s03-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s03-002 *, .con-s03-002 *::before, .con-s03-002 *::after { box-sizing: inherit; }
+.con-s03-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s03-002 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s03-002 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s03-002 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s03-002 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s03-002 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s03-002 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s03-002 h2 em { font-style: normal; color: var(--accent); }
+.con-s03-002 .lead { margin: 0 0 0.3rem; max-width: 24rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
 
-.con-s03-002 .eyebrow {
-  margin: 0 0 clamp(12px, 1.5vw, 20px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-.con-s03-002 h2 {
-  margin: 0 0 clamp(26px, 3.4vw, 52px);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(2.562rem, 5.544vw, 4.788rem);
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  max-width: 16ch;
-}
-.con-s03-002 h2 em { font-style: italic; color: var(--accent); }
+.con-s03-002 .media { position: relative; background: var(--media); border-radius: 2px; }
+.con-s03-002 .big { aspect-ratio: 21 / 9; margin-top: clamp(1.6rem, 3vw, 3rem); border-top: 3px solid var(--accent); border-radius: 0; }
+.con-s03-002 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s03-002 .st { position: absolute; right: 0; top: 0; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.8rem; background: var(--paper); color: var(--ink); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s03-002 .st i { width: 0.6rem; height: 0.6rem; border: 1px solid var(--accent); }
+.con-s03-002 .st.on i { background: var(--accent); }
 
-/* Lead */
-.con-s03-002 .lead .plate {
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 21 / 9;
-  background: linear-gradient(150deg, var(--slot-deep-a) 0%, var(--slot-deep-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(16px, 2vw, 26px);
-}
-.con-s03-002 .plate .tag {
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.78;
-}
-.con-s03-002 .under {
-  margin-top: clamp(16px, 2vw, 26px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.55fr) minmax(0, 0.45fr);
-  gap: clamp(18px, 2.8vw, 52px);
-  align-items: start;
-  padding-bottom: clamp(26px, 3.4vw, 52px);
-  border-bottom: 1px solid var(--rule);
-}
-.con-s03-002 .name {
-  display: block;
-  padding: 13px 16px;
-  border: 1px dashed var(--res-edge);
-  border-radius: 16px;
-  background: var(--res);
-  color: var(--res-ink);
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  max-width: 26rem;
-}
-.con-s03-002 .facts { margin: clamp(12px, 1.5vw, 18px) 0 0; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; }
-.con-s03-002 .sector { font-family: Georgia, "Times New Roman", Times, serif; font-size: clamp(1.534rem, 2.44vw, 2.074rem); }
-.con-s03-002 .by {
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--accent);
-}
-.con-s03-002 .hard { margin: 0; color: var(--ink-soft); font-size: clamp(1.1rem, 1.357vw, 1.345rem); line-height: 1.62; }
-.con-s03-002 .hard b { color: var(--ink); }
+.con-s03-002 .under { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: clamp(1.6rem, 3vw, 3.4rem); align-items: start; border-top: 1px solid var(--line-strong); }
+.con-s03-002 .draw { position: absolute; left: 0; right: 0; top: 0; height: 100%; pointer-events: none; color: var(--line); }
+.con-s03-002 .con { position: relative; margin: 0; padding-top: 1.2rem; max-width: 40rem; font-weight: 700; font-size: clamp(1.05rem, 1.7vw, 1.5rem); line-height: 1.3; letter-spacing: -0.015em; }
+.con-s03-002 .con span { color: var(--muted); font-weight: 400; }
+.con-s03-002 .tab { position: relative; display: grid; grid-template-columns: auto auto; gap: 0.8rem 1.6rem; margin-top: -1px; padding: 1rem 1.2rem 1.1rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); background: var(--paper); }
+.con-s03-002 .tab dt { margin: 0; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s03-002 .tab dd { margin: 0.15rem 0 0; display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.con-s03-002 .tab dd .ico { width: 1rem; height: 1rem; color: var(--accent); }
+.con-s03-002 .tab .full { grid-column: span 2; }
+.con-s03-002 .slot { display: inline-flex; align-items: center; min-width: 14rem; height: 1.9rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.9rem; font-weight: 400; letter-spacing: 0; text-transform: none; }
+.con-s03-002 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Three-up */
-.con-s03-002 .more {
-  margin: clamp(26px, 3.4vw, 52px) 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 30px);
-}
-.con-s03-002 .more li { min-width: 0; }
-.con-s03-002 .more .plate {
-  aspect-ratio: 3 / 2;
-  border-radius: 16px;
-  overflow: hidden;
-  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(11px, 1.4vw, 16px);
-}
-.con-s03-002 .more .name {
-  margin-top: clamp(11px, 1.3vw, 15px);
-  padding: 9px 12px;
-  max-width: none;
-  font-size: 0.74rem;
-}
-.con-s03-002 .more .row { margin: 9px 0 0; display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; }
-.con-s03-002 .more .s { font-size: 1.1rem; font-weight: 650; }
-.con-s03-002 .more .w { color: var(--ink-soft); font-size: 1rem; }
+.con-s03-002 .three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(1.2rem, 2vw, 2rem); margin-top: clamp(1.8rem, 3.4vw, 3.4rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.con-s03-002 .three .media { aspect-ratio: 4 / 3; }
+.con-s03-002 .rec { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.8rem; margin: 0.8rem 0 0; padding-top: 0.6rem; border-top: 1px solid var(--line); font-size: 0.74rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.con-s03-002 .rec span { color: var(--muted); font-weight: 400; letter-spacing: 0.04em; text-transform: none; font-size: 0.82rem; }
+.con-s03-002 .rec .ico { width: 1rem; height: 1rem; color: var(--accent); }
+.con-s03-002 .three .slot { display: flex; width: 100%; min-width: 0; margin-top: 0.6rem; }
 
-/* Responsive ladder */
-@media (max-width: 860px) {
-  .con-s03-002 .under { grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 22px); }
-  .con-s03-002 .more { grid-template-columns: minmax(0, 1fr); }
-  .con-s03-002 .lead .plate { aspect-ratio: 16 / 9; }
-  .con-s03-002 h2 { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s03-002 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s03-002 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
-  font-size: 1.06rem;
-}
-.con-s03-002 h2 { font-weight: 800; }
-.con-s03-002 h3, .con-s03-002 h4 { font-weight: 750; }
-.con-s03-002 .eyebrow, .con-s03-002 .tag {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s03-002 .name {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s03-002 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s03-002.con-s03-002 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  max-width: none;
-}
-.con-s03-002.con-s03-002 .shell > h2 span, .con-s03-002.con-s03-002 .shell > h2 b, .con-s03-002.con-s03-002 .shell > h2 em, .con-s03-002.con-s03-002 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s03-002 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s03-002 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s03-002 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s03-002 .lead { text-align: left; } .con-s03-002 h2 { max-width: none; } .con-s03-002 .under { grid-template-columns: minmax(0, 1fr); } .con-s03-002 .tab { justify-self: start; } .con-s03-002 .draw { display: none; } }
+@media (max-width: 768px) { .con-s03-002 .big { aspect-ratio: 16 / 10; } .con-s03-002 .three { grid-template-columns: minmax(0, 1fr); } .con-s03-002 .three .media { aspect-ratio: 16 / 10; } .con-s03-002 .three > div { padding-bottom: 1.4rem; } }
+@media (max-width: 480px) { .con-s03-002 .big { aspect-ratio: 4 / 3; } .con-s03-002 .tab { grid-template-columns: minmax(0, 1fr); } .con-s03-002 .tab .full { grid-column: span 1; } .con-s03-002 .slot { min-width: 0; width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .con-s03-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -260,41 +106,31 @@ body { margin: 0; background: #f1f1f1; }
 <div class="con-s03-002" data-study-id="CON-S03-002" data-direction="Premium / Editorial">
   <section class="shell" aria-labelledby="con-s03-002-title">
 
-    <p class="eyebrow">The work</p>
-    <h2 id="con-s03-002-title">The one we would show you <em>first</em>.</h2>
-
-    <div class="lead">
-      <div class="plate"><span class="tag">Project media &mdash; completed, wide</span></div>
-      <div class="under">
-        <div>
-          <span class="name">Project name &mdash; reserved</span>
-          <p class="facts">
-            <span class="sector">Healthcare</span>
-            <span class="by">Self-delivered</span>
-            <span class="by">Completed</span>
-          </p>
-        </div>
-        <p class="hard"><b>Occupied throughout.</b> Wards in use on the floor below, deliveries through a live entrance, and every noisy hour agreed with somebody in advance. That is the part worth knowing &mdash; not what it cost.</p>
+    <div class="head">
+      <div>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M7 21V3h13M20 3v6M7 7l6-4M16 3v4"/></svg>The work</p>
+        <h2 id="con-s03-002-title">The one we would <em>show you first.</em></h2>
       </div>
+      <p class="lead">Not the largest, not the newest &mdash; the one whose constraint is most likely to be yours.</p>
     </div>
 
-    <ul class="more">
-      <li>
-        <div class="plate"><span class="tag">Project media &mdash; completed</span></div>
-        <span class="name">Project name &mdash; reserved</span>
-        <p class="row"><span class="s">Education</span><span class="w">Frame and envelope &middot; Managed</span></p>
-      </li>
-      <li>
-        <div class="plate"><span class="tag">Project media &mdash; on site</span></div>
-        <span class="name">Project name &mdash; reserved</span>
-        <p class="row"><span class="s">Industrial</span><span class="w">Groundworks &middot; Self-delivered</span></p>
-      </li>
-      <li>
-        <div class="plate"><span class="tag">Project media &mdash; completed</span></div>
-        <span class="name">Project name &mdash; reserved</span>
-        <p class="row"><span class="s">Civic</span><span class="w">Enabling works &middot; Managed</span></p>
-      </li>
-    </ul>
+    <div class="media big" role="img" aria-label="Reserved project field: completed healthcare refurbishment, wide"><span class="st"><i aria-hidden="true"></i>Completed</span><p class="slate" aria-hidden="true">Project area &middot; 21:9 &middot; completed, wide</p></div>
+
+    <div class="under">
+      <svg class="draw" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><line x1="0" y1="150" x2="1440" y2="150"/><path d="M0 140v20M180 140v20M360 140v20M540 140v20M720 140v20M900 140v20M1080 140v20M1260 140v20M1440 140v20"/></g></svg>
+      <p class="con">Occupied throughout. <span>Wards in use on the floor below, deliveries through a live entrance, and every noisy hour agreed with somebody in advance. That is the part worth knowing &mdash; not what it cost.</span></p>
+      <dl class="tab">
+        <div><dt>Sector</dt><dd>Healthcare</dd></div>
+        <div><dt>Delivery</dt><dd><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Self-delivered</dd></div>
+        <div class="full"><dt>Project</dt><dd><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+      </dl>
+    </div>
+
+    <div class="three">
+      <div><div class="media" role="img" aria-label="Reserved project field: completed education frame and envelope"><span class="st"><i aria-hidden="true"></i>Completed</span><p class="slate" aria-hidden="true">4:3</p></div><p class="rec">Education<span>Frame and envelope</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg></p><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
+      <div><div class="media" role="img" aria-label="Reserved project field: industrial groundworks on site"><span class="st on"><i aria-hidden="true"></i>On site</span><p class="slate" aria-hidden="true">4:3</p></div><p class="rec">Industrial<span>Groundworks</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg></p><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
+      <div><div class="media" role="img" aria-label="Reserved project field: completed civic enabling works"><span class="st"><i aria-hidden="true"></i>Completed</span><p class="slate" aria-hidden="true">4:3</p></div><p class="rec">Civic<span>Enabling works</span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg></p><span class="slot"><span class="vh">Project name, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
+    </div>
 
   </section>
 </div>

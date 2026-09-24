@@ -12,29 +12,21 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S12 — Client Testimonials
   Direction      : Structured / Visual Modular
-  Reference      : None supplied for this section.
-  Layout model   : Three unequal columns ordered by how checkable each quotation is — contactable,
-                   named but not contactable, anonymous by request — the widest column holding the
-                   most verifiable evidence, narrowing to the right
-  Density        : High
-  Media mode     : None. A client photograph is a face this catalog does not have.
-  Interaction    : None (static; no JavaScript)
-  The device     : **Sorted by how far you can check it, and sized to match.** Every testimonials
-                   page flattens its quotations into one grid, which quietly asserts that they are
-                   equally good evidence. They are not: a name with a phone number behind it is a
-                   different object from an anonymous line, and the column widths say so before the
-                   labels do.
-  Why unequal    : The widest column is the most checkable, which also makes it the one a firm has
-                   to work hardest to fill. A page where the narrow column is the full one is telling
-                   you something, and this layout would show it rather than hide it.
-  Not a table    : The direction's trap. Three columns of different widths carrying different numbers
-                   of cards, with a key above and a dashed admission below &mdash; and *anonymous*
-                   is a group with its own reason rather than a missing cell.
-  Deliberately not : No star, score, rating, review count or aggregate &mdash; anti-pattern eight.
-                   No client logo wall, no review platform.
-  Content note   : Quotations are reserved blocks at prose cadence; names, roles and organisations
-                   are reserved fields. Sectors and scopes are generic vocabulary. No digit in
-                   visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3
+                   at unequal widths: three bordered columns on a twelve-column grid — WILL
+                   TAKE YOUR CALL at six, QUOTED, NOT CONTACTABLE at four, ANONYMOUS AT THEIR
+                   REQUEST at two — each headed by its stroke icon (phone, badge, cone) and
+                   definition, holding its quotations as ruled entries with a reserved
+                   quotation block, attribution fields and the edited / given lines. The
+                   widest column is the most checkable, which is the argument. WHAT THE WIDTHS
+                   ARE TELLING YOU as a bordered note with muted tags. Drawing layer: a
+                   dimension line with running ticks behind the head. V1 is kept whole.
+  Layout model   : Head split. Three unequal bordered columns (6 / 4 / 2). Bordered note.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : None. Six reserved quotation blocks, sixteen reserved fields.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No quotation text, name, role, organisation, rating, score, count, logo,
+                   client or project name. Every quotation is a reserved block. Inline SVG.
 -->
 
 <meta name="study-id" content="CON-S12-003">
@@ -45,424 +37,120 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Three unequal columns sorted by verifiability, widest most checkable">
-<meta name="density" content="high">
-<meta name="media-mode" content="none">
+<meta name="theme" content="003 Steel &amp; Structural Blue">
+<meta name="layout-model" content="Head split; three bordered columns at 6 / 4 / 2 sorted by verifiability, each with an iconed head and ruled quotation entries — reserved block, attribution fields, edited and given lines; bordered note on the widths with muted tags; dimension line behind">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media-six-reserved-quotations-sixteen-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S12-003 — Client Testimonials, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #dfdfdf; }
+body { margin: 0; background: #edf0f2; }
 
-/* Scoped study styles — namespaced to .con-s12-003 */
 .con-s12-003 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --ink-faint: #969696;
-  --paper: #dfdfdf;
-  --card: #ffffff;
-  --line: #d2d2d2;
-  --rule: #b4b4b4;
-  --field: #ececec;
-  --call: #111111;
-  --written: #444444;
-  --anon: #2b2b2b;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #edf0f2; --ink: #0f1316; --muted: #57616a; --line: #d2d9de; --line-strong: #0f1316;
+  --media: #dfe4e8; --band: #e4e8eb; --accent: #1f5fd0;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s12-003 *,
-.con-s12-003 *::before,
-.con-s12-003 *::after { box-sizing: inherit; }
-.con-s12-003 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s12-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s12-003 *, .con-s12-003 *::before, .con-s12-003 *::after { box-sizing: inherit; }
+.con-s12-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s12-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s12-003 .draw { position: absolute; left: 0; right: 0; top: 0; height: 22rem; pointer-events: none; color: var(--line); }
+.con-s12-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s12-003 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s12-003 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s12-003 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s12-003 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s12-003 h2 em { font-style: normal; color: var(--accent); }
+.con-s12-003 .lead { margin: 0 0 0.3rem; max-width: 26rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
 
-/* Head */
-.con-s12-003 .head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: clamp(14px, 2.4vw, 40px);
-  margin-bottom: clamp(16px, 2.2vw, 26px);
-}
-.con-s12-003 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s12-003 h2 {
-  margin: 0;
-  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
-  line-height: 1.04;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 22ch;
-}
-.con-s12-003 .head p { margin: 0; max-width: 42ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
-.con-s12-003 .head p b { color: var(--ink); font-weight: 650; }
+.con-s12-003 .cols { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); margin-top: clamp(1.6rem, 3vw, 3rem); border-top: 3px solid var(--accent); border-left: 1px solid var(--line-strong); }
+.con-s12-003 .col { display: flex; flex-direction: column; min-width: 0; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s12-003 .c6 { grid-column: span 6; } .con-s12-003 .c4 { grid-column: span 4; } .con-s12-003 .c2 { grid-column: span 2; }
+.con-s12-003 .ch { padding: 1.1rem 1.1rem 1rem; border-bottom: 1px solid var(--line-strong); }
+.con-s12-003 .ch .big { width: 2rem; height: 2rem; color: var(--accent); stroke-width: 1.4; }
+.con-s12-003 .ch h3 { margin: 0.6rem 0 0.3rem; font-weight: 800; font-size: clamp(0.95rem, 1.4vw, 1.25rem); line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s12-003 .ch p { margin: 0; color: var(--muted); font-size: 0.8rem; line-height: 1.45; }
+.con-s12-003 .ent { padding: 1rem 1.1rem 1.1rem; border-bottom: 1px solid var(--line); }
+.con-s12-003 .ent:last-child { border-bottom: 0; }
+.con-s12-003 .sec { margin: 0 0 0.7rem; color: var(--accent); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s12-003 .q { position: relative; padding: 1.8rem 0.9rem 0.9rem; border: 1px solid var(--line-strong); border-radius: 2px; background: var(--band); }
+.con-s12-003 .q .mark { position: absolute; left: 0.6rem; top: -0.3rem; margin: 0; color: var(--accent); font-weight: 800; font-size: 3.6rem; line-height: 1; letter-spacing: -0.05em; }
+.con-s12-003 .q .lines { display: grid; gap: 0.85rem; }
+.con-s12-003 .q .lines i { display: block; height: 0; border-bottom: 1px solid var(--line-strong); opacity: 0.55; }
+.con-s12-003 .q .lines i:nth-child(1) { width: 90%; } .con-s12-003 .q .lines i:nth-child(2) { width: 100%; } .con-s12-003 .q .lines i:nth-child(3) { width: 62%; }
+.con-s12-003 .c2 .q { padding: 1.4rem 0.6rem 0.7rem; }
+.con-s12-003 .c2 .q .mark { font-size: 2.6rem; }
+.con-s12-003 .att { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.3rem 0.6rem; align-items: center; margin: 0.8rem 0 0; }
+.con-s12-003 .c2 .att { grid-template-columns: minmax(0, 1fr); }
+.con-s12-003 .att dt { margin: 0; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s12-003 .att dd { margin: 0; }
+.con-s12-003 .slot { display: flex; align-items: center; width: 100%; height: 1.5rem; padding: 0 0.4rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.8rem; }
+.con-s12-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s12-003 .ent p.a { margin: 0.6rem 0 0; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+.con-s12-003 .ent p.a strong { color: var(--ink); }
 
-/* Columns, unequal by verifiability */
-.con-s12-003 .lanes {
-  margin: 0 0 clamp(12px, 1.6vw, 18px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr);
-  gap: clamp(12px, 1.5vw, 18px);
-  align-items: start;
-}
-.con-s12-003 .lanes > li { min-width: 0; }
+.con-s12-003 .not { display: grid; grid-template-columns: minmax(14rem, 0.5fr) minmax(0, 1.5fr); gap: clamp(1.2rem, 2.4vw, 2.6rem); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding: 1.2rem 1.5rem 1.4rem; border: 1px solid var(--line-strong); }
+.con-s12-003 .not h3 { display: flex; align-items: flex-start; gap: 0.5rem; margin: 0 0 0.8rem; font-weight: 800; font-size: clamp(1.05rem, 1.6vw, 1.4rem); line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s12-003 .not h3 .ico { color: var(--accent); margin-top: 0.1rem; }
+.con-s12-003 .not ul { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+.con-s12-003 .not li { padding: 0.3rem 0.55rem; border: 1px solid var(--line); color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s12-003 .not p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s12-003 .not p + p { margin-top: 0.6rem; }
 
-.con-s12-003 .lanehead {
-  border-radius: 22px;
-  background: var(--tone, #444444);
-  color: #ffffff;
-  padding: clamp(14px, 1.8vw, 22px);
-  margin-bottom: clamp(11px, 1.4vw, 16px);
-}
-.con-s12-003 .l-call { --tone: var(--call); }
-.con-s12-003 .l-written { --tone: var(--written); }
-.con-s12-003 .l-anon { --tone: var(--anon); }
-.con-s12-003 h3 { margin: 0 0 6px; font-size: clamp(1.1rem, 1.534vw, 1.44rem); line-height: 1.14; letter-spacing: -0.02em; font-weight: 700; }
-.con-s12-003 .lanehead p { margin: 0; font-size: 1rem; line-height: 1.48; opacity: 0.9; }
-
-.con-s12-003 .stack { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 16px); }
-.con-s12-003 .card {
-  border-radius: 22px;
-  background: var(--card);
-  padding: clamp(14px, 1.8vw, 22px);
-}
-.con-s12-003 .ctx {
-  margin: 0 0 clamp(10px, 1.3vw, 14px);
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-
-.con-s12-003 blockquote {
-  margin: 0 0 clamp(12px, 1.5vw, 16px);
-  padding-left: clamp(11px, 1.4vw, 15px);
-  border-left: 4px solid var(--tone, var(--rule));
-}
-.con-s12-003 .lines { display: block; }
-.con-s12-003 .lines i {
-  display: block;
-  height: clamp(10px, 1.2vw, 13px);
-  margin-bottom: clamp(7px, 0.9vw, 10px);
-  border-radius: 10px;
-  background: var(--field);
-}
-.con-s12-003 .lines i:nth-child(1) { width: 100%; }
-.con-s12-003 .lines i:nth-child(2) { width: 95%; }
-.con-s12-003 .lines i:nth-child(3) { width: 98%; }
-.con-s12-003 .lines i:nth-child(4) { width: 58%; margin-bottom: 0; }
-.con-s12-003 .short i:nth-child(1) { width: 97%; }
-.con-s12-003 .short i:nth-child(2) { width: 68%; margin-bottom: 0; }
-
-.con-s12-003 .attrib { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: grid; gap: 5px; }
-.con-s12-003 .attrib li {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 0.777rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s12-003 .attrib .slot {
-  min-width: 48px;
-  padding: 1px 9px;
-  border-radius: 16px;
-  background: var(--field);
-  text-align: center;
-  letter-spacing: 0;
-}
-.con-s12-003 .facts { margin: 0; padding-top: clamp(10px, 1.3vw, 13px); border-top: 1px solid var(--line); display: grid; gap: 7px; }
-.con-s12-003 .facts p { margin: 0; font-size: 1rem; line-height: 1.48; color: var(--ink-soft); }
-.con-s12-003 .facts b { color: var(--ink); font-weight: 650; }
-
-/* Admission */
-.con-s12-003 .missing {
-  border-radius: 22px;
-  border: 2px dashed var(--rule);
-  padding: clamp(16px, 2.2vw, 30px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
-  gap: clamp(16px, 2.6vw, 44px);
-  align-items: start;
-}
-.con-s12-003 .missing h3 { font-size: clamp(1.345rem, 1.888vw, 1.652rem); max-width: 18ch; color: var(--ink); }
-.con-s12-003 .none { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
-.con-s12-003 .none li {
-  padding: 5px 12px;
-  border-radius: 999px;
-  border: 1px dashed var(--rule);
-  color: var(--ink-soft);
-  font-size: 1rem;
-  font-weight: 600;
-}
-.con-s12-003 .missing p { margin: 0 0 10px; max-width: 76ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
-.con-s12-003 .missing p:last-child { margin-bottom: 0; }
-.con-s12-003 .missing p b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 1080px) {
-  .con-s12-003 .lanes { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .con-s12-003 .lanes > li:last-child { grid-column: 1 / -1; }
-}
-
-@media (max-width: 700px) {
-  .con-s12-003 .lanes { grid-template-columns: minmax(0, 1fr); }
-  .con-s12-003 .lanes > li:last-child { grid-column: auto; }
-  .con-s12-003 .missing { grid-template-columns: minmax(0, 1fr); }
-  .con-s12-003 h2, .con-s12-003 .head p, .con-s12-003 .missing h3, .con-s12-003 .missing p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s12-003 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s12-003 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
-  font-size: 1.06rem;
-}
-.con-s12-003 h2 { font-weight: 800; }
-.con-s12-003 h3, .con-s12-003 h4 { font-weight: 750; }
-.con-s12-003 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s12-003 .card {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #d2d2d2;
-}
-.con-s12-003 .none li {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s12-003 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s12-003.con-s12-003 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s12-003.con-s12-003 .head h2, .con-s12-003.con-s12-003 .head h3, .con-s12-003.con-s12-003 .head h4, .con-s12-003.con-s12-003 .head b, .con-s12-003.con-s12-003 .head strong, .con-s12-003.con-s12-003 .head p b, .con-s12-003.con-s12-003 .head li b, .con-s12-003.con-s12-003 .head span b, .con-s12-003.con-s12-003 .head dt, .con-s12-003.con-s12-003 .head div b {
-  color: #ffffff;
-}
-.con-s12-003.con-s12-003 .head p, .con-s12-003.con-s12-003 .head li, .con-s12-003.con-s12-003 .head span, .con-s12-003.con-s12-003 .head dd, .con-s12-003.con-s12-003 .head div p, .con-s12-003.con-s12-003 .head div li, .con-s12-003.con-s12-003 .head p span, .con-s12-003.con-s12-003 .head .said, .con-s12-003.con-s12-003 .head .note {
-  color: #d2d2d2;
-}
-.con-s12-003.con-s12-003 .head .eyebrow, .con-s12-003.con-s12-003 .head .kicker, .con-s12-003.con-s12-003 .head .slot, .con-s12-003.con-s12-003 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s12-003.con-s12-003 .head i, .con-s12-003.con-s12-003 .head .bars i, .con-s12-003.con-s12-003 .head .lines i, .con-s12-003.con-s12-003 .head .measures i, .con-s12-003.con-s12-003 .head .bar, .con-s12-003.con-s12-003 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s12-003.con-s12-003 .head .plate, .con-s12-003.con-s12-003 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s12-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s12-003 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s12-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s12-003 .lead { text-align: left; } .con-s12-003 h2 { max-width: none; } .con-s12-003 .draw { display: none; } .con-s12-003 .c6 { grid-column: span 12; } .con-s12-003 .c4 { grid-column: span 7; } .con-s12-003 .c2 { grid-column: span 5; } .con-s12-003 .c2 .att { grid-template-columns: auto minmax(0, 1fr); } }
+@media (max-width: 640px) { .con-s12-003 .c4, .con-s12-003 .c2 { grid-column: span 12; } .con-s12-003 .not { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s12-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s12-003" data-study-id="CON-S12-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" viewBox="0 0 1440 352" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><line x1="0" y1="60" x2="1440" y2="60"/><path d="M96 48v24M288 48v24M480 48v24M672 48v24M864 48v24M1056 48v24M1248 48v24"/><line x1="0" y1="300" x2="1440" y2="300"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s12-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">What clients said</p>
-        <h2 id="con-s12-003-title">Sorted by how far you can check it</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>What clients said</p>
+        <h2 id="con-s12-003-title">Sorted by how far <em>you can check it.</em></h2>
       </div>
-      <p>Every testimonials page puts its quotations in one grid, which quietly says they are equally good evidence. <b>They are not, so the most checkable column is the widest.</b></p>
+      <p class="lead">Every testimonials page puts its quotations in one grid, which quietly says they are equally good evidence. They are not, so the most checkable column is the widest.</p>
     </div>
 
-    <ul class="lanes">
+    <div class="cols">
+      <div class="col c6">
+        <div class="ch"><svg class="ico big" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><h3>Will take your call</h3><p>Named, and the number is yours on request. We do not choose which of them you ring.</p></div>
+        <div class="ent"><p class="sec">Healthcare &middot; refurbishment, occupied</p><div class="q" role="img" aria-label="Reserved quotation block"><p class="mark" aria-hidden="true">&ldquo;</p><div class="lines" aria-hidden="true"><i></i><i></i><i></i></div></div><dl class="att"><dt>Name</dt><dd><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Role</dt><dd><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Organisation</dt><dd><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></dd></dl><p class="a"><strong>Edited for length only,</strong> and they approved the cut. <strong>Given nothing.</strong> No discount, no fee, no retention released early.</p></div>
+        <div class="ent"><p class="sec">Civic &middot; enabling and civils</p><div class="q" role="img" aria-label="Reserved quotation block"><p class="mark" aria-hidden="true">&ldquo;</p><div class="lines" aria-hidden="true"><i></i><i></i><i></i></div></div><dl class="att"><dt>Name</dt><dd><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Role</dt><dd><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Organisation</dt><dd><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></dd></dl><p class="a"><strong>Not edited.</strong> This is the whole of what they wrote. <strong>Given nothing.</strong></p></div>
+        <div class="ent"><p class="sec">Industrial &middot; groundworks and frame</p><div class="q" role="img" aria-label="Reserved quotation block"><p class="mark" aria-hidden="true">&ldquo;</p><div class="lines" aria-hidden="true"><i></i><i></i><i></i></div></div><dl class="att"><dt>Name</dt><dd><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Role</dt><dd><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Organisation</dt><dd><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></dd></dl><p class="a"><strong>Edited for length only.</strong> <strong>Given nothing.</strong></p></div>
+      </div>
+      <div class="col c4">
+        <div class="ch"><svg class="ico big" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><circle cx="12" cy="10" r="2.5"/><path d="M8 18a4 4 0 0 1 8 0"/></svg><h3>Quoted, not contactable</h3><p>Happy to be named, not to field calls. A busy person rather than a reluctant one.</p></div>
+        <div class="ent"><p class="sec">Education &middot; frame and envelope</p><div class="q" role="img" aria-label="Reserved quotation block"><p class="mark" aria-hidden="true">&ldquo;</p><div class="lines" aria-hidden="true"><i></i><i></i><i></i></div></div><dl class="att"><dt>Name</dt><dd><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Role</dt><dd><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Organisation</dt><dd><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></dd></dl><p class="a"><strong>Not edited.</strong> <strong>Given nothing.</strong> If you need somebody in this sector you can ring, ask and we will find one.</p></div>
+        <div class="ent"><p class="sec">Retail &middot; fit-out, trading</p><div class="q" role="img" aria-label="Reserved quotation block"><p class="mark" aria-hidden="true">&ldquo;</p><div class="lines" aria-hidden="true"><i></i><i></i><i></i></div></div><dl class="att"><dt>Name</dt><dd><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Role</dt><dd><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></dd><dt>Organisation</dt><dd><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></dd></dl><p class="a"><strong>Edited for length only.</strong> <strong>Given nothing.</strong></p></div>
+      </div>
+      <div class="col c2">
+        <div class="ch"><svg class="ico big" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg><h3>Anonymous at their request</h3><p>Public bodies mid-procurement, and clients under an agreement that stops them naming a contractor.</p></div>
+        <div class="ent"><p class="sec">Residential &middot; refurbishment</p><div class="q" role="img" aria-label="Reserved quotation block"><p class="mark" aria-hidden="true">&ldquo;</p><div class="lines" aria-hidden="true"><i></i><i></i><i></i></div></div><dl class="att"><dt>Organisation type</dt><dd><span class="slot"><span class="vh">Type of organisation, no name</span><span aria-hidden="true">&mdash;</span></span></dd></dl><p class="a">Neither a bad sign nor our choice. The restriction is theirs and we would rather show the gap than fill it with a name we invented.</p><p class="a"><strong>Not edited. Given nothing.</strong></p></div>
+      </div>
+    </div>
 
-      <li>
-        <div class="lanehead l-call">
-          <h3>Will take your call</h3>
-          <p>Named, and the number is yours on request. We do not choose which of them you ring.</p>
-        </div>
-        <ul class="stack">
-          <li>
-            <div class="card l-call">
-              <p class="ctx">Healthcare &middot; refurbishment, occupied</p>
-              <blockquote><span class="lines" role="img" aria-label="Reserved area: the client's quotation, about four lines"><i></i><i></i><i></i><i></i></span></blockquote>
-              <ul class="attrib">
-                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-              <div class="facts">
-                <p><b>Edited for length only</b>, and they approved the cut.</p>
-                <p><b>Given nothing.</b> No discount, no fee, no retention released early.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="card l-call">
-              <p class="ctx">Civic &middot; enabling and civils</p>
-              <blockquote><span class="lines" role="img" aria-label="Reserved area: the client's quotation, about four lines"><i></i><i></i><i></i><i></i></span></blockquote>
-              <ul class="attrib">
-                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-              <div class="facts">
-                <p><b>Not edited.</b> This is the whole of what they wrote.</p>
-                <p><b>Given nothing.</b></p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="card l-call">
-              <p class="ctx">Industrial &middot; groundworks and frame</p>
-              <blockquote><span class="lines short" role="img" aria-label="Reserved area: the client's quotation, about two lines"><i></i><i></i></span></blockquote>
-              <ul class="attrib">
-                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-              <div class="facts">
-                <p><b>Edited for length only.</b></p>
-                <p><b>Given nothing.</b></p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <div class="lanehead l-written">
-          <h3>Quoted, not contactable</h3>
-          <p>Happy to be named, not to field calls. A busy person rather than a reluctant one.</p>
-        </div>
-        <ul class="stack">
-          <li>
-            <div class="card l-written">
-              <p class="ctx">Education &middot; frame and envelope</p>
-              <blockquote><span class="lines" role="img" aria-label="Reserved area: the client's quotation, about four lines"><i></i><i></i><i></i><i></i></span></blockquote>
-              <ul class="attrib">
-                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-              <div class="facts">
-                <p><b>Not edited.</b></p>
-                <p><b>Given nothing.</b> If you need somebody in this sector you can ring, ask and we will find one.</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="card l-written">
-              <p class="ctx">Retail &middot; fit-out, trading</p>
-              <blockquote><span class="lines short" role="img" aria-label="Reserved area: the client's quotation, about two lines"><i></i><i></i></span></blockquote>
-              <ul class="attrib">
-                <li><span>Name</span><span class="slot"><span class="vh">Name of the person quoted</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Role</span><span class="slot"><span class="vh">Their role</span><span aria-hidden="true">&mdash;</span></span></li>
-                <li><span>Organisation</span><span class="slot"><span class="vh">Their organisation</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-              <div class="facts">
-                <p><b>Edited for length only.</b></p>
-                <p><b>Given nothing.</b></p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <div class="lanehead l-anon">
-          <h3>Anonymous at their request</h3>
-          <p>Public bodies mid-procurement, and clients under an agreement that stops them naming a contractor.</p>
-        </div>
-        <ul class="stack">
-          <li>
-            <div class="card l-anon">
-              <p class="ctx">Residential &middot; refurbishment</p>
-              <blockquote><span class="lines short" role="img" aria-label="Reserved area: the client's quotation, about two lines"><i></i><i></i></span></blockquote>
-              <ul class="attrib">
-                <li><span>Organisation type</span><span class="slot"><span class="vh">Type of organisation, no name</span><span aria-hidden="true">&mdash;</span></span></li>
-              </ul>
-              <div class="facts">
-                <p><b>Neither a bad sign nor our choice.</b> The restriction is theirs and we would rather show the gap than fill it with a name we invented.</p>
-                <p><b>Not edited. Given nothing.</b></p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-
-    </ul>
-
-    <div class="missing" data-refusal>
-      <h3>What the widths are telling you</h3>
+    <div class="not">
       <div>
-        <ul class="none">
-          <li>No stars</li><li>No score</li><li>No review count</li><li>No client logos</li><li>No average anything</li>
-        </ul>
-        <p><b>A page where the narrow column is the full one is telling you something</b>, and this layout would show it rather than hide it. That is the reason for sizing the columns rather than lining them up.</p>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="9" cy="12" r="1.5"/><path d="M15 12h7v4h-7"/></svg>What the widths are telling you</h3>
+        <ul><li>No stars</li><li>No score</li><li>No review count</li><li>No client logos</li><li>No average anything</li></ul>
+      </div>
+      <div>
+        <p>A page where the narrow column is the full one is telling you something, and this layout would show it rather than hide it. That is the reason for sizing the columns rather than lining them up.</p>
         <p>There is no rating anywhere. A score asserts a survey nobody ran, and an average of a handful of quotations is a handful of quotations with arithmetic on top.</p>
-        <p><b>These are also the clients who agreed to be quoted, and the ones who did not are not here &mdash; and we are not going to pretend the difference is random.</b> Ask for those instead: we will give you a reference from a job that went badly and the number of the client it went badly for.</p>
+        <p>These are also the clients who agreed to be quoted, and the ones who did not are not here &mdash; and we are not going to pretend the difference is random. Ask for those instead: we will give you a reference from a job that went badly and the number of the client it went badly for.</p>
       </div>
     </div>
 

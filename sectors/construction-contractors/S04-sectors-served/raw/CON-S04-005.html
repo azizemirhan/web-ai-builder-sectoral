@@ -12,27 +12,20 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S04 — Sectors Served
   Direction      : Art-directed / Distinctive
-  Reference      : None supplied for this section.
-  Layout model   : The hierarchy inverted — the **constraint** is set at display scale as the
-                   headline of each row and the sector name is reduced to a small coloured marker
-                   beside it, on a deep brown ground
-  Density        : Low
-  Media mode     : None. Type and colour only.
-  Interaction    : None (static; no JavaScript)
-  The device     : Every sectors page in this industry sets the sector name large and the
-                   explanation small. **This one does the opposite**, because the sector name is
-                   the part every competitor also prints and the constraint is the part they cannot.
-                   Setting *"the building does not close"* at display scale and *Healthcare* at
-                   caption scale is an argument made entirely by type hierarchy.
-  Why it holds up : A reader scanning at speed reads the largest thing on the row. Here that is the
-                   sentence which is either true of this firm or is not, rather than a category
-                   nobody disputes.
-  Deliberately not : No photography, no rotation, no oversized number. The sector direction warns
-                   this direction toward the car-advert register; a page of sentences at scale on a
-                   flat ground cannot get there.
-  Content note   : Sector names are generic vocabulary. No client name or logo, no framework or
-                   authority, no per-sector count or percentage, no certification, award, rating,
-                   price or programme length; no digit in visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 6
+                   at row scale: the inverted hierarchy as six ruled rows, the constraint set
+                   in tracked uppercase at display size, the sector reduced to a small bordered
+                   tag with its stroke icon in the margin, and the SO line muted beneath. The
+                   first row carries the 3px tape bar. Drawing layer: a brick-coursing pattern
+                   down the right margin. No media, by the section's rule. V1 is kept whole:
+                   six constraints as headlines, six so-lines, the wrong-firm paragraph.
+  Layout model   : Head split. Six ruled rows: margin tag (icon + sector), constraint at
+                   display size, so-line. Foot rule with the wrong-firm line and a cone icon.
+  Density        : Structured (170–230), CON ceiling 250
+  Media mode     : None, by design.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No client, logo, framework, authority, count, share, certification, award,
+                   rating, price or urgency device. Graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S04-005">
@@ -43,265 +36,87 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="Inverted hierarchy — the constraint at display scale, the sector reduced to a marker">
-<meta name="density" content="low">
-<meta name="media-mode" content="none">
+<meta name="theme" content="005 Asphalt &amp; Signal">
+<meta name="layout-model" content="Head split; six ruled rows with the constraint at display size, the sector as a small iconed tag in the margin and the so-line muted; wrong-firm line on the foot rule; brick coursing down the right margin">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S04-005 — Sectors Served, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #1a1a1a; }
+body { margin: 0; background: #e6e6e3; }
 
-/* Scoped study styles — namespaced to .con-s04-005 */
 .con-s04-005 {
-  --ink: #ffffff;
-  --ink-soft: #2b2b2b;
-  --paper: #1a1a1a;
-  --rule: #111111;
-
-  --health: #2b2b2b;
-  --edu: #ececec;
-  --industrial: #444444;
-  --retail: #111111;
-  --civic: #969696;
-  --resi: #5e5e5e;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #e6e6e3; --ink: #0e0f10; --muted: #52555a; --line: #cfcfcb; --line-strong: #0e0f10;
+  --media: #d9d9d5; --band: #deded9; --accent: #e2521a;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s04-005 *,
-.con-s04-005 *::before,
-.con-s04-005 *::after { box-sizing: inherit; }
-.con-s04-005 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 4px;
-  border-radius: 16px;
-}
-.con-s04-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s04-005 *, .con-s04-005 *::before, .con-s04-005 *::after { box-sizing: inherit; }
+.con-s04-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s04-005 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s04-005 .draw { position: absolute; right: 0; top: 0; width: 9rem; height: 100%; pointer-events: none; color: var(--line); }
+.con-s04-005 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s04-005 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s04-005 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s04-005 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s04-005 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(2rem, 4vw, 4.4rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s04-005 h2 em { font-style: normal; color: var(--accent); }
+.con-s04-005 .lead { margin: 0 0 0.3rem; max-width: 24rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
 
-.con-s04-005 .open {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: clamp(16px, 2.6vw, 44px);
-  margin-bottom: clamp(28px, 3.6vw, 56px);
-}
-.con-s04-005 .eyebrow {
-  margin: 0 0 clamp(12px, 1.5vw, 20px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s04-005 h2 {
-  margin: 0;
-  font-size: clamp(1.83rem, 3.276vw, 2.772rem);
-  line-height: 1.1;
-  letter-spacing: -0.022em;
-  font-weight: 700;
-  max-width: 30ch;
-}
-.con-s04-005 .open p { margin: 0; max-width: 34ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
+.con-s04-005 .rows { margin: clamp(1.6rem, 3vw, 3rem) 0 0; padding: 0; list-style: none; border-top: 3px solid var(--accent); }
+.con-s04-005 .rows li { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 0 clamp(1.4rem, 3vw, 3.4rem); align-items: start; padding: clamp(1.2rem, 2.2vw, 2rem) 0; border-bottom: 1px solid var(--line); }
+.con-s04-005 .tag { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.4rem; padding: 0.4rem 0.6rem; border: 1px solid var(--line-strong); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s04-005 .tag .ico { width: 1.1rem; height: 1.1rem; color: var(--accent); }
+.con-s04-005 .rows p.t { margin: 0; max-width: 20ch; font-weight: 800; font-size: clamp(1.8rem, 3.6vw, 3.8rem); line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s04-005 .rows p.t em { font-style: normal; color: var(--accent); }
+.con-s04-005 .rows p.so { margin: 0.8rem 0 0; max-width: 40rem; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s04-005 .rows p.so strong { color: var(--ink); font-weight: 800; font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; margin-right: 0.4rem; }
 
-/* Rows — the constraint is the headline */
-.con-s04-005 .rows { margin: 0; padding: 0; list-style: none; }
-.con-s04-005 .rows li {
-  padding: clamp(22px, 2.8vw, 44px) 0;
-  border-top: 1px solid var(--rule);
-}
-.con-s04-005 .rows li:last-child { border-bottom: 1px solid var(--rule); }
-.con-s04-005 .mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: clamp(10px, 1.3vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-soft));
-}
-.con-s04-005 .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--tone, var(--ink-soft));
-}
-.con-s04-005 .t-health { --tone: var(--health); }
-.con-s04-005 .t-edu { --tone: var(--edu); }
-.con-s04-005 .t-industrial { --tone: var(--industrial); }
-.con-s04-005 .t-retail { --tone: var(--retail); }
-.con-s04-005 .t-civic { --tone: var(--civic); }
-.con-s04-005 .t-resi { --tone: var(--resi); }
+.con-s04-005 .foot { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 0 clamp(1.4rem, 3vw, 3.4rem); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.con-s04-005 .foot .lab { display: flex; align-items: center; gap: 0.5rem; margin: 0; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.3; }
+.con-s04-005 .foot .lab .ico { width: 1.2rem; height: 1.2rem; }
+.con-s04-005 .foot p.w { margin: 0; max-width: 46rem; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1.3; letter-spacing: -0.015em; }
+.con-s04-005 .foot p.w span { color: var(--muted); font-weight: 400; font-size: 0.88rem; }
 
-.con-s04-005 h3 {
-  margin: 0;
-  font-size: clamp(2.074rem, 5.292vw, 4.284rem);
-  line-height: 1.02;
-  letter-spacing: -0.034em;
-  font-weight: 700;
-  max-width: 19ch;
-}
-.con-s04-005 .do {
-  margin: clamp(12px, 1.6vw, 20px) 0 0;
-  max-width: 58ch;
-  color: var(--ink-soft);
-  font-size: clamp(1.1rem, 1.298vw, 1.251rem);
-  line-height: 1.6;
-}
-.con-s04-005 .do b { color: var(--ink); font-weight: 650; }
-
-.con-s04-005 .close {
-  margin: clamp(26px, 3.2vw, 48px) 0 0;
-  max-width: 66ch;
-  color: var(--ink-soft);
-  font-size: 1.1rem;
-  line-height: 1.64;
-}
-.con-s04-005 .close b { color: var(--ink); }
-
-/* Responsive ladder */
-@media (max-width: 760px) {
-  .con-s04-005 h2,
-  .con-s04-005 h3,
-  .con-s04-005 .open p,
-  .con-s04-005 .do,
-  .con-s04-005 .close { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s04-005 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s04-005 {
-  --v2-accent: #b4b4b4;
-  --v2-soft: #444444;
-  background: linear-gradient(180deg, #242424 0%, #1a1a1a 30%);
-  font-size: 1.06rem;
-}
-.con-s04-005 h2 { font-weight: 800; }
-.con-s04-005 h3, .con-s04-005 h4 { font-weight: 750; }
-.con-s04-005 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #444444;
-  color: #b4b4b4;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s04-005 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #444444;
-  color: #b4b4b4;
-  font-weight: 600;
-}
-.con-s04-005.con-s04-005 .shell > div:nth-of-type(1) {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: 1px solid #444444;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s04-005.con-s04-005 .shell > div:nth-of-type(1) h2, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) h3, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) h4, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) b, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) strong, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) p b, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) li b, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) span b, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) dt, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) div b {
-  color: #ffffff;
-}
-.con-s04-005.con-s04-005 .shell > div:nth-of-type(1) p, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) li, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) span, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) dd, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) div p, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) div li, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) p span, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .said, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .note {
-  color: #ececec;
-}
-.con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .eyebrow, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .kicker, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .slot, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s04-005.con-s04-005 .shell > div:nth-of-type(1) i, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .bars i, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .lines i, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .measures i, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .bar, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .plate, .con-s04-005.con-s04-005 .shell > div:nth-of-type(1) .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #ececec;
-}
-.con-s04-005 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s04-005 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s04-005 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s04-005 .lead { text-align: left; } .con-s04-005 h2 { max-width: none; } .con-s04-005 .draw { display: none; } }
+@media (max-width: 640px) { .con-s04-005 .rows li, .con-s04-005 .foot { grid-template-columns: minmax(0, 1fr); gap: 0.6rem; } .con-s04-005 .tag { margin-top: 0; } .con-s04-005 .rows p.t { max-width: none; } }
+@media (prefers-reduced-motion: reduce) { .con-s04-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s04-005" data-study-id="CON-S04-005" data-direction="Art-directed / Distinctive">
+  <svg class="draw" viewBox="0 0 144 2000" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 0v2000M144 0v2000M0 60h144M0 120h144M0 180h144M0 240h144M0 300h144M0 360h144M0 420h144M0 480h144M0 540h144M0 600h144M0 660h144M0 720h144M0 780h144M0 840h144M0 900h144M0 960h144M0 1020h144M0 1080h144M0 1140h144M0 1200h144M0 1260h144M0 1320h144M0 1380h144M0 1440h144M0 1500h144M0 1560h144M0 1620h144M0 1680h144M0 1740h144M0 1800h144M0 1860h144M0 1920h144M0 1980h144"/><path d="M72 0v60M72 120v60M72 240v60M72 360v60M72 480v60M72 600v60M72 720v60M72 840v60M72 960v60M72 1080v60M72 1200v60M72 1320v60M72 1440v60M72 1560v60M72 1680v60M72 1800v60M72 1920v60"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s04-005-title">
 
-    <div class="open">
+    <div class="head">
       <div>
-        <p class="eyebrow">Who we build for</p>
-        <h2 id="con-s04-005-title">The sector name is the small print. The constraint is the headline.</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6z"/></svg>Who we build for</p>
+        <h2 id="con-s04-005-title">The sector name is the small print. <em>The constraint is the headline.</em></h2>
       </div>
-      <p>Every contractor prints the same six categories. Only the sentences underneath them are worth reading, so they are set the other way round.</p>
+      <p class="lead">Every contractor prints the same six categories. Only the sentences underneath them are worth reading, so they are set the other way round.</p>
     </div>
 
-    <ul class="rows">
-      <li>
-        <span class="mark t-health"><span class="dot" aria-hidden="true"></span>Healthcare</span>
-        <h3>The building does not close while you work in it.</h3>
-        <p class="do"><b>So:</b> phasing is priced before anything else, and our site manager sits in the estates meeting rather than hearing about it afterwards.</p>
-      </li>
-      <li>
-        <span class="mark t-edu"><span class="dot" aria-hidden="true"></span>Education</span>
-        <h3>Term starts whether you are finished or not.</h3>
-        <p class="do"><b>So:</b> the programme is written backwards from the first day of teaching, and gate sequencing is agreed with the school rather than worked around it.</p>
-      </li>
-      <li>
-        <span class="mark t-industrial"><span class="dot" aria-hidden="true"></span>Industrial</span>
-        <h3>The ground decides before anybody draws an elevation.</h3>
-        <p class="do"><b>So:</b> we self-deliver the groundworks, because we would rather be the ones standing in the hole when it disagrees with the survey.</p>
-      </li>
-      <li>
-        <span class="mark t-retail"><span class="dot" aria-hidden="true"></span>Retail</span>
-        <h3>The floor is trading while the work happens.</h3>
-        <p class="do"><b>So:</b> the job is written in shifts, and the landlord and the client get the same programme rather than two versions of it.</p>
-      </li>
-      <li>
-        <span class="mark t-civic"><span class="dot" aria-hidden="true"></span>Civic</span>
-        <h3>Half the permissions belong to somebody who is not in the room.</h3>
-        <p class="do"><b>So:</b> hoardings, routes and closures are designed at tender, and the sequence assumes at least one permission arrives late.</p>
-      </li>
-      <li>
-        <span class="mark t-resi"><span class="dot" aria-hidden="true"></span>Residential</span>
-        <h3>The neighbours did not choose to live next to a site.</h3>
-        <p class="do"><b>So:</b> somebody on site is named and reachable, and a complaint gets an answer rather than a form.</p>
-      </li>
-    </ul>
+    <ol class="rows">
+      <li><span class="tag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M12 8v8M8 12h8"/></svg>Healthcare</span><div><p class="t">The building does not <em>close</em> while you work in it.</p><p class="so"><strong>So</strong>Phasing is priced before anything else, and our site manager sits in the estates meeting rather than hearing about it afterwards.</p></div></li>
+      <li><span class="tag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4z"/><path d="M6 9v6c0 1 3 3 6 3s6-2 6-3V9"/></svg>Education</span><div><p class="t">Term starts whether you are <em>finished</em> or not.</p><p class="so"><strong>So</strong>The programme is written backwards from the first day of teaching, and gate sequencing is agreed with the school rather than worked around it.</p></div></li>
+      <li><span class="tag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l6 4v-4l6 4v-4l6 4v7z"/><path d="M3 21h18"/></svg>Industrial</span><div><p class="t">The ground decides before anybody draws an <em>elevation.</em></p><p class="so"><strong>So</strong>We self-deliver the groundworks, because we would rather be the ones standing in the hole when it disagrees with the survey.</p></div></li>
+      <li><span class="tag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v3H3zM5 12v9h14v-9M3 9l2-5h14l2 5M10 21v-5h4v5"/></svg>Retail</span><div><p class="t">The floor is <em>trading</em> while the work happens.</p><p class="so"><strong>So</strong>The job is written in shifts, and the landlord and the client get the same programme rather than two versions of it.</p></div></li>
+      <li><span class="tag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6z"/></svg>Civic</span><div><p class="t">Half the permissions belong to somebody who is <em>not in the room.</em></p><p class="so"><strong>So</strong>Hoardings, routes and closures are designed at tender, and the sequence assumes at least one permission arrives late.</p></div></li>
+      <li><span class="tag"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v11h14V10M10 21v-6h4v6"/></svg>Residential</span><div><p class="t">The neighbours did not <em>choose</em> to live next to a site.</p><p class="so"><strong>So</strong>Somebody on site is named and reachable, and a complaint gets an answer rather than a form.</p></div></li>
+    </ol>
 
-    <p class="close"><b>Where we are the wrong firm:</b> anything with a live process running through it &mdash; clean areas, data halls, food production. The constraint there is contamination and continuity of process, and firms who work in it every week will beat us. Better said here than discovered together on your site.</p>
+    <div class="foot">
+      <p class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>Where we are the wrong firm</p>
+      <p class="w">Anything with a live process running through it &mdash; clean areas, data halls, food production. <span>The constraint there is contamination and continuity of process, and firms who work in it every week will beat us. Better said here than discovered together on your site.</span></p>
+    </div>
 
   </section>
 </div>

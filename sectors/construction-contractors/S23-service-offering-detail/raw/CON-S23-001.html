@@ -10,344 +10,132 @@
 
   Study ID       : CON-S23-001
   Sector         : Construction & Contractors (CON)
-  Section        : CON-S23 — Construction Service Detail
+  Section        : CON-S23 — Service Offering Detail
   Direction      : Universal / Safe
-  Reference      : None supplied for this section.
-  Layout model   : The anatomy of one service in five parts — what is in it, what is not and who does
-                   it instead, the seams with an owner named at each, what goes wrong on this kind of
-                   work, and who holds the work
-  Density        : Medium
-  Media mode     : One reserved area, at interior scale &mdash; a photograph of a junction rather
-                   than of a finished elevation.
-  Interaction    : None. The batch's anchors belong to `004`.
-  The constraint : **The edge is the content.** Every service page in this trade lists what is
-                   included and stops; buildings do not fail in the middle of a package, they fail
-                   at the interfaces &mdash; because two trades met at one detail and each thought
-                   the other had it.
-  The seams      : Each junction is named with the two parties either side of it and **the party who
-                   owns the joint**, including the joints we hand over. One of them is drawn as
-                   unowned, because on most jobs one of them is.
-  The refusal    : No turnkey, no one-stop shop, no *we handle everything*. **A firm claiming there
-                   are no interfaces is claiming something no building has.**
-  Placeholder    : The architecture run's convention &mdash; no em-dash. Reserved values read as the
-                   word.
-  Deliberately not : No system, product or proprietary name. No guarantee or warranty period. No
-                   badge. No before-and-after of an envelope &mdash; anti-pattern ten.
-  Content note   : Named specialists and standard references are reserved. No digit in visible copy;
-                   no header; no refusal region.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3
+                   with 7 inside it: IN THIS WORK and NOT IN THIS WORK as two bordered cells with
+                   iconed square-bulleted lists, the exclusions carrying the trade that does it
+                   instead; the four seams as bordered sheets — the two sides as iconed chips
+                   either end and THE JOINT as the wide centre cell behind a 3px accent edge
+                   with WHO OWNS THE JOINT on the band tone; the three failure modes as
+                   bordered cells with icons (pen / scaffold / water drop) and WHAT WE DO on the
+                   band tone; WHO HOLDS THIS WORK as a four-marker row with the reserved
+                   specialist slot; the refusal beside one reserved photograph of a junction
+                   at 3:1. Drawing layer: setting-out grid behind the head. V1 is kept whole.
+  Layout model   : Head split. Two bordered scope cells. Four bordered seam sheets. Three
+                   failure cells. Four-marker holding row. Refusal | 3:1 field.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : One reserved photograph of a junction, 3:1. One reserved field.
+  Interaction    : None (static; no JavaScript). No form.
+  Content note   : No product, system, standard, guarantee, period, figure or badge. The
+                   retained roofing specialist reserved. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S23-001">
 <meta name="sector" content="Construction &amp; Contractors">
 <meta name="sector-prefix" content="CON">
 <meta name="section-id" content="CON-S23">
-<meta name="section-name" content="Construction Service Detail">
+<meta name="section-name" content="Service Offering Detail">
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Five-part anatomy of one service, with the seams and their owners at the centre">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-interior-band">
+<meta name="theme" content="001 Site White &amp; Safety Orange">
+<meta name="layout-model" content="Head split; two bordered scope cells with iconed lists; four bordered seam sheets with the sides as iconed chips and the joint as the wide accent-edged centre cell with its owner on the band tone; three bordered failure cells with icons; four-marker holding row with the reserved specialist; refusal beside a 3:1 reserved junction photograph; setting-out grid behind the head">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-junction-photograph-one-reserved-field">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S23-001 — Service Detail, Universal</title>
+<title>CON-S23-001 — Service Offering Detail, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #f4f4f1; }
 
-/* Scoped study styles — namespaced to .con-s23-001 */
 .con-s23-001 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --ink-faint: #969696;
-  --paper: #f1f1f1;
-  --card: #ffffff;
-  --fill: #d2d2d2;
-  --line: #b4b4b4;
-  --soft-line: #ececec;
-  --rule: #111111;
-  --in: #2b2b2b;
-  --out: #969696;
-  --seam: #5e5e5e;
-  --wrong: #7a7a7a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f4f4f1; --ink: #121314; --muted: #5b5e62; --line: #d8d8d3; --line-strong: #121314;
+  --media: #e3e3de; --band: #ebebe6; --accent: #d9481a; --no: #8f1f14;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s23-001 *,
-.con-s23-001 *::before,
-.con-s23-001 *::after { box-sizing: inherit; }
-.con-s23-001 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s23-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s23-001 *, .con-s23-001 *::before, .con-s23-001 *::after { box-sizing: inherit; }
+.con-s23-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s23-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s23-001 .draw { position: absolute; right: 0; top: 0; width: 46%; height: 20rem; pointer-events: none; color: var(--line); }
+.con-s23-001 .shell { position: relative; width: min(100%, 100rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s23-001 .head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr); gap: 3rem; align-items: end; }
+.con-s23-001 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s23-001 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s23-001 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.3rem, 4.6vw, 5rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s23-001 h2 em { font-style: normal; color: var(--accent); }
+.con-s23-001 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s23-001 .head > p b { color: var(--ink); }
 
-/* Head */
-.con-s23-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  padding-bottom: clamp(16px, 2vw, 26px);
-  border-bottom: 2px solid var(--rule);
-  margin-bottom: clamp(16px, 2vw, 24px);
-}
-.con-s23-001 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s23-001 h2 {
-  margin: 0;
-  font-size: clamp(2.196rem, 4.284vw, 3.528rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-  max-width: 21ch;
-}
-.con-s23-001 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
-.con-s23-001 .head p b { color: var(--ink); font-weight: 650; }
+.con-s23-001 .scope { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin-top: clamp(2rem, 4vw, 3.6rem); border-top: 3px solid var(--accent); border-left: 1px solid var(--line-strong); }
+.con-s23-001 .scope > div { padding: 1.1rem 1.2rem 1.2rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s23-001 .scope > div:last-child { background: var(--band); }
+.con-s23-001 h3 { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.7rem; font-weight: 800; font-size: 1.15rem; line-height: 1.05; letter-spacing: -0.015em; text-transform: uppercase; }
+.con-s23-001 h3 .ico { width: 1.2rem; height: 1.2rem; color: var(--accent); }
+.con-s23-001 .scope ul { list-style: none; margin: 0; padding: 0; }
+.con-s23-001 .scope li { position: relative; padding: 0.4rem 0 0.4rem 1.1rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+.con-s23-001 .scope li:last-child { border-bottom: 0; }
+.con-s23-001 .scope li::before { content: ""; position: absolute; left: 0; top: 0.85rem; width: 0.45rem; height: 0.45rem; background: var(--ink); }
+.con-s23-001 .scope > div:last-child li::before { background: transparent; border: 1px solid var(--no); }
+.con-s23-001 .scope li b { color: var(--ink); }
+.con-s23-001 .scope li em { font-style: normal; color: var(--accent); font-weight: 700; }
 
-/* In and out */
-.con-s23-001 .scope {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(12px, 1.8vw, 22px);
-  margin-bottom: clamp(18px, 2.3vw, 28px);
-}
-.con-s23-001 .scope > div { min-width: 0; padding-top: clamp(11px, 1.4vw, 15px); border-top: 5px solid var(--tone, var(--line)); }
-.con-s23-001 .s-in { --tone: var(--in); }
-.con-s23-001 .s-out { --tone: var(--out); }
-.con-s23-001 .scope h3 {
-  margin: 0 0 clamp(10px, 1.3vw, 13px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s23-001 .scope ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
-.con-s23-001 .scope li { font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
-.con-s23-001 .scope li b { color: var(--ink); font-weight: 650; }
-.con-s23-001 .who { color: var(--ink-faint); }
+.con-s23-001 .sec { margin: clamp(2rem, 4vw, 3.6rem) 0 0.8rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s23-001 .seams { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); border-right: 1px solid var(--line-strong); }
+.con-s23-001 .seam { display: grid; grid-template-columns: 11rem minmax(0, 1fr) 11rem; border-bottom: 1px solid var(--line-strong); }
+.con-s23-001 .side { display: flex; flex-direction: column; justify-content: center; gap: 0.4rem; padding: 1rem 1.1rem; min-width: 0; }
+.con-s23-001 .side .ico { width: 1.8rem; height: 1.8rem; color: var(--accent); stroke-width: 1.4; }
+.con-s23-001 .side span { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s23-001 .joint { padding: 1rem 1.2rem 1.1rem; border-left: 3px solid var(--accent); border-right: 3px solid var(--accent); }
+.con-s23-001 .joint h3 { margin-bottom: 0.4rem; }
+.con-s23-001 .joint p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s23-001 .joint p b { color: var(--ink); }
+.con-s23-001 .own { margin-top: 0.7rem; padding: 0.6rem 0.8rem 0.7rem; background: var(--band); }
+.con-s23-001 .k { display: block; margin: 0 0 0.25rem; color: var(--accent); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s23-001 .own p { color: var(--ink); font-weight: 700; }
 
-/* The seams */
-.con-s23-001 .seams { margin: 0 0 clamp(18px, 2.3vw, 28px); padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: clamp(12px, 1.6vw, 18px); }
-.con-s23-001 .seams > li {
-  min-width: 0;
-  background: var(--card);
-  border-radius: 22px;
-  border-left: 6px solid var(--seam);
-  padding: clamp(15px, 1.9vw, 22px);
-  display: flex;
-  flex-direction: column;
-}
-.con-s23-001 .seams h4 { margin: 0 0 clamp(9px, 1.2vw, 12px); font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.018em; font-weight: 700; }
-.con-s23-001 .sides { margin: 0 0 clamp(10px, 1.3vw, 13px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
-.con-s23-001 .sides li { padding: 3px 11px; border-radius: 999px; background: var(--fill); font-size: 1rem; color: var(--ink-soft); }
-.con-s23-001 .owner { margin: auto 0 0; padding-top: clamp(10px, 1.3vw, 13px); border-top: 1px solid var(--soft-line); font-size: 1rem; line-height: 1.5; color: var(--ink); }
-.con-s23-001 .owner span {
-  display: block;
-  margin-bottom: 3px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--seam);
-}
-.con-s23-001 .owner b { font-weight: 650; }
-.con-s23-001 .seams p { margin: 0 0 clamp(10px, 1.3vw, 13px); font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
-.con-s23-001 .seams p b { color: var(--ink); font-weight: 650; }
+.con-s23-001 .fail { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s23-001 .fail li { display: flex; flex-direction: column; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s23-001 .fail li > div { padding: 1rem 1.1rem 1.1rem; }
+.con-s23-001 .fail p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s23-001 .fail p b { color: var(--ink); }
+.con-s23-001 .fail .do { margin-top: auto; background: var(--band); border-top: 1px solid var(--line); border-left: 3px solid var(--accent); }
 
-/* What goes wrong */
-.con-s23-001 .wrong {
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 2px solid var(--rule);
-  margin-bottom: clamp(18px, 2.3vw, 28px);
-}
-.con-s23-001 .wrong > h3 {
-  margin: 0 0 clamp(12px, 1.5vw, 18px);
-  font-size: clamp(1.369rem, 2.257vw, 1.83rem);
-  line-height: 1.14;
-  letter-spacing: -0.024em;
-  font-weight: 700;
-  max-width: 30ch;
-}
-.con-s23-001 .wrong ol { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(12px, 1.6vw, 20px); }
-.con-s23-001 .wrong li { min-width: 0; padding-left: clamp(12px, 1.5vw, 16px); border-left: 4px solid var(--wrong); }
-.con-s23-001 .wrong h4 { margin: 0 0 7px; font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.016em; font-weight: 700; }
-.con-s23-001 .wrong p { margin: 0 0 9px; font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
-.con-s23-001 .wrong .do { margin: 0; color: var(--ink); }
-.con-s23-001 .wrong .do span {
-  display: block;
-  margin-bottom: 3px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--wrong);
-}
-.con-s23-001 .wrong .do b { font-weight: 650; }
+.con-s23-001 .hold { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 3px solid var(--accent); border-left: 1px solid var(--line-strong); }
+.con-s23-001 .hold > div { padding: 0.9rem 1rem 1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s23-001 .hold .k { display: flex; align-items: center; gap: 0.4rem; color: var(--muted); }
+.con-s23-001 .hold .k i { width: 0.5rem; height: 0.5rem; border: 1px solid var(--ink); }
+.con-s23-001 .hold .k i.f { background: var(--ink); }
+.con-s23-001 .hold .k i.h { background: var(--accent); border-color: var(--accent); }
+.con-s23-001 .hold p { margin: 0; color: var(--ink); font-size: 0.86rem; line-height: 1.45; }
+.con-s23-001 .slot { display: inline-flex; align-items: center; width: 100%; height: 1.9rem; margin-top: 0.5rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1; }
+.con-s23-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Who holds it, and media */
-.con-s23-001 .foot {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(16px, 2.6vw, 44px);
-  align-items: start;
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 2px solid var(--rule);
-}
-.con-s23-001 .foot h3 {
-  margin: 0 0 clamp(10px, 1.3vw, 14px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s23-001 .holds { margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; display: grid; gap: 8px; }
-.con-s23-001 .holds li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--line); font-size: 1rem; color: var(--ink-soft); }
-.con-s23-001 .holds .m { font-size: 0.74rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; color: var(--in); }
-.con-s23-001 .slot {
-  display: inline-block;
-  min-width: 84px;
-  padding: 2px 11px;
-  border-radius: 10px;
-  background: #3a3a3a;
-  color: var(--ink-faint);
-  font-size: 1rem;
-  text-align: center;
-}
-.con-s23-001 .foot p { margin: 0; max-width: 58ch; font-size: 1rem; line-height: 1.6; color: var(--ink-faint); }
-.con-s23-001 .foot p b { color: var(--ink-soft); font-weight: 650; }
+.con-s23-001 .foot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.6rem, 3vw, 3rem); margin-top: clamp(2rem, 4vw, 3.6rem); align-items: end; }
+.con-s23-001 .refuse { padding: 1.2rem 1.3rem 1.3rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--no); }
+.con-s23-001 .refuse h3 .ico { color: var(--no); }
+.con-s23-001 .refuse p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.con-s23-001 .refuse p b { color: var(--ink); }
+.con-s23-001 .media { position: relative; aspect-ratio: 3 / 1; background: var(--media); border-radius: 2px; }
+.con-s23-001 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; max-width: 26rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; line-height: 1.5; text-transform: uppercase; }
 
-.con-s23-001 .media {
-  height: clamp(130px, 14vw, 210px);
-  border-radius: 22px;
-  border: 1px dashed var(--line);
-  background: var(--fill);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
+@media (max-width: 1000px) {
+  .con-s23-001 .seam { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .con-s23-001 .joint { grid-column: 1 / -1; border-left: 0; border-right: 0; border-top: 3px solid var(--accent); }
+  .con-s23-001 .fail, .con-s23-001 .hold { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-.con-s23-001 .media span {
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-  text-align: center;
+@media (max-width: 860px) {
+  .con-s23-001 .head, .con-s23-001 .scope, .con-s23-001 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s23-001 .draw { width: 70%; }
 }
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .con-s23-001 .head,
-  .con-s23-001 .foot { grid-template-columns: minmax(0, 1fr); }
-  .con-s23-001 .head { align-items: start; gap: clamp(14px, 2.4vw, 22px); }
-}
-
-@media (max-width: 620px) {
-  .con-s23-001 .seams { grid-template-columns: minmax(0, 1fr); }
-  .con-s23-001 h2, .con-s23-001 .head p, .con-s23-001 .wrong > h3, .con-s23-001 .foot p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s23-001 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s23-001 {
-  --v2-accent: #969696;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
-  font-size: 1.06rem;
-}
-.con-s23-001 h2 { font-weight: 800; }
-.con-s23-001 h3, .con-s23-001 h4 { font-weight: 750; }
-.con-s23-001 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s23-001 .seams > li {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #d2d2d2;
-}
-.con-s23-001 .media {
-  border: 1px dashed #b4b4b4;
-  border-radius: 14px;
-}
-.con-s23-001 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #3a3a3a;
-  color: #969696;
-  font-weight: 600;
-}
-.con-s23-001.con-s23-001 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s23-001.con-s23-001 .head h2, .con-s23-001.con-s23-001 .head h3, .con-s23-001.con-s23-001 .head h4, .con-s23-001.con-s23-001 .head b, .con-s23-001.con-s23-001 .head strong, .con-s23-001.con-s23-001 .head p b, .con-s23-001.con-s23-001 .head li b, .con-s23-001.con-s23-001 .head span b, .con-s23-001.con-s23-001 .head dt, .con-s23-001.con-s23-001 .head div b {
-  color: #ffffff;
-}
-.con-s23-001.con-s23-001 .head p, .con-s23-001.con-s23-001 .head li, .con-s23-001.con-s23-001 .head span, .con-s23-001.con-s23-001 .head dd, .con-s23-001.con-s23-001 .head div p, .con-s23-001.con-s23-001 .head div li, .con-s23-001.con-s23-001 .head p span, .con-s23-001.con-s23-001 .head .said, .con-s23-001.con-s23-001 .head .note {
-  color: #d2d2d2;
-}
-.con-s23-001.con-s23-001 .head .eyebrow, .con-s23-001.con-s23-001 .head .kicker, .con-s23-001.con-s23-001 .head .slot, .con-s23-001.con-s23-001 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s23-001.con-s23-001 .head i, .con-s23-001.con-s23-001 .head .bars i, .con-s23-001.con-s23-001 .head .lines i, .con-s23-001.con-s23-001 .head .measures i, .con-s23-001.con-s23-001 .head .bar, .con-s23-001.con-s23-001 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s23-001.con-s23-001 .head .plate, .con-s23-001.con-s23-001 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s23-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s23-001 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 560px) { .con-s23-001 .fail, .con-s23-001 .hold, .con-s23-001 .seam { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s23-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -355,17 +143,23 @@ body { margin: 0; background: #f1f1f1; }
 <div class="con-s23-001" data-study-id="CON-S23-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="con-s23-001-title">
 
+    <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <g stroke="currentColor" stroke-width="1" fill="none">
+        <path d="M0 20H100M0 40H100M0 60H100M0 80H100M20 0V100M40 0V100M60 0V100M80 0V100" vector-effect="non-scaling-stroke"/>
+      </g>
+    </svg>
+
     <div class="head">
       <div>
-        <p class="eyebrow">The building envelope</p>
-        <h2 id="con-s23-001-title">Buildings do not fail in the middle of a package. They fail at the edges.</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7M5 10v11h14V10M9 14h6v7H9z"/></svg>The building envelope</p>
+        <h2 id="con-s23-001-title">Buildings do not fail in the middle of a package. <em>They fail at the edges.</em></h2>
       </div>
       <p>Roof, walls, windows, and the junctions between them. <b>Water gets in where two trades meet and both thought the other had it</b> &mdash; so the useful half of this page is not what is included, it is where the work stops and who owns the joint.</p>
     </div>
 
     <div class="scope">
-      <div class="s-in">
-        <h3>In this work</h3>
+      <div>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18M8 6v6M16 6v6M12 12v6M3 6v12M21 6v12"/></svg>In this work</h3>
         <ul>
           <li>The roof covering, its upstands and its outlets</li>
           <li>The wall build-up, including the cavity and what closes it</li>
@@ -374,97 +168,63 @@ body { margin: 0; background: #f1f1f1; }
           <li>Access, scaffolding and the sequence they impose</li>
         </ul>
       </div>
-      <div class="s-out">
-        <h3>Not in this work, and who does it instead</h3>
+      <div>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>Not in this work, and who does it instead</h3>
         <ul>
-          <li>The windows themselves <span class="who">&mdash; the window contractor</span></li>
-          <li>Anything that passes through the envelope <span class="who">&mdash; whoever put it through</span></li>
-          <li>The structure the envelope hangs on <span class="who">&mdash; the frame contractor</span></li>
-          <li>The finished internal face <span class="who">&mdash; the fit-out package</span></li>
-          <li><b>Below the damp-proof course</b> <span class="who">&mdash; groundworks</span></li>
+          <li>The windows themselves &mdash; <em>the window contractor</em></li>
+          <li>Anything that passes through the envelope &mdash; <em>whoever put it through</em></li>
+          <li>The structure the envelope hangs on &mdash; <em>the frame contractor</em></li>
+          <li>The finished internal face &mdash; <em>the fit-out package</em></li>
+          <li>Below the damp-proof course &mdash; <em>groundworks</em></li>
         </ul>
       </div>
     </div>
 
+    <p class="sec">The seams, and who owns each joint</p>
     <ul class="seams">
-
-      <li>
-        <h4>Roof meets wall</h4>
-        <ul class="sides">
-          <li>Roof covering</li>
-          <li>Wall build-up</li>
-        </ul>
-        <p>The parapet, and the tray that stops water running down inside the cavity. Two build-ups, one detail, <b>and it is only ever built once.</b></p>
-        <div class="owner"><span>Who owns the joint</span><b>Ours, both sides.</b> There is nobody to hand it to and we do not look for one.</div>
+      <li class="seam">
+        <div class="side"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7M6 9v3h12V9"/></svg><span>Roof covering</span></div>
+        <div class="joint"><h3>Roof meets wall</h3><p>The parapet, and the tray that stops water running down inside the cavity. <b>Two build-ups, one detail, and it is only ever built once.</b></p><div class="own"><span class="k">Who owns the joint</span><p>Ours, both sides. There is nobody to hand it to and we do not look for one.</p></div></div>
+        <div class="side"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18M8 6v6M16 6v6M12 12v6M3 6v12M21 6v12"/></svg><span>Wall build-up</span></div>
       </li>
-
-      <li>
-        <h4>Wall meets window</h4>
-        <ul class="sides">
-          <li>Wall build-up</li>
-          <li>Window contractor</li>
-        </ul>
-        <p>The reveal, the tray over the head, and the seal at the frame. <b>Two firms, and the seal belongs to one of them and the tray to the other.</b></p>
-        <div class="owner"><span>Who owns the joint</span><b>Ours to the frame, theirs from it.</b> The line is drawn on a detail we both sign before either of us orders anything.</div>
+      <li class="seam">
+        <div class="side"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18M8 6v6M16 6v6M12 12v6M3 6v12M21 6v12"/></svg><span>Wall build-up</span></div>
+        <div class="joint"><h3>Wall meets window</h3><p>The reveal, the tray over the head, and the seal at the frame. <b>Two firms, and the seal belongs to one of them and the tray to the other.</b></p><div class="own"><span class="k">Who owns the joint</span><p>Ours to the frame, theirs from it. The line is drawn on a detail we both sign before either of us orders anything.</p></div></div>
+        <div class="side"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 4v16M4 12h16"/></svg><span>Window contractor</span></div>
       </li>
-
-      <li>
-        <h4>Wall meets ground</h4>
-        <ul class="sides">
-          <li>Wall build-up</li>
-          <li>Groundworks</li>
-        </ul>
-        <p>The damp-proof course, and the finished ground level somebody raised after it was set. <b>The commonest late change on any job</b>, and it is made by a landscaper.</p>
-        <div class="owner"><span>Who owns the joint</span><b>Ours, and we will say so in writing when the level moves</b> &mdash; because it will, and afterwards nobody remembers agreeing to it.</div>
+      <li class="seam">
+        <div class="side"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18M8 6v6M16 6v6M12 12v6M3 6v12M21 6v12"/></svg><span>Wall build-up</span></div>
+        <div class="joint"><h3>Wall meets ground</h3><p>The damp-proof course, and the finished ground level somebody raised after it was set. <b>The commonest late change on any job</b>, and it is made by a landscaper.</p><div class="own"><span class="k">Who owns the joint</span><p>Ours, and we will say so in writing when the level moves &mdash; because it will, and afterwards nobody remembers agreeing to it.</p></div></div>
+        <div class="side"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10h18M5 14h14M7 18h10"/></svg><span>Groundworks</span></div>
       </li>
-
-      <li>
-        <h4>Anything that goes through it</h4>
-        <ul class="sides">
-          <li>Us</li>
-          <li>Whoever made the hole</li>
-        </ul>
-        <p>Vents, flues, brackets, cables. Each one is a hole in a thing whose entire job is to have no holes in it, and <b>on most jobs this joint has no owner at all until somebody names one.</b></p>
-        <div class="owner"><span>Who owns the joint</span><b>We take it, and we say so at the start.</b> The alternative is discovering in the second winter that nobody did.</div>
+      <li class="seam">
+        <div class="side"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15a8 8 0 0 1 16 0M2 15h20v3H2zM10 7h4v5h-4z"/></svg><span>Us</span></div>
+        <div class="joint"><h3>Anything that goes through it</h3><p>Vents, flues, brackets, cables. Each one is a hole in a thing whose entire job is to have no holes in it, and <b>on most jobs this joint has no owner at all until somebody names one.</b></p><div class="own"><span class="k">Who owns the joint</span><p>We take it, and we say so at the start. The alternative is discovering in the second winter that nobody did.</p></div></div>
+        <div class="side"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM4 12h16"/></svg><span>Whoever made the hole</span></div>
       </li>
-
     </ul>
 
-    <div class="wrong">
-      <h3>Three things that go wrong on this kind of work, and what we do about each</h3>
-      <ol>
-        <li>
-          <h4>The detail nobody drew</h4>
-          <p>Standard details cover the typical bay. <b>Every job has three junctions the drawings do not show</b>, and they are always the ones with two trades in them.</p>
-          <p class="do"><span>What we do</span>Draw them and get them signed before we start, <b>rather than at the point somebody wants the scaffold down.</b></p>
-        </li>
-        <li>
-          <h4>The sequence</h4>
-          <p>An envelope is built once and inspected once, from a scaffold that is already booked to come down. <b>Anything found afterwards is a rope job or another scaffold.</b></p>
-          <p class="do"><span>What we do</span>Everything that has to be seen is seen while the scaffold is still standing, and the sign-off is a condition of striking it.</p>
-        </li>
-        <li>
-          <h4>The test</h4>
-          <p>A water test on a finished building tells you that a finished building leaks. It does not tell you which detail, and by then <b>the answer is behind a wall somebody has decorated.</b></p>
-          <p class="do"><span>What we do</span><b>We hose the first bay.</b> A test at the first bay tests the detail while it is still cheap to change, and it is the cheapest thing on this page.</p>
-        </li>
-      </ol>
+    <p class="sec">Three things that go wrong on this kind of work, and what we do about each</p>
+    <ul class="fail">
+      <li><div><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21l4-1 11-11-3-3L4 17zM14 6l3 3"/></svg>The detail nobody drew</h3><p>Standard details cover the typical bay. <b>Every job has three junctions the drawings do not show</b>, and they are always the ones with two trades in them.</p></div><div class="do"><span class="k">What we do</span><p>Draw them and get them signed before we start, rather than at the point somebody wants the scaffold down.</p></div></li>
+      <li><div><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3v18M20 3v18M4 8h16M4 14h16M4 20h16"/></svg>The sequence</h3><p>An envelope is built once and inspected once, from a scaffold that is already booked to come down. Anything found afterwards is a rope job or another scaffold.</p></div><div class="do"><span class="k">What we do</span><p>Everything that has to be seen is seen while the scaffold is still standing, and the sign-off is a condition of striking it.</p></div></li>
+      <li><div><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></svg>The test</h3><p>A water test on a finished building tells you that a finished building leaks. It does not tell you which detail, and by then the answer is behind a wall somebody has decorated.</p></div><div class="do"><span class="k">What we do</span><p><b>We hose the first bay.</b> A test at the first bay tests the detail while it is still cheap to change, and it is the cheapest thing on this page.</p></div></li>
+    </ul>
+
+    <p class="sec">Who holds this work</p>
+    <div class="hold">
+      <div><span class="k"><i class="f"></i>Directly employed</span><p>The people who build the wall and close the cavity</p></div>
+      <div><span class="k"><i></i>Long-term hire</span><p>Access and scaffolding</p></div>
+      <div><span class="k"><i class="h"></i>Retained specialist</span><p>Roof covering</p><span class="slot"><span class="vh">Name of the retained roofing specialist</span><span aria-hidden="true">Reserved</span></span></div>
+      <div><span class="k"><i style="border-color: var(--no)"></i>Somebody else&rsquo;s package</span><p>The windows, and the frame behind everything</p></div>
     </div>
 
     <div class="foot">
-      <div>
-        <h3>Who holds this work</h3>
-        <ul class="holds">
-          <li><span class="m">Directly employed</span>The people who build the wall and close the cavity</li>
-          <li><span class="m">Long-term hire</span>Access and scaffolding</li>
-          <li><span class="m">Retained specialist</span>Roof covering <span class="slot"><span class="vh">Name of the retained roofing specialist</span>Reserved</span></li>
-          <li><span class="m">Somebody else's package</span>The windows, and the frame behind everything</li>
-        </ul>
-        <p><b>There is no turnkey version of this.</b> A firm claiming there are no interfaces is claiming something no building has &mdash; and the ones it is not claiming are exactly the ones that leak.</p>
+      <div class="refuse" data-refusal>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>There is no turnkey version of this</h3>
+        <p><b>A firm claiming there are no interfaces is claiming something no building has</b> &mdash; and the ones it is not claiming are exactly the ones that leak.</p>
       </div>
-      <div class="media">
-        <span>Reserved area &mdash; one photograph of a junction, not of a finished elevation</span>
-      </div>
+      <div class="media" role="img" aria-label="Reserved area — one photograph of a junction, not of a finished elevation"><p class="slate" aria-hidden="true">Reserved area &mdash; one photograph of a junction, not of a finished elevation</p></div>
     </div>
 
   </section>

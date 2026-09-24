@@ -12,26 +12,20 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S04 — Sectors Served
   Direction      : Universal / Safe
-  Reference      : None supplied for this section.
-  Layout model   : Six split cards — a saturated colour half carrying the sector at display scale,
-                   a light half carrying the constraint it imposes and what the firm does about it
-  Density        : Medium
-  Media mode     : **None.** This section is carried by colour and type rather than by photography,
-                   which is the deliberate inverse of `S03`. See ../README.md.
-  Interaction    : None (static; no JavaScript)
-  The governing constraint : Naming a sector is not a claim — every contractor serves all of these.
-                   **Describing what that sector does to a programme is.** So the coloured half
-                   names the sector and the light half carries the only content worth reading: the
-                   constraint, and the practice that answers it.
-  Why colour rather than photographs : `S03-003` already indexes projects by sector. A second grid
-                   of sector tiles over stock imagery would be `S03` in a different order. A
-                   per-sector colour system gives this section its own identity and keeps the
-                   argument legible with no media at all.
-  The closing line : The sector this firm is wrong for. A sectors page that lists only sectors
-                   served is a claim of universal competence, which nobody believes.
-  Content note   : Sector names and services are generic vocabulary. No client name or logo, no
-                   framework or authority, no per-sector count or percentage, no certification,
-                   award, rating, price or programme length; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 4,
+                   tinted bands: six sector panels on the band tone in a 3 × 2 grid with
+                   hairline gutters, each led by a sector stroke icon at 2rem beside the name in
+                   tracked uppercase, THE CONSTRAINT as an eyebrow over the paragraph, and the
+                   SO line on a 3px tape edge. WHERE WE ARE THE WRONG FIRM as a bordered note
+                   across the foot with a cone icon. No project media, by the section's rule.
+                   Drawing layer: a setting-out grid behind the whole composition. V1 is kept:
+                   six constraints, six so-lines, the wrong-firm paragraph.
+  Layout model   : Head split. 3 × 2 grid of tinted panels. Bordered foot note.
+  Density        : Structured (170–230), CON ceiling 250
+  Media mode     : None, by design.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No client, logo, framework, authority, count, share, certification, award,
+                   rating, price or urgency device. Graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S04-001">
@@ -42,327 +36,86 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Six split cards, colour half naming the sector and light half carrying its constraint">
-<meta name="density" content="medium">
-<meta name="media-mode" content="none">
+<meta name="theme" content="001 Site White &amp; Safety Orange">
+<meta name="layout-model" content="Head split; six tinted sector panels in a 3 × 2 grid, each with a sector icon, name, THE CONSTRAINT paragraph and a tape-edged SO line; bordered wrong-firm note across the foot; setting-out grid behind">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S04-001 — Sectors Served, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #f4f4f1; }
 
-/* Scoped study styles — namespaced to .con-s04-001 */
 .con-s04-001 {
-  --ink: #111111;
-  --ink-soft: #7a7a7a;
-  --paper: #f1f1f1;
-  --card: #ffffff;
-  --line: #ececec;
-  --rule: #d2d2d2;
-
-  --health: #969696;
-  --edu: #b4b4b4;
-  --industrial: #444444;
-  --retail: #2b2b2b;
-  --civic: #5e5e5e;
-  --resi: #969696;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f4f4f1; --ink: #121314; --muted: #5b5e62; --line: #d8d8d3; --line-strong: #121314;
+  --media: #e3e3de; --band: #ebebe6; --accent: #d9481a;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s04-001 *,
-.con-s04-001 *::before,
-.con-s04-001 *::after { box-sizing: inherit; }
-.con-s04-001 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 22px;
-}
-.con-s04-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s04-001 *, .con-s04-001 *::before, .con-s04-001 *::after { box-sizing: inherit; }
+.con-s04-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s04-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s04-001 .draw { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; color: var(--line); }
+.con-s04-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s04-001 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s04-001 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s04-001 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s04-001 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s04-001 h2 em { font-style: normal; color: var(--accent); }
+.con-s04-001 .lead { margin: 0 0 0.3rem; max-width: 26rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
 
-.con-s04-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
-  gap: clamp(20px, 3vw, 60px);
-  align-items: end;
-  margin-bottom: clamp(22px, 2.8vw, 40px);
-}
-.con-s04-001 .eyebrow {
-  margin: 0 0 clamp(12px, 1.4vw, 18px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s04-001 h2 {
-  margin: 0;
-  font-size: clamp(2.44rem, 5.04vw, 4.284rem);
-  line-height: 1.02;
-  letter-spacing: -0.034em;
-  font-weight: 700;
-  max-width: 17ch;
-}
-.con-s04-001 .head p { margin: 0; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
-.con-s04-001 .head b { color: var(--ink); }
+.con-s04-001 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: clamp(1.6rem, 3vw, 3rem); padding-top: 1px; background: var(--line); border-top: 3px solid var(--accent); }
+.con-s04-001 .panel { display: flex; flex-direction: column; min-width: 0; padding: 1.4rem 1.5rem 1.5rem; background: var(--band); }
+.con-s04-001 .panel h3 { display: flex; align-items: center; gap: 0.7rem; margin: 0 0 1rem; font-weight: 800; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s04-001 .panel h3 .ico { width: 2rem; height: 2rem; color: var(--accent); stroke-width: 1.4; }
+.con-s04-001 .lab { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s04-001 .panel p.c { margin: 0; color: var(--ink); font-size: 0.9rem; line-height: 1.5; }
+.con-s04-001 .panel p.so { margin: auto 0 0; padding: 0.8rem 0 0 0.9rem; border-left: 3px solid var(--accent); margin-top: 1rem; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s04-001 .panel p.so strong { color: var(--ink); font-weight: 800; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; margin-right: 0.3rem; }
 
-/* Cards */
-.con-s04-001 .grid {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 1.8vw, 24px);
-}
-.con-s04-001 .grid li { min-width: 0; display: flex; }
-.con-s04-001 .card {
-  display: grid;
-  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
-  width: 100%;
-  border-radius: 26px;
-  overflow: hidden;
-  background: var(--card);
-  box-shadow: 0 1px 2px rgba(22, 22, 22, 0.05), 0 10px 26px rgba(22, 22, 22, 0.07);
-}
-.con-s04-001 .flag {
-  display: flex;
-  align-items: flex-end;
-  padding: clamp(14px, 1.8vw, 22px);
-  color: #ffffff;
-}
-.con-s04-001 .flag h3 {
-  margin: 0;
-  font-size: clamp(1.369rem, 2.074vw, 1.83rem);
-  line-height: 1.05;
-  letter-spacing: -0.022em;
-  font-weight: 700;
-}
-.con-s04-001 .f-health { background: var(--health); }
-.con-s04-001 .f-edu { background: var(--edu); }
-.con-s04-001 .f-industrial { background: var(--industrial); }
-.con-s04-001 .f-retail { background: var(--retail); }
-.con-s04-001 .f-civic { background: var(--civic); }
-.con-s04-001 .f-resi { background: var(--resi); }
+.con-s04-001 .wrong { display: grid; grid-template-columns: minmax(12rem, 0.5fr) minmax(0, 1.5fr); gap: clamp(1.4rem, 2.6vw, 3rem); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding: 1.2rem 1.5rem 1.4rem; border: 1px solid var(--line-strong); background: var(--paper); }
+.con-s04-001 .wrong .lab { display: flex; align-items: center; gap: 0.5rem; color: var(--accent); font-size: 0.62rem; }
+.con-s04-001 .wrong .lab .ico { width: 1.2rem; height: 1.2rem; }
+.con-s04-001 .wrong p.t { margin: 0; max-width: 46rem; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1.3; letter-spacing: -0.015em; }
+.con-s04-001 .wrong p.t span { color: var(--muted); font-weight: 400; font-size: 0.88rem; }
 
-.con-s04-001 .body { padding: clamp(15px, 1.9vw, 24px); }
-.con-s04-001 .lab {
-  display: block;
-  margin-bottom: 7px;
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.con-s04-001 .body p { margin: 0 0 clamp(12px, 1.5vw, 16px); font-size: 1.1rem; line-height: 1.55; }
-.con-s04-001 .body .do {
-  margin: 0;
-  padding-top: clamp(11px, 1.3vw, 14px);
-  border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.5;
-}
-.con-s04-001 .body .do b { color: var(--ink); font-weight: 650; }
-
-/* Closing */
-.con-s04-001 .not {
-  margin: clamp(20px, 2.6vw, 34px) 0 0;
-  padding-top: clamp(18px, 2.2vw, 26px);
-  border-top: 1px solid var(--rule);
-  display: grid;
-  grid-template-columns: minmax(0, 0.32fr) minmax(0, 0.68fr);
-  gap: clamp(16px, 2.6vw, 44px);
-  align-items: start;
-}
-.con-s04-001 .not h3 { margin: 0; font-size: 1.274rem; font-weight: 700; }
-.con-s04-001 .not p { margin: 0; max-width: 74ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
-.con-s04-001 .not b { color: var(--ink); }
-
-/* Responsive ladder */
-@media (max-width: 1080px) {
-  .con-s04-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 700px) {
-  .con-s04-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; gap: clamp(14px, 2vw, 20px); }
-  .con-s04-001 h2 { max-width: none; }
-  .con-s04-001 .grid { grid-template-columns: minmax(0, 1fr); }
-  .con-s04-001 .card { grid-template-columns: minmax(0, 1fr); }
-  .con-s04-001 .flag { min-height: 92px; }
-  .con-s04-001 .not { grid-template-columns: minmax(0, 1fr); gap: clamp(12px, 2vw, 18px); }
-  .con-s04-001 .not p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s04-001 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s04-001 {
-  --v2-accent: #7a7a7a;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
-  font-size: 1.06rem;
-}
-.con-s04-001 h2 { font-weight: 800; }
-.con-s04-001 h3, .con-s04-001 h4 { font-weight: 750; }
-.con-s04-001 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s04-001 .card {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #ececec;
-}
-.con-s04-001 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s04-001.con-s04-001 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s04-001.con-s04-001 .head h2, .con-s04-001.con-s04-001 .head h3, .con-s04-001.con-s04-001 .head h4, .con-s04-001.con-s04-001 .head b, .con-s04-001.con-s04-001 .head strong, .con-s04-001.con-s04-001 .head p b, .con-s04-001.con-s04-001 .head li b, .con-s04-001.con-s04-001 .head span b, .con-s04-001.con-s04-001 .head dt, .con-s04-001.con-s04-001 .head div b {
-  color: #ffffff;
-}
-.con-s04-001.con-s04-001 .head p, .con-s04-001.con-s04-001 .head li, .con-s04-001.con-s04-001 .head span, .con-s04-001.con-s04-001 .head dd, .con-s04-001.con-s04-001 .head div p, .con-s04-001.con-s04-001 .head div li, .con-s04-001.con-s04-001 .head p span, .con-s04-001.con-s04-001 .head .said, .con-s04-001.con-s04-001 .head .note {
-  color: #d2d2d2;
-}
-.con-s04-001.con-s04-001 .head .eyebrow, .con-s04-001.con-s04-001 .head .kicker, .con-s04-001.con-s04-001 .head .slot, .con-s04-001.con-s04-001 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s04-001.con-s04-001 .head i, .con-s04-001.con-s04-001 .head .bars i, .con-s04-001.con-s04-001 .head .lines i, .con-s04-001.con-s04-001 .head .measures i, .con-s04-001.con-s04-001 .head .bar, .con-s04-001.con-s04-001 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s04-001.con-s04-001 .head .plate, .con-s04-001.con-s04-001 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s04-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s04-001 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s04-001 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s04-001 .lead { text-align: left; } .con-s04-001 h2 { max-width: none; } .con-s04-001 .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .con-s04-001 .grid { grid-template-columns: minmax(0, 1fr); } .con-s04-001 .wrong { grid-template-columns: minmax(0, 1fr); gap: 0.8rem; } }
+@media (prefers-reduced-motion: reduce) { .con-s04-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s04-001" data-study-id="CON-S04-001" data-direction="Universal / Safe">
+  <svg class="draw" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 90H1440M0 270H1440M0 450H1440M0 630H1440M0 810H1440M180 0V900M360 0V900M540 0V900M720 0V900M900 0V900M1080 0V900M1260 0V900"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s04-001-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">Who we build for</p>
-        <h2 id="con-s04-001-title">Every contractor lists these. Here is what each one does to a programme.</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6z"/></svg>Who we build for</p>
+        <h2 id="con-s04-001-title">Every contractor lists these. Here is what each one <em>does to a programme.</em></h2>
       </div>
-      <p><b>Naming a sector is not a claim.</b> The line under each name is the part that is either true of us or not, and you can check it on site.</p>
+      <p class="lead">Naming a sector is not a claim. The line under each name is the part that is either true of us or not, and you can check it on site.</p>
     </div>
 
-    <ul class="grid">
-      <li>
-        <div class="card">
-          <div class="flag f-health"><h3>Healthcare</h3></div>
-          <div class="body">
-            <span class="lab">The constraint</span>
-            <p>The building stays open. Infection control, live entrances, and every noisy hour agreed in advance with somebody who has patients in the room below.</p>
-            <p class="do"><b>So:</b> phasing is priced before anything else, and our site manager sits in the estates meeting.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <div class="flag f-edu"><h3>Education</h3></div>
-          <div class="body">
-            <span class="lab">The constraint</span>
-            <p>A date nobody can move. Term starts whether the building is finished or not, and there is safeguarding around every gate while it is not.</p>
-            <p class="do"><b>So:</b> the programme runs backwards from the first day of teaching, and gates are sequenced with the school, not around it.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <div class="flag f-industrial"><h3>Industrial</h3></div>
-          <div class="body">
-            <span class="lab">The constraint</span>
-            <p>Ground and loads decide the programme before anybody has drawn anything, and the survey is a hypothesis rather than a fact.</p>
-            <p class="do"><b>So:</b> we self-deliver the groundworks and would rather be the ones standing in the hole when it disagrees.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <div class="flag f-retail"><h3>Retail</h3></div>
-          <div class="body">
-            <span class="lab">The constraint</span>
-            <p>A trading floor, weekend possessions, and a landlord with an opinion as well as a client with one.</p>
-            <p class="do"><b>So:</b> the work is written in shifts, and both parties get the same programme rather than two versions.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <div class="flag f-civic"><h3>Civic</h3></div>
-          <div class="body">
-            <span class="lab">The constraint</span>
-            <p>The public alongside the works, and half the permissions in somebody else's gift.</p>
-            <p class="do"><b>So:</b> hoardings, routes and closures are designed at tender rather than discovered on site.</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="card">
-          <div class="flag f-resi"><h3>Residential</h3></div>
-          <div class="body">
-            <span class="lab">The constraint</span>
-            <p>Neighbours who did not choose to live next to a construction site, and will be there long after we have gone.</p>
-            <p class="do"><b>So:</b> somebody on site is named and reachable, and complaints get an answer rather than a form.</p>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <div class="grid">
+      <div class="panel"><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M12 8v8M8 12h8"/></svg>Healthcare</h3><p class="lab">The constraint</p><p class="c">The building stays open. Infection control, live entrances, and every noisy hour agreed in advance with somebody who has patients in the room below.</p><p class="so"><strong>So</strong>Phasing is priced before anything else, and our site manager sits in the estates meeting.</p></div>
+      <div class="panel"><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4z"/><path d="M6 9v6c0 1 3 3 6 3s6-2 6-3V9"/></svg>Education</h3><p class="lab">The constraint</p><p class="c">A date nobody can move. Term starts whether the building is finished or not, and there is safeguarding around every gate while it is not.</p><p class="so"><strong>So</strong>The programme runs backwards from the first day of teaching, and gates are sequenced with the school, not around it.</p></div>
+      <div class="panel"><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l6 4v-4l6 4v-4l6 4v7z"/><path d="M3 21h18"/></svg>Industrial</h3><p class="lab">The constraint</p><p class="c">Ground and loads decide the programme before anybody has drawn anything, and the survey is a hypothesis rather than a fact.</p><p class="so"><strong>So</strong>We self-deliver the groundworks and would rather be the ones standing in the hole when it disagrees.</p></div>
+      <div class="panel"><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v3H3zM5 12v9h14v-9M3 9l2-5h14l2 5M10 21v-5h4v5"/></svg>Retail</h3><p class="lab">The constraint</p><p class="c">A trading floor, weekend possessions, and a landlord with an opinion as well as a client with one.</p><p class="so"><strong>So</strong>The work is written in shifts, and both parties get the same programme rather than two versions.</p></div>
+      <div class="panel"><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6z"/></svg>Civic</h3><p class="lab">The constraint</p><p class="c">The public alongside the works, and half the permissions in somebody else&rsquo;s gift.</p><p class="so"><strong>So</strong>Hoardings, routes and closures are designed at tender rather than discovered on site.</p></div>
+      <div class="panel"><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v11h14V10M10 21v-6h4v6"/></svg>Residential</h3><p class="lab">The constraint</p><p class="c">Neighbours who did not choose to live next to a construction site, and will be there long after we have gone.</p><p class="so"><strong>So</strong>Somebody on site is named and reachable, and complaints get an answer rather than a form.</p></div>
+    </div>
 
-    <div class="not">
-      <h3>Where we are the wrong firm</h3>
-      <p><b>Anything with a live process running through it</b> &mdash; food production, data halls, pharmaceutical clean areas. The constraint there is contamination and continuity of process, and specialists who work in it every week will beat us. We would rather say that here than find it out together on your site.</p>
+    <div class="wrong">
+      <p class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>Where we are the wrong firm</p>
+      <p class="t">Anything with a live process running through it &mdash; food production, data halls, pharmaceutical clean areas. <span>The constraint there is contamination and continuity of process, and specialists who work in it every week will beat us. We would rather say that here than find it out together on your site.</span></p>
     </div>
 
   </section>

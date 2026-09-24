@@ -12,31 +12,23 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S18 — BIM Technology
   Direction      : Art-directed / Distinctive
-  Reference      : None supplied for this section.
-  Layout model   : A poster. One statement occupies the top of the page at display scale; everything
-                   that supports it — the four rooms, the six items, the caveat — is set beneath it
-                   as a quiet strip
-  Density        : Low
-  Media mode     : None. No wireframe, no isometric, no overlay, **and nothing on this page is drawn
-                   at an angle** &mdash; anti-patterns four and five.
-  Interaction    : None. The anchors belong to `004` and appear once in this batch.
-  The device     : **Proportion, not a sequence.** `S15-005`, `S16-005` and `S17-005` all set one
-                   phrase per register at display scale; doing it a fourth time would be a house
-                   style rather than an art direction. This study spends the whole display budget on
-                   a single sentence and lets the evidence sit under it in small type &mdash; which
-                   is also the argument, because the evidence here is boring on purpose.
-  Why a poster   : Anti-pattern five is *technology as a mood.* A page that refuses spectacle
-                   entirely, and then spends its one large gesture on a sentence about where you are
-                   standing when a duct meets a beam, is making that refusal visible.
-  Software       : **Omitted, not reserved** &mdash; the `S09` test. The strip has room for it and
-                   deliberately does not use it.
-  Reserved       : The information manager, level schedule and survey references sit at ordinary
-                   scale in the foot. Not enlarged &mdash; a display-scale em-dash reads as a
-                   redaction, the lesson from `S08-005`, `S09-005`, `S15-005` and `S16-005`.
-  Deliberately not : No figure, percentage, clash count or saving. No software named. No compliance
-                   level as a badge. No fly-through. No named project.
-  Content note   : Standard names are reserved &mdash; the `S08` rule. No digit in visible copy; no
-                   acronym; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 9:
+                   the argument takes the whole of the large type — the statement at display
+                   size across the full measure under the 3px tape — and the evidence takes
+                   the rest at caption scale: the four rooms as a bordered strip of cells with
+                   icons and WHAT IT TAKES in tracked uppercase, escalating onto the band tone
+                   with the fourth red-edged; the six items as a two-column ruled iconed list;
+                   the filing argument as a band-tone panel; HELD AGAINST EVERY JOB as a
+                   bordered four-slot record at counter scale; the refusal as a ruled foot.
+                   Nothing at an angle: the drawing layer is a vertical datum line with ticks
+                   down the left margin, orthogonal throughout, no hatch. V1 is kept whole.
+  Layout model   : Head. Display statement. Bordered four-cell room strip. Two-column iconed
+                   list. Band-tone panel. Bordered record row. Ruled foot.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : No media. Four reserved fields.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No software, standard, level, figure, clash count, saving or project name.
+                   Information manager, level schedule, survey and model reserved.
 -->
 
 <meta name="study-id" content="CON-S18-005">
@@ -47,341 +39,164 @@
 <meta name="variant" content="005">
 <meta name="territory" content="Art-directed / Distinctive">
 <meta name="direction" content="Art-directed / Distinctive">
-<meta name="layout-model" content="A poster — one display statement, and the whole of the evidence as a quiet strip beneath it">
-<meta name="density" content="low">
-<meta name="media-mode" content="none">
+<meta name="theme" content="005 Asphalt &amp; Signal">
+<meta name="layout-model" content="Head; the statement at display size across the full measure under the tape; the four rooms as a bordered strip of iconed cells escalating onto the band tone; two-column ruled iconed item list; band-tone filing panel; bordered four-slot record row at counter scale; ruled refusal foot; vertical datum line with ticks down the left margin, nothing at an angle">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media-four-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S18-005 — BIM Technology, Art-directed</title>
+<title>CON-S18-005 — BIM Technology, Art-directed / Distinctive</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e8e8e8; }
+body { margin: 0; background: #e6e6e3; }
 
-/* Scoped study styles — namespaced to .con-s18-005 */
 .con-s18-005 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --ink-faint: #d2d2d2;
-  --paper: #e8e8e8;
-  --line: #ececec;
-  --soft-line: #ffffff;
-  --rule: #111111;
-  --model: #444444;
-  --review: #b4b4b4;
-  --site: #969696;
-  --after: #2b2b2b;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #e6e6e3; --ink: #0e0f10; --muted: #52555a; --line: #cfcfcb; --line-strong: #0e0f10;
+  --media: #d9d9d5; --band: #deded9; --accent: #e2521a; --no: #8f1f14;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s18-005 *,
-.con-s18-005 *::before,
-.con-s18-005 *::after { box-sizing: inherit; }
-.con-s18-005 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-}
-.con-s18-005 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s18-005 *, .con-s18-005 *::before, .con-s18-005 *::after { box-sizing: inherit; }
+.con-s18-005 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s18-005 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s18-005 .draw { position: absolute; left: 0.8rem; top: 0; width: 1.6rem; height: 100%; pointer-events: none; color: var(--line); }
+.con-s18-005 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s18-005 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s18-005 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s18-005 h2 { margin: 0; max-width: 14ch; font-weight: 800; font-size: clamp(2.6rem, 6.4vw, 7rem); line-height: 0.88; letter-spacing: -0.04em; text-transform: uppercase; }
+.con-s18-005 h2 em { font-style: normal; color: var(--accent); }
+.con-s18-005 .lead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1rem 3rem; margin-top: clamp(1.6rem, 3vw, 2.6rem); padding-top: 1.2rem; border-top: 3px solid var(--accent); }
+.con-s18-005 .lead p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s18-005 .lead p b { color: var(--ink); }
 
-/* The poster */
-.con-s18-005 .eyebrow {
-  margin: 0 0 clamp(16px, 2.2vw, 30px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s18-005 h2 {
-  margin: 0 0 clamp(18px, 2.4vw, 32px);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(3.276rem, 9.324vw, 8.064rem);
-  line-height: 0.98;
-  letter-spacing: -0.038em;
-  font-weight: 400;
-  max-width: 15ch;
-}
-.con-s18-005 h2 em { font-style: italic; }
-.con-s18-005 .under {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(16px, 3vw, 54px);
-  padding-bottom: clamp(22px, 2.8vw, 40px);
-  border-bottom: 3px solid var(--rule);
-}
-.con-s18-005 .under p { margin: 0; font-size: clamp(1.1rem, 1.345vw, 1.322rem); line-height: 1.68; color: var(--ink-soft); }
-.con-s18-005 .under p b { color: var(--ink); font-weight: 650; }
+.con-s18-005 .sec { margin: clamp(2rem, 4vw, 3.6rem) 0 0.8rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s18-005 .rooms { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s18-005 .rooms li { padding: 0.9rem 1rem 1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s18-005 .rooms li:nth-child(3), .con-s18-005 .rooms li:nth-child(4) { background: var(--band); }
+.con-s18-005 .rooms li:nth-child(4) { border-left: 3px solid var(--no); margin-left: -1px; }
+.con-s18-005 .where { display: flex; align-items: center; gap: 0.45rem; margin: 0 0 0.6rem; color: var(--accent); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s18-005 .where .ico { width: 1.1rem; height: 1.1rem; }
+.con-s18-005 .rooms li:nth-child(4) .where { color: var(--no); }
+.con-s18-005 .rooms h3 { margin: 0 0 0.4rem; font-weight: 800; font-size: 1rem; line-height: 1.1; letter-spacing: -0.01em; text-transform: uppercase; }
+.con-s18-005 .rooms p { margin: 0; color: var(--muted); font-size: 0.78rem; line-height: 1.45; }
+.con-s18-005 .rooms p b { color: var(--ink); }
 
-/* The strip */
-.con-s18-005 .strip {
-  margin: 0;
-  padding: clamp(20px, 2.6vw, 34px) 0 clamp(22px, 2.8vw, 38px);
-  border-bottom: 1px solid var(--line);
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.8vw, 24px);
-}
-.con-s18-005 .strip > li { min-width: 0; padding-top: clamp(10px, 1.2vw, 14px); border-top: 4px solid var(--tone, var(--line)); }
-.con-s18-005 .s-model { --tone: var(--model); }
-.con-s18-005 .s-review { --tone: var(--review); }
-.con-s18-005 .s-site { --tone: var(--site); }
-.con-s18-005 .s-after { --tone: var(--after); }
-.con-s18-005 .strip h3 {
-  margin: 0 0 6px;
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s18-005 .strip .takes {
-  margin: 0 0 7px;
-  font-size: 1.1rem;
-  line-height: 1.24;
-  letter-spacing: -0.016em;
-  font-weight: 700;
-}
-.con-s18-005 .strip p { margin: 0; font-size: 1rem; line-height: 1.5; color: var(--ink-soft); }
+.con-s18-005 .list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(1.6rem, 3vw, 3rem); border-top: 1px solid var(--line-strong); }
+.con-s18-005 .list li { display: flex; align-items: flex-start; gap: 0.7rem; padding: 0.7rem 0 0.8rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.82rem; line-height: 1.45; }
+.con-s18-005 .list li .ico { width: 1.2rem; height: 1.2rem; margin-top: 0.1rem; color: var(--accent); }
+.con-s18-005 .list li b { color: var(--ink); }
 
-/* The six, quietly */
-.con-s18-005 .six {
-  display: grid;
-  grid-template-columns: minmax(0, 0.5fr) minmax(0, 1.5fr);
-  gap: clamp(14px, 2.8vw, 48px);
-  padding: clamp(20px, 2.6vw, 34px) 0;
-  border-bottom: 1px solid var(--line);
-  align-items: start;
-}
-.con-s18-005 .six > h3 {
-  margin: 0;
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-  max-width: 22ch;
-}
-.con-s18-005 .six ol { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(9px, 1.1vw, 12px); }
-.con-s18-005 .six li {
-  padding-left: clamp(12px, 1.5vw, 16px);
-  border-left: 2px solid var(--soft-line);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--ink-soft);
-}
-.con-s18-005 .six li b { color: var(--ink); font-weight: 650; }
-.con-s18-005 .six .hard { border-left-color: var(--site); }
+.con-s18-005 .filing { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 1rem 3rem; margin-top: clamp(2rem, 4vw, 3.6rem); padding: 1.3rem 1.3rem 1.4rem; background: var(--band); border-left: 3px solid var(--accent); }
+.con-s18-005 .filing h3 { display: flex; align-items: flex-start; gap: 0.6rem; margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(1.2rem, 1.9vw, 1.7rem); line-height: 1; letter-spacing: -0.025em; text-transform: uppercase; }
+.con-s18-005 .filing h3 .ico { width: 1.4rem; height: 1.4rem; margin-top: 0.05rem; color: var(--accent); }
+.con-s18-005 .filing p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s18-005 .filing p + p { margin-top: 0.6rem; }
+.con-s18-005 .filing p b { color: var(--ink); }
 
-/* Foot */
-.con-s18-005 .foot {
-  display: grid;
-  grid-template-columns: minmax(0, 1.16fr) minmax(0, 0.84fr);
-  gap: clamp(16px, 2.8vw, 48px);
-  align-items: start;
-  padding: clamp(20px, 2.6vw, 34px) 0 0;
-}
-.con-s18-005 .foot h3 {
-  margin: 0 0 clamp(10px, 1.3vw, 14px);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(1.463rem, 2.44vw, 2.025rem);
-  line-height: 1.14;
-  letter-spacing: -0.022em;
-  font-weight: 400;
-  max-width: 26ch;
-}
-.con-s18-005 .foot p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 62ch; font-size: 1.1rem; line-height: 1.64; color: var(--ink-soft); }
-.con-s18-005 .foot p:last-child { margin-bottom: 0; }
-.con-s18-005 .foot p b { color: var(--ink); font-weight: 650; }
-.con-s18-005 .fields { margin: 0; padding: clamp(12px, 1.5vw, 16px) 0 0; border-top: 1px solid var(--line); list-style: none; display: grid; gap: 8px; }
-.con-s18-005 .fields li {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--line);
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s18-005 .slot {
-  min-width: 62px;
-  padding: 1px 11px;
-  background: #d2d2d2;
-  text-align: center;
-  letter-spacing: 0;
-}
-.con-s18-005 .fkey {
-  display: block;
-  margin-bottom: clamp(10px, 1.3vw, 14px);
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
+.con-s18-005 .held { margin-top: 1.4rem; border: 1px solid var(--line-strong); }
+.con-s18-005 .held h3 { margin: 0; padding: 0.8rem 1.2rem; border-bottom: 1px solid var(--line-strong); font-size: 0.6rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s18-005 .rec { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; }
+.con-s18-005 .rec div { display: grid; gap: 0.3rem; padding: 0.9rem 1.2rem 1rem; border-right: 1px solid var(--line); color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; min-width: 0; }
+.con-s18-005 .rec div:last-child { border-right: 0; }
+.con-s18-005 .rec dt, .con-s18-005 .rec dd { margin: 0; }
+.con-s18-005 .slot { display: inline-flex; align-items: center; width: 100%; height: 3rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-weight: 400; letter-spacing: 0; font-size: 2rem; line-height: 1; }
+.con-s18-005 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.con-s18-005 .close {
-  margin: clamp(18px, 2.4vw, 30px) 0 0;
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 1px solid var(--line);
-  max-width: 92ch;
-  font-size: 1rem;
-  line-height: 1.64;
-  color: var(--ink-soft);
-}
-.con-s18-005 .close b { color: var(--ink); font-weight: 650; }
+.con-s18-005 .foot { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem 1.6rem; align-items: start; margin-top: clamp(1.6rem, 3vw, 2.6rem); padding-top: 1rem; border-top: 1px solid var(--line-strong); }
+.con-s18-005 .foot .ico { width: 1.6rem; height: 1.6rem; color: var(--no); }
+.con-s18-005 .foot p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s18-005 .foot p b { color: var(--ink); }
 
-/* Responsive ladder */
-@media (max-width: 940px) {
-  .con-s18-005 .under,
-  .con-s18-005 .six,
-  .con-s18-005 .foot { grid-template-columns: minmax(0, 1fr); }
-  .con-s18-005 .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 1000px) {
+  .con-s18-005 .rooms { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .con-s18-005 .rooms li:nth-child(4) { margin-left: 0; }
+  .con-s18-005 .rec { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .con-s18-005 .rec div { border-bottom: 1px solid var(--line); }
 }
-
-@media (max-width: 560px) {
-  .con-s18-005 .strip { grid-template-columns: minmax(0, 1fr); }
-  .con-s18-005 h2, .con-s18-005 .six > h3, .con-s18-005 .foot h3,
-  .con-s18-005 .foot p, .con-s18-005 .close { max-width: none; }
+@media (max-width: 800px) {
+  .con-s18-005 .lead, .con-s18-005 .list, .con-s18-005 .filing { grid-template-columns: minmax(0, 1fr); }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s18-005 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s18-005 {
-  --v2-accent: #969696;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
-  font-size: 1.06rem;
-}
-.con-s18-005 h2 { font-weight: 800; }
-.con-s18-005 h3, .con-s18-005 h4 { font-weight: 750; }
-.con-s18-005 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #f2f2f2;
-  color: #7a7a7a;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s18-005 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #f2f2f2;
-  color: #7a7a7a;
-  font-weight: 600;
-}
-.con-s18-005.con-s18-005 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  max-width: none;
-}
-.con-s18-005.con-s18-005 .shell > h2 span, .con-s18-005.con-s18-005 .shell > h2 b, .con-s18-005.con-s18-005 .shell > h2 em, .con-s18-005.con-s18-005 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s18-005 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s18-005 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 560px) { .con-s18-005 .rooms, .con-s18-005 .rec { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s18-005 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s18-005" data-study-id="CON-S18-005" data-direction="Art-directed / Distinctive">
+  <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <g stroke="currentColor" stroke-width="1" fill="none">
+      <path d="M50 0V100M20 10H80M20 20H80M20 30H80M20 40H80M20 50H80M20 60H80M20 70H80M20 80H80M20 90H80" vector-effect="non-scaling-stroke"/>
+    </g>
+  </svg>
   <section class="shell" aria-labelledby="con-s18-005-title">
 
-    <p class="eyebrow">Coordination, and what it is for</p>
+    <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM4 12h16M12 4v16"/></svg>Coordination, and what it is for</p>
     <h2 id="con-s18-005-title">It does not stop it going wrong. <em>It moves where you find out.</em></h2>
 
-    <div class="under">
+    <div class="lead">
       <p>Every problem a coordinated model catches would also have been caught by the building. <b>The difference is the room you are standing in when it turns up, and what fixing it takes there</b> &mdash; which is the entire argument, so it gets the whole of the large type and the evidence gets the rest.</p>
-      <p>The evidence is deliberately dull. A page about this is usually a picture of a model rotating slowly, which is a mood rather than a capability. <b>Underneath is the boring version, which is the true one.</b></p>
+      <p>The evidence is deliberately dull. A page about this is usually a picture of a model rotating slowly, which is a mood rather than a capability. Underneath is the boring version, which is the true one.</p>
     </div>
 
-    <ul class="strip">
-      <li class="s-model">
-        <h3>Found in the model</h3>
-        <p class="takes">An email</p>
+    <p class="sec">The four rooms, and what fixing it takes in each</p>
+    <ol class="rooms">
+      <li>
+        <p class="where"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18v14H3zM3 5l9 7 9-7"/></svg>Found in the model</p>
+        <h3>An email</h3>
         <p>Before anything is ordered. Somebody moves an object and the thing that changes is a file.</p>
       </li>
-      <li class="s-review">
-        <h3>Found at the drawing review</h3>
-        <p class="takes">A re-issue</p>
+      <li>
+        <p class="where"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6"/></svg>Found at the drawing review</p>
+        <h3>A re-issue</h3>
         <p>Before fabrication. A revised drawing, and somebody reading it again.</p>
       </li>
-      <li class="s-site">
-        <h3>Found on site</h3>
-        <p class="takes">A variation, and two trades standing</p>
+      <li>
+        <p class="where"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15a8 8 0 0 1 16 0M2 15h20v3H2zM10 7h4v5h-4z"/></svg>Found on site</p>
+        <h3>A variation, and two trades standing</h3>
         <p>The argument about whose drawing was wrong takes longer than the alteration.</p>
       </li>
-      <li class="s-after">
-        <h3>Found after handover</h3>
-        <p class="takes">Opening something that was signed off</p>
-        <p>In a room somebody has moved into. The only one where the cost lands away from the people who caused it.</p>
+      <li>
+        <p class="where"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21h16M6 21V9l6-4 6 4v12M10 21v-5h4v5"/></svg>Found after handover</p>
+        <h3>Opening something that was signed off</h3>
+        <p>In a room somebody has moved into. <b>The only one where the cost lands away from the people who caused it.</b></p>
       </li>
+    </ol>
+
+    <p class="sec">The six things it is actually done to</p>
+    <ul class="list">
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16M4 19h16M8 5v14M16 5v14"/></svg><span><b>Services against structure.</b> A penetration designed into the beam rather than cut through it later.</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18M7 6v6M17 12v6"/></svg><span><b>Ceiling void depth.</b> The first thing trimmed when a budget moves, and the last thing anybody re-checks after it moves.</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21V9h16v12M8 21v-8h8v8M12 3v6M9 6l3-3 3 3"/></svg><span><b>Riser and plant access.</b> Room to lift the thing out again, not only to get it in &mdash; a clash the software does not flag, so somebody has to ask.</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 3h18v18H3zM9 9h6v6H9z"/></svg><span><b>Builder&rsquo;s work openings.</b> Every hole agreed before the pour, because concrete does not have a revision.</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 3v6M12 15v6M3 12h6M15 12h6"/></svg><span><b>Setting out against the survey.</b> On a refurbishment the building is never where the drawing says it is, and a model of an existing structure is only as true as the survey underneath it.</span></li>
+      <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg><span><b>Who owns which object.</b> A schedule of who models what, to what level, by when. Not a technology question at all.</span></li>
     </ul>
 
-    <div class="six">
-      <h3>The six things it is actually done to</h3>
-      <ol>
-        <li><b>Services against structure.</b> A penetration designed into the beam rather than cut through it later.</li>
-        <li><b>Ceiling void depth.</b> The first thing trimmed when a budget moves, and the last thing anybody re-checks after it moves.</li>
-        <li><b>Riser and plant access.</b> Room to lift the thing out again, not only to get it in &mdash; a clash the software does not flag, so somebody has to ask.</li>
-        <li class="hard"><b>Builder's work openings.</b> Every hole agreed before the pour, because <b>concrete does not have a revision.</b></li>
-        <li class="hard"><b>Setting out against the survey.</b> On a refurbishment the building is never where the drawing says it is, and <b>a model of an existing structure is only as true as the survey underneath it.</b></li>
-        <li><b>Who owns which object.</b> A schedule of who models what, to what level, by when. Not a technology question at all.</li>
-      </ol>
-    </div>
-
-    <div class="foot">
+    <div class="filing">
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14v17H5zM9 4V2h6v2M8 10h8M8 14h6"/></svg>Most of it is a filing problem wearing a technical hat</h3>
       <div>
-        <h3>Most of it is a filing problem wearing a technical hat</h3>
         <p>What usually goes wrong is not a clash anybody missed. <b>It is somebody modelling to a level of detail nobody agreed</b>, an object two parties each believed the other owned, or a file issued after the decision it was meant to inform.</p>
         <p>So the artefacts worth asking about are a schedule, a level against every line of it, and a date &mdash; <b>held by a person rather than by a system</b>, and the person is named.</p>
       </div>
-      <div>
-        <span class="fkey">Held against every job</span>
-        <ul class="fields">
-          <li><span>Who holds this</span><span class="slot"><span class="vh">Name of the information manager</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>Level schedule</span><span class="slot"><span class="vh">Level of definition schedule reference</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>Survey</span><span class="slot"><span class="vh">Survey reference</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>Model reference</span><span class="slot"><span class="vh">Model reference</span><span aria-hidden="true">&mdash;</span></span></li>
-        </ul>
-      </div>
     </div>
 
-    <div data-refusal>
-      <p class="close"><b>There is no wireframe on this page, no plan, no overlay, and nothing on it is set at an angle</b> &mdash; a drawing you did not make is a drawing of nothing, and an angle is the same picture rebuilt out of rules. <b>No package is named</b>, because which one we use is the least interesting fact about any of this, and a row of logos is a wall of badges in a different hat. A compliance level is a scope of work rather than an achievement, so it is not offered as one. There is no walkthrough: <b>a walkthrough sells a building, it does not coordinate one.</b> And there is no claim to a living record after handover &mdash; <b>an as-built model that nobody updates is a photograph of a building that has since changed</b>, so who maintains it is settled in writing before it is handed over, and if the answer is nobody we say so.</p>
+    <div class="held">
+      <h3>Held against every job</h3>
+      <dl class="rec">
+        <div><dt>Who holds this</dt><dd><span class="slot"><span class="vh">Name of the information manager</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        <div><dt>Level schedule</dt><dd><span class="slot"><span class="vh">Level of definition schedule reference</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        <div><dt>Survey</dt><dd><span class="slot"><span class="vh">Survey reference</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        <div><dt>Model reference</dt><dd><span class="slot"><span class="vh">Model reference</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+      </dl>
+    </div>
+
+    <div class="foot" data-refusal>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>
+      <p>There is no wireframe on this page, no plan, no overlay, and nothing on it is set at an angle &mdash; a drawing you did not make is a drawing of nothing, and an angle is the same picture rebuilt out of rules. <b>No package is named</b>, because which one we use is the least interesting fact about any of this, and a row of logos is a wall of badges in a different hat. A compliance level is a scope of work rather than an achievement, so it is not offered as one. There is no walkthrough: a walkthrough sells a building, it does not coordinate one. And there is no claim to a living record after handover &mdash; <b>an as-built model that nobody updates is a photograph of a building that has since changed</b>, so who maintains it is settled in writing before it is handed over, and if the answer is nobody we say so.</p>
     </div>
 
   </section>

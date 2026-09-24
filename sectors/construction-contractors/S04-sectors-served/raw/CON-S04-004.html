@@ -12,25 +12,21 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S04 — Sectors Served
   Direction      : Conversion-led
-  Reference      : None supplied for this section.
-  Layout model   : A sector selector on a deep near-black ground — one sector opened as a wide panel with
-                   its constraint, a reserved media area and the action, and the other five as tall
-                   colour columns beside it
-  Density        : Medium
-  Media mode     : One reserved project area inside the opened panel.
-  Interaction    : Plain links only (static; no JavaScript). **The other sectors are links, not a
-                   toggle** — a control that appears to switch panels and does not would be the
-                   `CON-S01-005` slide-counter failure again.
-  Conversion device : **Which of these are you?** The section converts by letting a visitor find
-                   their own constraint and act from inside it, rather than by asking them to read
-                   six sectors and then scroll to a form. The opened panel is the argument and the
-                   action in one place.
-  The steer-away : Kept, and given its own line under the action — the sector this firm is wrong
-                   for. A sectors page that lists only sectors served is a claim of universal
-                   competence, which nobody believes.
-  Content note   : Sector names and services are generic vocabulary. No client name or logo, no
-                   framework or authority, no per-sector count or percentage, no certification,
-                   award, rating, price, programme length or urgency device; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 10
+                   turned sideways: one opened sector as a bordered panel with hi-vis tape on
+                   its top edge — the healthcare icon at display scale, the two questions as
+                   ruled rows, one bordered action and the wrong-firm line — beside a 1:1
+                   project field; then the other five sectors as ruled rows with their icons
+                   and underlined ↗ routes. Drawing layer: cut-earth hatching down the right
+                   margin. V1 is kept: which of these are you, one panel open, five links, the
+                   wrong-firm line as the conversion device's honesty.
+  Layout model   : Eyebrow, display. Two columns: opened panel; 1:1 field. Five ruled sector
+                   rows with icons and ↗ routes.
+  Density        : Standard (90–170)
+  Media mode     : One reserved project field, 1:1.
+  Interaction    : None (static; no JavaScript). Actions are relative links.
+  Content note   : No client, logo, framework, authority, count, share, certification, award,
+                   rating, price or urgency device. Graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S04-004">
@@ -41,294 +37,96 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="layout-model" content="One opened sector panel beside five tall colour columns as links">
-<meta name="density" content="medium">
-<meta name="media-mode" content="one-reserved-area-in-the-opened-panel">
-<meta name="interaction" content="links-only">
+<meta name="theme" content="004 White &amp; Hi-Vis">
+<meta name="layout-model" content="Display; one opened sector as a bordered tape-topped panel with icon at display scale, ruled question rows, one action and the wrong-firm line, beside a 1:1 field; five ruled sector rows with icons and underlined routes; hatching down the right margin">
+<meta name="density" content="standard">
+<meta name="media-mode" content="one-reserved-project-field">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S04-004 — Sectors Served, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #0e0e0e; }
+body { margin: 0; background: #fbfbfa; }
 
-/* Scoped study styles — namespaced to .con-s04-004 */
 .con-s04-004 {
-  --ink: #ececec;
-  --ink-soft: #ececec;
-  --paper: #0e0e0e;
-  --panel: #111111;
-  --slot-a: #969696;
-  --slot-b: #2b2b2b;
-  --on-slot: #ffffff;
-  --line: #444444;
-
-  --health: #969696;
-  --edu: #969696;
-  --industrial: #2b2b2b;
-  --retail: #111111;
-  --civic: #444444;
-  --resi: #5e5e5e;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fbfbfa; --ink: #0b0b0b; --muted: #55585c; --line: #e2e2e0; --line-strong: #0b0b0b;
+  --media: #ececea; --band: #f2f2ef; --accent: #c99e00; --tape: #ffd400;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s04-004 *,
-.con-s04-004 *::before,
-.con-s04-004 *::after { box-sizing: inherit; }
-.con-s04-004 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 22px;
-}
-.con-s04-004 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s04-004 *, .con-s04-004 *::before, .con-s04-004 *::after { box-sizing: inherit; }
+.con-s04-004 :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
-.con-s04-004 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s04-004 .draw { position: absolute; right: 0; top: 0; width: 4rem; height: 100%; pointer-events: none; color: var(--line); }
+.con-s04-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s04-004 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s04-004 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s04-004 h2 { margin: 0; max-width: 14ch; font-weight: 800; font-size: clamp(2.4rem, 5vw, 5.6rem); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s04-004 h2 mark { background: transparent; color: var(--ink); text-decoration: underline; text-decoration-color: var(--tape); text-decoration-thickness: 0.16em; text-underline-offset: 0.04em; text-decoration-skip-ink: none; }
 
-.con-s04-004 .head { margin-bottom: clamp(20px, 2.6vw, 36px); }
-.con-s04-004 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s04-004 h2 {
-  margin: 0;
-  font-size: clamp(2.379rem, 4.788vw, 4.032rem);
-  line-height: 1.03;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 18ch;
-}
+.con-s04-004 .grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(1.6rem, 3vw, 3.4rem); align-items: stretch; margin-top: clamp(1.6rem, 3vw, 3rem); }
+.con-s04-004 .panel { display: flex; flex-direction: column; padding: 1.4rem 1.6rem 1.6rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--tape); }
+.con-s04-004 .panel h3 { display: flex; align-items: center; gap: 0.9rem; margin: 0 0 1rem; font-weight: 800; font-size: clamp(1.6rem, 2.6vw, 2.4rem); line-height: 1; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s04-004 .panel h3 .ico { width: 3rem; height: 3rem; color: var(--accent); stroke-width: 1.2; }
+.con-s04-004 .q { margin: 0; padding: 0.8rem 0; border-top: 1px solid var(--line); }
+.con-s04-004 .q strong { display: block; margin-bottom: 0.2rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s04-004 .q span { display: block; max-width: 34rem; font-size: 0.92rem; line-height: 1.5; }
+.con-s04-004 .btn { display: inline-flex; align-items: center; gap: 0.7rem; align-self: flex-start; margin-top: 1rem; padding: 0.95rem 1.5rem; border: 1px solid var(--ink); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; transition: background-color 160ms ease, color 160ms ease; }
+.con-s04-004 .btn:hover { background: var(--ink); color: var(--tape); }
+.con-s04-004 .btn .ico { width: 1.2rem; height: 1.2rem; }
+.con-s04-004 .wrong { margin: auto 0 0; padding-top: 1.2rem; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s04-004 .wrong strong { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.2rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s04-004 .wrong .ico { width: 1.1rem; height: 1.1rem; }
+.con-s04-004 .media { position: relative; aspect-ratio: 1 / 1; background: var(--media); border-radius: 2px; }
+.con-s04-004 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Selector */
-.con-s04-004 .selector {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.45fr);
-  gap: clamp(14px, 2vw, 26px);
-  align-items: stretch;
-}
+.con-s04-004 .rows { margin: clamp(1.4rem, 2.6vw, 2.6rem) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.con-s04-004 .rows li { border-bottom: 1px solid var(--line); }
+.con-s04-004 .rows a { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr) auto; gap: 1rem; align-items: center; padding: 0.9rem 0; color: var(--ink); text-decoration: none; }
+.con-s04-004 .rows .ico { width: 1.6rem; height: 1.6rem; color: var(--accent); stroke-width: 1.4; }
+.con-s04-004 .rows strong { font-size: 0.86rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s04-004 .rows strong span { margin-left: 1rem; color: var(--muted); font-weight: 400; letter-spacing: 0.04em; text-transform: none; font-size: 0.84rem; }
+.con-s04-004 .rows em { font-style: normal; text-decoration: underline; text-underline-offset: 0.3em; text-decoration-color: var(--tape); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s04-004 .rows em i { font-style: normal; color: var(--accent); margin-left: 0.3rem; }
+.con-s04-004 .rows a:hover strong { color: var(--accent); }
 
-.con-s04-004 .open {
-  background: var(--panel);
-  border-radius: 26px;
-  border-left: 10px solid var(--health);
-  padding: clamp(20px, 2.6vw, 36px);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-  gap: clamp(18px, 2.6vw, 40px);
-  align-items: center;
-}
-.con-s04-004 .open h3 {
-  margin: 0 0 clamp(11px, 1.4vw, 16px);
-  font-size: clamp(1.83rem, 2.928vw, 2.562rem);
-  line-height: 1.04;
-  letter-spacing: -0.026em;
-  font-weight: 700;
-}
-.con-s04-004 .q { margin: 0 0 5px; font-size: 0.75rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; color: var(--ink-soft); }
-.con-s04-004 .open p.a { margin: 0 0 clamp(14px, 1.8vw, 20px); font-size: clamp(1.1rem, 1.357vw, 1.298rem); line-height: 1.56; }
-.con-s04-004 .open .do { margin: 0 0 clamp(18px, 2.2vw, 26px); color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
-.con-s04-004 .open .do b { color: var(--ink); }
-.con-s04-004 .go {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  padding: 0 32px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 1.1rem;
-  font-weight: 650;
-  text-decoration: none;
-}
-.con-s04-004 .go:hover { background: #ffffff; }
-.con-s04-004 .wrong {
-  margin: clamp(12px, 1.5vw, 18px) 0 0;
-  max-width: 46ch;
-  color: var(--ink-soft);
-  font-size: 1rem;
-  line-height: 1.56;
-}
-.con-s04-004 .wrong b { color: var(--ink); }
-
-.con-s04-004 .shot {
-  border-radius: 22px;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(12px, 1.5vw, 18px);
-}
-.con-s04-004 .shot span {
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.82;
-}
-
-/* Columns */
-.con-s04-004 .others { margin: 0; padding: 0; list-style: none; display: grid; gap: clamp(8px, 1vw, 12px); }
-.con-s04-004 .others a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  min-height: 60px;
-  height: 100%;
-  padding: clamp(12px, 1.5vw, 18px) clamp(14px, 1.8vw, 22px);
-  border-radius: 22px;
-  background: var(--col, #2b2b2b);
-  color: #ffffff;
-  text-decoration: none;
-  font-size: clamp(1.1rem, 1.475vw, 1.369rem);
-  font-weight: 700;
-  letter-spacing: -0.014em;
-}
-.con-s04-004 .others a:hover { filter: brightness(1.14); }
-.con-s04-004 .o-edu { --col: var(--edu); }
-.con-s04-004 .o-industrial { --col: var(--industrial); }
-.con-s04-004 .o-retail { --col: var(--retail); }
-.con-s04-004 .o-civic { --col: var(--civic); }
-.con-s04-004 .o-resi { --col: var(--resi); }
-.con-s04-004 .others .arrow { font-size: 1.1rem; opacity: 0.85; }
-
-/* Responsive ladder */
-@media (max-width: 1000px) {
-  .con-s04-004 .selector { grid-template-columns: minmax(0, 1fr); }
-  .con-s04-004 .others { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 760px) {
-  .con-s04-004 .open { grid-template-columns: minmax(0, 1fr); gap: clamp(16px, 2.4vw, 22px); }
-  .con-s04-004 h2, .con-s04-004 .wrong { max-width: none; }
-  .con-s04-004 .go { width: 100%; }
-  .con-s04-004 .others { grid-template-columns: minmax(0, 1fr); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s04-004 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s04-004 {
-  --v2-accent: #b4b4b4;
-  --v2-soft: #444444;
-  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
-  font-size: 1.06rem;
-}
-.con-s04-004 h2 { font-weight: 800; }
-.con-s04-004 h3, .con-s04-004 h4 { font-weight: 750; }
-.con-s04-004 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #444444;
-  color: #b4b4b4;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s04-004 .go:hover {
-  border-radius: 26px;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
-  border: 1px solid #444444;
-}
-.con-s04-004 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #444444;
-  color: #b4b4b4;
-  font-weight: 600;
-}
-.con-s04-004.con-s04-004 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: 1px solid #444444;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s04-004.con-s04-004 .head h2, .con-s04-004.con-s04-004 .head h3, .con-s04-004.con-s04-004 .head h4, .con-s04-004.con-s04-004 .head b, .con-s04-004.con-s04-004 .head strong, .con-s04-004.con-s04-004 .head p b, .con-s04-004.con-s04-004 .head li b, .con-s04-004.con-s04-004 .head span b, .con-s04-004.con-s04-004 .head dt, .con-s04-004.con-s04-004 .head div b {
-  color: #ffffff;
-}
-.con-s04-004.con-s04-004 .head p, .con-s04-004.con-s04-004 .head li, .con-s04-004.con-s04-004 .head span, .con-s04-004.con-s04-004 .head dd, .con-s04-004.con-s04-004 .head div p, .con-s04-004.con-s04-004 .head div li, .con-s04-004.con-s04-004 .head p span, .con-s04-004.con-s04-004 .head .said, .con-s04-004.con-s04-004 .head .note {
-  color: #ececec;
-}
-.con-s04-004.con-s04-004 .head .eyebrow, .con-s04-004.con-s04-004 .head .kicker, .con-s04-004.con-s04-004 .head .slot, .con-s04-004.con-s04-004 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s04-004.con-s04-004 .head i, .con-s04-004.con-s04-004 .head .bars i, .con-s04-004.con-s04-004 .head .lines i, .con-s04-004.con-s04-004 .head .measures i, .con-s04-004.con-s04-004 .head .bar, .con-s04-004.con-s04-004 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s04-004.con-s04-004 .head .plate, .con-s04-004.con-s04-004 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #ececec;
-}
-.con-s04-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s04-004 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 900px) { .con-s04-004 .grid { grid-template-columns: minmax(0, 1fr); } .con-s04-004 .media { aspect-ratio: 16 / 10; } .con-s04-004 h2 { max-width: none; } .con-s04-004 .draw { display: none; } }
+@media (max-width: 560px) { .con-s04-004 .rows a { grid-template-columns: 2.2rem minmax(0, 1fr); } .con-s04-004 .rows em { grid-column: 2; } .con-s04-004 .rows strong span { display: block; margin: 0.2rem 0 0; } .con-s04-004 .btn { width: 100%; justify-content: center; } }
+@media (prefers-reduced-motion: reduce) { .con-s04-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s04-004" data-study-id="CON-S04-004" data-direction="Conversion-led">
+  <svg class="draw" viewBox="0 0 64 1600" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 40L64 0M0 100L64 60M0 160L64 120M0 220L64 180M0 280L64 240M0 340L64 300M0 400L64 360M0 460L64 420M0 520L64 480M0 580L64 540M0 640L64 600M0 700L64 660M0 760L64 720M0 820L64 780M0 880L64 840M0 940L64 900M0 1000L64 960M0 1060L64 1020M0 1120L64 1080M0 1180L64 1140M0 1240L64 1200M0 1300L64 1260M0 1360L64 1320M0 1420L64 1380M0 1480L64 1440M0 1540L64 1500M0 1600L64 1560"/><line x1="0" y1="0" x2="0" y2="1600"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s04-004-title">
 
-    <div class="head">
-      <p class="eyebrow">Who we build for</p>
-      <h2 id="con-s04-004-title">Which of these are you?</h2>
-    </div>
+    <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6z"/></svg>Who we build for</p>
+    <h2 id="con-s04-004-title">Which of these <mark>are you?</mark></h2>
 
-    <div class="selector">
-
-      <div class="open">
-        <div>
-          <h3>Healthcare</h3>
-          <p class="q">What makes it hard</p>
-          <p class="a">The building stays open. Infection control, live entrances, and every noisy hour agreed in advance with somebody who has patients in the room below.</p>
-          <p class="do"><b>What we do about it:</b> phasing is priced before anything else, and our site manager sits in the estates meeting rather than hearing about it afterwards.</p>
-          <a class="go" href="#con-s04-004-title">Put a healthcare project to us</a>
-          <p class="wrong"><b>Where we are the wrong firm:</b> anything with a live process running through it &mdash; clean areas, data halls, food production. Specialists who work in those every week will beat us.</p>
-        </div>
-        <div class="shot"><span>Project media &mdash; healthcare, completed</span></div>
+    <div class="grid">
+      <div class="panel">
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M12 8v8M8 12h8"/></svg>Healthcare</h3>
+        <p class="q"><strong>What makes it hard</strong><span>The building stays open. Infection control, live entrances, and every noisy hour agreed in advance with somebody who has patients in the room below.</span></p>
+        <p class="q"><strong>What we do about it</strong><span>Phasing is priced before anything else, and our site manager sits in the estates meeting rather than hearing about it afterwards.</span></p>
+        <a class="btn" href="#enquire"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Put a healthcare project to us</a>
+        <p class="wrong"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>Where we are the wrong firm</strong>Anything with a live process running through it &mdash; clean areas, data halls, food production. Specialists who work in those every week will beat us.</p>
       </div>
-
-      <ul class="others">
-        <li><a class="o-edu" href="#con-s04-004-title">Education <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-        <li><a class="o-industrial" href="#con-s04-004-title">Industrial <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-        <li><a class="o-retail" href="#con-s04-004-title">Retail <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-        <li><a class="o-civic" href="#con-s04-004-title">Civic <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-        <li><a class="o-resi" href="#con-s04-004-title">Residential <span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-      </ul>
-
+      <div class="media" role="img" aria-label="Reserved project field: healthcare, completed"><p class="slate" aria-hidden="true">Project area &middot; 1:1 &middot; healthcare, completed</p></div>
     </div>
+
+    <ul class="rows" aria-label="Other sectors">
+      <li><a href="#education"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4z"/><path d="M6 9v6c0 1 3 3 6 3s6-2 6-3V9"/></svg><strong>Education<span>A date nobody can move</span></strong><em>Open<i aria-hidden="true">&#8599;</i></em></a></li>
+      <li><a href="#industrial"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l6 4v-4l6 4v-4l6 4v7z"/><path d="M3 21h18"/></svg><strong>Industrial<span>The ground decides</span></strong><em>Open<i aria-hidden="true">&#8599;</i></em></a></li>
+      <li><a href="#retail"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v3H3zM5 12v9h14v-9M3 9l2-5h14l2 5M10 21v-5h4v5"/></svg><strong>Retail<span>A trading floor and a landlord</span></strong><em>Open<i aria-hidden="true">&#8599;</i></em></a></li>
+      <li><a href="#civic"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6z"/></svg><strong>Civic<span>The public alongside the works</span></strong><em>Open<i aria-hidden="true">&#8599;</i></em></a></li>
+      <li><a href="#residential"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v11h14V10M10 21v-6h4v6"/></svg><strong>Residential<span>Neighbours who did not choose a site</span></strong><em>Open<i aria-hidden="true">&#8599;</i></em></a></li>
+    </ul>
 
   </section>
 </div>

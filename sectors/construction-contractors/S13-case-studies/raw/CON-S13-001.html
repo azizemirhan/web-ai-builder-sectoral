@@ -12,31 +12,22 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S13 — Case Studies
   Direction      : Universal / Safe
-  Reference      : None supplied for this section.
-  Layout model   : Two case studies, each a reserved plate and a sequence of decisions — what we
-                   found, what we chose, what it cost — with the decision we got wrong drawn apart
-                   from the others at the foot of each
-  Density        : Medium
-  Media mode     : Two reserved project areas, one per case.
-  Interaction    : None (static; no JavaScript)
-  The device     : **What we found. What we chose. What it cost us.** A case study is an outcome
-                   claim by construction, and the outcome is exactly the part this catalog may not
-                   write. What anybody who ran a job actually remembers is three or four moments
-                   where something was found and somebody had to choose &mdash; which is real,
-                   specific, and survives the client's name being reserved.
-  The requirement : Each case carries **a decision we got wrong**, what it cost, and what changed
-                   afterwards. It is drawn in its own frame rather than buried, because a firm
-                   willing to name its worst decision on a job is making a claim the client can be
-                   asked about.
-  Cost in kind   : Never counted. *Out of our float rather than yours*, *we absorbed it*, *it cost
-                   the sequence rather than the price* &mdash; checkable with the client, and
-                   asserting no figure.
-  Deliberately not : No *on time*, no *on budget*, no *delighted client*. That paragraph appears on
-                   the case studies of firms that failed, because it is written afterwards by
-                   somebody who was not there.
-  Content note   : Project and client names are reserved fields; sectors and scopes are generic
-                   vocabulary. No value, duration, date or percentage. No client quotation &mdash;
-                   `S12` owns those. No digit in visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 9
+                   with device 3 inside: two cases as ruled chapters, each with the sector
+                   eyebrow, the title in tracked uppercase, the reserved record as a three-cell
+                   ruled row, a 3:1 project field, and the decision sequence as bordered rows
+                   of three cells — WHAT WE FOUND (search icon), WHAT WE CHOSE (clipboard),
+                   WHAT IT COST US (clock) — with THE ONE WE GOT WRONG as a bordered panel
+                   under a 3px tape edge with a cone icon and WHAT CHANGED on a hairline.
+                   WHAT IS NOT AT THE END OF THESE as a bordered note with muted tags. Drawing
+                   layer: a setting-out grid behind the head. V1 is kept whole.
+  Layout model   : Head split. Two chapters: head, record row, 3:1 field, three-cell decision
+                   rows, wrong-decision panel. Bordered refusal note.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : Two reserved project fields, 3:1. Six reserved fields.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No client, project name, value, duration, percentage, outcome claim or
+                   quotation. Cost described, never counted. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S13-001">
@@ -47,427 +38,145 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Two cases as decision sequences, the wrong decision framed apart">
-<meta name="density" content="medium">
-<meta name="media-mode" content="two-reserved-project-areas">
+<meta name="theme" content="001 Site White &amp; Safety Orange">
+<meta name="layout-model" content="Head split; two ruled case chapters each with reserved record row, 3:1 field, bordered three-cell decision rows (found / chose / cost with icons) and a tape-topped wrong-decision panel; bordered refusal note with muted tags; setting-out grid behind">
+<meta name="density" content="structured">
+<meta name="media-mode" content="two-reserved-project-fields-six-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S13-001 — Case Studies, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #f4f4f1; }
 
-/* Scoped study styles — namespaced to .con-s13-001 */
 .con-s13-001 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --ink-faint: #969696;
-  --paper: #f1f1f1;
-  --card: #ffffff;
-  --line: #d2d2d2;
-  --rule: #d2d2d2;
-  --field: #ececec;
-  --found: #444444;
-  --chose: #444444;
-  --cost: #444444;
-  --wrong: #2b2b2b;
-  --slot-a: #b4b4b4;
-  --slot-b: #7a7a7a;
-  --on-slot: #ffffff;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f4f4f1; --ink: #121314; --muted: #5b5e62; --line: #d8d8d3; --line-strong: #121314;
+  --media: #e3e3de; --band: #ebebe6; --accent: #d9481a;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s13-001 *,
-.con-s13-001 *::before,
-.con-s13-001 *::after { box-sizing: inherit; }
-.con-s13-001 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s13-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s13-001 *, .con-s13-001 *::before, .con-s13-001 *::after { box-sizing: inherit; }
+.con-s13-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s13-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s13-001 .draw { position: absolute; left: 0; right: 0; top: 0; height: 24rem; pointer-events: none; color: var(--line); }
+.con-s13-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s13-001 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s13-001 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s13-001 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s13-001 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s13-001 h2 em { font-style: normal; color: var(--accent); }
+.con-s13-001 .lead { margin: 0 0 0.3rem; max-width: 30rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
 
-/* Head */
-.con-s13-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(20px, 2.6vw, 34px);
-}
-.con-s13-001 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s13-001 h2 {
-  margin: 0;
-  font-size: clamp(2.318rem, 4.41vw, 3.78rem);
-  line-height: 1.04;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 20ch;
-}
-.con-s13-001 .head p { margin: 0; max-width: 48ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.6; }
-.con-s13-001 .head p b { color: var(--ink); font-weight: 650; }
+.con-s13-001 .case { margin-top: clamp(1.8rem, 3.4vw, 3.4rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.con-s13-001 .case:first-of-type { border-top: 3px solid var(--accent); }
+.con-s13-001 .sec { margin: 0 0 0.5rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s13-001 h3 { margin: 0 0 1rem; max-width: 24ch; font-weight: 800; font-size: clamp(1.6rem, 2.8vw, 2.6rem); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s13-001 .rec { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding: 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line); }
+.con-s13-001 .rec div { padding: 0.7rem 1.2rem 0.7rem 0; }
+.con-s13-001 .rec div + div { padding-left: 1.2rem; border-left: 1px solid var(--line); }
+.con-s13-001 .rec dt { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s13-001 .rec dd { margin: 0; }
+.con-s13-001 .slot { display: flex; align-items: center; width: 100%; height: 1.6rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.84rem; }
+.con-s13-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s13-001 .media { position: relative; aspect-ratio: 3 / 1; margin-top: 1.2rem; background: var(--media); border-radius: 2px; }
+.con-s13-001 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s13-001 .seq { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1.2rem; border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s13-001 .seq div { padding: 0.9rem 1.1rem 1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s13-001 .seq strong { display: flex; align-items: center; gap: 0.4rem; margin: 0 0 0.3rem; font-size: 0.54rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s13-001 .seq .ico { width: 1rem; height: 1rem; color: var(--accent); }
+.con-s13-001 .seq p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s13-001 .seq div.f p { color: var(--ink); }
+.con-s13-001 .wrong { display: grid; grid-template-columns: minmax(12rem, 0.4fr) minmax(0, 1.6fr); gap: clamp(1.2rem, 2.4vw, 2.6rem); margin-top: 1.2rem; padding: 1.1rem 1.3rem 1.2rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); }
+.con-s13-001 .wrong h4 { display: flex; align-items: center; gap: 0.5rem; margin: 0; color: var(--accent); font-size: 0.64rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s13-001 .wrong h4 .ico { width: 1.2rem; height: 1.2rem; }
+.con-s13-001 .wrong p { margin: 0; color: var(--ink); font-size: 0.92rem; line-height: 1.55; }
+.con-s13-001 .wrong p.ch { margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.86rem; }
+.con-s13-001 .wrong p.ch strong { color: var(--ink); font-size: 0.54rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-right: 0.3rem; }
 
-/* Cases */
-.con-s13-001 .case {
-  border-radius: 26px;
-  background: var(--card);
-  padding: clamp(18px, 2.3vw, 30px);
-  margin-bottom: clamp(12px, 1.6vw, 18px);
-}
-.con-s13-001 .casehead {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(16px, 2.6vw, 40px);
-  align-items: center;
-  margin-bottom: clamp(16px, 2.2vw, 26px);
-}
-.con-s13-001 .ctx {
-  margin: 0 0 clamp(10px, 1.3vw, 14px);
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s13-001 h3 {
-  margin: 0 0 clamp(12px, 1.5vw, 17px);
-  font-size: clamp(1.463rem, 2.196vw, 1.976rem);
-  line-height: 1.12;
-  letter-spacing: -0.026em;
-  font-weight: 700;
-  max-width: 24ch;
-}
-.con-s13-001 .ident { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
-.con-s13-001 .ident li {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 0.804rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s13-001 .ident .slot {
-  min-width: 60px;
-  padding: 1px 10px;
-  border-radius: 16px;
-  background: var(--field);
-  text-align: center;
-  letter-spacing: 0;
-}
-.con-s13-001 .shot {
-  border-radius: 22px;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
-  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(12px, 1.5vw, 18px);
-}
-.con-s13-001 .shot span {
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.84;
-}
+.con-s13-001 .not { display: grid; grid-template-columns: minmax(14rem, 0.5fr) minmax(0, 1.5fr); gap: clamp(1.2rem, 2.4vw, 2.6rem); margin-top: clamp(1.6rem, 3vw, 3rem); padding: 1.2rem 1.5rem 1.4rem; border: 1px solid var(--line-strong); }
+.con-s13-001 .not h3 { display: flex; align-items: flex-start; gap: 0.5rem; margin: 0 0 0.8rem; max-width: none; font-size: clamp(1.05rem, 1.6vw, 1.4rem); line-height: 1.05; letter-spacing: -0.02em; }
+.con-s13-001 .not h3 .ico { color: var(--accent); margin-top: 0.1rem; }
+.con-s13-001 .not ul { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+.con-s13-001 .not li { padding: 0.3rem 0.55rem; border: 1px solid var(--line); color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s13-001 .not p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s13-001 .not p + p { margin-top: 0.6rem; }
 
-/* The decisions */
-.con-s13-001 .decisions { margin: 0 0 clamp(14px, 1.8vw, 22px); padding: 0; list-style: none; display: grid; gap: clamp(11px, 1.4vw, 16px); }
-.con-s13-001 .decision {
-  border-radius: 22px;
-  background: var(--field);
-  padding: clamp(14px, 1.8vw, 22px);
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 32px);
-}
-.con-s13-001 .part .k {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.con-s13-001 .p-found .k { color: var(--found); }
-.con-s13-001 .p-chose .k { color: var(--chose); }
-.con-s13-001 .p-cost .k { color: var(--cost); }
-.con-s13-001 .part p { margin: 0; font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
-.con-s13-001 .part p b { color: var(--ink); font-weight: 650; }
-
-/* The one we got wrong */
-.con-s13-001 .wrong {
-  border-radius: 22px;
-  border: 2px solid var(--wrong);
-  padding: clamp(15px, 1.9vw, 24px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.34fr) minmax(0, 1fr);
-  gap: clamp(14px, 2.4vw, 36px);
-  align-items: start;
-}
-.con-s13-001 .wrong h4 {
-  margin: 0;
-  font-size: clamp(1.1rem, 1.51vw, 1.369rem);
-  line-height: 1.16;
-  letter-spacing: -0.018em;
-  font-weight: 700;
-  color: var(--wrong);
-  max-width: 16ch;
-}
-.con-s13-001 .wrong p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 70ch; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
-.con-s13-001 .wrong p:last-child { margin-bottom: 0; }
-.con-s13-001 .wrong p b { color: var(--ink); font-weight: 650; }
-
-/* Close */
-.con-s13-001 .close {
-  border-radius: 26px;
-  border: 2px dashed var(--rule);
-  padding: clamp(17px, 2.2vw, 30px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
-  gap: clamp(16px, 2.6vw, 44px);
-  align-items: start;
-}
-.con-s13-001 .close h3 { max-width: 20ch; margin-bottom: 0; }
-.con-s13-001 .close p { margin: 0 0 clamp(11px, 1.4vw, 15px); max-width: 76ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.62; }
-.con-s13-001 .close p:last-child { margin-bottom: 0; }
-.con-s13-001 .close p b { color: var(--ink); font-weight: 650; }
-.con-s13-001 .none { margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-.con-s13-001 .none li {
-  padding: 5px 13px;
-  border-radius: 999px;
-  border: 1px dashed var(--rule);
-  color: var(--ink-soft);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .con-s13-001 .decision { grid-template-columns: minmax(0, 1fr); gap: clamp(12px, 1.8vw, 18px); }
-}
-
-@media (max-width: 760px) {
-  .con-s13-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .con-s13-001 .casehead { grid-template-columns: minmax(0, 1fr); }
-  .con-s13-001 .wrong { grid-template-columns: minmax(0, 1fr); }
-  .con-s13-001 .close { grid-template-columns: minmax(0, 1fr); }
-  .con-s13-001 h2, .con-s13-001 h3, .con-s13-001 .head p,
-  .con-s13-001 .wrong h4, .con-s13-001 .wrong p, .con-s13-001 .close p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s13-001 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s13-001 {
-  --v2-accent: #7a7a7a;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
-  font-size: 1.06rem;
-}
-.con-s13-001 h2 { font-weight: 800; }
-.con-s13-001 h3, .con-s13-001 h4 { font-weight: 750; }
-.con-s13-001 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s13-001 .none li {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s13-001 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s13-001.con-s13-001 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s13-001.con-s13-001 .head h2, .con-s13-001.con-s13-001 .head h3, .con-s13-001.con-s13-001 .head h4, .con-s13-001.con-s13-001 .head b, .con-s13-001.con-s13-001 .head strong, .con-s13-001.con-s13-001 .head p b, .con-s13-001.con-s13-001 .head li b, .con-s13-001.con-s13-001 .head span b, .con-s13-001.con-s13-001 .head dt, .con-s13-001.con-s13-001 .head div b {
-  color: #ffffff;
-}
-.con-s13-001.con-s13-001 .head p, .con-s13-001.con-s13-001 .head li, .con-s13-001.con-s13-001 .head span, .con-s13-001.con-s13-001 .head dd, .con-s13-001.con-s13-001 .head div p, .con-s13-001.con-s13-001 .head div li, .con-s13-001.con-s13-001 .head p span, .con-s13-001.con-s13-001 .head .said, .con-s13-001.con-s13-001 .head .note {
-  color: #d2d2d2;
-}
-.con-s13-001.con-s13-001 .head .eyebrow, .con-s13-001.con-s13-001 .head .kicker, .con-s13-001.con-s13-001 .head .slot, .con-s13-001.con-s13-001 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s13-001.con-s13-001 .head i, .con-s13-001.con-s13-001 .head .bars i, .con-s13-001.con-s13-001 .head .lines i, .con-s13-001.con-s13-001 .head .measures i, .con-s13-001.con-s13-001 .head .bar, .con-s13-001.con-s13-001 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s13-001.con-s13-001 .head .plate, .con-s13-001.con-s13-001 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s13-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s13-001 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s13-001 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s13-001 .lead { text-align: left; } .con-s13-001 h2 { max-width: none; } .con-s13-001 .draw { display: none; } }
+@media (max-width: 760px) { .con-s13-001 .rec, .con-s13-001 .seq { grid-template-columns: minmax(0, 1fr); } .con-s13-001 .rec div { padding-inline: 0; } .con-s13-001 .rec div + div { border-left: 0; border-top: 1px solid var(--line); } .con-s13-001 .wrong, .con-s13-001 .not { grid-template-columns: minmax(0, 1fr); } .con-s13-001 .media { aspect-ratio: 16 / 10; } .con-s13-001 h3 { max-width: none; } }
+@media (prefers-reduced-motion: reduce) { .con-s13-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s13-001" data-study-id="CON-S13-001" data-direction="Universal / Safe">
+  <svg class="draw" viewBox="0 0 1440 384" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 64H1440M0 192H1440M0 320H1440M180 0V384M360 0V384M540 0V384M720 0V384M900 0V384M1080 0V384M1260 0V384"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s13-001-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">Particular jobs</p>
-        <h2 id="con-s13-001-title">What we found. What we chose. What it cost us.</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Particular jobs</p>
+        <h2 id="con-s13-001-title">What we found. What we chose. <em>What it cost us.</em></h2>
       </div>
-      <p>Nobody who ran a job remembers an outcome. They remember three or four moments where something was found and somebody had to choose. <b>So that is what is here &mdash; including, on each one, a decision we got wrong.</b></p>
+      <p class="lead">Nobody who ran a job remembers an outcome. They remember three or four moments where something was found and somebody had to choose. So that is what is here &mdash; including, on each one, a decision we got wrong.</p>
     </div>
 
-    <div class="case">
-      <div class="casehead">
-        <div>
-          <p class="ctx">Healthcare &middot; refurbishment, building occupied</p>
-          <h3>A ward refurbishment with the floor below in use throughout</h3>
-          <ul class="ident">
-            <li><span>Project</span><span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></li>
-            <li><span>Client</span><span class="slot"><span class="vh">Client name</span><span aria-hidden="true">&mdash;</span></span></li>
-            <li><span>Scope</span><span class="slot"><span class="vh">Scope of works</span><span aria-hidden="true">&mdash;</span></span></li>
-          </ul>
-        </div>
-        <div class="shot"><span>Project media &mdash; the work in progress, wide</span></div>
+    <article class="case">
+      <p class="sec">Healthcare &middot; refurbishment, building occupied</p>
+      <h3>A ward refurbishment with the floor below in use throughout</h3>
+      <dl class="rec"><div><dt>Project</dt><dd><span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></dd></div><div><dt>Client</dt><dd><span class="slot"><span class="vh">Client name</span><span aria-hidden="true">&mdash;</span></span></dd></div><div><dt>Scope</dt><dd><span class="slot"><span class="vh">Scope of works</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl>
+      <div class="media" role="img" aria-label="Reserved project field: the work in progress, wide"><p class="slate" aria-hidden="true">Project area &middot; 3:1 &middot; the work in progress</p></div>
+      <div class="seq">
+        <div class="f"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>What we found</strong><p>The slab was thinner than the record drawings showed, in the one bay where the new plant had to sit.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>What we chose</strong><p>Redesigned the fixings rather than re-pouring, with the temporary works engineer on site the same day rather than the following week.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>What it cost us</strong><p>The float we were holding on the fit-out sequence. Ours, not the client&rsquo;s.</p></div>
+        <div class="f"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>What we found</strong><p>The agreed noisy hours did not survive contact with the ward below, whose day started earlier than the estates team had told us.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>What we chose</strong><p>Re-sequenced the breaking into the afternoons and gave the mornings to the trades that make no noise, rather than asking the ward to move.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>What it cost us</strong><p>Two trades on site where one would have done. We absorbed the difference.</p></div>
+        <div class="f"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>What we found</strong><p>A services route on the drawings ran straight through a structural opening that had been filled at some point nobody had recorded.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>What we chose</strong><p>Stopped that trade and raised it as a design query the same morning rather than cutting and asking afterwards.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>What it cost us</strong><p>The trade went to another job while we waited, and we took them back when the answer came.</p></div>
       </div>
-
-      <ul class="decisions">
-        <li>
-          <div class="decision">
-            <div class="part p-found"><span class="k">What we found</span><p>The slab was thinner than the record drawings showed, in the one bay where the new plant had to sit.</p></div>
-            <div class="part p-chose"><span class="k">What we chose</span><p><b>Redesigned the fixings rather than re-pouring</b>, with the temporary works engineer on site the same day rather than the following week.</p></div>
-            <div class="part p-cost"><span class="k">What it cost us</span><p>The float we were holding on the fit-out sequence. <b>Ours, not the client&rsquo;s.</b></p></div>
-          </div>
-        </li>
-        <li>
-          <div class="decision">
-            <div class="part p-found"><span class="k">What we found</span><p>The agreed noisy hours did not survive contact with the ward below, whose day started earlier than the estates team had told us.</p></div>
-            <div class="part p-chose"><span class="k">What we chose</span><p>Re-sequenced the breaking into the afternoons and <b>gave the mornings to the trades that make no noise</b>, rather than asking the ward to move.</p></div>
-            <div class="part p-cost"><span class="k">What it cost us</span><p>Two trades on site where one would have done. We absorbed the difference.</p></div>
-          </div>
-        </li>
-        <li>
-          <div class="decision">
-            <div class="part p-found"><span class="k">What we found</span><p>A services route on the drawings ran straight through a structural opening that had been filled at some point nobody had recorded.</p></div>
-            <div class="part p-chose"><span class="k">What we chose</span><p>Stopped that trade and <b>raised it as a design query the same morning</b> rather than cutting and asking afterwards.</p></div>
-            <div class="part p-cost"><span class="k">What it cost us</span><p>The trade went to another job while we waited, and we took them back when the answer came.</p></div>
-          </div>
-        </li>
-      </ul>
-
       <div class="wrong">
-        <h4>The one we got wrong</h4>
-        <div>
-          <p><b>We let the asbestos survey stay a provisional item at tender instead of insisting on it first.</b> When it came back it changed the sequence, and everybody then spent longer arguing about whose risk it had been than the work itself took.</p>
-          <p><b>What changed:</b> we now decline to price this kind of refurbishment without the survey in hand. It has cost us two tenders since, both to firms who were happy to price around it.</p>
-        </div>
+        <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>The one we got wrong</h4>
+        <div><p>We let the asbestos survey stay a provisional item at tender instead of insisting on it first. When it came back it changed the sequence, and everybody then spent longer arguing about whose risk it had been than the work itself took.</p><p class="ch"><strong>What changed</strong>We now decline to price this kind of refurbishment without the survey in hand. It has cost us two tenders since, both to firms who were happy to price around it.</p></div>
       </div>
-    </div>
+    </article>
 
-    <div class="case">
-      <div class="casehead">
-        <div>
-          <p class="ctx">Education &middot; frame and envelope, term deadline</p>
-          <h3>A teaching block that had to be watertight before the first day of term</h3>
-          <ul class="ident">
-            <li><span>Project</span><span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></li>
-            <li><span>Client</span><span class="slot"><span class="vh">Client name</span><span aria-hidden="true">&mdash;</span></span></li>
-            <li><span>Scope</span><span class="slot"><span class="vh">Scope of works</span><span aria-hidden="true">&mdash;</span></span></li>
-          </ul>
-        </div>
-        <div class="shot"><span>Project media &mdash; the frame going up, wide</span></div>
+    <article class="case">
+      <p class="sec">Education &middot; frame and envelope, term deadline</p>
+      <h3>A teaching block that had to be watertight before the first day of term</h3>
+      <dl class="rec"><div><dt>Project</dt><dd><span class="slot"><span class="vh">Project name</span><span aria-hidden="true">&mdash;</span></span></dd></div><div><dt>Client</dt><dd><span class="slot"><span class="vh">Client name</span><span aria-hidden="true">&mdash;</span></span></dd></div><div><dt>Scope</dt><dd><span class="slot"><span class="vh">Scope of works</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl>
+      <div class="media" role="img" aria-label="Reserved project field: the frame going up, wide"><p class="slate" aria-hidden="true">Project area &middot; 3:1 &middot; the frame going up</p></div>
+      <div class="seq">
+        <div class="f"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>What we found</strong><p>The ground came up softer than the site investigation suggested across about a third of the footprint.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>What we chose</strong><p>Self-delivered the remedial groundworks rather than sublet them, because we would rather be the ones standing in the hole when it disagrees with the survey.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>What it cost us</strong><p>Our own gang moved off another job to do it. That job started later, and we told its client why.</p></div>
+        <div class="f"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>What we found</strong><p>The steel delivery was going to land in the same week as the school&rsquo;s open evening, on the only access route.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>What we chose</strong><p>Moved the erection sequence rather than the school&rsquo;s evening, and agreed the gate times with the site staff rather than the estates office.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>What it cost us</strong><p>The sequence rather than the price. We did not ask for it back.</p></div>
+        <div class="f"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>What we found</strong><p>A long-order component was going to arrive after the date we needed it, and the supplier told us late.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>What we chose</strong><p>Told the client the same day rather than at the next progress meeting, with two options and what each of them meant for the term date.</p></div>
+        <div><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>What it cost us</strong><p>An uncomfortable phone call earlier than we would have liked, which is the cheapest thing on this page.</p></div>
       </div>
-
-      <ul class="decisions">
-        <li>
-          <div class="decision">
-            <div class="part p-found"><span class="k">What we found</span><p>The ground came up softer than the site investigation suggested across about a third of the footprint.</p></div>
-            <div class="part p-chose"><span class="k">What we chose</span><p>Self-delivered the remedial groundworks rather than sublet them, <b>because we would rather be the ones standing in the hole</b> when it disagrees with the survey.</p></div>
-            <div class="part p-cost"><span class="k">What it cost us</span><p>Our own gang moved off another job to do it. That job started later, and we told its client why.</p></div>
-          </div>
-        </li>
-        <li>
-          <div class="decision">
-            <div class="part p-found"><span class="k">What we found</span><p>The steel delivery was going to land in the same week as the school&rsquo;s open evening, on the only access route.</p></div>
-            <div class="part p-chose"><span class="k">What we chose</span><p>Moved the erection sequence rather than the school&rsquo;s evening, and <b>agreed the gate times with the site staff rather than the estates office.</b></p></div>
-            <div class="part p-cost"><span class="k">What it cost us</span><p>The sequence rather than the price. We did not ask for it back.</p></div>
-          </div>
-        </li>
-        <li>
-          <div class="decision">
-            <div class="part p-found"><span class="k">What we found</span><p>A long-order component was going to arrive after the date we needed it, and the supplier told us late.</p></div>
-            <div class="part p-chose"><span class="k">What we chose</span><p><b>Told the client the same day rather than at the next progress meeting</b>, with two options and what each of them meant for the term date.</p></div>
-            <div class="part p-cost"><span class="k">What it cost us</span><p>An uncomfortable phone call earlier than we would have liked, which is the cheapest thing on this page.</p></div>
-          </div>
-        </li>
-      </ul>
-
       <div class="wrong">
-        <h4>The one we got wrong</h4>
-        <div>
-          <p><b>We took the client&rsquo;s word that the long-order items had been signed off, and did not check the order had actually been placed.</b> It had not. We found out at the point where finding out was most expensive.</p>
-          <p><b>What changed:</b> long-order items are now confirmed by order number at pre-start and checked again by the planner, and that check is a line on our own programme rather than an assumption about somebody else&rsquo;s.</p>
-        </div>
+        <h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>The one we got wrong</h4>
+        <div><p>We took the client&rsquo;s word that the long-order items had been signed off, and did not check the order had actually been placed. It had not. We found out at the point where finding out was most expensive.</p><p class="ch"><strong>What changed</strong>Long-order items are now confirmed by order number at pre-start and checked again by the planner, and that check is a line on our own programme rather than an assumption about somebody else&rsquo;s.</p></div>
       </div>
-    </div>
+    </article>
 
-    <div class="close" data-refusal>
-      <h3>What is not at the end of these</h3>
+    <div class="not">
       <div>
-        <ul class="none">
-          <li>On time</li><li>On budget</li><li>A delighted client</li><li>Any percentage</li><li>Any value or duration</li>
-        </ul>
-        <p><b>That paragraph appears on the case studies of firms that failed</b>, because it is written afterwards by somebody who was not on the job. We would rather show you the decisions, which are checkable by asking the client about any one of them.</p>
-        <p>Cost is described rather than counted, for the same reason. <b>Out of our float rather than yours</b> is something a client will either confirm or contradict; a figure is something you would have to take on trust.</p>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>What is not at the end of these</h3>
+        <ul><li>On time</li><li>On budget</li><li>A delighted client</li><li>Any percentage</li><li>Any value or duration</li></ul>
+      </div>
+      <div>
+        <p>That paragraph appears on the case studies of firms that failed, because it is written afterwards by somebody who was not on the job. We would rather show you the decisions, which are checkable by asking the client about any one of them.</p>
+        <p>Cost is described rather than counted, for the same reason. Out of our float rather than yours is something a client will either confirm or contradict; a figure is something you would have to take on trust.</p>
       </div>
     </div>
 

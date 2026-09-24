@@ -127,7 +127,7 @@ Section only. No global header, logo, primary navigation, announcement bar or fo
 
 # Status
 
-AUTHORED — PENDING DESIGN LAB INGESTION
+RE-AUTHORED — V2 DETAILING PASS — PENDING DESIGN LAB INGESTION
 
 # Raw Path
 

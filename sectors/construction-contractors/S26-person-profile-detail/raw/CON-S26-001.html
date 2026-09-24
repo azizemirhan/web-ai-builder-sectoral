@@ -10,395 +10,146 @@
 
   Study ID       : CON-S26-001
   Sector         : Construction & Contractors (CON)
-  Section        : CON-S26 — Leader / Project Expert Profile
+  Section        : CON-S26 — Person / Profile Detail
   Direction      : Universal / Safe
-  Reference      : None supplied for this section.
-  Layout model   : Identity and the post, how often you will see them, what they settle against what
-                   they must ring about, the weeks they are not here, and how to reach them
-  Density        : Medium
-  Media mode     : One reserved portrait, paired with the name inside a single figure. No hard hat,
-                   no folded arms, no site behind them &mdash; anti-patterns one, five and thirteen.
-  Interaction    : None. The batch's anchors belong to `004`.
-  The constraint : **Will this person be on my job?** The page answers how often, and then answers
-                   the harder half &mdash; what happens the week they are not, including the reason
-                   nobody prints, which is that they get moved to another job.
-  Second device  : **What they cannot decide.** A page listing only what somebody settles is
-                   describing an owner, not an employee.
-  Third device   : **What is only in their head**, and what gets written down so that it is not.
-  Deliberately not : No qualification, membership, chartership or training card, and none of them as
-                   an empty field either. No years figure. No personal quote.
-  Content note   : Name, portrait, jobs at once, the covering name and the routes are reserved. No
-                   digit in visible copy; no header; no refusal region.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3
+                   with 7 inside it: the portrait as a bare 4:5 field inside one figure with the
+                   reserved name, the post and the reserved jobs-at-once in its figcaption as a
+                   bordered ledger; WHAT THE POST COVERS beside; HOW OFTEN as three bordered
+                   cells with a clock / calendar / stop icon; SETTLES and HAS TO RING ABOUT as
+                   two bordered columns, the second on the band tone behind a 3px deep-red edge
+                   with a phone icon; THE WEEKS THEY ARE NOT HERE as three iconed cells (case /
+                   cross / exchange) and the three things written down as a tape-topped list;
+                   routes as a bordered four-slot ledger; the refusal cell. Drawing layer:
+                   setting-out grid behind the head. V1 is kept whole.
+  Layout model   : Head split. Figure (4:5 portrait + caption ledger) | post. Three how-often
+                   cells. Two authority columns. Three absence cells + written-down list.
+                   Routes ledger | refusal.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : One reserved portrait, 4:5, inside the figure. Seven reserved fields.
+  Interaction    : None (static; no JavaScript). No form.
+  Content note   : Name, jobs at once, telephones and cover reserved. No credential, years,
+                   count, quotation, biography or social handle. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S26-001">
 <meta name="sector" content="Construction &amp; Contractors">
 <meta name="sector-prefix" content="CON">
 <meta name="section-id" content="CON-S26">
-<meta name="section-name" content="Leader / Project Expert Profile">
+<meta name="section-name" content="Person / Profile Detail">
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Identity and post, frequency, settles against rings, the weeks away, the route">
-<meta name="density" content="medium">
-<meta name="media-mode" content="reserved-portrait-in-figure">
+<meta name="theme" content="001 Site White &amp; Safety Orange">
+<meta name="layout-model" content="Head split; figure with a 4:5 reserved portrait and the reserved name, post and jobs-at-once in its figcaption beside the post description; three bordered how-often cells with icons; settles / has-to-ring columns with the second red-edged on the band tone; three iconed absence cells and a tape-topped written-down list; bordered four-slot routes ledger beside the refusal; setting-out grid behind the head">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-portrait-seven-reserved-fields">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S26-001 — Profile Detail, Universal</title>
+<title>CON-S26-001 — Person / Profile Detail, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #f4f4f1; }
 
-/* Scoped study styles — namespaced to .con-s26-001 */
 .con-s26-001 {
-  --ink: #111111;
-  --ink-soft: #444444;
-  --ink-faint: #b4b4b4;
-  --paper: #f1f1f1;
-  --card: #ffffff;
-  --fill: #ececec;
-  --line: #d2d2d2;
-  --rule: #111111;
-  --often: #2b2b2b;
-  --settle: #5e5e5e;
-  --ring: #7a7a7a;
-  --away: #969696;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f4f4f1; --ink: #121314; --muted: #5b5e62; --line: #d8d8d3; --line-strong: #121314;
+  --media: #e3e3de; --band: #ebebe6; --accent: #d9481a; --no: #8f1f14;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s26-001 *,
-.con-s26-001 *::before,
-.con-s26-001 *::after { box-sizing: inherit; }
-.con-s26-001 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s26-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s26-001 *, .con-s26-001 *::before, .con-s26-001 *::after { box-sizing: inherit; }
+.con-s26-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s26-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s26-001 .draw { position: absolute; right: 0; top: 0; width: 46%; height: 20rem; pointer-events: none; color: var(--line); }
+.con-s26-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s26-001 .head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr); gap: 3rem; align-items: end; }
+.con-s26-001 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s26-001 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s26-001 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(2.1rem, 4.2vw, 4.6rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s26-001 h2 em { font-style: normal; color: var(--accent); }
+.con-s26-001 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s26-001 .head > p b { color: var(--ink); }
 
-.con-s26-001 .slot {
-  display: inline-block;
-  min-width: 92px;
-  padding: 2px 12px;
-  border-radius: 10px;
-  background: #3a3a3a;
-  color: var(--ink-faint);
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-  text-align: center;
-}
+.con-s26-001 .who { display: grid; grid-template-columns: 18rem minmax(0, 1fr); gap: clamp(1.6rem, 3vw, 3rem); margin-top: clamp(2rem, 4vw, 3.6rem); padding-top: 1.4rem; border-top: 3px solid var(--accent); align-items: start; }
+.con-s26-001 figure { margin: 0; }
+.con-s26-001 .media { position: relative; aspect-ratio: 4 / 5; background: var(--media); border-radius: 2px; }
+.con-s26-001 .slate { position: absolute; left: 0.9rem; bottom: 0.7rem; right: 0.9rem; margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; line-height: 1.45; text-transform: uppercase; }
+.con-s26-001 figcaption { border: 1px solid var(--line-strong); border-top: 0; }
+.con-s26-001 figcaption > span { display: grid; gap: 0.25rem; padding: 0.6rem 0.8rem 0.7rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s26-001 figcaption > span:last-child { border-bottom: 0; }
+.con-s26-001 figcaption .role { color: var(--ink); font-size: 0.9rem; font-weight: 800; letter-spacing: 0.02em; line-height: 1.1; }
+.con-s26-001 .slot { display: inline-flex; align-items: center; width: 100%; height: 2rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1; }
+.con-s26-001 .nm .slot { height: 2.6rem; font-size: 1rem; border-color: var(--line-strong); }
+.con-s26-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s26-001 h3 { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.7rem; font-weight: 800; font-size: 1.2rem; line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s26-001 h3 .ico { width: 1.2rem; height: 1.2rem; color: var(--accent); }
+.con-s26-001 .post p { margin: 0; max-width: 44rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s26-001 .post p + p { margin-top: 0.7rem; }
+.con-s26-001 .post p b { color: var(--ink); }
 
-/* Head */
-.con-s26-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  padding-bottom: clamp(16px, 2vw, 26px);
-  border-bottom: 2px solid var(--rule);
-  margin-bottom: clamp(18px, 2.3vw, 28px);
-}
-.con-s26-001 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s26-001 h2 {
-  margin: 0;
-  font-size: clamp(2.196rem, 4.284vw, 3.528rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-  max-width: 20ch;
-}
-.con-s26-001 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
-.con-s26-001 .head p b { color: var(--ink); font-weight: 650; }
+.con-s26-001 .sec { margin: clamp(2rem, 4vw, 3.6rem) 0 0.8rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s26-001 .often { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s26-001 .often li { padding: 1rem 1.1rem 1.1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s26-001 .often h4 { display: flex; align-items: flex-start; gap: 0.5rem; margin: 0 0 0.4rem; font-weight: 800; font-size: 1.05rem; line-height: 1.1; letter-spacing: -0.015em; text-transform: uppercase; }
+.con-s26-001 .often h4 .ico { width: 1.2rem; height: 1.2rem; margin-top: 0.05rem; color: var(--accent); }
+.con-s26-001 .often p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
 
-/* Identity and the post */
-.con-s26-001 .top {
-  display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
-  gap: clamp(16px, 2.6vw, 40px);
-  align-items: start;
-  padding-bottom: clamp(18px, 2.2vw, 26px);
-  border-bottom: 1px solid var(--line);
-  margin-bottom: clamp(18px, 2.2vw, 26px);
-}
-.con-s26-001 figure {
-  margin: 0;
-  background: var(--card);
-  border-radius: 22px;
-  padding: clamp(12px, 1.4vw, 16px);
-}
-.con-s26-001 .plate {
-  height: clamp(150px, 15vw, 218px);
-  border-radius: 16px;
-  border: 1px dashed var(--line);
-  background: var(--fill);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px;
-  margin-bottom: clamp(11px, 1.3vw, 14px);
-}
-.con-s26-001 .plate span {
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-  text-align: center;
-  line-height: 1.5;
-}
-.con-s26-001 figcaption { display: grid; gap: 7px; }
-.con-s26-001 figcaption .nm {
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s26-001 figcaption .role {
-  font-size: clamp(1.1rem, 1.652vw, 1.392rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  color: var(--ink);
-}
-.con-s26-001 figcaption .run {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  padding-top: 8px;
-  border-top: 1px solid var(--line);
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
+.con-s26-001 .auth { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s26-001 .auth > div { padding: 1.1rem 1.2rem 1.2rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s26-001 .auth > div:last-child { background: var(--band); border-left: 3px solid var(--no); margin-left: -1px; }
+.con-s26-001 .auth > div:last-child h3 .ico { color: var(--no); }
+.con-s26-001 .auth ul { list-style: none; margin: 0 0 0.8rem; padding: 0; }
+.con-s26-001 .auth li { position: relative; padding: 0.45rem 0 0.45rem 1.1rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+.con-s26-001 .auth li::before { content: ""; position: absolute; left: 0; top: 0.85rem; width: 0.45rem; height: 0.45rem; background: var(--ink); }
+.con-s26-001 .auth > div:last-child li::before { background: transparent; border: 1px solid var(--no); }
+.con-s26-001 .auth li b { color: var(--ink); }
+.con-s26-001 .auth p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s26-001 .auth p b { color: var(--ink); }
 
-.con-s26-001 .post h3,
-.con-s26-001 .often h3,
-.con-s26-001 .two h3,
-.con-s26-001 .away h3,
-.con-s26-001 .reach h3,
-.con-s26-001 .not h3 {
-  margin: 0 0 clamp(9px, 1.1vw, 12px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s26-001 .post p { margin: 0 0 10px; font-size: 1.1rem; line-height: 1.6; color: var(--ink-soft); max-width: 62ch; }
-.con-s26-001 .post p:last-child { margin-bottom: 0; }
-.con-s26-001 .post p b { color: var(--ink); font-weight: 650; }
-.con-s26-001 .post .lead { font-size: clamp(1.251rem, 1.77vw, 1.463rem); line-height: 1.34; letter-spacing: -0.015em; color: var(--ink); font-weight: 650; max-width: 34ch; }
+.con-s26-001 .away { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s26-001 .away li { padding: 1rem 1.1rem 1.1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s26-001 .away li:last-child { background: var(--band); }
+.con-s26-001 .away h4 { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.4rem; font-weight: 800; font-size: 1.05rem; line-height: 1.1; letter-spacing: -0.015em; text-transform: uppercase; }
+.con-s26-001 .away h4 .ico { width: 1.2rem; height: 1.2rem; color: var(--accent); }
+.con-s26-001 .away p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s26-001 .away p b { color: var(--ink); }
+.con-s26-001 .written { margin-top: 1rem; padding: 1.1rem 1.2rem 1.2rem; border-top: 3px solid var(--accent); background: var(--band); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 1rem 3rem; }
+.con-s26-001 .written p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.con-s26-001 .written p b { color: var(--ink); }
+.con-s26-001 .written ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.con-s26-001 .written li { display: flex; gap: 0.6rem; align-items: flex-start; padding: 0.5rem 0 0.6rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+.con-s26-001 .written li .ico { width: 1.1rem; height: 1.1rem; margin-top: 0.1rem; color: var(--accent); }
+.con-s26-001 .written li b { color: var(--ink); }
 
-/* How often */
-.con-s26-001 .often { --tone: var(--often); margin-bottom: clamp(18px, 2.2vw, 26px); }
-.con-s26-001 .often ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(11px, 1.5vw, 18px); }
-.con-s26-001 .often li {
-  min-width: 0;
-  padding-left: clamp(11px, 1.3vw, 14px);
-  border-left: 4px solid var(--often);
-  font-size: 1rem;
-  line-height: 1.56;
-  color: var(--ink-soft);
-}
-.con-s26-001 .often li b { display: block; color: var(--ink); font-weight: 700; margin-bottom: 3px; }
+.con-s26-001 .foot { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(1.6rem, 3vw, 3rem); margin-top: clamp(2rem, 4vw, 3.6rem); align-items: start; }
+.con-s26-001 .routes { border: 1px solid var(--line-strong); }
+.con-s26-001 .routes h3 { padding: 0.8rem 1rem 0; margin: 0; }
+.con-s26-001 .routes dl { margin: 0; }
+.con-s26-001 .routes div { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 0.8rem; align-items: center; padding: 0.6rem 1rem; border-bottom: 1px solid var(--line); }
+.con-s26-001 .routes div:last-of-type { border-bottom: 0; }
+.con-s26-001 .routes dt { margin: 0; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s26-001 .routes dd { margin: 0; }
+.con-s26-001 .routes p { margin: 0; padding: 0.8rem 1rem 1rem; border-top: 1px solid var(--line-strong); color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s26-001 .routes p b { color: var(--ink); }
+.con-s26-001 .refuse { padding: 1.2rem 1.3rem 1.3rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--no); }
+.con-s26-001 .refuse h3 .ico { color: var(--no); }
+.con-s26-001 .refuse p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s26-001 .refuse p + p { margin-top: 0.6rem; }
+.con-s26-001 .refuse p b { color: var(--ink); }
 
-/* Settles / rings */
-.con-s26-001 .two {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(14px, 2vw, 28px);
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 2px solid var(--rule);
-  margin-bottom: clamp(18px, 2.2vw, 26px);
+@media (max-width: 960px) { .con-s26-001 .often, .con-s26-001 .away { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 860px) {
+  .con-s26-001 .head, .con-s26-001 .who, .con-s26-001 .auth, .con-s26-001 .written, .con-s26-001 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s26-001 figure { max-width: 18rem; }
+  .con-s26-001 .auth > div:last-child { margin-left: 0; }
+  .con-s26-001 .draw { width: 70%; }
 }
-.con-s26-001 .two > div { min-width: 0; }
-.con-s26-001 .t-settle { --tone: var(--settle); }
-.con-s26-001 .t-ring { --tone: var(--ring); }
-.con-s26-001 .two ul { margin: 0 0 10px; padding: 0; list-style: none; display: grid; gap: 8px; }
-.con-s26-001 .two li { padding-left: clamp(11px, 1.3vw, 14px); border-left: 2px solid var(--tone); font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
-.con-s26-001 .two li b { color: var(--ink); font-weight: 650; }
-.con-s26-001 .two > div > p { margin: 0; font-size: 1rem; line-height: 1.58; color: var(--ink-faint); max-width: 52ch; }
-.con-s26-001 .two > div > p b { color: var(--ink-soft); font-weight: 650; }
-
-/* The weeks away */
-.con-s26-001 .away {
-  --tone: var(--away);
-  background: var(--card);
-  border-radius: 22px;
-  padding: clamp(16px, 2vw, 26px);
-  margin-bottom: clamp(18px, 2.2vw, 26px);
-}
-.con-s26-001 .away .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(13px, 1.8vw, 24px);
-}
-.con-s26-001 .away .grid > div { min-width: 0; padding-top: clamp(10px, 1.2vw, 13px); border-top: 4px solid var(--away); }
-.con-s26-001 .away h4 {
-  margin: 0 0 7px;
-  font-size: clamp(1.1rem, 1.534vw, 1.298rem);
-  line-height: 1.22;
-  letter-spacing: -0.015em;
-  font-weight: 700;
-}
-.con-s26-001 .away p { margin: 0 0 8px; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
-.con-s26-001 .away p:last-child { margin-bottom: 0; }
-.con-s26-001 .away p b { color: var(--ink); font-weight: 650; }
-.con-s26-001 .away .kept { margin-top: clamp(13px, 1.7vw, 18px); padding-top: clamp(12px, 1.5vw, 16px); border-top: 1px solid var(--line); }
-.con-s26-001 .away .kept ol { margin: 0; padding: 0 0 0 clamp(16px, 1.8vw, 20px); display: grid; gap: 7px; font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
-.con-s26-001 .away .kept ol b { color: var(--ink); font-weight: 650; }
-
-/* Reach, and what is not here */
-.con-s26-001 .foot {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(14px, 2vw, 28px);
-  padding-top: clamp(16px, 2vw, 24px);
-  border-top: 2px solid var(--rule);
-}
-.con-s26-001 .foot > div { min-width: 0; }
-.con-s26-001 .reach dl { margin: 0; display: grid; gap: 9px; }
-.con-s26-001 .reach .row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--line);
-}
-.con-s26-001 .reach dt { font-size: 1rem; font-weight: 650; color: var(--ink); }
-.con-s26-001 .reach dd { margin: 0; }
-.con-s26-001 .reach > p { margin: 10px 0 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); max-width: 50ch; }
-.con-s26-001 .reach > p b { color: var(--ink); font-weight: 650; }
-.con-s26-001 .not p { margin: 0 0 9px; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); max-width: 52ch; }
-.con-s26-001 .not p:last-child { margin-bottom: 0; }
-.con-s26-001 .not p b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 960px) {
-  .con-s26-001 .head,
-  .con-s26-001 .top { grid-template-columns: minmax(0, 1fr); }
-  .con-s26-001 .head { align-items: start; gap: clamp(14px, 2.4vw, 22px); }
-  .con-s26-001 .plate { height: clamp(140px, 26vw, 190px); }
-}
-
-@media (max-width: 620px) {
-  .con-s26-001 h2,
-  .con-s26-001 .head p,
-  .con-s26-001 .post .lead { max-width: none; }
-  .con-s26-001 .reach .row { flex-direction: column; align-items: flex-start; gap: 5px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s26-001 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s26-001 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
-  font-size: 1.06rem;
-}
-.con-s26-001 h2 { font-weight: 800; }
-.con-s26-001 h3, .con-s26-001 h4 { font-weight: 750; }
-.con-s26-001 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s26-001 figure {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #ececec;
-}
-.con-s26-001 .plate {
-  height: auto;
-  min-height: clamp(200px, 21vw, 320px);
-  border-radius: 26px;
-  border: 2px dashed #969696;
-  background: linear-gradient(145deg, #d2d2d2 0%, var(--fill) 100%);
-}
-.con-s26-001 .plate span {
-  color: #5e5e5e;
-  font-weight: 700;
-}
-.con-s26-001 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s26-001.con-s26-001 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s26-001.con-s26-001 .head h2, .con-s26-001.con-s26-001 .head h3, .con-s26-001.con-s26-001 .head h4, .con-s26-001.con-s26-001 .head b, .con-s26-001.con-s26-001 .head strong, .con-s26-001.con-s26-001 .head p b, .con-s26-001.con-s26-001 .head li b, .con-s26-001.con-s26-001 .head span b, .con-s26-001.con-s26-001 .head dt, .con-s26-001.con-s26-001 .head div b {
-  color: #ffffff;
-}
-.con-s26-001.con-s26-001 .head p, .con-s26-001.con-s26-001 .head li, .con-s26-001.con-s26-001 .head span, .con-s26-001.con-s26-001 .head dd, .con-s26-001.con-s26-001 .head div p, .con-s26-001.con-s26-001 .head div li, .con-s26-001.con-s26-001 .head p span, .con-s26-001.con-s26-001 .head .said, .con-s26-001.con-s26-001 .head .note {
-  color: #d2d2d2;
-}
-.con-s26-001.con-s26-001 .head .eyebrow, .con-s26-001.con-s26-001 .head .kicker, .con-s26-001.con-s26-001 .head .slot, .con-s26-001.con-s26-001 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s26-001.con-s26-001 .head i, .con-s26-001.con-s26-001 .head .bars i, .con-s26-001.con-s26-001 .head .lines i, .con-s26-001.con-s26-001 .head .measures i, .con-s26-001.con-s26-001 .head .bar, .con-s26-001.con-s26-001 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s26-001.con-s26-001 .head .plate, .con-s26-001.con-s26-001 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s26-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s26-001 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 480px) { .con-s26-001 .routes div { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; } }
+@media (prefers-reduced-motion: reduce) { .con-s26-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -406,45 +157,48 @@ body { margin: 0; background: #f1f1f1; }
 <div class="con-s26-001" data-study-id="CON-S26-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="con-s26-001-title">
 
+    <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <g stroke="currentColor" stroke-width="1" fill="none">
+        <path d="M0 20H100M0 40H100M0 60H100M0 80H100M20 0V100M40 0V100M60 0V100M80 0V100" vector-effect="non-scaling-stroke"/>
+      </g>
+    </svg>
+
     <div class="head">
       <div>
-        <p class="eyebrow">The people who run the work</p>
-        <h2 id="con-s26-001-title">The question is not who this person is. It is whether they will be on your job.</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>The people who run the work</p>
+        <h2 id="con-s26-001-title">The question is not who this person is. <em>It is whether they will be on your job.</em></h2>
       </div>
       <p>Every profile page in this industry makes that promise without stating it. <b>This one answers how often, and then answers the harder half</b> &mdash; what happens in the weeks they are not there, which on a long job is a certainty rather than a risk.</p>
     </div>
 
-    <div class="top">
+    <div class="who">
       <figure>
-        <div class="plate">
-          <span>Reserved area &mdash; one portrait, no hard hat and no folded arms</span>
-        </div>
+        <div class="media" role="img" aria-label="Reserved area — one portrait, no hard hat and no folded arms"><p class="slate" aria-hidden="true">Reserved area &mdash; one portrait, no hard hat and no folded arms</p></div>
         <figcaption>
-          <span class="nm"><span class="slot"><span class="vh">Name of the person</span>Reserved</span></span>
-          <span class="role">Contracts manager</span>
-          <span class="run">Jobs running at once <span class="slot"><span class="vh">Number of jobs this person runs at once</span>Reserved</span></span>
+          <span class="nm">Name<span class="slot"><span class="vh">Name of the person</span><span aria-hidden="true">Reserved</span></span></span>
+          <span><span class="role">Contracts manager</span></span>
+          <span>Jobs running at once<span class="slot"><span class="vh">Number of jobs this person runs at once</span><span aria-hidden="true">Reserved</span></span></span>
         </figcaption>
       </figure>
       <div class="post">
-        <h3>What the post covers</h3>
-        <p class="lead">A contracts manager runs the job above the site, and is the person a client escalates to.</p>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14v17H5zM9 4V2h6v2M8 10h8M8 14h6"/></svg>What the post covers</h3>
+        <p><b>A contracts manager runs the job above the site, and is the person a client escalates to.</b></p>
         <p>They hold the programme, the labour across more than one site, and the conversations that decide whether a change is a change or an argument. <b>They are not on your site every day, and no page should suggest otherwise</b> &mdash; the person who is there every day is the site manager, and that is a different post with different authority.</p>
         <p>What is written here is the post, not a biography. <b>Nothing on this page is a claim about how good anybody is</b>, because a claim like that is worth nothing until somebody has stood on a site with them.</p>
       </div>
     </div>
 
-    <div class="often">
-      <h3>How often you will actually see them</h3>
-      <ul>
-        <li><b>Two mornings in a normal week</b>On your site, walking it before anything else in the day, and back in the office by the middle of the morning.</li>
-        <li><b>Every morning in the fortnight either side of a date that cannot move</b>A pour, a lift, watertight, handover. The pattern suspends itself when the job needs it to.</li>
-        <li><b>Inside the hour when the work has stopped</b>Not a promise about response time. It is simply what happens, because a stopped site costs more than the drive.</li>
-      </ul>
-    </div>
+    <p class="sec">How often you will actually see them</p>
+    <ul class="often">
+      <li><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>Two mornings in a normal week</h4><p>On your site, walking it before anything else in the day, and back in the office by the middle of the morning.</p></li>
+      <li><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v16H4zM4 10h16M8 3v4M16 3v4"/></svg>Every morning in the fortnight either side of a date that cannot move</h4><p>A pour, a lift, watertight, handover. The pattern suspends itself when the job needs it to.</p></li>
+      <li><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8zM9 12h6"/></svg>Inside the hour when the work has stopped</h4><p>Not a promise about response time. It is simply what happens, because a stopped site costs more than the drive.</p></li>
+    </ul>
 
-    <div class="two">
-      <div class="t-settle">
-        <h3>What they settle standing on your site</h3>
+    <p class="sec">Authority</p>
+    <div class="auth">
+      <div>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15a8 8 0 0 1 16 0M2 15h20v3H2zM10 7h4v5h-4z"/></svg>What they settle standing on your site</h3>
         <ul>
           <li><b>The sequence inside the week.</b> Which trade goes where, and in what order, without asking anybody.</li>
           <li><b>What gets ordered for tomorrow</b>, so the gang is not stood waiting on it.</li>
@@ -452,8 +206,8 @@ body { margin: 0; background: #f1f1f1; }
         </ul>
         <p>All three are decided in front of you, which is most of the reason the visit is worth anything.</p>
       </div>
-      <div class="t-ring">
-        <h3>And what they have to ring somebody about</h3>
+      <div>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>And what they have to ring somebody about</h3>
         <ul>
           <li><b>Anything with money on it.</b> A variation is priced by the commercial manager, not agreed on a walk.</li>
           <li><b>Anything that moves the completion date.</b> That is a change to the contract and it goes to a director.</li>
@@ -463,47 +217,36 @@ body { margin: 0; background: #f1f1f1; }
       </div>
     </div>
 
-    <div class="away">
-      <h3>The weeks they are not here</h3>
-      <div class="grid">
-        <div>
-          <h4>Holiday, booked</h4>
-          <p>You are told before it happens and you are told who is covering. <b>The cover is named rather than implied</b>, and they walk the site with this person before the week starts.</p>
-        </div>
-        <div>
-          <h4>Illness, not booked</h4>
-          <p>Somebody covers the same morning. <b>You will notice, because the second walk is slower</b> &mdash; the person doing it is reading the job rather than remembering it.</p>
-        </div>
-        <div>
-          <h4>They get moved to another job</h4>
-          <p>The reason nobody prints. It happens when another site is in trouble, <b>and the honest thing is to say so at the time rather than let the visits quietly thin out.</b></p>
-        </div>
-      </div>
-      <div class="kept">
-        <p><b>Absence costs anything at all because a person carries a job in their head.</b> So three things are written down on every job we run, and they are what makes a week of cover survivable:</p>
-        <ol>
-          <li><b>The outstanding items</b>, with who owes each one and when it was asked for.</li>
-          <li><b>The drawing revision the work is actually being built to</b>, which is not always the latest one issued.</li>
-          <li><b>The things the client has asked for that are not in the contract yet</b> &mdash; the line that saves an argument in month four.</li>
-        </ol>
-      </div>
+    <p class="sec">The weeks they are not here</p>
+    <ul class="away">
+      <li><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 8h18v12H3zM8 8V5h8v3M3 13h18"/></svg>Holiday, booked</h4><p>You are told before it happens and you are told who is covering. <b>The cover is named rather than implied</b>, and they walk the site with this person before the week starts.</p></li>
+      <li><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 8v8M8 12h8"/></svg>Illness, not booked</h4><p>Somebody covers the same morning. You will notice, because the second walk is slower &mdash; the person doing it is reading the job rather than remembering it.</p></li>
+      <li><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>They get moved to another job</h4><p><b>The reason nobody prints.</b> It happens when another site is in trouble, and the honest thing is to say so at the time rather than let the visits quietly thin out.</p></li>
+    </ul>
+    <div class="written">
+      <p><b>Absence costs anything at all because a person carries a job in their head.</b> So three things are written down on every job we run, and they are what makes a week of cover survivable:</p>
+      <ol>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14v17H5zM9 4V2h6v2M8 10h8M8 14h6"/></svg><span><b>The outstanding items</b>, with who owes each one and when it was asked for.</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6"/></svg><span><b>The drawing revision the work is actually being built to</b>, which is not always the latest one issued.</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4zM8 9h8M8 12h5"/></svg><span><b>The things the client has asked for that are not in the contract yet</b> &mdash; the line that saves an argument in month four.</span></li>
+      </ol>
     </div>
 
     <div class="foot">
-      <div class="reach">
-        <h3>How to reach them</h3>
+      <div class="routes">
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>How to reach them</h3>
         <dl>
-          <div class="row"><dt>Ask for them by name</dt><dd><span class="slot"><span class="vh">Name of the person</span>Reserved</span></dd></div>
-          <div class="row"><dt>The office, in working hours</dt><dd><span class="slot"><span class="vh">Office telephone number</span>Reserved</span></dd></div>
-          <div class="row"><dt>Cover while they are away</dt><dd><span class="slot"><span class="vh">Name of the person covering</span>Reserved</span></dd></div>
-          <div class="row"><dt>The site itself, first thing</dt><dd><span class="slot"><span class="vh">Site telephone number</span>Reserved</span></dd></div>
+          <div><dt>Ask for them by name</dt><dd><span class="slot"><span class="vh">Name of the person</span><span aria-hidden="true">Reserved</span></span></dd></div>
+          <div><dt>The office, in working hours</dt><dd><span class="slot"><span class="vh">Office telephone number</span><span aria-hidden="true">Reserved</span></span></dd></div>
+          <div><dt>Cover while they are away</dt><dd><span class="slot"><span class="vh">Name of the person covering</span><span aria-hidden="true">Reserved</span></span></dd></div>
+          <div><dt>The site itself, first thing</dt><dd><span class="slot"><span class="vh">Site telephone number</span><span aria-hidden="true">Reserved</span></span></dd></div>
         </dl>
         <p><b>At seven in the morning you want the site, not this person.</b> They are driving, and the answer you need is standing on the slab.</p>
       </div>
-      <div class="not">
-        <h3>What is not on this page, and why</h3>
-        <p>No qualifications, no memberships, no training cards, <b>and not as empty fields either.</b> An empty field says we list them and that this person's are pending, which asserts something nobody has told us.</p>
-        <p>No count of anything, and no sentence in quotation marks. <b>A quote attributed to a name that has not been filled in is a statement by a person who does not exist.</b></p>
+      <div class="refuse" data-refusal>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM8 8l8 8M16 8l-8 8"/></svg>What is not on this page, and why</h3>
+        <p><b>No qualifications, no memberships, no training cards, and not as empty fields either.</b> An empty field says we list them and that this person&rsquo;s are pending, which asserts something nobody has told us.</p>
+        <p>No count of anything, and no sentence in quotation marks. A quote attributed to a name that has not been filled in is a statement by a person who does not exist.</p>
       </div>
     </div>
 

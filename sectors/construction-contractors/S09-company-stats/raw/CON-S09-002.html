@@ -12,27 +12,21 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S09 — Company Stats
   Direction      : Premium / Editorial
-  Reference      : None supplied for this section.
-  Layout model   : An annotated text. Serif prose runs down the wide column in four movements, and
-                   each figure sits in the narrow margin beside the paragraph that discusses it —
-                   small, precise, and reserved
-  Density        : Low
-  Media mode     : None. A counter has nothing to photograph.
-  Interaction    : None (static; no JavaScript)
-  The device     : **The number is smaller than the sentence about it.** Every stats band in this
-                   industry sets the figure at display scale and the label at caption scale, which
-                   is the wrong way round: the figure is the part nobody can evaluate and the
-                   sentence is the part that makes it readable. This study inverts the proportion,
-                   and the inversion is the editorial argument.
-  Structural note : Distinct from `CON-S06-002`, whose single column was broken by full-width
-                   interruptions, and from `CON-S08-002`, whose ledger ran as an independent sidebar.
-                   Here the margin entries are **aligned to the paragraphs that discuss them**, so
-                   neither column reads on its own.
-  Deliberately not : No fifth figure, no percentage, no growth arrow or trend line, no client logo,
-                   award or rating.
-  Content note   : Sectors and trades are generic vocabulary and are the only real content. All four
-                   figures and all four bases are reserved fields. No safety figure of any kind; no
-                   digit in visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 9,
+                   chapter pacing: four ruled chapters, each with the reserved figure and its
+                   secondary fields standing in the margin column (the figure at counter scale
+                   but, as V1 says, smaller than the sentence about it) and the annotation in
+                   the wide column — a run-in line in tracked uppercase and two paragraphs.
+                   V1's serif is the sector's display voice. The sectors and trades as tags,
+                   the refusal on the foot rule. Drawing layer: a levelling circle behind the
+                   head. V1 is kept whole.
+  Layout model   : Eyebrow, display, lead. Four ruled chapters: margin ledger + annotation.
+                   Ruled tag row. Ruled foot.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : None. Ten reserved fields.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No figure, date, percentage, rating, award, client, project name, price or
+                   safety figure. Every quantity is a reserved slot. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S09-002">
@@ -43,334 +37,110 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="Annotated text — serif prose with reserved figures aligned in the margin">
-<meta name="density" content="low">
-<meta name="media-mode" content="none">
+<meta name="theme" content="002 Bone &amp; Burnt Amber">
+<meta name="layout-model" content="Display proposition; four ruled chapters with the reserved figure and its fields in the margin and the annotation in the wide column; ruled sector and trade tags; refusal on the foot rule; levelling circle behind">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media-ten-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S09-002 — Company Stats, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #efece5; }
 
-/* Scoped study styles — namespaced to .con-s09-002 */
 .con-s09-002 {
-  --ink: #111111;
-  --ink-soft: #7a7a7a;
-  --ink-faint: #b4b4b4;
-  --paper: #fafafa;
-  --rule: #d2d2d2;
-  --hair: #ececec;
-  --field: #ffffff;
-
-  --point: #444444;
-  --total: #2b2b2b;
-  --snap: #969696;
-  --extreme: #5e5e5e;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #efece5; --ink: #171410; --muted: #6a655c; --line: #d9d3c8; --line-strong: #171410;
+  --media: #e3ded4; --band: #e8e3d9; --accent: #b4531d;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s09-002 *,
-.con-s09-002 *::before,
-.con-s09-002 *::after { box-sizing: inherit; }
-.con-s09-002 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 4px;
-  border-radius: 16px;
-}
-.con-s09-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s09-002 *, .con-s09-002 *::before, .con-s09-002 *::after { box-sizing: inherit; }
+.con-s09-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s09-002 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s09-002 .draw { position: absolute; right: -5rem; top: -5rem; width: 30rem; height: 30rem; pointer-events: none; color: var(--line); }
+.con-s09-002 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s09-002 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s09-002 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s09-002 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.4rem, 5vw, 5.6rem); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s09-002 h2 em { font-style: normal; color: var(--accent); }
+.con-s09-002 .lead { margin: 1.4rem 0 0; max-width: 44rem; color: var(--muted); font-size: 0.94rem; line-height: 1.55; }
 
-.con-s09-002 .eyebrow {
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s09-002 h2 {
-  margin: 0 0 clamp(16px, 2.2vw, 26px);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(2.44rem, 5.292vw, 4.284rem);
-  line-height: 1.04;
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  max-width: 20ch;
-}
-.con-s09-002 h2 em { font-style: italic; }
-.con-s09-002 .stand {
-  margin: 0 0 clamp(28px, 3.6vw, 52px);
-  max-width: 58ch;
-  font-size: clamp(1.1rem, 1.357vw, 1.345rem);
-  line-height: 1.64;
-  color: var(--ink-soft);
-}
-.con-s09-002 .stand b { color: var(--ink); font-weight: 650; }
+.con-s09-002 .ch { display: grid; grid-template-columns: minmax(16rem, 0.6fr) minmax(0, 1.4fr); gap: 0 clamp(1.6rem, 3.4vw, 4rem); align-items: start; margin-top: clamp(1.6rem, 3vw, 3rem); padding: 1.2rem 0 clamp(1.4rem, 2.6vw, 2.6rem); border-top: 1px solid var(--line-strong); }
+.con-s09-002 .ch:first-of-type { border-top: 3px solid var(--accent); }
+.con-s09-002 .kind { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.5rem; color: var(--accent); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s09-002 .kind .ico { width: 1.2rem; height: 1.2rem; }
+.con-s09-002 h3 { margin: 0 0 0.5rem; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.con-s09-002 .slot { display: flex; align-items: center; width: min(100%, 18rem); height: 3.4rem; padding: 0 1rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 2.2rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.con-s09-002 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s09-002 .rec { margin: 0.7rem 0 0; }
+.con-s09-002 .rec { width: min(100%, 18rem); }
+.con-s09-002 .rec div { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; padding: 0.4rem 0; border-top: 1px solid var(--line); }
+.con-s09-002 .rec dt { margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s09-002 .rec dd { margin: 0; }
+.con-s09-002 .rec .s { display: inline-flex; align-items: center; min-width: 6rem; height: 1.5rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.8rem; }
+.con-s09-002 .an p.t { margin: 0 0 0.6rem; max-width: 30ch; font-weight: 800; font-size: clamp(1.3rem, 2.2vw, 2.1rem); line-height: 1; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s09-002 .an p { margin: 0; max-width: 42rem; color: var(--muted); font-size: 0.94rem; line-height: 1.6; }
+.con-s09-002 .an p + p { margin-top: 0.7rem; }
 
-/* Annotated rows: margin figure beside the paragraph that discusses it */
-.con-s09-002 .row {
-  display: grid;
-  grid-template-columns: minmax(0, 0.34fr) minmax(0, 1fr);
-  gap: clamp(18px, 3vw, 52px);
-  align-items: start;
-  padding: clamp(24px, 3vw, 42px) 0;
-  border-top: 1px solid var(--hair);
-}
-.con-s09-002 .row:first-of-type { border-top: 2px solid var(--rule); }
+.con-s09-002 .tags { display: grid; grid-template-columns: minmax(16rem, 0.6fr) minmax(0, 1.4fr); gap: 0 clamp(1.6rem, 3.4vw, 4rem); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.con-s09-002 .tags h3 { font-size: clamp(1.05rem, 1.6vw, 1.4rem); letter-spacing: -0.02em; line-height: 1.05; }
+.con-s09-002 .tags p { margin: 0 0 0.9rem; max-width: 42rem; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s09-002 .tags ul { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+.con-s09-002 .tags li { padding: 0.35rem 0.6rem; border: 1px solid var(--line-strong); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s09-002 .tags li.t { border-color: var(--line); color: var(--muted); }
+.con-s09-002 .foot { display: grid; grid-template-columns: minmax(16rem, 0.6fr) minmax(0, 1.4fr); gap: 0 clamp(1.6rem, 3.4vw, 4rem); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding-top: 1.2rem; border-top: 1px solid var(--line-strong); }
+.con-s09-002 .foot h3 { display: flex; align-items: flex-start; gap: 0.5rem; font-size: clamp(1.05rem, 1.6vw, 1.4rem); letter-spacing: -0.02em; line-height: 1.05; }
+.con-s09-002 .foot h3 .ico { color: var(--accent); margin-top: 0.1rem; }
+.con-s09-002 .foot p { margin: 0; max-width: 42rem; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s09-002 .foot p + p { margin-top: 0.6rem; }
 
-/* The margin entry — deliberately small */
-.con-s09-002 .note { padding-top: 4px; }
-.con-s09-002 .kind {
-  display: block;
-  margin: 0 0 8px;
-  padding-left: 13px;
-  border-left: 4px solid var(--tone, var(--ink-faint));
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s09-002 .k-point { --tone: var(--point); }
-.con-s09-002 .k-total { --tone: var(--total); }
-.con-s09-002 .k-snap { --tone: var(--snap); }
-.con-s09-002 .k-extreme { --tone: var(--extreme); }
-.con-s09-002 .label {
-  margin: 0 0 7px;
-  font-size: 1rem;
-  line-height: 1.28;
-  font-weight: 700;
-}
-.con-s09-002 .value {
-  margin: 0 0 9px;
-  font-size: clamp(1.369rem, 1.77vw, 1.652rem);
-  line-height: 1.1;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s09-002 .value .slot {
-  display: inline-block;
-  min-width: 60px;
-  padding: 1px 10px;
-  border-radius: 16px;
-  background: var(--field);
-}
-.con-s09-002 .basis {
-  margin: 0;
-  font-size: 0.8rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  line-height: 1.7;
-  color: var(--ink-faint);
-}
-.con-s09-002 .basis .slot {
-  display: inline-block;
-  min-width: 40px;
-  margin-left: 6px;
-  padding: 0 8px;
-  border-radius: 10px;
-  background: var(--field);
-  letter-spacing: 0;
-}
-
-/* The essay */
-.con-s09-002 h3 {
-  margin: 0 0 clamp(10px, 1.3vw, 15px);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(1.652rem, 2.562vw, 2.318rem);
-  line-height: 1.12;
-  letter-spacing: -0.014em;
-  font-weight: 400;
-  max-width: 26ch;
-}
-.con-s09-002 .say p {
-  margin: 0;
-  max-width: 58ch;
-  font-size: clamp(1.1rem, 1.298vw, 1.286rem);
-  line-height: 1.68;
-  color: var(--ink-soft);
-}
-.con-s09-002 .say p + p { margin-top: clamp(11px, 1.4vw, 16px); }
-.con-s09-002 .say p b { color: var(--ink); font-weight: 650; }
-
-/* Close */
-.con-s09-002 .close {
-  margin-top: clamp(28px, 3.6vw, 52px);
-  padding-top: clamp(22px, 3vw, 38px);
-  border-top: 2px solid var(--rule);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(20px, 3.2vw, 52px);
-}
-.con-s09-002 .close h3 { margin-bottom: clamp(10px, 1.3vw, 14px); }
-.con-s09-002 .close p { margin: 0 0 clamp(10px, 1.3vw, 14px); max-width: 54ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.64; }
-.con-s09-002 .close p:last-child { margin-bottom: 0; }
-.con-s09-002 .close p b { color: var(--ink); font-weight: 650; }
-.con-s09-002 .chips { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
-.con-s09-002 .chips li {
-  padding: 5px 13px;
-  border-radius: 999px;
-  background: var(--field);
-  color: var(--ink-soft);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* Responsive ladder */
-@media (max-width: 860px) {
-  .con-s09-002 .row { grid-template-columns: minmax(0, 1fr); gap: clamp(14px, 2.2vw, 20px); }
-  .con-s09-002 .close { grid-template-columns: minmax(0, 1fr); }
-  .con-s09-002 h2, .con-s09-002 h3, .con-s09-002 .stand,
-  .con-s09-002 .say p, .con-s09-002 .close p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s09-002 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s09-002 {
-  --v2-accent: #969696;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 30%);
-  font-size: 1.06rem;
-}
-.con-s09-002 h2 { font-weight: 800; }
-.con-s09-002 h3, .con-s09-002 h4 { font-weight: 750; }
-.con-s09-002 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #ececec;
-  color: #7a7a7a;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s09-002 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #ececec;
-  color: #7a7a7a;
-  font-weight: 600;
-}
-.con-s09-002.con-s09-002 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  max-width: none;
-}
-.con-s09-002.con-s09-002 .shell > h2 span, .con-s09-002.con-s09-002 .shell > h2 b, .con-s09-002.con-s09-002 .shell > h2 em, .con-s09-002.con-s09-002 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s09-002 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s09-002 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 900px) { .con-s09-002 .ch, .con-s09-002 .tags, .con-s09-002 .foot { grid-template-columns: minmax(0, 1fr); gap: 0.8rem; } .con-s09-002 h2 { max-width: none; } .con-s09-002 .draw { display: none; } }
+@media (prefers-reduced-motion: reduce) { .con-s09-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s09-002" data-study-id="CON-S09-002" data-direction="Premium / Editorial">
+  <svg class="draw" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="200" cy="200" r="180"/><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="24"/><line x1="200" y1="0" x2="200" y2="400"/><line x1="0" y1="200" x2="400" y2="200"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s09-002-title">
 
-    <p class="eyebrow">The firm, in figures</p>
-    <h2 id="con-s09-002-title">The number is the part <em>nobody can evaluate</em>.</h2>
-    <p class="stand">Which is why, on this page, it is smaller than the sentence about it. <b>There are four figures here and four different kinds of figure</b> &mdash; a fixed point, a running total, a snapshot and a single extreme &mdash; and the usual row of four identical boxes is what stops a reader noticing the difference.</p>
+    <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="9" cy="12" r="1.5"/><path d="M15 12h7v4h-7"/></svg>The firm, in figures</p>
+    <h2 id="con-s09-002-title">The number is the part <em>nobody can evaluate.</em></h2>
+    <p class="lead">Which is why, on this page, it is smaller than the sentence about it. There are four figures here and four different kinds of figure &mdash; a fixed point, a running total, a snapshot and a single extreme &mdash; and the usual row of four identical boxes is what stops a reader noticing the difference.</p>
 
-    <div class="row">
-      <div class="note">
-        <span class="kind k-point">A fixed point</span>
-        <p class="label">Year founded</p>
-        <p class="value"><span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span></p>
-        <p class="basis">Under this name since<span class="slot"><span class="vh">Year the current trading name was adopted</span><span aria-hidden="true">&mdash;</span></span></p>
-      </div>
-      <div class="say">
-        <h3>A date is not a score</h3>
-        <p>It is the one figure in a stats band that cannot be improved by doing good work, and it does not grow because a firm is any better this year than last. It grows because time passed.</p>
-        <p><b>The second line is the one worth reading.</b> Firms change names after a bad job, after an insolvency, after a sale; a long history and a short trading name are a combination worth asking about, and we would rather print both than the flattering one.</p>
-      </div>
+    <article class="ch">
+      <div><p class="kind"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12h20"/><circle cx="8" cy="12" r="2.5"/></svg>A fixed point</p><h3>Year founded</h3><span class="slot"><span class="vh">Year the firm was founded</span><span aria-hidden="true">&mdash;</span></span><dl class="rec"><div><dt>Under this name since</dt><dd><span class="s"><span class="vh">Year the current trading name was adopted</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl></div>
+      <div class="an"><p class="t">A date is not a score</p><p>It is the one figure in a stats band that cannot be improved by doing good work, and it does not grow because a firm is any better this year than last. It grows because time passed.</p><p>The second line is the one worth reading. Firms change names after a bad job, after an insolvency, after a sale; a long history and a short trading name are a combination worth asking about, and we would rather print both than the flattering one.</p></div>
+    </article>
+
+    <article class="ch">
+      <div><p class="kind"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h4v-6H4zM10 20h4V9h-4zM16 20h4V4h-4z"/></svg>A running total</p><h3>Projects completed</h3><span class="slot"><span class="vh">Number of projects completed</span><span aria-hidden="true">&mdash;</span></span><dl class="rec"><div><dt>Counted since</dt><dd><span class="s"><span class="vh">Year the count starts from</span><span aria-hidden="true">&mdash;</span></span></dd></div><div><dt>A project means</dt><dd><span class="s"><span class="vh">Definition of a counted project</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl></div>
+      <div class="an"><p class="t">A total with no start date can be any number you like</p><p>Counted from the founding year it means one thing; counted from last spring it means another; and the industry convention is to leave the question open and let the reader assume whichever is more impressive.</p><p>The definition matters as much as the count. A firm counting every call-out will always beat one counting contracts, and neither number tells you anything until you know which of the two you are looking at.</p></div>
+    </article>
+
+    <article class="ch">
+      <div><p class="kind"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6v12M20 6v12M4 12h16"/></svg>A snapshot</p><h3>People employed</h3><span class="slot"><span class="vh">Number of people employed</span><span aria-hidden="true">&mdash;</span></span><dl class="rec"><div><dt>As at</dt><dd><span class="s"><span class="vh">Date the headcount was taken</span><span aria-hidden="true">&mdash;</span></span></dd></div><div><dt>On our own books</dt><dd><span class="s"><span class="vh">Number directly employed</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl></div>
+      <div class="an"><p class="t">True on the day it was counted, and different next month</p><p>Headcount in this industry moves with the order book. A figure printed without a date is being presented as permanent when it is provisional, and the provisional version is the honest one.</p><p>The split is the part that tells you something. How many of those people are on our own books rather than on somebody else&rsquo;s is a different question from how many are on site, and the capabilities page is where we answer it properly.</p></div>
+    </article>
+
+    <article class="ch">
+      <div><p class="kind"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20v-3M8 20v-4M11 20v-14M14 20v-3M17 20v-4M20 20v-3"/></svg>A single extreme</p><h3>Largest project by value</h3><span class="slot"><span class="vh">Value of the largest project</span><span aria-hidden="true">&mdash;</span></span><dl class="rec"><div><dt>That one job, completed</dt><dd><span class="s"><span class="vh">Year the largest project completed</span><span aria-hidden="true">&mdash;</span></span></dd></div></dl></div>
+      <div class="an"><p class="t">The largest project we have done is not the size of project we usually do</p><p>This is the figure most designed to be misread, and the misreading runs in the direction that costs a client something: it is the one that makes somebody with an ordinary job decide they are too small to bother us with.</p><p>They are not, and it is one job. An extreme is not an average, a typical value or a floor, and printing it beside three other numbers in an identical box invites all three of those readings at once.</p></div>
+    </article>
+
+    <div class="tags">
+      <h3>The only thing here without a number attached</h3>
+      <div><p>Every figure above is a reserved field. The sectors and trades are the one part we can state outright, because they are not quantities &mdash; and you can check them against any job we have run.</p><ul><li>Healthcare</li><li>Education</li><li>Industrial</li><li>Retail</li><li>Civic</li><li>Residential</li><li class="t">Groundworks</li><li class="t">Concrete frame</li><li class="t">Fit-out</li><li class="t">Refurbishment</li><li class="t">Civils</li></ul></div>
     </div>
 
-    <div class="row">
-      <div class="note">
-        <span class="kind k-total">A running total</span>
-        <p class="label">Projects completed</p>
-        <p class="value"><span class="slot"><span class="vh">Number of projects completed</span><span aria-hidden="true">&mdash;</span></span></p>
-        <p class="basis">Counted since<span class="slot"><span class="vh">Year the count starts from</span><span aria-hidden="true">&mdash;</span></span><br>A project means<span class="slot"><span class="vh">Definition of a counted project</span><span aria-hidden="true">&mdash;</span></span></p>
-      </div>
-      <div class="say">
-        <h3>A total with no start date can be any number you like</h3>
-        <p>Counted from the founding year it means one thing; counted from last spring it means another; and the industry convention is to leave the question open and let the reader assume whichever is more impressive.</p>
-        <p><b>The definition matters as much as the count.</b> A firm counting every call-out will always beat one counting contracts, and neither number tells you anything until you know which of the two you are looking at.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="note">
-        <span class="kind k-snap">A snapshot</span>
-        <p class="label">People employed</p>
-        <p class="value"><span class="slot"><span class="vh">Number of people employed</span><span aria-hidden="true">&mdash;</span></span></p>
-        <p class="basis">As at<span class="slot"><span class="vh">Date the headcount was taken</span><span aria-hidden="true">&mdash;</span></span><br>On our own books<span class="slot"><span class="vh">Number directly employed</span><span aria-hidden="true">&mdash;</span></span></p>
-      </div>
-      <div class="say">
-        <h3>True on the day it was counted, and different next month</h3>
-        <p>Headcount in this industry moves with the order book. A figure printed without a date is being presented as permanent when it is provisional, and the provisional version is the honest one.</p>
-        <p><b>The split is the part that tells you something.</b> How many of those people are on our own books rather than on somebody else's is a different question from how many are on site, and the capabilities page is where we answer it properly.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="note">
-        <span class="kind k-extreme">A single extreme</span>
-        <p class="label">Largest project by value</p>
-        <p class="value"><span class="slot"><span class="vh">Value of the largest project</span><span aria-hidden="true">&mdash;</span></span></p>
-        <p class="basis">That one job, completed<span class="slot"><span class="vh">Year the largest project completed</span><span aria-hidden="true">&mdash;</span></span></p>
-      </div>
-      <div class="say">
-        <h3>The largest project we have done is not the size of project we usually do</h3>
-        <p>This is the figure most designed to be misread, and the misreading runs in the direction that costs a client something: it is the one that makes somebody with an ordinary job decide they are too small to bother us with.</p>
-        <p><b>They are not, and it is one job.</b> An extreme is not an average, a typical value or a floor, and printing it beside three other numbers in an identical box invites all three of those readings at once.</p>
-      </div>
-    </div>
-
-    <div class="close">
-      <div>
-        <h3>The only thing here without a number attached</h3>
-        <p><b>Every figure above is a reserved field.</b> The sectors and trades are the one part we can state outright, because they are not quantities &mdash; and you can check them against any job we have run.</p>
-        <ul class="chips">
-          <li>Healthcare</li><li>Education</li><li>Industrial</li><li>Retail</li><li>Civic</li><li>Residential</li>
-          <li>Groundworks</li><li>Concrete frame</li><li>Fit-out</li><li>Refurbishment</li><li>Civils</li>
-        </ul>
-      </div>
-      <div data-refusal>
-        <h3>And the numbers that are not here at all</h3>
-        <p><b>No happy clients</b> &mdash; that is a client list with a compliment attached, and nobody ran the survey. <b>No satisfaction or on-time percentage</b>, because both assert a measurement system and the definition of on time belongs to whoever reports it. No awards: a body we chose, making a judgement we paid to enter.</p>
-        <p>No safety figure, for a harder reason set out on the safety page. <b>If a figure is countable and it is not one of the four above, it is a claim rather than a count.</b></p>
-      </div>
+    <div class="foot">
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>And the numbers that are not here at all</h3>
+      <div><p>No happy clients &mdash; that is a client list with a compliment attached, and nobody ran the survey. No satisfaction or on-time percentage, because both assert a measurement system and the definition of on time belongs to whoever reports it. No awards: a body we chose, making a judgement we paid to enter.</p><p>No safety figure, for a harder reason set out on the safety page. If a figure is countable and it is not one of the four above, it is a claim rather than a count.</p></div>
     </div>
 
   </section>

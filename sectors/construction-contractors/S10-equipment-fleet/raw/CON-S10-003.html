@@ -10,475 +10,164 @@
 
   Study ID       : CON-S10-003
   Sector         : Construction & Contractors (CON)
-  Section        : CON-S10 — Equipment Fleet
+  Section        : CON-S10 — Equipment & Fleet
   Direction      : Structured / Visual Modular
-  Reference      : None supplied for this section.
-  Layout model   : The access ladder — four tiers as full-width bands, each opened by a drawn gate
-                   whose gap widens tier by tier, with the plant that fits beneath it. The fourth
-                   tier is drawn broken, because it is the one we send elsewhere
-  Density        : High
-  Media mode     : One reserved plant area, machinery in use. Never at rest.
-  Interaction    : None (static; no JavaScript)
-  The device     : **The gate, drawn.** Ask any groundworker what they want to know about a job and
-                   they ask about access before volume. So the organising fact is what physically
-                   fits through the opening, and each tier carries a gate whose gap widens &mdash;
-                   two posts and the space between them, built from elements rather than pictured.
-  The fourth tier : Drawn with broken posts because there is no gate: it needs a road closure or a
-                   crane, and that is a specialist with a permit and a programme of its own. A plant
-                   page that pretends otherwise is selling a machine into a job it cannot reach.
-  Not a table    : The direction's trap. The bands are unequal &mdash; the tiers carry different
-                   numbers of families and different amounts of copy &mdash; and each is headed by
-                   a drawn object rather than a cell.
-  Deliberately not : No make, model, weight, reach, capacity or tonnage. The gate gap is drawn
-                   rather than dimensioned, precisely so that no measurement is asserted.
-  Content note   : Kinds of plant are generic vocabulary. Machines held, ticketed operators and
-                   fitters are reserved fields. No digit in visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 4
+                   four times: the four access tiers as full-width bands alternating paper and
+                   band tone under a tape rule, each headed by a drawn gate — two posts and a
+                   gap that widens tier by tier, an inline construction figure at --line-strong
+                   with no dimension on it — beside the tier name at display size, and its
+                   machines as bordered cells with ANSWERS and the reserved HELD count. Tier
+                   four's cells hold the not-ours answer. A 3:1 plant field above; WHAT IS NOT
+                   ON THIS PAGE as a bordered note. Drawing layer: a dimension line with
+                   running ticks behind the head. V1 is kept whole.
+  Layout model   : Head split. 3:1 field. Four tier bands with drawn gates and bordered
+                   machine cells. Bordered refusal note.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : One reserved plant field, 3:1. Ten reserved counts.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No make, model, weight, reach, capacity, tonnage, hours, value, rating,
+                   client or project name. The gates are drawn, not dimensioned. Inline SVG.
 -->
 
 <meta name="study-id" content="CON-S10-003">
 <meta name="sector" content="Construction &amp; Contractors">
 <meta name="sector-prefix" content="CON">
 <meta name="section-id" content="CON-S10">
-<meta name="section-name" content="Equipment Fleet">
+<meta name="section-name" content="Equipment &amp; Fleet">
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Four access tiers as bands, each headed by a drawn gate of widening gap">
-<meta name="density" content="high">
-<meta name="media-mode" content="one-reserved-area-in-use">
+<meta name="theme" content="003 Steel &amp; Structural Blue">
+<meta name="layout-model" content="Head split; 3:1 plant field; four alternating tier bands each headed by a drawn gate of widening gap beside the tier at display size, with bordered machine cells carrying ANSWERS and reserved HELD counts; bordered refusal note; dimension line behind">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-plant-field-ten-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S10-003 — Equipment Fleet, Structured / Visual Modular</title>
+<title>CON-S10-003 — Equipment &amp; Fleet, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #e8e8e8; }
+body { margin: 0; background: #edf0f2; }
 
-/* Scoped study styles — namespaced to .con-s10-003 */
 .con-s10-003 {
-  --ink: #111111;
-  --ink-soft: #7a7a7a;
-  --ink-faint: #969696;
-  --paper: #e8e8e8;
-  --card: #ffffff;
-  --line: #ececec;
-  --rule: #d2d2d2;
-  --field: #ececec;
-  --site: #444444;
-  --t1: #111111;
-  --t2: #2b2b2b;
-  --t3: #444444;
-  --slot-a: #b4b4b4;
-  --slot-b: #969696;
-  --on-slot: #ffffff;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #edf0f2; --ink: #0f1316; --muted: #57616a; --line: #d2d9de; --line-strong: #0f1316;
+  --media: #dfe4e8; --band: #e4e8eb; --accent: #1f5fd0;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s10-003 *,
-.con-s10-003 *::before,
-.con-s10-003 *::after { box-sizing: inherit; }
-.con-s10-003 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s10-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s10-003 *, .con-s10-003 *::before, .con-s10-003 *::after { box-sizing: inherit; }
+.con-s10-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s10-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s10-003 .draw { position: absolute; left: 0; right: 0; top: 0; height: 22rem; pointer-events: none; color: var(--line); }
+.con-s10-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s10-003 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s10-003 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s10-003 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s10-003 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s10-003 h2 em { font-style: normal; color: var(--accent); }
+.con-s10-003 .lead { margin: 0 0 0.3rem; max-width: 26rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
+.con-s10-003 .media { position: relative; aspect-ratio: 3 / 1; margin-top: clamp(1.6rem, 3vw, 3rem); background: var(--media); border-top: 3px solid var(--accent); }
+.con-s10-003 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Head */
-.con-s10-003 .head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: clamp(14px, 2.4vw, 40px);
-  margin-bottom: clamp(16px, 2.2vw, 26px);
-}
-.con-s10-003 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s10-003 h2 {
-  margin: 0;
-  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
-  line-height: 1.04;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 21ch;
-}
-.con-s10-003 .head p { margin: 0; max-width: 42ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
-.con-s10-003 .head p b { color: var(--ink); font-weight: 650; }
+.con-s10-003 .tiers { margin-top: clamp(1.4rem, 2.6vw, 2.6rem); border-top: 1px solid var(--line-strong); }
+.con-s10-003 .tier { display: grid; grid-template-columns: minmax(16rem, 0.6fr) minmax(0, 1.4fr); gap: clamp(1.4rem, 2.6vw, 3rem); align-items: start; padding: clamp(1.4rem, 2.6vw, 2.6rem) clamp(1rem, 2vw, 2rem); border-bottom: 1px solid var(--line-strong); }
+.con-s10-003 .tier:nth-child(even) { background: var(--band); }
+.con-s10-003 .gate { width: 100%; max-width: 16rem; height: 5rem; color: var(--line-strong); }
+.con-s10-003 .ph { margin: 0.6rem 0 0.3rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s10-003 h3 { margin: 0 0 0.6rem; font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 2.4rem); line-height: 0.92; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s10-003 .tier > div > p { margin: 0; max-width: 24rem; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s10-003 .cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s10-003 .cell { display: flex; flex-direction: column; min-width: 0; padding: 1rem 1.1rem 1.1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s10-003 .cell h4 { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.5rem; font-weight: 800; font-size: 0.92rem; line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; }
+.con-s10-003 .cell h4 .ico { width: 1.1rem; height: 1.1rem; color: var(--accent); }
+.con-s10-003 .cell p { margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.45; }
+.con-s10-003 .cell p strong { color: var(--ink); font-size: 0.52rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; margin-right: 0.3rem; }
+.con-s10-003 .dep { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; margin: auto 0 0; padding-top: 0.8rem; }
+.con-s10-003 .dep dt { margin: 0; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s10-003 .dep dd { margin: 0; }
+.con-s10-003 .slot { display: inline-flex; align-items: center; justify-content: center; min-width: 4rem; height: 2.2rem; padding: 0 0.6rem; border: 1px solid var(--line-strong); border-radius: 2px; background: var(--paper); color: var(--ink); font-size: 1.4rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.con-s10-003 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s10-003 .t4 .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.con-s10-003 .t4 h4 .ico, .con-s10-003 .t4 .cell p strong { color: var(--accent); }
 
-.con-s10-003 .shot {
-  border-radius: 22px;
-  overflow: hidden;
-  height: clamp(140px, 15vw, 230px);
-  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(13px, 1.6vw, 20px);
-  margin-bottom: clamp(16px, 2.2vw, 26px);
-}
-.con-s10-003 .shot span {
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.84;
-}
+.con-s10-003 .not { display: grid; grid-template-columns: minmax(12rem, 0.5fr) minmax(0, 1.5fr); gap: clamp(1.2rem, 2.4vw, 2.6rem); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding: 1.2rem 1.5rem 1.4rem; border: 1px solid var(--line-strong); }
+.con-s10-003 .not .lab { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.6rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s10-003 .not .lab .ico { width: 1.2rem; height: 1.2rem; }
+.con-s10-003 .not ul { margin: 0; padding: 0; list-style: none; }
+.con-s10-003 .not li { padding: 0.3rem 0; border-top: 1px solid var(--line); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.con-s10-003 .not p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s10-003 .not p + p { margin-top: 0.6rem; }
 
-/* Tier bands */
-.con-s10-003 .tier {
-  border-radius: 22px;
-  background: var(--card);
-  padding: clamp(15px, 1.9vw, 26px);
-  margin-bottom: clamp(11px, 1.4vw, 16px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1.58fr);
-  gap: clamp(16px, 2.6vw, 44px);
-  align-items: start;
-}
-.con-s10-003 .tier.out { background: transparent; border: 2px dashed var(--rule); }
-
-/* The gate, drawn rather than dimensioned */
-.con-s10-003 .gate {
-  display: flex;
-  align-items: flex-end;
-  margin-bottom: clamp(11px, 1.4vw, 16px);
-}
-.con-s10-003 .gate i {
-  display: block;
-  width: 7px;
-  height: clamp(40px, 4.6vw, 62px);
-  background: var(--tone, var(--ink));
-  border-radius: 10px 2px 0 0;
-}
-.con-s10-003 .g1 { gap: clamp(14px, 1.8vw, 22px); }
-.con-s10-003 .g2 { gap: clamp(34px, 4.4vw, 56px); }
-.con-s10-003 .g3 { gap: clamp(58px, 7.4vw, 96px); }
-.con-s10-003 .g4 { gap: clamp(58px, 7.4vw, 96px); }
-.con-s10-003 .g4 i {
-  background: transparent;
-  border-left: 7px dashed var(--rule);
-  width: 7px;
-  border-radius: 0;
-}
-.con-s10-003 .t-one { --tone: var(--t1); }
-.con-s10-003 .t-two { --tone: var(--t2); }
-.con-s10-003 .t-three { --tone: var(--t3); }
-
-.con-s10-003 .tname {
-  margin: 0 0 6px;
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s10-003 h3 {
-  margin: 0 0 clamp(9px, 1.2vw, 12px);
-  font-size: clamp(1.298rem, 1.77vw, 1.605rem);
-  line-height: 1.14;
-  letter-spacing: -0.022em;
-  font-weight: 700;
-  max-width: 20ch;
-}
-.con-s10-003 .means { margin: 0; max-width: 40ch; font-size: 1rem; line-height: 1.54; color: var(--ink-soft); }
-.con-s10-003 .means b { color: var(--ink); font-weight: 650; }
-
-/* Plant that fits */
-.con-s10-003 .fits { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.3vw, 15px); }
-.con-s10-003 .fits.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.con-s10-003 .fits li { min-width: 0; }
-.con-s10-003 .item {
-  height: 100%;
-  border-radius: 22px;
-  background: var(--field);
-  padding: clamp(12px, 1.5vw, 17px);
-}
-.con-s10-003 .tier.out .item { background: transparent; border: 1px dashed var(--rule); }
-.con-s10-003 h4 { margin: 0 0 6px; font-size: 1.1rem; line-height: 1.2; letter-spacing: -0.014em; font-weight: 700; }
-.con-s10-003 .answers { margin: 0 0 8px; font-size: 1rem; line-height: 1.48; color: var(--ink-soft); }
-.con-s10-003 .answers .k { display: block; margin-bottom: 3px; font-size: 0.74rem; letter-spacing: 0.085em; text-transform: uppercase; font-weight: 700; color: var(--site); }
-.con-s10-003 .count {
-  margin: 0;
-  padding-top: 8px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
-  font-size: 0.74rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s10-003 .count .slot { min-width: 38px; padding: 1px 8px; border-radius: 16px; background: var(--card); text-align: center; letter-spacing: 0; }
-.con-s10-003 .tier.out .count .slot { background: var(--field); }
-
-/* Refusal */
-.con-s10-003 .refuse {
-  margin-top: clamp(12px, 1.6vw, 18px);
-  border-radius: 22px;
-  border: 2px dashed var(--rule);
-  padding: clamp(16px, 2.2vw, 28px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
-  gap: clamp(16px, 2.6vw, 44px);
-  align-items: start;
-}
-.con-s10-003 .refuse h3 { max-width: 18ch; }
-.con-s10-003 .none { margin: 0 0 clamp(11px, 1.4vw, 15px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
-.con-s10-003 .none li { padding: 5px 12px; border-radius: 999px; border: 1px dashed var(--rule); color: var(--ink-soft); font-size: 1rem; font-weight: 600; }
-.con-s10-003 .refuse p { margin: 0 0 10px; max-width: 76ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
-.con-s10-003 .refuse p:last-child { margin-bottom: 0; }
-.con-s10-003 .refuse p b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 1080px) {
-  .con-s10-003 .tier { grid-template-columns: minmax(0, 1fr); }
-  .con-s10-003 .fits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 660px) {
-  .con-s10-003 .fits, .con-s10-003 .fits.two { grid-template-columns: minmax(0, 1fr); }
-  .con-s10-003 .refuse { grid-template-columns: minmax(0, 1fr); }
-  .con-s10-003 h2, .con-s10-003 .head p, .con-s10-003 h3,
-  .con-s10-003 .means, .con-s10-003 .refuse p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s10-003 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s10-003 {
-  --v2-accent: #5e5e5e;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e0e0e0 0%, #e8e8e8 30%);
-  font-size: 1.06rem;
-}
-.con-s10-003 h2 { font-weight: 800; }
-.con-s10-003 h3, .con-s10-003 h4 { font-weight: 750; }
-.con-s10-003 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s10-003 .count .slot {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #d2d2d2;
-}
-.con-s10-003 .tier.out .item, .con-s10-003 .none li {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s10-003 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s10-003.con-s10-003 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s10-003.con-s10-003 .head h2, .con-s10-003.con-s10-003 .head h3, .con-s10-003.con-s10-003 .head h4, .con-s10-003.con-s10-003 .head b, .con-s10-003.con-s10-003 .head strong, .con-s10-003.con-s10-003 .head p b, .con-s10-003.con-s10-003 .head li b, .con-s10-003.con-s10-003 .head span b, .con-s10-003.con-s10-003 .head dt, .con-s10-003.con-s10-003 .head div b {
-  color: #ffffff;
-}
-.con-s10-003.con-s10-003 .head p, .con-s10-003.con-s10-003 .head li, .con-s10-003.con-s10-003 .head span, .con-s10-003.con-s10-003 .head dd, .con-s10-003.con-s10-003 .head div p, .con-s10-003.con-s10-003 .head div li, .con-s10-003.con-s10-003 .head p span, .con-s10-003.con-s10-003 .head .said, .con-s10-003.con-s10-003 .head .note {
-  color: #d2d2d2;
-}
-.con-s10-003.con-s10-003 .head .eyebrow, .con-s10-003.con-s10-003 .head .kicker, .con-s10-003.con-s10-003 .head .slot, .con-s10-003.con-s10-003 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s10-003.con-s10-003 .head i, .con-s10-003.con-s10-003 .head .bars i, .con-s10-003.con-s10-003 .head .lines i, .con-s10-003.con-s10-003 .head .measures i, .con-s10-003.con-s10-003 .head .bar, .con-s10-003.con-s10-003 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s10-003.con-s10-003 .head .plate, .con-s10-003.con-s10-003 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s10-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s10-003 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s10-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s10-003 .lead { text-align: left; } .con-s10-003 h2 { max-width: none; } .con-s10-003 .draw { display: none; } .con-s10-003 .tier { grid-template-columns: minmax(0, 1fr); } .con-s10-003 .tier > div > p { max-width: 36rem; } .con-s10-003 .cells { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .con-s10-003 .cells, .con-s10-003 .t4 .cells { grid-template-columns: minmax(0, 1fr); } .con-s10-003 .media { aspect-ratio: 16 / 10; } .con-s10-003 .not { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s10-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s10-003" data-study-id="CON-S10-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" viewBox="0 0 1440 352" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><line x1="0" y1="60" x2="1440" y2="60"/><path d="M96 48v24M288 48v24M480 48v24M672 48v24M864 48v24M1056 48v24M1248 48v24"/><line x1="0" y1="300" x2="1440" y2="300"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s10-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">The plant</p>
-        <h2 id="con-s10-003-title">Sorted by what fits through the gap</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M9 11h6l-1 8h-4zM12 3l3 2"/></svg>The plant</p>
+        <h2 id="con-s10-003-title">Sorted by what <em>fits through the gap.</em></h2>
       </div>
-      <p>Ask a groundworker what they want to know about a job and they ask about access before they ask about volume. <b>So the fleet is sorted by what can physically get in.</b></p>
+      <p class="lead">Ask a groundworker what they want to know about a job and they ask about access before they ask about volume. So the fleet is sorted by what can physically get in.</p>
     </div>
 
-    <div class="shot"><span>Plant media &mdash; a machine tracking through a restricted access, operator in it</span></div>
+    <div class="media" role="img" aria-label="Reserved plant field: a machine tracking through a restricted access, operator in it"><p class="slate" aria-hidden="true">Plant area &middot; 3:1 &middot; a machine tracking through a restricted access, operator in it</p></div>
 
-    <div class="tier t-one">
-      <div>
-        <span class="gate g1" aria-hidden="true"><i></i><i></i></span>
-        <p class="tname">Tier one</p>
-        <h3>Through a domestic gate</h3>
-        <p class="means">A back garden, a side return, an occupied terrace. <b>Anything full-size arrives and turns straight round again</b>, which is a wasted morning and an awkward phone call.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div><svg class="gate" viewBox="0 0 256 80" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 76h256"/><path d="M92 76V16h8v60M156 76V16h8v60"/><path d="M100 30h56M100 44h56M100 58h56"/></g></svg><p class="ph">Tier one</p><h3>Through a domestic gate</h3><p>A back garden, a side return, an occupied terrace. Anything full-size arrives and turns straight round again, which is a wasted morning and an awkward phone call.</p></div>
+        <div class="cells">
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M9 11h6l-1 8h-4zM12 3l3 2"/></svg>Micro excavator</h4><p><strong>Answers</strong>A gate somebody&rsquo;s bins live behind. Tracks rather than rolls, so a lawn survives it.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of micro excavators held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>Tracked barrow</h4><p><strong>Answers</strong>Muck out through a house or a side passage without a wheel touching the floor covering.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of tracked barrows held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18L21 8M3 14l18-10"/><circle cx="5" cy="16" r="2"/><circle cx="19" cy="6" r="2"/></svg>Conveyor</h4><p><strong>Answers</strong>Spoil out over a wall where nothing can be driven at all.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of conveyors held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+        </div>
       </div>
-      <ul class="fits">
-        <li>
-          <div class="item">
-            <h4>Micro excavator</h4>
-            <p class="answers"><span class="k">Answers</span>A gate somebody&rsquo;s bins live behind. Tracks rather than rolls, so a lawn survives it.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of micro excavators held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <h4>Tracked barrow</h4>
-            <p class="answers"><span class="k">Answers</span>Muck out through a house or a side passage without a wheel touching the floor covering.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of tracked barrows held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <h4>Conveyor</h4>
-            <p class="answers"><span class="k">Answers</span>Spoil out over a wall where nothing can be driven at all.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of conveyors held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-      </ul>
+
+      <div class="tier">
+        <div><svg class="gate" viewBox="0 0 256 80" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 76h256"/><path d="M56 76V12h8v64M192 76V12h8v64"/><path d="M64 30h128M64 44h128M64 58h128"/></g></svg><p class="ph">Tier two</p><h3>Through a site gate</h3><p>Ordinary access, a hardstanding, a compound with room to turn. Most of a job lives here, and so does most of the fleet.</p></div>
+        <div class="cells">
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M9 11h6l-1 8h-4zM12 3l3 2"/></svg>Tracked excavator</h4><p><strong>Answers</strong>The bulk of the dig, and a reach that lets it work from a stance the engineer has agreed.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of tracked excavators held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16h13V8H2zM15 11h4l3 3v2h-7"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>Site dumper</h4><p><strong>Answers</strong>Muck away to the compound without a lorry ever coming past the gate.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of site dumpers held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="5"/><path d="M13 15h8v-4h-6"/><path d="M8 10V4h8"/></svg>Roller and compaction</h4><p><strong>Answers</strong>Formation and backfill &mdash; and where something next door must not move, pressed rather than driven.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of rollers and compaction units held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+        </div>
+      </div>
+
+      <div class="tier">
+        <div><svg class="gate" viewBox="0 0 256 80" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 76h256"/><path d="M20 76V8h8v68M228 76V8h8v68"/><path d="M28 30h200M28 44h200M28 58h200"/><path d="M96 76v-8h64v8"/></g></svg><p class="ph">Tier three</p><h3>Delivered on a low-loader, and it needs somewhere to stand</h3><p>It does not drive itself in, and the standing is the harder half: a slab that will take it, or mats and a lighter machine working further out.</p></div>
+        <div class="cells">
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M7 21V3h13M20 3v6M7 7l6-4M16 3v4"/></svg>Telehandler</h4><p><strong>Answers</strong>Height and reach from inside the boundary, so a road closure is not required to lift a pallet to a third floor.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of telehandlers held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M9 11h6l-1 8h-4zM12 3l3 2"/></svg>Larger tracked plant</h4><p><strong>Answers</strong>Deeper digs and bulk earthworks &mdash; with the stance, the mats and the loadings agreed before it is booked.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of larger tracked machines held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+        </div>
+      </div>
+
+      <div class="tier t4">
+        <div><svg class="gate" viewBox="0 0 256 80" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M0 76h256"/><path d="M4 76V4h8v72M244 76V4h8v72"/><path d="M40 4h176"/><path d="M128 4v20"/></g></svg><p class="ph">Tier four</p><h3>Needs a road closure or a crane</h3><p>Not us. That is a specialist, a permit and a programme of its own, and it should be priced by somebody who does it every week.</p></div>
+        <div class="cells">
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>Mobile and tower cranes</h4><p><strong>Answers</strong>Nothing we own. We coordinate the lift and the interfaces; the lift itself is theirs.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of cranes held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+          <div class="cell"><h4><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>Piling rigs</h4><p><strong>Answers</strong>Also not ours. Where a job leads with piling, a specialist will be better and cheaper and we will say so at tender.</p><dl class="dep"><dt>Held</dt><dd><span class="slot"><span class="vh">Number of piling rigs held</span><span aria-hidden="true">&mdash;</span></span></dd></dl></div>
+        </div>
+      </div>
     </div>
 
-    <div class="tier t-two">
+    <div class="not">
       <div>
-        <span class="gate g2" aria-hidden="true"><i></i><i></i></span>
-        <p class="tname">Tier two</p>
-        <h3>Through a site gate</h3>
-        <p class="means">Ordinary access, a hardstanding, a compound with room to turn. <b>Most of a job lives here</b>, and so does most of the fleet.</p>
+        <p class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>What is not on this page</p>
+        <ul><li>Makes and models</li><li>Weights and tonnages</li><li>Reach and capacity</li><li>Hours run</li><li>Fleet value</li></ul>
       </div>
-      <ul class="fits">
-        <li>
-          <div class="item">
-            <h4>Tracked excavator</h4>
-            <p class="answers"><span class="k">Answers</span>The bulk of the dig, and a reach that lets it work from a stance the engineer has agreed.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of tracked excavators held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <h4>Site dumper</h4>
-            <p class="answers"><span class="k">Answers</span>Muck away to the compound without a lorry ever coming past the gate.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of site dumpers held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <h4>Roller and compaction</h4>
-            <p class="answers"><span class="k">Answers</span>Formation and backfill &mdash; and where something next door must not move, pressed rather than driven.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of rollers and compaction units held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="tier t-three">
       <div>
-        <span class="gate g3" aria-hidden="true"><i></i><i></i></span>
-        <p class="tname">Tier three</p>
-        <h3>Delivered on a low-loader, and it needs somewhere to stand</h3>
-        <p class="means">It does not drive itself in, and <b>the standing is the harder half</b>: a slab that will take it, or mats and a lighter machine working further out.</p>
-      </div>
-      <ul class="fits two">
-        <li>
-          <div class="item">
-            <h4>Telehandler</h4>
-            <p class="answers"><span class="k">Answers</span>Height and reach from inside the boundary, so a road closure is not required to lift a pallet to a third floor.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of telehandlers held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <h4>Larger tracked plant</h4>
-            <p class="answers"><span class="k">Answers</span>Deeper digs and bulk earthworks &mdash; with the stance, the mats and the loadings agreed before it is booked.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of larger tracked machines held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="tier out">
-      <div>
-        <span class="gate g4" aria-hidden="true"><i></i><i></i></span>
-        <p class="tname">Tier four</p>
-        <h3>Needs a road closure or a crane</h3>
-        <p class="means"><b>Not us.</b> That is a specialist, a permit and a programme of its own, and it should be priced by somebody who does it every week.</p>
-      </div>
-      <ul class="fits two">
-        <li>
-          <div class="item">
-            <h4>Mobile and tower cranes</h4>
-            <p class="answers"><span class="k">Answers</span>Nothing we own. We coordinate the lift and the interfaces; the lift itself is theirs.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of cranes held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-        <li>
-          <div class="item">
-            <h4>Piling rigs</h4>
-            <p class="answers"><span class="k">Answers</span>Also not ours. Where a job leads with piling, a specialist will be better and cheaper and we will say so at tender.</p>
-            <p class="count"><span>Held</span><span class="slot"><span class="vh">Number of piling rigs held</span><span aria-hidden="true">&mdash;</span></span></p>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="refuse" data-refusal>
-      <h3>What is not on this page</h3>
-      <div>
-        <ul class="none">
-          <li>Makes and models</li><li>Weights and tonnages</li><li>Reach and capacity</li><li>Hours run</li><li>Fleet value</li>
-        </ul>
-        <p><b>The gates above are drawn rather than dimensioned</b>, deliberately. A measurement printed here would be a specification, and a specification tells you what a machine can do somewhere rather than whether it fits your opening.</p>
-        <p>Send us a photograph of your access and we will tell you which tier you are in. <b>Every picture on this page is of a machine working with somebody in it</b>, because a clean machine on a forecourt is an advertisement rather than evidence.</p>
+        <p>The gates above are drawn rather than dimensioned, deliberately. A measurement printed here would be a specification, and a specification tells you what a machine can do somewhere rather than whether it fits your opening.</p>
+        <p>Send us a photograph of your access and we will tell you which tier you are in. Every picture on this page is of a machine working with somebody in it, because a clean machine on a forecourt is an advertisement rather than evidence.</p>
       </div>
     </div>
 

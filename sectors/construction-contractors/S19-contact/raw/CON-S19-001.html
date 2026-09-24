@@ -12,19 +12,24 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S19 — Contact
   Direction      : Universal / Safe
-  Theme          : 001 Site White — see ../../CONSTRUCTION-THEME-CONTRACT.md
-  Layout model   : Split head with a reserved hoarding area, a saturated out-of-hours band, then
-                   six routing rows ordered by urgency
-  Density        : Low-medium (164 visible words; 812 before the text-budget rework)
-  Media mode     : One reserved media area — the site hoarding a neighbour reads the duty number
-                   from. It is the only photograph this role can honestly carry: S27 owns offices
-                   and the sector direction forbids a map here.
-  Interaction    : None (static; no JavaScript)
-  Content note   : Every number, mailbox and name is a reserved field. No response-time promise,
-                   no service level, no map, no general enquiry form, no header.
-  Rework note    : The prose that carried the routing argument was replaced by the routing itself.
-                   The argument is now made by the order of the rows and by what each row says the
-                   person who answers can settle — which is what the section README asked for.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3
+                   with 7 inside it: the hoarding as a bare 21:9 field with a slate label; OUT OF
+                   HOURS as a tape-topped band with a phone icon and the reserved duty number as
+                   a bordered slot at display scale; the six routes as bordered rows sharing one
+                   hairline system, in urgency order — a word index at counter scale, a stroke
+                   icon (hard hat / house / wrench / exchange / badge / clipboard), the route in
+                   tracked uppercase, the one sentence of what the answerer can do, and the
+                   reserved line or mailbox as a bordered slot — the first row on the band tone;
+                   the site-visit refusal as a bordered cell with a stop octagon. Drawing layer:
+                   setting-out grid behind the head. V1 is kept whole, its numerals replaced by
+                   word indices.
+  Layout model   : Head split. 21:9 hoarding field. Tape-topped out-of-hours band. Six bordered
+                   route rows. Bordered refusal cell.
+  Density        : Compact — V1's spine kept in full
+  Media mode     : One reserved hoarding field, 21:9. Seven reserved fields.
+  Interaction    : None (static; no JavaScript). No form.
+  Content note   : Every number, mailbox and name reserved. No response time, map or opening
+                   hours. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S19-001">
@@ -35,206 +40,82 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="theme" content="001 Site White">
-<meta name="layout-model" content="Split head, out-of-hours band, six urgency-ordered routing rows">
-<meta name="density" content="low-medium">
-<meta name="media-mode" content="one-reserved-hoarding-area">
+<meta name="theme" content="001 Site White &amp; Safety Orange">
+<meta name="layout-model" content="Head split; 21:9 reserved hoarding field; tape-topped out-of-hours band with the reserved duty number at display scale; six bordered route rows in urgency order with word indices, icons and reserved slots, the first on the band tone; bordered site-visit refusal; setting-out grid behind the head">
+<meta name="density" content="compact">
+<meta name="media-mode" content="one-reserved-hoarding-field-seven-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S19-001 — Contact, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f5f5f3; }
+body { margin: 0; background: #f4f4f1; }
 
-/* Scoped study styles — namespaced to .con-s19-001 */
 .con-s19-001 {
-  --paper: #f5f5f3;
-  --ink: #101112;
-  --ink-soft: #5a5d61;
-  --line: #dcdcd8;
-  --slot: #e6e6e2;
-  --slot-edge: #b9b9b3;
-  --slot-ink: #55585b;
-  --accent: #e8541f;
-  --accent-ink: #ffffff;
-  --focus: #101112;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f4f4f1; --ink: #121314; --muted: #5b5e62; --line: #d8d8d3; --line-strong: #121314;
+  --media: #e3e3de; --band: #ebebe6; --accent: #d9481a;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s19-001 *,
-.con-s19-001 *::before,
-.con-s19-001 *::after { box-sizing: inherit; }
-.con-s19-001 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 8px; }
-.con-s19-001 .vh {
-  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
-  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
-}
+.con-s19-001 *, .con-s19-001 *::before, .con-s19-001 *::after { box-sizing: inherit; }
+.con-s19-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s19-001 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s19-001 .draw { position: absolute; right: 0; top: 0; width: 46%; height: 18rem; pointer-events: none; color: var(--line); }
+.con-s19-001 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s19-001 .head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr); gap: 3rem; align-items: end; }
+.con-s19-001 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s19-001 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s19-001 h2 { margin: 0; max-width: 14ch; font-weight: 800; font-size: clamp(2.3rem, 4.6vw, 5rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s19-001 h2 em { font-style: normal; color: var(--accent); }
+.con-s19-001 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s19-001 .head > p b { color: var(--ink); }
 
-/* --- Head: the line left, the hoarding right --- */
-.con-s19-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(28px, 4vw, 64px);
-  align-items: end;
-}
-.con-s19-001 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(14px, 1.8vw, 20px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.con-s19-001 h2 {
-  margin: 0;
-  font-size: clamp(2.2rem, 4.4vw, 3.5rem);
-  line-height: 1.02;
-  letter-spacing: -0.035em;
-  font-weight: 800;
-  max-width: 15ch;
-}
-.con-s19-001 .lead {
-  margin: clamp(16px, 2vw, 24px) 0 0;
-  max-width: 44ch;
-  color: var(--ink-soft);
-  font-size: clamp(1.04rem, 1.2vw, 1.16rem);
-}
-.con-s19-001 .hoarding {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 14px;
-  background: var(--slot);
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-}
-.con-s19-001 .hoarding span {
-  color: var(--slot-ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.7;
-}
+.con-s19-001 .media { position: relative; margin-top: clamp(2rem, 4vw, 3.6rem); aspect-ratio: 21 / 9; background: var(--media); border-radius: 2px; }
+.con-s19-001 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; max-width: 28rem; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; line-height: 1.5; text-transform: uppercase; }
 
-/* --- The out-of-hours band, the one saturated surface --- */
-.con-s19-001 .band {
-  margin: clamp(30px, 3.6vw, 52px) 0 0;
-  padding: clamp(22px, 2.8vw, 34px) clamp(22px, 3vw, 38px);
-  border-radius: 14px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(18px, 3vw, 44px);
-  align-items: center;
-}
-.con-s19-001 .band h3 {
-  margin: 0 0 6px;
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
-.con-s19-001 .band p { margin: 0; max-width: 58ch; font-size: clamp(1.04rem, 1.24vw, 1.2rem); }
-.con-s19-001 .duty {
-  display: grid;
-  place-items: center;
-  min-width: clamp(120px, 13vw, 172px);
-  min-height: 64px;
-  padding: 8px 18px;
-  border: 2px dashed var(--accent-ink);
-  border-radius: 12px;
-  font-size: clamp(1.4rem, 2vw, 1.8rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
+.con-s19-001 .ooh { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.8fr); gap: 2rem; align-items: center; margin-top: 1.2rem; padding: 1.3rem 1.4rem 1.4rem; border-top: 3px solid var(--accent); background: var(--band); }
+.con-s19-001 .ooh h3 { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 0.5rem; font-weight: 800; font-size: clamp(1.4rem, 2.3vw, 2.1rem); line-height: 1; letter-spacing: -0.025em; text-transform: uppercase; }
+.con-s19-001 .ooh h3 .ico { width: 1.6rem; height: 1.6rem; color: var(--accent); }
+.con-s19-001 .ooh p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.con-s19-001 .ooh p b { color: var(--ink); }
+.con-s19-001 .duty { display: grid; gap: 0.3rem; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s19-001 .duty .slot { height: 4.4rem; font-size: 3.2rem; border-color: var(--line-strong); background: var(--paper); }
+.con-s19-001 .slot { display: inline-flex; align-items: center; width: 100%; height: 2.4rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-weight: 400; letter-spacing: 0; font-size: 1.6rem; line-height: 1; }
+.con-s19-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* --- Routing rows, ordered by urgency --- */
-.con-s19-001 .routes { margin: clamp(30px, 3.6vw, 52px) 0 0; padding: 0; list-style: none; }
-.con-s19-001 .routes li {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.1fr) minmax(0, 0.5fr);
-  gap: clamp(12px, 2.4vw, 36px);
-  align-items: baseline;
-  padding: clamp(16px, 2vw, 24px) 0;
-  border-top: 1px solid var(--line);
-}
-.con-s19-001 .routes li:last-child { border-bottom: 1px solid var(--line); }
-.con-s19-001 .what {
-  margin: 0;
-  font-weight: 750;
-  font-size: clamp(1.06rem, 1.32vw, 1.24rem);
-  letter-spacing: -0.012em;
-}
-.con-s19-001 .can { margin: 0; color: var(--ink-soft); }
-.con-s19-001 .field {
-  justify-self: end;
-  display: inline-grid;
-  place-items: center;
-  min-width: clamp(88px, 9vw, 124px);
-  padding: 7px 16px;
-  border: 1px dashed var(--slot-edge);
-  border-radius: 999px;
-  background: var(--slot);
-  color: var(--slot-ink);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
+.con-s19-001 .routes { list-style: none; margin: clamp(1.6rem, 3vw, 2.6rem) 0 0; padding: 0; border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); border-right: 1px solid var(--line-strong); }
+.con-s19-001 .r { display: grid; grid-template-columns: 7rem 3rem minmax(0, 1fr) 18rem; gap: 0 1rem; align-items: center; padding: 1rem 1.2rem 1.1rem; border-bottom: 1px solid var(--line-strong); }
+.con-s19-001 .r:first-child { background: var(--band); }
+.con-s19-001 .r p.ix { margin: 0; font-weight: 800; font-size: 1.9rem; line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; color: var(--ink); }
+.con-s19-001 .r:first-child .ix { color: var(--accent); }
+.con-s19-001 .r .ico.big { width: 2rem; height: 2rem; color: var(--accent); stroke-width: 1.4; }
+.con-s19-001 .r h3 { margin: 0 0 0.2rem; font-weight: 800; font-size: 1.15rem; line-height: 1.05; letter-spacing: -0.015em; text-transform: uppercase; }
+.con-s19-001 .r p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.45; }
+.con-s19-001 .r .rec { display: grid; gap: 0.25rem; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 
-/* --- The site-visit refusal --- */
-.con-s19-001 .foot {
-  margin: clamp(24px, 3vw, 38px) 0 0;
-  padding-left: clamp(14px, 1.6vw, 20px);
-  border-left: 3px solid var(--accent);
-  max-width: 62ch;
-  color: var(--ink-soft);
-}
-.con-s19-001 .foot b { color: var(--ink); font-weight: 750; }
+.con-s19-001 .refuse { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem 1.2rem; align-items: start; margin-top: clamp(1.6rem, 3vw, 2.6rem); padding: 1.2rem 1.3rem 1.3rem; border: 1px solid var(--line-strong); }
+.con-s19-001 .refuse .ico { width: 2rem; height: 2rem; color: var(--accent); stroke-width: 1.4; }
+.con-s19-001 .refuse p { margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.con-s19-001 .refuse p b { color: var(--ink); }
 
-/* --- Responsive ladder --- */
+@media (max-width: 1000px) {
+  .con-s19-001 .r { grid-template-columns: 6rem 2.4rem minmax(0, 1fr); }
+  .con-s19-001 .r .rec { grid-column: 2 / -1; margin-top: 0.6rem; max-width: 22rem; }
+}
 @media (max-width: 860px) {
-  .con-s19-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .con-s19-001 h2, .con-s19-001 .lead { max-width: none; }
-  .con-s19-001 .hoarding { aspect-ratio: 16 / 9; }
-  .con-s19-001 .band { grid-template-columns: minmax(0, 1fr); }
-  .con-s19-001 .duty { justify-self: start; }
-  .con-s19-001 .routes li { grid-template-columns: minmax(0, 1fr) auto; }
-  .con-s19-001 .can { grid-column: 1 / -1; }
+  .con-s19-001 .head, .con-s19-001 .ooh { grid-template-columns: minmax(0, 1fr); }
+  .con-s19-001 .media { aspect-ratio: 16 / 9; }
+  .con-s19-001 .draw { width: 70%; }
 }
 @media (max-width: 560px) {
-  .con-s19-001 .routes li { grid-template-columns: minmax(0, 1fr); }
-  .con-s19-001 .field { justify-self: start; }
-  .con-s19-001 .hoarding { aspect-ratio: 3 / 2; }
+  .con-s19-001 .r { grid-template-columns: 2.4rem minmax(0, 1fr); }
+  .con-s19-001 .ix { grid-column: 1 / -1; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .con-s19-001 * { transition: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .con-s19-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -242,57 +123,73 @@ body { margin: 0; background: #f5f5f3; }
 <div class="con-s19-001" data-study-id="CON-S19-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="con-s19-001-title">
 
+    <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <g stroke="currentColor" stroke-width="1" fill="none">
+        <path d="M0 20H100M0 40H100M0 60H100M0 80H100M20 0V100M40 0V100M60 0V100M80 0V100" vector-effect="non-scaling-stroke"/>
+      </g>
+    </svg>
+
     <div class="head">
       <div>
-        <p class="eyebrow">Contact</p>
-        <h2 id="con-s19-001-title">Ring the right phone first time.</h2>
-        <p class="lead">Six problems reach a contractor, and they do not share a number. The most urgent is first.</p>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Contact</p>
+        <h2 id="con-s19-001-title">Ring the right phone <em>first time.</em></h2>
       </div>
-      <div class="hoarding"><span>Site hoarding media area &mdash; the board<br>a neighbour reads the duty number from</span></div>
+      <p><b>Six problems reach a contractor, and they do not share a number.</b> The most urgent is first.</p>
     </div>
 
-    <div class="band">
+    <div class="media" role="img" aria-label="Site hoarding media area — the board a neighbour reads the duty number from"><p class="slate" aria-hidden="true">Site hoarding media area &mdash; the board a neighbour reads the duty number from</p></div>
+
+    <div class="ooh">
       <div>
-        <h3>Out of hours</h3>
-        <p>A real number rings a real phone. Whoever answers can make it safe. They cannot authorise work.</p>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Out of hours</h3>
+        <p><b>A real number rings a real phone.</b> Whoever answers can make it safe. They cannot authorise work.</p>
       </div>
-      <p class="duty"><span class="vh">Duty phone number, reserved</span><span aria-hidden="true">&mdash;</span></p>
+      <div class="duty">Duty phone<span class="slot"><span class="vh">Duty phone number, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
     </div>
 
-    <ul class="routes">
-      <li>
-        <p class="what">Something is happening on a site now</p>
-        <p class="can">Stopped, made safe, and written down.</p>
-        <span class="field"><span class="vh">Site line, reserved</span><span aria-hidden="true">&mdash;</span></span>
+    <ol class="routes">
+      <li class="r">
+        <p class="ix" aria-hidden="true">One</p>
+        <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15a8 8 0 0 1 16 0M2 15h20v3H2zM10 7h4v5h-4z"/></svg>
+        <div><h3>Something is happening on a site now</h3><p>Stopped, made safe, and written down.</p></div>
+        <div class="rec">Site line<span class="slot"><span class="vh">Site line, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
-      <li>
-        <p class="what">You live or work beside one</p>
-        <p class="can">What is happening, and when it stops.</p>
-        <span class="field"><span class="vh">Same number, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      <li class="r">
+        <p class="ix" aria-hidden="true">Two</p>
+        <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7M5 10v11h14V10M10 21v-6h4v6"/></svg>
+        <div><h3>You live or work beside one</h3><p>What is happening, and when it stops.</p></div>
+        <div class="rec">Same number<span class="slot"><span class="vh">Same number, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
-      <li>
-        <p class="what">A defect in a building we finished</p>
-        <p class="can">Somebody comes to look, and we say who pays.</p>
-        <span class="field"><span class="vh">Aftercare line, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      <li class="r">
+        <p class="ix" aria-hidden="true">Three</p>
+        <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.7 2.7-2.1-2.1z"/></svg>
+        <div><h3>A defect in a building we finished</h3><p>Somebody comes to look, and we say who pays.</p></div>
+        <div class="rec">Aftercare<span class="slot"><span class="vh">Aftercare line, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
-      <li>
-        <p class="what">You are a subcontractor or supplier</p>
-        <p class="can">Where your invoice is.</p>
-        <span class="field"><span class="vh">Accounts mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      <li class="r">
+        <p class="ix" aria-hidden="true">Four</p>
+        <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>
+        <div><h3>You are a subcontractor or supplier</h3><p>Where your invoice is.</p></div>
+        <div class="rec">Accounts<span class="slot"><span class="vh">Accounts mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
-      <li>
-        <p class="what">You want to work here</p>
-        <p class="can">Read. We do not keep a talent pool.</p>
-        <span class="field"><span class="vh">Applications mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      <li class="r">
+        <p class="ix" aria-hidden="true">Five</p>
+        <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>
+        <div><h3>You want to work here</h3><p>Read. <b>We do not keep a talent pool.</b></p></div>
+        <div class="rec">Applications<span class="slot"><span class="vh">Applications mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
-      <li>
-        <p class="what">You have work for us</p>
-        <p class="can">The scope taken, and which of three answers you get.</p>
-        <span class="field"><span class="vh">Estimating mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span>
+      <li class="r">
+        <p class="ix" aria-hidden="true">Six</p>
+        <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14v17H5zM9 4V2h6v2M8 10h8M8 14h6"/></svg>
+        <div><h3>You have work for us</h3><p>The scope taken, and which of three answers you get.</p></div>
+        <div class="rec">Estimating<span class="slot"><span class="vh">Estimating mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
-    </ul>
+    </ol>
 
-    <p class="foot"><b>Do not come to a site to talk to us.</b> You would need an induction to get past the gate. The office is where a conversation happens.</p>
+    <div class="refuse" data-refusal>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8zM9 12h6"/></svg>
+      <p><b>Do not come to a site to talk to us.</b> You would need an induction to get past the gate. The office is where a conversation happens.</p>
+    </div>
 
   </section>
 </div>

@@ -12,26 +12,22 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S16 — Capability Downloads
   Direction      : Universal / Safe
-  Reference      : None supplied for this section.
-  Layout model   : A statement about where the figures live, the gate explained once, then six
-                   document cards each carrying what is in it, who it is for, and the rule by which
-                   it stops being true
-  Density        : Medium
-  Media mode     : None. A document library has nothing to photograph, and a rendered PDF cover is
-                   an illustration of a file rather than information about it.
-  Interaction    : None.
-  The device     : **Three things per document** &mdash; what is in it, who it is for, and when it
-                   stops being true. The third is the section's content: every download page in this
-                   industry prints a title and an icon, and the expiry rule is the part that decides
-                   whether the document is worth having.
-  The rule vs the date : *Reissued at the end of every quarter* is authorable and real. *Issued on
-                   the fourteenth* is not ours to invent, so the issue date, revision and file are
-                   reserved fields on every card.
-  Deliberately not : No figure, limit, term or period anywhere &mdash; they are in the documents,
-                   which is the argument. No certificate image, no brochure, no download count, no
-                   link to a file that does not exist.
-  Content note   : Scheme, standard and accrediting body names are reserved &mdash; the `S08` rule.
-                   No digit in visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3
+                   with 7 inside it: the gate policy as three bordered cells with padlock icons
+                   (open / closed / struck); the six documents as bordered sheets sharing one
+                   hairline system — a title column with a document icon and a gate chip, three
+                   cells for WHAT IS IN IT / WHO IT IS FOR / WHEN IT STOPS BEING TRUE, the third
+                   on the band tone behind a 3px tape edge, and a record column of reserved
+                   slots (issued, revision or renewal or signatory, file). The refusal note as a
+                   bordered cell with muted tags. Drawing layer: setting-out grid behind the
+                   head. V1 is kept whole.
+  Layout model   : Head split. Three bordered gate cells. Six bordered document sheets (title /
+                   three cells / record). Bordered refusal note.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : No media. Eighteen reserved fields.
+  Interaction    : None (static; no JavaScript). No link to any file.
+  Content note   : No issue date, revision, renewal date, signatory, file size or count. No
+                   figure, limit, term or period. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S16-001">
@@ -42,305 +38,94 @@
 <meta name="variant" content="001">
 <meta name="territory" content="Universal / Safe">
 <meta name="direction" content="Universal / Safe">
-<meta name="layout-model" content="Six document cards, each carrying what is in it, who it is for, and when it stops being true">
-<meta name="density" content="medium">
-<meta name="media-mode" content="none">
+<meta name="theme" content="001 Site White &amp; Safety Orange">
+<meta name="layout-model" content="Head split; three bordered gate-policy cells with padlock icons; six bordered document sheets with a document icon and gate chip, three cells for contents / audience / expiry with the expiry on the band tone behind a tape edge, and a record column of reserved slots; bordered refusal note with tags; setting-out grid behind the head">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media-eighteen-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
-<title>CON-S16-001 — Capability Downloads, Universal</title>
+<title>CON-S16-001 — Capability Downloads, Universal / Safe</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #f1f1f1; }
+body { margin: 0; background: #f4f4f1; }
 
-/* Scoped study styles — namespaced to .con-s16-001 */
 .con-s16-001 {
-  --ink: #111111;
-  --ink-soft: #969696;
-  --ink-faint: #d2d2d2;
-  --paper: #f1f1f1;
-  --card: #ffffff;
-  --line: #ececec;
-  --rule: #111111;
-  --open: #5e5e5e;
-  --request: #b4b4b4;
-  --stale: #2b2b2b;
-  --for: #444444;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #f4f4f1; --ink: #121314; --muted: #5b5e62; --line: #d8d8d3; --line-strong: #121314;
+  --media: #e3e3de; --band: #ebebe6; --accent: #d9481a;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s16-001 *,
-.con-s16-001 *::before,
-.con-s16-001 *::after { box-sizing: inherit; }
-.con-s16-001 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s16-001 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s16-001 *, .con-s16-001 *::before, .con-s16-001 *::after { box-sizing: inherit; }
+.con-s16-001 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s16-001 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s16-001 .draw { position: absolute; right: 0; top: 0; width: 46%; height: 22rem; pointer-events: none; color: var(--line); }
+.con-s16-001 .shell { position: relative; width: min(100%, 100rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s16-001 .head { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(16rem, 0.75fr); gap: 3rem; align-items: end; }
+.con-s16-001 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s16-001 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s16-001 h2 { margin: 0; max-width: 16ch; font-weight: 800; font-size: clamp(2.3rem, 4.6vw, 5rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s16-001 h2 em { font-style: normal; color: var(--accent); }
+.con-s16-001 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s16-001 .head > p b { color: var(--ink); }
 
-/* Head */
-.con-s16-001 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  padding-bottom: clamp(18px, 2.3vw, 30px);
-  border-bottom: 2px solid var(--rule);
-  margin-bottom: clamp(16px, 2vw, 24px);
-}
-.con-s16-001 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s16-001 h2 {
-  margin: 0;
-  font-size: clamp(2.318rem, 4.536vw, 3.843rem);
-  line-height: 1.04;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 20ch;
-}
-.con-s16-001 .head p { margin: 0; max-width: 50ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
-.con-s16-001 .head p b { color: var(--ink); font-weight: 650; }
+.con-s16-001 .gate { list-style: none; margin: clamp(2rem, 4vw, 3.6rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 3px solid var(--accent); border-left: 1px solid var(--line-strong); }
+.con-s16-001 .gate li { padding: 1.1rem 1.2rem 1.2rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s16-001 .gate li:last-child { background: var(--band); }
+.con-s16-001 .gate h3 { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.5rem; font-weight: 800; font-size: 1.1rem; line-height: 1.05; letter-spacing: -0.015em; text-transform: uppercase; }
+.con-s16-001 .gate h3 .ico { width: 1.2rem; height: 1.2rem; color: var(--accent); }
+.con-s16-001 .gate p { margin: 0; color: var(--muted); font-size: 0.86rem; line-height: 1.5; }
+.con-s16-001 .gate p b { color: var(--ink); }
 
-/* The gate, explained once */
-.con-s16-001 .gate {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(12px, 1.8vw, 26px);
-  padding: clamp(16px, 2vw, 24px) 0 clamp(20px, 2.5vw, 30px);
-  border-bottom: 1px solid var(--line);
-  margin-bottom: clamp(18px, 2.4vw, 30px);
-}
-.con-s16-001 .gate div { min-width: 0; padding-left: clamp(11px, 1.4vw, 15px); border-left: 4px solid var(--tone, var(--line)); }
-.con-s16-001 .g-open { --tone: var(--open); }
-.con-s16-001 .g-request { --tone: var(--request); }
-.con-s16-001 .g-never { --tone: var(--stale); }
-.con-s16-001 .gate h3 {
-  margin: 0 0 6px;
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s16-001 .gate p { margin: 0; font-size: 1rem; line-height: 1.56; color: var(--ink-soft); }
-.con-s16-001 .gate p b { color: var(--ink); font-weight: 650; }
+.con-s16-001 .docs { list-style: none; margin: clamp(2rem, 4vw, 3.6rem) 0 0; padding: 0; border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); border-right: 1px solid var(--line-strong); }
+.con-s16-001 .doc { display: grid; grid-template-columns: 15rem minmax(0, 1fr) 13rem; border-bottom: 1px solid var(--line-strong); }
+.con-s16-001 .t { padding: 1.1rem 1.2rem 1.2rem; border-right: 1px solid var(--line-strong); min-width: 0; }
+.con-s16-001 .chip { display: inline-flex; align-items: center; gap: 0.35rem; margin: 0 0 0.8rem; padding: 0.2rem 0.5rem; border: 1px solid var(--line-strong); border-radius: 2px; font-size: 0.52rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s16-001 .chip .ico { width: 0.85rem; height: 0.85rem; }
+.con-s16-001 .chip.req { background: var(--ink); color: var(--paper); }
+.con-s16-001 .t .ico.big { display: block; width: 2.4rem; height: 2.4rem; margin: 0 0 0.6rem; color: var(--accent); stroke-width: 1.4; }
+.con-s16-001 h3 { margin: 0; font-weight: 800; font-size: 1.25rem; line-height: 1.05; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s16-001 .cells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.con-s16-001 .cells div { padding: 1rem 1.1rem 1.1rem; border-right: 1px solid var(--line); min-width: 0; }
+.con-s16-001 .cells div:last-child { border-right: 1px solid var(--line-strong); background: var(--band); border-left: 3px solid var(--accent); margin-left: -1px; }
+.con-s16-001 .k { display: flex; align-items: center; gap: 0.4rem; margin: 0 0 0.35rem; color: var(--muted); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s16-001 .k .ico { width: 0.95rem; height: 0.95rem; color: var(--accent); }
+.con-s16-001 .cells div:last-child .k { color: var(--accent); }
+.con-s16-001 .cells p { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.45; }
+.con-s16-001 .cells p b { color: var(--ink); }
+.con-s16-001 .rec { margin: 0; padding: 0.9rem 1rem 1rem; display: grid; gap: 0.55rem; align-content: start; }
+.con-s16-001 .rec div { display: grid; gap: 0.2rem; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s16-001 .rec dt, .con-s16-001 .rec dd { margin: 0; }
+.con-s16-001 .slot { display: inline-flex; align-items: center; width: 100%; height: 1.7rem; padding: 0 0.5rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-weight: 400; letter-spacing: 0; font-size: 0.95rem; line-height: 1; }
+.con-s16-001 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Documents */
-.con-s16-001 .docs {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  gap: clamp(12px, 1.6vw, 20px);
-}
-.con-s16-001 .docs > li {
-  min-width: 0;
-  background: var(--card);
-  border-radius: 22px;
-  border-top: 5px solid var(--tone, var(--line));
-  padding: clamp(17px, 2.1vw, 25px) clamp(17px, 2.1vw, 25px) clamp(15px, 1.9vw, 22px);
-  display: flex;
-  flex-direction: column;
-}
-.con-s16-001 .d-open { --tone: var(--open); }
-.con-s16-001 .d-request { --tone: var(--request); }
+.con-s16-001 .refuse { margin-top: clamp(1.6rem, 3vw, 2.6rem); padding: 1.2rem 1.3rem 1.3rem; border: 1px solid var(--line-strong); border-top: 3px solid var(--accent); display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 1.2rem 2.4rem; }
+.con-s16-001 .refuse h3 { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 0.8rem; font-size: 1.2rem; }
+.con-s16-001 .refuse h3 .ico { color: var(--accent); }
+.con-s16-001 .none { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; }
+.con-s16-001 .none li { padding: 0.25rem 0.55rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.con-s16-001 .refuse p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s16-001 .refuse p b { color: var(--ink); }
 
-.con-s16-001 .tag {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
+@media (max-width: 1100px) {
+  .con-s16-001 .doc { grid-template-columns: 13rem minmax(0, 1fr); }
+  .con-s16-001 .rec { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
 }
-.con-s16-001 h4 {
-  margin: 0 0 clamp(11px, 1.4vw, 15px);
-  font-size: clamp(1.251rem, 1.77vw, 1.487rem);
-  line-height: 1.16;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  max-width: 22ch;
+@media (max-width: 860px) {
+  .con-s16-001 .head, .con-s16-001 .refuse { grid-template-columns: minmax(0, 1fr); }
+  .con-s16-001 .gate { grid-template-columns: minmax(0, 1fr); }
+  .con-s16-001 .doc { grid-template-columns: minmax(0, 1fr); }
+  .con-s16-001 .t { border-right: 0; border-bottom: 1px solid var(--line-strong); }
+  .con-s16-001 .cells { grid-template-columns: minmax(0, 1fr); }
+  .con-s16-001 .cells div { border-right: 0; border-bottom: 1px solid var(--line); }
+  .con-s16-001 .cells div:last-child { border-right: 0; margin-left: 0; }
+  .con-s16-001 .draw { width: 70%; }
 }
-.con-s16-001 .part { padding-top: clamp(10px, 1.2vw, 13px); border-top: 1px solid var(--line); margin-bottom: clamp(10px, 1.2vw, 13px); }
-.con-s16-001 .part .k {
-  display: block;
-  margin-bottom: 3px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s16-001 .part p { margin: 0; font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
-.con-s16-001 .part p b { color: var(--ink); font-weight: 650; }
-.con-s16-001 .p-for .k { color: var(--for); }
-.con-s16-001 .p-stale .k { color: var(--stale); }
-.con-s16-001 .p-stale p { color: var(--ink); }
-
-.con-s16-001 .meta {
-  margin: auto 0 0;
-  padding: clamp(11px, 1.4vw, 15px) 0 0;
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 5px;
-  list-style: none;
-}
-.con-s16-001 .meta li {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 0.74rem;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s16-001 .slot {
-  min-width: 62px;
-  padding: 1px 10px;
-  border-radius: 10px;
-  background: var(--paper);
-  text-align: center;
-  letter-spacing: 0;
-}
-
-/* Close */
-.con-s16-001 .refuse {
-  margin-top: clamp(20px, 2.6vw, 34px);
-  padding-top: clamp(18px, 2.3vw, 28px);
-  border-top: 2px solid var(--rule);
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(16px, 2.6vw, 44px);
-  align-items: start;
-}
-.con-s16-001 .refuse h3 {
-  margin: 0;
-  font-size: clamp(1.416rem, 2.318vw, 1.952rem);
-  line-height: 1.1;
-  letter-spacing: -0.024em;
-  font-weight: 700;
-  max-width: 20ch;
-}
-.con-s16-001 .refuse ul { margin: 0 0 clamp(12px, 1.5vw, 16px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 7px; }
-.con-s16-001 .refuse li {
-  padding: 4px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  font-size: 1rem;
-  color: var(--ink-soft);
-  background: var(--card);
-}
-.con-s16-001 .refuse p { margin: 0; max-width: 66ch; font-size: 1rem; line-height: 1.62; color: var(--ink-soft); }
-.con-s16-001 .refuse p b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 900px) {
-  .con-s16-001 .head { grid-template-columns: minmax(0, 1fr); align-items: start; gap: clamp(14px, 2.4vw, 22px); }
-  .con-s16-001 .refuse { grid-template-columns: minmax(0, 1fr); }
-}
-
-@media (max-width: 620px) {
-  .con-s16-001 .docs { grid-template-columns: minmax(0, 1fr); }
-  .con-s16-001 h2, .con-s16-001 .head p, .con-s16-001 h4,
-  .con-s16-001 .refuse h3, .con-s16-001 .refuse p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s16-001 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s16-001 {
-  --v2-accent: #7a7a7a;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #e9e9e9 0%, #f1f1f1 30%);
-  font-size: 1.06rem;
-}
-.con-s16-001 h2 { font-weight: 800; }
-.con-s16-001 h3, .con-s16-001 h4 { font-weight: 750; }
-.con-s16-001 .eyebrow, .con-s16-001 .tag {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s16-001 .docs > li, .con-s16-001 .refuse li {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #ececec;
-}
-.con-s16-001 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s16-001.con-s16-001 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s16-001.con-s16-001 .head h2, .con-s16-001.con-s16-001 .head h3, .con-s16-001.con-s16-001 .head h4, .con-s16-001.con-s16-001 .head b, .con-s16-001.con-s16-001 .head strong, .con-s16-001.con-s16-001 .head p b, .con-s16-001.con-s16-001 .head li b, .con-s16-001.con-s16-001 .head span b, .con-s16-001.con-s16-001 .head dt, .con-s16-001.con-s16-001 .head div b {
-  color: #ffffff;
-}
-.con-s16-001.con-s16-001 .head p, .con-s16-001.con-s16-001 .head li, .con-s16-001.con-s16-001 .head span, .con-s16-001.con-s16-001 .head dd, .con-s16-001.con-s16-001 .head div p, .con-s16-001.con-s16-001 .head div li, .con-s16-001.con-s16-001 .head p span, .con-s16-001.con-s16-001 .head .said, .con-s16-001.con-s16-001 .head .note {
-  color: #d2d2d2;
-}
-.con-s16-001.con-s16-001 .head .eyebrow, .con-s16-001.con-s16-001 .head .kicker, .con-s16-001.con-s16-001 .head .slot, .con-s16-001.con-s16-001 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s16-001.con-s16-001 .head i, .con-s16-001.con-s16-001 .head .bars i, .con-s16-001.con-s16-001 .head .lines i, .con-s16-001.con-s16-001 .head .measures i, .con-s16-001.con-s16-001 .head .bar, .con-s16-001.con-s16-001 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s16-001.con-s16-001 .head .plate, .con-s16-001.con-s16-001 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s16-001 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s16-001 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 560px) { .con-s16-001 .rec { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s16-001 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -348,176 +133,155 @@ body { margin: 0; background: #f1f1f1; }
 <div class="con-s16-001" data-study-id="CON-S16-001" data-direction="Universal / Safe">
   <section class="shell" aria-labelledby="con-s16-001-title">
 
+    <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <g stroke="currentColor" stroke-width="1" fill="none">
+        <path d="M0 20H100M0 40H100M0 60H100M0 80H100M20 0V100M40 0V100M60 0V100M80 0V100" vector-effect="non-scaling-stroke"/>
+      </g>
+    </svg>
+
     <div class="head">
       <div>
-        <p class="eyebrow">What we will send you</p>
-        <h2 id="con-s16-001-title">Every figure you want is in one of these. None of them is on this page.</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6"/></svg>What we will send you</p>
+        <h2 id="con-s16-001-title">Every figure you want is in one of these. <em>None of them is on this page.</em></h2>
       </div>
-      <p>A number in a signed document has a date on it, a revision and somebody's name against it. <b>A number on a web page has none of those, and can be edited on a Tuesday afternoon by whoever has the login.</b> So the documents hold the figures, and this page tells you which one to open.</p>
+      <p><b>A number in a signed document has a date on it, a revision and somebody&rsquo;s name against it.</b> A number on a web page has none of those, and can be edited on a Tuesday afternoon by whoever has the login. So the documents hold the figures, and this page tells you which one to open.</p>
     </div>
 
-    <div class="gate">
-      <div class="g-open">
-        <h3>Open to anybody</h3>
-        <p><b>Everything you need in order to decide whether to talk to us.</b> No email address, no form. Somebody working out what we do should not have to trade for it.</p>
-      </div>
-      <div class="g-request">
-        <h3>Sent on request, and here is why</h3>
-        <p>The two that end up in somebody's tender file. <b>We have to know which version you are holding</b>, because an answer you quote back to us has to match the one we can evidence.</p>
-      </div>
-      <div class="g-never">
-        <h3>Not a reason we use</h3>
+    <ul class="gate">
+      <li>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 7.5-2"/></svg>Open to anybody</h3>
+        <p>Everything you need in order to decide whether to talk to us. <b>No email address, no form.</b> Somebody working out what we do should not have to trade for it.</p>
+      </li>
+      <li>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></svg>Sent on request, and here is why</h3>
+        <p>The two that end up in somebody&rsquo;s tender file. <b>We have to know which version you are holding</b>, because an answer you quote back to us has to match the one we can evidence.</p>
+      </li>
+      <li>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 5h18v14H3zM3 5l9 7 9-7M2 2l20 20"/></svg>Not a reason we use</h3>
         <p>Getting an email address. <b>A document gated to capture a lead is a document nobody wanted to write and nobody wants to read.</b></p>
-      </div>
-    </div>
+      </li>
+    </ul>
 
     <ul class="docs">
 
-      <li class="d-open">
-        <span class="tag">Open</span>
-        <h4>Capability statement</h4>
-        <div class="part">
-          <span class="k">What is in it</span>
-          <p>What we build, at what size, in which sectors &mdash; and <b>the four kinds of work we turn down</b>, which is the part that saves you a meeting.</p>
+      <li class="doc">
+        <div class="t">
+          <span class="chip"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 7.5-2"/></svg>Open</span>
+          <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6zM15 3v4h4M9 11h6M9 15h6M9 18h4"/></svg>
+          <h3>Capability statement</h3>
         </div>
-        <div class="part p-for">
-          <span class="k">Who it is for</span>
-          <p>Somebody deciding whether to have a conversation with us at all.</p>
+        <div class="cells">
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>What is in it</span><p>What we build, at what size, in which sectors &mdash; <b>and the four kinds of work we turn down</b>, which is the part that saves you a meeting.</p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>Who it is for</span><p>Somebody deciding whether to have a conversation with us at all.</p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>When it stops being true</span><p>When a project completes or somebody leaves. <b>Reissued at the end of every quarter</b>, and the issue date is on the cover for that reason.</p></div>
         </div>
-        <div class="part p-stale">
-          <span class="k">When it stops being true</span>
-          <p><b>When a project completes or somebody leaves.</b> Reissued at the end of every quarter, and the issue date is on the cover for that reason.</p>
-        </div>
-        <ul class="meta">
-          <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>Revision</span><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
-        </ul>
+        <dl class="rec">
+          <div><dt>Issued</dt><dd><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>Revision</dt><dd><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>File</dt><dd><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        </dl>
       </li>
 
-      <li class="d-request">
-        <span class="tag">On request</span>
-        <h4>Prequalification pack</h4>
-        <div class="part">
-          <span class="k">What is in it</span>
-          <p>The standard answers to the standard questions, <b>each one carrying the registration you can check for yourself</b> rather than a certificate you have to take from us.</p>
+      <li class="doc">
+        <div class="t">
+          <span class="chip req"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></svg>On request</span>
+          <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM4 10h16M4 16h16M10 4v16"/></svg>
+          <h3>Prequalification pack</h3>
         </div>
-        <div class="part p-for">
-          <span class="k">Who it is for</span>
-          <p>A procurement team filling in a matrix, who would rather not chase us for every line of it.</p>
+        <div class="cells">
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>What is in it</span><p>The standard answers to the standard questions, each one carrying <b>the registration you can check for yourself</b> rather than a certificate you have to take from us.</p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>Who it is for</span><p>A procurement team filling in a matrix, who would rather not chase us for every line of it.</p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>When it stops being true</span><p>When an accreditation is reassessed. <b>Every answer carries the date it was written</b>, so you can see which ones are older than the rest.</p></div>
         </div>
-        <div class="part p-stale">
-          <span class="k">When it stops being true</span>
-          <p>When an accreditation is reassessed. <b>Every answer carries the date it was written</b>, so you can see which ones are older than the rest.</p>
-        </div>
-        <ul class="meta">
-          <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>Revision</span><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
-        </ul>
+        <dl class="rec">
+          <div><dt>Issued</dt><dd><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>Revision</dt><dd><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>File</dt><dd><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        </dl>
       </li>
 
-      <li class="d-open">
-        <span class="tag">Open</span>
-        <h4>Insurance summary</h4>
-        <div class="part">
-          <span class="k">What is in it</span>
-          <p>The cover we carry, the limits against each, and the renewal date. <b>The figures are in it, which is where figures belong.</b></p>
+      <li class="doc">
+        <div class="t">
+          <span class="chip"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 7.5-2"/></svg>Open</span>
+          <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM9 12l2 2 4-4"/></svg>
+          <h3>Insurance summary</h3>
         </div>
-        <div class="part p-for">
-          <span class="k">Who it is for</span>
-          <p>Anybody who has to satisfy themselves before we come on site. <b>Checking us is doing us a favour</b>, so it is not behind anything.</p>
+        <div class="cells">
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>What is in it</span><p>The cover we carry, the limits against each, and the renewal date. <b>The figures are in it, which is where figures belong.</b></p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>Who it is for</span><p>Anybody who has to satisfy themselves before we come on site. <b>Checking us is doing us a favour</b>, so it is not behind anything.</p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>When it stops being true</span><p><b>On the renewal date printed on the front.</b> After that it is a historical document and should come out of your file rather than sit in it.</p></div>
         </div>
-        <div class="part p-stale">
-          <span class="k">When it stops being true</span>
-          <p><b>On the renewal date printed on the front.</b> After that it is a historical document and should come out of your file rather than sit in it.</p>
-        </div>
-        <ul class="meta">
-          <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>Renews</span><span class="slot"><span class="vh">Renewal date</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
-        </ul>
+        <dl class="rec">
+          <div><dt>Issued</dt><dd><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>Renews</dt><dd><span class="slot"><span class="vh">Renewal date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>File</dt><dd><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        </dl>
       </li>
 
-      <li class="d-open">
-        <span class="tag">Open</span>
-        <h4>Health, safety and environmental policy</h4>
-        <div class="part">
-          <span class="k">What is in it</span>
-          <p>The signed policy, and the names against each responsibility in it. <b>An unsigned policy is a document nobody owns.</b></p>
+      <li class="doc">
+        <div class="t">
+          <span class="chip"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 7.5-2"/></svg>Open</span>
+          <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 21l4-1 11-11-3-3L4 17zM14 6l3 3M3 21h18"/></svg>
+          <h3>Health, safety and environmental policy</h3>
         </div>
-        <div class="part p-for">
-          <span class="k">Who it is for</span>
-          <p>Your compliance file, and the person who has to answer for what is in it.</p>
+        <div class="cells">
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>What is in it</span><p>The signed policy, and the names against each responsibility in it. <b>An unsigned policy is a document nobody owns.</b></p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>Who it is for</span><p>Your compliance file, and the person who has to answer for what is in it.</p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>When it stops being true</span><p>When the law changes, when we are reassessed, or <b>when the person who signed it is no longer the person responsible</b> &mdash; which is a stronger test than a date.</p></div>
         </div>
-        <div class="part p-stale">
-          <span class="k">When it stops being true</span>
-          <p>When the law changes, when we are reassessed, or <b>when the person who signed it is no longer the person responsible</b> &mdash; which is a stronger test than a date.</p>
-        </div>
-        <ul class="meta">
-          <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>Signed by</span><span class="slot"><span class="vh">Name of the signatory</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
-        </ul>
+        <dl class="rec">
+          <div><dt>Issued</dt><dd><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>Signed by</dt><dd><span class="slot"><span class="vh">Name of the signatory</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>File</dt><dd><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        </dl>
       </li>
 
-      <li class="d-request">
-        <span class="tag">On request</span>
-        <h4>Method statement and risk assessment, the generic ones</h4>
-        <div class="part">
-          <span class="k">What is in it</span>
-          <p>How we would normally sequence the common operations, and the format your principal designer will receive.</p>
+      <li class="doc">
+        <div class="t">
+          <span class="chip req"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 8 0v4"/></svg>On request</span>
+          <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h6v4H4zM14 15h6v4h-6zM10 7h4v10M14 7h0M10 17h4"/></svg>
+          <h3>Method statement and risk assessment, the generic ones</h3>
         </div>
-        <div class="part p-for">
-          <span class="k">Who it is for</span>
-          <p>Somebody who wants to see the shape of it before we write yours. Sent with a covering note rather than on its own, because <b>a template sent without one gets used as if it were the real thing.</b></p>
+        <div class="cells">
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>What is in it</span><p>How we would normally sequence the common operations, and the format your principal designer will receive.</p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>Who it is for</span><p>Somebody who wants to see the shape of it before we write yours. <b>Sent with a covering note rather than on its own</b>, because a template sent without one gets used as if it were the real thing.</p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>When it stops being true</span><p><b>Immediately, for your job.</b> A generic method statement is a sample of our handwriting. The real one is written after we have walked your site.</p></div>
         </div>
-        <div class="part p-stale">
-          <span class="k">When it stops being true</span>
-          <p><b>Immediately, for your job.</b> A generic method statement is a sample of our handwriting. The real one is written after we have walked your site.</p>
-        </div>
-        <ul class="meta">
-          <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>Revision</span><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
-        </ul>
+        <dl class="rec">
+          <div><dt>Issued</dt><dd><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>Revision</dt><dd><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>File</dt><dd><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        </dl>
       </li>
 
-      <li class="d-open">
-        <span class="tag">Open</span>
-        <h4>Payment terms for our supply chain</h4>
-        <div class="part">
-          <span class="k">What is in it</span>
-          <p>When our subcontractors are paid, what we hold back and for how long. <b>Most firms in this trade do not publish this one.</b></p>
+      <li class="doc">
+        <div class="t">
+          <span class="chip"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 11h14v10H5zM8 11V7a4 4 0 0 1 7.5-2"/></svg>Open</span>
+          <svg class="ico big" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>
+          <h3>Payment terms for our supply chain</h3>
         </div>
-        <div class="part p-for">
-          <span class="k">Who it is for</span>
-          <p>A client who wants to know whether a price is being propped up by somebody downstream who has not been paid yet.</p>
+        <div class="cells">
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>What is in it</span><p>When our subcontractors are paid, what we hold back and for how long. <b>Most firms in this trade do not publish this one.</b></p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg>Who it is for</span><p>A client who wants to know whether a price is being propped up by somebody downstream who has not been paid yet.</p></div>
+          <div><span class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v5l3 2"/></svg>When it stops being true</span><p>When we change them, <b>which we have done once</b>. The version before it is in the same document, underneath, so you can see what moved.</p></div>
         </div>
-        <div class="part p-stale">
-          <span class="k">When it stops being true</span>
-          <p>When we change them, <b>which we have done once</b>. The version before it is in the same document, underneath, so you can see what moved.</p>
-        </div>
-        <ul class="meta">
-          <li><span>Issued</span><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>Revision</span><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></li>
-          <li><span>File</span><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></li>
-        </ul>
+        <dl class="rec">
+          <div><dt>Issued</dt><dd><span class="slot"><span class="vh">Issue date</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>Revision</dt><dd><span class="slot"><span class="vh">Revision reference</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+          <div><dt>File</dt><dd><span class="slot"><span class="vh">File format and size</span><span aria-hidden="true">&mdash;</span></span></dd></div>
+        </dl>
       </li>
 
     </ul>
 
     <div class="refuse" data-refusal>
-      <h3>And four things you will not find here</h3>
       <div>
-        <ul>
-          <li>No brochure</li>
-          <li>No scanned certificates</li>
-          <li>No undated document</li>
-          <li>No download count</li>
+        <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3h14v18H5zM8 8h8M8 12h8M3 3l18 18"/></svg>And four things you will not find here</h3>
+        <ul class="none">
+          <li>No brochure</li><li>No scanned certificates</li><li>No undated document</li><li>No download count</li>
         </ul>
-        <p><b>A brochure is a document made to be handed out rather than read</b>, and a scan of a certificate proves less than a registration you can check yourself &mdash; which is why the registrations are listed rather than the certificates pictured. <b>Nothing goes on this page without an issue date on its cover</b>, because a document with no date on it is a claim about a firm that may no longer exist in that form. And how many people have downloaded something tells you what other people did, not whether it answers your question.</p>
       </div>
+      <p><b>A brochure is a document made to be handed out rather than read</b>, and a scan of a certificate proves less than a registration you can check yourself &mdash; which is why the registrations are listed rather than the certificates pictured. <b>Nothing goes on this page without an issue date on its cover</b>, because a document with no date on it is a claim about a firm that may no longer exist in that form. And how many people have downloaded something tells you what other people did, not whether it answers your question.</p>
     </div>
 
   </section>

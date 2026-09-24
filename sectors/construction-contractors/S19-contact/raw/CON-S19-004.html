@@ -12,25 +12,22 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S19 — Contact
   Direction      : Conversion-led
-  Theme          : 004 High-Vis — see ../../CONSTRUCTION-THEME-CONTRACT.md
-  Layout model   : Compact head with a reserved hoarding panel, then one saturated action panel
-                   carrying the urgent route at display scale, then the remaining five as a strip
-  Density        : Low-medium (169 visible words; 848 before the text-budget rework)
-  Media mode     : One reserved hoarding area, held to the head so it does not compete with the
-                   action panel.
-  Interaction    : None (static; no JavaScript)
-
-  What "conversion-led" means in this role, which is the whole design problem :
-                   The section README puts the commercial enquiry LAST and says the ordering is the
-                   argument. So the conversion here is NOT the sales enquiry — promoting it would
-                   break the role. **The conversion is the urgent route**: somebody standing on a
-                   site at half past six reaching the right phone without reading anything. That is
-                   what gets the saturated panel and the display-scale field; the estimating route
-                   stays sixth and points at S15.
-
-  Content note   : Every number and mailbox is a reserved field. No response-time promise, no
-                   service level, no map, no general enquiry form, no header, no urgency device
-                   beyond the real one.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 4
+                   with 3: display with the tape underline; the urgent route as the largest
+                   thing on the page — a hi-vis band with RIGHT NOW, a hard-hat icon, the route
+                   at display size, and the reserved site-and-duty number as a bordered slot at
+                   display scale, chevron run behind; the hoarding as a bare 3:1 field beside
+                   it; the other five as a bordered five-cell ledger row with word indices,
+                   icons and reserved slots, the enquiry last and on the band tone; the site-
+                   visit refusal as a ruled foot with a stop octagon. No form, no anchor. V1
+                   is kept whole, its numerals replaced by word indices.
+  Layout model   : Display. Hi-vis urgent band with display-scale slot | 3:1 hoarding field.
+                   Five-cell bordered ledger. Ruled foot.
+  Density        : Compact — V1's spine kept in full
+  Media mode     : One reserved hoarding field, 3:1. Six reserved fields.
+  Interaction    : None (static; no JavaScript). No form.
+  Content note   : Every number, mailbox and name reserved. No response time, map or opening
+                   hours. Inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S19-004">
@@ -41,215 +38,78 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="theme" content="004 High-Vis">
-<meta name="layout-model" content="Compact head with hoarding panel, saturated urgent-route action panel, five-route strip">
-<meta name="density" content="low-medium">
-<meta name="media-mode" content="one-reserved-hoarding-panel">
+<meta name="theme" content="004 White &amp; Hi-Vis">
+<meta name="layout-model" content="Display with tape underline; hi-vis urgent band with the route at display size and the reserved site-and-duty number at display scale, chevron run behind, beside a 3:1 reserved hoarding field; five-cell bordered ledger of the other routes with word indices, icons and reserved slots, the enquiry last on the band tone; ruled site-visit refusal foot">
+<meta name="density" content="compact">
+<meta name="media-mode" content="one-reserved-hoarding-field-six-reserved-slots">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S19-004 — Contact, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #ffffff; }
+body { margin: 0; background: #fbfbfa; }
 
-/* Scoped study styles — namespaced to .con-s19-004 */
 .con-s19-004 {
-  --paper: #ffffff;
-  --ink: #0a0a0a;
-  --ink-soft: #55585c;
-  --line: #e4e4e4;
-  --slot: #efefef;
-  --slot-edge: #c2c2c2;
-  --slot-ink: #4f5155;
-  --accent: #ffd400;
-  --accent-ink: #0a0a0a;
-  --focus: #0a0a0a;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fbfbfa; --ink: #0b0b0b; --muted: #55585c; --line: #e2e2e0; --line-strong: #0b0b0b;
+  --media: #ececea; --band: #f2f2ef; --accent: #c99e00; --tape: #ffd400;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.06rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s19-004 *,
-.con-s19-004 *::before,
-.con-s19-004 *::after { box-sizing: inherit; }
-.con-s19-004 :focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 8px; }
-.con-s19-004 .vh {
-  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
-  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
-}
+.con-s19-004 *, .con-s19-004 *::before, .con-s19-004 *::after { box-sizing: inherit; }
+.con-s19-004 :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
-.con-s19-004 .shell {
-  width: 100%; max-width: 1320px; margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s19-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s19-004 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s19-004 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s19-004 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s19-004 h2 { margin: 0; max-width: 14ch; font-weight: 800; font-size: clamp(2.4rem, 5vw, 5.6rem); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s19-004 h2 mark { background: transparent; color: inherit; text-decoration: underline; text-decoration-color: var(--tape); text-decoration-thickness: 0.16em; text-underline-offset: 0.04em; text-decoration-skip-ink: none; }
+.con-s19-004 .head > p { margin: 0 0 0.3rem; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.con-s19-004 .head > p b { color: var(--ink); }
 
-/* --- Head --- */
-.con-s19-004 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  gap: clamp(24px, 3.6vw, 56px);
-  align-items: center;
-}
-.con-s19-004 .eyebrow {
-  display: inline-block;
-  margin: 0 0 clamp(12px, 1.6vw, 18px);
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-}
-.con-s19-004 h2 {
-  margin: 0;
-  font-size: clamp(2.05rem, 3.9vw, 3.1rem);
-  line-height: 1.03;
-  letter-spacing: -0.035em;
-  font-weight: 800;
-  max-width: 17ch;
-}
-.con-s19-004 .lead { margin: clamp(14px, 1.8vw, 20px) 0 0; max-width: 46ch; color: var(--ink-soft); }
-.con-s19-004 .hoarding {
-  border: 2px dashed var(--slot-edge);
-  border-radius: 12px;
-  background: var(--slot);
-  aspect-ratio: 3 / 2;
-  display: grid;
-  place-items: center;
-  padding: 18px;
-}
-.con-s19-004 .hoarding span {
-  color: var(--slot-ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.8;
-}
+.con-s19-004 .urgent { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(1.6rem, 3vw, 3rem); margin-top: clamp(2rem, 4vw, 3.6rem); align-items: stretch; }
+.con-s19-004 .band { position: relative; padding: clamp(1.4rem, 2.6vw, 2.4rem) clamp(1.2rem, 2.4vw, 2.2rem); background: var(--band); border-top: 3px solid var(--tape); overflow: hidden; display: flex; flex-direction: column; }
+.con-s19-004 .band > :not(.draw) { position: relative; }
+.con-s19-004 .draw { position: absolute; right: 0; top: 0; width: 45%; height: 100%; pointer-events: none; color: var(--line); }
+.con-s19-004 .k { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.8rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s19-004 .k .ico { width: 1.4rem; height: 1.4rem; }
+.con-s19-004 .band h3 { margin: 0 0 0.6rem; max-width: 14ch; font-weight: 800; font-size: clamp(1.9rem, 3.6vw, 3.6rem); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s19-004 .band p { margin: 0; max-width: 32rem; color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.con-s19-004 .band p b { color: var(--ink); }
+.con-s19-004 .duty { margin-top: auto; padding-top: 1.4rem; display: grid; gap: 0.3rem; color: var(--muted); font-size: 0.54rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s19-004 .duty .slot { height: 4.8rem; font-size: 3.4rem; border-color: var(--line-strong); background: var(--paper); }
+.con-s19-004 .slot { display: inline-flex; align-items: center; width: 100%; height: 2.3rem; padding: 0 0.6rem; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-weight: 400; letter-spacing: 0; font-size: 1.5rem; line-height: 1; }
+.con-s19-004 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.con-s19-004 .media { position: relative; min-height: 100%; background: var(--media); border-radius: 2px; }
+.con-s19-004 .slate { position: absolute; left: 1rem; bottom: 0.8rem; right: 1rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; line-height: 1.5; text-transform: uppercase; }
 
-/* --- The action panel: the urgent route, at scale --- */
-.con-s19-004 .action {
-  margin: clamp(28px, 3.4vw, 48px) 0 0;
-  padding: clamp(26px, 3.4vw, 46px) clamp(24px, 3.2vw, 44px);
-  border-radius: 12px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(20px, 3.4vw, 56px);
-  align-items: center;
-}
-.con-s19-004 .action .n {
-  display: block;
-  margin: 0 0 10px;
-  font-size: 0.8rem;
-  font-weight: 750;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  opacity: 0.72;
-}
-.con-s19-004 .action h3 {
-  margin: 0;
-  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  font-weight: 800;
-  max-width: 20ch;
-}
-.con-s19-004 .action p { margin: 12px 0 0; max-width: 52ch; font-size: clamp(1.02rem, 1.2vw, 1.14rem); }
-.con-s19-004 .duty {
-  display: grid;
-  place-items: center;
-  min-width: clamp(150px, 17vw, 240px);
-  min-height: clamp(84px, 9vw, 116px);
-  padding: 10px 22px;
-  border: 3px dashed var(--accent-ink);
-  border-radius: 12px;
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-}
+.con-s19-004 .rest { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s19-004 .rest li { display: flex; flex-direction: column; padding: 1rem 1rem 1.1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); min-width: 0; }
+.con-s19-004 .rest li:last-child { background: var(--band); }
+.con-s19-004 .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.6rem; margin-bottom: 0.7rem; }
+.con-s19-004 .rest p.ix { margin: 0; color: var(--ink); font-weight: 800; font-size: 2rem; line-height: 0.85; letter-spacing: -0.04em; text-transform: uppercase; }
+.con-s19-004 .top .ico { width: 1.6rem; height: 1.6rem; color: var(--accent); stroke-width: 1.4; }
+.con-s19-004 .rest h3 { margin: 0 0 0.3rem; font-weight: 800; font-size: 1rem; line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase; }
+.con-s19-004 .rest p { margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.45; }
+.con-s19-004 .rest p b { color: var(--ink); }
+.con-s19-004 .rec { margin-top: auto; padding-top: 0.8rem; display: grid; gap: 0.25rem; color: var(--muted); font-size: 0.5rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 
-/* --- The other five, as a strip --- */
-.con-s19-004 .strip {
-  margin: clamp(24px, 3vw, 40px) 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(12px, 1.4vw, 18px);
-}
-.con-s19-004 .strip li {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  padding: clamp(16px, 1.9vw, 22px);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-}
-.con-s19-004 .strip .n { font-size: 0.78rem; font-weight: 750; letter-spacing: 0.06em; color: var(--ink-soft); }
-.con-s19-004 .what { margin: 0; font-weight: 750; font-size: 1.02rem; letter-spacing: -0.012em; }
-.con-s19-004 .can { margin: 0; color: var(--ink-soft); font-size: 0.94rem; flex: 1 1 auto; }
-.con-s19-004 .field {
-  align-self: flex-start;
-  display: inline-grid;
-  place-items: center;
-  min-width: 74px;
-  padding: 6px 14px;
-  border: 1px dashed var(--slot-edge);
-  border-radius: 999px;
-  background: var(--slot);
-  color: var(--slot-ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
+.con-s19-004 .foot { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1rem 1.4rem; align-items: start; margin-top: clamp(1.6rem, 3vw, 2.6rem); padding-top: 1rem; border-top: 1px solid var(--line-strong); }
+.con-s19-004 .foot .ico { width: 1.8rem; height: 1.8rem; color: var(--accent); stroke-width: 1.4; }
+.con-s19-004 .foot p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.con-s19-004 .foot p b { color: var(--ink); }
 
-/* --- Foot --- */
-.con-s19-004 .foot {
-  margin: clamp(22px, 2.6vw, 34px) 0 0;
-  padding-top: clamp(18px, 2.2vw, 26px);
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 3vw, 52px);
-  color: var(--ink-soft);
-}
-.con-s19-004 .foot p { margin: 0; max-width: 48ch; }
-.con-s19-004 .foot b { color: var(--ink); font-weight: 750; }
-
-/* --- Responsive ladder --- */
-@media (max-width: 980px) {
-  .con-s19-004 .strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
+@media (max-width: 1100px) { .con-s19-004 .rest { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 860px) {
-  .con-s19-004 .head { grid-template-columns: minmax(0, 1fr); }
-  .con-s19-004 h2, .con-s19-004 .lead { max-width: none; }
-  .con-s19-004 .hoarding { aspect-ratio: 16 / 9; }
-  .con-s19-004 .action { grid-template-columns: minmax(0, 1fr); }
-  .con-s19-004 .duty { justify-self: start; }
-  .con-s19-004 .foot { grid-template-columns: minmax(0, 1fr); }
+  .con-s19-004 .head, .con-s19-004 .urgent { grid-template-columns: minmax(0, 1fr); }
+  .con-s19-004 .media { aspect-ratio: 16 / 9; min-height: 0; }
 }
-@media (max-width: 560px) {
-  .con-s19-004 .strip { grid-template-columns: minmax(0, 1fr); }
-  .con-s19-004 .duty { width: 100%; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .con-s19-004 * { transition: none !important; }
-}
+@media (max-width: 600px) { .con-s19-004 .rest { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .con-s19-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -259,58 +119,63 @@ body { margin: 0; background: #ffffff; }
 
     <div class="head">
       <div>
-        <p class="eyebrow">Contact</p>
-        <h2 id="con-s19-004-title">The urgent one is not the one that buys anything.</h2>
-        <p class="lead">So it gets the largest thing on the page. The other five are underneath, and the enquiry is last.</p>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Contact</p>
+        <h2 id="con-s19-004-title">The urgent one is <mark>not the one that buys anything.</mark></h2>
       </div>
-      <div class="hoarding"><span>Site hoarding media area &mdash; the board<br>a neighbour reads the duty number from</span></div>
+      <p><b>So it gets the largest thing on the page.</b> The other five are underneath, and the enquiry is last.</p>
     </div>
 
-    <div class="action">
-      <div>
-        <span class="n">01 &mdash; Right now</span>
+    <div class="urgent">
+      <div class="band">
+        <svg class="draw" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <g stroke="currentColor" stroke-width="1" fill="none">
+            <path d="M40 0L52 50L40 100M55 0L67 50L55 100M70 0L82 50L70 100M85 0L97 50L85 100" vector-effect="non-scaling-stroke"/>
+          </g>
+        </svg>
+        <p class="k"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 15a8 8 0 0 1 16 0M2 15h20v3H2zM10 7h4v5h-4z"/></svg>One &mdash; right now</p>
         <h3>Something is happening on a site now</h3>
-        <p>Stopped, made safe, and written down. Out of hours the same number rings a real phone.</p>
+        <p><b>Stopped, made safe, and written down.</b> Out of hours the same number rings a real phone.</p>
+        <div class="duty">Site and duty phone<span class="slot"><span class="vh">Site and duty phone number, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </div>
-      <p class="duty"><span class="vh">Site and duty phone number, reserved</span><span aria-hidden="true">&mdash;</span></p>
+      <div class="media" role="img" aria-label="Site hoarding media area — the board a neighbour reads the duty number from"><p class="slate" aria-hidden="true">Site hoarding media area &mdash; the board a neighbour reads the duty number from</p></div>
     </div>
 
-    <ul class="strip">
+    <ol class="rest">
       <li>
-        <span class="n">02</span>
-        <p class="what">You live or work beside one</p>
-        <p class="can">What is happening, and when it stops.</p>
-        <span class="field"><span class="vh">Same number, reserved</span><span aria-hidden="true">&mdash;</span></span>
+        <div class="top"><p class="ix" aria-hidden="true">Two</p><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11l9-7 9 7M5 10v11h14V10M10 21v-6h4v6"/></svg></div>
+        <h3>You live or work beside one</h3>
+        <p>What is happening, and when it stops.</p>
+        <div class="rec">Same number<span class="slot"><span class="vh">Same number, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
       <li>
-        <span class="n">03</span>
-        <p class="what">A defect in a building we finished</p>
-        <p class="can">Somebody looks, and we say who pays.</p>
-        <span class="field"><span class="vh">Aftercare line, reserved</span><span aria-hidden="true">&mdash;</span></span>
+        <div class="top"><p class="ix" aria-hidden="true">Three</p><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18l3 3 6.1-6.1a4 4 0 0 0 5.6-5.6l-2.7 2.7-2.1-2.1z"/></svg></div>
+        <h3>A defect in a building we finished</h3>
+        <p>Somebody looks, and we say who pays.</p>
+        <div class="rec">Aftercare<span class="slot"><span class="vh">Aftercare line, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
       <li>
-        <span class="n">04</span>
-        <p class="what">Subcontractor or supplier</p>
-        <p class="can">Where your invoice is.</p>
-        <span class="field"><span class="vh">Accounts mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span>
+        <div class="top"><p class="ix" aria-hidden="true">Four</p><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg></div>
+        <h3>Subcontractor or supplier</h3>
+        <p>Where your invoice is.</p>
+        <div class="rec">Accounts<span class="slot"><span class="vh">Accounts mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
       <li>
-        <span class="n">05</span>
-        <p class="what">You want to work here</p>
-        <p class="can">Read. We do not keep a talent pool.</p>
-        <span class="field"><span class="vh">Applications mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span>
+        <div class="top"><p class="ix" aria-hidden="true">Five</p><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h16v16H4zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8 18a4 4 0 0 1 8 0"/></svg></div>
+        <h3>You want to work here</h3>
+        <p>Read. <b>We do not keep a talent pool.</b></p>
+        <div class="rec">Applications<span class="slot"><span class="vh">Applications mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
       <li>
-        <span class="n">06</span>
-        <p class="what">You have work for us</p>
-        <p class="can">The scope taken, and which of three answers you get.</p>
-        <span class="field"><span class="vh">Estimating mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span>
+        <div class="top"><p class="ix" aria-hidden="true">Six</p><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 4h14v17H5zM9 4V2h6v2M8 10h8M8 14h6"/></svg></div>
+        <h3>You have work for us</h3>
+        <p>The scope taken, and which of three answers you get.</p>
+        <div class="rec">Estimating<span class="slot"><span class="vh">Estimating mailbox, reserved</span><span aria-hidden="true">&mdash;</span></span></div>
       </li>
-    </ul>
+    </ol>
 
-    <div class="foot">
-      <p><b>Do not come to a site to talk to us.</b> You would need an induction to get past the gate.</p>
-      <p>The office is where a conversation happens. The site is where work happens.</p>
+    <div class="foot" data-refusal>
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8zM9 12h6"/></svg>
+      <p><b>Do not come to a site to talk to us.</b> You would need an induction to get past the gate. The office is where a conversation happens. The site is where work happens.</p>
     </div>
 
   </section>

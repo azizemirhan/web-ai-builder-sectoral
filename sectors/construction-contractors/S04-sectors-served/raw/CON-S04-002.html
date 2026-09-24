@@ -12,22 +12,20 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S04 — Sectors Served
   Direction      : Premium / Editorial
-  Reference      : None supplied for this section.
-  Layout model   : A serif proposition, then four sectors as generously spaced passages — each
-                   opened by a coloured rule and a marginal sector name, with the constraint set at
-                   reading scale — and one wide reserved plate closing it
-  Density        : Low
-  Media mode     : One reserved project area, 21:9, at the foot. **Secondary by design** — the
-                   argument has to hold with it removed, which is the test this section must pass
-                   and `S03` must fail.
-  Interaction    : None (static; no JavaScript)
-  The editorial argument : Four sectors given room rather than six squeezed into a grid. The
-                   marginal sector name and the coloured rule do the indexing so the body can be
-                   read as continuous prose, which is how somebody who is already in one of these
-                   sectors actually reads it: they find their own row and read one passage properly.
-  Content note   : Sector names and services are generic vocabulary. No client name or logo, no
-                   framework or authority, no per-sector count or percentage, no certification,
-                   award, rating, price or programme length; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 9,
+                   chapter pacing: the proposition in tracked uppercase at display size, then
+                   four ruled passages — the sector name and its stroke icon standing in the
+                   margin, the constraint set large, and WHAT THAT CHANGES as an indented line
+                   on a 3px tape edge. One 21:9 project field closes the study. Drawing layer:
+                   a levelling circle with crosshair behind the proposition. V1 is kept: the
+                   serif proposition (now the sector's display voice), four passages, one field.
+  Layout model   : Eyebrow, display. Four ruled passages: margin (icon + sector), body
+                   (constraint large, what-that-changes indented). 21:9 field on a tape rule.
+  Density        : Standard (90–170), CON ceiling 250
+  Media mode     : One reserved project field, 21:9.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No client, logo, framework, authority, count, share, certification, award,
+                   rating, price or urgency device. Graphics are inline SVG, decorative.
 -->
 
 <meta name="study-id" content="CON-S04-002">
@@ -38,248 +36,85 @@
 <meta name="variant" content="002">
 <meta name="territory" content="Premium / Editorial">
 <meta name="direction" content="Premium / Editorial">
-<meta name="layout-model" content="Serif proposition above four spaced sector passages with marginal names and coloured rules">
-<meta name="density" content="low">
-<meta name="media-mode" content="one-secondary-reserved-area">
+<meta name="theme" content="002 Bone &amp; Burnt Amber">
+<meta name="layout-model" content="Display proposition; four ruled passages with sector icon and name in the margin, the constraint large and WHAT THAT CHANGES on a tape edge; one 21:9 field; levelling circle behind">
+<meta name="density" content="standard">
+<meta name="media-mode" content="one-reserved-project-field">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S04-002 — Sectors Served, Premium / Editorial</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #fafafa; }
+body { margin: 0; background: #efece5; }
 
-/* Scoped study styles — namespaced to .con-s04-002 */
 .con-s04-002 {
-  --ink: #111111;
-  --ink-soft: #5e5e5e;
-  --paper: #fafafa;
-  --slot-a: #d2d2d2;
-  --slot-b: #b4b4b4;
-  --on-slot: #ffffff;
-  --rule: #ececec;
-
-  --health: #7a7a7a;
-  --edu: #969696;
-  --industrial: #2b2b2b;
-  --civic: #444444;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #efece5; --ink: #171410; --muted: #6a655c; --line: #d9d3c8; --line-strong: #171410;
+  --media: #e3ded4; --band: #e8e3d9; --accent: #b4531d;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s04-002 *,
-.con-s04-002 *::before,
-.con-s04-002 *::after { box-sizing: inherit; }
-.con-s04-002 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 4px;
-  border-radius: 16px;
-}
-.con-s04-002 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s04-002 *, .con-s04-002 *::before, .con-s04-002 *::after { box-sizing: inherit; }
+.con-s04-002 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s04-002 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s04-002 .draw { position: absolute; right: -5rem; top: -5rem; width: 30rem; height: 30rem; pointer-events: none; color: var(--line); }
+.con-s04-002 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s04-002 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s04-002 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s04-002 h2 { margin: 0; max-width: 20ch; font-weight: 800; font-size: clamp(2.4rem, 5vw, 5.6rem); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s04-002 h2 em { font-style: normal; color: var(--accent); }
 
-.con-s04-002 .eyebrow {
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.con-s04-002 h2 {
-  margin: 0 0 clamp(30px, 4vw, 66px);
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: clamp(2.44rem, 5.292vw, 4.536rem);
-  line-height: 1.04;
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  max-width: 19ch;
-}
-.con-s04-002 h2 em { font-style: italic; }
+.con-s04-002 .ps { display: grid; grid-template-columns: minmax(10rem, 0.5fr) minmax(0, 1.5fr); gap: 0 clamp(1.6rem, 3vw, 3.4rem); align-items: start; margin-top: clamp(1.6rem, 3vw, 3rem); padding: 1.2rem 0 clamp(1.4rem, 2.6vw, 2.6rem); border-top: 1px solid var(--line-strong); }
+.con-s04-002 .ps:first-of-type { border-top: 3px solid var(--accent); }
+.con-s04-002 .ps h3 { display: flex; flex-direction: column; gap: 0.6rem; margin: 0; font-weight: 800; font-size: clamp(1.1rem, 1.6vw, 1.4rem); line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; }
+.con-s04-002 .ps h3 .ico { width: 2.4rem; height: 2.4rem; color: var(--accent); stroke-width: 1.3; }
+.con-s04-002 .ps > div { max-width: 40rem; }
+.con-s04-002 .ps p.c { margin: 0; font-weight: 700; font-size: clamp(1.2rem, 2vw, 1.8rem); line-height: 1.25; letter-spacing: -0.02em; }
+.con-s04-002 .ps p.w { margin: 1.1rem 0 0; padding-left: 1rem; border-left: 3px solid var(--accent); color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s04-002 .ps p.w strong { display: block; margin-bottom: 0.2rem; color: var(--ink); font-size: 0.58rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
 
-/* Passages */
-.con-s04-002 .passage {
-  display: grid;
-  grid-template-columns: clamp(120px, 15vw, 210px) minmax(0, 1fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: start;
-  padding: clamp(24px, 3vw, 44px) 0;
-  border-top: 1px solid var(--rule);
-}
-.con-s04-002 .passage:last-of-type { border-bottom: 1px solid var(--rule); }
-.con-s04-002 .marg { position: relative; padding-top: 4px; }
-.con-s04-002 .bar {
-  display: block;
-  width: clamp(40px, 5vw, 64px);
-  height: 7px;
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
-.con-s04-002 .b-health { background: var(--health); }
-.con-s04-002 .b-edu { background: var(--edu); }
-.con-s04-002 .b-industrial { background: var(--industrial); }
-.con-s04-002 .b-civic { background: var(--civic); }
-.con-s04-002 h3 {
-  margin: 0;
-  font-size: clamp(1.463rem, 2.135vw, 1.952rem);
-  font-weight: 700;
-  letter-spacing: -0.018em;
-}
+.con-s04-002 .media { position: relative; aspect-ratio: 21 / 9; background: var(--media); border-top: 3px solid var(--accent); }
+.con-s04-002 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-.con-s04-002 .say { min-width: 0; max-width: 56ch; }
-.con-s04-002 .say p { margin: 0; font-size: clamp(1.1rem, 1.475vw, 1.463rem); line-height: 1.56; }
-.con-s04-002 .say .do {
-  margin: clamp(12px, 1.5vw, 18px) 0 0;
-  color: var(--ink-soft);
-  font-size: clamp(1.1rem, 1.111vw, 1.1rem);
-  line-height: 1.62;
-}
-.con-s04-002 .say .do b { color: var(--ink); font-weight: 650; }
-
-/* Plate */
-.con-s04-002 .plate {
-  margin: clamp(30px, 3.8vw, 60px) 0 0;
-  border-radius: 16px;
-  overflow: hidden;
-  aspect-ratio: 21 / 9;
-  background: linear-gradient(150deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(16px, 2vw, 26px);
-}
-.con-s04-002 .plate span {
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.8;
-}
-
-/* Responsive ladder */
-@media (max-width: 860px) {
-  .con-s04-002 .passage { grid-template-columns: minmax(0, 1fr); gap: clamp(12px, 2vw, 18px); }
-  .con-s04-002 h2, .con-s04-002 .say { max-width: none; }
-  .con-s04-002 .plate { aspect-ratio: 16 / 9; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s04-002 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s04-002 {
-  --v2-accent: #7a7a7a;
-  --v2-soft: #ececec;
-  background: linear-gradient(180deg, #f2f2f2 0%, #fafafa 30%);
-  font-size: 1.06rem;
-}
-.con-s04-002 h2 { font-weight: 800; }
-.con-s04-002 h3, .con-s04-002 h4 { font-weight: 750; }
-.con-s04-002 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #ececec;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s04-002 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #ececec;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s04-002.con-s04-002 .shell > h2 {
-  padding: clamp(26px, 3.4vw, 54px);
-  border-radius: 34px;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  max-width: none;
-}
-.con-s04-002.con-s04-002 .shell > h2 span, .con-s04-002.con-s04-002 .shell > h2 b, .con-s04-002.con-s04-002 .shell > h2 em, .con-s04-002.con-s04-002 .shell > h2 i {
-  color: #ffffff;
-}
-.con-s04-002 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s04-002 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 900px) { .con-s04-002 .ps { grid-template-columns: minmax(0, 1fr); gap: 0.8rem; } .con-s04-002 .ps h3 { flex-direction: row; align-items: center; } .con-s04-002 h2 { max-width: none; } .con-s04-002 .draw { display: none; } .con-s04-002 .media { aspect-ratio: 16 / 10; } }
+@media (max-width: 480px) { .con-s04-002 .media { aspect-ratio: 4 / 3; } }
+@media (prefers-reduced-motion: reduce) { .con-s04-002 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s04-002" data-study-id="CON-S04-002" data-direction="Premium / Editorial">
+  <svg class="draw" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="200" cy="200" r="180"/><circle cx="200" cy="200" r="110"/><circle cx="200" cy="200" r="20"/><line x1="200" y1="0" x2="200" y2="400"/><line x1="0" y1="200" x2="400" y2="200"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s04-002-title">
 
-    <p class="eyebrow">Who we build for</p>
-    <h2 id="con-s04-002-title">The sector is not a category. It is <em>what makes the job hard</em>.</h2>
+    <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6z"/></svg>Who we build for</p>
+    <h2 id="con-s04-002-title">The sector is not a category. It is <em>what makes the job hard.</em></h2>
 
-    <div class="passage">
-      <div class="marg">
-        <span class="bar b-health" aria-hidden="true"></span>
-        <h3>Healthcare</h3>
-      </div>
-      <div class="say">
-        <p>The building does not close. There are patients on the floor below, a delivery route that is also somebody's front door, and a list of hours in which you are allowed to make noise.</p>
-        <p class="do"><b>What that changes:</b> phasing is priced before anything else, and our site manager sits in the estates meeting rather than hearing about it afterwards.</p>
-      </div>
-    </div>
+    <article class="ps">
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M12 8v8M8 12h8"/></svg>Healthcare</h3>
+      <div><p class="c">The building does not close. There are patients on the floor below, a delivery route that is also somebody&rsquo;s front door, and a list of hours in which you are allowed to make noise.</p><p class="w"><strong>What that changes</strong>Phasing is priced before anything else, and our site manager sits in the estates meeting rather than hearing about it afterwards.</p></div>
+    </article>
 
-    <div class="passage">
-      <div class="marg">
-        <span class="bar b-edu" aria-hidden="true"></span>
-        <h3>Education</h3>
-      </div>
-      <div class="say">
-        <p>Term starts whether you are finished or not. It is the one date in construction that genuinely cannot move, and there is safeguarding around every gate until it arrives.</p>
-        <p class="do"><b>What that changes:</b> the programme is written backwards from the first day of teaching, and gate sequencing is agreed with the school rather than worked around it.</p>
-      </div>
-    </div>
+    <article class="ps">
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4z"/><path d="M6 9v6c0 1 3 3 6 3s6-2 6-3V9"/></svg>Education</h3>
+      <div><p class="c">Term starts whether you are finished or not. It is the one date in construction that genuinely cannot move, and there is safeguarding around every gate until it arrives.</p><p class="w"><strong>What that changes</strong>The programme is written backwards from the first day of teaching, and gate sequencing is agreed with the school rather than worked around it.</p></div>
+    </article>
 
-    <div class="passage">
-      <div class="marg">
-        <span class="bar b-industrial" aria-hidden="true"></span>
-        <h3>Industrial</h3>
-      </div>
-      <div class="say">
-        <p>The ground decides. Loads, slabs and drainage set the programme before anybody has drawn an elevation, and the site investigation is a hypothesis rather than a fact.</p>
-        <p class="do"><b>What that changes:</b> we self-deliver the groundworks, because we would rather be the ones standing in the hole when the ground disagrees with the survey.</p>
-      </div>
-    </div>
+    <article class="ps">
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l6 4v-4l6 4v-4l6 4v7z"/><path d="M3 21h18"/></svg>Industrial</h3>
+      <div><p class="c">The ground decides. Loads, slabs and drainage set the programme before anybody has drawn an elevation, and the site investigation is a hypothesis rather than a fact.</p><p class="w"><strong>What that changes</strong>We self-deliver the groundworks, because we would rather be the ones standing in the hole when the ground disagrees with the survey.</p></div>
+    </article>
 
-    <div class="passage">
-      <div class="marg">
-        <span class="bar b-civic" aria-hidden="true"></span>
-        <h3>Civic</h3>
-      </div>
-      <div class="say">
-        <p>The public is alongside the works the whole time, and half the permissions you need belong to somebody who is not in the room.</p>
-        <p class="do"><b>What that changes:</b> hoardings, routes and closures are designed at tender rather than discovered on site, and the sequence assumes at least one of them arrives late.</p>
-      </div>
-    </div>
+    <article class="ps">
+      <h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10M9 21V10M15 21V10M19 21V10M3 10l9-6 9 6z"/></svg>Civic</h3>
+      <div><p class="c">The public is alongside the works the whole time, and half the permissions you need belong to somebody who is not in the room.</p><p class="w"><strong>What that changes</strong>Hoardings, routes and closures are designed at tender rather than discovered on site, and the sequence assumes at least one of them arrives late.</p></div>
+    </article>
 
-    <div class="plate"><span>Project media &mdash; one completed job, wide</span></div>
+    <div class="media" role="img" aria-label="Reserved project field: one completed job, wide"><p class="slate" aria-hidden="true">Project area &middot; 21:9 &middot; one completed job, wide</p></div>
 
   </section>
 </div>

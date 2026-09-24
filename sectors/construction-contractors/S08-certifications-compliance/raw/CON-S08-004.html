@@ -12,27 +12,21 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S08 — Certifications & Compliance
   Direction      : Conversion-led
-  Reference      : None supplied for this section.
-  Layout model   : A deep ground. Three outcome cards for a prequalification list — we hold it, we
-                   could go and get it, we cannot — above a compact register of the reserved numbers
-                   and a single action, closing on the handover to the safety page
-  Density        : Medium
-  Media mode     : None. A certifications section has nothing to photograph that is not a logo.
-  Interaction    : A single plain link. No form &mdash; `S05-004` carries this sector's only
-                   mechanism and `S15` owns the formal submission.
-  Conversion device : **The pre-tender check.** A client with a prequalification list in front of
-                   them is about to spend an evening finding out whether this firm qualifies. The
-                   section converts by offering to answer that first, in three honest outcomes
-                   including the one that loses us the job.
-  Why it converts : Because the third card exists. A page that can only say *we hold it* is a page
-                   whose answer you cannot trust; a page that prints **we cannot** as an equal
-                   third of the same row is answering the question rather than selling.
-  Deliberately not : No urgency device, no logo, badge, seal or crest, and no real scheme, standard
-                   or body named in copy. No *fully accredited* or *fully compliant*.
-  Content note   : Categories of assurance are generic vocabulary. Scheme names, registration
-                   numbers, issuing bodies and expiry dates are reserved fields. No duration or date
-                   asserted anywhere in copy. No incident figure or safety record; no digit in
-                   visible copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 3
+                   then device 4: the three answers — WE HOLD IT, WE COULD GO AND GET IT, WE
+                   CANNOT — as three bordered cells with stroke icons (closed padlock, open
+                   padlock, cone) under a hi-vis tape rule; the compact register as ruled rows
+                   with the reserved number at counter scale and the one-line caveat; then
+                   SEND THE LIST as a tinted band with hi-vis tape carrying one bordered action.
+                   The foot line under. Drawing layer: a chevron run behind the band. V1 is
+                   kept whole.
+  Layout model   : Head split. Three bordered answer cells. Six-row ruled register with
+                   slots. Tinted action band. Foot line.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : None. Six reserved fields.
+  Interaction    : None (static; no JavaScript). The action is a relative link.
+  Content note   : No scheme name, registration number, issuing body, date, logo, client,
+                   project name, award, safety figure or urgency device.
 -->
 
 <meta name="study-id" content="CON-S08-004">
@@ -43,292 +37,74 @@
 <meta name="variant" content="004">
 <meta name="territory" content="Conversion-led">
 <meta name="direction" content="Conversion-led">
-<meta name="layout-model" content="Three outcome cards above a compact reserved register and one action">
-<meta name="density" content="medium">
-<meta name="media-mode" content="none">
-<meta name="interaction" content="single-link">
+<meta name="theme" content="004 White &amp; Hi-Vis">
+<meta name="layout-model" content="Head split with tape underline; three bordered iconed answer cells; six-row ruled register with reserved numbers at counter scale and one-line caveats; SEND THE LIST as a hi-vis tape band with one bordered action; foot line; chevron run behind">
+<meta name="density" content="structured">
+<meta name="media-mode" content="no-media-six-reserved-slots">
+<meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S08-004 — Certifications &amp; Compliance, Conversion-led</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #0e0e0e; }
+body { margin: 0; background: #fbfbfa; }
 
-/* Scoped study styles — namespaced to .con-s08-004 */
 .con-s08-004 {
-  --ink: #ececec;
-  --ink-soft: #d2d2d2;
-  --ink-faint: #7a7a7a;
-  --paper: #0e0e0e;
-  --edge: #444444;
-  --card: #2b2b2b;
-  --panel: #ffffff;
-  --panel-ink: #111111;
-  --panel-soft: #5e5e5e;
-
-  --hold: #b4b4b4;
-  --could: #969696;
-  --cannot: #969696;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #fbfbfa; --ink: #0b0b0b; --muted: #55585c; --line: #e2e2e0; --line-strong: #0b0b0b;
+  --media: #ececea; --band: #f2f2ef; --accent: #c99e00; --tape: #ffd400;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s08-004 *,
-.con-s08-004 *::before,
-.con-s08-004 *::after { box-sizing: inherit; }
-.con-s08-004 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s08-004 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s08-004 *, .con-s08-004 *::before, .con-s08-004 *::after { box-sizing: inherit; }
+.con-s08-004 :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 
-.con-s08-004 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s08-004 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s08-004 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s08-004 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s08-004 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s08-004 h2 { margin: 0; max-width: 14ch; font-weight: 800; font-size: clamp(2.4rem, 5vw, 5.6rem); line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+.con-s08-004 h2 mark { background: transparent; color: var(--ink); text-decoration: underline; text-decoration-color: var(--tape); text-decoration-thickness: 0.16em; text-underline-offset: 0.04em; text-decoration-skip-ink: none; }
+.con-s08-004 .lead { margin: 0 0 0.3rem; max-width: 28rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
 
-/* Head */
-.con-s08-004 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(18px, 3vw, 56px);
-  align-items: end;
-  margin-bottom: clamp(20px, 2.6vw, 34px);
-}
-.con-s08-004 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s08-004 h2 {
-  margin: 0;
-  font-size: clamp(2.379rem, 4.788vw, 4.032rem);
-  line-height: 1.03;
-  letter-spacing: -0.034em;
-  font-weight: 700;
-  max-width: 18ch;
-}
-.con-s08-004 .head p { margin: 0; max-width: 48ch; color: var(--ink-soft); font-size: clamp(1.1rem, 1.274vw, 1.251rem); line-height: 1.62; }
-.con-s08-004 .head p b { color: var(--ink); font-weight: 650; }
+.con-s08-004 .three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(1.6rem, 3vw, 3rem); border-top: 3px solid var(--tape); border-left: 1px solid var(--line-strong); }
+.con-s08-004 .cell { display: flex; flex-direction: column; min-width: 0; padding: 1.3rem 1.4rem 1.4rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s08-004 .cell .big { width: 2.4rem; height: 2.4rem; color: var(--accent); stroke-width: 1.3; }
+.con-s08-004 .cell h3 { margin: 0.8rem 0 0.2rem; font-weight: 800; font-size: clamp(1.3rem, 2.1vw, 2rem); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s08-004 .cell .sub { margin: 0 0 0.7rem; color: var(--accent); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s08-004 .cell p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s08-004 .cell p + p { margin-top: 0.6rem; }
+.con-s08-004 .cell p strong { color: var(--ink); }
 
-/* Three outcomes */
-.con-s08-004 .outcomes {
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.5vw, 18px);
-}
-.con-s08-004 .outcomes li { min-width: 0; }
-.con-s08-004 .outcome {
-  height: 100%;
-  border-radius: 22px;
-  background: var(--card);
-  border-top: 5px solid var(--tone, var(--edge));
-  padding: clamp(16px, 2vw, 26px);
-}
-.con-s08-004 .o-hold { --tone: var(--hold); }
-.con-s08-004 .o-could { --tone: var(--could); }
-.con-s08-004 .o-cannot { --tone: var(--cannot); }
-.con-s08-004 .verdict {
-  margin: 0 0 clamp(9px, 1.2vw, 13px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s08-004 h3 {
-  margin: 0 0 clamp(10px, 1.3vw, 14px);
-  font-size: clamp(1.369rem, 1.888vw, 1.699rem);
-  line-height: 1.1;
-  letter-spacing: -0.024em;
-  font-weight: 700;
-}
-.con-s08-004 .outcome p { margin: 0; font-size: 1rem; line-height: 1.58; color: var(--ink-soft); }
-.con-s08-004 .outcome p + p { margin-top: 10px; }
-.con-s08-004 .outcome p b { color: var(--ink); font-weight: 650; }
+.con-s08-004 .reg { margin-top: clamp(1.6rem, 3vw, 3rem); }
+.con-s08-004 .reg > .lab { display: flex; align-items: center; gap: 0.5rem; margin: 0; padding-bottom: 0.7rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s08-004 .reg ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(1.6rem, 3vw, 3.4rem); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); }
+.con-s08-004 .reg li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.3rem 1.2rem; align-items: center; padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
+.con-s08-004 .reg h4 { margin: 0; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+.con-s08-004 .reg p { grid-column: 1; margin: 0; color: var(--muted); font-size: 0.82rem; line-height: 1.45; }
+.con-s08-004 .slot { grid-column: 2; grid-row: 1 / span 2; display: inline-flex; align-items: center; min-width: 8rem; height: 3rem; padding: 0 0.9rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); font-size: 1.9rem; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+.con-s08-004 .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Compact register */
-.con-s08-004 .regs {
-  margin: 0 0 clamp(14px, 1.8vw, 22px);
-  padding: clamp(16px, 2vw, 26px);
-  border-radius: 22px;
-  border: 1px solid var(--edge);
-}
-.con-s08-004 .regs > .k {
-  display: block;
-  margin-bottom: clamp(12px, 1.5vw, 17px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s08-004 .regs ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(12px, 1.6vw, 20px);
-}
-.con-s08-004 .regs li { min-width: 0; padding-left: clamp(11px, 1.4vw, 15px); border-left: 2px solid var(--edge); }
-.con-s08-004 .cat {
-  margin: 0 0 5px;
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s08-004 .num {
-  margin: 0 0 5px;
-  font-size: clamp(1.369rem, 2.074vw, 1.83rem);
-  line-height: 1.1;
-  letter-spacing: 0.04em;
-  font-weight: 700;
-  color: var(--ink-soft);
-}
-.con-s08-004 .not { margin: 0; font-size: 1rem; line-height: 1.48; color: var(--ink-faint); }
+.con-s08-004 .band { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.4fr) auto; gap: clamp(1.4rem, 3vw, 3.4rem); align-items: center; margin-top: clamp(1.6rem, 3vw, 3rem); padding: clamp(1.4rem, 2.6vw, 2.4rem) clamp(1.2rem, 2.4vw, 2.4rem); background: var(--band); border-top: 3px solid var(--tape); }
+.con-s08-004 .draw { position: absolute; right: -2rem; top: 0; height: 100%; width: 22rem; pointer-events: none; color: var(--line); }
+.con-s08-004 .band > :not(.draw) { position: relative; }
+.con-s08-004 .band h3 { margin: 0 0 0.6rem; max-width: 22ch; font-weight: 800; font-size: clamp(1.4rem, 2.4vw, 2.2rem); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s08-004 .band p { margin: 0; max-width: 44rem; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.con-s08-004 .band p + p { margin-top: 0.6rem; font-size: 0.84rem; }
+.con-s08-004 .btn { display: inline-flex; align-items: center; gap: 0.7rem; padding: 0.95rem 1.5rem; border: 1px solid var(--ink); border-radius: 0; color: var(--ink); text-decoration: none; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; transition: background-color 160ms ease, color 160ms ease; }
+.con-s08-004 .btn:hover { background: var(--ink); color: var(--tape); }
+.con-s08-004 .btn .ico { width: 1.2rem; height: 1.2rem; }
+.con-s08-004 .foot { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1.2rem; align-items: start; margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding-top: 1rem; border-top: 1px solid var(--line-strong); }
+.con-s08-004 .foot .ico { width: 1.4rem; height: 1.4rem; color: var(--accent); margin-top: 0.1rem; }
+.con-s08-004 .foot p { margin: 0; max-width: 56rem; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s08-004 .foot strong { color: var(--ink); }
 
-/* Action */
-.con-s08-004 .act {
-  border-radius: 26px;
-  background: var(--panel);
-  color: var(--panel-ink);
-  padding: clamp(20px, 2.6vw, 36px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(18px, 3vw, 48px);
-  align-items: center;
-  margin-bottom: clamp(12px, 1.6vw, 18px);
-}
-.con-s08-004 .act h3 { margin: 0 0 clamp(10px, 1.3vw, 15px); max-width: 24ch; }
-.con-s08-004 .act p { margin: 0 0 clamp(12px, 1.5vw, 17px); max-width: 58ch; color: var(--panel-soft); font-size: 1.1rem; line-height: 1.6; }
-.con-s08-004 .act p:last-child { margin-bottom: 0; }
-.con-s08-004 .act p b { color: var(--panel-ink); font-weight: 650; }
-.con-s08-004 .go {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 56px;
-  padding: 0 34px;
-  border-radius: 999px;
-  background: var(--panel-ink);
-  color: var(--panel);
-  font-size: 1.1rem;
-  font-weight: 650;
-  text-decoration: none;
-}
-.con-s08-004 .go:hover { background: #111111; }
-
-.con-s08-004 .close { margin: 0; max-width: 88ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.62; }
-.con-s08-004 .close b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 1020px) {
-  .con-s08-004 .outcomes { grid-template-columns: minmax(0, 1fr); }
-  .con-s08-004 .regs ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 780px) {
-  .con-s08-004 .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .con-s08-004 .regs ul { grid-template-columns: minmax(0, 1fr); }
-  .con-s08-004 .act { grid-template-columns: minmax(0, 1fr); }
-  .con-s08-004 h2,
-  .con-s08-004 .head p,
-  .con-s08-004 .act h3,
-  .con-s08-004 .act p,
-  .con-s08-004 .close { max-width: none; }
-  .con-s08-004 .go { width: 100%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s08-004 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s08-004 {
-  --v2-accent: #b4b4b4;
-  --v2-soft: #444444;
-  background: linear-gradient(180deg, #181818 0%, #0e0e0e 30%);
-  font-size: 1.06rem;
-}
-.con-s08-004 h2 { font-weight: 800; }
-.con-s08-004 h3, .con-s08-004 h4 { font-weight: 750; }
-.con-s08-004 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #444444;
-  color: #b4b4b4;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s08-004 .outcome {
-  border-radius: 26px;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
-  border: 1px solid #2b2b2b;
-}
-.con-s08-004 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #444444;
-  color: #b4b4b4;
-  font-weight: 600;
-}
-.con-s08-004.con-s08-004 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: 1px solid #444444;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s08-004.con-s08-004 .head h2, .con-s08-004.con-s08-004 .head h3, .con-s08-004.con-s08-004 .head h4, .con-s08-004.con-s08-004 .head b, .con-s08-004.con-s08-004 .head strong, .con-s08-004.con-s08-004 .head p b, .con-s08-004.con-s08-004 .head li b, .con-s08-004.con-s08-004 .head span b, .con-s08-004.con-s08-004 .head dt, .con-s08-004.con-s08-004 .head div b {
-  color: #ffffff;
-}
-.con-s08-004.con-s08-004 .head p, .con-s08-004.con-s08-004 .head li, .con-s08-004.con-s08-004 .head span, .con-s08-004.con-s08-004 .head dd, .con-s08-004.con-s08-004 .head div p, .con-s08-004.con-s08-004 .head div li, .con-s08-004.con-s08-004 .head p span, .con-s08-004.con-s08-004 .head .said, .con-s08-004.con-s08-004 .head .note {
-  color: #d2d2d2;
-}
-.con-s08-004.con-s08-004 .head .eyebrow, .con-s08-004.con-s08-004 .head .kicker, .con-s08-004.con-s08-004 .head .slot, .con-s08-004.con-s08-004 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s08-004.con-s08-004 .head i, .con-s08-004.con-s08-004 .head .bars i, .con-s08-004.con-s08-004 .head .lines i, .con-s08-004.con-s08-004 .head .measures i, .con-s08-004.con-s08-004 .head .bar, .con-s08-004.con-s08-004 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s08-004.con-s08-004 .head .plate, .con-s08-004.con-s08-004 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s08-004 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s08-004 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s08-004 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s08-004 .lead { text-align: left; } .con-s08-004 h2 { max-width: none; } .con-s08-004 .draw { display: none; } .con-s08-004 .band { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 860px) { .con-s08-004 .three { grid-template-columns: minmax(0, 1fr); } .con-s08-004 .reg ol { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { .con-s08-004 .reg li { grid-template-columns: minmax(0, 1fr); } .con-s08-004 .slot { grid-column: 1; grid-row: auto; } .con-s08-004 .btn { width: 100%; justify-content: center; } }
+@media (prefers-reduced-motion: reduce) { .con-s08-004 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
@@ -338,87 +114,44 @@ body { margin: 0; background: #0e0e0e; }
 
     <div class="head">
       <div>
-        <p class="eyebrow">The paperwork</p>
-        <h2 id="con-s08-004-title">Send us the list before you fill it in.</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>The paperwork</p>
+        <h2 id="con-s08-004-title">Send us the list <mark>before you fill it in.</mark></h2>
       </div>
-      <p>If your tender has a prequalification list, you are about to spend an evening finding out whether we qualify. <b>We can answer that first, and there are only three answers.</b></p>
+      <p class="lead">If your tender has a prequalification list, you are about to spend an evening finding out whether we qualify. We can answer that first, and there are only three answers.</p>
     </div>
 
-    <ul class="outcomes">
-      <li>
-        <div class="outcome o-hold">
-          <p class="verdict">We hold it</p>
-          <h3>Here is the number, go and check it</h3>
-          <p>You get the registration and the body that issued it, and you verify it on their public register rather than taking our word.</p>
-          <p><b>If it has lapsed, the register tells you before we do.</b> That is the point of printing numbers instead of badges.</p>
-        </div>
-      </li>
-      <li>
-        <div class="outcome o-could">
-          <p class="verdict">We could go and get it</p>
-          <h3>And we will say whether it is worth waiting for</h3>
-          <p>Some assessments we have simply never needed. If yours requires one, we will tell you what getting it involves and let you decide.</p>
-          <p><b>We will not tell you it is imminent</b> to keep ourselves on your list while you wait.</p>
-        </div>
-      </li>
-      <li>
-        <div class="outcome o-cannot">
-          <p class="verdict">We cannot</p>
-          <h3>And this is the card that makes the other two worth reading</h3>
-          <p>Some requirements we will not meet, and the honest thing is to say so at the first email rather than after you have shortlisted us.</p>
-          <p><b>A page that can only say yes is a page whose yes means nothing.</b></p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="regs">
-      <span class="k">What we hold, with the numbers where the badges usually go</span>
-      <ul>
-        <li>
-          <p class="cat">Quality management</p>
-          <p class="num"><span class="slot"><span class="vh">Quality management registration number</span><span aria-hidden="true">&mdash;</span></span></p>
-          <p class="not">Audits the system, not the building.</p>
-        </li>
-        <li>
-          <p class="cat">Health and safety assessment</p>
-          <p class="num"><span class="slot"><span class="vh">Health and safety assessment registration number</span><span aria-hidden="true">&mdash;</span></span></p>
-          <p class="not">Not how a site runs when we are behind.</p>
-        </li>
-        <li>
-          <p class="cat">Environmental management</p>
-          <p class="num"><span class="slot"><span class="vh">Environmental management registration number</span><span aria-hidden="true">&mdash;</span></span></p>
-          <p class="not">Says nothing about a carbon footprint.</p>
-        </li>
-        <li>
-          <p class="cat">Trade body registration</p>
-          <p class="num"><span class="slot"><span class="vh">Trade body membership number</span><span aria-hidden="true">&mdash;</span></span></p>
-          <p class="not">Confirms we exist and we pay. Not competence.</p>
-        </li>
-        <li>
-          <p class="cat">Public sector supplier registration</p>
-          <p class="num"><span class="slot"><span class="vh">Public sector supplier registration number</span><span aria-hidden="true">&mdash;</span></span></p>
-          <p class="not">Eligible is not chosen.</p>
-        </li>
-        <li>
-          <p class="cat">Insurance</p>
-          <p class="num"><span class="slot"><span class="vh">Insurance policy number</span><span aria-hidden="true">&mdash;</span></span></p>
-          <p class="not">Cover has limits. Yours should read them.</p>
-        </li>
-      </ul>
+    <div class="three">
+      <div class="cell"><svg class="ico big" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><h3>We hold it</h3><p class="sub">Here is the number, go and check it</p><p>You get the registration and the body that issued it, and you verify it on their public register rather than taking our word.</p><p>If it has lapsed, the register tells you before we do. That is the point of printing numbers instead of badges.</p></div>
+      <div class="cell"><svg class="ico big" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/></svg><h3>We could go and get it</h3><p class="sub">And we will say whether it is worth waiting for</p><p>Some assessments we have simply never needed. If yours requires one, we will tell you what getting it involves and let you decide.</p><p>We will not tell you it is imminent to keep ourselves on your list while you wait.</p></div>
+      <div class="cell"><svg class="ico big" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg><h3>We cannot</h3><p class="sub">And this is the card that makes the other two worth reading</p><p>Some requirements we will not meet, and the honest thing is to say so at the first email rather than after you have shortlisted us.</p><p><strong>A page that can only say yes is a page whose yes means nothing.</strong></p></div>
     </div>
 
-    <div class="act">
+    <div class="reg">
+      <p class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>What we hold, with the numbers where the badges usually go</p>
+      <ol>
+        <li><h4>Quality management</h4><p>Audits the system, not the building.</p><span class="slot"><span class="vh">Quality management registration number</span><span aria-hidden="true">&mdash;</span></span></li>
+        <li><h4>Health and safety assessment</h4><p>Not how a site runs when we are behind.</p><span class="slot"><span class="vh">Health and safety assessment registration number</span><span aria-hidden="true">&mdash;</span></span></li>
+        <li><h4>Environmental management</h4><p>Says nothing about a carbon footprint.</p><span class="slot"><span class="vh">Environmental management registration number</span><span aria-hidden="true">&mdash;</span></span></li>
+        <li><h4>Trade body registration</h4><p>Confirms we exist and we pay. Not competence.</p><span class="slot"><span class="vh">Trade body membership number</span><span aria-hidden="true">&mdash;</span></span></li>
+        <li><h4>Public sector supplier registration</h4><p>Eligible is not chosen.</p><span class="slot"><span class="vh">Public sector supplier registration number</span><span aria-hidden="true">&mdash;</span></span></li>
+        <li><h4>Insurance</h4><p>Cover has limits. Yours should read them.</p><span class="slot"><span class="vh">Insurance policy number</span><span aria-hidden="true">&mdash;</span></span></li>
+      </ol>
+    </div>
+
+    <div class="band">
+      <svg class="draw" viewBox="0 0 352 240" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><path d="M0 240L120 0M40 240L160 0M80 240L200 0M120 240L240 0M160 240L280 0M200 240L320 0M240 240L360 0M280 240L400 0"/></g></svg>
       <div>
         <h3>Send the list and we will mark it up</h3>
-        <p>Every line answered with one of the three above, the registration where we have it, and a straight sentence where we do not. <b>You will know before you start writing whether the submission is worth either of our evenings.</b></p>
-        <a class="go" href="#con-s08-004-title">Send us your prequalification list</a>
+        <p>Every line answered with one of the three above, the registration where we have it, and a straight sentence where we do not. You will know before you start writing whether the submission is worth either of our evenings.</p>
+        <p>This is not a bid and it does not put us on your list. It is the cheapest possible way for both of us to find out that we are not eligible &mdash; and where we are, you will have the numbers to verify before you have committed anything at all.</p>
       </div>
-      <div>
-        <p><b>This is not a bid and it does not put us on your list.</b> It is the cheapest possible way for both of us to find out that we are not eligible &mdash; and where we are, you will have the numbers to verify before you have committed anything at all.</p>
-      </div>
+      <a class="btn" href="#prequal"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17"/><path d="M9 4V2h6v2M8 10h8M8 14h6"/></svg>Send us your prequalification list</a>
     </div>
 
-    <p class="close"><b>None of this tells you whether the site is run well.</b> It tells you that somebody checked the paperwork on a date. Who can stop the work, and what happens to them if they were wrong, is on the safety page &mdash; nobody certifies those answers, which is why they are the ones worth asking.</p>
+    <div class="foot">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"/><path d="M9 12h6"/></svg>
+      <p><strong>None of this tells you whether the site is run well.</strong> It tells you that somebody checked the paperwork on a date. Who can stop the work, and what happens to them if they were wrong, is on the safety page &mdash; nobody certifies those answers, which is why they are the ones worth asking.</p>
+    </div>
 
   </section>
 </div>

@@ -12,29 +12,23 @@
   Sector         : Construction & Contractors (CON)
   Section        : CON-S07 — Safety Program
   Direction      : Structured / Visual Modular
-  Reference      : None supplied for this section.
-  Layout model   : Three horizontal phase bands — before work starts, the moment something is wrong,
-                   afterwards — each with a dark label block on the left and its standing decisions
-                   as cards along the right, closing on a full-width refusal strip
-  Density        : High
-  Media mode     : One reserved site area, as a band, under the head.
-  Interaction    : None (static; no JavaScript)
-  The device     : **Grouped by when, not by what.** A safety page listed by topic is a policy
-                   index; grouped by the moment each decision applies in, it becomes usable — a
-                   reader can find the row for *the moment something is wrong* and read only that.
-  Structural note : `CON-S05-003` grouped a set into vertical colour columns keyed to its marker.
-                   This study runs the bands horizontally and keys them to **time**, leaving the
-                   authority marker to appear as a small chip inside each card. Different axis,
-                   different thing carrying the colour.
-  Not a table    : The direction's trap. The bands are unequal by construction — the middle one is
-                   the shortest and the most important — the label blocks are solid fields rather
-                   than a header row, and no column means the same thing twice across the bands.
-  Deliberately not : Nothing hi-vis. Where the middle band is darkest it is
-                   because that is the moment something is wrong, not because a site is a shade.
-  Content note   : Roles are generic vocabulary. No incident rate, frequency or lost-time figure, no
-                   days-without board, no zero-harm slogan, no certification, scheme, registration
-                   number or named regulation; no reserved field of any kind; no digit in visible
-                   copy; no header.
+  Register       : Detailing pass — CONSTRUCTION-DESIGN-DIRECTION.md → Detailing Pass. Device 4
+                   three times: three phase bands — BEFORE WORK STARTS, THE MOMENT SOMETHING
+                   IS WRONG, AFTERWARDS — alternating paper and band tone under one 3px tape
+                   rule, each with the phase index and name at display size on the left and
+                   its decisions as bordered cells on the right, every cell carrying a holder
+                   chip, the decision and COSTS US with a clock icon. The middle band is the
+                   short one, as V1 wrote it. A 4:1 site field above; WHAT IS NOT ON THIS PAGE
+                   as a bordered strip below. Drawing layer: a dimension line with running
+                   ticks behind the head. V1 is kept whole.
+  Layout model   : Head split. 4:1 field. Three phase bands with bordered decision cells.
+                   Bordered refusal strip.
+  Density        : Structured, long-form — V1's spine kept in full
+  Media mode     : One reserved site field, 4:1.
+  Interaction    : None (static; no JavaScript).
+  Content note   : No incident rate, days-without figure, zero-harm claim, certification,
+                   registration number, scheme logo, client, project name or award. The
+                   forbidden devices are named only as what is absent. Inline SVG.
 -->
 
 <meta name="study-id" content="CON-S07-003">
@@ -45,461 +39,125 @@
 <meta name="variant" content="003">
 <meta name="territory" content="Structured / Visual Modular">
 <meta name="direction" content="Structured / Visual Modular">
-<meta name="layout-model" content="Three horizontal phase bands of decision cards, closing on a refusal strip">
-<meta name="density" content="high">
-<meta name="media-mode" content="one-reserved-area">
+<meta name="theme" content="003 Steel &amp; Structural Blue">
+<meta name="layout-model" content="Head split; 4:1 field; three alternating phase bands with index and name at display size beside bordered decision cells carrying holder chips and cost lines; bordered refusal strip; dimension line behind">
+<meta name="density" content="structured">
+<meta name="media-mode" content="one-reserved-site-field">
 <meta name="interaction" content="none">
 <meta name="dependencies" content="none">
-<meta name="batch" content="V1">
+<meta name="batch" content="V2-detailing">
 
 <title>CON-S07-003 — Safety Program, Structured / Visual Modular</title>
 
 <style>
-/* Standalone host baseline */
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: #dfdfdf; }
+body { margin: 0; background: #edf0f2; }
 
-/* Scoped study styles — namespaced to .con-s07-003 */
 .con-s07-003 {
-  --ink: #111111;
-  --ink-soft: #7a7a7a;
-  --ink-faint: #b4b4b4;
-  --paper: #dfdfdf;
-  --card: #ffffff;
-  --line: #ececec;
-  --rule: #ececec;
-
-  /* Phase blocks. The darkest value is the moment something is wrong; nothing here is hi-vis. */
-  --p-before: #111111;
-  --p-moment: #2b2b2b;
-  --p-after: #444444;
-
-  /* The one hue system that carries meaning: who holds the authority. */
-  --anyone: #969696;
-  --named: #5e5e5e;
-
-  --slot-a: #d2d2d2;
-  --slot-b: #969696;
-  --on-slot: #ffffff;
-
-  box-sizing: border-box;
-  display: block;
-  background: var(--paper);
-  color: var(--ink);
+  --paper: #edf0f2; --ink: #0f1316; --muted: #57616a; --line: #d2d9de; --line-strong: #0f1316;
+  --media: #dfe4e8; --band: #e4e8eb; --accent: #1f5fd0;
+  box-sizing: border-box; display: block; position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  font-size: 1rem; line-height: 1.6; -webkit-font-smoothing: antialiased;
 }
-.con-s07-003 *,
-.con-s07-003 *::before,
-.con-s07-003 *::after { box-sizing: inherit; }
-.con-s07-003 :focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 3px;
-  border-radius: 16px;
-}
-.con-s07-003 .vh {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
+.con-s07-003 *, .con-s07-003 *::before, .con-s07-003 *::after { box-sizing: inherit; }
+.con-s07-003 :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 
-.con-s07-003 .shell {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: clamp(40px, 5vw, 92px) clamp(22px, 3.6vw, 58px);
-}
+.con-s07-003 .draw { position: absolute; left: 0; right: 0; top: 0; height: 22rem; pointer-events: none; color: var(--line); }
+.con-s07-003 .shell { position: relative; width: min(100%, 96rem); margin: 0 auto; padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4.5vw, 4.5rem); }
+.con-s07-003 .head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(16rem, 0.7fr); gap: 3rem; align-items: end; }
+.con-s07-003 .eyebrow { display: flex; align-items: center; gap: 0.6rem; margin: 0 0 1.2rem; color: var(--accent); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+.con-s07-003 .ico { width: 1.3rem; height: 1.3rem; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.con-s07-003 h2 { margin: 0; max-width: 18ch; font-weight: 800; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s07-003 h2 em { font-style: normal; color: var(--accent); }
+.con-s07-003 .lead { margin: 0 0 0.3rem; max-width: 26rem; color: var(--muted); font-size: 0.9rem; line-height: 1.55; text-align: right; }
+.con-s07-003 .media { position: relative; aspect-ratio: 4 / 1; margin-top: clamp(1.6rem, 3vw, 3rem); background: var(--media); border-top: 3px solid var(--accent); }
+.con-s07-003 .slate { position: absolute; left: 1rem; bottom: 0.8rem; margin: 0; color: var(--muted); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-/* Head */
-.con-s07-003 .head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: clamp(14px, 2.4vw, 40px);
-  margin-bottom: clamp(16px, 2.2vw, 28px);
-}
-.con-s07-003 .eyebrow {
-  margin: 0 0 clamp(10px, 1.2vw, 16px);
-  font-size: 0.8rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-.con-s07-003 h2 {
-  margin: 0;
-  font-size: clamp(2.257rem, 4.284vw, 3.654rem);
-  line-height: 1.04;
-  letter-spacing: -0.032em;
-  font-weight: 700;
-  max-width: 20ch;
-}
-.con-s07-003 .head p { margin: 0; max-width: 40ch; color: var(--ink-soft); font-size: 1.1rem; line-height: 1.58; }
-.con-s07-003 .head p b { color: var(--ink); font-weight: 650; }
+.con-s07-003 .bands { margin-top: clamp(1.4rem, 2.6vw, 2.6rem); border-top: 1px solid var(--line-strong); }
+.con-s07-003 .band { display: grid; grid-template-columns: minmax(12rem, 0.55fr) minmax(0, 1.45fr); gap: clamp(1.2rem, 2.4vw, 2.6rem); align-items: start; padding: clamp(1.4rem, 2.6vw, 2.6rem) clamp(1rem, 2vw, 2rem); border-bottom: 1px solid var(--line-strong); }
+.con-s07-003 .band:nth-child(2) { background: var(--band); }
+.con-s07-003 .band:nth-child(3) .cells { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.con-s07-003 .ph { margin: 0 0 0.4rem; color: var(--accent); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s07-003 .band h3 { margin: 0 0 0.6rem; font-weight: 800; font-size: clamp(1.6rem, 2.8vw, 2.6rem); line-height: 0.92; letter-spacing: -0.03em; text-transform: uppercase; }
+.con-s07-003 .band > div > p { margin: 0; max-width: 20rem; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s07-003 .cells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.con-s07-003 .cell { display: flex; flex-direction: column; min-width: 0; padding: 1rem 1.1rem 1.1rem; border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.con-s07-003 .who { display: inline-flex; align-items: center; gap: 0.4rem; align-self: flex-start; padding: 0.28rem 0.5rem; border: 1px solid var(--line-strong); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s07-003 .who .ico { width: 0.9rem; height: 0.9rem; color: var(--accent); }
+.con-s07-003 .cell h4 { margin: 0.7rem 0 0.35rem; font-weight: 800; font-size: 1rem; line-height: 1.05; letter-spacing: -0.01em; text-transform: uppercase; }
+.con-s07-003 .cell p.d { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.5; }
+.con-s07-003 .cell p.c { margin: auto 0 0; padding: 0.7rem 0 0 0.8rem; border-left: 3px solid var(--accent); margin-top: 0.8rem; color: var(--muted); font-size: 0.8rem; line-height: 1.45; }
+.con-s07-003 .cell p.c strong { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.1rem; color: var(--ink); font-size: 0.52rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+.con-s07-003 .cell p.c .ico { width: 0.9rem; height: 0.9rem; color: var(--accent); }
 
-.con-s07-003 .shot {
-  border-radius: 22px;
-  overflow: hidden;
-  height: clamp(140px, 15vw, 230px);
-  background: linear-gradient(148deg, var(--slot-a) 0%, var(--slot-b) 100%);
-  display: grid;
-  place-items: start start;
-  padding: clamp(13px, 1.6vw, 20px);
-  margin-bottom: clamp(16px, 2.2vw, 26px);
-}
-.con-s07-003 .shot span {
-  font-size: 0.75rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  color: var(--on-slot);
-  opacity: 0.84;
-}
+.con-s07-003 .not { display: grid; grid-template-columns: minmax(12rem, 0.55fr) minmax(0, 1.45fr); gap: clamp(1.2rem, 2.4vw, 2.6rem); margin-top: clamp(1.4rem, 2.6vw, 2.6rem); padding: 1.2rem 1.5rem 1.4rem; border: 1px solid var(--line-strong); }
+.con-s07-003 .not .lab { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.6rem; color: var(--accent); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.con-s07-003 .not .lab .ico { width: 1.2rem; height: 1.2rem; }
+.con-s07-003 .not ul { margin: 0; padding: 0; list-style: none; }
+.con-s07-003 .not li { padding: 0.35rem 0; border-top: 1px solid var(--line); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.con-s07-003 .not p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.con-s07-003 .not p + p { margin-top: 0.7rem; }
+.con-s07-003 .not p strong { color: var(--ink); }
 
-/* Phase bands */
-.con-s07-003 .band {
-  display: grid;
-  grid-template-columns: minmax(0, 0.36fr) minmax(0, 1.64fr);
-  gap: clamp(10px, 1.3vw, 16px);
-  align-items: stretch;
-  margin-bottom: clamp(10px, 1.3vw, 16px);
-}
-.con-s07-003 .label {
-  border-radius: 22px;
-  background: var(--phase, #2b2b2b);
-  color: #ffffff;
-  padding: clamp(16px, 2vw, 26px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.con-s07-003 .b-before { --phase: var(--p-before); }
-.con-s07-003 .b-moment { --phase: var(--p-moment); }
-.con-s07-003 .b-after { --phase: var(--p-after); }
-.con-s07-003 .label .k {
-  margin: 0 0 6px;
-  font-size: 0.804rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  opacity: 0.72;
-}
-.con-s07-003 h3 {
-  margin: 0 0 8px;
-  font-size: clamp(1.369rem, 1.952vw, 1.806rem);
-  line-height: 1.1;
-  letter-spacing: -0.024em;
-  font-weight: 700;
-}
-.con-s07-003 .label p { margin: 0; font-size: 1rem; line-height: 1.48; opacity: 0.86; }
-
-.con-s07-003 .cards {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr));
-  gap: clamp(10px, 1.3vw, 16px);
-}
-.con-s07-003 .n2 { --n: 2; }
-.con-s07-003 .n3 { --n: 3; }
-.con-s07-003 .n4 { --n: 4; }
-.con-s07-003 .cards li { min-width: 0; }
-.con-s07-003 .card {
-  height: 100%;
-  border-radius: 22px;
-  background: var(--card);
-  padding: clamp(14px, 1.8vw, 22px);
-  display: flex;
-  flex-direction: column;
-}
-.con-s07-003 .who {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  align-self: flex-start;
-  margin: 0 0 9px;
-  font-size: 0.777rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--tone, var(--ink-faint));
-}
-.con-s07-003 .who::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex: none;
-  background: var(--tone, var(--ink-faint));
-}
-.con-s07-003 .t-anyone { --tone: var(--anyone); }
-.con-s07-003 .t-named { --tone: var(--named); }
-.con-s07-003 h4 {
-  margin: 0 0 8px;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  letter-spacing: -0.016em;
-  font-weight: 700;
-}
-.con-s07-003 .what { margin: 0; font-size: 1rem; line-height: 1.52; color: var(--ink-soft); }
-.con-s07-003 .what b { color: var(--ink); font-weight: 650; }
-.con-s07-003 .cost {
-  margin: auto 0 0;
-  padding-top: 10px;
-  border-top: 1px solid var(--line);
-  font-size: 1rem;
-  line-height: 1.48;
-  color: var(--ink-soft);
-}
-.con-s07-003 .cost .k {
-  display: block;
-  margin-bottom: 3px;
-  font-size: 0.74rem;
-  letter-spacing: 0.085em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--ink-faint);
-}
-.con-s07-003 .what + .cost { margin-top: clamp(11px, 1.4vw, 15px); }
-
-/* Refusal strip */
-.con-s07-003 .refuse {
-  border-radius: 22px;
-  border: 2px dashed var(--rule);
-  padding: clamp(16px, 2.2vw, 30px);
-  display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
-  gap: clamp(16px, 2.6vw, 44px);
-  align-items: start;
-}
-.con-s07-003 .refuse h3 { max-width: 17ch; }
-.con-s07-003 .none { margin: 0 0 clamp(12px, 1.5vw, 17px); padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-.con-s07-003 .none li {
-  padding: 5px 13px;
-  border-radius: 999px;
-  border: 1px dashed var(--rule);
-  color: var(--ink-soft);
-  font-size: 1rem;
-  font-weight: 600;
-}
-.con-s07-003 .refuse p { margin: 0 0 10px; max-width: 78ch; color: var(--ink-soft); font-size: 1rem; line-height: 1.6; }
-.con-s07-003 .refuse p:last-child { margin-bottom: 0; }
-.con-s07-003 .refuse p b { color: var(--ink); font-weight: 650; }
-
-/* Responsive ladder */
-@media (max-width: 1100px) {
-  .con-s07-003 .band { grid-template-columns: minmax(0, 1fr); }
-  .con-s07-003 .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 660px) {
-  .con-s07-003 .cards { grid-template-columns: minmax(0, 1fr); }
-  .con-s07-003 .refuse { grid-template-columns: minmax(0, 1fr); }
-  .con-s07-003 h2, .con-s07-003 .head p, .con-s07-003 .refuse h3, .con-s07-003 .refuse p { max-width: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .con-s07-003 * { transition: none !important; }
-}
-
-/* ---- v2 modern pass: frame, accent, depth ---- */
-.con-s07-003 {
-  --v2-accent: #7a7a7a;
-  --v2-soft: #d2d2d2;
-  background: linear-gradient(180deg, #d7d7d7 0%, #dfdfdf 30%);
-  font-size: 1.06rem;
-}
-.con-s07-003 h2 { font-weight: 800; }
-.con-s07-003 h3, .con-s07-003 h4 { font-weight: 750; }
-.con-s07-003 .eyebrow {
-  display: inline-block;
-  padding: 7px 15px;
-  border-radius: 999px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-}
-.con-s07-003 .card {
-  border-radius: 26px;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  border: 1px solid #d2d2d2;
-}
-.con-s07-003 .none li {
-  border: 1px dashed #969696;
-  border-radius: 14px;
-}
-.con-s07-003 .slot {
-  border-radius: 999px;
-  padding: 4px 15px;
-  background: #d2d2d2;
-  color: #5e5e5e;
-  font-weight: 600;
-}
-.con-s07-003.con-s07-003 .head {
-  padding: clamp(30px, 4vw, 64px);
-  border-radius: 34px;
-  border: none;
-  background: linear-gradient(135deg, #2b2b2b 0%, #141414 58%, #000000 100%);
-  color: #ffffff;
-  box-shadow: 0 22px 50px rgba(25, 25, 25, 0.09);
-  margin-bottom: clamp(26px, 3.2vw, 48px);
-}
-.con-s07-003.con-s07-003 .head h2, .con-s07-003.con-s07-003 .head h3, .con-s07-003.con-s07-003 .head h4, .con-s07-003.con-s07-003 .head b, .con-s07-003.con-s07-003 .head strong, .con-s07-003.con-s07-003 .head p b, .con-s07-003.con-s07-003 .head li b, .con-s07-003.con-s07-003 .head span b, .con-s07-003.con-s07-003 .head dt, .con-s07-003.con-s07-003 .head div b {
-  color: #ffffff;
-}
-.con-s07-003.con-s07-003 .head p, .con-s07-003.con-s07-003 .head li, .con-s07-003.con-s07-003 .head span, .con-s07-003.con-s07-003 .head dd, .con-s07-003.con-s07-003 .head div p, .con-s07-003.con-s07-003 .head div li, .con-s07-003.con-s07-003 .head p span, .con-s07-003.con-s07-003 .head .said, .con-s07-003.con-s07-003 .head .note {
-  color: #d2d2d2;
-}
-.con-s07-003.con-s07-003 .head .eyebrow, .con-s07-003.con-s07-003 .head .kicker, .con-s07-003.con-s07-003 .head .slot, .con-s07-003.con-s07-003 .head .tag {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-.con-s07-003.con-s07-003 .head i, .con-s07-003.con-s07-003 .head .bars i, .con-s07-003.con-s07-003 .head .lines i, .con-s07-003.con-s07-003 .head .measures i, .con-s07-003.con-s07-003 .head .bar, .con-s07-003.con-s07-003 .head .rule {
-  background: rgba(255, 255, 255, 0.24);
-}
-.con-s07-003.con-s07-003 .head .plate, .con-s07-003.con-s07-003 .head .plate span {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: #d2d2d2;
-}
-.con-s07-003 .shell > * { margin-bottom: clamp(26px, 3.2vw, 50px); }
-.con-s07-003 .shell > *:last-child { margin-bottom: 0; }
+@media (max-width: 1024px) { .con-s07-003 .head { grid-template-columns: minmax(0, 1fr); gap: 1rem; } .con-s07-003 .lead { text-align: left; } .con-s07-003 h2 { max-width: none; } .con-s07-003 .draw { display: none; } .con-s07-003 .band { grid-template-columns: minmax(0, 1fr); } .con-s07-003 .band > div > p { max-width: 34rem; } }
+@media (max-width: 640px) { .con-s07-003 .cells, .con-s07-003 .band:nth-child(3) .cells { grid-template-columns: minmax(0, 1fr); } .con-s07-003 .not { grid-template-columns: minmax(0, 1fr); } .con-s07-003 .media { aspect-ratio: 16 / 10; } }
+@media (prefers-reduced-motion: reduce) { .con-s07-003 * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="con-s07-003" data-study-id="CON-S07-003" data-direction="Structured / Visual Modular">
+  <svg class="draw" viewBox="0 0 1440 352" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke"><line x1="0" y1="60" x2="1440" y2="60"/><path d="M96 48v24M288 48v24M480 48v24M672 48v24M864 48v24M1056 48v24M1248 48v24"/><line x1="0" y1="300" x2="1440" y2="300"/></g></svg>
+
   <section class="shell" aria-labelledby="con-s07-003-title">
 
     <div class="head">
       <div>
-        <p class="eyebrow">How the site is run</p>
-        <h2 id="con-s07-003-title">Sorted by when it applies, not by what it is called</h2>
+        <p class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>How the site is run</p>
+        <h2 id="con-s07-003-title">Sorted by <em>when it applies,</em> not by what it is called.</h2>
       </div>
-      <p><b>A record is an outcome and outcomes can be under-reported.</b> These are decisions, and a decision can be checked by asking somebody standing on the site.</p>
+      <p class="lead">A record is an outcome and outcomes can be under-reported. These are decisions, and a decision can be checked by asking somebody standing on the site.</p>
     </div>
 
-    <div class="shot"><span>Site media &mdash; work happening, real PPE, not posed</span></div>
+    <div class="media" role="img" aria-label="Reserved site field: work happening, real PPE, not posed"><p class="slate" aria-hidden="true">Site area &middot; 4:1 &middot; work happening, real PPE, not posed</p></div>
 
-    <div class="band">
-      <div class="label b-before">
-        <p class="k">Phase one</p>
-        <h3>Before work starts</h3>
-        <p>Most of what keeps a site safe is decided before anybody picks anything up.</p>
+    <div class="bands">
+      <div class="band">
+        <div><p class="ph">Phase one</p><h3>Before work starts</h3><p>Most of what keeps a site safe is decided before anybody picks anything up.</p></div>
+        <div class="cells">
+          <div class="cell"><span class="who"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><circle cx="12" cy="10" r="2.5"/><path d="M8 18a4 4 0 0 1 8 0"/></svg>A named role</span><h4>The morning brief</h4><p class="d">Run by the supervisor for that work, not read off a form: what changed since yesterday, what is happening above and below you, who is working next to you.</p><p class="c"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Costs us</strong>The start of every morning from everybody, before anybody is productive.</p></div>
+          <div class="cell"><span class="who"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><circle cx="12" cy="10" r="2.5"/><path d="M8 18a4 4 0 0 1 8 0"/></svg>A named role</span><h4>Induction</h4><p class="d">Everybody is told on their first morning that they can stop the job, by the person who would be stopped. Told by anybody else it is a policy; told by them it is true.</p><p class="c"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Costs us</strong>A supervisor&rsquo;s time on every arrival, including a driver here once.</p></div>
+          <div class="cell"><span class="who"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><circle cx="12" cy="10" r="2.5"/><path d="M8 18a4 4 0 0 1 8 0"/></svg>A named role</span><h4>Temporary works</h4><p class="d">Designed by the engineer who carries it and never altered by the person who wants the prop moved. A prop in the way is in the way for a reason.</p><p class="c"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Costs us</strong>Waiting on somebody not on site, on a morning when moving it would take a minute.</p></div>
+          <div class="cell"><span class="who"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><circle cx="12" cy="10" r="2.5"/><path d="M8 18a4 4 0 0 1 8 0"/></svg>A named role</span><h4>The chain on site</h4><p class="d">On safety every firm answers to our supervisor &mdash; regardless of who they invoice or how long they have done it another way.</p><p class="c"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Costs us</strong>Subcontractors. Some will not work that way, and we would rather know at tender.</p></div>
+        </div>
       </div>
-      <ul class="cards n4">
-        <li>
-          <div class="card">
-            <p class="who t-named">A named role</p>
-            <h4>The morning brief</h4>
-            <p class="what">Run by the supervisor for that work, not read off a form: <b>what changed since yesterday, what is happening above and below you, who is working next to you.</b></p>
-            <p class="cost"><span class="k">Costs us</span>The start of every morning from everybody, before anybody is productive.</p>
-          </div>
-        </li>
-        <li>
-          <div class="card">
-            <p class="who t-named">A named role</p>
-            <h4>Induction</h4>
-            <p class="what">Everybody is told on their first morning that they can stop the job, <b>by the person who would be stopped</b>. Told by anybody else it is a policy; told by them it is true.</p>
-            <p class="cost"><span class="k">Costs us</span>A supervisor&rsquo;s time on every arrival, including a driver here once.</p>
-          </div>
-        </li>
-        <li>
-          <div class="card">
-            <p class="who t-named">A named role</p>
-            <h4>Temporary works</h4>
-            <p class="what">Designed by the engineer who carries it and <b>never altered by the person who wants the prop moved.</b> A prop in the way is in the way for a reason.</p>
-            <p class="cost"><span class="k">Costs us</span>Waiting on somebody not on site, on a morning when moving it would take a minute.</p>
-          </div>
-        </li>
-        <li>
-          <div class="card">
-            <p class="who t-named">A named role</p>
-            <h4>The chain on site</h4>
-            <p class="what">On safety every firm answers to <b>our supervisor</b> &mdash; regardless of who they invoice or how long they have done it another way.</p>
-            <p class="cost"><span class="k">Costs us</span>Subcontractors. Some will not work that way, and we would rather know at tender.</p>
-          </div>
-        </li>
-      </ul>
+
+      <div class="band">
+        <div><p class="ph">Phase two</p><h3>The moment something is wrong</h3><p>The shortest part of this page, and the only part that has to be true.</p></div>
+        <div class="cells">
+          <div class="cell"><span class="who"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Anybody on site</span><h4>Anybody stops the work</h4><p class="d">Somebody who started this morning, an agency operative, a driver through the gate once. No permission, no manager to find first, and no need to be right about the trade being stopped.</p><p class="c"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Costs us</strong>Time we do not get back, on the morning we can least afford it. That is the price of it being real.</p></div>
+          <div class="cell"><span class="who"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Anybody on site</span><h4>And if they were wrong</h4><p class="d">Nothing happens to them. No conversation afterwards, no note, no quiet reputation for being difficult. A stop that costs the person something will not happen the second time.</p><p class="c"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Costs us</strong>Some stops will be unnecessary and we pay for those in full. A cheaper problem than the alternative.</p></div>
+        </div>
+      </div>
+
+      <div class="band">
+        <div><p class="ph">Phase three</p><h3>Afterwards</h3><p>What happens next is what decides whether it happens again.</p></div>
+        <div class="cells">
+          <div class="cell"><span class="who"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><circle cx="12" cy="10" r="2.5"/><path d="M8 18a4 4 0 0 1 8 0"/></svg>A named role</span><h4>Who restarts it</h4><p class="d">The supervisor and the person who raised it, together &mdash; not the person who stopped it alone, and not whoever is under the most pressure that morning.</p><p class="c"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Costs us</strong>Sometimes the rest of the day. Recorded against the programme, never against the person who called it.</p></div>
+          <div class="cell"><span class="who"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Anybody on site</span><h4>The near miss</h4><p class="d">Whoever saw it says so; it is written down and briefed to everybody the same week rather than filed. It is the only time anybody learns something at no cost.</p><p class="c"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Costs us</strong>Honest recording makes our own figures look worse than a firm that does not bother. That is what those figures are worth.</p></div>
+          <div class="cell"><span class="who"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v3H2z"/><path d="M10 7h4v5h-4z"/></svg>Anybody on site</span><h4>When the job is behind</h4><p class="d">Every serious incident in this industry happens on a job that is behind. None of the above changes when we are behind &mdash; the only circumstance in which any of it is worth anything.</p><p class="c"><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Costs us</strong>We have handed time back rather than compress a sequence. The most expensive line here, and the one we would keep.</p></div>
+        </div>
+      </div>
     </div>
 
-    <div class="band">
-      <div class="label b-moment">
-        <p class="k">Phase two</p>
-        <h3>The moment something is wrong</h3>
-        <p>The shortest part of this page, and the only part that has to be true.</p>
-      </div>
-      <ul class="cards n2">
-        <li>
-          <div class="card">
-            <p class="who t-anyone">Anybody on site</p>
-            <h4>Anybody stops the work</h4>
-            <p class="what">Somebody who started this morning, an agency operative, a driver through the gate once. <b>No permission, no manager to find first, and no need to be right about the trade being stopped.</b></p>
-            <p class="cost"><span class="k">Costs us</span>Time we do not get back, on the morning we can least afford it. That is the price of it being real.</p>
-          </div>
-        </li>
-        <li>
-          <div class="card">
-            <p class="who t-anyone">Anybody on site</p>
-            <h4>And if they were wrong</h4>
-            <p class="what"><b>Nothing happens to them.</b> No conversation afterwards, no note, no quiet reputation for being difficult. A stop that costs the person something will not happen the second time.</p>
-            <p class="cost"><span class="k">Costs us</span>Some stops will be unnecessary and we pay for those in full. A cheaper problem than the alternative.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="band">
-      <div class="label b-after">
-        <p class="k">Phase three</p>
-        <h3>Afterwards</h3>
-        <p>What happens next is what decides whether it happens again.</p>
-      </div>
-      <ul class="cards n3">
-        <li>
-          <div class="card">
-            <p class="who t-named">A named role</p>
-            <h4>Who restarts it</h4>
-            <p class="what">The supervisor and the person who raised it, <b>together</b> &mdash; not the person who stopped it alone, and not whoever is under the most pressure that morning.</p>
-            <p class="cost"><span class="k">Costs us</span>Sometimes the rest of the day. Recorded against the programme, never against the person who called it.</p>
-          </div>
-        </li>
-        <li>
-          <div class="card">
-            <p class="who t-anyone">Anybody on site</p>
-            <h4>The near miss</h4>
-            <p class="what">Whoever saw it says so; it is written down and <b>briefed to everybody the same week</b> rather than filed. It is the only time anybody learns something at no cost.</p>
-            <p class="cost"><span class="k">Costs us</span>Honest recording makes our own figures look worse than a firm that does not bother. That is what those figures are worth.</p>
-          </div>
-        </li>
-        <li>
-          <div class="card">
-            <p class="who t-anyone">Anybody on site</p>
-            <h4>When the job is behind</h4>
-            <p class="what">Every serious incident in this industry happens on a job that is behind. <b>None of the above changes when we are behind</b> &mdash; the only circumstance in which any of it is worth anything.</p>
-            <p class="cost"><span class="k">Costs us</span>We have handed time back rather than compress a sequence. The most expensive line here, and the one we would keep.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="refuse" data-refusal>
-      <h3>What is not on this page, and why</h3>
+    <div class="not">
       <div>
-        <ul class="none">
-          <li>An incident rate</li>
-          <li>A days-without board</li>
-          <li>Zero harm</li>
-          <li>A perfect record</li>
-          <li>A wall of scheme logos</li>
-        </ul>
-        <p><b>An incident rate rewards under-reporting</b> &mdash; the cheapest way to improve one is to write less down. <b>A days-without board punishes whoever breaks the streak</b>, and the person who breaks it is the person who reported something.</p>
+        <p class="lab"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21l2-16h2l2 16M4 21h16M8 12h8M7 16h10"/></svg>What is not on this page, and why</p>
+        <ul><li>An incident rate</li><li>A days-without board</li><li>Zero harm</li><li>A perfect record</li><li>A wall of scheme logos</li></ul>
+      </div>
+      <div>
+        <p><strong>An incident rate rewards under-reporting</strong> &mdash; the cheapest way to improve one is to write less down. A days-without board punishes whoever breaks the streak, and the person who breaks it is the person who reported something.</p>
         <p>Both make a page look better and a site more dangerous. A firm that prints them is telling you what it optimises, so we would rather tell you who can stop the work &mdash; which you can check by asking anybody standing on it.</p>
         <p>The certificates and registrations are real, and they are not here either. They belong on the compliance page, where a number can be checked against a register rather than admired on a wall.</p>
       </div>

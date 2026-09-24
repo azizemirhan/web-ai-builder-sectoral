@@ -234,3 +234,85 @@ result is better than the colour was:
 
 Author in black and white from the start. A study that arrives with hue in it is not finished, and
 the pass exists to correct the catalog rather than to license colour in new work.
+
+# Detailing Pass — the reference register applied to CON
+
+Status: ACTIVE from 17 September 2026. This pass **supersedes the V2 visual language and the
+black-and-white rule above for the design layer of every `CON` study.** The argument, the reserved
+fields, the counter rule, the safety limits, the thirteen anti-patterns and the text budget all
+stand; the gradient hero panel, the pills, the soft shadows, the dashed slot edges and the
+ten-step grey ramp go. The register is `../../standards/08-VISUAL-REFERENCE-STYLE.md`, read the way
+`WELL` read it — but this sector is the register's *heavy* reading, and it is deliberately fuller.
+
+## The CON reading in one sentence
+
+    Concrete paper, one heavy tracked-uppercase display voice, hairlines and 3px site-tape bars,
+    bare project fields at large scale, a drawing layer behind the composition and a stroke-icon
+    set in front of it — everything drawn, nothing photographed, nothing invented.
+
+## What CON translates
+
+| Register element | CON reading |
+| --- | --- |
+| Display voice | The register's second option only: tracked uppercase grotesque, weight 800, `line-height: 0.9`, `letter-spacing: -0.03em`, `clamp(2.4rem, 5vw, 5.6rem)`. **No serif anywhere** — the serif is the developer-brochure register this sector avoids. One word may carry the accent. |
+| Eyebrows and labels | `0.6–0.7rem`, 700, tracking `0.16–0.2em`, uppercase. Index numerals as `01 / 02` in the accent. |
+| Rules | 1px hairlines for structure; **one 3px accent bar** per composition — the "site tape" — on the head, the active cell or the promoted row. Never two. |
+| Paper | Concrete, bone, steel, white, asphalt — see the theme table. Tinted bands are the paper darkened 4–6%. **No dark panels, no black hero.** The ink is the only black on the page. |
+| Radius | `0–2px` on everything. Fields 2px, slots 2px, actions 0. |
+| Media fields | Bare, flat, **large** — project photography is the sector's only asset, so fields run 21:9, 3:1, 16:10 and full-column 4:5. Slate labels bottom-left: `PROJECT AREA · 21:9`, `SITE AREA`, `PLANT AREA`, `DETAIL AREA`, `PORTRAIT AREA`. Never a dashed edge, never a gradient. |
+| Reserved figures | The counter is the signature: reserved figures are drawn **at counter scale** — a bordered slot `min-width 8–12rem`, `height 3–5rem`, the em dash at `2.2–3.4rem` in the display weight, the label tracked beneath. Small facts (year, reference) use the 1.8rem slot. |
+| Actions | 1px bordered rectangle, radius 0, uppercase tracked, **with a leading stroke icon** where it helps; the second route an underlined link with `↗`. Hover fills with the accent. |
+| **The drawing layer** | Behind a composition, at `--line` tone or lighter, an inline SVG of construction-drawing geometry: a dimension line with end ticks, a grid, a section arrow, a hatched band, a levelling circle, a chevron run. `aria-hidden`, `pointer-events: none`, `position: absolute`, never over body text, never above 12% visual weight. Every study carries one; no two studies in a section carry the same figure. |
+| **The site icons** | A 24×24 stroke set at `stroke-width: 1.6`, `currentColor`, round joins: hard hat, crane, spirit level, tape measure, clipboard, cone, brick course, I-beam, excavator bucket, drainage pipe, safety boot, hi-vis vest, handshake-crossed-out is **not** in the set. Inline SVG only, `aria-hidden`, sized 1.25–2rem, in the accent or the ink. Icons sit beside labels, at the head of cells and on actions — never as a decorative grid of their own. |
+| Density | Fuller than `WELL`: a composition carries its head, a drawing figure, an icon-led cell row or ruled ledger, at least one large field and one action or foot line. Text budget unchanged (hero 40–90, standard 90–170, detail 150–230, ceiling 250). |
+
+## CON themes for the detailing pass
+
+| Variant | Name | paper | ink | muted | line | media | band | accent |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 001 | Site White & Safety Orange | `#f4f4f1` | `#121314` | `#5b5e62` | `#d8d8d3` | `#e3e3de` | `#ebebe6` | `#d9481a` |
+| 002 | Bone & Burnt Amber | `#efece5` | `#171410` | `#6a655c` | `#d9d3c8` | `#e3ded4` | `#e8e3d9` | `#b4531d` |
+| 003 | Steel & Structural Blue | `#edf0f2` | `#0f1316` | `#57616a` | `#d2d9de` | `#dfe4e8` | `#e4e8eb` | `#1f5fd0` |
+| 004 | White & Hi-Vis | `#fbfbfa` | `#0b0b0b` | `#55585c` | `#e2e2e0` | `#ececea` | `#f2f2ef` | `#c99e00` |
+| 005 | Asphalt & Signal | `#e6e6e3` | `#0e0f10` | `#52555a` | `#cfcfcb` | `#d9d9d5` | `#deded9` | `#e2521a` |
+
+The 004 accent is high-vis yellow **darkened to `#c99e00`** so it holds as text and stroke on
+white; as a surface (the 3px tape, an icon fill) it may be `#ffd400`. No study introduces a
+second accent.
+
+## Sector rules that remain in force
+
+The counter rule (year founded, projects completed, people employed, largest project by value
+reserved; satisfaction, on-time, safety figures, awards and prices omitted), the safety limits,
+the media limits and the copy test are unchanged. Reserved fields stay empty. The checker for this
+pass is `concheck.ps1`: it enforces the theme tokens, the namespace, the flat register (no pill,
+dashed edge, shadow or gradient), inline-SVG-only graphics (`aria-hidden`, no `image`, `use` or
+`script` inside), the shell rule, the safety and figure vocabulary, and the h1 rule.
+
+## Completion record — 17 September 2026
+
+The detailing pass is applied to all one hundred and thirty-five `CON` studies, S01 through S27.
+Every section carries a `BATCH-V2.md` design record beside its `BATCH-V1.md`; every study passes
+`concheck.ps1` (tokens, namespace, flat register, inline-SVG-only, reduced-motion rule, shell rule,
+h1 rule, digit and claims vocabulary, field parity) and was rendered and read at 1440.
+
+What the pass settled beyond the table above, and what the next sector should inherit:
+
+- **The drawing layer is assigned by variant, not by section**: `001` setting-out grid, `002`
+  levelling circle with crosshair, `003` dimension line with ticks, `004` chevron run behind the
+  band, `005` cut-earth hatching down the left margin. Sections whose subject forbids an angle
+  (S18 BIM) carry orthogonal datum lines only; sections whose figures *are* the drawing
+  (S21 title bars, S26 week bars) carry the dimension line over them.
+- **Word indices, never numerals.** The `01 / 02` index in the translation table was withdrawn:
+  the checker refuses every digit in visible copy, so indices are `ONE … SIX` and `THE FIRST …`
+  at 3rem in the line tone, and V1 copy that carried `01–06` was reworded to the same.
+- **Reserved values read "Reserved"** in S21–S27 (the architecture run) and in every contact
+  ledger; the em-dash slot is kept for figures at counter scale only.
+- **A second colour token, `--no` (deep red, `#8a1f14`–`#8f1f14`)**, carries refusal across
+  S17–S27: the will-not-claim edge, the *got it wrong* row, the client-is-not-on-that-list
+  line, the away week, the not-ours plate. It is an edge, a top rule, an icon stroke or one
+  plate — never a surface behind body text, never a second accent. S17 carries no green.
+- **Contact before media** in S19 and S27 is a source-order rule the checker enforces, not a
+  layout preference.
+- **The 004 tape** is the `mark` underline in `#ffd400` on the display and a 3px top rule on
+  the band; the accent `#c99e00` does the text and strokes.
